@@ -9,9 +9,6 @@ permissions:
   contents: read
 
 jobs:
-  # Drift, format and vet use the workspace (which includes the maintainer tool in
-  # tools/roxygen) on a current Go. `go vet` also type-checks, so there is no separate
-  # build step; the consumer build is covered by the test job below.
   checks:
     runs-on: ubuntu-latest
     steps:
@@ -38,8 +35,6 @@ jobs:
       - name: Vet
         run: go vet ./...
 
-  # The published module is built and tested from the consumer's perspective
-  # (GOWORK off, no maintainer tooling) across supported Go versions.
   test:
     runs-on: ubuntu-latest
     strategy:

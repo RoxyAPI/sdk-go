@@ -1,4 +1,4 @@
-// Command roxygen is the RoxyAPI Go SDK maintainer tool. The live OpenAPI spec at
+// Command roxygen is the RoxyAPI Go SDK code generator. The OpenAPI spec at
 // roxyapi.com is the single source of truth; everything below regenerates from it.
 //
 //	roxygen generate    Fetch the spec, normalize it for oapi-codegen, generate the
