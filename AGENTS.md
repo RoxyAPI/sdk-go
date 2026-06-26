@@ -27,7 +27,7 @@ roxy, err := roxyapi.NewRoxy(key, roxyapi.WithHTTPClient(&http.Client{Timeout: 1
 ## Rules to get right
 
 - **Methods are grouped by domain and named for the spec operation id.** `roxy.Astrology.GenerateNatalChart(...)`, `roxy.VedicAstrology.GenerateBirthChart(...)`. Never invent a name; the full list is in `docs/llms-full.txt`.
-- **Argument order is `(ctx, pathParams..., params, body)`, but the arity varies.** `params` is a nilable `*XxxParams` of query parameters (it carries `Lang` on i18n endpoints); pass `nil` for none. POST endpoints add a typed `body` last. **An endpoint with no query parameters has NO `params` argument at all** (for example `roxy.Usage.GetUsageStats(ctx)` and `roxy.Languages.ListLanguages(ctx)`). Do not pass a stray `nil` to those: `nil` would be read as a request editor and panic. When unsure, let autocomplete show the signature.
+- **Argument order is `(ctx, pathParams..., params, body)`, but the arity varies.** `params` is a nilable `*XxxParams` of query parameters (it carries `Lang` on i18n endpoints); pass `nil` for none. POST endpoints add a typed `body` last. **An endpoint with no query parameters has NO `params` argument at all** (for example `roxy.Usage.GetUsageStats(ctx)` and `roxy.Languages.ListLanguages(ctx)`). Do not pass a stray `nil` to those: it COMPILES (the last arg is variadic) then PANICS at runtime in applyEditors. Call them with `ctx` only. When unsure, let autocomplete show the signature.
 - **The request body type is always `roxyapi.<MethodName>JSONRequestBody`** (some are aliases of a named request like `NatalChartRequest`; both names work). Build it as a struct literal.
 - **Read the success body from `JSON200`** (a typed struct, nil unless the call was a 2xx): `resp.JSON200.Cities[0].Latitude`. `resp.StatusCode()` and `resp.Bytes()` give the raw response.
 - **Handle errors with `errors.As` on `*RoxyError`.** Switch on `Code` (stable), not `Message`. On a 400, range over `Issues`.
@@ -39,7 +39,7 @@ Every chart, horoscope, panchang, dasha, dosha, navamsa, KP, synastry, compatibi
 
 ```go
 search, err := roxy.Location.SearchCities(ctx, &roxyapi.SearchCitiesParams{Q: "Berlin Germany"})
-if err != nil {
+if err != nil || len(search.JSON200.Cities) == 0 { // a 200 can still return zero cities
 	return err
 }
 city := search.JSON200.Cities[0] // fields: City, Country, Latitude, Longitude, Timezone (IANA), UtcOffset, Population
@@ -55,7 +55,7 @@ chart, err := roxy.Astrology.GenerateNatalChart(ctx, nil, roxyapi.NatalChartRequ
 })
 ```
 
-`Q` accepts a bare city (`"Paris"`), city plus country (`"Berlin Germany"`), or comma qualified (`"Springfield, Illinois"`). Use the qualified form to disambiguate.
+`Q` accepts a bare city (`"Paris"`), city plus country (`"Berlin Germany"`), or comma qualified (`"Springfield, Illinois"`). Use the qualified form to disambiguate, with a full country name, not an abbreviation (`"London, United Kingdom"`, not `"London, UK"`).
 
 ## Domains
 
@@ -105,9 +105,12 @@ import (
 	roxyapi "github.com/RoxyAPI/sdk-go"
 )
 
-// The Timezone field is a per-request union. Every timezone-taking request R exposes
-// the type R_Timezone with two builders: FromRTimezone0(decimalOffset) and
-// FromRTimezone1(ianaName). Both return an error you can ignore for a static value.
+// The Timezone field is a per-request union. Build it with the generated From..0
+// (decimal offset) or From..1 (IANA) method. The union TYPE NAME is not always
+// guessable: a $ref body uses <Request>_Timezone (NatalChartRequest_Timezone); an
+// inline body (most POST endpoints) uses <Operation>JSONBody_Timezone, e.g.
+// GenerateBodygraphJSONBody_Timezone. If unsure, write the field with any value and
+// read the expected type from the compiler error, or use autocomplete.
 var tz roxyapi.NatalChartRequest_Timezone
 _ = tz.FromNatalChartRequestTimezone1("Europe/Berlin") // or .FromNatalChartRequestTimezone0(1)
 
@@ -190,7 +193,10 @@ LLMs hallucinate confidently here. The specific traps:
 
 ## Go-specific gotchas
 
-- **Some methods have no `params` argument** (see Rules). Passing `nil` to those panics. Affected: `Usage.GetUsageStats`, `Languages.ListLanguages`, `Crystals.ListCrystalColors`, `Crystals.ListCrystalPlanets`, `Dreams.GetSymbolLetterCounts`.
+- **Some methods have no `params` argument** (see Rules). Passing `nil` to those compiles but PANICS at runtime (the trailing arg is a variadic request editor). Affected: `Usage.GetUsageStats`, `Languages.ListLanguages`, `Crystals.ListCrystalColors`, `Crystals.ListCrystalPlanets`, `Dreams.GetSymbolLetterCounts`.
+- **`Timezone` union type names vary:** `<Request>_Timezone` for a named body, `<Operation>JSONBody_Timezone` for an inline body (most POST endpoints). Cannot guess it? Write the field with any value and read the expected type from the compiler error, or use autocomplete.
+- **`NewRoxy` returns `*roxyapi.Roxy`** (the type for your own function signatures and struct fields) and returns an error on an empty API key, so a missing `ROXYAPI_KEY` fails at construction, not as a confusing later 401.
+- **A successful `SearchCities` can return zero cities.** Check `len(search.JSON200.Cities) == 0` before indexing `[0]`.
 - **Person-pair and forecast bodies use anonymous nested structs** (`CalculateSynastry`, `CalculateGunMilan`, `GenerateTimeline` carry inline `Person1`/`Person2`/`BirthData` structs). They are awkward to build as a Go literal; for those, see https://roxyapi.com/api-reference for the JSON shape.
 - **`SearchCities` paginates** with `Limit` and `Offset` (`roxyapi.Ptr(20)`); the default page is 10.
 - **One direct runtime dependency.** `go get` pulls `github.com/oapi-codegen/runtime` (Apache 2.0); it brings two small transitive modules (`google/uuid`, `apapsch/go-jsonmerge`). The HTTP layer is the standard library `net/http`.

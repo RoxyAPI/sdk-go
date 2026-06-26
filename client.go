@@ -2,6 +2,7 @@ package roxyapi
 
 import (
 	"context"
+	"errors"
 	"net/http"
 )
 
@@ -16,7 +17,13 @@ const DefaultBaseURL = "https://roxyapi.com/api/v2"
 // at a different host, WithHTTPClient to supply a custom *http.Client, or
 // WithRequestEditorFn to add a header. The API key and SDK identification headers are
 // always applied first.
+//
+// NewRoxy returns an error if apiKey is empty, so a missing ROXYAPI_KEY fails here
+// rather than as a confusing 401 on the first call.
 func NewRoxy(apiKey string, opts ...ClientOption) (*Roxy, error) {
+	if apiKey == "" {
+		return nil, errors.New("roxyapi: an API key is required (set ROXYAPI_KEY)")
+	}
 	all := append([]ClientOption{
 		WithRequestEditorFn(apiKeyEditor(apiKey)),
 		WithRequestEditorFn(sdkClientEditor),

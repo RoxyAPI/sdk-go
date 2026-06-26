@@ -54,10 +54,14 @@ func main() {
 	}
 	ctx := context.Background()
 
-	// Step 1: geocode the birth city (required for any chart endpoint).
-	search, err := roxy.Location.SearchCities(ctx, &roxyapi.SearchCitiesParams{Q: "London, UK"})
+	// Step 1: geocode the birth city (required for any chart endpoint). Use a full
+	// country name, not an abbreviation ("London, United Kingdom", not "London, UK").
+	search, err := roxy.Location.SearchCities(ctx, &roxyapi.SearchCitiesParams{Q: "London, United Kingdom"})
 	if err != nil {
 		panic(err)
+	}
+	if len(search.JSON200.Cities) == 0 {
+		panic("no city matched the search") // a 200 can still return zero cities
 	}
 	city := search.JSON200.Cities[0] // City, Country, Latitude, Longitude, Timezone (IANA), UtcOffset
 
@@ -181,6 +185,10 @@ yn, err := roxy.Tarot.CastYesNo(ctx, nil, roxyapi.CastYesNoJSONRequestBody{Quest
 
 ```go
 // Full bodygraph: type, strategy, authority, profile, centers, channels, gates.
+// Timezone union: for an inline-body endpoint the type name uses JSONBody, not
+// JSONRequestBody (see Gotchas). If unsure of the name, let autocomplete fill it.
+var btz roxyapi.GenerateBodygraphJSONBody_Timezone
+_ = btz.FromGenerateBodygraphJSONBodyTimezone1("America/New_York")
 hd, err := roxy.HumanDesign.GenerateBodygraph(ctx, nil, roxyapi.GenerateBodygraphJSONRequestBody{
 	Date: roxyapi.Date(1990, time.July, 4), Time: "10:12:00",
 	Latitude: roxyapi.Ptr[float32](40.7128), Longitude: roxyapi.Ptr[float32](-74.006), Timezone: btz,
@@ -247,6 +255,23 @@ Every endpoint is also a remote MCP tool at `https://roxyapi.com/mcp/{domain}` (
 - **Enum-like strings are validated server-side.** `sign` and `Lang` are open string types; an invalid value compiles and comes back as a `validation_error` (400).
 - **Read responses off `JSON200`** (`resp.JSON200.Cities[0].Latitude`). It is nil unless the call was a 2xx (errors are returned, not in the body).
 - **Person-pair / forecast bodies use anonymous structs** (see note above) and are best built from the JSON shape in the API reference.
+
+## FAQ
+
+**Q: `SearchCities` returned 200 but `Cities[0]` panics, or my city is not found.**
+A: A successful search can still return an empty `Cities` slice, so check `len(search.JSON200.Cities) == 0` before indexing. Two-letter country abbreviations are not matched: use the full country name (`"London, United Kingdom"`, not `"London, UK"`) or just the bare city (`"London"`).
+
+**Q: I got `nil pointer dereference` in `applyEditors`. What did I do?**
+A: You passed `nil` to an endpoint that has no query-parameters argument (`roxy.Usage.GetUsageStats`, `roxy.Languages.ListLanguages`, `roxy.Crystals.ListCrystalColors`, `roxy.Crystals.ListCrystalPlanets`, `roxy.Dreams.GetSymbolLetterCounts`). That `nil` is read as a request editor: the call compiles, then panics at runtime. Call them with `ctx` only, for example `roxy.Usage.GetUsageStats(ctx)`.
+
+**Q: `NewRoxy` returned no error but every call is `401 api_key_required`.**
+A: Make sure `ROXYAPI_KEY` is exported. `NewRoxy` returns an error for an empty key; a non-empty but wrong key only fails on the first request.
+
+**Q: How do I build the `Timezone` when I cannot guess the union type name?**
+A: The union type is `<Request>_Timezone` for a named request body (`NatalChartRequest_Timezone`) and `<Operation>JSONBody_Timezone` for an inline body (`GenerateBodygraphJSONBody_Timezone`). If you cannot guess it, write the `Timezone:` field with any value and read the expected type from the compiler error, or let autocomplete fill it. Build it with `.From<Type>Timezone1("IANA")` or `.From<Type>Timezone0(decimal)`.
+
+**Q: What type does `NewRoxy` return, so I can store it or pass it to a function?**
+A: `*roxyapi.Roxy`.
 
 ## Error handling and advanced use
 
