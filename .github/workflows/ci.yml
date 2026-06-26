@@ -1,0 +1,60 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  # Drift, format and vet use the workspace (which includes the maintainer tool in
+  # tools/roxygen) on a current Go. `go vet` also type-checks, so there is no separate
+  # build step; the consumer build is covered by the test job below.
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-go@v6
+        with:
+          go-version: stable
+
+      - name: Codegen drift check
+        run: |
+          go run ./tools/roxygen generate
+          git diff --exit-code -- specs/openapi.json roxyapi.gen.go roxy.gen.go \
+            || { echo 'codegen drift: run "go run ./tools/roxygen generate" and commit the result'; exit 1; }
+
+      - name: Docs drift check
+        run: |
+          go run ./tools/roxygen sync-docs
+          git diff --exit-code -- README.md AGENTS.md docs/llms-full.txt \
+            || { echo 'docs drift: run "go run ./tools/roxygen sync-docs" and commit the result'; exit 1; }
+
+      - name: gofmt
+        run: test -z "$(gofmt -l .)" || { echo 'run gofmt -w .'; gofmt -l .; exit 1; }
+
+      - name: Vet
+        run: go vet ./...
+
+  # The published module is built and tested from the consumer's perspective
+  # (GOWORK off, no maintainer tooling) across supported Go versions.
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        go: ['1.24.x', 'stable']
+    env:
+      GOWORK: off
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-go@v6
+        with:
+          go-version: ${{ matrix.go }}
+      - name: Build
+        run: go build .
+      - name: Test
+        run: go test .
+        env:
+          ROXY_API_KEY: ${{ secrets.ROXY_API_KEY }}

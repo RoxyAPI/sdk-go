@@ -1,0 +1,18 @@
+# Go build/test output
+*.test
+*.out
+coverage.txt
+
+# IDE
+.vs/
+.idea/
+*.user
+
+# Local secrets
+.env
+.env.local
+*.env.*
+
+# Maintainer-only, never published or pushed
+CLAUDE.md
+docs/todo.md

@@ -1,0 +1,253 @@
+# RoxyAPI Go SDK - Full Method Reference
+
+The official Go SDK for RoxyAPI. Astrology, Vedic astrology, numerology, tarot, human design, forecasting and more, one API key, fully typed, generated from the OpenAPI spec.
+
+## How to call
+
+```go
+import roxyapi "github.com/RoxyAPI/sdk-go"
+
+roxy, err := roxyapi.NewRoxy(os.Getenv("ROXYAPI_KEY"))
+resp, err := roxy.Astrology.GetDailyHoroscope(context.Background(), "aries", nil)
+// resp.JSON200 holds the parsed body on a 2xx; a 4xx or 5xx is returned as *roxyapi.RoxyError.
+```
+
+Methods are grouped by domain on the value returned by `NewRoxy` and named for the spec operation id below (PascalCase). The signature order is `(ctx, pathParams..., params, body)`: `params` is a nilable `*XxxParams` carrying query parameters (including `Lang`); endpoints with no query parameters drop it. POST endpoints take a typed `body` (`roxyapi.<Method>JSONRequestBody`) last. Read `AGENTS.md` for request construction (the `Date` and `Ptr` helpers, the timezone union, multi language) and error handling.
+
+This file is the method INDEX (operation id, HTTP method, path, summary). For request and response FIELD names, use the typed Go structs: editor autocomplete, https://pkg.go.dev/github.com/RoxyAPI/sdk-go, or the JSON shapes at https://roxyapi.com/api-reference.
+
+<!-- BEGIN:METHODS -->
+## Western Astrology - `roxy.Astrology`
+
+Western astrology API for natal birth charts, daily, weekly, and monthly horoscopes with unique content per sign, syn...
+
+- `calculateArabicLots` - POST `/astrology/arabic-lots` - Arabic lots calculator - seven Hermetic parts including Part of Fortune and Spirit
+- `detectAspectPatterns` - POST `/astrology/aspect-patterns` - Detect aspect patterns - Grand Trine, Kite, T-Square, Grand Cross, Yod, Mystic Rectangle, Stellium
+- `calculateAspects` - POST `/astrology/aspects` - Calculate planetary aspects - Aspect finder for any date and time
+- `generateAsteroids` - POST `/astrology/asteroids` - Asteroid goddesses calculator - Ceres, Pallas, Juno, and Vesta natal positions
+- `generateAstrocartography` - POST `/astrology/astrocartography` - Astrocartography map - planetary lines and relocation calculator
+- `calculateCompatibility` - POST `/astrology/compatibility-score` - Compatibility Score. Relationship compatibility analysis with category breakdown
+- `generateCompositeChart` - POST `/astrology/composite-chart` - Composite Chart - Midpoint relationship chart with interpretations
+- `generateFixedStars` - POST `/astrology/fixed-stars` - Fixed stars and star conjunctions calculator - Regulus, Spica, Algol natal report
+- `getDailyHoroscope` - GET `/astrology/horoscope/{sign}/daily` - Daily horoscope by zodiac sign - Transit-based forecast with house activations
+- `getMonthlyHoroscope` - GET `/astrology/horoscope/{sign}/monthly` - Monthly horoscope by zodiac sign - 30-day transit forecast with key dates
+- `getWeeklyHoroscope` - GET `/astrology/horoscope/{sign}/weekly` - Weekly horoscope by zodiac sign - 7-day transit forecast
+- `calculateHouses` - POST `/astrology/houses` - Calculate house cusps - House system calculator with comparison
+- `generateLilith` - POST `/astrology/lilith` - Black Moon Lilith calculator - mean and true lunar apogee in the natal chart
+- `generateLocalSpace` - POST `/astrology/local-space` - Local space astrology map - Directional planetary compass lines
+- `generateLunarReturn` - POST `/astrology/lunar-return` - Lunar Return Chart - Monthly emotional forecast with Moon cycle chart
+- `getMoonCalendar` - GET `/astrology/moon-phase/calendar/{year}/{month}` - Get lunar calendar - Moon phases for entire month
+- `getCurrentMoonPhase` - GET `/astrology/moon-phase/current` - Get current moon phase - Lunar phase calculator with zodiac sign
+- `getUpcomingMoonPhases` - GET `/astrology/moon-phase/upcoming` - Get upcoming moon phases - Next new moon, full moon, quarters
+- `generateNatalChart` - POST `/astrology/natal-chart` - Generate natal chart - Birth chart calculator API with houses and aspects
+- `listPlanetMeanings` - GET `/astrology/planet-meanings` - Get all planet meanings - Complete astrology planet interpretations list
+- `getPlanetMeaning` - GET `/astrology/planet-meanings/{id}` - Get planet meaning details - Complete astrology planet interpretation
+- `generatePlanetaryReturn` - POST `/astrology/planetary-returns` - Planetary Return Chart - Saturn return, Jupiter return, and inner planet cycles
+- `getPlanetaryPositions` - POST `/astrology/planets` - Get planetary positions - Ephemeris calculator for all planets
+- `generateProfections` - POST `/astrology/profections` - Annual profections calculator - lord of the year and yearly time lord by age
+- `generateProgressions` - POST `/astrology/progressions` - Secondary progressions calculator - progressed chart, progressed Sun and Moon
+- `generateRelocationChart` - POST `/astrology/relocation-chart` - Generate relocation chart - Relocated birth chart calculator with shifted houses and angles
+- `listZodiacSigns` - GET `/astrology/signs` - Get all zodiac signs - Complete zodiac signs list with dates and elements
+- `getZodiacSign` - GET `/astrology/signs/{id}` - Get zodiac sign details - Complete astrology sign profile with personality traits
+- `generateSolarArc` - POST `/astrology/solar-arc` - Solar arc directions calculator - directed chart at one degree per year
+- `generateSolarReturn` - POST `/astrology/solar-return` - Solar Return Chart - Annual birthday forecast with relocated chart
+- `calculateSynastry` - POST `/astrology/synastry` - Calculate synastry - Relationship compatibility analysis API
+- `calculateTransitAspects` - POST `/astrology/transit-aspects` - Transit Aspects - Detailed transit-to-natal aspect analysis with interpretations
+- `calculateTransits` - POST `/astrology/transits` - Calculate planetary transits - Current transits with natal chart comparison
+
+## Vedic Astrology - `roxy.VedicAstrology`
+
+Vedic astrology (Jyotish) and KP API for kundli generation with 15 divisional charts (D1-D60), Ashtakoot Gun Milan ku...
+
+- `calculateAshtakavarga` - POST `/vedic-astrology/ashtakavarga` - Get Ashtakavarga (planetary strength) analysis - Ashtakavarga Calculator API
+- `calculateDrishti` - POST `/vedic-astrology/aspects` - Get planetary aspects (Drishti) - Mutual aspects between all planets
+- `getLunarAspects` - POST `/vedic-astrology/aspects/lunar` - Monthly Lunar Aspects - Moon aspect events with all planets for a month
+- `getMonthlyAspects` - POST `/vedic-astrology/aspects/monthly` - Monthly Planetary Aspects - Major and minor aspect events for a month
+- `generateBirthChart` - POST `/vedic-astrology/birth-chart` - Get birth chart (D1 Rashi chart) - Kundli Calculator API
+- `calculateGunMilan` - POST `/vedic-astrology/compatibility` - Calculate compatibility score - Gun Milan API (Ashtakoot Matching)
+- `getCurrentDasha` - POST `/vedic-astrology/dasha/current` - Get current Mahadasha, Antardasha, Pratyantardasha - Dasha Calculator API
+- `getMajorDashas` - POST `/vedic-astrology/dasha/major` - Get all 9 Mahadasha periods (120-year cycle)
+- `getSubDashas` - POST `/vedic-astrology/dasha/sub/{mahadasha}` - Get all Antardashas (sub-periods) for a specific Mahadasha
+- `generateDivisionalChart` - POST `/vedic-astrology/divisional-chart` - Get divisional chart (Varga) - D2 to D60 Calculator
+- `checkKalsarpaDosha` - POST `/vedic-astrology/dosha/kalsarpa` - Check Kalsarpa Dosha - Kalsarpa Yoga Calculator API
+- `checkManglikDosha` - POST `/vedic-astrology/dosha/manglik` - Check Manglik Dosha - Mangal Dosha Calculator API
+- `checkSadhesati` - POST `/vedic-astrology/dosha/sadhesati` - Check Sadhesati - Sade Sati Calculator API (Saturn Transit)
+- `getEclipticCrossings` - POST `/vedic-astrology/ecliptic-crossings` - Ecliptic Crossings - When planets cross the ecliptic plane
+- `getKpAyanamsa` - GET `/vedic-astrology/kp/ayanamsa` - Get KP-Newcomb ayanamsa - Dynamic daily calculation
+- `generateKpChart` - POST `/vedic-astrology/kp/chart` - Generate complete KP birth chart
+- `getKpCusps` - POST `/vedic-astrology/kp/cusps` - Get KP Placidus house cusps with sub-lords
+- `getKpPlanets` - POST `/vedic-astrology/kp/planets` - Get KP planetary positions with sub-lords
+- `getKpPlanetsInterval` - POST `/vedic-astrology/kp/planets-interval` - Get KP planets at time intervals
+- `getKpRasiChanges` - POST `/vedic-astrology/kp/rasi-changes` - Find KP rasi ingress times
+- `getKpRulingPlanets` - POST `/vedic-astrology/kp/ruling-planets` - Get KP ruling planets with optional significators
+- `getKpRulingInterval` - POST `/vedic-astrology/kp/ruling-planets-interval` - Get KP ruling planets with significators at intervals
+- `getKpSublordChanges` - POST `/vedic-astrology/kp/sublord-changes` - Find KP sublord changes
+- `listNakshatras` - GET `/vedic-astrology/nakshatras` - List all 27 Nakshatras - Lunar Mansions Reference
+- `getNakshatra` - GET `/vedic-astrology/nakshatras/{id}` - Get Nakshatra by ID - Lunar Mansion Detail
+- `generateNavamsa` - POST `/vedic-astrology/navamsa` - Get Navamsa chart (D9) - Marriage Compatibility Calculator
+- `getBasicPanchang` - POST `/vedic-astrology/panchang/basic` - Get basic Panchang - Tithi Nakshatra Yoga Karana Calculator
+- `getChoghadiya` - POST `/vedic-astrology/panchang/choghadiya` - Get Choghadiya - 8 Muhurta divisions of day and night
+- `getDetailedPanchang` - POST `/vedic-astrology/panchang/detailed` - Get detailed Panchang with Rahu Kaal, Yamaganda, Gulika
+- `getHora` - POST `/vedic-astrology/panchang/hora` - Get Hora - 24 Planetary Hours (12 day + 12 night)
+- `calculateParallels` - POST `/vedic-astrology/parallels` - Declination Parallels - Planets at same or opposite declination
+- `getMonthlyParallels` - POST `/vedic-astrology/parallels/monthly` - Monthly Declination Parallels - Parallel and contraparallel events for a month
+- `getPlanetPositions` - POST `/vedic-astrology/planetary-positions` - Get planetary positions - Graha Positions API
+- `getMonthlyEphemeris` - POST `/vedic-astrology/planetary-positions/monthly` - Monthly Ephemeris - Daily sidereal planetary positions for a month
+- `listRashis` - GET `/vedic-astrology/rashis` - List all 12 Rashis - Vedic Zodiac Signs Reference
+- `getRashi` - GET `/vedic-astrology/rashis/{id}` - Get Rashi by ID - Vedic Zodiac Sign Detail
+- `calculateShadbala` - POST `/vedic-astrology/shadbala` - Get Shadbala (six-fold planetary strength) analysis - Shadbala Calculator API
+- `calculateTransit` - POST `/vedic-astrology/transit` - Transit Analysis - Compare current planets to natal chart (Gochar)
+- `getMonthlyTransits` - POST `/vedic-astrology/transit/monthly` - Monthly Transit - Planetary sign changes for an entire month
+- `getUpagrahaPositions` - POST `/vedic-astrology/upagraha` - Get upagraha (sub-planet) positions - Upagraha Calculator API
+- `listYogas` - GET `/vedic-astrology/yoga` - List all planetary yogas - 300+ Vedic Yoga Glossary
+- `detectYogas` - POST `/vedic-astrology/yoga/detect` - Detect classical Vedic yogas in a birth chart
+- `getYoga` - GET `/vedic-astrology/yoga/{id}` - Get yoga details by ID - Vedic Yoga Glossary Entry
+
+## Numerology - `roxy.Numerology`
+
+Numerology API to calculate life path, expression, soul urge, personality, and maturity numbers, with Pinnacle and Ch...
+
+- `calculateBirthDay` - POST `/numerology/birth-day` - Calculate Birth Day number - Special talents from day of birth
+- `calculateBridgeNumbers` - POST `/numerology/bridge` - Calculate Bridge Numbers - Harmonize different aspects of personality
+- `calculateBusinessName` - POST `/numerology/business-name` - Business name numerology - Chaldean brand name analysis and lucky numbers
+- `calculateChaldean` - POST `/numerology/chaldean` - Chaldean numerology name reading - Destiny, compound number, planetary ruler
+- `generateNumerologyChart` - POST `/numerology/chart` - Generate Complete Numerology Chart - Full profile analysis
+- `calculateNumCompatibility` - POST `/numerology/compatibility` - Calculate Compatibility - Relationship dynamics between two people
+- `getCompoundNumber` - GET `/numerology/compound-number/{number}` - Compound number meaning - Cheiro Chaldean interpretation 10 to 52
+- `getDailyNumber` - POST `/numerology/daily` - Get daily numerology number - Number of the Day with interpretation
+- `calculateDual` - POST `/numerology/dual` - Dual numerology - Pythagorean and Chaldean name numbers in one call
+- `calculateExpression` - POST `/numerology/expression` - Calculate Expression number - Natural talents and life goals
+- `checkKarmicDebt` - POST `/numerology/karmic-debt` - Detect Karmic Debt numbers - Past life challenges (13, 14, 16, 19)
+- `analyzeKarmicLessons` - POST `/numerology/karmic-lessons` - Analyze Karmic Lessons - Life lessons from missing numbers
+- `calculateLifePath` - POST `/numerology/life-path` - Calculate Life Path number - Most important numerology calculation
+- `calculateMaturity` - POST `/numerology/maturity` - Calculate Maturity number - Who you become in later life
+- `getNumberMeaning` - GET `/numerology/meanings/{number}` - Get Number Meaning - Interpretation for any number 1-9, 11, 22, 33
+- `calculatePersonalDay` - POST `/numerology/personal-day` - Calculate Personal Day - Daily personalized numerology forecast
+- `calculatePersonalMonth` - POST `/numerology/personal-month` - Calculate Personal Month - Monthly numerology forecast
+- `calculatePersonalYear` - POST `/numerology/personal-year` - Calculate Personal Year - Annual cycle and forecast for current year
+- `calculatePersonality` - POST `/numerology/personality` - Calculate Personality number - How others perceive you
+- `calculateSoulUrge` - POST `/numerology/soul-urge` - Calculate Soul Urge number - Inner motivations and desires
+
+## Tarot - `roxy.Tarot`
+
+Tarot reading API with the complete 78-card Rider-Waite-Smith deck and card meanings for love, career, health, and sp...
+
+- `listCards` - GET `/tarot/cards` - List all 78 tarot cards
+- `getCard` - GET `/tarot/cards/{id}` - Get detailed tarot card information
+- `getDailyCard` - POST `/tarot/daily` - Get daily tarot card reading
+- `drawCards` - POST `/tarot/draw` - Draw random tarot cards with reproducible results
+- `castCareerSpread` - POST `/tarot/spreads/career` - Career Spread (7 cards)
+- `castCelticCross` - POST `/tarot/spreads/celtic-cross` - Celtic Cross Spread (10 cards)
+- `castCustomSpread` - POST `/tarot/spreads/custom` - Custom Spread Builder
+- `castLoveSpread` - POST `/tarot/spreads/love` - Love Spread (5 cards)
+- `castThreeCard` - POST `/tarot/spreads/three-card` - Three-Card Spread: Past, Present, Future
+- `castYesNo` - POST `/tarot/yes-no` - Get yes/no answer to your question
+
+## Human Design - `roxy.HumanDesign`
+
+Generate the full Human Design bodygraph from a birth moment: type, strategy, inner authority, profile, definition, i...
+
+- `generateBodygraph` - POST `/human-design/bodygraph` - Generate full Human Design bodygraph - Type, authority, profile, centers, channels, gates
+- `calculateCenters` - POST `/human-design/centers` - Calculate the nine Human Design centers
+- `getCenter` - GET `/human-design/centers/{id}` - Look up a Human Design center by id
+- `calculateChannels` - POST `/human-design/channels` - Calculate the defined Human Design channels
+- `calculateConnection` - POST `/human-design/connection` - Calculate Human Design connection chart - Two-person composite bodygraph compatibility
+- `calculateGates` - POST `/human-design/gates` - Calculate the 26 Human Design gate activations
+- `getGate` - GET `/human-design/gates/{number}` - Look up a Human Design gate by number
+- `calculatePenta` - POST `/human-design/penta` - Calculate Human Design Penta - Small-group BG5 operating system for three to five people
+- `calculateProfile` - POST `/human-design/profile` - Calculate the Human Design profile and line keynotes
+- `generateTransit` - POST `/human-design/transit` - Generate Human Design transit overlay - Current planetary activations on a natal bodygraph
+- `calculateType` - POST `/human-design/type` - Calculate Human Design type, authority and profile
+- `calculateVariables` - POST `/human-design/variables` - Calculate Human Design Variables - The four arrows and Color, Tone, Base substructure
+
+## Forecast - `roxy.Forecast`
+
+Merge upcoming transit aspects, sign ingresses, retrograde stations, new and full moons, biorhythm critical days, and...
+
+- `generateDigest` - POST `/forecast/digest` - Forecast digest - Pre-summarized next 24h, 7d, 30d, and 90d rollups
+- `findSignificantDates` - POST `/forecast/significant-dates` - Significant dates - High-significance cross-domain forecast highlights
+- `forecastSolarReturn` - POST `/forecast/solar-return` - Solar return chart - Annual birthday forecast chart for a single subject
+- `generateTimeline` - POST `/forecast/timeline` - Cross-domain forecast timeline - Transits, ingresses, stations, dasha changes, critical days
+- `forecastTransits` - POST `/forecast/transits` - Western astrology forecast - aspects, ingresses, stations, eclipses, moon phases
+
+## Biorhythm - `roxy.Biorhythm`
+
+The most complete biorhythm API: 10 cycle types across 3 primary (physical, emotional, intellectual), 4 secondary (in...
+
+- `calculateBioCompatibility` - POST `/biorhythm/compatibility` - Calculate compatibility - Biorhythm alignment between two people
+- `getCriticalDays` - POST `/biorhythm/critical-days` - Find critical days - Zero crossing detection for any date range
+- `getDailyBiorhythm` - POST `/biorhythm/daily` - Get daily biorhythm - Seeded reading for daily check-in features
+- `getForecast` - POST `/biorhythm/forecast` - Get biorhythm forecast - Multi-day cycle predictions with best and worst days
+- `getPhases` - POST `/biorhythm/phases` - Get phase info - Lightweight cycle status for dashboards and widgets
+- `getReading` - POST `/biorhythm/reading` - Get biorhythm reading - Complete cycle analysis for any date
+
+## I-Ching - `roxy.Iching`
+
+I-Ching oracle API with all 64 hexagrams, 384 changing lines, 8 trigrams, and modern interpretations for love, career...
+
+- `castReading` - GET `/iching/cast` - Cast an I-Ching reading
+- `getDailyHexagram` - POST `/iching/daily` - Get daily I-Ching hexagram
+- `castDailyReading` - POST `/iching/daily/cast` - Cast daily I-Ching reading with changing lines
+- `listHexagrams` - GET `/iching/hexagrams` - List all 64 hexagrams
+- `lookupHexagram` - GET `/iching/hexagrams/lookup` - Lookup hexagram by line pattern
+- `getRandomHexagram` - GET `/iching/hexagrams/random` - Get a random hexagram
+- `getHexagram` - GET `/iching/hexagrams/{number}` - Get hexagram by number
+- `listTrigrams` - GET `/iching/trigrams` - List all 8 trigrams
+- `getTrigram` - GET `/iching/trigrams/{id}` - Get trigram by number or name
+
+## Crystals and Healing Stones - `roxy.Crystals`
+
+Crystal healing API with 80 healing crystals and gemstones and their spiritual, emotional, and physical properties
+
+- `listCrystals` - GET `/crystals` - List All Crystals
+- `getBirthstones` - GET `/crystals/birthstone/{month}` - Birthstone Crystals by Month
+- `getCrystalsByChakra` - GET `/crystals/chakra/{chakra}` - Crystals by Chakra
+- `listCrystalColors` - GET `/crystals/colors` - List Crystal Colors
+- `getDailyCrystal` - POST `/crystals/daily` - Daily Crystal
+- `getCrystalsByElement` - GET `/crystals/element/{element}` - Crystals by Element
+- `getCrystalPairings` - GET `/crystals/pairings/{id}` - Crystal Pairings
+- `listCrystalPlanets` - GET `/crystals/planets` - List Crystal Planets
+- `getRandomCrystal` - GET `/crystals/random` - Random Crystal
+- `searchCrystals` - GET `/crystals/search` - Search Crystals
+- `getCrystalsByZodiac` - GET `/crystals/zodiac/{sign}` - Crystals by Zodiac Sign
+- `getCrystal` - GET `/crystals/{id}` - Get Crystal Healing Properties
+
+## Dreams - `roxy.Dreams`
+
+Dream interpretation API with a 2,000+ symbol dream dictionary and psychological meanings covering animals, objects,...
+
+- `getDailyDreamSymbol` - POST `/dreams/daily` - Get daily dream symbol
+- `searchDreamSymbols` - GET `/dreams/symbols` - List and search dream symbols
+- `getSymbolLetterCounts` - GET `/dreams/symbols/letters` - Get symbol counts by letter
+- `getRandomSymbols` - GET `/dreams/symbols/random` - Get random dream symbols
+- `getDreamSymbol` - GET `/dreams/symbols/{id}` - Get dream symbol details
+
+## Angel Numbers - `roxy.AngelNumbers`
+
+Angel numbers API with meanings for 111, 222, 333, 444, 555, 666, 777, 888, 999, 1111, and 75+ sequences covering eve...
+
+- `getDailyAngelNumber` - POST `/angel-numbers/daily` - Daily Angel Number
+- `analyzeNumberSequence` - GET `/angel-numbers/lookup` - Analyze Any Number Sequence
+- `listAngelNumbers` - GET `/angel-numbers/numbers` - List All Angel Numbers
+- `getAngelNumber` - GET `/angel-numbers/numbers/{number}` - Get Angel Number Meaning
+
+## Location and Timezone - `roxy.Location`
+
+City search and geocoding API with 7,000+ cities across 227 countries, returning latitude, longitude, IANA timezone,...
+
+- `listCountries` - GET `/location/countries` - List all countries - ISO codes and city coverage
+- `getCitiesByCountry` - GET `/location/countries/{iso2}` - Get cities in a country - Geocoding directory sorted by population
+- `searchCities` - GET `/location/search` - Search cities worldwide - Geocoding autocomplete with coordinates and timezone
+
+## Usage - `roxy.Usage`
+
+Monitor your API usage, check rate limits, and track request consumption
+
+- `getUsageStats` - GET `/usage` - Get API usage statistics
+
+## Languages - `roxy.Languages`
+
+List the response languages accepted by the `lang` query parameter on every i18n-aware endpoint
+
+- `listLanguages` - GET `/languages` - List supported response languages
+<!-- END:METHODS -->

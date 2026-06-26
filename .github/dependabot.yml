@@ -1,0 +1,41 @@
+version: 2
+updates:
+  - package-ecosystem: gomod
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    # Wait 3 days before opening a bump PR so freshly published versions get
+    # a chance to be flagged for supply-chain issues before they land.
+    cooldown:
+      default-days: 3
+    groups:
+      dependencies:
+        patterns:
+          - "*"
+    # The oapi-codegen runtime is pinned to the generator version in
+    # tools/roxygen. Bumping it out of step can desync the generated client, so it
+    # is upgraded deliberately at generation time, never by dependabot.
+    ignore:
+      - dependency-name: "github.com/oapi-codegen/runtime"
+
+  - package-ecosystem: gomod
+    directory: /tools/roxygen
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    cooldown:
+      default-days: 3
+    groups:
+      dependencies:
+        patterns:
+          - "*"
+    # The generator version is pinned and drives the generated output; bump it
+    # deliberately and regenerate, never via an automated PR.
+    ignore:
+      - dependency-name: "github.com/oapi-codegen/oapi-codegen/v2"
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly

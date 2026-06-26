@@ -1,0 +1,97 @@
+name: Release
+
+on:
+  repository_dispatch:
+    types: [openapi-updated] # fired by the server repo on an OpenAPI change
+  schedule:
+    - cron: '0 6 * * *' # daily fallback, also covers an unwired dispatch
+  workflow_dispatch:
+    inputs:
+      version_bump:
+        description: 'patch | minor | major'
+        required: false
+        default: 'patch'
+
+# Go has no package registry and no OIDC publish: a release is just a git tag that
+# pkg.go.dev indexes through the module proxy. The only token needed is the default
+# GITHUB_TOKEN for the commit and tag. There are no publish secrets.
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0 # need all tags to compute the next version
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/setup-go@v6
+        with:
+          go-version: stable
+
+      - name: Regenerate from live spec
+        run: go run ./tools/roxygen generate
+
+      - name: Detect drift
+        id: diff
+        run: |
+          if git diff --quiet -- specs/openapi.json roxyapi.gen.go roxy.gen.go README.md AGENTS.md docs/llms-full.txt; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Vet, build, test
+        if: steps.diff.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
+        run: |
+          go vet ./...
+          go build ./...
+          go test ./...
+        env:
+          ROXY_API_KEY: ${{ secrets.ROXY_API_KEY }}
+
+      - name: Compute next version
+        id: bump
+        if: steps.diff.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
+        run: |
+          git fetch --tags --force
+          LATEST=$(git tag --list 'v*' --sort=-v:refname | head -1)
+          LATEST=${LATEST:-v0.0.0}
+          IFS=. read -r MA MI PA <<<"${LATEST#v}"
+          case "${{ github.event.inputs.version_bump || 'patch' }}" in
+            major) MA=$((MA+1)); MI=0; PA=0 ;;
+            minor) MI=$((MI+1)); PA=0 ;;
+            *)     PA=$((PA+1)) ;;
+          esac
+          VER="$MA.$MI.$PA"
+          sed -i "s/const Version = \".*\"/const Version = \"$VER\"/" version.go
+          echo "version=$VER" >> "$GITHUB_OUTPUT"
+          echo "Next version: v$VER"
+
+      - name: Commit, tag, push
+        if: steps.diff.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          V=${{ steps.bump.outputs.version }}
+          git add specs/openapi.json roxyapi.gen.go roxy.gen.go version.go README.md AGENTS.md docs/llms-full.txt
+          git commit -m "release: v$V"
+          git tag "v$V"
+          git push --follow-tags
+
+      - name: Prompt pkg.go.dev to index the new version
+        # The documented way to get a module indexed: ask the proxy for it via the go
+        # tool (handles module-path case encoding; no manual curl bang-encoding).
+        if: steps.diff.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
+        env:
+          GOPROXY: proxy.golang.org
+        run: go list -m "github.com/RoxyAPI/sdk-go@v${{ steps.bump.outputs.version }}" || true
+
+      - name: Create GitHub release
+        if: steps.diff.outputs.changed == 'true' || github.event_name == 'workflow_dispatch'
+        uses: softprops/action-gh-release@v3
+        with:
+          tag_name: v${{ steps.bump.outputs.version }}
+          generate_release_notes: true
+          make_latest: 'true'
