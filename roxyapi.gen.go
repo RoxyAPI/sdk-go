@@ -53769,9 +53769,9 @@ type GetDetailedPanchangResponse struct {
 			Start string `json:"start"`
 		} `json:"amritKalam"`
 
-		// Bhadra Bhadra (Vishti Karana), the 7th movable karana, avoided for all auspicious activities. Bhadra recurs roughly every 3 to 5 days and lasts about half a tithi, so most occurrences begin after sunrise rather than at it. startsAt and endsAt report the Bhadra beginning on this date regardless of whether it is active at sunrise.
+		// Bhadra Bhadra (Vishti Karana), the 7th movable karana, avoided for all auspicious activities. Bhadra recurs roughly every 3 to 5 days and lasts about half a tithi. active is true whenever a Bhadra is attributed to this date; startsAt and endsAt give the window, which may end on the next calendar day.
 		Bhadra struct {
-			// Active Whether Bhadra (Vishti Karana) is in force at sunrise, the panchang day reference moment. Can be false while startsAt and endsAt are populated when Bhadra begins later in the day.
+			// Active True when a Bhadra (Vishti Karana) occurs on this date, in which case startsAt and endsAt give its window. False only when no Bhadra begins on this date.
 			Active bool `json:"active"`
 
 			// EndsAt When the Bhadra (Vishti) period that begins on this date ends. May fall on the next calendar day. Null when no Bhadra begins on this date. In requested timezone.
@@ -53921,7 +53921,7 @@ type GetDetailedPanchangResponse struct {
 
 		// Panchaka Panchaka, the inauspicious ~5-day window while the Moon transits the last five nakshatras (Dhanishta 3rd pada through Revati, 300 to 360 degrees sidereal). The dosha type depends on the weekday it begins; startsAt and endsAt report the period in force at sunrise or beginning later this day. Avoid major activities during Panchaka.
 		Panchaka struct {
-			// Active Whether Panchaka is in force at sunrise, the panchang day reference. Can be false while startsAt and endsAt are populated when Panchaka begins later in the day.
+			// Active True when Panchaka is in effect on this date, whether it is already running at sunrise or begins later in the day, in which case startsAt and endsAt give the window. False only when no Panchaka touches this date.
 			Active bool `json:"active"`
 
 			// EndsAt When the Panchaka period ends (Moon exits Revati at 360 degrees), about five days after it starts. Null when no Panchaka. In requested timezone.
@@ -72563,9 +72563,9 @@ func ParseGetDetailedPanchangResponse(rsp *http.Response) (*GetDetailedPanchangR
 				Start string `json:"start"`
 			} `json:"amritKalam"`
 
-			// Bhadra Bhadra (Vishti Karana), the 7th movable karana, avoided for all auspicious activities. Bhadra recurs roughly every 3 to 5 days and lasts about half a tithi, so most occurrences begin after sunrise rather than at it. startsAt and endsAt report the Bhadra beginning on this date regardless of whether it is active at sunrise.
+			// Bhadra Bhadra (Vishti Karana), the 7th movable karana, avoided for all auspicious activities. Bhadra recurs roughly every 3 to 5 days and lasts about half a tithi. active is true whenever a Bhadra is attributed to this date; startsAt and endsAt give the window, which may end on the next calendar day.
 			Bhadra struct {
-				// Active Whether Bhadra (Vishti Karana) is in force at sunrise, the panchang day reference moment. Can be false while startsAt and endsAt are populated when Bhadra begins later in the day.
+				// Active True when a Bhadra (Vishti Karana) occurs on this date, in which case startsAt and endsAt give its window. False only when no Bhadra begins on this date.
 				Active bool `json:"active"`
 
 				// EndsAt When the Bhadra (Vishti) period that begins on this date ends. May fall on the next calendar day. Null when no Bhadra begins on this date. In requested timezone.
@@ -72715,7 +72715,7 @@ func ParseGetDetailedPanchangResponse(rsp *http.Response) (*GetDetailedPanchangR
 
 			// Panchaka Panchaka, the inauspicious ~5-day window while the Moon transits the last five nakshatras (Dhanishta 3rd pada through Revati, 300 to 360 degrees sidereal). The dosha type depends on the weekday it begins; startsAt and endsAt report the period in force at sunrise or beginning later this day. Avoid major activities during Panchaka.
 			Panchaka struct {
-				// Active Whether Panchaka is in force at sunrise, the panchang day reference. Can be false while startsAt and endsAt are populated when Panchaka begins later in the day.
+				// Active True when Panchaka is in effect on this date, whether it is already running at sunrise or begins later in the day, in which case startsAt and endsAt give the window. False only when no Panchaka touches this date.
 				Active bool `json:"active"`
 
 				// EndsAt When the Panchaka period ends (Moon exits Revati at 360 degrees), about five days after it starts. Null when no Panchaka. In requested timezone.
