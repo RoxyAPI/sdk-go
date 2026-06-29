@@ -233,7 +233,7 @@ Angel numbers API with meanings for 111, 222, 333, 444, 555, 666, 777, 888, 999,
 
 ## Location and Timezone - `roxy.Location`
 
-City search and geocoding API with 7,000+ cities across 227 countries, returning latitude, longitude, IANA timezone,...
+City search and geocoding API with 23,000+ cities across 240+ countries, returning latitude, longitude, IANA timezone...
 
 - `listCountries` - GET `/location/countries` - List all countries - ISO codes and city coverage
 - `getCitiesByCountry` - GET `/location/countries/{iso2}` - Get cities in a country - Geocoding directory sorted by population
