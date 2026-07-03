@@ -39,6 +39,7 @@
           "time": {
             "description": "Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.",
             "example": "14:30:00",
+            "format": "time",
             "type": "string"
           },
           "timezone": {
@@ -94,6 +95,7 @@
               "time": {
                 "description": "Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.",
                 "example": "14:30:00",
+                "format": "time",
                 "type": "string"
               },
               "timezone": {
@@ -217,6 +219,7 @@
           "time": {
             "description": "Birth time in 24-hour HH:MM:SS format. Time is CRITICAL for Lagna (Ascendant) calculation and house divisions. It changes every two hours roughly. Even minutes matter for accurate nakshatra pada and divisional chart (D9, D10) calculations. Without exact time, Lagna and house-based predictions will be incorrect.",
             "example": "10:12:00",
+            "format": "time",
             "type": "string"
           },
           "timezone": {
@@ -525,6 +528,7 @@
           "time": {
             "description": "Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.",
             "example": "14:30:00",
+            "format": "time",
             "type": "string"
           },
           "timezone": {
@@ -742,6 +746,7 @@
           "time": {
             "description": "Time in HH:MM:SS format (24-hour)",
             "example": "14:30:00",
+            "format": "time",
             "type": "string"
           },
           "timezone": {
@@ -1100,6 +1105,7 @@
           "time": {
             "description": "Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.",
             "example": "14:30:00",
+            "format": "time",
             "type": "string"
           },
           "timezone": {
@@ -1225,6 +1231,7 @@
               "time": {
                 "description": "Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.",
                 "example": "14:30:00",
+                "format": "time",
                 "type": "string"
               },
               "timezone": {
@@ -1297,6 +1304,7 @@
               "time": {
                 "description": "Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.",
                 "example": "14:30:00",
+                "format": "time",
                 "type": "string"
               },
               "timezone": {
@@ -1693,6 +1701,7 @@
           "time": {
             "description": "Birth time in 24-hour HH:MM:SS format. Time is CRITICAL for Lagna (Ascendant) calculation and house divisions. It changes every two hours roughly. Even minutes matter for accurate nakshatra pada and divisional chart (D9, D10) calculations. Without exact time, Lagna and house-based predictions will be incorrect.",
             "example": "10:12:00",
+            "format": "time",
             "type": "string"
           },
           "timezone": {
@@ -3221,7 +3230,7 @@
             "type": "object"
           },
           "yogas": {
-            "description": "Twelve classical yogas detected against this chart: Gajakesari (three-rule parashara definition), Sunapha, Anapha, Dhurdhura, Kemadruma, Chandra Mangala, Budha-Aditya, and the five Pancha Mahapurusha (Ruchaka, Bhadra, Hamsa, Malavya, Sasa). Each entry carries an `id` (matches `GET /yoga/{id}` for full glossary lookup), a `present` boolean, and classical-text `evidence` for the rule that triggered or failed.",
+            "description": "Twelve classical yogas detected against this chart: Gajakesari (three-rule parashara definition), Sunapha, Anapha, Dhurdhura, Kemadruma, Chandra Mangala, Budha-Aditya, and the five Pancha Mahapurusha (Ruchaka, Bhadra, Hamsa, Malavya, Sasa). Each entry carries an `id` (matches `GET /yoga/{id}` for full glossary lookup), a `present` boolean, a `quality` (Positive, Negative, or Both = auspicious, inauspicious, or context-dependent), and classical-text `evidence` for the rule that triggered or failed.",
             "items": {
               "properties": {
                 "description": {
@@ -3518,6 +3527,7 @@
               "time": {
                 "description": "Birth time in 24-hour HH:MM:SS format. Time is CRITICAL for Lagna (Ascendant) calculation and house divisions. It changes every two hours roughly. Even minutes matter for accurate nakshatra pada and divisional chart (D9, D10) calculations. Without exact time, Lagna and house-based predictions will be incorrect.",
                 "example": "10:12:00",
+                "format": "time",
                 "type": "string"
               },
               "timezone": {
@@ -3571,6 +3581,7 @@
               "time": {
                 "description": "Birth time in 24-hour HH:MM:SS format. Time is CRITICAL for Lagna (Ascendant) calculation and house divisions. It changes every two hours roughly. Even minutes matter for accurate nakshatra pada and divisional chart (D9, D10) calculations. Without exact time, Lagna and house-based predictions will be incorrect.",
                 "example": "10:12:00",
+                "format": "time",
                 "type": "string"
               },
               "timezone": {
@@ -3753,6 +3764,7 @@
           "time": {
             "description": "Birth time in 24-hour HH:MM:SS format. Time is CRITICAL for Lagna (Ascendant) calculation and house divisions. It changes every two hours roughly. Even minutes matter for accurate nakshatra pada and divisional chart (D9, D10) calculations. Without exact time, Lagna and house-based predictions will be incorrect.",
             "example": "10:12:00",
+            "format": "time",
             "type": "string"
           },
           "timezone": {
@@ -4236,6 +4248,7 @@
               "time": {
                 "description": "Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.",
                 "example": "14:30:00",
+                "format": "time",
                 "type": "string"
               },
               "timezone": {
@@ -4787,6 +4800,7 @@
           "time": {
             "description": "Birth time in 24-hour HH:MM:SS format. CRITICAL for accurate Lagna and house calculations.",
             "example": "10:12:00",
+            "format": "time",
             "type": "string"
           },
           "timezone": {
@@ -5340,6 +5354,7 @@
           "time": {
             "description": "Birth time in 24-hour HH:MM:SS format",
             "example": "10:12:00",
+            "format": "time",
             "type": "string"
           },
           "timezone": {
@@ -5477,9 +5492,9 @@
             "type": "string"
           },
           "endDatetime": {
-            "description": "End datetime in ISO 8601 format. Maximum 7 days from start. Always interpreted as local time when a non-zero timezone is provided (Z suffix is ignored).",
+            "description": "End datetime in ISO 8601 (YYYY-MM-DDTHH:MM:SS). Maximum 7 days from start. Interpreted as local time when a non-zero timezone is provided (a trailing Z is accepted but ignored); with timezone 0 it is UTC.",
             "example": "2025-01-15T23:59:00Z",
-            "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}(:\\d{2})?Z?$",
+            "format": "date-time",
             "type": "string"
           },
           "intervalMinutes": {
@@ -5514,9 +5529,9 @@
             "type": "string"
           },
           "startDatetime": {
-            "description": "Start datetime in ISO 8601 format. Always interpreted as local time when a non-zero timezone is provided (Z suffix is ignored). With timezone 0, Z suffix is treated as UTC.",
+            "description": "Start datetime in ISO 8601 (YYYY-MM-DDTHH:MM:SS). Interpreted as local time when a non-zero timezone is provided (a trailing Z is accepted but ignored); with timezone 0 it is UTC.",
             "example": "2025-01-15T00:00:00Z",
-            "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}(:\\d{2})?Z?$",
+            "format": "date-time",
             "type": "string"
           },
           "timezone": {
@@ -5742,6 +5757,7 @@
           "time": {
             "description": "Birth time in 24-hour HH:MM:SS format",
             "example": "10:12:00",
+            "format": "time",
             "type": "string"
           },
           "timezone": {
@@ -6772,6 +6788,7 @@
           "time": {
             "description": "Birth time in 24-hour HH:MM:SS format. Time is CRITICAL for Lagna (Ascendant) calculation and house divisions. It changes every two hours roughly. Even minutes matter for accurate nakshatra pada and divisional chart (D9, D10) calculations. Without exact time, Lagna and house-based predictions will be incorrect.",
             "example": "10:12:00",
+            "format": "time",
             "type": "string"
           },
           "timezone": {
@@ -6925,6 +6942,7 @@
           "time": {
             "description": "Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.",
             "example": "14:30:00",
+            "format": "time",
             "type": "string"
           },
           "timezone": {
@@ -6980,6 +6998,7 @@
               "time": {
                 "description": "Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.",
                 "example": "14:30:00",
+                "format": "time",
                 "type": "string"
               },
               "timezone": {
@@ -7262,6 +7281,7 @@
           "time": {
             "description": "Birth time in 24-hour HH:MM:SS format. Time is CRITICAL for Lagna (Ascendant) calculation and house divisions. It changes every two hours roughly. Even minutes matter for accurate nakshatra pada and divisional chart (D9, D10) calculations. Without exact time, Lagna and house-based predictions will be incorrect.",
             "example": "10:12:00",
+            "format": "time",
             "type": "string"
           },
           "timezone": {
@@ -7575,6 +7595,7 @@
           "time": {
             "description": "Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.",
             "example": "14:30:00",
+            "format": "time",
             "type": "string"
           },
           "timezone": {
@@ -8205,6 +8226,7 @@
           "time": {
             "description": "Birth time in 24-hour HH:MM:SS format. Time is CRITICAL for Lagna (Ascendant) calculation and house divisions. It changes every two hours roughly. Even minutes matter for accurate nakshatra pada and divisional chart (D9, D10) calculations. Without exact time, Lagna and house-based predictions will be incorrect.",
             "example": "10:12:00",
+            "format": "time",
             "type": "string"
           },
           "timezone": {
@@ -8474,6 +8496,7 @@
           "time": {
             "description": "Birth time in 24-hour HH:MM:SS format. Time is CRITICAL for Lagna (Ascendant) calculation and house divisions. It changes every two hours roughly. Even minutes matter for accurate nakshatra pada and divisional chart (D9, D10) calculations. Without exact time, Lagna and house-based predictions will be incorrect.",
             "example": "10:12:00",
+            "format": "time",
             "type": "string"
           },
           "timezone": {
@@ -8723,6 +8746,7 @@
           "time": {
             "description": "Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.",
             "example": "14:30:00",
+            "format": "time",
             "type": "string"
           },
           "timezone": {
@@ -8785,6 +8809,7 @@
               "time": {
                 "description": "Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.",
                 "example": "14:30:00",
+                "format": "time",
                 "type": "string"
               },
               "timezone": {
@@ -8903,6 +8928,7 @@
           "time": {
             "description": "Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.",
             "example": "14:30:00",
+            "format": "time",
             "type": "string"
           },
           "timezone": {
@@ -8989,6 +9015,7 @@
               "time": {
                 "description": "Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.",
                 "example": "14:30:00",
+                "format": "time",
                 "type": "string"
               },
               "timezone": {
@@ -9287,6 +9314,7 @@
           "time": {
             "description": "Birth time in 24-hour HH:MM:SS format. Combined with the timezone it fixes the exact birth instant, which the relocated angles and houses are recomputed for.",
             "example": "19:24:00",
+            "format": "time",
             "type": "string"
           },
           "timezone": {
@@ -9742,6 +9770,7 @@
           "time": {
             "description": "Birth time in 24-hour HH:MM:SS format. Time is CRITICAL for Lagna (Ascendant) calculation and house divisions. It changes every two hours roughly. Even minutes matter for accurate nakshatra pada and divisional chart (D9, D10) calculations. Without exact time, Lagna and house-based predictions will be incorrect.",
             "example": "10:12:00",
+            "format": "time",
             "type": "string"
           },
           "timezone": {
@@ -9864,6 +9893,7 @@
           "time": {
             "description": "Birth time in 24-hour HH:MM:SS format. Time is CRITICAL for Lagna (Ascendant) calculation and house divisions. It changes every two hours roughly. Even minutes matter for accurate nakshatra pada and divisional chart (D9, D10) calculations. Without exact time, Lagna and house-based predictions will be incorrect.",
             "example": "10:12:00",
+            "format": "time",
             "type": "string"
           },
           "timezone": {
@@ -10027,6 +10057,7 @@
           "time": {
             "description": "Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.",
             "example": "14:30:00",
+            "format": "time",
             "type": "string"
           },
           "timezone": {
@@ -10083,6 +10114,7 @@
               "time": {
                 "description": "Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.",
                 "example": "14:30:00",
+                "format": "time",
                 "type": "string"
               },
               "timezone": {
@@ -10194,7 +10226,7 @@
             "description": "Optional natal chart data to compare transits against",
             "properties": {
               "date": {
-                "description": "Date in YYYY-MM-DD format.",
+                "description": "Date in YYYY-MM-DD format. A single-digit month or day is accepted and zero-padded (2026-3-5 becomes 2026-03-05). Impossible calendar dates are rejected.",
                 "example": "1990-07-15",
                 "format": "date",
                 "type": "string"
@@ -10212,8 +10244,9 @@
                 "type": "number"
               },
               "time": {
-                "description": "Time in 24-hour HH:MM:SS format.",
+                "description": "Time in 24-hour format. Seconds are optional and default to 00 (14:30 becomes 14:30:00); a single-digit hour is zero-padded. Out-of-range values are rejected.",
                 "example": "14:30:00",
+                "format": "time",
                 "type": "string"
               },
               "timezone": {
@@ -10244,6 +10277,7 @@
           "time": {
             "description": "Transit time in HH:MM:SS format (defaults to current time)",
             "example": "12:00:00",
+            "format": "time",
             "type": "string"
           },
           "timezone": {
@@ -10594,6 +10628,7 @@
           "time": {
             "description": "Birth time in 24-hour HH:MM:SS format. Time is CRITICAL for Lagna (Ascendant) calculation and house divisions. It changes every two hours roughly. Even minutes matter for accurate nakshatra pada and divisional chart (D9, D10) calculations. Without exact time, Lagna and house-based predictions will be incorrect.",
             "example": "10:12:00",
+            "format": "time",
             "type": "string"
           },
           "timezone": {
@@ -10764,6 +10799,7 @@
           "time": {
             "description": "Birth time in 24-hour HH:MM:SS format. Time is CRITICAL for Lagna (Ascendant) calculation and house divisions. It changes every two hours roughly. Even minutes matter for accurate nakshatra pada and divisional chart (D9, D10) calculations. Without exact time, Lagna and house-based predictions will be incorrect.",
             "example": "10:12:00",
+            "format": "time",
             "type": "string"
           },
           "timezone": {
@@ -10827,7 +10863,7 @@
             "type": "number"
           },
           "yogas": {
-            "description": "Array of 12 detected yogas. Every entry carries a present boolean; filter on present === true for active yogas. Evidence text names the rule that triggered or failed.",
+            "description": "Array of 12 detected yogas. Every entry carries a `present` boolean and a `quality` (Positive, Negative, or Both = auspicious, inauspicious, or context-dependent); filter on present === true for active yogas. Evidence text names the rule that triggered or failed.",
             "items": {
               "properties": {
                 "description": {
@@ -12558,6 +12594,7 @@
                   "time": {
                     "description": "Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.",
                     "example": "14:30:00",
+                    "format": "time",
                     "type": "string"
                   },
                   "timezone": {
@@ -12744,6 +12781,7 @@
                       "time": {
                         "description": "Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.",
                         "example": "14:30:00",
+                        "format": "time",
                         "type": "string"
                       },
                       "timezone": {
@@ -12797,6 +12835,7 @@
                       "time": {
                         "description": "Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.",
                         "example": "14:30:00",
+                        "format": "time",
                         "type": "string"
                       },
                       "timezone": {
@@ -13590,6 +13629,7 @@
                       "time": {
                         "description": "Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.",
                         "example": "14:30:00",
+                        "format": "time",
                         "type": "string"
                       },
                       "timezone": {
@@ -13643,6 +13683,7 @@
                       "time": {
                         "description": "Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.",
                         "example": "14:30:00",
+                        "format": "time",
                         "type": "string"
                       },
                       "timezone": {
@@ -14044,6 +14085,7 @@
                         "time": {
                           "description": "Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.",
                           "example": "14:30:00",
+                          "format": "time",
                           "type": "string"
                         },
                         "timezone": {
@@ -14089,6 +14131,7 @@
                         "time": {
                           "description": "Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.",
                           "example": "14:30:00",
+                          "format": "time",
                           "type": "string"
                         },
                         "timezone": {
@@ -14266,6 +14309,7 @@
                   "time": {
                     "description": "Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.",
                     "example": "14:30:00",
+                    "format": "time",
                     "type": "string"
                   },
                   "timezone": {
@@ -15182,6 +15226,7 @@
                   "time": {
                     "description": "Birth time in 24-hour HH:MM:SS format. Time is ESSENTIAL for accurate house cusps - even minutes matter. The Ascendant (1st house cusp) changes roughly every 4 minutes. Without accurate time, house placements will be incorrect.",
                     "example": "14:30:00",
+                    "format": "time",
                     "type": "string"
                   },
                   "timezone": {
@@ -15478,6 +15523,7 @@
                   "time": {
                     "description": "Birth time in 24-hour HH:MM:SS format. Time is essential: the local horizon rotates a full circle each day, so the azimuth (compass direction) of every body depends on the exact birth time.",
                     "example": "14:30:00",
+                    "format": "time",
                     "type": "string"
                   },
                   "timezone": {
@@ -15640,6 +15686,7 @@
                   "birthTime": {
                     "description": "Original birth time in 24-hour HH:MM:SS format. Determines exact natal Moon position for monthly return timing.",
                     "example": "14:30:00",
+                    "format": "time",
                     "type": "string"
                   },
                   "houseSystem": {
@@ -15852,6 +15899,7 @@
                             "time": {
                               "description": "Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.",
                               "example": "14:30:00",
+                              "format": "time",
                               "type": "string"
                             },
                             "timezone": {
@@ -16476,9 +16524,9 @@
             "name": "time",
             "required": false,
             "schema": {
-              "default": "12:00:00",
               "description": "Time in 24-hour HH:MM:SS format. Defaults to 12:00:00 (noon). Moon moves ~13 degrees per day so time affects phase precision.",
               "example": "12:00:00",
+              "format": "time",
               "type": "string"
             }
           },
@@ -17446,6 +17494,7 @@
                   "birthTime": {
                     "description": "Original birth time in 24-hour HH:MM:SS format. Determines exact natal planet position for return timing.",
                     "example": "14:30:00",
+                    "format": "time",
                     "type": "string"
                   },
                   "houseSystem": {
@@ -17670,6 +17719,7 @@
                             "time": {
                               "description": "Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.",
                               "example": "14:30:00",
+                              "format": "time",
                               "type": "string"
                             },
                             "timezone": {
@@ -18126,6 +18176,7 @@
                   "time": {
                     "description": "Time in 24-hour HH:MM:SS format for precise calculations. Moon moves ~13° per day, so time matters for accurate lunar position. Use 12:00:00 (noon) as default if exact time not needed.",
                     "example": "12:00:00",
+                    "format": "time",
                     "type": "string"
                   },
                   "timezone": {
@@ -19334,6 +19385,7 @@
                   "birthTime": {
                     "description": "Original birth time in 24-hour HH:MM:SS format. Determines exact natal Sun position for annual return timing.",
                     "example": "14:30:00",
+                    "format": "time",
                     "type": "string"
                   },
                   "houseSystem": {
@@ -19545,6 +19597,7 @@
                             "time": {
                               "description": "Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.",
                               "example": "14:30:00",
+                              "format": "time",
                               "type": "string"
                             },
                             "timezone": {
@@ -20024,6 +20077,7 @@
                       "time": {
                         "description": "Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.",
                         "example": "14:30:00",
+                        "format": "time",
                         "type": "string"
                       },
                       "timezone": {
@@ -20081,6 +20135,7 @@
                       "time": {
                         "description": "Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.",
                         "example": "14:30:00",
+                        "format": "time",
                         "type": "string"
                       },
                       "timezone": {
@@ -20570,6 +20625,7 @@
                       "time": {
                         "description": "Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.",
                         "example": "14:30:00",
+                        "format": "time",
                         "type": "string"
                       },
                       "timezone": {
@@ -20629,6 +20685,7 @@
                   "transitTime": {
                     "description": "Transit time in HH:MM:SS format. Defaults to 12:00:00 (noon) if omitted.",
                     "example": "12:00:00",
+                    "format": "time",
                     "type": "string"
                   }
                 },
@@ -25929,6 +25986,7 @@
                       "time": {
                         "description": "Birth time in 24-hour HH:MM:SS format. Precision matters for the natal positions the transit aspects are measured against.",
                         "example": "13:30:00",
+                        "format": "time",
                         "type": "string"
                       },
                       "timezone": {
@@ -26067,6 +26125,7 @@
                         "time": {
                           "description": "Birth time in 24-hour HH:MM:SS format. Precision matters for the natal positions the transit aspects are measured against.",
                           "example": "13:30:00",
+                          "format": "time",
                           "type": "string"
                         },
                         "timezone": {
@@ -26452,6 +26511,7 @@
                       "time": {
                         "description": "Birth time in 24-hour HH:MM:SS format. Precision matters for the natal positions the transit aspects are measured against.",
                         "example": "13:30:00",
+                        "format": "time",
                         "type": "string"
                       },
                       "timezone": {
@@ -26589,6 +26649,7 @@
                         "time": {
                           "description": "Birth time in 24-hour HH:MM:SS format. Precision matters for the natal positions the transit aspects are measured against.",
                           "example": "13:30:00",
+                          "format": "time",
                           "type": "string"
                         },
                         "timezone": {
@@ -26897,6 +26958,7 @@
                   "time": {
                     "description": "Birth time in 24-hour HH:MM:SS format. Pins the exact natal Sun position that defines the solar return moment.",
                     "example": "14:30:00",
+                    "format": "time",
                     "type": "string"
                   },
                   "timezone": {
@@ -27084,6 +27146,7 @@
                             "time": {
                               "description": "Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.",
                               "example": "14:30:00",
+                              "format": "time",
                               "type": "string"
                             },
                             "timezone": {
@@ -27526,6 +27589,7 @@
                       "time": {
                         "description": "Birth time in 24-hour HH:MM:SS format. Precision matters for the natal positions the transit aspects are measured against.",
                         "example": "13:30:00",
+                        "format": "time",
                         "type": "string"
                       },
                       "timezone": {
@@ -27663,6 +27727,7 @@
                         "time": {
                           "description": "Birth time in 24-hour HH:MM:SS format. Precision matters for the natal positions the transit aspects are measured against.",
                           "example": "13:30:00",
+                          "format": "time",
                           "type": "string"
                         },
                         "timezone": {
@@ -27964,6 +28029,7 @@
                       "time": {
                         "description": "Birth time in 24-hour HH:MM:SS format. Precision matters for the natal positions the transit aspects are measured against.",
                         "example": "13:30:00",
+                        "format": "time",
                         "type": "string"
                       },
                       "timezone": {
@@ -28051,6 +28117,7 @@
                         "time": {
                           "description": "Birth time in 24-hour HH:MM:SS format. Precision matters for the natal positions the transit aspects are measured against.",
                           "example": "13:30:00",
+                          "format": "time",
                           "type": "string"
                         },
                         "timezone": {
@@ -28349,6 +28416,7 @@
                   "time": {
                     "description": "Birth time in 24-hour HH:MM:SS format. Precision matters: the profile lines and gate boundaries shift with the exact minute of birth.",
                     "example": "13:00:00",
+                    "format": "time",
                     "type": "string"
                   },
                   "timezone": {
@@ -28774,6 +28842,7 @@
                   "time": {
                     "description": "Birth time in 24-hour HH:MM:SS format. Precision matters: the profile lines and gate boundaries shift with the exact minute of birth.",
                     "example": "13:00:00",
+                    "format": "time",
                     "type": "string"
                   },
                   "timezone": {
@@ -29180,6 +29249,7 @@
                   "time": {
                     "description": "Birth time in 24-hour HH:MM:SS format. Precision matters: the profile lines and gate boundaries shift with the exact minute of birth.",
                     "example": "13:00:00",
+                    "format": "time",
                     "type": "string"
                   },
                   "timezone": {
@@ -29421,6 +29491,7 @@
                       "time": {
                         "description": "Birth time in 24-hour HH:MM:SS format. Precision matters: the profile lines and gate boundaries shift with the exact minute of birth.",
                         "example": "13:00:00",
+                        "format": "time",
                         "type": "string"
                       },
                       "timezone": {
@@ -29474,6 +29545,7 @@
                       "time": {
                         "description": "Birth time in 24-hour HH:MM:SS format. Precision matters: the profile lines and gate boundaries shift with the exact minute of birth.",
                         "example": "13:00:00",
+                        "format": "time",
                         "type": "string"
                       },
                       "timezone": {
@@ -29814,6 +29886,7 @@
                   "time": {
                     "description": "Birth time in 24-hour HH:MM:SS format. Precision matters: the profile lines and gate boundaries shift with the exact minute of birth.",
                     "example": "13:00:00",
+                    "format": "time",
                     "type": "string"
                   },
                   "timezone": {
@@ -30319,6 +30392,7 @@
                         "time": {
                           "description": "Birth time in 24-hour HH:MM:SS format. Precision matters: the profile lines and gate boundaries shift with the exact minute of birth.",
                           "example": "13:00:00",
+                          "format": "time",
                           "type": "string"
                         },
                         "timezone": {
@@ -30664,6 +30738,7 @@
                   "time": {
                     "description": "Birth time in 24-hour HH:MM:SS format. Precision matters: the profile lines and gate boundaries shift with the exact minute of birth.",
                     "example": "13:00:00",
+                    "format": "time",
                     "type": "string"
                   },
                   "timezone": {
@@ -30866,6 +30941,7 @@
                       "time": {
                         "description": "Birth time in 24-hour HH:MM:SS format. Precision matters: the profile lines and gate boundaries shift with the exact minute of birth.",
                         "example": "13:00:00",
+                        "format": "time",
                         "type": "string"
                       },
                       "timezone": {
@@ -30900,6 +30976,7 @@
                   "time": {
                     "description": "Transit time in HH:MM:SS UTC. Optional. Defaults to the current UTC time when omitted. Precision matters: the Moon moves through a gate in roughly half a day.",
                     "example": "12:00:00",
+                    "format": "time",
                     "type": "string"
                   }
                 },
@@ -31241,6 +31318,7 @@
                   "time": {
                     "description": "Birth time in 24-hour HH:MM:SS format. Precision matters: the profile lines and gate boundaries shift with the exact minute of birth.",
                     "example": "13:00:00",
+                    "format": "time",
                     "type": "string"
                   },
                   "timezone": {
@@ -31448,6 +31526,7 @@
                   "time": {
                     "description": "Birth time in 24-hour HH:MM:SS format. Precision matters: the profile lines and gate boundaries shift with the exact minute of birth.",
                     "example": "13:00:00",
+                    "format": "time",
                     "type": "string"
                   },
                   "timezone": {
@@ -39333,9 +39412,9 @@
                     "type": "integer"
                   },
                   "targetDate": {
-                    "description": "Target date in YYYY-MM-DD format (defaults to today)",
+                    "description": "Target date in YYYY-MM-DD format. Defaults to today (UTC).",
                     "example": "2026-04-04",
-                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                    "format": "date",
                     "type": "string"
                   }
                 },
@@ -42518,6 +42597,7 @@
                   "time": {
                     "description": "Time in HH:MM:SS format (24-hour). Exact time affects fast-moving planets (Moon, Mercury) and aspect orbs.",
                     "example": "12:00:00",
+                    "format": "time",
                     "type": "string"
                   },
                   "timezone": {
@@ -43552,6 +43632,7 @@
                   "time": {
                     "description": "Birth time in 24-hour HH:MM:SS format. Time is CRITICAL for Lagna (Ascendant) calculation and house divisions. It changes every two hours roughly. Even minutes matter for accurate nakshatra pada and divisional chart (D9, D10) calculations. Without exact time, Lagna and house-based predictions will be incorrect.",
                     "example": "10:12:00",
+                    "format": "time",
                     "type": "string"
                   },
                   "timezone": {
@@ -44051,6 +44132,7 @@
                   "time": {
                     "description": "Birth time in 24-hour HH:MM:SS format. Time is CRITICAL for Lagna (Ascendant) calculation and house divisions. It changes every two hours roughly. Even minutes matter for accurate nakshatra pada and divisional chart (D9, D10) calculations. Without exact time, Lagna and house-based predictions will be incorrect.",
                     "example": "10:12:00",
+                    "format": "time",
                     "type": "string"
                   },
                   "timezone": {
@@ -44367,6 +44449,7 @@
                   "time": {
                     "description": "Birth time in 24-hour HH:MM:SS format. Time is CRITICAL for Lagna (Ascendant) calculation and house divisions. It changes every two hours roughly. Even minutes matter for accurate nakshatra pada and divisional chart (D9, D10) calculations. Without exact time, Lagna and house-based predictions will be incorrect.",
                     "example": "10:12:00",
+                    "format": "time",
                     "type": "string"
                   },
                   "timezone": {
@@ -45835,12 +45918,13 @@
                   "birthTime": {
                     "description": "Birth time (HH:MM:SS) for significator calculation. Required if birthDate is provided.",
                     "example": "10:12:00",
+                    "format": "time",
                     "type": "string"
                   },
                   "datetime": {
-                    "description": "ISO 8601 datetime for ruling planets. Defaults to current time. Always interpreted as local time when a non-zero timezone is provided (Z suffix is ignored).",
+                    "description": "ISO 8601 datetime (YYYY-MM-DDTHH:MM:SS) for ruling planets. Defaults to current time. Interpreted as local time when a non-zero timezone is provided (a trailing Z is accepted but ignored); with timezone 0 it is UTC.",
                     "example": "2025-01-15T10:30:00Z",
-                    "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}(:\\d{2})?Z?$",
+                    "format": "date-time",
                     "type": "string"
                   },
                   "latitude": {
@@ -45995,9 +46079,9 @@
                     "type": "string"
                   },
                   "endDatetime": {
-                    "description": "End of the interval range in ISO 8601 format. Always interpreted as local time when a non-zero timezone is provided (Z suffix is ignored).",
+                    "description": "End of the interval range in ISO 8601 (YYYY-MM-DDTHH:MM:SS). Interpreted as local time when a non-zero timezone is provided (a trailing Z is accepted but ignored); with timezone 0 it is UTC.",
                     "example": "2026-02-03T01:00:00Z",
-                    "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}(:\\d{2})?Z?$",
+                    "format": "date-time",
                     "type": "string"
                   },
                   "intervalMinutes": {
@@ -46032,9 +46116,9 @@
                     "type": "string"
                   },
                   "startDatetime": {
-                    "description": "Start of the interval range in ISO 8601 format. Always interpreted as local time when a non-zero timezone is provided (Z suffix is ignored).",
+                    "description": "Start of the interval range in ISO 8601 (YYYY-MM-DDTHH:MM:SS). Interpreted as local time when a non-zero timezone is provided (a trailing Z is accepted but ignored); with timezone 0 it is UTC.",
                     "example": "2026-02-03T00:00:00Z",
-                    "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}(:\\d{2})?Z?$",
+                    "format": "date-time",
                     "type": "string"
                   },
                   "timezone": {
@@ -46683,6 +46767,7 @@
                   "time": {
                     "description": "Time in HH:MM:SS format (24-hour). Determines the exact Moon and Sun positions for tithi and nakshatra calculation.",
                     "example": "12:00:00",
+                    "format": "time",
                     "type": "string"
                   },
                   "timezone": {
@@ -46987,7 +47072,7 @@
               "schema": {
                 "properties": {
                   "date": {
-                    "description": "Date in YYYY-MM-DD format.",
+                    "description": "Date in YYYY-MM-DD format. A single-digit month or day is accepted and zero-padded (2026-3-5 becomes 2026-03-05). Impossible calendar dates are rejected.",
                     "example": "2026-02-03",
                     "format": "date",
                     "type": "string"
@@ -47267,7 +47352,7 @@
               "schema": {
                 "properties": {
                   "date": {
-                    "description": "Date in YYYY-MM-DD format.",
+                    "description": "Date in YYYY-MM-DD format. A single-digit month or day is accepted and zero-padded (2026-3-5 becomes 2026-03-05). Impossible calendar dates are rejected.",
                     "example": "2026-02-03",
                     "format": "date",
                     "type": "string"
@@ -48307,7 +48392,7 @@
               "schema": {
                 "properties": {
                   "date": {
-                    "description": "Date in YYYY-MM-DD format.",
+                    "description": "Date in YYYY-MM-DD format. A single-digit month or day is accepted and zero-padded (2026-3-5 becomes 2026-03-05). Impossible calendar dates are rejected.",
                     "example": "2026-02-03",
                     "format": "date",
                     "type": "string"
@@ -48556,6 +48641,7 @@
                   "time": {
                     "description": "Time in HH:MM:SS format (24-hour). Exact time affects declination values, especially for the fast-moving Moon.",
                     "example": "12:00:00",
+                    "format": "time",
                     "type": "string"
                   },
                   "timezone": {
@@ -49657,6 +49743,7 @@
                   "birthTime": {
                     "description": "Birth time in HH:MM:SS format (24-hour). Critical for accurate natal Lagna and Placidus house cusps which determine transit house placements.",
                     "example": "10:12:00",
+                    "format": "time",
                     "type": "string"
                   },
                   "coordinateSystem": {
@@ -49706,9 +49793,9 @@
                     "type": "string"
                   },
                   "transitTime": {
-                    "default": "12:00:00",
                     "description": "Transit time in HH:MM:SS format (24-hour). Affects fast-moving planets like Moon. Defaults to noon.",
                     "example": "12:00:00",
+                    "format": "time",
                     "type": "string"
                   }
                 },
@@ -50441,7 +50528,7 @@
     },
     "/vedic-astrology/yoga/detect": {
       "post": {
-        "description": "Chart-driven detection of 12 classical Vedic yogas: Gajakesari (parashara three-rule definition), Sunapha, Anapha, Dhurdhura, Kemadruma, Chandra Mangala, Budha-Aditya, and the five Pancha Mahapurusha yogas (Ruchaka, Bhadra, Hamsa, Malavya, Sasa). Each yoga is returned with a present boolean and a classical-text evidence string naming the rule that triggered or failed (kendra position, dignity, malefic drishti, lordship, retrograde state). Unlike GET /yoga and GET /yoga/{id} which are dictionary lookups, this endpoint computes the kundli from birth data and runs the detection rules. Sources: BPHS ch. 75, Mantreswara Phaladeepika ch. 6, B.V. Raman Three Hundred Important Combinations.",
+        "description": "Chart-driven detection of 12 classical Vedic yogas: Gajakesari (parashara three-rule definition), Sunapha, Anapha, Dhurdhura, Kemadruma, Chandra Mangala, Budha-Aditya, and the five Pancha Mahapurusha yogas (Ruchaka, Bhadra, Hamsa, Malavya, Sasa). Each yoga is returned with an `id`, `name`, a `present` boolean, a `quality` (Positive, Negative, or Both, i.e. auspicious, inauspicious, or context-dependent), and a classical-text `evidence` string naming the rule that triggered or failed (kendra position, dignity, malefic drishti, lordship, retrograde state). There is no separate major/minor flag; `quality` is the auspiciousness axis. Unlike GET /yoga and GET /yoga/{id} which are dictionary lookups, this endpoint computes the kundli from birth data and runs the detection rules. Sources: BPHS ch. 75, Mantreswara Phaladeepika ch. 6, B.V. Raman Three Hundred Important Combinations.",
         "operationId": "detectYogas",
         "parameters": [
           {

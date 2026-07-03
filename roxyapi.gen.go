@@ -13618,7 +13618,7 @@ type BirthChartResponse struct {
 		} `json:"signs"`
 	} `json:"virgo"`
 
-	// Yogas Twelve classical yogas detected against this chart: Gajakesari (three-rule parashara definition), Sunapha, Anapha, Dhurdhura, Kemadruma, Chandra Mangala, Budha-Aditya, and the five Pancha Mahapurusha (Ruchaka, Bhadra, Hamsa, Malavya, Sasa). Each entry carries an `id` (matches `GET /yoga/{id}` for full glossary lookup), a `present` boolean, and classical-text `evidence` for the rule that triggered or failed.
+	// Yogas Twelve classical yogas detected against this chart: Gajakesari (three-rule parashara definition), Sunapha, Anapha, Dhurdhura, Kemadruma, Chandra Mangala, Budha-Aditya, and the five Pancha Mahapurusha (Ruchaka, Bhadra, Hamsa, Malavya, Sasa). Each entry carries an `id` (matches `GET /yoga/{id}` for full glossary lookup), a `present` boolean, a `quality` (Positive, Negative, or Both = auspicious, inauspicious, or context-dependent), and classical-text `evidence` for the rule that triggered or failed.
 	Yogas *[]struct {
 		// Description Brief classical formation rule. Identifies the planetary placement, lordship, dignity, or aspect pattern required for the yoga to form.
 		Description string `json:"description"`
@@ -14744,8 +14744,8 @@ type KPPlanetsIntervalRequest struct {
 	// Ayanamsa Ayanamsa system for sidereal conversion. "kp-newcomb" uses the KP-Newcomb dynamic formula, the most common choice for KP astrology. "kp-old" uses the Krishnamurti original table from KP Reader-1 with constant precession rate. "lahiri" uses Lahiri/Chitrapaksha ayanamsa, matching most traditional Vedic software. Defaults to "kp-newcomb".
 	Ayanamsa *KPPlanetsIntervalRequestAyanamsa `json:"ayanamsa,omitempty"`
 
-	// EndDatetime End datetime in ISO 8601 format. Maximum 7 days from start. Always interpreted as local time when a non-zero timezone is provided (Z suffix is ignored).
-	EndDatetime string `json:"endDatetime"`
+	// EndDatetime End datetime in ISO 8601 (YYYY-MM-DDTHH:MM:SS). Maximum 7 days from start. Interpreted as local time when a non-zero timezone is provided (a trailing Z is accepted but ignored); with timezone 0 it is UTC.
+	EndDatetime time.Time `json:"endDatetime"`
 
 	// IntervalMinutes Time between calculations in minutes. Range: 15 (quarter-hourly) to 1440 (daily).
 	IntervalMinutes float32 `json:"intervalMinutes"`
@@ -14759,8 +14759,8 @@ type KPPlanetsIntervalRequest struct {
 	// NodeType Lunar node type for Rahu and Ketu positions. "mean" uses the smooth mean node (traditional Vedic astrology default). "true" uses the osculating node with perturbation corrections, oscillating up to 1.5 degrees from mean with a 173-day period. Impacts KP sub-lord assignments in narrow boundary cases. Defaults to "mean".
 	NodeType *KPPlanetsIntervalRequestNodeType `json:"nodeType,omitempty"`
 
-	// StartDatetime Start datetime in ISO 8601 format. Always interpreted as local time when a non-zero timezone is provided (Z suffix is ignored). With timezone 0, Z suffix is treated as UTC.
-	StartDatetime string `json:"startDatetime"`
+	// StartDatetime Start datetime in ISO 8601 (YYYY-MM-DDTHH:MM:SS). Interpreted as local time when a non-zero timezone is provided (a trailing Z is accepted but ignored); with timezone 0 it is UTC.
+	StartDatetime time.Time `json:"startDatetime"`
 
 	// Timezone Decimal hours from UTC OR IANA name (e.g. "Asia/Kolkata"). IANA resolved to the DST-correct offset for the startDatetime date. When non-zero, all datetimes are treated as local time in this timezone (Z suffix is ignored). Defaults to 0 (UTC).
 	Timezone *KPPlanetsIntervalRequest_Timezone `json:"timezone,omitempty"`
@@ -16836,12 +16836,12 @@ type TransitsRequest struct {
 
 	// NatalChart Optional natal chart data to compare transits against
 	NatalChart *struct {
-		// Date Date in YYYY-MM-DD format.
+		// Date Date in YYYY-MM-DD format. A single-digit month or day is accepted and zero-padded (2026-3-5 becomes 2026-03-05). Impossible calendar dates are rejected.
 		Date      openapi_types.Date `json:"date"`
 		Latitude  float32            `json:"latitude"`
 		Longitude float32            `json:"longitude"`
 
-		// Time Time in 24-hour HH:MM:SS format.
+		// Time Time in 24-hour format. Seconds are optional and default to 00 (14:30 becomes 14:30:00); a single-digit hour is zero-padded. Out-of-range values are rejected.
 		Time string `json:"time"`
 
 		// Timezone Natal timezone: decimal hours OR IANA name (e.g. "America/New_York"). IANA resolved to the DST-correct offset for the natal date.
@@ -17144,7 +17144,7 @@ type YogaDetectResponse struct {
 	// Total Count of yogas where present === true in this chart. Range 0-12.
 	Total float32 `json:"total"`
 
-	// Yogas Array of 12 detected yogas. Every entry carries a present boolean; filter on present === true for active yogas. Evidence text names the rule that triggered or failed.
+	// Yogas Array of 12 detected yogas. Every entry carries a `present` boolean and a `quality` (Positive, Negative, or Both = auspicious, inauspicious, or context-dependent); filter on present === true for active yogas. Evidence text names the rule that triggered or failed.
 	Yogas []struct {
 		// Description Brief classical formation rule. Identifies the planetary placement, lordship, dignity, or aspect pattern required for the yoga to form.
 		Description string `json:"description"`
@@ -19950,8 +19950,8 @@ type CalculatePersonalDayJSONBody struct {
 	// Month Birth month (1-12)
 	Month int `json:"month"`
 
-	// TargetDate Target date in YYYY-MM-DD format (defaults to today)
-	TargetDate *string `json:"targetDate,omitempty"`
+	// TargetDate Target date in YYYY-MM-DD format. Defaults to today (UTC).
+	TargetDate *openapi_types.Date `json:"targetDate,omitempty"`
 }
 
 // CalculatePersonalDayParams defines parameters for CalculatePersonalDay.
@@ -20576,8 +20576,8 @@ type GetKpRulingPlanetsJSONBody struct {
 	// BirthTime Birth time (HH:MM:SS) for significator calculation. Required if birthDate is provided.
 	BirthTime *string `json:"birthTime,omitempty"`
 
-	// Datetime ISO 8601 datetime for ruling planets. Defaults to current time. Always interpreted as local time when a non-zero timezone is provided (Z suffix is ignored).
-	Datetime *string `json:"datetime,omitempty"`
+	// Datetime ISO 8601 datetime (YYYY-MM-DDTHH:MM:SS) for ruling planets. Defaults to current time. Interpreted as local time when a non-zero timezone is provided (a trailing Z is accepted but ignored); with timezone 0 it is UTC.
+	Datetime *time.Time `json:"datetime,omitempty"`
 
 	// Latitude Observer latitude in decimal degrees
 	Latitude float32 `json:"latitude"`
@@ -20611,8 +20611,8 @@ type GetKpRulingIntervalJSONBody struct {
 	// Ayanamsa Ayanamsa system for sidereal conversion. "kp-newcomb" uses the KP-Newcomb dynamic formula, the most common choice for KP astrology. "kp-old" uses the Krishnamurti original table from KP Reader-1 with constant precession rate. "lahiri" uses Lahiri/Chitrapaksha ayanamsa, matching most traditional Vedic software. Defaults to "kp-newcomb".
 	Ayanamsa *GetKpRulingIntervalJSONBodyAyanamsa `json:"ayanamsa,omitempty"`
 
-	// EndDatetime End of the interval range in ISO 8601 format. Always interpreted as local time when a non-zero timezone is provided (Z suffix is ignored).
-	EndDatetime string `json:"endDatetime"`
+	// EndDatetime End of the interval range in ISO 8601 (YYYY-MM-DDTHH:MM:SS). Interpreted as local time when a non-zero timezone is provided (a trailing Z is accepted but ignored); with timezone 0 it is UTC.
+	EndDatetime time.Time `json:"endDatetime"`
 
 	// IntervalMinutes Interval between calculations in minutes (1-1440). Use 1-5 for birth time rectification.
 	IntervalMinutes int `json:"intervalMinutes"`
@@ -20626,8 +20626,8 @@ type GetKpRulingIntervalJSONBody struct {
 	// NodeType Lunar node type for Rahu and Ketu positions. "mean" uses the smooth mean node (traditional Vedic astrology default). "true" uses the osculating node with perturbation corrections, oscillating up to 1.5 degrees from mean with a 173-day period. Impacts KP sub-lord assignments in narrow boundary cases. Defaults to "mean".
 	NodeType *GetKpRulingIntervalJSONBodyNodeType `json:"nodeType,omitempty"`
 
-	// StartDatetime Start of the interval range in ISO 8601 format. Always interpreted as local time when a non-zero timezone is provided (Z suffix is ignored).
-	StartDatetime string `json:"startDatetime"`
+	// StartDatetime Start of the interval range in ISO 8601 (YYYY-MM-DDTHH:MM:SS). Interpreted as local time when a non-zero timezone is provided (a trailing Z is accepted but ignored); with timezone 0 it is UTC.
+	StartDatetime time.Time `json:"startDatetime"`
 
 	// Timezone Timezone offset from UTC in decimal hours. When non-zero, all datetimes are treated as local time in this timezone (Z suffix is ignored). Output times are also converted to this timezone. Defaults to 5.5 (IST).
 	Timezone *GetKpRulingIntervalJSONBody_Timezone `json:"timezone,omitempty"`
@@ -20723,7 +20723,7 @@ type GetBasicPanchang200JSONResponseBodyTithiPaksha string
 
 // GetChoghadiyaJSONBody defines parameters for GetChoghadiya.
 type GetChoghadiyaJSONBody struct {
-	// Date Date in YYYY-MM-DD format.
+	// Date Date in YYYY-MM-DD format. A single-digit month or day is accepted and zero-padded (2026-3-5 becomes 2026-03-05). Impossible calendar dates are rejected.
 	Date openapi_types.Date `json:"date"`
 
 	// Latitude Observer latitude in decimal degrees. Determines sunrise and sunset times which define day/night boundaries for muhurta calculations.
@@ -20761,7 +20761,7 @@ type GetChoghadiya200JSONResponseBodyNightChoghadiyaName string
 
 // GetDetailedPanchangJSONBody defines parameters for GetDetailedPanchang.
 type GetDetailedPanchangJSONBody struct {
-	// Date Date in YYYY-MM-DD format.
+	// Date Date in YYYY-MM-DD format. A single-digit month or day is accepted and zero-padded (2026-3-5 becomes 2026-03-05). Impossible calendar dates are rejected.
 	Date openapi_types.Date `json:"date"`
 
 	// Latitude Observer latitude in decimal degrees. Determines sunrise and sunset times which define day/night boundaries for muhurta calculations.
@@ -20799,7 +20799,7 @@ type GetDetailedPanchang200JSONResponseBodyTithiPaksha string
 
 // GetHoraJSONBody defines parameters for GetHora.
 type GetHoraJSONBody struct {
-	// Date Date in YYYY-MM-DD format.
+	// Date Date in YYYY-MM-DD format. A single-digit month or day is accepted and zero-padded (2026-3-5 becomes 2026-03-05). Impossible calendar dates are rejected.
 	Date openapi_types.Date `json:"date"`
 
 	// Latitude Observer latitude in decimal degrees. Determines sunrise and sunset times which define day/night boundaries for muhurta calculations.
@@ -32296,7 +32296,7 @@ func NewGetCurrentMoonPhaseRequest(server string, params *GetCurrentMoonPhasePar
 
 		if params.Time != nil {
 
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "time", *params.Time, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "time", *params.Time, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: "time"}); err != nil {
 				return nil, err
 			} else {
 				for _, qp := range strings.Split(queryFrag, "&") {
