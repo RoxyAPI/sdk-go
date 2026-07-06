@@ -197,7 +197,7 @@ I-Ching oracle API with all 64 hexagrams, 384 changing lines, 8 trigrams, and mo
 
 ## Crystals and Healing Stones - `roxy.Crystals`
 
-Crystal healing API with 80 healing crystals and gemstones and their spiritual, emotional, and physical properties
+Crystal healing API covering the most popular and widely-searched healing crystals and gemstones, from Amethyst and R...
 
 - `listCrystals` - GET `/crystals` - List All Crystals
 - `getBirthstones` - GET `/crystals/birthstone/{month}` - Birthstone Crystals by Month

@@ -23107,7 +23107,6 @@
                     },
                     "total": {
                       "description": "Total number of crystals matching the filter criteria.",
-                      "example": 80,
                       "type": "number"
                     }
                   },
@@ -24111,12 +24110,12 @@
         "operationId": "getCrystalPairings",
         "parameters": [
           {
-            "description": "URL-safe crystal identifier to find pairings for (e.g., \"amethyst\", \"rose-quartz\").",
+            "description": "URL-safe crystal identifier to find pairings for, case-insensitive (e.g., \"amethyst\", \"Amethyst\", \"rose-quartz\" all resolve).",
             "in": "path",
             "name": "id",
             "required": true,
             "schema": {
-              "description": "URL-safe crystal identifier to find pairings for (e.g., \"amethyst\", \"rose-quartz\").",
+              "description": "URL-safe crystal identifier to find pairings for, case-insensitive (e.g., \"amethyst\", \"Amethyst\", \"rose-quartz\" all resolve).",
               "example": "amethyst",
               "type": "string"
             }
@@ -25009,12 +25008,12 @@
         "operationId": "getCrystal",
         "parameters": [
           {
-            "description": "URL-safe crystal identifier (e.g., \"amethyst\", \"rose-quartz\", \"black-tourmaline\"). Must match an entry in the database.",
+            "description": "URL-safe crystal identifier, case-insensitive (e.g., \"amethyst\", \"Amethyst\", \"rose-quartz\" all resolve). Must match an entry in the database.",
             "in": "path",
             "name": "id",
             "required": true,
             "schema": {
-              "description": "URL-safe crystal identifier (e.g., \"amethyst\", \"rose-quartz\", \"black-tourmaline\"). Must match an entry in the database.",
+              "description": "URL-safe crystal identifier, case-insensitive (e.g., \"amethyst\", \"Amethyst\", \"rose-quartz\" all resolve). Must match an entry in the database.",
               "example": "amethyst",
               "type": "string"
             }
@@ -51161,7 +51160,7 @@
       "name": "I-Ching"
     },
     {
-      "description": "Crystal healing API with 80 healing crystals and gemstones and their spiritual, emotional, and physical properties. Filter by chakra (Root through Crown), zodiac sign, or element, search by keyword, browse birthstones by month, discover crystal pairings, and get random or daily crystal picks. Includes Mohs hardness, numerological vibration, and planetary associations per stone. Built for wellness apps, crystal shops, chakra-balancing tools, astrology integrations, and AI spiritual advisors. One key covers every RoxyAPI domain, with Remote MCP and typed SDKs.",
+      "description": "Crystal healing API covering the most popular and widely-searched healing crystals and gemstones, from Amethyst and Rose Quartz to Moldavite and Selenite, each with its spiritual, emotional, and physical properties. Filter by chakra (Root through Crown), zodiac sign, or element, search by keyword, browse birthstones by month, discover crystal pairings, and get random or daily crystal picks. Includes Mohs hardness, numerological vibration, and planetary associations per stone. Built for wellness apps, crystal shops, chakra-balancing tools, astrology integrations, and AI spiritual advisors. One key covers every RoxyAPI domain, with Remote MCP and typed SDKs.",
       "name": "Crystals and Healing Stones"
     },
     {
