@@ -8067,7 +8067,7 @@
                   "type": "number"
                 },
                 "name": {
-                  "description": "Planet or point name (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto, North Node, South Node, Chiron, Black Moon Lilith).",
+                  "description": "Planet or point name (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto, North Node, South Node, Chiron, Black Moon Lilith). The lunar nodes are the mean node; software using the true node may show node positions up to 1.75 degrees different.",
                   "example": "Sun",
                   "type": "string"
                 },
@@ -10464,7 +10464,7 @@
                   "type": "number"
                 },
                 "name": {
-                  "description": "Planet name (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto, North Node, South Node, Chiron, Black Moon Lilith).",
+                  "description": "Planet name (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto, North Node, South Node, Chiron, Black Moon Lilith). The lunar nodes are the mean node; software using the true node may show node positions up to 1.75 degrees different.",
                   "example": "Sun",
                   "type": "string"
                 },
@@ -12555,12 +12555,12 @@
             }
           },
           {
-            "description": "Optional comma separated list of extra bodies to plot beyond the ten classical planets. Allowed values: north-node, chiron, lilith. Unknown values are ignored. Defaults to none.",
+            "description": "Optional comma separated list of extra bodies to plot beyond the ten classical planets. Allowed values: north-node, chiron, lilith. north-node is the mean lunar node. Unknown values are ignored. Defaults to none.",
             "in": "query",
             "name": "include",
             "required": false,
             "schema": {
-              "description": "Optional comma separated list of extra bodies to plot beyond the ten classical planets. Allowed values: north-node, chiron, lilith. Unknown values are ignored. Defaults to none.",
+              "description": "Optional comma separated list of extra bodies to plot beyond the ten classical planets. Allowed values: north-node, chiron, lilith. north-node is the mean lunar node. Unknown values are ignored. Defaults to none.",
               "example": "chiron",
               "type": "string"
             }
@@ -15484,12 +15484,12 @@
             }
           },
           {
-            "description": "Optional comma-separated extra bodies to add beyond the 10 classical planets. Allowed values: north-node, chiron, lilith. Omit to return the 10 classical planets only.",
+            "description": "Optional comma-separated extra bodies to add beyond the 10 classical planets. Allowed values: north-node, chiron, lilith. north-node is the mean lunar node. Omit to return the 10 classical planets only.",
             "in": "query",
             "name": "include",
             "required": false,
             "schema": {
-              "description": "Optional comma-separated extra bodies to add beyond the 10 classical planets. Allowed values: north-node, chiron, lilith. Omit to return the 10 classical planets only.",
+              "description": "Optional comma-separated extra bodies to add beyond the 10 classical planets. Allowed values: north-node, chiron, lilith. north-node is the mean lunar node. Omit to return the 10 classical planets only.",
               "example": "chiron,lilith",
               "type": "string"
             }
@@ -18285,7 +18285,7 @@
                             "type": "number"
                           },
                           "name": {
-                            "description": "Planet name (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto, North Node, South Node, Chiron, Black Moon Lilith).",
+                            "description": "Planet name (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto, North Node, South Node, Chiron, Black Moon Lilith). The lunar nodes are the mean node; software using the true node may show node positions up to 1.75 degrees different.",
                             "example": "Sun",
                             "type": "string"
                           },

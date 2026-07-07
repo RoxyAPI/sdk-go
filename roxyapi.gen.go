@@ -15883,7 +15883,7 @@ type NatalChartResponse struct {
 		// Longitude Tropical ecliptic longitude in degrees (0-360).
 		Longitude float32 `json:"longitude"`
 
-		// Name Planet or point name (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto, North Node, South Node, Chiron, Black Moon Lilith).
+		// Name Planet or point name (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto, North Node, South Node, Chiron, Black Moon Lilith). The lunar nodes are the mean node; software using the true node may show node positions up to 1.75 degrees different.
 		Name string `json:"name"`
 
 		// Sign Tropical zodiac sign this planet occupies.
@@ -16959,7 +16959,7 @@ type TransitsResponse struct {
 		// Longitude Tropical ecliptic longitude in degrees (0-360). Primary coordinate for sign and aspect calculation.
 		Longitude float32 `json:"longitude"`
 
-		// Name Planet name (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto, North Node, South Node, Chiron, Black Moon Lilith).
+		// Name Planet name (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto, North Node, South Node, Chiron, Black Moon Lilith). The lunar nodes are the mean node; software using the true node may show node positions up to 1.75 degrees different.
 		Name string `json:"name"`
 
 		// Sign Tropical zodiac sign the planet currently occupies. Changes when longitude crosses a 30-degree boundary.
@@ -17306,7 +17306,7 @@ type GenerateAstrocartographyParams struct {
 	// Lang Response language (ISO 639-1). Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en. Languages without translations yet return English.
 	Lang *GenerateAstrocartographyParamsLang `form:"lang,omitempty" json:"lang,omitempty"`
 
-	// Include Optional comma separated list of extra bodies to plot beyond the ten classical planets. Allowed values: north-node, chiron, lilith. Unknown values are ignored. Defaults to none.
+	// Include Optional comma separated list of extra bodies to plot beyond the ten classical planets. Allowed values: north-node, chiron, lilith. north-node is the mean lunar node. Unknown values are ignored. Defaults to none.
 	Include *string `form:"include,omitempty" json:"include,omitempty"`
 }
 
@@ -17652,7 +17652,7 @@ type GenerateLocalSpaceParams struct {
 	// Lang Response language (ISO 639-1). Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en. Languages without translations yet return English.
 	Lang *GenerateLocalSpaceParamsLang `form:"lang,omitempty" json:"lang,omitempty"`
 
-	// Include Optional comma-separated extra bodies to add beyond the 10 classical planets. Allowed values: north-node, chiron, lilith. Omit to return the 10 classical planets only.
+	// Include Optional comma-separated extra bodies to add beyond the 10 classical planets. Allowed values: north-node, chiron, lilith. north-node is the mean lunar node. Omit to return the 10 classical planets only.
 	Include *string `form:"include,omitempty" json:"include,omitempty"`
 }
 
@@ -44113,7 +44113,7 @@ type GetPlanetaryPositionsResponse struct {
 			// Longitude Tropical ecliptic longitude in degrees (0-360).
 			Longitude float32 `json:"longitude"`
 
-			// Name Planet name (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto, North Node, South Node, Chiron, Black Moon Lilith).
+			// Name Planet name (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto, North Node, South Node, Chiron, Black Moon Lilith). The lunar nodes are the mean node; software using the true node may show node positions up to 1.75 degrees different.
 			Name string `json:"name"`
 
 			// Sign Tropical zodiac sign this planet occupies.
@@ -60246,7 +60246,7 @@ func ParseGetPlanetaryPositionsResponse(rsp *http.Response) (*GetPlanetaryPositi
 				// Longitude Tropical ecliptic longitude in degrees (0-360).
 				Longitude float32 `json:"longitude"`
 
-				// Name Planet name (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto, North Node, South Node, Chiron, Black Moon Lilith).
+				// Name Planet name (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto, North Node, South Node, Chiron, Black Moon Lilith). The lunar nodes are the mean node; software using the true node may show node positions up to 1.75 degrees different.
 				Name string `json:"name"`
 
 				// Sign Tropical zodiac sign this planet occupies.
