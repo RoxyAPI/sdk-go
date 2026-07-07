@@ -114,21 +114,42 @@ func generate() {
 	syncDocs()
 }
 
+// fetchSpec retries with exponential backoff: a transient upstream error (e.g. a
+// CDN 520) must not fail the daily release run.
 func fetchSpec() []byte {
+	const attempts = 5
+	for attempt := 1; ; attempt++ {
+		body, err := fetchSpecOnce()
+		if err == nil {
+			return body
+		}
+		if attempt == attempts {
+			fail("fetch spec: %v (after %d attempts)", err, attempts)
+		}
+		delay := time.Duration(1<<attempt) * time.Second
+		fmt.Printf("Fetch attempt %d/%d failed (%v), retrying in %s\n", attempt, attempts, err, delay)
+		time.Sleep(delay)
+	}
+}
+
+func fetchSpecOnce() ([]byte, error) {
 	req, err := http.NewRequest(http.MethodGet, specURL, nil)
 	check(err, "build request")
 	req.Header.Set("Cache-Control", "no-cache")
 	client := &http.Client{Timeout: 60 * time.Second}
 	resp, err := client.Do(req)
-	check(err, "fetch spec")
+	if err != nil {
+		return nil, err
+	}
 	defer resp.Body.Close()
 	if resp.StatusCode != http.StatusOK {
-		fail("fetch spec: unexpected status %d", resp.StatusCode)
+		return nil, fmt.Errorf("unexpected status %d", resp.StatusCode)
 	}
 	buf := new(bytes.Buffer)
-	_, err = buf.ReadFrom(resp.Body)
-	check(err, "read spec body")
-	return buf.Bytes()
+	if _, err := buf.ReadFrom(resp.Body); err != nil {
+		return nil, err
+	}
+	return buf.Bytes(), nil
 }
 
 // ─── spec normalization ──────────────────────────────────────────────────────
