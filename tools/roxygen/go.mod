@@ -2,7 +2,7 @@ module github.com/RoxyAPI/sdk-go/tools/roxygen
 
 go 1.25
 
-require github.com/oapi-codegen/oapi-codegen/v2 v2.7.1
+require github.com/oapi-codegen/oapi-codegen/v2 v2.7.2
 
 require (
 	github.com/dprotaso/go-yit v0.0.0-20220510233725-9ba8df137936 // indirect
