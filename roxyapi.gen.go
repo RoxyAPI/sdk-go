@@ -12393,7 +12393,7 @@ type ArabicLotsRequest struct {
 	// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
 	Time string `json:"time"`
 
-	// Timezone Timezone: decimal hours from UTC (e.g. -5 for EST, 5.5 for IST) OR IANA name (e.g. "America/New_York", "Asia/Kolkata"). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly.
+	// Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly.
 	Timezone ArabicLotsRequest_Timezone `json:"timezone"`
 }
 
@@ -12406,7 +12406,7 @@ type ArabicLotsRequestTimezone0 = float32
 // ArabicLotsRequestTimezone1 defines model for .
 type ArabicLotsRequestTimezone1 = string
 
-// ArabicLotsRequest_Timezone Timezone: decimal hours from UTC (e.g. -5 for EST, 5.5 for IST) OR IANA name (e.g. "America/New_York", "Asia/Kolkata"). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly.
+// ArabicLotsRequest_Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly.
 type ArabicLotsRequest_Timezone struct {
 	union json.RawMessage
 }
@@ -12479,7 +12479,7 @@ type AshtakavargaRequest struct {
 	// Time Birth time in 24-hour HH:MM:SS format. Time is CRITICAL for Lagna (Ascendant) calculation and house divisions. It changes every two hours roughly. Even minutes matter for accurate nakshatra pada and divisional chart (D9, D10) calculations. Without exact time, Lagna and house-based predictions will be incorrect.
 	Time string `json:"time"`
 
-	// Timezone Timezone: decimal hours from UTC (e.g. 5.5 for IST, -5 for EST) OR IANA name (e.g. "Asia/Kolkata", "America/New_York"). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5 (IST).
+	// Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5.
 	Timezone *AshtakavargaRequest_Timezone `json:"timezone,omitempty"`
 }
 
@@ -12489,7 +12489,7 @@ type AshtakavargaRequestTimezone0 = float32
 // AshtakavargaRequestTimezone1 defines model for .
 type AshtakavargaRequestTimezone1 = string
 
-// AshtakavargaRequest_Timezone Timezone: decimal hours from UTC (e.g. 5.5 for IST, -5 for EST) OR IANA name (e.g. "Asia/Kolkata", "America/New_York"). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5 (IST).
+// AshtakavargaRequest_Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5.
 type AshtakavargaRequest_Timezone struct {
 	union json.RawMessage
 }
@@ -12574,7 +12574,7 @@ type AspectPatternsRequest struct {
 	// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
 	Time string `json:"time"`
 
-	// Timezone Timezone: decimal hours from UTC (e.g. -5 for EST, 5.5 for IST) OR IANA name (e.g. "America/New_York", "Asia/Kolkata"). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly.
+	// Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly.
 	Timezone AspectPatternsRequest_Timezone `json:"timezone"`
 }
 
@@ -12584,7 +12584,7 @@ type AspectPatternsRequestTimezone0 = float32
 // AspectPatternsRequestTimezone1 defines model for .
 type AspectPatternsRequestTimezone1 = string
 
-// AspectPatternsRequest_Timezone Timezone: decimal hours from UTC (e.g. -5 for EST, 5.5 for IST) OR IANA name (e.g. "America/New_York", "Asia/Kolkata"). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly.
+// AspectPatternsRequest_Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly.
 type AspectPatternsRequest_Timezone struct {
 	union json.RawMessage
 }
@@ -12824,7 +12824,7 @@ type AsteroidsRequest struct {
 	// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
 	Time string `json:"time"`
 
-	// Timezone Timezone: decimal hours from UTC (e.g. -5 for EST, 5.5 for IST) OR IANA name (e.g. "America/New_York", "Asia/Kolkata"). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly.
+	// Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly.
 	Timezone AsteroidsRequest_Timezone `json:"timezone"`
 }
 
@@ -12837,7 +12837,7 @@ type AsteroidsRequestTimezone0 = float32
 // AsteroidsRequestTimezone1 defines model for .
 type AsteroidsRequestTimezone1 = string
 
-// AsteroidsRequest_Timezone Timezone: decimal hours from UTC (e.g. -5 for EST, 5.5 for IST) OR IANA name (e.g. "America/New_York", "Asia/Kolkata"). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly.
+// AsteroidsRequest_Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly.
 type AsteroidsRequest_Timezone struct {
 	union json.RawMessage
 }
@@ -13096,7 +13096,7 @@ type BirthChartRequest struct {
 	// Time Birth time in 24-hour HH:MM:SS format. Time is CRITICAL for Lagna (Ascendant) calculation and house divisions. It changes every two hours roughly. Even minutes matter for accurate nakshatra pada and divisional chart (D9, D10) calculations. Without exact time, Lagna and house-based predictions will be incorrect.
 	Time string `json:"time"`
 
-	// Timezone Timezone: decimal hours from UTC (e.g. 5.5 for IST, -5 for EST) OR IANA name (e.g. "Asia/Kolkata", "America/New_York"). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5 (IST).
+	// Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5.
 	Timezone *BirthChartRequest_Timezone `json:"timezone,omitempty"`
 }
 
@@ -13106,7 +13106,7 @@ type BirthChartRequestTimezone0 = float32
 // BirthChartRequestTimezone1 defines model for .
 type BirthChartRequestTimezone1 = string
 
-// BirthChartRequest_Timezone Timezone: decimal hours from UTC (e.g. 5.5 for IST, -5 for EST) OR IANA name (e.g. "Asia/Kolkata", "America/New_York"). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5 (IST).
+// BirthChartRequest_Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5.
 type BirthChartRequest_Timezone struct {
 	union json.RawMessage
 }
@@ -13833,7 +13833,7 @@ type CompatibilityRequest struct {
 		// Time Birth time in 24-hour HH:MM:SS format. Time is CRITICAL for Lagna (Ascendant) calculation and house divisions. It changes every two hours roughly. Even minutes matter for accurate nakshatra pada and divisional chart (D9, D10) calculations. Without exact time, Lagna and house-based predictions will be incorrect.
 		Time string `json:"time"`
 
-		// Timezone Timezone: decimal hours from UTC (e.g. 5.5 for IST, -5 for EST) OR IANA name (e.g. "Asia/Kolkata", "America/New_York"). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5 (IST).
+		// Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5.
 		Timezone *CompatibilityRequest_Person1_Timezone `json:"timezone,omitempty"`
 	} `json:"person1"`
 
@@ -13851,7 +13851,7 @@ type CompatibilityRequest struct {
 		// Time Birth time in 24-hour HH:MM:SS format. Time is CRITICAL for Lagna (Ascendant) calculation and house divisions. It changes every two hours roughly. Even minutes matter for accurate nakshatra pada and divisional chart (D9, D10) calculations. Without exact time, Lagna and house-based predictions will be incorrect.
 		Time string `json:"time"`
 
-		// Timezone Timezone: decimal hours from UTC (e.g. 5.5 for IST, -5 for EST) OR IANA name (e.g. "Asia/Kolkata", "America/New_York"). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5 (IST).
+		// Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5.
 		Timezone *CompatibilityRequest_Person2_Timezone `json:"timezone,omitempty"`
 	} `json:"person2"`
 }
@@ -13862,7 +13862,7 @@ type CompatibilityRequestPerson1Timezone0 = float32
 // CompatibilityRequestPerson1Timezone1 defines model for .
 type CompatibilityRequestPerson1Timezone1 = string
 
-// CompatibilityRequest_Person1_Timezone Timezone: decimal hours from UTC (e.g. 5.5 for IST, -5 for EST) OR IANA name (e.g. "Asia/Kolkata", "America/New_York"). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5 (IST).
+// CompatibilityRequest_Person1_Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5.
 type CompatibilityRequest_Person1_Timezone struct {
 	union json.RawMessage
 }
@@ -13873,7 +13873,7 @@ type CompatibilityRequestPerson2Timezone0 = float32
 // CompatibilityRequestPerson2Timezone1 defines model for .
 type CompatibilityRequestPerson2Timezone1 = string
 
-// CompatibilityRequest_Person2_Timezone Timezone: decimal hours from UTC (e.g. 5.5 for IST, -5 for EST) OR IANA name (e.g. "Asia/Kolkata", "America/New_York"). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5 (IST).
+// CompatibilityRequest_Person2_Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5.
 type CompatibilityRequest_Person2_Timezone struct {
 	union json.RawMessage
 }
@@ -13946,7 +13946,7 @@ type DivisionalChartRequest struct {
 	// Time Birth time in 24-hour HH:MM:SS format. Time is CRITICAL for Lagna (Ascendant) calculation and house divisions. It changes every two hours roughly. Even minutes matter for accurate nakshatra pada and divisional chart (D9, D10) calculations. Without exact time, Lagna and house-based predictions will be incorrect.
 	Time string `json:"time"`
 
-	// Timezone Timezone: decimal hours from UTC (e.g. 5.5 for IST, -5 for EST) OR IANA name (e.g. "Asia/Kolkata", "America/New_York"). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5 (IST).
+	// Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5.
 	Timezone *DivisionalChartRequest_Timezone `json:"timezone,omitempty"`
 }
 
@@ -13956,7 +13956,7 @@ type DivisionalChartRequestTimezone0 = float32
 // DivisionalChartRequestTimezone1 defines model for .
 type DivisionalChartRequestTimezone1 = string
 
-// DivisionalChartRequest_Timezone Timezone: decimal hours from UTC (e.g. 5.5 for IST, -5 for EST) OR IANA name (e.g. "Asia/Kolkata", "America/New_York"). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5 (IST).
+// DivisionalChartRequest_Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5.
 type DivisionalChartRequest_Timezone struct {
 	union json.RawMessage
 }
@@ -14762,7 +14762,7 @@ type KPPlanetsIntervalRequest struct {
 	// StartDatetime Start datetime in ISO 8601 (YYYY-MM-DDTHH:MM:SS). Interpreted as local time when a non-zero timezone is provided (a trailing Z is accepted but ignored); with timezone 0 it is UTC.
 	StartDatetime time.Time `json:"startDatetime"`
 
-	// Timezone Decimal hours from UTC OR IANA name (e.g. "Asia/Kolkata"). IANA resolved to the DST-correct offset for the startDatetime date. When non-zero, all datetimes are treated as local time in this timezone (Z suffix is ignored). Defaults to 0 (UTC).
+	// Timezone IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC. IANA resolved to the DST-correct offset for the startDatetime date. When non-zero, all datetimes are treated as local time in this timezone (Z suffix is ignored). Defaults to 0 (UTC).
 	Timezone *KPPlanetsIntervalRequest_Timezone `json:"timezone,omitempty"`
 }
 
@@ -14778,7 +14778,7 @@ type KPPlanetsIntervalRequestTimezone0 = float32
 // KPPlanetsIntervalRequestTimezone1 defines model for .
 type KPPlanetsIntervalRequestTimezone1 = string
 
-// KPPlanetsIntervalRequest_Timezone Decimal hours from UTC OR IANA name (e.g. "Asia/Kolkata"). IANA resolved to the DST-correct offset for the startDatetime date. When non-zero, all datetimes are treated as local time in this timezone (Z suffix is ignored). Defaults to 0 (UTC).
+// KPPlanetsIntervalRequest_Timezone IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC. IANA resolved to the DST-correct offset for the startDatetime date. When non-zero, all datetimes are treated as local time in this timezone (Z suffix is ignored). Defaults to 0 (UTC).
 type KPPlanetsIntervalRequest_Timezone struct {
 	union json.RawMessage
 }
@@ -14956,7 +14956,7 @@ type KPRasiChangesRequest struct {
 	// StartDate Start date for sign ingress search (YYYY-MM-DD format)
 	StartDate openapi_types.Date `json:"startDate"`
 
-	// Timezone Decimal hours from UTC OR IANA name (e.g. "Asia/Kolkata"). IANA resolved to the DST-correct offset for startDate. Output times are converted to this timezone. Defaults to 0 (UTC).
+	// Timezone IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC. IANA resolved to the DST-correct offset for startDate. Output times are converted to this timezone. Defaults to 0 (UTC).
 	Timezone *KPRasiChangesRequest_Timezone `json:"timezone,omitempty"`
 }
 
@@ -14972,7 +14972,7 @@ type KPRasiChangesRequestTimezone0 = float32
 // KPRasiChangesRequestTimezone1 defines model for .
 type KPRasiChangesRequestTimezone1 = string
 
-// KPRasiChangesRequest_Timezone Decimal hours from UTC OR IANA name (e.g. "Asia/Kolkata"). IANA resolved to the DST-correct offset for startDate. Output times are converted to this timezone. Defaults to 0 (UTC).
+// KPRasiChangesRequest_Timezone IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC. IANA resolved to the DST-correct offset for startDate. Output times are converted to this timezone. Defaults to 0 (UTC).
 type KPRasiChangesRequest_Timezone struct {
 	union json.RawMessage
 }
@@ -15223,7 +15223,7 @@ type KPSublordChangesRequest struct {
 	// StartDate Start date for sublord change search (YYYY-MM-DD format)
 	StartDate openapi_types.Date `json:"startDate"`
 
-	// Timezone Decimal hours from UTC OR IANA name (e.g. "Asia/Kolkata"). IANA resolved to the DST-correct offset for startDate. Output times are converted to this timezone. Defaults to 0 (UTC).
+	// Timezone IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC. IANA resolved to the DST-correct offset for startDate. Output times are converted to this timezone. Defaults to 0 (UTC).
 	Timezone *KPSublordChangesRequest_Timezone `json:"timezone,omitempty"`
 }
 
@@ -15239,7 +15239,7 @@ type KPSublordChangesRequestTimezone0 = float32
 // KPSublordChangesRequestTimezone1 defines model for .
 type KPSublordChangesRequestTimezone1 = string
 
-// KPSublordChangesRequest_Timezone Decimal hours from UTC OR IANA name (e.g. "Asia/Kolkata"). IANA resolved to the DST-correct offset for startDate. Output times are converted to this timezone. Defaults to 0 (UTC).
+// KPSublordChangesRequest_Timezone IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC. IANA resolved to the DST-correct offset for startDate. Output times are converted to this timezone. Defaults to 0 (UTC).
 type KPSublordChangesRequest_Timezone struct {
 	union json.RawMessage
 }
@@ -15303,7 +15303,7 @@ type KalsarpaRequest struct {
 	// Time Birth time in 24-hour HH:MM:SS format. Time is CRITICAL for Lagna (Ascendant) calculation and house divisions. It changes every two hours roughly. Even minutes matter for accurate nakshatra pada and divisional chart (D9, D10) calculations. Without exact time, Lagna and house-based predictions will be incorrect.
 	Time string `json:"time"`
 
-	// Timezone Timezone: decimal hours from UTC (e.g. 5.5 for IST, -5 for EST) OR IANA name (e.g. "Asia/Kolkata", "America/New_York"). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5 (IST).
+	// Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5.
 	Timezone *KalsarpaRequest_Timezone `json:"timezone,omitempty"`
 }
 
@@ -15313,7 +15313,7 @@ type KalsarpaRequestTimezone0 = float32
 // KalsarpaRequestTimezone1 defines model for .
 type KalsarpaRequestTimezone1 = string
 
-// KalsarpaRequest_Timezone Timezone: decimal hours from UTC (e.g. 5.5 for IST, -5 for EST) OR IANA name (e.g. "Asia/Kolkata", "America/New_York"). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5 (IST).
+// KalsarpaRequest_Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5.
 type KalsarpaRequest_Timezone struct {
 	union json.RawMessage
 }
@@ -15377,7 +15377,7 @@ type LilithRequest struct {
 	// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
 	Time string `json:"time"`
 
-	// Timezone Timezone: decimal hours from UTC (e.g. -5 for EST, 5.5 for IST) OR IANA name (e.g. "America/New_York", "Asia/Kolkata"). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly.
+	// Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly.
 	Timezone LilithRequest_Timezone `json:"timezone"`
 }
 
@@ -15390,7 +15390,7 @@ type LilithRequestTimezone0 = float32
 // LilithRequestTimezone1 defines model for .
 type LilithRequestTimezone1 = string
 
-// LilithRequest_Timezone Timezone: decimal hours from UTC (e.g. -5 for EST, 5.5 for IST) OR IANA name (e.g. "America/New_York", "Asia/Kolkata"). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly.
+// LilithRequest_Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly.
 type LilithRequest_Timezone struct {
 	union json.RawMessage
 }
@@ -15532,7 +15532,7 @@ type ManglikRequest struct {
 	// Time Birth time in 24-hour HH:MM:SS format. Time is CRITICAL for Lagna (Ascendant) calculation and house divisions. It changes every two hours roughly. Even minutes matter for accurate nakshatra pada and divisional chart (D9, D10) calculations. Without exact time, Lagna and house-based predictions will be incorrect.
 	Time string `json:"time"`
 
-	// Timezone Timezone: decimal hours from UTC (e.g. 5.5 for IST, -5 for EST) OR IANA name (e.g. "Asia/Kolkata", "America/New_York"). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5 (IST).
+	// Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5.
 	Timezone *ManglikRequest_Timezone `json:"timezone,omitempty"`
 }
 
@@ -15542,7 +15542,7 @@ type ManglikRequestTimezone0 = float32
 // ManglikRequestTimezone1 defines model for .
 type ManglikRequestTimezone1 = string
 
-// ManglikRequest_Timezone Timezone: decimal hours from UTC (e.g. 5.5 for IST, -5 for EST) OR IANA name (e.g. "Asia/Kolkata", "America/New_York"). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5 (IST).
+// ManglikRequest_Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5.
 type ManglikRequest_Timezone struct {
 	union json.RawMessage
 }
@@ -15678,7 +15678,7 @@ type NatalChartRequest struct {
 	// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
 	Time string `json:"time"`
 
-	// Timezone Timezone: decimal hours from UTC (e.g. -5 for EST, 5.5 for IST) OR IANA name (e.g. "America/New_York", "Asia/Kolkata"). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly.
+	// Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly.
 	Timezone NatalChartRequest_Timezone `json:"timezone"`
 }
 
@@ -15691,7 +15691,7 @@ type NatalChartRequestTimezone0 = float32
 // NatalChartRequestTimezone1 defines model for .
 type NatalChartRequestTimezone1 = string
 
-// NatalChartRequest_Timezone Timezone: decimal hours from UTC (e.g. -5 for EST, 5.5 for IST) OR IANA name (e.g. "America/New_York", "Asia/Kolkata"). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly.
+// NatalChartRequest_Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly.
 type NatalChartRequest_Timezone struct {
 	union json.RawMessage
 }
@@ -15950,7 +15950,7 @@ type NavamsaRequest struct {
 	// Time Birth time in 24-hour HH:MM:SS format. Time is CRITICAL for Lagna (Ascendant) calculation and house divisions. It changes every two hours roughly. Even minutes matter for accurate nakshatra pada and divisional chart (D9, D10) calculations. Without exact time, Lagna and house-based predictions will be incorrect.
 	Time string `json:"time"`
 
-	// Timezone Timezone: decimal hours from UTC (e.g. 5.5 for IST, -5 for EST) OR IANA name (e.g. "Asia/Kolkata", "America/New_York"). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5 (IST).
+	// Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5.
 	Timezone *NavamsaRequest_Timezone `json:"timezone,omitempty"`
 }
 
@@ -15960,7 +15960,7 @@ type NavamsaRequestTimezone0 = float32
 // NavamsaRequestTimezone1 defines model for .
 type NavamsaRequestTimezone1 = string
 
-// NavamsaRequest_Timezone Timezone: decimal hours from UTC (e.g. 5.5 for IST, -5 for EST) OR IANA name (e.g. "Asia/Kolkata", "America/New_York"). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5 (IST).
+// NavamsaRequest_Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5.
 type NavamsaRequest_Timezone struct {
 	union json.RawMessage
 }
@@ -16070,7 +16070,7 @@ type PlanetaryPositionsRequest struct {
 	// Time Birth time in 24-hour HH:MM:SS format. Time is CRITICAL for Lagna (Ascendant) calculation and house divisions. It changes every two hours roughly. Even minutes matter for accurate nakshatra pada and divisional chart (D9, D10) calculations. Without exact time, Lagna and house-based predictions will be incorrect.
 	Time string `json:"time"`
 
-	// Timezone Timezone: decimal hours from UTC (e.g. 5.5 for IST, -5 for EST) OR IANA name (e.g. "Asia/Kolkata", "America/New_York"). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5 (IST).
+	// Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5.
 	Timezone *PlanetaryPositionsRequest_Timezone `json:"timezone,omitempty"`
 }
 
@@ -16080,7 +16080,7 @@ type PlanetaryPositionsRequestTimezone0 = float32
 // PlanetaryPositionsRequestTimezone1 defines model for .
 type PlanetaryPositionsRequestTimezone1 = string
 
-// PlanetaryPositionsRequest_Timezone Timezone: decimal hours from UTC (e.g. 5.5 for IST, -5 for EST) OR IANA name (e.g. "Asia/Kolkata", "America/New_York"). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5 (IST).
+// PlanetaryPositionsRequest_Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5.
 type PlanetaryPositionsRequest_Timezone struct {
 	union json.RawMessage
 }
@@ -16174,7 +16174,7 @@ type ProfectionsRequest struct {
 	// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
 	Time string `json:"time"`
 
-	// Timezone Timezone: decimal hours from UTC (e.g. -5 for EST, 5.5 for IST) OR IANA name (e.g. "America/New_York", "Asia/Kolkata"). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly.
+	// Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly.
 	Timezone ProfectionsRequest_Timezone `json:"timezone"`
 }
 
@@ -16187,7 +16187,7 @@ type ProfectionsRequestTimezone0 = float32
 // ProfectionsRequestTimezone1 defines model for .
 type ProfectionsRequestTimezone1 = string
 
-// ProfectionsRequest_Timezone Timezone: decimal hours from UTC (e.g. -5 for EST, 5.5 for IST) OR IANA name (e.g. "America/New_York", "Asia/Kolkata"). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly.
+// ProfectionsRequest_Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly.
 type ProfectionsRequest_Timezone struct {
 	union json.RawMessage
 }
@@ -16260,7 +16260,7 @@ type ProgressionsRequest struct {
 	// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
 	Time string `json:"time"`
 
-	// Timezone Timezone: decimal hours from UTC (e.g. -5 for EST, 5.5 for IST) OR IANA name (e.g. "America/New_York", "Asia/Kolkata"). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly.
+	// Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly.
 	Timezone ProgressionsRequest_Timezone `json:"timezone"`
 }
 
@@ -16270,7 +16270,7 @@ type ProgressionsRequestTimezone0 = float32
 // ProgressionsRequestTimezone1 defines model for .
 type ProgressionsRequestTimezone1 = string
 
-// ProgressionsRequest_Timezone Timezone: decimal hours from UTC (e.g. -5 for EST, 5.5 for IST) OR IANA name (e.g. "America/New_York", "Asia/Kolkata"). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly.
+// ProgressionsRequest_Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly.
 type ProgressionsRequest_Timezone struct {
 	union json.RawMessage
 }
@@ -16624,7 +16624,7 @@ type SadhesatiRequest struct {
 	// Time Birth time in 24-hour HH:MM:SS format. Time is CRITICAL for Lagna (Ascendant) calculation and house divisions. It changes every two hours roughly. Even minutes matter for accurate nakshatra pada and divisional chart (D9, D10) calculations. Without exact time, Lagna and house-based predictions will be incorrect.
 	Time string `json:"time"`
 
-	// Timezone Timezone: decimal hours from UTC (e.g. 5.5 for IST, -5 for EST) OR IANA name (e.g. "Asia/Kolkata", "America/New_York"). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5 (IST).
+	// Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5.
 	Timezone *SadhesatiRequest_Timezone `json:"timezone,omitempty"`
 }
 
@@ -16634,7 +16634,7 @@ type SadhesatiRequestTimezone0 = float32
 // SadhesatiRequestTimezone1 defines model for .
 type SadhesatiRequestTimezone1 = string
 
-// SadhesatiRequest_Timezone Timezone: decimal hours from UTC (e.g. 5.5 for IST, -5 for EST) OR IANA name (e.g. "Asia/Kolkata", "America/New_York"). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5 (IST).
+// SadhesatiRequest_Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5.
 type SadhesatiRequest_Timezone struct {
 	union json.RawMessage
 }
@@ -16683,7 +16683,7 @@ type ShadbalaRequest struct {
 	// Time Birth time in 24-hour HH:MM:SS format. Time is CRITICAL for Lagna (Ascendant) calculation and house divisions. It changes every two hours roughly. Even minutes matter for accurate nakshatra pada and divisional chart (D9, D10) calculations. Without exact time, Lagna and house-based predictions will be incorrect.
 	Time string `json:"time"`
 
-	// Timezone Timezone: decimal hours from UTC (e.g. 5.5 for IST, -5 for EST) OR IANA name (e.g. "Asia/Kolkata", "America/New_York"). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5 (IST).
+	// Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5.
 	Timezone *ShadbalaRequest_Timezone `json:"timezone,omitempty"`
 }
 
@@ -16693,7 +16693,7 @@ type ShadbalaRequestTimezone0 = float32
 // ShadbalaRequestTimezone1 defines model for .
 type ShadbalaRequestTimezone1 = string
 
-// ShadbalaRequest_Timezone Timezone: decimal hours from UTC (e.g. 5.5 for IST, -5 for EST) OR IANA name (e.g. "Asia/Kolkata", "America/New_York"). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5 (IST).
+// ShadbalaRequest_Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5.
 type ShadbalaRequest_Timezone struct {
 	union json.RawMessage
 }
@@ -16763,7 +16763,7 @@ type SolarArcRequest struct {
 	// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
 	Time string `json:"time"`
 
-	// Timezone Timezone: decimal hours from UTC (e.g. -5 for EST, 5.5 for IST) OR IANA name (e.g. "America/New_York", "Asia/Kolkata"). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly.
+	// Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly.
 	Timezone SolarArcRequest_Timezone `json:"timezone"`
 }
 
@@ -16773,7 +16773,7 @@ type SolarArcRequestTimezone0 = float32
 // SolarArcRequestTimezone1 defines model for .
 type SolarArcRequestTimezone1 = string
 
-// SolarArcRequest_Timezone Timezone: decimal hours from UTC (e.g. -5 for EST, 5.5 for IST) OR IANA name (e.g. "America/New_York", "Asia/Kolkata"). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly.
+// SolarArcRequest_Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly.
 type SolarArcRequest_Timezone struct {
 	union json.RawMessage
 }
@@ -17035,7 +17035,7 @@ type UpagrahaRequest struct {
 	// Time Birth time in 24-hour HH:MM:SS format. Time is CRITICAL for Lagna (Ascendant) calculation and house divisions. It changes every two hours roughly. Even minutes matter for accurate nakshatra pada and divisional chart (D9, D10) calculations. Without exact time, Lagna and house-based predictions will be incorrect.
 	Time string `json:"time"`
 
-	// Timezone Timezone: decimal hours from UTC (e.g. 5.5 for IST, -5 for EST) OR IANA name (e.g. "Asia/Kolkata", "America/New_York"). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5 (IST).
+	// Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5.
 	Timezone *UpagrahaRequest_Timezone `json:"timezone,omitempty"`
 }
 
@@ -17045,7 +17045,7 @@ type UpagrahaRequestTimezone0 = float32
 // UpagrahaRequestTimezone1 defines model for .
 type UpagrahaRequestTimezone1 = string
 
-// UpagrahaRequest_Timezone Timezone: decimal hours from UTC (e.g. 5.5 for IST, -5 for EST) OR IANA name (e.g. "Asia/Kolkata", "America/New_York"). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5 (IST).
+// UpagrahaRequest_Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5.
 type UpagrahaRequest_Timezone struct {
 	union json.RawMessage
 }
@@ -17115,7 +17115,7 @@ type YogaDetectRequest struct {
 	// Time Birth time in 24-hour HH:MM:SS format. Time is CRITICAL for Lagna (Ascendant) calculation and house divisions. It changes every two hours roughly. Even minutes matter for accurate nakshatra pada and divisional chart (D9, D10) calculations. Without exact time, Lagna and house-based predictions will be incorrect.
 	Time string `json:"time"`
 
-	// Timezone Timezone: decimal hours from UTC (e.g. 5.5 for IST, -5 for EST) OR IANA name (e.g. "Asia/Kolkata", "America/New_York"). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5 (IST).
+	// Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5.
 	Timezone *YogaDetectRequest_Timezone `json:"timezone,omitempty"`
 }
 
@@ -17125,7 +17125,7 @@ type YogaDetectRequestTimezone0 = float32
 // YogaDetectRequestTimezone1 defines model for .
 type YogaDetectRequestTimezone1 = string
 
-// YogaDetectRequest_Timezone Timezone: decimal hours from UTC (e.g. 5.5 for IST, -5 for EST) OR IANA name (e.g. "Asia/Kolkata", "America/New_York"). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5 (IST).
+// YogaDetectRequest_Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5.
 type YogaDetectRequest_Timezone struct {
 	union json.RawMessage
 }
@@ -17297,7 +17297,7 @@ type GenerateAstrocartographyJSONBody struct {
 	// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
 	Time string `json:"time"`
 
-	// Timezone Timezone: decimal hours from UTC (e.g. -5 for EST, 5.5 for IST) OR IANA name (e.g. "America/New_York", "Asia/Kolkata"). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly.
+	// Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly.
 	Timezone GenerateAstrocartographyJSONBody_Timezone `json:"timezone"`
 }
 
@@ -17340,7 +17340,7 @@ type CalculateCompatibilityJSONBody struct {
 		// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
 		Time string `json:"time"`
 
-		// Timezone Timezone: decimal hours from UTC (e.g. -5 for EST, 5.5 for IST) OR IANA name (e.g. "America/New_York", "Asia/Kolkata"). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly.
+		// Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly.
 		Timezone CalculateCompatibilityJSONBody_Person1_Timezone `json:"timezone"`
 	} `json:"person1"`
 
@@ -17358,7 +17358,7 @@ type CalculateCompatibilityJSONBody struct {
 		// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
 		Time string `json:"time"`
 
-		// Timezone Timezone: decimal hours from UTC (e.g. -5 for EST, 5.5 for IST) OR IANA name (e.g. "America/New_York", "Asia/Kolkata"). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly.
+		// Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly.
 		Timezone CalculateCompatibilityJSONBody_Person2_Timezone `json:"timezone"`
 	} `json:"person2"`
 }
@@ -17416,7 +17416,7 @@ type GenerateCompositeChartJSONBody struct {
 		// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
 		Time string `json:"time"`
 
-		// Timezone Timezone: decimal hours from UTC (e.g. -5 for EST, 5.5 for IST) OR IANA name (e.g. "America/New_York", "Asia/Kolkata"). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly.
+		// Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly.
 		Timezone GenerateCompositeChartJSONBody_Person1_Timezone `json:"timezone"`
 	} `json:"person1"`
 
@@ -17434,7 +17434,7 @@ type GenerateCompositeChartJSONBody struct {
 		// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
 		Time string `json:"time"`
 
-		// Timezone Timezone: decimal hours from UTC (e.g. -5 for EST, 5.5 for IST) OR IANA name (e.g. "America/New_York", "Asia/Kolkata"). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly.
+		// Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly.
 		Timezone GenerateCompositeChartJSONBody_Person2_Timezone `json:"timezone"`
 	} `json:"person2"`
 }
@@ -17502,7 +17502,7 @@ type GenerateFixedStarsJSONBody struct {
 	// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
 	Time string `json:"time"`
 
-	// Timezone Timezone: decimal hours from UTC (e.g. -5 for EST, 5.5 for IST) OR IANA name (e.g. "America/New_York", "Asia/Kolkata"). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly.
+	// Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly.
 	Timezone GenerateFixedStarsJSONBody_Timezone `json:"timezone"`
 }
 
@@ -17758,7 +17758,7 @@ type GetCurrentMoonPhaseParams struct {
 	// Time Time in 24-hour HH:MM:SS format. Defaults to 12:00:00 (noon). Moon moves ~13 degrees per day so time affects phase precision.
 	Time *string `form:"time,omitempty" json:"time,omitempty"`
 
-	// Timezone Decimal hours (e.g. 5.5 for IST, -5 for EST) OR IANA name (e.g. "Asia/Kolkata"). IANA resolved to the DST-correct offset for the given date. Defaults to 0 (UTC).
+	// Timezone IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours (e.g. -5 for EST, 1 for CET). IANA resolved to the DST-correct offset for the given date. Defaults to 0 (UTC).
 	Timezone *struct {
 		union json.RawMessage
 	} `form:"timezone,omitempty" json:"timezone,omitempty"`
@@ -18084,7 +18084,7 @@ type CalculateSynastryJSONBody struct {
 		// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
 		Time string `json:"time"`
 
-		// Timezone Timezone: decimal hours from UTC (e.g. -5 for EST, 5.5 for IST) OR IANA name (e.g. "America/New_York", "Asia/Kolkata"). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly.
+		// Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly.
 		Timezone CalculateSynastryJSONBody_Person1_Timezone `json:"timezone"`
 	} `json:"person1"`
 	Person2 struct {
@@ -18103,7 +18103,7 @@ type CalculateSynastryJSONBody struct {
 		// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
 		Time string `json:"time"`
 
-		// Timezone Timezone: decimal hours from UTC (e.g. -5 for EST, 5.5 for IST) OR IANA name (e.g. "America/New_York", "Asia/Kolkata"). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly.
+		// Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly.
 		Timezone CalculateSynastryJSONBody_Person2_Timezone `json:"timezone"`
 	} `json:"person2"`
 }
@@ -18164,7 +18164,7 @@ type CalculateTransitAspectsJSONBody struct {
 		// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
 		Time string `json:"time"`
 
-		// Timezone Timezone: decimal hours from UTC (e.g. -5 for EST, 5.5 for IST) OR IANA name (e.g. "America/New_York", "Asia/Kolkata"). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly.
+		// Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly.
 		Timezone CalculateTransitAspectsJSONBody_NatalChart_Timezone `json:"timezone"`
 	} `json:"natalChart"`
 
@@ -18574,7 +18574,7 @@ type GenerateDigestJSONBody struct {
 		// Time Birth time in 24-hour HH:MM:SS format. Precision matters for the natal positions the transit aspects are measured against.
 		Time string `json:"time"`
 
-		// Timezone Decimal hours (e.g. 5.5 for IST, -5 for EST) OR IANA name (e.g. "America/New_York", "UTC"). IANA is resolved to the DST-correct offset for the request date. Invalid timezones return 400 with a validation error.
+		// Timezone IANA name (e.g. "America/New_York", "Europe/London", "UTC"), decimal hours (e.g. -5 for EST, 1 for CET), or a fixed UTC offset (e.g. "-05:00", "+01:00"). Prefer the IANA name: it is resolved to the DST-correct offset for the birth date, while a fixed offset or decimal is taken literally and will be wrong if it does not match the daylight-saving state on that date. Invalid timezones return 400 with a validation error.
 		Timezone GenerateDigestJSONBody_BirthData_Timezone `json:"timezone"`
 	} `json:"birthData"`
 
@@ -18668,7 +18668,7 @@ type FindSignificantDatesJSONBody struct {
 		// Time Birth time in 24-hour HH:MM:SS format. Precision matters for the natal positions the transit aspects are measured against.
 		Time string `json:"time"`
 
-		// Timezone Decimal hours (e.g. 5.5 for IST, -5 for EST) OR IANA name (e.g. "America/New_York", "UTC"). IANA is resolved to the DST-correct offset for the request date. Invalid timezones return 400 with a validation error.
+		// Timezone IANA name (e.g. "America/New_York", "Europe/London", "UTC"), decimal hours (e.g. -5 for EST, 1 for CET), or a fixed UTC offset (e.g. "-05:00", "+01:00"). Prefer the IANA name: it is resolved to the DST-correct offset for the birth date, while a fixed offset or decimal is taken literally and will be wrong if it does not match the daylight-saving state on that date. Invalid timezones return 400 with a validation error.
 		Timezone FindSignificantDatesJSONBody_BirthData_Timezone `json:"timezone"`
 	} `json:"birthData"`
 
@@ -18763,7 +18763,7 @@ type ForecastSolarReturnJSONBody struct {
 	// Time Birth time in 24-hour HH:MM:SS format. Pins the exact natal Sun position that defines the solar return moment.
 	Time string `json:"time"`
 
-	// Timezone Decimal hours (e.g. 5.5 for IST, -5 for EST) OR IANA name (e.g. "America/New_York", "UTC"). IANA is resolved to the DST-correct offset for the request date. Invalid timezones return 400 with a validation error.
+	// Timezone IANA name (e.g. "America/New_York", "Europe/London", "UTC"), decimal hours (e.g. -5 for EST, 1 for CET), or a fixed UTC offset (e.g. "-05:00", "+01:00"). Prefer the IANA name: it is resolved to the DST-correct offset for the birth date, while a fixed offset or decimal is taken literally and will be wrong if it does not match the daylight-saving state on that date. Invalid timezones return 400 with a validation error.
 	Timezone ForecastSolarReturnJSONBody_Timezone `json:"timezone"`
 
 	// Year Year to cast the solar return for. The chart is erected for the moment in this year when the transiting Sun returns to the natal Sun longitude, on or within a day of the birthday.
@@ -18830,7 +18830,7 @@ type GenerateTimelineJSONBody struct {
 		// Time Birth time in 24-hour HH:MM:SS format. Precision matters for the natal positions the transit aspects are measured against.
 		Time string `json:"time"`
 
-		// Timezone Decimal hours (e.g. 5.5 for IST, -5 for EST) OR IANA name (e.g. "America/New_York", "UTC"). IANA is resolved to the DST-correct offset for the request date. Invalid timezones return 400 with a validation error.
+		// Timezone IANA name (e.g. "America/New_York", "Europe/London", "UTC"), decimal hours (e.g. -5 for EST, 1 for CET), or a fixed UTC offset (e.g. "-05:00", "+01:00"). Prefer the IANA name: it is resolved to the DST-correct offset for the birth date, while a fixed offset or decimal is taken literally and will be wrong if it does not match the daylight-saving state on that date. Invalid timezones return 400 with a validation error.
 		Timezone GenerateTimelineJSONBody_BirthData_Timezone `json:"timezone"`
 	} `json:"birthData"`
 
@@ -18924,7 +18924,7 @@ type ForecastTransitsJSONBody struct {
 		// Time Birth time in 24-hour HH:MM:SS format. Precision matters for the natal positions the transit aspects are measured against.
 		Time string `json:"time"`
 
-		// Timezone Decimal hours (e.g. 5.5 for IST, -5 for EST) OR IANA name (e.g. "America/New_York", "UTC"). IANA is resolved to the DST-correct offset for the request date. Invalid timezones return 400 with a validation error.
+		// Timezone IANA name (e.g. "America/New_York", "Europe/London", "UTC"), decimal hours (e.g. -5 for EST, 1 for CET), or a fixed UTC offset (e.g. "-05:00", "+01:00"). Prefer the IANA name: it is resolved to the DST-correct offset for the birth date, while a fixed offset or decimal is taken literally and will be wrong if it does not match the daylight-saving state on that date. Invalid timezones return 400 with a validation error.
 		Timezone ForecastTransitsJSONBody_BirthData_Timezone `json:"timezone"`
 	} `json:"birthData"`
 
@@ -18998,7 +18998,7 @@ type GenerateBodygraphJSONBody struct {
 	// Time Birth time in 24-hour HH:MM:SS format. Precision matters: the profile lines and gate boundaries shift with the exact minute of birth.
 	Time string `json:"time"`
 
-	// Timezone Decimal hours (e.g. 5.5 for IST, -5 for EST) OR IANA name (e.g. "America/New_York", "UTC"). IANA is resolved to the DST-correct offset for the request date. Invalid timezones return 400 with a validation error.
+	// Timezone IANA name (e.g. "America/New_York", "Europe/London", "UTC"), decimal hours (e.g. -5 for EST, 1 for CET), or a fixed UTC offset (e.g. "-05:00", "+01:00"). Prefer the IANA name: it is resolved to the DST-correct offset for the birth date, while a fixed offset or decimal is taken literally and will be wrong if it does not match the daylight-saving state on that date. Invalid timezones return 400 with a validation error.
 	Timezone GenerateBodygraphJSONBody_Timezone `json:"timezone"`
 }
 
@@ -19036,7 +19036,7 @@ type CalculateCentersJSONBody struct {
 	// Time Birth time in 24-hour HH:MM:SS format. Precision matters: the profile lines and gate boundaries shift with the exact minute of birth.
 	Time string `json:"time"`
 
-	// Timezone Decimal hours (e.g. 5.5 for IST, -5 for EST) OR IANA name (e.g. "America/New_York", "UTC"). IANA is resolved to the DST-correct offset for the request date. Invalid timezones return 400 with a validation error.
+	// Timezone IANA name (e.g. "America/New_York", "Europe/London", "UTC"), decimal hours (e.g. -5 for EST, 1 for CET), or a fixed UTC offset (e.g. "-05:00", "+01:00"). Prefer the IANA name: it is resolved to the DST-correct offset for the birth date, while a fixed offset or decimal is taken literally and will be wrong if it does not match the daylight-saving state on that date. Invalid timezones return 400 with a validation error.
 	Timezone CalculateCentersJSONBody_Timezone `json:"timezone"`
 }
 
@@ -19086,7 +19086,7 @@ type CalculateChannelsJSONBody struct {
 	// Time Birth time in 24-hour HH:MM:SS format. Precision matters: the profile lines and gate boundaries shift with the exact minute of birth.
 	Time string `json:"time"`
 
-	// Timezone Decimal hours (e.g. 5.5 for IST, -5 for EST) OR IANA name (e.g. "America/New_York", "UTC"). IANA is resolved to the DST-correct offset for the request date. Invalid timezones return 400 with a validation error.
+	// Timezone IANA name (e.g. "America/New_York", "Europe/London", "UTC"), decimal hours (e.g. -5 for EST, 1 for CET), or a fixed UTC offset (e.g. "-05:00", "+01:00"). Prefer the IANA name: it is resolved to the DST-correct offset for the birth date, while a fixed offset or decimal is taken literally and will be wrong if it does not match the daylight-saving state on that date. Invalid timezones return 400 with a validation error.
 	Timezone CalculateChannelsJSONBody_Timezone `json:"timezone"`
 }
 
@@ -19126,7 +19126,7 @@ type CalculateConnectionJSONBody struct {
 		// Time Birth time in 24-hour HH:MM:SS format. Precision matters: the profile lines and gate boundaries shift with the exact minute of birth.
 		Time string `json:"time"`
 
-		// Timezone Decimal hours (e.g. 5.5 for IST, -5 for EST) OR IANA name (e.g. "America/New_York", "UTC"). IANA is resolved to the DST-correct offset for the request date. Invalid timezones return 400 with a validation error.
+		// Timezone IANA name (e.g. "America/New_York", "Europe/London", "UTC"), decimal hours (e.g. -5 for EST, 1 for CET), or a fixed UTC offset (e.g. "-05:00", "+01:00"). Prefer the IANA name: it is resolved to the DST-correct offset for the birth date, while a fixed offset or decimal is taken literally and will be wrong if it does not match the daylight-saving state on that date. Invalid timezones return 400 with a validation error.
 		Timezone CalculateConnectionJSONBody_PersonA_Timezone `json:"timezone"`
 	} `json:"personA"`
 
@@ -19144,7 +19144,7 @@ type CalculateConnectionJSONBody struct {
 		// Time Birth time in 24-hour HH:MM:SS format. Precision matters: the profile lines and gate boundaries shift with the exact minute of birth.
 		Time string `json:"time"`
 
-		// Timezone Decimal hours (e.g. 5.5 for IST, -5 for EST) OR IANA name (e.g. "America/New_York", "UTC"). IANA is resolved to the DST-correct offset for the request date. Invalid timezones return 400 with a validation error.
+		// Timezone IANA name (e.g. "America/New_York", "Europe/London", "UTC"), decimal hours (e.g. -5 for EST, 1 for CET), or a fixed UTC offset (e.g. "-05:00", "+01:00"). Prefer the IANA name: it is resolved to the DST-correct offset for the birth date, while a fixed offset or decimal is taken literally and will be wrong if it does not match the daylight-saving state on that date. Invalid timezones return 400 with a validation error.
 		Timezone CalculateConnectionJSONBody_PersonB_Timezone `json:"timezone"`
 	} `json:"personB"`
 }
@@ -19194,7 +19194,7 @@ type CalculateGatesJSONBody struct {
 	// Time Birth time in 24-hour HH:MM:SS format. Precision matters: the profile lines and gate boundaries shift with the exact minute of birth.
 	Time string `json:"time"`
 
-	// Timezone Decimal hours (e.g. 5.5 for IST, -5 for EST) OR IANA name (e.g. "America/New_York", "UTC"). IANA is resolved to the DST-correct offset for the request date. Invalid timezones return 400 with a validation error.
+	// Timezone IANA name (e.g. "America/New_York", "Europe/London", "UTC"), decimal hours (e.g. -5 for EST, 1 for CET), or a fixed UTC offset (e.g. "-05:00", "+01:00"). Prefer the IANA name: it is resolved to the DST-correct offset for the birth date, while a fixed offset or decimal is taken literally and will be wrong if it does not match the daylight-saving state on that date. Invalid timezones return 400 with a validation error.
 	Timezone CalculateGatesJSONBody_Timezone `json:"timezone"`
 }
 
@@ -19243,7 +19243,7 @@ type CalculatePentaJSONBody struct {
 		// Time Birth time in 24-hour HH:MM:SS format. Precision matters: the profile lines and gate boundaries shift with the exact minute of birth.
 		Time string `json:"time"`
 
-		// Timezone Decimal hours (e.g. 5.5 for IST, -5 for EST) OR IANA name (e.g. "America/New_York", "UTC"). IANA is resolved to the DST-correct offset for the request date. Invalid timezones return 400 with a validation error.
+		// Timezone IANA name (e.g. "America/New_York", "Europe/London", "UTC"), decimal hours (e.g. -5 for EST, 1 for CET), or a fixed UTC offset (e.g. "-05:00", "+01:00"). Prefer the IANA name: it is resolved to the DST-correct offset for the birth date, while a fixed offset or decimal is taken literally and will be wrong if it does not match the daylight-saving state on that date. Invalid timezones return 400 with a validation error.
 		Timezone CalculatePentaJSONBody_Members_Timezone `json:"timezone"`
 	} `json:"members"`
 }
@@ -19282,7 +19282,7 @@ type CalculateProfileJSONBody struct {
 	// Time Birth time in 24-hour HH:MM:SS format. Precision matters: the profile lines and gate boundaries shift with the exact minute of birth.
 	Time string `json:"time"`
 
-	// Timezone Decimal hours (e.g. 5.5 for IST, -5 for EST) OR IANA name (e.g. "America/New_York", "UTC"). IANA is resolved to the DST-correct offset for the request date. Invalid timezones return 400 with a validation error.
+	// Timezone IANA name (e.g. "America/New_York", "Europe/London", "UTC"), decimal hours (e.g. -5 for EST, 1 for CET), or a fixed UTC offset (e.g. "-05:00", "+01:00"). Prefer the IANA name: it is resolved to the DST-correct offset for the birth date, while a fixed offset or decimal is taken literally and will be wrong if it does not match the daylight-saving state on that date. Invalid timezones return 400 with a validation error.
 	Timezone CalculateProfileJSONBody_Timezone `json:"timezone"`
 }
 
@@ -19322,7 +19322,7 @@ type GenerateTransitJSONBody struct {
 		// Time Birth time in 24-hour HH:MM:SS format. Precision matters: the profile lines and gate boundaries shift with the exact minute of birth.
 		Time string `json:"time"`
 
-		// Timezone Decimal hours (e.g. 5.5 for IST, -5 for EST) OR IANA name (e.g. "America/New_York", "UTC"). IANA is resolved to the DST-correct offset for the request date. Invalid timezones return 400 with a validation error.
+		// Timezone IANA name (e.g. "America/New_York", "Europe/London", "UTC"), decimal hours (e.g. -5 for EST, 1 for CET), or a fixed UTC offset (e.g. "-05:00", "+01:00"). Prefer the IANA name: it is resolved to the DST-correct offset for the birth date, while a fixed offset or decimal is taken literally and will be wrong if it does not match the daylight-saving state on that date. Invalid timezones return 400 with a validation error.
 		Timezone GenerateTransitJSONBody_BirthData_Timezone `json:"timezone"`
 	} `json:"birthData"`
 
@@ -19367,7 +19367,7 @@ type CalculateTypeJSONBody struct {
 	// Time Birth time in 24-hour HH:MM:SS format. Precision matters: the profile lines and gate boundaries shift with the exact minute of birth.
 	Time string `json:"time"`
 
-	// Timezone Decimal hours (e.g. 5.5 for IST, -5 for EST) OR IANA name (e.g. "America/New_York", "UTC"). IANA is resolved to the DST-correct offset for the request date. Invalid timezones return 400 with a validation error.
+	// Timezone IANA name (e.g. "America/New_York", "Europe/London", "UTC"), decimal hours (e.g. -5 for EST, 1 for CET), or a fixed UTC offset (e.g. "-05:00", "+01:00"). Prefer the IANA name: it is resolved to the DST-correct offset for the birth date, while a fixed offset or decimal is taken literally and will be wrong if it does not match the daylight-saving state on that date. Invalid timezones return 400 with a validation error.
 	Timezone CalculateTypeJSONBody_Timezone `json:"timezone"`
 }
 
@@ -19405,7 +19405,7 @@ type CalculateVariablesJSONBody struct {
 	// Time Birth time in 24-hour HH:MM:SS format. Precision matters: the profile lines and gate boundaries shift with the exact minute of birth.
 	Time string `json:"time"`
 
-	// Timezone Decimal hours (e.g. 5.5 for IST, -5 for EST) OR IANA name (e.g. "America/New_York", "UTC"). IANA is resolved to the DST-correct offset for the request date. Invalid timezones return 400 with a validation error.
+	// Timezone IANA name (e.g. "America/New_York", "Europe/London", "UTC"), decimal hours (e.g. -5 for EST, 1 for CET), or a fixed UTC offset (e.g. "-05:00", "+01:00"). Prefer the IANA name: it is resolved to the DST-correct offset for the birth date, while a fixed offset or decimal is taken literally and will be wrong if it does not match the daylight-saving state on that date. Invalid timezones return 400 with a validation error.
 	Timezone CalculateVariablesJSONBody_Timezone `json:"timezone"`
 }
 
@@ -20373,7 +20373,7 @@ type GetCurrentDashaJSONBody struct {
 	// Time Birth time in 24-hour HH:MM:SS format. Time is CRITICAL for Lagna (Ascendant) calculation and house divisions. It changes every two hours roughly. Even minutes matter for accurate nakshatra pada and divisional chart (D9, D10) calculations. Without exact time, Lagna and house-based predictions will be incorrect.
 	Time string `json:"time"`
 
-	// Timezone Timezone: decimal hours from UTC (e.g. 5.5 for IST, -5 for EST) OR IANA name (e.g. "Asia/Kolkata", "America/New_York"). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5 (IST).
+	// Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5.
 	Timezone *GetCurrentDashaJSONBody_Timezone `json:"timezone,omitempty"`
 }
 
@@ -20432,7 +20432,7 @@ type GetMajorDashasJSONBody struct {
 	// Time Birth time in 24-hour HH:MM:SS format. Time is CRITICAL for Lagna (Ascendant) calculation and house divisions. It changes every two hours roughly. Even minutes matter for accurate nakshatra pada and divisional chart (D9, D10) calculations. Without exact time, Lagna and house-based predictions will be incorrect.
 	Time string `json:"time"`
 
-	// Timezone Timezone: decimal hours from UTC (e.g. 5.5 for IST, -5 for EST) OR IANA name (e.g. "Asia/Kolkata", "America/New_York"). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5 (IST).
+	// Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5.
 	Timezone *GetMajorDashasJSONBody_Timezone `json:"timezone,omitempty"`
 }
 
@@ -20476,7 +20476,7 @@ type GetSubDashasJSONBody struct {
 	// Time Birth time in 24-hour HH:MM:SS format. Time is CRITICAL for Lagna (Ascendant) calculation and house divisions. It changes every two hours roughly. Even minutes matter for accurate nakshatra pada and divisional chart (D9, D10) calculations. Without exact time, Lagna and house-based predictions will be incorrect.
 	Time string `json:"time"`
 
-	// Timezone Timezone: decimal hours from UTC (e.g. 5.5 for IST, -5 for EST) OR IANA name (e.g. "Asia/Kolkata", "America/New_York"). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5 (IST).
+	// Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5.
 	Timezone *GetSubDashasJSONBody_Timezone `json:"timezone,omitempty"`
 }
 
@@ -20588,7 +20588,7 @@ type GetKpRulingPlanetsJSONBody struct {
 	// NodeType Lunar node type for Rahu and Ketu positions. "mean" uses the smooth mean node (traditional Vedic astrology default). "true" uses the osculating node with perturbation corrections, oscillating up to 1.5 degrees from mean with a 173-day period. Impacts KP sub-lord assignments in narrow boundary cases. Defaults to "mean".
 	NodeType *GetKpRulingPlanetsJSONBodyNodeType `json:"nodeType,omitempty"`
 
-	// Timezone Timezone: decimal hours from UTC OR IANA name (e.g. "Asia/Kolkata"). IANA resolved to the DST-correct offset based on birthDate or datetime. Defaults to 5.5 (IST).
+	// Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC. IANA resolved to the DST-correct offset based on birthDate or datetime. Defaults to 5.5.
 	Timezone *GetKpRulingPlanetsJSONBody_Timezone `json:"timezone,omitempty"`
 }
 
@@ -46675,7 +46675,7 @@ type GenerateDigestResponse struct {
 			// Time Birth time in 24-hour HH:MM:SS format. Precision matters for the natal positions the transit aspects are measured against.
 			Time string `json:"time"`
 
-			// Timezone Decimal hours (e.g. 5.5 for IST, -5 for EST) OR IANA name (e.g. "America/New_York", "UTC"). IANA is resolved to the DST-correct offset for the request date. Invalid timezones return 400 with a validation error.
+			// Timezone IANA name (e.g. "America/New_York", "Europe/London", "UTC"), decimal hours (e.g. -5 for EST, 1 for CET), or a fixed UTC offset (e.g. "-05:00", "+01:00"). Prefer the IANA name: it is resolved to the DST-correct offset for the birth date, while a fixed offset or decimal is taken literally and will be wrong if it does not match the daylight-saving state on that date. Invalid timezones return 400 with a validation error.
 			Timezone GenerateDigest200JSONResponseBody_BirthData_Timezone `json:"timezone"`
 		} `json:"birthData"`
 
@@ -46817,7 +46817,7 @@ type FindSignificantDatesResponse struct {
 			// Time Birth time in 24-hour HH:MM:SS format. Precision matters for the natal positions the transit aspects are measured against.
 			Time string `json:"time"`
 
-			// Timezone Decimal hours (e.g. 5.5 for IST, -5 for EST) OR IANA name (e.g. "America/New_York", "UTC"). IANA is resolved to the DST-correct offset for the request date. Invalid timezones return 400 with a validation error.
+			// Timezone IANA name (e.g. "America/New_York", "Europe/London", "UTC"), decimal hours (e.g. -5 for EST, 1 for CET), or a fixed UTC offset (e.g. "-05:00", "+01:00"). Prefer the IANA name: it is resolved to the DST-correct offset for the birth date, while a fixed offset or decimal is taken literally and will be wrong if it does not match the daylight-saving state on that date. Invalid timezones return 400 with a validation error.
 			Timezone FindSignificantDates200JSONResponseBody_BirthData_Timezone `json:"timezone"`
 		} `json:"birthData"`
 
@@ -47122,7 +47122,7 @@ type GenerateTimelineResponse struct {
 			// Time Birth time in 24-hour HH:MM:SS format. Precision matters for the natal positions the transit aspects are measured against.
 			Time string `json:"time"`
 
-			// Timezone Decimal hours (e.g. 5.5 for IST, -5 for EST) OR IANA name (e.g. "America/New_York", "UTC"). IANA is resolved to the DST-correct offset for the request date. Invalid timezones return 400 with a validation error.
+			// Timezone IANA name (e.g. "America/New_York", "Europe/London", "UTC"), decimal hours (e.g. -5 for EST, 1 for CET), or a fixed UTC offset (e.g. "-05:00", "+01:00"). Prefer the IANA name: it is resolved to the DST-correct offset for the birth date, while a fixed offset or decimal is taken literally and will be wrong if it does not match the daylight-saving state on that date. Invalid timezones return 400 with a validation error.
 			Timezone GenerateTimeline200JSONResponseBody_BirthData_Timezone `json:"timezone"`
 		} `json:"birthData"`
 
@@ -47234,7 +47234,7 @@ type ForecastTransitsResponse struct {
 			// Time Birth time in 24-hour HH:MM:SS format. Precision matters for the natal positions the transit aspects are measured against.
 			Time string `json:"time"`
 
-			// Timezone Decimal hours (e.g. 5.5 for IST, -5 for EST) OR IANA name (e.g. "America/New_York", "UTC"). IANA is resolved to the DST-correct offset for the request date. Invalid timezones return 400 with a validation error.
+			// Timezone IANA name (e.g. "America/New_York", "Europe/London", "UTC"), decimal hours (e.g. -5 for EST, 1 for CET), or a fixed UTC offset (e.g. "-05:00", "+01:00"). Prefer the IANA name: it is resolved to the DST-correct offset for the birth date, while a fixed offset or decimal is taken literally and will be wrong if it does not match the daylight-saving state on that date. Invalid timezones return 400 with a validation error.
 			Timezone ForecastTransits200JSONResponseBody_BirthData_Timezone `json:"timezone"`
 		} `json:"birthData"`
 
@@ -47332,13 +47332,22 @@ type GenerateBodygraphResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *struct {
+		// Aura The aura mechanic of the type: how the energy field itself operates, for example open and enveloping, or closed and repelling.
+		Aura string `json:"aura"`
+
 		// Authority Inner authority for decision making. One of Emotional, Sacral, Splenic, Ego, Self-Projected, Mental, Lunar.
 		Authority string `json:"authority"`
+
+		// AuthorityDescription How the decision is made, the timing it requires, and the characteristic trap. Inner authority is the most actionable output of a Human Design chart, so this is the field to lean on when grounding a reading.
+		AuthorityDescription string `json:"authorityDescription"`
 
 		// Centers All nine centers with their defined state and active gates.
 		Centers []struct {
 			// Awareness Whether this is an awareness center. The three awareness centers are Ajna, Solar Plexus, and Spleen.
 			Awareness bool `json:"awareness"`
+
+			// Biology The gland, organ, or system this center corresponds to in the body.
+			Biology string `json:"biology"`
 
 			// Defined Whether the center is defined. A defined center is a consistent source of energy or awareness; an undefined center is open and conditioned by others.
 			Defined bool `json:"defined"`
@@ -47355,6 +47364,9 @@ type GenerateBodygraphResponse struct {
 			// Name Display name of the center.
 			Name string `json:"name"`
 
+			// NotSelfQuestion The conditioning trap of this center when it is open. Returned on every center so a consumer can surface it the moment `defined` is false, which is where the not-self operates.
+			NotSelfQuestion string `json:"notSelfQuestion"`
+
 			// Theme Theme text describing the center in its current defined or undefined state.
 			Theme string `json:"theme"`
 		} `json:"centers"`
@@ -47366,6 +47378,12 @@ type GenerateBodygraphResponse struct {
 
 			// Circuit Circuit family of the channel. One of Individual, Collective, Tribal.
 			Circuit string `json:"circuit"`
+
+			// CircuitDescription What the circuit family of this channel governs.
+			CircuitDescription string `json:"circuitDescription"`
+
+			// Description What this channel wires between its two centers and the nature of the energy it carries.
+			Description string `json:"description"`
 
 			// GateA First gate of the channel.
 			GateA float32 `json:"gateA"`
@@ -47380,10 +47398,16 @@ type GenerateBodygraphResponse struct {
 		// Definition Definition type from the number of connected components among defined centers. One of None, Single, Split, Triple Split, Quadruple Split.
 		Definition string `json:"definition"`
 
+		// DefinitionDescription How energy flows through the defined centers in this configuration, and what the configuration needs. For a split, this is where the bridging gates of other people matter.
+		DefinitionDescription string `json:"definitionDescription"`
+
 		// Gates All 26 activations, 13 Personality and 13 Design.
 		Gates []struct {
 			// Gate Human Design gate number from 1 to 64 that this activation falls in.
 			Gate float32 `json:"gate"`
+
+			// GateDescription Bodygraph function of the gate: what it does in the center it sits in and the channel it forms. This is NOT the meaning of the I-Ching hexagram that shares its number. They share a number, not a definition.
+			GateDescription string `json:"gateDescription"`
 
 			// GateName Human Design keynote name of the gate, describing its bodygraph function.
 			GateName string `json:"gateName"`
@@ -47400,8 +47424,14 @@ type GenerateBodygraphResponse struct {
 			// Line Line number from 1 to 6 within the gate, setting the line keynote and the profile.
 			Line float32 `json:"line"`
 
+			// LineMeaning Meaning of this gate at this specific line, one of 384. The finest interpretive layer in the chart and the one that makes a reading specific rather than generic. This is not the six abstract line archetypes: gate 41 line 3 carries its own meaning that neither the gate keynote nor the line-3 archetype holds alone.
+			LineMeaning string `json:"lineMeaning"`
+
 			// Planet Activating body. One of Sun, Earth, Moon, North Node, South Node, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto.
 			Planet string `json:"planet"`
+
+			// PlanetDescription What this planetary activation contributes in Human Design specifically, which is not its meaning in western astrology.
+			PlanetDescription string `json:"planetDescription"`
 
 			// Side Chart side. personality is the conscious birth-moment activation, design is the unconscious activation 88 degrees of solar arc before birth.
 			Side string `json:"side"`
@@ -47414,6 +47444,9 @@ type GenerateBodygraphResponse struct {
 
 			// AngleCode Short code for the angle. One of RAX, JXT, LAX.
 			AngleCode string `json:"angleCode"`
+
+			// Description The life theme of the cross, synthesized from its four gates and the orientation the angle gives them. The same Sun gate under a different angle is a genuinely different theme: Right Angle is personal destiny, Left Angle is worked out through other people, Juxtaposition is a fixed fate.
+			Description *string `json:"description,omitempty"`
 
 			// Gates The four cardinal gates of the cross: Personality Sun, Personality Earth, Design Sun, Design Earth.
 			Gates []float32 `json:"gates"`
@@ -47428,14 +47461,41 @@ type GenerateBodygraphResponse struct {
 		// Profile Profile in conscious/unconscious form from the Personality Sun line over the Design Sun line.
 		Profile string `json:"profile"`
 
+		// ProfileDescription Meaning of the combined profile. A profile is not the sum of its two lines: 6/2 has its own meaning that neither the line 6 nor the line 2 keynote carries alone.
+		ProfileDescription string `json:"profileDescription"`
+
+		// ProfileKeynotes The two line keynotes the profile is built from, conscious over unconscious, so the profile is readable without a separate lookup.
+		ProfileKeynotes struct {
+			// Design Keynote of the unconscious Design line. The half of the life role others see operating in the body, which the person does not directly experience.
+			Design string `json:"design"`
+
+			// DesignLine Line number 1 to 6 of the unconscious Design Sun, the second digit of the profile.
+			DesignLine float32 `json:"designLine"`
+
+			// Personality Keynote of the conscious Personality line. The half of the life role the person is aware of and can speak to.
+			Personality string `json:"personality"`
+
+			// PersonalityLine Line number 1 to 6 of the conscious Personality Sun, the first digit of the profile.
+			PersonalityLine float32 `json:"personalityLine"`
+		} `json:"profileKeynotes"`
+
+		// Sides What the two chart sides are: personality is the conscious mind side, design is the unconscious body side computed 88 degrees of solar arc before birth. Returned once at the top level rather than repeated across all 26 activations.
+		Sides map[string]string `json:"sides"`
+
 		// Signature The signature feeling of living in alignment with the type.
 		Signature string `json:"signature"`
 
 		// Strategy The aura strategy for engaging life correctly for this type.
 		Strategy string `json:"strategy"`
 
+		// StrategyDescription How to actually apply the strategy. The strategy field alone is a bare label such as Respond or Inform; this is the operating instruction behind it.
+		StrategyDescription string `json:"strategyDescription"`
+
 		// Type Human Design energy type. One of Manifestor, Generator, Manifesting Generator, Projector, Reflector.
 		Type string `json:"type"`
+
+		// TypeDescription What the aura of this type does and how it is designed to engage life. The grounding text for the type label, so a consuming agent does not have to supply the meaning itself.
+		TypeDescription string `json:"typeDescription"`
 	}
 	JSON400 *ErrorResponse
 	JSON401 *ErrorResponse
@@ -47482,6 +47542,9 @@ type CalculateCentersResponse struct {
 			// Awareness Whether this is an awareness center. The three awareness centers are Ajna, Solar Plexus, and Spleen.
 			Awareness bool `json:"awareness"`
 
+			// Biology The gland, organ, or system this center corresponds to in the body.
+			Biology string `json:"biology"`
+
 			// Defined Whether the center is defined. A defined center is a consistent source of energy or awareness; an undefined center is open and conditioned by others.
 			Defined bool `json:"defined"`
 
@@ -47496,6 +47559,9 @@ type CalculateCentersResponse struct {
 
 			// Name Display name of the center.
 			Name string `json:"name"`
+
+			// NotSelfQuestion The conditioning trap of this center when it is open. Returned on every center so a consumer can surface it the moment `defined` is false, which is where the not-self operates.
+			NotSelfQuestion string `json:"notSelfQuestion"`
 
 			// Theme Theme text describing the center in its current defined or undefined state.
 			Theme string `json:"theme"`
@@ -47609,6 +47675,12 @@ type CalculateChannelsResponse struct {
 
 			// Circuit Circuit family of the channel. One of Individual, Collective, Tribal.
 			Circuit string `json:"circuit"`
+
+			// CircuitDescription What the circuit family of this channel governs.
+			CircuitDescription string `json:"circuitDescription"`
+
+			// Description What this channel wires between its two centers and the nature of the energy it carries.
+			Description string `json:"description"`
 
 			// GateA First gate of the channel.
 			GateA float32 `json:"gateA"`
@@ -47774,6 +47846,9 @@ type CalculateGatesResponse struct {
 			// Gate Human Design gate number from 1 to 64 that this activation falls in.
 			Gate float32 `json:"gate"`
 
+			// GateDescription Bodygraph function of the gate: what it does in the center it sits in and the channel it forms. This is NOT the meaning of the I-Ching hexagram that shares its number. They share a number, not a definition.
+			GateDescription string `json:"gateDescription"`
+
 			// GateName Human Design keynote name of the gate, describing its bodygraph function.
 			GateName string `json:"gateName"`
 
@@ -47789,8 +47864,14 @@ type CalculateGatesResponse struct {
 			// Line Line number from 1 to 6 within the gate, setting the line keynote and the profile.
 			Line float32 `json:"line"`
 
+			// LineMeaning Meaning of this gate at this specific line, one of 384. The finest interpretive layer in the chart and the one that makes a reading specific rather than generic. This is not the six abstract line archetypes: gate 41 line 3 carries its own meaning that neither the gate keynote nor the line-3 archetype holds alone.
+			LineMeaning string `json:"lineMeaning"`
+
 			// Planet Activating body. One of Sun, Earth, Moon, North Node, South Node, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto.
 			Planet string `json:"planet"`
+
+			// PlanetDescription What this planetary activation contributes in Human Design specifically, which is not its meaning in western astrology.
+			PlanetDescription string `json:"planetDescription"`
 
 			// Side Chart side. personality is the conscious birth-moment activation, design is the unconscious activation 88 degrees of solar arc before birth.
 			Side string `json:"side"`
@@ -47801,6 +47882,9 @@ type CalculateGatesResponse struct {
 			// Gate Human Design gate number from 1 to 64 that this activation falls in.
 			Gate float32 `json:"gate"`
 
+			// GateDescription Bodygraph function of the gate: what it does in the center it sits in and the channel it forms. This is NOT the meaning of the I-Ching hexagram that shares its number. They share a number, not a definition.
+			GateDescription string `json:"gateDescription"`
+
 			// GateName Human Design keynote name of the gate, describing its bodygraph function.
 			GateName string `json:"gateName"`
 
@@ -47816,8 +47900,14 @@ type CalculateGatesResponse struct {
 			// Line Line number from 1 to 6 within the gate, setting the line keynote and the profile.
 			Line float32 `json:"line"`
 
+			// LineMeaning Meaning of this gate at this specific line, one of 384. The finest interpretive layer in the chart and the one that makes a reading specific rather than generic. This is not the six abstract line archetypes: gate 41 line 3 carries its own meaning that neither the gate keynote nor the line-3 archetype holds alone.
+			LineMeaning string `json:"lineMeaning"`
+
 			// Planet Activating body. One of Sun, Earth, Moon, North Node, South Node, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto.
 			Planet string `json:"planet"`
+
+			// PlanetDescription What this planetary activation contributes in Human Design specifically, which is not its meaning in western astrology.
+			PlanetDescription string `json:"planetDescription"`
 
 			// Side Chart side. personality is the conscious birth-moment activation, design is the unconscious activation 88 degrees of solar arc before birth.
 			Side string `json:"side"`
@@ -48207,8 +48297,14 @@ type CalculateTypeResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *struct {
+		// Aura The aura mechanic of the type: how the energy field itself operates, for example open and enveloping, or closed and repelling.
+		Aura string `json:"aura"`
+
 		// Authority Inner authority for decision making. One of Emotional, Sacral, Splenic, Ego, Self-Projected, Mental, Lunar.
 		Authority string `json:"authority"`
+
+		// AuthorityDescription How the decision is made, the timing it requires, and the characteristic trap. Inner authority is the most actionable output of a Human Design chart.
+		AuthorityDescription string `json:"authorityDescription"`
 
 		// NotSelf The not-self theme that signals being out of alignment.
 		NotSelf string `json:"notSelf"`
@@ -48222,8 +48318,14 @@ type CalculateTypeResponse struct {
 		// Strategy The aura strategy for engaging life correctly for this type.
 		Strategy string `json:"strategy"`
 
+		// StrategyDescription How to actually apply the strategy. The strategy field alone is a bare label such as Respond or Inform; this is the operating instruction behind it.
+		StrategyDescription string `json:"strategyDescription"`
+
 		// Type Human Design energy type. One of Manifestor, Generator, Manifesting Generator, Projector, Reflector.
 		Type string `json:"type"`
+
+		// TypeDescription What the aura of this type does and how it is designed to engage life. The grounding text for the type label, so a consuming agent does not have to supply the meaning itself.
+		TypeDescription string `json:"typeDescription"`
 	}
 	JSON400 *ErrorResponse
 	JSON401 *ErrorResponse
@@ -48279,14 +48381,29 @@ type CalculateVariablesResponse struct {
 			// Base Base number from 1 to 5, the finest published subdivision of the wheel. Returned for completeness but treated as informational, since it is finer than most birth times can resolve.
 			Base float32 `json:"base"`
 
+			// BaseName Name of the Base. Informational only: the Base is finer than any civil birth time can resolve.
+			BaseName string `json:"baseName"`
+
+			// Cognition Cognition, the strongest sense, read off the Determination Tone. Present on the determination arrow ONLY: no authority supports reading Cognition from the other three arrows, so it is omitted rather than invented.
+			Cognition *struct {
+				Description string `json:"description"`
+				Label       string `json:"label"`
+			} `json:"cognition,omitempty"`
+
 			// Color Color number from 1 to 6, the substructure level one octave finer than the line. Color selects the arrow theme, for example the determination family or the motivation.
 			Color float32 `json:"color"`
 
 			// ColorLabel Name of the Color theme for this arrow, for example a determination family such as Touch, an environment such as Mountains, a perspective such as Personal, or a motivation such as Hope.
 			ColorLabel string `json:"colorLabel"`
 
+			// ColorMeaning Meaning of the Color for THIS arrow. The same Color number means something different under Determination than under Motivation, so this is the reading of colorLabel in context, not a generic gloss.
+			ColorMeaning string `json:"colorMeaning"`
+
 			// Confident Whether this arrow is far enough from a Color or Tone boundary to be reliable. When false the activation sits on a knife edge where the Color label or the arrow direction could flip with a more precise birth time, and the arrow should not be presented as fact.
 			Confident bool `json:"confident"`
+
+			// Description What this arrow is and what it governs.
+			Description string `json:"description"`
 
 			// Direction Arrow direction derived from the Tone. left for tones 1 to 3, right for tones 4 to 6.
 			Direction string `json:"direction"`
@@ -48294,11 +48411,17 @@ type CalculateVariablesResponse struct {
 			// DirectionLabel Keynote of the arrow direction for this arrow, for example Active or Passive for Determination, Focused or Peripheral for Perspective.
 			DirectionLabel string `json:"directionLabel"`
 
+			// DirectionMeaning Meaning of the left or right direction for THIS arrow, the reading of directionLabel.
+			DirectionMeaning string `json:"directionMeaning"`
+
 			// Key Stable arrow identifier. One of determination, environment, perspective, motivation.
 			Key string `json:"key"`
 
 			// Layer Which half of the advanced layer the arrow belongs to. Primary Health System covers the body-side Determination and Environment arrows, Rave Psychology covers the mind-side Perspective and Motivation arrows.
 			Layer string `json:"layer"`
+
+			// LayerDescription What the layer this arrow belongs to governs, the body side or the mind side.
+			LayerDescription string `json:"layerDescription"`
 
 			// Name Arrow name. Determination is the top-left arrow governing the Primary Health System and digestion, Environment the bottom-left arrow, Perspective the bottom-right arrow also called View, and Motivation the top-right arrow.
 			Name string `json:"name"`
@@ -48308,7 +48431,13 @@ type CalculateVariablesResponse struct {
 
 			// Tone Tone number from 1 to 6, the substructure level beneath Color. Tone sets the arrow direction: tones 1 to 3 face left, tones 4 to 6 face right.
 			Tone float32 `json:"tone"`
+
+			// ToneMeaning Meaning of the Tone. The six Tones are shared across all four arrows: the arrow does not change the Tone, it changes what the Tone qualifies.
+			ToneMeaning string `json:"toneMeaning"`
 		} `json:"arrows"`
+
+		// BaseDescription What the Base layer is. Returned once at the top level rather than repeated on every arrow, since the Base layer is the same concept for all four. No per-Base meaning is returned: every one in circulation traces back to a single origin, so it fails the two-source bar this package holds.
+		BaseDescription string `json:"baseDescription"`
 
 		// ConfidenceMarginDeg Boundary margin in degrees of ecliptic longitude used for the per-arrow confidence flag, the solar arc over a few minutes of clock time. An activation within this distance of a Color or Tone boundary is flagged low-confidence.
 		ConfidenceMarginDeg float32 `json:"confidenceMarginDeg"`
@@ -63546,7 +63675,7 @@ func ParseGenerateDigestResponse(rsp *http.Response) (*GenerateDigestResponse, e
 				// Time Birth time in 24-hour HH:MM:SS format. Precision matters for the natal positions the transit aspects are measured against.
 				Time string `json:"time"`
 
-				// Timezone Decimal hours (e.g. 5.5 for IST, -5 for EST) OR IANA name (e.g. "America/New_York", "UTC"). IANA is resolved to the DST-correct offset for the request date. Invalid timezones return 400 with a validation error.
+				// Timezone IANA name (e.g. "America/New_York", "Europe/London", "UTC"), decimal hours (e.g. -5 for EST, 1 for CET), or a fixed UTC offset (e.g. "-05:00", "+01:00"). Prefer the IANA name: it is resolved to the DST-correct offset for the birth date, while a fixed offset or decimal is taken literally and will be wrong if it does not match the daylight-saving state on that date. Invalid timezones return 400 with a validation error.
 				Timezone GenerateDigest200JSONResponseBody_BirthData_Timezone `json:"timezone"`
 			} `json:"birthData"`
 
@@ -63709,7 +63838,7 @@ func ParseFindSignificantDatesResponse(rsp *http.Response) (*FindSignificantDate
 				// Time Birth time in 24-hour HH:MM:SS format. Precision matters for the natal positions the transit aspects are measured against.
 				Time string `json:"time"`
 
-				// Timezone Decimal hours (e.g. 5.5 for IST, -5 for EST) OR IANA name (e.g. "America/New_York", "UTC"). IANA is resolved to the DST-correct offset for the request date. Invalid timezones return 400 with a validation error.
+				// Timezone IANA name (e.g. "America/New_York", "Europe/London", "UTC"), decimal hours (e.g. -5 for EST, 1 for CET), or a fixed UTC offset (e.g. "-05:00", "+01:00"). Prefer the IANA name: it is resolved to the DST-correct offset for the birth date, while a fixed offset or decimal is taken literally and will be wrong if it does not match the daylight-saving state on that date. Invalid timezones return 400 with a validation error.
 				Timezone FindSignificantDates200JSONResponseBody_BirthData_Timezone `json:"timezone"`
 			} `json:"birthData"`
 
@@ -64056,7 +64185,7 @@ func ParseGenerateTimelineResponse(rsp *http.Response) (*GenerateTimelineRespons
 				// Time Birth time in 24-hour HH:MM:SS format. Precision matters for the natal positions the transit aspects are measured against.
 				Time string `json:"time"`
 
-				// Timezone Decimal hours (e.g. 5.5 for IST, -5 for EST) OR IANA name (e.g. "America/New_York", "UTC"). IANA is resolved to the DST-correct offset for the request date. Invalid timezones return 400 with a validation error.
+				// Timezone IANA name (e.g. "America/New_York", "Europe/London", "UTC"), decimal hours (e.g. -5 for EST, 1 for CET), or a fixed UTC offset (e.g. "-05:00", "+01:00"). Prefer the IANA name: it is resolved to the DST-correct offset for the birth date, while a fixed offset or decimal is taken literally and will be wrong if it does not match the daylight-saving state on that date. Invalid timezones return 400 with a validation error.
 				Timezone GenerateTimeline200JSONResponseBody_BirthData_Timezone `json:"timezone"`
 			} `json:"birthData"`
 
@@ -64189,7 +64318,7 @@ func ParseForecastTransitsResponse(rsp *http.Response) (*ForecastTransitsRespons
 				// Time Birth time in 24-hour HH:MM:SS format. Precision matters for the natal positions the transit aspects are measured against.
 				Time string `json:"time"`
 
-				// Timezone Decimal hours (e.g. 5.5 for IST, -5 for EST) OR IANA name (e.g. "America/New_York", "UTC"). IANA is resolved to the DST-correct offset for the request date. Invalid timezones return 400 with a validation error.
+				// Timezone IANA name (e.g. "America/New_York", "Europe/London", "UTC"), decimal hours (e.g. -5 for EST, 1 for CET), or a fixed UTC offset (e.g. "-05:00", "+01:00"). Prefer the IANA name: it is resolved to the DST-correct offset for the birth date, while a fixed offset or decimal is taken literally and will be wrong if it does not match the daylight-saving state on that date. Invalid timezones return 400 with a validation error.
 				Timezone ForecastTransits200JSONResponseBody_BirthData_Timezone `json:"timezone"`
 			} `json:"birthData"`
 
@@ -64308,13 +64437,22 @@ func ParseGenerateBodygraphResponse(rsp *http.Response) (*GenerateBodygraphRespo
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
+			// Aura The aura mechanic of the type: how the energy field itself operates, for example open and enveloping, or closed and repelling.
+			Aura string `json:"aura"`
+
 			// Authority Inner authority for decision making. One of Emotional, Sacral, Splenic, Ego, Self-Projected, Mental, Lunar.
 			Authority string `json:"authority"`
+
+			// AuthorityDescription How the decision is made, the timing it requires, and the characteristic trap. Inner authority is the most actionable output of a Human Design chart, so this is the field to lean on when grounding a reading.
+			AuthorityDescription string `json:"authorityDescription"`
 
 			// Centers All nine centers with their defined state and active gates.
 			Centers []struct {
 				// Awareness Whether this is an awareness center. The three awareness centers are Ajna, Solar Plexus, and Spleen.
 				Awareness bool `json:"awareness"`
+
+				// Biology The gland, organ, or system this center corresponds to in the body.
+				Biology string `json:"biology"`
 
 				// Defined Whether the center is defined. A defined center is a consistent source of energy or awareness; an undefined center is open and conditioned by others.
 				Defined bool `json:"defined"`
@@ -64331,6 +64469,9 @@ func ParseGenerateBodygraphResponse(rsp *http.Response) (*GenerateBodygraphRespo
 				// Name Display name of the center.
 				Name string `json:"name"`
 
+				// NotSelfQuestion The conditioning trap of this center when it is open. Returned on every center so a consumer can surface it the moment `defined` is false, which is where the not-self operates.
+				NotSelfQuestion string `json:"notSelfQuestion"`
+
 				// Theme Theme text describing the center in its current defined or undefined state.
 				Theme string `json:"theme"`
 			} `json:"centers"`
@@ -64342,6 +64483,12 @@ func ParseGenerateBodygraphResponse(rsp *http.Response) (*GenerateBodygraphRespo
 
 				// Circuit Circuit family of the channel. One of Individual, Collective, Tribal.
 				Circuit string `json:"circuit"`
+
+				// CircuitDescription What the circuit family of this channel governs.
+				CircuitDescription string `json:"circuitDescription"`
+
+				// Description What this channel wires between its two centers and the nature of the energy it carries.
+				Description string `json:"description"`
 
 				// GateA First gate of the channel.
 				GateA float32 `json:"gateA"`
@@ -64356,10 +64503,16 @@ func ParseGenerateBodygraphResponse(rsp *http.Response) (*GenerateBodygraphRespo
 			// Definition Definition type from the number of connected components among defined centers. One of None, Single, Split, Triple Split, Quadruple Split.
 			Definition string `json:"definition"`
 
+			// DefinitionDescription How energy flows through the defined centers in this configuration, and what the configuration needs. For a split, this is where the bridging gates of other people matter.
+			DefinitionDescription string `json:"definitionDescription"`
+
 			// Gates All 26 activations, 13 Personality and 13 Design.
 			Gates []struct {
 				// Gate Human Design gate number from 1 to 64 that this activation falls in.
 				Gate float32 `json:"gate"`
+
+				// GateDescription Bodygraph function of the gate: what it does in the center it sits in and the channel it forms. This is NOT the meaning of the I-Ching hexagram that shares its number. They share a number, not a definition.
+				GateDescription string `json:"gateDescription"`
 
 				// GateName Human Design keynote name of the gate, describing its bodygraph function.
 				GateName string `json:"gateName"`
@@ -64376,8 +64529,14 @@ func ParseGenerateBodygraphResponse(rsp *http.Response) (*GenerateBodygraphRespo
 				// Line Line number from 1 to 6 within the gate, setting the line keynote and the profile.
 				Line float32 `json:"line"`
 
+				// LineMeaning Meaning of this gate at this specific line, one of 384. The finest interpretive layer in the chart and the one that makes a reading specific rather than generic. This is not the six abstract line archetypes: gate 41 line 3 carries its own meaning that neither the gate keynote nor the line-3 archetype holds alone.
+				LineMeaning string `json:"lineMeaning"`
+
 				// Planet Activating body. One of Sun, Earth, Moon, North Node, South Node, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto.
 				Planet string `json:"planet"`
+
+				// PlanetDescription What this planetary activation contributes in Human Design specifically, which is not its meaning in western astrology.
+				PlanetDescription string `json:"planetDescription"`
 
 				// Side Chart side. personality is the conscious birth-moment activation, design is the unconscious activation 88 degrees of solar arc before birth.
 				Side string `json:"side"`
@@ -64390,6 +64549,9 @@ func ParseGenerateBodygraphResponse(rsp *http.Response) (*GenerateBodygraphRespo
 
 				// AngleCode Short code for the angle. One of RAX, JXT, LAX.
 				AngleCode string `json:"angleCode"`
+
+				// Description The life theme of the cross, synthesized from its four gates and the orientation the angle gives them. The same Sun gate under a different angle is a genuinely different theme: Right Angle is personal destiny, Left Angle is worked out through other people, Juxtaposition is a fixed fate.
+				Description *string `json:"description,omitempty"`
 
 				// Gates The four cardinal gates of the cross: Personality Sun, Personality Earth, Design Sun, Design Earth.
 				Gates []float32 `json:"gates"`
@@ -64404,14 +64566,41 @@ func ParseGenerateBodygraphResponse(rsp *http.Response) (*GenerateBodygraphRespo
 			// Profile Profile in conscious/unconscious form from the Personality Sun line over the Design Sun line.
 			Profile string `json:"profile"`
 
+			// ProfileDescription Meaning of the combined profile. A profile is not the sum of its two lines: 6/2 has its own meaning that neither the line 6 nor the line 2 keynote carries alone.
+			ProfileDescription string `json:"profileDescription"`
+
+			// ProfileKeynotes The two line keynotes the profile is built from, conscious over unconscious, so the profile is readable without a separate lookup.
+			ProfileKeynotes struct {
+				// Design Keynote of the unconscious Design line. The half of the life role others see operating in the body, which the person does not directly experience.
+				Design string `json:"design"`
+
+				// DesignLine Line number 1 to 6 of the unconscious Design Sun, the second digit of the profile.
+				DesignLine float32 `json:"designLine"`
+
+				// Personality Keynote of the conscious Personality line. The half of the life role the person is aware of and can speak to.
+				Personality string `json:"personality"`
+
+				// PersonalityLine Line number 1 to 6 of the conscious Personality Sun, the first digit of the profile.
+				PersonalityLine float32 `json:"personalityLine"`
+			} `json:"profileKeynotes"`
+
+			// Sides What the two chart sides are: personality is the conscious mind side, design is the unconscious body side computed 88 degrees of solar arc before birth. Returned once at the top level rather than repeated across all 26 activations.
+			Sides map[string]string `json:"sides"`
+
 			// Signature The signature feeling of living in alignment with the type.
 			Signature string `json:"signature"`
 
 			// Strategy The aura strategy for engaging life correctly for this type.
 			Strategy string `json:"strategy"`
 
+			// StrategyDescription How to actually apply the strategy. The strategy field alone is a bare label such as Respond or Inform; this is the operating instruction behind it.
+			StrategyDescription string `json:"strategyDescription"`
+
 			// Type Human Design energy type. One of Manifestor, Generator, Manifesting Generator, Projector, Reflector.
 			Type string `json:"type"`
+
+			// TypeDescription What the aura of this type does and how it is designed to engage life. The grounding text for the type label, so a consuming agent does not have to supply the meaning itself.
+			TypeDescription string `json:"typeDescription"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -64479,6 +64668,9 @@ func ParseCalculateCentersResponse(rsp *http.Response) (*CalculateCentersRespons
 				// Awareness Whether this is an awareness center. The three awareness centers are Ajna, Solar Plexus, and Spleen.
 				Awareness bool `json:"awareness"`
 
+				// Biology The gland, organ, or system this center corresponds to in the body.
+				Biology string `json:"biology"`
+
 				// Defined Whether the center is defined. A defined center is a consistent source of energy or awareness; an undefined center is open and conditioned by others.
 				Defined bool `json:"defined"`
 
@@ -64493,6 +64685,9 @@ func ParseCalculateCentersResponse(rsp *http.Response) (*CalculateCentersRespons
 
 				// Name Display name of the center.
 				Name string `json:"name"`
+
+				// NotSelfQuestion The conditioning trap of this center when it is open. Returned on every center so a consumer can surface it the moment `defined` is false, which is where the not-self operates.
+				NotSelfQuestion string `json:"notSelfQuestion"`
 
 				// Theme Theme text describing the center in its current defined or undefined state.
 				Theme string `json:"theme"`
@@ -64648,6 +64843,12 @@ func ParseCalculateChannelsResponse(rsp *http.Response) (*CalculateChannelsRespo
 
 				// Circuit Circuit family of the channel. One of Individual, Collective, Tribal.
 				Circuit string `json:"circuit"`
+
+				// CircuitDescription What the circuit family of this channel governs.
+				CircuitDescription string `json:"circuitDescription"`
+
+				// Description What this channel wires between its two centers and the nature of the energy it carries.
+				Description string `json:"description"`
 
 				// GateA First gate of the channel.
 				GateA float32 `json:"gateA"`
@@ -64855,6 +65056,9 @@ func ParseCalculateGatesResponse(rsp *http.Response) (*CalculateGatesResponse, e
 				// Gate Human Design gate number from 1 to 64 that this activation falls in.
 				Gate float32 `json:"gate"`
 
+				// GateDescription Bodygraph function of the gate: what it does in the center it sits in and the channel it forms. This is NOT the meaning of the I-Ching hexagram that shares its number. They share a number, not a definition.
+				GateDescription string `json:"gateDescription"`
+
 				// GateName Human Design keynote name of the gate, describing its bodygraph function.
 				GateName string `json:"gateName"`
 
@@ -64870,8 +65074,14 @@ func ParseCalculateGatesResponse(rsp *http.Response) (*CalculateGatesResponse, e
 				// Line Line number from 1 to 6 within the gate, setting the line keynote and the profile.
 				Line float32 `json:"line"`
 
+				// LineMeaning Meaning of this gate at this specific line, one of 384. The finest interpretive layer in the chart and the one that makes a reading specific rather than generic. This is not the six abstract line archetypes: gate 41 line 3 carries its own meaning that neither the gate keynote nor the line-3 archetype holds alone.
+				LineMeaning string `json:"lineMeaning"`
+
 				// Planet Activating body. One of Sun, Earth, Moon, North Node, South Node, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto.
 				Planet string `json:"planet"`
+
+				// PlanetDescription What this planetary activation contributes in Human Design specifically, which is not its meaning in western astrology.
+				PlanetDescription string `json:"planetDescription"`
 
 				// Side Chart side. personality is the conscious birth-moment activation, design is the unconscious activation 88 degrees of solar arc before birth.
 				Side string `json:"side"`
@@ -64882,6 +65092,9 @@ func ParseCalculateGatesResponse(rsp *http.Response) (*CalculateGatesResponse, e
 				// Gate Human Design gate number from 1 to 64 that this activation falls in.
 				Gate float32 `json:"gate"`
 
+				// GateDescription Bodygraph function of the gate: what it does in the center it sits in and the channel it forms. This is NOT the meaning of the I-Ching hexagram that shares its number. They share a number, not a definition.
+				GateDescription string `json:"gateDescription"`
+
 				// GateName Human Design keynote name of the gate, describing its bodygraph function.
 				GateName string `json:"gateName"`
 
@@ -64897,8 +65110,14 @@ func ParseCalculateGatesResponse(rsp *http.Response) (*CalculateGatesResponse, e
 				// Line Line number from 1 to 6 within the gate, setting the line keynote and the profile.
 				Line float32 `json:"line"`
 
+				// LineMeaning Meaning of this gate at this specific line, one of 384. The finest interpretive layer in the chart and the one that makes a reading specific rather than generic. This is not the six abstract line archetypes: gate 41 line 3 carries its own meaning that neither the gate keynote nor the line-3 archetype holds alone.
+				LineMeaning string `json:"lineMeaning"`
+
 				// Planet Activating body. One of Sun, Earth, Moon, North Node, South Node, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto.
 				Planet string `json:"planet"`
+
+				// PlanetDescription What this planetary activation contributes in Human Design specifically, which is not its meaning in western astrology.
+				PlanetDescription string `json:"planetDescription"`
 
 				// Side Chart side. personality is the conscious birth-moment activation, design is the unconscious activation 88 degrees of solar arc before birth.
 				Side string `json:"side"`
@@ -65399,8 +65618,14 @@ func ParseCalculateTypeResponse(rsp *http.Response) (*CalculateTypeResponse, err
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
+			// Aura The aura mechanic of the type: how the energy field itself operates, for example open and enveloping, or closed and repelling.
+			Aura string `json:"aura"`
+
 			// Authority Inner authority for decision making. One of Emotional, Sacral, Splenic, Ego, Self-Projected, Mental, Lunar.
 			Authority string `json:"authority"`
+
+			// AuthorityDescription How the decision is made, the timing it requires, and the characteristic trap. Inner authority is the most actionable output of a Human Design chart.
+			AuthorityDescription string `json:"authorityDescription"`
 
 			// NotSelf The not-self theme that signals being out of alignment.
 			NotSelf string `json:"notSelf"`
@@ -65414,8 +65639,14 @@ func ParseCalculateTypeResponse(rsp *http.Response) (*CalculateTypeResponse, err
 			// Strategy The aura strategy for engaging life correctly for this type.
 			Strategy string `json:"strategy"`
 
+			// StrategyDescription How to actually apply the strategy. The strategy field alone is a bare label such as Respond or Inform; this is the operating instruction behind it.
+			StrategyDescription string `json:"strategyDescription"`
+
 			// Type Human Design energy type. One of Manifestor, Generator, Manifesting Generator, Projector, Reflector.
 			Type string `json:"type"`
+
+			// TypeDescription What the aura of this type does and how it is designed to engage life. The grounding text for the type label, so a consuming agent does not have to supply the meaning itself.
+			TypeDescription string `json:"typeDescription"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -65492,14 +65723,29 @@ func ParseCalculateVariablesResponse(rsp *http.Response) (*CalculateVariablesRes
 				// Base Base number from 1 to 5, the finest published subdivision of the wheel. Returned for completeness but treated as informational, since it is finer than most birth times can resolve.
 				Base float32 `json:"base"`
 
+				// BaseName Name of the Base. Informational only: the Base is finer than any civil birth time can resolve.
+				BaseName string `json:"baseName"`
+
+				// Cognition Cognition, the strongest sense, read off the Determination Tone. Present on the determination arrow ONLY: no authority supports reading Cognition from the other three arrows, so it is omitted rather than invented.
+				Cognition *struct {
+					Description string `json:"description"`
+					Label       string `json:"label"`
+				} `json:"cognition,omitempty"`
+
 				// Color Color number from 1 to 6, the substructure level one octave finer than the line. Color selects the arrow theme, for example the determination family or the motivation.
 				Color float32 `json:"color"`
 
 				// ColorLabel Name of the Color theme for this arrow, for example a determination family such as Touch, an environment such as Mountains, a perspective such as Personal, or a motivation such as Hope.
 				ColorLabel string `json:"colorLabel"`
 
+				// ColorMeaning Meaning of the Color for THIS arrow. The same Color number means something different under Determination than under Motivation, so this is the reading of colorLabel in context, not a generic gloss.
+				ColorMeaning string `json:"colorMeaning"`
+
 				// Confident Whether this arrow is far enough from a Color or Tone boundary to be reliable. When false the activation sits on a knife edge where the Color label or the arrow direction could flip with a more precise birth time, and the arrow should not be presented as fact.
 				Confident bool `json:"confident"`
+
+				// Description What this arrow is and what it governs.
+				Description string `json:"description"`
 
 				// Direction Arrow direction derived from the Tone. left for tones 1 to 3, right for tones 4 to 6.
 				Direction string `json:"direction"`
@@ -65507,11 +65753,17 @@ func ParseCalculateVariablesResponse(rsp *http.Response) (*CalculateVariablesRes
 				// DirectionLabel Keynote of the arrow direction for this arrow, for example Active or Passive for Determination, Focused or Peripheral for Perspective.
 				DirectionLabel string `json:"directionLabel"`
 
+				// DirectionMeaning Meaning of the left or right direction for THIS arrow, the reading of directionLabel.
+				DirectionMeaning string `json:"directionMeaning"`
+
 				// Key Stable arrow identifier. One of determination, environment, perspective, motivation.
 				Key string `json:"key"`
 
 				// Layer Which half of the advanced layer the arrow belongs to. Primary Health System covers the body-side Determination and Environment arrows, Rave Psychology covers the mind-side Perspective and Motivation arrows.
 				Layer string `json:"layer"`
+
+				// LayerDescription What the layer this arrow belongs to governs, the body side or the mind side.
+				LayerDescription string `json:"layerDescription"`
 
 				// Name Arrow name. Determination is the top-left arrow governing the Primary Health System and digestion, Environment the bottom-left arrow, Perspective the bottom-right arrow also called View, and Motivation the top-right arrow.
 				Name string `json:"name"`
@@ -65521,7 +65773,13 @@ func ParseCalculateVariablesResponse(rsp *http.Response) (*CalculateVariablesRes
 
 				// Tone Tone number from 1 to 6, the substructure level beneath Color. Tone sets the arrow direction: tones 1 to 3 face left, tones 4 to 6 face right.
 				Tone float32 `json:"tone"`
+
+				// ToneMeaning Meaning of the Tone. The six Tones are shared across all four arrows: the arrow does not change the Tone, it changes what the Tone qualifies.
+				ToneMeaning string `json:"toneMeaning"`
 			} `json:"arrows"`
+
+			// BaseDescription What the Base layer is. Returned once at the top level rather than repeated on every arrow, since the Base layer is the same concept for all four. No per-Base meaning is returned: every one in circulation traces back to a single origin, so it fails the two-source bar this package holds.
+			BaseDescription string `json:"baseDescription"`
 
 			// ConfidenceMarginDeg Boundary margin in degrees of ecliptic longitude used for the per-arrow confidence flag, the solar arc over a few minutes of clock time. An activation within this distance of a Color or Tone boundary is flagged low-confidence.
 			ConfidenceMarginDeg float32 `json:"confidenceMarginDeg"`
