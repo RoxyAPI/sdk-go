@@ -13810,10 +13810,13 @@ type CardSuit string
 
 // ChangingLine defines model for ChangingLine.
 type ChangingLine struct {
+	// Meaning What the line statement asks of the querent, read from its position in the hexagram (1 is the hidden beginning, 3 is the exposed threshold, 5 is the ruling line, 6 is past the peak) and from whether the line is yin or yang. This is the meaning behind the image, so a consuming agent does not have to invent one.
+	Meaning *string `json:"meaning,omitempty"`
+
 	// Position Line position (1-6, bottom to top). In I-Ching, each hexagram has six lines (yao) read from bottom upward.
 	Position float32 `json:"position"`
 
-	// Text Changing line interpretation text. Applies only when this specific line is a changing line (old yin or old yang) in a casting.
+	// Text The oracle statement for this line. It applies when this specific line comes up changing (old yin or old yang) in a casting, and it speaks in the concrete imagery of the tradition.
 	Text string `json:"text"`
 }
 
@@ -17005,7 +17008,7 @@ type Trigram struct {
 	// Meaning Concise interpretation of the trigram covering its symbolic meaning, key associations, and guidance for understanding hexagrams containing this trigram.
 	Meaning string `json:"meaning"`
 
-	// Number Trigram number (1-8) in the traditional I-Ching ordering.
+	// Number Stable identifier for the trigram, 1 to 8. This is our lookup key, not a canonical sequence: the tradition has several orderings (King Wen, Fu Xi, Earlier and Later Heaven) and they disagree, so do not read ranking or precedence into it.
 	Number float32 `json:"number"`
 
 	// Pinyin Pinyin romanization of the Chinese name with tone marks for correct pronunciation.
@@ -48702,6 +48705,9 @@ type CastDailyReadingResponse struct {
 		// ChangingLinePositions Positions of changing lines (1-6, bottom to top). These lines transform yin to yang or vice versa.
 		ChangingLinePositions []float32 `json:"changingLinePositions"`
 
+		// ChangingLines The oracle statement and meaning of each line that came up CHANGING, and only those. The changing lines are what the cast is actually about, so this saves a second call to read them and stops a consuming agent from having to invent them.
+		ChangingLines *[]ChangingLine `json:"changingLines,omitempty"`
+
 		// Date Date this daily casting is for (YYYY-MM-DD, UTC).
 		Date     string `json:"date"`
 		Hexagram *struct {
@@ -66106,6 +66112,9 @@ func ParseCastDailyReadingResponse(rsp *http.Response) (*CastDailyReadingRespons
 		var dest struct {
 			// ChangingLinePositions Positions of changing lines (1-6, bottom to top). These lines transform yin to yang or vice versa.
 			ChangingLinePositions []float32 `json:"changingLinePositions"`
+
+			// ChangingLines The oracle statement and meaning of each line that came up CHANGING, and only those. The changing lines are what the cast is actually about, so this saves a second call to read them and stops a consuming agent from having to invent them.
+			ChangingLines *[]ChangingLine `json:"changingLines,omitempty"`
 
 			// Date Date this daily casting is for (YYYY-MM-DD, UTC).
 			Date     string `json:"date"`
