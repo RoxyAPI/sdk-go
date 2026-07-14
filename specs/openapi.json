@@ -4852,6 +4852,11 @@
                 "description": "Zodiac sign of the Ascendant.",
                 "type": "string"
               },
+              "signLord": {
+                "description": "Ruling planet of the Ascendant sign (the rashi lord). In KP this is the weakest of the four lords, ranked below the star lord and sub lord, but it still sets the broad temperament of the Lagna.",
+                "example": "Venus",
+                "type": "string"
+              },
               "starLord": {
                 "description": "KP star lord of the Ascendant position.",
                 "type": "string"
@@ -4868,6 +4873,7 @@
             "required": [
               "longitude",
               "sign",
+              "signLord",
               "nakshatra",
               "nakshatraLord",
               "pada",
@@ -5007,6 +5013,11 @@
                     "description": "Occupied house number (1-12) based on Placidus cusps.",
                     "type": "number"
                   },
+                  "kpNumber": {
+                    "description": "KP number (1-249) locating Ketu in the 249-division sub-lord scheme. Each of the 249 divisions maps to a unique sign, star lord and sub lord triple, so one integer pins the position precisely enough for KP event timing.",
+                    "example": 194,
+                    "type": "number"
+                  },
                   "longitude": {
                     "description": "Sidereal longitude of Ketu (South Node). Always 180 degrees from Rahu.",
                     "type": "number"
@@ -5039,7 +5050,8 @@
                   "nakshatra",
                   "starLord",
                   "subLord",
-                  "subSubLord"
+                  "subSubLord",
+                  "kpNumber"
                 ],
                 "type": "object"
               },
@@ -5048,6 +5060,11 @@
                 "properties": {
                   "house": {
                     "description": "Occupied house number (1-12) based on Placidus cusps.",
+                    "type": "number"
+                  },
+                  "kpNumber": {
+                    "description": "KP number (1-249) locating Rahu in the 249-division sub-lord scheme. Each of the 249 divisions maps to a unique sign, star lord and sub lord triple, so one integer pins the position precisely enough for KP event timing.",
+                    "example": 194,
                     "type": "number"
                   },
                   "longitude": {
@@ -5082,7 +5099,8 @@
                   "nakshatra",
                   "starLord",
                   "subLord",
-                  "subSubLord"
+                  "subSubLord",
+                  "kpNumber"
                 ],
                 "type": "object"
               }
@@ -42918,7 +42936,8 @@
                       "type": "array"
                     },
                     "datetime": {
-                      "description": "UTC datetime used for aspect calculation (ISO 8601).",
+                      "description": "Chart time the aspects were calculated for, echoed back as the local wall clock of the request (ISO 8601, no offset). This is the `date` and `time` you sent, NOT a UTC instant: hold them fixed and vary `timezone` and every longitude moves while this field does not. Combine it with the `timezone` you sent to recover the absolute moment.",
+                      "example": "1990-06-15T14:30:00",
                       "type": "string"
                     },
                     "mutualAspects": {

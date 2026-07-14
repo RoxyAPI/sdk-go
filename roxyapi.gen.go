@@ -14462,6 +14462,9 @@ type KPChartResponse struct {
 		// Sign Zodiac sign of the Ascendant.
 		Sign string `json:"sign"`
 
+		// SignLord Ruling planet of the Ascendant sign (the rashi lord). In KP this is the weakest of the four lords, ranked below the star lord and sub lord, but it still sets the broad temperament of the Lagna.
+		SignLord string `json:"signLord"`
+
 		// StarLord KP star lord of the Ascendant position.
 		StarLord string `json:"starLord"`
 
@@ -14542,6 +14545,9 @@ type KPChartResponse struct {
 			// House Occupied house number (1-12) based on Placidus cusps.
 			House float32 `json:"house"`
 
+			// KpNumber KP number (1-249) locating Ketu in the 249-division sub-lord scheme. Each of the 249 divisions maps to a unique sign, star lord and sub lord triple, so one integer pins the position precisely enough for KP event timing.
+			KpNumber float32 `json:"kpNumber"`
+
 			// Longitude Sidereal longitude of Ketu (South Node). Always 180 degrees from Rahu.
 			Longitude float32 `json:"longitude"`
 
@@ -14565,6 +14571,9 @@ type KPChartResponse struct {
 		Rahu struct {
 			// House Occupied house number (1-12) based on Placidus cusps.
 			House float32 `json:"house"`
+
+			// KpNumber KP number (1-249) locating Rahu in the 249-division sub-lord scheme. Each of the 249 divisions maps to a unique sign, star lord and sub lord triple, so one integer pins the position precisely enough for KP event timing.
+			KpNumber float32 `json:"kpNumber"`
 
 			// Longitude Sidereal longitude of Rahu (North Node).
 			Longitude float32 `json:"longitude"`
@@ -52344,7 +52353,7 @@ type CalculateDrishtiResponse struct {
 			Strength float32 `json:"strength"`
 		} `json:"aspects"`
 
-		// Datetime UTC datetime used for aspect calculation (ISO 8601).
+		// Datetime Chart time the aspects were calculated for, echoed back as the local wall clock of the request (ISO 8601, no offset). This is the `date` and `time` you sent, NOT a UTC instant: hold them fixed and vary `timezone` and every longitude moves while this field does not. Combine it with the `timezone` you sent to recover the absolute moment.
 		Datetime string `json:"datetime"`
 
 		// MutualAspects Pairs of planets aspecting each other simultaneously. Mutual aspects amplify planetary influence significantly.
@@ -70697,7 +70706,7 @@ func ParseCalculateDrishtiResponse(rsp *http.Response) (*CalculateDrishtiRespons
 				Strength float32 `json:"strength"`
 			} `json:"aspects"`
 
-			// Datetime UTC datetime used for aspect calculation (ISO 8601).
+			// Datetime Chart time the aspects were calculated for, echoed back as the local wall clock of the request (ISO 8601, no offset). This is the `date` and `time` you sent, NOT a UTC instant: hold them fixed and vary `timezone` and every longitude moves while this field does not. Combine it with the `timezone` you sent to recover the absolute moment.
 			Datetime string `json:"datetime"`
 
 			// MutualAspects Pairs of planets aspecting each other simultaneously. Mutual aspects amplify planetary influence significantly.
