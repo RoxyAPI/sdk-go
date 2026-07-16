@@ -7303,6 +7303,24 @@ func (e GenerateBodygraphParamsLang) Valid() bool {
 	}
 }
 
+// Defines values for GenerateBodygraphJSONBodyNodeType.
+const (
+	GenerateBodygraphJSONBodyNodeTypeMean GenerateBodygraphJSONBodyNodeType = "mean"
+	GenerateBodygraphJSONBodyNodeTypeTrue GenerateBodygraphJSONBodyNodeType = "true"
+)
+
+// Valid indicates whether the value is a known member of the GenerateBodygraphJSONBodyNodeType enum.
+func (e GenerateBodygraphJSONBodyNodeType) Valid() bool {
+	switch e {
+	case GenerateBodygraphJSONBodyNodeTypeMean:
+		return true
+	case GenerateBodygraphJSONBodyNodeTypeTrue:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for CalculateCentersParamsLang.
 const (
 	CalculateCentersParamsLangDe CalculateCentersParamsLang = "de"
@@ -7333,6 +7351,24 @@ func (e CalculateCentersParamsLang) Valid() bool {
 	case CalculateCentersParamsLangRu:
 		return true
 	case CalculateCentersParamsLangTr:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for CalculateCentersJSONBodyNodeType.
+const (
+	CalculateCentersJSONBodyNodeTypeMean CalculateCentersJSONBodyNodeType = "mean"
+	CalculateCentersJSONBodyNodeTypeTrue CalculateCentersJSONBodyNodeType = "true"
+)
+
+// Valid indicates whether the value is a known member of the CalculateCentersJSONBodyNodeType enum.
+func (e CalculateCentersJSONBodyNodeType) Valid() bool {
+	switch e {
+	case CalculateCentersJSONBodyNodeTypeMean:
+		return true
+	case CalculateCentersJSONBodyNodeTypeTrue:
 		return true
 	default:
 		return false
@@ -7450,6 +7486,24 @@ func (e CalculateChannelsParamsLang) Valid() bool {
 	}
 }
 
+// Defines values for CalculateChannelsJSONBodyNodeType.
+const (
+	CalculateChannelsJSONBodyNodeTypeMean CalculateChannelsJSONBodyNodeType = "mean"
+	CalculateChannelsJSONBodyNodeTypeTrue CalculateChannelsJSONBodyNodeType = "true"
+)
+
+// Valid indicates whether the value is a known member of the CalculateChannelsJSONBodyNodeType enum.
+func (e CalculateChannelsJSONBodyNodeType) Valid() bool {
+	switch e {
+	case CalculateChannelsJSONBodyNodeTypeMean:
+		return true
+	case CalculateChannelsJSONBodyNodeTypeTrue:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for CalculateConnectionParamsLang.
 const (
 	CalculateConnectionParamsLangDe CalculateConnectionParamsLang = "de"
@@ -7486,6 +7540,42 @@ func (e CalculateConnectionParamsLang) Valid() bool {
 	}
 }
 
+// Defines values for CalculateConnectionJSONBodyPersonANodeType.
+const (
+	CalculateConnectionJSONBodyPersonANodeTypeMean CalculateConnectionJSONBodyPersonANodeType = "mean"
+	CalculateConnectionJSONBodyPersonANodeTypeTrue CalculateConnectionJSONBodyPersonANodeType = "true"
+)
+
+// Valid indicates whether the value is a known member of the CalculateConnectionJSONBodyPersonANodeType enum.
+func (e CalculateConnectionJSONBodyPersonANodeType) Valid() bool {
+	switch e {
+	case CalculateConnectionJSONBodyPersonANodeTypeMean:
+		return true
+	case CalculateConnectionJSONBodyPersonANodeTypeTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for CalculateConnectionJSONBodyPersonBNodeType.
+const (
+	CalculateConnectionJSONBodyPersonBNodeTypeMean CalculateConnectionJSONBodyPersonBNodeType = "mean"
+	CalculateConnectionJSONBodyPersonBNodeTypeTrue CalculateConnectionJSONBodyPersonBNodeType = "true"
+)
+
+// Valid indicates whether the value is a known member of the CalculateConnectionJSONBodyPersonBNodeType enum.
+func (e CalculateConnectionJSONBodyPersonBNodeType) Valid() bool {
+	switch e {
+	case CalculateConnectionJSONBodyPersonBNodeTypeMean:
+		return true
+	case CalculateConnectionJSONBodyPersonBNodeTypeTrue:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for CalculateGatesParamsLang.
 const (
 	CalculateGatesParamsLangDe CalculateGatesParamsLang = "de"
@@ -7516,6 +7606,24 @@ func (e CalculateGatesParamsLang) Valid() bool {
 	case CalculateGatesParamsLangRu:
 		return true
 	case CalculateGatesParamsLangTr:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for CalculateGatesJSONBodyNodeType.
+const (
+	CalculateGatesJSONBodyNodeTypeMean CalculateGatesJSONBodyNodeType = "mean"
+	CalculateGatesJSONBodyNodeTypeTrue CalculateGatesJSONBodyNodeType = "true"
+)
+
+// Valid indicates whether the value is a known member of the CalculateGatesJSONBodyNodeType enum.
+func (e CalculateGatesJSONBodyNodeType) Valid() bool {
+	switch e {
+	case CalculateGatesJSONBodyNodeTypeMean:
+		return true
+	case CalculateGatesJSONBodyNodeTypeTrue:
 		return true
 	default:
 		return false
@@ -7594,6 +7702,24 @@ func (e CalculatePentaParamsLang) Valid() bool {
 	}
 }
 
+// Defines values for CalculatePentaJSONBodyMembersNodeType.
+const (
+	CalculatePentaJSONBodyMembersNodeTypeMean CalculatePentaJSONBodyMembersNodeType = "mean"
+	CalculatePentaJSONBodyMembersNodeTypeTrue CalculatePentaJSONBodyMembersNodeType = "true"
+)
+
+// Valid indicates whether the value is a known member of the CalculatePentaJSONBodyMembersNodeType enum.
+func (e CalculatePentaJSONBodyMembersNodeType) Valid() bool {
+	switch e {
+	case CalculatePentaJSONBodyMembersNodeTypeMean:
+		return true
+	case CalculatePentaJSONBodyMembersNodeTypeTrue:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for CalculateProfileParamsLang.
 const (
 	CalculateProfileParamsLangDe CalculateProfileParamsLang = "de"
@@ -7624,6 +7750,24 @@ func (e CalculateProfileParamsLang) Valid() bool {
 	case CalculateProfileParamsLangRu:
 		return true
 	case CalculateProfileParamsLangTr:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for CalculateProfileJSONBodyNodeType.
+const (
+	CalculateProfileJSONBodyNodeTypeMean CalculateProfileJSONBodyNodeType = "mean"
+	CalculateProfileJSONBodyNodeTypeTrue CalculateProfileJSONBodyNodeType = "true"
+)
+
+// Valid indicates whether the value is a known member of the CalculateProfileJSONBodyNodeType enum.
+func (e CalculateProfileJSONBodyNodeType) Valid() bool {
+	switch e {
+	case CalculateProfileJSONBodyNodeTypeMean:
+		return true
+	case CalculateProfileJSONBodyNodeTypeTrue:
 		return true
 	default:
 		return false
@@ -7666,6 +7810,24 @@ func (e GenerateTransitParamsLang) Valid() bool {
 	}
 }
 
+// Defines values for GenerateTransitJSONBodyBirthDataNodeType.
+const (
+	GenerateTransitJSONBodyBirthDataNodeTypeMean GenerateTransitJSONBodyBirthDataNodeType = "mean"
+	GenerateTransitJSONBodyBirthDataNodeTypeTrue GenerateTransitJSONBodyBirthDataNodeType = "true"
+)
+
+// Valid indicates whether the value is a known member of the GenerateTransitJSONBodyBirthDataNodeType enum.
+func (e GenerateTransitJSONBodyBirthDataNodeType) Valid() bool {
+	switch e {
+	case GenerateTransitJSONBodyBirthDataNodeTypeMean:
+		return true
+	case GenerateTransitJSONBodyBirthDataNodeTypeTrue:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for CalculateTypeParamsLang.
 const (
 	CalculateTypeParamsLangDe CalculateTypeParamsLang = "de"
@@ -7702,6 +7864,24 @@ func (e CalculateTypeParamsLang) Valid() bool {
 	}
 }
 
+// Defines values for CalculateTypeJSONBodyNodeType.
+const (
+	CalculateTypeJSONBodyNodeTypeMean CalculateTypeJSONBodyNodeType = "mean"
+	CalculateTypeJSONBodyNodeTypeTrue CalculateTypeJSONBodyNodeType = "true"
+)
+
+// Valid indicates whether the value is a known member of the CalculateTypeJSONBodyNodeType enum.
+func (e CalculateTypeJSONBodyNodeType) Valid() bool {
+	switch e {
+	case CalculateTypeJSONBodyNodeTypeMean:
+		return true
+	case CalculateTypeJSONBodyNodeTypeTrue:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for CalculateVariablesParamsLang.
 const (
 	CalculateVariablesParamsLangDe CalculateVariablesParamsLang = "de"
@@ -7732,6 +7912,24 @@ func (e CalculateVariablesParamsLang) Valid() bool {
 	case CalculateVariablesParamsLangRu:
 		return true
 	case CalculateVariablesParamsLangTr:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for CalculateVariablesJSONBodyNodeType.
+const (
+	CalculateVariablesJSONBodyNodeTypeMean CalculateVariablesJSONBodyNodeType = "mean"
+	CalculateVariablesJSONBodyNodeTypeTrue CalculateVariablesJSONBodyNodeType = "true"
+)
+
+// Valid indicates whether the value is a known member of the CalculateVariablesJSONBodyNodeType enum.
+func (e CalculateVariablesJSONBodyNodeType) Valid() bool {
+	switch e {
+	case CalculateVariablesJSONBodyNodeTypeMean:
+		return true
+	case CalculateVariablesJSONBodyNodeTypeTrue:
 		return true
 	default:
 		return false
@@ -10662,16 +10860,16 @@ func (e GetKpRulingIntervalJSONBodyAyanamsa) Valid() bool {
 
 // Defines values for GetKpRulingIntervalJSONBodyNodeType.
 const (
-	Mean GetKpRulingIntervalJSONBodyNodeType = "mean"
-	True GetKpRulingIntervalJSONBodyNodeType = "true"
+	GetKpRulingIntervalJSONBodyNodeTypeMean GetKpRulingIntervalJSONBodyNodeType = "mean"
+	GetKpRulingIntervalJSONBodyNodeTypeTrue GetKpRulingIntervalJSONBodyNodeType = "true"
 )
 
 // Valid indicates whether the value is a known member of the GetKpRulingIntervalJSONBodyNodeType enum.
 func (e GetKpRulingIntervalJSONBodyNodeType) Valid() bool {
 	switch e {
-	case Mean:
+	case GetKpRulingIntervalJSONBodyNodeTypeMean:
 		return true
-	case True:
+	case GetKpRulingIntervalJSONBodyNodeTypeTrue:
 		return true
 	default:
 		return false
@@ -16944,7 +17142,7 @@ type TransitsResponse struct {
 		// Orb Distance from exact aspect in degrees. Tighter orb = stronger influence.
 		Orb float32 `json:"orb"`
 
-		// Strength Aspect strength percentage (0-100). Based on orb tightness — 100 is exact.
+		// Strength Aspect strength percentage (0-100) based on orb tightness, where 100 is exact.
 		Strength float32 `json:"strength"`
 
 		// TransitPlanet Transiting planet forming the aspect.
@@ -19007,6 +19205,9 @@ type GenerateBodygraphJSONBody struct {
 	// Longitude Birth longitude in decimal degrees. Optional and does not affect the bodygraph. Defaults to 0.
 	Longitude *float32 `json:"longitude,omitempty"`
 
+	// NodeType Lunar node convention for the North and South Node activations. Leave unset (or "true") for the standard Human Design chart: "true" is the osculating node used by professional Human Design software (HumanDesign.ai, Total Human Design) and is the value RoxyAPI verifies against. Pass "mean" to match a calculator that uses the smoothed mean node (the traditional Western-astrology default, common in free chart tools). The two agree on almost every chart; they diverge by up to ~1.75 degrees only when a node sits on a gate boundary, where the choice can move a node gate and, rarely, change the completed channels and therefore the type, authority, or definition. If another calculator shows a different type, it is likely using the mean node: pass "mean" to match it.
+	NodeType *GenerateBodygraphJSONBodyNodeType `json:"nodeType,omitempty"`
+
 	// Time Birth time in 24-hour HH:MM:SS format. Precision matters: the profile lines and gate boundaries shift with the exact minute of birth.
 	Time string `json:"time"`
 
@@ -19022,6 +19223,9 @@ type GenerateBodygraphParams struct {
 
 // GenerateBodygraphParamsLang defines parameters for GenerateBodygraph.
 type GenerateBodygraphParamsLang string
+
+// GenerateBodygraphJSONBodyNodeType defines parameters for GenerateBodygraph.
+type GenerateBodygraphJSONBodyNodeType string
 
 // GenerateBodygraphJSONBodyTimezone0 defines parameters for GenerateBodygraph.
 type GenerateBodygraphJSONBodyTimezone0 = float32
@@ -19045,6 +19249,9 @@ type CalculateCentersJSONBody struct {
 	// Longitude Birth longitude in decimal degrees. Optional and does not affect the bodygraph. Defaults to 0.
 	Longitude *float32 `json:"longitude,omitempty"`
 
+	// NodeType Lunar node convention for the North and South Node activations. Leave unset (or "true") for the standard Human Design chart: "true" is the osculating node used by professional Human Design software (HumanDesign.ai, Total Human Design) and is the value RoxyAPI verifies against. Pass "mean" to match a calculator that uses the smoothed mean node (the traditional Western-astrology default, common in free chart tools). The two agree on almost every chart; they diverge by up to ~1.75 degrees only when a node sits on a gate boundary, where the choice can move a node gate and, rarely, change the completed channels and therefore the type, authority, or definition. If another calculator shows a different type, it is likely using the mean node: pass "mean" to match it.
+	NodeType *CalculateCentersJSONBodyNodeType `json:"nodeType,omitempty"`
+
 	// Time Birth time in 24-hour HH:MM:SS format. Precision matters: the profile lines and gate boundaries shift with the exact minute of birth.
 	Time string `json:"time"`
 
@@ -19060,6 +19267,9 @@ type CalculateCentersParams struct {
 
 // CalculateCentersParamsLang defines parameters for CalculateCenters.
 type CalculateCentersParamsLang string
+
+// CalculateCentersJSONBodyNodeType defines parameters for CalculateCenters.
+type CalculateCentersJSONBodyNodeType string
 
 // CalculateCentersJSONBodyTimezone0 defines parameters for CalculateCenters.
 type CalculateCentersJSONBodyTimezone0 = float32
@@ -19095,6 +19305,9 @@ type CalculateChannelsJSONBody struct {
 	// Longitude Birth longitude in decimal degrees. Optional and does not affect the bodygraph. Defaults to 0.
 	Longitude *float32 `json:"longitude,omitempty"`
 
+	// NodeType Lunar node convention for the North and South Node activations. Leave unset (or "true") for the standard Human Design chart: "true" is the osculating node used by professional Human Design software (HumanDesign.ai, Total Human Design) and is the value RoxyAPI verifies against. Pass "mean" to match a calculator that uses the smoothed mean node (the traditional Western-astrology default, common in free chart tools). The two agree on almost every chart; they diverge by up to ~1.75 degrees only when a node sits on a gate boundary, where the choice can move a node gate and, rarely, change the completed channels and therefore the type, authority, or definition. If another calculator shows a different type, it is likely using the mean node: pass "mean" to match it.
+	NodeType *CalculateChannelsJSONBodyNodeType `json:"nodeType,omitempty"`
+
 	// Time Birth time in 24-hour HH:MM:SS format. Precision matters: the profile lines and gate boundaries shift with the exact minute of birth.
 	Time string `json:"time"`
 
@@ -19110,6 +19323,9 @@ type CalculateChannelsParams struct {
 
 // CalculateChannelsParamsLang defines parameters for CalculateChannels.
 type CalculateChannelsParamsLang string
+
+// CalculateChannelsJSONBodyNodeType defines parameters for CalculateChannels.
+type CalculateChannelsJSONBodyNodeType string
 
 // CalculateChannelsJSONBodyTimezone0 defines parameters for CalculateChannels.
 type CalculateChannelsJSONBodyTimezone0 = float32
@@ -19135,6 +19351,9 @@ type CalculateConnectionJSONBody struct {
 		// Longitude Birth longitude in decimal degrees. Optional and does not affect the bodygraph. Defaults to 0.
 		Longitude *float32 `json:"longitude,omitempty"`
 
+		// NodeType Lunar node convention for the North and South Node activations. Leave unset (or "true") for the standard Human Design chart: "true" is the osculating node used by professional Human Design software (HumanDesign.ai, Total Human Design) and is the value RoxyAPI verifies against. Pass "mean" to match a calculator that uses the smoothed mean node (the traditional Western-astrology default, common in free chart tools). The two agree on almost every chart; they diverge by up to ~1.75 degrees only when a node sits on a gate boundary, where the choice can move a node gate and, rarely, change the completed channels and therefore the type, authority, or definition. If another calculator shows a different type, it is likely using the mean node: pass "mean" to match it.
+		NodeType *CalculateConnectionJSONBodyPersonANodeType `json:"nodeType,omitempty"`
+
 		// Time Birth time in 24-hour HH:MM:SS format. Precision matters: the profile lines and gate boundaries shift with the exact minute of birth.
 		Time string `json:"time"`
 
@@ -19153,6 +19372,9 @@ type CalculateConnectionJSONBody struct {
 		// Longitude Birth longitude in decimal degrees. Optional and does not affect the bodygraph. Defaults to 0.
 		Longitude *float32 `json:"longitude,omitempty"`
 
+		// NodeType Lunar node convention for the North and South Node activations. Leave unset (or "true") for the standard Human Design chart: "true" is the osculating node used by professional Human Design software (HumanDesign.ai, Total Human Design) and is the value RoxyAPI verifies against. Pass "mean" to match a calculator that uses the smoothed mean node (the traditional Western-astrology default, common in free chart tools). The two agree on almost every chart; they diverge by up to ~1.75 degrees only when a node sits on a gate boundary, where the choice can move a node gate and, rarely, change the completed channels and therefore the type, authority, or definition. If another calculator shows a different type, it is likely using the mean node: pass "mean" to match it.
+		NodeType *CalculateConnectionJSONBodyPersonBNodeType `json:"nodeType,omitempty"`
+
 		// Time Birth time in 24-hour HH:MM:SS format. Precision matters: the profile lines and gate boundaries shift with the exact minute of birth.
 		Time string `json:"time"`
 
@@ -19170,6 +19392,9 @@ type CalculateConnectionParams struct {
 // CalculateConnectionParamsLang defines parameters for CalculateConnection.
 type CalculateConnectionParamsLang string
 
+// CalculateConnectionJSONBodyPersonANodeType defines parameters for CalculateConnection.
+type CalculateConnectionJSONBodyPersonANodeType string
+
 // CalculateConnectionJSONBodyPersonATimezone0 defines parameters for CalculateConnection.
 type CalculateConnectionJSONBodyPersonATimezone0 = float32
 
@@ -19180,6 +19405,9 @@ type CalculateConnectionJSONBodyPersonATimezone1 = string
 type CalculateConnectionJSONBody_PersonA_Timezone struct {
 	union json.RawMessage
 }
+
+// CalculateConnectionJSONBodyPersonBNodeType defines parameters for CalculateConnection.
+type CalculateConnectionJSONBodyPersonBNodeType string
 
 // CalculateConnectionJSONBodyPersonBTimezone0 defines parameters for CalculateConnection.
 type CalculateConnectionJSONBodyPersonBTimezone0 = float32
@@ -19203,6 +19431,9 @@ type CalculateGatesJSONBody struct {
 	// Longitude Birth longitude in decimal degrees. Optional and does not affect the bodygraph. Defaults to 0.
 	Longitude *float32 `json:"longitude,omitempty"`
 
+	// NodeType Lunar node convention for the North and South Node activations. Leave unset (or "true") for the standard Human Design chart: "true" is the osculating node used by professional Human Design software (HumanDesign.ai, Total Human Design) and is the value RoxyAPI verifies against. Pass "mean" to match a calculator that uses the smoothed mean node (the traditional Western-astrology default, common in free chart tools). The two agree on almost every chart; they diverge by up to ~1.75 degrees only when a node sits on a gate boundary, where the choice can move a node gate and, rarely, change the completed channels and therefore the type, authority, or definition. If another calculator shows a different type, it is likely using the mean node: pass "mean" to match it.
+	NodeType *CalculateGatesJSONBodyNodeType `json:"nodeType,omitempty"`
+
 	// Time Birth time in 24-hour HH:MM:SS format. Precision matters: the profile lines and gate boundaries shift with the exact minute of birth.
 	Time string `json:"time"`
 
@@ -19218,6 +19449,9 @@ type CalculateGatesParams struct {
 
 // CalculateGatesParamsLang defines parameters for CalculateGates.
 type CalculateGatesParamsLang string
+
+// CalculateGatesJSONBodyNodeType defines parameters for CalculateGates.
+type CalculateGatesJSONBodyNodeType string
 
 // CalculateGatesJSONBodyTimezone0 defines parameters for CalculateGates.
 type CalculateGatesJSONBodyTimezone0 = float32
@@ -19252,6 +19486,9 @@ type CalculatePentaJSONBody struct {
 		// Longitude Birth longitude in decimal degrees. Optional and does not affect the bodygraph. Defaults to 0.
 		Longitude *float32 `json:"longitude,omitempty"`
 
+		// NodeType Lunar node convention for the North and South Node activations. Leave unset (or "true") for the standard Human Design chart: "true" is the osculating node used by professional Human Design software (HumanDesign.ai, Total Human Design) and is the value RoxyAPI verifies against. Pass "mean" to match a calculator that uses the smoothed mean node (the traditional Western-astrology default, common in free chart tools). The two agree on almost every chart; they diverge by up to ~1.75 degrees only when a node sits on a gate boundary, where the choice can move a node gate and, rarely, change the completed channels and therefore the type, authority, or definition. If another calculator shows a different type, it is likely using the mean node: pass "mean" to match it.
+		NodeType *CalculatePentaJSONBodyMembersNodeType `json:"nodeType,omitempty"`
+
 		// Time Birth time in 24-hour HH:MM:SS format. Precision matters: the profile lines and gate boundaries shift with the exact minute of birth.
 		Time string `json:"time"`
 
@@ -19268,6 +19505,9 @@ type CalculatePentaParams struct {
 
 // CalculatePentaParamsLang defines parameters for CalculatePenta.
 type CalculatePentaParamsLang string
+
+// CalculatePentaJSONBodyMembersNodeType defines parameters for CalculatePenta.
+type CalculatePentaJSONBodyMembersNodeType string
 
 // CalculatePentaJSONBodyMembersTimezone0 defines parameters for CalculatePenta.
 type CalculatePentaJSONBodyMembersTimezone0 = float32
@@ -19291,6 +19531,9 @@ type CalculateProfileJSONBody struct {
 	// Longitude Birth longitude in decimal degrees. Optional and does not affect the bodygraph. Defaults to 0.
 	Longitude *float32 `json:"longitude,omitempty"`
 
+	// NodeType Lunar node convention for the North and South Node activations. Leave unset (or "true") for the standard Human Design chart: "true" is the osculating node used by professional Human Design software (HumanDesign.ai, Total Human Design) and is the value RoxyAPI verifies against. Pass "mean" to match a calculator that uses the smoothed mean node (the traditional Western-astrology default, common in free chart tools). The two agree on almost every chart; they diverge by up to ~1.75 degrees only when a node sits on a gate boundary, where the choice can move a node gate and, rarely, change the completed channels and therefore the type, authority, or definition. If another calculator shows a different type, it is likely using the mean node: pass "mean" to match it.
+	NodeType *CalculateProfileJSONBodyNodeType `json:"nodeType,omitempty"`
+
 	// Time Birth time in 24-hour HH:MM:SS format. Precision matters: the profile lines and gate boundaries shift with the exact minute of birth.
 	Time string `json:"time"`
 
@@ -19306,6 +19549,9 @@ type CalculateProfileParams struct {
 
 // CalculateProfileParamsLang defines parameters for CalculateProfile.
 type CalculateProfileParamsLang string
+
+// CalculateProfileJSONBodyNodeType defines parameters for CalculateProfile.
+type CalculateProfileJSONBodyNodeType string
 
 // CalculateProfileJSONBodyTimezone0 defines parameters for CalculateProfile.
 type CalculateProfileJSONBodyTimezone0 = float32
@@ -19331,6 +19577,9 @@ type GenerateTransitJSONBody struct {
 		// Longitude Birth longitude in decimal degrees. Optional and does not affect the bodygraph. Defaults to 0.
 		Longitude *float32 `json:"longitude,omitempty"`
 
+		// NodeType Lunar node convention for the North and South Node activations. Leave unset (or "true") for the standard Human Design chart: "true" is the osculating node used by professional Human Design software (HumanDesign.ai, Total Human Design) and is the value RoxyAPI verifies against. Pass "mean" to match a calculator that uses the smoothed mean node (the traditional Western-astrology default, common in free chart tools). The two agree on almost every chart; they diverge by up to ~1.75 degrees only when a node sits on a gate boundary, where the choice can move a node gate and, rarely, change the completed channels and therefore the type, authority, or definition. If another calculator shows a different type, it is likely using the mean node: pass "mean" to match it.
+		NodeType *GenerateTransitJSONBodyBirthDataNodeType `json:"nodeType,omitempty"`
+
 		// Time Birth time in 24-hour HH:MM:SS format. Precision matters: the profile lines and gate boundaries shift with the exact minute of birth.
 		Time string `json:"time"`
 
@@ -19354,6 +19603,9 @@ type GenerateTransitParams struct {
 // GenerateTransitParamsLang defines parameters for GenerateTransit.
 type GenerateTransitParamsLang string
 
+// GenerateTransitJSONBodyBirthDataNodeType defines parameters for GenerateTransit.
+type GenerateTransitJSONBodyBirthDataNodeType string
+
 // GenerateTransitJSONBodyBirthDataTimezone0 defines parameters for GenerateTransit.
 type GenerateTransitJSONBodyBirthDataTimezone0 = float32
 
@@ -19376,6 +19628,9 @@ type CalculateTypeJSONBody struct {
 	// Longitude Birth longitude in decimal degrees. Optional and does not affect the bodygraph. Defaults to 0.
 	Longitude *float32 `json:"longitude,omitempty"`
 
+	// NodeType Lunar node convention for the North and South Node activations. Leave unset (or "true") for the standard Human Design chart: "true" is the osculating node used by professional Human Design software (HumanDesign.ai, Total Human Design) and is the value RoxyAPI verifies against. Pass "mean" to match a calculator that uses the smoothed mean node (the traditional Western-astrology default, common in free chart tools). The two agree on almost every chart; they diverge by up to ~1.75 degrees only when a node sits on a gate boundary, where the choice can move a node gate and, rarely, change the completed channels and therefore the type, authority, or definition. If another calculator shows a different type, it is likely using the mean node: pass "mean" to match it.
+	NodeType *CalculateTypeJSONBodyNodeType `json:"nodeType,omitempty"`
+
 	// Time Birth time in 24-hour HH:MM:SS format. Precision matters: the profile lines and gate boundaries shift with the exact minute of birth.
 	Time string `json:"time"`
 
@@ -19391,6 +19646,9 @@ type CalculateTypeParams struct {
 
 // CalculateTypeParamsLang defines parameters for CalculateType.
 type CalculateTypeParamsLang string
+
+// CalculateTypeJSONBodyNodeType defines parameters for CalculateType.
+type CalculateTypeJSONBodyNodeType string
 
 // CalculateTypeJSONBodyTimezone0 defines parameters for CalculateType.
 type CalculateTypeJSONBodyTimezone0 = float32
@@ -19414,6 +19672,9 @@ type CalculateVariablesJSONBody struct {
 	// Longitude Birth longitude in decimal degrees. Optional and does not affect the bodygraph. Defaults to 0.
 	Longitude *float32 `json:"longitude,omitempty"`
 
+	// NodeType Lunar node convention for the North and South Node activations. Leave unset (or "true") for the standard Human Design chart: "true" is the osculating node used by professional Human Design software (HumanDesign.ai, Total Human Design) and is the value RoxyAPI verifies against. Pass "mean" to match a calculator that uses the smoothed mean node (the traditional Western-astrology default, common in free chart tools). The two agree on almost every chart; they diverge by up to ~1.75 degrees only when a node sits on a gate boundary, where the choice can move a node gate and, rarely, change the completed channels and therefore the type, authority, or definition. If another calculator shows a different type, it is likely using the mean node: pass "mean" to match it.
+	NodeType *CalculateVariablesJSONBodyNodeType `json:"nodeType,omitempty"`
+
 	// Time Birth time in 24-hour HH:MM:SS format. Precision matters: the profile lines and gate boundaries shift with the exact minute of birth.
 	Time string `json:"time"`
 
@@ -19429,6 +19690,9 @@ type CalculateVariablesParams struct {
 
 // CalculateVariablesParamsLang defines parameters for CalculateVariables.
 type CalculateVariablesParamsLang string
+
+// CalculateVariablesJSONBodyNodeType defines parameters for CalculateVariables.
+type CalculateVariablesJSONBodyNodeType string
 
 // CalculateVariablesJSONBodyTimezone0 defines parameters for CalculateVariables.
 type CalculateVariablesJSONBodyTimezone0 = float32
