@@ -4,6 +4,7 @@ on:
   pull_request:
   push:
     branches: [main]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -53,3 +54,13 @@ jobs:
         run: go test .
         env:
           ROXY_API_KEY: ${{ secrets.ROXY_API_KEY }}
+
+  # Single stable context for branch protection: matrix legs rename as Go versions rotate, this name never does.
+  ci-ok:
+    if: always()
+    needs: [checks, test]
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          test "${{ needs.checks.result }}" = "success"
+          test "${{ needs.test.result }}" = "success"
