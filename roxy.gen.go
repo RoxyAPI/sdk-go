@@ -15,10 +15,10 @@ type Roxy struct {
 	client         *ClientWithResponses
 	Astrology      *AstrologyService
 	VedicAstrology *VedicAstrologyService
+	Forecast       *ForecastService
+	HumanDesign    *HumanDesignService
 	Numerology     *NumerologyService
 	Tarot          *TarotService
-	HumanDesign    *HumanDesignService
-	Forecast       *ForecastService
 	Biorhythm      *BiorhythmService
 	Iching         *IchingService
 	Crystals       *CrystalsService
@@ -33,10 +33,10 @@ func newRoxy(c *ClientWithResponses) *Roxy {
 	r := &Roxy{client: c}
 	r.Astrology = &AstrologyService{client: c}
 	r.VedicAstrology = &VedicAstrologyService{client: c}
+	r.Forecast = &ForecastService{client: c}
+	r.HumanDesign = &HumanDesignService{client: c}
 	r.Numerology = &NumerologyService{client: c}
 	r.Tarot = &TarotService{client: c}
-	r.HumanDesign = &HumanDesignService{client: c}
-	r.Forecast = &ForecastService{client: c}
 	r.Biorhythm = &BiorhythmService{client: c}
 	r.Iching = &IchingService{client: c}
 	r.Crystals = &CrystalsService{client: c}
@@ -662,6 +662,148 @@ func (s *VedicAstrologyService) ListYogas(ctx context.Context, params *ListYogas
 	return resp, asRoxyError(resp)
 }
 
+// ForecastService groups the forecast endpoints.
+type ForecastService struct{ client *ClientWithResponses }
+
+func (s *ForecastService) FindSignificantDates(ctx context.Context, params *FindSignificantDatesParams, body FindSignificantDatesJSONRequestBody, reqEditors ...RequestEditorFn) (*FindSignificantDatesResponse, error) {
+	resp, err := s.client.FindSignificantDatesWithResponse(ctx, params, body, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *ForecastService) ForecastSolarReturn(ctx context.Context, params *ForecastSolarReturnParams, body ForecastSolarReturnJSONRequestBody, reqEditors ...RequestEditorFn) (*ForecastSolarReturnResponse, error) {
+	resp, err := s.client.ForecastSolarReturnWithResponse(ctx, params, body, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *ForecastService) ForecastTransits(ctx context.Context, params *ForecastTransitsParams, body ForecastTransitsJSONRequestBody, reqEditors ...RequestEditorFn) (*ForecastTransitsResponse, error) {
+	resp, err := s.client.ForecastTransitsWithResponse(ctx, params, body, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *ForecastService) GenerateDigest(ctx context.Context, params *GenerateDigestParams, body GenerateDigestJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateDigestResponse, error) {
+	resp, err := s.client.GenerateDigestWithResponse(ctx, params, body, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *ForecastService) GenerateTimeline(ctx context.Context, params *GenerateTimelineParams, body GenerateTimelineJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateTimelineResponse, error) {
+	resp, err := s.client.GenerateTimelineWithResponse(ctx, params, body, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+// HumanDesignService groups the human-design endpoints.
+type HumanDesignService struct{ client *ClientWithResponses }
+
+func (s *HumanDesignService) CalculateCenters(ctx context.Context, params *CalculateCentersParams, body CalculateCentersJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateCentersResponse, error) {
+	resp, err := s.client.CalculateCentersWithResponse(ctx, params, body, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *HumanDesignService) CalculateChannels(ctx context.Context, params *CalculateChannelsParams, body CalculateChannelsJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateChannelsResponse, error) {
+	resp, err := s.client.CalculateChannelsWithResponse(ctx, params, body, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *HumanDesignService) CalculateConnection(ctx context.Context, params *CalculateConnectionParams, body CalculateConnectionJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateConnectionResponse, error) {
+	resp, err := s.client.CalculateConnectionWithResponse(ctx, params, body, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *HumanDesignService) CalculateGates(ctx context.Context, params *CalculateGatesParams, body CalculateGatesJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateGatesResponse, error) {
+	resp, err := s.client.CalculateGatesWithResponse(ctx, params, body, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *HumanDesignService) CalculatePenta(ctx context.Context, params *CalculatePentaParams, body CalculatePentaJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculatePentaResponse, error) {
+	resp, err := s.client.CalculatePentaWithResponse(ctx, params, body, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *HumanDesignService) CalculateProfile(ctx context.Context, params *CalculateProfileParams, body CalculateProfileJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateProfileResponse, error) {
+	resp, err := s.client.CalculateProfileWithResponse(ctx, params, body, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *HumanDesignService) CalculateType(ctx context.Context, params *CalculateTypeParams, body CalculateTypeJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateTypeResponse, error) {
+	resp, err := s.client.CalculateTypeWithResponse(ctx, params, body, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *HumanDesignService) CalculateVariables(ctx context.Context, params *CalculateVariablesParams, body CalculateVariablesJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateVariablesResponse, error) {
+	resp, err := s.client.CalculateVariablesWithResponse(ctx, params, body, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *HumanDesignService) GenerateBodygraph(ctx context.Context, params *GenerateBodygraphParams, body GenerateBodygraphJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateBodygraphResponse, error) {
+	resp, err := s.client.GenerateBodygraphWithResponse(ctx, params, body, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *HumanDesignService) GenerateTransit(ctx context.Context, params *GenerateTransitParams, body GenerateTransitJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateTransitResponse, error) {
+	resp, err := s.client.GenerateTransitWithResponse(ctx, params, body, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *HumanDesignService) GetCenter(ctx context.Context, id GetCenterParamsID, params *GetCenterParams, reqEditors ...RequestEditorFn) (*GetCenterResponse, error) {
+	resp, err := s.client.GetCenterWithResponse(ctx, id, params, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *HumanDesignService) GetGate(ctx context.Context, number int, params *GetGateParams, reqEditors ...RequestEditorFn) (*GetGateResponse, error) {
+	resp, err := s.client.GetGateWithResponse(ctx, number, params, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
 // NumerologyService groups the numerology endpoints.
 type NumerologyService struct{ client *ClientWithResponses }
 
@@ -902,148 +1044,6 @@ func (s *TarotService) GetDailyCard(ctx context.Context, params *GetDailyCardPar
 
 func (s *TarotService) ListCards(ctx context.Context, params *ListCardsParams, reqEditors ...RequestEditorFn) (*ListCardsResponse, error) {
 	resp, err := s.client.ListCardsWithResponse(ctx, params, reqEditors...)
-	if err != nil {
-		return resp, err
-	}
-	return resp, asRoxyError(resp)
-}
-
-// HumanDesignService groups the human-design endpoints.
-type HumanDesignService struct{ client *ClientWithResponses }
-
-func (s *HumanDesignService) CalculateCenters(ctx context.Context, params *CalculateCentersParams, body CalculateCentersJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateCentersResponse, error) {
-	resp, err := s.client.CalculateCentersWithResponse(ctx, params, body, reqEditors...)
-	if err != nil {
-		return resp, err
-	}
-	return resp, asRoxyError(resp)
-}
-
-func (s *HumanDesignService) CalculateChannels(ctx context.Context, params *CalculateChannelsParams, body CalculateChannelsJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateChannelsResponse, error) {
-	resp, err := s.client.CalculateChannelsWithResponse(ctx, params, body, reqEditors...)
-	if err != nil {
-		return resp, err
-	}
-	return resp, asRoxyError(resp)
-}
-
-func (s *HumanDesignService) CalculateConnection(ctx context.Context, params *CalculateConnectionParams, body CalculateConnectionJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateConnectionResponse, error) {
-	resp, err := s.client.CalculateConnectionWithResponse(ctx, params, body, reqEditors...)
-	if err != nil {
-		return resp, err
-	}
-	return resp, asRoxyError(resp)
-}
-
-func (s *HumanDesignService) CalculateGates(ctx context.Context, params *CalculateGatesParams, body CalculateGatesJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateGatesResponse, error) {
-	resp, err := s.client.CalculateGatesWithResponse(ctx, params, body, reqEditors...)
-	if err != nil {
-		return resp, err
-	}
-	return resp, asRoxyError(resp)
-}
-
-func (s *HumanDesignService) CalculatePenta(ctx context.Context, params *CalculatePentaParams, body CalculatePentaJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculatePentaResponse, error) {
-	resp, err := s.client.CalculatePentaWithResponse(ctx, params, body, reqEditors...)
-	if err != nil {
-		return resp, err
-	}
-	return resp, asRoxyError(resp)
-}
-
-func (s *HumanDesignService) CalculateProfile(ctx context.Context, params *CalculateProfileParams, body CalculateProfileJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateProfileResponse, error) {
-	resp, err := s.client.CalculateProfileWithResponse(ctx, params, body, reqEditors...)
-	if err != nil {
-		return resp, err
-	}
-	return resp, asRoxyError(resp)
-}
-
-func (s *HumanDesignService) CalculateType(ctx context.Context, params *CalculateTypeParams, body CalculateTypeJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateTypeResponse, error) {
-	resp, err := s.client.CalculateTypeWithResponse(ctx, params, body, reqEditors...)
-	if err != nil {
-		return resp, err
-	}
-	return resp, asRoxyError(resp)
-}
-
-func (s *HumanDesignService) CalculateVariables(ctx context.Context, params *CalculateVariablesParams, body CalculateVariablesJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateVariablesResponse, error) {
-	resp, err := s.client.CalculateVariablesWithResponse(ctx, params, body, reqEditors...)
-	if err != nil {
-		return resp, err
-	}
-	return resp, asRoxyError(resp)
-}
-
-func (s *HumanDesignService) GenerateBodygraph(ctx context.Context, params *GenerateBodygraphParams, body GenerateBodygraphJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateBodygraphResponse, error) {
-	resp, err := s.client.GenerateBodygraphWithResponse(ctx, params, body, reqEditors...)
-	if err != nil {
-		return resp, err
-	}
-	return resp, asRoxyError(resp)
-}
-
-func (s *HumanDesignService) GenerateTransit(ctx context.Context, params *GenerateTransitParams, body GenerateTransitJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateTransitResponse, error) {
-	resp, err := s.client.GenerateTransitWithResponse(ctx, params, body, reqEditors...)
-	if err != nil {
-		return resp, err
-	}
-	return resp, asRoxyError(resp)
-}
-
-func (s *HumanDesignService) GetCenter(ctx context.Context, id GetCenterParamsID, params *GetCenterParams, reqEditors ...RequestEditorFn) (*GetCenterResponse, error) {
-	resp, err := s.client.GetCenterWithResponse(ctx, id, params, reqEditors...)
-	if err != nil {
-		return resp, err
-	}
-	return resp, asRoxyError(resp)
-}
-
-func (s *HumanDesignService) GetGate(ctx context.Context, number int, params *GetGateParams, reqEditors ...RequestEditorFn) (*GetGateResponse, error) {
-	resp, err := s.client.GetGateWithResponse(ctx, number, params, reqEditors...)
-	if err != nil {
-		return resp, err
-	}
-	return resp, asRoxyError(resp)
-}
-
-// ForecastService groups the forecast endpoints.
-type ForecastService struct{ client *ClientWithResponses }
-
-func (s *ForecastService) FindSignificantDates(ctx context.Context, params *FindSignificantDatesParams, body FindSignificantDatesJSONRequestBody, reqEditors ...RequestEditorFn) (*FindSignificantDatesResponse, error) {
-	resp, err := s.client.FindSignificantDatesWithResponse(ctx, params, body, reqEditors...)
-	if err != nil {
-		return resp, err
-	}
-	return resp, asRoxyError(resp)
-}
-
-func (s *ForecastService) ForecastSolarReturn(ctx context.Context, params *ForecastSolarReturnParams, body ForecastSolarReturnJSONRequestBody, reqEditors ...RequestEditorFn) (*ForecastSolarReturnResponse, error) {
-	resp, err := s.client.ForecastSolarReturnWithResponse(ctx, params, body, reqEditors...)
-	if err != nil {
-		return resp, err
-	}
-	return resp, asRoxyError(resp)
-}
-
-func (s *ForecastService) ForecastTransits(ctx context.Context, params *ForecastTransitsParams, body ForecastTransitsJSONRequestBody, reqEditors ...RequestEditorFn) (*ForecastTransitsResponse, error) {
-	resp, err := s.client.ForecastTransitsWithResponse(ctx, params, body, reqEditors...)
-	if err != nil {
-		return resp, err
-	}
-	return resp, asRoxyError(resp)
-}
-
-func (s *ForecastService) GenerateDigest(ctx context.Context, params *GenerateDigestParams, body GenerateDigestJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateDigestResponse, error) {
-	resp, err := s.client.GenerateDigestWithResponse(ctx, params, body, reqEditors...)
-	if err != nil {
-		return resp, err
-	}
-	return resp, asRoxyError(resp)
-}
-
-func (s *ForecastService) GenerateTimeline(ctx context.Context, params *GenerateTimelineParams, body GenerateTimelineJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateTimelineResponse, error) {
-	resp, err := s.client.GenerateTimelineWithResponse(ctx, params, body, reqEditors...)
 	if err != nil {
 		return resp, err
 	}
