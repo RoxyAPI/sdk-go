@@ -10093,6 +10093,27 @@ func (e GetCurrentDashaParamsLang) Valid() bool {
 	}
 }
 
+// Defines values for GetCurrentDashaJSONBodyAyanamsa.
+const (
+	GetCurrentDashaJSONBodyAyanamsaKpNewcomb GetCurrentDashaJSONBodyAyanamsa = "kp-newcomb"
+	GetCurrentDashaJSONBodyAyanamsaKpOld     GetCurrentDashaJSONBodyAyanamsa = "kp-old"
+	GetCurrentDashaJSONBodyAyanamsaLahiri    GetCurrentDashaJSONBodyAyanamsa = "lahiri"
+)
+
+// Valid indicates whether the value is a known member of the GetCurrentDashaJSONBodyAyanamsa enum.
+func (e GetCurrentDashaJSONBodyAyanamsa) Valid() bool {
+	switch e {
+	case GetCurrentDashaJSONBodyAyanamsaKpNewcomb:
+		return true
+	case GetCurrentDashaJSONBodyAyanamsaKpOld:
+		return true
+	case GetCurrentDashaJSONBodyAyanamsaLahiri:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for GetCurrentDasha200JSONResponseBodyAntardashaMahadashaLord.
 const (
 	GetCurrentDasha200JSONResponseBodyAntardashaMahadashaLordJupiter GetCurrentDasha200JSONResponseBodyAntardashaMahadashaLord = "Jupiter"
@@ -10165,6 +10186,27 @@ func (e GetCurrentDasha200JSONResponseBodyAntardashaPlanet) Valid() bool {
 	case GetCurrentDasha200JSONResponseBodyAntardashaPlanetSun:
 		return true
 	case GetCurrentDasha200JSONResponseBodyAntardashaPlanetVenus:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetCurrentDasha200JSONResponseBodyAyanamsaType.
+const (
+	GetCurrentDasha200JSONResponseBodyAyanamsaTypeKpNewcomb GetCurrentDasha200JSONResponseBodyAyanamsaType = "kp-newcomb"
+	GetCurrentDasha200JSONResponseBodyAyanamsaTypeKpOld     GetCurrentDasha200JSONResponseBodyAyanamsaType = "kp-old"
+	GetCurrentDasha200JSONResponseBodyAyanamsaTypeLahiri    GetCurrentDasha200JSONResponseBodyAyanamsaType = "lahiri"
+)
+
+// Valid indicates whether the value is a known member of the GetCurrentDasha200JSONResponseBodyAyanamsaType enum.
+func (e GetCurrentDasha200JSONResponseBodyAyanamsaType) Valid() bool {
+	switch e {
+	case GetCurrentDasha200JSONResponseBodyAyanamsaTypeKpNewcomb:
+		return true
+	case GetCurrentDasha200JSONResponseBodyAyanamsaTypeKpOld:
+		return true
+	case GetCurrentDasha200JSONResponseBodyAyanamsaTypeLahiri:
 		return true
 	default:
 		return false
@@ -10366,6 +10408,162 @@ func (e GetCurrentDasha200JSONResponseBodyPratyantardashaPlanet) Valid() bool {
 	}
 }
 
+// Defines values for GetCurrentDasha200JSONResponseBodySookshmaDashaAntardashaLord.
+const (
+	GetCurrentDasha200JSONResponseBodySookshmaDashaAntardashaLordJupiter GetCurrentDasha200JSONResponseBodySookshmaDashaAntardashaLord = "Jupiter"
+	GetCurrentDasha200JSONResponseBodySookshmaDashaAntardashaLordKetu    GetCurrentDasha200JSONResponseBodySookshmaDashaAntardashaLord = "Ketu"
+	GetCurrentDasha200JSONResponseBodySookshmaDashaAntardashaLordMars    GetCurrentDasha200JSONResponseBodySookshmaDashaAntardashaLord = "Mars"
+	GetCurrentDasha200JSONResponseBodySookshmaDashaAntardashaLordMercury GetCurrentDasha200JSONResponseBodySookshmaDashaAntardashaLord = "Mercury"
+	GetCurrentDasha200JSONResponseBodySookshmaDashaAntardashaLordMoon    GetCurrentDasha200JSONResponseBodySookshmaDashaAntardashaLord = "Moon"
+	GetCurrentDasha200JSONResponseBodySookshmaDashaAntardashaLordRahu    GetCurrentDasha200JSONResponseBodySookshmaDashaAntardashaLord = "Rahu"
+	GetCurrentDasha200JSONResponseBodySookshmaDashaAntardashaLordSaturn  GetCurrentDasha200JSONResponseBodySookshmaDashaAntardashaLord = "Saturn"
+	GetCurrentDasha200JSONResponseBodySookshmaDashaAntardashaLordSun     GetCurrentDasha200JSONResponseBodySookshmaDashaAntardashaLord = "Sun"
+	GetCurrentDasha200JSONResponseBodySookshmaDashaAntardashaLordVenus   GetCurrentDasha200JSONResponseBodySookshmaDashaAntardashaLord = "Venus"
+)
+
+// Valid indicates whether the value is a known member of the GetCurrentDasha200JSONResponseBodySookshmaDashaAntardashaLord enum.
+func (e GetCurrentDasha200JSONResponseBodySookshmaDashaAntardashaLord) Valid() bool {
+	switch e {
+	case GetCurrentDasha200JSONResponseBodySookshmaDashaAntardashaLordJupiter:
+		return true
+	case GetCurrentDasha200JSONResponseBodySookshmaDashaAntardashaLordKetu:
+		return true
+	case GetCurrentDasha200JSONResponseBodySookshmaDashaAntardashaLordMars:
+		return true
+	case GetCurrentDasha200JSONResponseBodySookshmaDashaAntardashaLordMercury:
+		return true
+	case GetCurrentDasha200JSONResponseBodySookshmaDashaAntardashaLordMoon:
+		return true
+	case GetCurrentDasha200JSONResponseBodySookshmaDashaAntardashaLordRahu:
+		return true
+	case GetCurrentDasha200JSONResponseBodySookshmaDashaAntardashaLordSaturn:
+		return true
+	case GetCurrentDasha200JSONResponseBodySookshmaDashaAntardashaLordSun:
+		return true
+	case GetCurrentDasha200JSONResponseBodySookshmaDashaAntardashaLordVenus:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetCurrentDasha200JSONResponseBodySookshmaDashaMahadashaLord.
+const (
+	GetCurrentDasha200JSONResponseBodySookshmaDashaMahadashaLordJupiter GetCurrentDasha200JSONResponseBodySookshmaDashaMahadashaLord = "Jupiter"
+	GetCurrentDasha200JSONResponseBodySookshmaDashaMahadashaLordKetu    GetCurrentDasha200JSONResponseBodySookshmaDashaMahadashaLord = "Ketu"
+	GetCurrentDasha200JSONResponseBodySookshmaDashaMahadashaLordMars    GetCurrentDasha200JSONResponseBodySookshmaDashaMahadashaLord = "Mars"
+	GetCurrentDasha200JSONResponseBodySookshmaDashaMahadashaLordMercury GetCurrentDasha200JSONResponseBodySookshmaDashaMahadashaLord = "Mercury"
+	GetCurrentDasha200JSONResponseBodySookshmaDashaMahadashaLordMoon    GetCurrentDasha200JSONResponseBodySookshmaDashaMahadashaLord = "Moon"
+	GetCurrentDasha200JSONResponseBodySookshmaDashaMahadashaLordRahu    GetCurrentDasha200JSONResponseBodySookshmaDashaMahadashaLord = "Rahu"
+	GetCurrentDasha200JSONResponseBodySookshmaDashaMahadashaLordSaturn  GetCurrentDasha200JSONResponseBodySookshmaDashaMahadashaLord = "Saturn"
+	GetCurrentDasha200JSONResponseBodySookshmaDashaMahadashaLordSun     GetCurrentDasha200JSONResponseBodySookshmaDashaMahadashaLord = "Sun"
+	GetCurrentDasha200JSONResponseBodySookshmaDashaMahadashaLordVenus   GetCurrentDasha200JSONResponseBodySookshmaDashaMahadashaLord = "Venus"
+)
+
+// Valid indicates whether the value is a known member of the GetCurrentDasha200JSONResponseBodySookshmaDashaMahadashaLord enum.
+func (e GetCurrentDasha200JSONResponseBodySookshmaDashaMahadashaLord) Valid() bool {
+	switch e {
+	case GetCurrentDasha200JSONResponseBodySookshmaDashaMahadashaLordJupiter:
+		return true
+	case GetCurrentDasha200JSONResponseBodySookshmaDashaMahadashaLordKetu:
+		return true
+	case GetCurrentDasha200JSONResponseBodySookshmaDashaMahadashaLordMars:
+		return true
+	case GetCurrentDasha200JSONResponseBodySookshmaDashaMahadashaLordMercury:
+		return true
+	case GetCurrentDasha200JSONResponseBodySookshmaDashaMahadashaLordMoon:
+		return true
+	case GetCurrentDasha200JSONResponseBodySookshmaDashaMahadashaLordRahu:
+		return true
+	case GetCurrentDasha200JSONResponseBodySookshmaDashaMahadashaLordSaturn:
+		return true
+	case GetCurrentDasha200JSONResponseBodySookshmaDashaMahadashaLordSun:
+		return true
+	case GetCurrentDasha200JSONResponseBodySookshmaDashaMahadashaLordVenus:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetCurrentDasha200JSONResponseBodySookshmaDashaPlanet.
+const (
+	GetCurrentDasha200JSONResponseBodySookshmaDashaPlanetJupiter GetCurrentDasha200JSONResponseBodySookshmaDashaPlanet = "Jupiter"
+	GetCurrentDasha200JSONResponseBodySookshmaDashaPlanetKetu    GetCurrentDasha200JSONResponseBodySookshmaDashaPlanet = "Ketu"
+	GetCurrentDasha200JSONResponseBodySookshmaDashaPlanetMars    GetCurrentDasha200JSONResponseBodySookshmaDashaPlanet = "Mars"
+	GetCurrentDasha200JSONResponseBodySookshmaDashaPlanetMercury GetCurrentDasha200JSONResponseBodySookshmaDashaPlanet = "Mercury"
+	GetCurrentDasha200JSONResponseBodySookshmaDashaPlanetMoon    GetCurrentDasha200JSONResponseBodySookshmaDashaPlanet = "Moon"
+	GetCurrentDasha200JSONResponseBodySookshmaDashaPlanetRahu    GetCurrentDasha200JSONResponseBodySookshmaDashaPlanet = "Rahu"
+	GetCurrentDasha200JSONResponseBodySookshmaDashaPlanetSaturn  GetCurrentDasha200JSONResponseBodySookshmaDashaPlanet = "Saturn"
+	GetCurrentDasha200JSONResponseBodySookshmaDashaPlanetSun     GetCurrentDasha200JSONResponseBodySookshmaDashaPlanet = "Sun"
+	GetCurrentDasha200JSONResponseBodySookshmaDashaPlanetVenus   GetCurrentDasha200JSONResponseBodySookshmaDashaPlanet = "Venus"
+)
+
+// Valid indicates whether the value is a known member of the GetCurrentDasha200JSONResponseBodySookshmaDashaPlanet enum.
+func (e GetCurrentDasha200JSONResponseBodySookshmaDashaPlanet) Valid() bool {
+	switch e {
+	case GetCurrentDasha200JSONResponseBodySookshmaDashaPlanetJupiter:
+		return true
+	case GetCurrentDasha200JSONResponseBodySookshmaDashaPlanetKetu:
+		return true
+	case GetCurrentDasha200JSONResponseBodySookshmaDashaPlanetMars:
+		return true
+	case GetCurrentDasha200JSONResponseBodySookshmaDashaPlanetMercury:
+		return true
+	case GetCurrentDasha200JSONResponseBodySookshmaDashaPlanetMoon:
+		return true
+	case GetCurrentDasha200JSONResponseBodySookshmaDashaPlanetRahu:
+		return true
+	case GetCurrentDasha200JSONResponseBodySookshmaDashaPlanetSaturn:
+		return true
+	case GetCurrentDasha200JSONResponseBodySookshmaDashaPlanetSun:
+		return true
+	case GetCurrentDasha200JSONResponseBodySookshmaDashaPlanetVenus:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetCurrentDasha200JSONResponseBodySookshmaDashaPratyantardashaLord.
+const (
+	GetCurrentDasha200JSONResponseBodySookshmaDashaPratyantardashaLordJupiter GetCurrentDasha200JSONResponseBodySookshmaDashaPratyantardashaLord = "Jupiter"
+	GetCurrentDasha200JSONResponseBodySookshmaDashaPratyantardashaLordKetu    GetCurrentDasha200JSONResponseBodySookshmaDashaPratyantardashaLord = "Ketu"
+	GetCurrentDasha200JSONResponseBodySookshmaDashaPratyantardashaLordMars    GetCurrentDasha200JSONResponseBodySookshmaDashaPratyantardashaLord = "Mars"
+	GetCurrentDasha200JSONResponseBodySookshmaDashaPratyantardashaLordMercury GetCurrentDasha200JSONResponseBodySookshmaDashaPratyantardashaLord = "Mercury"
+	GetCurrentDasha200JSONResponseBodySookshmaDashaPratyantardashaLordMoon    GetCurrentDasha200JSONResponseBodySookshmaDashaPratyantardashaLord = "Moon"
+	GetCurrentDasha200JSONResponseBodySookshmaDashaPratyantardashaLordRahu    GetCurrentDasha200JSONResponseBodySookshmaDashaPratyantardashaLord = "Rahu"
+	GetCurrentDasha200JSONResponseBodySookshmaDashaPratyantardashaLordSaturn  GetCurrentDasha200JSONResponseBodySookshmaDashaPratyantardashaLord = "Saturn"
+	GetCurrentDasha200JSONResponseBodySookshmaDashaPratyantardashaLordSun     GetCurrentDasha200JSONResponseBodySookshmaDashaPratyantardashaLord = "Sun"
+	GetCurrentDasha200JSONResponseBodySookshmaDashaPratyantardashaLordVenus   GetCurrentDasha200JSONResponseBodySookshmaDashaPratyantardashaLord = "Venus"
+)
+
+// Valid indicates whether the value is a known member of the GetCurrentDasha200JSONResponseBodySookshmaDashaPratyantardashaLord enum.
+func (e GetCurrentDasha200JSONResponseBodySookshmaDashaPratyantardashaLord) Valid() bool {
+	switch e {
+	case GetCurrentDasha200JSONResponseBodySookshmaDashaPratyantardashaLordJupiter:
+		return true
+	case GetCurrentDasha200JSONResponseBodySookshmaDashaPratyantardashaLordKetu:
+		return true
+	case GetCurrentDasha200JSONResponseBodySookshmaDashaPratyantardashaLordMars:
+		return true
+	case GetCurrentDasha200JSONResponseBodySookshmaDashaPratyantardashaLordMercury:
+		return true
+	case GetCurrentDasha200JSONResponseBodySookshmaDashaPratyantardashaLordMoon:
+		return true
+	case GetCurrentDasha200JSONResponseBodySookshmaDashaPratyantardashaLordRahu:
+		return true
+	case GetCurrentDasha200JSONResponseBodySookshmaDashaPratyantardashaLordSaturn:
+		return true
+	case GetCurrentDasha200JSONResponseBodySookshmaDashaPratyantardashaLordSun:
+		return true
+	case GetCurrentDasha200JSONResponseBodySookshmaDashaPratyantardashaLordVenus:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for GetMajorDashasParamsLang.
 const (
 	GetMajorDashasParamsLangDe GetMajorDashasParamsLang = "de"
@@ -10396,6 +10594,48 @@ func (e GetMajorDashasParamsLang) Valid() bool {
 	case GetMajorDashasParamsLangRu:
 		return true
 	case GetMajorDashasParamsLangTr:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetMajorDashasJSONBodyAyanamsa.
+const (
+	GetMajorDashasJSONBodyAyanamsaKpNewcomb GetMajorDashasJSONBodyAyanamsa = "kp-newcomb"
+	GetMajorDashasJSONBodyAyanamsaKpOld     GetMajorDashasJSONBodyAyanamsa = "kp-old"
+	GetMajorDashasJSONBodyAyanamsaLahiri    GetMajorDashasJSONBodyAyanamsa = "lahiri"
+)
+
+// Valid indicates whether the value is a known member of the GetMajorDashasJSONBodyAyanamsa enum.
+func (e GetMajorDashasJSONBodyAyanamsa) Valid() bool {
+	switch e {
+	case GetMajorDashasJSONBodyAyanamsaKpNewcomb:
+		return true
+	case GetMajorDashasJSONBodyAyanamsaKpOld:
+		return true
+	case GetMajorDashasJSONBodyAyanamsaLahiri:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetMajorDashas200JSONResponseBodyAyanamsaType.
+const (
+	GetMajorDashas200JSONResponseBodyAyanamsaTypeKpNewcomb GetMajorDashas200JSONResponseBodyAyanamsaType = "kp-newcomb"
+	GetMajorDashas200JSONResponseBodyAyanamsaTypeKpOld     GetMajorDashas200JSONResponseBodyAyanamsaType = "kp-old"
+	GetMajorDashas200JSONResponseBodyAyanamsaTypeLahiri    GetMajorDashas200JSONResponseBodyAyanamsaType = "lahiri"
+)
+
+// Valid indicates whether the value is a known member of the GetMajorDashas200JSONResponseBodyAyanamsaType enum.
+func (e GetMajorDashas200JSONResponseBodyAyanamsaType) Valid() bool {
+	switch e {
+	case GetMajorDashas200JSONResponseBodyAyanamsaTypeKpNewcomb:
+		return true
+	case GetMajorDashas200JSONResponseBodyAyanamsaTypeKpOld:
+		return true
+	case GetMajorDashas200JSONResponseBodyAyanamsaTypeLahiri:
 		return true
 	default:
 		return false
@@ -10555,6 +10795,27 @@ func (e GetSubDashasParamsMahadasha) Valid() bool {
 	}
 }
 
+// Defines values for GetSubDashasJSONBodyAyanamsa.
+const (
+	GetSubDashasJSONBodyAyanamsaKpNewcomb GetSubDashasJSONBodyAyanamsa = "kp-newcomb"
+	GetSubDashasJSONBodyAyanamsaKpOld     GetSubDashasJSONBodyAyanamsa = "kp-old"
+	GetSubDashasJSONBodyAyanamsaLahiri    GetSubDashasJSONBodyAyanamsa = "lahiri"
+)
+
+// Valid indicates whether the value is a known member of the GetSubDashasJSONBodyAyanamsa enum.
+func (e GetSubDashasJSONBodyAyanamsa) Valid() bool {
+	switch e {
+	case GetSubDashasJSONBodyAyanamsaKpNewcomb:
+		return true
+	case GetSubDashasJSONBodyAyanamsaKpOld:
+		return true
+	case GetSubDashasJSONBodyAyanamsaLahiri:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for GetSubDashas200JSONResponseBodyAntardashasMahadashaLord.
 const (
 	GetSubDashas200JSONResponseBodyAntardashasMahadashaLordJupiter GetSubDashas200JSONResponseBodyAntardashasMahadashaLord = "Jupiter"
@@ -10633,6 +10894,27 @@ func (e GetSubDashas200JSONResponseBodyAntardashasPlanet) Valid() bool {
 	}
 }
 
+// Defines values for GetSubDashas200JSONResponseBodyAyanamsaType.
+const (
+	GetSubDashas200JSONResponseBodyAyanamsaTypeKpNewcomb GetSubDashas200JSONResponseBodyAyanamsaType = "kp-newcomb"
+	GetSubDashas200JSONResponseBodyAyanamsaTypeKpOld     GetSubDashas200JSONResponseBodyAyanamsaType = "kp-old"
+	GetSubDashas200JSONResponseBodyAyanamsaTypeLahiri    GetSubDashas200JSONResponseBodyAyanamsaType = "lahiri"
+)
+
+// Valid indicates whether the value is a known member of the GetSubDashas200JSONResponseBodyAyanamsaType enum.
+func (e GetSubDashas200JSONResponseBodyAyanamsaType) Valid() bool {
+	switch e {
+	case GetSubDashas200JSONResponseBodyAyanamsaTypeKpNewcomb:
+		return true
+	case GetSubDashas200JSONResponseBodyAyanamsaTypeKpOld:
+		return true
+	case GetSubDashas200JSONResponseBodyAyanamsaTypeLahiri:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for GetSubDashas200JSONResponseBodyMahadashaLord.
 const (
 	GetSubDashas200JSONResponseBodyMahadashaLordJupiter GetSubDashas200JSONResponseBodyMahadashaLord = "Jupiter"
@@ -10705,6 +10987,1020 @@ func (e GetSubDashas200JSONResponseBodyMahadashaPeriodPlanet) Valid() bool {
 	case GetSubDashas200JSONResponseBodyMahadashaPeriodPlanetSun:
 		return true
 	case GetSubDashas200JSONResponseBodyMahadashaPeriodPlanetVenus:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetPratyantardashasParamsLang.
+const (
+	GetPratyantardashasParamsLangDe GetPratyantardashasParamsLang = "de"
+	GetPratyantardashasParamsLangEn GetPratyantardashasParamsLang = "en"
+	GetPratyantardashasParamsLangEs GetPratyantardashasParamsLang = "es"
+	GetPratyantardashasParamsLangFr GetPratyantardashasParamsLang = "fr"
+	GetPratyantardashasParamsLangHi GetPratyantardashasParamsLang = "hi"
+	GetPratyantardashasParamsLangPt GetPratyantardashasParamsLang = "pt"
+	GetPratyantardashasParamsLangRu GetPratyantardashasParamsLang = "ru"
+	GetPratyantardashasParamsLangTr GetPratyantardashasParamsLang = "tr"
+)
+
+// Valid indicates whether the value is a known member of the GetPratyantardashasParamsLang enum.
+func (e GetPratyantardashasParamsLang) Valid() bool {
+	switch e {
+	case GetPratyantardashasParamsLangDe:
+		return true
+	case GetPratyantardashasParamsLangEn:
+		return true
+	case GetPratyantardashasParamsLangEs:
+		return true
+	case GetPratyantardashasParamsLangFr:
+		return true
+	case GetPratyantardashasParamsLangHi:
+		return true
+	case GetPratyantardashasParamsLangPt:
+		return true
+	case GetPratyantardashasParamsLangRu:
+		return true
+	case GetPratyantardashasParamsLangTr:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetPratyantardashasParamsMahadasha.
+const (
+	GetPratyantardashasParamsMahadashaJupiter GetPratyantardashasParamsMahadasha = "Jupiter"
+	GetPratyantardashasParamsMahadashaKetu    GetPratyantardashasParamsMahadasha = "Ketu"
+	GetPratyantardashasParamsMahadashaMars    GetPratyantardashasParamsMahadasha = "Mars"
+	GetPratyantardashasParamsMahadashaMercury GetPratyantardashasParamsMahadasha = "Mercury"
+	GetPratyantardashasParamsMahadashaMoon    GetPratyantardashasParamsMahadasha = "Moon"
+	GetPratyantardashasParamsMahadashaRahu    GetPratyantardashasParamsMahadasha = "Rahu"
+	GetPratyantardashasParamsMahadashaSaturn  GetPratyantardashasParamsMahadasha = "Saturn"
+	GetPratyantardashasParamsMahadashaSun     GetPratyantardashasParamsMahadasha = "Sun"
+	GetPratyantardashasParamsMahadashaVenus   GetPratyantardashasParamsMahadasha = "Venus"
+)
+
+// Valid indicates whether the value is a known member of the GetPratyantardashasParamsMahadasha enum.
+func (e GetPratyantardashasParamsMahadasha) Valid() bool {
+	switch e {
+	case GetPratyantardashasParamsMahadashaJupiter:
+		return true
+	case GetPratyantardashasParamsMahadashaKetu:
+		return true
+	case GetPratyantardashasParamsMahadashaMars:
+		return true
+	case GetPratyantardashasParamsMahadashaMercury:
+		return true
+	case GetPratyantardashasParamsMahadashaMoon:
+		return true
+	case GetPratyantardashasParamsMahadashaRahu:
+		return true
+	case GetPratyantardashasParamsMahadashaSaturn:
+		return true
+	case GetPratyantardashasParamsMahadashaSun:
+		return true
+	case GetPratyantardashasParamsMahadashaVenus:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetPratyantardashasParamsAntardasha.
+const (
+	GetPratyantardashasParamsAntardashaJupiter GetPratyantardashasParamsAntardasha = "Jupiter"
+	GetPratyantardashasParamsAntardashaKetu    GetPratyantardashasParamsAntardasha = "Ketu"
+	GetPratyantardashasParamsAntardashaMars    GetPratyantardashasParamsAntardasha = "Mars"
+	GetPratyantardashasParamsAntardashaMercury GetPratyantardashasParamsAntardasha = "Mercury"
+	GetPratyantardashasParamsAntardashaMoon    GetPratyantardashasParamsAntardasha = "Moon"
+	GetPratyantardashasParamsAntardashaRahu    GetPratyantardashasParamsAntardasha = "Rahu"
+	GetPratyantardashasParamsAntardashaSaturn  GetPratyantardashasParamsAntardasha = "Saturn"
+	GetPratyantardashasParamsAntardashaSun     GetPratyantardashasParamsAntardasha = "Sun"
+	GetPratyantardashasParamsAntardashaVenus   GetPratyantardashasParamsAntardasha = "Venus"
+)
+
+// Valid indicates whether the value is a known member of the GetPratyantardashasParamsAntardasha enum.
+func (e GetPratyantardashasParamsAntardasha) Valid() bool {
+	switch e {
+	case GetPratyantardashasParamsAntardashaJupiter:
+		return true
+	case GetPratyantardashasParamsAntardashaKetu:
+		return true
+	case GetPratyantardashasParamsAntardashaMars:
+		return true
+	case GetPratyantardashasParamsAntardashaMercury:
+		return true
+	case GetPratyantardashasParamsAntardashaMoon:
+		return true
+	case GetPratyantardashasParamsAntardashaRahu:
+		return true
+	case GetPratyantardashasParamsAntardashaSaturn:
+		return true
+	case GetPratyantardashasParamsAntardashaSun:
+		return true
+	case GetPratyantardashasParamsAntardashaVenus:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetPratyantardashasJSONBodyAyanamsa.
+const (
+	GetPratyantardashasJSONBodyAyanamsaKpNewcomb GetPratyantardashasJSONBodyAyanamsa = "kp-newcomb"
+	GetPratyantardashasJSONBodyAyanamsaKpOld     GetPratyantardashasJSONBodyAyanamsa = "kp-old"
+	GetPratyantardashasJSONBodyAyanamsaLahiri    GetPratyantardashasJSONBodyAyanamsa = "lahiri"
+)
+
+// Valid indicates whether the value is a known member of the GetPratyantardashasJSONBodyAyanamsa enum.
+func (e GetPratyantardashasJSONBodyAyanamsa) Valid() bool {
+	switch e {
+	case GetPratyantardashasJSONBodyAyanamsaKpNewcomb:
+		return true
+	case GetPratyantardashasJSONBodyAyanamsaKpOld:
+		return true
+	case GetPratyantardashasJSONBodyAyanamsaLahiri:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetPratyantardashas200JSONResponseBodyAntardashaLord.
+const (
+	GetPratyantardashas200JSONResponseBodyAntardashaLordJupiter GetPratyantardashas200JSONResponseBodyAntardashaLord = "Jupiter"
+	GetPratyantardashas200JSONResponseBodyAntardashaLordKetu    GetPratyantardashas200JSONResponseBodyAntardashaLord = "Ketu"
+	GetPratyantardashas200JSONResponseBodyAntardashaLordMars    GetPratyantardashas200JSONResponseBodyAntardashaLord = "Mars"
+	GetPratyantardashas200JSONResponseBodyAntardashaLordMercury GetPratyantardashas200JSONResponseBodyAntardashaLord = "Mercury"
+	GetPratyantardashas200JSONResponseBodyAntardashaLordMoon    GetPratyantardashas200JSONResponseBodyAntardashaLord = "Moon"
+	GetPratyantardashas200JSONResponseBodyAntardashaLordRahu    GetPratyantardashas200JSONResponseBodyAntardashaLord = "Rahu"
+	GetPratyantardashas200JSONResponseBodyAntardashaLordSaturn  GetPratyantardashas200JSONResponseBodyAntardashaLord = "Saturn"
+	GetPratyantardashas200JSONResponseBodyAntardashaLordSun     GetPratyantardashas200JSONResponseBodyAntardashaLord = "Sun"
+	GetPratyantardashas200JSONResponseBodyAntardashaLordVenus   GetPratyantardashas200JSONResponseBodyAntardashaLord = "Venus"
+)
+
+// Valid indicates whether the value is a known member of the GetPratyantardashas200JSONResponseBodyAntardashaLord enum.
+func (e GetPratyantardashas200JSONResponseBodyAntardashaLord) Valid() bool {
+	switch e {
+	case GetPratyantardashas200JSONResponseBodyAntardashaLordJupiter:
+		return true
+	case GetPratyantardashas200JSONResponseBodyAntardashaLordKetu:
+		return true
+	case GetPratyantardashas200JSONResponseBodyAntardashaLordMars:
+		return true
+	case GetPratyantardashas200JSONResponseBodyAntardashaLordMercury:
+		return true
+	case GetPratyantardashas200JSONResponseBodyAntardashaLordMoon:
+		return true
+	case GetPratyantardashas200JSONResponseBodyAntardashaLordRahu:
+		return true
+	case GetPratyantardashas200JSONResponseBodyAntardashaLordSaturn:
+		return true
+	case GetPratyantardashas200JSONResponseBodyAntardashaLordSun:
+		return true
+	case GetPratyantardashas200JSONResponseBodyAntardashaLordVenus:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetPratyantardashas200JSONResponseBodyAntardashaPeriodMahadashaLord.
+const (
+	GetPratyantardashas200JSONResponseBodyAntardashaPeriodMahadashaLordJupiter GetPratyantardashas200JSONResponseBodyAntardashaPeriodMahadashaLord = "Jupiter"
+	GetPratyantardashas200JSONResponseBodyAntardashaPeriodMahadashaLordKetu    GetPratyantardashas200JSONResponseBodyAntardashaPeriodMahadashaLord = "Ketu"
+	GetPratyantardashas200JSONResponseBodyAntardashaPeriodMahadashaLordMars    GetPratyantardashas200JSONResponseBodyAntardashaPeriodMahadashaLord = "Mars"
+	GetPratyantardashas200JSONResponseBodyAntardashaPeriodMahadashaLordMercury GetPratyantardashas200JSONResponseBodyAntardashaPeriodMahadashaLord = "Mercury"
+	GetPratyantardashas200JSONResponseBodyAntardashaPeriodMahadashaLordMoon    GetPratyantardashas200JSONResponseBodyAntardashaPeriodMahadashaLord = "Moon"
+	GetPratyantardashas200JSONResponseBodyAntardashaPeriodMahadashaLordRahu    GetPratyantardashas200JSONResponseBodyAntardashaPeriodMahadashaLord = "Rahu"
+	GetPratyantardashas200JSONResponseBodyAntardashaPeriodMahadashaLordSaturn  GetPratyantardashas200JSONResponseBodyAntardashaPeriodMahadashaLord = "Saturn"
+	GetPratyantardashas200JSONResponseBodyAntardashaPeriodMahadashaLordSun     GetPratyantardashas200JSONResponseBodyAntardashaPeriodMahadashaLord = "Sun"
+	GetPratyantardashas200JSONResponseBodyAntardashaPeriodMahadashaLordVenus   GetPratyantardashas200JSONResponseBodyAntardashaPeriodMahadashaLord = "Venus"
+)
+
+// Valid indicates whether the value is a known member of the GetPratyantardashas200JSONResponseBodyAntardashaPeriodMahadashaLord enum.
+func (e GetPratyantardashas200JSONResponseBodyAntardashaPeriodMahadashaLord) Valid() bool {
+	switch e {
+	case GetPratyantardashas200JSONResponseBodyAntardashaPeriodMahadashaLordJupiter:
+		return true
+	case GetPratyantardashas200JSONResponseBodyAntardashaPeriodMahadashaLordKetu:
+		return true
+	case GetPratyantardashas200JSONResponseBodyAntardashaPeriodMahadashaLordMars:
+		return true
+	case GetPratyantardashas200JSONResponseBodyAntardashaPeriodMahadashaLordMercury:
+		return true
+	case GetPratyantardashas200JSONResponseBodyAntardashaPeriodMahadashaLordMoon:
+		return true
+	case GetPratyantardashas200JSONResponseBodyAntardashaPeriodMahadashaLordRahu:
+		return true
+	case GetPratyantardashas200JSONResponseBodyAntardashaPeriodMahadashaLordSaturn:
+		return true
+	case GetPratyantardashas200JSONResponseBodyAntardashaPeriodMahadashaLordSun:
+		return true
+	case GetPratyantardashas200JSONResponseBodyAntardashaPeriodMahadashaLordVenus:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetPratyantardashas200JSONResponseBodyAntardashaPeriodPlanet.
+const (
+	GetPratyantardashas200JSONResponseBodyAntardashaPeriodPlanetJupiter GetPratyantardashas200JSONResponseBodyAntardashaPeriodPlanet = "Jupiter"
+	GetPratyantardashas200JSONResponseBodyAntardashaPeriodPlanetKetu    GetPratyantardashas200JSONResponseBodyAntardashaPeriodPlanet = "Ketu"
+	GetPratyantardashas200JSONResponseBodyAntardashaPeriodPlanetMars    GetPratyantardashas200JSONResponseBodyAntardashaPeriodPlanet = "Mars"
+	GetPratyantardashas200JSONResponseBodyAntardashaPeriodPlanetMercury GetPratyantardashas200JSONResponseBodyAntardashaPeriodPlanet = "Mercury"
+	GetPratyantardashas200JSONResponseBodyAntardashaPeriodPlanetMoon    GetPratyantardashas200JSONResponseBodyAntardashaPeriodPlanet = "Moon"
+	GetPratyantardashas200JSONResponseBodyAntardashaPeriodPlanetRahu    GetPratyantardashas200JSONResponseBodyAntardashaPeriodPlanet = "Rahu"
+	GetPratyantardashas200JSONResponseBodyAntardashaPeriodPlanetSaturn  GetPratyantardashas200JSONResponseBodyAntardashaPeriodPlanet = "Saturn"
+	GetPratyantardashas200JSONResponseBodyAntardashaPeriodPlanetSun     GetPratyantardashas200JSONResponseBodyAntardashaPeriodPlanet = "Sun"
+	GetPratyantardashas200JSONResponseBodyAntardashaPeriodPlanetVenus   GetPratyantardashas200JSONResponseBodyAntardashaPeriodPlanet = "Venus"
+)
+
+// Valid indicates whether the value is a known member of the GetPratyantardashas200JSONResponseBodyAntardashaPeriodPlanet enum.
+func (e GetPratyantardashas200JSONResponseBodyAntardashaPeriodPlanet) Valid() bool {
+	switch e {
+	case GetPratyantardashas200JSONResponseBodyAntardashaPeriodPlanetJupiter:
+		return true
+	case GetPratyantardashas200JSONResponseBodyAntardashaPeriodPlanetKetu:
+		return true
+	case GetPratyantardashas200JSONResponseBodyAntardashaPeriodPlanetMars:
+		return true
+	case GetPratyantardashas200JSONResponseBodyAntardashaPeriodPlanetMercury:
+		return true
+	case GetPratyantardashas200JSONResponseBodyAntardashaPeriodPlanetMoon:
+		return true
+	case GetPratyantardashas200JSONResponseBodyAntardashaPeriodPlanetRahu:
+		return true
+	case GetPratyantardashas200JSONResponseBodyAntardashaPeriodPlanetSaturn:
+		return true
+	case GetPratyantardashas200JSONResponseBodyAntardashaPeriodPlanetSun:
+		return true
+	case GetPratyantardashas200JSONResponseBodyAntardashaPeriodPlanetVenus:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetPratyantardashas200JSONResponseBodyAyanamsaType.
+const (
+	GetPratyantardashas200JSONResponseBodyAyanamsaTypeKpNewcomb GetPratyantardashas200JSONResponseBodyAyanamsaType = "kp-newcomb"
+	GetPratyantardashas200JSONResponseBodyAyanamsaTypeKpOld     GetPratyantardashas200JSONResponseBodyAyanamsaType = "kp-old"
+	GetPratyantardashas200JSONResponseBodyAyanamsaTypeLahiri    GetPratyantardashas200JSONResponseBodyAyanamsaType = "lahiri"
+)
+
+// Valid indicates whether the value is a known member of the GetPratyantardashas200JSONResponseBodyAyanamsaType enum.
+func (e GetPratyantardashas200JSONResponseBodyAyanamsaType) Valid() bool {
+	switch e {
+	case GetPratyantardashas200JSONResponseBodyAyanamsaTypeKpNewcomb:
+		return true
+	case GetPratyantardashas200JSONResponseBodyAyanamsaTypeKpOld:
+		return true
+	case GetPratyantardashas200JSONResponseBodyAyanamsaTypeLahiri:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetPratyantardashas200JSONResponseBodyMahadashaLord.
+const (
+	GetPratyantardashas200JSONResponseBodyMahadashaLordJupiter GetPratyantardashas200JSONResponseBodyMahadashaLord = "Jupiter"
+	GetPratyantardashas200JSONResponseBodyMahadashaLordKetu    GetPratyantardashas200JSONResponseBodyMahadashaLord = "Ketu"
+	GetPratyantardashas200JSONResponseBodyMahadashaLordMars    GetPratyantardashas200JSONResponseBodyMahadashaLord = "Mars"
+	GetPratyantardashas200JSONResponseBodyMahadashaLordMercury GetPratyantardashas200JSONResponseBodyMahadashaLord = "Mercury"
+	GetPratyantardashas200JSONResponseBodyMahadashaLordMoon    GetPratyantardashas200JSONResponseBodyMahadashaLord = "Moon"
+	GetPratyantardashas200JSONResponseBodyMahadashaLordRahu    GetPratyantardashas200JSONResponseBodyMahadashaLord = "Rahu"
+	GetPratyantardashas200JSONResponseBodyMahadashaLordSaturn  GetPratyantardashas200JSONResponseBodyMahadashaLord = "Saturn"
+	GetPratyantardashas200JSONResponseBodyMahadashaLordSun     GetPratyantardashas200JSONResponseBodyMahadashaLord = "Sun"
+	GetPratyantardashas200JSONResponseBodyMahadashaLordVenus   GetPratyantardashas200JSONResponseBodyMahadashaLord = "Venus"
+)
+
+// Valid indicates whether the value is a known member of the GetPratyantardashas200JSONResponseBodyMahadashaLord enum.
+func (e GetPratyantardashas200JSONResponseBodyMahadashaLord) Valid() bool {
+	switch e {
+	case GetPratyantardashas200JSONResponseBodyMahadashaLordJupiter:
+		return true
+	case GetPratyantardashas200JSONResponseBodyMahadashaLordKetu:
+		return true
+	case GetPratyantardashas200JSONResponseBodyMahadashaLordMars:
+		return true
+	case GetPratyantardashas200JSONResponseBodyMahadashaLordMercury:
+		return true
+	case GetPratyantardashas200JSONResponseBodyMahadashaLordMoon:
+		return true
+	case GetPratyantardashas200JSONResponseBodyMahadashaLordRahu:
+		return true
+	case GetPratyantardashas200JSONResponseBodyMahadashaLordSaturn:
+		return true
+	case GetPratyantardashas200JSONResponseBodyMahadashaLordSun:
+		return true
+	case GetPratyantardashas200JSONResponseBodyMahadashaLordVenus:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetPratyantardashas200JSONResponseBodyPratyantardashasAntardashaLord.
+const (
+	GetPratyantardashas200JSONResponseBodyPratyantardashasAntardashaLordJupiter GetPratyantardashas200JSONResponseBodyPratyantardashasAntardashaLord = "Jupiter"
+	GetPratyantardashas200JSONResponseBodyPratyantardashasAntardashaLordKetu    GetPratyantardashas200JSONResponseBodyPratyantardashasAntardashaLord = "Ketu"
+	GetPratyantardashas200JSONResponseBodyPratyantardashasAntardashaLordMars    GetPratyantardashas200JSONResponseBodyPratyantardashasAntardashaLord = "Mars"
+	GetPratyantardashas200JSONResponseBodyPratyantardashasAntardashaLordMercury GetPratyantardashas200JSONResponseBodyPratyantardashasAntardashaLord = "Mercury"
+	GetPratyantardashas200JSONResponseBodyPratyantardashasAntardashaLordMoon    GetPratyantardashas200JSONResponseBodyPratyantardashasAntardashaLord = "Moon"
+	GetPratyantardashas200JSONResponseBodyPratyantardashasAntardashaLordRahu    GetPratyantardashas200JSONResponseBodyPratyantardashasAntardashaLord = "Rahu"
+	GetPratyantardashas200JSONResponseBodyPratyantardashasAntardashaLordSaturn  GetPratyantardashas200JSONResponseBodyPratyantardashasAntardashaLord = "Saturn"
+	GetPratyantardashas200JSONResponseBodyPratyantardashasAntardashaLordSun     GetPratyantardashas200JSONResponseBodyPratyantardashasAntardashaLord = "Sun"
+	GetPratyantardashas200JSONResponseBodyPratyantardashasAntardashaLordVenus   GetPratyantardashas200JSONResponseBodyPratyantardashasAntardashaLord = "Venus"
+)
+
+// Valid indicates whether the value is a known member of the GetPratyantardashas200JSONResponseBodyPratyantardashasAntardashaLord enum.
+func (e GetPratyantardashas200JSONResponseBodyPratyantardashasAntardashaLord) Valid() bool {
+	switch e {
+	case GetPratyantardashas200JSONResponseBodyPratyantardashasAntardashaLordJupiter:
+		return true
+	case GetPratyantardashas200JSONResponseBodyPratyantardashasAntardashaLordKetu:
+		return true
+	case GetPratyantardashas200JSONResponseBodyPratyantardashasAntardashaLordMars:
+		return true
+	case GetPratyantardashas200JSONResponseBodyPratyantardashasAntardashaLordMercury:
+		return true
+	case GetPratyantardashas200JSONResponseBodyPratyantardashasAntardashaLordMoon:
+		return true
+	case GetPratyantardashas200JSONResponseBodyPratyantardashasAntardashaLordRahu:
+		return true
+	case GetPratyantardashas200JSONResponseBodyPratyantardashasAntardashaLordSaturn:
+		return true
+	case GetPratyantardashas200JSONResponseBodyPratyantardashasAntardashaLordSun:
+		return true
+	case GetPratyantardashas200JSONResponseBodyPratyantardashasAntardashaLordVenus:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetPratyantardashas200JSONResponseBodyPratyantardashasMahadashaLord.
+const (
+	GetPratyantardashas200JSONResponseBodyPratyantardashasMahadashaLordJupiter GetPratyantardashas200JSONResponseBodyPratyantardashasMahadashaLord = "Jupiter"
+	GetPratyantardashas200JSONResponseBodyPratyantardashasMahadashaLordKetu    GetPratyantardashas200JSONResponseBodyPratyantardashasMahadashaLord = "Ketu"
+	GetPratyantardashas200JSONResponseBodyPratyantardashasMahadashaLordMars    GetPratyantardashas200JSONResponseBodyPratyantardashasMahadashaLord = "Mars"
+	GetPratyantardashas200JSONResponseBodyPratyantardashasMahadashaLordMercury GetPratyantardashas200JSONResponseBodyPratyantardashasMahadashaLord = "Mercury"
+	GetPratyantardashas200JSONResponseBodyPratyantardashasMahadashaLordMoon    GetPratyantardashas200JSONResponseBodyPratyantardashasMahadashaLord = "Moon"
+	GetPratyantardashas200JSONResponseBodyPratyantardashasMahadashaLordRahu    GetPratyantardashas200JSONResponseBodyPratyantardashasMahadashaLord = "Rahu"
+	GetPratyantardashas200JSONResponseBodyPratyantardashasMahadashaLordSaturn  GetPratyantardashas200JSONResponseBodyPratyantardashasMahadashaLord = "Saturn"
+	GetPratyantardashas200JSONResponseBodyPratyantardashasMahadashaLordSun     GetPratyantardashas200JSONResponseBodyPratyantardashasMahadashaLord = "Sun"
+	GetPratyantardashas200JSONResponseBodyPratyantardashasMahadashaLordVenus   GetPratyantardashas200JSONResponseBodyPratyantardashasMahadashaLord = "Venus"
+)
+
+// Valid indicates whether the value is a known member of the GetPratyantardashas200JSONResponseBodyPratyantardashasMahadashaLord enum.
+func (e GetPratyantardashas200JSONResponseBodyPratyantardashasMahadashaLord) Valid() bool {
+	switch e {
+	case GetPratyantardashas200JSONResponseBodyPratyantardashasMahadashaLordJupiter:
+		return true
+	case GetPratyantardashas200JSONResponseBodyPratyantardashasMahadashaLordKetu:
+		return true
+	case GetPratyantardashas200JSONResponseBodyPratyantardashasMahadashaLordMars:
+		return true
+	case GetPratyantardashas200JSONResponseBodyPratyantardashasMahadashaLordMercury:
+		return true
+	case GetPratyantardashas200JSONResponseBodyPratyantardashasMahadashaLordMoon:
+		return true
+	case GetPratyantardashas200JSONResponseBodyPratyantardashasMahadashaLordRahu:
+		return true
+	case GetPratyantardashas200JSONResponseBodyPratyantardashasMahadashaLordSaturn:
+		return true
+	case GetPratyantardashas200JSONResponseBodyPratyantardashasMahadashaLordSun:
+		return true
+	case GetPratyantardashas200JSONResponseBodyPratyantardashasMahadashaLordVenus:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetPratyantardashas200JSONResponseBodyPratyantardashasPlanet.
+const (
+	GetPratyantardashas200JSONResponseBodyPratyantardashasPlanetJupiter GetPratyantardashas200JSONResponseBodyPratyantardashasPlanet = "Jupiter"
+	GetPratyantardashas200JSONResponseBodyPratyantardashasPlanetKetu    GetPratyantardashas200JSONResponseBodyPratyantardashasPlanet = "Ketu"
+	GetPratyantardashas200JSONResponseBodyPratyantardashasPlanetMars    GetPratyantardashas200JSONResponseBodyPratyantardashasPlanet = "Mars"
+	GetPratyantardashas200JSONResponseBodyPratyantardashasPlanetMercury GetPratyantardashas200JSONResponseBodyPratyantardashasPlanet = "Mercury"
+	GetPratyantardashas200JSONResponseBodyPratyantardashasPlanetMoon    GetPratyantardashas200JSONResponseBodyPratyantardashasPlanet = "Moon"
+	GetPratyantardashas200JSONResponseBodyPratyantardashasPlanetRahu    GetPratyantardashas200JSONResponseBodyPratyantardashasPlanet = "Rahu"
+	GetPratyantardashas200JSONResponseBodyPratyantardashasPlanetSaturn  GetPratyantardashas200JSONResponseBodyPratyantardashasPlanet = "Saturn"
+	GetPratyantardashas200JSONResponseBodyPratyantardashasPlanetSun     GetPratyantardashas200JSONResponseBodyPratyantardashasPlanet = "Sun"
+	GetPratyantardashas200JSONResponseBodyPratyantardashasPlanetVenus   GetPratyantardashas200JSONResponseBodyPratyantardashasPlanet = "Venus"
+)
+
+// Valid indicates whether the value is a known member of the GetPratyantardashas200JSONResponseBodyPratyantardashasPlanet enum.
+func (e GetPratyantardashas200JSONResponseBodyPratyantardashasPlanet) Valid() bool {
+	switch e {
+	case GetPratyantardashas200JSONResponseBodyPratyantardashasPlanetJupiter:
+		return true
+	case GetPratyantardashas200JSONResponseBodyPratyantardashasPlanetKetu:
+		return true
+	case GetPratyantardashas200JSONResponseBodyPratyantardashasPlanetMars:
+		return true
+	case GetPratyantardashas200JSONResponseBodyPratyantardashasPlanetMercury:
+		return true
+	case GetPratyantardashas200JSONResponseBodyPratyantardashasPlanetMoon:
+		return true
+	case GetPratyantardashas200JSONResponseBodyPratyantardashasPlanetRahu:
+		return true
+	case GetPratyantardashas200JSONResponseBodyPratyantardashasPlanetSaturn:
+		return true
+	case GetPratyantardashas200JSONResponseBodyPratyantardashasPlanetSun:
+		return true
+	case GetPratyantardashas200JSONResponseBodyPratyantardashasPlanetVenus:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetSookshmaDashasParamsLang.
+const (
+	GetSookshmaDashasParamsLangDe GetSookshmaDashasParamsLang = "de"
+	GetSookshmaDashasParamsLangEn GetSookshmaDashasParamsLang = "en"
+	GetSookshmaDashasParamsLangEs GetSookshmaDashasParamsLang = "es"
+	GetSookshmaDashasParamsLangFr GetSookshmaDashasParamsLang = "fr"
+	GetSookshmaDashasParamsLangHi GetSookshmaDashasParamsLang = "hi"
+	GetSookshmaDashasParamsLangPt GetSookshmaDashasParamsLang = "pt"
+	GetSookshmaDashasParamsLangRu GetSookshmaDashasParamsLang = "ru"
+	GetSookshmaDashasParamsLangTr GetSookshmaDashasParamsLang = "tr"
+)
+
+// Valid indicates whether the value is a known member of the GetSookshmaDashasParamsLang enum.
+func (e GetSookshmaDashasParamsLang) Valid() bool {
+	switch e {
+	case GetSookshmaDashasParamsLangDe:
+		return true
+	case GetSookshmaDashasParamsLangEn:
+		return true
+	case GetSookshmaDashasParamsLangEs:
+		return true
+	case GetSookshmaDashasParamsLangFr:
+		return true
+	case GetSookshmaDashasParamsLangHi:
+		return true
+	case GetSookshmaDashasParamsLangPt:
+		return true
+	case GetSookshmaDashasParamsLangRu:
+		return true
+	case GetSookshmaDashasParamsLangTr:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetSookshmaDashasParamsMahadasha.
+const (
+	GetSookshmaDashasParamsMahadashaJupiter GetSookshmaDashasParamsMahadasha = "Jupiter"
+	GetSookshmaDashasParamsMahadashaKetu    GetSookshmaDashasParamsMahadasha = "Ketu"
+	GetSookshmaDashasParamsMahadashaMars    GetSookshmaDashasParamsMahadasha = "Mars"
+	GetSookshmaDashasParamsMahadashaMercury GetSookshmaDashasParamsMahadasha = "Mercury"
+	GetSookshmaDashasParamsMahadashaMoon    GetSookshmaDashasParamsMahadasha = "Moon"
+	GetSookshmaDashasParamsMahadashaRahu    GetSookshmaDashasParamsMahadasha = "Rahu"
+	GetSookshmaDashasParamsMahadashaSaturn  GetSookshmaDashasParamsMahadasha = "Saturn"
+	GetSookshmaDashasParamsMahadashaSun     GetSookshmaDashasParamsMahadasha = "Sun"
+	GetSookshmaDashasParamsMahadashaVenus   GetSookshmaDashasParamsMahadasha = "Venus"
+)
+
+// Valid indicates whether the value is a known member of the GetSookshmaDashasParamsMahadasha enum.
+func (e GetSookshmaDashasParamsMahadasha) Valid() bool {
+	switch e {
+	case GetSookshmaDashasParamsMahadashaJupiter:
+		return true
+	case GetSookshmaDashasParamsMahadashaKetu:
+		return true
+	case GetSookshmaDashasParamsMahadashaMars:
+		return true
+	case GetSookshmaDashasParamsMahadashaMercury:
+		return true
+	case GetSookshmaDashasParamsMahadashaMoon:
+		return true
+	case GetSookshmaDashasParamsMahadashaRahu:
+		return true
+	case GetSookshmaDashasParamsMahadashaSaturn:
+		return true
+	case GetSookshmaDashasParamsMahadashaSun:
+		return true
+	case GetSookshmaDashasParamsMahadashaVenus:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetSookshmaDashasParamsAntardasha.
+const (
+	GetSookshmaDashasParamsAntardashaJupiter GetSookshmaDashasParamsAntardasha = "Jupiter"
+	GetSookshmaDashasParamsAntardashaKetu    GetSookshmaDashasParamsAntardasha = "Ketu"
+	GetSookshmaDashasParamsAntardashaMars    GetSookshmaDashasParamsAntardasha = "Mars"
+	GetSookshmaDashasParamsAntardashaMercury GetSookshmaDashasParamsAntardasha = "Mercury"
+	GetSookshmaDashasParamsAntardashaMoon    GetSookshmaDashasParamsAntardasha = "Moon"
+	GetSookshmaDashasParamsAntardashaRahu    GetSookshmaDashasParamsAntardasha = "Rahu"
+	GetSookshmaDashasParamsAntardashaSaturn  GetSookshmaDashasParamsAntardasha = "Saturn"
+	GetSookshmaDashasParamsAntardashaSun     GetSookshmaDashasParamsAntardasha = "Sun"
+	GetSookshmaDashasParamsAntardashaVenus   GetSookshmaDashasParamsAntardasha = "Venus"
+)
+
+// Valid indicates whether the value is a known member of the GetSookshmaDashasParamsAntardasha enum.
+func (e GetSookshmaDashasParamsAntardasha) Valid() bool {
+	switch e {
+	case GetSookshmaDashasParamsAntardashaJupiter:
+		return true
+	case GetSookshmaDashasParamsAntardashaKetu:
+		return true
+	case GetSookshmaDashasParamsAntardashaMars:
+		return true
+	case GetSookshmaDashasParamsAntardashaMercury:
+		return true
+	case GetSookshmaDashasParamsAntardashaMoon:
+		return true
+	case GetSookshmaDashasParamsAntardashaRahu:
+		return true
+	case GetSookshmaDashasParamsAntardashaSaturn:
+		return true
+	case GetSookshmaDashasParamsAntardashaSun:
+		return true
+	case GetSookshmaDashasParamsAntardashaVenus:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetSookshmaDashasParamsPratyantardasha.
+const (
+	GetSookshmaDashasParamsPratyantardashaJupiter GetSookshmaDashasParamsPratyantardasha = "Jupiter"
+	GetSookshmaDashasParamsPratyantardashaKetu    GetSookshmaDashasParamsPratyantardasha = "Ketu"
+	GetSookshmaDashasParamsPratyantardashaMars    GetSookshmaDashasParamsPratyantardasha = "Mars"
+	GetSookshmaDashasParamsPratyantardashaMercury GetSookshmaDashasParamsPratyantardasha = "Mercury"
+	GetSookshmaDashasParamsPratyantardashaMoon    GetSookshmaDashasParamsPratyantardasha = "Moon"
+	GetSookshmaDashasParamsPratyantardashaRahu    GetSookshmaDashasParamsPratyantardasha = "Rahu"
+	GetSookshmaDashasParamsPratyantardashaSaturn  GetSookshmaDashasParamsPratyantardasha = "Saturn"
+	GetSookshmaDashasParamsPratyantardashaSun     GetSookshmaDashasParamsPratyantardasha = "Sun"
+	GetSookshmaDashasParamsPratyantardashaVenus   GetSookshmaDashasParamsPratyantardasha = "Venus"
+)
+
+// Valid indicates whether the value is a known member of the GetSookshmaDashasParamsPratyantardasha enum.
+func (e GetSookshmaDashasParamsPratyantardasha) Valid() bool {
+	switch e {
+	case GetSookshmaDashasParamsPratyantardashaJupiter:
+		return true
+	case GetSookshmaDashasParamsPratyantardashaKetu:
+		return true
+	case GetSookshmaDashasParamsPratyantardashaMars:
+		return true
+	case GetSookshmaDashasParamsPratyantardashaMercury:
+		return true
+	case GetSookshmaDashasParamsPratyantardashaMoon:
+		return true
+	case GetSookshmaDashasParamsPratyantardashaRahu:
+		return true
+	case GetSookshmaDashasParamsPratyantardashaSaturn:
+		return true
+	case GetSookshmaDashasParamsPratyantardashaSun:
+		return true
+	case GetSookshmaDashasParamsPratyantardashaVenus:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetSookshmaDashasJSONBodyAyanamsa.
+const (
+	GetSookshmaDashasJSONBodyAyanamsaKpNewcomb GetSookshmaDashasJSONBodyAyanamsa = "kp-newcomb"
+	GetSookshmaDashasJSONBodyAyanamsaKpOld     GetSookshmaDashasJSONBodyAyanamsa = "kp-old"
+	GetSookshmaDashasJSONBodyAyanamsaLahiri    GetSookshmaDashasJSONBodyAyanamsa = "lahiri"
+)
+
+// Valid indicates whether the value is a known member of the GetSookshmaDashasJSONBodyAyanamsa enum.
+func (e GetSookshmaDashasJSONBodyAyanamsa) Valid() bool {
+	switch e {
+	case GetSookshmaDashasJSONBodyAyanamsaKpNewcomb:
+		return true
+	case GetSookshmaDashasJSONBodyAyanamsaKpOld:
+		return true
+	case GetSookshmaDashasJSONBodyAyanamsaLahiri:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetSookshmaDashas200JSONResponseBodyAntardashaLord.
+const (
+	GetSookshmaDashas200JSONResponseBodyAntardashaLordJupiter GetSookshmaDashas200JSONResponseBodyAntardashaLord = "Jupiter"
+	GetSookshmaDashas200JSONResponseBodyAntardashaLordKetu    GetSookshmaDashas200JSONResponseBodyAntardashaLord = "Ketu"
+	GetSookshmaDashas200JSONResponseBodyAntardashaLordMars    GetSookshmaDashas200JSONResponseBodyAntardashaLord = "Mars"
+	GetSookshmaDashas200JSONResponseBodyAntardashaLordMercury GetSookshmaDashas200JSONResponseBodyAntardashaLord = "Mercury"
+	GetSookshmaDashas200JSONResponseBodyAntardashaLordMoon    GetSookshmaDashas200JSONResponseBodyAntardashaLord = "Moon"
+	GetSookshmaDashas200JSONResponseBodyAntardashaLordRahu    GetSookshmaDashas200JSONResponseBodyAntardashaLord = "Rahu"
+	GetSookshmaDashas200JSONResponseBodyAntardashaLordSaturn  GetSookshmaDashas200JSONResponseBodyAntardashaLord = "Saturn"
+	GetSookshmaDashas200JSONResponseBodyAntardashaLordSun     GetSookshmaDashas200JSONResponseBodyAntardashaLord = "Sun"
+	GetSookshmaDashas200JSONResponseBodyAntardashaLordVenus   GetSookshmaDashas200JSONResponseBodyAntardashaLord = "Venus"
+)
+
+// Valid indicates whether the value is a known member of the GetSookshmaDashas200JSONResponseBodyAntardashaLord enum.
+func (e GetSookshmaDashas200JSONResponseBodyAntardashaLord) Valid() bool {
+	switch e {
+	case GetSookshmaDashas200JSONResponseBodyAntardashaLordJupiter:
+		return true
+	case GetSookshmaDashas200JSONResponseBodyAntardashaLordKetu:
+		return true
+	case GetSookshmaDashas200JSONResponseBodyAntardashaLordMars:
+		return true
+	case GetSookshmaDashas200JSONResponseBodyAntardashaLordMercury:
+		return true
+	case GetSookshmaDashas200JSONResponseBodyAntardashaLordMoon:
+		return true
+	case GetSookshmaDashas200JSONResponseBodyAntardashaLordRahu:
+		return true
+	case GetSookshmaDashas200JSONResponseBodyAntardashaLordSaturn:
+		return true
+	case GetSookshmaDashas200JSONResponseBodyAntardashaLordSun:
+		return true
+	case GetSookshmaDashas200JSONResponseBodyAntardashaLordVenus:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetSookshmaDashas200JSONResponseBodyAyanamsaType.
+const (
+	GetSookshmaDashas200JSONResponseBodyAyanamsaTypeKpNewcomb GetSookshmaDashas200JSONResponseBodyAyanamsaType = "kp-newcomb"
+	GetSookshmaDashas200JSONResponseBodyAyanamsaTypeKpOld     GetSookshmaDashas200JSONResponseBodyAyanamsaType = "kp-old"
+	GetSookshmaDashas200JSONResponseBodyAyanamsaTypeLahiri    GetSookshmaDashas200JSONResponseBodyAyanamsaType = "lahiri"
+)
+
+// Valid indicates whether the value is a known member of the GetSookshmaDashas200JSONResponseBodyAyanamsaType enum.
+func (e GetSookshmaDashas200JSONResponseBodyAyanamsaType) Valid() bool {
+	switch e {
+	case GetSookshmaDashas200JSONResponseBodyAyanamsaTypeKpNewcomb:
+		return true
+	case GetSookshmaDashas200JSONResponseBodyAyanamsaTypeKpOld:
+		return true
+	case GetSookshmaDashas200JSONResponseBodyAyanamsaTypeLahiri:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetSookshmaDashas200JSONResponseBodyMahadashaLord.
+const (
+	GetSookshmaDashas200JSONResponseBodyMahadashaLordJupiter GetSookshmaDashas200JSONResponseBodyMahadashaLord = "Jupiter"
+	GetSookshmaDashas200JSONResponseBodyMahadashaLordKetu    GetSookshmaDashas200JSONResponseBodyMahadashaLord = "Ketu"
+	GetSookshmaDashas200JSONResponseBodyMahadashaLordMars    GetSookshmaDashas200JSONResponseBodyMahadashaLord = "Mars"
+	GetSookshmaDashas200JSONResponseBodyMahadashaLordMercury GetSookshmaDashas200JSONResponseBodyMahadashaLord = "Mercury"
+	GetSookshmaDashas200JSONResponseBodyMahadashaLordMoon    GetSookshmaDashas200JSONResponseBodyMahadashaLord = "Moon"
+	GetSookshmaDashas200JSONResponseBodyMahadashaLordRahu    GetSookshmaDashas200JSONResponseBodyMahadashaLord = "Rahu"
+	GetSookshmaDashas200JSONResponseBodyMahadashaLordSaturn  GetSookshmaDashas200JSONResponseBodyMahadashaLord = "Saturn"
+	GetSookshmaDashas200JSONResponseBodyMahadashaLordSun     GetSookshmaDashas200JSONResponseBodyMahadashaLord = "Sun"
+	GetSookshmaDashas200JSONResponseBodyMahadashaLordVenus   GetSookshmaDashas200JSONResponseBodyMahadashaLord = "Venus"
+)
+
+// Valid indicates whether the value is a known member of the GetSookshmaDashas200JSONResponseBodyMahadashaLord enum.
+func (e GetSookshmaDashas200JSONResponseBodyMahadashaLord) Valid() bool {
+	switch e {
+	case GetSookshmaDashas200JSONResponseBodyMahadashaLordJupiter:
+		return true
+	case GetSookshmaDashas200JSONResponseBodyMahadashaLordKetu:
+		return true
+	case GetSookshmaDashas200JSONResponseBodyMahadashaLordMars:
+		return true
+	case GetSookshmaDashas200JSONResponseBodyMahadashaLordMercury:
+		return true
+	case GetSookshmaDashas200JSONResponseBodyMahadashaLordMoon:
+		return true
+	case GetSookshmaDashas200JSONResponseBodyMahadashaLordRahu:
+		return true
+	case GetSookshmaDashas200JSONResponseBodyMahadashaLordSaturn:
+		return true
+	case GetSookshmaDashas200JSONResponseBodyMahadashaLordSun:
+		return true
+	case GetSookshmaDashas200JSONResponseBodyMahadashaLordVenus:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetSookshmaDashas200JSONResponseBodyPratyantardashaLord.
+const (
+	GetSookshmaDashas200JSONResponseBodyPratyantardashaLordJupiter GetSookshmaDashas200JSONResponseBodyPratyantardashaLord = "Jupiter"
+	GetSookshmaDashas200JSONResponseBodyPratyantardashaLordKetu    GetSookshmaDashas200JSONResponseBodyPratyantardashaLord = "Ketu"
+	GetSookshmaDashas200JSONResponseBodyPratyantardashaLordMars    GetSookshmaDashas200JSONResponseBodyPratyantardashaLord = "Mars"
+	GetSookshmaDashas200JSONResponseBodyPratyantardashaLordMercury GetSookshmaDashas200JSONResponseBodyPratyantardashaLord = "Mercury"
+	GetSookshmaDashas200JSONResponseBodyPratyantardashaLordMoon    GetSookshmaDashas200JSONResponseBodyPratyantardashaLord = "Moon"
+	GetSookshmaDashas200JSONResponseBodyPratyantardashaLordRahu    GetSookshmaDashas200JSONResponseBodyPratyantardashaLord = "Rahu"
+	GetSookshmaDashas200JSONResponseBodyPratyantardashaLordSaturn  GetSookshmaDashas200JSONResponseBodyPratyantardashaLord = "Saturn"
+	GetSookshmaDashas200JSONResponseBodyPratyantardashaLordSun     GetSookshmaDashas200JSONResponseBodyPratyantardashaLord = "Sun"
+	GetSookshmaDashas200JSONResponseBodyPratyantardashaLordVenus   GetSookshmaDashas200JSONResponseBodyPratyantardashaLord = "Venus"
+)
+
+// Valid indicates whether the value is a known member of the GetSookshmaDashas200JSONResponseBodyPratyantardashaLord enum.
+func (e GetSookshmaDashas200JSONResponseBodyPratyantardashaLord) Valid() bool {
+	switch e {
+	case GetSookshmaDashas200JSONResponseBodyPratyantardashaLordJupiter:
+		return true
+	case GetSookshmaDashas200JSONResponseBodyPratyantardashaLordKetu:
+		return true
+	case GetSookshmaDashas200JSONResponseBodyPratyantardashaLordMars:
+		return true
+	case GetSookshmaDashas200JSONResponseBodyPratyantardashaLordMercury:
+		return true
+	case GetSookshmaDashas200JSONResponseBodyPratyantardashaLordMoon:
+		return true
+	case GetSookshmaDashas200JSONResponseBodyPratyantardashaLordRahu:
+		return true
+	case GetSookshmaDashas200JSONResponseBodyPratyantardashaLordSaturn:
+		return true
+	case GetSookshmaDashas200JSONResponseBodyPratyantardashaLordSun:
+		return true
+	case GetSookshmaDashas200JSONResponseBodyPratyantardashaLordVenus:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodAntardashaLord.
+const (
+	GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodAntardashaLordJupiter GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodAntardashaLord = "Jupiter"
+	GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodAntardashaLordKetu    GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodAntardashaLord = "Ketu"
+	GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodAntardashaLordMars    GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodAntardashaLord = "Mars"
+	GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodAntardashaLordMercury GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodAntardashaLord = "Mercury"
+	GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodAntardashaLordMoon    GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodAntardashaLord = "Moon"
+	GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodAntardashaLordRahu    GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodAntardashaLord = "Rahu"
+	GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodAntardashaLordSaturn  GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodAntardashaLord = "Saturn"
+	GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodAntardashaLordSun     GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodAntardashaLord = "Sun"
+	GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodAntardashaLordVenus   GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodAntardashaLord = "Venus"
+)
+
+// Valid indicates whether the value is a known member of the GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodAntardashaLord enum.
+func (e GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodAntardashaLord) Valid() bool {
+	switch e {
+	case GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodAntardashaLordJupiter:
+		return true
+	case GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodAntardashaLordKetu:
+		return true
+	case GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodAntardashaLordMars:
+		return true
+	case GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodAntardashaLordMercury:
+		return true
+	case GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodAntardashaLordMoon:
+		return true
+	case GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodAntardashaLordRahu:
+		return true
+	case GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodAntardashaLordSaturn:
+		return true
+	case GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodAntardashaLordSun:
+		return true
+	case GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodAntardashaLordVenus:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodMahadashaLord.
+const (
+	GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodMahadashaLordJupiter GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodMahadashaLord = "Jupiter"
+	GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodMahadashaLordKetu    GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodMahadashaLord = "Ketu"
+	GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodMahadashaLordMars    GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodMahadashaLord = "Mars"
+	GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodMahadashaLordMercury GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodMahadashaLord = "Mercury"
+	GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodMahadashaLordMoon    GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodMahadashaLord = "Moon"
+	GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodMahadashaLordRahu    GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodMahadashaLord = "Rahu"
+	GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodMahadashaLordSaturn  GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodMahadashaLord = "Saturn"
+	GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodMahadashaLordSun     GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodMahadashaLord = "Sun"
+	GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodMahadashaLordVenus   GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodMahadashaLord = "Venus"
+)
+
+// Valid indicates whether the value is a known member of the GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodMahadashaLord enum.
+func (e GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodMahadashaLord) Valid() bool {
+	switch e {
+	case GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodMahadashaLordJupiter:
+		return true
+	case GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodMahadashaLordKetu:
+		return true
+	case GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodMahadashaLordMars:
+		return true
+	case GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodMahadashaLordMercury:
+		return true
+	case GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodMahadashaLordMoon:
+		return true
+	case GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodMahadashaLordRahu:
+		return true
+	case GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodMahadashaLordSaturn:
+		return true
+	case GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodMahadashaLordSun:
+		return true
+	case GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodMahadashaLordVenus:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodPlanet.
+const (
+	GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodPlanetJupiter GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodPlanet = "Jupiter"
+	GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodPlanetKetu    GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodPlanet = "Ketu"
+	GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodPlanetMars    GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodPlanet = "Mars"
+	GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodPlanetMercury GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodPlanet = "Mercury"
+	GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodPlanetMoon    GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodPlanet = "Moon"
+	GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodPlanetRahu    GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodPlanet = "Rahu"
+	GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodPlanetSaturn  GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodPlanet = "Saturn"
+	GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodPlanetSun     GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodPlanet = "Sun"
+	GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodPlanetVenus   GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodPlanet = "Venus"
+)
+
+// Valid indicates whether the value is a known member of the GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodPlanet enum.
+func (e GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodPlanet) Valid() bool {
+	switch e {
+	case GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodPlanetJupiter:
+		return true
+	case GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodPlanetKetu:
+		return true
+	case GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodPlanetMars:
+		return true
+	case GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodPlanetMercury:
+		return true
+	case GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodPlanetMoon:
+		return true
+	case GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodPlanetRahu:
+		return true
+	case GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodPlanetSaturn:
+		return true
+	case GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodPlanetSun:
+		return true
+	case GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodPlanetVenus:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetSookshmaDashas200JSONResponseBodySookshmaDashasAntardashaLord.
+const (
+	GetSookshmaDashas200JSONResponseBodySookshmaDashasAntardashaLordJupiter GetSookshmaDashas200JSONResponseBodySookshmaDashasAntardashaLord = "Jupiter"
+	GetSookshmaDashas200JSONResponseBodySookshmaDashasAntardashaLordKetu    GetSookshmaDashas200JSONResponseBodySookshmaDashasAntardashaLord = "Ketu"
+	GetSookshmaDashas200JSONResponseBodySookshmaDashasAntardashaLordMars    GetSookshmaDashas200JSONResponseBodySookshmaDashasAntardashaLord = "Mars"
+	GetSookshmaDashas200JSONResponseBodySookshmaDashasAntardashaLordMercury GetSookshmaDashas200JSONResponseBodySookshmaDashasAntardashaLord = "Mercury"
+	GetSookshmaDashas200JSONResponseBodySookshmaDashasAntardashaLordMoon    GetSookshmaDashas200JSONResponseBodySookshmaDashasAntardashaLord = "Moon"
+	GetSookshmaDashas200JSONResponseBodySookshmaDashasAntardashaLordRahu    GetSookshmaDashas200JSONResponseBodySookshmaDashasAntardashaLord = "Rahu"
+	GetSookshmaDashas200JSONResponseBodySookshmaDashasAntardashaLordSaturn  GetSookshmaDashas200JSONResponseBodySookshmaDashasAntardashaLord = "Saturn"
+	GetSookshmaDashas200JSONResponseBodySookshmaDashasAntardashaLordSun     GetSookshmaDashas200JSONResponseBodySookshmaDashasAntardashaLord = "Sun"
+	GetSookshmaDashas200JSONResponseBodySookshmaDashasAntardashaLordVenus   GetSookshmaDashas200JSONResponseBodySookshmaDashasAntardashaLord = "Venus"
+)
+
+// Valid indicates whether the value is a known member of the GetSookshmaDashas200JSONResponseBodySookshmaDashasAntardashaLord enum.
+func (e GetSookshmaDashas200JSONResponseBodySookshmaDashasAntardashaLord) Valid() bool {
+	switch e {
+	case GetSookshmaDashas200JSONResponseBodySookshmaDashasAntardashaLordJupiter:
+		return true
+	case GetSookshmaDashas200JSONResponseBodySookshmaDashasAntardashaLordKetu:
+		return true
+	case GetSookshmaDashas200JSONResponseBodySookshmaDashasAntardashaLordMars:
+		return true
+	case GetSookshmaDashas200JSONResponseBodySookshmaDashasAntardashaLordMercury:
+		return true
+	case GetSookshmaDashas200JSONResponseBodySookshmaDashasAntardashaLordMoon:
+		return true
+	case GetSookshmaDashas200JSONResponseBodySookshmaDashasAntardashaLordRahu:
+		return true
+	case GetSookshmaDashas200JSONResponseBodySookshmaDashasAntardashaLordSaturn:
+		return true
+	case GetSookshmaDashas200JSONResponseBodySookshmaDashasAntardashaLordSun:
+		return true
+	case GetSookshmaDashas200JSONResponseBodySookshmaDashasAntardashaLordVenus:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetSookshmaDashas200JSONResponseBodySookshmaDashasMahadashaLord.
+const (
+	GetSookshmaDashas200JSONResponseBodySookshmaDashasMahadashaLordJupiter GetSookshmaDashas200JSONResponseBodySookshmaDashasMahadashaLord = "Jupiter"
+	GetSookshmaDashas200JSONResponseBodySookshmaDashasMahadashaLordKetu    GetSookshmaDashas200JSONResponseBodySookshmaDashasMahadashaLord = "Ketu"
+	GetSookshmaDashas200JSONResponseBodySookshmaDashasMahadashaLordMars    GetSookshmaDashas200JSONResponseBodySookshmaDashasMahadashaLord = "Mars"
+	GetSookshmaDashas200JSONResponseBodySookshmaDashasMahadashaLordMercury GetSookshmaDashas200JSONResponseBodySookshmaDashasMahadashaLord = "Mercury"
+	GetSookshmaDashas200JSONResponseBodySookshmaDashasMahadashaLordMoon    GetSookshmaDashas200JSONResponseBodySookshmaDashasMahadashaLord = "Moon"
+	GetSookshmaDashas200JSONResponseBodySookshmaDashasMahadashaLordRahu    GetSookshmaDashas200JSONResponseBodySookshmaDashasMahadashaLord = "Rahu"
+	GetSookshmaDashas200JSONResponseBodySookshmaDashasMahadashaLordSaturn  GetSookshmaDashas200JSONResponseBodySookshmaDashasMahadashaLord = "Saturn"
+	GetSookshmaDashas200JSONResponseBodySookshmaDashasMahadashaLordSun     GetSookshmaDashas200JSONResponseBodySookshmaDashasMahadashaLord = "Sun"
+	GetSookshmaDashas200JSONResponseBodySookshmaDashasMahadashaLordVenus   GetSookshmaDashas200JSONResponseBodySookshmaDashasMahadashaLord = "Venus"
+)
+
+// Valid indicates whether the value is a known member of the GetSookshmaDashas200JSONResponseBodySookshmaDashasMahadashaLord enum.
+func (e GetSookshmaDashas200JSONResponseBodySookshmaDashasMahadashaLord) Valid() bool {
+	switch e {
+	case GetSookshmaDashas200JSONResponseBodySookshmaDashasMahadashaLordJupiter:
+		return true
+	case GetSookshmaDashas200JSONResponseBodySookshmaDashasMahadashaLordKetu:
+		return true
+	case GetSookshmaDashas200JSONResponseBodySookshmaDashasMahadashaLordMars:
+		return true
+	case GetSookshmaDashas200JSONResponseBodySookshmaDashasMahadashaLordMercury:
+		return true
+	case GetSookshmaDashas200JSONResponseBodySookshmaDashasMahadashaLordMoon:
+		return true
+	case GetSookshmaDashas200JSONResponseBodySookshmaDashasMahadashaLordRahu:
+		return true
+	case GetSookshmaDashas200JSONResponseBodySookshmaDashasMahadashaLordSaturn:
+		return true
+	case GetSookshmaDashas200JSONResponseBodySookshmaDashasMahadashaLordSun:
+		return true
+	case GetSookshmaDashas200JSONResponseBodySookshmaDashasMahadashaLordVenus:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetSookshmaDashas200JSONResponseBodySookshmaDashasPlanet.
+const (
+	GetSookshmaDashas200JSONResponseBodySookshmaDashasPlanetJupiter GetSookshmaDashas200JSONResponseBodySookshmaDashasPlanet = "Jupiter"
+	GetSookshmaDashas200JSONResponseBodySookshmaDashasPlanetKetu    GetSookshmaDashas200JSONResponseBodySookshmaDashasPlanet = "Ketu"
+	GetSookshmaDashas200JSONResponseBodySookshmaDashasPlanetMars    GetSookshmaDashas200JSONResponseBodySookshmaDashasPlanet = "Mars"
+	GetSookshmaDashas200JSONResponseBodySookshmaDashasPlanetMercury GetSookshmaDashas200JSONResponseBodySookshmaDashasPlanet = "Mercury"
+	GetSookshmaDashas200JSONResponseBodySookshmaDashasPlanetMoon    GetSookshmaDashas200JSONResponseBodySookshmaDashasPlanet = "Moon"
+	GetSookshmaDashas200JSONResponseBodySookshmaDashasPlanetRahu    GetSookshmaDashas200JSONResponseBodySookshmaDashasPlanet = "Rahu"
+	GetSookshmaDashas200JSONResponseBodySookshmaDashasPlanetSaturn  GetSookshmaDashas200JSONResponseBodySookshmaDashasPlanet = "Saturn"
+	GetSookshmaDashas200JSONResponseBodySookshmaDashasPlanetSun     GetSookshmaDashas200JSONResponseBodySookshmaDashasPlanet = "Sun"
+	GetSookshmaDashas200JSONResponseBodySookshmaDashasPlanetVenus   GetSookshmaDashas200JSONResponseBodySookshmaDashasPlanet = "Venus"
+)
+
+// Valid indicates whether the value is a known member of the GetSookshmaDashas200JSONResponseBodySookshmaDashasPlanet enum.
+func (e GetSookshmaDashas200JSONResponseBodySookshmaDashasPlanet) Valid() bool {
+	switch e {
+	case GetSookshmaDashas200JSONResponseBodySookshmaDashasPlanetJupiter:
+		return true
+	case GetSookshmaDashas200JSONResponseBodySookshmaDashasPlanetKetu:
+		return true
+	case GetSookshmaDashas200JSONResponseBodySookshmaDashasPlanetMars:
+		return true
+	case GetSookshmaDashas200JSONResponseBodySookshmaDashasPlanetMercury:
+		return true
+	case GetSookshmaDashas200JSONResponseBodySookshmaDashasPlanetMoon:
+		return true
+	case GetSookshmaDashas200JSONResponseBodySookshmaDashasPlanetRahu:
+		return true
+	case GetSookshmaDashas200JSONResponseBodySookshmaDashasPlanetSaturn:
+		return true
+	case GetSookshmaDashas200JSONResponseBodySookshmaDashasPlanetSun:
+		return true
+	case GetSookshmaDashas200JSONResponseBodySookshmaDashasPlanetVenus:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetSookshmaDashas200JSONResponseBodySookshmaDashasPratyantardashaLord.
+const (
+	GetSookshmaDashas200JSONResponseBodySookshmaDashasPratyantardashaLordJupiter GetSookshmaDashas200JSONResponseBodySookshmaDashasPratyantardashaLord = "Jupiter"
+	GetSookshmaDashas200JSONResponseBodySookshmaDashasPratyantardashaLordKetu    GetSookshmaDashas200JSONResponseBodySookshmaDashasPratyantardashaLord = "Ketu"
+	GetSookshmaDashas200JSONResponseBodySookshmaDashasPratyantardashaLordMars    GetSookshmaDashas200JSONResponseBodySookshmaDashasPratyantardashaLord = "Mars"
+	GetSookshmaDashas200JSONResponseBodySookshmaDashasPratyantardashaLordMercury GetSookshmaDashas200JSONResponseBodySookshmaDashasPratyantardashaLord = "Mercury"
+	GetSookshmaDashas200JSONResponseBodySookshmaDashasPratyantardashaLordMoon    GetSookshmaDashas200JSONResponseBodySookshmaDashasPratyantardashaLord = "Moon"
+	GetSookshmaDashas200JSONResponseBodySookshmaDashasPratyantardashaLordRahu    GetSookshmaDashas200JSONResponseBodySookshmaDashasPratyantardashaLord = "Rahu"
+	GetSookshmaDashas200JSONResponseBodySookshmaDashasPratyantardashaLordSaturn  GetSookshmaDashas200JSONResponseBodySookshmaDashasPratyantardashaLord = "Saturn"
+	GetSookshmaDashas200JSONResponseBodySookshmaDashasPratyantardashaLordSun     GetSookshmaDashas200JSONResponseBodySookshmaDashasPratyantardashaLord = "Sun"
+	GetSookshmaDashas200JSONResponseBodySookshmaDashasPratyantardashaLordVenus   GetSookshmaDashas200JSONResponseBodySookshmaDashasPratyantardashaLord = "Venus"
+)
+
+// Valid indicates whether the value is a known member of the GetSookshmaDashas200JSONResponseBodySookshmaDashasPratyantardashaLord enum.
+func (e GetSookshmaDashas200JSONResponseBodySookshmaDashasPratyantardashaLord) Valid() bool {
+	switch e {
+	case GetSookshmaDashas200JSONResponseBodySookshmaDashasPratyantardashaLordJupiter:
+		return true
+	case GetSookshmaDashas200JSONResponseBodySookshmaDashasPratyantardashaLordKetu:
+		return true
+	case GetSookshmaDashas200JSONResponseBodySookshmaDashasPratyantardashaLordMars:
+		return true
+	case GetSookshmaDashas200JSONResponseBodySookshmaDashasPratyantardashaLordMercury:
+		return true
+	case GetSookshmaDashas200JSONResponseBodySookshmaDashasPratyantardashaLordMoon:
+		return true
+	case GetSookshmaDashas200JSONResponseBodySookshmaDashasPratyantardashaLordRahu:
+		return true
+	case GetSookshmaDashas200JSONResponseBodySookshmaDashasPratyantardashaLordSaturn:
+		return true
+	case GetSookshmaDashas200JSONResponseBodySookshmaDashasPratyantardashaLordSun:
+		return true
+	case GetSookshmaDashas200JSONResponseBodySookshmaDashasPratyantardashaLordVenus:
 		return true
 	default:
 		return false
@@ -20637,6 +21933,9 @@ type CalculateGunMilanParamsLang string
 
 // GetCurrentDashaJSONBody defines parameters for GetCurrentDasha.
 type GetCurrentDashaJSONBody struct {
+	// Ayanamsa Ayanamsa system used to place the birth Moon in its nakshatra, which sets every dasha start and end date. "lahiri" uses Lahiri/Chitrapaksha, the traditional Vedic standard, and is the default. "kp-newcomb" uses the KP-Newcomb dynamic formula, matching Krishnamurti Paddhati software. "kp-old" uses the Krishnamurti original table from KP Reader-1. Switching frames shifts every dasha boundary by weeks, so pick the one your reference software uses.
+	Ayanamsa *GetCurrentDashaJSONBodyAyanamsa `json:"ayanamsa,omitempty"`
+
 	// Date Birth date in YYYY-MM-DD format. Date determines planetary positions and nakshatra calculations for Vedic kundli (janam patri). Accurate birth date is essential for dashas, yoga calculations, and divisional charts (vargas).
 	Date openapi_types.Date `json:"date"`
 
@@ -20662,6 +21961,9 @@ type GetCurrentDashaParams struct {
 // GetCurrentDashaParamsLang defines parameters for GetCurrentDasha.
 type GetCurrentDashaParamsLang string
 
+// GetCurrentDashaJSONBodyAyanamsa defines parameters for GetCurrentDasha.
+type GetCurrentDashaJSONBodyAyanamsa string
+
 // GetCurrentDashaJSONBodyTimezone0 defines parameters for GetCurrentDasha.
 type GetCurrentDashaJSONBodyTimezone0 = float32
 
@@ -20679,6 +21981,9 @@ type GetCurrentDasha200JSONResponseBodyAntardashaMahadashaLord string
 // GetCurrentDasha200JSONResponseBodyAntardashaPlanet defines parameters for GetCurrentDasha.
 type GetCurrentDasha200JSONResponseBodyAntardashaPlanet string
 
+// GetCurrentDasha200JSONResponseBodyAyanamsaType defines parameters for GetCurrentDasha.
+type GetCurrentDasha200JSONResponseBodyAyanamsaType string
+
 // GetCurrentDasha200JSONResponseBodyMahadashaPlanet defines parameters for GetCurrentDasha.
 type GetCurrentDasha200JSONResponseBodyMahadashaPlanet string
 
@@ -20694,8 +21999,23 @@ type GetCurrentDasha200JSONResponseBodyPratyantardashaMahadashaLord string
 // GetCurrentDasha200JSONResponseBodyPratyantardashaPlanet defines parameters for GetCurrentDasha.
 type GetCurrentDasha200JSONResponseBodyPratyantardashaPlanet string
 
+// GetCurrentDasha200JSONResponseBodySookshmaDashaAntardashaLord defines parameters for GetCurrentDasha.
+type GetCurrentDasha200JSONResponseBodySookshmaDashaAntardashaLord string
+
+// GetCurrentDasha200JSONResponseBodySookshmaDashaMahadashaLord defines parameters for GetCurrentDasha.
+type GetCurrentDasha200JSONResponseBodySookshmaDashaMahadashaLord string
+
+// GetCurrentDasha200JSONResponseBodySookshmaDashaPlanet defines parameters for GetCurrentDasha.
+type GetCurrentDasha200JSONResponseBodySookshmaDashaPlanet string
+
+// GetCurrentDasha200JSONResponseBodySookshmaDashaPratyantardashaLord defines parameters for GetCurrentDasha.
+type GetCurrentDasha200JSONResponseBodySookshmaDashaPratyantardashaLord string
+
 // GetMajorDashasJSONBody defines parameters for GetMajorDashas.
 type GetMajorDashasJSONBody struct {
+	// Ayanamsa Ayanamsa system used to place the birth Moon in its nakshatra, which sets every dasha start and end date. "lahiri" uses Lahiri/Chitrapaksha, the traditional Vedic standard, and is the default. "kp-newcomb" uses the KP-Newcomb dynamic formula, matching Krishnamurti Paddhati software. "kp-old" uses the Krishnamurti original table from KP Reader-1. Switching frames shifts every dasha boundary by weeks, so pick the one your reference software uses.
+	Ayanamsa *GetMajorDashasJSONBodyAyanamsa `json:"ayanamsa,omitempty"`
+
 	// Date Birth date in YYYY-MM-DD format. Date determines planetary positions and nakshatra calculations for Vedic kundli (janam patri). Accurate birth date is essential for dashas, yoga calculations, and divisional charts (vargas).
 	Date openapi_types.Date `json:"date"`
 
@@ -20721,6 +22041,9 @@ type GetMajorDashasParams struct {
 // GetMajorDashasParamsLang defines parameters for GetMajorDashas.
 type GetMajorDashasParamsLang string
 
+// GetMajorDashasJSONBodyAyanamsa defines parameters for GetMajorDashas.
+type GetMajorDashasJSONBodyAyanamsa string
+
 // GetMajorDashasJSONBodyTimezone0 defines parameters for GetMajorDashas.
 type GetMajorDashasJSONBodyTimezone0 = float32
 
@@ -20732,6 +22055,9 @@ type GetMajorDashasJSONBody_Timezone struct {
 	union json.RawMessage
 }
 
+// GetMajorDashas200JSONResponseBodyAyanamsaType defines parameters for GetMajorDashas.
+type GetMajorDashas200JSONResponseBodyAyanamsaType string
+
 // GetMajorDashas200JSONResponseBodyMahadashasPlanet defines parameters for GetMajorDashas.
 type GetMajorDashas200JSONResponseBodyMahadashasPlanet string
 
@@ -20740,6 +22066,9 @@ type GetMajorDashas200JSONResponseBodyNakshatraLord string
 
 // GetSubDashasJSONBody defines parameters for GetSubDashas.
 type GetSubDashasJSONBody struct {
+	// Ayanamsa Ayanamsa system used to place the birth Moon in its nakshatra, which sets every dasha start and end date. "lahiri" uses Lahiri/Chitrapaksha, the traditional Vedic standard, and is the default. "kp-newcomb" uses the KP-Newcomb dynamic formula, matching Krishnamurti Paddhati software. "kp-old" uses the Krishnamurti original table from KP Reader-1. Switching frames shifts every dasha boundary by weeks, so pick the one your reference software uses.
+	Ayanamsa *GetSubDashasJSONBodyAyanamsa `json:"ayanamsa,omitempty"`
+
 	// Date Birth date in YYYY-MM-DD format. Date determines planetary positions and nakshatra calculations for Vedic kundli (janam patri). Accurate birth date is essential for dashas, yoga calculations, and divisional charts (vargas).
 	Date openapi_types.Date `json:"date"`
 
@@ -20768,6 +22097,9 @@ type GetSubDashasParamsLang string
 // GetSubDashasParamsMahadasha defines parameters for GetSubDashas.
 type GetSubDashasParamsMahadasha string
 
+// GetSubDashasJSONBodyAyanamsa defines parameters for GetSubDashas.
+type GetSubDashasJSONBodyAyanamsa string
+
 // GetSubDashasJSONBodyTimezone0 defines parameters for GetSubDashas.
 type GetSubDashasJSONBodyTimezone0 = float32
 
@@ -20785,11 +22117,174 @@ type GetSubDashas200JSONResponseBodyAntardashasMahadashaLord string
 // GetSubDashas200JSONResponseBodyAntardashasPlanet defines parameters for GetSubDashas.
 type GetSubDashas200JSONResponseBodyAntardashasPlanet string
 
+// GetSubDashas200JSONResponseBodyAyanamsaType defines parameters for GetSubDashas.
+type GetSubDashas200JSONResponseBodyAyanamsaType string
+
 // GetSubDashas200JSONResponseBodyMahadashaLord defines parameters for GetSubDashas.
 type GetSubDashas200JSONResponseBodyMahadashaLord string
 
 // GetSubDashas200JSONResponseBodyMahadashaPeriodPlanet defines parameters for GetSubDashas.
 type GetSubDashas200JSONResponseBodyMahadashaPeriodPlanet string
+
+// GetPratyantardashasJSONBody defines parameters for GetPratyantardashas.
+type GetPratyantardashasJSONBody struct {
+	// Ayanamsa Ayanamsa system used to place the birth Moon in its nakshatra, which sets every dasha start and end date. "lahiri" uses Lahiri/Chitrapaksha, the traditional Vedic standard, and is the default. "kp-newcomb" uses the KP-Newcomb dynamic formula, matching Krishnamurti Paddhati software. "kp-old" uses the Krishnamurti original table from KP Reader-1. Switching frames shifts every dasha boundary by weeks, so pick the one your reference software uses.
+	Ayanamsa *GetPratyantardashasJSONBodyAyanamsa `json:"ayanamsa,omitempty"`
+
+	// Date Birth date in YYYY-MM-DD format. Date determines planetary positions and nakshatra calculations for Vedic kundli (janam patri). Accurate birth date is essential for dashas, yoga calculations, and divisional charts (vargas).
+	Date openapi_types.Date `json:"date"`
+
+	// Latitude Birth location latitude in decimal degrees. Location determines local sidereal time for Lagna calculation and affects bhava (house) cusps. Example: Delhi 28.6139, Mumbai 19.0760, Kathmandu 27.7172.
+	Latitude float32 `json:"latitude"`
+
+	// Longitude Birth location longitude in decimal degrees. Affects local time calculations and ayanamsha adjustments. Example: Delhi 77.2090, Mumbai 72.8777, Kathmandu 85.3240.
+	Longitude float32 `json:"longitude"`
+
+	// Time Birth time in 24-hour HH:MM:SS format. Time is CRITICAL for Lagna (Ascendant) calculation and house divisions. It changes every two hours roughly. Even minutes matter for accurate nakshatra pada and divisional chart (D9, D10) calculations. Without exact time, Lagna and house-based predictions will be incorrect.
+	Time string `json:"time"`
+
+	// Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5.
+	Timezone *GetPratyantardashasJSONBody_Timezone `json:"timezone,omitempty"`
+}
+
+// GetPratyantardashasParams defines parameters for GetPratyantardashas.
+type GetPratyantardashasParams struct {
+	// Lang Response language (ISO 639-1). Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en. Languages without translations yet return English.
+	Lang *GetPratyantardashasParamsLang `form:"lang,omitempty" json:"lang,omitempty"`
+}
+
+// GetPratyantardashasParamsLang defines parameters for GetPratyantardashas.
+type GetPratyantardashasParamsLang string
+
+// GetPratyantardashasParamsMahadasha defines parameters for GetPratyantardashas.
+type GetPratyantardashasParamsMahadasha string
+
+// GetPratyantardashasParamsAntardasha defines parameters for GetPratyantardashas.
+type GetPratyantardashasParamsAntardasha string
+
+// GetPratyantardashasJSONBodyAyanamsa defines parameters for GetPratyantardashas.
+type GetPratyantardashasJSONBodyAyanamsa string
+
+// GetPratyantardashasJSONBodyTimezone0 defines parameters for GetPratyantardashas.
+type GetPratyantardashasJSONBodyTimezone0 = float32
+
+// GetPratyantardashasJSONBodyTimezone1 defines parameters for GetPratyantardashas.
+type GetPratyantardashasJSONBodyTimezone1 = string
+
+// GetPratyantardashasJSONBody_Timezone defines parameters for GetPratyantardashas.
+type GetPratyantardashasJSONBody_Timezone struct {
+	union json.RawMessage
+}
+
+// GetPratyantardashas200JSONResponseBodyAntardashaLord defines parameters for GetPratyantardashas.
+type GetPratyantardashas200JSONResponseBodyAntardashaLord string
+
+// GetPratyantardashas200JSONResponseBodyAntardashaPeriodMahadashaLord defines parameters for GetPratyantardashas.
+type GetPratyantardashas200JSONResponseBodyAntardashaPeriodMahadashaLord string
+
+// GetPratyantardashas200JSONResponseBodyAntardashaPeriodPlanet defines parameters for GetPratyantardashas.
+type GetPratyantardashas200JSONResponseBodyAntardashaPeriodPlanet string
+
+// GetPratyantardashas200JSONResponseBodyAyanamsaType defines parameters for GetPratyantardashas.
+type GetPratyantardashas200JSONResponseBodyAyanamsaType string
+
+// GetPratyantardashas200JSONResponseBodyMahadashaLord defines parameters for GetPratyantardashas.
+type GetPratyantardashas200JSONResponseBodyMahadashaLord string
+
+// GetPratyantardashas200JSONResponseBodyPratyantardashasAntardashaLord defines parameters for GetPratyantardashas.
+type GetPratyantardashas200JSONResponseBodyPratyantardashasAntardashaLord string
+
+// GetPratyantardashas200JSONResponseBodyPratyantardashasMahadashaLord defines parameters for GetPratyantardashas.
+type GetPratyantardashas200JSONResponseBodyPratyantardashasMahadashaLord string
+
+// GetPratyantardashas200JSONResponseBodyPratyantardashasPlanet defines parameters for GetPratyantardashas.
+type GetPratyantardashas200JSONResponseBodyPratyantardashasPlanet string
+
+// GetSookshmaDashasJSONBody defines parameters for GetSookshmaDashas.
+type GetSookshmaDashasJSONBody struct {
+	// Ayanamsa Ayanamsa system used to place the birth Moon in its nakshatra, which sets every dasha start and end date. "lahiri" uses Lahiri/Chitrapaksha, the traditional Vedic standard, and is the default. "kp-newcomb" uses the KP-Newcomb dynamic formula, matching Krishnamurti Paddhati software. "kp-old" uses the Krishnamurti original table from KP Reader-1. Switching frames shifts every dasha boundary by weeks, so pick the one your reference software uses.
+	Ayanamsa *GetSookshmaDashasJSONBodyAyanamsa `json:"ayanamsa,omitempty"`
+
+	// Date Birth date in YYYY-MM-DD format. Date determines planetary positions and nakshatra calculations for Vedic kundli (janam patri). Accurate birth date is essential for dashas, yoga calculations, and divisional charts (vargas).
+	Date openapi_types.Date `json:"date"`
+
+	// Latitude Birth location latitude in decimal degrees. Location determines local sidereal time for Lagna calculation and affects bhava (house) cusps. Example: Delhi 28.6139, Mumbai 19.0760, Kathmandu 27.7172.
+	Latitude float32 `json:"latitude"`
+
+	// Longitude Birth location longitude in decimal degrees. Affects local time calculations and ayanamsha adjustments. Example: Delhi 77.2090, Mumbai 72.8777, Kathmandu 85.3240.
+	Longitude float32 `json:"longitude"`
+
+	// Time Birth time in 24-hour HH:MM:SS format. Time is CRITICAL for Lagna (Ascendant) calculation and house divisions. It changes every two hours roughly. Even minutes matter for accurate nakshatra pada and divisional chart (D9, D10) calculations. Without exact time, Lagna and house-based predictions will be incorrect.
+	Time string `json:"time"`
+
+	// Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5.
+	Timezone *GetSookshmaDashasJSONBody_Timezone `json:"timezone,omitempty"`
+}
+
+// GetSookshmaDashasParams defines parameters for GetSookshmaDashas.
+type GetSookshmaDashasParams struct {
+	// Lang Response language (ISO 639-1). Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en. Languages without translations yet return English.
+	Lang *GetSookshmaDashasParamsLang `form:"lang,omitempty" json:"lang,omitempty"`
+}
+
+// GetSookshmaDashasParamsLang defines parameters for GetSookshmaDashas.
+type GetSookshmaDashasParamsLang string
+
+// GetSookshmaDashasParamsMahadasha defines parameters for GetSookshmaDashas.
+type GetSookshmaDashasParamsMahadasha string
+
+// GetSookshmaDashasParamsAntardasha defines parameters for GetSookshmaDashas.
+type GetSookshmaDashasParamsAntardasha string
+
+// GetSookshmaDashasParamsPratyantardasha defines parameters for GetSookshmaDashas.
+type GetSookshmaDashasParamsPratyantardasha string
+
+// GetSookshmaDashasJSONBodyAyanamsa defines parameters for GetSookshmaDashas.
+type GetSookshmaDashasJSONBodyAyanamsa string
+
+// GetSookshmaDashasJSONBodyTimezone0 defines parameters for GetSookshmaDashas.
+type GetSookshmaDashasJSONBodyTimezone0 = float32
+
+// GetSookshmaDashasJSONBodyTimezone1 defines parameters for GetSookshmaDashas.
+type GetSookshmaDashasJSONBodyTimezone1 = string
+
+// GetSookshmaDashasJSONBody_Timezone defines parameters for GetSookshmaDashas.
+type GetSookshmaDashasJSONBody_Timezone struct {
+	union json.RawMessage
+}
+
+// GetSookshmaDashas200JSONResponseBodyAntardashaLord defines parameters for GetSookshmaDashas.
+type GetSookshmaDashas200JSONResponseBodyAntardashaLord string
+
+// GetSookshmaDashas200JSONResponseBodyAyanamsaType defines parameters for GetSookshmaDashas.
+type GetSookshmaDashas200JSONResponseBodyAyanamsaType string
+
+// GetSookshmaDashas200JSONResponseBodyMahadashaLord defines parameters for GetSookshmaDashas.
+type GetSookshmaDashas200JSONResponseBodyMahadashaLord string
+
+// GetSookshmaDashas200JSONResponseBodyPratyantardashaLord defines parameters for GetSookshmaDashas.
+type GetSookshmaDashas200JSONResponseBodyPratyantardashaLord string
+
+// GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodAntardashaLord defines parameters for GetSookshmaDashas.
+type GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodAntardashaLord string
+
+// GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodMahadashaLord defines parameters for GetSookshmaDashas.
+type GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodMahadashaLord string
+
+// GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodPlanet defines parameters for GetSookshmaDashas.
+type GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodPlanet string
+
+// GetSookshmaDashas200JSONResponseBodySookshmaDashasAntardashaLord defines parameters for GetSookshmaDashas.
+type GetSookshmaDashas200JSONResponseBodySookshmaDashasAntardashaLord string
+
+// GetSookshmaDashas200JSONResponseBodySookshmaDashasMahadashaLord defines parameters for GetSookshmaDashas.
+type GetSookshmaDashas200JSONResponseBodySookshmaDashasMahadashaLord string
+
+// GetSookshmaDashas200JSONResponseBodySookshmaDashasPlanet defines parameters for GetSookshmaDashas.
+type GetSookshmaDashas200JSONResponseBodySookshmaDashasPlanet string
+
+// GetSookshmaDashas200JSONResponseBodySookshmaDashasPratyantardashaLord defines parameters for GetSookshmaDashas.
+type GetSookshmaDashas200JSONResponseBodySookshmaDashasPratyantardashaLord string
 
 // GenerateDivisionalChartParams defines parameters for GenerateDivisionalChart.
 type GenerateDivisionalChartParams struct {
@@ -21559,6 +23054,12 @@ type GetMajorDashasJSONRequestBody GetMajorDashasJSONBody
 
 // GetSubDashasJSONRequestBody defines body for GetSubDashas for application/json ContentType.
 type GetSubDashasJSONRequestBody GetSubDashasJSONBody
+
+// GetPratyantardashasJSONRequestBody defines body for GetPratyantardashas for application/json ContentType.
+type GetPratyantardashasJSONRequestBody GetPratyantardashasJSONBody
+
+// GetSookshmaDashasJSONRequestBody defines body for GetSookshmaDashas for application/json ContentType.
+type GetSookshmaDashasJSONRequestBody GetSookshmaDashasJSONBody
 
 // GenerateDivisionalChartJSONRequestBody defines body for GenerateDivisionalChart for application/json ContentType.
 type GenerateDivisionalChartJSONRequestBody = DivisionalChartRequest
@@ -26329,6 +27830,130 @@ func (t *GetSubDashasJSONBody_Timezone) UnmarshalJSON(b []byte) error {
 	return err
 }
 
+// AsGetPratyantardashasJSONBodyTimezone0 returns the union data inside the GetPratyantardashasJSONBody_Timezone as a GetPratyantardashasJSONBodyTimezone0
+func (t GetPratyantardashasJSONBody_Timezone) AsGetPratyantardashasJSONBodyTimezone0() (GetPratyantardashasJSONBodyTimezone0, error) {
+	var body GetPratyantardashasJSONBodyTimezone0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetPratyantardashasJSONBodyTimezone0 overwrites any union data inside the GetPratyantardashasJSONBody_Timezone as the provided GetPratyantardashasJSONBodyTimezone0
+func (t *GetPratyantardashasJSONBody_Timezone) FromGetPratyantardashasJSONBodyTimezone0(v GetPratyantardashasJSONBodyTimezone0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetPratyantardashasJSONBodyTimezone0 performs a merge with any union data inside the GetPratyantardashasJSONBody_Timezone, using the provided GetPratyantardashasJSONBodyTimezone0
+func (t *GetPratyantardashasJSONBody_Timezone) MergeGetPratyantardashasJSONBodyTimezone0(v GetPratyantardashasJSONBodyTimezone0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetPratyantardashasJSONBodyTimezone1 returns the union data inside the GetPratyantardashasJSONBody_Timezone as a GetPratyantardashasJSONBodyTimezone1
+func (t GetPratyantardashasJSONBody_Timezone) AsGetPratyantardashasJSONBodyTimezone1() (GetPratyantardashasJSONBodyTimezone1, error) {
+	var body GetPratyantardashasJSONBodyTimezone1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetPratyantardashasJSONBodyTimezone1 overwrites any union data inside the GetPratyantardashasJSONBody_Timezone as the provided GetPratyantardashasJSONBodyTimezone1
+func (t *GetPratyantardashasJSONBody_Timezone) FromGetPratyantardashasJSONBodyTimezone1(v GetPratyantardashasJSONBodyTimezone1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetPratyantardashasJSONBodyTimezone1 performs a merge with any union data inside the GetPratyantardashasJSONBody_Timezone, using the provided GetPratyantardashasJSONBodyTimezone1
+func (t *GetPratyantardashasJSONBody_Timezone) MergeGetPratyantardashasJSONBodyTimezone1(v GetPratyantardashasJSONBodyTimezone1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetPratyantardashasJSONBody_Timezone) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetPratyantardashasJSONBody_Timezone) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetSookshmaDashasJSONBodyTimezone0 returns the union data inside the GetSookshmaDashasJSONBody_Timezone as a GetSookshmaDashasJSONBodyTimezone0
+func (t GetSookshmaDashasJSONBody_Timezone) AsGetSookshmaDashasJSONBodyTimezone0() (GetSookshmaDashasJSONBodyTimezone0, error) {
+	var body GetSookshmaDashasJSONBodyTimezone0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetSookshmaDashasJSONBodyTimezone0 overwrites any union data inside the GetSookshmaDashasJSONBody_Timezone as the provided GetSookshmaDashasJSONBodyTimezone0
+func (t *GetSookshmaDashasJSONBody_Timezone) FromGetSookshmaDashasJSONBodyTimezone0(v GetSookshmaDashasJSONBodyTimezone0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetSookshmaDashasJSONBodyTimezone0 performs a merge with any union data inside the GetSookshmaDashasJSONBody_Timezone, using the provided GetSookshmaDashasJSONBodyTimezone0
+func (t *GetSookshmaDashasJSONBody_Timezone) MergeGetSookshmaDashasJSONBodyTimezone0(v GetSookshmaDashasJSONBodyTimezone0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetSookshmaDashasJSONBodyTimezone1 returns the union data inside the GetSookshmaDashasJSONBody_Timezone as a GetSookshmaDashasJSONBodyTimezone1
+func (t GetSookshmaDashasJSONBody_Timezone) AsGetSookshmaDashasJSONBodyTimezone1() (GetSookshmaDashasJSONBodyTimezone1, error) {
+	var body GetSookshmaDashasJSONBodyTimezone1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetSookshmaDashasJSONBodyTimezone1 overwrites any union data inside the GetSookshmaDashasJSONBody_Timezone as the provided GetSookshmaDashasJSONBodyTimezone1
+func (t *GetSookshmaDashasJSONBody_Timezone) FromGetSookshmaDashasJSONBodyTimezone1(v GetSookshmaDashasJSONBodyTimezone1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetSookshmaDashasJSONBodyTimezone1 performs a merge with any union data inside the GetSookshmaDashasJSONBody_Timezone, using the provided GetSookshmaDashasJSONBodyTimezone1
+func (t *GetSookshmaDashasJSONBody_Timezone) MergeGetSookshmaDashasJSONBodyTimezone1(v GetSookshmaDashasJSONBodyTimezone1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetSookshmaDashasJSONBody_Timezone) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetSookshmaDashasJSONBody_Timezone) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
 // AsGetEclipticCrossingsJSONBodyTimezone0 returns the union data inside the GetEclipticCrossingsJSONBody_Timezone as a GetEclipticCrossingsJSONBodyTimezone0
 func (t GetEclipticCrossingsJSONBody_Timezone) AsGetEclipticCrossingsJSONBodyTimezone0() (GetEclipticCrossingsJSONBodyTimezone0, error) {
 	var body GetEclipticCrossingsJSONBodyTimezone0
@@ -27641,6 +29266,16 @@ type ClientInterface interface {
 	GetSubDashasWithBody(ctx context.Context, mahadasha GetSubDashasParamsMahadasha, params *GetSubDashasParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	GetSubDashas(ctx context.Context, mahadasha GetSubDashasParamsMahadasha, params *GetSubDashasParams, body GetSubDashasJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetPratyantardashasWithBody request with any body
+	GetPratyantardashasWithBody(ctx context.Context, mahadasha GetPratyantardashasParamsMahadasha, antardasha GetPratyantardashasParamsAntardasha, params *GetPratyantardashasParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	GetPratyantardashas(ctx context.Context, mahadasha GetPratyantardashasParamsMahadasha, antardasha GetPratyantardashasParamsAntardasha, params *GetPratyantardashasParams, body GetPratyantardashasJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetSookshmaDashasWithBody request with any body
+	GetSookshmaDashasWithBody(ctx context.Context, mahadasha GetSookshmaDashasParamsMahadasha, antardasha GetSookshmaDashasParamsAntardasha, pratyantardasha GetSookshmaDashasParamsPratyantardasha, params *GetSookshmaDashasParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	GetSookshmaDashas(ctx context.Context, mahadasha GetSookshmaDashasParamsMahadasha, antardasha GetSookshmaDashasParamsAntardasha, pratyantardasha GetSookshmaDashasParamsPratyantardasha, params *GetSookshmaDashasParams, body GetSookshmaDashasJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GenerateDivisionalChartWithBody request with any body
 	GenerateDivisionalChartWithBody(ctx context.Context, params *GenerateDivisionalChartParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -30357,6 +31992,54 @@ func (c *Client) GetSubDashasWithBody(ctx context.Context, mahadasha GetSubDasha
 
 func (c *Client) GetSubDashas(ctx context.Context, mahadasha GetSubDashasParamsMahadasha, params *GetSubDashasParams, body GetSubDashasJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewGetSubDashasRequest(c.Server, mahadasha, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) GetPratyantardashasWithBody(ctx context.Context, mahadasha GetPratyantardashasParamsMahadasha, antardasha GetPratyantardashasParamsAntardasha, params *GetPratyantardashasParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetPratyantardashasRequestWithBody(c.Server, mahadasha, antardasha, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) GetPratyantardashas(ctx context.Context, mahadasha GetPratyantardashasParamsMahadasha, antardasha GetPratyantardashasParamsAntardasha, params *GetPratyantardashasParams, body GetPratyantardashasJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetPratyantardashasRequest(c.Server, mahadasha, antardasha, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) GetSookshmaDashasWithBody(ctx context.Context, mahadasha GetSookshmaDashasParamsMahadasha, antardasha GetSookshmaDashasParamsAntardasha, pratyantardasha GetSookshmaDashasParamsPratyantardasha, params *GetSookshmaDashasParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetSookshmaDashasRequestWithBody(c.Server, mahadasha, antardasha, pratyantardasha, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) GetSookshmaDashas(ctx context.Context, mahadasha GetSookshmaDashasParamsMahadasha, antardasha GetSookshmaDashasParamsAntardasha, pratyantardasha GetSookshmaDashasParamsPratyantardasha, params *GetSookshmaDashasParams, body GetSookshmaDashasJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetSookshmaDashasRequest(c.Server, mahadasha, antardasha, pratyantardasha, params, body)
 	if err != nil {
 		return nil, err
 	}
@@ -39642,6 +41325,175 @@ func NewGetSubDashasRequestWithBody(server string, mahadasha GetSubDashasParamsM
 	return req, nil
 }
 
+// NewGetPratyantardashasRequest calls the generic GetPratyantardashas builder with application/json body
+func NewGetPratyantardashasRequest(server string, mahadasha GetPratyantardashasParamsMahadasha, antardasha GetPratyantardashasParamsAntardasha, params *GetPratyantardashasParams, body GetPratyantardashasJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewGetPratyantardashasRequestWithBody(server, mahadasha, antardasha, params, "application/json", bodyReader)
+}
+
+// NewGetPratyantardashasRequestWithBody generates requests for GetPratyantardashas with any type of body
+func NewGetPratyantardashasRequestWithBody(server string, mahadasha GetPratyantardashasParamsMahadasha, antardasha GetPratyantardashasParamsAntardasha, params *GetPratyantardashasParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "mahadasha", mahadasha, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "antardasha", antardasha, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/vedic-astrology/dasha/sub/%s/%s", pathParam0, pathParam1)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Lang != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "lang", *params.Lang, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewGetSookshmaDashasRequest calls the generic GetSookshmaDashas builder with application/json body
+func NewGetSookshmaDashasRequest(server string, mahadasha GetSookshmaDashasParamsMahadasha, antardasha GetSookshmaDashasParamsAntardasha, pratyantardasha GetSookshmaDashasParamsPratyantardasha, params *GetSookshmaDashasParams, body GetSookshmaDashasJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewGetSookshmaDashasRequestWithBody(server, mahadasha, antardasha, pratyantardasha, params, "application/json", bodyReader)
+}
+
+// NewGetSookshmaDashasRequestWithBody generates requests for GetSookshmaDashas with any type of body
+func NewGetSookshmaDashasRequestWithBody(server string, mahadasha GetSookshmaDashasParamsMahadasha, antardasha GetSookshmaDashasParamsAntardasha, pratyantardasha GetSookshmaDashasParamsPratyantardasha, params *GetSookshmaDashasParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "mahadasha", mahadasha, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "antardasha", antardasha, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam2 string
+
+	pathParam2, err = runtime.StyleParamWithOptions("simple", false, "pratyantardasha", pratyantardasha, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/vedic-astrology/dasha/sub/%s/%s/%s", pathParam0, pathParam1, pathParam2)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Lang != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "lang", *params.Lang, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
 // NewGenerateDivisionalChartRequest calls the generic GenerateDivisionalChart builder with application/json body
 func NewGenerateDivisionalChartRequest(server string, params *GenerateDivisionalChartParams, body GenerateDivisionalChartJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
@@ -41910,6 +43762,16 @@ type ClientWithResponsesInterface interface {
 	GetSubDashasWithBodyWithResponse(ctx context.Context, mahadasha GetSubDashasParamsMahadasha, params *GetSubDashasParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetSubDashasResponse, error)
 
 	GetSubDashasWithResponse(ctx context.Context, mahadasha GetSubDashasParamsMahadasha, params *GetSubDashasParams, body GetSubDashasJSONRequestBody, reqEditors ...RequestEditorFn) (*GetSubDashasResponse, error)
+
+	// GetPratyantardashasWithBodyWithResponse request with any body
+	GetPratyantardashasWithBodyWithResponse(ctx context.Context, mahadasha GetPratyantardashasParamsMahadasha, antardasha GetPratyantardashasParamsAntardasha, params *GetPratyantardashasParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetPratyantardashasResponse, error)
+
+	GetPratyantardashasWithResponse(ctx context.Context, mahadasha GetPratyantardashasParamsMahadasha, antardasha GetPratyantardashasParamsAntardasha, params *GetPratyantardashasParams, body GetPratyantardashasJSONRequestBody, reqEditors ...RequestEditorFn) (*GetPratyantardashasResponse, error)
+
+	// GetSookshmaDashasWithBodyWithResponse request with any body
+	GetSookshmaDashasWithBodyWithResponse(ctx context.Context, mahadasha GetSookshmaDashasParamsMahadasha, antardasha GetSookshmaDashasParamsAntardasha, pratyantardasha GetSookshmaDashasParamsPratyantardasha, params *GetSookshmaDashasParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetSookshmaDashasResponse, error)
+
+	GetSookshmaDashasWithResponse(ctx context.Context, mahadasha GetSookshmaDashasParamsMahadasha, antardasha GetSookshmaDashasParamsAntardasha, pratyantardasha GetSookshmaDashasParamsPratyantardasha, params *GetSookshmaDashasParams, body GetSookshmaDashasJSONRequestBody, reqEditors ...RequestEditorFn) (*GetSookshmaDashasResponse, error)
 
 	// GenerateDivisionalChartWithBodyWithResponse request with any body
 	GenerateDivisionalChartWithBodyWithResponse(ctx context.Context, params *GenerateDivisionalChartParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GenerateDivisionalChartResponse, error)
@@ -52939,12 +54801,21 @@ type GetCurrentDashaResponse struct {
 			// MahadashaLord Parent Mahadasha lord under which this Antardasha sub-period runs.
 			MahadashaLord GetCurrentDasha200JSONResponseBodyAntardashaMahadashaLord `json:"mahadashaLord"`
 
+			// NominalStartDate Theoretical start of this period, present ONLY when the birth date truncated it. The Vimshottari cycle is already running when a native is born, so the period in force at birth began earlier: startDate is clipped to the birth moment while this field keeps the real start. Its presence is also why the first period of a chart can contain fewer than 9 sub-periods, the earlier ones having finished before birth. Absent on every period that runs its full length.
+			NominalStartDate *string `json:"nominalStartDate,omitempty"`
+
 			// Planet Ruling graha of this Vimshottari dasha period. One of 9 planets in the Ketu-Venus-Sun-Moon-Mars-Rahu-Jupiter-Saturn-Mercury sequence.
 			Planet GetCurrentDasha200JSONResponseBodyAntardashaPlanet `json:"planet"`
 
 			// StartDate Start datetime of this dasha period. Adjusted to the requested timezone offset.
 			StartDate string `json:"startDate"`
 		} `json:"antardasha"`
+
+		// Ayanamsa Ayanamsa actually applied, in degrees. The precession offset subtracted from the tropical (sayana) longitude to get the sidereal (nirayana) one. Lahiri sits near 23 deg 43 min for a 1990 birth, KP-Newcomb near 23 deg 38 min.
+		Ayanamsa float32 `json:"ayanamsa"`
+
+		// AyanamsaType Ayanamsa system used, echoing the request field. One of "lahiri", "kp-newcomb", "kp-old". Echoed so a client can confirm which frame produced these dates without re-deriving it.
+		AyanamsaType GetCurrentDasha200JSONResponseBodyAyanamsaType `json:"ayanamsaType"`
 
 		// Mahadasha Mahadasha (major planetary period) in the 120-year Vimshottari dasha cycle. Start and end dates are determined by Moon nakshatra at birth.
 		Mahadasha struct {
@@ -52957,12 +54828,18 @@ type GetCurrentDashaResponse struct {
 			// Interpretation Vedic interpretation of the planetary period describing themes, karmic lessons, and life areas affected by this graha.
 			Interpretation *string `json:"interpretation,omitempty"`
 
+			// NominalStartDate Theoretical start of this period, present ONLY when the birth date truncated it. The Vimshottari cycle is already running when a native is born, so the period in force at birth began earlier: startDate is clipped to the birth moment while this field keeps the real start. Its presence is also why the first period of a chart can contain fewer than 9 sub-periods, the earlier ones having finished before birth. Absent on every period that runs its full length.
+			NominalStartDate *string `json:"nominalStartDate,omitempty"`
+
 			// Planet Ruling graha of this Vimshottari dasha period. One of 9 planets in the Ketu-Venus-Sun-Moon-Mars-Rahu-Jupiter-Saturn-Mercury sequence.
 			Planet GetCurrentDasha200JSONResponseBodyMahadashaPlanet `json:"planet"`
 
 			// StartDate Start datetime of this dasha period. Adjusted to the requested timezone offset.
 			StartDate string `json:"startDate"`
 		} `json:"mahadasha"`
+
+		// MoonLongitude Sidereal (nirayana) longitude of the birth Moon in degrees, 0 to 360, measured in the ayanamsa frame reported below. This single value determines the birth nakshatra and therefore every dasha start and end date in this response. Compare it against a reference chart to reconcile any date difference at its source.
+		MoonLongitude float32 `json:"moonLongitude"`
 
 		// MoonNakshatra Birth Moon nakshatra number (1-27). This nakshatra determines the starting dasha lord in the Vimshottari 120-year cycle.
 		MoonNakshatra int `json:"moonNakshatra"`
@@ -52989,6 +54866,9 @@ type GetCurrentDashaResponse struct {
 
 			// MahadashaLord Parent Mahadasha lord under which this Antardasha sub-period runs.
 			MahadashaLord GetCurrentDasha200JSONResponseBodyPratyantardashaMahadashaLord `json:"mahadashaLord"`
+
+			// NominalStartDate Theoretical start of this period, present ONLY when the birth date truncated it. The Vimshottari cycle is already running when a native is born, so the period in force at birth began earlier: startDate is clipped to the birth moment while this field keeps the real start. Its presence is also why the first period of a chart can contain fewer than 9 sub-periods, the earlier ones having finished before birth. Absent on every period that runs its full length.
+			NominalStartDate *string `json:"nominalStartDate,omitempty"`
 
 			// Planet Ruling graha of this Vimshottari dasha period. One of 9 planets in the Ketu-Venus-Sun-Moon-Mars-Rahu-Jupiter-Saturn-Mercury sequence.
 			Planet GetCurrentDasha200JSONResponseBodyPratyantardashaPlanet `json:"planet"`
@@ -53041,6 +54921,51 @@ type GetCurrentDashaResponse struct {
 			// Years Full years remaining in this Vimshottari dasha period.
 			Years float32 `json:"years"`
 		} `json:"remainingInPratyantardasha"`
+
+		// RemainingInSookshma Time remaining in the currently running Sookshma dasha (fourth level). Sookshma periods last days rather than months, so this value turns over quickly.
+		RemainingInSookshma struct {
+			// Days Additional days remaining beyond full months.
+			Days float32 `json:"days"`
+
+			// Months Additional months remaining beyond full years.
+			Months float32 `json:"months"`
+
+			// TotalDays Total remaining days in this dasha period. Useful for progress calculations.
+			TotalDays float32 `json:"totalDays"`
+
+			// Years Full years remaining in this Vimshottari dasha period.
+			Years float32 `json:"years"`
+		} `json:"remainingInSookshma"`
+
+		// SookshmaDasha Sookshma dasha (sookshma antardasha), the fourth level of the Vimshottari dasha hierarchy. Each Pratyantardasha divides into 9 Sookshma periods running roughly 3 to 30 days each, the finest level exposed by this API and the one used for day-level event timing and muhurta style selection.
+		SookshmaDasha struct {
+			// AntardashaLord Parent Antardasha lord under which this Pratyantardasha runs.
+			AntardashaLord GetCurrentDasha200JSONResponseBodySookshmaDashaAntardashaLord `json:"antardashaLord"`
+
+			// DurationYears Duration of this dasha period in years. Mahadasha durations range from 6 years (Sun) to 20 years (Venus).
+			DurationYears float32 `json:"durationYears"`
+
+			// EndDate End datetime of this dasha period. Adjusted to the requested timezone offset.
+			EndDate string `json:"endDate"`
+
+			// Interpretation Vedic interpretation of the planetary period describing themes, karmic lessons, and life areas affected by this graha.
+			Interpretation *string `json:"interpretation,omitempty"`
+
+			// MahadashaLord Parent Mahadasha lord under which this Antardasha sub-period runs.
+			MahadashaLord GetCurrentDasha200JSONResponseBodySookshmaDashaMahadashaLord `json:"mahadashaLord"`
+
+			// NominalStartDate Theoretical start of this period, present ONLY when the birth date truncated it. The Vimshottari cycle is already running when a native is born, so the period in force at birth began earlier: startDate is clipped to the birth moment while this field keeps the real start. Its presence is also why the first period of a chart can contain fewer than 9 sub-periods, the earlier ones having finished before birth. Absent on every period that runs its full length.
+			NominalStartDate *string `json:"nominalStartDate,omitempty"`
+
+			// Planet Ruling graha of this Vimshottari dasha period. One of 9 planets in the Ketu-Venus-Sun-Moon-Mars-Rahu-Jupiter-Saturn-Mercury sequence.
+			Planet GetCurrentDasha200JSONResponseBodySookshmaDashaPlanet `json:"planet"`
+
+			// PratyantardashaLord Parent Pratyantardasha lord under which this Sookshma dasha runs.
+			PratyantardashaLord GetCurrentDasha200JSONResponseBodySookshmaDashaPratyantardashaLord `json:"pratyantardashaLord"`
+
+			// StartDate Start datetime of this dasha period. Adjusted to the requested timezone offset.
+			StartDate string `json:"startDate"`
+		} `json:"sookshmaDasha"`
 	}
 	JSON400 *ErrorResponse
 	JSON401 *ErrorResponse
@@ -53082,6 +55007,12 @@ type GetMajorDashasResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *struct {
+		// Ayanamsa Ayanamsa actually applied, in degrees. The precession offset subtracted from the tropical (sayana) longitude to get the sidereal (nirayana) one. Lahiri sits near 23 deg 43 min for a 1990 birth, KP-Newcomb near 23 deg 38 min.
+		Ayanamsa float32 `json:"ayanamsa"`
+
+		// AyanamsaType Ayanamsa system used, echoing the request field. One of "lahiri", "kp-newcomb", "kp-old". Echoed so a client can confirm which frame produced these dates without re-deriving it.
+		AyanamsaType GetMajorDashas200JSONResponseBodyAyanamsaType `json:"ayanamsaType"`
+
 		// BirthDashaBalance Remaining balance of the first Mahadasha at birth. Based on Moon degree within the birth nakshatra. partial dasha already elapsed before birth.
 		BirthDashaBalance struct {
 			// Days Additional days remaining beyond full months.
@@ -53108,12 +55039,18 @@ type GetMajorDashasResponse struct {
 			// Interpretation Vedic interpretation of the planetary period describing themes, karmic lessons, and life areas affected by this graha.
 			Interpretation *string `json:"interpretation,omitempty"`
 
+			// NominalStartDate Theoretical start of this period, present ONLY when the birth date truncated it. The Vimshottari cycle is already running when a native is born, so the period in force at birth began earlier: startDate is clipped to the birth moment while this field keeps the real start. Its presence is also why the first period of a chart can contain fewer than 9 sub-periods, the earlier ones having finished before birth. Absent on every period that runs its full length.
+			NominalStartDate *string `json:"nominalStartDate,omitempty"`
+
 			// Planet Ruling graha of this Vimshottari dasha period. One of 9 planets in the Ketu-Venus-Sun-Moon-Mars-Rahu-Jupiter-Saturn-Mercury sequence.
 			Planet GetMajorDashas200JSONResponseBodyMahadashasPlanet `json:"planet"`
 
 			// StartDate Start datetime of this dasha period. Adjusted to the requested timezone offset.
 			StartDate string `json:"startDate"`
 		} `json:"mahadashas"`
+
+		// MoonLongitude Sidereal (nirayana) longitude of the birth Moon in degrees, 0 to 360, measured in the ayanamsa frame reported below. This single value determines the birth nakshatra and therefore every dasha start and end date in this response. Compare it against a reference chart to reconcile any date difference at its source.
+		MoonLongitude float32 `json:"moonLongitude"`
 
 		// MoonNakshatra Birth Moon nakshatra number (1-27) that determines the Vimshottari starting point.
 		MoonNakshatra int `json:"moonNakshatra"`
@@ -53167,7 +55104,7 @@ type GetSubDashasResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *struct {
-		// Antardashas All 9 Antardasha sub-periods within this Mahadasha, proportional to each planet Vimshottari years. Sorted chronologically.
+		// Antardashas Antardasha (bhukti) sub-periods within this Mahadasha, proportional to each planet Vimshottari years, sorted chronologically. Nine for any Mahadasha the native lived through in full. FEWER than nine for the first Mahadasha in the chart, because the Vimshottari cycle was already running at birth: the Antardashas that ended before the birth date are not part of the chart, and the one in force at birth starts on the birth date.
 		Antardashas []struct {
 			// DurationYears Duration of this dasha period in years. Mahadasha durations range from 6 years (Sun) to 20 years (Venus).
 			DurationYears float32 `json:"durationYears"`
@@ -53181,12 +55118,21 @@ type GetSubDashasResponse struct {
 			// MahadashaLord Parent Mahadasha lord under which this Antardasha sub-period runs.
 			MahadashaLord GetSubDashas200JSONResponseBodyAntardashasMahadashaLord `json:"mahadashaLord"`
 
+			// NominalStartDate Theoretical start of this period, present ONLY when the birth date truncated it. The Vimshottari cycle is already running when a native is born, so the period in force at birth began earlier: startDate is clipped to the birth moment while this field keeps the real start. Its presence is also why the first period of a chart can contain fewer than 9 sub-periods, the earlier ones having finished before birth. Absent on every period that runs its full length.
+			NominalStartDate *string `json:"nominalStartDate,omitempty"`
+
 			// Planet Ruling graha of this Vimshottari dasha period. One of 9 planets in the Ketu-Venus-Sun-Moon-Mars-Rahu-Jupiter-Saturn-Mercury sequence.
 			Planet GetSubDashas200JSONResponseBodyAntardashasPlanet `json:"planet"`
 
 			// StartDate Start datetime of this dasha period. Adjusted to the requested timezone offset.
 			StartDate string `json:"startDate"`
 		} `json:"antardashas"`
+
+		// Ayanamsa Ayanamsa actually applied, in degrees. The precession offset subtracted from the tropical (sayana) longitude to get the sidereal (nirayana) one. Lahiri sits near 23 deg 43 min for a 1990 birth, KP-Newcomb near 23 deg 38 min.
+		Ayanamsa float32 `json:"ayanamsa"`
+
+		// AyanamsaType Ayanamsa system used, echoing the request field. One of "lahiri", "kp-newcomb", "kp-old". Echoed so a client can confirm which frame produced these dates without re-deriving it.
+		AyanamsaType GetSubDashas200JSONResponseBodyAyanamsaType `json:"ayanamsaType"`
 
 		// MahadashaLord Ruling planet of the requested Mahadasha period.
 		MahadashaLord GetSubDashas200JSONResponseBodyMahadashaLord `json:"mahadashaLord"`
@@ -53202,12 +55148,18 @@ type GetSubDashasResponse struct {
 			// Interpretation Vedic interpretation of the planetary period describing themes, karmic lessons, and life areas affected by this graha.
 			Interpretation *string `json:"interpretation,omitempty"`
 
+			// NominalStartDate Theoretical start of this period, present ONLY when the birth date truncated it. The Vimshottari cycle is already running when a native is born, so the period in force at birth began earlier: startDate is clipped to the birth moment while this field keeps the real start. Its presence is also why the first period of a chart can contain fewer than 9 sub-periods, the earlier ones having finished before birth. Absent on every period that runs its full length.
+			NominalStartDate *string `json:"nominalStartDate,omitempty"`
+
 			// Planet Ruling graha of this Vimshottari dasha period. One of 9 planets in the Ketu-Venus-Sun-Moon-Mars-Rahu-Jupiter-Saturn-Mercury sequence.
 			Planet GetSubDashas200JSONResponseBodyMahadashaPeriodPlanet `json:"planet"`
 
 			// StartDate Start datetime of this dasha period. Adjusted to the requested timezone offset.
 			StartDate string `json:"startDate"`
 		} `json:"mahadashaPeriod"`
+
+		// MoonLongitude Sidereal (nirayana) longitude of the birth Moon in degrees, 0 to 360, measured in the ayanamsa frame reported below. This single value determines the birth nakshatra and therefore every dasha start and end date in this response. Compare it against a reference chart to reconcile any date difference at its source.
+		MoonLongitude float32 `json:"moonLongitude"`
 	}
 	JSON400 *ErrorResponse
 	JSON401 *ErrorResponse
@@ -53239,6 +55191,227 @@ func (r GetSubDashasResponse) Bytes() []byte {
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r GetSubDashasResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetPratyantardashasResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *struct {
+		// AntardashaLord Ruling planet of the requested Antardasha sub-period.
+		AntardashaLord GetPratyantardashas200JSONResponseBodyAntardashaLord `json:"antardashaLord"`
+
+		// AntardashaPeriod Full details of the parent Antardasha including start/end dates and duration.
+		AntardashaPeriod struct {
+			// DurationYears Duration of this dasha period in years. Mahadasha durations range from 6 years (Sun) to 20 years (Venus).
+			DurationYears float32 `json:"durationYears"`
+
+			// EndDate End datetime of this dasha period. Adjusted to the requested timezone offset.
+			EndDate string `json:"endDate"`
+
+			// Interpretation Vedic interpretation of the planetary period describing themes, karmic lessons, and life areas affected by this graha.
+			Interpretation *string `json:"interpretation,omitempty"`
+
+			// MahadashaLord Parent Mahadasha lord under which this Antardasha sub-period runs.
+			MahadashaLord GetPratyantardashas200JSONResponseBodyAntardashaPeriodMahadashaLord `json:"mahadashaLord"`
+
+			// NominalStartDate Theoretical start of this period, present ONLY when the birth date truncated it. The Vimshottari cycle is already running when a native is born, so the period in force at birth began earlier: startDate is clipped to the birth moment while this field keeps the real start. Its presence is also why the first period of a chart can contain fewer than 9 sub-periods, the earlier ones having finished before birth. Absent on every period that runs its full length.
+			NominalStartDate *string `json:"nominalStartDate,omitempty"`
+
+			// Planet Ruling graha of this Vimshottari dasha period. One of 9 planets in the Ketu-Venus-Sun-Moon-Mars-Rahu-Jupiter-Saturn-Mercury sequence.
+			Planet GetPratyantardashas200JSONResponseBodyAntardashaPeriodPlanet `json:"planet"`
+
+			// StartDate Start datetime of this dasha period. Adjusted to the requested timezone offset.
+			StartDate string `json:"startDate"`
+		} `json:"antardashaPeriod"`
+
+		// Ayanamsa Ayanamsa actually applied, in degrees. The precession offset subtracted from the tropical (sayana) longitude to get the sidereal (nirayana) one. Lahiri sits near 23 deg 43 min for a 1990 birth, KP-Newcomb near 23 deg 38 min.
+		Ayanamsa float32 `json:"ayanamsa"`
+
+		// AyanamsaType Ayanamsa system used, echoing the request field. One of "lahiri", "kp-newcomb", "kp-old". Echoed so a client can confirm which frame produced these dates without re-deriving it.
+		AyanamsaType GetPratyantardashas200JSONResponseBodyAyanamsaType `json:"ayanamsaType"`
+
+		// MahadashaLord Ruling planet of the requested Mahadasha period.
+		MahadashaLord GetPratyantardashas200JSONResponseBodyMahadashaLord `json:"mahadashaLord"`
+
+		// MoonLongitude Sidereal (nirayana) longitude of the birth Moon in degrees, 0 to 360, measured in the ayanamsa frame reported below. This single value determines the birth nakshatra and therefore every dasha start and end date in this response. Compare it against a reference chart to reconcile any date difference at its source.
+		MoonLongitude float32 `json:"moonLongitude"`
+
+		// Pratyantardashas Pratyantardasha (antara) periods within this Antardasha, proportional to each planet Vimshottari years, sorted chronologically and starting with the Antardasha lord. Fewer than nine only when the parent Antardasha is the one that was already running at birth, in which case the periods that ended before the birth date are omitted.
+		Pratyantardashas []struct {
+			// AntardashaLord Parent Antardasha lord under which this Pratyantardasha runs.
+			AntardashaLord GetPratyantardashas200JSONResponseBodyPratyantardashasAntardashaLord `json:"antardashaLord"`
+
+			// DurationYears Duration of this dasha period in years. Mahadasha durations range from 6 years (Sun) to 20 years (Venus).
+			DurationYears float32 `json:"durationYears"`
+
+			// EndDate End datetime of this dasha period. Adjusted to the requested timezone offset.
+			EndDate string `json:"endDate"`
+
+			// Interpretation Vedic interpretation of the planetary period describing themes, karmic lessons, and life areas affected by this graha.
+			Interpretation *string `json:"interpretation,omitempty"`
+
+			// MahadashaLord Parent Mahadasha lord under which this Antardasha sub-period runs.
+			MahadashaLord GetPratyantardashas200JSONResponseBodyPratyantardashasMahadashaLord `json:"mahadashaLord"`
+
+			// NominalStartDate Theoretical start of this period, present ONLY when the birth date truncated it. The Vimshottari cycle is already running when a native is born, so the period in force at birth began earlier: startDate is clipped to the birth moment while this field keeps the real start. Its presence is also why the first period of a chart can contain fewer than 9 sub-periods, the earlier ones having finished before birth. Absent on every period that runs its full length.
+			NominalStartDate *string `json:"nominalStartDate,omitempty"`
+
+			// Planet Ruling graha of this Vimshottari dasha period. One of 9 planets in the Ketu-Venus-Sun-Moon-Mars-Rahu-Jupiter-Saturn-Mercury sequence.
+			Planet GetPratyantardashas200JSONResponseBodyPratyantardashasPlanet `json:"planet"`
+
+			// StartDate Start datetime of this dasha period. Adjusted to the requested timezone offset.
+			StartDate string `json:"startDate"`
+		} `json:"pratyantardashas"`
+	}
+	JSON400 *ErrorResponse
+	JSON401 *ErrorResponse
+	JSON405 *ErrorResponse
+	JSON429 *ErrorResponse
+	JSON500 *ErrorResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r GetPratyantardashasResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetPratyantardashasResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// Bytes is a convenience method to retrieve the raw bytes from the HTTP response
+func (r GetPratyantardashasResponse) Bytes() []byte {
+	return r.Body
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetPratyantardashasResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetSookshmaDashasResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *struct {
+		// AntardashaLord Ruling planet of the requested Antardasha sub-period.
+		AntardashaLord GetSookshmaDashas200JSONResponseBodyAntardashaLord `json:"antardashaLord"`
+
+		// Ayanamsa Ayanamsa actually applied, in degrees. The precession offset subtracted from the tropical (sayana) longitude to get the sidereal (nirayana) one. Lahiri sits near 23 deg 43 min for a 1990 birth, KP-Newcomb near 23 deg 38 min.
+		Ayanamsa float32 `json:"ayanamsa"`
+
+		// AyanamsaType Ayanamsa system used, echoing the request field. One of "lahiri", "kp-newcomb", "kp-old". Echoed so a client can confirm which frame produced these dates without re-deriving it.
+		AyanamsaType GetSookshmaDashas200JSONResponseBodyAyanamsaType `json:"ayanamsaType"`
+
+		// MahadashaLord Ruling planet of the requested Mahadasha period.
+		MahadashaLord GetSookshmaDashas200JSONResponseBodyMahadashaLord `json:"mahadashaLord"`
+
+		// MoonLongitude Sidereal (nirayana) longitude of the birth Moon in degrees, 0 to 360, measured in the ayanamsa frame reported below. This single value determines the birth nakshatra and therefore every dasha start and end date in this response. Compare it against a reference chart to reconcile any date difference at its source.
+		MoonLongitude float32 `json:"moonLongitude"`
+
+		// PratyantardashaLord Ruling planet of the requested Pratyantardasha sub-sub-period.
+		PratyantardashaLord GetSookshmaDashas200JSONResponseBodyPratyantardashaLord `json:"pratyantardashaLord"`
+
+		// PratyantardashaPeriod Full details of the parent Pratyantardasha including start/end dates and duration.
+		PratyantardashaPeriod struct {
+			// AntardashaLord Parent Antardasha lord under which this Pratyantardasha runs.
+			AntardashaLord GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodAntardashaLord `json:"antardashaLord"`
+
+			// DurationYears Duration of this dasha period in years. Mahadasha durations range from 6 years (Sun) to 20 years (Venus).
+			DurationYears float32 `json:"durationYears"`
+
+			// EndDate End datetime of this dasha period. Adjusted to the requested timezone offset.
+			EndDate string `json:"endDate"`
+
+			// Interpretation Vedic interpretation of the planetary period describing themes, karmic lessons, and life areas affected by this graha.
+			Interpretation *string `json:"interpretation,omitempty"`
+
+			// MahadashaLord Parent Mahadasha lord under which this Antardasha sub-period runs.
+			MahadashaLord GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodMahadashaLord `json:"mahadashaLord"`
+
+			// NominalStartDate Theoretical start of this period, present ONLY when the birth date truncated it. The Vimshottari cycle is already running when a native is born, so the period in force at birth began earlier: startDate is clipped to the birth moment while this field keeps the real start. Its presence is also why the first period of a chart can contain fewer than 9 sub-periods, the earlier ones having finished before birth. Absent on every period that runs its full length.
+			NominalStartDate *string `json:"nominalStartDate,omitempty"`
+
+			// Planet Ruling graha of this Vimshottari dasha period. One of 9 planets in the Ketu-Venus-Sun-Moon-Mars-Rahu-Jupiter-Saturn-Mercury sequence.
+			Planet GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodPlanet `json:"planet"`
+
+			// StartDate Start datetime of this dasha period. Adjusted to the requested timezone offset.
+			StartDate string `json:"startDate"`
+		} `json:"pratyantardashaPeriod"`
+
+		// SookshmaDashas Sookshma dasha periods within this Pratyantardasha, proportional to each planet Vimshottari years, sorted chronologically and starting with the Pratyantardasha lord. Fewer than nine only when the parent Pratyantardasha is the one that was already running at birth, in which case the periods that ended before the birth date are omitted.
+		SookshmaDashas []struct {
+			// AntardashaLord Parent Antardasha lord under which this Pratyantardasha runs.
+			AntardashaLord GetSookshmaDashas200JSONResponseBodySookshmaDashasAntardashaLord `json:"antardashaLord"`
+
+			// DurationYears Duration of this dasha period in years. Mahadasha durations range from 6 years (Sun) to 20 years (Venus).
+			DurationYears float32 `json:"durationYears"`
+
+			// EndDate End datetime of this dasha period. Adjusted to the requested timezone offset.
+			EndDate string `json:"endDate"`
+
+			// Interpretation Vedic interpretation of the planetary period describing themes, karmic lessons, and life areas affected by this graha.
+			Interpretation *string `json:"interpretation,omitempty"`
+
+			// MahadashaLord Parent Mahadasha lord under which this Antardasha sub-period runs.
+			MahadashaLord GetSookshmaDashas200JSONResponseBodySookshmaDashasMahadashaLord `json:"mahadashaLord"`
+
+			// NominalStartDate Theoretical start of this period, present ONLY when the birth date truncated it. The Vimshottari cycle is already running when a native is born, so the period in force at birth began earlier: startDate is clipped to the birth moment while this field keeps the real start. Its presence is also why the first period of a chart can contain fewer than 9 sub-periods, the earlier ones having finished before birth. Absent on every period that runs its full length.
+			NominalStartDate *string `json:"nominalStartDate,omitempty"`
+
+			// Planet Ruling graha of this Vimshottari dasha period. One of 9 planets in the Ketu-Venus-Sun-Moon-Mars-Rahu-Jupiter-Saturn-Mercury sequence.
+			Planet GetSookshmaDashas200JSONResponseBodySookshmaDashasPlanet `json:"planet"`
+
+			// PratyantardashaLord Parent Pratyantardasha lord under which this Sookshma dasha runs.
+			PratyantardashaLord GetSookshmaDashas200JSONResponseBodySookshmaDashasPratyantardashaLord `json:"pratyantardashaLord"`
+
+			// StartDate Start datetime of this dasha period. Adjusted to the requested timezone offset.
+			StartDate string `json:"startDate"`
+		} `json:"sookshmaDashas"`
+	}
+	JSON400 *ErrorResponse
+	JSON401 *ErrorResponse
+	JSON405 *ErrorResponse
+	JSON429 *ErrorResponse
+	JSON500 *ErrorResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r GetSookshmaDashasResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetSookshmaDashasResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// Bytes is a convenience method to retrieve the raw bytes from the HTTP response
+func (r GetSookshmaDashasResponse) Bytes() []byte {
+	return r.Body
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetSookshmaDashasResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -57239,6 +59412,40 @@ func (c *ClientWithResponses) GetSubDashasWithResponse(ctx context.Context, maha
 		return nil, err
 	}
 	return ParseGetSubDashasResponse(rsp)
+}
+
+// GetPratyantardashasWithBodyWithResponse request with arbitrary body returning *GetPratyantardashasResponse
+func (c *ClientWithResponses) GetPratyantardashasWithBodyWithResponse(ctx context.Context, mahadasha GetPratyantardashasParamsMahadasha, antardasha GetPratyantardashasParamsAntardasha, params *GetPratyantardashasParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetPratyantardashasResponse, error) {
+	rsp, err := c.GetPratyantardashasWithBody(ctx, mahadasha, antardasha, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetPratyantardashasResponse(rsp)
+}
+
+func (c *ClientWithResponses) GetPratyantardashasWithResponse(ctx context.Context, mahadasha GetPratyantardashasParamsMahadasha, antardasha GetPratyantardashasParamsAntardasha, params *GetPratyantardashasParams, body GetPratyantardashasJSONRequestBody, reqEditors ...RequestEditorFn) (*GetPratyantardashasResponse, error) {
+	rsp, err := c.GetPratyantardashas(ctx, mahadasha, antardasha, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetPratyantardashasResponse(rsp)
+}
+
+// GetSookshmaDashasWithBodyWithResponse request with arbitrary body returning *GetSookshmaDashasResponse
+func (c *ClientWithResponses) GetSookshmaDashasWithBodyWithResponse(ctx context.Context, mahadasha GetSookshmaDashasParamsMahadasha, antardasha GetSookshmaDashasParamsAntardasha, pratyantardasha GetSookshmaDashasParamsPratyantardasha, params *GetSookshmaDashasParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetSookshmaDashasResponse, error) {
+	rsp, err := c.GetSookshmaDashasWithBody(ctx, mahadasha, antardasha, pratyantardasha, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetSookshmaDashasResponse(rsp)
+}
+
+func (c *ClientWithResponses) GetSookshmaDashasWithResponse(ctx context.Context, mahadasha GetSookshmaDashasParamsMahadasha, antardasha GetSookshmaDashasParamsAntardasha, pratyantardasha GetSookshmaDashasParamsPratyantardasha, params *GetSookshmaDashasParams, body GetSookshmaDashasJSONRequestBody, reqEditors ...RequestEditorFn) (*GetSookshmaDashasResponse, error) {
+	rsp, err := c.GetSookshmaDashas(ctx, mahadasha, antardasha, pratyantardasha, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetSookshmaDashasResponse(rsp)
 }
 
 // GenerateDivisionalChartWithBodyWithResponse request with arbitrary body returning *GenerateDivisionalChartResponse
@@ -71397,12 +73604,21 @@ func ParseGetCurrentDashaResponse(rsp *http.Response) (*GetCurrentDashaResponse,
 				// MahadashaLord Parent Mahadasha lord under which this Antardasha sub-period runs.
 				MahadashaLord GetCurrentDasha200JSONResponseBodyAntardashaMahadashaLord `json:"mahadashaLord"`
 
+				// NominalStartDate Theoretical start of this period, present ONLY when the birth date truncated it. The Vimshottari cycle is already running when a native is born, so the period in force at birth began earlier: startDate is clipped to the birth moment while this field keeps the real start. Its presence is also why the first period of a chart can contain fewer than 9 sub-periods, the earlier ones having finished before birth. Absent on every period that runs its full length.
+				NominalStartDate *string `json:"nominalStartDate,omitempty"`
+
 				// Planet Ruling graha of this Vimshottari dasha period. One of 9 planets in the Ketu-Venus-Sun-Moon-Mars-Rahu-Jupiter-Saturn-Mercury sequence.
 				Planet GetCurrentDasha200JSONResponseBodyAntardashaPlanet `json:"planet"`
 
 				// StartDate Start datetime of this dasha period. Adjusted to the requested timezone offset.
 				StartDate string `json:"startDate"`
 			} `json:"antardasha"`
+
+			// Ayanamsa Ayanamsa actually applied, in degrees. The precession offset subtracted from the tropical (sayana) longitude to get the sidereal (nirayana) one. Lahiri sits near 23 deg 43 min for a 1990 birth, KP-Newcomb near 23 deg 38 min.
+			Ayanamsa float32 `json:"ayanamsa"`
+
+			// AyanamsaType Ayanamsa system used, echoing the request field. One of "lahiri", "kp-newcomb", "kp-old". Echoed so a client can confirm which frame produced these dates without re-deriving it.
+			AyanamsaType GetCurrentDasha200JSONResponseBodyAyanamsaType `json:"ayanamsaType"`
 
 			// Mahadasha Mahadasha (major planetary period) in the 120-year Vimshottari dasha cycle. Start and end dates are determined by Moon nakshatra at birth.
 			Mahadasha struct {
@@ -71415,12 +73631,18 @@ func ParseGetCurrentDashaResponse(rsp *http.Response) (*GetCurrentDashaResponse,
 				// Interpretation Vedic interpretation of the planetary period describing themes, karmic lessons, and life areas affected by this graha.
 				Interpretation *string `json:"interpretation,omitempty"`
 
+				// NominalStartDate Theoretical start of this period, present ONLY when the birth date truncated it. The Vimshottari cycle is already running when a native is born, so the period in force at birth began earlier: startDate is clipped to the birth moment while this field keeps the real start. Its presence is also why the first period of a chart can contain fewer than 9 sub-periods, the earlier ones having finished before birth. Absent on every period that runs its full length.
+				NominalStartDate *string `json:"nominalStartDate,omitempty"`
+
 				// Planet Ruling graha of this Vimshottari dasha period. One of 9 planets in the Ketu-Venus-Sun-Moon-Mars-Rahu-Jupiter-Saturn-Mercury sequence.
 				Planet GetCurrentDasha200JSONResponseBodyMahadashaPlanet `json:"planet"`
 
 				// StartDate Start datetime of this dasha period. Adjusted to the requested timezone offset.
 				StartDate string `json:"startDate"`
 			} `json:"mahadasha"`
+
+			// MoonLongitude Sidereal (nirayana) longitude of the birth Moon in degrees, 0 to 360, measured in the ayanamsa frame reported below. This single value determines the birth nakshatra and therefore every dasha start and end date in this response. Compare it against a reference chart to reconcile any date difference at its source.
+			MoonLongitude float32 `json:"moonLongitude"`
 
 			// MoonNakshatra Birth Moon nakshatra number (1-27). This nakshatra determines the starting dasha lord in the Vimshottari 120-year cycle.
 			MoonNakshatra int `json:"moonNakshatra"`
@@ -71447,6 +73669,9 @@ func ParseGetCurrentDashaResponse(rsp *http.Response) (*GetCurrentDashaResponse,
 
 				// MahadashaLord Parent Mahadasha lord under which this Antardasha sub-period runs.
 				MahadashaLord GetCurrentDasha200JSONResponseBodyPratyantardashaMahadashaLord `json:"mahadashaLord"`
+
+				// NominalStartDate Theoretical start of this period, present ONLY when the birth date truncated it. The Vimshottari cycle is already running when a native is born, so the period in force at birth began earlier: startDate is clipped to the birth moment while this field keeps the real start. Its presence is also why the first period of a chart can contain fewer than 9 sub-periods, the earlier ones having finished before birth. Absent on every period that runs its full length.
+				NominalStartDate *string `json:"nominalStartDate,omitempty"`
 
 				// Planet Ruling graha of this Vimshottari dasha period. One of 9 planets in the Ketu-Venus-Sun-Moon-Mars-Rahu-Jupiter-Saturn-Mercury sequence.
 				Planet GetCurrentDasha200JSONResponseBodyPratyantardashaPlanet `json:"planet"`
@@ -71499,6 +73724,51 @@ func ParseGetCurrentDashaResponse(rsp *http.Response) (*GetCurrentDashaResponse,
 				// Years Full years remaining in this Vimshottari dasha period.
 				Years float32 `json:"years"`
 			} `json:"remainingInPratyantardasha"`
+
+			// RemainingInSookshma Time remaining in the currently running Sookshma dasha (fourth level). Sookshma periods last days rather than months, so this value turns over quickly.
+			RemainingInSookshma struct {
+				// Days Additional days remaining beyond full months.
+				Days float32 `json:"days"`
+
+				// Months Additional months remaining beyond full years.
+				Months float32 `json:"months"`
+
+				// TotalDays Total remaining days in this dasha period. Useful for progress calculations.
+				TotalDays float32 `json:"totalDays"`
+
+				// Years Full years remaining in this Vimshottari dasha period.
+				Years float32 `json:"years"`
+			} `json:"remainingInSookshma"`
+
+			// SookshmaDasha Sookshma dasha (sookshma antardasha), the fourth level of the Vimshottari dasha hierarchy. Each Pratyantardasha divides into 9 Sookshma periods running roughly 3 to 30 days each, the finest level exposed by this API and the one used for day-level event timing and muhurta style selection.
+			SookshmaDasha struct {
+				// AntardashaLord Parent Antardasha lord under which this Pratyantardasha runs.
+				AntardashaLord GetCurrentDasha200JSONResponseBodySookshmaDashaAntardashaLord `json:"antardashaLord"`
+
+				// DurationYears Duration of this dasha period in years. Mahadasha durations range from 6 years (Sun) to 20 years (Venus).
+				DurationYears float32 `json:"durationYears"`
+
+				// EndDate End datetime of this dasha period. Adjusted to the requested timezone offset.
+				EndDate string `json:"endDate"`
+
+				// Interpretation Vedic interpretation of the planetary period describing themes, karmic lessons, and life areas affected by this graha.
+				Interpretation *string `json:"interpretation,omitempty"`
+
+				// MahadashaLord Parent Mahadasha lord under which this Antardasha sub-period runs.
+				MahadashaLord GetCurrentDasha200JSONResponseBodySookshmaDashaMahadashaLord `json:"mahadashaLord"`
+
+				// NominalStartDate Theoretical start of this period, present ONLY when the birth date truncated it. The Vimshottari cycle is already running when a native is born, so the period in force at birth began earlier: startDate is clipped to the birth moment while this field keeps the real start. Its presence is also why the first period of a chart can contain fewer than 9 sub-periods, the earlier ones having finished before birth. Absent on every period that runs its full length.
+				NominalStartDate *string `json:"nominalStartDate,omitempty"`
+
+				// Planet Ruling graha of this Vimshottari dasha period. One of 9 planets in the Ketu-Venus-Sun-Moon-Mars-Rahu-Jupiter-Saturn-Mercury sequence.
+				Planet GetCurrentDasha200JSONResponseBodySookshmaDashaPlanet `json:"planet"`
+
+				// PratyantardashaLord Parent Pratyantardasha lord under which this Sookshma dasha runs.
+				PratyantardashaLord GetCurrentDasha200JSONResponseBodySookshmaDashaPratyantardashaLord `json:"pratyantardashaLord"`
+
+				// StartDate Start datetime of this dasha period. Adjusted to the requested timezone offset.
+				StartDate string `json:"startDate"`
+			} `json:"sookshmaDasha"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -71561,6 +73831,12 @@ func ParseGetMajorDashasResponse(rsp *http.Response) (*GetMajorDashasResponse, e
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
+			// Ayanamsa Ayanamsa actually applied, in degrees. The precession offset subtracted from the tropical (sayana) longitude to get the sidereal (nirayana) one. Lahiri sits near 23 deg 43 min for a 1990 birth, KP-Newcomb near 23 deg 38 min.
+			Ayanamsa float32 `json:"ayanamsa"`
+
+			// AyanamsaType Ayanamsa system used, echoing the request field. One of "lahiri", "kp-newcomb", "kp-old". Echoed so a client can confirm which frame produced these dates without re-deriving it.
+			AyanamsaType GetMajorDashas200JSONResponseBodyAyanamsaType `json:"ayanamsaType"`
+
 			// BirthDashaBalance Remaining balance of the first Mahadasha at birth. Based on Moon degree within the birth nakshatra. partial dasha already elapsed before birth.
 			BirthDashaBalance struct {
 				// Days Additional days remaining beyond full months.
@@ -71587,12 +73863,18 @@ func ParseGetMajorDashasResponse(rsp *http.Response) (*GetMajorDashasResponse, e
 				// Interpretation Vedic interpretation of the planetary period describing themes, karmic lessons, and life areas affected by this graha.
 				Interpretation *string `json:"interpretation,omitempty"`
 
+				// NominalStartDate Theoretical start of this period, present ONLY when the birth date truncated it. The Vimshottari cycle is already running when a native is born, so the period in force at birth began earlier: startDate is clipped to the birth moment while this field keeps the real start. Its presence is also why the first period of a chart can contain fewer than 9 sub-periods, the earlier ones having finished before birth. Absent on every period that runs its full length.
+				NominalStartDate *string `json:"nominalStartDate,omitempty"`
+
 				// Planet Ruling graha of this Vimshottari dasha period. One of 9 planets in the Ketu-Venus-Sun-Moon-Mars-Rahu-Jupiter-Saturn-Mercury sequence.
 				Planet GetMajorDashas200JSONResponseBodyMahadashasPlanet `json:"planet"`
 
 				// StartDate Start datetime of this dasha period. Adjusted to the requested timezone offset.
 				StartDate string `json:"startDate"`
 			} `json:"mahadashas"`
+
+			// MoonLongitude Sidereal (nirayana) longitude of the birth Moon in degrees, 0 to 360, measured in the ayanamsa frame reported below. This single value determines the birth nakshatra and therefore every dasha start and end date in this response. Compare it against a reference chart to reconcile any date difference at its source.
+			MoonLongitude float32 `json:"moonLongitude"`
 
 			// MoonNakshatra Birth Moon nakshatra number (1-27) that determines the Vimshottari starting point.
 			MoonNakshatra int `json:"moonNakshatra"`
@@ -71667,7 +73949,7 @@ func ParseGetSubDashasResponse(rsp *http.Response) (*GetSubDashasResponse, error
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
-			// Antardashas All 9 Antardasha sub-periods within this Mahadasha, proportional to each planet Vimshottari years. Sorted chronologically.
+			// Antardashas Antardasha (bhukti) sub-periods within this Mahadasha, proportional to each planet Vimshottari years, sorted chronologically. Nine for any Mahadasha the native lived through in full. FEWER than nine for the first Mahadasha in the chart, because the Vimshottari cycle was already running at birth: the Antardashas that ended before the birth date are not part of the chart, and the one in force at birth starts on the birth date.
 			Antardashas []struct {
 				// DurationYears Duration of this dasha period in years. Mahadasha durations range from 6 years (Sun) to 20 years (Venus).
 				DurationYears float32 `json:"durationYears"`
@@ -71681,12 +73963,21 @@ func ParseGetSubDashasResponse(rsp *http.Response) (*GetSubDashasResponse, error
 				// MahadashaLord Parent Mahadasha lord under which this Antardasha sub-period runs.
 				MahadashaLord GetSubDashas200JSONResponseBodyAntardashasMahadashaLord `json:"mahadashaLord"`
 
+				// NominalStartDate Theoretical start of this period, present ONLY when the birth date truncated it. The Vimshottari cycle is already running when a native is born, so the period in force at birth began earlier: startDate is clipped to the birth moment while this field keeps the real start. Its presence is also why the first period of a chart can contain fewer than 9 sub-periods, the earlier ones having finished before birth. Absent on every period that runs its full length.
+				NominalStartDate *string `json:"nominalStartDate,omitempty"`
+
 				// Planet Ruling graha of this Vimshottari dasha period. One of 9 planets in the Ketu-Venus-Sun-Moon-Mars-Rahu-Jupiter-Saturn-Mercury sequence.
 				Planet GetSubDashas200JSONResponseBodyAntardashasPlanet `json:"planet"`
 
 				// StartDate Start datetime of this dasha period. Adjusted to the requested timezone offset.
 				StartDate string `json:"startDate"`
 			} `json:"antardashas"`
+
+			// Ayanamsa Ayanamsa actually applied, in degrees. The precession offset subtracted from the tropical (sayana) longitude to get the sidereal (nirayana) one. Lahiri sits near 23 deg 43 min for a 1990 birth, KP-Newcomb near 23 deg 38 min.
+			Ayanamsa float32 `json:"ayanamsa"`
+
+			// AyanamsaType Ayanamsa system used, echoing the request field. One of "lahiri", "kp-newcomb", "kp-old". Echoed so a client can confirm which frame produced these dates without re-deriving it.
+			AyanamsaType GetSubDashas200JSONResponseBodyAyanamsaType `json:"ayanamsaType"`
 
 			// MahadashaLord Ruling planet of the requested Mahadasha period.
 			MahadashaLord GetSubDashas200JSONResponseBodyMahadashaLord `json:"mahadashaLord"`
@@ -71702,12 +73993,281 @@ func ParseGetSubDashasResponse(rsp *http.Response) (*GetSubDashasResponse, error
 				// Interpretation Vedic interpretation of the planetary period describing themes, karmic lessons, and life areas affected by this graha.
 				Interpretation *string `json:"interpretation,omitempty"`
 
+				// NominalStartDate Theoretical start of this period, present ONLY when the birth date truncated it. The Vimshottari cycle is already running when a native is born, so the period in force at birth began earlier: startDate is clipped to the birth moment while this field keeps the real start. Its presence is also why the first period of a chart can contain fewer than 9 sub-periods, the earlier ones having finished before birth. Absent on every period that runs its full length.
+				NominalStartDate *string `json:"nominalStartDate,omitempty"`
+
 				// Planet Ruling graha of this Vimshottari dasha period. One of 9 planets in the Ketu-Venus-Sun-Moon-Mars-Rahu-Jupiter-Saturn-Mercury sequence.
 				Planet GetSubDashas200JSONResponseBodyMahadashaPeriodPlanet `json:"planet"`
 
 				// StartDate Start datetime of this dasha period. Adjusted to the requested timezone offset.
 				StartDate string `json:"startDate"`
 			} `json:"mahadashaPeriod"`
+
+			// MoonLongitude Sidereal (nirayana) longitude of the birth Moon in degrees, 0 to 360, measured in the ayanamsa frame reported below. This single value determines the birth nakshatra and therefore every dasha start and end date in this response. Compare it against a reference chart to reconcile any date difference at its source.
+			MoonLongitude float32 `json:"moonLongitude"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 405:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON405 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetPratyantardashasResponse parses an HTTP response from a GetPratyantardashasWithResponse call
+func ParseGetPratyantardashasResponse(rsp *http.Response) (*GetPratyantardashasResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetPratyantardashasResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// AntardashaLord Ruling planet of the requested Antardasha sub-period.
+			AntardashaLord GetPratyantardashas200JSONResponseBodyAntardashaLord `json:"antardashaLord"`
+
+			// AntardashaPeriod Full details of the parent Antardasha including start/end dates and duration.
+			AntardashaPeriod struct {
+				// DurationYears Duration of this dasha period in years. Mahadasha durations range from 6 years (Sun) to 20 years (Venus).
+				DurationYears float32 `json:"durationYears"`
+
+				// EndDate End datetime of this dasha period. Adjusted to the requested timezone offset.
+				EndDate string `json:"endDate"`
+
+				// Interpretation Vedic interpretation of the planetary period describing themes, karmic lessons, and life areas affected by this graha.
+				Interpretation *string `json:"interpretation,omitempty"`
+
+				// MahadashaLord Parent Mahadasha lord under which this Antardasha sub-period runs.
+				MahadashaLord GetPratyantardashas200JSONResponseBodyAntardashaPeriodMahadashaLord `json:"mahadashaLord"`
+
+				// NominalStartDate Theoretical start of this period, present ONLY when the birth date truncated it. The Vimshottari cycle is already running when a native is born, so the period in force at birth began earlier: startDate is clipped to the birth moment while this field keeps the real start. Its presence is also why the first period of a chart can contain fewer than 9 sub-periods, the earlier ones having finished before birth. Absent on every period that runs its full length.
+				NominalStartDate *string `json:"nominalStartDate,omitempty"`
+
+				// Planet Ruling graha of this Vimshottari dasha period. One of 9 planets in the Ketu-Venus-Sun-Moon-Mars-Rahu-Jupiter-Saturn-Mercury sequence.
+				Planet GetPratyantardashas200JSONResponseBodyAntardashaPeriodPlanet `json:"planet"`
+
+				// StartDate Start datetime of this dasha period. Adjusted to the requested timezone offset.
+				StartDate string `json:"startDate"`
+			} `json:"antardashaPeriod"`
+
+			// Ayanamsa Ayanamsa actually applied, in degrees. The precession offset subtracted from the tropical (sayana) longitude to get the sidereal (nirayana) one. Lahiri sits near 23 deg 43 min for a 1990 birth, KP-Newcomb near 23 deg 38 min.
+			Ayanamsa float32 `json:"ayanamsa"`
+
+			// AyanamsaType Ayanamsa system used, echoing the request field. One of "lahiri", "kp-newcomb", "kp-old". Echoed so a client can confirm which frame produced these dates without re-deriving it.
+			AyanamsaType GetPratyantardashas200JSONResponseBodyAyanamsaType `json:"ayanamsaType"`
+
+			// MahadashaLord Ruling planet of the requested Mahadasha period.
+			MahadashaLord GetPratyantardashas200JSONResponseBodyMahadashaLord `json:"mahadashaLord"`
+
+			// MoonLongitude Sidereal (nirayana) longitude of the birth Moon in degrees, 0 to 360, measured in the ayanamsa frame reported below. This single value determines the birth nakshatra and therefore every dasha start and end date in this response. Compare it against a reference chart to reconcile any date difference at its source.
+			MoonLongitude float32 `json:"moonLongitude"`
+
+			// Pratyantardashas Pratyantardasha (antara) periods within this Antardasha, proportional to each planet Vimshottari years, sorted chronologically and starting with the Antardasha lord. Fewer than nine only when the parent Antardasha is the one that was already running at birth, in which case the periods that ended before the birth date are omitted.
+			Pratyantardashas []struct {
+				// AntardashaLord Parent Antardasha lord under which this Pratyantardasha runs.
+				AntardashaLord GetPratyantardashas200JSONResponseBodyPratyantardashasAntardashaLord `json:"antardashaLord"`
+
+				// DurationYears Duration of this dasha period in years. Mahadasha durations range from 6 years (Sun) to 20 years (Venus).
+				DurationYears float32 `json:"durationYears"`
+
+				// EndDate End datetime of this dasha period. Adjusted to the requested timezone offset.
+				EndDate string `json:"endDate"`
+
+				// Interpretation Vedic interpretation of the planetary period describing themes, karmic lessons, and life areas affected by this graha.
+				Interpretation *string `json:"interpretation,omitempty"`
+
+				// MahadashaLord Parent Mahadasha lord under which this Antardasha sub-period runs.
+				MahadashaLord GetPratyantardashas200JSONResponseBodyPratyantardashasMahadashaLord `json:"mahadashaLord"`
+
+				// NominalStartDate Theoretical start of this period, present ONLY when the birth date truncated it. The Vimshottari cycle is already running when a native is born, so the period in force at birth began earlier: startDate is clipped to the birth moment while this field keeps the real start. Its presence is also why the first period of a chart can contain fewer than 9 sub-periods, the earlier ones having finished before birth. Absent on every period that runs its full length.
+				NominalStartDate *string `json:"nominalStartDate,omitempty"`
+
+				// Planet Ruling graha of this Vimshottari dasha period. One of 9 planets in the Ketu-Venus-Sun-Moon-Mars-Rahu-Jupiter-Saturn-Mercury sequence.
+				Planet GetPratyantardashas200JSONResponseBodyPratyantardashasPlanet `json:"planet"`
+
+				// StartDate Start datetime of this dasha period. Adjusted to the requested timezone offset.
+				StartDate string `json:"startDate"`
+			} `json:"pratyantardashas"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 405:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON405 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetSookshmaDashasResponse parses an HTTP response from a GetSookshmaDashasWithResponse call
+func ParseGetSookshmaDashasResponse(rsp *http.Response) (*GetSookshmaDashasResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetSookshmaDashasResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// AntardashaLord Ruling planet of the requested Antardasha sub-period.
+			AntardashaLord GetSookshmaDashas200JSONResponseBodyAntardashaLord `json:"antardashaLord"`
+
+			// Ayanamsa Ayanamsa actually applied, in degrees. The precession offset subtracted from the tropical (sayana) longitude to get the sidereal (nirayana) one. Lahiri sits near 23 deg 43 min for a 1990 birth, KP-Newcomb near 23 deg 38 min.
+			Ayanamsa float32 `json:"ayanamsa"`
+
+			// AyanamsaType Ayanamsa system used, echoing the request field. One of "lahiri", "kp-newcomb", "kp-old". Echoed so a client can confirm which frame produced these dates without re-deriving it.
+			AyanamsaType GetSookshmaDashas200JSONResponseBodyAyanamsaType `json:"ayanamsaType"`
+
+			// MahadashaLord Ruling planet of the requested Mahadasha period.
+			MahadashaLord GetSookshmaDashas200JSONResponseBodyMahadashaLord `json:"mahadashaLord"`
+
+			// MoonLongitude Sidereal (nirayana) longitude of the birth Moon in degrees, 0 to 360, measured in the ayanamsa frame reported below. This single value determines the birth nakshatra and therefore every dasha start and end date in this response. Compare it against a reference chart to reconcile any date difference at its source.
+			MoonLongitude float32 `json:"moonLongitude"`
+
+			// PratyantardashaLord Ruling planet of the requested Pratyantardasha sub-sub-period.
+			PratyantardashaLord GetSookshmaDashas200JSONResponseBodyPratyantardashaLord `json:"pratyantardashaLord"`
+
+			// PratyantardashaPeriod Full details of the parent Pratyantardasha including start/end dates and duration.
+			PratyantardashaPeriod struct {
+				// AntardashaLord Parent Antardasha lord under which this Pratyantardasha runs.
+				AntardashaLord GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodAntardashaLord `json:"antardashaLord"`
+
+				// DurationYears Duration of this dasha period in years. Mahadasha durations range from 6 years (Sun) to 20 years (Venus).
+				DurationYears float32 `json:"durationYears"`
+
+				// EndDate End datetime of this dasha period. Adjusted to the requested timezone offset.
+				EndDate string `json:"endDate"`
+
+				// Interpretation Vedic interpretation of the planetary period describing themes, karmic lessons, and life areas affected by this graha.
+				Interpretation *string `json:"interpretation,omitempty"`
+
+				// MahadashaLord Parent Mahadasha lord under which this Antardasha sub-period runs.
+				MahadashaLord GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodMahadashaLord `json:"mahadashaLord"`
+
+				// NominalStartDate Theoretical start of this period, present ONLY when the birth date truncated it. The Vimshottari cycle is already running when a native is born, so the period in force at birth began earlier: startDate is clipped to the birth moment while this field keeps the real start. Its presence is also why the first period of a chart can contain fewer than 9 sub-periods, the earlier ones having finished before birth. Absent on every period that runs its full length.
+				NominalStartDate *string `json:"nominalStartDate,omitempty"`
+
+				// Planet Ruling graha of this Vimshottari dasha period. One of 9 planets in the Ketu-Venus-Sun-Moon-Mars-Rahu-Jupiter-Saturn-Mercury sequence.
+				Planet GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodPlanet `json:"planet"`
+
+				// StartDate Start datetime of this dasha period. Adjusted to the requested timezone offset.
+				StartDate string `json:"startDate"`
+			} `json:"pratyantardashaPeriod"`
+
+			// SookshmaDashas Sookshma dasha periods within this Pratyantardasha, proportional to each planet Vimshottari years, sorted chronologically and starting with the Pratyantardasha lord. Fewer than nine only when the parent Pratyantardasha is the one that was already running at birth, in which case the periods that ended before the birth date are omitted.
+			SookshmaDashas []struct {
+				// AntardashaLord Parent Antardasha lord under which this Pratyantardasha runs.
+				AntardashaLord GetSookshmaDashas200JSONResponseBodySookshmaDashasAntardashaLord `json:"antardashaLord"`
+
+				// DurationYears Duration of this dasha period in years. Mahadasha durations range from 6 years (Sun) to 20 years (Venus).
+				DurationYears float32 `json:"durationYears"`
+
+				// EndDate End datetime of this dasha period. Adjusted to the requested timezone offset.
+				EndDate string `json:"endDate"`
+
+				// Interpretation Vedic interpretation of the planetary period describing themes, karmic lessons, and life areas affected by this graha.
+				Interpretation *string `json:"interpretation,omitempty"`
+
+				// MahadashaLord Parent Mahadasha lord under which this Antardasha sub-period runs.
+				MahadashaLord GetSookshmaDashas200JSONResponseBodySookshmaDashasMahadashaLord `json:"mahadashaLord"`
+
+				// NominalStartDate Theoretical start of this period, present ONLY when the birth date truncated it. The Vimshottari cycle is already running when a native is born, so the period in force at birth began earlier: startDate is clipped to the birth moment while this field keeps the real start. Its presence is also why the first period of a chart can contain fewer than 9 sub-periods, the earlier ones having finished before birth. Absent on every period that runs its full length.
+				NominalStartDate *string `json:"nominalStartDate,omitempty"`
+
+				// Planet Ruling graha of this Vimshottari dasha period. One of 9 planets in the Ketu-Venus-Sun-Moon-Mars-Rahu-Jupiter-Saturn-Mercury sequence.
+				Planet GetSookshmaDashas200JSONResponseBodySookshmaDashasPlanet `json:"planet"`
+
+				// PratyantardashaLord Parent Pratyantardasha lord under which this Sookshma dasha runs.
+				PratyantardashaLord GetSookshmaDashas200JSONResponseBodySookshmaDashasPratyantardashaLord `json:"pratyantardashaLord"`
+
+				// StartDate Start datetime of this dasha period. Adjusted to the requested timezone offset.
+				StartDate string `json:"startDate"`
+			} `json:"sookshmaDashas"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
