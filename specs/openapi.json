@@ -14715,6 +14715,10 @@
               "application/json": {
                 "schema": {
                   "properties": {
+                    "advice": {
+                      "description": "Actionable guidance for the month as a whole, derived from the Mercury house activation for this sign. Distinct from the per-week advice inside weekByWeek: this is the single takeaway for the month.",
+                      "type": "string"
+                    },
                     "career": {
                       "description": "Monthly career and professional outlook.",
                       "type": "string"
@@ -14833,6 +14837,7 @@
                     "career",
                     "health",
                     "finance",
+                    "advice",
                     "weekByWeek",
                     "keyDates",
                     "luckyNumbers",
@@ -16375,6 +16380,11 @@
                       "example": 12,
                       "type": "number"
                     },
+                    "monthName": {
+                      "description": "Month name, localized to the requested language. Saves the caller a lookup table when labelling a calendar heading, since the numeric month alone cannot be rendered without one.",
+                      "example": "December",
+                      "type": "string"
+                    },
                     "year": {
                       "description": "Calendar year for this lunar calendar.",
                       "example": 2025,
@@ -16384,6 +16394,7 @@
                   "required": [
                     "year",
                     "month",
+                    "monthName",
                     "calendar"
                   ],
                   "type": "object"
@@ -20297,7 +20308,7 @@
                       "type": "array"
                     },
                     "person1": {
-                      "description": "Person 1 chart highlights: Ascendant, Sun sign, and Moon sign.",
+                      "description": "Person 1 chart highlights: Ascendant, Sun sign, Moon sign, and plotting positions.",
                       "properties": {
                         "ascendant": {
                           "description": "Ascendant position for person 1. Determines first house cusp and outward personality.",
@@ -20329,6 +20340,53 @@
                           "example": "Alex",
                           "type": "string"
                         },
+                        "planets": {
+                          "description": "Planet positions for person 1, enough to render this side of a dual wheel without a second request. Per-planet interpretations are not repeated here; call the natal chart endpoint for an individual reading.",
+                          "items": {
+                            "properties": {
+                              "degree": {
+                                "description": "Degree within the sign (0-29.999).",
+                                "example": 24.52,
+                                "type": "number"
+                              },
+                              "house": {
+                                "description": "House this planet occupies in the person 1 chart (1-12).",
+                                "example": 3,
+                                "type": "number"
+                              },
+                              "isRetrograde": {
+                                "description": "True when the planet is retrograde at this moment.",
+                                "example": false,
+                                "type": "boolean"
+                              },
+                              "longitude": {
+                                "description": "Ecliptic longitude in degrees (0-360) measured from 0 Aries. This is the value a wheel plots.",
+                                "example": 114.52,
+                                "type": "number"
+                              },
+                              "name": {
+                                "description": "Planet or point name. Matches the names used in interAspects.",
+                                "example": "Sun",
+                                "type": "string"
+                              },
+                              "sign": {
+                                "description": "Zodiac sign containing the planet.",
+                                "example": "Cancer",
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "name",
+                              "longitude",
+                              "sign",
+                              "degree",
+                              "house",
+                              "isRetrograde"
+                            ],
+                            "type": "object"
+                          },
+                          "type": "array"
+                        },
                         "sunSign": {
                           "description": "Sun sign (zodiac sign) of this person. Core identity and ego expression.",
                           "example": "Cancer",
@@ -20338,15 +20396,16 @@
                       "required": [
                         "ascendant",
                         "sunSign",
-                        "moonSign"
+                        "moonSign",
+                        "planets"
                       ],
                       "type": "object"
                     },
                     "person2": {
-                      "description": "Person 2 chart highlights: Ascendant, Sun sign, and Moon sign.",
+                      "description": "Person 2 chart highlights: Ascendant, Sun sign, Moon sign, and plotting positions.",
                       "properties": {
                         "ascendant": {
-                          "description": "Ascendant position for person 2.",
+                          "description": "Ascendant position for person 2. Determines first house cusp and outward personality.",
                           "properties": {
                             "degree": {
                               "description": "Degree within the Ascendant sign (0-29.999).",
@@ -20366,7 +20425,7 @@
                           "type": "object"
                         },
                         "moonSign": {
-                          "description": "Moon sign of this person.",
+                          "description": "Moon sign of this person. Emotional nature and inner needs.",
                           "example": "Scorpio",
                           "type": "string"
                         },
@@ -20375,8 +20434,55 @@
                           "example": "Jordan",
                           "type": "string"
                         },
+                        "planets": {
+                          "description": "Planet positions for person 2, enough to render this side of a dual wheel without a second request. Per-planet interpretations are not repeated here; call the natal chart endpoint for an individual reading.",
+                          "items": {
+                            "properties": {
+                              "degree": {
+                                "description": "Degree within the sign (0-29.999).",
+                                "example": 24.52,
+                                "type": "number"
+                              },
+                              "house": {
+                                "description": "House this planet occupies in the person 2 chart (1-12).",
+                                "example": 3,
+                                "type": "number"
+                              },
+                              "isRetrograde": {
+                                "description": "True when the planet is retrograde at this moment.",
+                                "example": false,
+                                "type": "boolean"
+                              },
+                              "longitude": {
+                                "description": "Ecliptic longitude in degrees (0-360) measured from 0 Aries. This is the value a wheel plots.",
+                                "example": 114.52,
+                                "type": "number"
+                              },
+                              "name": {
+                                "description": "Planet or point name. Matches the names used in interAspects.",
+                                "example": "Sun",
+                                "type": "string"
+                              },
+                              "sign": {
+                                "description": "Zodiac sign containing the planet.",
+                                "example": "Cancer",
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "name",
+                              "longitude",
+                              "sign",
+                              "degree",
+                              "house",
+                              "isRetrograde"
+                            ],
+                            "type": "object"
+                          },
+                          "type": "array"
+                        },
                         "sunSign": {
-                          "description": "Sun sign of this person.",
+                          "description": "Sun sign (zodiac sign) of this person. Core identity and ego expression.",
                           "example": "Pisces",
                           "type": "string"
                         }
@@ -20384,7 +20490,8 @@
                       "required": [
                         "ascendant",
                         "sunSign",
-                        "moonSign"
+                        "moonSign",
+                        "planets"
                       ],
                       "type": "object"
                     },
@@ -48928,7 +49035,7 @@
                       }
                     ],
                     "default": 5.5,
-                    "description": "Timezone offset from UTC in decimal hours. Used for sunrise/sunset/moonrise/moonset search accuracy and output time formatting. Essential for correct results outside IST. Defaults to 5.5 (IST).",
+                    "description": "Timezone offset from UTC in decimal hours, for example -5 for New York or 9 for Tokyo. Send the offset that matches the coordinates: sunrise, sunset and every muhurta boundary are found by searching forward from local midnight, so the default anchors the search to an Indian day. Omitting it for a location outside IST returns a correctly ordered set of periods for the wrong window, shifted by the difference between 5.5 and the real offset. Defaults to 5.5 (IST).",
                     "example": 5.5
                   }
                 },

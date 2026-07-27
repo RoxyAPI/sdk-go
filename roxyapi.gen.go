@@ -22541,7 +22541,7 @@ type GetDetailedPanchangJSONBody struct {
 	// Longitude Observer longitude in decimal degrees. Affects local time calculations for sunrise, sunset, and muhurta period boundaries.
 	Longitude float32 `json:"longitude"`
 
-	// Timezone Timezone offset from UTC in decimal hours. Used for sunrise/sunset/moonrise/moonset search accuracy and output time formatting. Essential for correct results outside IST. Defaults to 5.5 (IST).
+	// Timezone Timezone offset from UTC in decimal hours, for example -5 for New York or 9 for Tokyo. Send the offset that matches the coordinates: sunrise, sunset and every muhurta boundary are found by searching forward from local midnight, so the default anchors the search to an Indian day. Omitting it for a location outside IST returns a correctly ordered set of periods for the wrong window, shifted by the difference between 5.5 and the real offset. Defaults to 5.5 (IST).
 	Timezone *GetDetailedPanchangJSONBody_Timezone `json:"timezone,omitempty"`
 }
 
@@ -45137,6 +45137,9 @@ type GetMonthlyHoroscopeResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *struct {
+		// Advice Actionable guidance for the month as a whole, derived from the Mercury house activation for this sign. Distinct from the per-week advice inside weekByWeek: this is the single takeaway for the month.
+		Advice string `json:"advice"`
+
 		// Career Monthly career and professional outlook.
 		Career string `json:"career"`
 
@@ -45637,6 +45640,9 @@ type GetMoonCalendarResponse struct {
 
 		// Month Calendar month for this lunar calendar.
 		Month float32 `json:"month"`
+
+		// MonthName Month name, localized to the requested language. Saves the caller a lookup table when labelling a calendar heading, since the numeric month alone cannot be rendered without one.
+		MonthName string `json:"monthName"`
 
 		// Year Calendar year for this lunar calendar.
 		Year float32 `json:"year"`
@@ -46903,7 +46909,7 @@ type CalculateSynastryResponse struct {
 			Type string `json:"type"`
 		} `json:"interAspects"`
 
-		// Person1 Person 1 chart highlights: Ascendant, Sun sign, and Moon sign.
+		// Person1 Person 1 chart highlights: Ascendant, Sun sign, Moon sign, and plotting positions.
 		Person1 struct {
 			// Ascendant Ascendant position for person 1. Determines first house cusp and outward personality.
 			Ascendant struct {
@@ -46920,13 +46926,34 @@ type CalculateSynastryResponse struct {
 			// Name Display name if provided in the request.
 			Name *string `json:"name,omitempty"`
 
+			// Planets Planet positions for person 1, enough to render this side of a dual wheel without a second request. Per-planet interpretations are not repeated here; call the natal chart endpoint for an individual reading.
+			Planets []struct {
+				// Degree Degree within the sign (0-29.999).
+				Degree float32 `json:"degree"`
+
+				// House House this planet occupies in the person 1 chart (1-12).
+				House float32 `json:"house"`
+
+				// IsRetrograde True when the planet is retrograde at this moment.
+				IsRetrograde bool `json:"isRetrograde"`
+
+				// Longitude Ecliptic longitude in degrees (0-360) measured from 0 Aries. This is the value a wheel plots.
+				Longitude float32 `json:"longitude"`
+
+				// Name Planet or point name. Matches the names used in interAspects.
+				Name string `json:"name"`
+
+				// Sign Zodiac sign containing the planet.
+				Sign string `json:"sign"`
+			} `json:"planets"`
+
 			// SunSign Sun sign (zodiac sign) of this person. Core identity and ego expression.
 			SunSign string `json:"sunSign"`
 		} `json:"person1"`
 
-		// Person2 Person 2 chart highlights: Ascendant, Sun sign, and Moon sign.
+		// Person2 Person 2 chart highlights: Ascendant, Sun sign, Moon sign, and plotting positions.
 		Person2 struct {
-			// Ascendant Ascendant position for person 2.
+			// Ascendant Ascendant position for person 2. Determines first house cusp and outward personality.
 			Ascendant struct {
 				// Degree Degree within the Ascendant sign (0-29.999).
 				Degree float32 `json:"degree"`
@@ -46935,13 +46962,34 @@ type CalculateSynastryResponse struct {
 				Sign string `json:"sign"`
 			} `json:"ascendant"`
 
-			// MoonSign Moon sign of this person.
+			// MoonSign Moon sign of this person. Emotional nature and inner needs.
 			MoonSign string `json:"moonSign"`
 
 			// Name Display name if provided in the request.
 			Name *string `json:"name,omitempty"`
 
-			// SunSign Sun sign of this person.
+			// Planets Planet positions for person 2, enough to render this side of a dual wheel without a second request. Per-planet interpretations are not repeated here; call the natal chart endpoint for an individual reading.
+			Planets []struct {
+				// Degree Degree within the sign (0-29.999).
+				Degree float32 `json:"degree"`
+
+				// House House this planet occupies in the person 2 chart (1-12).
+				House float32 `json:"house"`
+
+				// IsRetrograde True when the planet is retrograde at this moment.
+				IsRetrograde bool `json:"isRetrograde"`
+
+				// Longitude Ecliptic longitude in degrees (0-360) measured from 0 Aries. This is the value a wheel plots.
+				Longitude float32 `json:"longitude"`
+
+				// Name Planet or point name. Matches the names used in interAspects.
+				Name string `json:"name"`
+
+				// Sign Zodiac sign containing the planet.
+				Sign string `json:"sign"`
+			} `json:"planets"`
+
+			// SunSign Sun sign (zodiac sign) of this person. Core identity and ego expression.
 			SunSign string `json:"sunSign"`
 		} `json:"person2"`
 
@@ -61468,6 +61516,9 @@ func ParseGetMonthlyHoroscopeResponse(rsp *http.Response) (*GetMonthlyHoroscopeR
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
+			// Advice Actionable guidance for the month as a whole, derived from the Mercury house activation for this sign. Distinct from the per-week advice inside weekByWeek: this is the single takeaway for the month.
+			Advice string `json:"advice"`
+
 			// Career Monthly career and professional outlook.
 			Career string `json:"career"`
 
@@ -62094,6 +62145,9 @@ func ParseGetMoonCalendarResponse(rsp *http.Response) (*GetMoonCalendarResponse,
 
 			// Month Calendar month for this lunar calendar.
 			Month float32 `json:"month"`
+
+			// MonthName Month name, localized to the requested language. Saves the caller a lookup table when labelling a calendar heading, since the numeric month alone cannot be rendered without one.
+			MonthName string `json:"monthName"`
 
 			// Year Calendar year for this lunar calendar.
 			Year float32 `json:"year"`
@@ -63687,7 +63741,7 @@ func ParseCalculateSynastryResponse(rsp *http.Response) (*CalculateSynastryRespo
 				Type string `json:"type"`
 			} `json:"interAspects"`
 
-			// Person1 Person 1 chart highlights: Ascendant, Sun sign, and Moon sign.
+			// Person1 Person 1 chart highlights: Ascendant, Sun sign, Moon sign, and plotting positions.
 			Person1 struct {
 				// Ascendant Ascendant position for person 1. Determines first house cusp and outward personality.
 				Ascendant struct {
@@ -63704,13 +63758,34 @@ func ParseCalculateSynastryResponse(rsp *http.Response) (*CalculateSynastryRespo
 				// Name Display name if provided in the request.
 				Name *string `json:"name,omitempty"`
 
+				// Planets Planet positions for person 1, enough to render this side of a dual wheel without a second request. Per-planet interpretations are not repeated here; call the natal chart endpoint for an individual reading.
+				Planets []struct {
+					// Degree Degree within the sign (0-29.999).
+					Degree float32 `json:"degree"`
+
+					// House House this planet occupies in the person 1 chart (1-12).
+					House float32 `json:"house"`
+
+					// IsRetrograde True when the planet is retrograde at this moment.
+					IsRetrograde bool `json:"isRetrograde"`
+
+					// Longitude Ecliptic longitude in degrees (0-360) measured from 0 Aries. This is the value a wheel plots.
+					Longitude float32 `json:"longitude"`
+
+					// Name Planet or point name. Matches the names used in interAspects.
+					Name string `json:"name"`
+
+					// Sign Zodiac sign containing the planet.
+					Sign string `json:"sign"`
+				} `json:"planets"`
+
 				// SunSign Sun sign (zodiac sign) of this person. Core identity and ego expression.
 				SunSign string `json:"sunSign"`
 			} `json:"person1"`
 
-			// Person2 Person 2 chart highlights: Ascendant, Sun sign, and Moon sign.
+			// Person2 Person 2 chart highlights: Ascendant, Sun sign, Moon sign, and plotting positions.
 			Person2 struct {
-				// Ascendant Ascendant position for person 2.
+				// Ascendant Ascendant position for person 2. Determines first house cusp and outward personality.
 				Ascendant struct {
 					// Degree Degree within the Ascendant sign (0-29.999).
 					Degree float32 `json:"degree"`
@@ -63719,13 +63794,34 @@ func ParseCalculateSynastryResponse(rsp *http.Response) (*CalculateSynastryRespo
 					Sign string `json:"sign"`
 				} `json:"ascendant"`
 
-				// MoonSign Moon sign of this person.
+				// MoonSign Moon sign of this person. Emotional nature and inner needs.
 				MoonSign string `json:"moonSign"`
 
 				// Name Display name if provided in the request.
 				Name *string `json:"name,omitempty"`
 
-				// SunSign Sun sign of this person.
+				// Planets Planet positions for person 2, enough to render this side of a dual wheel without a second request. Per-planet interpretations are not repeated here; call the natal chart endpoint for an individual reading.
+				Planets []struct {
+					// Degree Degree within the sign (0-29.999).
+					Degree float32 `json:"degree"`
+
+					// House House this planet occupies in the person 2 chart (1-12).
+					House float32 `json:"house"`
+
+					// IsRetrograde True when the planet is retrograde at this moment.
+					IsRetrograde bool `json:"isRetrograde"`
+
+					// Longitude Ecliptic longitude in degrees (0-360) measured from 0 Aries. This is the value a wheel plots.
+					Longitude float32 `json:"longitude"`
+
+					// Name Planet or point name. Matches the names used in interAspects.
+					Name string `json:"name"`
+
+					// Sign Zodiac sign containing the planet.
+					Sign string `json:"sign"`
+				} `json:"planets"`
+
+				// SunSign Sun sign (zodiac sign) of this person. Core identity and ego expression.
 				SunSign string `json:"sunSign"`
 			} `json:"person2"`
 
