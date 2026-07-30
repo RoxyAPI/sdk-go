@@ -2061,19 +2061,19 @@ func (e RelocationPlanetName) Valid() bool {
 
 // Defines values for SadhesatiResponseSeverity.
 const (
-	Mild     SadhesatiResponseSeverity = "Mild"
-	Moderate SadhesatiResponseSeverity = "Moderate"
-	Severe   SadhesatiResponseSeverity = "Severe"
+	SadhesatiResponseSeverityMild     SadhesatiResponseSeverity = "Mild"
+	SadhesatiResponseSeverityModerate SadhesatiResponseSeverity = "Moderate"
+	SadhesatiResponseSeveritySevere   SadhesatiResponseSeverity = "Severe"
 )
 
 // Valid indicates whether the value is a known member of the SadhesatiResponseSeverity enum.
 func (e SadhesatiResponseSeverity) Valid() bool {
 	switch e {
-	case Mild:
+	case SadhesatiResponseSeverityMild:
 		return true
-	case Moderate:
+	case SadhesatiResponseSeverityModerate:
 		return true
-	case Severe:
+	case SadhesatiResponseSeveritySevere:
 		return true
 	default:
 		return false
@@ -9879,16 +9879,16 @@ func (e CastYesNo200JSONResponseBodyCardArcana) Valid() bool {
 
 // Defines values for CastYesNo200JSONResponseBodyStrength.
 const (
-	Qualified CastYesNo200JSONResponseBodyStrength = "Qualified"
-	Strong    CastYesNo200JSONResponseBodyStrength = "Strong"
+	CastYesNo200JSONResponseBodyStrengthQualified CastYesNo200JSONResponseBodyStrength = "Qualified"
+	CastYesNo200JSONResponseBodyStrengthStrong    CastYesNo200JSONResponseBodyStrength = "Strong"
 )
 
 // Valid indicates whether the value is a known member of the CastYesNo200JSONResponseBodyStrength enum.
 func (e CastYesNo200JSONResponseBodyStrength) Valid() bool {
 	switch e {
-	case Qualified:
+	case CastYesNo200JSONResponseBodyStrengthQualified:
 		return true
-	case Strong:
+	case CastYesNo200JSONResponseBodyStrengthStrong:
 		return true
 	default:
 		return false
@@ -10114,6 +10114,24 @@ func (e GetCurrentDashaJSONBodyAyanamsa) Valid() bool {
 	}
 }
 
+// Defines values for GetCurrentDashaJSONBodyNodeType.
+const (
+	GetCurrentDashaJSONBodyNodeTypeMean GetCurrentDashaJSONBodyNodeType = "mean"
+	GetCurrentDashaJSONBodyNodeTypeTrue GetCurrentDashaJSONBodyNodeType = "true"
+)
+
+// Valid indicates whether the value is a known member of the GetCurrentDashaJSONBodyNodeType enum.
+func (e GetCurrentDashaJSONBodyNodeType) Valid() bool {
+	switch e {
+	case GetCurrentDashaJSONBodyNodeTypeMean:
+		return true
+	case GetCurrentDashaJSONBodyNodeTypeTrue:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for GetCurrentDasha200JSONResponseBodyAntardashaMahadashaLord.
 const (
 	GetCurrentDasha200JSONResponseBodyAntardashaMahadashaLordJupiter GetCurrentDasha200JSONResponseBodyAntardashaMahadashaLord = "Jupiter"
@@ -10192,6 +10210,54 @@ func (e GetCurrentDasha200JSONResponseBodyAntardashaPlanet) Valid() bool {
 	}
 }
 
+// Defines values for GetCurrentDasha200JSONResponseBodyAntardashaSignificatorsStrengthGrade.
+const (
+	GetCurrentDasha200JSONResponseBodyAntardashaSignificatorsStrengthGradeA GetCurrentDasha200JSONResponseBodyAntardashaSignificatorsStrengthGrade = "A"
+	GetCurrentDasha200JSONResponseBodyAntardashaSignificatorsStrengthGradeB GetCurrentDasha200JSONResponseBodyAntardashaSignificatorsStrengthGrade = "B"
+	GetCurrentDasha200JSONResponseBodyAntardashaSignificatorsStrengthGradeC GetCurrentDasha200JSONResponseBodyAntardashaSignificatorsStrengthGrade = "C"
+	GetCurrentDasha200JSONResponseBodyAntardashaSignificatorsStrengthGradeD GetCurrentDasha200JSONResponseBodyAntardashaSignificatorsStrengthGrade = "D"
+)
+
+// Valid indicates whether the value is a known member of the GetCurrentDasha200JSONResponseBodyAntardashaSignificatorsStrengthGrade enum.
+func (e GetCurrentDasha200JSONResponseBodyAntardashaSignificatorsStrengthGrade) Valid() bool {
+	switch e {
+	case GetCurrentDasha200JSONResponseBodyAntardashaSignificatorsStrengthGradeA:
+		return true
+	case GetCurrentDasha200JSONResponseBodyAntardashaSignificatorsStrengthGradeB:
+		return true
+	case GetCurrentDasha200JSONResponseBodyAntardashaSignificatorsStrengthGradeC:
+		return true
+	case GetCurrentDasha200JSONResponseBodyAntardashaSignificatorsStrengthGradeD:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetCurrentDasha200JSONResponseBodyAntardashaSignificatorsStrengthLabel.
+const (
+	GetCurrentDasha200JSONResponseBodyAntardashaSignificatorsStrengthLabelModerate   GetCurrentDasha200JSONResponseBodyAntardashaSignificatorsStrengthLabel = "moderate"
+	GetCurrentDasha200JSONResponseBodyAntardashaSignificatorsStrengthLabelStrong     GetCurrentDasha200JSONResponseBodyAntardashaSignificatorsStrengthLabel = "strong"
+	GetCurrentDasha200JSONResponseBodyAntardashaSignificatorsStrengthLabelVeryStrong GetCurrentDasha200JSONResponseBodyAntardashaSignificatorsStrengthLabel = "very-strong"
+	GetCurrentDasha200JSONResponseBodyAntardashaSignificatorsStrengthLabelWeak       GetCurrentDasha200JSONResponseBodyAntardashaSignificatorsStrengthLabel = "weak"
+)
+
+// Valid indicates whether the value is a known member of the GetCurrentDasha200JSONResponseBodyAntardashaSignificatorsStrengthLabel enum.
+func (e GetCurrentDasha200JSONResponseBodyAntardashaSignificatorsStrengthLabel) Valid() bool {
+	switch e {
+	case GetCurrentDasha200JSONResponseBodyAntardashaSignificatorsStrengthLabelModerate:
+		return true
+	case GetCurrentDasha200JSONResponseBodyAntardashaSignificatorsStrengthLabelStrong:
+		return true
+	case GetCurrentDasha200JSONResponseBodyAntardashaSignificatorsStrengthLabelVeryStrong:
+		return true
+	case GetCurrentDasha200JSONResponseBodyAntardashaSignificatorsStrengthLabelWeak:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for GetCurrentDasha200JSONResponseBodyAyanamsaType.
 const (
 	GetCurrentDasha200JSONResponseBodyAyanamsaTypeKpNewcomb GetCurrentDasha200JSONResponseBodyAyanamsaType = "kp-newcomb"
@@ -10252,6 +10318,54 @@ func (e GetCurrentDasha200JSONResponseBodyMahadashaPlanet) Valid() bool {
 	}
 }
 
+// Defines values for GetCurrentDasha200JSONResponseBodyMahadashaSignificatorsStrengthGrade.
+const (
+	GetCurrentDasha200JSONResponseBodyMahadashaSignificatorsStrengthGradeA GetCurrentDasha200JSONResponseBodyMahadashaSignificatorsStrengthGrade = "A"
+	GetCurrentDasha200JSONResponseBodyMahadashaSignificatorsStrengthGradeB GetCurrentDasha200JSONResponseBodyMahadashaSignificatorsStrengthGrade = "B"
+	GetCurrentDasha200JSONResponseBodyMahadashaSignificatorsStrengthGradeC GetCurrentDasha200JSONResponseBodyMahadashaSignificatorsStrengthGrade = "C"
+	GetCurrentDasha200JSONResponseBodyMahadashaSignificatorsStrengthGradeD GetCurrentDasha200JSONResponseBodyMahadashaSignificatorsStrengthGrade = "D"
+)
+
+// Valid indicates whether the value is a known member of the GetCurrentDasha200JSONResponseBodyMahadashaSignificatorsStrengthGrade enum.
+func (e GetCurrentDasha200JSONResponseBodyMahadashaSignificatorsStrengthGrade) Valid() bool {
+	switch e {
+	case GetCurrentDasha200JSONResponseBodyMahadashaSignificatorsStrengthGradeA:
+		return true
+	case GetCurrentDasha200JSONResponseBodyMahadashaSignificatorsStrengthGradeB:
+		return true
+	case GetCurrentDasha200JSONResponseBodyMahadashaSignificatorsStrengthGradeC:
+		return true
+	case GetCurrentDasha200JSONResponseBodyMahadashaSignificatorsStrengthGradeD:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetCurrentDasha200JSONResponseBodyMahadashaSignificatorsStrengthLabel.
+const (
+	GetCurrentDasha200JSONResponseBodyMahadashaSignificatorsStrengthLabelModerate   GetCurrentDasha200JSONResponseBodyMahadashaSignificatorsStrengthLabel = "moderate"
+	GetCurrentDasha200JSONResponseBodyMahadashaSignificatorsStrengthLabelStrong     GetCurrentDasha200JSONResponseBodyMahadashaSignificatorsStrengthLabel = "strong"
+	GetCurrentDasha200JSONResponseBodyMahadashaSignificatorsStrengthLabelVeryStrong GetCurrentDasha200JSONResponseBodyMahadashaSignificatorsStrengthLabel = "very-strong"
+	GetCurrentDasha200JSONResponseBodyMahadashaSignificatorsStrengthLabelWeak       GetCurrentDasha200JSONResponseBodyMahadashaSignificatorsStrengthLabel = "weak"
+)
+
+// Valid indicates whether the value is a known member of the GetCurrentDasha200JSONResponseBodyMahadashaSignificatorsStrengthLabel enum.
+func (e GetCurrentDasha200JSONResponseBodyMahadashaSignificatorsStrengthLabel) Valid() bool {
+	switch e {
+	case GetCurrentDasha200JSONResponseBodyMahadashaSignificatorsStrengthLabelModerate:
+		return true
+	case GetCurrentDasha200JSONResponseBodyMahadashaSignificatorsStrengthLabelStrong:
+		return true
+	case GetCurrentDasha200JSONResponseBodyMahadashaSignificatorsStrengthLabelVeryStrong:
+		return true
+	case GetCurrentDasha200JSONResponseBodyMahadashaSignificatorsStrengthLabelWeak:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for GetCurrentDasha200JSONResponseBodyNakshatraLord.
 const (
 	GetCurrentDasha200JSONResponseBodyNakshatraLordJupiter GetCurrentDasha200JSONResponseBodyNakshatraLord = "Jupiter"
@@ -10285,6 +10399,249 @@ func (e GetCurrentDasha200JSONResponseBodyNakshatraLord) Valid() bool {
 	case GetCurrentDasha200JSONResponseBodyNakshatraLordSun:
 		return true
 	case GetCurrentDasha200JSONResponseBodyNakshatraLordVenus:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetCurrentDasha200JSONResponseBodyPranaDashaAntardashaLord.
+const (
+	GetCurrentDasha200JSONResponseBodyPranaDashaAntardashaLordJupiter GetCurrentDasha200JSONResponseBodyPranaDashaAntardashaLord = "Jupiter"
+	GetCurrentDasha200JSONResponseBodyPranaDashaAntardashaLordKetu    GetCurrentDasha200JSONResponseBodyPranaDashaAntardashaLord = "Ketu"
+	GetCurrentDasha200JSONResponseBodyPranaDashaAntardashaLordMars    GetCurrentDasha200JSONResponseBodyPranaDashaAntardashaLord = "Mars"
+	GetCurrentDasha200JSONResponseBodyPranaDashaAntardashaLordMercury GetCurrentDasha200JSONResponseBodyPranaDashaAntardashaLord = "Mercury"
+	GetCurrentDasha200JSONResponseBodyPranaDashaAntardashaLordMoon    GetCurrentDasha200JSONResponseBodyPranaDashaAntardashaLord = "Moon"
+	GetCurrentDasha200JSONResponseBodyPranaDashaAntardashaLordRahu    GetCurrentDasha200JSONResponseBodyPranaDashaAntardashaLord = "Rahu"
+	GetCurrentDasha200JSONResponseBodyPranaDashaAntardashaLordSaturn  GetCurrentDasha200JSONResponseBodyPranaDashaAntardashaLord = "Saturn"
+	GetCurrentDasha200JSONResponseBodyPranaDashaAntardashaLordSun     GetCurrentDasha200JSONResponseBodyPranaDashaAntardashaLord = "Sun"
+	GetCurrentDasha200JSONResponseBodyPranaDashaAntardashaLordVenus   GetCurrentDasha200JSONResponseBodyPranaDashaAntardashaLord = "Venus"
+)
+
+// Valid indicates whether the value is a known member of the GetCurrentDasha200JSONResponseBodyPranaDashaAntardashaLord enum.
+func (e GetCurrentDasha200JSONResponseBodyPranaDashaAntardashaLord) Valid() bool {
+	switch e {
+	case GetCurrentDasha200JSONResponseBodyPranaDashaAntardashaLordJupiter:
+		return true
+	case GetCurrentDasha200JSONResponseBodyPranaDashaAntardashaLordKetu:
+		return true
+	case GetCurrentDasha200JSONResponseBodyPranaDashaAntardashaLordMars:
+		return true
+	case GetCurrentDasha200JSONResponseBodyPranaDashaAntardashaLordMercury:
+		return true
+	case GetCurrentDasha200JSONResponseBodyPranaDashaAntardashaLordMoon:
+		return true
+	case GetCurrentDasha200JSONResponseBodyPranaDashaAntardashaLordRahu:
+		return true
+	case GetCurrentDasha200JSONResponseBodyPranaDashaAntardashaLordSaturn:
+		return true
+	case GetCurrentDasha200JSONResponseBodyPranaDashaAntardashaLordSun:
+		return true
+	case GetCurrentDasha200JSONResponseBodyPranaDashaAntardashaLordVenus:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetCurrentDasha200JSONResponseBodyPranaDashaMahadashaLord.
+const (
+	GetCurrentDasha200JSONResponseBodyPranaDashaMahadashaLordJupiter GetCurrentDasha200JSONResponseBodyPranaDashaMahadashaLord = "Jupiter"
+	GetCurrentDasha200JSONResponseBodyPranaDashaMahadashaLordKetu    GetCurrentDasha200JSONResponseBodyPranaDashaMahadashaLord = "Ketu"
+	GetCurrentDasha200JSONResponseBodyPranaDashaMahadashaLordMars    GetCurrentDasha200JSONResponseBodyPranaDashaMahadashaLord = "Mars"
+	GetCurrentDasha200JSONResponseBodyPranaDashaMahadashaLordMercury GetCurrentDasha200JSONResponseBodyPranaDashaMahadashaLord = "Mercury"
+	GetCurrentDasha200JSONResponseBodyPranaDashaMahadashaLordMoon    GetCurrentDasha200JSONResponseBodyPranaDashaMahadashaLord = "Moon"
+	GetCurrentDasha200JSONResponseBodyPranaDashaMahadashaLordRahu    GetCurrentDasha200JSONResponseBodyPranaDashaMahadashaLord = "Rahu"
+	GetCurrentDasha200JSONResponseBodyPranaDashaMahadashaLordSaturn  GetCurrentDasha200JSONResponseBodyPranaDashaMahadashaLord = "Saturn"
+	GetCurrentDasha200JSONResponseBodyPranaDashaMahadashaLordSun     GetCurrentDasha200JSONResponseBodyPranaDashaMahadashaLord = "Sun"
+	GetCurrentDasha200JSONResponseBodyPranaDashaMahadashaLordVenus   GetCurrentDasha200JSONResponseBodyPranaDashaMahadashaLord = "Venus"
+)
+
+// Valid indicates whether the value is a known member of the GetCurrentDasha200JSONResponseBodyPranaDashaMahadashaLord enum.
+func (e GetCurrentDasha200JSONResponseBodyPranaDashaMahadashaLord) Valid() bool {
+	switch e {
+	case GetCurrentDasha200JSONResponseBodyPranaDashaMahadashaLordJupiter:
+		return true
+	case GetCurrentDasha200JSONResponseBodyPranaDashaMahadashaLordKetu:
+		return true
+	case GetCurrentDasha200JSONResponseBodyPranaDashaMahadashaLordMars:
+		return true
+	case GetCurrentDasha200JSONResponseBodyPranaDashaMahadashaLordMercury:
+		return true
+	case GetCurrentDasha200JSONResponseBodyPranaDashaMahadashaLordMoon:
+		return true
+	case GetCurrentDasha200JSONResponseBodyPranaDashaMahadashaLordRahu:
+		return true
+	case GetCurrentDasha200JSONResponseBodyPranaDashaMahadashaLordSaturn:
+		return true
+	case GetCurrentDasha200JSONResponseBodyPranaDashaMahadashaLordSun:
+		return true
+	case GetCurrentDasha200JSONResponseBodyPranaDashaMahadashaLordVenus:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetCurrentDasha200JSONResponseBodyPranaDashaPlanet.
+const (
+	GetCurrentDasha200JSONResponseBodyPranaDashaPlanetJupiter GetCurrentDasha200JSONResponseBodyPranaDashaPlanet = "Jupiter"
+	GetCurrentDasha200JSONResponseBodyPranaDashaPlanetKetu    GetCurrentDasha200JSONResponseBodyPranaDashaPlanet = "Ketu"
+	GetCurrentDasha200JSONResponseBodyPranaDashaPlanetMars    GetCurrentDasha200JSONResponseBodyPranaDashaPlanet = "Mars"
+	GetCurrentDasha200JSONResponseBodyPranaDashaPlanetMercury GetCurrentDasha200JSONResponseBodyPranaDashaPlanet = "Mercury"
+	GetCurrentDasha200JSONResponseBodyPranaDashaPlanetMoon    GetCurrentDasha200JSONResponseBodyPranaDashaPlanet = "Moon"
+	GetCurrentDasha200JSONResponseBodyPranaDashaPlanetRahu    GetCurrentDasha200JSONResponseBodyPranaDashaPlanet = "Rahu"
+	GetCurrentDasha200JSONResponseBodyPranaDashaPlanetSaturn  GetCurrentDasha200JSONResponseBodyPranaDashaPlanet = "Saturn"
+	GetCurrentDasha200JSONResponseBodyPranaDashaPlanetSun     GetCurrentDasha200JSONResponseBodyPranaDashaPlanet = "Sun"
+	GetCurrentDasha200JSONResponseBodyPranaDashaPlanetVenus   GetCurrentDasha200JSONResponseBodyPranaDashaPlanet = "Venus"
+)
+
+// Valid indicates whether the value is a known member of the GetCurrentDasha200JSONResponseBodyPranaDashaPlanet enum.
+func (e GetCurrentDasha200JSONResponseBodyPranaDashaPlanet) Valid() bool {
+	switch e {
+	case GetCurrentDasha200JSONResponseBodyPranaDashaPlanetJupiter:
+		return true
+	case GetCurrentDasha200JSONResponseBodyPranaDashaPlanetKetu:
+		return true
+	case GetCurrentDasha200JSONResponseBodyPranaDashaPlanetMars:
+		return true
+	case GetCurrentDasha200JSONResponseBodyPranaDashaPlanetMercury:
+		return true
+	case GetCurrentDasha200JSONResponseBodyPranaDashaPlanetMoon:
+		return true
+	case GetCurrentDasha200JSONResponseBodyPranaDashaPlanetRahu:
+		return true
+	case GetCurrentDasha200JSONResponseBodyPranaDashaPlanetSaturn:
+		return true
+	case GetCurrentDasha200JSONResponseBodyPranaDashaPlanetSun:
+		return true
+	case GetCurrentDasha200JSONResponseBodyPranaDashaPlanetVenus:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetCurrentDasha200JSONResponseBodyPranaDashaPratyantardashaLord.
+const (
+	GetCurrentDasha200JSONResponseBodyPranaDashaPratyantardashaLordJupiter GetCurrentDasha200JSONResponseBodyPranaDashaPratyantardashaLord = "Jupiter"
+	GetCurrentDasha200JSONResponseBodyPranaDashaPratyantardashaLordKetu    GetCurrentDasha200JSONResponseBodyPranaDashaPratyantardashaLord = "Ketu"
+	GetCurrentDasha200JSONResponseBodyPranaDashaPratyantardashaLordMars    GetCurrentDasha200JSONResponseBodyPranaDashaPratyantardashaLord = "Mars"
+	GetCurrentDasha200JSONResponseBodyPranaDashaPratyantardashaLordMercury GetCurrentDasha200JSONResponseBodyPranaDashaPratyantardashaLord = "Mercury"
+	GetCurrentDasha200JSONResponseBodyPranaDashaPratyantardashaLordMoon    GetCurrentDasha200JSONResponseBodyPranaDashaPratyantardashaLord = "Moon"
+	GetCurrentDasha200JSONResponseBodyPranaDashaPratyantardashaLordRahu    GetCurrentDasha200JSONResponseBodyPranaDashaPratyantardashaLord = "Rahu"
+	GetCurrentDasha200JSONResponseBodyPranaDashaPratyantardashaLordSaturn  GetCurrentDasha200JSONResponseBodyPranaDashaPratyantardashaLord = "Saturn"
+	GetCurrentDasha200JSONResponseBodyPranaDashaPratyantardashaLordSun     GetCurrentDasha200JSONResponseBodyPranaDashaPratyantardashaLord = "Sun"
+	GetCurrentDasha200JSONResponseBodyPranaDashaPratyantardashaLordVenus   GetCurrentDasha200JSONResponseBodyPranaDashaPratyantardashaLord = "Venus"
+)
+
+// Valid indicates whether the value is a known member of the GetCurrentDasha200JSONResponseBodyPranaDashaPratyantardashaLord enum.
+func (e GetCurrentDasha200JSONResponseBodyPranaDashaPratyantardashaLord) Valid() bool {
+	switch e {
+	case GetCurrentDasha200JSONResponseBodyPranaDashaPratyantardashaLordJupiter:
+		return true
+	case GetCurrentDasha200JSONResponseBodyPranaDashaPratyantardashaLordKetu:
+		return true
+	case GetCurrentDasha200JSONResponseBodyPranaDashaPratyantardashaLordMars:
+		return true
+	case GetCurrentDasha200JSONResponseBodyPranaDashaPratyantardashaLordMercury:
+		return true
+	case GetCurrentDasha200JSONResponseBodyPranaDashaPratyantardashaLordMoon:
+		return true
+	case GetCurrentDasha200JSONResponseBodyPranaDashaPratyantardashaLordRahu:
+		return true
+	case GetCurrentDasha200JSONResponseBodyPranaDashaPratyantardashaLordSaturn:
+		return true
+	case GetCurrentDasha200JSONResponseBodyPranaDashaPratyantardashaLordSun:
+		return true
+	case GetCurrentDasha200JSONResponseBodyPranaDashaPratyantardashaLordVenus:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetCurrentDasha200JSONResponseBodyPranaDashaSignificatorsStrengthGrade.
+const (
+	GetCurrentDasha200JSONResponseBodyPranaDashaSignificatorsStrengthGradeA GetCurrentDasha200JSONResponseBodyPranaDashaSignificatorsStrengthGrade = "A"
+	GetCurrentDasha200JSONResponseBodyPranaDashaSignificatorsStrengthGradeB GetCurrentDasha200JSONResponseBodyPranaDashaSignificatorsStrengthGrade = "B"
+	GetCurrentDasha200JSONResponseBodyPranaDashaSignificatorsStrengthGradeC GetCurrentDasha200JSONResponseBodyPranaDashaSignificatorsStrengthGrade = "C"
+	GetCurrentDasha200JSONResponseBodyPranaDashaSignificatorsStrengthGradeD GetCurrentDasha200JSONResponseBodyPranaDashaSignificatorsStrengthGrade = "D"
+)
+
+// Valid indicates whether the value is a known member of the GetCurrentDasha200JSONResponseBodyPranaDashaSignificatorsStrengthGrade enum.
+func (e GetCurrentDasha200JSONResponseBodyPranaDashaSignificatorsStrengthGrade) Valid() bool {
+	switch e {
+	case GetCurrentDasha200JSONResponseBodyPranaDashaSignificatorsStrengthGradeA:
+		return true
+	case GetCurrentDasha200JSONResponseBodyPranaDashaSignificatorsStrengthGradeB:
+		return true
+	case GetCurrentDasha200JSONResponseBodyPranaDashaSignificatorsStrengthGradeC:
+		return true
+	case GetCurrentDasha200JSONResponseBodyPranaDashaSignificatorsStrengthGradeD:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetCurrentDasha200JSONResponseBodyPranaDashaSignificatorsStrengthLabel.
+const (
+	GetCurrentDasha200JSONResponseBodyPranaDashaSignificatorsStrengthLabelModerate   GetCurrentDasha200JSONResponseBodyPranaDashaSignificatorsStrengthLabel = "moderate"
+	GetCurrentDasha200JSONResponseBodyPranaDashaSignificatorsStrengthLabelStrong     GetCurrentDasha200JSONResponseBodyPranaDashaSignificatorsStrengthLabel = "strong"
+	GetCurrentDasha200JSONResponseBodyPranaDashaSignificatorsStrengthLabelVeryStrong GetCurrentDasha200JSONResponseBodyPranaDashaSignificatorsStrengthLabel = "very-strong"
+	GetCurrentDasha200JSONResponseBodyPranaDashaSignificatorsStrengthLabelWeak       GetCurrentDasha200JSONResponseBodyPranaDashaSignificatorsStrengthLabel = "weak"
+)
+
+// Valid indicates whether the value is a known member of the GetCurrentDasha200JSONResponseBodyPranaDashaSignificatorsStrengthLabel enum.
+func (e GetCurrentDasha200JSONResponseBodyPranaDashaSignificatorsStrengthLabel) Valid() bool {
+	switch e {
+	case GetCurrentDasha200JSONResponseBodyPranaDashaSignificatorsStrengthLabelModerate:
+		return true
+	case GetCurrentDasha200JSONResponseBodyPranaDashaSignificatorsStrengthLabelStrong:
+		return true
+	case GetCurrentDasha200JSONResponseBodyPranaDashaSignificatorsStrengthLabelVeryStrong:
+		return true
+	case GetCurrentDasha200JSONResponseBodyPranaDashaSignificatorsStrengthLabelWeak:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetCurrentDasha200JSONResponseBodyPranaDashaSookshmaLord.
+const (
+	GetCurrentDasha200JSONResponseBodyPranaDashaSookshmaLordJupiter GetCurrentDasha200JSONResponseBodyPranaDashaSookshmaLord = "Jupiter"
+	GetCurrentDasha200JSONResponseBodyPranaDashaSookshmaLordKetu    GetCurrentDasha200JSONResponseBodyPranaDashaSookshmaLord = "Ketu"
+	GetCurrentDasha200JSONResponseBodyPranaDashaSookshmaLordMars    GetCurrentDasha200JSONResponseBodyPranaDashaSookshmaLord = "Mars"
+	GetCurrentDasha200JSONResponseBodyPranaDashaSookshmaLordMercury GetCurrentDasha200JSONResponseBodyPranaDashaSookshmaLord = "Mercury"
+	GetCurrentDasha200JSONResponseBodyPranaDashaSookshmaLordMoon    GetCurrentDasha200JSONResponseBodyPranaDashaSookshmaLord = "Moon"
+	GetCurrentDasha200JSONResponseBodyPranaDashaSookshmaLordRahu    GetCurrentDasha200JSONResponseBodyPranaDashaSookshmaLord = "Rahu"
+	GetCurrentDasha200JSONResponseBodyPranaDashaSookshmaLordSaturn  GetCurrentDasha200JSONResponseBodyPranaDashaSookshmaLord = "Saturn"
+	GetCurrentDasha200JSONResponseBodyPranaDashaSookshmaLordSun     GetCurrentDasha200JSONResponseBodyPranaDashaSookshmaLord = "Sun"
+	GetCurrentDasha200JSONResponseBodyPranaDashaSookshmaLordVenus   GetCurrentDasha200JSONResponseBodyPranaDashaSookshmaLord = "Venus"
+)
+
+// Valid indicates whether the value is a known member of the GetCurrentDasha200JSONResponseBodyPranaDashaSookshmaLord enum.
+func (e GetCurrentDasha200JSONResponseBodyPranaDashaSookshmaLord) Valid() bool {
+	switch e {
+	case GetCurrentDasha200JSONResponseBodyPranaDashaSookshmaLordJupiter:
+		return true
+	case GetCurrentDasha200JSONResponseBodyPranaDashaSookshmaLordKetu:
+		return true
+	case GetCurrentDasha200JSONResponseBodyPranaDashaSookshmaLordMars:
+		return true
+	case GetCurrentDasha200JSONResponseBodyPranaDashaSookshmaLordMercury:
+		return true
+	case GetCurrentDasha200JSONResponseBodyPranaDashaSookshmaLordMoon:
+		return true
+	case GetCurrentDasha200JSONResponseBodyPranaDashaSookshmaLordRahu:
+		return true
+	case GetCurrentDasha200JSONResponseBodyPranaDashaSookshmaLordSaturn:
+		return true
+	case GetCurrentDasha200JSONResponseBodyPranaDashaSookshmaLordSun:
+		return true
+	case GetCurrentDasha200JSONResponseBodyPranaDashaSookshmaLordVenus:
 		return true
 	default:
 		return false
@@ -10402,6 +10759,54 @@ func (e GetCurrentDasha200JSONResponseBodyPratyantardashaPlanet) Valid() bool {
 	case GetCurrentDasha200JSONResponseBodyPratyantardashaPlanetSun:
 		return true
 	case GetCurrentDasha200JSONResponseBodyPratyantardashaPlanetVenus:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetCurrentDasha200JSONResponseBodyPratyantardashaSignificatorsStrengthGrade.
+const (
+	GetCurrentDasha200JSONResponseBodyPratyantardashaSignificatorsStrengthGradeA GetCurrentDasha200JSONResponseBodyPratyantardashaSignificatorsStrengthGrade = "A"
+	GetCurrentDasha200JSONResponseBodyPratyantardashaSignificatorsStrengthGradeB GetCurrentDasha200JSONResponseBodyPratyantardashaSignificatorsStrengthGrade = "B"
+	GetCurrentDasha200JSONResponseBodyPratyantardashaSignificatorsStrengthGradeC GetCurrentDasha200JSONResponseBodyPratyantardashaSignificatorsStrengthGrade = "C"
+	GetCurrentDasha200JSONResponseBodyPratyantardashaSignificatorsStrengthGradeD GetCurrentDasha200JSONResponseBodyPratyantardashaSignificatorsStrengthGrade = "D"
+)
+
+// Valid indicates whether the value is a known member of the GetCurrentDasha200JSONResponseBodyPratyantardashaSignificatorsStrengthGrade enum.
+func (e GetCurrentDasha200JSONResponseBodyPratyantardashaSignificatorsStrengthGrade) Valid() bool {
+	switch e {
+	case GetCurrentDasha200JSONResponseBodyPratyantardashaSignificatorsStrengthGradeA:
+		return true
+	case GetCurrentDasha200JSONResponseBodyPratyantardashaSignificatorsStrengthGradeB:
+		return true
+	case GetCurrentDasha200JSONResponseBodyPratyantardashaSignificatorsStrengthGradeC:
+		return true
+	case GetCurrentDasha200JSONResponseBodyPratyantardashaSignificatorsStrengthGradeD:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetCurrentDasha200JSONResponseBodyPratyantardashaSignificatorsStrengthLabel.
+const (
+	GetCurrentDasha200JSONResponseBodyPratyantardashaSignificatorsStrengthLabelModerate   GetCurrentDasha200JSONResponseBodyPratyantardashaSignificatorsStrengthLabel = "moderate"
+	GetCurrentDasha200JSONResponseBodyPratyantardashaSignificatorsStrengthLabelStrong     GetCurrentDasha200JSONResponseBodyPratyantardashaSignificatorsStrengthLabel = "strong"
+	GetCurrentDasha200JSONResponseBodyPratyantardashaSignificatorsStrengthLabelVeryStrong GetCurrentDasha200JSONResponseBodyPratyantardashaSignificatorsStrengthLabel = "very-strong"
+	GetCurrentDasha200JSONResponseBodyPratyantardashaSignificatorsStrengthLabelWeak       GetCurrentDasha200JSONResponseBodyPratyantardashaSignificatorsStrengthLabel = "weak"
+)
+
+// Valid indicates whether the value is a known member of the GetCurrentDasha200JSONResponseBodyPratyantardashaSignificatorsStrengthLabel enum.
+func (e GetCurrentDasha200JSONResponseBodyPratyantardashaSignificatorsStrengthLabel) Valid() bool {
+	switch e {
+	case GetCurrentDasha200JSONResponseBodyPratyantardashaSignificatorsStrengthLabelModerate:
+		return true
+	case GetCurrentDasha200JSONResponseBodyPratyantardashaSignificatorsStrengthLabelStrong:
+		return true
+	case GetCurrentDasha200JSONResponseBodyPratyantardashaSignificatorsStrengthLabelVeryStrong:
+		return true
+	case GetCurrentDasha200JSONResponseBodyPratyantardashaSignificatorsStrengthLabelWeak:
 		return true
 	default:
 		return false
@@ -10564,6 +10969,54 @@ func (e GetCurrentDasha200JSONResponseBodySookshmaDashaPratyantardashaLord) Vali
 	}
 }
 
+// Defines values for GetCurrentDasha200JSONResponseBodySookshmaDashaSignificatorsStrengthGrade.
+const (
+	GetCurrentDasha200JSONResponseBodySookshmaDashaSignificatorsStrengthGradeA GetCurrentDasha200JSONResponseBodySookshmaDashaSignificatorsStrengthGrade = "A"
+	GetCurrentDasha200JSONResponseBodySookshmaDashaSignificatorsStrengthGradeB GetCurrentDasha200JSONResponseBodySookshmaDashaSignificatorsStrengthGrade = "B"
+	GetCurrentDasha200JSONResponseBodySookshmaDashaSignificatorsStrengthGradeC GetCurrentDasha200JSONResponseBodySookshmaDashaSignificatorsStrengthGrade = "C"
+	GetCurrentDasha200JSONResponseBodySookshmaDashaSignificatorsStrengthGradeD GetCurrentDasha200JSONResponseBodySookshmaDashaSignificatorsStrengthGrade = "D"
+)
+
+// Valid indicates whether the value is a known member of the GetCurrentDasha200JSONResponseBodySookshmaDashaSignificatorsStrengthGrade enum.
+func (e GetCurrentDasha200JSONResponseBodySookshmaDashaSignificatorsStrengthGrade) Valid() bool {
+	switch e {
+	case GetCurrentDasha200JSONResponseBodySookshmaDashaSignificatorsStrengthGradeA:
+		return true
+	case GetCurrentDasha200JSONResponseBodySookshmaDashaSignificatorsStrengthGradeB:
+		return true
+	case GetCurrentDasha200JSONResponseBodySookshmaDashaSignificatorsStrengthGradeC:
+		return true
+	case GetCurrentDasha200JSONResponseBodySookshmaDashaSignificatorsStrengthGradeD:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetCurrentDasha200JSONResponseBodySookshmaDashaSignificatorsStrengthLabel.
+const (
+	GetCurrentDasha200JSONResponseBodySookshmaDashaSignificatorsStrengthLabelModerate   GetCurrentDasha200JSONResponseBodySookshmaDashaSignificatorsStrengthLabel = "moderate"
+	GetCurrentDasha200JSONResponseBodySookshmaDashaSignificatorsStrengthLabelStrong     GetCurrentDasha200JSONResponseBodySookshmaDashaSignificatorsStrengthLabel = "strong"
+	GetCurrentDasha200JSONResponseBodySookshmaDashaSignificatorsStrengthLabelVeryStrong GetCurrentDasha200JSONResponseBodySookshmaDashaSignificatorsStrengthLabel = "very-strong"
+	GetCurrentDasha200JSONResponseBodySookshmaDashaSignificatorsStrengthLabelWeak       GetCurrentDasha200JSONResponseBodySookshmaDashaSignificatorsStrengthLabel = "weak"
+)
+
+// Valid indicates whether the value is a known member of the GetCurrentDasha200JSONResponseBodySookshmaDashaSignificatorsStrengthLabel enum.
+func (e GetCurrentDasha200JSONResponseBodySookshmaDashaSignificatorsStrengthLabel) Valid() bool {
+	switch e {
+	case GetCurrentDasha200JSONResponseBodySookshmaDashaSignificatorsStrengthLabelModerate:
+		return true
+	case GetCurrentDasha200JSONResponseBodySookshmaDashaSignificatorsStrengthLabelStrong:
+		return true
+	case GetCurrentDasha200JSONResponseBodySookshmaDashaSignificatorsStrengthLabelVeryStrong:
+		return true
+	case GetCurrentDasha200JSONResponseBodySookshmaDashaSignificatorsStrengthLabelWeak:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for GetMajorDashasParamsLang.
 const (
 	GetMajorDashasParamsLangDe GetMajorDashasParamsLang = "de"
@@ -10615,6 +11068,24 @@ func (e GetMajorDashasJSONBodyAyanamsa) Valid() bool {
 	case GetMajorDashasJSONBodyAyanamsaKpOld:
 		return true
 	case GetMajorDashasJSONBodyAyanamsaLahiri:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetMajorDashasJSONBodyNodeType.
+const (
+	GetMajorDashasJSONBodyNodeTypeMean GetMajorDashasJSONBodyNodeType = "mean"
+	GetMajorDashasJSONBodyNodeTypeTrue GetMajorDashasJSONBodyNodeType = "true"
+)
+
+// Valid indicates whether the value is a known member of the GetMajorDashasJSONBodyNodeType enum.
+func (e GetMajorDashasJSONBodyNodeType) Valid() bool {
+	switch e {
+	case GetMajorDashasJSONBodyNodeTypeMean:
+		return true
+	case GetMajorDashasJSONBodyNodeTypeTrue:
 		return true
 	default:
 		return false
@@ -10675,6 +11146,54 @@ func (e GetMajorDashas200JSONResponseBodyMahadashasPlanet) Valid() bool {
 	case GetMajorDashas200JSONResponseBodyMahadashasPlanetSun:
 		return true
 	case GetMajorDashas200JSONResponseBodyMahadashasPlanetVenus:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetMajorDashas200JSONResponseBodyMahadashasSignificatorsStrengthGrade.
+const (
+	GetMajorDashas200JSONResponseBodyMahadashasSignificatorsStrengthGradeA GetMajorDashas200JSONResponseBodyMahadashasSignificatorsStrengthGrade = "A"
+	GetMajorDashas200JSONResponseBodyMahadashasSignificatorsStrengthGradeB GetMajorDashas200JSONResponseBodyMahadashasSignificatorsStrengthGrade = "B"
+	GetMajorDashas200JSONResponseBodyMahadashasSignificatorsStrengthGradeC GetMajorDashas200JSONResponseBodyMahadashasSignificatorsStrengthGrade = "C"
+	GetMajorDashas200JSONResponseBodyMahadashasSignificatorsStrengthGradeD GetMajorDashas200JSONResponseBodyMahadashasSignificatorsStrengthGrade = "D"
+)
+
+// Valid indicates whether the value is a known member of the GetMajorDashas200JSONResponseBodyMahadashasSignificatorsStrengthGrade enum.
+func (e GetMajorDashas200JSONResponseBodyMahadashasSignificatorsStrengthGrade) Valid() bool {
+	switch e {
+	case GetMajorDashas200JSONResponseBodyMahadashasSignificatorsStrengthGradeA:
+		return true
+	case GetMajorDashas200JSONResponseBodyMahadashasSignificatorsStrengthGradeB:
+		return true
+	case GetMajorDashas200JSONResponseBodyMahadashasSignificatorsStrengthGradeC:
+		return true
+	case GetMajorDashas200JSONResponseBodyMahadashasSignificatorsStrengthGradeD:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetMajorDashas200JSONResponseBodyMahadashasSignificatorsStrengthLabel.
+const (
+	GetMajorDashas200JSONResponseBodyMahadashasSignificatorsStrengthLabelModerate   GetMajorDashas200JSONResponseBodyMahadashasSignificatorsStrengthLabel = "moderate"
+	GetMajorDashas200JSONResponseBodyMahadashasSignificatorsStrengthLabelStrong     GetMajorDashas200JSONResponseBodyMahadashasSignificatorsStrengthLabel = "strong"
+	GetMajorDashas200JSONResponseBodyMahadashasSignificatorsStrengthLabelVeryStrong GetMajorDashas200JSONResponseBodyMahadashasSignificatorsStrengthLabel = "very-strong"
+	GetMajorDashas200JSONResponseBodyMahadashasSignificatorsStrengthLabelWeak       GetMajorDashas200JSONResponseBodyMahadashasSignificatorsStrengthLabel = "weak"
+)
+
+// Valid indicates whether the value is a known member of the GetMajorDashas200JSONResponseBodyMahadashasSignificatorsStrengthLabel enum.
+func (e GetMajorDashas200JSONResponseBodyMahadashasSignificatorsStrengthLabel) Valid() bool {
+	switch e {
+	case GetMajorDashas200JSONResponseBodyMahadashasSignificatorsStrengthLabelModerate:
+		return true
+	case GetMajorDashas200JSONResponseBodyMahadashasSignificatorsStrengthLabelStrong:
+		return true
+	case GetMajorDashas200JSONResponseBodyMahadashasSignificatorsStrengthLabelVeryStrong:
+		return true
+	case GetMajorDashas200JSONResponseBodyMahadashasSignificatorsStrengthLabelWeak:
 		return true
 	default:
 		return false
@@ -10816,6 +11335,24 @@ func (e GetSubDashasJSONBodyAyanamsa) Valid() bool {
 	}
 }
 
+// Defines values for GetSubDashasJSONBodyNodeType.
+const (
+	GetSubDashasJSONBodyNodeTypeMean GetSubDashasJSONBodyNodeType = "mean"
+	GetSubDashasJSONBodyNodeTypeTrue GetSubDashasJSONBodyNodeType = "true"
+)
+
+// Valid indicates whether the value is a known member of the GetSubDashasJSONBodyNodeType enum.
+func (e GetSubDashasJSONBodyNodeType) Valid() bool {
+	switch e {
+	case GetSubDashasJSONBodyNodeTypeMean:
+		return true
+	case GetSubDashasJSONBodyNodeTypeTrue:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for GetSubDashas200JSONResponseBodyAntardashasMahadashaLord.
 const (
 	GetSubDashas200JSONResponseBodyAntardashasMahadashaLordJupiter GetSubDashas200JSONResponseBodyAntardashasMahadashaLord = "Jupiter"
@@ -10888,6 +11425,54 @@ func (e GetSubDashas200JSONResponseBodyAntardashasPlanet) Valid() bool {
 	case GetSubDashas200JSONResponseBodyAntardashasPlanetSun:
 		return true
 	case GetSubDashas200JSONResponseBodyAntardashasPlanetVenus:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetSubDashas200JSONResponseBodyAntardashasSignificatorsStrengthGrade.
+const (
+	GetSubDashas200JSONResponseBodyAntardashasSignificatorsStrengthGradeA GetSubDashas200JSONResponseBodyAntardashasSignificatorsStrengthGrade = "A"
+	GetSubDashas200JSONResponseBodyAntardashasSignificatorsStrengthGradeB GetSubDashas200JSONResponseBodyAntardashasSignificatorsStrengthGrade = "B"
+	GetSubDashas200JSONResponseBodyAntardashasSignificatorsStrengthGradeC GetSubDashas200JSONResponseBodyAntardashasSignificatorsStrengthGrade = "C"
+	GetSubDashas200JSONResponseBodyAntardashasSignificatorsStrengthGradeD GetSubDashas200JSONResponseBodyAntardashasSignificatorsStrengthGrade = "D"
+)
+
+// Valid indicates whether the value is a known member of the GetSubDashas200JSONResponseBodyAntardashasSignificatorsStrengthGrade enum.
+func (e GetSubDashas200JSONResponseBodyAntardashasSignificatorsStrengthGrade) Valid() bool {
+	switch e {
+	case GetSubDashas200JSONResponseBodyAntardashasSignificatorsStrengthGradeA:
+		return true
+	case GetSubDashas200JSONResponseBodyAntardashasSignificatorsStrengthGradeB:
+		return true
+	case GetSubDashas200JSONResponseBodyAntardashasSignificatorsStrengthGradeC:
+		return true
+	case GetSubDashas200JSONResponseBodyAntardashasSignificatorsStrengthGradeD:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetSubDashas200JSONResponseBodyAntardashasSignificatorsStrengthLabel.
+const (
+	GetSubDashas200JSONResponseBodyAntardashasSignificatorsStrengthLabelModerate   GetSubDashas200JSONResponseBodyAntardashasSignificatorsStrengthLabel = "moderate"
+	GetSubDashas200JSONResponseBodyAntardashasSignificatorsStrengthLabelStrong     GetSubDashas200JSONResponseBodyAntardashasSignificatorsStrengthLabel = "strong"
+	GetSubDashas200JSONResponseBodyAntardashasSignificatorsStrengthLabelVeryStrong GetSubDashas200JSONResponseBodyAntardashasSignificatorsStrengthLabel = "very-strong"
+	GetSubDashas200JSONResponseBodyAntardashasSignificatorsStrengthLabelWeak       GetSubDashas200JSONResponseBodyAntardashasSignificatorsStrengthLabel = "weak"
+)
+
+// Valid indicates whether the value is a known member of the GetSubDashas200JSONResponseBodyAntardashasSignificatorsStrengthLabel enum.
+func (e GetSubDashas200JSONResponseBodyAntardashasSignificatorsStrengthLabel) Valid() bool {
+	switch e {
+	case GetSubDashas200JSONResponseBodyAntardashasSignificatorsStrengthLabelModerate:
+		return true
+	case GetSubDashas200JSONResponseBodyAntardashasSignificatorsStrengthLabelStrong:
+		return true
+	case GetSubDashas200JSONResponseBodyAntardashasSignificatorsStrengthLabelVeryStrong:
+		return true
+	case GetSubDashas200JSONResponseBodyAntardashasSignificatorsStrengthLabelWeak:
 		return true
 	default:
 		return false
@@ -10987,6 +11572,54 @@ func (e GetSubDashas200JSONResponseBodyMahadashaPeriodPlanet) Valid() bool {
 	case GetSubDashas200JSONResponseBodyMahadashaPeriodPlanetSun:
 		return true
 	case GetSubDashas200JSONResponseBodyMahadashaPeriodPlanetVenus:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetSubDashas200JSONResponseBodyMahadashaPeriodSignificatorsStrengthGrade.
+const (
+	GetSubDashas200JSONResponseBodyMahadashaPeriodSignificatorsStrengthGradeA GetSubDashas200JSONResponseBodyMahadashaPeriodSignificatorsStrengthGrade = "A"
+	GetSubDashas200JSONResponseBodyMahadashaPeriodSignificatorsStrengthGradeB GetSubDashas200JSONResponseBodyMahadashaPeriodSignificatorsStrengthGrade = "B"
+	GetSubDashas200JSONResponseBodyMahadashaPeriodSignificatorsStrengthGradeC GetSubDashas200JSONResponseBodyMahadashaPeriodSignificatorsStrengthGrade = "C"
+	GetSubDashas200JSONResponseBodyMahadashaPeriodSignificatorsStrengthGradeD GetSubDashas200JSONResponseBodyMahadashaPeriodSignificatorsStrengthGrade = "D"
+)
+
+// Valid indicates whether the value is a known member of the GetSubDashas200JSONResponseBodyMahadashaPeriodSignificatorsStrengthGrade enum.
+func (e GetSubDashas200JSONResponseBodyMahadashaPeriodSignificatorsStrengthGrade) Valid() bool {
+	switch e {
+	case GetSubDashas200JSONResponseBodyMahadashaPeriodSignificatorsStrengthGradeA:
+		return true
+	case GetSubDashas200JSONResponseBodyMahadashaPeriodSignificatorsStrengthGradeB:
+		return true
+	case GetSubDashas200JSONResponseBodyMahadashaPeriodSignificatorsStrengthGradeC:
+		return true
+	case GetSubDashas200JSONResponseBodyMahadashaPeriodSignificatorsStrengthGradeD:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetSubDashas200JSONResponseBodyMahadashaPeriodSignificatorsStrengthLabel.
+const (
+	GetSubDashas200JSONResponseBodyMahadashaPeriodSignificatorsStrengthLabelModerate   GetSubDashas200JSONResponseBodyMahadashaPeriodSignificatorsStrengthLabel = "moderate"
+	GetSubDashas200JSONResponseBodyMahadashaPeriodSignificatorsStrengthLabelStrong     GetSubDashas200JSONResponseBodyMahadashaPeriodSignificatorsStrengthLabel = "strong"
+	GetSubDashas200JSONResponseBodyMahadashaPeriodSignificatorsStrengthLabelVeryStrong GetSubDashas200JSONResponseBodyMahadashaPeriodSignificatorsStrengthLabel = "very-strong"
+	GetSubDashas200JSONResponseBodyMahadashaPeriodSignificatorsStrengthLabelWeak       GetSubDashas200JSONResponseBodyMahadashaPeriodSignificatorsStrengthLabel = "weak"
+)
+
+// Valid indicates whether the value is a known member of the GetSubDashas200JSONResponseBodyMahadashaPeriodSignificatorsStrengthLabel enum.
+func (e GetSubDashas200JSONResponseBodyMahadashaPeriodSignificatorsStrengthLabel) Valid() bool {
+	switch e {
+	case GetSubDashas200JSONResponseBodyMahadashaPeriodSignificatorsStrengthLabelModerate:
+		return true
+	case GetSubDashas200JSONResponseBodyMahadashaPeriodSignificatorsStrengthLabelStrong:
+		return true
+	case GetSubDashas200JSONResponseBodyMahadashaPeriodSignificatorsStrengthLabelVeryStrong:
+		return true
+	case GetSubDashas200JSONResponseBodyMahadashaPeriodSignificatorsStrengthLabelWeak:
 		return true
 	default:
 		return false
@@ -11128,6 +11761,24 @@ func (e GetPratyantardashasJSONBodyAyanamsa) Valid() bool {
 	}
 }
 
+// Defines values for GetPratyantardashasJSONBodyNodeType.
+const (
+	GetPratyantardashasJSONBodyNodeTypeMean GetPratyantardashasJSONBodyNodeType = "mean"
+	GetPratyantardashasJSONBodyNodeTypeTrue GetPratyantardashasJSONBodyNodeType = "true"
+)
+
+// Valid indicates whether the value is a known member of the GetPratyantardashasJSONBodyNodeType enum.
+func (e GetPratyantardashasJSONBodyNodeType) Valid() bool {
+	switch e {
+	case GetPratyantardashasJSONBodyNodeTypeMean:
+		return true
+	case GetPratyantardashasJSONBodyNodeTypeTrue:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for GetPratyantardashas200JSONResponseBodyAntardashaLord.
 const (
 	GetPratyantardashas200JSONResponseBodyAntardashaLordJupiter GetPratyantardashas200JSONResponseBodyAntardashaLord = "Jupiter"
@@ -11239,6 +11890,54 @@ func (e GetPratyantardashas200JSONResponseBodyAntardashaPeriodPlanet) Valid() bo
 	case GetPratyantardashas200JSONResponseBodyAntardashaPeriodPlanetSun:
 		return true
 	case GetPratyantardashas200JSONResponseBodyAntardashaPeriodPlanetVenus:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetPratyantardashas200JSONResponseBodyAntardashaPeriodSignificatorsStrengthGrade.
+const (
+	GetPratyantardashas200JSONResponseBodyAntardashaPeriodSignificatorsStrengthGradeA GetPratyantardashas200JSONResponseBodyAntardashaPeriodSignificatorsStrengthGrade = "A"
+	GetPratyantardashas200JSONResponseBodyAntardashaPeriodSignificatorsStrengthGradeB GetPratyantardashas200JSONResponseBodyAntardashaPeriodSignificatorsStrengthGrade = "B"
+	GetPratyantardashas200JSONResponseBodyAntardashaPeriodSignificatorsStrengthGradeC GetPratyantardashas200JSONResponseBodyAntardashaPeriodSignificatorsStrengthGrade = "C"
+	GetPratyantardashas200JSONResponseBodyAntardashaPeriodSignificatorsStrengthGradeD GetPratyantardashas200JSONResponseBodyAntardashaPeriodSignificatorsStrengthGrade = "D"
+)
+
+// Valid indicates whether the value is a known member of the GetPratyantardashas200JSONResponseBodyAntardashaPeriodSignificatorsStrengthGrade enum.
+func (e GetPratyantardashas200JSONResponseBodyAntardashaPeriodSignificatorsStrengthGrade) Valid() bool {
+	switch e {
+	case GetPratyantardashas200JSONResponseBodyAntardashaPeriodSignificatorsStrengthGradeA:
+		return true
+	case GetPratyantardashas200JSONResponseBodyAntardashaPeriodSignificatorsStrengthGradeB:
+		return true
+	case GetPratyantardashas200JSONResponseBodyAntardashaPeriodSignificatorsStrengthGradeC:
+		return true
+	case GetPratyantardashas200JSONResponseBodyAntardashaPeriodSignificatorsStrengthGradeD:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetPratyantardashas200JSONResponseBodyAntardashaPeriodSignificatorsStrengthLabel.
+const (
+	GetPratyantardashas200JSONResponseBodyAntardashaPeriodSignificatorsStrengthLabelModerate   GetPratyantardashas200JSONResponseBodyAntardashaPeriodSignificatorsStrengthLabel = "moderate"
+	GetPratyantardashas200JSONResponseBodyAntardashaPeriodSignificatorsStrengthLabelStrong     GetPratyantardashas200JSONResponseBodyAntardashaPeriodSignificatorsStrengthLabel = "strong"
+	GetPratyantardashas200JSONResponseBodyAntardashaPeriodSignificatorsStrengthLabelVeryStrong GetPratyantardashas200JSONResponseBodyAntardashaPeriodSignificatorsStrengthLabel = "very-strong"
+	GetPratyantardashas200JSONResponseBodyAntardashaPeriodSignificatorsStrengthLabelWeak       GetPratyantardashas200JSONResponseBodyAntardashaPeriodSignificatorsStrengthLabel = "weak"
+)
+
+// Valid indicates whether the value is a known member of the GetPratyantardashas200JSONResponseBodyAntardashaPeriodSignificatorsStrengthLabel enum.
+func (e GetPratyantardashas200JSONResponseBodyAntardashaPeriodSignificatorsStrengthLabel) Valid() bool {
+	switch e {
+	case GetPratyantardashas200JSONResponseBodyAntardashaPeriodSignificatorsStrengthLabelModerate:
+		return true
+	case GetPratyantardashas200JSONResponseBodyAntardashaPeriodSignificatorsStrengthLabelStrong:
+		return true
+	case GetPratyantardashas200JSONResponseBodyAntardashaPeriodSignificatorsStrengthLabelVeryStrong:
+		return true
+	case GetPratyantardashas200JSONResponseBodyAntardashaPeriodSignificatorsStrengthLabelWeak:
 		return true
 	default:
 		return false
@@ -11422,6 +12121,54 @@ func (e GetPratyantardashas200JSONResponseBodyPratyantardashasPlanet) Valid() bo
 	}
 }
 
+// Defines values for GetPratyantardashas200JSONResponseBodyPratyantardashasSignificatorsStrengthGrade.
+const (
+	GetPratyantardashas200JSONResponseBodyPratyantardashasSignificatorsStrengthGradeA GetPratyantardashas200JSONResponseBodyPratyantardashasSignificatorsStrengthGrade = "A"
+	GetPratyantardashas200JSONResponseBodyPratyantardashasSignificatorsStrengthGradeB GetPratyantardashas200JSONResponseBodyPratyantardashasSignificatorsStrengthGrade = "B"
+	GetPratyantardashas200JSONResponseBodyPratyantardashasSignificatorsStrengthGradeC GetPratyantardashas200JSONResponseBodyPratyantardashasSignificatorsStrengthGrade = "C"
+	GetPratyantardashas200JSONResponseBodyPratyantardashasSignificatorsStrengthGradeD GetPratyantardashas200JSONResponseBodyPratyantardashasSignificatorsStrengthGrade = "D"
+)
+
+// Valid indicates whether the value is a known member of the GetPratyantardashas200JSONResponseBodyPratyantardashasSignificatorsStrengthGrade enum.
+func (e GetPratyantardashas200JSONResponseBodyPratyantardashasSignificatorsStrengthGrade) Valid() bool {
+	switch e {
+	case GetPratyantardashas200JSONResponseBodyPratyantardashasSignificatorsStrengthGradeA:
+		return true
+	case GetPratyantardashas200JSONResponseBodyPratyantardashasSignificatorsStrengthGradeB:
+		return true
+	case GetPratyantardashas200JSONResponseBodyPratyantardashasSignificatorsStrengthGradeC:
+		return true
+	case GetPratyantardashas200JSONResponseBodyPratyantardashasSignificatorsStrengthGradeD:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetPratyantardashas200JSONResponseBodyPratyantardashasSignificatorsStrengthLabel.
+const (
+	GetPratyantardashas200JSONResponseBodyPratyantardashasSignificatorsStrengthLabelModerate   GetPratyantardashas200JSONResponseBodyPratyantardashasSignificatorsStrengthLabel = "moderate"
+	GetPratyantardashas200JSONResponseBodyPratyantardashasSignificatorsStrengthLabelStrong     GetPratyantardashas200JSONResponseBodyPratyantardashasSignificatorsStrengthLabel = "strong"
+	GetPratyantardashas200JSONResponseBodyPratyantardashasSignificatorsStrengthLabelVeryStrong GetPratyantardashas200JSONResponseBodyPratyantardashasSignificatorsStrengthLabel = "very-strong"
+	GetPratyantardashas200JSONResponseBodyPratyantardashasSignificatorsStrengthLabelWeak       GetPratyantardashas200JSONResponseBodyPratyantardashasSignificatorsStrengthLabel = "weak"
+)
+
+// Valid indicates whether the value is a known member of the GetPratyantardashas200JSONResponseBodyPratyantardashasSignificatorsStrengthLabel enum.
+func (e GetPratyantardashas200JSONResponseBodyPratyantardashasSignificatorsStrengthLabel) Valid() bool {
+	switch e {
+	case GetPratyantardashas200JSONResponseBodyPratyantardashasSignificatorsStrengthLabelModerate:
+		return true
+	case GetPratyantardashas200JSONResponseBodyPratyantardashasSignificatorsStrengthLabelStrong:
+		return true
+	case GetPratyantardashas200JSONResponseBodyPratyantardashasSignificatorsStrengthLabelVeryStrong:
+		return true
+	case GetPratyantardashas200JSONResponseBodyPratyantardashasSignificatorsStrengthLabelWeak:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for GetSookshmaDashasParamsLang.
 const (
 	GetSookshmaDashasParamsLangDe GetSookshmaDashasParamsLang = "de"
@@ -11590,6 +12337,24 @@ func (e GetSookshmaDashasJSONBodyAyanamsa) Valid() bool {
 	case GetSookshmaDashasJSONBodyAyanamsaKpOld:
 		return true
 	case GetSookshmaDashasJSONBodyAyanamsaLahiri:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetSookshmaDashasJSONBodyNodeType.
+const (
+	GetSookshmaDashasJSONBodyNodeTypeMean GetSookshmaDashasJSONBodyNodeType = "mean"
+	GetSookshmaDashasJSONBodyNodeTypeTrue GetSookshmaDashasJSONBodyNodeType = "true"
+)
+
+// Valid indicates whether the value is a known member of the GetSookshmaDashasJSONBodyNodeType enum.
+func (e GetSookshmaDashasJSONBodyNodeType) Valid() bool {
+	switch e {
+	case GetSookshmaDashasJSONBodyNodeTypeMean:
+		return true
+	case GetSookshmaDashasJSONBodyNodeTypeTrue:
 		return true
 	default:
 		return false
@@ -11851,6 +12616,54 @@ func (e GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodPlanet) Valid()
 	}
 }
 
+// Defines values for GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodSignificatorsStrengthGrade.
+const (
+	GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodSignificatorsStrengthGradeA GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodSignificatorsStrengthGrade = "A"
+	GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodSignificatorsStrengthGradeB GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodSignificatorsStrengthGrade = "B"
+	GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodSignificatorsStrengthGradeC GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodSignificatorsStrengthGrade = "C"
+	GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodSignificatorsStrengthGradeD GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodSignificatorsStrengthGrade = "D"
+)
+
+// Valid indicates whether the value is a known member of the GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodSignificatorsStrengthGrade enum.
+func (e GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodSignificatorsStrengthGrade) Valid() bool {
+	switch e {
+	case GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodSignificatorsStrengthGradeA:
+		return true
+	case GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodSignificatorsStrengthGradeB:
+		return true
+	case GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodSignificatorsStrengthGradeC:
+		return true
+	case GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodSignificatorsStrengthGradeD:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodSignificatorsStrengthLabel.
+const (
+	GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodSignificatorsStrengthLabelModerate   GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodSignificatorsStrengthLabel = "moderate"
+	GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodSignificatorsStrengthLabelStrong     GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodSignificatorsStrengthLabel = "strong"
+	GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodSignificatorsStrengthLabelVeryStrong GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodSignificatorsStrengthLabel = "very-strong"
+	GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodSignificatorsStrengthLabelWeak       GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodSignificatorsStrengthLabel = "weak"
+)
+
+// Valid indicates whether the value is a known member of the GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodSignificatorsStrengthLabel enum.
+func (e GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodSignificatorsStrengthLabel) Valid() bool {
+	switch e {
+	case GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodSignificatorsStrengthLabelModerate:
+		return true
+	case GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodSignificatorsStrengthLabelStrong:
+		return true
+	case GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodSignificatorsStrengthLabelVeryStrong:
+		return true
+	case GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodSignificatorsStrengthLabelWeak:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for GetSookshmaDashas200JSONResponseBodySookshmaDashasAntardashaLord.
 const (
 	GetSookshmaDashas200JSONResponseBodySookshmaDashasAntardashaLordJupiter GetSookshmaDashas200JSONResponseBodySookshmaDashasAntardashaLord = "Jupiter"
@@ -12001,6 +12814,909 @@ func (e GetSookshmaDashas200JSONResponseBodySookshmaDashasPratyantardashaLord) V
 	case GetSookshmaDashas200JSONResponseBodySookshmaDashasPratyantardashaLordSun:
 		return true
 	case GetSookshmaDashas200JSONResponseBodySookshmaDashasPratyantardashaLordVenus:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetSookshmaDashas200JSONResponseBodySookshmaDashasSignificatorsStrengthGrade.
+const (
+	GetSookshmaDashas200JSONResponseBodySookshmaDashasSignificatorsStrengthGradeA GetSookshmaDashas200JSONResponseBodySookshmaDashasSignificatorsStrengthGrade = "A"
+	GetSookshmaDashas200JSONResponseBodySookshmaDashasSignificatorsStrengthGradeB GetSookshmaDashas200JSONResponseBodySookshmaDashasSignificatorsStrengthGrade = "B"
+	GetSookshmaDashas200JSONResponseBodySookshmaDashasSignificatorsStrengthGradeC GetSookshmaDashas200JSONResponseBodySookshmaDashasSignificatorsStrengthGrade = "C"
+	GetSookshmaDashas200JSONResponseBodySookshmaDashasSignificatorsStrengthGradeD GetSookshmaDashas200JSONResponseBodySookshmaDashasSignificatorsStrengthGrade = "D"
+)
+
+// Valid indicates whether the value is a known member of the GetSookshmaDashas200JSONResponseBodySookshmaDashasSignificatorsStrengthGrade enum.
+func (e GetSookshmaDashas200JSONResponseBodySookshmaDashasSignificatorsStrengthGrade) Valid() bool {
+	switch e {
+	case GetSookshmaDashas200JSONResponseBodySookshmaDashasSignificatorsStrengthGradeA:
+		return true
+	case GetSookshmaDashas200JSONResponseBodySookshmaDashasSignificatorsStrengthGradeB:
+		return true
+	case GetSookshmaDashas200JSONResponseBodySookshmaDashasSignificatorsStrengthGradeC:
+		return true
+	case GetSookshmaDashas200JSONResponseBodySookshmaDashasSignificatorsStrengthGradeD:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetSookshmaDashas200JSONResponseBodySookshmaDashasSignificatorsStrengthLabel.
+const (
+	GetSookshmaDashas200JSONResponseBodySookshmaDashasSignificatorsStrengthLabelModerate   GetSookshmaDashas200JSONResponseBodySookshmaDashasSignificatorsStrengthLabel = "moderate"
+	GetSookshmaDashas200JSONResponseBodySookshmaDashasSignificatorsStrengthLabelStrong     GetSookshmaDashas200JSONResponseBodySookshmaDashasSignificatorsStrengthLabel = "strong"
+	GetSookshmaDashas200JSONResponseBodySookshmaDashasSignificatorsStrengthLabelVeryStrong GetSookshmaDashas200JSONResponseBodySookshmaDashasSignificatorsStrengthLabel = "very-strong"
+	GetSookshmaDashas200JSONResponseBodySookshmaDashasSignificatorsStrengthLabelWeak       GetSookshmaDashas200JSONResponseBodySookshmaDashasSignificatorsStrengthLabel = "weak"
+)
+
+// Valid indicates whether the value is a known member of the GetSookshmaDashas200JSONResponseBodySookshmaDashasSignificatorsStrengthLabel enum.
+func (e GetSookshmaDashas200JSONResponseBodySookshmaDashasSignificatorsStrengthLabel) Valid() bool {
+	switch e {
+	case GetSookshmaDashas200JSONResponseBodySookshmaDashasSignificatorsStrengthLabelModerate:
+		return true
+	case GetSookshmaDashas200JSONResponseBodySookshmaDashasSignificatorsStrengthLabelStrong:
+		return true
+	case GetSookshmaDashas200JSONResponseBodySookshmaDashasSignificatorsStrengthLabelVeryStrong:
+		return true
+	case GetSookshmaDashas200JSONResponseBodySookshmaDashasSignificatorsStrengthLabelWeak:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetPranaDashasParamsLang.
+const (
+	GetPranaDashasParamsLangDe GetPranaDashasParamsLang = "de"
+	GetPranaDashasParamsLangEn GetPranaDashasParamsLang = "en"
+	GetPranaDashasParamsLangEs GetPranaDashasParamsLang = "es"
+	GetPranaDashasParamsLangFr GetPranaDashasParamsLang = "fr"
+	GetPranaDashasParamsLangHi GetPranaDashasParamsLang = "hi"
+	GetPranaDashasParamsLangPt GetPranaDashasParamsLang = "pt"
+	GetPranaDashasParamsLangRu GetPranaDashasParamsLang = "ru"
+	GetPranaDashasParamsLangTr GetPranaDashasParamsLang = "tr"
+)
+
+// Valid indicates whether the value is a known member of the GetPranaDashasParamsLang enum.
+func (e GetPranaDashasParamsLang) Valid() bool {
+	switch e {
+	case GetPranaDashasParamsLangDe:
+		return true
+	case GetPranaDashasParamsLangEn:
+		return true
+	case GetPranaDashasParamsLangEs:
+		return true
+	case GetPranaDashasParamsLangFr:
+		return true
+	case GetPranaDashasParamsLangHi:
+		return true
+	case GetPranaDashasParamsLangPt:
+		return true
+	case GetPranaDashasParamsLangRu:
+		return true
+	case GetPranaDashasParamsLangTr:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetPranaDashasParamsMahadasha.
+const (
+	GetPranaDashasParamsMahadashaJupiter GetPranaDashasParamsMahadasha = "Jupiter"
+	GetPranaDashasParamsMahadashaKetu    GetPranaDashasParamsMahadasha = "Ketu"
+	GetPranaDashasParamsMahadashaMars    GetPranaDashasParamsMahadasha = "Mars"
+	GetPranaDashasParamsMahadashaMercury GetPranaDashasParamsMahadasha = "Mercury"
+	GetPranaDashasParamsMahadashaMoon    GetPranaDashasParamsMahadasha = "Moon"
+	GetPranaDashasParamsMahadashaRahu    GetPranaDashasParamsMahadasha = "Rahu"
+	GetPranaDashasParamsMahadashaSaturn  GetPranaDashasParamsMahadasha = "Saturn"
+	GetPranaDashasParamsMahadashaSun     GetPranaDashasParamsMahadasha = "Sun"
+	GetPranaDashasParamsMahadashaVenus   GetPranaDashasParamsMahadasha = "Venus"
+)
+
+// Valid indicates whether the value is a known member of the GetPranaDashasParamsMahadasha enum.
+func (e GetPranaDashasParamsMahadasha) Valid() bool {
+	switch e {
+	case GetPranaDashasParamsMahadashaJupiter:
+		return true
+	case GetPranaDashasParamsMahadashaKetu:
+		return true
+	case GetPranaDashasParamsMahadashaMars:
+		return true
+	case GetPranaDashasParamsMahadashaMercury:
+		return true
+	case GetPranaDashasParamsMahadashaMoon:
+		return true
+	case GetPranaDashasParamsMahadashaRahu:
+		return true
+	case GetPranaDashasParamsMahadashaSaturn:
+		return true
+	case GetPranaDashasParamsMahadashaSun:
+		return true
+	case GetPranaDashasParamsMahadashaVenus:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetPranaDashasParamsAntardasha.
+const (
+	GetPranaDashasParamsAntardashaJupiter GetPranaDashasParamsAntardasha = "Jupiter"
+	GetPranaDashasParamsAntardashaKetu    GetPranaDashasParamsAntardasha = "Ketu"
+	GetPranaDashasParamsAntardashaMars    GetPranaDashasParamsAntardasha = "Mars"
+	GetPranaDashasParamsAntardashaMercury GetPranaDashasParamsAntardasha = "Mercury"
+	GetPranaDashasParamsAntardashaMoon    GetPranaDashasParamsAntardasha = "Moon"
+	GetPranaDashasParamsAntardashaRahu    GetPranaDashasParamsAntardasha = "Rahu"
+	GetPranaDashasParamsAntardashaSaturn  GetPranaDashasParamsAntardasha = "Saturn"
+	GetPranaDashasParamsAntardashaSun     GetPranaDashasParamsAntardasha = "Sun"
+	GetPranaDashasParamsAntardashaVenus   GetPranaDashasParamsAntardasha = "Venus"
+)
+
+// Valid indicates whether the value is a known member of the GetPranaDashasParamsAntardasha enum.
+func (e GetPranaDashasParamsAntardasha) Valid() bool {
+	switch e {
+	case GetPranaDashasParamsAntardashaJupiter:
+		return true
+	case GetPranaDashasParamsAntardashaKetu:
+		return true
+	case GetPranaDashasParamsAntardashaMars:
+		return true
+	case GetPranaDashasParamsAntardashaMercury:
+		return true
+	case GetPranaDashasParamsAntardashaMoon:
+		return true
+	case GetPranaDashasParamsAntardashaRahu:
+		return true
+	case GetPranaDashasParamsAntardashaSaturn:
+		return true
+	case GetPranaDashasParamsAntardashaSun:
+		return true
+	case GetPranaDashasParamsAntardashaVenus:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetPranaDashasParamsPratyantardasha.
+const (
+	GetPranaDashasParamsPratyantardashaJupiter GetPranaDashasParamsPratyantardasha = "Jupiter"
+	GetPranaDashasParamsPratyantardashaKetu    GetPranaDashasParamsPratyantardasha = "Ketu"
+	GetPranaDashasParamsPratyantardashaMars    GetPranaDashasParamsPratyantardasha = "Mars"
+	GetPranaDashasParamsPratyantardashaMercury GetPranaDashasParamsPratyantardasha = "Mercury"
+	GetPranaDashasParamsPratyantardashaMoon    GetPranaDashasParamsPratyantardasha = "Moon"
+	GetPranaDashasParamsPratyantardashaRahu    GetPranaDashasParamsPratyantardasha = "Rahu"
+	GetPranaDashasParamsPratyantardashaSaturn  GetPranaDashasParamsPratyantardasha = "Saturn"
+	GetPranaDashasParamsPratyantardashaSun     GetPranaDashasParamsPratyantardasha = "Sun"
+	GetPranaDashasParamsPratyantardashaVenus   GetPranaDashasParamsPratyantardasha = "Venus"
+)
+
+// Valid indicates whether the value is a known member of the GetPranaDashasParamsPratyantardasha enum.
+func (e GetPranaDashasParamsPratyantardasha) Valid() bool {
+	switch e {
+	case GetPranaDashasParamsPratyantardashaJupiter:
+		return true
+	case GetPranaDashasParamsPratyantardashaKetu:
+		return true
+	case GetPranaDashasParamsPratyantardashaMars:
+		return true
+	case GetPranaDashasParamsPratyantardashaMercury:
+		return true
+	case GetPranaDashasParamsPratyantardashaMoon:
+		return true
+	case GetPranaDashasParamsPratyantardashaRahu:
+		return true
+	case GetPranaDashasParamsPratyantardashaSaturn:
+		return true
+	case GetPranaDashasParamsPratyantardashaSun:
+		return true
+	case GetPranaDashasParamsPratyantardashaVenus:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetPranaDashasParamsSookshma.
+const (
+	GetPranaDashasParamsSookshmaJupiter GetPranaDashasParamsSookshma = "Jupiter"
+	GetPranaDashasParamsSookshmaKetu    GetPranaDashasParamsSookshma = "Ketu"
+	GetPranaDashasParamsSookshmaMars    GetPranaDashasParamsSookshma = "Mars"
+	GetPranaDashasParamsSookshmaMercury GetPranaDashasParamsSookshma = "Mercury"
+	GetPranaDashasParamsSookshmaMoon    GetPranaDashasParamsSookshma = "Moon"
+	GetPranaDashasParamsSookshmaRahu    GetPranaDashasParamsSookshma = "Rahu"
+	GetPranaDashasParamsSookshmaSaturn  GetPranaDashasParamsSookshma = "Saturn"
+	GetPranaDashasParamsSookshmaSun     GetPranaDashasParamsSookshma = "Sun"
+	GetPranaDashasParamsSookshmaVenus   GetPranaDashasParamsSookshma = "Venus"
+)
+
+// Valid indicates whether the value is a known member of the GetPranaDashasParamsSookshma enum.
+func (e GetPranaDashasParamsSookshma) Valid() bool {
+	switch e {
+	case GetPranaDashasParamsSookshmaJupiter:
+		return true
+	case GetPranaDashasParamsSookshmaKetu:
+		return true
+	case GetPranaDashasParamsSookshmaMars:
+		return true
+	case GetPranaDashasParamsSookshmaMercury:
+		return true
+	case GetPranaDashasParamsSookshmaMoon:
+		return true
+	case GetPranaDashasParamsSookshmaRahu:
+		return true
+	case GetPranaDashasParamsSookshmaSaturn:
+		return true
+	case GetPranaDashasParamsSookshmaSun:
+		return true
+	case GetPranaDashasParamsSookshmaVenus:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetPranaDashasJSONBodyAyanamsa.
+const (
+	GetPranaDashasJSONBodyAyanamsaKpNewcomb GetPranaDashasJSONBodyAyanamsa = "kp-newcomb"
+	GetPranaDashasJSONBodyAyanamsaKpOld     GetPranaDashasJSONBodyAyanamsa = "kp-old"
+	GetPranaDashasJSONBodyAyanamsaLahiri    GetPranaDashasJSONBodyAyanamsa = "lahiri"
+)
+
+// Valid indicates whether the value is a known member of the GetPranaDashasJSONBodyAyanamsa enum.
+func (e GetPranaDashasJSONBodyAyanamsa) Valid() bool {
+	switch e {
+	case GetPranaDashasJSONBodyAyanamsaKpNewcomb:
+		return true
+	case GetPranaDashasJSONBodyAyanamsaKpOld:
+		return true
+	case GetPranaDashasJSONBodyAyanamsaLahiri:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetPranaDashasJSONBodyNodeType.
+const (
+	GetPranaDashasJSONBodyNodeTypeMean GetPranaDashasJSONBodyNodeType = "mean"
+	GetPranaDashasJSONBodyNodeTypeTrue GetPranaDashasJSONBodyNodeType = "true"
+)
+
+// Valid indicates whether the value is a known member of the GetPranaDashasJSONBodyNodeType enum.
+func (e GetPranaDashasJSONBodyNodeType) Valid() bool {
+	switch e {
+	case GetPranaDashasJSONBodyNodeTypeMean:
+		return true
+	case GetPranaDashasJSONBodyNodeTypeTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetPranaDashas200JSONResponseBodyAntardashaLord.
+const (
+	GetPranaDashas200JSONResponseBodyAntardashaLordJupiter GetPranaDashas200JSONResponseBodyAntardashaLord = "Jupiter"
+	GetPranaDashas200JSONResponseBodyAntardashaLordKetu    GetPranaDashas200JSONResponseBodyAntardashaLord = "Ketu"
+	GetPranaDashas200JSONResponseBodyAntardashaLordMars    GetPranaDashas200JSONResponseBodyAntardashaLord = "Mars"
+	GetPranaDashas200JSONResponseBodyAntardashaLordMercury GetPranaDashas200JSONResponseBodyAntardashaLord = "Mercury"
+	GetPranaDashas200JSONResponseBodyAntardashaLordMoon    GetPranaDashas200JSONResponseBodyAntardashaLord = "Moon"
+	GetPranaDashas200JSONResponseBodyAntardashaLordRahu    GetPranaDashas200JSONResponseBodyAntardashaLord = "Rahu"
+	GetPranaDashas200JSONResponseBodyAntardashaLordSaturn  GetPranaDashas200JSONResponseBodyAntardashaLord = "Saturn"
+	GetPranaDashas200JSONResponseBodyAntardashaLordSun     GetPranaDashas200JSONResponseBodyAntardashaLord = "Sun"
+	GetPranaDashas200JSONResponseBodyAntardashaLordVenus   GetPranaDashas200JSONResponseBodyAntardashaLord = "Venus"
+)
+
+// Valid indicates whether the value is a known member of the GetPranaDashas200JSONResponseBodyAntardashaLord enum.
+func (e GetPranaDashas200JSONResponseBodyAntardashaLord) Valid() bool {
+	switch e {
+	case GetPranaDashas200JSONResponseBodyAntardashaLordJupiter:
+		return true
+	case GetPranaDashas200JSONResponseBodyAntardashaLordKetu:
+		return true
+	case GetPranaDashas200JSONResponseBodyAntardashaLordMars:
+		return true
+	case GetPranaDashas200JSONResponseBodyAntardashaLordMercury:
+		return true
+	case GetPranaDashas200JSONResponseBodyAntardashaLordMoon:
+		return true
+	case GetPranaDashas200JSONResponseBodyAntardashaLordRahu:
+		return true
+	case GetPranaDashas200JSONResponseBodyAntardashaLordSaturn:
+		return true
+	case GetPranaDashas200JSONResponseBodyAntardashaLordSun:
+		return true
+	case GetPranaDashas200JSONResponseBodyAntardashaLordVenus:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetPranaDashas200JSONResponseBodyAyanamsaType.
+const (
+	GetPranaDashas200JSONResponseBodyAyanamsaTypeKpNewcomb GetPranaDashas200JSONResponseBodyAyanamsaType = "kp-newcomb"
+	GetPranaDashas200JSONResponseBodyAyanamsaTypeKpOld     GetPranaDashas200JSONResponseBodyAyanamsaType = "kp-old"
+	GetPranaDashas200JSONResponseBodyAyanamsaTypeLahiri    GetPranaDashas200JSONResponseBodyAyanamsaType = "lahiri"
+)
+
+// Valid indicates whether the value is a known member of the GetPranaDashas200JSONResponseBodyAyanamsaType enum.
+func (e GetPranaDashas200JSONResponseBodyAyanamsaType) Valid() bool {
+	switch e {
+	case GetPranaDashas200JSONResponseBodyAyanamsaTypeKpNewcomb:
+		return true
+	case GetPranaDashas200JSONResponseBodyAyanamsaTypeKpOld:
+		return true
+	case GetPranaDashas200JSONResponseBodyAyanamsaTypeLahiri:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetPranaDashas200JSONResponseBodyMahadashaLord.
+const (
+	GetPranaDashas200JSONResponseBodyMahadashaLordJupiter GetPranaDashas200JSONResponseBodyMahadashaLord = "Jupiter"
+	GetPranaDashas200JSONResponseBodyMahadashaLordKetu    GetPranaDashas200JSONResponseBodyMahadashaLord = "Ketu"
+	GetPranaDashas200JSONResponseBodyMahadashaLordMars    GetPranaDashas200JSONResponseBodyMahadashaLord = "Mars"
+	GetPranaDashas200JSONResponseBodyMahadashaLordMercury GetPranaDashas200JSONResponseBodyMahadashaLord = "Mercury"
+	GetPranaDashas200JSONResponseBodyMahadashaLordMoon    GetPranaDashas200JSONResponseBodyMahadashaLord = "Moon"
+	GetPranaDashas200JSONResponseBodyMahadashaLordRahu    GetPranaDashas200JSONResponseBodyMahadashaLord = "Rahu"
+	GetPranaDashas200JSONResponseBodyMahadashaLordSaturn  GetPranaDashas200JSONResponseBodyMahadashaLord = "Saturn"
+	GetPranaDashas200JSONResponseBodyMahadashaLordSun     GetPranaDashas200JSONResponseBodyMahadashaLord = "Sun"
+	GetPranaDashas200JSONResponseBodyMahadashaLordVenus   GetPranaDashas200JSONResponseBodyMahadashaLord = "Venus"
+)
+
+// Valid indicates whether the value is a known member of the GetPranaDashas200JSONResponseBodyMahadashaLord enum.
+func (e GetPranaDashas200JSONResponseBodyMahadashaLord) Valid() bool {
+	switch e {
+	case GetPranaDashas200JSONResponseBodyMahadashaLordJupiter:
+		return true
+	case GetPranaDashas200JSONResponseBodyMahadashaLordKetu:
+		return true
+	case GetPranaDashas200JSONResponseBodyMahadashaLordMars:
+		return true
+	case GetPranaDashas200JSONResponseBodyMahadashaLordMercury:
+		return true
+	case GetPranaDashas200JSONResponseBodyMahadashaLordMoon:
+		return true
+	case GetPranaDashas200JSONResponseBodyMahadashaLordRahu:
+		return true
+	case GetPranaDashas200JSONResponseBodyMahadashaLordSaturn:
+		return true
+	case GetPranaDashas200JSONResponseBodyMahadashaLordSun:
+		return true
+	case GetPranaDashas200JSONResponseBodyMahadashaLordVenus:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetPranaDashas200JSONResponseBodyPranaDashasAntardashaLord.
+const (
+	GetPranaDashas200JSONResponseBodyPranaDashasAntardashaLordJupiter GetPranaDashas200JSONResponseBodyPranaDashasAntardashaLord = "Jupiter"
+	GetPranaDashas200JSONResponseBodyPranaDashasAntardashaLordKetu    GetPranaDashas200JSONResponseBodyPranaDashasAntardashaLord = "Ketu"
+	GetPranaDashas200JSONResponseBodyPranaDashasAntardashaLordMars    GetPranaDashas200JSONResponseBodyPranaDashasAntardashaLord = "Mars"
+	GetPranaDashas200JSONResponseBodyPranaDashasAntardashaLordMercury GetPranaDashas200JSONResponseBodyPranaDashasAntardashaLord = "Mercury"
+	GetPranaDashas200JSONResponseBodyPranaDashasAntardashaLordMoon    GetPranaDashas200JSONResponseBodyPranaDashasAntardashaLord = "Moon"
+	GetPranaDashas200JSONResponseBodyPranaDashasAntardashaLordRahu    GetPranaDashas200JSONResponseBodyPranaDashasAntardashaLord = "Rahu"
+	GetPranaDashas200JSONResponseBodyPranaDashasAntardashaLordSaturn  GetPranaDashas200JSONResponseBodyPranaDashasAntardashaLord = "Saturn"
+	GetPranaDashas200JSONResponseBodyPranaDashasAntardashaLordSun     GetPranaDashas200JSONResponseBodyPranaDashasAntardashaLord = "Sun"
+	GetPranaDashas200JSONResponseBodyPranaDashasAntardashaLordVenus   GetPranaDashas200JSONResponseBodyPranaDashasAntardashaLord = "Venus"
+)
+
+// Valid indicates whether the value is a known member of the GetPranaDashas200JSONResponseBodyPranaDashasAntardashaLord enum.
+func (e GetPranaDashas200JSONResponseBodyPranaDashasAntardashaLord) Valid() bool {
+	switch e {
+	case GetPranaDashas200JSONResponseBodyPranaDashasAntardashaLordJupiter:
+		return true
+	case GetPranaDashas200JSONResponseBodyPranaDashasAntardashaLordKetu:
+		return true
+	case GetPranaDashas200JSONResponseBodyPranaDashasAntardashaLordMars:
+		return true
+	case GetPranaDashas200JSONResponseBodyPranaDashasAntardashaLordMercury:
+		return true
+	case GetPranaDashas200JSONResponseBodyPranaDashasAntardashaLordMoon:
+		return true
+	case GetPranaDashas200JSONResponseBodyPranaDashasAntardashaLordRahu:
+		return true
+	case GetPranaDashas200JSONResponseBodyPranaDashasAntardashaLordSaturn:
+		return true
+	case GetPranaDashas200JSONResponseBodyPranaDashasAntardashaLordSun:
+		return true
+	case GetPranaDashas200JSONResponseBodyPranaDashasAntardashaLordVenus:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetPranaDashas200JSONResponseBodyPranaDashasMahadashaLord.
+const (
+	GetPranaDashas200JSONResponseBodyPranaDashasMahadashaLordJupiter GetPranaDashas200JSONResponseBodyPranaDashasMahadashaLord = "Jupiter"
+	GetPranaDashas200JSONResponseBodyPranaDashasMahadashaLordKetu    GetPranaDashas200JSONResponseBodyPranaDashasMahadashaLord = "Ketu"
+	GetPranaDashas200JSONResponseBodyPranaDashasMahadashaLordMars    GetPranaDashas200JSONResponseBodyPranaDashasMahadashaLord = "Mars"
+	GetPranaDashas200JSONResponseBodyPranaDashasMahadashaLordMercury GetPranaDashas200JSONResponseBodyPranaDashasMahadashaLord = "Mercury"
+	GetPranaDashas200JSONResponseBodyPranaDashasMahadashaLordMoon    GetPranaDashas200JSONResponseBodyPranaDashasMahadashaLord = "Moon"
+	GetPranaDashas200JSONResponseBodyPranaDashasMahadashaLordRahu    GetPranaDashas200JSONResponseBodyPranaDashasMahadashaLord = "Rahu"
+	GetPranaDashas200JSONResponseBodyPranaDashasMahadashaLordSaturn  GetPranaDashas200JSONResponseBodyPranaDashasMahadashaLord = "Saturn"
+	GetPranaDashas200JSONResponseBodyPranaDashasMahadashaLordSun     GetPranaDashas200JSONResponseBodyPranaDashasMahadashaLord = "Sun"
+	GetPranaDashas200JSONResponseBodyPranaDashasMahadashaLordVenus   GetPranaDashas200JSONResponseBodyPranaDashasMahadashaLord = "Venus"
+)
+
+// Valid indicates whether the value is a known member of the GetPranaDashas200JSONResponseBodyPranaDashasMahadashaLord enum.
+func (e GetPranaDashas200JSONResponseBodyPranaDashasMahadashaLord) Valid() bool {
+	switch e {
+	case GetPranaDashas200JSONResponseBodyPranaDashasMahadashaLordJupiter:
+		return true
+	case GetPranaDashas200JSONResponseBodyPranaDashasMahadashaLordKetu:
+		return true
+	case GetPranaDashas200JSONResponseBodyPranaDashasMahadashaLordMars:
+		return true
+	case GetPranaDashas200JSONResponseBodyPranaDashasMahadashaLordMercury:
+		return true
+	case GetPranaDashas200JSONResponseBodyPranaDashasMahadashaLordMoon:
+		return true
+	case GetPranaDashas200JSONResponseBodyPranaDashasMahadashaLordRahu:
+		return true
+	case GetPranaDashas200JSONResponseBodyPranaDashasMahadashaLordSaturn:
+		return true
+	case GetPranaDashas200JSONResponseBodyPranaDashasMahadashaLordSun:
+		return true
+	case GetPranaDashas200JSONResponseBodyPranaDashasMahadashaLordVenus:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetPranaDashas200JSONResponseBodyPranaDashasPlanet.
+const (
+	GetPranaDashas200JSONResponseBodyPranaDashasPlanetJupiter GetPranaDashas200JSONResponseBodyPranaDashasPlanet = "Jupiter"
+	GetPranaDashas200JSONResponseBodyPranaDashasPlanetKetu    GetPranaDashas200JSONResponseBodyPranaDashasPlanet = "Ketu"
+	GetPranaDashas200JSONResponseBodyPranaDashasPlanetMars    GetPranaDashas200JSONResponseBodyPranaDashasPlanet = "Mars"
+	GetPranaDashas200JSONResponseBodyPranaDashasPlanetMercury GetPranaDashas200JSONResponseBodyPranaDashasPlanet = "Mercury"
+	GetPranaDashas200JSONResponseBodyPranaDashasPlanetMoon    GetPranaDashas200JSONResponseBodyPranaDashasPlanet = "Moon"
+	GetPranaDashas200JSONResponseBodyPranaDashasPlanetRahu    GetPranaDashas200JSONResponseBodyPranaDashasPlanet = "Rahu"
+	GetPranaDashas200JSONResponseBodyPranaDashasPlanetSaturn  GetPranaDashas200JSONResponseBodyPranaDashasPlanet = "Saturn"
+	GetPranaDashas200JSONResponseBodyPranaDashasPlanetSun     GetPranaDashas200JSONResponseBodyPranaDashasPlanet = "Sun"
+	GetPranaDashas200JSONResponseBodyPranaDashasPlanetVenus   GetPranaDashas200JSONResponseBodyPranaDashasPlanet = "Venus"
+)
+
+// Valid indicates whether the value is a known member of the GetPranaDashas200JSONResponseBodyPranaDashasPlanet enum.
+func (e GetPranaDashas200JSONResponseBodyPranaDashasPlanet) Valid() bool {
+	switch e {
+	case GetPranaDashas200JSONResponseBodyPranaDashasPlanetJupiter:
+		return true
+	case GetPranaDashas200JSONResponseBodyPranaDashasPlanetKetu:
+		return true
+	case GetPranaDashas200JSONResponseBodyPranaDashasPlanetMars:
+		return true
+	case GetPranaDashas200JSONResponseBodyPranaDashasPlanetMercury:
+		return true
+	case GetPranaDashas200JSONResponseBodyPranaDashasPlanetMoon:
+		return true
+	case GetPranaDashas200JSONResponseBodyPranaDashasPlanetRahu:
+		return true
+	case GetPranaDashas200JSONResponseBodyPranaDashasPlanetSaturn:
+		return true
+	case GetPranaDashas200JSONResponseBodyPranaDashasPlanetSun:
+		return true
+	case GetPranaDashas200JSONResponseBodyPranaDashasPlanetVenus:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetPranaDashas200JSONResponseBodyPranaDashasPratyantardashaLord.
+const (
+	GetPranaDashas200JSONResponseBodyPranaDashasPratyantardashaLordJupiter GetPranaDashas200JSONResponseBodyPranaDashasPratyantardashaLord = "Jupiter"
+	GetPranaDashas200JSONResponseBodyPranaDashasPratyantardashaLordKetu    GetPranaDashas200JSONResponseBodyPranaDashasPratyantardashaLord = "Ketu"
+	GetPranaDashas200JSONResponseBodyPranaDashasPratyantardashaLordMars    GetPranaDashas200JSONResponseBodyPranaDashasPratyantardashaLord = "Mars"
+	GetPranaDashas200JSONResponseBodyPranaDashasPratyantardashaLordMercury GetPranaDashas200JSONResponseBodyPranaDashasPratyantardashaLord = "Mercury"
+	GetPranaDashas200JSONResponseBodyPranaDashasPratyantardashaLordMoon    GetPranaDashas200JSONResponseBodyPranaDashasPratyantardashaLord = "Moon"
+	GetPranaDashas200JSONResponseBodyPranaDashasPratyantardashaLordRahu    GetPranaDashas200JSONResponseBodyPranaDashasPratyantardashaLord = "Rahu"
+	GetPranaDashas200JSONResponseBodyPranaDashasPratyantardashaLordSaturn  GetPranaDashas200JSONResponseBodyPranaDashasPratyantardashaLord = "Saturn"
+	GetPranaDashas200JSONResponseBodyPranaDashasPratyantardashaLordSun     GetPranaDashas200JSONResponseBodyPranaDashasPratyantardashaLord = "Sun"
+	GetPranaDashas200JSONResponseBodyPranaDashasPratyantardashaLordVenus   GetPranaDashas200JSONResponseBodyPranaDashasPratyantardashaLord = "Venus"
+)
+
+// Valid indicates whether the value is a known member of the GetPranaDashas200JSONResponseBodyPranaDashasPratyantardashaLord enum.
+func (e GetPranaDashas200JSONResponseBodyPranaDashasPratyantardashaLord) Valid() bool {
+	switch e {
+	case GetPranaDashas200JSONResponseBodyPranaDashasPratyantardashaLordJupiter:
+		return true
+	case GetPranaDashas200JSONResponseBodyPranaDashasPratyantardashaLordKetu:
+		return true
+	case GetPranaDashas200JSONResponseBodyPranaDashasPratyantardashaLordMars:
+		return true
+	case GetPranaDashas200JSONResponseBodyPranaDashasPratyantardashaLordMercury:
+		return true
+	case GetPranaDashas200JSONResponseBodyPranaDashasPratyantardashaLordMoon:
+		return true
+	case GetPranaDashas200JSONResponseBodyPranaDashasPratyantardashaLordRahu:
+		return true
+	case GetPranaDashas200JSONResponseBodyPranaDashasPratyantardashaLordSaturn:
+		return true
+	case GetPranaDashas200JSONResponseBodyPranaDashasPratyantardashaLordSun:
+		return true
+	case GetPranaDashas200JSONResponseBodyPranaDashasPratyantardashaLordVenus:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetPranaDashas200JSONResponseBodyPranaDashasSignificatorsStrengthGrade.
+const (
+	GetPranaDashas200JSONResponseBodyPranaDashasSignificatorsStrengthGradeA GetPranaDashas200JSONResponseBodyPranaDashasSignificatorsStrengthGrade = "A"
+	GetPranaDashas200JSONResponseBodyPranaDashasSignificatorsStrengthGradeB GetPranaDashas200JSONResponseBodyPranaDashasSignificatorsStrengthGrade = "B"
+	GetPranaDashas200JSONResponseBodyPranaDashasSignificatorsStrengthGradeC GetPranaDashas200JSONResponseBodyPranaDashasSignificatorsStrengthGrade = "C"
+	GetPranaDashas200JSONResponseBodyPranaDashasSignificatorsStrengthGradeD GetPranaDashas200JSONResponseBodyPranaDashasSignificatorsStrengthGrade = "D"
+)
+
+// Valid indicates whether the value is a known member of the GetPranaDashas200JSONResponseBodyPranaDashasSignificatorsStrengthGrade enum.
+func (e GetPranaDashas200JSONResponseBodyPranaDashasSignificatorsStrengthGrade) Valid() bool {
+	switch e {
+	case GetPranaDashas200JSONResponseBodyPranaDashasSignificatorsStrengthGradeA:
+		return true
+	case GetPranaDashas200JSONResponseBodyPranaDashasSignificatorsStrengthGradeB:
+		return true
+	case GetPranaDashas200JSONResponseBodyPranaDashasSignificatorsStrengthGradeC:
+		return true
+	case GetPranaDashas200JSONResponseBodyPranaDashasSignificatorsStrengthGradeD:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetPranaDashas200JSONResponseBodyPranaDashasSignificatorsStrengthLabel.
+const (
+	GetPranaDashas200JSONResponseBodyPranaDashasSignificatorsStrengthLabelModerate   GetPranaDashas200JSONResponseBodyPranaDashasSignificatorsStrengthLabel = "moderate"
+	GetPranaDashas200JSONResponseBodyPranaDashasSignificatorsStrengthLabelStrong     GetPranaDashas200JSONResponseBodyPranaDashasSignificatorsStrengthLabel = "strong"
+	GetPranaDashas200JSONResponseBodyPranaDashasSignificatorsStrengthLabelVeryStrong GetPranaDashas200JSONResponseBodyPranaDashasSignificatorsStrengthLabel = "very-strong"
+	GetPranaDashas200JSONResponseBodyPranaDashasSignificatorsStrengthLabelWeak       GetPranaDashas200JSONResponseBodyPranaDashasSignificatorsStrengthLabel = "weak"
+)
+
+// Valid indicates whether the value is a known member of the GetPranaDashas200JSONResponseBodyPranaDashasSignificatorsStrengthLabel enum.
+func (e GetPranaDashas200JSONResponseBodyPranaDashasSignificatorsStrengthLabel) Valid() bool {
+	switch e {
+	case GetPranaDashas200JSONResponseBodyPranaDashasSignificatorsStrengthLabelModerate:
+		return true
+	case GetPranaDashas200JSONResponseBodyPranaDashasSignificatorsStrengthLabelStrong:
+		return true
+	case GetPranaDashas200JSONResponseBodyPranaDashasSignificatorsStrengthLabelVeryStrong:
+		return true
+	case GetPranaDashas200JSONResponseBodyPranaDashasSignificatorsStrengthLabelWeak:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetPranaDashas200JSONResponseBodyPranaDashasSookshmaLord.
+const (
+	GetPranaDashas200JSONResponseBodyPranaDashasSookshmaLordJupiter GetPranaDashas200JSONResponseBodyPranaDashasSookshmaLord = "Jupiter"
+	GetPranaDashas200JSONResponseBodyPranaDashasSookshmaLordKetu    GetPranaDashas200JSONResponseBodyPranaDashasSookshmaLord = "Ketu"
+	GetPranaDashas200JSONResponseBodyPranaDashasSookshmaLordMars    GetPranaDashas200JSONResponseBodyPranaDashasSookshmaLord = "Mars"
+	GetPranaDashas200JSONResponseBodyPranaDashasSookshmaLordMercury GetPranaDashas200JSONResponseBodyPranaDashasSookshmaLord = "Mercury"
+	GetPranaDashas200JSONResponseBodyPranaDashasSookshmaLordMoon    GetPranaDashas200JSONResponseBodyPranaDashasSookshmaLord = "Moon"
+	GetPranaDashas200JSONResponseBodyPranaDashasSookshmaLordRahu    GetPranaDashas200JSONResponseBodyPranaDashasSookshmaLord = "Rahu"
+	GetPranaDashas200JSONResponseBodyPranaDashasSookshmaLordSaturn  GetPranaDashas200JSONResponseBodyPranaDashasSookshmaLord = "Saturn"
+	GetPranaDashas200JSONResponseBodyPranaDashasSookshmaLordSun     GetPranaDashas200JSONResponseBodyPranaDashasSookshmaLord = "Sun"
+	GetPranaDashas200JSONResponseBodyPranaDashasSookshmaLordVenus   GetPranaDashas200JSONResponseBodyPranaDashasSookshmaLord = "Venus"
+)
+
+// Valid indicates whether the value is a known member of the GetPranaDashas200JSONResponseBodyPranaDashasSookshmaLord enum.
+func (e GetPranaDashas200JSONResponseBodyPranaDashasSookshmaLord) Valid() bool {
+	switch e {
+	case GetPranaDashas200JSONResponseBodyPranaDashasSookshmaLordJupiter:
+		return true
+	case GetPranaDashas200JSONResponseBodyPranaDashasSookshmaLordKetu:
+		return true
+	case GetPranaDashas200JSONResponseBodyPranaDashasSookshmaLordMars:
+		return true
+	case GetPranaDashas200JSONResponseBodyPranaDashasSookshmaLordMercury:
+		return true
+	case GetPranaDashas200JSONResponseBodyPranaDashasSookshmaLordMoon:
+		return true
+	case GetPranaDashas200JSONResponseBodyPranaDashasSookshmaLordRahu:
+		return true
+	case GetPranaDashas200JSONResponseBodyPranaDashasSookshmaLordSaturn:
+		return true
+	case GetPranaDashas200JSONResponseBodyPranaDashasSookshmaLordSun:
+		return true
+	case GetPranaDashas200JSONResponseBodyPranaDashasSookshmaLordVenus:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetPranaDashas200JSONResponseBodyPratyantardashaLord.
+const (
+	GetPranaDashas200JSONResponseBodyPratyantardashaLordJupiter GetPranaDashas200JSONResponseBodyPratyantardashaLord = "Jupiter"
+	GetPranaDashas200JSONResponseBodyPratyantardashaLordKetu    GetPranaDashas200JSONResponseBodyPratyantardashaLord = "Ketu"
+	GetPranaDashas200JSONResponseBodyPratyantardashaLordMars    GetPranaDashas200JSONResponseBodyPratyantardashaLord = "Mars"
+	GetPranaDashas200JSONResponseBodyPratyantardashaLordMercury GetPranaDashas200JSONResponseBodyPratyantardashaLord = "Mercury"
+	GetPranaDashas200JSONResponseBodyPratyantardashaLordMoon    GetPranaDashas200JSONResponseBodyPratyantardashaLord = "Moon"
+	GetPranaDashas200JSONResponseBodyPratyantardashaLordRahu    GetPranaDashas200JSONResponseBodyPratyantardashaLord = "Rahu"
+	GetPranaDashas200JSONResponseBodyPratyantardashaLordSaturn  GetPranaDashas200JSONResponseBodyPratyantardashaLord = "Saturn"
+	GetPranaDashas200JSONResponseBodyPratyantardashaLordSun     GetPranaDashas200JSONResponseBodyPratyantardashaLord = "Sun"
+	GetPranaDashas200JSONResponseBodyPratyantardashaLordVenus   GetPranaDashas200JSONResponseBodyPratyantardashaLord = "Venus"
+)
+
+// Valid indicates whether the value is a known member of the GetPranaDashas200JSONResponseBodyPratyantardashaLord enum.
+func (e GetPranaDashas200JSONResponseBodyPratyantardashaLord) Valid() bool {
+	switch e {
+	case GetPranaDashas200JSONResponseBodyPratyantardashaLordJupiter:
+		return true
+	case GetPranaDashas200JSONResponseBodyPratyantardashaLordKetu:
+		return true
+	case GetPranaDashas200JSONResponseBodyPratyantardashaLordMars:
+		return true
+	case GetPranaDashas200JSONResponseBodyPratyantardashaLordMercury:
+		return true
+	case GetPranaDashas200JSONResponseBodyPratyantardashaLordMoon:
+		return true
+	case GetPranaDashas200JSONResponseBodyPratyantardashaLordRahu:
+		return true
+	case GetPranaDashas200JSONResponseBodyPratyantardashaLordSaturn:
+		return true
+	case GetPranaDashas200JSONResponseBodyPratyantardashaLordSun:
+		return true
+	case GetPranaDashas200JSONResponseBodyPratyantardashaLordVenus:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetPranaDashas200JSONResponseBodySookshmaLord.
+const (
+	GetPranaDashas200JSONResponseBodySookshmaLordJupiter GetPranaDashas200JSONResponseBodySookshmaLord = "Jupiter"
+	GetPranaDashas200JSONResponseBodySookshmaLordKetu    GetPranaDashas200JSONResponseBodySookshmaLord = "Ketu"
+	GetPranaDashas200JSONResponseBodySookshmaLordMars    GetPranaDashas200JSONResponseBodySookshmaLord = "Mars"
+	GetPranaDashas200JSONResponseBodySookshmaLordMercury GetPranaDashas200JSONResponseBodySookshmaLord = "Mercury"
+	GetPranaDashas200JSONResponseBodySookshmaLordMoon    GetPranaDashas200JSONResponseBodySookshmaLord = "Moon"
+	GetPranaDashas200JSONResponseBodySookshmaLordRahu    GetPranaDashas200JSONResponseBodySookshmaLord = "Rahu"
+	GetPranaDashas200JSONResponseBodySookshmaLordSaturn  GetPranaDashas200JSONResponseBodySookshmaLord = "Saturn"
+	GetPranaDashas200JSONResponseBodySookshmaLordSun     GetPranaDashas200JSONResponseBodySookshmaLord = "Sun"
+	GetPranaDashas200JSONResponseBodySookshmaLordVenus   GetPranaDashas200JSONResponseBodySookshmaLord = "Venus"
+)
+
+// Valid indicates whether the value is a known member of the GetPranaDashas200JSONResponseBodySookshmaLord enum.
+func (e GetPranaDashas200JSONResponseBodySookshmaLord) Valid() bool {
+	switch e {
+	case GetPranaDashas200JSONResponseBodySookshmaLordJupiter:
+		return true
+	case GetPranaDashas200JSONResponseBodySookshmaLordKetu:
+		return true
+	case GetPranaDashas200JSONResponseBodySookshmaLordMars:
+		return true
+	case GetPranaDashas200JSONResponseBodySookshmaLordMercury:
+		return true
+	case GetPranaDashas200JSONResponseBodySookshmaLordMoon:
+		return true
+	case GetPranaDashas200JSONResponseBodySookshmaLordRahu:
+		return true
+	case GetPranaDashas200JSONResponseBodySookshmaLordSaturn:
+		return true
+	case GetPranaDashas200JSONResponseBodySookshmaLordSun:
+		return true
+	case GetPranaDashas200JSONResponseBodySookshmaLordVenus:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetPranaDashas200JSONResponseBodySookshmaPeriodAntardashaLord.
+const (
+	GetPranaDashas200JSONResponseBodySookshmaPeriodAntardashaLordJupiter GetPranaDashas200JSONResponseBodySookshmaPeriodAntardashaLord = "Jupiter"
+	GetPranaDashas200JSONResponseBodySookshmaPeriodAntardashaLordKetu    GetPranaDashas200JSONResponseBodySookshmaPeriodAntardashaLord = "Ketu"
+	GetPranaDashas200JSONResponseBodySookshmaPeriodAntardashaLordMars    GetPranaDashas200JSONResponseBodySookshmaPeriodAntardashaLord = "Mars"
+	GetPranaDashas200JSONResponseBodySookshmaPeriodAntardashaLordMercury GetPranaDashas200JSONResponseBodySookshmaPeriodAntardashaLord = "Mercury"
+	GetPranaDashas200JSONResponseBodySookshmaPeriodAntardashaLordMoon    GetPranaDashas200JSONResponseBodySookshmaPeriodAntardashaLord = "Moon"
+	GetPranaDashas200JSONResponseBodySookshmaPeriodAntardashaLordRahu    GetPranaDashas200JSONResponseBodySookshmaPeriodAntardashaLord = "Rahu"
+	GetPranaDashas200JSONResponseBodySookshmaPeriodAntardashaLordSaturn  GetPranaDashas200JSONResponseBodySookshmaPeriodAntardashaLord = "Saturn"
+	GetPranaDashas200JSONResponseBodySookshmaPeriodAntardashaLordSun     GetPranaDashas200JSONResponseBodySookshmaPeriodAntardashaLord = "Sun"
+	GetPranaDashas200JSONResponseBodySookshmaPeriodAntardashaLordVenus   GetPranaDashas200JSONResponseBodySookshmaPeriodAntardashaLord = "Venus"
+)
+
+// Valid indicates whether the value is a known member of the GetPranaDashas200JSONResponseBodySookshmaPeriodAntardashaLord enum.
+func (e GetPranaDashas200JSONResponseBodySookshmaPeriodAntardashaLord) Valid() bool {
+	switch e {
+	case GetPranaDashas200JSONResponseBodySookshmaPeriodAntardashaLordJupiter:
+		return true
+	case GetPranaDashas200JSONResponseBodySookshmaPeriodAntardashaLordKetu:
+		return true
+	case GetPranaDashas200JSONResponseBodySookshmaPeriodAntardashaLordMars:
+		return true
+	case GetPranaDashas200JSONResponseBodySookshmaPeriodAntardashaLordMercury:
+		return true
+	case GetPranaDashas200JSONResponseBodySookshmaPeriodAntardashaLordMoon:
+		return true
+	case GetPranaDashas200JSONResponseBodySookshmaPeriodAntardashaLordRahu:
+		return true
+	case GetPranaDashas200JSONResponseBodySookshmaPeriodAntardashaLordSaturn:
+		return true
+	case GetPranaDashas200JSONResponseBodySookshmaPeriodAntardashaLordSun:
+		return true
+	case GetPranaDashas200JSONResponseBodySookshmaPeriodAntardashaLordVenus:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetPranaDashas200JSONResponseBodySookshmaPeriodMahadashaLord.
+const (
+	GetPranaDashas200JSONResponseBodySookshmaPeriodMahadashaLordJupiter GetPranaDashas200JSONResponseBodySookshmaPeriodMahadashaLord = "Jupiter"
+	GetPranaDashas200JSONResponseBodySookshmaPeriodMahadashaLordKetu    GetPranaDashas200JSONResponseBodySookshmaPeriodMahadashaLord = "Ketu"
+	GetPranaDashas200JSONResponseBodySookshmaPeriodMahadashaLordMars    GetPranaDashas200JSONResponseBodySookshmaPeriodMahadashaLord = "Mars"
+	GetPranaDashas200JSONResponseBodySookshmaPeriodMahadashaLordMercury GetPranaDashas200JSONResponseBodySookshmaPeriodMahadashaLord = "Mercury"
+	GetPranaDashas200JSONResponseBodySookshmaPeriodMahadashaLordMoon    GetPranaDashas200JSONResponseBodySookshmaPeriodMahadashaLord = "Moon"
+	GetPranaDashas200JSONResponseBodySookshmaPeriodMahadashaLordRahu    GetPranaDashas200JSONResponseBodySookshmaPeriodMahadashaLord = "Rahu"
+	GetPranaDashas200JSONResponseBodySookshmaPeriodMahadashaLordSaturn  GetPranaDashas200JSONResponseBodySookshmaPeriodMahadashaLord = "Saturn"
+	GetPranaDashas200JSONResponseBodySookshmaPeriodMahadashaLordSun     GetPranaDashas200JSONResponseBodySookshmaPeriodMahadashaLord = "Sun"
+	GetPranaDashas200JSONResponseBodySookshmaPeriodMahadashaLordVenus   GetPranaDashas200JSONResponseBodySookshmaPeriodMahadashaLord = "Venus"
+)
+
+// Valid indicates whether the value is a known member of the GetPranaDashas200JSONResponseBodySookshmaPeriodMahadashaLord enum.
+func (e GetPranaDashas200JSONResponseBodySookshmaPeriodMahadashaLord) Valid() bool {
+	switch e {
+	case GetPranaDashas200JSONResponseBodySookshmaPeriodMahadashaLordJupiter:
+		return true
+	case GetPranaDashas200JSONResponseBodySookshmaPeriodMahadashaLordKetu:
+		return true
+	case GetPranaDashas200JSONResponseBodySookshmaPeriodMahadashaLordMars:
+		return true
+	case GetPranaDashas200JSONResponseBodySookshmaPeriodMahadashaLordMercury:
+		return true
+	case GetPranaDashas200JSONResponseBodySookshmaPeriodMahadashaLordMoon:
+		return true
+	case GetPranaDashas200JSONResponseBodySookshmaPeriodMahadashaLordRahu:
+		return true
+	case GetPranaDashas200JSONResponseBodySookshmaPeriodMahadashaLordSaturn:
+		return true
+	case GetPranaDashas200JSONResponseBodySookshmaPeriodMahadashaLordSun:
+		return true
+	case GetPranaDashas200JSONResponseBodySookshmaPeriodMahadashaLordVenus:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetPranaDashas200JSONResponseBodySookshmaPeriodPlanet.
+const (
+	GetPranaDashas200JSONResponseBodySookshmaPeriodPlanetJupiter GetPranaDashas200JSONResponseBodySookshmaPeriodPlanet = "Jupiter"
+	GetPranaDashas200JSONResponseBodySookshmaPeriodPlanetKetu    GetPranaDashas200JSONResponseBodySookshmaPeriodPlanet = "Ketu"
+	GetPranaDashas200JSONResponseBodySookshmaPeriodPlanetMars    GetPranaDashas200JSONResponseBodySookshmaPeriodPlanet = "Mars"
+	GetPranaDashas200JSONResponseBodySookshmaPeriodPlanetMercury GetPranaDashas200JSONResponseBodySookshmaPeriodPlanet = "Mercury"
+	GetPranaDashas200JSONResponseBodySookshmaPeriodPlanetMoon    GetPranaDashas200JSONResponseBodySookshmaPeriodPlanet = "Moon"
+	GetPranaDashas200JSONResponseBodySookshmaPeriodPlanetRahu    GetPranaDashas200JSONResponseBodySookshmaPeriodPlanet = "Rahu"
+	GetPranaDashas200JSONResponseBodySookshmaPeriodPlanetSaturn  GetPranaDashas200JSONResponseBodySookshmaPeriodPlanet = "Saturn"
+	GetPranaDashas200JSONResponseBodySookshmaPeriodPlanetSun     GetPranaDashas200JSONResponseBodySookshmaPeriodPlanet = "Sun"
+	GetPranaDashas200JSONResponseBodySookshmaPeriodPlanetVenus   GetPranaDashas200JSONResponseBodySookshmaPeriodPlanet = "Venus"
+)
+
+// Valid indicates whether the value is a known member of the GetPranaDashas200JSONResponseBodySookshmaPeriodPlanet enum.
+func (e GetPranaDashas200JSONResponseBodySookshmaPeriodPlanet) Valid() bool {
+	switch e {
+	case GetPranaDashas200JSONResponseBodySookshmaPeriodPlanetJupiter:
+		return true
+	case GetPranaDashas200JSONResponseBodySookshmaPeriodPlanetKetu:
+		return true
+	case GetPranaDashas200JSONResponseBodySookshmaPeriodPlanetMars:
+		return true
+	case GetPranaDashas200JSONResponseBodySookshmaPeriodPlanetMercury:
+		return true
+	case GetPranaDashas200JSONResponseBodySookshmaPeriodPlanetMoon:
+		return true
+	case GetPranaDashas200JSONResponseBodySookshmaPeriodPlanetRahu:
+		return true
+	case GetPranaDashas200JSONResponseBodySookshmaPeriodPlanetSaturn:
+		return true
+	case GetPranaDashas200JSONResponseBodySookshmaPeriodPlanetSun:
+		return true
+	case GetPranaDashas200JSONResponseBodySookshmaPeriodPlanetVenus:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetPranaDashas200JSONResponseBodySookshmaPeriodPratyantardashaLord.
+const (
+	GetPranaDashas200JSONResponseBodySookshmaPeriodPratyantardashaLordJupiter GetPranaDashas200JSONResponseBodySookshmaPeriodPratyantardashaLord = "Jupiter"
+	GetPranaDashas200JSONResponseBodySookshmaPeriodPratyantardashaLordKetu    GetPranaDashas200JSONResponseBodySookshmaPeriodPratyantardashaLord = "Ketu"
+	GetPranaDashas200JSONResponseBodySookshmaPeriodPratyantardashaLordMars    GetPranaDashas200JSONResponseBodySookshmaPeriodPratyantardashaLord = "Mars"
+	GetPranaDashas200JSONResponseBodySookshmaPeriodPratyantardashaLordMercury GetPranaDashas200JSONResponseBodySookshmaPeriodPratyantardashaLord = "Mercury"
+	GetPranaDashas200JSONResponseBodySookshmaPeriodPratyantardashaLordMoon    GetPranaDashas200JSONResponseBodySookshmaPeriodPratyantardashaLord = "Moon"
+	GetPranaDashas200JSONResponseBodySookshmaPeriodPratyantardashaLordRahu    GetPranaDashas200JSONResponseBodySookshmaPeriodPratyantardashaLord = "Rahu"
+	GetPranaDashas200JSONResponseBodySookshmaPeriodPratyantardashaLordSaturn  GetPranaDashas200JSONResponseBodySookshmaPeriodPratyantardashaLord = "Saturn"
+	GetPranaDashas200JSONResponseBodySookshmaPeriodPratyantardashaLordSun     GetPranaDashas200JSONResponseBodySookshmaPeriodPratyantardashaLord = "Sun"
+	GetPranaDashas200JSONResponseBodySookshmaPeriodPratyantardashaLordVenus   GetPranaDashas200JSONResponseBodySookshmaPeriodPratyantardashaLord = "Venus"
+)
+
+// Valid indicates whether the value is a known member of the GetPranaDashas200JSONResponseBodySookshmaPeriodPratyantardashaLord enum.
+func (e GetPranaDashas200JSONResponseBodySookshmaPeriodPratyantardashaLord) Valid() bool {
+	switch e {
+	case GetPranaDashas200JSONResponseBodySookshmaPeriodPratyantardashaLordJupiter:
+		return true
+	case GetPranaDashas200JSONResponseBodySookshmaPeriodPratyantardashaLordKetu:
+		return true
+	case GetPranaDashas200JSONResponseBodySookshmaPeriodPratyantardashaLordMars:
+		return true
+	case GetPranaDashas200JSONResponseBodySookshmaPeriodPratyantardashaLordMercury:
+		return true
+	case GetPranaDashas200JSONResponseBodySookshmaPeriodPratyantardashaLordMoon:
+		return true
+	case GetPranaDashas200JSONResponseBodySookshmaPeriodPratyantardashaLordRahu:
+		return true
+	case GetPranaDashas200JSONResponseBodySookshmaPeriodPratyantardashaLordSaturn:
+		return true
+	case GetPranaDashas200JSONResponseBodySookshmaPeriodPratyantardashaLordSun:
+		return true
+	case GetPranaDashas200JSONResponseBodySookshmaPeriodPratyantardashaLordVenus:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetPranaDashas200JSONResponseBodySookshmaPeriodSignificatorsStrengthGrade.
+const (
+	GetPranaDashas200JSONResponseBodySookshmaPeriodSignificatorsStrengthGradeA GetPranaDashas200JSONResponseBodySookshmaPeriodSignificatorsStrengthGrade = "A"
+	GetPranaDashas200JSONResponseBodySookshmaPeriodSignificatorsStrengthGradeB GetPranaDashas200JSONResponseBodySookshmaPeriodSignificatorsStrengthGrade = "B"
+	GetPranaDashas200JSONResponseBodySookshmaPeriodSignificatorsStrengthGradeC GetPranaDashas200JSONResponseBodySookshmaPeriodSignificatorsStrengthGrade = "C"
+	GetPranaDashas200JSONResponseBodySookshmaPeriodSignificatorsStrengthGradeD GetPranaDashas200JSONResponseBodySookshmaPeriodSignificatorsStrengthGrade = "D"
+)
+
+// Valid indicates whether the value is a known member of the GetPranaDashas200JSONResponseBodySookshmaPeriodSignificatorsStrengthGrade enum.
+func (e GetPranaDashas200JSONResponseBodySookshmaPeriodSignificatorsStrengthGrade) Valid() bool {
+	switch e {
+	case GetPranaDashas200JSONResponseBodySookshmaPeriodSignificatorsStrengthGradeA:
+		return true
+	case GetPranaDashas200JSONResponseBodySookshmaPeriodSignificatorsStrengthGradeB:
+		return true
+	case GetPranaDashas200JSONResponseBodySookshmaPeriodSignificatorsStrengthGradeC:
+		return true
+	case GetPranaDashas200JSONResponseBodySookshmaPeriodSignificatorsStrengthGradeD:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetPranaDashas200JSONResponseBodySookshmaPeriodSignificatorsStrengthLabel.
+const (
+	GetPranaDashas200JSONResponseBodySookshmaPeriodSignificatorsStrengthLabelModerate   GetPranaDashas200JSONResponseBodySookshmaPeriodSignificatorsStrengthLabel = "moderate"
+	GetPranaDashas200JSONResponseBodySookshmaPeriodSignificatorsStrengthLabelStrong     GetPranaDashas200JSONResponseBodySookshmaPeriodSignificatorsStrengthLabel = "strong"
+	GetPranaDashas200JSONResponseBodySookshmaPeriodSignificatorsStrengthLabelVeryStrong GetPranaDashas200JSONResponseBodySookshmaPeriodSignificatorsStrengthLabel = "very-strong"
+	GetPranaDashas200JSONResponseBodySookshmaPeriodSignificatorsStrengthLabelWeak       GetPranaDashas200JSONResponseBodySookshmaPeriodSignificatorsStrengthLabel = "weak"
+)
+
+// Valid indicates whether the value is a known member of the GetPranaDashas200JSONResponseBodySookshmaPeriodSignificatorsStrengthLabel enum.
+func (e GetPranaDashas200JSONResponseBodySookshmaPeriodSignificatorsStrengthLabel) Valid() bool {
+	switch e {
+	case GetPranaDashas200JSONResponseBodySookshmaPeriodSignificatorsStrengthLabelModerate:
+		return true
+	case GetPranaDashas200JSONResponseBodySookshmaPeriodSignificatorsStrengthLabelStrong:
+		return true
+	case GetPranaDashas200JSONResponseBodySookshmaPeriodSignificatorsStrengthLabelVeryStrong:
+		return true
+	case GetPranaDashas200JSONResponseBodySookshmaPeriodSignificatorsStrengthLabelWeak:
 		return true
 	default:
 		return false
@@ -12903,34 +14619,34 @@ func (e DetectYogasParamsLang) Valid() bool {
 
 // Defines values for GetYogaParamsLang.
 const (
-	GetYogaParamsLangDe GetYogaParamsLang = "de"
-	GetYogaParamsLangEn GetYogaParamsLang = "en"
-	GetYogaParamsLangEs GetYogaParamsLang = "es"
-	GetYogaParamsLangFr GetYogaParamsLang = "fr"
-	GetYogaParamsLangHi GetYogaParamsLang = "hi"
-	GetYogaParamsLangPt GetYogaParamsLang = "pt"
-	GetYogaParamsLangRu GetYogaParamsLang = "ru"
-	GetYogaParamsLangTr GetYogaParamsLang = "tr"
+	De GetYogaParamsLang = "de"
+	En GetYogaParamsLang = "en"
+	Es GetYogaParamsLang = "es"
+	Fr GetYogaParamsLang = "fr"
+	Hi GetYogaParamsLang = "hi"
+	Pt GetYogaParamsLang = "pt"
+	Ru GetYogaParamsLang = "ru"
+	Tr GetYogaParamsLang = "tr"
 )
 
 // Valid indicates whether the value is a known member of the GetYogaParamsLang enum.
 func (e GetYogaParamsLang) Valid() bool {
 	switch e {
-	case GetYogaParamsLangDe:
+	case De:
 		return true
-	case GetYogaParamsLangEn:
+	case En:
 		return true
-	case GetYogaParamsLangEs:
+	case Es:
 		return true
-	case GetYogaParamsLangFr:
+	case Fr:
 		return true
-	case GetYogaParamsLangHi:
+	case Hi:
 		return true
-	case GetYogaParamsLangPt:
+	case Pt:
 		return true
-	case GetYogaParamsLangRu:
+	case Ru:
 		return true
-	case GetYogaParamsLangTr:
+	case Tr:
 		return true
 	default:
 		return false
@@ -16558,32 +18274,32 @@ type KPRulingPlanetsIntervalResponse struct {
 
 		// MoonSignLordSignifies KP 4-level significator breakdown for the Moon Sign Lord planet. Shows which houses the Moon rashi lord activates at this moment, broken down by strength tier.
 		MoonSignLordSignifies struct {
-			// L1 Level 1 (strongest signification). Houses influenced because this planet sits in the nakshatra (star) of a planet occupying those houses. For Rahu and Ketu, also includes L1 houses from agent planets (conjoined, aspecting, sign lord).
-			L1 []float32 `json:"L1"`
+			// L1 Level 1, the strongest signification (grade A). Houses influenced because this planet sits in the nakshatra (star) of a planet occupying those houses. For Rahu and Ketu, also includes the L1 houses of their agent planets (conjoined, aspecting, sign lord).
+			L1 []int `json:"L1"`
 
-			// L2 Level 2. The house this planet physically occupies in the chart. For Rahu and Ketu, also includes houses occupied by agent planets (conjoined, aspecting, sign lord).
-			L2 []float32 `json:"L2"`
+			// L2 Level 2 (grade B). The house this planet physically occupies. For Rahu and Ketu, also includes houses occupied by their agent planets.
+			L2 []int `json:"L2"`
 
-			// L3 Level 3. Houses influenced because this planet sits in the nakshatra of the sign lord (owner) of those houses. For Rahu and Ketu, also includes L3 houses from agent planets.
-			L3 []float32 `json:"L3"`
+			// L3 Level 3 (grade C). Houses influenced because this planet sits in the nakshatra of the sign lord (owner) of those houses. For Rahu and Ketu, also includes the L3 houses of their agent planets.
+			L3 []int `json:"L3"`
 
-			// L4 Level 4 (weakest signification). Houses this planet rules by zodiac sign ownership. For Sun through Saturn, can be up to 2 houses. For Rahu and Ketu, includes houses owned by agent planets (conjoined, aspecting, sign lord).
-			L4 []float32 `json:"L4"`
+			// L4 Level 4, the weakest signification (grade D). Houses this planet rules by zodiac sign ownership, up to 2 for Sun through Saturn and 3 where a sign is intercepted. Rahu and Ketu own no sign, so their L4 comes entirely from their agent planets.
+			L4 []int `json:"L4"`
 		} `json:"moonSignLordSignifies"`
 
 		// MoonSignifies KP 4-level significator breakdown for Moon itself. Shows which bhavas Moon directly activates based on its position and star lord in the current moment chart.
 		MoonSignifies struct {
-			// L1 Level 1 (strongest signification). Houses influenced because this planet sits in the nakshatra (star) of a planet occupying those houses. For Rahu and Ketu, also includes L1 houses from agent planets (conjoined, aspecting, sign lord).
-			L1 []float32 `json:"L1"`
+			// L1 Level 1, the strongest signification (grade A). Houses influenced because this planet sits in the nakshatra (star) of a planet occupying those houses. For Rahu and Ketu, also includes the L1 houses of their agent planets (conjoined, aspecting, sign lord).
+			L1 []int `json:"L1"`
 
-			// L2 Level 2. The house this planet physically occupies in the chart. For Rahu and Ketu, also includes houses occupied by agent planets (conjoined, aspecting, sign lord).
-			L2 []float32 `json:"L2"`
+			// L2 Level 2 (grade B). The house this planet physically occupies. For Rahu and Ketu, also includes houses occupied by their agent planets.
+			L2 []int `json:"L2"`
 
-			// L3 Level 3. Houses influenced because this planet sits in the nakshatra of the sign lord (owner) of those houses. For Rahu and Ketu, also includes L3 houses from agent planets.
-			L3 []float32 `json:"L3"`
+			// L3 Level 3 (grade C). Houses influenced because this planet sits in the nakshatra of the sign lord (owner) of those houses. For Rahu and Ketu, also includes the L3 houses of their agent planets.
+			L3 []int `json:"L3"`
 
-			// L4 Level 4 (weakest signification). Houses this planet rules by zodiac sign ownership. For Sun through Saturn, can be up to 2 houses. For Rahu and Ketu, includes houses owned by agent planets (conjoined, aspecting, sign lord).
-			L4 []float32 `json:"L4"`
+			// L4 Level 4, the weakest signification (grade D). Houses this planet rules by zodiac sign ownership, up to 2 for Sun through Saturn and 3 where a sign is intercepted. Rahu and Ketu own no sign, so their L4 comes entirely from their agent planets.
+			L4 []int `json:"L4"`
 		} `json:"moonSignifies"`
 
 		// MoonStarLord Lord of the nakshatra (star, 1 of 27) where Moon is placed. Follows Vimshottari dasha sequence.
@@ -16591,17 +18307,17 @@ type KPRulingPlanetsIntervalResponse struct {
 
 		// MoonStarLordSignifies KP 4-level significator breakdown for the Moon Star Lord (nakshatra lord) planet. The star lord determines the nature of results Moon delivers.
 		MoonStarLordSignifies struct {
-			// L1 Level 1 (strongest signification). Houses influenced because this planet sits in the nakshatra (star) of a planet occupying those houses. For Rahu and Ketu, also includes L1 houses from agent planets (conjoined, aspecting, sign lord).
-			L1 []float32 `json:"L1"`
+			// L1 Level 1, the strongest signification (grade A). Houses influenced because this planet sits in the nakshatra (star) of a planet occupying those houses. For Rahu and Ketu, also includes the L1 houses of their agent planets (conjoined, aspecting, sign lord).
+			L1 []int `json:"L1"`
 
-			// L2 Level 2. The house this planet physically occupies in the chart. For Rahu and Ketu, also includes houses occupied by agent planets (conjoined, aspecting, sign lord).
-			L2 []float32 `json:"L2"`
+			// L2 Level 2 (grade B). The house this planet physically occupies. For Rahu and Ketu, also includes houses occupied by their agent planets.
+			L2 []int `json:"L2"`
 
-			// L3 Level 3. Houses influenced because this planet sits in the nakshatra of the sign lord (owner) of those houses. For Rahu and Ketu, also includes L3 houses from agent planets.
-			L3 []float32 `json:"L3"`
+			// L3 Level 3 (grade C). Houses influenced because this planet sits in the nakshatra of the sign lord (owner) of those houses. For Rahu and Ketu, also includes the L3 houses of their agent planets.
+			L3 []int `json:"L3"`
 
-			// L4 Level 4 (weakest signification). Houses this planet rules by zodiac sign ownership. For Sun through Saturn, can be up to 2 houses. For Rahu and Ketu, includes houses owned by agent planets (conjoined, aspecting, sign lord).
-			L4 []float32 `json:"L4"`
+			// L4 Level 4, the weakest signification (grade D). Houses this planet rules by zodiac sign ownership, up to 2 for Sun through Saturn and 3 where a sign is intercepted. Rahu and Ketu own no sign, so their L4 comes entirely from their agent planets.
+			L4 []int `json:"L4"`
 		} `json:"moonStarLordSignifies"`
 
 		// MoonSubSublord KP sub-sublord (SSL) of Moons position. Finest subdivision for precise timing.
@@ -16612,17 +18328,17 @@ type KPRulingPlanetsIntervalResponse struct {
 
 		// MoonSublordSignifies KP 4-level significator breakdown for the Moon Sub Lord planet. The sub lord determines whether Moon-related events will manifest.
 		MoonSublordSignifies struct {
-			// L1 Level 1 (strongest signification). Houses influenced because this planet sits in the nakshatra (star) of a planet occupying those houses. For Rahu and Ketu, also includes L1 houses from agent planets (conjoined, aspecting, sign lord).
-			L1 []float32 `json:"L1"`
+			// L1 Level 1, the strongest signification (grade A). Houses influenced because this planet sits in the nakshatra (star) of a planet occupying those houses. For Rahu and Ketu, also includes the L1 houses of their agent planets (conjoined, aspecting, sign lord).
+			L1 []int `json:"L1"`
 
-			// L2 Level 2. The house this planet physically occupies in the chart. For Rahu and Ketu, also includes houses occupied by agent planets (conjoined, aspecting, sign lord).
-			L2 []float32 `json:"L2"`
+			// L2 Level 2 (grade B). The house this planet physically occupies. For Rahu and Ketu, also includes houses occupied by their agent planets.
+			L2 []int `json:"L2"`
 
-			// L3 Level 3. Houses influenced because this planet sits in the nakshatra of the sign lord (owner) of those houses. For Rahu and Ketu, also includes L3 houses from agent planets.
-			L3 []float32 `json:"L3"`
+			// L3 Level 3 (grade C). Houses influenced because this planet sits in the nakshatra of the sign lord (owner) of those houses. For Rahu and Ketu, also includes the L3 houses of their agent planets.
+			L3 []int `json:"L3"`
 
-			// L4 Level 4 (weakest signification). Houses this planet rules by zodiac sign ownership. For Sun through Saturn, can be up to 2 houses. For Rahu and Ketu, includes houses owned by agent planets (conjoined, aspecting, sign lord).
-			L4 []float32 `json:"L4"`
+			// L4 Level 4, the weakest signification (grade D). Houses this planet rules by zodiac sign ownership, up to 2 for Sun through Saturn and 3 where a sign is intercepted. Rahu and Ketu own no sign, so their L4 comes entirely from their agent planets.
+			L4 []int `json:"L4"`
 		} `json:"moonSublordSignifies"`
 
 		// RulingPlanets Unique set of ruling planets derived from Day Lord, Moon Sign/Star Lords, and Lagna Sign/Star Lords. In KP astrology, events manifest when dasha/transit planets match these ruling planets.
@@ -21945,6 +23661,12 @@ type GetCurrentDashaJSONBody struct {
 	// Longitude Birth location longitude in decimal degrees. Affects local time calculations and ayanamsha adjustments. Example: Delhi 77.2090, Mumbai 72.8777, Kathmandu 85.3240.
 	Longitude float32 `json:"longitude"`
 
+	// NodeType Lunar node type for Rahu and Ketu, used ONLY when "significators" is true. Dasha dates themselves come from the Moon and never move with this field. "mean" uses the smooth mean node (traditional default). "true" uses the osculating node, which swings up to 1.5 degrees either side of mean over a 173-day cycle and can therefore change which house or star a node falls in. Defaults to "mean".
+	NodeType *GetCurrentDashaJSONBodyNodeType `json:"nodeType,omitempty"`
+
+	// Significators Set true to attach the KP significators of each period lord: its star lord, sub lord, occupied house, the houses it signifies at levels L1 to L4, and a strength grade. Off by default, so responses stay exactly as they are for clients that only need dates. Requires the birth latitude and longitude, since significators are read off a Placidus house chart, and uses the same ayanamsa frame selected above.
+	Significators *bool `json:"significators,omitempty"`
+
 	// Time Birth time in 24-hour HH:MM:SS format. Time is CRITICAL for Lagna (Ascendant) calculation and house divisions. It changes every two hours roughly. Even minutes matter for accurate nakshatra pada and divisional chart (D9, D10) calculations. Without exact time, Lagna and house-based predictions will be incorrect.
 	Time string `json:"time"`
 
@@ -21964,6 +23686,9 @@ type GetCurrentDashaParamsLang string
 // GetCurrentDashaJSONBodyAyanamsa defines parameters for GetCurrentDasha.
 type GetCurrentDashaJSONBodyAyanamsa string
 
+// GetCurrentDashaJSONBodyNodeType defines parameters for GetCurrentDasha.
+type GetCurrentDashaJSONBodyNodeType string
+
 // GetCurrentDashaJSONBodyTimezone0 defines parameters for GetCurrentDasha.
 type GetCurrentDashaJSONBodyTimezone0 = float32
 
@@ -21981,14 +23706,47 @@ type GetCurrentDasha200JSONResponseBodyAntardashaMahadashaLord string
 // GetCurrentDasha200JSONResponseBodyAntardashaPlanet defines parameters for GetCurrentDasha.
 type GetCurrentDasha200JSONResponseBodyAntardashaPlanet string
 
+// GetCurrentDasha200JSONResponseBodyAntardashaSignificatorsStrengthGrade defines parameters for GetCurrentDasha.
+type GetCurrentDasha200JSONResponseBodyAntardashaSignificatorsStrengthGrade string
+
+// GetCurrentDasha200JSONResponseBodyAntardashaSignificatorsStrengthLabel defines parameters for GetCurrentDasha.
+type GetCurrentDasha200JSONResponseBodyAntardashaSignificatorsStrengthLabel string
+
 // GetCurrentDasha200JSONResponseBodyAyanamsaType defines parameters for GetCurrentDasha.
 type GetCurrentDasha200JSONResponseBodyAyanamsaType string
 
 // GetCurrentDasha200JSONResponseBodyMahadashaPlanet defines parameters for GetCurrentDasha.
 type GetCurrentDasha200JSONResponseBodyMahadashaPlanet string
 
+// GetCurrentDasha200JSONResponseBodyMahadashaSignificatorsStrengthGrade defines parameters for GetCurrentDasha.
+type GetCurrentDasha200JSONResponseBodyMahadashaSignificatorsStrengthGrade string
+
+// GetCurrentDasha200JSONResponseBodyMahadashaSignificatorsStrengthLabel defines parameters for GetCurrentDasha.
+type GetCurrentDasha200JSONResponseBodyMahadashaSignificatorsStrengthLabel string
+
 // GetCurrentDasha200JSONResponseBodyNakshatraLord defines parameters for GetCurrentDasha.
 type GetCurrentDasha200JSONResponseBodyNakshatraLord string
+
+// GetCurrentDasha200JSONResponseBodyPranaDashaAntardashaLord defines parameters for GetCurrentDasha.
+type GetCurrentDasha200JSONResponseBodyPranaDashaAntardashaLord string
+
+// GetCurrentDasha200JSONResponseBodyPranaDashaMahadashaLord defines parameters for GetCurrentDasha.
+type GetCurrentDasha200JSONResponseBodyPranaDashaMahadashaLord string
+
+// GetCurrentDasha200JSONResponseBodyPranaDashaPlanet defines parameters for GetCurrentDasha.
+type GetCurrentDasha200JSONResponseBodyPranaDashaPlanet string
+
+// GetCurrentDasha200JSONResponseBodyPranaDashaPratyantardashaLord defines parameters for GetCurrentDasha.
+type GetCurrentDasha200JSONResponseBodyPranaDashaPratyantardashaLord string
+
+// GetCurrentDasha200JSONResponseBodyPranaDashaSignificatorsStrengthGrade defines parameters for GetCurrentDasha.
+type GetCurrentDasha200JSONResponseBodyPranaDashaSignificatorsStrengthGrade string
+
+// GetCurrentDasha200JSONResponseBodyPranaDashaSignificatorsStrengthLabel defines parameters for GetCurrentDasha.
+type GetCurrentDasha200JSONResponseBodyPranaDashaSignificatorsStrengthLabel string
+
+// GetCurrentDasha200JSONResponseBodyPranaDashaSookshmaLord defines parameters for GetCurrentDasha.
+type GetCurrentDasha200JSONResponseBodyPranaDashaSookshmaLord string
 
 // GetCurrentDasha200JSONResponseBodyPratyantardashaAntardashaLord defines parameters for GetCurrentDasha.
 type GetCurrentDasha200JSONResponseBodyPratyantardashaAntardashaLord string
@@ -21998,6 +23756,12 @@ type GetCurrentDasha200JSONResponseBodyPratyantardashaMahadashaLord string
 
 // GetCurrentDasha200JSONResponseBodyPratyantardashaPlanet defines parameters for GetCurrentDasha.
 type GetCurrentDasha200JSONResponseBodyPratyantardashaPlanet string
+
+// GetCurrentDasha200JSONResponseBodyPratyantardashaSignificatorsStrengthGrade defines parameters for GetCurrentDasha.
+type GetCurrentDasha200JSONResponseBodyPratyantardashaSignificatorsStrengthGrade string
+
+// GetCurrentDasha200JSONResponseBodyPratyantardashaSignificatorsStrengthLabel defines parameters for GetCurrentDasha.
+type GetCurrentDasha200JSONResponseBodyPratyantardashaSignificatorsStrengthLabel string
 
 // GetCurrentDasha200JSONResponseBodySookshmaDashaAntardashaLord defines parameters for GetCurrentDasha.
 type GetCurrentDasha200JSONResponseBodySookshmaDashaAntardashaLord string
@@ -22010,6 +23774,12 @@ type GetCurrentDasha200JSONResponseBodySookshmaDashaPlanet string
 
 // GetCurrentDasha200JSONResponseBodySookshmaDashaPratyantardashaLord defines parameters for GetCurrentDasha.
 type GetCurrentDasha200JSONResponseBodySookshmaDashaPratyantardashaLord string
+
+// GetCurrentDasha200JSONResponseBodySookshmaDashaSignificatorsStrengthGrade defines parameters for GetCurrentDasha.
+type GetCurrentDasha200JSONResponseBodySookshmaDashaSignificatorsStrengthGrade string
+
+// GetCurrentDasha200JSONResponseBodySookshmaDashaSignificatorsStrengthLabel defines parameters for GetCurrentDasha.
+type GetCurrentDasha200JSONResponseBodySookshmaDashaSignificatorsStrengthLabel string
 
 // GetMajorDashasJSONBody defines parameters for GetMajorDashas.
 type GetMajorDashasJSONBody struct {
@@ -22024,6 +23794,12 @@ type GetMajorDashasJSONBody struct {
 
 	// Longitude Birth location longitude in decimal degrees. Affects local time calculations and ayanamsha adjustments. Example: Delhi 77.2090, Mumbai 72.8777, Kathmandu 85.3240.
 	Longitude float32 `json:"longitude"`
+
+	// NodeType Lunar node type for Rahu and Ketu, used ONLY when "significators" is true. Dasha dates themselves come from the Moon and never move with this field. "mean" uses the smooth mean node (traditional default). "true" uses the osculating node, which swings up to 1.5 degrees either side of mean over a 173-day cycle and can therefore change which house or star a node falls in. Defaults to "mean".
+	NodeType *GetMajorDashasJSONBodyNodeType `json:"nodeType,omitempty"`
+
+	// Significators Set true to attach the KP significators of each period lord: its star lord, sub lord, occupied house, the houses it signifies at levels L1 to L4, and a strength grade. Off by default, so responses stay exactly as they are for clients that only need dates. Requires the birth latitude and longitude, since significators are read off a Placidus house chart, and uses the same ayanamsa frame selected above.
+	Significators *bool `json:"significators,omitempty"`
 
 	// Time Birth time in 24-hour HH:MM:SS format. Time is CRITICAL for Lagna (Ascendant) calculation and house divisions. It changes every two hours roughly. Even minutes matter for accurate nakshatra pada and divisional chart (D9, D10) calculations. Without exact time, Lagna and house-based predictions will be incorrect.
 	Time string `json:"time"`
@@ -22044,6 +23820,9 @@ type GetMajorDashasParamsLang string
 // GetMajorDashasJSONBodyAyanamsa defines parameters for GetMajorDashas.
 type GetMajorDashasJSONBodyAyanamsa string
 
+// GetMajorDashasJSONBodyNodeType defines parameters for GetMajorDashas.
+type GetMajorDashasJSONBodyNodeType string
+
 // GetMajorDashasJSONBodyTimezone0 defines parameters for GetMajorDashas.
 type GetMajorDashasJSONBodyTimezone0 = float32
 
@@ -22061,6 +23840,12 @@ type GetMajorDashas200JSONResponseBodyAyanamsaType string
 // GetMajorDashas200JSONResponseBodyMahadashasPlanet defines parameters for GetMajorDashas.
 type GetMajorDashas200JSONResponseBodyMahadashasPlanet string
 
+// GetMajorDashas200JSONResponseBodyMahadashasSignificatorsStrengthGrade defines parameters for GetMajorDashas.
+type GetMajorDashas200JSONResponseBodyMahadashasSignificatorsStrengthGrade string
+
+// GetMajorDashas200JSONResponseBodyMahadashasSignificatorsStrengthLabel defines parameters for GetMajorDashas.
+type GetMajorDashas200JSONResponseBodyMahadashasSignificatorsStrengthLabel string
+
 // GetMajorDashas200JSONResponseBodyNakshatraLord defines parameters for GetMajorDashas.
 type GetMajorDashas200JSONResponseBodyNakshatraLord string
 
@@ -22077,6 +23862,12 @@ type GetSubDashasJSONBody struct {
 
 	// Longitude Birth location longitude in decimal degrees. Affects local time calculations and ayanamsha adjustments. Example: Delhi 77.2090, Mumbai 72.8777, Kathmandu 85.3240.
 	Longitude float32 `json:"longitude"`
+
+	// NodeType Lunar node type for Rahu and Ketu, used ONLY when "significators" is true. Dasha dates themselves come from the Moon and never move with this field. "mean" uses the smooth mean node (traditional default). "true" uses the osculating node, which swings up to 1.5 degrees either side of mean over a 173-day cycle and can therefore change which house or star a node falls in. Defaults to "mean".
+	NodeType *GetSubDashasJSONBodyNodeType `json:"nodeType,omitempty"`
+
+	// Significators Set true to attach the KP significators of each period lord: its star lord, sub lord, occupied house, the houses it signifies at levels L1 to L4, and a strength grade. Off by default, so responses stay exactly as they are for clients that only need dates. Requires the birth latitude and longitude, since significators are read off a Placidus house chart, and uses the same ayanamsa frame selected above.
+	Significators *bool `json:"significators,omitempty"`
 
 	// Time Birth time in 24-hour HH:MM:SS format. Time is CRITICAL for Lagna (Ascendant) calculation and house divisions. It changes every two hours roughly. Even minutes matter for accurate nakshatra pada and divisional chart (D9, D10) calculations. Without exact time, Lagna and house-based predictions will be incorrect.
 	Time string `json:"time"`
@@ -22100,6 +23891,9 @@ type GetSubDashasParamsMahadasha string
 // GetSubDashasJSONBodyAyanamsa defines parameters for GetSubDashas.
 type GetSubDashasJSONBodyAyanamsa string
 
+// GetSubDashasJSONBodyNodeType defines parameters for GetSubDashas.
+type GetSubDashasJSONBodyNodeType string
+
 // GetSubDashasJSONBodyTimezone0 defines parameters for GetSubDashas.
 type GetSubDashasJSONBodyTimezone0 = float32
 
@@ -22117,6 +23911,12 @@ type GetSubDashas200JSONResponseBodyAntardashasMahadashaLord string
 // GetSubDashas200JSONResponseBodyAntardashasPlanet defines parameters for GetSubDashas.
 type GetSubDashas200JSONResponseBodyAntardashasPlanet string
 
+// GetSubDashas200JSONResponseBodyAntardashasSignificatorsStrengthGrade defines parameters for GetSubDashas.
+type GetSubDashas200JSONResponseBodyAntardashasSignificatorsStrengthGrade string
+
+// GetSubDashas200JSONResponseBodyAntardashasSignificatorsStrengthLabel defines parameters for GetSubDashas.
+type GetSubDashas200JSONResponseBodyAntardashasSignificatorsStrengthLabel string
+
 // GetSubDashas200JSONResponseBodyAyanamsaType defines parameters for GetSubDashas.
 type GetSubDashas200JSONResponseBodyAyanamsaType string
 
@@ -22125,6 +23925,12 @@ type GetSubDashas200JSONResponseBodyMahadashaLord string
 
 // GetSubDashas200JSONResponseBodyMahadashaPeriodPlanet defines parameters for GetSubDashas.
 type GetSubDashas200JSONResponseBodyMahadashaPeriodPlanet string
+
+// GetSubDashas200JSONResponseBodyMahadashaPeriodSignificatorsStrengthGrade defines parameters for GetSubDashas.
+type GetSubDashas200JSONResponseBodyMahadashaPeriodSignificatorsStrengthGrade string
+
+// GetSubDashas200JSONResponseBodyMahadashaPeriodSignificatorsStrengthLabel defines parameters for GetSubDashas.
+type GetSubDashas200JSONResponseBodyMahadashaPeriodSignificatorsStrengthLabel string
 
 // GetPratyantardashasJSONBody defines parameters for GetPratyantardashas.
 type GetPratyantardashasJSONBody struct {
@@ -22139,6 +23945,12 @@ type GetPratyantardashasJSONBody struct {
 
 	// Longitude Birth location longitude in decimal degrees. Affects local time calculations and ayanamsha adjustments. Example: Delhi 77.2090, Mumbai 72.8777, Kathmandu 85.3240.
 	Longitude float32 `json:"longitude"`
+
+	// NodeType Lunar node type for Rahu and Ketu, used ONLY when "significators" is true. Dasha dates themselves come from the Moon and never move with this field. "mean" uses the smooth mean node (traditional default). "true" uses the osculating node, which swings up to 1.5 degrees either side of mean over a 173-day cycle and can therefore change which house or star a node falls in. Defaults to "mean".
+	NodeType *GetPratyantardashasJSONBodyNodeType `json:"nodeType,omitempty"`
+
+	// Significators Set true to attach the KP significators of each period lord: its star lord, sub lord, occupied house, the houses it signifies at levels L1 to L4, and a strength grade. Off by default, so responses stay exactly as they are for clients that only need dates. Requires the birth latitude and longitude, since significators are read off a Placidus house chart, and uses the same ayanamsa frame selected above.
+	Significators *bool `json:"significators,omitempty"`
 
 	// Time Birth time in 24-hour HH:MM:SS format. Time is CRITICAL for Lagna (Ascendant) calculation and house divisions. It changes every two hours roughly. Even minutes matter for accurate nakshatra pada and divisional chart (D9, D10) calculations. Without exact time, Lagna and house-based predictions will be incorrect.
 	Time string `json:"time"`
@@ -22165,6 +23977,9 @@ type GetPratyantardashasParamsAntardasha string
 // GetPratyantardashasJSONBodyAyanamsa defines parameters for GetPratyantardashas.
 type GetPratyantardashasJSONBodyAyanamsa string
 
+// GetPratyantardashasJSONBodyNodeType defines parameters for GetPratyantardashas.
+type GetPratyantardashasJSONBodyNodeType string
+
 // GetPratyantardashasJSONBodyTimezone0 defines parameters for GetPratyantardashas.
 type GetPratyantardashasJSONBodyTimezone0 = float32
 
@@ -22185,6 +24000,12 @@ type GetPratyantardashas200JSONResponseBodyAntardashaPeriodMahadashaLord string
 // GetPratyantardashas200JSONResponseBodyAntardashaPeriodPlanet defines parameters for GetPratyantardashas.
 type GetPratyantardashas200JSONResponseBodyAntardashaPeriodPlanet string
 
+// GetPratyantardashas200JSONResponseBodyAntardashaPeriodSignificatorsStrengthGrade defines parameters for GetPratyantardashas.
+type GetPratyantardashas200JSONResponseBodyAntardashaPeriodSignificatorsStrengthGrade string
+
+// GetPratyantardashas200JSONResponseBodyAntardashaPeriodSignificatorsStrengthLabel defines parameters for GetPratyantardashas.
+type GetPratyantardashas200JSONResponseBodyAntardashaPeriodSignificatorsStrengthLabel string
+
 // GetPratyantardashas200JSONResponseBodyAyanamsaType defines parameters for GetPratyantardashas.
 type GetPratyantardashas200JSONResponseBodyAyanamsaType string
 
@@ -22200,6 +24021,12 @@ type GetPratyantardashas200JSONResponseBodyPratyantardashasMahadashaLord string
 // GetPratyantardashas200JSONResponseBodyPratyantardashasPlanet defines parameters for GetPratyantardashas.
 type GetPratyantardashas200JSONResponseBodyPratyantardashasPlanet string
 
+// GetPratyantardashas200JSONResponseBodyPratyantardashasSignificatorsStrengthGrade defines parameters for GetPratyantardashas.
+type GetPratyantardashas200JSONResponseBodyPratyantardashasSignificatorsStrengthGrade string
+
+// GetPratyantardashas200JSONResponseBodyPratyantardashasSignificatorsStrengthLabel defines parameters for GetPratyantardashas.
+type GetPratyantardashas200JSONResponseBodyPratyantardashasSignificatorsStrengthLabel string
+
 // GetSookshmaDashasJSONBody defines parameters for GetSookshmaDashas.
 type GetSookshmaDashasJSONBody struct {
 	// Ayanamsa Ayanamsa system used to place the birth Moon in its nakshatra, which sets every dasha start and end date. "lahiri" uses Lahiri/Chitrapaksha, the traditional Vedic standard, and is the default. "kp-newcomb" uses the KP-Newcomb dynamic formula, matching Krishnamurti Paddhati software. "kp-old" uses the Krishnamurti original table from KP Reader-1. Switching frames shifts every dasha boundary by weeks, so pick the one your reference software uses.
@@ -22213,6 +24040,12 @@ type GetSookshmaDashasJSONBody struct {
 
 	// Longitude Birth location longitude in decimal degrees. Affects local time calculations and ayanamsha adjustments. Example: Delhi 77.2090, Mumbai 72.8777, Kathmandu 85.3240.
 	Longitude float32 `json:"longitude"`
+
+	// NodeType Lunar node type for Rahu and Ketu, used ONLY when "significators" is true. Dasha dates themselves come from the Moon and never move with this field. "mean" uses the smooth mean node (traditional default). "true" uses the osculating node, which swings up to 1.5 degrees either side of mean over a 173-day cycle and can therefore change which house or star a node falls in. Defaults to "mean".
+	NodeType *GetSookshmaDashasJSONBodyNodeType `json:"nodeType,omitempty"`
+
+	// Significators Set true to attach the KP significators of each period lord: its star lord, sub lord, occupied house, the houses it signifies at levels L1 to L4, and a strength grade. Off by default, so responses stay exactly as they are for clients that only need dates. Requires the birth latitude and longitude, since significators are read off a Placidus house chart, and uses the same ayanamsa frame selected above.
+	Significators *bool `json:"significators,omitempty"`
 
 	// Time Birth time in 24-hour HH:MM:SS format. Time is CRITICAL for Lagna (Ascendant) calculation and house divisions. It changes every two hours roughly. Even minutes matter for accurate nakshatra pada and divisional chart (D9, D10) calculations. Without exact time, Lagna and house-based predictions will be incorrect.
 	Time string `json:"time"`
@@ -22241,6 +24074,9 @@ type GetSookshmaDashasParamsPratyantardasha string
 
 // GetSookshmaDashasJSONBodyAyanamsa defines parameters for GetSookshmaDashas.
 type GetSookshmaDashasJSONBodyAyanamsa string
+
+// GetSookshmaDashasJSONBodyNodeType defines parameters for GetSookshmaDashas.
+type GetSookshmaDashasJSONBodyNodeType string
 
 // GetSookshmaDashasJSONBodyTimezone0 defines parameters for GetSookshmaDashas.
 type GetSookshmaDashasJSONBodyTimezone0 = float32
@@ -22274,6 +24110,12 @@ type GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodMahadashaLord stri
 // GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodPlanet defines parameters for GetSookshmaDashas.
 type GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodPlanet string
 
+// GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodSignificatorsStrengthGrade defines parameters for GetSookshmaDashas.
+type GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodSignificatorsStrengthGrade string
+
+// GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodSignificatorsStrengthLabel defines parameters for GetSookshmaDashas.
+type GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodSignificatorsStrengthLabel string
+
 // GetSookshmaDashas200JSONResponseBodySookshmaDashasAntardashaLord defines parameters for GetSookshmaDashas.
 type GetSookshmaDashas200JSONResponseBodySookshmaDashasAntardashaLord string
 
@@ -22285,6 +24127,131 @@ type GetSookshmaDashas200JSONResponseBodySookshmaDashasPlanet string
 
 // GetSookshmaDashas200JSONResponseBodySookshmaDashasPratyantardashaLord defines parameters for GetSookshmaDashas.
 type GetSookshmaDashas200JSONResponseBodySookshmaDashasPratyantardashaLord string
+
+// GetSookshmaDashas200JSONResponseBodySookshmaDashasSignificatorsStrengthGrade defines parameters for GetSookshmaDashas.
+type GetSookshmaDashas200JSONResponseBodySookshmaDashasSignificatorsStrengthGrade string
+
+// GetSookshmaDashas200JSONResponseBodySookshmaDashasSignificatorsStrengthLabel defines parameters for GetSookshmaDashas.
+type GetSookshmaDashas200JSONResponseBodySookshmaDashasSignificatorsStrengthLabel string
+
+// GetPranaDashasJSONBody defines parameters for GetPranaDashas.
+type GetPranaDashasJSONBody struct {
+	// Ayanamsa Ayanamsa system used to place the birth Moon in its nakshatra, which sets every dasha start and end date. "lahiri" uses Lahiri/Chitrapaksha, the traditional Vedic standard, and is the default. "kp-newcomb" uses the KP-Newcomb dynamic formula, matching Krishnamurti Paddhati software. "kp-old" uses the Krishnamurti original table from KP Reader-1. Switching frames shifts every dasha boundary by weeks, so pick the one your reference software uses.
+	Ayanamsa *GetPranaDashasJSONBodyAyanamsa `json:"ayanamsa,omitempty"`
+
+	// Date Birth date in YYYY-MM-DD format. Date determines planetary positions and nakshatra calculations for Vedic kundli (janam patri). Accurate birth date is essential for dashas, yoga calculations, and divisional charts (vargas).
+	Date openapi_types.Date `json:"date"`
+
+	// Latitude Birth location latitude in decimal degrees. Location determines local sidereal time for Lagna calculation and affects bhava (house) cusps. Example: Delhi 28.6139, Mumbai 19.0760, Kathmandu 27.7172.
+	Latitude float32 `json:"latitude"`
+
+	// Longitude Birth location longitude in decimal degrees. Affects local time calculations and ayanamsha adjustments. Example: Delhi 77.2090, Mumbai 72.8777, Kathmandu 85.3240.
+	Longitude float32 `json:"longitude"`
+
+	// NodeType Lunar node type for Rahu and Ketu, used ONLY when "significators" is true. Dasha dates themselves come from the Moon and never move with this field. "mean" uses the smooth mean node (traditional default). "true" uses the osculating node, which swings up to 1.5 degrees either side of mean over a 173-day cycle and can therefore change which house or star a node falls in. Defaults to "mean".
+	NodeType *GetPranaDashasJSONBodyNodeType `json:"nodeType,omitempty"`
+
+	// Significators Set true to attach the KP significators of each period lord: its star lord, sub lord, occupied house, the houses it signifies at levels L1 to L4, and a strength grade. Off by default, so responses stay exactly as they are for clients that only need dates. Requires the birth latitude and longitude, since significators are read off a Placidus house chart, and uses the same ayanamsa frame selected above.
+	Significators *bool `json:"significators,omitempty"`
+
+	// Time Birth time in 24-hour HH:MM:SS format. Time is CRITICAL for Lagna (Ascendant) calculation and house divisions. It changes every two hours roughly. Even minutes matter for accurate nakshatra pada and divisional chart (D9, D10) calculations. Without exact time, Lagna and house-based predictions will be incorrect.
+	Time string `json:"time"`
+
+	// Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5.
+	Timezone *GetPranaDashasJSONBody_Timezone `json:"timezone,omitempty"`
+}
+
+// GetPranaDashasParams defines parameters for GetPranaDashas.
+type GetPranaDashasParams struct {
+	// Lang Response language (ISO 639-1). Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en. Languages without translations yet return English.
+	Lang *GetPranaDashasParamsLang `form:"lang,omitempty" json:"lang,omitempty"`
+}
+
+// GetPranaDashasParamsLang defines parameters for GetPranaDashas.
+type GetPranaDashasParamsLang string
+
+// GetPranaDashasParamsMahadasha defines parameters for GetPranaDashas.
+type GetPranaDashasParamsMahadasha string
+
+// GetPranaDashasParamsAntardasha defines parameters for GetPranaDashas.
+type GetPranaDashasParamsAntardasha string
+
+// GetPranaDashasParamsPratyantardasha defines parameters for GetPranaDashas.
+type GetPranaDashasParamsPratyantardasha string
+
+// GetPranaDashasParamsSookshma defines parameters for GetPranaDashas.
+type GetPranaDashasParamsSookshma string
+
+// GetPranaDashasJSONBodyAyanamsa defines parameters for GetPranaDashas.
+type GetPranaDashasJSONBodyAyanamsa string
+
+// GetPranaDashasJSONBodyNodeType defines parameters for GetPranaDashas.
+type GetPranaDashasJSONBodyNodeType string
+
+// GetPranaDashasJSONBodyTimezone0 defines parameters for GetPranaDashas.
+type GetPranaDashasJSONBodyTimezone0 = float32
+
+// GetPranaDashasJSONBodyTimezone1 defines parameters for GetPranaDashas.
+type GetPranaDashasJSONBodyTimezone1 = string
+
+// GetPranaDashasJSONBody_Timezone defines parameters for GetPranaDashas.
+type GetPranaDashasJSONBody_Timezone struct {
+	union json.RawMessage
+}
+
+// GetPranaDashas200JSONResponseBodyAntardashaLord defines parameters for GetPranaDashas.
+type GetPranaDashas200JSONResponseBodyAntardashaLord string
+
+// GetPranaDashas200JSONResponseBodyAyanamsaType defines parameters for GetPranaDashas.
+type GetPranaDashas200JSONResponseBodyAyanamsaType string
+
+// GetPranaDashas200JSONResponseBodyMahadashaLord defines parameters for GetPranaDashas.
+type GetPranaDashas200JSONResponseBodyMahadashaLord string
+
+// GetPranaDashas200JSONResponseBodyPranaDashasAntardashaLord defines parameters for GetPranaDashas.
+type GetPranaDashas200JSONResponseBodyPranaDashasAntardashaLord string
+
+// GetPranaDashas200JSONResponseBodyPranaDashasMahadashaLord defines parameters for GetPranaDashas.
+type GetPranaDashas200JSONResponseBodyPranaDashasMahadashaLord string
+
+// GetPranaDashas200JSONResponseBodyPranaDashasPlanet defines parameters for GetPranaDashas.
+type GetPranaDashas200JSONResponseBodyPranaDashasPlanet string
+
+// GetPranaDashas200JSONResponseBodyPranaDashasPratyantardashaLord defines parameters for GetPranaDashas.
+type GetPranaDashas200JSONResponseBodyPranaDashasPratyantardashaLord string
+
+// GetPranaDashas200JSONResponseBodyPranaDashasSignificatorsStrengthGrade defines parameters for GetPranaDashas.
+type GetPranaDashas200JSONResponseBodyPranaDashasSignificatorsStrengthGrade string
+
+// GetPranaDashas200JSONResponseBodyPranaDashasSignificatorsStrengthLabel defines parameters for GetPranaDashas.
+type GetPranaDashas200JSONResponseBodyPranaDashasSignificatorsStrengthLabel string
+
+// GetPranaDashas200JSONResponseBodyPranaDashasSookshmaLord defines parameters for GetPranaDashas.
+type GetPranaDashas200JSONResponseBodyPranaDashasSookshmaLord string
+
+// GetPranaDashas200JSONResponseBodyPratyantardashaLord defines parameters for GetPranaDashas.
+type GetPranaDashas200JSONResponseBodyPratyantardashaLord string
+
+// GetPranaDashas200JSONResponseBodySookshmaLord defines parameters for GetPranaDashas.
+type GetPranaDashas200JSONResponseBodySookshmaLord string
+
+// GetPranaDashas200JSONResponseBodySookshmaPeriodAntardashaLord defines parameters for GetPranaDashas.
+type GetPranaDashas200JSONResponseBodySookshmaPeriodAntardashaLord string
+
+// GetPranaDashas200JSONResponseBodySookshmaPeriodMahadashaLord defines parameters for GetPranaDashas.
+type GetPranaDashas200JSONResponseBodySookshmaPeriodMahadashaLord string
+
+// GetPranaDashas200JSONResponseBodySookshmaPeriodPlanet defines parameters for GetPranaDashas.
+type GetPranaDashas200JSONResponseBodySookshmaPeriodPlanet string
+
+// GetPranaDashas200JSONResponseBodySookshmaPeriodPratyantardashaLord defines parameters for GetPranaDashas.
+type GetPranaDashas200JSONResponseBodySookshmaPeriodPratyantardashaLord string
+
+// GetPranaDashas200JSONResponseBodySookshmaPeriodSignificatorsStrengthGrade defines parameters for GetPranaDashas.
+type GetPranaDashas200JSONResponseBodySookshmaPeriodSignificatorsStrengthGrade string
+
+// GetPranaDashas200JSONResponseBodySookshmaPeriodSignificatorsStrengthLabel defines parameters for GetPranaDashas.
+type GetPranaDashas200JSONResponseBodySookshmaPeriodSignificatorsStrengthLabel string
 
 // GenerateDivisionalChartParams defines parameters for GenerateDivisionalChart.
 type GenerateDivisionalChartParams struct {
@@ -23060,6 +25027,9 @@ type GetPratyantardashasJSONRequestBody GetPratyantardashasJSONBody
 
 // GetSookshmaDashasJSONRequestBody defines body for GetSookshmaDashas for application/json ContentType.
 type GetSookshmaDashasJSONRequestBody GetSookshmaDashasJSONBody
+
+// GetPranaDashasJSONRequestBody defines body for GetPranaDashas for application/json ContentType.
+type GetPranaDashasJSONRequestBody GetPranaDashasJSONBody
 
 // GenerateDivisionalChartJSONRequestBody defines body for GenerateDivisionalChart for application/json ContentType.
 type GenerateDivisionalChartJSONRequestBody = DivisionalChartRequest
@@ -27954,6 +29924,68 @@ func (t *GetSookshmaDashasJSONBody_Timezone) UnmarshalJSON(b []byte) error {
 	return err
 }
 
+// AsGetPranaDashasJSONBodyTimezone0 returns the union data inside the GetPranaDashasJSONBody_Timezone as a GetPranaDashasJSONBodyTimezone0
+func (t GetPranaDashasJSONBody_Timezone) AsGetPranaDashasJSONBodyTimezone0() (GetPranaDashasJSONBodyTimezone0, error) {
+	var body GetPranaDashasJSONBodyTimezone0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetPranaDashasJSONBodyTimezone0 overwrites any union data inside the GetPranaDashasJSONBody_Timezone as the provided GetPranaDashasJSONBodyTimezone0
+func (t *GetPranaDashasJSONBody_Timezone) FromGetPranaDashasJSONBodyTimezone0(v GetPranaDashasJSONBodyTimezone0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetPranaDashasJSONBodyTimezone0 performs a merge with any union data inside the GetPranaDashasJSONBody_Timezone, using the provided GetPranaDashasJSONBodyTimezone0
+func (t *GetPranaDashasJSONBody_Timezone) MergeGetPranaDashasJSONBodyTimezone0(v GetPranaDashasJSONBodyTimezone0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetPranaDashasJSONBodyTimezone1 returns the union data inside the GetPranaDashasJSONBody_Timezone as a GetPranaDashasJSONBodyTimezone1
+func (t GetPranaDashasJSONBody_Timezone) AsGetPranaDashasJSONBodyTimezone1() (GetPranaDashasJSONBodyTimezone1, error) {
+	var body GetPranaDashasJSONBodyTimezone1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetPranaDashasJSONBodyTimezone1 overwrites any union data inside the GetPranaDashasJSONBody_Timezone as the provided GetPranaDashasJSONBodyTimezone1
+func (t *GetPranaDashasJSONBody_Timezone) FromGetPranaDashasJSONBodyTimezone1(v GetPranaDashasJSONBodyTimezone1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetPranaDashasJSONBodyTimezone1 performs a merge with any union data inside the GetPranaDashasJSONBody_Timezone, using the provided GetPranaDashasJSONBodyTimezone1
+func (t *GetPranaDashasJSONBody_Timezone) MergeGetPranaDashasJSONBodyTimezone1(v GetPranaDashasJSONBodyTimezone1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetPranaDashasJSONBody_Timezone) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetPranaDashasJSONBody_Timezone) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
 // AsGetEclipticCrossingsJSONBodyTimezone0 returns the union data inside the GetEclipticCrossingsJSONBody_Timezone as a GetEclipticCrossingsJSONBodyTimezone0
 func (t GetEclipticCrossingsJSONBody_Timezone) AsGetEclipticCrossingsJSONBodyTimezone0() (GetEclipticCrossingsJSONBodyTimezone0, error) {
 	var body GetEclipticCrossingsJSONBodyTimezone0
@@ -29276,6 +31308,11 @@ type ClientInterface interface {
 	GetSookshmaDashasWithBody(ctx context.Context, mahadasha GetSookshmaDashasParamsMahadasha, antardasha GetSookshmaDashasParamsAntardasha, pratyantardasha GetSookshmaDashasParamsPratyantardasha, params *GetSookshmaDashasParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	GetSookshmaDashas(ctx context.Context, mahadasha GetSookshmaDashasParamsMahadasha, antardasha GetSookshmaDashasParamsAntardasha, pratyantardasha GetSookshmaDashasParamsPratyantardasha, params *GetSookshmaDashasParams, body GetSookshmaDashasJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetPranaDashasWithBody request with any body
+	GetPranaDashasWithBody(ctx context.Context, mahadasha GetPranaDashasParamsMahadasha, antardasha GetPranaDashasParamsAntardasha, pratyantardasha GetPranaDashasParamsPratyantardasha, sookshma GetPranaDashasParamsSookshma, params *GetPranaDashasParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	GetPranaDashas(ctx context.Context, mahadasha GetPranaDashasParamsMahadasha, antardasha GetPranaDashasParamsAntardasha, pratyantardasha GetPranaDashasParamsPratyantardasha, sookshma GetPranaDashasParamsSookshma, params *GetPranaDashasParams, body GetPranaDashasJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GenerateDivisionalChartWithBody request with any body
 	GenerateDivisionalChartWithBody(ctx context.Context, params *GenerateDivisionalChartParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -32040,6 +34077,30 @@ func (c *Client) GetSookshmaDashasWithBody(ctx context.Context, mahadasha GetSoo
 
 func (c *Client) GetSookshmaDashas(ctx context.Context, mahadasha GetSookshmaDashasParamsMahadasha, antardasha GetSookshmaDashasParamsAntardasha, pratyantardasha GetSookshmaDashasParamsPratyantardasha, params *GetSookshmaDashasParams, body GetSookshmaDashasJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewGetSookshmaDashasRequest(c.Server, mahadasha, antardasha, pratyantardasha, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) GetPranaDashasWithBody(ctx context.Context, mahadasha GetPranaDashasParamsMahadasha, antardasha GetPranaDashasParamsAntardasha, pratyantardasha GetPranaDashasParamsPratyantardasha, sookshma GetPranaDashasParamsSookshma, params *GetPranaDashasParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetPranaDashasRequestWithBody(c.Server, mahadasha, antardasha, pratyantardasha, sookshma, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) GetPranaDashas(ctx context.Context, mahadasha GetPranaDashasParamsMahadasha, antardasha GetPranaDashasParamsAntardasha, pratyantardasha GetPranaDashasParamsPratyantardasha, sookshma GetPranaDashasParamsSookshma, params *GetPranaDashasParams, body GetPranaDashasJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetPranaDashasRequest(c.Server, mahadasha, antardasha, pratyantardasha, sookshma, params, body)
 	if err != nil {
 		return nil, err
 	}
@@ -41494,6 +43555,101 @@ func NewGetSookshmaDashasRequestWithBody(server string, mahadasha GetSookshmaDas
 	return req, nil
 }
 
+// NewGetPranaDashasRequest calls the generic GetPranaDashas builder with application/json body
+func NewGetPranaDashasRequest(server string, mahadasha GetPranaDashasParamsMahadasha, antardasha GetPranaDashasParamsAntardasha, pratyantardasha GetPranaDashasParamsPratyantardasha, sookshma GetPranaDashasParamsSookshma, params *GetPranaDashasParams, body GetPranaDashasJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewGetPranaDashasRequestWithBody(server, mahadasha, antardasha, pratyantardasha, sookshma, params, "application/json", bodyReader)
+}
+
+// NewGetPranaDashasRequestWithBody generates requests for GetPranaDashas with any type of body
+func NewGetPranaDashasRequestWithBody(server string, mahadasha GetPranaDashasParamsMahadasha, antardasha GetPranaDashasParamsAntardasha, pratyantardasha GetPranaDashasParamsPratyantardasha, sookshma GetPranaDashasParamsSookshma, params *GetPranaDashasParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "mahadasha", mahadasha, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam1 string
+
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "antardasha", antardasha, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam2 string
+
+	pathParam2, err = runtime.StyleParamWithOptions("simple", false, "pratyantardasha", pratyantardasha, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	var pathParam3 string
+
+	pathParam3, err = runtime.StyleParamWithOptions("simple", false, "sookshma", sookshma, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/vedic-astrology/dasha/sub/%s/%s/%s/%s", pathParam0, pathParam1, pathParam2, pathParam3)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Lang != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "lang", *params.Lang, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
 // NewGenerateDivisionalChartRequest calls the generic GenerateDivisionalChart builder with application/json body
 func NewGenerateDivisionalChartRequest(server string, params *GenerateDivisionalChartParams, body GenerateDivisionalChartJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
@@ -43772,6 +45928,11 @@ type ClientWithResponsesInterface interface {
 	GetSookshmaDashasWithBodyWithResponse(ctx context.Context, mahadasha GetSookshmaDashasParamsMahadasha, antardasha GetSookshmaDashasParamsAntardasha, pratyantardasha GetSookshmaDashasParamsPratyantardasha, params *GetSookshmaDashasParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetSookshmaDashasResponse, error)
 
 	GetSookshmaDashasWithResponse(ctx context.Context, mahadasha GetSookshmaDashasParamsMahadasha, antardasha GetSookshmaDashasParamsAntardasha, pratyantardasha GetSookshmaDashasParamsPratyantardasha, params *GetSookshmaDashasParams, body GetSookshmaDashasJSONRequestBody, reqEditors ...RequestEditorFn) (*GetSookshmaDashasResponse, error)
+
+	// GetPranaDashasWithBodyWithResponse request with any body
+	GetPranaDashasWithBodyWithResponse(ctx context.Context, mahadasha GetPranaDashasParamsMahadasha, antardasha GetPranaDashasParamsAntardasha, pratyantardasha GetPranaDashasParamsPratyantardasha, sookshma GetPranaDashasParamsSookshma, params *GetPranaDashasParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetPranaDashasResponse, error)
+
+	GetPranaDashasWithResponse(ctx context.Context, mahadasha GetPranaDashasParamsMahadasha, antardasha GetPranaDashasParamsAntardasha, pratyantardasha GetPranaDashasParamsPratyantardasha, sookshma GetPranaDashasParamsSookshma, params *GetPranaDashasParams, body GetPranaDashasJSONRequestBody, reqEditors ...RequestEditorFn) (*GetPranaDashasResponse, error)
 
 	// GenerateDivisionalChartWithBodyWithResponse request with any body
 	GenerateDivisionalChartWithBodyWithResponse(ctx context.Context, params *GenerateDivisionalChartParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GenerateDivisionalChartResponse, error)
@@ -54855,6 +57016,51 @@ type GetCurrentDashaResponse struct {
 			// Planet Ruling graha of this Vimshottari dasha period. One of 9 planets in the Ketu-Venus-Sun-Moon-Mars-Rahu-Jupiter-Saturn-Mercury sequence.
 			Planet GetCurrentDasha200JSONResponseBodyAntardashaPlanet `json:"planet"`
 
+			// Significators KP significators of this period lord, read from the Placidus birth chart in the requested ayanamsa. Present only when the request sets "significators": true.
+			Significators *struct {
+				// House House 1-12 this lord occupies in the Placidus birth chart. Its own Level 2 signification, repeated here because the occupied house is the first thing a KP reading looks at.
+				House int `json:"house"`
+
+				// SignifiedHouses Every house this lord signifies, deduplicated and ordered strongest tier first. Where a house is reached at more than one level it is listed once, at its strongest. This is the flat "houses signified" column of a KP dasha table.
+				SignifiedHouses []int `json:"signifiedHouses"`
+
+				// Signifies KP 4-level significator breakdown showing which houses (1-12) this planet signifies at each strength tier. L1 is strongest, L4 is weakest.
+				Signifies struct {
+					// L1 Level 1, the strongest signification (grade A). Houses influenced because this planet sits in the nakshatra (star) of a planet occupying those houses. For Rahu and Ketu, also includes the L1 houses of their agent planets (conjoined, aspecting, sign lord).
+					L1 []int `json:"L1"`
+
+					// L2 Level 2 (grade B). The house this planet physically occupies. For Rahu and Ketu, also includes houses occupied by their agent planets.
+					L2 []int `json:"L2"`
+
+					// L3 Level 3 (grade C). Houses influenced because this planet sits in the nakshatra of the sign lord (owner) of those houses. For Rahu and Ketu, also includes the L3 houses of their agent planets.
+					L3 []int `json:"L3"`
+
+					// L4 Level 4, the weakest signification (grade D). Houses this planet rules by zodiac sign ownership, up to 2 for Sun through Saturn and 3 where a sign is intercepted. Rahu and Ketu own no sign, so their L4 comes entirely from their agent planets.
+					L4 []int `json:"L4"`
+				} `json:"signifies"`
+
+				// StarLord Lord of the nakshatra this planet sits in, one of the 9 grahas. In KP the star lord outranks the planet itself: a period lord mainly delivers the houses its star lord occupies and owns, which is why those appear at L1 and L3 rather than the planet own house.
+				StarLord string `json:"starLord"`
+
+				// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading.
+				Strength struct {
+					// Grade Band the score falls in, on the standard KP significator grading: A planets in the constellation of the occupant, B occupants, C planets in the constellation of the house owner, D the house owner. Band edges are the midpoints between the four weights.
+					Grade GetCurrentDasha200JSONResponseBodyAntardashaSignificatorsStrengthGrade `json:"grade"`
+
+					// Label Plain-language form of grade: "very-strong" for A, "strong" for B, "moderate" for C, "weak" for D. Says how firmly this lord is connected to the houses it signifies, NOT whether those houses are favourable, which depends on the matter being judged.
+					Label GetCurrentDasha200JSONResponseBodyAntardashaSignificatorsStrengthLabel `json:"label"`
+
+					// Score Mean KP percentage weight across signifiedHouses, each house counted at its strongest level (A 100, B 75, C 50, D 25). A mean rather than a total, so signifying many houses weakly does not outrank signifying two houses at grade A.
+					Score float32 `json:"score"`
+				} `json:"strength"`
+
+				// StrongHouses Subset of signifiedHouses reached at grade A or B (levels L1 and L2). These are the houses a KP reading acts on for this period; the rest are supporting connections.
+				StrongHouses []int `json:"strongHouses"`
+
+				// SubLord KP sub lord of this planet, the 1 of 249 subdivision its longitude falls in, one of the 9 grahas. The star lord says WHAT results the period gives, the sub lord says WHETHER they materialize, so KP judgement checks both.
+				SubLord *string `json:"subLord,omitempty"`
+			} `json:"significators,omitempty"`
+
 			// StartDate Start datetime of this dasha period. Adjusted to the requested timezone offset.
 			StartDate string `json:"startDate"`
 		} `json:"antardasha"`
@@ -54864,6 +57070,18 @@ type GetCurrentDashaResponse struct {
 
 		// AyanamsaType Ayanamsa system used, echoing the request field. One of "lahiri", "kp-newcomb", "kp-old". Echoed so a client can confirm which frame produced these dates without re-deriving it.
 		AyanamsaType GetCurrentDasha200JSONResponseBodyAyanamsaType `json:"ayanamsaType"`
+
+		// CommonHouses Houses common to the significators of the running dasha lords. In KP a matter fructifies under lords that jointly signify the houses of that matter, so these two sets are what a prediction is checked against.
+		CommonHouses *struct {
+			// AllLevels Houses signified by ALL FIVE running lords at once (Mahadasha through Prana). The tightest reading available: a house every active level carries is the one the current moment is pointed at. Often empty, which is itself informative, it means the five levels do not converge on a single house.
+			AllLevels []int `json:"allLevels"`
+
+			// DashaBhuktiAntara Houses signified by the Mahadasha, Antardasha and Pratyantardasha lords together, the classical KP three-lord test used to decide whether a matter fructifies in the running period. Wider than allLevels because it ignores the two fastest levels, which is what makes it the practical filter for month-scale predictions.
+			DashaBhuktiAntara []int `json:"dashaBhuktiAntara"`
+		} `json:"commonHouses,omitempty"`
+
+		// HouseThemes What each house MEANS, keyed by house number 1 to 12, in the requested language. Turns a house list into words without the client writing any interpretation copy: for a period signifying houses 2, 7 and 8, join houseThemes for those keys to render the "nature" line of a KP dasha table. Sent once per response rather than repeated on every period, so look the houses up from signifiedHouses or strongHouses. Localized by the lang query, like every other interpretation field.
+		HouseThemes *map[string][]string `json:"houseThemes,omitempty"`
 
 		// Mahadasha Mahadasha (major planetary period) in the 120-year Vimshottari dasha cycle. Start and end dates are determined by Moon nakshatra at birth.
 		Mahadasha struct {
@@ -54882,6 +57100,51 @@ type GetCurrentDashaResponse struct {
 			// Planet Ruling graha of this Vimshottari dasha period. One of 9 planets in the Ketu-Venus-Sun-Moon-Mars-Rahu-Jupiter-Saturn-Mercury sequence.
 			Planet GetCurrentDasha200JSONResponseBodyMahadashaPlanet `json:"planet"`
 
+			// Significators KP significators of this period lord, read from the Placidus birth chart in the requested ayanamsa. Present only when the request sets "significators": true.
+			Significators *struct {
+				// House House 1-12 this lord occupies in the Placidus birth chart. Its own Level 2 signification, repeated here because the occupied house is the first thing a KP reading looks at.
+				House int `json:"house"`
+
+				// SignifiedHouses Every house this lord signifies, deduplicated and ordered strongest tier first. Where a house is reached at more than one level it is listed once, at its strongest. This is the flat "houses signified" column of a KP dasha table.
+				SignifiedHouses []int `json:"signifiedHouses"`
+
+				// Signifies KP 4-level significator breakdown showing which houses (1-12) this planet signifies at each strength tier. L1 is strongest, L4 is weakest.
+				Signifies struct {
+					// L1 Level 1, the strongest signification (grade A). Houses influenced because this planet sits in the nakshatra (star) of a planet occupying those houses. For Rahu and Ketu, also includes the L1 houses of their agent planets (conjoined, aspecting, sign lord).
+					L1 []int `json:"L1"`
+
+					// L2 Level 2 (grade B). The house this planet physically occupies. For Rahu and Ketu, also includes houses occupied by their agent planets.
+					L2 []int `json:"L2"`
+
+					// L3 Level 3 (grade C). Houses influenced because this planet sits in the nakshatra of the sign lord (owner) of those houses. For Rahu and Ketu, also includes the L3 houses of their agent planets.
+					L3 []int `json:"L3"`
+
+					// L4 Level 4, the weakest signification (grade D). Houses this planet rules by zodiac sign ownership, up to 2 for Sun through Saturn and 3 where a sign is intercepted. Rahu and Ketu own no sign, so their L4 comes entirely from their agent planets.
+					L4 []int `json:"L4"`
+				} `json:"signifies"`
+
+				// StarLord Lord of the nakshatra this planet sits in, one of the 9 grahas. In KP the star lord outranks the planet itself: a period lord mainly delivers the houses its star lord occupies and owns, which is why those appear at L1 and L3 rather than the planet own house.
+				StarLord string `json:"starLord"`
+
+				// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading.
+				Strength struct {
+					// Grade Band the score falls in, on the standard KP significator grading: A planets in the constellation of the occupant, B occupants, C planets in the constellation of the house owner, D the house owner. Band edges are the midpoints between the four weights.
+					Grade GetCurrentDasha200JSONResponseBodyMahadashaSignificatorsStrengthGrade `json:"grade"`
+
+					// Label Plain-language form of grade: "very-strong" for A, "strong" for B, "moderate" for C, "weak" for D. Says how firmly this lord is connected to the houses it signifies, NOT whether those houses are favourable, which depends on the matter being judged.
+					Label GetCurrentDasha200JSONResponseBodyMahadashaSignificatorsStrengthLabel `json:"label"`
+
+					// Score Mean KP percentage weight across signifiedHouses, each house counted at its strongest level (A 100, B 75, C 50, D 25). A mean rather than a total, so signifying many houses weakly does not outrank signifying two houses at grade A.
+					Score float32 `json:"score"`
+				} `json:"strength"`
+
+				// StrongHouses Subset of signifiedHouses reached at grade A or B (levels L1 and L2). These are the houses a KP reading acts on for this period; the rest are supporting connections.
+				StrongHouses []int `json:"strongHouses"`
+
+				// SubLord KP sub lord of this planet, the 1 of 249 subdivision its longitude falls in, one of the 9 grahas. The star lord says WHAT results the period gives, the sub lord says WHETHER they materialize, so KP judgement checks both.
+				SubLord *string `json:"subLord,omitempty"`
+			} `json:"significators,omitempty"`
+
 			// StartDate Start datetime of this dasha period. Adjusted to the requested timezone offset.
 			StartDate string `json:"startDate"`
 		} `json:"mahadasha"`
@@ -54897,6 +57160,84 @@ type GetCurrentDashaResponse struct {
 
 		// NakshatraName Name of the birth Moon nakshatra (lunar mansion). One of 27 Vedic nakshatras from Ashwini to Revati.
 		NakshatraName string `json:"nakshatraName"`
+
+		// PranaDasha Prana dasha (praana antardasha), the fifth and finest level of the Vimshottari dasha hierarchy. Each Sookshma dasha divides into 9 Prana periods, running from about 20 minutes inside a Sun Mahadasha to about 4 days inside a Saturn one. This is the level that takes Vimshottari from day-level to hour-level timing, used for muhurta selection and pinpointing the trigger inside an already identified window.
+		PranaDasha struct {
+			// AntardashaLord Parent Antardasha lord under which this Pratyantardasha runs.
+			AntardashaLord GetCurrentDasha200JSONResponseBodyPranaDashaAntardashaLord `json:"antardashaLord"`
+
+			// DurationYears Duration of this dasha period in years. Mahadasha durations range from 6 years (Sun) to 20 years (Venus).
+			DurationYears float32 `json:"durationYears"`
+
+			// EndDate End datetime of this dasha period. Adjusted to the requested timezone offset.
+			EndDate string `json:"endDate"`
+
+			// Interpretation Vedic interpretation of the planetary period describing themes, karmic lessons, and life areas affected by this graha.
+			Interpretation *string `json:"interpretation,omitempty"`
+
+			// MahadashaLord Parent Mahadasha lord under which this Antardasha sub-period runs.
+			MahadashaLord GetCurrentDasha200JSONResponseBodyPranaDashaMahadashaLord `json:"mahadashaLord"`
+
+			// NominalStartDate Theoretical start of this period, present ONLY when the birth date truncated it. The Vimshottari cycle is already running when a native is born, so the period in force at birth began earlier: startDate is clipped to the birth moment while this field keeps the real start. Its presence is also why the first period of a chart can contain fewer than 9 sub-periods, the earlier ones having finished before birth. Absent on every period that runs its full length.
+			NominalStartDate *string `json:"nominalStartDate,omitempty"`
+
+			// Planet Ruling graha of this Vimshottari dasha period. One of 9 planets in the Ketu-Venus-Sun-Moon-Mars-Rahu-Jupiter-Saturn-Mercury sequence.
+			Planet GetCurrentDasha200JSONResponseBodyPranaDashaPlanet `json:"planet"`
+
+			// PratyantardashaLord Parent Pratyantardasha lord under which this Sookshma dasha runs.
+			PratyantardashaLord GetCurrentDasha200JSONResponseBodyPranaDashaPratyantardashaLord `json:"pratyantardashaLord"`
+
+			// Significators KP significators of this period lord, read from the Placidus birth chart in the requested ayanamsa. Present only when the request sets "significators": true.
+			Significators *struct {
+				// House House 1-12 this lord occupies in the Placidus birth chart. Its own Level 2 signification, repeated here because the occupied house is the first thing a KP reading looks at.
+				House int `json:"house"`
+
+				// SignifiedHouses Every house this lord signifies, deduplicated and ordered strongest tier first. Where a house is reached at more than one level it is listed once, at its strongest. This is the flat "houses signified" column of a KP dasha table.
+				SignifiedHouses []int `json:"signifiedHouses"`
+
+				// Signifies KP 4-level significator breakdown showing which houses (1-12) this planet signifies at each strength tier. L1 is strongest, L4 is weakest.
+				Signifies struct {
+					// L1 Level 1, the strongest signification (grade A). Houses influenced because this planet sits in the nakshatra (star) of a planet occupying those houses. For Rahu and Ketu, also includes the L1 houses of their agent planets (conjoined, aspecting, sign lord).
+					L1 []int `json:"L1"`
+
+					// L2 Level 2 (grade B). The house this planet physically occupies. For Rahu and Ketu, also includes houses occupied by their agent planets.
+					L2 []int `json:"L2"`
+
+					// L3 Level 3 (grade C). Houses influenced because this planet sits in the nakshatra of the sign lord (owner) of those houses. For Rahu and Ketu, also includes the L3 houses of their agent planets.
+					L3 []int `json:"L3"`
+
+					// L4 Level 4, the weakest signification (grade D). Houses this planet rules by zodiac sign ownership, up to 2 for Sun through Saturn and 3 where a sign is intercepted. Rahu and Ketu own no sign, so their L4 comes entirely from their agent planets.
+					L4 []int `json:"L4"`
+				} `json:"signifies"`
+
+				// StarLord Lord of the nakshatra this planet sits in, one of the 9 grahas. In KP the star lord outranks the planet itself: a period lord mainly delivers the houses its star lord occupies and owns, which is why those appear at L1 and L3 rather than the planet own house.
+				StarLord string `json:"starLord"`
+
+				// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading.
+				Strength struct {
+					// Grade Band the score falls in, on the standard KP significator grading: A planets in the constellation of the occupant, B occupants, C planets in the constellation of the house owner, D the house owner. Band edges are the midpoints between the four weights.
+					Grade GetCurrentDasha200JSONResponseBodyPranaDashaSignificatorsStrengthGrade `json:"grade"`
+
+					// Label Plain-language form of grade: "very-strong" for A, "strong" for B, "moderate" for C, "weak" for D. Says how firmly this lord is connected to the houses it signifies, NOT whether those houses are favourable, which depends on the matter being judged.
+					Label GetCurrentDasha200JSONResponseBodyPranaDashaSignificatorsStrengthLabel `json:"label"`
+
+					// Score Mean KP percentage weight across signifiedHouses, each house counted at its strongest level (A 100, B 75, C 50, D 25). A mean rather than a total, so signifying many houses weakly does not outrank signifying two houses at grade A.
+					Score float32 `json:"score"`
+				} `json:"strength"`
+
+				// StrongHouses Subset of signifiedHouses reached at grade A or B (levels L1 and L2). These are the houses a KP reading acts on for this period; the rest are supporting connections.
+				StrongHouses []int `json:"strongHouses"`
+
+				// SubLord KP sub lord of this planet, the 1 of 249 subdivision its longitude falls in, one of the 9 grahas. The star lord says WHAT results the period gives, the sub lord says WHETHER they materialize, so KP judgement checks both.
+				SubLord *string `json:"subLord,omitempty"`
+			} `json:"significators,omitempty"`
+
+			// SookshmaLord Parent Sookshma dasha lord under which this Prana dasha runs.
+			SookshmaLord GetCurrentDasha200JSONResponseBodyPranaDashaSookshmaLord `json:"sookshmaLord"`
+
+			// StartDate Start datetime of this dasha period. Adjusted to the requested timezone offset.
+			StartDate string `json:"startDate"`
+		} `json:"pranaDasha"`
 
 		// Pratyantardasha Pratyantardasha (sub-sub-period), the third level of the Vimshottari dasha hierarchy, Provides finer timing within each Antardasha for event prediction.
 		Pratyantardasha struct {
@@ -54920,6 +57261,51 @@ type GetCurrentDashaResponse struct {
 
 			// Planet Ruling graha of this Vimshottari dasha period. One of 9 planets in the Ketu-Venus-Sun-Moon-Mars-Rahu-Jupiter-Saturn-Mercury sequence.
 			Planet GetCurrentDasha200JSONResponseBodyPratyantardashaPlanet `json:"planet"`
+
+			// Significators KP significators of this period lord, read from the Placidus birth chart in the requested ayanamsa. Present only when the request sets "significators": true.
+			Significators *struct {
+				// House House 1-12 this lord occupies in the Placidus birth chart. Its own Level 2 signification, repeated here because the occupied house is the first thing a KP reading looks at.
+				House int `json:"house"`
+
+				// SignifiedHouses Every house this lord signifies, deduplicated and ordered strongest tier first. Where a house is reached at more than one level it is listed once, at its strongest. This is the flat "houses signified" column of a KP dasha table.
+				SignifiedHouses []int `json:"signifiedHouses"`
+
+				// Signifies KP 4-level significator breakdown showing which houses (1-12) this planet signifies at each strength tier. L1 is strongest, L4 is weakest.
+				Signifies struct {
+					// L1 Level 1, the strongest signification (grade A). Houses influenced because this planet sits in the nakshatra (star) of a planet occupying those houses. For Rahu and Ketu, also includes the L1 houses of their agent planets (conjoined, aspecting, sign lord).
+					L1 []int `json:"L1"`
+
+					// L2 Level 2 (grade B). The house this planet physically occupies. For Rahu and Ketu, also includes houses occupied by their agent planets.
+					L2 []int `json:"L2"`
+
+					// L3 Level 3 (grade C). Houses influenced because this planet sits in the nakshatra of the sign lord (owner) of those houses. For Rahu and Ketu, also includes the L3 houses of their agent planets.
+					L3 []int `json:"L3"`
+
+					// L4 Level 4, the weakest signification (grade D). Houses this planet rules by zodiac sign ownership, up to 2 for Sun through Saturn and 3 where a sign is intercepted. Rahu and Ketu own no sign, so their L4 comes entirely from their agent planets.
+					L4 []int `json:"L4"`
+				} `json:"signifies"`
+
+				// StarLord Lord of the nakshatra this planet sits in, one of the 9 grahas. In KP the star lord outranks the planet itself: a period lord mainly delivers the houses its star lord occupies and owns, which is why those appear at L1 and L3 rather than the planet own house.
+				StarLord string `json:"starLord"`
+
+				// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading.
+				Strength struct {
+					// Grade Band the score falls in, on the standard KP significator grading: A planets in the constellation of the occupant, B occupants, C planets in the constellation of the house owner, D the house owner. Band edges are the midpoints between the four weights.
+					Grade GetCurrentDasha200JSONResponseBodyPratyantardashaSignificatorsStrengthGrade `json:"grade"`
+
+					// Label Plain-language form of grade: "very-strong" for A, "strong" for B, "moderate" for C, "weak" for D. Says how firmly this lord is connected to the houses it signifies, NOT whether those houses are favourable, which depends on the matter being judged.
+					Label GetCurrentDasha200JSONResponseBodyPratyantardashaSignificatorsStrengthLabel `json:"label"`
+
+					// Score Mean KP percentage weight across signifiedHouses, each house counted at its strongest level (A 100, B 75, C 50, D 25). A mean rather than a total, so signifying many houses weakly does not outrank signifying two houses at grade A.
+					Score float32 `json:"score"`
+				} `json:"strength"`
+
+				// StrongHouses Subset of signifiedHouses reached at grade A or B (levels L1 and L2). These are the houses a KP reading acts on for this period; the rest are supporting connections.
+				StrongHouses []int `json:"strongHouses"`
+
+				// SubLord KP sub lord of this planet, the 1 of 249 subdivision its longitude falls in, one of the 9 grahas. The star lord says WHAT results the period gives, the sub lord says WHETHER they materialize, so KP judgement checks both.
+				SubLord *string `json:"subLord,omitempty"`
+			} `json:"significators,omitempty"`
 
 			// StartDate Start datetime of this dasha period. Adjusted to the requested timezone offset.
 			StartDate string `json:"startDate"`
@@ -54955,6 +57341,21 @@ type GetCurrentDashaResponse struct {
 			Years float32 `json:"years"`
 		} `json:"remainingInMahadasha"`
 
+		// RemainingInPrana Time remaining in the currently running Prana dasha (fifth level). Prana periods run hours to days, so totalDays is often 0 or 1 and the years and months fields are almost always zero.
+		RemainingInPrana struct {
+			// Days Additional days remaining beyond full months.
+			Days float32 `json:"days"`
+
+			// Months Additional months remaining beyond full years.
+			Months float32 `json:"months"`
+
+			// TotalDays Total remaining days in this dasha period. Useful for progress calculations.
+			TotalDays float32 `json:"totalDays"`
+
+			// Years Full years remaining in this Vimshottari dasha period.
+			Years float32 `json:"years"`
+		} `json:"remainingInPrana"`
+
 		// RemainingInPratyantardasha Time remaining in the currently running Pratyantardasha (sub-sub-period).
 		RemainingInPratyantardasha struct {
 			// Days Additional days remaining beyond full months.
@@ -54985,7 +57386,7 @@ type GetCurrentDashaResponse struct {
 			Years float32 `json:"years"`
 		} `json:"remainingInSookshma"`
 
-		// SookshmaDasha Sookshma dasha (sookshma antardasha), the fourth level of the Vimshottari dasha hierarchy. Each Pratyantardasha divides into 9 Sookshma periods running roughly 3 to 30 days each, the finest level exposed by this API and the one used for day-level event timing and muhurta style selection.
+		// SookshmaDasha Sookshma dasha (sookshma antardasha), the fourth level of the Vimshottari dasha hierarchy. Each Pratyantardasha divides into 9 Sookshma periods running roughly 3 to 30 days each, used for day-level event timing and muhurta style selection.
 		SookshmaDasha struct {
 			// AntardashaLord Parent Antardasha lord under which this Pratyantardasha runs.
 			AntardashaLord GetCurrentDasha200JSONResponseBodySookshmaDashaAntardashaLord `json:"antardashaLord"`
@@ -55010,6 +57411,51 @@ type GetCurrentDashaResponse struct {
 
 			// PratyantardashaLord Parent Pratyantardasha lord under which this Sookshma dasha runs.
 			PratyantardashaLord GetCurrentDasha200JSONResponseBodySookshmaDashaPratyantardashaLord `json:"pratyantardashaLord"`
+
+			// Significators KP significators of this period lord, read from the Placidus birth chart in the requested ayanamsa. Present only when the request sets "significators": true.
+			Significators *struct {
+				// House House 1-12 this lord occupies in the Placidus birth chart. Its own Level 2 signification, repeated here because the occupied house is the first thing a KP reading looks at.
+				House int `json:"house"`
+
+				// SignifiedHouses Every house this lord signifies, deduplicated and ordered strongest tier first. Where a house is reached at more than one level it is listed once, at its strongest. This is the flat "houses signified" column of a KP dasha table.
+				SignifiedHouses []int `json:"signifiedHouses"`
+
+				// Signifies KP 4-level significator breakdown showing which houses (1-12) this planet signifies at each strength tier. L1 is strongest, L4 is weakest.
+				Signifies struct {
+					// L1 Level 1, the strongest signification (grade A). Houses influenced because this planet sits in the nakshatra (star) of a planet occupying those houses. For Rahu and Ketu, also includes the L1 houses of their agent planets (conjoined, aspecting, sign lord).
+					L1 []int `json:"L1"`
+
+					// L2 Level 2 (grade B). The house this planet physically occupies. For Rahu and Ketu, also includes houses occupied by their agent planets.
+					L2 []int `json:"L2"`
+
+					// L3 Level 3 (grade C). Houses influenced because this planet sits in the nakshatra of the sign lord (owner) of those houses. For Rahu and Ketu, also includes the L3 houses of their agent planets.
+					L3 []int `json:"L3"`
+
+					// L4 Level 4, the weakest signification (grade D). Houses this planet rules by zodiac sign ownership, up to 2 for Sun through Saturn and 3 where a sign is intercepted. Rahu and Ketu own no sign, so their L4 comes entirely from their agent planets.
+					L4 []int `json:"L4"`
+				} `json:"signifies"`
+
+				// StarLord Lord of the nakshatra this planet sits in, one of the 9 grahas. In KP the star lord outranks the planet itself: a period lord mainly delivers the houses its star lord occupies and owns, which is why those appear at L1 and L3 rather than the planet own house.
+				StarLord string `json:"starLord"`
+
+				// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading.
+				Strength struct {
+					// Grade Band the score falls in, on the standard KP significator grading: A planets in the constellation of the occupant, B occupants, C planets in the constellation of the house owner, D the house owner. Band edges are the midpoints between the four weights.
+					Grade GetCurrentDasha200JSONResponseBodySookshmaDashaSignificatorsStrengthGrade `json:"grade"`
+
+					// Label Plain-language form of grade: "very-strong" for A, "strong" for B, "moderate" for C, "weak" for D. Says how firmly this lord is connected to the houses it signifies, NOT whether those houses are favourable, which depends on the matter being judged.
+					Label GetCurrentDasha200JSONResponseBodySookshmaDashaSignificatorsStrengthLabel `json:"label"`
+
+					// Score Mean KP percentage weight across signifiedHouses, each house counted at its strongest level (A 100, B 75, C 50, D 25). A mean rather than a total, so signifying many houses weakly does not outrank signifying two houses at grade A.
+					Score float32 `json:"score"`
+				} `json:"strength"`
+
+				// StrongHouses Subset of signifiedHouses reached at grade A or B (levels L1 and L2). These are the houses a KP reading acts on for this period; the rest are supporting connections.
+				StrongHouses []int `json:"strongHouses"`
+
+				// SubLord KP sub lord of this planet, the 1 of 249 subdivision its longitude falls in, one of the 9 grahas. The star lord says WHAT results the period gives, the sub lord says WHETHER they materialize, so KP judgement checks both.
+				SubLord *string `json:"subLord,omitempty"`
+			} `json:"significators,omitempty"`
 
 			// StartDate Start datetime of this dasha period. Adjusted to the requested timezone offset.
 			StartDate string `json:"startDate"`
@@ -55076,6 +57522,9 @@ type GetMajorDashasResponse struct {
 			Years float32 `json:"years"`
 		} `json:"birthDashaBalance"`
 
+		// HouseThemes What each house MEANS, keyed by house number 1 to 12, in the requested language. Turns a house list into words without the client writing any interpretation copy: for a period signifying houses 2, 7 and 8, join houseThemes for those keys to render the "nature" line of a KP dasha table. Sent once per response rather than repeated on every period, so look the houses up from signifiedHouses or strongHouses. Localized by the lang query, like every other interpretation field.
+		HouseThemes *map[string][]string `json:"houseThemes,omitempty"`
+
 		// Mahadashas Complete sequence of all 9 Mahadasha periods spanning 120 years from birth. Follows the Vimshottari order: Ketu(7), Venus(20), Sun(6), Moon(10), Mars(7), Rahu(18), Jupiter(16), Saturn(19), Mercury(17).
 		Mahadashas []struct {
 			// DurationYears Duration of this dasha period in years. Mahadasha durations range from 6 years (Sun) to 20 years (Venus).
@@ -55092,6 +57541,51 @@ type GetMajorDashasResponse struct {
 
 			// Planet Ruling graha of this Vimshottari dasha period. One of 9 planets in the Ketu-Venus-Sun-Moon-Mars-Rahu-Jupiter-Saturn-Mercury sequence.
 			Planet GetMajorDashas200JSONResponseBodyMahadashasPlanet `json:"planet"`
+
+			// Significators KP significators of this period lord, read from the Placidus birth chart in the requested ayanamsa. Present only when the request sets "significators": true.
+			Significators *struct {
+				// House House 1-12 this lord occupies in the Placidus birth chart. Its own Level 2 signification, repeated here because the occupied house is the first thing a KP reading looks at.
+				House int `json:"house"`
+
+				// SignifiedHouses Every house this lord signifies, deduplicated and ordered strongest tier first. Where a house is reached at more than one level it is listed once, at its strongest. This is the flat "houses signified" column of a KP dasha table.
+				SignifiedHouses []int `json:"signifiedHouses"`
+
+				// Signifies KP 4-level significator breakdown showing which houses (1-12) this planet signifies at each strength tier. L1 is strongest, L4 is weakest.
+				Signifies struct {
+					// L1 Level 1, the strongest signification (grade A). Houses influenced because this planet sits in the nakshatra (star) of a planet occupying those houses. For Rahu and Ketu, also includes the L1 houses of their agent planets (conjoined, aspecting, sign lord).
+					L1 []int `json:"L1"`
+
+					// L2 Level 2 (grade B). The house this planet physically occupies. For Rahu and Ketu, also includes houses occupied by their agent planets.
+					L2 []int `json:"L2"`
+
+					// L3 Level 3 (grade C). Houses influenced because this planet sits in the nakshatra of the sign lord (owner) of those houses. For Rahu and Ketu, also includes the L3 houses of their agent planets.
+					L3 []int `json:"L3"`
+
+					// L4 Level 4, the weakest signification (grade D). Houses this planet rules by zodiac sign ownership, up to 2 for Sun through Saturn and 3 where a sign is intercepted. Rahu and Ketu own no sign, so their L4 comes entirely from their agent planets.
+					L4 []int `json:"L4"`
+				} `json:"signifies"`
+
+				// StarLord Lord of the nakshatra this planet sits in, one of the 9 grahas. In KP the star lord outranks the planet itself: a period lord mainly delivers the houses its star lord occupies and owns, which is why those appear at L1 and L3 rather than the planet own house.
+				StarLord string `json:"starLord"`
+
+				// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading.
+				Strength struct {
+					// Grade Band the score falls in, on the standard KP significator grading: A planets in the constellation of the occupant, B occupants, C planets in the constellation of the house owner, D the house owner. Band edges are the midpoints between the four weights.
+					Grade GetMajorDashas200JSONResponseBodyMahadashasSignificatorsStrengthGrade `json:"grade"`
+
+					// Label Plain-language form of grade: "very-strong" for A, "strong" for B, "moderate" for C, "weak" for D. Says how firmly this lord is connected to the houses it signifies, NOT whether those houses are favourable, which depends on the matter being judged.
+					Label GetMajorDashas200JSONResponseBodyMahadashasSignificatorsStrengthLabel `json:"label"`
+
+					// Score Mean KP percentage weight across signifiedHouses, each house counted at its strongest level (A 100, B 75, C 50, D 25). A mean rather than a total, so signifying many houses weakly does not outrank signifying two houses at grade A.
+					Score float32 `json:"score"`
+				} `json:"strength"`
+
+				// StrongHouses Subset of signifiedHouses reached at grade A or B (levels L1 and L2). These are the houses a KP reading acts on for this period; the rest are supporting connections.
+				StrongHouses []int `json:"strongHouses"`
+
+				// SubLord KP sub lord of this planet, the 1 of 249 subdivision its longitude falls in, one of the 9 grahas. The star lord says WHAT results the period gives, the sub lord says WHETHER they materialize, so KP judgement checks both.
+				SubLord *string `json:"subLord,omitempty"`
+			} `json:"significators,omitempty"`
 
 			// StartDate Start datetime of this dasha period. Adjusted to the requested timezone offset.
 			StartDate string `json:"startDate"`
@@ -55172,6 +57666,51 @@ type GetSubDashasResponse struct {
 			// Planet Ruling graha of this Vimshottari dasha period. One of 9 planets in the Ketu-Venus-Sun-Moon-Mars-Rahu-Jupiter-Saturn-Mercury sequence.
 			Planet GetSubDashas200JSONResponseBodyAntardashasPlanet `json:"planet"`
 
+			// Significators KP significators of this period lord, read from the Placidus birth chart in the requested ayanamsa. Present only when the request sets "significators": true.
+			Significators *struct {
+				// House House 1-12 this lord occupies in the Placidus birth chart. Its own Level 2 signification, repeated here because the occupied house is the first thing a KP reading looks at.
+				House int `json:"house"`
+
+				// SignifiedHouses Every house this lord signifies, deduplicated and ordered strongest tier first. Where a house is reached at more than one level it is listed once, at its strongest. This is the flat "houses signified" column of a KP dasha table.
+				SignifiedHouses []int `json:"signifiedHouses"`
+
+				// Signifies KP 4-level significator breakdown showing which houses (1-12) this planet signifies at each strength tier. L1 is strongest, L4 is weakest.
+				Signifies struct {
+					// L1 Level 1, the strongest signification (grade A). Houses influenced because this planet sits in the nakshatra (star) of a planet occupying those houses. For Rahu and Ketu, also includes the L1 houses of their agent planets (conjoined, aspecting, sign lord).
+					L1 []int `json:"L1"`
+
+					// L2 Level 2 (grade B). The house this planet physically occupies. For Rahu and Ketu, also includes houses occupied by their agent planets.
+					L2 []int `json:"L2"`
+
+					// L3 Level 3 (grade C). Houses influenced because this planet sits in the nakshatra of the sign lord (owner) of those houses. For Rahu and Ketu, also includes the L3 houses of their agent planets.
+					L3 []int `json:"L3"`
+
+					// L4 Level 4, the weakest signification (grade D). Houses this planet rules by zodiac sign ownership, up to 2 for Sun through Saturn and 3 where a sign is intercepted. Rahu and Ketu own no sign, so their L4 comes entirely from their agent planets.
+					L4 []int `json:"L4"`
+				} `json:"signifies"`
+
+				// StarLord Lord of the nakshatra this planet sits in, one of the 9 grahas. In KP the star lord outranks the planet itself: a period lord mainly delivers the houses its star lord occupies and owns, which is why those appear at L1 and L3 rather than the planet own house.
+				StarLord string `json:"starLord"`
+
+				// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading.
+				Strength struct {
+					// Grade Band the score falls in, on the standard KP significator grading: A planets in the constellation of the occupant, B occupants, C planets in the constellation of the house owner, D the house owner. Band edges are the midpoints between the four weights.
+					Grade GetSubDashas200JSONResponseBodyAntardashasSignificatorsStrengthGrade `json:"grade"`
+
+					// Label Plain-language form of grade: "very-strong" for A, "strong" for B, "moderate" for C, "weak" for D. Says how firmly this lord is connected to the houses it signifies, NOT whether those houses are favourable, which depends on the matter being judged.
+					Label GetSubDashas200JSONResponseBodyAntardashasSignificatorsStrengthLabel `json:"label"`
+
+					// Score Mean KP percentage weight across signifiedHouses, each house counted at its strongest level (A 100, B 75, C 50, D 25). A mean rather than a total, so signifying many houses weakly does not outrank signifying two houses at grade A.
+					Score float32 `json:"score"`
+				} `json:"strength"`
+
+				// StrongHouses Subset of signifiedHouses reached at grade A or B (levels L1 and L2). These are the houses a KP reading acts on for this period; the rest are supporting connections.
+				StrongHouses []int `json:"strongHouses"`
+
+				// SubLord KP sub lord of this planet, the 1 of 249 subdivision its longitude falls in, one of the 9 grahas. The star lord says WHAT results the period gives, the sub lord says WHETHER they materialize, so KP judgement checks both.
+				SubLord *string `json:"subLord,omitempty"`
+			} `json:"significators,omitempty"`
+
 			// StartDate Start datetime of this dasha period. Adjusted to the requested timezone offset.
 			StartDate string `json:"startDate"`
 		} `json:"antardashas"`
@@ -55181,6 +57720,9 @@ type GetSubDashasResponse struct {
 
 		// AyanamsaType Ayanamsa system used, echoing the request field. One of "lahiri", "kp-newcomb", "kp-old". Echoed so a client can confirm which frame produced these dates without re-deriving it.
 		AyanamsaType GetSubDashas200JSONResponseBodyAyanamsaType `json:"ayanamsaType"`
+
+		// HouseThemes What each house MEANS, keyed by house number 1 to 12, in the requested language. Turns a house list into words without the client writing any interpretation copy: for a period signifying houses 2, 7 and 8, join houseThemes for those keys to render the "nature" line of a KP dasha table. Sent once per response rather than repeated on every period, so look the houses up from signifiedHouses or strongHouses. Localized by the lang query, like every other interpretation field.
+		HouseThemes *map[string][]string `json:"houseThemes,omitempty"`
 
 		// MahadashaLord Ruling planet of the requested Mahadasha period.
 		MahadashaLord GetSubDashas200JSONResponseBodyMahadashaLord `json:"mahadashaLord"`
@@ -55201,6 +57743,51 @@ type GetSubDashasResponse struct {
 
 			// Planet Ruling graha of this Vimshottari dasha period. One of 9 planets in the Ketu-Venus-Sun-Moon-Mars-Rahu-Jupiter-Saturn-Mercury sequence.
 			Planet GetSubDashas200JSONResponseBodyMahadashaPeriodPlanet `json:"planet"`
+
+			// Significators KP significators of this period lord, read from the Placidus birth chart in the requested ayanamsa. Present only when the request sets "significators": true.
+			Significators *struct {
+				// House House 1-12 this lord occupies in the Placidus birth chart. Its own Level 2 signification, repeated here because the occupied house is the first thing a KP reading looks at.
+				House int `json:"house"`
+
+				// SignifiedHouses Every house this lord signifies, deduplicated and ordered strongest tier first. Where a house is reached at more than one level it is listed once, at its strongest. This is the flat "houses signified" column of a KP dasha table.
+				SignifiedHouses []int `json:"signifiedHouses"`
+
+				// Signifies KP 4-level significator breakdown showing which houses (1-12) this planet signifies at each strength tier. L1 is strongest, L4 is weakest.
+				Signifies struct {
+					// L1 Level 1, the strongest signification (grade A). Houses influenced because this planet sits in the nakshatra (star) of a planet occupying those houses. For Rahu and Ketu, also includes the L1 houses of their agent planets (conjoined, aspecting, sign lord).
+					L1 []int `json:"L1"`
+
+					// L2 Level 2 (grade B). The house this planet physically occupies. For Rahu and Ketu, also includes houses occupied by their agent planets.
+					L2 []int `json:"L2"`
+
+					// L3 Level 3 (grade C). Houses influenced because this planet sits in the nakshatra of the sign lord (owner) of those houses. For Rahu and Ketu, also includes the L3 houses of their agent planets.
+					L3 []int `json:"L3"`
+
+					// L4 Level 4, the weakest signification (grade D). Houses this planet rules by zodiac sign ownership, up to 2 for Sun through Saturn and 3 where a sign is intercepted. Rahu and Ketu own no sign, so their L4 comes entirely from their agent planets.
+					L4 []int `json:"L4"`
+				} `json:"signifies"`
+
+				// StarLord Lord of the nakshatra this planet sits in, one of the 9 grahas. In KP the star lord outranks the planet itself: a period lord mainly delivers the houses its star lord occupies and owns, which is why those appear at L1 and L3 rather than the planet own house.
+				StarLord string `json:"starLord"`
+
+				// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading.
+				Strength struct {
+					// Grade Band the score falls in, on the standard KP significator grading: A planets in the constellation of the occupant, B occupants, C planets in the constellation of the house owner, D the house owner. Band edges are the midpoints between the four weights.
+					Grade GetSubDashas200JSONResponseBodyMahadashaPeriodSignificatorsStrengthGrade `json:"grade"`
+
+					// Label Plain-language form of grade: "very-strong" for A, "strong" for B, "moderate" for C, "weak" for D. Says how firmly this lord is connected to the houses it signifies, NOT whether those houses are favourable, which depends on the matter being judged.
+					Label GetSubDashas200JSONResponseBodyMahadashaPeriodSignificatorsStrengthLabel `json:"label"`
+
+					// Score Mean KP percentage weight across signifiedHouses, each house counted at its strongest level (A 100, B 75, C 50, D 25). A mean rather than a total, so signifying many houses weakly does not outrank signifying two houses at grade A.
+					Score float32 `json:"score"`
+				} `json:"strength"`
+
+				// StrongHouses Subset of signifiedHouses reached at grade A or B (levels L1 and L2). These are the houses a KP reading acts on for this period; the rest are supporting connections.
+				StrongHouses []int `json:"strongHouses"`
+
+				// SubLord KP sub lord of this planet, the 1 of 249 subdivision its longitude falls in, one of the 9 grahas. The star lord says WHAT results the period gives, the sub lord says WHETHER they materialize, so KP judgement checks both.
+				SubLord *string `json:"subLord,omitempty"`
+			} `json:"significators,omitempty"`
 
 			// StartDate Start datetime of this dasha period. Adjusted to the requested timezone offset.
 			StartDate string `json:"startDate"`
@@ -55272,6 +57859,51 @@ type GetPratyantardashasResponse struct {
 			// Planet Ruling graha of this Vimshottari dasha period. One of 9 planets in the Ketu-Venus-Sun-Moon-Mars-Rahu-Jupiter-Saturn-Mercury sequence.
 			Planet GetPratyantardashas200JSONResponseBodyAntardashaPeriodPlanet `json:"planet"`
 
+			// Significators KP significators of this period lord, read from the Placidus birth chart in the requested ayanamsa. Present only when the request sets "significators": true.
+			Significators *struct {
+				// House House 1-12 this lord occupies in the Placidus birth chart. Its own Level 2 signification, repeated here because the occupied house is the first thing a KP reading looks at.
+				House int `json:"house"`
+
+				// SignifiedHouses Every house this lord signifies, deduplicated and ordered strongest tier first. Where a house is reached at more than one level it is listed once, at its strongest. This is the flat "houses signified" column of a KP dasha table.
+				SignifiedHouses []int `json:"signifiedHouses"`
+
+				// Signifies KP 4-level significator breakdown showing which houses (1-12) this planet signifies at each strength tier. L1 is strongest, L4 is weakest.
+				Signifies struct {
+					// L1 Level 1, the strongest signification (grade A). Houses influenced because this planet sits in the nakshatra (star) of a planet occupying those houses. For Rahu and Ketu, also includes the L1 houses of their agent planets (conjoined, aspecting, sign lord).
+					L1 []int `json:"L1"`
+
+					// L2 Level 2 (grade B). The house this planet physically occupies. For Rahu and Ketu, also includes houses occupied by their agent planets.
+					L2 []int `json:"L2"`
+
+					// L3 Level 3 (grade C). Houses influenced because this planet sits in the nakshatra of the sign lord (owner) of those houses. For Rahu and Ketu, also includes the L3 houses of their agent planets.
+					L3 []int `json:"L3"`
+
+					// L4 Level 4, the weakest signification (grade D). Houses this planet rules by zodiac sign ownership, up to 2 for Sun through Saturn and 3 where a sign is intercepted. Rahu and Ketu own no sign, so their L4 comes entirely from their agent planets.
+					L4 []int `json:"L4"`
+				} `json:"signifies"`
+
+				// StarLord Lord of the nakshatra this planet sits in, one of the 9 grahas. In KP the star lord outranks the planet itself: a period lord mainly delivers the houses its star lord occupies and owns, which is why those appear at L1 and L3 rather than the planet own house.
+				StarLord string `json:"starLord"`
+
+				// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading.
+				Strength struct {
+					// Grade Band the score falls in, on the standard KP significator grading: A planets in the constellation of the occupant, B occupants, C planets in the constellation of the house owner, D the house owner. Band edges are the midpoints between the four weights.
+					Grade GetPratyantardashas200JSONResponseBodyAntardashaPeriodSignificatorsStrengthGrade `json:"grade"`
+
+					// Label Plain-language form of grade: "very-strong" for A, "strong" for B, "moderate" for C, "weak" for D. Says how firmly this lord is connected to the houses it signifies, NOT whether those houses are favourable, which depends on the matter being judged.
+					Label GetPratyantardashas200JSONResponseBodyAntardashaPeriodSignificatorsStrengthLabel `json:"label"`
+
+					// Score Mean KP percentage weight across signifiedHouses, each house counted at its strongest level (A 100, B 75, C 50, D 25). A mean rather than a total, so signifying many houses weakly does not outrank signifying two houses at grade A.
+					Score float32 `json:"score"`
+				} `json:"strength"`
+
+				// StrongHouses Subset of signifiedHouses reached at grade A or B (levels L1 and L2). These are the houses a KP reading acts on for this period; the rest are supporting connections.
+				StrongHouses []int `json:"strongHouses"`
+
+				// SubLord KP sub lord of this planet, the 1 of 249 subdivision its longitude falls in, one of the 9 grahas. The star lord says WHAT results the period gives, the sub lord says WHETHER they materialize, so KP judgement checks both.
+				SubLord *string `json:"subLord,omitempty"`
+			} `json:"significators,omitempty"`
+
 			// StartDate Start datetime of this dasha period. Adjusted to the requested timezone offset.
 			StartDate string `json:"startDate"`
 		} `json:"antardashaPeriod"`
@@ -55281,6 +57913,9 @@ type GetPratyantardashasResponse struct {
 
 		// AyanamsaType Ayanamsa system used, echoing the request field. One of "lahiri", "kp-newcomb", "kp-old". Echoed so a client can confirm which frame produced these dates without re-deriving it.
 		AyanamsaType GetPratyantardashas200JSONResponseBodyAyanamsaType `json:"ayanamsaType"`
+
+		// HouseThemes What each house MEANS, keyed by house number 1 to 12, in the requested language. Turns a house list into words without the client writing any interpretation copy: for a period signifying houses 2, 7 and 8, join houseThemes for those keys to render the "nature" line of a KP dasha table. Sent once per response rather than repeated on every period, so look the houses up from signifiedHouses or strongHouses. Localized by the lang query, like every other interpretation field.
+		HouseThemes *map[string][]string `json:"houseThemes,omitempty"`
 
 		// MahadashaLord Ruling planet of the requested Mahadasha period.
 		MahadashaLord GetPratyantardashas200JSONResponseBodyMahadashaLord `json:"mahadashaLord"`
@@ -55310,6 +57945,51 @@ type GetPratyantardashasResponse struct {
 
 			// Planet Ruling graha of this Vimshottari dasha period. One of 9 planets in the Ketu-Venus-Sun-Moon-Mars-Rahu-Jupiter-Saturn-Mercury sequence.
 			Planet GetPratyantardashas200JSONResponseBodyPratyantardashasPlanet `json:"planet"`
+
+			// Significators KP significators of this period lord, read from the Placidus birth chart in the requested ayanamsa. Present only when the request sets "significators": true.
+			Significators *struct {
+				// House House 1-12 this lord occupies in the Placidus birth chart. Its own Level 2 signification, repeated here because the occupied house is the first thing a KP reading looks at.
+				House int `json:"house"`
+
+				// SignifiedHouses Every house this lord signifies, deduplicated and ordered strongest tier first. Where a house is reached at more than one level it is listed once, at its strongest. This is the flat "houses signified" column of a KP dasha table.
+				SignifiedHouses []int `json:"signifiedHouses"`
+
+				// Signifies KP 4-level significator breakdown showing which houses (1-12) this planet signifies at each strength tier. L1 is strongest, L4 is weakest.
+				Signifies struct {
+					// L1 Level 1, the strongest signification (grade A). Houses influenced because this planet sits in the nakshatra (star) of a planet occupying those houses. For Rahu and Ketu, also includes the L1 houses of their agent planets (conjoined, aspecting, sign lord).
+					L1 []int `json:"L1"`
+
+					// L2 Level 2 (grade B). The house this planet physically occupies. For Rahu and Ketu, also includes houses occupied by their agent planets.
+					L2 []int `json:"L2"`
+
+					// L3 Level 3 (grade C). Houses influenced because this planet sits in the nakshatra of the sign lord (owner) of those houses. For Rahu and Ketu, also includes the L3 houses of their agent planets.
+					L3 []int `json:"L3"`
+
+					// L4 Level 4, the weakest signification (grade D). Houses this planet rules by zodiac sign ownership, up to 2 for Sun through Saturn and 3 where a sign is intercepted. Rahu and Ketu own no sign, so their L4 comes entirely from their agent planets.
+					L4 []int `json:"L4"`
+				} `json:"signifies"`
+
+				// StarLord Lord of the nakshatra this planet sits in, one of the 9 grahas. In KP the star lord outranks the planet itself: a period lord mainly delivers the houses its star lord occupies and owns, which is why those appear at L1 and L3 rather than the planet own house.
+				StarLord string `json:"starLord"`
+
+				// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading.
+				Strength struct {
+					// Grade Band the score falls in, on the standard KP significator grading: A planets in the constellation of the occupant, B occupants, C planets in the constellation of the house owner, D the house owner. Band edges are the midpoints between the four weights.
+					Grade GetPratyantardashas200JSONResponseBodyPratyantardashasSignificatorsStrengthGrade `json:"grade"`
+
+					// Label Plain-language form of grade: "very-strong" for A, "strong" for B, "moderate" for C, "weak" for D. Says how firmly this lord is connected to the houses it signifies, NOT whether those houses are favourable, which depends on the matter being judged.
+					Label GetPratyantardashas200JSONResponseBodyPratyantardashasSignificatorsStrengthLabel `json:"label"`
+
+					// Score Mean KP percentage weight across signifiedHouses, each house counted at its strongest level (A 100, B 75, C 50, D 25). A mean rather than a total, so signifying many houses weakly does not outrank signifying two houses at grade A.
+					Score float32 `json:"score"`
+				} `json:"strength"`
+
+				// StrongHouses Subset of signifiedHouses reached at grade A or B (levels L1 and L2). These are the houses a KP reading acts on for this period; the rest are supporting connections.
+				StrongHouses []int `json:"strongHouses"`
+
+				// SubLord KP sub lord of this planet, the 1 of 249 subdivision its longitude falls in, one of the 9 grahas. The star lord says WHAT results the period gives, the sub lord says WHETHER they materialize, so KP judgement checks both.
+				SubLord *string `json:"subLord,omitempty"`
+			} `json:"significators,omitempty"`
 
 			// StartDate Start datetime of this dasha period. Adjusted to the requested timezone offset.
 			StartDate string `json:"startDate"`
@@ -55364,6 +58044,9 @@ type GetSookshmaDashasResponse struct {
 		// AyanamsaType Ayanamsa system used, echoing the request field. One of "lahiri", "kp-newcomb", "kp-old". Echoed so a client can confirm which frame produced these dates without re-deriving it.
 		AyanamsaType GetSookshmaDashas200JSONResponseBodyAyanamsaType `json:"ayanamsaType"`
 
+		// HouseThemes What each house MEANS, keyed by house number 1 to 12, in the requested language. Turns a house list into words without the client writing any interpretation copy: for a period signifying houses 2, 7 and 8, join houseThemes for those keys to render the "nature" line of a KP dasha table. Sent once per response rather than repeated on every period, so look the houses up from signifiedHouses or strongHouses. Localized by the lang query, like every other interpretation field.
+		HouseThemes *map[string][]string `json:"houseThemes,omitempty"`
+
 		// MahadashaLord Ruling planet of the requested Mahadasha period.
 		MahadashaLord GetSookshmaDashas200JSONResponseBodyMahadashaLord `json:"mahadashaLord"`
 
@@ -55396,6 +58079,51 @@ type GetSookshmaDashasResponse struct {
 			// Planet Ruling graha of this Vimshottari dasha period. One of 9 planets in the Ketu-Venus-Sun-Moon-Mars-Rahu-Jupiter-Saturn-Mercury sequence.
 			Planet GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodPlanet `json:"planet"`
 
+			// Significators KP significators of this period lord, read from the Placidus birth chart in the requested ayanamsa. Present only when the request sets "significators": true.
+			Significators *struct {
+				// House House 1-12 this lord occupies in the Placidus birth chart. Its own Level 2 signification, repeated here because the occupied house is the first thing a KP reading looks at.
+				House int `json:"house"`
+
+				// SignifiedHouses Every house this lord signifies, deduplicated and ordered strongest tier first. Where a house is reached at more than one level it is listed once, at its strongest. This is the flat "houses signified" column of a KP dasha table.
+				SignifiedHouses []int `json:"signifiedHouses"`
+
+				// Signifies KP 4-level significator breakdown showing which houses (1-12) this planet signifies at each strength tier. L1 is strongest, L4 is weakest.
+				Signifies struct {
+					// L1 Level 1, the strongest signification (grade A). Houses influenced because this planet sits in the nakshatra (star) of a planet occupying those houses. For Rahu and Ketu, also includes the L1 houses of their agent planets (conjoined, aspecting, sign lord).
+					L1 []int `json:"L1"`
+
+					// L2 Level 2 (grade B). The house this planet physically occupies. For Rahu and Ketu, also includes houses occupied by their agent planets.
+					L2 []int `json:"L2"`
+
+					// L3 Level 3 (grade C). Houses influenced because this planet sits in the nakshatra of the sign lord (owner) of those houses. For Rahu and Ketu, also includes the L3 houses of their agent planets.
+					L3 []int `json:"L3"`
+
+					// L4 Level 4, the weakest signification (grade D). Houses this planet rules by zodiac sign ownership, up to 2 for Sun through Saturn and 3 where a sign is intercepted. Rahu and Ketu own no sign, so their L4 comes entirely from their agent planets.
+					L4 []int `json:"L4"`
+				} `json:"signifies"`
+
+				// StarLord Lord of the nakshatra this planet sits in, one of the 9 grahas. In KP the star lord outranks the planet itself: a period lord mainly delivers the houses its star lord occupies and owns, which is why those appear at L1 and L3 rather than the planet own house.
+				StarLord string `json:"starLord"`
+
+				// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading.
+				Strength struct {
+					// Grade Band the score falls in, on the standard KP significator grading: A planets in the constellation of the occupant, B occupants, C planets in the constellation of the house owner, D the house owner. Band edges are the midpoints between the four weights.
+					Grade GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodSignificatorsStrengthGrade `json:"grade"`
+
+					// Label Plain-language form of grade: "very-strong" for A, "strong" for B, "moderate" for C, "weak" for D. Says how firmly this lord is connected to the houses it signifies, NOT whether those houses are favourable, which depends on the matter being judged.
+					Label GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodSignificatorsStrengthLabel `json:"label"`
+
+					// Score Mean KP percentage weight across signifiedHouses, each house counted at its strongest level (A 100, B 75, C 50, D 25). A mean rather than a total, so signifying many houses weakly does not outrank signifying two houses at grade A.
+					Score float32 `json:"score"`
+				} `json:"strength"`
+
+				// StrongHouses Subset of signifiedHouses reached at grade A or B (levels L1 and L2). These are the houses a KP reading acts on for this period; the rest are supporting connections.
+				StrongHouses []int `json:"strongHouses"`
+
+				// SubLord KP sub lord of this planet, the 1 of 249 subdivision its longitude falls in, one of the 9 grahas. The star lord says WHAT results the period gives, the sub lord says WHETHER they materialize, so KP judgement checks both.
+				SubLord *string `json:"subLord,omitempty"`
+			} `json:"significators,omitempty"`
+
 			// StartDate Start datetime of this dasha period. Adjusted to the requested timezone offset.
 			StartDate string `json:"startDate"`
 		} `json:"pratyantardashaPeriod"`
@@ -55425,6 +58153,51 @@ type GetSookshmaDashasResponse struct {
 
 			// PratyantardashaLord Parent Pratyantardasha lord under which this Sookshma dasha runs.
 			PratyantardashaLord GetSookshmaDashas200JSONResponseBodySookshmaDashasPratyantardashaLord `json:"pratyantardashaLord"`
+
+			// Significators KP significators of this period lord, read from the Placidus birth chart in the requested ayanamsa. Present only when the request sets "significators": true.
+			Significators *struct {
+				// House House 1-12 this lord occupies in the Placidus birth chart. Its own Level 2 signification, repeated here because the occupied house is the first thing a KP reading looks at.
+				House int `json:"house"`
+
+				// SignifiedHouses Every house this lord signifies, deduplicated and ordered strongest tier first. Where a house is reached at more than one level it is listed once, at its strongest. This is the flat "houses signified" column of a KP dasha table.
+				SignifiedHouses []int `json:"signifiedHouses"`
+
+				// Signifies KP 4-level significator breakdown showing which houses (1-12) this planet signifies at each strength tier. L1 is strongest, L4 is weakest.
+				Signifies struct {
+					// L1 Level 1, the strongest signification (grade A). Houses influenced because this planet sits in the nakshatra (star) of a planet occupying those houses. For Rahu and Ketu, also includes the L1 houses of their agent planets (conjoined, aspecting, sign lord).
+					L1 []int `json:"L1"`
+
+					// L2 Level 2 (grade B). The house this planet physically occupies. For Rahu and Ketu, also includes houses occupied by their agent planets.
+					L2 []int `json:"L2"`
+
+					// L3 Level 3 (grade C). Houses influenced because this planet sits in the nakshatra of the sign lord (owner) of those houses. For Rahu and Ketu, also includes the L3 houses of their agent planets.
+					L3 []int `json:"L3"`
+
+					// L4 Level 4, the weakest signification (grade D). Houses this planet rules by zodiac sign ownership, up to 2 for Sun through Saturn and 3 where a sign is intercepted. Rahu and Ketu own no sign, so their L4 comes entirely from their agent planets.
+					L4 []int `json:"L4"`
+				} `json:"signifies"`
+
+				// StarLord Lord of the nakshatra this planet sits in, one of the 9 grahas. In KP the star lord outranks the planet itself: a period lord mainly delivers the houses its star lord occupies and owns, which is why those appear at L1 and L3 rather than the planet own house.
+				StarLord string `json:"starLord"`
+
+				// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading.
+				Strength struct {
+					// Grade Band the score falls in, on the standard KP significator grading: A planets in the constellation of the occupant, B occupants, C planets in the constellation of the house owner, D the house owner. Band edges are the midpoints between the four weights.
+					Grade GetSookshmaDashas200JSONResponseBodySookshmaDashasSignificatorsStrengthGrade `json:"grade"`
+
+					// Label Plain-language form of grade: "very-strong" for A, "strong" for B, "moderate" for C, "weak" for D. Says how firmly this lord is connected to the houses it signifies, NOT whether those houses are favourable, which depends on the matter being judged.
+					Label GetSookshmaDashas200JSONResponseBodySookshmaDashasSignificatorsStrengthLabel `json:"label"`
+
+					// Score Mean KP percentage weight across signifiedHouses, each house counted at its strongest level (A 100, B 75, C 50, D 25). A mean rather than a total, so signifying many houses weakly does not outrank signifying two houses at grade A.
+					Score float32 `json:"score"`
+				} `json:"strength"`
+
+				// StrongHouses Subset of signifiedHouses reached at grade A or B (levels L1 and L2). These are the houses a KP reading acts on for this period; the rest are supporting connections.
+				StrongHouses []int `json:"strongHouses"`
+
+				// SubLord KP sub lord of this planet, the 1 of 249 subdivision its longitude falls in, one of the 9 grahas. The star lord says WHAT results the period gives, the sub lord says WHETHER they materialize, so KP judgement checks both.
+				SubLord *string `json:"subLord,omitempty"`
+			} `json:"significators,omitempty"`
 
 			// StartDate Start datetime of this dasha period. Adjusted to the requested timezone offset.
 			StartDate string `json:"startDate"`
@@ -55460,6 +58233,223 @@ func (r GetSookshmaDashasResponse) Bytes() []byte {
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r GetSookshmaDashasResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetPranaDashasResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *struct {
+		// AntardashaLord Ruling planet of the requested Antardasha sub-period.
+		AntardashaLord GetPranaDashas200JSONResponseBodyAntardashaLord `json:"antardashaLord"`
+
+		// Ayanamsa Ayanamsa actually applied, in degrees. The precession offset subtracted from the tropical (sayana) longitude to get the sidereal (nirayana) one. Lahiri sits near 23 deg 43 min for a 1990 birth, KP-Newcomb near 23 deg 38 min.
+		Ayanamsa float32 `json:"ayanamsa"`
+
+		// AyanamsaType Ayanamsa system used, echoing the request field. One of "lahiri", "kp-newcomb", "kp-old". Echoed so a client can confirm which frame produced these dates without re-deriving it.
+		AyanamsaType GetPranaDashas200JSONResponseBodyAyanamsaType `json:"ayanamsaType"`
+
+		// HouseThemes What each house MEANS, keyed by house number 1 to 12, in the requested language. Turns a house list into words without the client writing any interpretation copy: for a period signifying houses 2, 7 and 8, join houseThemes for those keys to render the "nature" line of a KP dasha table. Sent once per response rather than repeated on every period, so look the houses up from signifiedHouses or strongHouses. Localized by the lang query, like every other interpretation field.
+		HouseThemes *map[string][]string `json:"houseThemes,omitempty"`
+
+		// MahadashaLord Ruling planet of the requested Mahadasha period.
+		MahadashaLord GetPranaDashas200JSONResponseBodyMahadashaLord `json:"mahadashaLord"`
+
+		// MoonLongitude Sidereal (nirayana) longitude of the birth Moon in degrees, 0 to 360, measured in the ayanamsa frame reported below. This single value determines the birth nakshatra and therefore every dasha start and end date in this response. Compare it against a reference chart to reconcile any date difference at its source.
+		MoonLongitude float32 `json:"moonLongitude"`
+
+		// PranaDashas Prana dasha periods within this Sookshma dasha, proportional to each planet Vimshottari years, sorted chronologically and starting with the Sookshma lord. Fewer than nine only when the parent Sookshma dasha is the one that was already running at birth, in which case the periods that ended before the birth date are omitted.
+		PranaDashas []struct {
+			// AntardashaLord Parent Antardasha lord under which this Pratyantardasha runs.
+			AntardashaLord GetPranaDashas200JSONResponseBodyPranaDashasAntardashaLord `json:"antardashaLord"`
+
+			// DurationYears Duration of this dasha period in years. Mahadasha durations range from 6 years (Sun) to 20 years (Venus).
+			DurationYears float32 `json:"durationYears"`
+
+			// EndDate End datetime of this dasha period. Adjusted to the requested timezone offset.
+			EndDate string `json:"endDate"`
+
+			// Interpretation Vedic interpretation of the planetary period describing themes, karmic lessons, and life areas affected by this graha.
+			Interpretation *string `json:"interpretation,omitempty"`
+
+			// MahadashaLord Parent Mahadasha lord under which this Antardasha sub-period runs.
+			MahadashaLord GetPranaDashas200JSONResponseBodyPranaDashasMahadashaLord `json:"mahadashaLord"`
+
+			// NominalStartDate Theoretical start of this period, present ONLY when the birth date truncated it. The Vimshottari cycle is already running when a native is born, so the period in force at birth began earlier: startDate is clipped to the birth moment while this field keeps the real start. Its presence is also why the first period of a chart can contain fewer than 9 sub-periods, the earlier ones having finished before birth. Absent on every period that runs its full length.
+			NominalStartDate *string `json:"nominalStartDate,omitempty"`
+
+			// Planet Ruling graha of this Vimshottari dasha period. One of 9 planets in the Ketu-Venus-Sun-Moon-Mars-Rahu-Jupiter-Saturn-Mercury sequence.
+			Planet GetPranaDashas200JSONResponseBodyPranaDashasPlanet `json:"planet"`
+
+			// PratyantardashaLord Parent Pratyantardasha lord under which this Sookshma dasha runs.
+			PratyantardashaLord GetPranaDashas200JSONResponseBodyPranaDashasPratyantardashaLord `json:"pratyantardashaLord"`
+
+			// Significators KP significators of this period lord, read from the Placidus birth chart in the requested ayanamsa. Present only when the request sets "significators": true.
+			Significators *struct {
+				// House House 1-12 this lord occupies in the Placidus birth chart. Its own Level 2 signification, repeated here because the occupied house is the first thing a KP reading looks at.
+				House int `json:"house"`
+
+				// SignifiedHouses Every house this lord signifies, deduplicated and ordered strongest tier first. Where a house is reached at more than one level it is listed once, at its strongest. This is the flat "houses signified" column of a KP dasha table.
+				SignifiedHouses []int `json:"signifiedHouses"`
+
+				// Signifies KP 4-level significator breakdown showing which houses (1-12) this planet signifies at each strength tier. L1 is strongest, L4 is weakest.
+				Signifies struct {
+					// L1 Level 1, the strongest signification (grade A). Houses influenced because this planet sits in the nakshatra (star) of a planet occupying those houses. For Rahu and Ketu, also includes the L1 houses of their agent planets (conjoined, aspecting, sign lord).
+					L1 []int `json:"L1"`
+
+					// L2 Level 2 (grade B). The house this planet physically occupies. For Rahu and Ketu, also includes houses occupied by their agent planets.
+					L2 []int `json:"L2"`
+
+					// L3 Level 3 (grade C). Houses influenced because this planet sits in the nakshatra of the sign lord (owner) of those houses. For Rahu and Ketu, also includes the L3 houses of their agent planets.
+					L3 []int `json:"L3"`
+
+					// L4 Level 4, the weakest signification (grade D). Houses this planet rules by zodiac sign ownership, up to 2 for Sun through Saturn and 3 where a sign is intercepted. Rahu and Ketu own no sign, so their L4 comes entirely from their agent planets.
+					L4 []int `json:"L4"`
+				} `json:"signifies"`
+
+				// StarLord Lord of the nakshatra this planet sits in, one of the 9 grahas. In KP the star lord outranks the planet itself: a period lord mainly delivers the houses its star lord occupies and owns, which is why those appear at L1 and L3 rather than the planet own house.
+				StarLord string `json:"starLord"`
+
+				// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading.
+				Strength struct {
+					// Grade Band the score falls in, on the standard KP significator grading: A planets in the constellation of the occupant, B occupants, C planets in the constellation of the house owner, D the house owner. Band edges are the midpoints between the four weights.
+					Grade GetPranaDashas200JSONResponseBodyPranaDashasSignificatorsStrengthGrade `json:"grade"`
+
+					// Label Plain-language form of grade: "very-strong" for A, "strong" for B, "moderate" for C, "weak" for D. Says how firmly this lord is connected to the houses it signifies, NOT whether those houses are favourable, which depends on the matter being judged.
+					Label GetPranaDashas200JSONResponseBodyPranaDashasSignificatorsStrengthLabel `json:"label"`
+
+					// Score Mean KP percentage weight across signifiedHouses, each house counted at its strongest level (A 100, B 75, C 50, D 25). A mean rather than a total, so signifying many houses weakly does not outrank signifying two houses at grade A.
+					Score float32 `json:"score"`
+				} `json:"strength"`
+
+				// StrongHouses Subset of signifiedHouses reached at grade A or B (levels L1 and L2). These are the houses a KP reading acts on for this period; the rest are supporting connections.
+				StrongHouses []int `json:"strongHouses"`
+
+				// SubLord KP sub lord of this planet, the 1 of 249 subdivision its longitude falls in, one of the 9 grahas. The star lord says WHAT results the period gives, the sub lord says WHETHER they materialize, so KP judgement checks both.
+				SubLord *string `json:"subLord,omitempty"`
+			} `json:"significators,omitempty"`
+
+			// SookshmaLord Parent Sookshma dasha lord under which this Prana dasha runs.
+			SookshmaLord GetPranaDashas200JSONResponseBodyPranaDashasSookshmaLord `json:"sookshmaLord"`
+
+			// StartDate Start datetime of this dasha period. Adjusted to the requested timezone offset.
+			StartDate string `json:"startDate"`
+		} `json:"pranaDashas"`
+
+		// PratyantardashaLord Ruling planet of the requested Pratyantardasha sub-sub-period.
+		PratyantardashaLord GetPranaDashas200JSONResponseBodyPratyantardashaLord `json:"pratyantardashaLord"`
+
+		// SookshmaLord Ruling planet of the requested Sookshma dasha.
+		SookshmaLord GetPranaDashas200JSONResponseBodySookshmaLord `json:"sookshmaLord"`
+
+		// SookshmaPeriod Full details of the parent Sookshma dasha including start/end dates and duration.
+		SookshmaPeriod struct {
+			// AntardashaLord Parent Antardasha lord under which this Pratyantardasha runs.
+			AntardashaLord GetPranaDashas200JSONResponseBodySookshmaPeriodAntardashaLord `json:"antardashaLord"`
+
+			// DurationYears Duration of this dasha period in years. Mahadasha durations range from 6 years (Sun) to 20 years (Venus).
+			DurationYears float32 `json:"durationYears"`
+
+			// EndDate End datetime of this dasha period. Adjusted to the requested timezone offset.
+			EndDate string `json:"endDate"`
+
+			// Interpretation Vedic interpretation of the planetary period describing themes, karmic lessons, and life areas affected by this graha.
+			Interpretation *string `json:"interpretation,omitempty"`
+
+			// MahadashaLord Parent Mahadasha lord under which this Antardasha sub-period runs.
+			MahadashaLord GetPranaDashas200JSONResponseBodySookshmaPeriodMahadashaLord `json:"mahadashaLord"`
+
+			// NominalStartDate Theoretical start of this period, present ONLY when the birth date truncated it. The Vimshottari cycle is already running when a native is born, so the period in force at birth began earlier: startDate is clipped to the birth moment while this field keeps the real start. Its presence is also why the first period of a chart can contain fewer than 9 sub-periods, the earlier ones having finished before birth. Absent on every period that runs its full length.
+			NominalStartDate *string `json:"nominalStartDate,omitempty"`
+
+			// Planet Ruling graha of this Vimshottari dasha period. One of 9 planets in the Ketu-Venus-Sun-Moon-Mars-Rahu-Jupiter-Saturn-Mercury sequence.
+			Planet GetPranaDashas200JSONResponseBodySookshmaPeriodPlanet `json:"planet"`
+
+			// PratyantardashaLord Parent Pratyantardasha lord under which this Sookshma dasha runs.
+			PratyantardashaLord GetPranaDashas200JSONResponseBodySookshmaPeriodPratyantardashaLord `json:"pratyantardashaLord"`
+
+			// Significators KP significators of this period lord, read from the Placidus birth chart in the requested ayanamsa. Present only when the request sets "significators": true.
+			Significators *struct {
+				// House House 1-12 this lord occupies in the Placidus birth chart. Its own Level 2 signification, repeated here because the occupied house is the first thing a KP reading looks at.
+				House int `json:"house"`
+
+				// SignifiedHouses Every house this lord signifies, deduplicated and ordered strongest tier first. Where a house is reached at more than one level it is listed once, at its strongest. This is the flat "houses signified" column of a KP dasha table.
+				SignifiedHouses []int `json:"signifiedHouses"`
+
+				// Signifies KP 4-level significator breakdown showing which houses (1-12) this planet signifies at each strength tier. L1 is strongest, L4 is weakest.
+				Signifies struct {
+					// L1 Level 1, the strongest signification (grade A). Houses influenced because this planet sits in the nakshatra (star) of a planet occupying those houses. For Rahu and Ketu, also includes the L1 houses of their agent planets (conjoined, aspecting, sign lord).
+					L1 []int `json:"L1"`
+
+					// L2 Level 2 (grade B). The house this planet physically occupies. For Rahu and Ketu, also includes houses occupied by their agent planets.
+					L2 []int `json:"L2"`
+
+					// L3 Level 3 (grade C). Houses influenced because this planet sits in the nakshatra of the sign lord (owner) of those houses. For Rahu and Ketu, also includes the L3 houses of their agent planets.
+					L3 []int `json:"L3"`
+
+					// L4 Level 4, the weakest signification (grade D). Houses this planet rules by zodiac sign ownership, up to 2 for Sun through Saturn and 3 where a sign is intercepted. Rahu and Ketu own no sign, so their L4 comes entirely from their agent planets.
+					L4 []int `json:"L4"`
+				} `json:"signifies"`
+
+				// StarLord Lord of the nakshatra this planet sits in, one of the 9 grahas. In KP the star lord outranks the planet itself: a period lord mainly delivers the houses its star lord occupies and owns, which is why those appear at L1 and L3 rather than the planet own house.
+				StarLord string `json:"starLord"`
+
+				// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading.
+				Strength struct {
+					// Grade Band the score falls in, on the standard KP significator grading: A planets in the constellation of the occupant, B occupants, C planets in the constellation of the house owner, D the house owner. Band edges are the midpoints between the four weights.
+					Grade GetPranaDashas200JSONResponseBodySookshmaPeriodSignificatorsStrengthGrade `json:"grade"`
+
+					// Label Plain-language form of grade: "very-strong" for A, "strong" for B, "moderate" for C, "weak" for D. Says how firmly this lord is connected to the houses it signifies, NOT whether those houses are favourable, which depends on the matter being judged.
+					Label GetPranaDashas200JSONResponseBodySookshmaPeriodSignificatorsStrengthLabel `json:"label"`
+
+					// Score Mean KP percentage weight across signifiedHouses, each house counted at its strongest level (A 100, B 75, C 50, D 25). A mean rather than a total, so signifying many houses weakly does not outrank signifying two houses at grade A.
+					Score float32 `json:"score"`
+				} `json:"strength"`
+
+				// StrongHouses Subset of signifiedHouses reached at grade A or B (levels L1 and L2). These are the houses a KP reading acts on for this period; the rest are supporting connections.
+				StrongHouses []int `json:"strongHouses"`
+
+				// SubLord KP sub lord of this planet, the 1 of 249 subdivision its longitude falls in, one of the 9 grahas. The star lord says WHAT results the period gives, the sub lord says WHETHER they materialize, so KP judgement checks both.
+				SubLord *string `json:"subLord,omitempty"`
+			} `json:"significators,omitempty"`
+
+			// StartDate Start datetime of this dasha period. Adjusted to the requested timezone offset.
+			StartDate string `json:"startDate"`
+		} `json:"sookshmaPeriod"`
+	}
+	JSON400 *ErrorResponse
+	JSON401 *ErrorResponse
+	JSON405 *ErrorResponse
+	JSON429 *ErrorResponse
+	JSON500 *ErrorResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r GetPranaDashasResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetPranaDashasResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// Bytes is a convenience method to retrieve the raw bytes from the HTTP response
+func (r GetPranaDashasResponse) Bytes() []byte {
+	return r.Body
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetPranaDashasResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -59494,6 +62484,23 @@ func (c *ClientWithResponses) GetSookshmaDashasWithResponse(ctx context.Context,
 		return nil, err
 	}
 	return ParseGetSookshmaDashasResponse(rsp)
+}
+
+// GetPranaDashasWithBodyWithResponse request with arbitrary body returning *GetPranaDashasResponse
+func (c *ClientWithResponses) GetPranaDashasWithBodyWithResponse(ctx context.Context, mahadasha GetPranaDashasParamsMahadasha, antardasha GetPranaDashasParamsAntardasha, pratyantardasha GetPranaDashasParamsPratyantardasha, sookshma GetPranaDashasParamsSookshma, params *GetPranaDashasParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetPranaDashasResponse, error) {
+	rsp, err := c.GetPranaDashasWithBody(ctx, mahadasha, antardasha, pratyantardasha, sookshma, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetPranaDashasResponse(rsp)
+}
+
+func (c *ClientWithResponses) GetPranaDashasWithResponse(ctx context.Context, mahadasha GetPranaDashasParamsMahadasha, antardasha GetPranaDashasParamsAntardasha, pratyantardasha GetPranaDashasParamsPratyantardasha, sookshma GetPranaDashasParamsSookshma, params *GetPranaDashasParams, body GetPranaDashasJSONRequestBody, reqEditors ...RequestEditorFn) (*GetPranaDashasResponse, error) {
+	rsp, err := c.GetPranaDashas(ctx, mahadasha, antardasha, pratyantardasha, sookshma, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetPranaDashasResponse(rsp)
 }
 
 // GenerateDivisionalChartWithBodyWithResponse request with arbitrary body returning *GenerateDivisionalChartResponse
@@ -73706,6 +76713,51 @@ func ParseGetCurrentDashaResponse(rsp *http.Response) (*GetCurrentDashaResponse,
 				// Planet Ruling graha of this Vimshottari dasha period. One of 9 planets in the Ketu-Venus-Sun-Moon-Mars-Rahu-Jupiter-Saturn-Mercury sequence.
 				Planet GetCurrentDasha200JSONResponseBodyAntardashaPlanet `json:"planet"`
 
+				// Significators KP significators of this period lord, read from the Placidus birth chart in the requested ayanamsa. Present only when the request sets "significators": true.
+				Significators *struct {
+					// House House 1-12 this lord occupies in the Placidus birth chart. Its own Level 2 signification, repeated here because the occupied house is the first thing a KP reading looks at.
+					House int `json:"house"`
+
+					// SignifiedHouses Every house this lord signifies, deduplicated and ordered strongest tier first. Where a house is reached at more than one level it is listed once, at its strongest. This is the flat "houses signified" column of a KP dasha table.
+					SignifiedHouses []int `json:"signifiedHouses"`
+
+					// Signifies KP 4-level significator breakdown showing which houses (1-12) this planet signifies at each strength tier. L1 is strongest, L4 is weakest.
+					Signifies struct {
+						// L1 Level 1, the strongest signification (grade A). Houses influenced because this planet sits in the nakshatra (star) of a planet occupying those houses. For Rahu and Ketu, also includes the L1 houses of their agent planets (conjoined, aspecting, sign lord).
+						L1 []int `json:"L1"`
+
+						// L2 Level 2 (grade B). The house this planet physically occupies. For Rahu and Ketu, also includes houses occupied by their agent planets.
+						L2 []int `json:"L2"`
+
+						// L3 Level 3 (grade C). Houses influenced because this planet sits in the nakshatra of the sign lord (owner) of those houses. For Rahu and Ketu, also includes the L3 houses of their agent planets.
+						L3 []int `json:"L3"`
+
+						// L4 Level 4, the weakest signification (grade D). Houses this planet rules by zodiac sign ownership, up to 2 for Sun through Saturn and 3 where a sign is intercepted. Rahu and Ketu own no sign, so their L4 comes entirely from their agent planets.
+						L4 []int `json:"L4"`
+					} `json:"signifies"`
+
+					// StarLord Lord of the nakshatra this planet sits in, one of the 9 grahas. In KP the star lord outranks the planet itself: a period lord mainly delivers the houses its star lord occupies and owns, which is why those appear at L1 and L3 rather than the planet own house.
+					StarLord string `json:"starLord"`
+
+					// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading.
+					Strength struct {
+						// Grade Band the score falls in, on the standard KP significator grading: A planets in the constellation of the occupant, B occupants, C planets in the constellation of the house owner, D the house owner. Band edges are the midpoints between the four weights.
+						Grade GetCurrentDasha200JSONResponseBodyAntardashaSignificatorsStrengthGrade `json:"grade"`
+
+						// Label Plain-language form of grade: "very-strong" for A, "strong" for B, "moderate" for C, "weak" for D. Says how firmly this lord is connected to the houses it signifies, NOT whether those houses are favourable, which depends on the matter being judged.
+						Label GetCurrentDasha200JSONResponseBodyAntardashaSignificatorsStrengthLabel `json:"label"`
+
+						// Score Mean KP percentage weight across signifiedHouses, each house counted at its strongest level (A 100, B 75, C 50, D 25). A mean rather than a total, so signifying many houses weakly does not outrank signifying two houses at grade A.
+						Score float32 `json:"score"`
+					} `json:"strength"`
+
+					// StrongHouses Subset of signifiedHouses reached at grade A or B (levels L1 and L2). These are the houses a KP reading acts on for this period; the rest are supporting connections.
+					StrongHouses []int `json:"strongHouses"`
+
+					// SubLord KP sub lord of this planet, the 1 of 249 subdivision its longitude falls in, one of the 9 grahas. The star lord says WHAT results the period gives, the sub lord says WHETHER they materialize, so KP judgement checks both.
+					SubLord *string `json:"subLord,omitempty"`
+				} `json:"significators,omitempty"`
+
 				// StartDate Start datetime of this dasha period. Adjusted to the requested timezone offset.
 				StartDate string `json:"startDate"`
 			} `json:"antardasha"`
@@ -73715,6 +76767,18 @@ func ParseGetCurrentDashaResponse(rsp *http.Response) (*GetCurrentDashaResponse,
 
 			// AyanamsaType Ayanamsa system used, echoing the request field. One of "lahiri", "kp-newcomb", "kp-old". Echoed so a client can confirm which frame produced these dates without re-deriving it.
 			AyanamsaType GetCurrentDasha200JSONResponseBodyAyanamsaType `json:"ayanamsaType"`
+
+			// CommonHouses Houses common to the significators of the running dasha lords. In KP a matter fructifies under lords that jointly signify the houses of that matter, so these two sets are what a prediction is checked against.
+			CommonHouses *struct {
+				// AllLevels Houses signified by ALL FIVE running lords at once (Mahadasha through Prana). The tightest reading available: a house every active level carries is the one the current moment is pointed at. Often empty, which is itself informative, it means the five levels do not converge on a single house.
+				AllLevels []int `json:"allLevels"`
+
+				// DashaBhuktiAntara Houses signified by the Mahadasha, Antardasha and Pratyantardasha lords together, the classical KP three-lord test used to decide whether a matter fructifies in the running period. Wider than allLevels because it ignores the two fastest levels, which is what makes it the practical filter for month-scale predictions.
+				DashaBhuktiAntara []int `json:"dashaBhuktiAntara"`
+			} `json:"commonHouses,omitempty"`
+
+			// HouseThemes What each house MEANS, keyed by house number 1 to 12, in the requested language. Turns a house list into words without the client writing any interpretation copy: for a period signifying houses 2, 7 and 8, join houseThemes for those keys to render the "nature" line of a KP dasha table. Sent once per response rather than repeated on every period, so look the houses up from signifiedHouses or strongHouses. Localized by the lang query, like every other interpretation field.
+			HouseThemes *map[string][]string `json:"houseThemes,omitempty"`
 
 			// Mahadasha Mahadasha (major planetary period) in the 120-year Vimshottari dasha cycle. Start and end dates are determined by Moon nakshatra at birth.
 			Mahadasha struct {
@@ -73733,6 +76797,51 @@ func ParseGetCurrentDashaResponse(rsp *http.Response) (*GetCurrentDashaResponse,
 				// Planet Ruling graha of this Vimshottari dasha period. One of 9 planets in the Ketu-Venus-Sun-Moon-Mars-Rahu-Jupiter-Saturn-Mercury sequence.
 				Planet GetCurrentDasha200JSONResponseBodyMahadashaPlanet `json:"planet"`
 
+				// Significators KP significators of this period lord, read from the Placidus birth chart in the requested ayanamsa. Present only when the request sets "significators": true.
+				Significators *struct {
+					// House House 1-12 this lord occupies in the Placidus birth chart. Its own Level 2 signification, repeated here because the occupied house is the first thing a KP reading looks at.
+					House int `json:"house"`
+
+					// SignifiedHouses Every house this lord signifies, deduplicated and ordered strongest tier first. Where a house is reached at more than one level it is listed once, at its strongest. This is the flat "houses signified" column of a KP dasha table.
+					SignifiedHouses []int `json:"signifiedHouses"`
+
+					// Signifies KP 4-level significator breakdown showing which houses (1-12) this planet signifies at each strength tier. L1 is strongest, L4 is weakest.
+					Signifies struct {
+						// L1 Level 1, the strongest signification (grade A). Houses influenced because this planet sits in the nakshatra (star) of a planet occupying those houses. For Rahu and Ketu, also includes the L1 houses of their agent planets (conjoined, aspecting, sign lord).
+						L1 []int `json:"L1"`
+
+						// L2 Level 2 (grade B). The house this planet physically occupies. For Rahu and Ketu, also includes houses occupied by their agent planets.
+						L2 []int `json:"L2"`
+
+						// L3 Level 3 (grade C). Houses influenced because this planet sits in the nakshatra of the sign lord (owner) of those houses. For Rahu and Ketu, also includes the L3 houses of their agent planets.
+						L3 []int `json:"L3"`
+
+						// L4 Level 4, the weakest signification (grade D). Houses this planet rules by zodiac sign ownership, up to 2 for Sun through Saturn and 3 where a sign is intercepted. Rahu and Ketu own no sign, so their L4 comes entirely from their agent planets.
+						L4 []int `json:"L4"`
+					} `json:"signifies"`
+
+					// StarLord Lord of the nakshatra this planet sits in, one of the 9 grahas. In KP the star lord outranks the planet itself: a period lord mainly delivers the houses its star lord occupies and owns, which is why those appear at L1 and L3 rather than the planet own house.
+					StarLord string `json:"starLord"`
+
+					// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading.
+					Strength struct {
+						// Grade Band the score falls in, on the standard KP significator grading: A planets in the constellation of the occupant, B occupants, C planets in the constellation of the house owner, D the house owner. Band edges are the midpoints between the four weights.
+						Grade GetCurrentDasha200JSONResponseBodyMahadashaSignificatorsStrengthGrade `json:"grade"`
+
+						// Label Plain-language form of grade: "very-strong" for A, "strong" for B, "moderate" for C, "weak" for D. Says how firmly this lord is connected to the houses it signifies, NOT whether those houses are favourable, which depends on the matter being judged.
+						Label GetCurrentDasha200JSONResponseBodyMahadashaSignificatorsStrengthLabel `json:"label"`
+
+						// Score Mean KP percentage weight across signifiedHouses, each house counted at its strongest level (A 100, B 75, C 50, D 25). A mean rather than a total, so signifying many houses weakly does not outrank signifying two houses at grade A.
+						Score float32 `json:"score"`
+					} `json:"strength"`
+
+					// StrongHouses Subset of signifiedHouses reached at grade A or B (levels L1 and L2). These are the houses a KP reading acts on for this period; the rest are supporting connections.
+					StrongHouses []int `json:"strongHouses"`
+
+					// SubLord KP sub lord of this planet, the 1 of 249 subdivision its longitude falls in, one of the 9 grahas. The star lord says WHAT results the period gives, the sub lord says WHETHER they materialize, so KP judgement checks both.
+					SubLord *string `json:"subLord,omitempty"`
+				} `json:"significators,omitempty"`
+
 				// StartDate Start datetime of this dasha period. Adjusted to the requested timezone offset.
 				StartDate string `json:"startDate"`
 			} `json:"mahadasha"`
@@ -73748,6 +76857,84 @@ func ParseGetCurrentDashaResponse(rsp *http.Response) (*GetCurrentDashaResponse,
 
 			// NakshatraName Name of the birth Moon nakshatra (lunar mansion). One of 27 Vedic nakshatras from Ashwini to Revati.
 			NakshatraName string `json:"nakshatraName"`
+
+			// PranaDasha Prana dasha (praana antardasha), the fifth and finest level of the Vimshottari dasha hierarchy. Each Sookshma dasha divides into 9 Prana periods, running from about 20 minutes inside a Sun Mahadasha to about 4 days inside a Saturn one. This is the level that takes Vimshottari from day-level to hour-level timing, used for muhurta selection and pinpointing the trigger inside an already identified window.
+			PranaDasha struct {
+				// AntardashaLord Parent Antardasha lord under which this Pratyantardasha runs.
+				AntardashaLord GetCurrentDasha200JSONResponseBodyPranaDashaAntardashaLord `json:"antardashaLord"`
+
+				// DurationYears Duration of this dasha period in years. Mahadasha durations range from 6 years (Sun) to 20 years (Venus).
+				DurationYears float32 `json:"durationYears"`
+
+				// EndDate End datetime of this dasha period. Adjusted to the requested timezone offset.
+				EndDate string `json:"endDate"`
+
+				// Interpretation Vedic interpretation of the planetary period describing themes, karmic lessons, and life areas affected by this graha.
+				Interpretation *string `json:"interpretation,omitempty"`
+
+				// MahadashaLord Parent Mahadasha lord under which this Antardasha sub-period runs.
+				MahadashaLord GetCurrentDasha200JSONResponseBodyPranaDashaMahadashaLord `json:"mahadashaLord"`
+
+				// NominalStartDate Theoretical start of this period, present ONLY when the birth date truncated it. The Vimshottari cycle is already running when a native is born, so the period in force at birth began earlier: startDate is clipped to the birth moment while this field keeps the real start. Its presence is also why the first period of a chart can contain fewer than 9 sub-periods, the earlier ones having finished before birth. Absent on every period that runs its full length.
+				NominalStartDate *string `json:"nominalStartDate,omitempty"`
+
+				// Planet Ruling graha of this Vimshottari dasha period. One of 9 planets in the Ketu-Venus-Sun-Moon-Mars-Rahu-Jupiter-Saturn-Mercury sequence.
+				Planet GetCurrentDasha200JSONResponseBodyPranaDashaPlanet `json:"planet"`
+
+				// PratyantardashaLord Parent Pratyantardasha lord under which this Sookshma dasha runs.
+				PratyantardashaLord GetCurrentDasha200JSONResponseBodyPranaDashaPratyantardashaLord `json:"pratyantardashaLord"`
+
+				// Significators KP significators of this period lord, read from the Placidus birth chart in the requested ayanamsa. Present only when the request sets "significators": true.
+				Significators *struct {
+					// House House 1-12 this lord occupies in the Placidus birth chart. Its own Level 2 signification, repeated here because the occupied house is the first thing a KP reading looks at.
+					House int `json:"house"`
+
+					// SignifiedHouses Every house this lord signifies, deduplicated and ordered strongest tier first. Where a house is reached at more than one level it is listed once, at its strongest. This is the flat "houses signified" column of a KP dasha table.
+					SignifiedHouses []int `json:"signifiedHouses"`
+
+					// Signifies KP 4-level significator breakdown showing which houses (1-12) this planet signifies at each strength tier. L1 is strongest, L4 is weakest.
+					Signifies struct {
+						// L1 Level 1, the strongest signification (grade A). Houses influenced because this planet sits in the nakshatra (star) of a planet occupying those houses. For Rahu and Ketu, also includes the L1 houses of their agent planets (conjoined, aspecting, sign lord).
+						L1 []int `json:"L1"`
+
+						// L2 Level 2 (grade B). The house this planet physically occupies. For Rahu and Ketu, also includes houses occupied by their agent planets.
+						L2 []int `json:"L2"`
+
+						// L3 Level 3 (grade C). Houses influenced because this planet sits in the nakshatra of the sign lord (owner) of those houses. For Rahu and Ketu, also includes the L3 houses of their agent planets.
+						L3 []int `json:"L3"`
+
+						// L4 Level 4, the weakest signification (grade D). Houses this planet rules by zodiac sign ownership, up to 2 for Sun through Saturn and 3 where a sign is intercepted. Rahu and Ketu own no sign, so their L4 comes entirely from their agent planets.
+						L4 []int `json:"L4"`
+					} `json:"signifies"`
+
+					// StarLord Lord of the nakshatra this planet sits in, one of the 9 grahas. In KP the star lord outranks the planet itself: a period lord mainly delivers the houses its star lord occupies and owns, which is why those appear at L1 and L3 rather than the planet own house.
+					StarLord string `json:"starLord"`
+
+					// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading.
+					Strength struct {
+						// Grade Band the score falls in, on the standard KP significator grading: A planets in the constellation of the occupant, B occupants, C planets in the constellation of the house owner, D the house owner. Band edges are the midpoints between the four weights.
+						Grade GetCurrentDasha200JSONResponseBodyPranaDashaSignificatorsStrengthGrade `json:"grade"`
+
+						// Label Plain-language form of grade: "very-strong" for A, "strong" for B, "moderate" for C, "weak" for D. Says how firmly this lord is connected to the houses it signifies, NOT whether those houses are favourable, which depends on the matter being judged.
+						Label GetCurrentDasha200JSONResponseBodyPranaDashaSignificatorsStrengthLabel `json:"label"`
+
+						// Score Mean KP percentage weight across signifiedHouses, each house counted at its strongest level (A 100, B 75, C 50, D 25). A mean rather than a total, so signifying many houses weakly does not outrank signifying two houses at grade A.
+						Score float32 `json:"score"`
+					} `json:"strength"`
+
+					// StrongHouses Subset of signifiedHouses reached at grade A or B (levels L1 and L2). These are the houses a KP reading acts on for this period; the rest are supporting connections.
+					StrongHouses []int `json:"strongHouses"`
+
+					// SubLord KP sub lord of this planet, the 1 of 249 subdivision its longitude falls in, one of the 9 grahas. The star lord says WHAT results the period gives, the sub lord says WHETHER they materialize, so KP judgement checks both.
+					SubLord *string `json:"subLord,omitempty"`
+				} `json:"significators,omitempty"`
+
+				// SookshmaLord Parent Sookshma dasha lord under which this Prana dasha runs.
+				SookshmaLord GetCurrentDasha200JSONResponseBodyPranaDashaSookshmaLord `json:"sookshmaLord"`
+
+				// StartDate Start datetime of this dasha period. Adjusted to the requested timezone offset.
+				StartDate string `json:"startDate"`
+			} `json:"pranaDasha"`
 
 			// Pratyantardasha Pratyantardasha (sub-sub-period), the third level of the Vimshottari dasha hierarchy, Provides finer timing within each Antardasha for event prediction.
 			Pratyantardasha struct {
@@ -73771,6 +76958,51 @@ func ParseGetCurrentDashaResponse(rsp *http.Response) (*GetCurrentDashaResponse,
 
 				// Planet Ruling graha of this Vimshottari dasha period. One of 9 planets in the Ketu-Venus-Sun-Moon-Mars-Rahu-Jupiter-Saturn-Mercury sequence.
 				Planet GetCurrentDasha200JSONResponseBodyPratyantardashaPlanet `json:"planet"`
+
+				// Significators KP significators of this period lord, read from the Placidus birth chart in the requested ayanamsa. Present only when the request sets "significators": true.
+				Significators *struct {
+					// House House 1-12 this lord occupies in the Placidus birth chart. Its own Level 2 signification, repeated here because the occupied house is the first thing a KP reading looks at.
+					House int `json:"house"`
+
+					// SignifiedHouses Every house this lord signifies, deduplicated and ordered strongest tier first. Where a house is reached at more than one level it is listed once, at its strongest. This is the flat "houses signified" column of a KP dasha table.
+					SignifiedHouses []int `json:"signifiedHouses"`
+
+					// Signifies KP 4-level significator breakdown showing which houses (1-12) this planet signifies at each strength tier. L1 is strongest, L4 is weakest.
+					Signifies struct {
+						// L1 Level 1, the strongest signification (grade A). Houses influenced because this planet sits in the nakshatra (star) of a planet occupying those houses. For Rahu and Ketu, also includes the L1 houses of their agent planets (conjoined, aspecting, sign lord).
+						L1 []int `json:"L1"`
+
+						// L2 Level 2 (grade B). The house this planet physically occupies. For Rahu and Ketu, also includes houses occupied by their agent planets.
+						L2 []int `json:"L2"`
+
+						// L3 Level 3 (grade C). Houses influenced because this planet sits in the nakshatra of the sign lord (owner) of those houses. For Rahu and Ketu, also includes the L3 houses of their agent planets.
+						L3 []int `json:"L3"`
+
+						// L4 Level 4, the weakest signification (grade D). Houses this planet rules by zodiac sign ownership, up to 2 for Sun through Saturn and 3 where a sign is intercepted. Rahu and Ketu own no sign, so their L4 comes entirely from their agent planets.
+						L4 []int `json:"L4"`
+					} `json:"signifies"`
+
+					// StarLord Lord of the nakshatra this planet sits in, one of the 9 grahas. In KP the star lord outranks the planet itself: a period lord mainly delivers the houses its star lord occupies and owns, which is why those appear at L1 and L3 rather than the planet own house.
+					StarLord string `json:"starLord"`
+
+					// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading.
+					Strength struct {
+						// Grade Band the score falls in, on the standard KP significator grading: A planets in the constellation of the occupant, B occupants, C planets in the constellation of the house owner, D the house owner. Band edges are the midpoints between the four weights.
+						Grade GetCurrentDasha200JSONResponseBodyPratyantardashaSignificatorsStrengthGrade `json:"grade"`
+
+						// Label Plain-language form of grade: "very-strong" for A, "strong" for B, "moderate" for C, "weak" for D. Says how firmly this lord is connected to the houses it signifies, NOT whether those houses are favourable, which depends on the matter being judged.
+						Label GetCurrentDasha200JSONResponseBodyPratyantardashaSignificatorsStrengthLabel `json:"label"`
+
+						// Score Mean KP percentage weight across signifiedHouses, each house counted at its strongest level (A 100, B 75, C 50, D 25). A mean rather than a total, so signifying many houses weakly does not outrank signifying two houses at grade A.
+						Score float32 `json:"score"`
+					} `json:"strength"`
+
+					// StrongHouses Subset of signifiedHouses reached at grade A or B (levels L1 and L2). These are the houses a KP reading acts on for this period; the rest are supporting connections.
+					StrongHouses []int `json:"strongHouses"`
+
+					// SubLord KP sub lord of this planet, the 1 of 249 subdivision its longitude falls in, one of the 9 grahas. The star lord says WHAT results the period gives, the sub lord says WHETHER they materialize, so KP judgement checks both.
+					SubLord *string `json:"subLord,omitempty"`
+				} `json:"significators,omitempty"`
 
 				// StartDate Start datetime of this dasha period. Adjusted to the requested timezone offset.
 				StartDate string `json:"startDate"`
@@ -73806,6 +77038,21 @@ func ParseGetCurrentDashaResponse(rsp *http.Response) (*GetCurrentDashaResponse,
 				Years float32 `json:"years"`
 			} `json:"remainingInMahadasha"`
 
+			// RemainingInPrana Time remaining in the currently running Prana dasha (fifth level). Prana periods run hours to days, so totalDays is often 0 or 1 and the years and months fields are almost always zero.
+			RemainingInPrana struct {
+				// Days Additional days remaining beyond full months.
+				Days float32 `json:"days"`
+
+				// Months Additional months remaining beyond full years.
+				Months float32 `json:"months"`
+
+				// TotalDays Total remaining days in this dasha period. Useful for progress calculations.
+				TotalDays float32 `json:"totalDays"`
+
+				// Years Full years remaining in this Vimshottari dasha period.
+				Years float32 `json:"years"`
+			} `json:"remainingInPrana"`
+
 			// RemainingInPratyantardasha Time remaining in the currently running Pratyantardasha (sub-sub-period).
 			RemainingInPratyantardasha struct {
 				// Days Additional days remaining beyond full months.
@@ -73836,7 +77083,7 @@ func ParseGetCurrentDashaResponse(rsp *http.Response) (*GetCurrentDashaResponse,
 				Years float32 `json:"years"`
 			} `json:"remainingInSookshma"`
 
-			// SookshmaDasha Sookshma dasha (sookshma antardasha), the fourth level of the Vimshottari dasha hierarchy. Each Pratyantardasha divides into 9 Sookshma periods running roughly 3 to 30 days each, the finest level exposed by this API and the one used for day-level event timing and muhurta style selection.
+			// SookshmaDasha Sookshma dasha (sookshma antardasha), the fourth level of the Vimshottari dasha hierarchy. Each Pratyantardasha divides into 9 Sookshma periods running roughly 3 to 30 days each, used for day-level event timing and muhurta style selection.
 			SookshmaDasha struct {
 				// AntardashaLord Parent Antardasha lord under which this Pratyantardasha runs.
 				AntardashaLord GetCurrentDasha200JSONResponseBodySookshmaDashaAntardashaLord `json:"antardashaLord"`
@@ -73861,6 +77108,51 @@ func ParseGetCurrentDashaResponse(rsp *http.Response) (*GetCurrentDashaResponse,
 
 				// PratyantardashaLord Parent Pratyantardasha lord under which this Sookshma dasha runs.
 				PratyantardashaLord GetCurrentDasha200JSONResponseBodySookshmaDashaPratyantardashaLord `json:"pratyantardashaLord"`
+
+				// Significators KP significators of this period lord, read from the Placidus birth chart in the requested ayanamsa. Present only when the request sets "significators": true.
+				Significators *struct {
+					// House House 1-12 this lord occupies in the Placidus birth chart. Its own Level 2 signification, repeated here because the occupied house is the first thing a KP reading looks at.
+					House int `json:"house"`
+
+					// SignifiedHouses Every house this lord signifies, deduplicated and ordered strongest tier first. Where a house is reached at more than one level it is listed once, at its strongest. This is the flat "houses signified" column of a KP dasha table.
+					SignifiedHouses []int `json:"signifiedHouses"`
+
+					// Signifies KP 4-level significator breakdown showing which houses (1-12) this planet signifies at each strength tier. L1 is strongest, L4 is weakest.
+					Signifies struct {
+						// L1 Level 1, the strongest signification (grade A). Houses influenced because this planet sits in the nakshatra (star) of a planet occupying those houses. For Rahu and Ketu, also includes the L1 houses of their agent planets (conjoined, aspecting, sign lord).
+						L1 []int `json:"L1"`
+
+						// L2 Level 2 (grade B). The house this planet physically occupies. For Rahu and Ketu, also includes houses occupied by their agent planets.
+						L2 []int `json:"L2"`
+
+						// L3 Level 3 (grade C). Houses influenced because this planet sits in the nakshatra of the sign lord (owner) of those houses. For Rahu and Ketu, also includes the L3 houses of their agent planets.
+						L3 []int `json:"L3"`
+
+						// L4 Level 4, the weakest signification (grade D). Houses this planet rules by zodiac sign ownership, up to 2 for Sun through Saturn and 3 where a sign is intercepted. Rahu and Ketu own no sign, so their L4 comes entirely from their agent planets.
+						L4 []int `json:"L4"`
+					} `json:"signifies"`
+
+					// StarLord Lord of the nakshatra this planet sits in, one of the 9 grahas. In KP the star lord outranks the planet itself: a period lord mainly delivers the houses its star lord occupies and owns, which is why those appear at L1 and L3 rather than the planet own house.
+					StarLord string `json:"starLord"`
+
+					// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading.
+					Strength struct {
+						// Grade Band the score falls in, on the standard KP significator grading: A planets in the constellation of the occupant, B occupants, C planets in the constellation of the house owner, D the house owner. Band edges are the midpoints between the four weights.
+						Grade GetCurrentDasha200JSONResponseBodySookshmaDashaSignificatorsStrengthGrade `json:"grade"`
+
+						// Label Plain-language form of grade: "very-strong" for A, "strong" for B, "moderate" for C, "weak" for D. Says how firmly this lord is connected to the houses it signifies, NOT whether those houses are favourable, which depends on the matter being judged.
+						Label GetCurrentDasha200JSONResponseBodySookshmaDashaSignificatorsStrengthLabel `json:"label"`
+
+						// Score Mean KP percentage weight across signifiedHouses, each house counted at its strongest level (A 100, B 75, C 50, D 25). A mean rather than a total, so signifying many houses weakly does not outrank signifying two houses at grade A.
+						Score float32 `json:"score"`
+					} `json:"strength"`
+
+					// StrongHouses Subset of signifiedHouses reached at grade A or B (levels L1 and L2). These are the houses a KP reading acts on for this period; the rest are supporting connections.
+					StrongHouses []int `json:"strongHouses"`
+
+					// SubLord KP sub lord of this planet, the 1 of 249 subdivision its longitude falls in, one of the 9 grahas. The star lord says WHAT results the period gives, the sub lord says WHETHER they materialize, so KP judgement checks both.
+					SubLord *string `json:"subLord,omitempty"`
+				} `json:"significators,omitempty"`
 
 				// StartDate Start datetime of this dasha period. Adjusted to the requested timezone offset.
 				StartDate string `json:"startDate"`
@@ -73948,6 +77240,9 @@ func ParseGetMajorDashasResponse(rsp *http.Response) (*GetMajorDashasResponse, e
 				Years float32 `json:"years"`
 			} `json:"birthDashaBalance"`
 
+			// HouseThemes What each house MEANS, keyed by house number 1 to 12, in the requested language. Turns a house list into words without the client writing any interpretation copy: for a period signifying houses 2, 7 and 8, join houseThemes for those keys to render the "nature" line of a KP dasha table. Sent once per response rather than repeated on every period, so look the houses up from signifiedHouses or strongHouses. Localized by the lang query, like every other interpretation field.
+			HouseThemes *map[string][]string `json:"houseThemes,omitempty"`
+
 			// Mahadashas Complete sequence of all 9 Mahadasha periods spanning 120 years from birth. Follows the Vimshottari order: Ketu(7), Venus(20), Sun(6), Moon(10), Mars(7), Rahu(18), Jupiter(16), Saturn(19), Mercury(17).
 			Mahadashas []struct {
 				// DurationYears Duration of this dasha period in years. Mahadasha durations range from 6 years (Sun) to 20 years (Venus).
@@ -73964,6 +77259,51 @@ func ParseGetMajorDashasResponse(rsp *http.Response) (*GetMajorDashasResponse, e
 
 				// Planet Ruling graha of this Vimshottari dasha period. One of 9 planets in the Ketu-Venus-Sun-Moon-Mars-Rahu-Jupiter-Saturn-Mercury sequence.
 				Planet GetMajorDashas200JSONResponseBodyMahadashasPlanet `json:"planet"`
+
+				// Significators KP significators of this period lord, read from the Placidus birth chart in the requested ayanamsa. Present only when the request sets "significators": true.
+				Significators *struct {
+					// House House 1-12 this lord occupies in the Placidus birth chart. Its own Level 2 signification, repeated here because the occupied house is the first thing a KP reading looks at.
+					House int `json:"house"`
+
+					// SignifiedHouses Every house this lord signifies, deduplicated and ordered strongest tier first. Where a house is reached at more than one level it is listed once, at its strongest. This is the flat "houses signified" column of a KP dasha table.
+					SignifiedHouses []int `json:"signifiedHouses"`
+
+					// Signifies KP 4-level significator breakdown showing which houses (1-12) this planet signifies at each strength tier. L1 is strongest, L4 is weakest.
+					Signifies struct {
+						// L1 Level 1, the strongest signification (grade A). Houses influenced because this planet sits in the nakshatra (star) of a planet occupying those houses. For Rahu and Ketu, also includes the L1 houses of their agent planets (conjoined, aspecting, sign lord).
+						L1 []int `json:"L1"`
+
+						// L2 Level 2 (grade B). The house this planet physically occupies. For Rahu and Ketu, also includes houses occupied by their agent planets.
+						L2 []int `json:"L2"`
+
+						// L3 Level 3 (grade C). Houses influenced because this planet sits in the nakshatra of the sign lord (owner) of those houses. For Rahu and Ketu, also includes the L3 houses of their agent planets.
+						L3 []int `json:"L3"`
+
+						// L4 Level 4, the weakest signification (grade D). Houses this planet rules by zodiac sign ownership, up to 2 for Sun through Saturn and 3 where a sign is intercepted. Rahu and Ketu own no sign, so their L4 comes entirely from their agent planets.
+						L4 []int `json:"L4"`
+					} `json:"signifies"`
+
+					// StarLord Lord of the nakshatra this planet sits in, one of the 9 grahas. In KP the star lord outranks the planet itself: a period lord mainly delivers the houses its star lord occupies and owns, which is why those appear at L1 and L3 rather than the planet own house.
+					StarLord string `json:"starLord"`
+
+					// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading.
+					Strength struct {
+						// Grade Band the score falls in, on the standard KP significator grading: A planets in the constellation of the occupant, B occupants, C planets in the constellation of the house owner, D the house owner. Band edges are the midpoints between the four weights.
+						Grade GetMajorDashas200JSONResponseBodyMahadashasSignificatorsStrengthGrade `json:"grade"`
+
+						// Label Plain-language form of grade: "very-strong" for A, "strong" for B, "moderate" for C, "weak" for D. Says how firmly this lord is connected to the houses it signifies, NOT whether those houses are favourable, which depends on the matter being judged.
+						Label GetMajorDashas200JSONResponseBodyMahadashasSignificatorsStrengthLabel `json:"label"`
+
+						// Score Mean KP percentage weight across signifiedHouses, each house counted at its strongest level (A 100, B 75, C 50, D 25). A mean rather than a total, so signifying many houses weakly does not outrank signifying two houses at grade A.
+						Score float32 `json:"score"`
+					} `json:"strength"`
+
+					// StrongHouses Subset of signifiedHouses reached at grade A or B (levels L1 and L2). These are the houses a KP reading acts on for this period; the rest are supporting connections.
+					StrongHouses []int `json:"strongHouses"`
+
+					// SubLord KP sub lord of this planet, the 1 of 249 subdivision its longitude falls in, one of the 9 grahas. The star lord says WHAT results the period gives, the sub lord says WHETHER they materialize, so KP judgement checks both.
+					SubLord *string `json:"subLord,omitempty"`
+				} `json:"significators,omitempty"`
 
 				// StartDate Start datetime of this dasha period. Adjusted to the requested timezone offset.
 				StartDate string `json:"startDate"`
@@ -74065,6 +77405,51 @@ func ParseGetSubDashasResponse(rsp *http.Response) (*GetSubDashasResponse, error
 				// Planet Ruling graha of this Vimshottari dasha period. One of 9 planets in the Ketu-Venus-Sun-Moon-Mars-Rahu-Jupiter-Saturn-Mercury sequence.
 				Planet GetSubDashas200JSONResponseBodyAntardashasPlanet `json:"planet"`
 
+				// Significators KP significators of this period lord, read from the Placidus birth chart in the requested ayanamsa. Present only when the request sets "significators": true.
+				Significators *struct {
+					// House House 1-12 this lord occupies in the Placidus birth chart. Its own Level 2 signification, repeated here because the occupied house is the first thing a KP reading looks at.
+					House int `json:"house"`
+
+					// SignifiedHouses Every house this lord signifies, deduplicated and ordered strongest tier first. Where a house is reached at more than one level it is listed once, at its strongest. This is the flat "houses signified" column of a KP dasha table.
+					SignifiedHouses []int `json:"signifiedHouses"`
+
+					// Signifies KP 4-level significator breakdown showing which houses (1-12) this planet signifies at each strength tier. L1 is strongest, L4 is weakest.
+					Signifies struct {
+						// L1 Level 1, the strongest signification (grade A). Houses influenced because this planet sits in the nakshatra (star) of a planet occupying those houses. For Rahu and Ketu, also includes the L1 houses of their agent planets (conjoined, aspecting, sign lord).
+						L1 []int `json:"L1"`
+
+						// L2 Level 2 (grade B). The house this planet physically occupies. For Rahu and Ketu, also includes houses occupied by their agent planets.
+						L2 []int `json:"L2"`
+
+						// L3 Level 3 (grade C). Houses influenced because this planet sits in the nakshatra of the sign lord (owner) of those houses. For Rahu and Ketu, also includes the L3 houses of their agent planets.
+						L3 []int `json:"L3"`
+
+						// L4 Level 4, the weakest signification (grade D). Houses this planet rules by zodiac sign ownership, up to 2 for Sun through Saturn and 3 where a sign is intercepted. Rahu and Ketu own no sign, so their L4 comes entirely from their agent planets.
+						L4 []int `json:"L4"`
+					} `json:"signifies"`
+
+					// StarLord Lord of the nakshatra this planet sits in, one of the 9 grahas. In KP the star lord outranks the planet itself: a period lord mainly delivers the houses its star lord occupies and owns, which is why those appear at L1 and L3 rather than the planet own house.
+					StarLord string `json:"starLord"`
+
+					// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading.
+					Strength struct {
+						// Grade Band the score falls in, on the standard KP significator grading: A planets in the constellation of the occupant, B occupants, C planets in the constellation of the house owner, D the house owner. Band edges are the midpoints between the four weights.
+						Grade GetSubDashas200JSONResponseBodyAntardashasSignificatorsStrengthGrade `json:"grade"`
+
+						// Label Plain-language form of grade: "very-strong" for A, "strong" for B, "moderate" for C, "weak" for D. Says how firmly this lord is connected to the houses it signifies, NOT whether those houses are favourable, which depends on the matter being judged.
+						Label GetSubDashas200JSONResponseBodyAntardashasSignificatorsStrengthLabel `json:"label"`
+
+						// Score Mean KP percentage weight across signifiedHouses, each house counted at its strongest level (A 100, B 75, C 50, D 25). A mean rather than a total, so signifying many houses weakly does not outrank signifying two houses at grade A.
+						Score float32 `json:"score"`
+					} `json:"strength"`
+
+					// StrongHouses Subset of signifiedHouses reached at grade A or B (levels L1 and L2). These are the houses a KP reading acts on for this period; the rest are supporting connections.
+					StrongHouses []int `json:"strongHouses"`
+
+					// SubLord KP sub lord of this planet, the 1 of 249 subdivision its longitude falls in, one of the 9 grahas. The star lord says WHAT results the period gives, the sub lord says WHETHER they materialize, so KP judgement checks both.
+					SubLord *string `json:"subLord,omitempty"`
+				} `json:"significators,omitempty"`
+
 				// StartDate Start datetime of this dasha period. Adjusted to the requested timezone offset.
 				StartDate string `json:"startDate"`
 			} `json:"antardashas"`
@@ -74074,6 +77459,9 @@ func ParseGetSubDashasResponse(rsp *http.Response) (*GetSubDashasResponse, error
 
 			// AyanamsaType Ayanamsa system used, echoing the request field. One of "lahiri", "kp-newcomb", "kp-old". Echoed so a client can confirm which frame produced these dates without re-deriving it.
 			AyanamsaType GetSubDashas200JSONResponseBodyAyanamsaType `json:"ayanamsaType"`
+
+			// HouseThemes What each house MEANS, keyed by house number 1 to 12, in the requested language. Turns a house list into words without the client writing any interpretation copy: for a period signifying houses 2, 7 and 8, join houseThemes for those keys to render the "nature" line of a KP dasha table. Sent once per response rather than repeated on every period, so look the houses up from signifiedHouses or strongHouses. Localized by the lang query, like every other interpretation field.
+			HouseThemes *map[string][]string `json:"houseThemes,omitempty"`
 
 			// MahadashaLord Ruling planet of the requested Mahadasha period.
 			MahadashaLord GetSubDashas200JSONResponseBodyMahadashaLord `json:"mahadashaLord"`
@@ -74094,6 +77482,51 @@ func ParseGetSubDashasResponse(rsp *http.Response) (*GetSubDashasResponse, error
 
 				// Planet Ruling graha of this Vimshottari dasha period. One of 9 planets in the Ketu-Venus-Sun-Moon-Mars-Rahu-Jupiter-Saturn-Mercury sequence.
 				Planet GetSubDashas200JSONResponseBodyMahadashaPeriodPlanet `json:"planet"`
+
+				// Significators KP significators of this period lord, read from the Placidus birth chart in the requested ayanamsa. Present only when the request sets "significators": true.
+				Significators *struct {
+					// House House 1-12 this lord occupies in the Placidus birth chart. Its own Level 2 signification, repeated here because the occupied house is the first thing a KP reading looks at.
+					House int `json:"house"`
+
+					// SignifiedHouses Every house this lord signifies, deduplicated and ordered strongest tier first. Where a house is reached at more than one level it is listed once, at its strongest. This is the flat "houses signified" column of a KP dasha table.
+					SignifiedHouses []int `json:"signifiedHouses"`
+
+					// Signifies KP 4-level significator breakdown showing which houses (1-12) this planet signifies at each strength tier. L1 is strongest, L4 is weakest.
+					Signifies struct {
+						// L1 Level 1, the strongest signification (grade A). Houses influenced because this planet sits in the nakshatra (star) of a planet occupying those houses. For Rahu and Ketu, also includes the L1 houses of their agent planets (conjoined, aspecting, sign lord).
+						L1 []int `json:"L1"`
+
+						// L2 Level 2 (grade B). The house this planet physically occupies. For Rahu and Ketu, also includes houses occupied by their agent planets.
+						L2 []int `json:"L2"`
+
+						// L3 Level 3 (grade C). Houses influenced because this planet sits in the nakshatra of the sign lord (owner) of those houses. For Rahu and Ketu, also includes the L3 houses of their agent planets.
+						L3 []int `json:"L3"`
+
+						// L4 Level 4, the weakest signification (grade D). Houses this planet rules by zodiac sign ownership, up to 2 for Sun through Saturn and 3 where a sign is intercepted. Rahu and Ketu own no sign, so their L4 comes entirely from their agent planets.
+						L4 []int `json:"L4"`
+					} `json:"signifies"`
+
+					// StarLord Lord of the nakshatra this planet sits in, one of the 9 grahas. In KP the star lord outranks the planet itself: a period lord mainly delivers the houses its star lord occupies and owns, which is why those appear at L1 and L3 rather than the planet own house.
+					StarLord string `json:"starLord"`
+
+					// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading.
+					Strength struct {
+						// Grade Band the score falls in, on the standard KP significator grading: A planets in the constellation of the occupant, B occupants, C planets in the constellation of the house owner, D the house owner. Band edges are the midpoints between the four weights.
+						Grade GetSubDashas200JSONResponseBodyMahadashaPeriodSignificatorsStrengthGrade `json:"grade"`
+
+						// Label Plain-language form of grade: "very-strong" for A, "strong" for B, "moderate" for C, "weak" for D. Says how firmly this lord is connected to the houses it signifies, NOT whether those houses are favourable, which depends on the matter being judged.
+						Label GetSubDashas200JSONResponseBodyMahadashaPeriodSignificatorsStrengthLabel `json:"label"`
+
+						// Score Mean KP percentage weight across signifiedHouses, each house counted at its strongest level (A 100, B 75, C 50, D 25). A mean rather than a total, so signifying many houses weakly does not outrank signifying two houses at grade A.
+						Score float32 `json:"score"`
+					} `json:"strength"`
+
+					// StrongHouses Subset of signifiedHouses reached at grade A or B (levels L1 and L2). These are the houses a KP reading acts on for this period; the rest are supporting connections.
+					StrongHouses []int `json:"strongHouses"`
+
+					// SubLord KP sub lord of this planet, the 1 of 249 subdivision its longitude falls in, one of the 9 grahas. The star lord says WHAT results the period gives, the sub lord says WHETHER they materialize, so KP judgement checks both.
+					SubLord *string `json:"subLord,omitempty"`
+				} `json:"significators,omitempty"`
 
 				// StartDate Start datetime of this dasha period. Adjusted to the requested timezone offset.
 				StartDate string `json:"startDate"`
@@ -74186,6 +77619,51 @@ func ParseGetPratyantardashasResponse(rsp *http.Response) (*GetPratyantardashasR
 				// Planet Ruling graha of this Vimshottari dasha period. One of 9 planets in the Ketu-Venus-Sun-Moon-Mars-Rahu-Jupiter-Saturn-Mercury sequence.
 				Planet GetPratyantardashas200JSONResponseBodyAntardashaPeriodPlanet `json:"planet"`
 
+				// Significators KP significators of this period lord, read from the Placidus birth chart in the requested ayanamsa. Present only when the request sets "significators": true.
+				Significators *struct {
+					// House House 1-12 this lord occupies in the Placidus birth chart. Its own Level 2 signification, repeated here because the occupied house is the first thing a KP reading looks at.
+					House int `json:"house"`
+
+					// SignifiedHouses Every house this lord signifies, deduplicated and ordered strongest tier first. Where a house is reached at more than one level it is listed once, at its strongest. This is the flat "houses signified" column of a KP dasha table.
+					SignifiedHouses []int `json:"signifiedHouses"`
+
+					// Signifies KP 4-level significator breakdown showing which houses (1-12) this planet signifies at each strength tier. L1 is strongest, L4 is weakest.
+					Signifies struct {
+						// L1 Level 1, the strongest signification (grade A). Houses influenced because this planet sits in the nakshatra (star) of a planet occupying those houses. For Rahu and Ketu, also includes the L1 houses of their agent planets (conjoined, aspecting, sign lord).
+						L1 []int `json:"L1"`
+
+						// L2 Level 2 (grade B). The house this planet physically occupies. For Rahu and Ketu, also includes houses occupied by their agent planets.
+						L2 []int `json:"L2"`
+
+						// L3 Level 3 (grade C). Houses influenced because this planet sits in the nakshatra of the sign lord (owner) of those houses. For Rahu and Ketu, also includes the L3 houses of their agent planets.
+						L3 []int `json:"L3"`
+
+						// L4 Level 4, the weakest signification (grade D). Houses this planet rules by zodiac sign ownership, up to 2 for Sun through Saturn and 3 where a sign is intercepted. Rahu and Ketu own no sign, so their L4 comes entirely from their agent planets.
+						L4 []int `json:"L4"`
+					} `json:"signifies"`
+
+					// StarLord Lord of the nakshatra this planet sits in, one of the 9 grahas. In KP the star lord outranks the planet itself: a period lord mainly delivers the houses its star lord occupies and owns, which is why those appear at L1 and L3 rather than the planet own house.
+					StarLord string `json:"starLord"`
+
+					// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading.
+					Strength struct {
+						// Grade Band the score falls in, on the standard KP significator grading: A planets in the constellation of the occupant, B occupants, C planets in the constellation of the house owner, D the house owner. Band edges are the midpoints between the four weights.
+						Grade GetPratyantardashas200JSONResponseBodyAntardashaPeriodSignificatorsStrengthGrade `json:"grade"`
+
+						// Label Plain-language form of grade: "very-strong" for A, "strong" for B, "moderate" for C, "weak" for D. Says how firmly this lord is connected to the houses it signifies, NOT whether those houses are favourable, which depends on the matter being judged.
+						Label GetPratyantardashas200JSONResponseBodyAntardashaPeriodSignificatorsStrengthLabel `json:"label"`
+
+						// Score Mean KP percentage weight across signifiedHouses, each house counted at its strongest level (A 100, B 75, C 50, D 25). A mean rather than a total, so signifying many houses weakly does not outrank signifying two houses at grade A.
+						Score float32 `json:"score"`
+					} `json:"strength"`
+
+					// StrongHouses Subset of signifiedHouses reached at grade A or B (levels L1 and L2). These are the houses a KP reading acts on for this period; the rest are supporting connections.
+					StrongHouses []int `json:"strongHouses"`
+
+					// SubLord KP sub lord of this planet, the 1 of 249 subdivision its longitude falls in, one of the 9 grahas. The star lord says WHAT results the period gives, the sub lord says WHETHER they materialize, so KP judgement checks both.
+					SubLord *string `json:"subLord,omitempty"`
+				} `json:"significators,omitempty"`
+
 				// StartDate Start datetime of this dasha period. Adjusted to the requested timezone offset.
 				StartDate string `json:"startDate"`
 			} `json:"antardashaPeriod"`
@@ -74195,6 +77673,9 @@ func ParseGetPratyantardashasResponse(rsp *http.Response) (*GetPratyantardashasR
 
 			// AyanamsaType Ayanamsa system used, echoing the request field. One of "lahiri", "kp-newcomb", "kp-old". Echoed so a client can confirm which frame produced these dates without re-deriving it.
 			AyanamsaType GetPratyantardashas200JSONResponseBodyAyanamsaType `json:"ayanamsaType"`
+
+			// HouseThemes What each house MEANS, keyed by house number 1 to 12, in the requested language. Turns a house list into words without the client writing any interpretation copy: for a period signifying houses 2, 7 and 8, join houseThemes for those keys to render the "nature" line of a KP dasha table. Sent once per response rather than repeated on every period, so look the houses up from signifiedHouses or strongHouses. Localized by the lang query, like every other interpretation field.
+			HouseThemes *map[string][]string `json:"houseThemes,omitempty"`
 
 			// MahadashaLord Ruling planet of the requested Mahadasha period.
 			MahadashaLord GetPratyantardashas200JSONResponseBodyMahadashaLord `json:"mahadashaLord"`
@@ -74224,6 +77705,51 @@ func ParseGetPratyantardashasResponse(rsp *http.Response) (*GetPratyantardashasR
 
 				// Planet Ruling graha of this Vimshottari dasha period. One of 9 planets in the Ketu-Venus-Sun-Moon-Mars-Rahu-Jupiter-Saturn-Mercury sequence.
 				Planet GetPratyantardashas200JSONResponseBodyPratyantardashasPlanet `json:"planet"`
+
+				// Significators KP significators of this period lord, read from the Placidus birth chart in the requested ayanamsa. Present only when the request sets "significators": true.
+				Significators *struct {
+					// House House 1-12 this lord occupies in the Placidus birth chart. Its own Level 2 signification, repeated here because the occupied house is the first thing a KP reading looks at.
+					House int `json:"house"`
+
+					// SignifiedHouses Every house this lord signifies, deduplicated and ordered strongest tier first. Where a house is reached at more than one level it is listed once, at its strongest. This is the flat "houses signified" column of a KP dasha table.
+					SignifiedHouses []int `json:"signifiedHouses"`
+
+					// Signifies KP 4-level significator breakdown showing which houses (1-12) this planet signifies at each strength tier. L1 is strongest, L4 is weakest.
+					Signifies struct {
+						// L1 Level 1, the strongest signification (grade A). Houses influenced because this planet sits in the nakshatra (star) of a planet occupying those houses. For Rahu and Ketu, also includes the L1 houses of their agent planets (conjoined, aspecting, sign lord).
+						L1 []int `json:"L1"`
+
+						// L2 Level 2 (grade B). The house this planet physically occupies. For Rahu and Ketu, also includes houses occupied by their agent planets.
+						L2 []int `json:"L2"`
+
+						// L3 Level 3 (grade C). Houses influenced because this planet sits in the nakshatra of the sign lord (owner) of those houses. For Rahu and Ketu, also includes the L3 houses of their agent planets.
+						L3 []int `json:"L3"`
+
+						// L4 Level 4, the weakest signification (grade D). Houses this planet rules by zodiac sign ownership, up to 2 for Sun through Saturn and 3 where a sign is intercepted. Rahu and Ketu own no sign, so their L4 comes entirely from their agent planets.
+						L4 []int `json:"L4"`
+					} `json:"signifies"`
+
+					// StarLord Lord of the nakshatra this planet sits in, one of the 9 grahas. In KP the star lord outranks the planet itself: a period lord mainly delivers the houses its star lord occupies and owns, which is why those appear at L1 and L3 rather than the planet own house.
+					StarLord string `json:"starLord"`
+
+					// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading.
+					Strength struct {
+						// Grade Band the score falls in, on the standard KP significator grading: A planets in the constellation of the occupant, B occupants, C planets in the constellation of the house owner, D the house owner. Band edges are the midpoints between the four weights.
+						Grade GetPratyantardashas200JSONResponseBodyPratyantardashasSignificatorsStrengthGrade `json:"grade"`
+
+						// Label Plain-language form of grade: "very-strong" for A, "strong" for B, "moderate" for C, "weak" for D. Says how firmly this lord is connected to the houses it signifies, NOT whether those houses are favourable, which depends on the matter being judged.
+						Label GetPratyantardashas200JSONResponseBodyPratyantardashasSignificatorsStrengthLabel `json:"label"`
+
+						// Score Mean KP percentage weight across signifiedHouses, each house counted at its strongest level (A 100, B 75, C 50, D 25). A mean rather than a total, so signifying many houses weakly does not outrank signifying two houses at grade A.
+						Score float32 `json:"score"`
+					} `json:"strength"`
+
+					// StrongHouses Subset of signifiedHouses reached at grade A or B (levels L1 and L2). These are the houses a KP reading acts on for this period; the rest are supporting connections.
+					StrongHouses []int `json:"strongHouses"`
+
+					// SubLord KP sub lord of this planet, the 1 of 249 subdivision its longitude falls in, one of the 9 grahas. The star lord says WHAT results the period gives, the sub lord says WHETHER they materialize, so KP judgement checks both.
+					SubLord *string `json:"subLord,omitempty"`
+				} `json:"significators,omitempty"`
 
 				// StartDate Start datetime of this dasha period. Adjusted to the requested timezone offset.
 				StartDate string `json:"startDate"`
@@ -74299,6 +77825,9 @@ func ParseGetSookshmaDashasResponse(rsp *http.Response) (*GetSookshmaDashasRespo
 			// AyanamsaType Ayanamsa system used, echoing the request field. One of "lahiri", "kp-newcomb", "kp-old". Echoed so a client can confirm which frame produced these dates without re-deriving it.
 			AyanamsaType GetSookshmaDashas200JSONResponseBodyAyanamsaType `json:"ayanamsaType"`
 
+			// HouseThemes What each house MEANS, keyed by house number 1 to 12, in the requested language. Turns a house list into words without the client writing any interpretation copy: for a period signifying houses 2, 7 and 8, join houseThemes for those keys to render the "nature" line of a KP dasha table. Sent once per response rather than repeated on every period, so look the houses up from signifiedHouses or strongHouses. Localized by the lang query, like every other interpretation field.
+			HouseThemes *map[string][]string `json:"houseThemes,omitempty"`
+
 			// MahadashaLord Ruling planet of the requested Mahadasha period.
 			MahadashaLord GetSookshmaDashas200JSONResponseBodyMahadashaLord `json:"mahadashaLord"`
 
@@ -74331,6 +77860,51 @@ func ParseGetSookshmaDashasResponse(rsp *http.Response) (*GetSookshmaDashasRespo
 				// Planet Ruling graha of this Vimshottari dasha period. One of 9 planets in the Ketu-Venus-Sun-Moon-Mars-Rahu-Jupiter-Saturn-Mercury sequence.
 				Planet GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodPlanet `json:"planet"`
 
+				// Significators KP significators of this period lord, read from the Placidus birth chart in the requested ayanamsa. Present only when the request sets "significators": true.
+				Significators *struct {
+					// House House 1-12 this lord occupies in the Placidus birth chart. Its own Level 2 signification, repeated here because the occupied house is the first thing a KP reading looks at.
+					House int `json:"house"`
+
+					// SignifiedHouses Every house this lord signifies, deduplicated and ordered strongest tier first. Where a house is reached at more than one level it is listed once, at its strongest. This is the flat "houses signified" column of a KP dasha table.
+					SignifiedHouses []int `json:"signifiedHouses"`
+
+					// Signifies KP 4-level significator breakdown showing which houses (1-12) this planet signifies at each strength tier. L1 is strongest, L4 is weakest.
+					Signifies struct {
+						// L1 Level 1, the strongest signification (grade A). Houses influenced because this planet sits in the nakshatra (star) of a planet occupying those houses. For Rahu and Ketu, also includes the L1 houses of their agent planets (conjoined, aspecting, sign lord).
+						L1 []int `json:"L1"`
+
+						// L2 Level 2 (grade B). The house this planet physically occupies. For Rahu and Ketu, also includes houses occupied by their agent planets.
+						L2 []int `json:"L2"`
+
+						// L3 Level 3 (grade C). Houses influenced because this planet sits in the nakshatra of the sign lord (owner) of those houses. For Rahu and Ketu, also includes the L3 houses of their agent planets.
+						L3 []int `json:"L3"`
+
+						// L4 Level 4, the weakest signification (grade D). Houses this planet rules by zodiac sign ownership, up to 2 for Sun through Saturn and 3 where a sign is intercepted. Rahu and Ketu own no sign, so their L4 comes entirely from their agent planets.
+						L4 []int `json:"L4"`
+					} `json:"signifies"`
+
+					// StarLord Lord of the nakshatra this planet sits in, one of the 9 grahas. In KP the star lord outranks the planet itself: a period lord mainly delivers the houses its star lord occupies and owns, which is why those appear at L1 and L3 rather than the planet own house.
+					StarLord string `json:"starLord"`
+
+					// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading.
+					Strength struct {
+						// Grade Band the score falls in, on the standard KP significator grading: A planets in the constellation of the occupant, B occupants, C planets in the constellation of the house owner, D the house owner. Band edges are the midpoints between the four weights.
+						Grade GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodSignificatorsStrengthGrade `json:"grade"`
+
+						// Label Plain-language form of grade: "very-strong" for A, "strong" for B, "moderate" for C, "weak" for D. Says how firmly this lord is connected to the houses it signifies, NOT whether those houses are favourable, which depends on the matter being judged.
+						Label GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodSignificatorsStrengthLabel `json:"label"`
+
+						// Score Mean KP percentage weight across signifiedHouses, each house counted at its strongest level (A 100, B 75, C 50, D 25). A mean rather than a total, so signifying many houses weakly does not outrank signifying two houses at grade A.
+						Score float32 `json:"score"`
+					} `json:"strength"`
+
+					// StrongHouses Subset of signifiedHouses reached at grade A or B (levels L1 and L2). These are the houses a KP reading acts on for this period; the rest are supporting connections.
+					StrongHouses []int `json:"strongHouses"`
+
+					// SubLord KP sub lord of this planet, the 1 of 249 subdivision its longitude falls in, one of the 9 grahas. The star lord says WHAT results the period gives, the sub lord says WHETHER they materialize, so KP judgement checks both.
+					SubLord *string `json:"subLord,omitempty"`
+				} `json:"significators,omitempty"`
+
 				// StartDate Start datetime of this dasha period. Adjusted to the requested timezone offset.
 				StartDate string `json:"startDate"`
 			} `json:"pratyantardashaPeriod"`
@@ -74361,9 +77935,292 @@ func ParseGetSookshmaDashasResponse(rsp *http.Response) (*GetSookshmaDashasRespo
 				// PratyantardashaLord Parent Pratyantardasha lord under which this Sookshma dasha runs.
 				PratyantardashaLord GetSookshmaDashas200JSONResponseBodySookshmaDashasPratyantardashaLord `json:"pratyantardashaLord"`
 
+				// Significators KP significators of this period lord, read from the Placidus birth chart in the requested ayanamsa. Present only when the request sets "significators": true.
+				Significators *struct {
+					// House House 1-12 this lord occupies in the Placidus birth chart. Its own Level 2 signification, repeated here because the occupied house is the first thing a KP reading looks at.
+					House int `json:"house"`
+
+					// SignifiedHouses Every house this lord signifies, deduplicated and ordered strongest tier first. Where a house is reached at more than one level it is listed once, at its strongest. This is the flat "houses signified" column of a KP dasha table.
+					SignifiedHouses []int `json:"signifiedHouses"`
+
+					// Signifies KP 4-level significator breakdown showing which houses (1-12) this planet signifies at each strength tier. L1 is strongest, L4 is weakest.
+					Signifies struct {
+						// L1 Level 1, the strongest signification (grade A). Houses influenced because this planet sits in the nakshatra (star) of a planet occupying those houses. For Rahu and Ketu, also includes the L1 houses of their agent planets (conjoined, aspecting, sign lord).
+						L1 []int `json:"L1"`
+
+						// L2 Level 2 (grade B). The house this planet physically occupies. For Rahu and Ketu, also includes houses occupied by their agent planets.
+						L2 []int `json:"L2"`
+
+						// L3 Level 3 (grade C). Houses influenced because this planet sits in the nakshatra of the sign lord (owner) of those houses. For Rahu and Ketu, also includes the L3 houses of their agent planets.
+						L3 []int `json:"L3"`
+
+						// L4 Level 4, the weakest signification (grade D). Houses this planet rules by zodiac sign ownership, up to 2 for Sun through Saturn and 3 where a sign is intercepted. Rahu and Ketu own no sign, so their L4 comes entirely from their agent planets.
+						L4 []int `json:"L4"`
+					} `json:"signifies"`
+
+					// StarLord Lord of the nakshatra this planet sits in, one of the 9 grahas. In KP the star lord outranks the planet itself: a period lord mainly delivers the houses its star lord occupies and owns, which is why those appear at L1 and L3 rather than the planet own house.
+					StarLord string `json:"starLord"`
+
+					// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading.
+					Strength struct {
+						// Grade Band the score falls in, on the standard KP significator grading: A planets in the constellation of the occupant, B occupants, C planets in the constellation of the house owner, D the house owner. Band edges are the midpoints between the four weights.
+						Grade GetSookshmaDashas200JSONResponseBodySookshmaDashasSignificatorsStrengthGrade `json:"grade"`
+
+						// Label Plain-language form of grade: "very-strong" for A, "strong" for B, "moderate" for C, "weak" for D. Says how firmly this lord is connected to the houses it signifies, NOT whether those houses are favourable, which depends on the matter being judged.
+						Label GetSookshmaDashas200JSONResponseBodySookshmaDashasSignificatorsStrengthLabel `json:"label"`
+
+						// Score Mean KP percentage weight across signifiedHouses, each house counted at its strongest level (A 100, B 75, C 50, D 25). A mean rather than a total, so signifying many houses weakly does not outrank signifying two houses at grade A.
+						Score float32 `json:"score"`
+					} `json:"strength"`
+
+					// StrongHouses Subset of signifiedHouses reached at grade A or B (levels L1 and L2). These are the houses a KP reading acts on for this period; the rest are supporting connections.
+					StrongHouses []int `json:"strongHouses"`
+
+					// SubLord KP sub lord of this planet, the 1 of 249 subdivision its longitude falls in, one of the 9 grahas. The star lord says WHAT results the period gives, the sub lord says WHETHER they materialize, so KP judgement checks both.
+					SubLord *string `json:"subLord,omitempty"`
+				} `json:"significators,omitempty"`
+
 				// StartDate Start datetime of this dasha period. Adjusted to the requested timezone offset.
 				StartDate string `json:"startDate"`
 			} `json:"sookshmaDashas"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 405:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON405 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetPranaDashasResponse parses an HTTP response from a GetPranaDashasWithResponse call
+func ParseGetPranaDashasResponse(rsp *http.Response) (*GetPranaDashasResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetPranaDashasResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// AntardashaLord Ruling planet of the requested Antardasha sub-period.
+			AntardashaLord GetPranaDashas200JSONResponseBodyAntardashaLord `json:"antardashaLord"`
+
+			// Ayanamsa Ayanamsa actually applied, in degrees. The precession offset subtracted from the tropical (sayana) longitude to get the sidereal (nirayana) one. Lahiri sits near 23 deg 43 min for a 1990 birth, KP-Newcomb near 23 deg 38 min.
+			Ayanamsa float32 `json:"ayanamsa"`
+
+			// AyanamsaType Ayanamsa system used, echoing the request field. One of "lahiri", "kp-newcomb", "kp-old". Echoed so a client can confirm which frame produced these dates without re-deriving it.
+			AyanamsaType GetPranaDashas200JSONResponseBodyAyanamsaType `json:"ayanamsaType"`
+
+			// HouseThemes What each house MEANS, keyed by house number 1 to 12, in the requested language. Turns a house list into words without the client writing any interpretation copy: for a period signifying houses 2, 7 and 8, join houseThemes for those keys to render the "nature" line of a KP dasha table. Sent once per response rather than repeated on every period, so look the houses up from signifiedHouses or strongHouses. Localized by the lang query, like every other interpretation field.
+			HouseThemes *map[string][]string `json:"houseThemes,omitempty"`
+
+			// MahadashaLord Ruling planet of the requested Mahadasha period.
+			MahadashaLord GetPranaDashas200JSONResponseBodyMahadashaLord `json:"mahadashaLord"`
+
+			// MoonLongitude Sidereal (nirayana) longitude of the birth Moon in degrees, 0 to 360, measured in the ayanamsa frame reported below. This single value determines the birth nakshatra and therefore every dasha start and end date in this response. Compare it against a reference chart to reconcile any date difference at its source.
+			MoonLongitude float32 `json:"moonLongitude"`
+
+			// PranaDashas Prana dasha periods within this Sookshma dasha, proportional to each planet Vimshottari years, sorted chronologically and starting with the Sookshma lord. Fewer than nine only when the parent Sookshma dasha is the one that was already running at birth, in which case the periods that ended before the birth date are omitted.
+			PranaDashas []struct {
+				// AntardashaLord Parent Antardasha lord under which this Pratyantardasha runs.
+				AntardashaLord GetPranaDashas200JSONResponseBodyPranaDashasAntardashaLord `json:"antardashaLord"`
+
+				// DurationYears Duration of this dasha period in years. Mahadasha durations range from 6 years (Sun) to 20 years (Venus).
+				DurationYears float32 `json:"durationYears"`
+
+				// EndDate End datetime of this dasha period. Adjusted to the requested timezone offset.
+				EndDate string `json:"endDate"`
+
+				// Interpretation Vedic interpretation of the planetary period describing themes, karmic lessons, and life areas affected by this graha.
+				Interpretation *string `json:"interpretation,omitempty"`
+
+				// MahadashaLord Parent Mahadasha lord under which this Antardasha sub-period runs.
+				MahadashaLord GetPranaDashas200JSONResponseBodyPranaDashasMahadashaLord `json:"mahadashaLord"`
+
+				// NominalStartDate Theoretical start of this period, present ONLY when the birth date truncated it. The Vimshottari cycle is already running when a native is born, so the period in force at birth began earlier: startDate is clipped to the birth moment while this field keeps the real start. Its presence is also why the first period of a chart can contain fewer than 9 sub-periods, the earlier ones having finished before birth. Absent on every period that runs its full length.
+				NominalStartDate *string `json:"nominalStartDate,omitempty"`
+
+				// Planet Ruling graha of this Vimshottari dasha period. One of 9 planets in the Ketu-Venus-Sun-Moon-Mars-Rahu-Jupiter-Saturn-Mercury sequence.
+				Planet GetPranaDashas200JSONResponseBodyPranaDashasPlanet `json:"planet"`
+
+				// PratyantardashaLord Parent Pratyantardasha lord under which this Sookshma dasha runs.
+				PratyantardashaLord GetPranaDashas200JSONResponseBodyPranaDashasPratyantardashaLord `json:"pratyantardashaLord"`
+
+				// Significators KP significators of this period lord, read from the Placidus birth chart in the requested ayanamsa. Present only when the request sets "significators": true.
+				Significators *struct {
+					// House House 1-12 this lord occupies in the Placidus birth chart. Its own Level 2 signification, repeated here because the occupied house is the first thing a KP reading looks at.
+					House int `json:"house"`
+
+					// SignifiedHouses Every house this lord signifies, deduplicated and ordered strongest tier first. Where a house is reached at more than one level it is listed once, at its strongest. This is the flat "houses signified" column of a KP dasha table.
+					SignifiedHouses []int `json:"signifiedHouses"`
+
+					// Signifies KP 4-level significator breakdown showing which houses (1-12) this planet signifies at each strength tier. L1 is strongest, L4 is weakest.
+					Signifies struct {
+						// L1 Level 1, the strongest signification (grade A). Houses influenced because this planet sits in the nakshatra (star) of a planet occupying those houses. For Rahu and Ketu, also includes the L1 houses of their agent planets (conjoined, aspecting, sign lord).
+						L1 []int `json:"L1"`
+
+						// L2 Level 2 (grade B). The house this planet physically occupies. For Rahu and Ketu, also includes houses occupied by their agent planets.
+						L2 []int `json:"L2"`
+
+						// L3 Level 3 (grade C). Houses influenced because this planet sits in the nakshatra of the sign lord (owner) of those houses. For Rahu and Ketu, also includes the L3 houses of their agent planets.
+						L3 []int `json:"L3"`
+
+						// L4 Level 4, the weakest signification (grade D). Houses this planet rules by zodiac sign ownership, up to 2 for Sun through Saturn and 3 where a sign is intercepted. Rahu and Ketu own no sign, so their L4 comes entirely from their agent planets.
+						L4 []int `json:"L4"`
+					} `json:"signifies"`
+
+					// StarLord Lord of the nakshatra this planet sits in, one of the 9 grahas. In KP the star lord outranks the planet itself: a period lord mainly delivers the houses its star lord occupies and owns, which is why those appear at L1 and L3 rather than the planet own house.
+					StarLord string `json:"starLord"`
+
+					// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading.
+					Strength struct {
+						// Grade Band the score falls in, on the standard KP significator grading: A planets in the constellation of the occupant, B occupants, C planets in the constellation of the house owner, D the house owner. Band edges are the midpoints between the four weights.
+						Grade GetPranaDashas200JSONResponseBodyPranaDashasSignificatorsStrengthGrade `json:"grade"`
+
+						// Label Plain-language form of grade: "very-strong" for A, "strong" for B, "moderate" for C, "weak" for D. Says how firmly this lord is connected to the houses it signifies, NOT whether those houses are favourable, which depends on the matter being judged.
+						Label GetPranaDashas200JSONResponseBodyPranaDashasSignificatorsStrengthLabel `json:"label"`
+
+						// Score Mean KP percentage weight across signifiedHouses, each house counted at its strongest level (A 100, B 75, C 50, D 25). A mean rather than a total, so signifying many houses weakly does not outrank signifying two houses at grade A.
+						Score float32 `json:"score"`
+					} `json:"strength"`
+
+					// StrongHouses Subset of signifiedHouses reached at grade A or B (levels L1 and L2). These are the houses a KP reading acts on for this period; the rest are supporting connections.
+					StrongHouses []int `json:"strongHouses"`
+
+					// SubLord KP sub lord of this planet, the 1 of 249 subdivision its longitude falls in, one of the 9 grahas. The star lord says WHAT results the period gives, the sub lord says WHETHER they materialize, so KP judgement checks both.
+					SubLord *string `json:"subLord,omitempty"`
+				} `json:"significators,omitempty"`
+
+				// SookshmaLord Parent Sookshma dasha lord under which this Prana dasha runs.
+				SookshmaLord GetPranaDashas200JSONResponseBodyPranaDashasSookshmaLord `json:"sookshmaLord"`
+
+				// StartDate Start datetime of this dasha period. Adjusted to the requested timezone offset.
+				StartDate string `json:"startDate"`
+			} `json:"pranaDashas"`
+
+			// PratyantardashaLord Ruling planet of the requested Pratyantardasha sub-sub-period.
+			PratyantardashaLord GetPranaDashas200JSONResponseBodyPratyantardashaLord `json:"pratyantardashaLord"`
+
+			// SookshmaLord Ruling planet of the requested Sookshma dasha.
+			SookshmaLord GetPranaDashas200JSONResponseBodySookshmaLord `json:"sookshmaLord"`
+
+			// SookshmaPeriod Full details of the parent Sookshma dasha including start/end dates and duration.
+			SookshmaPeriod struct {
+				// AntardashaLord Parent Antardasha lord under which this Pratyantardasha runs.
+				AntardashaLord GetPranaDashas200JSONResponseBodySookshmaPeriodAntardashaLord `json:"antardashaLord"`
+
+				// DurationYears Duration of this dasha period in years. Mahadasha durations range from 6 years (Sun) to 20 years (Venus).
+				DurationYears float32 `json:"durationYears"`
+
+				// EndDate End datetime of this dasha period. Adjusted to the requested timezone offset.
+				EndDate string `json:"endDate"`
+
+				// Interpretation Vedic interpretation of the planetary period describing themes, karmic lessons, and life areas affected by this graha.
+				Interpretation *string `json:"interpretation,omitempty"`
+
+				// MahadashaLord Parent Mahadasha lord under which this Antardasha sub-period runs.
+				MahadashaLord GetPranaDashas200JSONResponseBodySookshmaPeriodMahadashaLord `json:"mahadashaLord"`
+
+				// NominalStartDate Theoretical start of this period, present ONLY when the birth date truncated it. The Vimshottari cycle is already running when a native is born, so the period in force at birth began earlier: startDate is clipped to the birth moment while this field keeps the real start. Its presence is also why the first period of a chart can contain fewer than 9 sub-periods, the earlier ones having finished before birth. Absent on every period that runs its full length.
+				NominalStartDate *string `json:"nominalStartDate,omitempty"`
+
+				// Planet Ruling graha of this Vimshottari dasha period. One of 9 planets in the Ketu-Venus-Sun-Moon-Mars-Rahu-Jupiter-Saturn-Mercury sequence.
+				Planet GetPranaDashas200JSONResponseBodySookshmaPeriodPlanet `json:"planet"`
+
+				// PratyantardashaLord Parent Pratyantardasha lord under which this Sookshma dasha runs.
+				PratyantardashaLord GetPranaDashas200JSONResponseBodySookshmaPeriodPratyantardashaLord `json:"pratyantardashaLord"`
+
+				// Significators KP significators of this period lord, read from the Placidus birth chart in the requested ayanamsa. Present only when the request sets "significators": true.
+				Significators *struct {
+					// House House 1-12 this lord occupies in the Placidus birth chart. Its own Level 2 signification, repeated here because the occupied house is the first thing a KP reading looks at.
+					House int `json:"house"`
+
+					// SignifiedHouses Every house this lord signifies, deduplicated and ordered strongest tier first. Where a house is reached at more than one level it is listed once, at its strongest. This is the flat "houses signified" column of a KP dasha table.
+					SignifiedHouses []int `json:"signifiedHouses"`
+
+					// Signifies KP 4-level significator breakdown showing which houses (1-12) this planet signifies at each strength tier. L1 is strongest, L4 is weakest.
+					Signifies struct {
+						// L1 Level 1, the strongest signification (grade A). Houses influenced because this planet sits in the nakshatra (star) of a planet occupying those houses. For Rahu and Ketu, also includes the L1 houses of their agent planets (conjoined, aspecting, sign lord).
+						L1 []int `json:"L1"`
+
+						// L2 Level 2 (grade B). The house this planet physically occupies. For Rahu and Ketu, also includes houses occupied by their agent planets.
+						L2 []int `json:"L2"`
+
+						// L3 Level 3 (grade C). Houses influenced because this planet sits in the nakshatra of the sign lord (owner) of those houses. For Rahu and Ketu, also includes the L3 houses of their agent planets.
+						L3 []int `json:"L3"`
+
+						// L4 Level 4, the weakest signification (grade D). Houses this planet rules by zodiac sign ownership, up to 2 for Sun through Saturn and 3 where a sign is intercepted. Rahu and Ketu own no sign, so their L4 comes entirely from their agent planets.
+						L4 []int `json:"L4"`
+					} `json:"signifies"`
+
+					// StarLord Lord of the nakshatra this planet sits in, one of the 9 grahas. In KP the star lord outranks the planet itself: a period lord mainly delivers the houses its star lord occupies and owns, which is why those appear at L1 and L3 rather than the planet own house.
+					StarLord string `json:"starLord"`
+
+					// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading.
+					Strength struct {
+						// Grade Band the score falls in, on the standard KP significator grading: A planets in the constellation of the occupant, B occupants, C planets in the constellation of the house owner, D the house owner. Band edges are the midpoints between the four weights.
+						Grade GetPranaDashas200JSONResponseBodySookshmaPeriodSignificatorsStrengthGrade `json:"grade"`
+
+						// Label Plain-language form of grade: "very-strong" for A, "strong" for B, "moderate" for C, "weak" for D. Says how firmly this lord is connected to the houses it signifies, NOT whether those houses are favourable, which depends on the matter being judged.
+						Label GetPranaDashas200JSONResponseBodySookshmaPeriodSignificatorsStrengthLabel `json:"label"`
+
+						// Score Mean KP percentage weight across signifiedHouses, each house counted at its strongest level (A 100, B 75, C 50, D 25). A mean rather than a total, so signifying many houses weakly does not outrank signifying two houses at grade A.
+						Score float32 `json:"score"`
+					} `json:"strength"`
+
+					// StrongHouses Subset of signifiedHouses reached at grade A or B (levels L1 and L2). These are the houses a KP reading acts on for this period; the rest are supporting connections.
+					StrongHouses []int `json:"strongHouses"`
+
+					// SubLord KP sub lord of this planet, the 1 of 249 subdivision its longitude falls in, one of the 9 grahas. The star lord says WHAT results the period gives, the sub lord says WHETHER they materialize, so KP judgement checks both.
+					SubLord *string `json:"subLord,omitempty"`
+				} `json:"significators,omitempty"`
+
+				// StartDate Start datetime of this dasha period. Adjusted to the requested timezone offset.
+				StartDate string `json:"startDate"`
+			} `json:"sookshmaPeriod"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err

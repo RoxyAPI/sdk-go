@@ -606,6 +606,14 @@ func (s *VedicAstrologyService) GetPlanetPositions(ctx context.Context, params *
 	return resp, asRoxyError(resp)
 }
 
+func (s *VedicAstrologyService) GetPranaDashas(ctx context.Context, mahadasha GetPranaDashasParamsMahadasha, antardasha GetPranaDashasParamsAntardasha, pratyantardasha GetPranaDashasParamsPratyantardasha, sookshma GetPranaDashasParamsSookshma, params *GetPranaDashasParams, body GetPranaDashasJSONRequestBody, reqEditors ...RequestEditorFn) (*GetPranaDashasResponse, error) {
+	resp, err := s.client.GetPranaDashasWithResponse(ctx, mahadasha, antardasha, pratyantardasha, sookshma, params, body, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
 func (s *VedicAstrologyService) GetPratyantardashas(ctx context.Context, mahadasha GetPratyantardashasParamsMahadasha, antardasha GetPratyantardashasParamsAntardasha, params *GetPratyantardashasParams, body GetPratyantardashasJSONRequestBody, reqEditors ...RequestEditorFn) (*GetPratyantardashasResponse, error) {
 	resp, err := s.client.GetPratyantardashasWithResponse(ctx, mahadasha, antardasha, params, body, reqEditors...)
 	if err != nil {

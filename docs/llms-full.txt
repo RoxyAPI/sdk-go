@@ -65,11 +65,12 @@ Vedic astrology (Jyotish) and KP API for kundli generation with 15 divisional ch
 - `getMonthlyAspects` - POST `/vedic-astrology/aspects/monthly` - Monthly Planetary Aspects - Major and minor aspect events for a month
 - `generateBirthChart` - POST `/vedic-astrology/birth-chart` - Get birth chart (D1 Rashi chart) - Kundli Calculator API
 - `calculateGunMilan` - POST `/vedic-astrology/compatibility` - Calculate compatibility score - Gun Milan API (Ashtakoot Matching)
-- `getCurrentDasha` - POST `/vedic-astrology/dasha/current` - Get current Mahadasha, Antardasha, Pratyantardasha, Sookshma - Dasha Calculator API
+- `getCurrentDasha` - POST `/vedic-astrology/dasha/current` - Get current Mahadasha, Antardasha, Pratyantardasha, Sookshma, Prana - Dasha Calculator API
 - `getMajorDashas` - POST `/vedic-astrology/dasha/major` - Get all 9 Mahadasha periods (120-year cycle)
 - `getSubDashas` - POST `/vedic-astrology/dasha/sub/{mahadasha}` - Get all Antardashas (sub-periods) for a specific Mahadasha
 - `getPratyantardashas` - POST `/vedic-astrology/dasha/sub/{mahadasha}/{antardasha}` - Get all Pratyantardashas (antara periods) for a Mahadasha and Antardasha
 - `getSookshmaDashas` - POST `/vedic-astrology/dasha/sub/{mahadasha}/{antardasha}/{pratyantardasha}` - Get all Sookshma dashas for a Mahadasha, Antardasha and Pratyantardasha
+- `getPranaDashas` - POST `/vedic-astrology/dasha/sub/{mahadasha}/{antardasha}/{pratyantardasha}/{sookshma}` - Get all Prana dashas for a Mahadasha, Antardasha, Pratyantardasha and Sookshma
 - `generateDivisionalChart` - POST `/vedic-astrology/divisional-chart` - Get divisional chart (Varga) - D2 to D60 Calculator
 - `checkKalsarpaDosha` - POST `/vedic-astrology/dosha/kalsarpa` - Check Kalsarpa Dosha - Kalsarpa Yoga Calculator API
 - `checkManglikDosha` - POST `/vedic-astrology/dosha/manglik` - Check Manglik Dosha - Mangal Dosha Calculator API
