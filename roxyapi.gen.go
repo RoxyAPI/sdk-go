@@ -403,6 +403,66 @@ func (e BirthChartResponseAquariusSignsAwastha) Valid() bool {
 	}
 }
 
+// Defines values for BirthChartResponseAquariusSignsDeeptadi.
+const (
+	BirthChartResponseAquariusSignsDeeptadiDina      BirthChartResponseAquariusSignsDeeptadi = "Dina"
+	BirthChartResponseAquariusSignsDeeptadiDipta     BirthChartResponseAquariusSignsDeeptadi = "Dipta"
+	BirthChartResponseAquariusSignsDeeptadiDuhkhita  BirthChartResponseAquariusSignsDeeptadi = "Duhkhita"
+	BirthChartResponseAquariusSignsDeeptadiKhala     BirthChartResponseAquariusSignsDeeptadi = "Khala"
+	BirthChartResponseAquariusSignsDeeptadiKopa      BirthChartResponseAquariusSignsDeeptadi = "Kopa"
+	BirthChartResponseAquariusSignsDeeptadiPramudita BirthChartResponseAquariusSignsDeeptadi = "Pramudita"
+	BirthChartResponseAquariusSignsDeeptadiShanta    BirthChartResponseAquariusSignsDeeptadi = "Shanta"
+	BirthChartResponseAquariusSignsDeeptadiSvastha   BirthChartResponseAquariusSignsDeeptadi = "Svastha"
+	BirthChartResponseAquariusSignsDeeptadiVikala    BirthChartResponseAquariusSignsDeeptadi = "Vikala"
+)
+
+// Valid indicates whether the value is a known member of the BirthChartResponseAquariusSignsDeeptadi enum.
+func (e BirthChartResponseAquariusSignsDeeptadi) Valid() bool {
+	switch e {
+	case BirthChartResponseAquariusSignsDeeptadiDina:
+		return true
+	case BirthChartResponseAquariusSignsDeeptadiDipta:
+		return true
+	case BirthChartResponseAquariusSignsDeeptadiDuhkhita:
+		return true
+	case BirthChartResponseAquariusSignsDeeptadiKhala:
+		return true
+	case BirthChartResponseAquariusSignsDeeptadiKopa:
+		return true
+	case BirthChartResponseAquariusSignsDeeptadiPramudita:
+		return true
+	case BirthChartResponseAquariusSignsDeeptadiShanta:
+		return true
+	case BirthChartResponseAquariusSignsDeeptadiSvastha:
+		return true
+	case BirthChartResponseAquariusSignsDeeptadiVikala:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for BirthChartResponseAquariusSignsJagradadi.
+const (
+	BirthChartResponseAquariusSignsJagradadiJagrat   BirthChartResponseAquariusSignsJagradadi = "Jagrat"
+	BirthChartResponseAquariusSignsJagradadiSushupti BirthChartResponseAquariusSignsJagradadi = "Sushupti"
+	BirthChartResponseAquariusSignsJagradadiSwapna   BirthChartResponseAquariusSignsJagradadi = "Swapna"
+)
+
+// Valid indicates whether the value is a known member of the BirthChartResponseAquariusSignsJagradadi enum.
+func (e BirthChartResponseAquariusSignsJagradadi) Valid() bool {
+	switch e {
+	case BirthChartResponseAquariusSignsJagradadiJagrat:
+		return true
+	case BirthChartResponseAquariusSignsJagradadiSushupti:
+		return true
+	case BirthChartResponseAquariusSignsJagradadiSwapna:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for BirthChartResponseAquariusSignsNakshatraLord.
 const (
 	BirthChartResponseAquariusSignsNakshatraLordJupiter BirthChartResponseAquariusSignsNakshatraLord = "Jupiter"
@@ -463,6 +523,66 @@ func (e BirthChartResponseAriesSignsAwastha) Valid() bool {
 	case BirthChartResponseAriesSignsAwasthaVriddha:
 		return true
 	case BirthChartResponseAriesSignsAwasthaYuva:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for BirthChartResponseAriesSignsDeeptadi.
+const (
+	BirthChartResponseAriesSignsDeeptadiDina      BirthChartResponseAriesSignsDeeptadi = "Dina"
+	BirthChartResponseAriesSignsDeeptadiDipta     BirthChartResponseAriesSignsDeeptadi = "Dipta"
+	BirthChartResponseAriesSignsDeeptadiDuhkhita  BirthChartResponseAriesSignsDeeptadi = "Duhkhita"
+	BirthChartResponseAriesSignsDeeptadiKhala     BirthChartResponseAriesSignsDeeptadi = "Khala"
+	BirthChartResponseAriesSignsDeeptadiKopa      BirthChartResponseAriesSignsDeeptadi = "Kopa"
+	BirthChartResponseAriesSignsDeeptadiPramudita BirthChartResponseAriesSignsDeeptadi = "Pramudita"
+	BirthChartResponseAriesSignsDeeptadiShanta    BirthChartResponseAriesSignsDeeptadi = "Shanta"
+	BirthChartResponseAriesSignsDeeptadiSvastha   BirthChartResponseAriesSignsDeeptadi = "Svastha"
+	BirthChartResponseAriesSignsDeeptadiVikala    BirthChartResponseAriesSignsDeeptadi = "Vikala"
+)
+
+// Valid indicates whether the value is a known member of the BirthChartResponseAriesSignsDeeptadi enum.
+func (e BirthChartResponseAriesSignsDeeptadi) Valid() bool {
+	switch e {
+	case BirthChartResponseAriesSignsDeeptadiDina:
+		return true
+	case BirthChartResponseAriesSignsDeeptadiDipta:
+		return true
+	case BirthChartResponseAriesSignsDeeptadiDuhkhita:
+		return true
+	case BirthChartResponseAriesSignsDeeptadiKhala:
+		return true
+	case BirthChartResponseAriesSignsDeeptadiKopa:
+		return true
+	case BirthChartResponseAriesSignsDeeptadiPramudita:
+		return true
+	case BirthChartResponseAriesSignsDeeptadiShanta:
+		return true
+	case BirthChartResponseAriesSignsDeeptadiSvastha:
+		return true
+	case BirthChartResponseAriesSignsDeeptadiVikala:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for BirthChartResponseAriesSignsJagradadi.
+const (
+	BirthChartResponseAriesSignsJagradadiJagrat   BirthChartResponseAriesSignsJagradadi = "Jagrat"
+	BirthChartResponseAriesSignsJagradadiSushupti BirthChartResponseAriesSignsJagradadi = "Sushupti"
+	BirthChartResponseAriesSignsJagradadiSwapna   BirthChartResponseAriesSignsJagradadi = "Swapna"
+)
+
+// Valid indicates whether the value is a known member of the BirthChartResponseAriesSignsJagradadi enum.
+func (e BirthChartResponseAriesSignsJagradadi) Valid() bool {
+	switch e {
+	case BirthChartResponseAriesSignsJagradadiJagrat:
+		return true
+	case BirthChartResponseAriesSignsJagradadiSushupti:
+		return true
+	case BirthChartResponseAriesSignsJagradadiSwapna:
 		return true
 	default:
 		return false
@@ -535,6 +655,66 @@ func (e BirthChartResponseCancerSignsAwastha) Valid() bool {
 	}
 }
 
+// Defines values for BirthChartResponseCancerSignsDeeptadi.
+const (
+	BirthChartResponseCancerSignsDeeptadiDina      BirthChartResponseCancerSignsDeeptadi = "Dina"
+	BirthChartResponseCancerSignsDeeptadiDipta     BirthChartResponseCancerSignsDeeptadi = "Dipta"
+	BirthChartResponseCancerSignsDeeptadiDuhkhita  BirthChartResponseCancerSignsDeeptadi = "Duhkhita"
+	BirthChartResponseCancerSignsDeeptadiKhala     BirthChartResponseCancerSignsDeeptadi = "Khala"
+	BirthChartResponseCancerSignsDeeptadiKopa      BirthChartResponseCancerSignsDeeptadi = "Kopa"
+	BirthChartResponseCancerSignsDeeptadiPramudita BirthChartResponseCancerSignsDeeptadi = "Pramudita"
+	BirthChartResponseCancerSignsDeeptadiShanta    BirthChartResponseCancerSignsDeeptadi = "Shanta"
+	BirthChartResponseCancerSignsDeeptadiSvastha   BirthChartResponseCancerSignsDeeptadi = "Svastha"
+	BirthChartResponseCancerSignsDeeptadiVikala    BirthChartResponseCancerSignsDeeptadi = "Vikala"
+)
+
+// Valid indicates whether the value is a known member of the BirthChartResponseCancerSignsDeeptadi enum.
+func (e BirthChartResponseCancerSignsDeeptadi) Valid() bool {
+	switch e {
+	case BirthChartResponseCancerSignsDeeptadiDina:
+		return true
+	case BirthChartResponseCancerSignsDeeptadiDipta:
+		return true
+	case BirthChartResponseCancerSignsDeeptadiDuhkhita:
+		return true
+	case BirthChartResponseCancerSignsDeeptadiKhala:
+		return true
+	case BirthChartResponseCancerSignsDeeptadiKopa:
+		return true
+	case BirthChartResponseCancerSignsDeeptadiPramudita:
+		return true
+	case BirthChartResponseCancerSignsDeeptadiShanta:
+		return true
+	case BirthChartResponseCancerSignsDeeptadiSvastha:
+		return true
+	case BirthChartResponseCancerSignsDeeptadiVikala:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for BirthChartResponseCancerSignsJagradadi.
+const (
+	BirthChartResponseCancerSignsJagradadiJagrat   BirthChartResponseCancerSignsJagradadi = "Jagrat"
+	BirthChartResponseCancerSignsJagradadiSushupti BirthChartResponseCancerSignsJagradadi = "Sushupti"
+	BirthChartResponseCancerSignsJagradadiSwapna   BirthChartResponseCancerSignsJagradadi = "Swapna"
+)
+
+// Valid indicates whether the value is a known member of the BirthChartResponseCancerSignsJagradadi enum.
+func (e BirthChartResponseCancerSignsJagradadi) Valid() bool {
+	switch e {
+	case BirthChartResponseCancerSignsJagradadiJagrat:
+		return true
+	case BirthChartResponseCancerSignsJagradadiSushupti:
+		return true
+	case BirthChartResponseCancerSignsJagradadiSwapna:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for BirthChartResponseCancerSignsNakshatraLord.
 const (
 	BirthChartResponseCancerSignsNakshatraLordJupiter BirthChartResponseCancerSignsNakshatraLord = "Jupiter"
@@ -595,6 +775,66 @@ func (e BirthChartResponseCapricornSignsAwastha) Valid() bool {
 	case BirthChartResponseCapricornSignsAwasthaVriddha:
 		return true
 	case BirthChartResponseCapricornSignsAwasthaYuva:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for BirthChartResponseCapricornSignsDeeptadi.
+const (
+	BirthChartResponseCapricornSignsDeeptadiDina      BirthChartResponseCapricornSignsDeeptadi = "Dina"
+	BirthChartResponseCapricornSignsDeeptadiDipta     BirthChartResponseCapricornSignsDeeptadi = "Dipta"
+	BirthChartResponseCapricornSignsDeeptadiDuhkhita  BirthChartResponseCapricornSignsDeeptadi = "Duhkhita"
+	BirthChartResponseCapricornSignsDeeptadiKhala     BirthChartResponseCapricornSignsDeeptadi = "Khala"
+	BirthChartResponseCapricornSignsDeeptadiKopa      BirthChartResponseCapricornSignsDeeptadi = "Kopa"
+	BirthChartResponseCapricornSignsDeeptadiPramudita BirthChartResponseCapricornSignsDeeptadi = "Pramudita"
+	BirthChartResponseCapricornSignsDeeptadiShanta    BirthChartResponseCapricornSignsDeeptadi = "Shanta"
+	BirthChartResponseCapricornSignsDeeptadiSvastha   BirthChartResponseCapricornSignsDeeptadi = "Svastha"
+	BirthChartResponseCapricornSignsDeeptadiVikala    BirthChartResponseCapricornSignsDeeptadi = "Vikala"
+)
+
+// Valid indicates whether the value is a known member of the BirthChartResponseCapricornSignsDeeptadi enum.
+func (e BirthChartResponseCapricornSignsDeeptadi) Valid() bool {
+	switch e {
+	case BirthChartResponseCapricornSignsDeeptadiDina:
+		return true
+	case BirthChartResponseCapricornSignsDeeptadiDipta:
+		return true
+	case BirthChartResponseCapricornSignsDeeptadiDuhkhita:
+		return true
+	case BirthChartResponseCapricornSignsDeeptadiKhala:
+		return true
+	case BirthChartResponseCapricornSignsDeeptadiKopa:
+		return true
+	case BirthChartResponseCapricornSignsDeeptadiPramudita:
+		return true
+	case BirthChartResponseCapricornSignsDeeptadiShanta:
+		return true
+	case BirthChartResponseCapricornSignsDeeptadiSvastha:
+		return true
+	case BirthChartResponseCapricornSignsDeeptadiVikala:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for BirthChartResponseCapricornSignsJagradadi.
+const (
+	BirthChartResponseCapricornSignsJagradadiJagrat   BirthChartResponseCapricornSignsJagradadi = "Jagrat"
+	BirthChartResponseCapricornSignsJagradadiSushupti BirthChartResponseCapricornSignsJagradadi = "Sushupti"
+	BirthChartResponseCapricornSignsJagradadiSwapna   BirthChartResponseCapricornSignsJagradadi = "Swapna"
+)
+
+// Valid indicates whether the value is a known member of the BirthChartResponseCapricornSignsJagradadi enum.
+func (e BirthChartResponseCapricornSignsJagradadi) Valid() bool {
+	switch e {
+	case BirthChartResponseCapricornSignsJagradadiJagrat:
+		return true
+	case BirthChartResponseCapricornSignsJagradadiSushupti:
+		return true
+	case BirthChartResponseCapricornSignsJagradadiSwapna:
 		return true
 	default:
 		return false
@@ -667,6 +907,66 @@ func (e BirthChartResponseGeminiSignsAwastha) Valid() bool {
 	}
 }
 
+// Defines values for BirthChartResponseGeminiSignsDeeptadi.
+const (
+	BirthChartResponseGeminiSignsDeeptadiDina      BirthChartResponseGeminiSignsDeeptadi = "Dina"
+	BirthChartResponseGeminiSignsDeeptadiDipta     BirthChartResponseGeminiSignsDeeptadi = "Dipta"
+	BirthChartResponseGeminiSignsDeeptadiDuhkhita  BirthChartResponseGeminiSignsDeeptadi = "Duhkhita"
+	BirthChartResponseGeminiSignsDeeptadiKhala     BirthChartResponseGeminiSignsDeeptadi = "Khala"
+	BirthChartResponseGeminiSignsDeeptadiKopa      BirthChartResponseGeminiSignsDeeptadi = "Kopa"
+	BirthChartResponseGeminiSignsDeeptadiPramudita BirthChartResponseGeminiSignsDeeptadi = "Pramudita"
+	BirthChartResponseGeminiSignsDeeptadiShanta    BirthChartResponseGeminiSignsDeeptadi = "Shanta"
+	BirthChartResponseGeminiSignsDeeptadiSvastha   BirthChartResponseGeminiSignsDeeptadi = "Svastha"
+	BirthChartResponseGeminiSignsDeeptadiVikala    BirthChartResponseGeminiSignsDeeptadi = "Vikala"
+)
+
+// Valid indicates whether the value is a known member of the BirthChartResponseGeminiSignsDeeptadi enum.
+func (e BirthChartResponseGeminiSignsDeeptadi) Valid() bool {
+	switch e {
+	case BirthChartResponseGeminiSignsDeeptadiDina:
+		return true
+	case BirthChartResponseGeminiSignsDeeptadiDipta:
+		return true
+	case BirthChartResponseGeminiSignsDeeptadiDuhkhita:
+		return true
+	case BirthChartResponseGeminiSignsDeeptadiKhala:
+		return true
+	case BirthChartResponseGeminiSignsDeeptadiKopa:
+		return true
+	case BirthChartResponseGeminiSignsDeeptadiPramudita:
+		return true
+	case BirthChartResponseGeminiSignsDeeptadiShanta:
+		return true
+	case BirthChartResponseGeminiSignsDeeptadiSvastha:
+		return true
+	case BirthChartResponseGeminiSignsDeeptadiVikala:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for BirthChartResponseGeminiSignsJagradadi.
+const (
+	BirthChartResponseGeminiSignsJagradadiJagrat   BirthChartResponseGeminiSignsJagradadi = "Jagrat"
+	BirthChartResponseGeminiSignsJagradadiSushupti BirthChartResponseGeminiSignsJagradadi = "Sushupti"
+	BirthChartResponseGeminiSignsJagradadiSwapna   BirthChartResponseGeminiSignsJagradadi = "Swapna"
+)
+
+// Valid indicates whether the value is a known member of the BirthChartResponseGeminiSignsJagradadi enum.
+func (e BirthChartResponseGeminiSignsJagradadi) Valid() bool {
+	switch e {
+	case BirthChartResponseGeminiSignsJagradadiJagrat:
+		return true
+	case BirthChartResponseGeminiSignsJagradadiSushupti:
+		return true
+	case BirthChartResponseGeminiSignsJagradadiSwapna:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for BirthChartResponseGeminiSignsNakshatraLord.
 const (
 	BirthChartResponseGeminiSignsNakshatraLordJupiter BirthChartResponseGeminiSignsNakshatraLord = "Jupiter"
@@ -727,6 +1027,66 @@ func (e BirthChartResponseLeoSignsAwastha) Valid() bool {
 	case BirthChartResponseLeoSignsAwasthaVriddha:
 		return true
 	case BirthChartResponseLeoSignsAwasthaYuva:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for BirthChartResponseLeoSignsDeeptadi.
+const (
+	BirthChartResponseLeoSignsDeeptadiDina      BirthChartResponseLeoSignsDeeptadi = "Dina"
+	BirthChartResponseLeoSignsDeeptadiDipta     BirthChartResponseLeoSignsDeeptadi = "Dipta"
+	BirthChartResponseLeoSignsDeeptadiDuhkhita  BirthChartResponseLeoSignsDeeptadi = "Duhkhita"
+	BirthChartResponseLeoSignsDeeptadiKhala     BirthChartResponseLeoSignsDeeptadi = "Khala"
+	BirthChartResponseLeoSignsDeeptadiKopa      BirthChartResponseLeoSignsDeeptadi = "Kopa"
+	BirthChartResponseLeoSignsDeeptadiPramudita BirthChartResponseLeoSignsDeeptadi = "Pramudita"
+	BirthChartResponseLeoSignsDeeptadiShanta    BirthChartResponseLeoSignsDeeptadi = "Shanta"
+	BirthChartResponseLeoSignsDeeptadiSvastha   BirthChartResponseLeoSignsDeeptadi = "Svastha"
+	BirthChartResponseLeoSignsDeeptadiVikala    BirthChartResponseLeoSignsDeeptadi = "Vikala"
+)
+
+// Valid indicates whether the value is a known member of the BirthChartResponseLeoSignsDeeptadi enum.
+func (e BirthChartResponseLeoSignsDeeptadi) Valid() bool {
+	switch e {
+	case BirthChartResponseLeoSignsDeeptadiDina:
+		return true
+	case BirthChartResponseLeoSignsDeeptadiDipta:
+		return true
+	case BirthChartResponseLeoSignsDeeptadiDuhkhita:
+		return true
+	case BirthChartResponseLeoSignsDeeptadiKhala:
+		return true
+	case BirthChartResponseLeoSignsDeeptadiKopa:
+		return true
+	case BirthChartResponseLeoSignsDeeptadiPramudita:
+		return true
+	case BirthChartResponseLeoSignsDeeptadiShanta:
+		return true
+	case BirthChartResponseLeoSignsDeeptadiSvastha:
+		return true
+	case BirthChartResponseLeoSignsDeeptadiVikala:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for BirthChartResponseLeoSignsJagradadi.
+const (
+	BirthChartResponseLeoSignsJagradadiJagrat   BirthChartResponseLeoSignsJagradadi = "Jagrat"
+	BirthChartResponseLeoSignsJagradadiSushupti BirthChartResponseLeoSignsJagradadi = "Sushupti"
+	BirthChartResponseLeoSignsJagradadiSwapna   BirthChartResponseLeoSignsJagradadi = "Swapna"
+)
+
+// Valid indicates whether the value is a known member of the BirthChartResponseLeoSignsJagradadi enum.
+func (e BirthChartResponseLeoSignsJagradadi) Valid() bool {
+	switch e {
+	case BirthChartResponseLeoSignsJagradadiJagrat:
+		return true
+	case BirthChartResponseLeoSignsJagradadiSushupti:
+		return true
+	case BirthChartResponseLeoSignsJagradadiSwapna:
 		return true
 	default:
 		return false
@@ -799,6 +1159,66 @@ func (e BirthChartResponseLibraSignsAwastha) Valid() bool {
 	}
 }
 
+// Defines values for BirthChartResponseLibraSignsDeeptadi.
+const (
+	BirthChartResponseLibraSignsDeeptadiDina      BirthChartResponseLibraSignsDeeptadi = "Dina"
+	BirthChartResponseLibraSignsDeeptadiDipta     BirthChartResponseLibraSignsDeeptadi = "Dipta"
+	BirthChartResponseLibraSignsDeeptadiDuhkhita  BirthChartResponseLibraSignsDeeptadi = "Duhkhita"
+	BirthChartResponseLibraSignsDeeptadiKhala     BirthChartResponseLibraSignsDeeptadi = "Khala"
+	BirthChartResponseLibraSignsDeeptadiKopa      BirthChartResponseLibraSignsDeeptadi = "Kopa"
+	BirthChartResponseLibraSignsDeeptadiPramudita BirthChartResponseLibraSignsDeeptadi = "Pramudita"
+	BirthChartResponseLibraSignsDeeptadiShanta    BirthChartResponseLibraSignsDeeptadi = "Shanta"
+	BirthChartResponseLibraSignsDeeptadiSvastha   BirthChartResponseLibraSignsDeeptadi = "Svastha"
+	BirthChartResponseLibraSignsDeeptadiVikala    BirthChartResponseLibraSignsDeeptadi = "Vikala"
+)
+
+// Valid indicates whether the value is a known member of the BirthChartResponseLibraSignsDeeptadi enum.
+func (e BirthChartResponseLibraSignsDeeptadi) Valid() bool {
+	switch e {
+	case BirthChartResponseLibraSignsDeeptadiDina:
+		return true
+	case BirthChartResponseLibraSignsDeeptadiDipta:
+		return true
+	case BirthChartResponseLibraSignsDeeptadiDuhkhita:
+		return true
+	case BirthChartResponseLibraSignsDeeptadiKhala:
+		return true
+	case BirthChartResponseLibraSignsDeeptadiKopa:
+		return true
+	case BirthChartResponseLibraSignsDeeptadiPramudita:
+		return true
+	case BirthChartResponseLibraSignsDeeptadiShanta:
+		return true
+	case BirthChartResponseLibraSignsDeeptadiSvastha:
+		return true
+	case BirthChartResponseLibraSignsDeeptadiVikala:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for BirthChartResponseLibraSignsJagradadi.
+const (
+	BirthChartResponseLibraSignsJagradadiJagrat   BirthChartResponseLibraSignsJagradadi = "Jagrat"
+	BirthChartResponseLibraSignsJagradadiSushupti BirthChartResponseLibraSignsJagradadi = "Sushupti"
+	BirthChartResponseLibraSignsJagradadiSwapna   BirthChartResponseLibraSignsJagradadi = "Swapna"
+)
+
+// Valid indicates whether the value is a known member of the BirthChartResponseLibraSignsJagradadi enum.
+func (e BirthChartResponseLibraSignsJagradadi) Valid() bool {
+	switch e {
+	case BirthChartResponseLibraSignsJagradadiJagrat:
+		return true
+	case BirthChartResponseLibraSignsJagradadiSushupti:
+		return true
+	case BirthChartResponseLibraSignsJagradadiSwapna:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for BirthChartResponseLibraSignsNakshatraLord.
 const (
 	BirthChartResponseLibraSignsNakshatraLordJupiter BirthChartResponseLibraSignsNakshatraLord = "Jupiter"
@@ -859,6 +1279,66 @@ func (e BirthChartResponseMetaAwastha) Valid() bool {
 	case BirthChartResponseMetaAwasthaVriddha:
 		return true
 	case BirthChartResponseMetaAwasthaYuva:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for BirthChartResponseMetaDeeptadi.
+const (
+	BirthChartResponseMetaDeeptadiDina      BirthChartResponseMetaDeeptadi = "Dina"
+	BirthChartResponseMetaDeeptadiDipta     BirthChartResponseMetaDeeptadi = "Dipta"
+	BirthChartResponseMetaDeeptadiDuhkhita  BirthChartResponseMetaDeeptadi = "Duhkhita"
+	BirthChartResponseMetaDeeptadiKhala     BirthChartResponseMetaDeeptadi = "Khala"
+	BirthChartResponseMetaDeeptadiKopa      BirthChartResponseMetaDeeptadi = "Kopa"
+	BirthChartResponseMetaDeeptadiPramudita BirthChartResponseMetaDeeptadi = "Pramudita"
+	BirthChartResponseMetaDeeptadiShanta    BirthChartResponseMetaDeeptadi = "Shanta"
+	BirthChartResponseMetaDeeptadiSvastha   BirthChartResponseMetaDeeptadi = "Svastha"
+	BirthChartResponseMetaDeeptadiVikala    BirthChartResponseMetaDeeptadi = "Vikala"
+)
+
+// Valid indicates whether the value is a known member of the BirthChartResponseMetaDeeptadi enum.
+func (e BirthChartResponseMetaDeeptadi) Valid() bool {
+	switch e {
+	case BirthChartResponseMetaDeeptadiDina:
+		return true
+	case BirthChartResponseMetaDeeptadiDipta:
+		return true
+	case BirthChartResponseMetaDeeptadiDuhkhita:
+		return true
+	case BirthChartResponseMetaDeeptadiKhala:
+		return true
+	case BirthChartResponseMetaDeeptadiKopa:
+		return true
+	case BirthChartResponseMetaDeeptadiPramudita:
+		return true
+	case BirthChartResponseMetaDeeptadiShanta:
+		return true
+	case BirthChartResponseMetaDeeptadiSvastha:
+		return true
+	case BirthChartResponseMetaDeeptadiVikala:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for BirthChartResponseMetaJagradadi.
+const (
+	BirthChartResponseMetaJagradadiJagrat   BirthChartResponseMetaJagradadi = "Jagrat"
+	BirthChartResponseMetaJagradadiSushupti BirthChartResponseMetaJagradadi = "Sushupti"
+	BirthChartResponseMetaJagradadiSwapna   BirthChartResponseMetaJagradadi = "Swapna"
+)
+
+// Valid indicates whether the value is a known member of the BirthChartResponseMetaJagradadi enum.
+func (e BirthChartResponseMetaJagradadi) Valid() bool {
+	switch e {
+	case BirthChartResponseMetaJagradadiJagrat:
+		return true
+	case BirthChartResponseMetaJagradadiSushupti:
+		return true
+	case BirthChartResponseMetaJagradadiSwapna:
 		return true
 	default:
 		return false
@@ -931,6 +1411,66 @@ func (e BirthChartResponsePiscesSignsAwastha) Valid() bool {
 	}
 }
 
+// Defines values for BirthChartResponsePiscesSignsDeeptadi.
+const (
+	BirthChartResponsePiscesSignsDeeptadiDina      BirthChartResponsePiscesSignsDeeptadi = "Dina"
+	BirthChartResponsePiscesSignsDeeptadiDipta     BirthChartResponsePiscesSignsDeeptadi = "Dipta"
+	BirthChartResponsePiscesSignsDeeptadiDuhkhita  BirthChartResponsePiscesSignsDeeptadi = "Duhkhita"
+	BirthChartResponsePiscesSignsDeeptadiKhala     BirthChartResponsePiscesSignsDeeptadi = "Khala"
+	BirthChartResponsePiscesSignsDeeptadiKopa      BirthChartResponsePiscesSignsDeeptadi = "Kopa"
+	BirthChartResponsePiscesSignsDeeptadiPramudita BirthChartResponsePiscesSignsDeeptadi = "Pramudita"
+	BirthChartResponsePiscesSignsDeeptadiShanta    BirthChartResponsePiscesSignsDeeptadi = "Shanta"
+	BirthChartResponsePiscesSignsDeeptadiSvastha   BirthChartResponsePiscesSignsDeeptadi = "Svastha"
+	BirthChartResponsePiscesSignsDeeptadiVikala    BirthChartResponsePiscesSignsDeeptadi = "Vikala"
+)
+
+// Valid indicates whether the value is a known member of the BirthChartResponsePiscesSignsDeeptadi enum.
+func (e BirthChartResponsePiscesSignsDeeptadi) Valid() bool {
+	switch e {
+	case BirthChartResponsePiscesSignsDeeptadiDina:
+		return true
+	case BirthChartResponsePiscesSignsDeeptadiDipta:
+		return true
+	case BirthChartResponsePiscesSignsDeeptadiDuhkhita:
+		return true
+	case BirthChartResponsePiscesSignsDeeptadiKhala:
+		return true
+	case BirthChartResponsePiscesSignsDeeptadiKopa:
+		return true
+	case BirthChartResponsePiscesSignsDeeptadiPramudita:
+		return true
+	case BirthChartResponsePiscesSignsDeeptadiShanta:
+		return true
+	case BirthChartResponsePiscesSignsDeeptadiSvastha:
+		return true
+	case BirthChartResponsePiscesSignsDeeptadiVikala:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for BirthChartResponsePiscesSignsJagradadi.
+const (
+	BirthChartResponsePiscesSignsJagradadiJagrat   BirthChartResponsePiscesSignsJagradadi = "Jagrat"
+	BirthChartResponsePiscesSignsJagradadiSushupti BirthChartResponsePiscesSignsJagradadi = "Sushupti"
+	BirthChartResponsePiscesSignsJagradadiSwapna   BirthChartResponsePiscesSignsJagradadi = "Swapna"
+)
+
+// Valid indicates whether the value is a known member of the BirthChartResponsePiscesSignsJagradadi enum.
+func (e BirthChartResponsePiscesSignsJagradadi) Valid() bool {
+	switch e {
+	case BirthChartResponsePiscesSignsJagradadiJagrat:
+		return true
+	case BirthChartResponsePiscesSignsJagradadiSushupti:
+		return true
+	case BirthChartResponsePiscesSignsJagradadiSwapna:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for BirthChartResponsePiscesSignsNakshatraLord.
 const (
 	BirthChartResponsePiscesSignsNakshatraLordJupiter BirthChartResponsePiscesSignsNakshatraLord = "Jupiter"
@@ -991,6 +1531,66 @@ func (e BirthChartResponseSagittariusSignsAwastha) Valid() bool {
 	case BirthChartResponseSagittariusSignsAwasthaVriddha:
 		return true
 	case BirthChartResponseSagittariusSignsAwasthaYuva:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for BirthChartResponseSagittariusSignsDeeptadi.
+const (
+	BirthChartResponseSagittariusSignsDeeptadiDina      BirthChartResponseSagittariusSignsDeeptadi = "Dina"
+	BirthChartResponseSagittariusSignsDeeptadiDipta     BirthChartResponseSagittariusSignsDeeptadi = "Dipta"
+	BirthChartResponseSagittariusSignsDeeptadiDuhkhita  BirthChartResponseSagittariusSignsDeeptadi = "Duhkhita"
+	BirthChartResponseSagittariusSignsDeeptadiKhala     BirthChartResponseSagittariusSignsDeeptadi = "Khala"
+	BirthChartResponseSagittariusSignsDeeptadiKopa      BirthChartResponseSagittariusSignsDeeptadi = "Kopa"
+	BirthChartResponseSagittariusSignsDeeptadiPramudita BirthChartResponseSagittariusSignsDeeptadi = "Pramudita"
+	BirthChartResponseSagittariusSignsDeeptadiShanta    BirthChartResponseSagittariusSignsDeeptadi = "Shanta"
+	BirthChartResponseSagittariusSignsDeeptadiSvastha   BirthChartResponseSagittariusSignsDeeptadi = "Svastha"
+	BirthChartResponseSagittariusSignsDeeptadiVikala    BirthChartResponseSagittariusSignsDeeptadi = "Vikala"
+)
+
+// Valid indicates whether the value is a known member of the BirthChartResponseSagittariusSignsDeeptadi enum.
+func (e BirthChartResponseSagittariusSignsDeeptadi) Valid() bool {
+	switch e {
+	case BirthChartResponseSagittariusSignsDeeptadiDina:
+		return true
+	case BirthChartResponseSagittariusSignsDeeptadiDipta:
+		return true
+	case BirthChartResponseSagittariusSignsDeeptadiDuhkhita:
+		return true
+	case BirthChartResponseSagittariusSignsDeeptadiKhala:
+		return true
+	case BirthChartResponseSagittariusSignsDeeptadiKopa:
+		return true
+	case BirthChartResponseSagittariusSignsDeeptadiPramudita:
+		return true
+	case BirthChartResponseSagittariusSignsDeeptadiShanta:
+		return true
+	case BirthChartResponseSagittariusSignsDeeptadiSvastha:
+		return true
+	case BirthChartResponseSagittariusSignsDeeptadiVikala:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for BirthChartResponseSagittariusSignsJagradadi.
+const (
+	BirthChartResponseSagittariusSignsJagradadiJagrat   BirthChartResponseSagittariusSignsJagradadi = "Jagrat"
+	BirthChartResponseSagittariusSignsJagradadiSushupti BirthChartResponseSagittariusSignsJagradadi = "Sushupti"
+	BirthChartResponseSagittariusSignsJagradadiSwapna   BirthChartResponseSagittariusSignsJagradadi = "Swapna"
+)
+
+// Valid indicates whether the value is a known member of the BirthChartResponseSagittariusSignsJagradadi enum.
+func (e BirthChartResponseSagittariusSignsJagradadi) Valid() bool {
+	switch e {
+	case BirthChartResponseSagittariusSignsJagradadiJagrat:
+		return true
+	case BirthChartResponseSagittariusSignsJagradadiSushupti:
+		return true
+	case BirthChartResponseSagittariusSignsJagradadiSwapna:
 		return true
 	default:
 		return false
@@ -1063,6 +1663,66 @@ func (e BirthChartResponseScorpioSignsAwastha) Valid() bool {
 	}
 }
 
+// Defines values for BirthChartResponseScorpioSignsDeeptadi.
+const (
+	BirthChartResponseScorpioSignsDeeptadiDina      BirthChartResponseScorpioSignsDeeptadi = "Dina"
+	BirthChartResponseScorpioSignsDeeptadiDipta     BirthChartResponseScorpioSignsDeeptadi = "Dipta"
+	BirthChartResponseScorpioSignsDeeptadiDuhkhita  BirthChartResponseScorpioSignsDeeptadi = "Duhkhita"
+	BirthChartResponseScorpioSignsDeeptadiKhala     BirthChartResponseScorpioSignsDeeptadi = "Khala"
+	BirthChartResponseScorpioSignsDeeptadiKopa      BirthChartResponseScorpioSignsDeeptadi = "Kopa"
+	BirthChartResponseScorpioSignsDeeptadiPramudita BirthChartResponseScorpioSignsDeeptadi = "Pramudita"
+	BirthChartResponseScorpioSignsDeeptadiShanta    BirthChartResponseScorpioSignsDeeptadi = "Shanta"
+	BirthChartResponseScorpioSignsDeeptadiSvastha   BirthChartResponseScorpioSignsDeeptadi = "Svastha"
+	BirthChartResponseScorpioSignsDeeptadiVikala    BirthChartResponseScorpioSignsDeeptadi = "Vikala"
+)
+
+// Valid indicates whether the value is a known member of the BirthChartResponseScorpioSignsDeeptadi enum.
+func (e BirthChartResponseScorpioSignsDeeptadi) Valid() bool {
+	switch e {
+	case BirthChartResponseScorpioSignsDeeptadiDina:
+		return true
+	case BirthChartResponseScorpioSignsDeeptadiDipta:
+		return true
+	case BirthChartResponseScorpioSignsDeeptadiDuhkhita:
+		return true
+	case BirthChartResponseScorpioSignsDeeptadiKhala:
+		return true
+	case BirthChartResponseScorpioSignsDeeptadiKopa:
+		return true
+	case BirthChartResponseScorpioSignsDeeptadiPramudita:
+		return true
+	case BirthChartResponseScorpioSignsDeeptadiShanta:
+		return true
+	case BirthChartResponseScorpioSignsDeeptadiSvastha:
+		return true
+	case BirthChartResponseScorpioSignsDeeptadiVikala:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for BirthChartResponseScorpioSignsJagradadi.
+const (
+	BirthChartResponseScorpioSignsJagradadiJagrat   BirthChartResponseScorpioSignsJagradadi = "Jagrat"
+	BirthChartResponseScorpioSignsJagradadiSushupti BirthChartResponseScorpioSignsJagradadi = "Sushupti"
+	BirthChartResponseScorpioSignsJagradadiSwapna   BirthChartResponseScorpioSignsJagradadi = "Swapna"
+)
+
+// Valid indicates whether the value is a known member of the BirthChartResponseScorpioSignsJagradadi enum.
+func (e BirthChartResponseScorpioSignsJagradadi) Valid() bool {
+	switch e {
+	case BirthChartResponseScorpioSignsJagradadiJagrat:
+		return true
+	case BirthChartResponseScorpioSignsJagradadiSushupti:
+		return true
+	case BirthChartResponseScorpioSignsJagradadiSwapna:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for BirthChartResponseScorpioSignsNakshatraLord.
 const (
 	BirthChartResponseScorpioSignsNakshatraLordJupiter BirthChartResponseScorpioSignsNakshatraLord = "Jupiter"
@@ -1129,6 +1789,66 @@ func (e BirthChartResponseTaurusSignsAwastha) Valid() bool {
 	}
 }
 
+// Defines values for BirthChartResponseTaurusSignsDeeptadi.
+const (
+	BirthChartResponseTaurusSignsDeeptadiDina      BirthChartResponseTaurusSignsDeeptadi = "Dina"
+	BirthChartResponseTaurusSignsDeeptadiDipta     BirthChartResponseTaurusSignsDeeptadi = "Dipta"
+	BirthChartResponseTaurusSignsDeeptadiDuhkhita  BirthChartResponseTaurusSignsDeeptadi = "Duhkhita"
+	BirthChartResponseTaurusSignsDeeptadiKhala     BirthChartResponseTaurusSignsDeeptadi = "Khala"
+	BirthChartResponseTaurusSignsDeeptadiKopa      BirthChartResponseTaurusSignsDeeptadi = "Kopa"
+	BirthChartResponseTaurusSignsDeeptadiPramudita BirthChartResponseTaurusSignsDeeptadi = "Pramudita"
+	BirthChartResponseTaurusSignsDeeptadiShanta    BirthChartResponseTaurusSignsDeeptadi = "Shanta"
+	BirthChartResponseTaurusSignsDeeptadiSvastha   BirthChartResponseTaurusSignsDeeptadi = "Svastha"
+	BirthChartResponseTaurusSignsDeeptadiVikala    BirthChartResponseTaurusSignsDeeptadi = "Vikala"
+)
+
+// Valid indicates whether the value is a known member of the BirthChartResponseTaurusSignsDeeptadi enum.
+func (e BirthChartResponseTaurusSignsDeeptadi) Valid() bool {
+	switch e {
+	case BirthChartResponseTaurusSignsDeeptadiDina:
+		return true
+	case BirthChartResponseTaurusSignsDeeptadiDipta:
+		return true
+	case BirthChartResponseTaurusSignsDeeptadiDuhkhita:
+		return true
+	case BirthChartResponseTaurusSignsDeeptadiKhala:
+		return true
+	case BirthChartResponseTaurusSignsDeeptadiKopa:
+		return true
+	case BirthChartResponseTaurusSignsDeeptadiPramudita:
+		return true
+	case BirthChartResponseTaurusSignsDeeptadiShanta:
+		return true
+	case BirthChartResponseTaurusSignsDeeptadiSvastha:
+		return true
+	case BirthChartResponseTaurusSignsDeeptadiVikala:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for BirthChartResponseTaurusSignsJagradadi.
+const (
+	BirthChartResponseTaurusSignsJagradadiJagrat   BirthChartResponseTaurusSignsJagradadi = "Jagrat"
+	BirthChartResponseTaurusSignsJagradadiSushupti BirthChartResponseTaurusSignsJagradadi = "Sushupti"
+	BirthChartResponseTaurusSignsJagradadiSwapna   BirthChartResponseTaurusSignsJagradadi = "Swapna"
+)
+
+// Valid indicates whether the value is a known member of the BirthChartResponseTaurusSignsJagradadi enum.
+func (e BirthChartResponseTaurusSignsJagradadi) Valid() bool {
+	switch e {
+	case BirthChartResponseTaurusSignsJagradadiJagrat:
+		return true
+	case BirthChartResponseTaurusSignsJagradadiSushupti:
+		return true
+	case BirthChartResponseTaurusSignsJagradadiSwapna:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for BirthChartResponseTaurusSignsNakshatraLord.
 const (
 	BirthChartResponseTaurusSignsNakshatraLordJupiter BirthChartResponseTaurusSignsNakshatraLord = "Jupiter"
@@ -1189,6 +1909,66 @@ func (e BirthChartResponseVirgoSignsAwastha) Valid() bool {
 	case BirthChartResponseVirgoSignsAwasthaVriddha:
 		return true
 	case BirthChartResponseVirgoSignsAwasthaYuva:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for BirthChartResponseVirgoSignsDeeptadi.
+const (
+	BirthChartResponseVirgoSignsDeeptadiDina      BirthChartResponseVirgoSignsDeeptadi = "Dina"
+	BirthChartResponseVirgoSignsDeeptadiDipta     BirthChartResponseVirgoSignsDeeptadi = "Dipta"
+	BirthChartResponseVirgoSignsDeeptadiDuhkhita  BirthChartResponseVirgoSignsDeeptadi = "Duhkhita"
+	BirthChartResponseVirgoSignsDeeptadiKhala     BirthChartResponseVirgoSignsDeeptadi = "Khala"
+	BirthChartResponseVirgoSignsDeeptadiKopa      BirthChartResponseVirgoSignsDeeptadi = "Kopa"
+	BirthChartResponseVirgoSignsDeeptadiPramudita BirthChartResponseVirgoSignsDeeptadi = "Pramudita"
+	BirthChartResponseVirgoSignsDeeptadiShanta    BirthChartResponseVirgoSignsDeeptadi = "Shanta"
+	BirthChartResponseVirgoSignsDeeptadiSvastha   BirthChartResponseVirgoSignsDeeptadi = "Svastha"
+	BirthChartResponseVirgoSignsDeeptadiVikala    BirthChartResponseVirgoSignsDeeptadi = "Vikala"
+)
+
+// Valid indicates whether the value is a known member of the BirthChartResponseVirgoSignsDeeptadi enum.
+func (e BirthChartResponseVirgoSignsDeeptadi) Valid() bool {
+	switch e {
+	case BirthChartResponseVirgoSignsDeeptadiDina:
+		return true
+	case BirthChartResponseVirgoSignsDeeptadiDipta:
+		return true
+	case BirthChartResponseVirgoSignsDeeptadiDuhkhita:
+		return true
+	case BirthChartResponseVirgoSignsDeeptadiKhala:
+		return true
+	case BirthChartResponseVirgoSignsDeeptadiKopa:
+		return true
+	case BirthChartResponseVirgoSignsDeeptadiPramudita:
+		return true
+	case BirthChartResponseVirgoSignsDeeptadiShanta:
+		return true
+	case BirthChartResponseVirgoSignsDeeptadiSvastha:
+		return true
+	case BirthChartResponseVirgoSignsDeeptadiVikala:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for BirthChartResponseVirgoSignsJagradadi.
+const (
+	Jagrat   BirthChartResponseVirgoSignsJagradadi = "Jagrat"
+	Sushupti BirthChartResponseVirgoSignsJagradadi = "Sushupti"
+	Swapna   BirthChartResponseVirgoSignsJagradadi = "Swapna"
+)
+
+// Valid indicates whether the value is a known member of the BirthChartResponseVirgoSignsJagradadi enum.
+func (e BirthChartResponseVirgoSignsJagradadi) Valid() bool {
+	switch e {
+	case Jagrat:
+		return true
+	case Sushupti:
+		return true
+	case Swapna:
 		return true
 	default:
 		return false
@@ -1291,6 +2071,42 @@ func (e CardSuit) Valid() bool {
 	case CardSuitSwords:
 		return true
 	case CardSuitWands:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for CharaKarakaRequestScheme.
+const (
+	CharaKarakaRequestSchemeEight CharaKarakaRequestScheme = "eight"
+	CharaKarakaRequestSchemeSeven CharaKarakaRequestScheme = "seven"
+)
+
+// Valid indicates whether the value is a known member of the CharaKarakaRequestScheme enum.
+func (e CharaKarakaRequestScheme) Valid() bool {
+	switch e {
+	case CharaKarakaRequestSchemeEight:
+		return true
+	case CharaKarakaRequestSchemeSeven:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for CharaKarakaResponseScheme.
+const (
+	CharaKarakaResponseSchemeEight CharaKarakaResponseScheme = "eight"
+	CharaKarakaResponseSchemeSeven CharaKarakaResponseScheme = "seven"
+)
+
+// Valid indicates whether the value is a known member of the CharaKarakaResponseScheme enum.
+func (e CharaKarakaResponseScheme) Valid() bool {
+	switch e {
+	case CharaKarakaResponseSchemeEight:
+		return true
+	case CharaKarakaResponseSchemeSeven:
 		return true
 	default:
 		return false
@@ -2080,21 +2896,42 @@ func (e SadhesatiResponseSeverity) Valid() bool {
 	}
 }
 
+// Defines values for YogaDetailQuality.
+const (
+	YogaDetailQualityBoth     YogaDetailQuality = "Both"
+	YogaDetailQualityNegative YogaDetailQuality = "Negative"
+	YogaDetailQualityPositive YogaDetailQuality = "Positive"
+)
+
+// Valid indicates whether the value is a known member of the YogaDetailQuality enum.
+func (e YogaDetailQuality) Valid() bool {
+	switch e {
+	case YogaDetailQualityBoth:
+		return true
+	case YogaDetailQualityNegative:
+		return true
+	case YogaDetailQualityPositive:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for YogaDetectResponseYogasQuality.
 const (
-	YogaDetectResponseYogasQualityBoth     YogaDetectResponseYogasQuality = "Both"
-	YogaDetectResponseYogasQualityNegative YogaDetectResponseYogasQuality = "Negative"
-	YogaDetectResponseYogasQualityPositive YogaDetectResponseYogasQuality = "Positive"
+	Both     YogaDetectResponseYogasQuality = "Both"
+	Negative YogaDetectResponseYogasQuality = "Negative"
+	Positive YogaDetectResponseYogasQuality = "Positive"
 )
 
 // Valid indicates whether the value is a known member of the YogaDetectResponseYogasQuality enum.
 func (e YogaDetectResponseYogasQuality) Valid() bool {
 	switch e {
-	case YogaDetectResponseYogasQualityBoth:
+	case Both:
 		return true
-	case YogaDetectResponseYogasQualityNegative:
+	case Negative:
 		return true
-	case YogaDetectResponseYogasQualityPositive:
+	case Positive:
 		return true
 	default:
 		return false
@@ -9895,6 +10732,42 @@ func (e CastYesNo200JSONResponseBodyStrength) Valid() bool {
 	}
 }
 
+// Defines values for CalculateArudhaPadasParamsLang.
+const (
+	CalculateArudhaPadasParamsLangDe CalculateArudhaPadasParamsLang = "de"
+	CalculateArudhaPadasParamsLangEn CalculateArudhaPadasParamsLang = "en"
+	CalculateArudhaPadasParamsLangEs CalculateArudhaPadasParamsLang = "es"
+	CalculateArudhaPadasParamsLangFr CalculateArudhaPadasParamsLang = "fr"
+	CalculateArudhaPadasParamsLangHi CalculateArudhaPadasParamsLang = "hi"
+	CalculateArudhaPadasParamsLangPt CalculateArudhaPadasParamsLang = "pt"
+	CalculateArudhaPadasParamsLangRu CalculateArudhaPadasParamsLang = "ru"
+	CalculateArudhaPadasParamsLangTr CalculateArudhaPadasParamsLang = "tr"
+)
+
+// Valid indicates whether the value is a known member of the CalculateArudhaPadasParamsLang enum.
+func (e CalculateArudhaPadasParamsLang) Valid() bool {
+	switch e {
+	case CalculateArudhaPadasParamsLangDe:
+		return true
+	case CalculateArudhaPadasParamsLangEn:
+		return true
+	case CalculateArudhaPadasParamsLangEs:
+		return true
+	case CalculateArudhaPadasParamsLangFr:
+		return true
+	case CalculateArudhaPadasParamsLangHi:
+		return true
+	case CalculateArudhaPadasParamsLangPt:
+		return true
+	case CalculateArudhaPadasParamsLangRu:
+		return true
+	case CalculateArudhaPadasParamsLangTr:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for CalculateDrishtiJSONBodyCoordinateSystem.
 const (
 	CalculateDrishtiJSONBodyCoordinateSystemSidereal CalculateDrishtiJSONBodyCoordinateSystem = "sidereal"
@@ -9985,6 +10858,204 @@ func (e GetMonthlyAspectsJSONBodyCoordinateSystem) Valid() bool {
 	}
 }
 
+// Defines values for ListAvasthasParamsLang.
+const (
+	ListAvasthasParamsLangDe ListAvasthasParamsLang = "de"
+	ListAvasthasParamsLangEn ListAvasthasParamsLang = "en"
+	ListAvasthasParamsLangEs ListAvasthasParamsLang = "es"
+	ListAvasthasParamsLangFr ListAvasthasParamsLang = "fr"
+	ListAvasthasParamsLangHi ListAvasthasParamsLang = "hi"
+	ListAvasthasParamsLangPt ListAvasthasParamsLang = "pt"
+	ListAvasthasParamsLangRu ListAvasthasParamsLang = "ru"
+	ListAvasthasParamsLangTr ListAvasthasParamsLang = "tr"
+)
+
+// Valid indicates whether the value is a known member of the ListAvasthasParamsLang enum.
+func (e ListAvasthasParamsLang) Valid() bool {
+	switch e {
+	case ListAvasthasParamsLangDe:
+		return true
+	case ListAvasthasParamsLangEn:
+		return true
+	case ListAvasthasParamsLangEs:
+		return true
+	case ListAvasthasParamsLangFr:
+		return true
+	case ListAvasthasParamsLangHi:
+		return true
+	case ListAvasthasParamsLangPt:
+		return true
+	case ListAvasthasParamsLangRu:
+		return true
+	case ListAvasthasParamsLangTr:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ListAvasthasParamsSystem.
+const (
+	ListAvasthasParamsSystemBaladi    ListAvasthasParamsSystem = "baladi"
+	ListAvasthasParamsSystemDeeptadi  ListAvasthasParamsSystem = "deeptadi"
+	ListAvasthasParamsSystemJagradadi ListAvasthasParamsSystem = "jagradadi"
+)
+
+// Valid indicates whether the value is a known member of the ListAvasthasParamsSystem enum.
+func (e ListAvasthasParamsSystem) Valid() bool {
+	switch e {
+	case ListAvasthasParamsSystemBaladi:
+		return true
+	case ListAvasthasParamsSystemDeeptadi:
+		return true
+	case ListAvasthasParamsSystemJagradadi:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ListAvasthas200JSONResponseBodySystem.
+const (
+	ListAvasthas200JSONResponseBodySystemBaladi    ListAvasthas200JSONResponseBodySystem = "baladi"
+	ListAvasthas200JSONResponseBodySystemDeeptadi  ListAvasthas200JSONResponseBodySystem = "deeptadi"
+	ListAvasthas200JSONResponseBodySystemJagradadi ListAvasthas200JSONResponseBodySystem = "jagradadi"
+)
+
+// Valid indicates whether the value is a known member of the ListAvasthas200JSONResponseBodySystem enum.
+func (e ListAvasthas200JSONResponseBodySystem) Valid() bool {
+	switch e {
+	case ListAvasthas200JSONResponseBodySystemBaladi:
+		return true
+	case ListAvasthas200JSONResponseBodySystemDeeptadi:
+		return true
+	case ListAvasthas200JSONResponseBodySystemJagradadi:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetAvasthaParamsLang.
+const (
+	GetAvasthaParamsLangDe GetAvasthaParamsLang = "de"
+	GetAvasthaParamsLangEn GetAvasthaParamsLang = "en"
+	GetAvasthaParamsLangEs GetAvasthaParamsLang = "es"
+	GetAvasthaParamsLangFr GetAvasthaParamsLang = "fr"
+	GetAvasthaParamsLangHi GetAvasthaParamsLang = "hi"
+	GetAvasthaParamsLangPt GetAvasthaParamsLang = "pt"
+	GetAvasthaParamsLangRu GetAvasthaParamsLang = "ru"
+	GetAvasthaParamsLangTr GetAvasthaParamsLang = "tr"
+)
+
+// Valid indicates whether the value is a known member of the GetAvasthaParamsLang enum.
+func (e GetAvasthaParamsLang) Valid() bool {
+	switch e {
+	case GetAvasthaParamsLangDe:
+		return true
+	case GetAvasthaParamsLangEn:
+		return true
+	case GetAvasthaParamsLangEs:
+		return true
+	case GetAvasthaParamsLangFr:
+		return true
+	case GetAvasthaParamsLangHi:
+		return true
+	case GetAvasthaParamsLangPt:
+		return true
+	case GetAvasthaParamsLangRu:
+		return true
+	case GetAvasthaParamsLangTr:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetAvasthaParamsID.
+const (
+	GetAvasthaParamsIDBala      GetAvasthaParamsID = "bala"
+	GetAvasthaParamsIDDina      GetAvasthaParamsID = "dina"
+	GetAvasthaParamsIDDipta     GetAvasthaParamsID = "dipta"
+	GetAvasthaParamsIDDuhkhita  GetAvasthaParamsID = "duhkhita"
+	GetAvasthaParamsIDJagrat    GetAvasthaParamsID = "jagrat"
+	GetAvasthaParamsIDKhala     GetAvasthaParamsID = "khala"
+	GetAvasthaParamsIDKopa      GetAvasthaParamsID = "kopa"
+	GetAvasthaParamsIDKumara    GetAvasthaParamsID = "kumara"
+	GetAvasthaParamsIDMrita     GetAvasthaParamsID = "mrita"
+	GetAvasthaParamsIDPramudita GetAvasthaParamsID = "pramudita"
+	GetAvasthaParamsIDShanta    GetAvasthaParamsID = "shanta"
+	GetAvasthaParamsIDSushupti  GetAvasthaParamsID = "sushupti"
+	GetAvasthaParamsIDSvastha   GetAvasthaParamsID = "svastha"
+	GetAvasthaParamsIDSwapna    GetAvasthaParamsID = "swapna"
+	GetAvasthaParamsIDVikala    GetAvasthaParamsID = "vikala"
+	GetAvasthaParamsIDVriddha   GetAvasthaParamsID = "vriddha"
+	GetAvasthaParamsIDYuva      GetAvasthaParamsID = "yuva"
+)
+
+// Valid indicates whether the value is a known member of the GetAvasthaParamsID enum.
+func (e GetAvasthaParamsID) Valid() bool {
+	switch e {
+	case GetAvasthaParamsIDBala:
+		return true
+	case GetAvasthaParamsIDDina:
+		return true
+	case GetAvasthaParamsIDDipta:
+		return true
+	case GetAvasthaParamsIDDuhkhita:
+		return true
+	case GetAvasthaParamsIDJagrat:
+		return true
+	case GetAvasthaParamsIDKhala:
+		return true
+	case GetAvasthaParamsIDKopa:
+		return true
+	case GetAvasthaParamsIDKumara:
+		return true
+	case GetAvasthaParamsIDMrita:
+		return true
+	case GetAvasthaParamsIDPramudita:
+		return true
+	case GetAvasthaParamsIDShanta:
+		return true
+	case GetAvasthaParamsIDSushupti:
+		return true
+	case GetAvasthaParamsIDSvastha:
+		return true
+	case GetAvasthaParamsIDSwapna:
+		return true
+	case GetAvasthaParamsIDVikala:
+		return true
+	case GetAvasthaParamsIDVriddha:
+		return true
+	case GetAvasthaParamsIDYuva:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetAvastha200JSONResponseBodySystem.
+const (
+	Baladi    GetAvastha200JSONResponseBodySystem = "baladi"
+	Deeptadi  GetAvastha200JSONResponseBodySystem = "deeptadi"
+	Jagradadi GetAvastha200JSONResponseBodySystem = "jagradadi"
+)
+
+// Valid indicates whether the value is a known member of the GetAvastha200JSONResponseBodySystem enum.
+func (e GetAvastha200JSONResponseBodySystem) Valid() bool {
+	switch e {
+	case Baladi:
+		return true
+	case Deeptadi:
+		return true
+	case Jagradadi:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for GenerateBirthChartParamsLang.
 const (
 	GenerateBirthChartParamsLangDe GenerateBirthChartParamsLang = "de"
@@ -10015,6 +11086,60 @@ func (e GenerateBirthChartParamsLang) Valid() bool {
 	case GenerateBirthChartParamsLangRu:
 		return true
 	case GenerateBirthChartParamsLangTr:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GenerateBirthChartParamsFocus.
+const (
+	GenerateBirthChartParamsFocusFinance GenerateBirthChartParamsFocus = "finance"
+	GenerateBirthChartParamsFocusGeneral GenerateBirthChartParamsFocus = "general"
+)
+
+// Valid indicates whether the value is a known member of the GenerateBirthChartParamsFocus enum.
+func (e GenerateBirthChartParamsFocus) Valid() bool {
+	switch e {
+	case GenerateBirthChartParamsFocusFinance:
+		return true
+	case GenerateBirthChartParamsFocusGeneral:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for CalculateCharaKarakasParamsLang.
+const (
+	CalculateCharaKarakasParamsLangDe CalculateCharaKarakasParamsLang = "de"
+	CalculateCharaKarakasParamsLangEn CalculateCharaKarakasParamsLang = "en"
+	CalculateCharaKarakasParamsLangEs CalculateCharaKarakasParamsLang = "es"
+	CalculateCharaKarakasParamsLangFr CalculateCharaKarakasParamsLang = "fr"
+	CalculateCharaKarakasParamsLangHi CalculateCharaKarakasParamsLang = "hi"
+	CalculateCharaKarakasParamsLangPt CalculateCharaKarakasParamsLang = "pt"
+	CalculateCharaKarakasParamsLangRu CalculateCharaKarakasParamsLang = "ru"
+	CalculateCharaKarakasParamsLangTr CalculateCharaKarakasParamsLang = "tr"
+)
+
+// Valid indicates whether the value is a known member of the CalculateCharaKarakasParamsLang enum.
+func (e CalculateCharaKarakasParamsLang) Valid() bool {
+	switch e {
+	case CalculateCharaKarakasParamsLangDe:
+		return true
+	case CalculateCharaKarakasParamsLangEn:
+		return true
+	case CalculateCharaKarakasParamsLangEs:
+		return true
+	case CalculateCharaKarakasParamsLangFr:
+		return true
+	case CalculateCharaKarakasParamsLangHi:
+		return true
+	case CalculateCharaKarakasParamsLangPt:
+		return true
+	case CalculateCharaKarakasParamsLangRu:
+		return true
+	case CalculateCharaKarakasParamsLangTr:
 		return true
 	default:
 		return false
@@ -10087,6 +11212,24 @@ func (e GetCurrentDashaParamsLang) Valid() bool {
 	case GetCurrentDashaParamsLangRu:
 		return true
 	case GetCurrentDashaParamsLangTr:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetCurrentDashaParamsFocus.
+const (
+	GetCurrentDashaParamsFocusFinance GetCurrentDashaParamsFocus = "finance"
+	GetCurrentDashaParamsFocusGeneral GetCurrentDashaParamsFocus = "general"
+)
+
+// Valid indicates whether the value is a known member of the GetCurrentDashaParamsFocus enum.
+func (e GetCurrentDashaParamsFocus) Valid() bool {
+	switch e {
+	case GetCurrentDashaParamsFocusFinance:
+		return true
+	case GetCurrentDashaParamsFocusGeneral:
 		return true
 	default:
 		return false
@@ -11053,6 +12196,24 @@ func (e GetMajorDashasParamsLang) Valid() bool {
 	}
 }
 
+// Defines values for GetMajorDashasParamsFocus.
+const (
+	GetMajorDashasParamsFocusFinance GetMajorDashasParamsFocus = "finance"
+	GetMajorDashasParamsFocusGeneral GetMajorDashasParamsFocus = "general"
+)
+
+// Valid indicates whether the value is a known member of the GetMajorDashasParamsFocus enum.
+func (e GetMajorDashasParamsFocus) Valid() bool {
+	switch e {
+	case GetMajorDashasParamsFocusFinance:
+		return true
+	case GetMajorDashasParamsFocusGeneral:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for GetMajorDashasJSONBodyAyanamsa.
 const (
 	GetMajorDashasJSONBodyAyanamsaKpNewcomb GetMajorDashasJSONBodyAyanamsa = "kp-newcomb"
@@ -11269,6 +12430,24 @@ func (e GetSubDashasParamsLang) Valid() bool {
 	case GetSubDashasParamsLangRu:
 		return true
 	case GetSubDashasParamsLangTr:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetSubDashasParamsFocus.
+const (
+	GetSubDashasParamsFocusFinance GetSubDashasParamsFocus = "finance"
+	GetSubDashasParamsFocusGeneral GetSubDashasParamsFocus = "general"
+)
+
+// Valid indicates whether the value is a known member of the GetSubDashasParamsFocus enum.
+func (e GetSubDashasParamsFocus) Valid() bool {
+	switch e {
+	case GetSubDashasParamsFocusFinance:
+		return true
+	case GetSubDashasParamsFocusGeneral:
 		return true
 	default:
 		return false
@@ -11656,6 +12835,24 @@ func (e GetPratyantardashasParamsLang) Valid() bool {
 	case GetPratyantardashasParamsLangRu:
 		return true
 	case GetPratyantardashasParamsLangTr:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetPratyantardashasParamsFocus.
+const (
+	GetPratyantardashasParamsFocusFinance GetPratyantardashasParamsFocus = "finance"
+	GetPratyantardashasParamsFocusGeneral GetPratyantardashasParamsFocus = "general"
+)
+
+// Valid indicates whether the value is a known member of the GetPratyantardashasParamsFocus enum.
+func (e GetPratyantardashasParamsFocus) Valid() bool {
+	switch e {
+	case GetPratyantardashasParamsFocusFinance:
+		return true
+	case GetPratyantardashasParamsFocusGeneral:
 		return true
 	default:
 		return false
@@ -12199,6 +13396,24 @@ func (e GetSookshmaDashasParamsLang) Valid() bool {
 	case GetSookshmaDashasParamsLangRu:
 		return true
 	case GetSookshmaDashasParamsLangTr:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetSookshmaDashasParamsFocus.
+const (
+	GetSookshmaDashasParamsFocusFinance GetSookshmaDashasParamsFocus = "finance"
+	GetSookshmaDashasParamsFocusGeneral GetSookshmaDashasParamsFocus = "general"
+)
+
+// Valid indicates whether the value is a known member of the GetSookshmaDashasParamsFocus enum.
+func (e GetSookshmaDashasParamsFocus) Valid() bool {
+	switch e {
+	case GetSookshmaDashasParamsFocusFinance:
+		return true
+	case GetSookshmaDashasParamsFocusGeneral:
 		return true
 	default:
 		return false
@@ -12898,6 +14113,24 @@ func (e GetPranaDashasParamsLang) Valid() bool {
 	case GetPranaDashasParamsLangRu:
 		return true
 	case GetPranaDashasParamsLangTr:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetPranaDashasParamsFocus.
+const (
+	GetPranaDashasParamsFocusFinance GetPranaDashasParamsFocus = "finance"
+	GetPranaDashasParamsFocusGeneral GetPranaDashasParamsFocus = "general"
+)
+
+// Valid indicates whether the value is a known member of the GetPranaDashasParamsFocus enum.
+func (e GetPranaDashasParamsFocus) Valid() bool {
+	switch e {
+	case GetPranaDashasParamsFocusFinance:
+		return true
+	case GetPranaDashasParamsFocusGeneral:
 		return true
 	default:
 		return false
@@ -13825,6 +15058,24 @@ func (e GenerateKpChartParamsLang) Valid() bool {
 	case GenerateKpChartParamsLangRu:
 		return true
 	case GenerateKpChartParamsLangTr:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GenerateKpChartParamsFocus.
+const (
+	GenerateKpChartParamsFocusFinance GenerateKpChartParamsFocus = "finance"
+	GenerateKpChartParamsFocusGeneral GenerateKpChartParamsFocus = "general"
+)
+
+// Valid indicates whether the value is a known member of the GenerateKpChartParamsFocus enum.
+func (e GenerateKpChartParamsFocus) Valid() bool {
+	switch e {
+	case GenerateKpChartParamsFocusFinance:
+		return true
+	case GenerateKpChartParamsFocusGeneral:
 		return true
 	default:
 		return false
@@ -14808,6 +16059,7 @@ const (
 	Madhyavayasidhana         GetYogaParamsID = "madhyavayasidhana"
 	Mahabhagya                GetYogaParamsID = "mahabhagya"
 	Makuta                    GetYogaParamsID = "makuta"
+	Mala                      GetYogaParamsID = "mala"
 	Malavya                   GetYogaParamsID = "malavya"
 	Marud                     GetYogaParamsID = "marud"
 	Matibhramana              GetYogaParamsID = "matibhramana"
@@ -15266,6 +16518,8 @@ func (e GetYogaParamsID) Valid() bool {
 		return true
 	case Makuta:
 		return true
+	case Mala:
+		return true
 	case Malavya:
 		return true
 	case Marud:
@@ -15565,27 +16819,6 @@ func (e GetYogaParamsID) Valid() bool {
 	}
 }
 
-// Defines values for GetYoga200JSONResponseBodyQuality.
-const (
-	Both     GetYoga200JSONResponseBodyQuality = "Both"
-	Negative GetYoga200JSONResponseBodyQuality = "Negative"
-	Positive GetYoga200JSONResponseBodyQuality = "Positive"
-)
-
-// Valid indicates whether the value is a known member of the GetYoga200JSONResponseBodyQuality enum.
-func (e GetYoga200JSONResponseBodyQuality) Valid() bool {
-	switch e {
-	case Both:
-		return true
-	case Negative:
-		return true
-	case Positive:
-		return true
-	default:
-		return false
-	}
-}
-
 // ArabicLotsRequest defines model for ArabicLotsRequest.
 type ArabicLotsRequest struct {
 	// Date Birth date in YYYY-MM-DD format. Determines planetary positions for the specific calendar day.
@@ -15674,6 +16907,86 @@ type ArabicLotsResponse struct {
 
 // ArabicLotsResponseSect Chart sect that selected each formula. Day (diurnal) when the Sun is above the horizon, night (nocturnal) when below. Every lot swaps its two non-Ascendant terms between day and night.
 type ArabicLotsResponseSect string
+
+// ArudhaRequest defines model for ArudhaRequest.
+type ArudhaRequest struct {
+	// Date Birth date in YYYY-MM-DD format. Date determines planetary positions and nakshatra calculations for Vedic kundli (janam patri). Accurate birth date is essential for dashas, yoga calculations, and divisional charts (vargas).
+	Date openapi_types.Date `json:"date"`
+
+	// Latitude Birth location latitude in decimal degrees. Location determines local sidereal time for Lagna calculation and affects bhava (house) cusps. Example: Delhi 28.6139, Mumbai 19.0760, Kathmandu 27.7172.
+	Latitude float32 `json:"latitude"`
+
+	// Longitude Birth location longitude in decimal degrees. Affects local time calculations and ayanamsha adjustments. Example: Delhi 77.2090, Mumbai 72.8777, Kathmandu 85.3240.
+	Longitude float32 `json:"longitude"`
+
+	// Time Birth time in 24-hour HH:MM:SS format. Time is CRITICAL for Lagna (Ascendant) calculation and house divisions. It changes every two hours roughly. Even minutes matter for accurate nakshatra pada and divisional chart (D9, D10) calculations. Without exact time, Lagna and house-based predictions will be incorrect.
+	Time string `json:"time"`
+
+	// Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5.
+	Timezone *ArudhaRequest_Timezone `json:"timezone,omitempty"`
+}
+
+// ArudhaRequestTimezone0 defines model for .
+type ArudhaRequestTimezone0 = float32
+
+// ArudhaRequestTimezone1 defines model for .
+type ArudhaRequestTimezone1 = string
+
+// ArudhaRequest_Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5.
+type ArudhaRequest_Timezone struct {
+	union json.RawMessage
+}
+
+// ArudhaResponse The twelve Arudha padas of a birth chart, computed per the Jaimini rule with the classical exception applied.
+type ArudhaResponse struct {
+	// ArudhaLagna Zodiac sign of the Arudha Lagna (AL), the pada of the first house and the single most used value in this response. Repeated at the top level so a client rendering only the AL does not have to search the array.
+	ArudhaLagna string `json:"arudhaLagna"`
+
+	// LagnaRashi Zodiac sign of the Ascendant (Lagna), which anchors the twelve bhavas the padas are derived from.
+	LagnaRashi string `json:"lagnaRashi"`
+
+	// Padas All twelve Arudha padas in bhava order, a1 through a12. Each carries the lord and the count it came from, so the derivation can be checked by hand.
+	Padas []struct {
+		// Abbreviation Practitioner shorthand written on a chart: AL for the Arudha Lagna, A2 through A11, and UL for the Upapada.
+		Abbreviation string `json:"abbreviation"`
+
+		// BhavaRashi Zodiac sign (rashi) occupying that bhava, counted whole-sign from the Lagna. The count to the pada starts here.
+		BhavaRashi string `json:"bhavaRashi"`
+
+		// ExceptionApplied True when the raw pada landed in the same bhava or the seventh from it and was moved to the tenth from there, as the classical rule requires. Surfaced so a reader can see exactly why a pada sits where it does, which is the step implementations most often skip.
+		ExceptionApplied bool `json:"exceptionApplied"`
+
+		// House Bhava (house) number 1-12 whose pada this is. The pada is the perceived, outward form of that bhava.
+		House int `json:"house"`
+
+		// HouseFromLagna Which house from the Lagna the pada sits in, counted inclusively 1-12. Reading a pada against the natal Lagna is how its strength is judged.
+		HouseFromLagna int `json:"houseFromLagna"`
+
+		// ID Pada identifier, a1 through a12, matching the bhava it belongs to. a1 is the Arudha Lagna and a12 the Upapada.
+		ID string `json:"id"`
+
+		// Lord Lord of the bhava sign. The pada is found by counting to this graha and then the same distance again.
+		Lord string `json:"lord"`
+
+		// LordRashi Zodiac sign the bhava lord occupies, which sets the length of the count.
+		LordRashi string `json:"lordRashi"`
+
+		// Meaning Short label for what this pada is read for, sized for a table cell.
+		Meaning string `json:"meaning"`
+
+		// Name Classical Sanskrit name of the pada, for example Arudha Lagna, Dhana Pada, Dara Pada, Upapada.
+		Name string `json:"name"`
+
+		// Rashi Zodiac sign the pada falls in, after the classical exception is applied. This is the answer most readings start from.
+		Rashi string `json:"rashi"`
+
+		// Significations What this pada governs. Padas describe how a matter is PERCEIVED, which is what separates them from the bhava significations of the same house.
+		Significations string `json:"significations"`
+	} `json:"padas"`
+
+	// Upapada Zodiac sign of the Upapada (UL), the pada of the twelfth house, read for marriage and its durability. The second most used value, so it is also lifted to the top level.
+	Upapada string `json:"upapada"`
+}
 
 // AshtakavargaRequest defines model for AshtakavargaRequest.
 type AshtakavargaRequest struct {
@@ -16332,6 +17645,9 @@ type BirthChartResponse struct {
 			// Awastha Baladi avastha, the planetary age-state set by the graha degree within its sign: Bala (infant), Kumara (child), Yuva (adult, strongest results), Vriddha (old), Mrita (dead, weakest). Bands run forward in odd signs and reversed in even signs. D1 birth chart only.
 			Awastha *BirthChartResponseAquariusSignsAwastha `json:"awastha,omitempty"`
 
+			// Deeptadi Deeptadi avastha, the dispositional state of the graha, one of nine: Dipta (exalted, blazing), Svastha (own sign, healthy), Pramudita (great friend sign, delighted), Shanta (friendly sign, at peace), Dina (neutral sign, helpless), Duhkhita (enemy sign, sorrowful), Khala (great enemy sign, harsh), Vikala (joined by a natural malefic, disabled), Kopa (eclipsed by the Sun, enraged). Where more than one applies the more severe is returned, so combustion outranks a malefic conjunction, which outranks the sign reading. Present for the seven classical grahas on the D1 chart; Rahu, Ketu and the Lagna are omitted.
+			Deeptadi *BirthChartResponseAquariusSignsDeeptadi `json:"deeptadi,omitempty"`
+
 			// Graha Planet (graha) placed in this sign.
 			Graha string `json:"graha"`
 
@@ -16340,6 +17656,9 @@ type BirthChartResponse struct {
 
 			// IsRetrograde True if planet is in retrograde motion (appears to move backward). Retrograde planets have altered significations.
 			IsRetrograde bool `json:"isRetrograde"`
+
+			// Jagradadi Jagradadi avastha, the waking state of the graha set by its sign dignity: Jagrat (awake, own sign or exaltation, full results), Swapna (dreaming, a friendly or neutral sign, medium results), Sushupti (sleeping, an enemy sign or debilitation, no results). Present for the seven classical grahas on the D1 chart; Rahu, Ketu and the Lagna own no sign and are omitted.
+			Jagradadi *BirthChartResponseAquariusSignsJagradadi `json:"jagradadi,omitempty"`
 
 			// Longitude Sidereal longitude in degrees (0-360) using Lahiri ayanamsa.
 			Longitude float32 `json:"longitude"`
@@ -16367,6 +17686,9 @@ type BirthChartResponse struct {
 			// Awastha Baladi avastha, the planetary age-state set by the graha degree within its sign: Bala (infant), Kumara (child), Yuva (adult, strongest results), Vriddha (old), Mrita (dead, weakest). Bands run forward in odd signs and reversed in even signs. D1 birth chart only.
 			Awastha *BirthChartResponseAriesSignsAwastha `json:"awastha,omitempty"`
 
+			// Deeptadi Deeptadi avastha, the dispositional state of the graha, one of nine: Dipta (exalted, blazing), Svastha (own sign, healthy), Pramudita (great friend sign, delighted), Shanta (friendly sign, at peace), Dina (neutral sign, helpless), Duhkhita (enemy sign, sorrowful), Khala (great enemy sign, harsh), Vikala (joined by a natural malefic, disabled), Kopa (eclipsed by the Sun, enraged). Where more than one applies the more severe is returned, so combustion outranks a malefic conjunction, which outranks the sign reading. Present for the seven classical grahas on the D1 chart; Rahu, Ketu and the Lagna are omitted.
+			Deeptadi *BirthChartResponseAriesSignsDeeptadi `json:"deeptadi,omitempty"`
+
 			// Graha Planet (graha) placed in this sign.
 			Graha string `json:"graha"`
 
@@ -16375,6 +17697,9 @@ type BirthChartResponse struct {
 
 			// IsRetrograde True if planet is in retrograde motion (appears to move backward). Retrograde planets have altered significations.
 			IsRetrograde bool `json:"isRetrograde"`
+
+			// Jagradadi Jagradadi avastha, the waking state of the graha set by its sign dignity: Jagrat (awake, own sign or exaltation, full results), Swapna (dreaming, a friendly or neutral sign, medium results), Sushupti (sleeping, an enemy sign or debilitation, no results). Present for the seven classical grahas on the D1 chart; Rahu, Ketu and the Lagna own no sign and are omitted.
+			Jagradadi *BirthChartResponseAriesSignsJagradadi `json:"jagradadi,omitempty"`
 
 			// Longitude Sidereal longitude in degrees (0-360) using Lahiri ayanamsa.
 			Longitude float32 `json:"longitude"`
@@ -16402,6 +17727,9 @@ type BirthChartResponse struct {
 			// Awastha Baladi avastha, the planetary age-state set by the graha degree within its sign: Bala (infant), Kumara (child), Yuva (adult, strongest results), Vriddha (old), Mrita (dead, weakest). Bands run forward in odd signs and reversed in even signs. D1 birth chart only.
 			Awastha *BirthChartResponseCancerSignsAwastha `json:"awastha,omitempty"`
 
+			// Deeptadi Deeptadi avastha, the dispositional state of the graha, one of nine: Dipta (exalted, blazing), Svastha (own sign, healthy), Pramudita (great friend sign, delighted), Shanta (friendly sign, at peace), Dina (neutral sign, helpless), Duhkhita (enemy sign, sorrowful), Khala (great enemy sign, harsh), Vikala (joined by a natural malefic, disabled), Kopa (eclipsed by the Sun, enraged). Where more than one applies the more severe is returned, so combustion outranks a malefic conjunction, which outranks the sign reading. Present for the seven classical grahas on the D1 chart; Rahu, Ketu and the Lagna are omitted.
+			Deeptadi *BirthChartResponseCancerSignsDeeptadi `json:"deeptadi,omitempty"`
+
 			// Graha Planet (graha) placed in this sign.
 			Graha string `json:"graha"`
 
@@ -16410,6 +17738,9 @@ type BirthChartResponse struct {
 
 			// IsRetrograde True if planet is in retrograde motion (appears to move backward). Retrograde planets have altered significations.
 			IsRetrograde bool `json:"isRetrograde"`
+
+			// Jagradadi Jagradadi avastha, the waking state of the graha set by its sign dignity: Jagrat (awake, own sign or exaltation, full results), Swapna (dreaming, a friendly or neutral sign, medium results), Sushupti (sleeping, an enemy sign or debilitation, no results). Present for the seven classical grahas on the D1 chart; Rahu, Ketu and the Lagna own no sign and are omitted.
+			Jagradadi *BirthChartResponseCancerSignsJagradadi `json:"jagradadi,omitempty"`
 
 			// Longitude Sidereal longitude in degrees (0-360) using Lahiri ayanamsa.
 			Longitude float32 `json:"longitude"`
@@ -16437,6 +17768,9 @@ type BirthChartResponse struct {
 			// Awastha Baladi avastha, the planetary age-state set by the graha degree within its sign: Bala (infant), Kumara (child), Yuva (adult, strongest results), Vriddha (old), Mrita (dead, weakest). Bands run forward in odd signs and reversed in even signs. D1 birth chart only.
 			Awastha *BirthChartResponseCapricornSignsAwastha `json:"awastha,omitempty"`
 
+			// Deeptadi Deeptadi avastha, the dispositional state of the graha, one of nine: Dipta (exalted, blazing), Svastha (own sign, healthy), Pramudita (great friend sign, delighted), Shanta (friendly sign, at peace), Dina (neutral sign, helpless), Duhkhita (enemy sign, sorrowful), Khala (great enemy sign, harsh), Vikala (joined by a natural malefic, disabled), Kopa (eclipsed by the Sun, enraged). Where more than one applies the more severe is returned, so combustion outranks a malefic conjunction, which outranks the sign reading. Present for the seven classical grahas on the D1 chart; Rahu, Ketu and the Lagna are omitted.
+			Deeptadi *BirthChartResponseCapricornSignsDeeptadi `json:"deeptadi,omitempty"`
+
 			// Graha Planet (graha) placed in this sign.
 			Graha string `json:"graha"`
 
@@ -16445,6 +17779,9 @@ type BirthChartResponse struct {
 
 			// IsRetrograde True if planet is in retrograde motion (appears to move backward). Retrograde planets have altered significations.
 			IsRetrograde bool `json:"isRetrograde"`
+
+			// Jagradadi Jagradadi avastha, the waking state of the graha set by its sign dignity: Jagrat (awake, own sign or exaltation, full results), Swapna (dreaming, a friendly or neutral sign, medium results), Sushupti (sleeping, an enemy sign or debilitation, no results). Present for the seven classical grahas on the D1 chart; Rahu, Ketu and the Lagna own no sign and are omitted.
+			Jagradadi *BirthChartResponseCapricornSignsJagradadi `json:"jagradadi,omitempty"`
 
 			// Longitude Sidereal longitude in degrees (0-360) using Lahiri ayanamsa.
 			Longitude float32 `json:"longitude"`
@@ -16484,6 +17821,9 @@ type BirthChartResponse struct {
 			// Awastha Baladi avastha, the planetary age-state set by the graha degree within its sign: Bala (infant), Kumara (child), Yuva (adult, strongest results), Vriddha (old), Mrita (dead, weakest). Bands run forward in odd signs and reversed in even signs. D1 birth chart only.
 			Awastha *BirthChartResponseGeminiSignsAwastha `json:"awastha,omitempty"`
 
+			// Deeptadi Deeptadi avastha, the dispositional state of the graha, one of nine: Dipta (exalted, blazing), Svastha (own sign, healthy), Pramudita (great friend sign, delighted), Shanta (friendly sign, at peace), Dina (neutral sign, helpless), Duhkhita (enemy sign, sorrowful), Khala (great enemy sign, harsh), Vikala (joined by a natural malefic, disabled), Kopa (eclipsed by the Sun, enraged). Where more than one applies the more severe is returned, so combustion outranks a malefic conjunction, which outranks the sign reading. Present for the seven classical grahas on the D1 chart; Rahu, Ketu and the Lagna are omitted.
+			Deeptadi *BirthChartResponseGeminiSignsDeeptadi `json:"deeptadi,omitempty"`
+
 			// Graha Planet (graha) placed in this sign.
 			Graha string `json:"graha"`
 
@@ -16492,6 +17832,9 @@ type BirthChartResponse struct {
 
 			// IsRetrograde True if planet is in retrograde motion (appears to move backward). Retrograde planets have altered significations.
 			IsRetrograde bool `json:"isRetrograde"`
+
+			// Jagradadi Jagradadi avastha, the waking state of the graha set by its sign dignity: Jagrat (awake, own sign or exaltation, full results), Swapna (dreaming, a friendly or neutral sign, medium results), Sushupti (sleeping, an enemy sign or debilitation, no results). Present for the seven classical grahas on the D1 chart; Rahu, Ketu and the Lagna own no sign and are omitted.
+			Jagradadi *BirthChartResponseGeminiSignsJagradadi `json:"jagradadi,omitempty"`
 
 			// Longitude Sidereal longitude in degrees (0-360) using Lahiri ayanamsa.
 			Longitude float32 `json:"longitude"`
@@ -16521,6 +17864,9 @@ type BirthChartResponse struct {
 
 		// Number Bhava (house) number 1-12. House 1 is the Lagna (Ascendant), house 7 the partnership axis, house 10 the career axis.
 		Number int `json:"number"`
+
+		// Themes Significations of the bhava as short keywords, the compact form of description. Bhava 1 covers self, body and vitality; 2 wealth and speech; 7 marriage and partnership; 10 career and status. Suited to chart labels, table cells and legends where the full classical description is too long, and identical to the houseThemes map returned by the Vimshottari dasha and KP chart routes. Localized by the lang query parameter.
+		Themes *[]string `json:"themes,omitempty"`
 	} `json:"houses"`
 
 	// Interpretations Planet-in-rashi and planet-in-nakshatra interpretation summaries, keyed by planet name. Translated when a supported lang is requested.
@@ -16540,6 +17886,9 @@ type BirthChartResponse struct {
 			// Awastha Baladi avastha, the planetary age-state set by the graha degree within its sign: Bala (infant), Kumara (child), Yuva (adult, strongest results), Vriddha (old), Mrita (dead, weakest). Bands run forward in odd signs and reversed in even signs. D1 birth chart only.
 			Awastha *BirthChartResponseLeoSignsAwastha `json:"awastha,omitempty"`
 
+			// Deeptadi Deeptadi avastha, the dispositional state of the graha, one of nine: Dipta (exalted, blazing), Svastha (own sign, healthy), Pramudita (great friend sign, delighted), Shanta (friendly sign, at peace), Dina (neutral sign, helpless), Duhkhita (enemy sign, sorrowful), Khala (great enemy sign, harsh), Vikala (joined by a natural malefic, disabled), Kopa (eclipsed by the Sun, enraged). Where more than one applies the more severe is returned, so combustion outranks a malefic conjunction, which outranks the sign reading. Present for the seven classical grahas on the D1 chart; Rahu, Ketu and the Lagna are omitted.
+			Deeptadi *BirthChartResponseLeoSignsDeeptadi `json:"deeptadi,omitempty"`
+
 			// Graha Planet (graha) placed in this sign.
 			Graha string `json:"graha"`
 
@@ -16548,6 +17897,9 @@ type BirthChartResponse struct {
 
 			// IsRetrograde True if planet is in retrograde motion (appears to move backward). Retrograde planets have altered significations.
 			IsRetrograde bool `json:"isRetrograde"`
+
+			// Jagradadi Jagradadi avastha, the waking state of the graha set by its sign dignity: Jagrat (awake, own sign or exaltation, full results), Swapna (dreaming, a friendly or neutral sign, medium results), Sushupti (sleeping, an enemy sign or debilitation, no results). Present for the seven classical grahas on the D1 chart; Rahu, Ketu and the Lagna own no sign and are omitted.
+			Jagradadi *BirthChartResponseLeoSignsJagradadi `json:"jagradadi,omitempty"`
 
 			// Longitude Sidereal longitude in degrees (0-360) using Lahiri ayanamsa.
 			Longitude float32 `json:"longitude"`
@@ -16575,6 +17927,9 @@ type BirthChartResponse struct {
 			// Awastha Baladi avastha, the planetary age-state set by the graha degree within its sign: Bala (infant), Kumara (child), Yuva (adult, strongest results), Vriddha (old), Mrita (dead, weakest). Bands run forward in odd signs and reversed in even signs. D1 birth chart only.
 			Awastha *BirthChartResponseLibraSignsAwastha `json:"awastha,omitempty"`
 
+			// Deeptadi Deeptadi avastha, the dispositional state of the graha, one of nine: Dipta (exalted, blazing), Svastha (own sign, healthy), Pramudita (great friend sign, delighted), Shanta (friendly sign, at peace), Dina (neutral sign, helpless), Duhkhita (enemy sign, sorrowful), Khala (great enemy sign, harsh), Vikala (joined by a natural malefic, disabled), Kopa (eclipsed by the Sun, enraged). Where more than one applies the more severe is returned, so combustion outranks a malefic conjunction, which outranks the sign reading. Present for the seven classical grahas on the D1 chart; Rahu, Ketu and the Lagna are omitted.
+			Deeptadi *BirthChartResponseLibraSignsDeeptadi `json:"deeptadi,omitempty"`
+
 			// Graha Planet (graha) placed in this sign.
 			Graha string `json:"graha"`
 
@@ -16583,6 +17938,9 @@ type BirthChartResponse struct {
 
 			// IsRetrograde True if planet is in retrograde motion (appears to move backward). Retrograde planets have altered significations.
 			IsRetrograde bool `json:"isRetrograde"`
+
+			// Jagradadi Jagradadi avastha, the waking state of the graha set by its sign dignity: Jagrat (awake, own sign or exaltation, full results), Swapna (dreaming, a friendly or neutral sign, medium results), Sushupti (sleeping, an enemy sign or debilitation, no results). Present for the seven classical grahas on the D1 chart; Rahu, Ketu and the Lagna own no sign and are omitted.
+			Jagradadi *BirthChartResponseLibraSignsJagradadi `json:"jagradadi,omitempty"`
 
 			// Longitude Sidereal longitude in degrees (0-360) using Lahiri ayanamsa.
 			Longitude float32 `json:"longitude"`
@@ -16607,6 +17965,9 @@ type BirthChartResponse struct {
 		// Awastha Baladi avastha, the planetary age-state set by the graha degree within its sign: Bala (infant), Kumara (child), Yuva (adult, strongest results), Vriddha (old), Mrita (dead, weakest). Bands run forward in odd signs and reversed in even signs. D1 birth chart only.
 		Awastha *BirthChartResponseMetaAwastha `json:"awastha,omitempty"`
 
+		// Deeptadi Deeptadi avastha, the dispositional state of the graha, one of nine: Dipta (exalted, blazing), Svastha (own sign, healthy), Pramudita (great friend sign, delighted), Shanta (friendly sign, at peace), Dina (neutral sign, helpless), Duhkhita (enemy sign, sorrowful), Khala (great enemy sign, harsh), Vikala (joined by a natural malefic, disabled), Kopa (eclipsed by the Sun, enraged). Where more than one applies the more severe is returned, so combustion outranks a malefic conjunction, which outranks the sign reading. Present for the seven classical grahas on the D1 chart; Rahu, Ketu and the Lagna are omitted.
+		Deeptadi *BirthChartResponseMetaDeeptadi `json:"deeptadi,omitempty"`
+
 		// Graha Planet (graha) name. One of 9 Navagraha (Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn, Rahu, Ketu) or Lagna (Ascendant). Used for matching transits and dasha lords to natal positions.
 		Graha string `json:"graha"`
 
@@ -16615,6 +17976,9 @@ type BirthChartResponse struct {
 
 		// IsRetrograde True if the planet is in retrograde motion (appears to move backward through the zodiac). Retrograde planets carry intensified or internalized significations in Vedic interpretation.
 		IsRetrograde bool `json:"isRetrograde"`
+
+		// Jagradadi Jagradadi avastha, the waking state of the graha set by its sign dignity: Jagrat (awake, own sign or exaltation, full results), Swapna (dreaming, a friendly or neutral sign, medium results), Sushupti (sleeping, an enemy sign or debilitation, no results). Present for the seven classical grahas on the D1 chart; Rahu, Ketu and the Lagna own no sign and are omitted.
+		Jagradadi *BirthChartResponseMetaJagradadi `json:"jagradadi,omitempty"`
 
 		// Longitude Sidereal longitude in degrees (0-360) using Lahiri ayanamsa. Precise position used for aspect calculations, divisional chart mapping, and transit analysis.
 		Longitude float32 `json:"longitude"`
@@ -16646,6 +18010,9 @@ type BirthChartResponse struct {
 			// Awastha Baladi avastha, the planetary age-state set by the graha degree within its sign: Bala (infant), Kumara (child), Yuva (adult, strongest results), Vriddha (old), Mrita (dead, weakest). Bands run forward in odd signs and reversed in even signs. D1 birth chart only.
 			Awastha *BirthChartResponsePiscesSignsAwastha `json:"awastha,omitempty"`
 
+			// Deeptadi Deeptadi avastha, the dispositional state of the graha, one of nine: Dipta (exalted, blazing), Svastha (own sign, healthy), Pramudita (great friend sign, delighted), Shanta (friendly sign, at peace), Dina (neutral sign, helpless), Duhkhita (enemy sign, sorrowful), Khala (great enemy sign, harsh), Vikala (joined by a natural malefic, disabled), Kopa (eclipsed by the Sun, enraged). Where more than one applies the more severe is returned, so combustion outranks a malefic conjunction, which outranks the sign reading. Present for the seven classical grahas on the D1 chart; Rahu, Ketu and the Lagna are omitted.
+			Deeptadi *BirthChartResponsePiscesSignsDeeptadi `json:"deeptadi,omitempty"`
+
 			// Graha Planet (graha) placed in this sign.
 			Graha string `json:"graha"`
 
@@ -16654,6 +18021,9 @@ type BirthChartResponse struct {
 
 			// IsRetrograde True if planet is in retrograde motion (appears to move backward). Retrograde planets have altered significations.
 			IsRetrograde bool `json:"isRetrograde"`
+
+			// Jagradadi Jagradadi avastha, the waking state of the graha set by its sign dignity: Jagrat (awake, own sign or exaltation, full results), Swapna (dreaming, a friendly or neutral sign, medium results), Sushupti (sleeping, an enemy sign or debilitation, no results). Present for the seven classical grahas on the D1 chart; Rahu, Ketu and the Lagna own no sign and are omitted.
+			Jagradadi *BirthChartResponsePiscesSignsJagradadi `json:"jagradadi,omitempty"`
 
 			// Longitude Sidereal longitude in degrees (0-360) using Lahiri ayanamsa.
 			Longitude float32 `json:"longitude"`
@@ -16696,6 +18066,9 @@ type BirthChartResponse struct {
 			// Awastha Baladi avastha, the planetary age-state set by the graha degree within its sign: Bala (infant), Kumara (child), Yuva (adult, strongest results), Vriddha (old), Mrita (dead, weakest). Bands run forward in odd signs and reversed in even signs. D1 birth chart only.
 			Awastha *BirthChartResponseSagittariusSignsAwastha `json:"awastha,omitempty"`
 
+			// Deeptadi Deeptadi avastha, the dispositional state of the graha, one of nine: Dipta (exalted, blazing), Svastha (own sign, healthy), Pramudita (great friend sign, delighted), Shanta (friendly sign, at peace), Dina (neutral sign, helpless), Duhkhita (enemy sign, sorrowful), Khala (great enemy sign, harsh), Vikala (joined by a natural malefic, disabled), Kopa (eclipsed by the Sun, enraged). Where more than one applies the more severe is returned, so combustion outranks a malefic conjunction, which outranks the sign reading. Present for the seven classical grahas on the D1 chart; Rahu, Ketu and the Lagna are omitted.
+			Deeptadi *BirthChartResponseSagittariusSignsDeeptadi `json:"deeptadi,omitempty"`
+
 			// Graha Planet (graha) placed in this sign.
 			Graha string `json:"graha"`
 
@@ -16704,6 +18077,9 @@ type BirthChartResponse struct {
 
 			// IsRetrograde True if planet is in retrograde motion (appears to move backward). Retrograde planets have altered significations.
 			IsRetrograde bool `json:"isRetrograde"`
+
+			// Jagradadi Jagradadi avastha, the waking state of the graha set by its sign dignity: Jagrat (awake, own sign or exaltation, full results), Swapna (dreaming, a friendly or neutral sign, medium results), Sushupti (sleeping, an enemy sign or debilitation, no results). Present for the seven classical grahas on the D1 chart; Rahu, Ketu and the Lagna own no sign and are omitted.
+			Jagradadi *BirthChartResponseSagittariusSignsJagradadi `json:"jagradadi,omitempty"`
 
 			// Longitude Sidereal longitude in degrees (0-360) using Lahiri ayanamsa.
 			Longitude float32 `json:"longitude"`
@@ -16731,6 +18107,9 @@ type BirthChartResponse struct {
 			// Awastha Baladi avastha, the planetary age-state set by the graha degree within its sign: Bala (infant), Kumara (child), Yuva (adult, strongest results), Vriddha (old), Mrita (dead, weakest). Bands run forward in odd signs and reversed in even signs. D1 birth chart only.
 			Awastha *BirthChartResponseScorpioSignsAwastha `json:"awastha,omitempty"`
 
+			// Deeptadi Deeptadi avastha, the dispositional state of the graha, one of nine: Dipta (exalted, blazing), Svastha (own sign, healthy), Pramudita (great friend sign, delighted), Shanta (friendly sign, at peace), Dina (neutral sign, helpless), Duhkhita (enemy sign, sorrowful), Khala (great enemy sign, harsh), Vikala (joined by a natural malefic, disabled), Kopa (eclipsed by the Sun, enraged). Where more than one applies the more severe is returned, so combustion outranks a malefic conjunction, which outranks the sign reading. Present for the seven classical grahas on the D1 chart; Rahu, Ketu and the Lagna are omitted.
+			Deeptadi *BirthChartResponseScorpioSignsDeeptadi `json:"deeptadi,omitempty"`
+
 			// Graha Planet (graha) placed in this sign.
 			Graha string `json:"graha"`
 
@@ -16739,6 +18118,9 @@ type BirthChartResponse struct {
 
 			// IsRetrograde True if planet is in retrograde motion (appears to move backward). Retrograde planets have altered significations.
 			IsRetrograde bool `json:"isRetrograde"`
+
+			// Jagradadi Jagradadi avastha, the waking state of the graha set by its sign dignity: Jagrat (awake, own sign or exaltation, full results), Swapna (dreaming, a friendly or neutral sign, medium results), Sushupti (sleeping, an enemy sign or debilitation, no results). Present for the seven classical grahas on the D1 chart; Rahu, Ketu and the Lagna own no sign and are omitted.
+			Jagradadi *BirthChartResponseScorpioSignsJagradadi `json:"jagradadi,omitempty"`
 
 			// Longitude Sidereal longitude in degrees (0-360) using Lahiri ayanamsa.
 			Longitude float32 `json:"longitude"`
@@ -16766,6 +18148,9 @@ type BirthChartResponse struct {
 			// Awastha Baladi avastha, the planetary age-state set by the graha degree within its sign: Bala (infant), Kumara (child), Yuva (adult, strongest results), Vriddha (old), Mrita (dead, weakest). Bands run forward in odd signs and reversed in even signs. D1 birth chart only.
 			Awastha *BirthChartResponseTaurusSignsAwastha `json:"awastha,omitempty"`
 
+			// Deeptadi Deeptadi avastha, the dispositional state of the graha, one of nine: Dipta (exalted, blazing), Svastha (own sign, healthy), Pramudita (great friend sign, delighted), Shanta (friendly sign, at peace), Dina (neutral sign, helpless), Duhkhita (enemy sign, sorrowful), Khala (great enemy sign, harsh), Vikala (joined by a natural malefic, disabled), Kopa (eclipsed by the Sun, enraged). Where more than one applies the more severe is returned, so combustion outranks a malefic conjunction, which outranks the sign reading. Present for the seven classical grahas on the D1 chart; Rahu, Ketu and the Lagna are omitted.
+			Deeptadi *BirthChartResponseTaurusSignsDeeptadi `json:"deeptadi,omitempty"`
+
 			// Graha Planet (graha) placed in this sign.
 			Graha string `json:"graha"`
 
@@ -16774,6 +18159,9 @@ type BirthChartResponse struct {
 
 			// IsRetrograde True if planet is in retrograde motion (appears to move backward). Retrograde planets have altered significations.
 			IsRetrograde bool `json:"isRetrograde"`
+
+			// Jagradadi Jagradadi avastha, the waking state of the graha set by its sign dignity: Jagrat (awake, own sign or exaltation, full results), Swapna (dreaming, a friendly or neutral sign, medium results), Sushupti (sleeping, an enemy sign or debilitation, no results). Present for the seven classical grahas on the D1 chart; Rahu, Ketu and the Lagna own no sign and are omitted.
+			Jagradadi *BirthChartResponseTaurusSignsJagradadi `json:"jagradadi,omitempty"`
 
 			// Longitude Sidereal longitude in degrees (0-360) using Lahiri ayanamsa.
 			Longitude float32 `json:"longitude"`
@@ -16801,6 +18189,9 @@ type BirthChartResponse struct {
 			// Awastha Baladi avastha, the planetary age-state set by the graha degree within its sign: Bala (infant), Kumara (child), Yuva (adult, strongest results), Vriddha (old), Mrita (dead, weakest). Bands run forward in odd signs and reversed in even signs. D1 birth chart only.
 			Awastha *BirthChartResponseVirgoSignsAwastha `json:"awastha,omitempty"`
 
+			// Deeptadi Deeptadi avastha, the dispositional state of the graha, one of nine: Dipta (exalted, blazing), Svastha (own sign, healthy), Pramudita (great friend sign, delighted), Shanta (friendly sign, at peace), Dina (neutral sign, helpless), Duhkhita (enemy sign, sorrowful), Khala (great enemy sign, harsh), Vikala (joined by a natural malefic, disabled), Kopa (eclipsed by the Sun, enraged). Where more than one applies the more severe is returned, so combustion outranks a malefic conjunction, which outranks the sign reading. Present for the seven classical grahas on the D1 chart; Rahu, Ketu and the Lagna are omitted.
+			Deeptadi *BirthChartResponseVirgoSignsDeeptadi `json:"deeptadi,omitempty"`
+
 			// Graha Planet (graha) placed in this sign.
 			Graha string `json:"graha"`
 
@@ -16809,6 +18200,9 @@ type BirthChartResponse struct {
 
 			// IsRetrograde True if planet is in retrograde motion (appears to move backward). Retrograde planets have altered significations.
 			IsRetrograde bool `json:"isRetrograde"`
+
+			// Jagradadi Jagradadi avastha, the waking state of the graha set by its sign dignity: Jagrat (awake, own sign or exaltation, full results), Swapna (dreaming, a friendly or neutral sign, medium results), Sushupti (sleeping, an enemy sign or debilitation, no results). Present for the seven classical grahas on the D1 chart; Rahu, Ketu and the Lagna own no sign and are omitted.
+			Jagradadi *BirthChartResponseVirgoSignsJagradadi `json:"jagradadi,omitempty"`
 
 			// Longitude Sidereal longitude in degrees (0-360) using Lahiri ayanamsa.
 			Longitude float32 `json:"longitude"`
@@ -16828,12 +18222,12 @@ type BirthChartResponse struct {
 		} `json:"signs"`
 	} `json:"virgo"`
 
-	// Yogas Twelve classical yogas detected against this chart: Gajakesari (three-rule parashara definition), Sunapha, Anapha, Dhurdhura, Kemadruma, Chandra Mangala, Budha-Aditya, and the five Pancha Mahapurusha (Ruchaka, Bhadra, Hamsa, Malavya, Sasa). Each entry carries an `id` (matches `GET /yoga/{id}` for full glossary lookup), a `present` boolean, a `quality` (Positive, Negative, or Both = auspicious, inauspicious, or context-dependent), and classical-text `evidence` for the rule that triggered or failed.
+	// Yogas Forty-four classical yogas detected against this chart. Twelve conjunction and dignity yogas: Gajakesari (three-rule parashara definition), Sunapha, Anapha, Dhurdhura, Kemadruma, Chandra Mangala, Budha-Aditya, and the five Pancha Mahapurusha (Ruchaka, Bhadra, Hamsa, Malavya, Sasa). Plus all 32 Nabhasa distribution yogas across the Asraya, Dala, Akriti and Sankhya families, which read how the seven visible grahas are spread over the whole chart rather than any single conjunction, and which apply the four classical precedence norms so an outranked yoga is returned as absent with evidence naming the norm that silenced it. Each entry carries an `id` (matches `GET /yoga/{id}` for full glossary lookup), a `present` boolean, a `quality` (Positive, Negative, or Both = auspicious, inauspicious, or context-dependent), and classical-text `evidence` for the rule that triggered or failed. Filter on `present === true` for the active list.
 	Yogas *[]struct {
-		// Description Brief classical formation rule. Identifies the planetary placement, lordship, dignity, or aspect pattern required for the yoga to form.
+		// Description Brief classical formation rule. Identifies the planetary placement, lordship, dignity, aspect pattern, sign modality, or whole-chart bhava distribution required for the yoga to form.
 		Description string `json:"description"`
 
-		// Evidence Human-readable rationale naming the specific rule that triggered or failed the detection, including planetary positions, dignity, kendrādhipati status, lordship, or malefic drishti.
+		// Evidence Human-readable rationale naming the specific rule that triggered or failed the detection, including planetary positions, dignity, kendradhipati status, lordship, malefic drishti, sign modality, or whole-chart bhava distribution. For a Nabhasa yoga that matched its own rule but was outranked, this names the precedence norm that silenced it, for example that an Akriti yoga outranks Asraya or that any other Nabhasa family suppresses Sankhya.
 		Evidence *string `json:"evidence,omitempty"`
 
 		// ID Glossary id (lowercase, kebab-case) matching an entry in the 300-entry planetary-yoga catalog. Use with GET /yoga/{id} to retrieve the full glossary text.
@@ -16842,7 +18236,7 @@ type BirthChartResponse struct {
 		// Name Classical Sanskrit name of the yoga as referenced in BPHS (Brihat Parashara Hora Shastra), Phaladeepika, and B.V. Raman *Three Hundred Important Combinations*.
 		Name string `json:"name"`
 
-		// Present True if every classical condition for the yoga is satisfied by the given chart. False if any rule fails, including "almost-present" cases where dignity is met but kendra/aspect is not.
+		// Present True if every classical condition for the yoga is satisfied by the given chart. False if any rule fails, including "almost-present" cases where dignity is met but kendra/aspect is not, and Nabhasa cases where the yoga matched its own rule but a stronger family outranked it under the classical precedence norms. Read `evidence` to tell those apart.
 		Present bool `json:"present"`
 
 		// Quality Overall nature. Auspicious yogas (Pancha Mahapurusha, Gajakesari) bestow benefits; inauspicious yogas (Kemadruma) indicate challenges; Both denotes context-dependent effects.
@@ -16856,11 +18250,23 @@ type BirthChartResponse struct {
 // BirthChartResponseAquariusSignsAwastha Baladi avastha, the planetary age-state set by the graha degree within its sign: Bala (infant), Kumara (child), Yuva (adult, strongest results), Vriddha (old), Mrita (dead, weakest). Bands run forward in odd signs and reversed in even signs. D1 birth chart only.
 type BirthChartResponseAquariusSignsAwastha string
 
+// BirthChartResponseAquariusSignsDeeptadi Deeptadi avastha, the dispositional state of the graha, one of nine: Dipta (exalted, blazing), Svastha (own sign, healthy), Pramudita (great friend sign, delighted), Shanta (friendly sign, at peace), Dina (neutral sign, helpless), Duhkhita (enemy sign, sorrowful), Khala (great enemy sign, harsh), Vikala (joined by a natural malefic, disabled), Kopa (eclipsed by the Sun, enraged). Where more than one applies the more severe is returned, so combustion outranks a malefic conjunction, which outranks the sign reading. Present for the seven classical grahas on the D1 chart; Rahu, Ketu and the Lagna are omitted.
+type BirthChartResponseAquariusSignsDeeptadi string
+
+// BirthChartResponseAquariusSignsJagradadi Jagradadi avastha, the waking state of the graha set by its sign dignity: Jagrat (awake, own sign or exaltation, full results), Swapna (dreaming, a friendly or neutral sign, medium results), Sushupti (sleeping, an enemy sign or debilitation, no results). Present for the seven classical grahas on the D1 chart; Rahu, Ketu and the Lagna own no sign and are omitted.
+type BirthChartResponseAquariusSignsJagradadi string
+
 // BirthChartResponseAquariusSignsNakshatraLord Vimshottari ruling planet of this nakshatra. One of the nine grahas (Ketu, Venus, Sun, Moon, Mars, Rahu, Jupiter, Saturn, Mercury). Drives the dasha sequence and the nakshatra qualities.
 type BirthChartResponseAquariusSignsNakshatraLord string
 
 // BirthChartResponseAriesSignsAwastha Baladi avastha, the planetary age-state set by the graha degree within its sign: Bala (infant), Kumara (child), Yuva (adult, strongest results), Vriddha (old), Mrita (dead, weakest). Bands run forward in odd signs and reversed in even signs. D1 birth chart only.
 type BirthChartResponseAriesSignsAwastha string
+
+// BirthChartResponseAriesSignsDeeptadi Deeptadi avastha, the dispositional state of the graha, one of nine: Dipta (exalted, blazing), Svastha (own sign, healthy), Pramudita (great friend sign, delighted), Shanta (friendly sign, at peace), Dina (neutral sign, helpless), Duhkhita (enemy sign, sorrowful), Khala (great enemy sign, harsh), Vikala (joined by a natural malefic, disabled), Kopa (eclipsed by the Sun, enraged). Where more than one applies the more severe is returned, so combustion outranks a malefic conjunction, which outranks the sign reading. Present for the seven classical grahas on the D1 chart; Rahu, Ketu and the Lagna are omitted.
+type BirthChartResponseAriesSignsDeeptadi string
+
+// BirthChartResponseAriesSignsJagradadi Jagradadi avastha, the waking state of the graha set by its sign dignity: Jagrat (awake, own sign or exaltation, full results), Swapna (dreaming, a friendly or neutral sign, medium results), Sushupti (sleeping, an enemy sign or debilitation, no results). Present for the seven classical grahas on the D1 chart; Rahu, Ketu and the Lagna own no sign and are omitted.
+type BirthChartResponseAriesSignsJagradadi string
 
 // BirthChartResponseAriesSignsNakshatraLord Vimshottari ruling planet of this nakshatra. One of the nine grahas (Ketu, Venus, Sun, Moon, Mars, Rahu, Jupiter, Saturn, Mercury). Drives the dasha sequence and the nakshatra qualities.
 type BirthChartResponseAriesSignsNakshatraLord string
@@ -16868,11 +18274,23 @@ type BirthChartResponseAriesSignsNakshatraLord string
 // BirthChartResponseCancerSignsAwastha Baladi avastha, the planetary age-state set by the graha degree within its sign: Bala (infant), Kumara (child), Yuva (adult, strongest results), Vriddha (old), Mrita (dead, weakest). Bands run forward in odd signs and reversed in even signs. D1 birth chart only.
 type BirthChartResponseCancerSignsAwastha string
 
+// BirthChartResponseCancerSignsDeeptadi Deeptadi avastha, the dispositional state of the graha, one of nine: Dipta (exalted, blazing), Svastha (own sign, healthy), Pramudita (great friend sign, delighted), Shanta (friendly sign, at peace), Dina (neutral sign, helpless), Duhkhita (enemy sign, sorrowful), Khala (great enemy sign, harsh), Vikala (joined by a natural malefic, disabled), Kopa (eclipsed by the Sun, enraged). Where more than one applies the more severe is returned, so combustion outranks a malefic conjunction, which outranks the sign reading. Present for the seven classical grahas on the D1 chart; Rahu, Ketu and the Lagna are omitted.
+type BirthChartResponseCancerSignsDeeptadi string
+
+// BirthChartResponseCancerSignsJagradadi Jagradadi avastha, the waking state of the graha set by its sign dignity: Jagrat (awake, own sign or exaltation, full results), Swapna (dreaming, a friendly or neutral sign, medium results), Sushupti (sleeping, an enemy sign or debilitation, no results). Present for the seven classical grahas on the D1 chart; Rahu, Ketu and the Lagna own no sign and are omitted.
+type BirthChartResponseCancerSignsJagradadi string
+
 // BirthChartResponseCancerSignsNakshatraLord Vimshottari ruling planet of this nakshatra. One of the nine grahas (Ketu, Venus, Sun, Moon, Mars, Rahu, Jupiter, Saturn, Mercury). Drives the dasha sequence and the nakshatra qualities.
 type BirthChartResponseCancerSignsNakshatraLord string
 
 // BirthChartResponseCapricornSignsAwastha Baladi avastha, the planetary age-state set by the graha degree within its sign: Bala (infant), Kumara (child), Yuva (adult, strongest results), Vriddha (old), Mrita (dead, weakest). Bands run forward in odd signs and reversed in even signs. D1 birth chart only.
 type BirthChartResponseCapricornSignsAwastha string
+
+// BirthChartResponseCapricornSignsDeeptadi Deeptadi avastha, the dispositional state of the graha, one of nine: Dipta (exalted, blazing), Svastha (own sign, healthy), Pramudita (great friend sign, delighted), Shanta (friendly sign, at peace), Dina (neutral sign, helpless), Duhkhita (enemy sign, sorrowful), Khala (great enemy sign, harsh), Vikala (joined by a natural malefic, disabled), Kopa (eclipsed by the Sun, enraged). Where more than one applies the more severe is returned, so combustion outranks a malefic conjunction, which outranks the sign reading. Present for the seven classical grahas on the D1 chart; Rahu, Ketu and the Lagna are omitted.
+type BirthChartResponseCapricornSignsDeeptadi string
+
+// BirthChartResponseCapricornSignsJagradadi Jagradadi avastha, the waking state of the graha set by its sign dignity: Jagrat (awake, own sign or exaltation, full results), Swapna (dreaming, a friendly or neutral sign, medium results), Sushupti (sleeping, an enemy sign or debilitation, no results). Present for the seven classical grahas on the D1 chart; Rahu, Ketu and the Lagna own no sign and are omitted.
+type BirthChartResponseCapricornSignsJagradadi string
 
 // BirthChartResponseCapricornSignsNakshatraLord Vimshottari ruling planet of this nakshatra. One of the nine grahas (Ketu, Venus, Sun, Moon, Mars, Rahu, Jupiter, Saturn, Mercury). Drives the dasha sequence and the nakshatra qualities.
 type BirthChartResponseCapricornSignsNakshatraLord string
@@ -16880,11 +18298,23 @@ type BirthChartResponseCapricornSignsNakshatraLord string
 // BirthChartResponseGeminiSignsAwastha Baladi avastha, the planetary age-state set by the graha degree within its sign: Bala (infant), Kumara (child), Yuva (adult, strongest results), Vriddha (old), Mrita (dead, weakest). Bands run forward in odd signs and reversed in even signs. D1 birth chart only.
 type BirthChartResponseGeminiSignsAwastha string
 
+// BirthChartResponseGeminiSignsDeeptadi Deeptadi avastha, the dispositional state of the graha, one of nine: Dipta (exalted, blazing), Svastha (own sign, healthy), Pramudita (great friend sign, delighted), Shanta (friendly sign, at peace), Dina (neutral sign, helpless), Duhkhita (enemy sign, sorrowful), Khala (great enemy sign, harsh), Vikala (joined by a natural malefic, disabled), Kopa (eclipsed by the Sun, enraged). Where more than one applies the more severe is returned, so combustion outranks a malefic conjunction, which outranks the sign reading. Present for the seven classical grahas on the D1 chart; Rahu, Ketu and the Lagna are omitted.
+type BirthChartResponseGeminiSignsDeeptadi string
+
+// BirthChartResponseGeminiSignsJagradadi Jagradadi avastha, the waking state of the graha set by its sign dignity: Jagrat (awake, own sign or exaltation, full results), Swapna (dreaming, a friendly or neutral sign, medium results), Sushupti (sleeping, an enemy sign or debilitation, no results). Present for the seven classical grahas on the D1 chart; Rahu, Ketu and the Lagna own no sign and are omitted.
+type BirthChartResponseGeminiSignsJagradadi string
+
 // BirthChartResponseGeminiSignsNakshatraLord Vimshottari ruling planet of this nakshatra. One of the nine grahas (Ketu, Venus, Sun, Moon, Mars, Rahu, Jupiter, Saturn, Mercury). Drives the dasha sequence and the nakshatra qualities.
 type BirthChartResponseGeminiSignsNakshatraLord string
 
 // BirthChartResponseLeoSignsAwastha Baladi avastha, the planetary age-state set by the graha degree within its sign: Bala (infant), Kumara (child), Yuva (adult, strongest results), Vriddha (old), Mrita (dead, weakest). Bands run forward in odd signs and reversed in even signs. D1 birth chart only.
 type BirthChartResponseLeoSignsAwastha string
+
+// BirthChartResponseLeoSignsDeeptadi Deeptadi avastha, the dispositional state of the graha, one of nine: Dipta (exalted, blazing), Svastha (own sign, healthy), Pramudita (great friend sign, delighted), Shanta (friendly sign, at peace), Dina (neutral sign, helpless), Duhkhita (enemy sign, sorrowful), Khala (great enemy sign, harsh), Vikala (joined by a natural malefic, disabled), Kopa (eclipsed by the Sun, enraged). Where more than one applies the more severe is returned, so combustion outranks a malefic conjunction, which outranks the sign reading. Present for the seven classical grahas on the D1 chart; Rahu, Ketu and the Lagna are omitted.
+type BirthChartResponseLeoSignsDeeptadi string
+
+// BirthChartResponseLeoSignsJagradadi Jagradadi avastha, the waking state of the graha set by its sign dignity: Jagrat (awake, own sign or exaltation, full results), Swapna (dreaming, a friendly or neutral sign, medium results), Sushupti (sleeping, an enemy sign or debilitation, no results). Present for the seven classical grahas on the D1 chart; Rahu, Ketu and the Lagna own no sign and are omitted.
+type BirthChartResponseLeoSignsJagradadi string
 
 // BirthChartResponseLeoSignsNakshatraLord Vimshottari ruling planet of this nakshatra. One of the nine grahas (Ketu, Venus, Sun, Moon, Mars, Rahu, Jupiter, Saturn, Mercury). Drives the dasha sequence and the nakshatra qualities.
 type BirthChartResponseLeoSignsNakshatraLord string
@@ -16892,11 +18322,23 @@ type BirthChartResponseLeoSignsNakshatraLord string
 // BirthChartResponseLibraSignsAwastha Baladi avastha, the planetary age-state set by the graha degree within its sign: Bala (infant), Kumara (child), Yuva (adult, strongest results), Vriddha (old), Mrita (dead, weakest). Bands run forward in odd signs and reversed in even signs. D1 birth chart only.
 type BirthChartResponseLibraSignsAwastha string
 
+// BirthChartResponseLibraSignsDeeptadi Deeptadi avastha, the dispositional state of the graha, one of nine: Dipta (exalted, blazing), Svastha (own sign, healthy), Pramudita (great friend sign, delighted), Shanta (friendly sign, at peace), Dina (neutral sign, helpless), Duhkhita (enemy sign, sorrowful), Khala (great enemy sign, harsh), Vikala (joined by a natural malefic, disabled), Kopa (eclipsed by the Sun, enraged). Where more than one applies the more severe is returned, so combustion outranks a malefic conjunction, which outranks the sign reading. Present for the seven classical grahas on the D1 chart; Rahu, Ketu and the Lagna are omitted.
+type BirthChartResponseLibraSignsDeeptadi string
+
+// BirthChartResponseLibraSignsJagradadi Jagradadi avastha, the waking state of the graha set by its sign dignity: Jagrat (awake, own sign or exaltation, full results), Swapna (dreaming, a friendly or neutral sign, medium results), Sushupti (sleeping, an enemy sign or debilitation, no results). Present for the seven classical grahas on the D1 chart; Rahu, Ketu and the Lagna own no sign and are omitted.
+type BirthChartResponseLibraSignsJagradadi string
+
 // BirthChartResponseLibraSignsNakshatraLord Vimshottari ruling planet of this nakshatra. One of the nine grahas (Ketu, Venus, Sun, Moon, Mars, Rahu, Jupiter, Saturn, Mercury). Drives the dasha sequence and the nakshatra qualities.
 type BirthChartResponseLibraSignsNakshatraLord string
 
 // BirthChartResponseMetaAwastha Baladi avastha, the planetary age-state set by the graha degree within its sign: Bala (infant), Kumara (child), Yuva (adult, strongest results), Vriddha (old), Mrita (dead, weakest). Bands run forward in odd signs and reversed in even signs. D1 birth chart only.
 type BirthChartResponseMetaAwastha string
+
+// BirthChartResponseMetaDeeptadi Deeptadi avastha, the dispositional state of the graha, one of nine: Dipta (exalted, blazing), Svastha (own sign, healthy), Pramudita (great friend sign, delighted), Shanta (friendly sign, at peace), Dina (neutral sign, helpless), Duhkhita (enemy sign, sorrowful), Khala (great enemy sign, harsh), Vikala (joined by a natural malefic, disabled), Kopa (eclipsed by the Sun, enraged). Where more than one applies the more severe is returned, so combustion outranks a malefic conjunction, which outranks the sign reading. Present for the seven classical grahas on the D1 chart; Rahu, Ketu and the Lagna are omitted.
+type BirthChartResponseMetaDeeptadi string
+
+// BirthChartResponseMetaJagradadi Jagradadi avastha, the waking state of the graha set by its sign dignity: Jagrat (awake, own sign or exaltation, full results), Swapna (dreaming, a friendly or neutral sign, medium results), Sushupti (sleeping, an enemy sign or debilitation, no results). Present for the seven classical grahas on the D1 chart; Rahu, Ketu and the Lagna own no sign and are omitted.
+type BirthChartResponseMetaJagradadi string
 
 // BirthChartResponseMetaNakshatraLord Vimshottari ruling planet of this nakshatra. One of the nine grahas (Ketu, Venus, Sun, Moon, Mars, Rahu, Jupiter, Saturn, Mercury). Drives the dasha sequence and the nakshatra qualities.
 type BirthChartResponseMetaNakshatraLord string
@@ -16904,11 +18346,23 @@ type BirthChartResponseMetaNakshatraLord string
 // BirthChartResponsePiscesSignsAwastha Baladi avastha, the planetary age-state set by the graha degree within its sign: Bala (infant), Kumara (child), Yuva (adult, strongest results), Vriddha (old), Mrita (dead, weakest). Bands run forward in odd signs and reversed in even signs. D1 birth chart only.
 type BirthChartResponsePiscesSignsAwastha string
 
+// BirthChartResponsePiscesSignsDeeptadi Deeptadi avastha, the dispositional state of the graha, one of nine: Dipta (exalted, blazing), Svastha (own sign, healthy), Pramudita (great friend sign, delighted), Shanta (friendly sign, at peace), Dina (neutral sign, helpless), Duhkhita (enemy sign, sorrowful), Khala (great enemy sign, harsh), Vikala (joined by a natural malefic, disabled), Kopa (eclipsed by the Sun, enraged). Where more than one applies the more severe is returned, so combustion outranks a malefic conjunction, which outranks the sign reading. Present for the seven classical grahas on the D1 chart; Rahu, Ketu and the Lagna are omitted.
+type BirthChartResponsePiscesSignsDeeptadi string
+
+// BirthChartResponsePiscesSignsJagradadi Jagradadi avastha, the waking state of the graha set by its sign dignity: Jagrat (awake, own sign or exaltation, full results), Swapna (dreaming, a friendly or neutral sign, medium results), Sushupti (sleeping, an enemy sign or debilitation, no results). Present for the seven classical grahas on the D1 chart; Rahu, Ketu and the Lagna own no sign and are omitted.
+type BirthChartResponsePiscesSignsJagradadi string
+
 // BirthChartResponsePiscesSignsNakshatraLord Vimshottari ruling planet of this nakshatra. One of the nine grahas (Ketu, Venus, Sun, Moon, Mars, Rahu, Jupiter, Saturn, Mercury). Drives the dasha sequence and the nakshatra qualities.
 type BirthChartResponsePiscesSignsNakshatraLord string
 
 // BirthChartResponseSagittariusSignsAwastha Baladi avastha, the planetary age-state set by the graha degree within its sign: Bala (infant), Kumara (child), Yuva (adult, strongest results), Vriddha (old), Mrita (dead, weakest). Bands run forward in odd signs and reversed in even signs. D1 birth chart only.
 type BirthChartResponseSagittariusSignsAwastha string
+
+// BirthChartResponseSagittariusSignsDeeptadi Deeptadi avastha, the dispositional state of the graha, one of nine: Dipta (exalted, blazing), Svastha (own sign, healthy), Pramudita (great friend sign, delighted), Shanta (friendly sign, at peace), Dina (neutral sign, helpless), Duhkhita (enemy sign, sorrowful), Khala (great enemy sign, harsh), Vikala (joined by a natural malefic, disabled), Kopa (eclipsed by the Sun, enraged). Where more than one applies the more severe is returned, so combustion outranks a malefic conjunction, which outranks the sign reading. Present for the seven classical grahas on the D1 chart; Rahu, Ketu and the Lagna are omitted.
+type BirthChartResponseSagittariusSignsDeeptadi string
+
+// BirthChartResponseSagittariusSignsJagradadi Jagradadi avastha, the waking state of the graha set by its sign dignity: Jagrat (awake, own sign or exaltation, full results), Swapna (dreaming, a friendly or neutral sign, medium results), Sushupti (sleeping, an enemy sign or debilitation, no results). Present for the seven classical grahas on the D1 chart; Rahu, Ketu and the Lagna own no sign and are omitted.
+type BirthChartResponseSagittariusSignsJagradadi string
 
 // BirthChartResponseSagittariusSignsNakshatraLord Vimshottari ruling planet of this nakshatra. One of the nine grahas (Ketu, Venus, Sun, Moon, Mars, Rahu, Jupiter, Saturn, Mercury). Drives the dasha sequence and the nakshatra qualities.
 type BirthChartResponseSagittariusSignsNakshatraLord string
@@ -16916,17 +18370,35 @@ type BirthChartResponseSagittariusSignsNakshatraLord string
 // BirthChartResponseScorpioSignsAwastha Baladi avastha, the planetary age-state set by the graha degree within its sign: Bala (infant), Kumara (child), Yuva (adult, strongest results), Vriddha (old), Mrita (dead, weakest). Bands run forward in odd signs and reversed in even signs. D1 birth chart only.
 type BirthChartResponseScorpioSignsAwastha string
 
+// BirthChartResponseScorpioSignsDeeptadi Deeptadi avastha, the dispositional state of the graha, one of nine: Dipta (exalted, blazing), Svastha (own sign, healthy), Pramudita (great friend sign, delighted), Shanta (friendly sign, at peace), Dina (neutral sign, helpless), Duhkhita (enemy sign, sorrowful), Khala (great enemy sign, harsh), Vikala (joined by a natural malefic, disabled), Kopa (eclipsed by the Sun, enraged). Where more than one applies the more severe is returned, so combustion outranks a malefic conjunction, which outranks the sign reading. Present for the seven classical grahas on the D1 chart; Rahu, Ketu and the Lagna are omitted.
+type BirthChartResponseScorpioSignsDeeptadi string
+
+// BirthChartResponseScorpioSignsJagradadi Jagradadi avastha, the waking state of the graha set by its sign dignity: Jagrat (awake, own sign or exaltation, full results), Swapna (dreaming, a friendly or neutral sign, medium results), Sushupti (sleeping, an enemy sign or debilitation, no results). Present for the seven classical grahas on the D1 chart; Rahu, Ketu and the Lagna own no sign and are omitted.
+type BirthChartResponseScorpioSignsJagradadi string
+
 // BirthChartResponseScorpioSignsNakshatraLord Vimshottari ruling planet of this nakshatra. One of the nine grahas (Ketu, Venus, Sun, Moon, Mars, Rahu, Jupiter, Saturn, Mercury). Drives the dasha sequence and the nakshatra qualities.
 type BirthChartResponseScorpioSignsNakshatraLord string
 
 // BirthChartResponseTaurusSignsAwastha Baladi avastha, the planetary age-state set by the graha degree within its sign: Bala (infant), Kumara (child), Yuva (adult, strongest results), Vriddha (old), Mrita (dead, weakest). Bands run forward in odd signs and reversed in even signs. D1 birth chart only.
 type BirthChartResponseTaurusSignsAwastha string
 
+// BirthChartResponseTaurusSignsDeeptadi Deeptadi avastha, the dispositional state of the graha, one of nine: Dipta (exalted, blazing), Svastha (own sign, healthy), Pramudita (great friend sign, delighted), Shanta (friendly sign, at peace), Dina (neutral sign, helpless), Duhkhita (enemy sign, sorrowful), Khala (great enemy sign, harsh), Vikala (joined by a natural malefic, disabled), Kopa (eclipsed by the Sun, enraged). Where more than one applies the more severe is returned, so combustion outranks a malefic conjunction, which outranks the sign reading. Present for the seven classical grahas on the D1 chart; Rahu, Ketu and the Lagna are omitted.
+type BirthChartResponseTaurusSignsDeeptadi string
+
+// BirthChartResponseTaurusSignsJagradadi Jagradadi avastha, the waking state of the graha set by its sign dignity: Jagrat (awake, own sign or exaltation, full results), Swapna (dreaming, a friendly or neutral sign, medium results), Sushupti (sleeping, an enemy sign or debilitation, no results). Present for the seven classical grahas on the D1 chart; Rahu, Ketu and the Lagna own no sign and are omitted.
+type BirthChartResponseTaurusSignsJagradadi string
+
 // BirthChartResponseTaurusSignsNakshatraLord Vimshottari ruling planet of this nakshatra. One of the nine grahas (Ketu, Venus, Sun, Moon, Mars, Rahu, Jupiter, Saturn, Mercury). Drives the dasha sequence and the nakshatra qualities.
 type BirthChartResponseTaurusSignsNakshatraLord string
 
 // BirthChartResponseVirgoSignsAwastha Baladi avastha, the planetary age-state set by the graha degree within its sign: Bala (infant), Kumara (child), Yuva (adult, strongest results), Vriddha (old), Mrita (dead, weakest). Bands run forward in odd signs and reversed in even signs. D1 birth chart only.
 type BirthChartResponseVirgoSignsAwastha string
+
+// BirthChartResponseVirgoSignsDeeptadi Deeptadi avastha, the dispositional state of the graha, one of nine: Dipta (exalted, blazing), Svastha (own sign, healthy), Pramudita (great friend sign, delighted), Shanta (friendly sign, at peace), Dina (neutral sign, helpless), Duhkhita (enemy sign, sorrowful), Khala (great enemy sign, harsh), Vikala (joined by a natural malefic, disabled), Kopa (eclipsed by the Sun, enraged). Where more than one applies the more severe is returned, so combustion outranks a malefic conjunction, which outranks the sign reading. Present for the seven classical grahas on the D1 chart; Rahu, Ketu and the Lagna are omitted.
+type BirthChartResponseVirgoSignsDeeptadi string
+
+// BirthChartResponseVirgoSignsJagradadi Jagradadi avastha, the waking state of the graha set by its sign dignity: Jagrat (awake, own sign or exaltation, full results), Swapna (dreaming, a friendly or neutral sign, medium results), Sushupti (sleeping, an enemy sign or debilitation, no results). Present for the seven classical grahas on the D1 chart; Rahu, Ketu and the Lagna own no sign and are omitted.
+type BirthChartResponseVirgoSignsJagradadi string
 
 // BirthChartResponseVirgoSignsNakshatraLord Vimshottari ruling planet of this nakshatra. One of the nine grahas (Ketu, Venus, Sun, Moon, Mars, Rahu, Jupiter, Saturn, Mercury). Drives the dasha sequence and the nakshatra qualities.
 type BirthChartResponseVirgoSignsNakshatraLord string
@@ -17029,6 +18501,89 @@ type ChangingLine struct {
 	// Text The oracle statement for this line. It applies when this specific line comes up changing (old yin or old yang) in a casting, and it speaks in the concrete imagery of the tradition.
 	Text string `json:"text"`
 }
+
+// CharaKarakaRequest defines model for CharaKarakaRequest.
+type CharaKarakaRequest struct {
+	// Date Birth date in YYYY-MM-DD format. Date determines planetary positions and nakshatra calculations for Vedic kundli (janam patri). Accurate birth date is essential for dashas, yoga calculations, and divisional charts (vargas).
+	Date openapi_types.Date `json:"date"`
+
+	// Latitude Birth location latitude in decimal degrees. Location determines local sidereal time for Lagna calculation and affects bhava (house) cusps. Example: Delhi 28.6139, Mumbai 19.0760, Kathmandu 27.7172.
+	Latitude float32 `json:"latitude"`
+
+	// Longitude Birth location longitude in decimal degrees. Affects local time calculations and ayanamsha adjustments. Example: Delhi 77.2090, Mumbai 72.8777, Kathmandu 85.3240.
+	Longitude float32 `json:"longitude"`
+
+	// Scheme Which Chara Karaka scheme to rank. "eight" includes Rahu, counting its degree in reverse because it moves retrograde, and returns eight offices including Pitrikaraka. "seven" ranks only the seven classical grahas and drops Pitrikaraka. Ketu is excluded from both, since it always mirrors the Rahu degree exactly. The two schemes can produce a different Atmakaraka for the same chart, so select the one your reference software uses. Defaults to "eight".
+	Scheme *CharaKarakaRequestScheme `json:"scheme,omitempty"`
+
+	// Time Birth time in 24-hour HH:MM:SS format. Time is CRITICAL for Lagna (Ascendant) calculation and house divisions. It changes every two hours roughly. Even minutes matter for accurate nakshatra pada and divisional chart (D9, D10) calculations. Without exact time, Lagna and house-based predictions will be incorrect.
+	Time string `json:"time"`
+
+	// Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5.
+	Timezone *CharaKarakaRequest_Timezone `json:"timezone,omitempty"`
+}
+
+// CharaKarakaRequestScheme Which Chara Karaka scheme to rank. "eight" includes Rahu, counting its degree in reverse because it moves retrograde, and returns eight offices including Pitrikaraka. "seven" ranks only the seven classical grahas and drops Pitrikaraka. Ketu is excluded from both, since it always mirrors the Rahu degree exactly. The two schemes can produce a different Atmakaraka for the same chart, so select the one your reference software uses. Defaults to "eight".
+type CharaKarakaRequestScheme string
+
+// CharaKarakaRequestTimezone0 defines model for .
+type CharaKarakaRequestTimezone0 = float32
+
+// CharaKarakaRequestTimezone1 defines model for .
+type CharaKarakaRequestTimezone1 = string
+
+// CharaKarakaRequest_Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5.
+type CharaKarakaRequest_Timezone struct {
+	union json.RawMessage
+}
+
+// CharaKarakaResponse Chara Karakas for a birth chart: the movable significators of Jaimini astrology, ranked by how far each graha has advanced into its sign.
+type CharaKarakaResponse struct {
+	// Atmakaraka Graha holding the Atmakaraka office, the most consequential single value in Jaimini analysis. Lifted to the top level so a client reading only the Atmakaraka does not have to search the array.
+	Atmakaraka string `json:"atmakaraka"`
+
+	// Darakaraka Graha holding the Darakaraka office, read for the spouse. The second most requested value, so it is also lifted to the top level.
+	Darakaraka string `json:"darakaraka"`
+
+	// Karakas Karaka offices in descending rank, Atmakaraka first. Eight entries in the eight-karaka scheme, seven in the seven-karaka scheme.
+	Karakas []struct {
+		// Abbreviation Practitioner shorthand: AK, AmK, BK, MK, PiK, PK, GK, DK, in descending rank order.
+		Abbreviation string `json:"abbreviation"`
+
+		// DegreeInRashi Degree the graha has advanced into its sign, 0 to 30. This is the figure a chart displays.
+		DegreeInRashi float32 `json:"degreeInRashi"`
+
+		// Graha Graha holding this office in this chart.
+		Graha string `json:"graha"`
+
+		// ID Karaka office identifier: atmakaraka, amatyakaraka, bhratrikaraka, matrikaraka, pitrikaraka, putrakaraka, gnatikaraka, darakaraka. Returned in descending rank, so the first entry is always the Atmakaraka.
+		ID string `json:"id"`
+
+		// IsReversed True only for Rahu, flagging that its degree was measured from the end of the sign rather than the start.
+		IsReversed bool `json:"isReversed"`
+
+		// Meaning Short label for what this karaka is read for, sized for a table cell.
+		Meaning string `json:"meaning"`
+
+		// Name Classical Sanskrit name of the karaka office.
+		Name string `json:"name"`
+
+		// RankingDegree The degree actually ranked. Identical to degreeInRashi for every graha except Rahu, where it is 30 minus that value because Rahu advances backward through the sign. Returned so the ordering can be checked without knowing the rule.
+		RankingDegree float32 `json:"rankingDegree"`
+
+		// Rashi Zodiac sign (rashi) the graha occupies.
+		Rashi string `json:"rashi"`
+
+		// Significations What this karaka office governs in a reading.
+		Significations string `json:"significations"`
+	} `json:"karakas"`
+
+	// Scheme Scheme the ranking used, echoed back so a cached or logged response is self describing.
+	Scheme CharaKarakaResponseScheme `json:"scheme"`
+}
+
+// CharaKarakaResponseScheme Scheme the ranking used, echoed back so a cached or logged response is self describing.
+type CharaKarakaResponseScheme string
 
 // CompatibilityRequest defines model for CompatibilityRequest.
 type CompatibilityRequest struct {
@@ -17720,6 +19275,9 @@ type KPChartResponse struct {
 		// SubSubLord KP sub-sub lord (SSL) of the cusp. Third level of Vimshottari subdivision for fine-grained cusp analysis.
 		SubSubLord string `json:"subSubLord"`
 	} `json:"cusps"`
+
+	// HouseThemes Significations of each of the twelve bhavas (houses), keyed by house number 1 to 12, as short keywords. Bhava 1 is the Lagna (self, body, vitality), 2 wealth and speech, 4 home and mother, 7 marriage and partnership, 10 career and status, 11 gains. Use it to label the house numbers returned elsewhere in the response: a Vimshottari dasha period signifying houses 2, 7 and 8, or a KP significator carrying houses 11 and 6, becomes readable text without a separate lookup call. Returned once per response rather than repeated per period, and localized by the lang query parameter alongside every other interpretation field.
+	HouseThemes map[string][]string `json:"houseThemes"`
 
 	// Meta Chart metadata including birth data, ayanamsa, and house system.
 	Meta struct {
@@ -20323,6 +21881,27 @@ type UpagrahaResponse struct {
 	} `json:"timeBased"`
 }
 
+// YogaDetail defines model for YogaDetail.
+type YogaDetail struct {
+	// Description Brief classical formation rule. Identifies the planetary placement, lordship, dignity, aspect pattern, sign modality, or whole-chart bhava distribution required for the yoga to form.
+	Description string `json:"description"`
+
+	// ID Glossary id (lowercase, kebab-case) matching an entry in the 300-entry planetary-yoga catalog. Use with GET /yoga/{id} to retrieve the full glossary text.
+	ID string `json:"id"`
+
+	// Name Classical Sanskrit name of the yoga as referenced in BPHS (Brihat Parashara Hora Shastra), Phaladeepika, and B.V. Raman *Three Hundred Important Combinations*.
+	Name string `json:"name"`
+
+	// Quality Overall nature. Auspicious yogas (Pancha Mahapurusha, Gajakesari) bestow benefits; inauspicious yogas (Kemadruma) indicate challenges; Both denotes context-dependent effects.
+	Quality YogaDetailQuality `json:"quality"`
+
+	// Result Classical phala (life-effect) description of the yoga when present, sourced from the parashari and phaladeepika tradition.
+	Result string `json:"result"`
+}
+
+// YogaDetailQuality Overall nature. Auspicious yogas (Pancha Mahapurusha, Gajakesari) bestow benefits; inauspicious yogas (Kemadruma) indicate challenges; Both denotes context-dependent effects.
+type YogaDetailQuality string
+
 // YogaDetectRequest defines model for YogaDetectRequest.
 type YogaDetectRequest struct {
 	// Date Birth date in YYYY-MM-DD format. Date determines planetary positions and nakshatra calculations for Vedic kundli (janam patri). Accurate birth date is essential for dashas, yoga calculations, and divisional charts (vargas).
@@ -20363,15 +21942,15 @@ type YogaDetectResponse struct {
 		Timezone  float32 `json:"timezone"`
 	} `json:"birthDetails"`
 
-	// Total Count of yogas where present === true in this chart. Range 0-12.
+	// Total Count of yogas where present === true in this chart. Range 0-44, though real charts sit in the low single digits: the Nabhasa families are mutually constrained by the precedence norms, and most shape yogas are rare.
 	Total float32 `json:"total"`
 
-	// Yogas Array of 12 detected yogas. Every entry carries a `present` boolean and a `quality` (Positive, Negative, or Both = auspicious, inauspicious, or context-dependent); filter on present === true for active yogas. Evidence text names the rule that triggered or failed.
+	// Yogas Array of 44 detected yogas, always the full set so a caller can render absent verdicts too. Every entry carries a `present` boolean and a `quality` (Positive, Negative, or Both = auspicious, inauspicious, or context-dependent); filter on present === true for active yogas. Evidence text names the rule that triggered or failed, or the precedence norm that outranked it.
 	Yogas []struct {
-		// Description Brief classical formation rule. Identifies the planetary placement, lordship, dignity, or aspect pattern required for the yoga to form.
+		// Description Brief classical formation rule. Identifies the planetary placement, lordship, dignity, aspect pattern, sign modality, or whole-chart bhava distribution required for the yoga to form.
 		Description string `json:"description"`
 
-		// Evidence Human-readable rationale naming the specific rule that triggered or failed the detection, including planetary positions, dignity, kendrādhipati status, lordship, or malefic drishti.
+		// Evidence Human-readable rationale naming the specific rule that triggered or failed the detection, including planetary positions, dignity, kendradhipati status, lordship, malefic drishti, sign modality, or whole-chart bhava distribution. For a Nabhasa yoga that matched its own rule but was outranked, this names the precedence norm that silenced it, for example that an Akriti yoga outranks Asraya or that any other Nabhasa family suppresses Sankhya.
 		Evidence *string `json:"evidence,omitempty"`
 
 		// ID Glossary id (lowercase, kebab-case) matching an entry in the 300-entry planetary-yoga catalog. Use with GET /yoga/{id} to retrieve the full glossary text.
@@ -20380,7 +21959,7 @@ type YogaDetectResponse struct {
 		// Name Classical Sanskrit name of the yoga as referenced in BPHS (Brihat Parashara Hora Shastra), Phaladeepika, and B.V. Raman *Three Hundred Important Combinations*.
 		Name string `json:"name"`
 
-		// Present True if every classical condition for the yoga is satisfied by the given chart. False if any rule fails, including "almost-present" cases where dignity is met but kendra/aspect is not.
+		// Present True if every classical condition for the yoga is satisfied by the given chart. False if any rule fails, including "almost-present" cases where dignity is met but kendra/aspect is not, and Nabhasa cases where the yoga matched its own rule but a stronger family outranked it under the classical precedence norms. Read `evidence` to tell those apart.
 		Present bool `json:"present"`
 
 		// Quality Overall nature. Auspicious yogas (Pancha Mahapurusha, Gajakesari) bestow benefits; inauspicious yogas (Kemadruma) indicate challenges; Both denotes context-dependent effects.
@@ -23533,6 +25112,15 @@ type CastYesNo200JSONResponseBodyCardArcana string
 // CastYesNo200JSONResponseBodyStrength defines parameters for CastYesNo.
 type CastYesNo200JSONResponseBodyStrength string
 
+// CalculateArudhaPadasParams defines parameters for CalculateArudhaPadas.
+type CalculateArudhaPadasParams struct {
+	// Lang Response language (ISO 639-1). Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en. Languages without translations yet return English.
+	Lang *CalculateArudhaPadasParamsLang `form:"lang,omitempty" json:"lang,omitempty"`
+}
+
+// CalculateArudhaPadasParamsLang defines parameters for CalculateArudhaPadas.
+type CalculateArudhaPadasParamsLang string
+
 // CalculateDrishtiJSONBody defines parameters for CalculateDrishti.
 type CalculateDrishtiJSONBody struct {
 	// CoordinateSystem Coordinate system for longitude output. "sidereal" (Nirayana) uses Lahiri ayanamsa - standard for Vedic astrology. "tropical" (Sayana) uses raw ecliptic longitude matching Western astrology. Defaults to "sidereal".
@@ -23629,14 +25217,62 @@ type GetMonthlyAspectsJSONBody_Timezone struct {
 	union json.RawMessage
 }
 
+// ListAvasthasParams defines parameters for ListAvasthas.
+type ListAvasthasParams struct {
+	// Lang Response language (ISO 639-1). Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en. Languages without translations yet return English.
+	Lang *ListAvasthasParamsLang `form:"lang,omitempty" json:"lang,omitempty"`
+
+	// System Return only the states of one system: "baladi" (5), "jagradadi" (3) or "deeptadi" (9). Omit for all 17.
+	System *ListAvasthasParamsSystem `form:"system,omitempty" json:"system,omitempty"`
+}
+
+// ListAvasthasParamsLang defines parameters for ListAvasthas.
+type ListAvasthasParamsLang string
+
+// ListAvasthasParamsSystem defines parameters for ListAvasthas.
+type ListAvasthasParamsSystem string
+
+// ListAvasthas200JSONResponseBodySystem defines parameters for ListAvasthas.
+type ListAvasthas200JSONResponseBodySystem string
+
+// GetAvasthaParams defines parameters for GetAvastha.
+type GetAvasthaParams struct {
+	// Lang Response language (ISO 639-1). Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en. Languages without translations yet return English.
+	Lang *GetAvasthaParamsLang `form:"lang,omitempty" json:"lang,omitempty"`
+}
+
+// GetAvasthaParamsLang defines parameters for GetAvastha.
+type GetAvasthaParamsLang string
+
+// GetAvasthaParamsID defines parameters for GetAvastha.
+type GetAvasthaParamsID string
+
+// GetAvastha200JSONResponseBodySystem defines parameters for GetAvastha.
+type GetAvastha200JSONResponseBodySystem string
+
 // GenerateBirthChartParams defines parameters for GenerateBirthChart.
 type GenerateBirthChartParams struct {
 	// Lang Response language (ISO 639-1). Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en. Languages without translations yet return English.
 	Lang *GenerateBirthChartParamsLang `form:"lang,omitempty" json:"lang,omitempty"`
+
+	// Focus Which signification vocabulary the houseThemes map returns. "general" gives the classical bhava significations (self, wealth, siblings, home, and so on). "finance" gives the money reading of the same twelve bhavas, so house 2 returns income and savings, 5 speculation and risk appetite, 8 sudden money and leverage, 11 gains and profits, and 12 expenses and capital outflow. Use "finance" for wealth, income, business and market timing questions in Krishnamurti Paddhati, where the significator house groups 2, 6, 10, 11 for earned income and 5, 8, 11 for speculation are read against a running dasha. Defaults to "general".
+	Focus *GenerateBirthChartParamsFocus `form:"focus,omitempty" json:"focus,omitempty"`
 }
 
 // GenerateBirthChartParamsLang defines parameters for GenerateBirthChart.
 type GenerateBirthChartParamsLang string
+
+// GenerateBirthChartParamsFocus defines parameters for GenerateBirthChart.
+type GenerateBirthChartParamsFocus string
+
+// CalculateCharaKarakasParams defines parameters for CalculateCharaKarakas.
+type CalculateCharaKarakasParams struct {
+	// Lang Response language (ISO 639-1). Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en. Languages without translations yet return English.
+	Lang *CalculateCharaKarakasParamsLang `form:"lang,omitempty" json:"lang,omitempty"`
+}
+
+// CalculateCharaKarakasParamsLang defines parameters for CalculateCharaKarakas.
+type CalculateCharaKarakasParamsLang string
 
 // CalculateGunMilanParams defines parameters for CalculateGunMilan.
 type CalculateGunMilanParams struct {
@@ -23678,10 +25314,16 @@ type GetCurrentDashaJSONBody struct {
 type GetCurrentDashaParams struct {
 	// Lang Response language (ISO 639-1). Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en. Languages without translations yet return English.
 	Lang *GetCurrentDashaParamsLang `form:"lang,omitempty" json:"lang,omitempty"`
+
+	// Focus Which signification vocabulary the houseThemes map returns. "general" gives the classical bhava significations (self, wealth, siblings, home, and so on). "finance" gives the money reading of the same twelve bhavas, so house 2 returns income and savings, 5 speculation and risk appetite, 8 sudden money and leverage, 11 gains and profits, and 12 expenses and capital outflow. Use "finance" for wealth, income, business and market timing questions in Krishnamurti Paddhati, where the significator house groups 2, 6, 10, 11 for earned income and 5, 8, 11 for speculation are read against a running dasha. Defaults to "general".
+	Focus *GetCurrentDashaParamsFocus `form:"focus,omitempty" json:"focus,omitempty"`
 }
 
 // GetCurrentDashaParamsLang defines parameters for GetCurrentDasha.
 type GetCurrentDashaParamsLang string
+
+// GetCurrentDashaParamsFocus defines parameters for GetCurrentDasha.
+type GetCurrentDashaParamsFocus string
 
 // GetCurrentDashaJSONBodyAyanamsa defines parameters for GetCurrentDasha.
 type GetCurrentDashaJSONBodyAyanamsa string
@@ -23812,10 +25454,16 @@ type GetMajorDashasJSONBody struct {
 type GetMajorDashasParams struct {
 	// Lang Response language (ISO 639-1). Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en. Languages without translations yet return English.
 	Lang *GetMajorDashasParamsLang `form:"lang,omitempty" json:"lang,omitempty"`
+
+	// Focus Which signification vocabulary the houseThemes map returns. "general" gives the classical bhava significations (self, wealth, siblings, home, and so on). "finance" gives the money reading of the same twelve bhavas, so house 2 returns income and savings, 5 speculation and risk appetite, 8 sudden money and leverage, 11 gains and profits, and 12 expenses and capital outflow. Use "finance" for wealth, income, business and market timing questions in Krishnamurti Paddhati, where the significator house groups 2, 6, 10, 11 for earned income and 5, 8, 11 for speculation are read against a running dasha. Defaults to "general".
+	Focus *GetMajorDashasParamsFocus `form:"focus,omitempty" json:"focus,omitempty"`
 }
 
 // GetMajorDashasParamsLang defines parameters for GetMajorDashas.
 type GetMajorDashasParamsLang string
+
+// GetMajorDashasParamsFocus defines parameters for GetMajorDashas.
+type GetMajorDashasParamsFocus string
 
 // GetMajorDashasJSONBodyAyanamsa defines parameters for GetMajorDashas.
 type GetMajorDashasJSONBodyAyanamsa string
@@ -23880,10 +25528,16 @@ type GetSubDashasJSONBody struct {
 type GetSubDashasParams struct {
 	// Lang Response language (ISO 639-1). Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en. Languages without translations yet return English.
 	Lang *GetSubDashasParamsLang `form:"lang,omitempty" json:"lang,omitempty"`
+
+	// Focus Which signification vocabulary the houseThemes map returns. "general" gives the classical bhava significations (self, wealth, siblings, home, and so on). "finance" gives the money reading of the same twelve bhavas, so house 2 returns income and savings, 5 speculation and risk appetite, 8 sudden money and leverage, 11 gains and profits, and 12 expenses and capital outflow. Use "finance" for wealth, income, business and market timing questions in Krishnamurti Paddhati, where the significator house groups 2, 6, 10, 11 for earned income and 5, 8, 11 for speculation are read against a running dasha. Defaults to "general".
+	Focus *GetSubDashasParamsFocus `form:"focus,omitempty" json:"focus,omitempty"`
 }
 
 // GetSubDashasParamsLang defines parameters for GetSubDashas.
 type GetSubDashasParamsLang string
+
+// GetSubDashasParamsFocus defines parameters for GetSubDashas.
+type GetSubDashasParamsFocus string
 
 // GetSubDashasParamsMahadasha defines parameters for GetSubDashas.
 type GetSubDashasParamsMahadasha string
@@ -23963,10 +25617,16 @@ type GetPratyantardashasJSONBody struct {
 type GetPratyantardashasParams struct {
 	// Lang Response language (ISO 639-1). Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en. Languages without translations yet return English.
 	Lang *GetPratyantardashasParamsLang `form:"lang,omitempty" json:"lang,omitempty"`
+
+	// Focus Which signification vocabulary the houseThemes map returns. "general" gives the classical bhava significations (self, wealth, siblings, home, and so on). "finance" gives the money reading of the same twelve bhavas, so house 2 returns income and savings, 5 speculation and risk appetite, 8 sudden money and leverage, 11 gains and profits, and 12 expenses and capital outflow. Use "finance" for wealth, income, business and market timing questions in Krishnamurti Paddhati, where the significator house groups 2, 6, 10, 11 for earned income and 5, 8, 11 for speculation are read against a running dasha. Defaults to "general".
+	Focus *GetPratyantardashasParamsFocus `form:"focus,omitempty" json:"focus,omitempty"`
 }
 
 // GetPratyantardashasParamsLang defines parameters for GetPratyantardashas.
 type GetPratyantardashasParamsLang string
+
+// GetPratyantardashasParamsFocus defines parameters for GetPratyantardashas.
+type GetPratyantardashasParamsFocus string
 
 // GetPratyantardashasParamsMahadasha defines parameters for GetPratyantardashas.
 type GetPratyantardashasParamsMahadasha string
@@ -24058,10 +25718,16 @@ type GetSookshmaDashasJSONBody struct {
 type GetSookshmaDashasParams struct {
 	// Lang Response language (ISO 639-1). Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en. Languages without translations yet return English.
 	Lang *GetSookshmaDashasParamsLang `form:"lang,omitempty" json:"lang,omitempty"`
+
+	// Focus Which signification vocabulary the houseThemes map returns. "general" gives the classical bhava significations (self, wealth, siblings, home, and so on). "finance" gives the money reading of the same twelve bhavas, so house 2 returns income and savings, 5 speculation and risk appetite, 8 sudden money and leverage, 11 gains and profits, and 12 expenses and capital outflow. Use "finance" for wealth, income, business and market timing questions in Krishnamurti Paddhati, where the significator house groups 2, 6, 10, 11 for earned income and 5, 8, 11 for speculation are read against a running dasha. Defaults to "general".
+	Focus *GetSookshmaDashasParamsFocus `form:"focus,omitempty" json:"focus,omitempty"`
 }
 
 // GetSookshmaDashasParamsLang defines parameters for GetSookshmaDashas.
 type GetSookshmaDashasParamsLang string
+
+// GetSookshmaDashasParamsFocus defines parameters for GetSookshmaDashas.
+type GetSookshmaDashasParamsFocus string
 
 // GetSookshmaDashasParamsMahadasha defines parameters for GetSookshmaDashas.
 type GetSookshmaDashasParamsMahadasha string
@@ -24165,10 +25831,16 @@ type GetPranaDashasJSONBody struct {
 type GetPranaDashasParams struct {
 	// Lang Response language (ISO 639-1). Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en. Languages without translations yet return English.
 	Lang *GetPranaDashasParamsLang `form:"lang,omitempty" json:"lang,omitempty"`
+
+	// Focus Which signification vocabulary the houseThemes map returns. "general" gives the classical bhava significations (self, wealth, siblings, home, and so on). "finance" gives the money reading of the same twelve bhavas, so house 2 returns income and savings, 5 speculation and risk appetite, 8 sudden money and leverage, 11 gains and profits, and 12 expenses and capital outflow. Use "finance" for wealth, income, business and market timing questions in Krishnamurti Paddhati, where the significator house groups 2, 6, 10, 11 for earned income and 5, 8, 11 for speculation are read against a running dasha. Defaults to "general".
+	Focus *GetPranaDashasParamsFocus `form:"focus,omitempty" json:"focus,omitempty"`
 }
 
 // GetPranaDashasParamsLang defines parameters for GetPranaDashas.
 type GetPranaDashasParamsLang string
+
+// GetPranaDashasParamsFocus defines parameters for GetPranaDashas.
+type GetPranaDashasParamsFocus string
 
 // GetPranaDashasParamsMahadasha defines parameters for GetPranaDashas.
 type GetPranaDashasParamsMahadasha string
@@ -24301,10 +25973,16 @@ type GetKpAyanamsaParams struct {
 type GenerateKpChartParams struct {
 	// Lang Response language (ISO 639-1). Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en. Languages without translations yet return English.
 	Lang *GenerateKpChartParamsLang `form:"lang,omitempty" json:"lang,omitempty"`
+
+	// Focus Which signification vocabulary the houseThemes map returns. "general" gives the classical bhava significations (self, wealth, siblings, home, and so on). "finance" gives the money reading of the same twelve bhavas, so house 2 returns income and savings, 5 speculation and risk appetite, 8 sudden money and leverage, 11 gains and profits, and 12 expenses and capital outflow. Use "finance" for wealth, income, business and market timing questions in Krishnamurti Paddhati, where the significator house groups 2, 6, 10, 11 for earned income and 5, 8, 11 for speculation are read against a running dasha. Defaults to "general".
+	Focus *GenerateKpChartParamsFocus `form:"focus,omitempty" json:"focus,omitempty"`
 }
 
 // GenerateKpChartParamsLang defines parameters for GenerateKpChart.
 type GenerateKpChartParamsLang string
+
+// GenerateKpChartParamsFocus defines parameters for GenerateKpChart.
+type GenerateKpChartParamsFocus string
 
 // GetKpRulingPlanetsJSONBody defines parameters for GetKpRulingPlanets.
 type GetKpRulingPlanetsJSONBody struct {
@@ -24767,9 +26445,6 @@ type GetYogaParamsLang string
 // GetYogaParamsID defines parameters for GetYoga.
 type GetYogaParamsID string
 
-// GetYoga200JSONResponseBodyQuality defines parameters for GetYoga.
-type GetYoga200JSONResponseBodyQuality string
-
 // GetDailyAngelNumberJSONRequestBody defines body for GetDailyAngelNumber for application/json ContentType.
 type GetDailyAngelNumberJSONRequestBody GetDailyAngelNumberJSONBody
 
@@ -24995,6 +26670,9 @@ type CastThreeCardJSONRequestBody CastThreeCardJSONBody
 // CastYesNoJSONRequestBody defines body for CastYesNo for application/json ContentType.
 type CastYesNoJSONRequestBody CastYesNoJSONBody
 
+// CalculateArudhaPadasJSONRequestBody defines body for CalculateArudhaPadas for application/json ContentType.
+type CalculateArudhaPadasJSONRequestBody = ArudhaRequest
+
 // CalculateAshtakavargaJSONRequestBody defines body for CalculateAshtakavarga for application/json ContentType.
 type CalculateAshtakavargaJSONRequestBody = AshtakavargaRequest
 
@@ -25009,6 +26687,9 @@ type GetMonthlyAspectsJSONRequestBody GetMonthlyAspectsJSONBody
 
 // GenerateBirthChartJSONRequestBody defines body for GenerateBirthChart for application/json ContentType.
 type GenerateBirthChartJSONRequestBody = BirthChartRequest
+
+// CalculateCharaKarakasJSONRequestBody defines body for CalculateCharaKarakas for application/json ContentType.
+type CalculateCharaKarakasJSONRequestBody = CharaKarakaRequest
 
 // CalculateGunMilanJSONRequestBody defines body for CalculateGunMilan for application/json ContentType.
 type CalculateGunMilanJSONRequestBody = CompatibilityRequest
@@ -25336,6 +27017,68 @@ func (t *ArabicLotsRequest_Timezone) UnmarshalJSON(b []byte) error {
 	return err
 }
 
+// AsArudhaRequestTimezone0 returns the union data inside the ArudhaRequest_Timezone as a ArudhaRequestTimezone0
+func (t ArudhaRequest_Timezone) AsArudhaRequestTimezone0() (ArudhaRequestTimezone0, error) {
+	var body ArudhaRequestTimezone0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromArudhaRequestTimezone0 overwrites any union data inside the ArudhaRequest_Timezone as the provided ArudhaRequestTimezone0
+func (t *ArudhaRequest_Timezone) FromArudhaRequestTimezone0(v ArudhaRequestTimezone0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeArudhaRequestTimezone0 performs a merge with any union data inside the ArudhaRequest_Timezone, using the provided ArudhaRequestTimezone0
+func (t *ArudhaRequest_Timezone) MergeArudhaRequestTimezone0(v ArudhaRequestTimezone0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsArudhaRequestTimezone1 returns the union data inside the ArudhaRequest_Timezone as a ArudhaRequestTimezone1
+func (t ArudhaRequest_Timezone) AsArudhaRequestTimezone1() (ArudhaRequestTimezone1, error) {
+	var body ArudhaRequestTimezone1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromArudhaRequestTimezone1 overwrites any union data inside the ArudhaRequest_Timezone as the provided ArudhaRequestTimezone1
+func (t *ArudhaRequest_Timezone) FromArudhaRequestTimezone1(v ArudhaRequestTimezone1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeArudhaRequestTimezone1 performs a merge with any union data inside the ArudhaRequest_Timezone, using the provided ArudhaRequestTimezone1
+func (t *ArudhaRequest_Timezone) MergeArudhaRequestTimezone1(v ArudhaRequestTimezone1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t ArudhaRequest_Timezone) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *ArudhaRequest_Timezone) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
 // AsAshtakavargaRequestTimezone0 returns the union data inside the AshtakavargaRequest_Timezone as a AshtakavargaRequestTimezone0
 func (t AshtakavargaRequest_Timezone) AsAshtakavargaRequestTimezone0() (AshtakavargaRequestTimezone0, error) {
 	var body AshtakavargaRequestTimezone0
@@ -25642,6 +27385,68 @@ func (t BirthChartRequest_Timezone) MarshalJSON() ([]byte, error) {
 }
 
 func (t *BirthChartRequest_Timezone) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsCharaKarakaRequestTimezone0 returns the union data inside the CharaKarakaRequest_Timezone as a CharaKarakaRequestTimezone0
+func (t CharaKarakaRequest_Timezone) AsCharaKarakaRequestTimezone0() (CharaKarakaRequestTimezone0, error) {
+	var body CharaKarakaRequestTimezone0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromCharaKarakaRequestTimezone0 overwrites any union data inside the CharaKarakaRequest_Timezone as the provided CharaKarakaRequestTimezone0
+func (t *CharaKarakaRequest_Timezone) FromCharaKarakaRequestTimezone0(v CharaKarakaRequestTimezone0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeCharaKarakaRequestTimezone0 performs a merge with any union data inside the CharaKarakaRequest_Timezone, using the provided CharaKarakaRequestTimezone0
+func (t *CharaKarakaRequest_Timezone) MergeCharaKarakaRequestTimezone0(v CharaKarakaRequestTimezone0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsCharaKarakaRequestTimezone1 returns the union data inside the CharaKarakaRequest_Timezone as a CharaKarakaRequestTimezone1
+func (t CharaKarakaRequest_Timezone) AsCharaKarakaRequestTimezone1() (CharaKarakaRequestTimezone1, error) {
+	var body CharaKarakaRequestTimezone1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromCharaKarakaRequestTimezone1 overwrites any union data inside the CharaKarakaRequest_Timezone as the provided CharaKarakaRequestTimezone1
+func (t *CharaKarakaRequest_Timezone) FromCharaKarakaRequestTimezone1(v CharaKarakaRequestTimezone1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeCharaKarakaRequestTimezone1 performs a merge with any union data inside the CharaKarakaRequest_Timezone, using the provided CharaKarakaRequestTimezone1
+func (t *CharaKarakaRequest_Timezone) MergeCharaKarakaRequestTimezone1(v CharaKarakaRequestTimezone1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t CharaKarakaRequest_Timezone) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *CharaKarakaRequest_Timezone) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }
@@ -31254,6 +33059,11 @@ type ClientInterface interface {
 	// GetUsageStats request
 	GetUsageStats(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// CalculateArudhaPadasWithBody request with any body
+	CalculateArudhaPadasWithBody(ctx context.Context, params *CalculateArudhaPadasParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	CalculateArudhaPadas(ctx context.Context, params *CalculateArudhaPadasParams, body CalculateArudhaPadasJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// CalculateAshtakavargaWithBody request with any body
 	CalculateAshtakavargaWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
@@ -31274,10 +33084,21 @@ type ClientInterface interface {
 
 	GetMonthlyAspects(ctx context.Context, body GetMonthlyAspectsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// ListAvasthas request
+	ListAvasthas(ctx context.Context, params *ListAvasthasParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetAvastha request
+	GetAvastha(ctx context.Context, id GetAvasthaParamsID, params *GetAvasthaParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// GenerateBirthChartWithBody request with any body
 	GenerateBirthChartWithBody(ctx context.Context, params *GenerateBirthChartParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	GenerateBirthChart(ctx context.Context, params *GenerateBirthChartParams, body GenerateBirthChartJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CalculateCharaKarakasWithBody request with any body
+	CalculateCharaKarakasWithBody(ctx context.Context, params *CalculateCharaKarakasParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	CalculateCharaKarakas(ctx context.Context, params *CalculateCharaKarakasParams, body CalculateCharaKarakasJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// CalculateGunMilanWithBody request with any body
 	CalculateGunMilanWithBody(ctx context.Context, params *CalculateGunMilanParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -33823,6 +35644,30 @@ func (c *Client) GetUsageStats(ctx context.Context, reqEditors ...RequestEditorF
 	return c.Client.Do(req)
 }
 
+func (c *Client) CalculateArudhaPadasWithBody(ctx context.Context, params *CalculateArudhaPadasParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCalculateArudhaPadasRequestWithBody(c.Server, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) CalculateArudhaPadas(ctx context.Context, params *CalculateArudhaPadasParams, body CalculateArudhaPadasJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCalculateArudhaPadasRequest(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 func (c *Client) CalculateAshtakavargaWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewCalculateAshtakavargaRequestWithBody(c.Server, contentType, body)
 	if err != nil {
@@ -33919,6 +35764,30 @@ func (c *Client) GetMonthlyAspects(ctx context.Context, body GetMonthlyAspectsJS
 	return c.Client.Do(req)
 }
 
+func (c *Client) ListAvasthas(ctx context.Context, params *ListAvasthasParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewListAvasthasRequest(c.Server, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) GetAvastha(ctx context.Context, id GetAvasthaParamsID, params *GetAvasthaParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetAvasthaRequest(c.Server, id, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 func (c *Client) GenerateBirthChartWithBody(ctx context.Context, params *GenerateBirthChartParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewGenerateBirthChartRequestWithBody(c.Server, params, contentType, body)
 	if err != nil {
@@ -33933,6 +35802,30 @@ func (c *Client) GenerateBirthChartWithBody(ctx context.Context, params *Generat
 
 func (c *Client) GenerateBirthChart(ctx context.Context, params *GenerateBirthChartParams, body GenerateBirthChartJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewGenerateBirthChartRequest(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) CalculateCharaKarakasWithBody(ctx context.Context, params *CalculateCharaKarakasParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCalculateCharaKarakasRequestWithBody(c.Server, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) CalculateCharaKarakas(ctx context.Context, params *CalculateCharaKarakasParams, body CalculateCharaKarakasJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCalculateCharaKarakasRequest(c.Server, params, body)
 	if err != nil {
 		return nil, err
 	}
@@ -42884,6 +44777,73 @@ func NewGetUsageStatsRequest(server string) (*http.Request, error) {
 	return req, nil
 }
 
+// NewCalculateArudhaPadasRequest calls the generic CalculateArudhaPadas builder with application/json body
+func NewCalculateArudhaPadasRequest(server string, params *CalculateArudhaPadasParams, body CalculateArudhaPadasJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewCalculateArudhaPadasRequestWithBody(server, params, "application/json", bodyReader)
+}
+
+// NewCalculateArudhaPadasRequestWithBody generates requests for CalculateArudhaPadas with any type of body
+func NewCalculateArudhaPadasRequestWithBody(server string, params *CalculateArudhaPadasParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/vedic-astrology/arudha")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Lang != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "lang", *params.Lang, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
 // NewCalculateAshtakavargaRequest calls the generic CalculateAshtakavarga builder with application/json body
 func NewCalculateAshtakavargaRequest(server string, body CalculateAshtakavargaJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
@@ -43044,6 +45004,133 @@ func NewGetMonthlyAspectsRequestWithBody(server string, contentType string, body
 	return req, nil
 }
 
+// NewListAvasthasRequest generates requests for ListAvasthas
+func NewListAvasthasRequest(server string, params *ListAvasthasParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/vedic-astrology/avasthas")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Lang != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "lang", *params.Lang, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.System != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "system", *params.System, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetAvasthaRequest generates requests for GetAvastha
+func NewGetAvasthaRequest(server string, id GetAvasthaParamsID, params *GetAvasthaParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "id", id, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/vedic-astrology/avasthas/%s", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Lang != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "lang", *params.Lang, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
 // NewGenerateBirthChartRequest calls the generic GenerateBirthChart builder with application/json body
 func NewGenerateBirthChartRequest(server string, params *GenerateBirthChartParams, body GenerateBirthChartJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
@@ -43065,6 +45152,85 @@ func NewGenerateBirthChartRequestWithBody(server string, params *GenerateBirthCh
 	}
 
 	operationPath := fmt.Sprintf("/vedic-astrology/birth-chart")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Lang != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "lang", *params.Lang, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Focus != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "focus", *params.Focus, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewCalculateCharaKarakasRequest calls the generic CalculateCharaKarakas builder with application/json body
+func NewCalculateCharaKarakasRequest(server string, params *CalculateCharaKarakasParams, body CalculateCharaKarakasJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewCalculateCharaKarakasRequestWithBody(server, params, "application/json", bodyReader)
+}
+
+// NewCalculateCharaKarakasRequestWithBody generates requests for CalculateCharaKarakas with any type of body
+func NewCalculateCharaKarakasRequestWithBody(server string, params *CalculateCharaKarakasParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/vedic-astrology/chara-karakas")
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -43229,6 +45395,18 @@ func NewGetCurrentDashaRequestWithBody(server string, params *GetCurrentDashaPar
 
 		}
 
+		if params.Focus != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "focus", *params.Focus, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
 		if encoded := queryValues.Encode(); encoded != "" {
 			rawQueryFragments = append(rawQueryFragments, encoded)
 		}
@@ -43287,6 +45465,18 @@ func NewGetMajorDashasRequestWithBody(server string, params *GetMajorDashasParam
 		if params.Lang != nil {
 
 			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "lang", *params.Lang, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Focus != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "focus", *params.Focus, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
 				return nil, err
 			} else {
 				for _, qp := range strings.Split(queryFrag, "&") {
@@ -43370,6 +45560,18 @@ func NewGetSubDashasRequestWithBody(server string, mahadasha GetSubDashasParamsM
 
 		}
 
+		if params.Focus != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "focus", *params.Focus, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
 		if encoded := queryValues.Encode(); encoded != "" {
 			rawQueryFragments = append(rawQueryFragments, encoded)
 		}
@@ -43442,6 +45644,18 @@ func NewGetPratyantardashasRequestWithBody(server string, mahadasha GetPratyanta
 		if params.Lang != nil {
 
 			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "lang", *params.Lang, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Focus != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "focus", *params.Focus, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
 				return nil, err
 			} else {
 				for _, qp := range strings.Split(queryFrag, "&") {
@@ -43539,6 +45753,18 @@ func NewGetSookshmaDashasRequestWithBody(server string, mahadasha GetSookshmaDas
 
 		}
 
+		if params.Focus != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "focus", *params.Focus, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
 		if encoded := queryValues.Encode(); encoded != "" {
 			rawQueryFragments = append(rawQueryFragments, encoded)
 		}
@@ -43625,6 +45851,18 @@ func NewGetPranaDashasRequestWithBody(server string, mahadasha GetPranaDashasPar
 		if params.Lang != nil {
 
 			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "lang", *params.Lang, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Focus != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "focus", *params.Focus, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
 				return nil, err
 			} else {
 				for _, qp := range strings.Split(queryFrag, "&") {
@@ -43973,6 +46211,18 @@ func NewGenerateKpChartRequestWithBody(server string, params *GenerateKpChartPar
 		if params.Lang != nil {
 
 			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "lang", *params.Lang, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Focus != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "focus", *params.Focus, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
 				return nil, err
 			} else {
 				for _, qp := range strings.Split(queryFrag, "&") {
@@ -45874,6 +48124,11 @@ type ClientWithResponsesInterface interface {
 	// GetUsageStatsWithResponse request
 	GetUsageStatsWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*GetUsageStatsResponse, error)
 
+	// CalculateArudhaPadasWithBodyWithResponse request with any body
+	CalculateArudhaPadasWithBodyWithResponse(ctx context.Context, params *CalculateArudhaPadasParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CalculateArudhaPadasResponse, error)
+
+	CalculateArudhaPadasWithResponse(ctx context.Context, params *CalculateArudhaPadasParams, body CalculateArudhaPadasJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateArudhaPadasResponse, error)
+
 	// CalculateAshtakavargaWithBodyWithResponse request with any body
 	CalculateAshtakavargaWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CalculateAshtakavargaResponse, error)
 
@@ -45894,10 +48149,21 @@ type ClientWithResponsesInterface interface {
 
 	GetMonthlyAspectsWithResponse(ctx context.Context, body GetMonthlyAspectsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetMonthlyAspectsResponse, error)
 
+	// ListAvasthasWithResponse request
+	ListAvasthasWithResponse(ctx context.Context, params *ListAvasthasParams, reqEditors ...RequestEditorFn) (*ListAvasthasResponse, error)
+
+	// GetAvasthaWithResponse request
+	GetAvasthaWithResponse(ctx context.Context, id GetAvasthaParamsID, params *GetAvasthaParams, reqEditors ...RequestEditorFn) (*GetAvasthaResponse, error)
+
 	// GenerateBirthChartWithBodyWithResponse request with any body
 	GenerateBirthChartWithBodyWithResponse(ctx context.Context, params *GenerateBirthChartParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GenerateBirthChartResponse, error)
 
 	GenerateBirthChartWithResponse(ctx context.Context, params *GenerateBirthChartParams, body GenerateBirthChartJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateBirthChartResponse, error)
+
+	// CalculateCharaKarakasWithBodyWithResponse request with any body
+	CalculateCharaKarakasWithBodyWithResponse(ctx context.Context, params *CalculateCharaKarakasParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CalculateCharaKarakasResponse, error)
+
+	CalculateCharaKarakasWithResponse(ctx context.Context, params *CalculateCharaKarakasParams, body CalculateCharaKarakasJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateCharaKarakasResponse, error)
 
 	// CalculateGunMilanWithBodyWithResponse request with any body
 	CalculateGunMilanWithBodyWithResponse(ctx context.Context, params *CalculateGunMilanParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CalculateGunMilanResponse, error)
@@ -56608,6 +58874,46 @@ func (r GetUsageStatsResponse) ContentType() string {
 	return ""
 }
 
+type CalculateArudhaPadasResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *ArudhaResponse
+	JSON400      *ErrorResponse
+	JSON401      *ErrorResponse
+	JSON405      *ErrorResponse
+	JSON429      *ErrorResponse
+	JSON500      *ErrorResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r CalculateArudhaPadasResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CalculateArudhaPadasResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// Bytes is a convenience method to retrieve the raw bytes from the HTTP response
+func (r CalculateArudhaPadasResponse) Bytes() []byte {
+	return r.Body
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r CalculateArudhaPadasResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
 type CalculateAshtakavargaResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -56912,6 +59218,117 @@ func (r GetMonthlyAspectsResponse) ContentType() string {
 	return ""
 }
 
+type ListAvasthasResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *[]struct {
+		// ID Unique slug for the avastha state. It is the lowercased form of the state name the birth chart returns, so a chart value maps straight onto this record.
+		ID string `json:"id"`
+
+		// Interpretation What the state means for the results the graha delivers, which is the whole purpose of reading an avastha: the chart says where a graha is, the avastha says how much of its promise it can keep.
+		Interpretation string `json:"interpretation"`
+
+		// Meaning Short label for the state, sized for a table cell beside the graha.
+		Meaning string `json:"meaning"`
+
+		// Name Sanskrit name of the state, exactly as it appears in the `awastha`, `jagradadi` or `deeptadi` field of a birth chart.
+		Name string `json:"name"`
+
+		// System Which avastha system the state belongs to, and therefore which birth-chart field it appears in. "baladi" is the five-fold age state set by degree within the sign and appears in `awastha`. "jagradadi" is the three-fold waking state set by sign dignity. "deeptadi" is the nine-fold dispositional state. Baladi applies to every body; the other two apply to the seven classical grahas only.
+		System ListAvasthas200JSONResponseBodySystem `json:"system"`
+	}
+	JSON400 *ErrorResponse
+	JSON401 *ErrorResponse
+	JSON405 *ErrorResponse
+	JSON429 *ErrorResponse
+	JSON500 *ErrorResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r ListAvasthasResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r ListAvasthasResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// Bytes is a convenience method to retrieve the raw bytes from the HTTP response
+func (r ListAvasthasResponse) Bytes() []byte {
+	return r.Body
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r ListAvasthasResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type GetAvasthaResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *struct {
+		// ID Unique slug for the avastha state. It is the lowercased form of the state name the birth chart returns, so a chart value maps straight onto this record.
+		ID string `json:"id"`
+
+		// Interpretation What the state means for the results the graha delivers, which is the whole purpose of reading an avastha: the chart says where a graha is, the avastha says how much of its promise it can keep.
+		Interpretation string `json:"interpretation"`
+
+		// Meaning Short label for the state, sized for a table cell beside the graha.
+		Meaning string `json:"meaning"`
+
+		// Name Sanskrit name of the state, exactly as it appears in the `awastha`, `jagradadi` or `deeptadi` field of a birth chart.
+		Name string `json:"name"`
+
+		// System Which avastha system the state belongs to, and therefore which birth-chart field it appears in. "baladi" is the five-fold age state set by degree within the sign and appears in `awastha`. "jagradadi" is the three-fold waking state set by sign dignity. "deeptadi" is the nine-fold dispositional state. Baladi applies to every body; the other two apply to the seven classical grahas only.
+		System GetAvastha200JSONResponseBodySystem `json:"system"`
+	}
+	JSON400 *ErrorResponse
+	JSON401 *ErrorResponse
+	JSON404 *ErrorResponse
+	JSON405 *ErrorResponse
+	JSON429 *ErrorResponse
+	JSON500 *ErrorResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r GetAvasthaResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetAvasthaResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// Bytes is a convenience method to retrieve the raw bytes from the HTTP response
+func (r GetAvasthaResponse) Bytes() []byte {
+	return r.Body
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetAvasthaResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
 type GenerateBirthChartResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
@@ -56946,6 +59363,46 @@ func (r GenerateBirthChartResponse) Bytes() []byte {
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r GenerateBirthChartResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type CalculateCharaKarakasResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *CharaKarakaResponse
+	JSON400      *ErrorResponse
+	JSON401      *ErrorResponse
+	JSON405      *ErrorResponse
+	JSON429      *ErrorResponse
+	JSON500      *ErrorResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r CalculateCharaKarakasResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CalculateCharaKarakasResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// Bytes is a convenience method to retrieve the raw bytes from the HTTP response
+func (r CalculateCharaKarakasResponse) Bytes() []byte {
+	return r.Body
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r CalculateCharaKarakasResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -57042,7 +59499,7 @@ type GetCurrentDashaResponse struct {
 				// StarLord Lord of the nakshatra this planet sits in, one of the 9 grahas. In KP the star lord outranks the planet itself: a period lord mainly delivers the houses its star lord occupies and owns, which is why those appear at L1 and L3 rather than the planet own house.
 				StarLord string `json:"starLord"`
 
-				// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading.
+				// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading. Reproducible from the significator levels alone, in two steps. STEP 1, per house keep only the strongest level: a planet routinely reaches the same house at more than one level, for example its star lord occupies house 11 and it also owns house 11, and KP cites a significator by its best connection, so that house counts once at grade A. This is why signifiedHouses is shorter than the four level arrays concatenated, and omitting it is what makes a hand calculation disagree. STEP 2, average the surviving weights: each house contributes 100, 75, 50 or 25 for grade A, B, C or D, and the mean is the score. Worked example, a lord signifying house 11 at level 1, house 6 at level 2 and house 2 at level 4 scores (100 + 75 + 25) / 3 = 66.7, which lands in band B because the band edges are the midpoints 87.5, 62.5 and 37.5. The score says how firmly the lord is connected, never whether the houses are favourable, which depends on the matter being judged.
 				Strength struct {
 					// Grade Band the score falls in, on the standard KP significator grading: A planets in the constellation of the occupant, B occupants, C planets in the constellation of the house owner, D the house owner. Band edges are the midpoints between the four weights.
 					Grade GetCurrentDasha200JSONResponseBodyAntardashaSignificatorsStrengthGrade `json:"grade"`
@@ -57080,7 +59537,7 @@ type GetCurrentDashaResponse struct {
 			DashaBhuktiAntara []int `json:"dashaBhuktiAntara"`
 		} `json:"commonHouses,omitempty"`
 
-		// HouseThemes What each house MEANS, keyed by house number 1 to 12, in the requested language. Turns a house list into words without the client writing any interpretation copy: for a period signifying houses 2, 7 and 8, join houseThemes for those keys to render the "nature" line of a KP dasha table. Sent once per response rather than repeated on every period, so look the houses up from signifiedHouses or strongHouses. Localized by the lang query, like every other interpretation field.
+		// HouseThemes Significations of each of the twelve bhavas (houses), keyed by house number 1 to 12, as short keywords. Bhava 1 is the Lagna (self, body, vitality), 2 wealth and speech, 4 home and mother, 7 marriage and partnership, 10 career and status, 11 gains. Use it to label the house numbers returned elsewhere in the response: a Vimshottari dasha period signifying houses 2, 7 and 8, or a KP significator carrying houses 11 and 6, becomes readable text without a separate lookup call. Returned once per response rather than repeated per period, and localized by the lang query parameter alongside every other interpretation field.
 		HouseThemes *map[string][]string `json:"houseThemes,omitempty"`
 
 		// Mahadasha Mahadasha (major planetary period) in the 120-year Vimshottari dasha cycle. Start and end dates are determined by Moon nakshatra at birth.
@@ -57126,7 +59583,7 @@ type GetCurrentDashaResponse struct {
 				// StarLord Lord of the nakshatra this planet sits in, one of the 9 grahas. In KP the star lord outranks the planet itself: a period lord mainly delivers the houses its star lord occupies and owns, which is why those appear at L1 and L3 rather than the planet own house.
 				StarLord string `json:"starLord"`
 
-				// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading.
+				// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading. Reproducible from the significator levels alone, in two steps. STEP 1, per house keep only the strongest level: a planet routinely reaches the same house at more than one level, for example its star lord occupies house 11 and it also owns house 11, and KP cites a significator by its best connection, so that house counts once at grade A. This is why signifiedHouses is shorter than the four level arrays concatenated, and omitting it is what makes a hand calculation disagree. STEP 2, average the surviving weights: each house contributes 100, 75, 50 or 25 for grade A, B, C or D, and the mean is the score. Worked example, a lord signifying house 11 at level 1, house 6 at level 2 and house 2 at level 4 scores (100 + 75 + 25) / 3 = 66.7, which lands in band B because the band edges are the midpoints 87.5, 62.5 and 37.5. The score says how firmly the lord is connected, never whether the houses are favourable, which depends on the matter being judged.
 				Strength struct {
 					// Grade Band the score falls in, on the standard KP significator grading: A planets in the constellation of the occupant, B occupants, C planets in the constellation of the house owner, D the house owner. Band edges are the midpoints between the four weights.
 					Grade GetCurrentDasha200JSONResponseBodyMahadashaSignificatorsStrengthGrade `json:"grade"`
@@ -57213,7 +59670,7 @@ type GetCurrentDashaResponse struct {
 				// StarLord Lord of the nakshatra this planet sits in, one of the 9 grahas. In KP the star lord outranks the planet itself: a period lord mainly delivers the houses its star lord occupies and owns, which is why those appear at L1 and L3 rather than the planet own house.
 				StarLord string `json:"starLord"`
 
-				// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading.
+				// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading. Reproducible from the significator levels alone, in two steps. STEP 1, per house keep only the strongest level: a planet routinely reaches the same house at more than one level, for example its star lord occupies house 11 and it also owns house 11, and KP cites a significator by its best connection, so that house counts once at grade A. This is why signifiedHouses is shorter than the four level arrays concatenated, and omitting it is what makes a hand calculation disagree. STEP 2, average the surviving weights: each house contributes 100, 75, 50 or 25 for grade A, B, C or D, and the mean is the score. Worked example, a lord signifying house 11 at level 1, house 6 at level 2 and house 2 at level 4 scores (100 + 75 + 25) / 3 = 66.7, which lands in band B because the band edges are the midpoints 87.5, 62.5 and 37.5. The score says how firmly the lord is connected, never whether the houses are favourable, which depends on the matter being judged.
 				Strength struct {
 					// Grade Band the score falls in, on the standard KP significator grading: A planets in the constellation of the occupant, B occupants, C planets in the constellation of the house owner, D the house owner. Band edges are the midpoints between the four weights.
 					Grade GetCurrentDasha200JSONResponseBodyPranaDashaSignificatorsStrengthGrade `json:"grade"`
@@ -57288,7 +59745,7 @@ type GetCurrentDashaResponse struct {
 				// StarLord Lord of the nakshatra this planet sits in, one of the 9 grahas. In KP the star lord outranks the planet itself: a period lord mainly delivers the houses its star lord occupies and owns, which is why those appear at L1 and L3 rather than the planet own house.
 				StarLord string `json:"starLord"`
 
-				// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading.
+				// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading. Reproducible from the significator levels alone, in two steps. STEP 1, per house keep only the strongest level: a planet routinely reaches the same house at more than one level, for example its star lord occupies house 11 and it also owns house 11, and KP cites a significator by its best connection, so that house counts once at grade A. This is why signifiedHouses is shorter than the four level arrays concatenated, and omitting it is what makes a hand calculation disagree. STEP 2, average the surviving weights: each house contributes 100, 75, 50 or 25 for grade A, B, C or D, and the mean is the score. Worked example, a lord signifying house 11 at level 1, house 6 at level 2 and house 2 at level 4 scores (100 + 75 + 25) / 3 = 66.7, which lands in band B because the band edges are the midpoints 87.5, 62.5 and 37.5. The score says how firmly the lord is connected, never whether the houses are favourable, which depends on the matter being judged.
 				Strength struct {
 					// Grade Band the score falls in, on the standard KP significator grading: A planets in the constellation of the occupant, B occupants, C planets in the constellation of the house owner, D the house owner. Band edges are the midpoints between the four weights.
 					Grade GetCurrentDasha200JSONResponseBodyPratyantardashaSignificatorsStrengthGrade `json:"grade"`
@@ -57438,7 +59895,7 @@ type GetCurrentDashaResponse struct {
 				// StarLord Lord of the nakshatra this planet sits in, one of the 9 grahas. In KP the star lord outranks the planet itself: a period lord mainly delivers the houses its star lord occupies and owns, which is why those appear at L1 and L3 rather than the planet own house.
 				StarLord string `json:"starLord"`
 
-				// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading.
+				// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading. Reproducible from the significator levels alone, in two steps. STEP 1, per house keep only the strongest level: a planet routinely reaches the same house at more than one level, for example its star lord occupies house 11 and it also owns house 11, and KP cites a significator by its best connection, so that house counts once at grade A. This is why signifiedHouses is shorter than the four level arrays concatenated, and omitting it is what makes a hand calculation disagree. STEP 2, average the surviving weights: each house contributes 100, 75, 50 or 25 for grade A, B, C or D, and the mean is the score. Worked example, a lord signifying house 11 at level 1, house 6 at level 2 and house 2 at level 4 scores (100 + 75 + 25) / 3 = 66.7, which lands in band B because the band edges are the midpoints 87.5, 62.5 and 37.5. The score says how firmly the lord is connected, never whether the houses are favourable, which depends on the matter being judged.
 				Strength struct {
 					// Grade Band the score falls in, on the standard KP significator grading: A planets in the constellation of the occupant, B occupants, C planets in the constellation of the house owner, D the house owner. Band edges are the midpoints between the four weights.
 					Grade GetCurrentDasha200JSONResponseBodySookshmaDashaSignificatorsStrengthGrade `json:"grade"`
@@ -57522,7 +59979,7 @@ type GetMajorDashasResponse struct {
 			Years float32 `json:"years"`
 		} `json:"birthDashaBalance"`
 
-		// HouseThemes What each house MEANS, keyed by house number 1 to 12, in the requested language. Turns a house list into words without the client writing any interpretation copy: for a period signifying houses 2, 7 and 8, join houseThemes for those keys to render the "nature" line of a KP dasha table. Sent once per response rather than repeated on every period, so look the houses up from signifiedHouses or strongHouses. Localized by the lang query, like every other interpretation field.
+		// HouseThemes Significations of each of the twelve bhavas (houses), keyed by house number 1 to 12, as short keywords. Bhava 1 is the Lagna (self, body, vitality), 2 wealth and speech, 4 home and mother, 7 marriage and partnership, 10 career and status, 11 gains. Use it to label the house numbers returned elsewhere in the response: a Vimshottari dasha period signifying houses 2, 7 and 8, or a KP significator carrying houses 11 and 6, becomes readable text without a separate lookup call. Returned once per response rather than repeated per period, and localized by the lang query parameter alongside every other interpretation field.
 		HouseThemes *map[string][]string `json:"houseThemes,omitempty"`
 
 		// Mahadashas Complete sequence of all 9 Mahadasha periods spanning 120 years from birth. Follows the Vimshottari order: Ketu(7), Venus(20), Sun(6), Moon(10), Mars(7), Rahu(18), Jupiter(16), Saturn(19), Mercury(17).
@@ -57568,7 +60025,7 @@ type GetMajorDashasResponse struct {
 				// StarLord Lord of the nakshatra this planet sits in, one of the 9 grahas. In KP the star lord outranks the planet itself: a period lord mainly delivers the houses its star lord occupies and owns, which is why those appear at L1 and L3 rather than the planet own house.
 				StarLord string `json:"starLord"`
 
-				// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading.
+				// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading. Reproducible from the significator levels alone, in two steps. STEP 1, per house keep only the strongest level: a planet routinely reaches the same house at more than one level, for example its star lord occupies house 11 and it also owns house 11, and KP cites a significator by its best connection, so that house counts once at grade A. This is why signifiedHouses is shorter than the four level arrays concatenated, and omitting it is what makes a hand calculation disagree. STEP 2, average the surviving weights: each house contributes 100, 75, 50 or 25 for grade A, B, C or D, and the mean is the score. Worked example, a lord signifying house 11 at level 1, house 6 at level 2 and house 2 at level 4 scores (100 + 75 + 25) / 3 = 66.7, which lands in band B because the band edges are the midpoints 87.5, 62.5 and 37.5. The score says how firmly the lord is connected, never whether the houses are favourable, which depends on the matter being judged.
 				Strength struct {
 					// Grade Band the score falls in, on the standard KP significator grading: A planets in the constellation of the occupant, B occupants, C planets in the constellation of the house owner, D the house owner. Band edges are the midpoints between the four weights.
 					Grade GetMajorDashas200JSONResponseBodyMahadashasSignificatorsStrengthGrade `json:"grade"`
@@ -57692,7 +60149,7 @@ type GetSubDashasResponse struct {
 				// StarLord Lord of the nakshatra this planet sits in, one of the 9 grahas. In KP the star lord outranks the planet itself: a period lord mainly delivers the houses its star lord occupies and owns, which is why those appear at L1 and L3 rather than the planet own house.
 				StarLord string `json:"starLord"`
 
-				// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading.
+				// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading. Reproducible from the significator levels alone, in two steps. STEP 1, per house keep only the strongest level: a planet routinely reaches the same house at more than one level, for example its star lord occupies house 11 and it also owns house 11, and KP cites a significator by its best connection, so that house counts once at grade A. This is why signifiedHouses is shorter than the four level arrays concatenated, and omitting it is what makes a hand calculation disagree. STEP 2, average the surviving weights: each house contributes 100, 75, 50 or 25 for grade A, B, C or D, and the mean is the score. Worked example, a lord signifying house 11 at level 1, house 6 at level 2 and house 2 at level 4 scores (100 + 75 + 25) / 3 = 66.7, which lands in band B because the band edges are the midpoints 87.5, 62.5 and 37.5. The score says how firmly the lord is connected, never whether the houses are favourable, which depends on the matter being judged.
 				Strength struct {
 					// Grade Band the score falls in, on the standard KP significator grading: A planets in the constellation of the occupant, B occupants, C planets in the constellation of the house owner, D the house owner. Band edges are the midpoints between the four weights.
 					Grade GetSubDashas200JSONResponseBodyAntardashasSignificatorsStrengthGrade `json:"grade"`
@@ -57721,7 +60178,7 @@ type GetSubDashasResponse struct {
 		// AyanamsaType Ayanamsa system used, echoing the request field. One of "lahiri", "kp-newcomb", "kp-old". Echoed so a client can confirm which frame produced these dates without re-deriving it.
 		AyanamsaType GetSubDashas200JSONResponseBodyAyanamsaType `json:"ayanamsaType"`
 
-		// HouseThemes What each house MEANS, keyed by house number 1 to 12, in the requested language. Turns a house list into words without the client writing any interpretation copy: for a period signifying houses 2, 7 and 8, join houseThemes for those keys to render the "nature" line of a KP dasha table. Sent once per response rather than repeated on every period, so look the houses up from signifiedHouses or strongHouses. Localized by the lang query, like every other interpretation field.
+		// HouseThemes Significations of each of the twelve bhavas (houses), keyed by house number 1 to 12, as short keywords. Bhava 1 is the Lagna (self, body, vitality), 2 wealth and speech, 4 home and mother, 7 marriage and partnership, 10 career and status, 11 gains. Use it to label the house numbers returned elsewhere in the response: a Vimshottari dasha period signifying houses 2, 7 and 8, or a KP significator carrying houses 11 and 6, becomes readable text without a separate lookup call. Returned once per response rather than repeated per period, and localized by the lang query parameter alongside every other interpretation field.
 		HouseThemes *map[string][]string `json:"houseThemes,omitempty"`
 
 		// MahadashaLord Ruling planet of the requested Mahadasha period.
@@ -57770,7 +60227,7 @@ type GetSubDashasResponse struct {
 				// StarLord Lord of the nakshatra this planet sits in, one of the 9 grahas. In KP the star lord outranks the planet itself: a period lord mainly delivers the houses its star lord occupies and owns, which is why those appear at L1 and L3 rather than the planet own house.
 				StarLord string `json:"starLord"`
 
-				// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading.
+				// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading. Reproducible from the significator levels alone, in two steps. STEP 1, per house keep only the strongest level: a planet routinely reaches the same house at more than one level, for example its star lord occupies house 11 and it also owns house 11, and KP cites a significator by its best connection, so that house counts once at grade A. This is why signifiedHouses is shorter than the four level arrays concatenated, and omitting it is what makes a hand calculation disagree. STEP 2, average the surviving weights: each house contributes 100, 75, 50 or 25 for grade A, B, C or D, and the mean is the score. Worked example, a lord signifying house 11 at level 1, house 6 at level 2 and house 2 at level 4 scores (100 + 75 + 25) / 3 = 66.7, which lands in band B because the band edges are the midpoints 87.5, 62.5 and 37.5. The score says how firmly the lord is connected, never whether the houses are favourable, which depends on the matter being judged.
 				Strength struct {
 					// Grade Band the score falls in, on the standard KP significator grading: A planets in the constellation of the occupant, B occupants, C planets in the constellation of the house owner, D the house owner. Band edges are the midpoints between the four weights.
 					Grade GetSubDashas200JSONResponseBodyMahadashaPeriodSignificatorsStrengthGrade `json:"grade"`
@@ -57885,7 +60342,7 @@ type GetPratyantardashasResponse struct {
 				// StarLord Lord of the nakshatra this planet sits in, one of the 9 grahas. In KP the star lord outranks the planet itself: a period lord mainly delivers the houses its star lord occupies and owns, which is why those appear at L1 and L3 rather than the planet own house.
 				StarLord string `json:"starLord"`
 
-				// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading.
+				// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading. Reproducible from the significator levels alone, in two steps. STEP 1, per house keep only the strongest level: a planet routinely reaches the same house at more than one level, for example its star lord occupies house 11 and it also owns house 11, and KP cites a significator by its best connection, so that house counts once at grade A. This is why signifiedHouses is shorter than the four level arrays concatenated, and omitting it is what makes a hand calculation disagree. STEP 2, average the surviving weights: each house contributes 100, 75, 50 or 25 for grade A, B, C or D, and the mean is the score. Worked example, a lord signifying house 11 at level 1, house 6 at level 2 and house 2 at level 4 scores (100 + 75 + 25) / 3 = 66.7, which lands in band B because the band edges are the midpoints 87.5, 62.5 and 37.5. The score says how firmly the lord is connected, never whether the houses are favourable, which depends on the matter being judged.
 				Strength struct {
 					// Grade Band the score falls in, on the standard KP significator grading: A planets in the constellation of the occupant, B occupants, C planets in the constellation of the house owner, D the house owner. Band edges are the midpoints between the four weights.
 					Grade GetPratyantardashas200JSONResponseBodyAntardashaPeriodSignificatorsStrengthGrade `json:"grade"`
@@ -57914,7 +60371,7 @@ type GetPratyantardashasResponse struct {
 		// AyanamsaType Ayanamsa system used, echoing the request field. One of "lahiri", "kp-newcomb", "kp-old". Echoed so a client can confirm which frame produced these dates without re-deriving it.
 		AyanamsaType GetPratyantardashas200JSONResponseBodyAyanamsaType `json:"ayanamsaType"`
 
-		// HouseThemes What each house MEANS, keyed by house number 1 to 12, in the requested language. Turns a house list into words without the client writing any interpretation copy: for a period signifying houses 2, 7 and 8, join houseThemes for those keys to render the "nature" line of a KP dasha table. Sent once per response rather than repeated on every period, so look the houses up from signifiedHouses or strongHouses. Localized by the lang query, like every other interpretation field.
+		// HouseThemes Significations of each of the twelve bhavas (houses), keyed by house number 1 to 12, as short keywords. Bhava 1 is the Lagna (self, body, vitality), 2 wealth and speech, 4 home and mother, 7 marriage and partnership, 10 career and status, 11 gains. Use it to label the house numbers returned elsewhere in the response: a Vimshottari dasha period signifying houses 2, 7 and 8, or a KP significator carrying houses 11 and 6, becomes readable text without a separate lookup call. Returned once per response rather than repeated per period, and localized by the lang query parameter alongside every other interpretation field.
 		HouseThemes *map[string][]string `json:"houseThemes,omitempty"`
 
 		// MahadashaLord Ruling planet of the requested Mahadasha period.
@@ -57972,7 +60429,7 @@ type GetPratyantardashasResponse struct {
 				// StarLord Lord of the nakshatra this planet sits in, one of the 9 grahas. In KP the star lord outranks the planet itself: a period lord mainly delivers the houses its star lord occupies and owns, which is why those appear at L1 and L3 rather than the planet own house.
 				StarLord string `json:"starLord"`
 
-				// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading.
+				// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading. Reproducible from the significator levels alone, in two steps. STEP 1, per house keep only the strongest level: a planet routinely reaches the same house at more than one level, for example its star lord occupies house 11 and it also owns house 11, and KP cites a significator by its best connection, so that house counts once at grade A. This is why signifiedHouses is shorter than the four level arrays concatenated, and omitting it is what makes a hand calculation disagree. STEP 2, average the surviving weights: each house contributes 100, 75, 50 or 25 for grade A, B, C or D, and the mean is the score. Worked example, a lord signifying house 11 at level 1, house 6 at level 2 and house 2 at level 4 scores (100 + 75 + 25) / 3 = 66.7, which lands in band B because the band edges are the midpoints 87.5, 62.5 and 37.5. The score says how firmly the lord is connected, never whether the houses are favourable, which depends on the matter being judged.
 				Strength struct {
 					// Grade Band the score falls in, on the standard KP significator grading: A planets in the constellation of the occupant, B occupants, C planets in the constellation of the house owner, D the house owner. Band edges are the midpoints between the four weights.
 					Grade GetPratyantardashas200JSONResponseBodyPratyantardashasSignificatorsStrengthGrade `json:"grade"`
@@ -58044,7 +60501,7 @@ type GetSookshmaDashasResponse struct {
 		// AyanamsaType Ayanamsa system used, echoing the request field. One of "lahiri", "kp-newcomb", "kp-old". Echoed so a client can confirm which frame produced these dates without re-deriving it.
 		AyanamsaType GetSookshmaDashas200JSONResponseBodyAyanamsaType `json:"ayanamsaType"`
 
-		// HouseThemes What each house MEANS, keyed by house number 1 to 12, in the requested language. Turns a house list into words without the client writing any interpretation copy: for a period signifying houses 2, 7 and 8, join houseThemes for those keys to render the "nature" line of a KP dasha table. Sent once per response rather than repeated on every period, so look the houses up from signifiedHouses or strongHouses. Localized by the lang query, like every other interpretation field.
+		// HouseThemes Significations of each of the twelve bhavas (houses), keyed by house number 1 to 12, as short keywords. Bhava 1 is the Lagna (self, body, vitality), 2 wealth and speech, 4 home and mother, 7 marriage and partnership, 10 career and status, 11 gains. Use it to label the house numbers returned elsewhere in the response: a Vimshottari dasha period signifying houses 2, 7 and 8, or a KP significator carrying houses 11 and 6, becomes readable text without a separate lookup call. Returned once per response rather than repeated per period, and localized by the lang query parameter alongside every other interpretation field.
 		HouseThemes *map[string][]string `json:"houseThemes,omitempty"`
 
 		// MahadashaLord Ruling planet of the requested Mahadasha period.
@@ -58105,7 +60562,7 @@ type GetSookshmaDashasResponse struct {
 				// StarLord Lord of the nakshatra this planet sits in, one of the 9 grahas. In KP the star lord outranks the planet itself: a period lord mainly delivers the houses its star lord occupies and owns, which is why those appear at L1 and L3 rather than the planet own house.
 				StarLord string `json:"starLord"`
 
-				// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading.
+				// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading. Reproducible from the significator levels alone, in two steps. STEP 1, per house keep only the strongest level: a planet routinely reaches the same house at more than one level, for example its star lord occupies house 11 and it also owns house 11, and KP cites a significator by its best connection, so that house counts once at grade A. This is why signifiedHouses is shorter than the four level arrays concatenated, and omitting it is what makes a hand calculation disagree. STEP 2, average the surviving weights: each house contributes 100, 75, 50 or 25 for grade A, B, C or D, and the mean is the score. Worked example, a lord signifying house 11 at level 1, house 6 at level 2 and house 2 at level 4 scores (100 + 75 + 25) / 3 = 66.7, which lands in band B because the band edges are the midpoints 87.5, 62.5 and 37.5. The score says how firmly the lord is connected, never whether the houses are favourable, which depends on the matter being judged.
 				Strength struct {
 					// Grade Band the score falls in, on the standard KP significator grading: A planets in the constellation of the occupant, B occupants, C planets in the constellation of the house owner, D the house owner. Band edges are the midpoints between the four weights.
 					Grade GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodSignificatorsStrengthGrade `json:"grade"`
@@ -58180,7 +60637,7 @@ type GetSookshmaDashasResponse struct {
 				// StarLord Lord of the nakshatra this planet sits in, one of the 9 grahas. In KP the star lord outranks the planet itself: a period lord mainly delivers the houses its star lord occupies and owns, which is why those appear at L1 and L3 rather than the planet own house.
 				StarLord string `json:"starLord"`
 
-				// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading.
+				// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading. Reproducible from the significator levels alone, in two steps. STEP 1, per house keep only the strongest level: a planet routinely reaches the same house at more than one level, for example its star lord occupies house 11 and it also owns house 11, and KP cites a significator by its best connection, so that house counts once at grade A. This is why signifiedHouses is shorter than the four level arrays concatenated, and omitting it is what makes a hand calculation disagree. STEP 2, average the surviving weights: each house contributes 100, 75, 50 or 25 for grade A, B, C or D, and the mean is the score. Worked example, a lord signifying house 11 at level 1, house 6 at level 2 and house 2 at level 4 scores (100 + 75 + 25) / 3 = 66.7, which lands in band B because the band edges are the midpoints 87.5, 62.5 and 37.5. The score says how firmly the lord is connected, never whether the houses are favourable, which depends on the matter being judged.
 				Strength struct {
 					// Grade Band the score falls in, on the standard KP significator grading: A planets in the constellation of the occupant, B occupants, C planets in the constellation of the house owner, D the house owner. Band edges are the midpoints between the four weights.
 					Grade GetSookshmaDashas200JSONResponseBodySookshmaDashasSignificatorsStrengthGrade `json:"grade"`
@@ -58252,7 +60709,7 @@ type GetPranaDashasResponse struct {
 		// AyanamsaType Ayanamsa system used, echoing the request field. One of "lahiri", "kp-newcomb", "kp-old". Echoed so a client can confirm which frame produced these dates without re-deriving it.
 		AyanamsaType GetPranaDashas200JSONResponseBodyAyanamsaType `json:"ayanamsaType"`
 
-		// HouseThemes What each house MEANS, keyed by house number 1 to 12, in the requested language. Turns a house list into words without the client writing any interpretation copy: for a period signifying houses 2, 7 and 8, join houseThemes for those keys to render the "nature" line of a KP dasha table. Sent once per response rather than repeated on every period, so look the houses up from signifiedHouses or strongHouses. Localized by the lang query, like every other interpretation field.
+		// HouseThemes Significations of each of the twelve bhavas (houses), keyed by house number 1 to 12, as short keywords. Bhava 1 is the Lagna (self, body, vitality), 2 wealth and speech, 4 home and mother, 7 marriage and partnership, 10 career and status, 11 gains. Use it to label the house numbers returned elsewhere in the response: a Vimshottari dasha period signifying houses 2, 7 and 8, or a KP significator carrying houses 11 and 6, becomes readable text without a separate lookup call. Returned once per response rather than repeated per period, and localized by the lang query parameter alongside every other interpretation field.
 		HouseThemes *map[string][]string `json:"houseThemes,omitempty"`
 
 		// MahadashaLord Ruling planet of the requested Mahadasha period.
@@ -58313,7 +60770,7 @@ type GetPranaDashasResponse struct {
 				// StarLord Lord of the nakshatra this planet sits in, one of the 9 grahas. In KP the star lord outranks the planet itself: a period lord mainly delivers the houses its star lord occupies and owns, which is why those appear at L1 and L3 rather than the planet own house.
 				StarLord string `json:"starLord"`
 
-				// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading.
+				// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading. Reproducible from the significator levels alone, in two steps. STEP 1, per house keep only the strongest level: a planet routinely reaches the same house at more than one level, for example its star lord occupies house 11 and it also owns house 11, and KP cites a significator by its best connection, so that house counts once at grade A. This is why signifiedHouses is shorter than the four level arrays concatenated, and omitting it is what makes a hand calculation disagree. STEP 2, average the surviving weights: each house contributes 100, 75, 50 or 25 for grade A, B, C or D, and the mean is the score. Worked example, a lord signifying house 11 at level 1, house 6 at level 2 and house 2 at level 4 scores (100 + 75 + 25) / 3 = 66.7, which lands in band B because the band edges are the midpoints 87.5, 62.5 and 37.5. The score says how firmly the lord is connected, never whether the houses are favourable, which depends on the matter being judged.
 				Strength struct {
 					// Grade Band the score falls in, on the standard KP significator grading: A planets in the constellation of the occupant, B occupants, C planets in the constellation of the house owner, D the house owner. Band edges are the midpoints between the four weights.
 					Grade GetPranaDashas200JSONResponseBodyPranaDashasSignificatorsStrengthGrade `json:"grade"`
@@ -58397,7 +60854,7 @@ type GetPranaDashasResponse struct {
 				// StarLord Lord of the nakshatra this planet sits in, one of the 9 grahas. In KP the star lord outranks the planet itself: a period lord mainly delivers the houses its star lord occupies and owns, which is why those appear at L1 and L3 rather than the planet own house.
 				StarLord string `json:"starLord"`
 
-				// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading.
+				// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading. Reproducible from the significator levels alone, in two steps. STEP 1, per house keep only the strongest level: a planet routinely reaches the same house at more than one level, for example its star lord occupies house 11 and it also owns house 11, and KP cites a significator by its best connection, so that house counts once at grade A. This is why signifiedHouses is shorter than the four level arrays concatenated, and omitting it is what makes a hand calculation disagree. STEP 2, average the surviving weights: each house contributes 100, 75, 50 or 25 for grade A, B, C or D, and the mean is the score. Worked example, a lord signifying house 11 at level 1, house 6 at level 2 and house 2 at level 4 scores (100 + 75 + 25) / 3 = 66.7, which lands in band B because the band edges are the midpoints 87.5, 62.5 and 37.5. The score says how firmly the lord is connected, never whether the houses are favourable, which depends on the matter being judged.
 				Strength struct {
 					// Grade Band the score falls in, on the standard KP significator grading: A planets in the constellation of the occupant, B occupants, C planets in the constellation of the house owner, D the house owner. Band edges are the midpoints between the four weights.
 					Grade GetPranaDashas200JSONResponseBodySookshmaPeriodSignificatorsStrengthGrade `json:"grade"`
@@ -60557,28 +63014,13 @@ func (r DetectYogasResponse) ContentType() string {
 type GetYogaResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
-	JSON200      *struct {
-		// Description Brief formation rule describing which planets must be in which houses or signs for this yoga to form in a birth chart.
-		Description string `json:"description"`
-
-		// ID Unique yoga identifier in lowercase kebab-case. Use this to fetch yoga details via GET /yogas/:id.
-		ID string `json:"id"`
-
-		// Name Traditional Sanskrit name of the planetary yoga combination as referenced in classical Vedic astrology texts.
-		Name string `json:"name"`
-
-		// Quality Overall nature of the yoga. Positive yogas (Raj Yoga, Gajakesari) bestow benefits. Negative yogas (Kemadruma, Kaal Sarp) indicate challenges. Both means the yoga has mixed effects depending on chart context.
-		Quality GetYoga200JSONResponseBodyQuality `json:"quality"`
-
-		// Result Detailed prediction of the effects and life outcomes when this yoga is present in a horoscope. Covers personality traits, career, wealth, relationships, and spiritual tendencies.
-		Result string `json:"result"`
-	}
-	JSON400 *ErrorResponse
-	JSON401 *ErrorResponse
-	JSON404 *ErrorResponse
-	JSON405 *ErrorResponse
-	JSON429 *ErrorResponse
-	JSON500 *ErrorResponse
+	JSON200      *YogaDetail
+	JSON400      *ErrorResponse
+	JSON401      *ErrorResponse
+	JSON404      *ErrorResponse
+	JSON405      *ErrorResponse
+	JSON429      *ErrorResponse
+	JSON500      *ErrorResponse
 }
 
 // Status returns HTTPResponse.Status
@@ -62299,6 +64741,23 @@ func (c *ClientWithResponses) GetUsageStatsWithResponse(ctx context.Context, req
 	return ParseGetUsageStatsResponse(rsp)
 }
 
+// CalculateArudhaPadasWithBodyWithResponse request with arbitrary body returning *CalculateArudhaPadasResponse
+func (c *ClientWithResponses) CalculateArudhaPadasWithBodyWithResponse(ctx context.Context, params *CalculateArudhaPadasParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CalculateArudhaPadasResponse, error) {
+	rsp, err := c.CalculateArudhaPadasWithBody(ctx, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCalculateArudhaPadasResponse(rsp)
+}
+
+func (c *ClientWithResponses) CalculateArudhaPadasWithResponse(ctx context.Context, params *CalculateArudhaPadasParams, body CalculateArudhaPadasJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateArudhaPadasResponse, error) {
+	rsp, err := c.CalculateArudhaPadas(ctx, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCalculateArudhaPadasResponse(rsp)
+}
+
 // CalculateAshtakavargaWithBodyWithResponse request with arbitrary body returning *CalculateAshtakavargaResponse
 func (c *ClientWithResponses) CalculateAshtakavargaWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CalculateAshtakavargaResponse, error) {
 	rsp, err := c.CalculateAshtakavargaWithBody(ctx, contentType, body, reqEditors...)
@@ -62367,6 +64826,24 @@ func (c *ClientWithResponses) GetMonthlyAspectsWithResponse(ctx context.Context,
 	return ParseGetMonthlyAspectsResponse(rsp)
 }
 
+// ListAvasthasWithResponse request returning *ListAvasthasResponse
+func (c *ClientWithResponses) ListAvasthasWithResponse(ctx context.Context, params *ListAvasthasParams, reqEditors ...RequestEditorFn) (*ListAvasthasResponse, error) {
+	rsp, err := c.ListAvasthas(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseListAvasthasResponse(rsp)
+}
+
+// GetAvasthaWithResponse request returning *GetAvasthaResponse
+func (c *ClientWithResponses) GetAvasthaWithResponse(ctx context.Context, id GetAvasthaParamsID, params *GetAvasthaParams, reqEditors ...RequestEditorFn) (*GetAvasthaResponse, error) {
+	rsp, err := c.GetAvastha(ctx, id, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetAvasthaResponse(rsp)
+}
+
 // GenerateBirthChartWithBodyWithResponse request with arbitrary body returning *GenerateBirthChartResponse
 func (c *ClientWithResponses) GenerateBirthChartWithBodyWithResponse(ctx context.Context, params *GenerateBirthChartParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GenerateBirthChartResponse, error) {
 	rsp, err := c.GenerateBirthChartWithBody(ctx, params, contentType, body, reqEditors...)
@@ -62382,6 +64859,23 @@ func (c *ClientWithResponses) GenerateBirthChartWithResponse(ctx context.Context
 		return nil, err
 	}
 	return ParseGenerateBirthChartResponse(rsp)
+}
+
+// CalculateCharaKarakasWithBodyWithResponse request with arbitrary body returning *CalculateCharaKarakasResponse
+func (c *ClientWithResponses) CalculateCharaKarakasWithBodyWithResponse(ctx context.Context, params *CalculateCharaKarakasParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CalculateCharaKarakasResponse, error) {
+	rsp, err := c.CalculateCharaKarakasWithBody(ctx, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCalculateCharaKarakasResponse(rsp)
+}
+
+func (c *ClientWithResponses) CalculateCharaKarakasWithResponse(ctx context.Context, params *CalculateCharaKarakasParams, body CalculateCharaKarakasJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateCharaKarakasResponse, error) {
+	rsp, err := c.CalculateCharaKarakas(ctx, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCalculateCharaKarakasResponse(rsp)
 }
 
 // CalculateGunMilanWithBodyWithResponse request with arbitrary body returning *CalculateGunMilanResponse
@@ -76167,6 +78661,67 @@ func ParseGetUsageStatsResponse(rsp *http.Response) (*GetUsageStatsResponse, err
 	return response, nil
 }
 
+// ParseCalculateArudhaPadasResponse parses an HTTP response from a CalculateArudhaPadasWithResponse call
+func ParseCalculateArudhaPadasResponse(rsp *http.Response) (*CalculateArudhaPadasResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CalculateArudhaPadasResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest ArudhaResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 405:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON405 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
 // ParseCalculateAshtakavargaResponse parses an HTTP response from a CalculateAshtakavargaWithResponse call
 func ParseCalculateAshtakavargaResponse(rsp *http.Response) (*CalculateAshtakavargaResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -76555,6 +79110,165 @@ func ParseGetMonthlyAspectsResponse(rsp *http.Response) (*GetMonthlyAspectsRespo
 	return response, nil
 }
 
+// ParseListAvasthasResponse parses an HTTP response from a ListAvasthasWithResponse call
+func ParseListAvasthasResponse(rsp *http.Response) (*ListAvasthasResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &ListAvasthasResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest []struct {
+			// ID Unique slug for the avastha state. It is the lowercased form of the state name the birth chart returns, so a chart value maps straight onto this record.
+			ID string `json:"id"`
+
+			// Interpretation What the state means for the results the graha delivers, which is the whole purpose of reading an avastha: the chart says where a graha is, the avastha says how much of its promise it can keep.
+			Interpretation string `json:"interpretation"`
+
+			// Meaning Short label for the state, sized for a table cell beside the graha.
+			Meaning string `json:"meaning"`
+
+			// Name Sanskrit name of the state, exactly as it appears in the `awastha`, `jagradadi` or `deeptadi` field of a birth chart.
+			Name string `json:"name"`
+
+			// System Which avastha system the state belongs to, and therefore which birth-chart field it appears in. "baladi" is the five-fold age state set by degree within the sign and appears in `awastha`. "jagradadi" is the three-fold waking state set by sign dignity. "deeptadi" is the nine-fold dispositional state. Baladi applies to every body; the other two apply to the seven classical grahas only.
+			System ListAvasthas200JSONResponseBodySystem `json:"system"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 405:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON405 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseGetAvasthaResponse parses an HTTP response from a GetAvasthaWithResponse call
+func ParseGetAvasthaResponse(rsp *http.Response) (*GetAvasthaResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetAvasthaResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// ID Unique slug for the avastha state. It is the lowercased form of the state name the birth chart returns, so a chart value maps straight onto this record.
+			ID string `json:"id"`
+
+			// Interpretation What the state means for the results the graha delivers, which is the whole purpose of reading an avastha: the chart says where a graha is, the avastha says how much of its promise it can keep.
+			Interpretation string `json:"interpretation"`
+
+			// Meaning Short label for the state, sized for a table cell beside the graha.
+			Meaning string `json:"meaning"`
+
+			// Name Sanskrit name of the state, exactly as it appears in the `awastha`, `jagradadi` or `deeptadi` field of a birth chart.
+			Name string `json:"name"`
+
+			// System Which avastha system the state belongs to, and therefore which birth-chart field it appears in. "baladi" is the five-fold age state set by degree within the sign and appears in `awastha`. "jagradadi" is the three-fold waking state set by sign dignity. "deeptadi" is the nine-fold dispositional state. Baladi applies to every body; the other two apply to the seven classical grahas only.
+			System GetAvastha200JSONResponseBodySystem `json:"system"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 405:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON405 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
 // ParseGenerateBirthChartResponse parses an HTTP response from a GenerateBirthChartWithResponse call
 func ParseGenerateBirthChartResponse(rsp *http.Response) (*GenerateBirthChartResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -76571,6 +79285,67 @@ func ParseGenerateBirthChartResponse(rsp *http.Response) (*GenerateBirthChartRes
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest BirthChartResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 405:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON405 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseCalculateCharaKarakasResponse parses an HTTP response from a CalculateCharaKarakasWithResponse call
+func ParseCalculateCharaKarakasResponse(rsp *http.Response) (*CalculateCharaKarakasResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CalculateCharaKarakasResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest CharaKarakaResponse
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}
@@ -76739,7 +79514,7 @@ func ParseGetCurrentDashaResponse(rsp *http.Response) (*GetCurrentDashaResponse,
 					// StarLord Lord of the nakshatra this planet sits in, one of the 9 grahas. In KP the star lord outranks the planet itself: a period lord mainly delivers the houses its star lord occupies and owns, which is why those appear at L1 and L3 rather than the planet own house.
 					StarLord string `json:"starLord"`
 
-					// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading.
+					// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading. Reproducible from the significator levels alone, in two steps. STEP 1, per house keep only the strongest level: a planet routinely reaches the same house at more than one level, for example its star lord occupies house 11 and it also owns house 11, and KP cites a significator by its best connection, so that house counts once at grade A. This is why signifiedHouses is shorter than the four level arrays concatenated, and omitting it is what makes a hand calculation disagree. STEP 2, average the surviving weights: each house contributes 100, 75, 50 or 25 for grade A, B, C or D, and the mean is the score. Worked example, a lord signifying house 11 at level 1, house 6 at level 2 and house 2 at level 4 scores (100 + 75 + 25) / 3 = 66.7, which lands in band B because the band edges are the midpoints 87.5, 62.5 and 37.5. The score says how firmly the lord is connected, never whether the houses are favourable, which depends on the matter being judged.
 					Strength struct {
 						// Grade Band the score falls in, on the standard KP significator grading: A planets in the constellation of the occupant, B occupants, C planets in the constellation of the house owner, D the house owner. Band edges are the midpoints between the four weights.
 						Grade GetCurrentDasha200JSONResponseBodyAntardashaSignificatorsStrengthGrade `json:"grade"`
@@ -76777,7 +79552,7 @@ func ParseGetCurrentDashaResponse(rsp *http.Response) (*GetCurrentDashaResponse,
 				DashaBhuktiAntara []int `json:"dashaBhuktiAntara"`
 			} `json:"commonHouses,omitempty"`
 
-			// HouseThemes What each house MEANS, keyed by house number 1 to 12, in the requested language. Turns a house list into words without the client writing any interpretation copy: for a period signifying houses 2, 7 and 8, join houseThemes for those keys to render the "nature" line of a KP dasha table. Sent once per response rather than repeated on every period, so look the houses up from signifiedHouses or strongHouses. Localized by the lang query, like every other interpretation field.
+			// HouseThemes Significations of each of the twelve bhavas (houses), keyed by house number 1 to 12, as short keywords. Bhava 1 is the Lagna (self, body, vitality), 2 wealth and speech, 4 home and mother, 7 marriage and partnership, 10 career and status, 11 gains. Use it to label the house numbers returned elsewhere in the response: a Vimshottari dasha period signifying houses 2, 7 and 8, or a KP significator carrying houses 11 and 6, becomes readable text without a separate lookup call. Returned once per response rather than repeated per period, and localized by the lang query parameter alongside every other interpretation field.
 			HouseThemes *map[string][]string `json:"houseThemes,omitempty"`
 
 			// Mahadasha Mahadasha (major planetary period) in the 120-year Vimshottari dasha cycle. Start and end dates are determined by Moon nakshatra at birth.
@@ -76823,7 +79598,7 @@ func ParseGetCurrentDashaResponse(rsp *http.Response) (*GetCurrentDashaResponse,
 					// StarLord Lord of the nakshatra this planet sits in, one of the 9 grahas. In KP the star lord outranks the planet itself: a period lord mainly delivers the houses its star lord occupies and owns, which is why those appear at L1 and L3 rather than the planet own house.
 					StarLord string `json:"starLord"`
 
-					// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading.
+					// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading. Reproducible from the significator levels alone, in two steps. STEP 1, per house keep only the strongest level: a planet routinely reaches the same house at more than one level, for example its star lord occupies house 11 and it also owns house 11, and KP cites a significator by its best connection, so that house counts once at grade A. This is why signifiedHouses is shorter than the four level arrays concatenated, and omitting it is what makes a hand calculation disagree. STEP 2, average the surviving weights: each house contributes 100, 75, 50 or 25 for grade A, B, C or D, and the mean is the score. Worked example, a lord signifying house 11 at level 1, house 6 at level 2 and house 2 at level 4 scores (100 + 75 + 25) / 3 = 66.7, which lands in band B because the band edges are the midpoints 87.5, 62.5 and 37.5. The score says how firmly the lord is connected, never whether the houses are favourable, which depends on the matter being judged.
 					Strength struct {
 						// Grade Band the score falls in, on the standard KP significator grading: A planets in the constellation of the occupant, B occupants, C planets in the constellation of the house owner, D the house owner. Band edges are the midpoints between the four weights.
 						Grade GetCurrentDasha200JSONResponseBodyMahadashaSignificatorsStrengthGrade `json:"grade"`
@@ -76910,7 +79685,7 @@ func ParseGetCurrentDashaResponse(rsp *http.Response) (*GetCurrentDashaResponse,
 					// StarLord Lord of the nakshatra this planet sits in, one of the 9 grahas. In KP the star lord outranks the planet itself: a period lord mainly delivers the houses its star lord occupies and owns, which is why those appear at L1 and L3 rather than the planet own house.
 					StarLord string `json:"starLord"`
 
-					// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading.
+					// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading. Reproducible from the significator levels alone, in two steps. STEP 1, per house keep only the strongest level: a planet routinely reaches the same house at more than one level, for example its star lord occupies house 11 and it also owns house 11, and KP cites a significator by its best connection, so that house counts once at grade A. This is why signifiedHouses is shorter than the four level arrays concatenated, and omitting it is what makes a hand calculation disagree. STEP 2, average the surviving weights: each house contributes 100, 75, 50 or 25 for grade A, B, C or D, and the mean is the score. Worked example, a lord signifying house 11 at level 1, house 6 at level 2 and house 2 at level 4 scores (100 + 75 + 25) / 3 = 66.7, which lands in band B because the band edges are the midpoints 87.5, 62.5 and 37.5. The score says how firmly the lord is connected, never whether the houses are favourable, which depends on the matter being judged.
 					Strength struct {
 						// Grade Band the score falls in, on the standard KP significator grading: A planets in the constellation of the occupant, B occupants, C planets in the constellation of the house owner, D the house owner. Band edges are the midpoints between the four weights.
 						Grade GetCurrentDasha200JSONResponseBodyPranaDashaSignificatorsStrengthGrade `json:"grade"`
@@ -76985,7 +79760,7 @@ func ParseGetCurrentDashaResponse(rsp *http.Response) (*GetCurrentDashaResponse,
 					// StarLord Lord of the nakshatra this planet sits in, one of the 9 grahas. In KP the star lord outranks the planet itself: a period lord mainly delivers the houses its star lord occupies and owns, which is why those appear at L1 and L3 rather than the planet own house.
 					StarLord string `json:"starLord"`
 
-					// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading.
+					// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading. Reproducible from the significator levels alone, in two steps. STEP 1, per house keep only the strongest level: a planet routinely reaches the same house at more than one level, for example its star lord occupies house 11 and it also owns house 11, and KP cites a significator by its best connection, so that house counts once at grade A. This is why signifiedHouses is shorter than the four level arrays concatenated, and omitting it is what makes a hand calculation disagree. STEP 2, average the surviving weights: each house contributes 100, 75, 50 or 25 for grade A, B, C or D, and the mean is the score. Worked example, a lord signifying house 11 at level 1, house 6 at level 2 and house 2 at level 4 scores (100 + 75 + 25) / 3 = 66.7, which lands in band B because the band edges are the midpoints 87.5, 62.5 and 37.5. The score says how firmly the lord is connected, never whether the houses are favourable, which depends on the matter being judged.
 					Strength struct {
 						// Grade Band the score falls in, on the standard KP significator grading: A planets in the constellation of the occupant, B occupants, C planets in the constellation of the house owner, D the house owner. Band edges are the midpoints between the four weights.
 						Grade GetCurrentDasha200JSONResponseBodyPratyantardashaSignificatorsStrengthGrade `json:"grade"`
@@ -77135,7 +79910,7 @@ func ParseGetCurrentDashaResponse(rsp *http.Response) (*GetCurrentDashaResponse,
 					// StarLord Lord of the nakshatra this planet sits in, one of the 9 grahas. In KP the star lord outranks the planet itself: a period lord mainly delivers the houses its star lord occupies and owns, which is why those appear at L1 and L3 rather than the planet own house.
 					StarLord string `json:"starLord"`
 
-					// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading.
+					// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading. Reproducible from the significator levels alone, in two steps. STEP 1, per house keep only the strongest level: a planet routinely reaches the same house at more than one level, for example its star lord occupies house 11 and it also owns house 11, and KP cites a significator by its best connection, so that house counts once at grade A. This is why signifiedHouses is shorter than the four level arrays concatenated, and omitting it is what makes a hand calculation disagree. STEP 2, average the surviving weights: each house contributes 100, 75, 50 or 25 for grade A, B, C or D, and the mean is the score. Worked example, a lord signifying house 11 at level 1, house 6 at level 2 and house 2 at level 4 scores (100 + 75 + 25) / 3 = 66.7, which lands in band B because the band edges are the midpoints 87.5, 62.5 and 37.5. The score says how firmly the lord is connected, never whether the houses are favourable, which depends on the matter being judged.
 					Strength struct {
 						// Grade Band the score falls in, on the standard KP significator grading: A planets in the constellation of the occupant, B occupants, C planets in the constellation of the house owner, D the house owner. Band edges are the midpoints between the four weights.
 						Grade GetCurrentDasha200JSONResponseBodySookshmaDashaSignificatorsStrengthGrade `json:"grade"`
@@ -77240,7 +80015,7 @@ func ParseGetMajorDashasResponse(rsp *http.Response) (*GetMajorDashasResponse, e
 				Years float32 `json:"years"`
 			} `json:"birthDashaBalance"`
 
-			// HouseThemes What each house MEANS, keyed by house number 1 to 12, in the requested language. Turns a house list into words without the client writing any interpretation copy: for a period signifying houses 2, 7 and 8, join houseThemes for those keys to render the "nature" line of a KP dasha table. Sent once per response rather than repeated on every period, so look the houses up from signifiedHouses or strongHouses. Localized by the lang query, like every other interpretation field.
+			// HouseThemes Significations of each of the twelve bhavas (houses), keyed by house number 1 to 12, as short keywords. Bhava 1 is the Lagna (self, body, vitality), 2 wealth and speech, 4 home and mother, 7 marriage and partnership, 10 career and status, 11 gains. Use it to label the house numbers returned elsewhere in the response: a Vimshottari dasha period signifying houses 2, 7 and 8, or a KP significator carrying houses 11 and 6, becomes readable text without a separate lookup call. Returned once per response rather than repeated per period, and localized by the lang query parameter alongside every other interpretation field.
 			HouseThemes *map[string][]string `json:"houseThemes,omitempty"`
 
 			// Mahadashas Complete sequence of all 9 Mahadasha periods spanning 120 years from birth. Follows the Vimshottari order: Ketu(7), Venus(20), Sun(6), Moon(10), Mars(7), Rahu(18), Jupiter(16), Saturn(19), Mercury(17).
@@ -77286,7 +80061,7 @@ func ParseGetMajorDashasResponse(rsp *http.Response) (*GetMajorDashasResponse, e
 					// StarLord Lord of the nakshatra this planet sits in, one of the 9 grahas. In KP the star lord outranks the planet itself: a period lord mainly delivers the houses its star lord occupies and owns, which is why those appear at L1 and L3 rather than the planet own house.
 					StarLord string `json:"starLord"`
 
-					// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading.
+					// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading. Reproducible from the significator levels alone, in two steps. STEP 1, per house keep only the strongest level: a planet routinely reaches the same house at more than one level, for example its star lord occupies house 11 and it also owns house 11, and KP cites a significator by its best connection, so that house counts once at grade A. This is why signifiedHouses is shorter than the four level arrays concatenated, and omitting it is what makes a hand calculation disagree. STEP 2, average the surviving weights: each house contributes 100, 75, 50 or 25 for grade A, B, C or D, and the mean is the score. Worked example, a lord signifying house 11 at level 1, house 6 at level 2 and house 2 at level 4 scores (100 + 75 + 25) / 3 = 66.7, which lands in band B because the band edges are the midpoints 87.5, 62.5 and 37.5. The score says how firmly the lord is connected, never whether the houses are favourable, which depends on the matter being judged.
 					Strength struct {
 						// Grade Band the score falls in, on the standard KP significator grading: A planets in the constellation of the occupant, B occupants, C planets in the constellation of the house owner, D the house owner. Band edges are the midpoints between the four weights.
 						Grade GetMajorDashas200JSONResponseBodyMahadashasSignificatorsStrengthGrade `json:"grade"`
@@ -77431,7 +80206,7 @@ func ParseGetSubDashasResponse(rsp *http.Response) (*GetSubDashasResponse, error
 					// StarLord Lord of the nakshatra this planet sits in, one of the 9 grahas. In KP the star lord outranks the planet itself: a period lord mainly delivers the houses its star lord occupies and owns, which is why those appear at L1 and L3 rather than the planet own house.
 					StarLord string `json:"starLord"`
 
-					// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading.
+					// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading. Reproducible from the significator levels alone, in two steps. STEP 1, per house keep only the strongest level: a planet routinely reaches the same house at more than one level, for example its star lord occupies house 11 and it also owns house 11, and KP cites a significator by its best connection, so that house counts once at grade A. This is why signifiedHouses is shorter than the four level arrays concatenated, and omitting it is what makes a hand calculation disagree. STEP 2, average the surviving weights: each house contributes 100, 75, 50 or 25 for grade A, B, C or D, and the mean is the score. Worked example, a lord signifying house 11 at level 1, house 6 at level 2 and house 2 at level 4 scores (100 + 75 + 25) / 3 = 66.7, which lands in band B because the band edges are the midpoints 87.5, 62.5 and 37.5. The score says how firmly the lord is connected, never whether the houses are favourable, which depends on the matter being judged.
 					Strength struct {
 						// Grade Band the score falls in, on the standard KP significator grading: A planets in the constellation of the occupant, B occupants, C planets in the constellation of the house owner, D the house owner. Band edges are the midpoints between the four weights.
 						Grade GetSubDashas200JSONResponseBodyAntardashasSignificatorsStrengthGrade `json:"grade"`
@@ -77460,7 +80235,7 @@ func ParseGetSubDashasResponse(rsp *http.Response) (*GetSubDashasResponse, error
 			// AyanamsaType Ayanamsa system used, echoing the request field. One of "lahiri", "kp-newcomb", "kp-old". Echoed so a client can confirm which frame produced these dates without re-deriving it.
 			AyanamsaType GetSubDashas200JSONResponseBodyAyanamsaType `json:"ayanamsaType"`
 
-			// HouseThemes What each house MEANS, keyed by house number 1 to 12, in the requested language. Turns a house list into words without the client writing any interpretation copy: for a period signifying houses 2, 7 and 8, join houseThemes for those keys to render the "nature" line of a KP dasha table. Sent once per response rather than repeated on every period, so look the houses up from signifiedHouses or strongHouses. Localized by the lang query, like every other interpretation field.
+			// HouseThemes Significations of each of the twelve bhavas (houses), keyed by house number 1 to 12, as short keywords. Bhava 1 is the Lagna (self, body, vitality), 2 wealth and speech, 4 home and mother, 7 marriage and partnership, 10 career and status, 11 gains. Use it to label the house numbers returned elsewhere in the response: a Vimshottari dasha period signifying houses 2, 7 and 8, or a KP significator carrying houses 11 and 6, becomes readable text without a separate lookup call. Returned once per response rather than repeated per period, and localized by the lang query parameter alongside every other interpretation field.
 			HouseThemes *map[string][]string `json:"houseThemes,omitempty"`
 
 			// MahadashaLord Ruling planet of the requested Mahadasha period.
@@ -77509,7 +80284,7 @@ func ParseGetSubDashasResponse(rsp *http.Response) (*GetSubDashasResponse, error
 					// StarLord Lord of the nakshatra this planet sits in, one of the 9 grahas. In KP the star lord outranks the planet itself: a period lord mainly delivers the houses its star lord occupies and owns, which is why those appear at L1 and L3 rather than the planet own house.
 					StarLord string `json:"starLord"`
 
-					// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading.
+					// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading. Reproducible from the significator levels alone, in two steps. STEP 1, per house keep only the strongest level: a planet routinely reaches the same house at more than one level, for example its star lord occupies house 11 and it also owns house 11, and KP cites a significator by its best connection, so that house counts once at grade A. This is why signifiedHouses is shorter than the four level arrays concatenated, and omitting it is what makes a hand calculation disagree. STEP 2, average the surviving weights: each house contributes 100, 75, 50 or 25 for grade A, B, C or D, and the mean is the score. Worked example, a lord signifying house 11 at level 1, house 6 at level 2 and house 2 at level 4 scores (100 + 75 + 25) / 3 = 66.7, which lands in band B because the band edges are the midpoints 87.5, 62.5 and 37.5. The score says how firmly the lord is connected, never whether the houses are favourable, which depends on the matter being judged.
 					Strength struct {
 						// Grade Band the score falls in, on the standard KP significator grading: A planets in the constellation of the occupant, B occupants, C planets in the constellation of the house owner, D the house owner. Band edges are the midpoints between the four weights.
 						Grade GetSubDashas200JSONResponseBodyMahadashaPeriodSignificatorsStrengthGrade `json:"grade"`
@@ -77645,7 +80420,7 @@ func ParseGetPratyantardashasResponse(rsp *http.Response) (*GetPratyantardashasR
 					// StarLord Lord of the nakshatra this planet sits in, one of the 9 grahas. In KP the star lord outranks the planet itself: a period lord mainly delivers the houses its star lord occupies and owns, which is why those appear at L1 and L3 rather than the planet own house.
 					StarLord string `json:"starLord"`
 
-					// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading.
+					// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading. Reproducible from the significator levels alone, in two steps. STEP 1, per house keep only the strongest level: a planet routinely reaches the same house at more than one level, for example its star lord occupies house 11 and it also owns house 11, and KP cites a significator by its best connection, so that house counts once at grade A. This is why signifiedHouses is shorter than the four level arrays concatenated, and omitting it is what makes a hand calculation disagree. STEP 2, average the surviving weights: each house contributes 100, 75, 50 or 25 for grade A, B, C or D, and the mean is the score. Worked example, a lord signifying house 11 at level 1, house 6 at level 2 and house 2 at level 4 scores (100 + 75 + 25) / 3 = 66.7, which lands in band B because the band edges are the midpoints 87.5, 62.5 and 37.5. The score says how firmly the lord is connected, never whether the houses are favourable, which depends on the matter being judged.
 					Strength struct {
 						// Grade Band the score falls in, on the standard KP significator grading: A planets in the constellation of the occupant, B occupants, C planets in the constellation of the house owner, D the house owner. Band edges are the midpoints between the four weights.
 						Grade GetPratyantardashas200JSONResponseBodyAntardashaPeriodSignificatorsStrengthGrade `json:"grade"`
@@ -77674,7 +80449,7 @@ func ParseGetPratyantardashasResponse(rsp *http.Response) (*GetPratyantardashasR
 			// AyanamsaType Ayanamsa system used, echoing the request field. One of "lahiri", "kp-newcomb", "kp-old". Echoed so a client can confirm which frame produced these dates without re-deriving it.
 			AyanamsaType GetPratyantardashas200JSONResponseBodyAyanamsaType `json:"ayanamsaType"`
 
-			// HouseThemes What each house MEANS, keyed by house number 1 to 12, in the requested language. Turns a house list into words without the client writing any interpretation copy: for a period signifying houses 2, 7 and 8, join houseThemes for those keys to render the "nature" line of a KP dasha table. Sent once per response rather than repeated on every period, so look the houses up from signifiedHouses or strongHouses. Localized by the lang query, like every other interpretation field.
+			// HouseThemes Significations of each of the twelve bhavas (houses), keyed by house number 1 to 12, as short keywords. Bhava 1 is the Lagna (self, body, vitality), 2 wealth and speech, 4 home and mother, 7 marriage and partnership, 10 career and status, 11 gains. Use it to label the house numbers returned elsewhere in the response: a Vimshottari dasha period signifying houses 2, 7 and 8, or a KP significator carrying houses 11 and 6, becomes readable text without a separate lookup call. Returned once per response rather than repeated per period, and localized by the lang query parameter alongside every other interpretation field.
 			HouseThemes *map[string][]string `json:"houseThemes,omitempty"`
 
 			// MahadashaLord Ruling planet of the requested Mahadasha period.
@@ -77732,7 +80507,7 @@ func ParseGetPratyantardashasResponse(rsp *http.Response) (*GetPratyantardashasR
 					// StarLord Lord of the nakshatra this planet sits in, one of the 9 grahas. In KP the star lord outranks the planet itself: a period lord mainly delivers the houses its star lord occupies and owns, which is why those appear at L1 and L3 rather than the planet own house.
 					StarLord string `json:"starLord"`
 
-					// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading.
+					// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading. Reproducible from the significator levels alone, in two steps. STEP 1, per house keep only the strongest level: a planet routinely reaches the same house at more than one level, for example its star lord occupies house 11 and it also owns house 11, and KP cites a significator by its best connection, so that house counts once at grade A. This is why signifiedHouses is shorter than the four level arrays concatenated, and omitting it is what makes a hand calculation disagree. STEP 2, average the surviving weights: each house contributes 100, 75, 50 or 25 for grade A, B, C or D, and the mean is the score. Worked example, a lord signifying house 11 at level 1, house 6 at level 2 and house 2 at level 4 scores (100 + 75 + 25) / 3 = 66.7, which lands in band B because the band edges are the midpoints 87.5, 62.5 and 37.5. The score says how firmly the lord is connected, never whether the houses are favourable, which depends on the matter being judged.
 					Strength struct {
 						// Grade Band the score falls in, on the standard KP significator grading: A planets in the constellation of the occupant, B occupants, C planets in the constellation of the house owner, D the house owner. Band edges are the midpoints between the four weights.
 						Grade GetPratyantardashas200JSONResponseBodyPratyantardashasSignificatorsStrengthGrade `json:"grade"`
@@ -77825,7 +80600,7 @@ func ParseGetSookshmaDashasResponse(rsp *http.Response) (*GetSookshmaDashasRespo
 			// AyanamsaType Ayanamsa system used, echoing the request field. One of "lahiri", "kp-newcomb", "kp-old". Echoed so a client can confirm which frame produced these dates without re-deriving it.
 			AyanamsaType GetSookshmaDashas200JSONResponseBodyAyanamsaType `json:"ayanamsaType"`
 
-			// HouseThemes What each house MEANS, keyed by house number 1 to 12, in the requested language. Turns a house list into words without the client writing any interpretation copy: for a period signifying houses 2, 7 and 8, join houseThemes for those keys to render the "nature" line of a KP dasha table. Sent once per response rather than repeated on every period, so look the houses up from signifiedHouses or strongHouses. Localized by the lang query, like every other interpretation field.
+			// HouseThemes Significations of each of the twelve bhavas (houses), keyed by house number 1 to 12, as short keywords. Bhava 1 is the Lagna (self, body, vitality), 2 wealth and speech, 4 home and mother, 7 marriage and partnership, 10 career and status, 11 gains. Use it to label the house numbers returned elsewhere in the response: a Vimshottari dasha period signifying houses 2, 7 and 8, or a KP significator carrying houses 11 and 6, becomes readable text without a separate lookup call. Returned once per response rather than repeated per period, and localized by the lang query parameter alongside every other interpretation field.
 			HouseThemes *map[string][]string `json:"houseThemes,omitempty"`
 
 			// MahadashaLord Ruling planet of the requested Mahadasha period.
@@ -77886,7 +80661,7 @@ func ParseGetSookshmaDashasResponse(rsp *http.Response) (*GetSookshmaDashasRespo
 					// StarLord Lord of the nakshatra this planet sits in, one of the 9 grahas. In KP the star lord outranks the planet itself: a period lord mainly delivers the houses its star lord occupies and owns, which is why those appear at L1 and L3 rather than the planet own house.
 					StarLord string `json:"starLord"`
 
-					// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading.
+					// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading. Reproducible from the significator levels alone, in two steps. STEP 1, per house keep only the strongest level: a planet routinely reaches the same house at more than one level, for example its star lord occupies house 11 and it also owns house 11, and KP cites a significator by its best connection, so that house counts once at grade A. This is why signifiedHouses is shorter than the four level arrays concatenated, and omitting it is what makes a hand calculation disagree. STEP 2, average the surviving weights: each house contributes 100, 75, 50 or 25 for grade A, B, C or D, and the mean is the score. Worked example, a lord signifying house 11 at level 1, house 6 at level 2 and house 2 at level 4 scores (100 + 75 + 25) / 3 = 66.7, which lands in band B because the band edges are the midpoints 87.5, 62.5 and 37.5. The score says how firmly the lord is connected, never whether the houses are favourable, which depends on the matter being judged.
 					Strength struct {
 						// Grade Band the score falls in, on the standard KP significator grading: A planets in the constellation of the occupant, B occupants, C planets in the constellation of the house owner, D the house owner. Band edges are the midpoints between the four weights.
 						Grade GetSookshmaDashas200JSONResponseBodyPratyantardashaPeriodSignificatorsStrengthGrade `json:"grade"`
@@ -77961,7 +80736,7 @@ func ParseGetSookshmaDashasResponse(rsp *http.Response) (*GetSookshmaDashasRespo
 					// StarLord Lord of the nakshatra this planet sits in, one of the 9 grahas. In KP the star lord outranks the planet itself: a period lord mainly delivers the houses its star lord occupies and owns, which is why those appear at L1 and L3 rather than the planet own house.
 					StarLord string `json:"starLord"`
 
-					// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading.
+					// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading. Reproducible from the significator levels alone, in two steps. STEP 1, per house keep only the strongest level: a planet routinely reaches the same house at more than one level, for example its star lord occupies house 11 and it also owns house 11, and KP cites a significator by its best connection, so that house counts once at grade A. This is why signifiedHouses is shorter than the four level arrays concatenated, and omitting it is what makes a hand calculation disagree. STEP 2, average the surviving weights: each house contributes 100, 75, 50 or 25 for grade A, B, C or D, and the mean is the score. Worked example, a lord signifying house 11 at level 1, house 6 at level 2 and house 2 at level 4 scores (100 + 75 + 25) / 3 = 66.7, which lands in band B because the band edges are the midpoints 87.5, 62.5 and 37.5. The score says how firmly the lord is connected, never whether the houses are favourable, which depends on the matter being judged.
 					Strength struct {
 						// Grade Band the score falls in, on the standard KP significator grading: A planets in the constellation of the occupant, B occupants, C planets in the constellation of the house owner, D the house owner. Band edges are the midpoints between the four weights.
 						Grade GetSookshmaDashas200JSONResponseBodySookshmaDashasSignificatorsStrengthGrade `json:"grade"`
@@ -78054,7 +80829,7 @@ func ParseGetPranaDashasResponse(rsp *http.Response) (*GetPranaDashasResponse, e
 			// AyanamsaType Ayanamsa system used, echoing the request field. One of "lahiri", "kp-newcomb", "kp-old". Echoed so a client can confirm which frame produced these dates without re-deriving it.
 			AyanamsaType GetPranaDashas200JSONResponseBodyAyanamsaType `json:"ayanamsaType"`
 
-			// HouseThemes What each house MEANS, keyed by house number 1 to 12, in the requested language. Turns a house list into words without the client writing any interpretation copy: for a period signifying houses 2, 7 and 8, join houseThemes for those keys to render the "nature" line of a KP dasha table. Sent once per response rather than repeated on every period, so look the houses up from signifiedHouses or strongHouses. Localized by the lang query, like every other interpretation field.
+			// HouseThemes Significations of each of the twelve bhavas (houses), keyed by house number 1 to 12, as short keywords. Bhava 1 is the Lagna (self, body, vitality), 2 wealth and speech, 4 home and mother, 7 marriage and partnership, 10 career and status, 11 gains. Use it to label the house numbers returned elsewhere in the response: a Vimshottari dasha period signifying houses 2, 7 and 8, or a KP significator carrying houses 11 and 6, becomes readable text without a separate lookup call. Returned once per response rather than repeated per period, and localized by the lang query parameter alongside every other interpretation field.
 			HouseThemes *map[string][]string `json:"houseThemes,omitempty"`
 
 			// MahadashaLord Ruling planet of the requested Mahadasha period.
@@ -78115,7 +80890,7 @@ func ParseGetPranaDashasResponse(rsp *http.Response) (*GetPranaDashasResponse, e
 					// StarLord Lord of the nakshatra this planet sits in, one of the 9 grahas. In KP the star lord outranks the planet itself: a period lord mainly delivers the houses its star lord occupies and owns, which is why those appear at L1 and L3 rather than the planet own house.
 					StarLord string `json:"starLord"`
 
-					// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading.
+					// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading. Reproducible from the significator levels alone, in two steps. STEP 1, per house keep only the strongest level: a planet routinely reaches the same house at more than one level, for example its star lord occupies house 11 and it also owns house 11, and KP cites a significator by its best connection, so that house counts once at grade A. This is why signifiedHouses is shorter than the four level arrays concatenated, and omitting it is what makes a hand calculation disagree. STEP 2, average the surviving weights: each house contributes 100, 75, 50 or 25 for grade A, B, C or D, and the mean is the score. Worked example, a lord signifying house 11 at level 1, house 6 at level 2 and house 2 at level 4 scores (100 + 75 + 25) / 3 = 66.7, which lands in band B because the band edges are the midpoints 87.5, 62.5 and 37.5. The score says how firmly the lord is connected, never whether the houses are favourable, which depends on the matter being judged.
 					Strength struct {
 						// Grade Band the score falls in, on the standard KP significator grading: A planets in the constellation of the occupant, B occupants, C planets in the constellation of the house owner, D the house owner. Band edges are the midpoints between the four weights.
 						Grade GetPranaDashas200JSONResponseBodyPranaDashasSignificatorsStrengthGrade `json:"grade"`
@@ -78199,7 +80974,7 @@ func ParseGetPranaDashasResponse(rsp *http.Response) (*GetPranaDashasResponse, e
 					// StarLord Lord of the nakshatra this planet sits in, one of the 9 grahas. In KP the star lord outranks the planet itself: a period lord mainly delivers the houses its star lord occupies and owns, which is why those appear at L1 and L3 rather than the planet own house.
 					StarLord string `json:"starLord"`
 
-					// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading.
+					// Strength How firmly this lord is tied to the houses it signifies, on the KP A to D significator grading. Reproducible from the significator levels alone, in two steps. STEP 1, per house keep only the strongest level: a planet routinely reaches the same house at more than one level, for example its star lord occupies house 11 and it also owns house 11, and KP cites a significator by its best connection, so that house counts once at grade A. This is why signifiedHouses is shorter than the four level arrays concatenated, and omitting it is what makes a hand calculation disagree. STEP 2, average the surviving weights: each house contributes 100, 75, 50 or 25 for grade A, B, C or D, and the mean is the score. Worked example, a lord signifying house 11 at level 1, house 6 at level 2 and house 2 at level 4 scores (100 + 75 + 25) / 3 = 66.7, which lands in band B because the band edges are the midpoints 87.5, 62.5 and 37.5. The score says how firmly the lord is connected, never whether the houses are favourable, which depends on the matter being judged.
 					Strength struct {
 						// Grade Band the score falls in, on the standard KP significator grading: A planets in the constellation of the occupant, B occupants, C planets in the constellation of the house owner, D the house owner. Band edges are the midpoints between the four weights.
 						Grade GetPranaDashas200JSONResponseBodySookshmaPeriodSignificatorsStrengthGrade `json:"grade"`
@@ -81085,22 +83860,7 @@ func ParseGetYogaResponse(rsp *http.Response) (*GetYogaResponse, error) {
 
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
-		var dest struct {
-			// Description Brief formation rule describing which planets must be in which houses or signs for this yoga to form in a birth chart.
-			Description string `json:"description"`
-
-			// ID Unique yoga identifier in lowercase kebab-case. Use this to fetch yoga details via GET /yogas/:id.
-			ID string `json:"id"`
-
-			// Name Traditional Sanskrit name of the planetary yoga combination as referenced in classical Vedic astrology texts.
-			Name string `json:"name"`
-
-			// Quality Overall nature of the yoga. Positive yogas (Raj Yoga, Gajakesari) bestow benefits. Negative yogas (Kemadruma, Kaal Sarp) indicate challenges. Both means the yoga has mixed effects depending on chart context.
-			Quality GetYoga200JSONResponseBodyQuality `json:"quality"`
-
-			// Result Detailed prediction of the effects and life outcomes when this yoga is present in a horoscope. Covers personality traits, career, wealth, relationships, and spiritual tendencies.
-			Result string `json:"result"`
-		}
+		var dest YogaDetail
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
 		}

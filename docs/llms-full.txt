@@ -59,11 +59,15 @@ Western astrology API for natal birth charts, daily, weekly, and monthly horosco
 
 Vedic astrology (Jyotish) and KP API for kundli generation with 15 divisional charts (D1-D60), Ashtakoot Gun Milan ku...
 
+- `calculateArudhaPadas` - POST `/vedic-astrology/arudha` - Get the twelve Arudha padas - Arudha Lagna Calculator API
 - `calculateAshtakavarga` - POST `/vedic-astrology/ashtakavarga` - Get Ashtakavarga (planetary strength) analysis - Ashtakavarga Calculator API
 - `calculateDrishti` - POST `/vedic-astrology/aspects` - Get planetary aspects (Drishti) - Mutual aspects between all planets
 - `getLunarAspects` - POST `/vedic-astrology/aspects/lunar` - Monthly Lunar Aspects - Moon aspect events with all planets for a month
 - `getMonthlyAspects` - POST `/vedic-astrology/aspects/monthly` - Monthly Planetary Aspects - Major and minor aspect events for a month
+- `listAvasthas` - GET `/vedic-astrology/avasthas` - List all 17 avastha states - Planetary State Reference
+- `getAvastha` - GET `/vedic-astrology/avasthas/{id}` - Get avastha by ID - Planetary State Detail
 - `generateBirthChart` - POST `/vedic-astrology/birth-chart` - Get birth chart (D1 Rashi chart) - Kundli Calculator API
+- `calculateCharaKarakas` - POST `/vedic-astrology/chara-karakas` - Get Chara Karakas including Atmakaraka - Jaimini Karaka Calculator API
 - `calculateGunMilan` - POST `/vedic-astrology/compatibility` - Calculate compatibility score - Gun Milan API (Ashtakoot Matching)
 - `getCurrentDasha` - POST `/vedic-astrology/dasha/current` - Get current Mahadasha, Antardasha, Pratyantardasha, Sookshma, Prana - Dasha Calculator API
 - `getMajorDashas` - POST `/vedic-astrology/dasha/major` - Get all 9 Mahadasha periods (120-year cycle)

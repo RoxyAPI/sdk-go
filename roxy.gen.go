@@ -318,8 +318,24 @@ func (s *AstrologyService) ListZodiacSigns(ctx context.Context, params *ListZodi
 // VedicAstrologyService groups the vedic-astrology endpoints.
 type VedicAstrologyService struct{ client *ClientWithResponses }
 
+func (s *VedicAstrologyService) CalculateArudhaPadas(ctx context.Context, params *CalculateArudhaPadasParams, body CalculateArudhaPadasJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateArudhaPadasResponse, error) {
+	resp, err := s.client.CalculateArudhaPadasWithResponse(ctx, params, body, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
 func (s *VedicAstrologyService) CalculateAshtakavarga(ctx context.Context, body CalculateAshtakavargaJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateAshtakavargaResponse, error) {
 	resp, err := s.client.CalculateAshtakavargaWithResponse(ctx, body, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *VedicAstrologyService) CalculateCharaKarakas(ctx context.Context, params *CalculateCharaKarakasParams, body CalculateCharaKarakasJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateCharaKarakasResponse, error) {
+	resp, err := s.client.CalculateCharaKarakasWithResponse(ctx, params, body, reqEditors...)
 	if err != nil {
 		return resp, err
 	}
@@ -424,6 +440,14 @@ func (s *VedicAstrologyService) GenerateKpChart(ctx context.Context, params *Gen
 
 func (s *VedicAstrologyService) GenerateNavamsa(ctx context.Context, params *GenerateNavamsaParams, body GenerateNavamsaJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateNavamsaResponse, error) {
 	resp, err := s.client.GenerateNavamsaWithResponse(ctx, params, body, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *VedicAstrologyService) GetAvastha(ctx context.Context, id GetAvasthaParamsID, params *GetAvasthaParams, reqEditors ...RequestEditorFn) (*GetAvasthaResponse, error) {
+	resp, err := s.client.GetAvasthaWithResponse(ctx, id, params, reqEditors...)
 	if err != nil {
 		return resp, err
 	}
@@ -656,6 +680,14 @@ func (s *VedicAstrologyService) GetUpagrahaPositions(ctx context.Context, body G
 
 func (s *VedicAstrologyService) GetYoga(ctx context.Context, id GetYogaParamsID, params *GetYogaParams, reqEditors ...RequestEditorFn) (*GetYogaResponse, error) {
 	resp, err := s.client.GetYogaWithResponse(ctx, id, params, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *VedicAstrologyService) ListAvasthas(ctx context.Context, params *ListAvasthasParams, reqEditors ...RequestEditorFn) (*ListAvasthasResponse, error) {
+	resp, err := s.client.ListAvasthasWithResponse(ctx, params, reqEditors...)
 	if err != nil {
 		return resp, err
 	}
