@@ -510,8 +510,8 @@ func (s *VedicAstrologyService) GetKpAyanamsa(ctx context.Context, params *GetKp
 	return resp, asRoxyError(resp)
 }
 
-func (s *VedicAstrologyService) GetKpCusps(ctx context.Context, body GetKpCuspsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetKpCuspsResponse, error) {
-	resp, err := s.client.GetKpCuspsWithResponse(ctx, body, reqEditors...)
+func (s *VedicAstrologyService) GetKpCusps(ctx context.Context, params *GetKpCuspsParams, body GetKpCuspsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetKpCuspsResponse, error) {
+	resp, err := s.client.GetKpCuspsWithResponse(ctx, params, body, reqEditors...)
 	if err != nil {
 		return resp, err
 	}
@@ -542,16 +542,16 @@ func (s *VedicAstrologyService) GetKpRasiChanges(ctx context.Context, body GetKp
 	return resp, asRoxyError(resp)
 }
 
-func (s *VedicAstrologyService) GetKpRulingInterval(ctx context.Context, body GetKpRulingIntervalJSONRequestBody, reqEditors ...RequestEditorFn) (*GetKpRulingIntervalResponse, error) {
-	resp, err := s.client.GetKpRulingIntervalWithResponse(ctx, body, reqEditors...)
+func (s *VedicAstrologyService) GetKpRulingInterval(ctx context.Context, params *GetKpRulingIntervalParams, body GetKpRulingIntervalJSONRequestBody, reqEditors ...RequestEditorFn) (*GetKpRulingIntervalResponse, error) {
+	resp, err := s.client.GetKpRulingIntervalWithResponse(ctx, params, body, reqEditors...)
 	if err != nil {
 		return resp, err
 	}
 	return resp, asRoxyError(resp)
 }
 
-func (s *VedicAstrologyService) GetKpRulingPlanets(ctx context.Context, body GetKpRulingPlanetsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetKpRulingPlanetsResponse, error) {
-	resp, err := s.client.GetKpRulingPlanetsWithResponse(ctx, body, reqEditors...)
+func (s *VedicAstrologyService) GetKpRulingPlanets(ctx context.Context, params *GetKpRulingPlanetsParams, body GetKpRulingPlanetsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetKpRulingPlanetsResponse, error) {
+	resp, err := s.client.GetKpRulingPlanetsWithResponse(ctx, params, body, reqEditors...)
 	if err != nil {
 		return resp, err
 	}

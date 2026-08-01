@@ -11238,6 +11238,7 @@ func (e GetCurrentDashaParamsFocus) Valid() bool {
 
 // Defines values for GetCurrentDashaJSONBodyAyanamsa.
 const (
+	GetCurrentDashaJSONBodyAyanamsaCustom    GetCurrentDashaJSONBodyAyanamsa = "custom"
 	GetCurrentDashaJSONBodyAyanamsaKpNewcomb GetCurrentDashaJSONBodyAyanamsa = "kp-newcomb"
 	GetCurrentDashaJSONBodyAyanamsaKpOld     GetCurrentDashaJSONBodyAyanamsa = "kp-old"
 	GetCurrentDashaJSONBodyAyanamsaLahiri    GetCurrentDashaJSONBodyAyanamsa = "lahiri"
@@ -11246,6 +11247,8 @@ const (
 // Valid indicates whether the value is a known member of the GetCurrentDashaJSONBodyAyanamsa enum.
 func (e GetCurrentDashaJSONBodyAyanamsa) Valid() bool {
 	switch e {
+	case GetCurrentDashaJSONBodyAyanamsaCustom:
+		return true
 	case GetCurrentDashaJSONBodyAyanamsaKpNewcomb:
 		return true
 	case GetCurrentDashaJSONBodyAyanamsaKpOld:
@@ -11403,6 +11406,7 @@ func (e GetCurrentDasha200JSONResponseBodyAntardashaSignificatorsStrengthLabel) 
 
 // Defines values for GetCurrentDasha200JSONResponseBodyAyanamsaType.
 const (
+	GetCurrentDasha200JSONResponseBodyAyanamsaTypeCustom    GetCurrentDasha200JSONResponseBodyAyanamsaType = "custom"
 	GetCurrentDasha200JSONResponseBodyAyanamsaTypeKpNewcomb GetCurrentDasha200JSONResponseBodyAyanamsaType = "kp-newcomb"
 	GetCurrentDasha200JSONResponseBodyAyanamsaTypeKpOld     GetCurrentDasha200JSONResponseBodyAyanamsaType = "kp-old"
 	GetCurrentDasha200JSONResponseBodyAyanamsaTypeLahiri    GetCurrentDasha200JSONResponseBodyAyanamsaType = "lahiri"
@@ -11411,6 +11415,8 @@ const (
 // Valid indicates whether the value is a known member of the GetCurrentDasha200JSONResponseBodyAyanamsaType enum.
 func (e GetCurrentDasha200JSONResponseBodyAyanamsaType) Valid() bool {
 	switch e {
+	case GetCurrentDasha200JSONResponseBodyAyanamsaTypeCustom:
+		return true
 	case GetCurrentDasha200JSONResponseBodyAyanamsaTypeKpNewcomb:
 		return true
 	case GetCurrentDasha200JSONResponseBodyAyanamsaTypeKpOld:
@@ -12216,6 +12222,7 @@ func (e GetMajorDashasParamsFocus) Valid() bool {
 
 // Defines values for GetMajorDashasJSONBodyAyanamsa.
 const (
+	GetMajorDashasJSONBodyAyanamsaCustom    GetMajorDashasJSONBodyAyanamsa = "custom"
 	GetMajorDashasJSONBodyAyanamsaKpNewcomb GetMajorDashasJSONBodyAyanamsa = "kp-newcomb"
 	GetMajorDashasJSONBodyAyanamsaKpOld     GetMajorDashasJSONBodyAyanamsa = "kp-old"
 	GetMajorDashasJSONBodyAyanamsaLahiri    GetMajorDashasJSONBodyAyanamsa = "lahiri"
@@ -12224,6 +12231,8 @@ const (
 // Valid indicates whether the value is a known member of the GetMajorDashasJSONBodyAyanamsa enum.
 func (e GetMajorDashasJSONBodyAyanamsa) Valid() bool {
 	switch e {
+	case GetMajorDashasJSONBodyAyanamsaCustom:
+		return true
 	case GetMajorDashasJSONBodyAyanamsaKpNewcomb:
 		return true
 	case GetMajorDashasJSONBodyAyanamsaKpOld:
@@ -12255,6 +12264,7 @@ func (e GetMajorDashasJSONBodyNodeType) Valid() bool {
 
 // Defines values for GetMajorDashas200JSONResponseBodyAyanamsaType.
 const (
+	GetMajorDashas200JSONResponseBodyAyanamsaTypeCustom    GetMajorDashas200JSONResponseBodyAyanamsaType = "custom"
 	GetMajorDashas200JSONResponseBodyAyanamsaTypeKpNewcomb GetMajorDashas200JSONResponseBodyAyanamsaType = "kp-newcomb"
 	GetMajorDashas200JSONResponseBodyAyanamsaTypeKpOld     GetMajorDashas200JSONResponseBodyAyanamsaType = "kp-old"
 	GetMajorDashas200JSONResponseBodyAyanamsaTypeLahiri    GetMajorDashas200JSONResponseBodyAyanamsaType = "lahiri"
@@ -12263,6 +12273,8 @@ const (
 // Valid indicates whether the value is a known member of the GetMajorDashas200JSONResponseBodyAyanamsaType enum.
 func (e GetMajorDashas200JSONResponseBodyAyanamsaType) Valid() bool {
 	switch e {
+	case GetMajorDashas200JSONResponseBodyAyanamsaTypeCustom:
+		return true
 	case GetMajorDashas200JSONResponseBodyAyanamsaTypeKpNewcomb:
 		return true
 	case GetMajorDashas200JSONResponseBodyAyanamsaTypeKpOld:
@@ -12495,6 +12507,7 @@ func (e GetSubDashasParamsMahadasha) Valid() bool {
 
 // Defines values for GetSubDashasJSONBodyAyanamsa.
 const (
+	GetSubDashasJSONBodyAyanamsaCustom    GetSubDashasJSONBodyAyanamsa = "custom"
 	GetSubDashasJSONBodyAyanamsaKpNewcomb GetSubDashasJSONBodyAyanamsa = "kp-newcomb"
 	GetSubDashasJSONBodyAyanamsaKpOld     GetSubDashasJSONBodyAyanamsa = "kp-old"
 	GetSubDashasJSONBodyAyanamsaLahiri    GetSubDashasJSONBodyAyanamsa = "lahiri"
@@ -12503,6 +12516,8 @@ const (
 // Valid indicates whether the value is a known member of the GetSubDashasJSONBodyAyanamsa enum.
 func (e GetSubDashasJSONBodyAyanamsa) Valid() bool {
 	switch e {
+	case GetSubDashasJSONBodyAyanamsaCustom:
+		return true
 	case GetSubDashasJSONBodyAyanamsaKpNewcomb:
 		return true
 	case GetSubDashasJSONBodyAyanamsaKpOld:
@@ -12660,6 +12675,7 @@ func (e GetSubDashas200JSONResponseBodyAntardashasSignificatorsStrengthLabel) Va
 
 // Defines values for GetSubDashas200JSONResponseBodyAyanamsaType.
 const (
+	GetSubDashas200JSONResponseBodyAyanamsaTypeCustom    GetSubDashas200JSONResponseBodyAyanamsaType = "custom"
 	GetSubDashas200JSONResponseBodyAyanamsaTypeKpNewcomb GetSubDashas200JSONResponseBodyAyanamsaType = "kp-newcomb"
 	GetSubDashas200JSONResponseBodyAyanamsaTypeKpOld     GetSubDashas200JSONResponseBodyAyanamsaType = "kp-old"
 	GetSubDashas200JSONResponseBodyAyanamsaTypeLahiri    GetSubDashas200JSONResponseBodyAyanamsaType = "lahiri"
@@ -12668,6 +12684,8 @@ const (
 // Valid indicates whether the value is a known member of the GetSubDashas200JSONResponseBodyAyanamsaType enum.
 func (e GetSubDashas200JSONResponseBodyAyanamsaType) Valid() bool {
 	switch e {
+	case GetSubDashas200JSONResponseBodyAyanamsaTypeCustom:
+		return true
 	case GetSubDashas200JSONResponseBodyAyanamsaTypeKpNewcomb:
 		return true
 	case GetSubDashas200JSONResponseBodyAyanamsaTypeKpOld:
@@ -12939,6 +12957,7 @@ func (e GetPratyantardashasParamsAntardasha) Valid() bool {
 
 // Defines values for GetPratyantardashasJSONBodyAyanamsa.
 const (
+	GetPratyantardashasJSONBodyAyanamsaCustom    GetPratyantardashasJSONBodyAyanamsa = "custom"
 	GetPratyantardashasJSONBodyAyanamsaKpNewcomb GetPratyantardashasJSONBodyAyanamsa = "kp-newcomb"
 	GetPratyantardashasJSONBodyAyanamsaKpOld     GetPratyantardashasJSONBodyAyanamsa = "kp-old"
 	GetPratyantardashasJSONBodyAyanamsaLahiri    GetPratyantardashasJSONBodyAyanamsa = "lahiri"
@@ -12947,6 +12966,8 @@ const (
 // Valid indicates whether the value is a known member of the GetPratyantardashasJSONBodyAyanamsa enum.
 func (e GetPratyantardashasJSONBodyAyanamsa) Valid() bool {
 	switch e {
+	case GetPratyantardashasJSONBodyAyanamsaCustom:
+		return true
 	case GetPratyantardashasJSONBodyAyanamsaKpNewcomb:
 		return true
 	case GetPratyantardashasJSONBodyAyanamsaKpOld:
@@ -13143,6 +13164,7 @@ func (e GetPratyantardashas200JSONResponseBodyAntardashaPeriodSignificatorsStren
 
 // Defines values for GetPratyantardashas200JSONResponseBodyAyanamsaType.
 const (
+	GetPratyantardashas200JSONResponseBodyAyanamsaTypeCustom    GetPratyantardashas200JSONResponseBodyAyanamsaType = "custom"
 	GetPratyantardashas200JSONResponseBodyAyanamsaTypeKpNewcomb GetPratyantardashas200JSONResponseBodyAyanamsaType = "kp-newcomb"
 	GetPratyantardashas200JSONResponseBodyAyanamsaTypeKpOld     GetPratyantardashas200JSONResponseBodyAyanamsaType = "kp-old"
 	GetPratyantardashas200JSONResponseBodyAyanamsaTypeLahiri    GetPratyantardashas200JSONResponseBodyAyanamsaType = "lahiri"
@@ -13151,6 +13173,8 @@ const (
 // Valid indicates whether the value is a known member of the GetPratyantardashas200JSONResponseBodyAyanamsaType enum.
 func (e GetPratyantardashas200JSONResponseBodyAyanamsaType) Valid() bool {
 	switch e {
+	case GetPratyantardashas200JSONResponseBodyAyanamsaTypeCustom:
+		return true
 	case GetPratyantardashas200JSONResponseBodyAyanamsaTypeKpNewcomb:
 		return true
 	case GetPratyantardashas200JSONResponseBodyAyanamsaTypeKpOld:
@@ -13539,6 +13563,7 @@ func (e GetSookshmaDashasParamsPratyantardasha) Valid() bool {
 
 // Defines values for GetSookshmaDashasJSONBodyAyanamsa.
 const (
+	GetSookshmaDashasJSONBodyAyanamsaCustom    GetSookshmaDashasJSONBodyAyanamsa = "custom"
 	GetSookshmaDashasJSONBodyAyanamsaKpNewcomb GetSookshmaDashasJSONBodyAyanamsa = "kp-newcomb"
 	GetSookshmaDashasJSONBodyAyanamsaKpOld     GetSookshmaDashasJSONBodyAyanamsa = "kp-old"
 	GetSookshmaDashasJSONBodyAyanamsaLahiri    GetSookshmaDashasJSONBodyAyanamsa = "lahiri"
@@ -13547,6 +13572,8 @@ const (
 // Valid indicates whether the value is a known member of the GetSookshmaDashasJSONBodyAyanamsa enum.
 func (e GetSookshmaDashasJSONBodyAyanamsa) Valid() bool {
 	switch e {
+	case GetSookshmaDashasJSONBodyAyanamsaCustom:
+		return true
 	case GetSookshmaDashasJSONBodyAyanamsaKpNewcomb:
 		return true
 	case GetSookshmaDashasJSONBodyAyanamsaKpOld:
@@ -13617,6 +13644,7 @@ func (e GetSookshmaDashas200JSONResponseBodyAntardashaLord) Valid() bool {
 
 // Defines values for GetSookshmaDashas200JSONResponseBodyAyanamsaType.
 const (
+	GetSookshmaDashas200JSONResponseBodyAyanamsaTypeCustom    GetSookshmaDashas200JSONResponseBodyAyanamsaType = "custom"
 	GetSookshmaDashas200JSONResponseBodyAyanamsaTypeKpNewcomb GetSookshmaDashas200JSONResponseBodyAyanamsaType = "kp-newcomb"
 	GetSookshmaDashas200JSONResponseBodyAyanamsaTypeKpOld     GetSookshmaDashas200JSONResponseBodyAyanamsaType = "kp-old"
 	GetSookshmaDashas200JSONResponseBodyAyanamsaTypeLahiri    GetSookshmaDashas200JSONResponseBodyAyanamsaType = "lahiri"
@@ -13625,6 +13653,8 @@ const (
 // Valid indicates whether the value is a known member of the GetSookshmaDashas200JSONResponseBodyAyanamsaType enum.
 func (e GetSookshmaDashas200JSONResponseBodyAyanamsaType) Valid() bool {
 	switch e {
+	case GetSookshmaDashas200JSONResponseBodyAyanamsaTypeCustom:
+		return true
 	case GetSookshmaDashas200JSONResponseBodyAyanamsaTypeKpNewcomb:
 		return true
 	case GetSookshmaDashas200JSONResponseBodyAyanamsaTypeKpOld:
@@ -14295,6 +14325,7 @@ func (e GetPranaDashasParamsSookshma) Valid() bool {
 
 // Defines values for GetPranaDashasJSONBodyAyanamsa.
 const (
+	GetPranaDashasJSONBodyAyanamsaCustom    GetPranaDashasJSONBodyAyanamsa = "custom"
 	GetPranaDashasJSONBodyAyanamsaKpNewcomb GetPranaDashasJSONBodyAyanamsa = "kp-newcomb"
 	GetPranaDashasJSONBodyAyanamsaKpOld     GetPranaDashasJSONBodyAyanamsa = "kp-old"
 	GetPranaDashasJSONBodyAyanamsaLahiri    GetPranaDashasJSONBodyAyanamsa = "lahiri"
@@ -14303,6 +14334,8 @@ const (
 // Valid indicates whether the value is a known member of the GetPranaDashasJSONBodyAyanamsa enum.
 func (e GetPranaDashasJSONBodyAyanamsa) Valid() bool {
 	switch e {
+	case GetPranaDashasJSONBodyAyanamsaCustom:
+		return true
 	case GetPranaDashasJSONBodyAyanamsaKpNewcomb:
 		return true
 	case GetPranaDashasJSONBodyAyanamsaKpOld:
@@ -14373,6 +14406,7 @@ func (e GetPranaDashas200JSONResponseBodyAntardashaLord) Valid() bool {
 
 // Defines values for GetPranaDashas200JSONResponseBodyAyanamsaType.
 const (
+	GetPranaDashas200JSONResponseBodyAyanamsaTypeCustom    GetPranaDashas200JSONResponseBodyAyanamsaType = "custom"
 	GetPranaDashas200JSONResponseBodyAyanamsaTypeKpNewcomb GetPranaDashas200JSONResponseBodyAyanamsaType = "kp-newcomb"
 	GetPranaDashas200JSONResponseBodyAyanamsaTypeKpOld     GetPranaDashas200JSONResponseBodyAyanamsaType = "kp-old"
 	GetPranaDashas200JSONResponseBodyAyanamsaTypeLahiri    GetPranaDashas200JSONResponseBodyAyanamsaType = "lahiri"
@@ -14381,6 +14415,8 @@ const (
 // Valid indicates whether the value is a known member of the GetPranaDashas200JSONResponseBodyAyanamsaType enum.
 func (e GetPranaDashas200JSONResponseBodyAyanamsaType) Valid() bool {
 	switch e {
+	case GetPranaDashas200JSONResponseBodyAyanamsaTypeCustom:
+		return true
 	case GetPranaDashas200JSONResponseBodyAyanamsaTypeKpNewcomb:
 		return true
 	case GetPranaDashas200JSONResponseBodyAyanamsaTypeKpOld:
@@ -15082,6 +15118,114 @@ func (e GenerateKpChartParamsFocus) Valid() bool {
 	}
 }
 
+// Defines values for GetKpCuspsParamsLang.
+const (
+	GetKpCuspsParamsLangDe GetKpCuspsParamsLang = "de"
+	GetKpCuspsParamsLangEn GetKpCuspsParamsLang = "en"
+	GetKpCuspsParamsLangEs GetKpCuspsParamsLang = "es"
+	GetKpCuspsParamsLangFr GetKpCuspsParamsLang = "fr"
+	GetKpCuspsParamsLangHi GetKpCuspsParamsLang = "hi"
+	GetKpCuspsParamsLangPt GetKpCuspsParamsLang = "pt"
+	GetKpCuspsParamsLangRu GetKpCuspsParamsLang = "ru"
+	GetKpCuspsParamsLangTr GetKpCuspsParamsLang = "tr"
+)
+
+// Valid indicates whether the value is a known member of the GetKpCuspsParamsLang enum.
+func (e GetKpCuspsParamsLang) Valid() bool {
+	switch e {
+	case GetKpCuspsParamsLangDe:
+		return true
+	case GetKpCuspsParamsLangEn:
+		return true
+	case GetKpCuspsParamsLangEs:
+		return true
+	case GetKpCuspsParamsLangFr:
+		return true
+	case GetKpCuspsParamsLangHi:
+		return true
+	case GetKpCuspsParamsLangPt:
+		return true
+	case GetKpCuspsParamsLangRu:
+		return true
+	case GetKpCuspsParamsLangTr:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetKpCuspsParamsFocus.
+const (
+	GetKpCuspsParamsFocusFinance GetKpCuspsParamsFocus = "finance"
+	GetKpCuspsParamsFocusGeneral GetKpCuspsParamsFocus = "general"
+)
+
+// Valid indicates whether the value is a known member of the GetKpCuspsParamsFocus enum.
+func (e GetKpCuspsParamsFocus) Valid() bool {
+	switch e {
+	case GetKpCuspsParamsFocusFinance:
+		return true
+	case GetKpCuspsParamsFocusGeneral:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetKpRulingPlanetsParamsLang.
+const (
+	GetKpRulingPlanetsParamsLangDe GetKpRulingPlanetsParamsLang = "de"
+	GetKpRulingPlanetsParamsLangEn GetKpRulingPlanetsParamsLang = "en"
+	GetKpRulingPlanetsParamsLangEs GetKpRulingPlanetsParamsLang = "es"
+	GetKpRulingPlanetsParamsLangFr GetKpRulingPlanetsParamsLang = "fr"
+	GetKpRulingPlanetsParamsLangHi GetKpRulingPlanetsParamsLang = "hi"
+	GetKpRulingPlanetsParamsLangPt GetKpRulingPlanetsParamsLang = "pt"
+	GetKpRulingPlanetsParamsLangRu GetKpRulingPlanetsParamsLang = "ru"
+	GetKpRulingPlanetsParamsLangTr GetKpRulingPlanetsParamsLang = "tr"
+)
+
+// Valid indicates whether the value is a known member of the GetKpRulingPlanetsParamsLang enum.
+func (e GetKpRulingPlanetsParamsLang) Valid() bool {
+	switch e {
+	case GetKpRulingPlanetsParamsLangDe:
+		return true
+	case GetKpRulingPlanetsParamsLangEn:
+		return true
+	case GetKpRulingPlanetsParamsLangEs:
+		return true
+	case GetKpRulingPlanetsParamsLangFr:
+		return true
+	case GetKpRulingPlanetsParamsLangHi:
+		return true
+	case GetKpRulingPlanetsParamsLangPt:
+		return true
+	case GetKpRulingPlanetsParamsLangRu:
+		return true
+	case GetKpRulingPlanetsParamsLangTr:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetKpRulingPlanetsParamsFocus.
+const (
+	GetKpRulingPlanetsParamsFocusFinance GetKpRulingPlanetsParamsFocus = "finance"
+	GetKpRulingPlanetsParamsFocusGeneral GetKpRulingPlanetsParamsFocus = "general"
+)
+
+// Valid indicates whether the value is a known member of the GetKpRulingPlanetsParamsFocus enum.
+func (e GetKpRulingPlanetsParamsFocus) Valid() bool {
+	switch e {
+	case GetKpRulingPlanetsParamsFocusFinance:
+		return true
+	case GetKpRulingPlanetsParamsFocusGeneral:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for GetKpRulingPlanetsJSONBodyNodeType.
 const (
 	GetKpRulingPlanetsJSONBodyNodeTypeMean GetKpRulingPlanetsJSONBodyNodeType = "mean"
@@ -15094,6 +15238,60 @@ func (e GetKpRulingPlanetsJSONBodyNodeType) Valid() bool {
 	case GetKpRulingPlanetsJSONBodyNodeTypeMean:
 		return true
 	case GetKpRulingPlanetsJSONBodyNodeTypeTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetKpRulingIntervalParamsLang.
+const (
+	GetKpRulingIntervalParamsLangDe GetKpRulingIntervalParamsLang = "de"
+	GetKpRulingIntervalParamsLangEn GetKpRulingIntervalParamsLang = "en"
+	GetKpRulingIntervalParamsLangEs GetKpRulingIntervalParamsLang = "es"
+	GetKpRulingIntervalParamsLangFr GetKpRulingIntervalParamsLang = "fr"
+	GetKpRulingIntervalParamsLangHi GetKpRulingIntervalParamsLang = "hi"
+	GetKpRulingIntervalParamsLangPt GetKpRulingIntervalParamsLang = "pt"
+	GetKpRulingIntervalParamsLangRu GetKpRulingIntervalParamsLang = "ru"
+	GetKpRulingIntervalParamsLangTr GetKpRulingIntervalParamsLang = "tr"
+)
+
+// Valid indicates whether the value is a known member of the GetKpRulingIntervalParamsLang enum.
+func (e GetKpRulingIntervalParamsLang) Valid() bool {
+	switch e {
+	case GetKpRulingIntervalParamsLangDe:
+		return true
+	case GetKpRulingIntervalParamsLangEn:
+		return true
+	case GetKpRulingIntervalParamsLangEs:
+		return true
+	case GetKpRulingIntervalParamsLangFr:
+		return true
+	case GetKpRulingIntervalParamsLangHi:
+		return true
+	case GetKpRulingIntervalParamsLangPt:
+		return true
+	case GetKpRulingIntervalParamsLangRu:
+		return true
+	case GetKpRulingIntervalParamsLangTr:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetKpRulingIntervalParamsFocus.
+const (
+	Finance GetKpRulingIntervalParamsFocus = "finance"
+	General GetKpRulingIntervalParamsFocus = "general"
+)
+
+// Valid indicates whether the value is a known member of the GetKpRulingIntervalParamsFocus enum.
+func (e GetKpRulingIntervalParamsFocus) Valid() bool {
+	switch e {
+	case Finance:
+		return true
+	case General:
 		return true
 	default:
 		return false
@@ -15870,34 +16068,34 @@ func (e DetectYogasParamsLang) Valid() bool {
 
 // Defines values for GetYogaParamsLang.
 const (
-	De GetYogaParamsLang = "de"
-	En GetYogaParamsLang = "en"
-	Es GetYogaParamsLang = "es"
-	Fr GetYogaParamsLang = "fr"
-	Hi GetYogaParamsLang = "hi"
-	Pt GetYogaParamsLang = "pt"
-	Ru GetYogaParamsLang = "ru"
-	Tr GetYogaParamsLang = "tr"
+	GetYogaParamsLangDe GetYogaParamsLang = "de"
+	GetYogaParamsLangEn GetYogaParamsLang = "en"
+	GetYogaParamsLangEs GetYogaParamsLang = "es"
+	GetYogaParamsLangFr GetYogaParamsLang = "fr"
+	GetYogaParamsLangHi GetYogaParamsLang = "hi"
+	GetYogaParamsLangPt GetYogaParamsLang = "pt"
+	GetYogaParamsLangRu GetYogaParamsLang = "ru"
+	GetYogaParamsLangTr GetYogaParamsLang = "tr"
 )
 
 // Valid indicates whether the value is a known member of the GetYogaParamsLang enum.
 func (e GetYogaParamsLang) Valid() bool {
 	switch e {
-	case De:
+	case GetYogaParamsLangDe:
 		return true
-	case En:
+	case GetYogaParamsLangEn:
 		return true
-	case Es:
+	case GetYogaParamsLangEs:
 		return true
-	case Fr:
+	case GetYogaParamsLangFr:
 		return true
-	case Hi:
+	case GetYogaParamsLangHi:
 		return true
-	case Pt:
+	case GetYogaParamsLangPt:
 		return true
-	case Ru:
+	case GetYogaParamsLangRu:
 		return true
-	case Tr:
+	case GetYogaParamsLangTr:
 		return true
 	default:
 		return false
@@ -19157,6 +19355,9 @@ type KPAyanamsaResponse struct {
 	// Formula Mathematical basis for ayanamsa calculation
 	Formula string `json:"formula"`
 
+	// Instant The exact UTC instant the value was computed for, after applying the time and timezone. Echoed so a client reconciling to the arcsecond can confirm the moment rather than infer it from the date alone. Equals midnight UTC of the date when no time was supplied.
+	Instant string `json:"instant"`
+
 	// Type Ayanamsa type identifier
 	Type string `json:"type"`
 }
@@ -19517,6 +19718,9 @@ type KPCuspsResponse struct {
 
 	// HouseSystem House system used for calculations
 	HouseSystem string `json:"houseSystem"`
+
+	// HouseThemes Significations of each of the twelve bhavas (houses), keyed by house number 1 to 12, as short keywords. Bhava 1 is the Lagna (self, body, vitality), 2 wealth and speech, 4 home and mother, 7 marriage and partnership, 10 career and status, 11 gains. Use it to label the house numbers returned elsewhere in the response: a Vimshottari dasha period signifying houses 2, 7 and 8, or a KP significator carrying houses 11 and 6, becomes readable text without a separate lookup call. Returned once per response rather than repeated per period, and localized by the lang query parameter alongside every other interpretation field.
+	HouseThemes map[string][]string `json:"houseThemes"`
 }
 
 // KPPlanetsIntervalRequest defines model for KPPlanetsIntervalRequest.
@@ -19801,6 +20005,9 @@ type KPRulingPlanetsIntervalResponse struct {
 	// EndDatetime End of the KP ruling planets interval range (ISO 8601).
 	EndDatetime string `json:"endDatetime"`
 
+	// HouseThemes Significations of each of the twelve bhavas (houses), keyed by house number 1 to 12, as short keywords. Bhava 1 is the Lagna (self, body, vitality), 2 wealth and speech, 4 home and mother, 7 marriage and partnership, 10 career and status, 11 gains. Use it to label the house numbers returned elsewhere in the response: a Vimshottari dasha period signifying houses 2, 7 and 8, or a KP significator carrying houses 11 and 6, becomes readable text without a separate lookup call. Returned once per response rather than repeated per period, and localized by the lang query parameter alongside every other interpretation field.
+	HouseThemes map[string][]string `json:"houseThemes"`
+
 	// IntervalMinutes Time gap between consecutive ruling planet calculations in minutes.
 	IntervalMinutes float32 `json:"intervalMinutes"`
 
@@ -19941,6 +20148,9 @@ type KPRulingPlanetsResponse struct {
 
 	// DayLord Lord of the weekday (Sun=Sunday through Saturn=Saturday)
 	DayLord string `json:"dayLord"`
+
+	// HouseThemes Significations of each of the twelve bhavas (houses), keyed by house number 1 to 12, as short keywords. Bhava 1 is the Lagna (self, body, vitality), 2 wealth and speech, 4 home and mother, 7 marriage and partnership, 10 career and status, 11 gains. Use it to label the house numbers returned elsewhere in the response: a Vimshottari dasha period signifying houses 2, 7 and 8, or a KP significator carrying houses 11 and 6, becomes readable text without a separate lookup call. Returned once per response rather than repeated per period, and localized by the lang query parameter alongside every other interpretation field.
+	HouseThemes *map[string][]string `json:"houseThemes,omitempty"`
 
 	// LagnaSignLord Lord of the rising zodiac sign (Ascendant)
 	LagnaSignLord string `json:"lagnaSignLord"`
@@ -22335,8 +22545,11 @@ type GetDailyHoroscopeParams struct {
 	// Lang Response language (ISO 639-1). Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en. Languages without translations yet return English.
 	Lang *GetDailyHoroscopeParamsLang `form:"lang,omitempty" json:"lang,omitempty"`
 
-	// Date Forecast date in YYYY-MM-DD format. Defaults to today. Supports future and past dates for editorial scheduling.
+	// Date Forecast date in YYYY-MM-DD format. Past and future dates are both supported, for editorial scheduling and backfill. Defaults to the current period in the timezone parameter.
 	Date *openapi_types.Date `form:"date,omitempty" json:"date,omitempty"`
+
+	// Timezone Selects which period counts as current when date is omitted. Defaults to UTC, so the forecast rolls over at 00:00 UTC on each day. Pass the timezone of the end user to roll over on their local clock instead. Ignored when date is set. Accepts an IANA name (e.g. "America/New_York"), decimal hours (e.g. 5.5 for IST), or a fixed UTC offset (e.g. "-05:00").
+	Timezone *string `form:"timezone,omitempty" json:"timezone,omitempty"`
 }
 
 // GetDailyHoroscopeParamsLang defines parameters for GetDailyHoroscope.
@@ -22349,6 +22562,12 @@ type GetDailyHoroscopeParamsSign string
 type GetMonthlyHoroscopeParams struct {
 	// Lang Response language (ISO 639-1). Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en. Languages without translations yet return English.
 	Lang *GetMonthlyHoroscopeParamsLang `form:"lang,omitempty" json:"lang,omitempty"`
+
+	// Date Any date inside the target month, in YYYY-MM-DD format. The forecast covers the whole calendar month containing it. Defaults to the current period in the timezone parameter.
+	Date *openapi_types.Date `form:"date,omitempty" json:"date,omitempty"`
+
+	// Timezone Selects which period counts as current when date is omitted. Defaults to UTC, so the forecast rolls over at 00:00 UTC on the 1st. Pass the timezone of the end user to roll over on their local clock instead. Ignored when date is set. Accepts an IANA name (e.g. "America/New_York"), decimal hours (e.g. 5.5 for IST), or a fixed UTC offset (e.g. "-05:00").
+	Timezone *string `form:"timezone,omitempty" json:"timezone,omitempty"`
 }
 
 // GetMonthlyHoroscopeParamsLang defines parameters for GetMonthlyHoroscope.
@@ -22361,6 +22580,12 @@ type GetMonthlyHoroscopeParamsSign string
 type GetWeeklyHoroscopeParams struct {
 	// Lang Response language (ISO 639-1). Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en. Languages without translations yet return English.
 	Lang *GetWeeklyHoroscopeParamsLang `form:"lang,omitempty" json:"lang,omitempty"`
+
+	// Date Any date inside the target week, in YYYY-MM-DD format. The forecast covers the Monday to Sunday week containing it. Defaults to the current period in the timezone parameter.
+	Date *openapi_types.Date `form:"date,omitempty" json:"date,omitempty"`
+
+	// Timezone Selects which period counts as current when date is omitted. Defaults to UTC, so the forecast rolls over at 00:00 UTC on each Monday. Pass the timezone of the end user to roll over on their local clock instead. Ignored when date is set. Accepts an IANA name (e.g. "America/New_York"), decimal hours (e.g. 5.5 for IST), or a fixed UTC offset (e.g. "-05:00").
+	Timezone *string `form:"timezone,omitempty" json:"timezone,omitempty"`
 }
 
 // GetWeeklyHoroscopeParamsLang defines parameters for GetWeeklyHoroscope.
@@ -22559,23 +22784,12 @@ type GetCurrentMoonPhaseParams struct {
 	// Time Time in 24-hour HH:MM:SS format. Defaults to 12:00:00 (noon). Moon moves ~13 degrees per day so time affects phase precision.
 	Time *string `form:"time,omitempty" json:"time,omitempty"`
 
-	// Timezone IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours (e.g. -5 for EST, 1 for CET). IANA resolved to the DST-correct offset for the given date. Defaults to 0 (UTC).
-	Timezone *struct {
-		union json.RawMessage
-	} `form:"timezone,omitempty" json:"timezone,omitempty"`
+	// Timezone IANA name (e.g. "America/New_York", "Europe/London"), decimal hours (e.g. -5 for EST, 1 for CET), or a fixed UTC offset (e.g. "-05:00"). IANA resolved to the DST-correct offset for the given date. Defaults to 0 (UTC).
+	Timezone *string `form:"timezone,omitempty" json:"timezone,omitempty"`
 }
 
 // GetCurrentMoonPhaseParamsLang defines parameters for GetCurrentMoonPhase.
 type GetCurrentMoonPhaseParamsLang string
-
-// GetCurrentMoonPhaseParamsTimezone0 defines parameters for GetCurrentMoonPhase.
-type GetCurrentMoonPhaseParamsTimezone0 = float32
-
-// GetCurrentMoonPhaseParamsTimezone1 defines parameters for GetCurrentMoonPhase.
-type GetCurrentMoonPhaseParamsTimezone1 = string
-
-// GetCurrentMoonPhaseParamsTimezone2 defines parameters for GetCurrentMoonPhase.
-type GetCurrentMoonPhaseParamsTimezone2 = interface{}
 
 // GetCurrentMoonPhase200JSONResponseBodyMeaningEnergy defines parameters for GetCurrentMoonPhase.
 type GetCurrentMoonPhase200JSONResponseBodyMeaningEnergy string
@@ -25285,8 +25499,11 @@ type CalculateGunMilanParamsLang string
 
 // GetCurrentDashaJSONBody defines parameters for GetCurrentDasha.
 type GetCurrentDashaJSONBody struct {
-	// Ayanamsa Ayanamsa system used to place the birth Moon in its nakshatra, which sets every dasha start and end date. "lahiri" uses Lahiri/Chitrapaksha, the traditional Vedic standard, and is the default. "kp-newcomb" uses the KP-Newcomb dynamic formula, matching Krishnamurti Paddhati software. "kp-old" uses the Krishnamurti original table from KP Reader-1. Switching frames shifts every dasha boundary by weeks, so pick the one your reference software uses.
+	// Ayanamsa Ayanamsa system used to place the birth Moon in its nakshatra, which sets every dasha start and end date. "lahiri" uses Lahiri/Chitrapaksha, the traditional Vedic standard, and is the default. "kp-newcomb" uses the KP-Newcomb dynamic formula, matching Krishnamurti Paddhati software. "kp-old" uses the Krishnamurti original table from KP Reader-1. "custom" takes your own value in degrees via ayanamsaValue, for reconciling exactly against a specific reference program. Switching frames shifts every dasha boundary by weeks, so pick the one your reference software uses.
 	Ayanamsa *GetCurrentDashaJSONBodyAyanamsa `json:"ayanamsa,omitempty"`
+
+	// AyanamsaValue Custom ayanamsa value in degrees. When provided, overrides the computed ayanamsa from the selected type. Use for testing with specific ayanamsa values or matching a particular reference source.
+	AyanamsaValue *float32 `json:"ayanamsaValue,omitempty"`
 
 	// Date Birth date in YYYY-MM-DD format. Date determines planetary positions and nakshatra calculations for Vedic kundli (janam patri). Accurate birth date is essential for dashas, yoga calculations, and divisional charts (vargas).
 	Date openapi_types.Date `json:"date"`
@@ -25425,8 +25642,11 @@ type GetCurrentDasha200JSONResponseBodySookshmaDashaSignificatorsStrengthLabel s
 
 // GetMajorDashasJSONBody defines parameters for GetMajorDashas.
 type GetMajorDashasJSONBody struct {
-	// Ayanamsa Ayanamsa system used to place the birth Moon in its nakshatra, which sets every dasha start and end date. "lahiri" uses Lahiri/Chitrapaksha, the traditional Vedic standard, and is the default. "kp-newcomb" uses the KP-Newcomb dynamic formula, matching Krishnamurti Paddhati software. "kp-old" uses the Krishnamurti original table from KP Reader-1. Switching frames shifts every dasha boundary by weeks, so pick the one your reference software uses.
+	// Ayanamsa Ayanamsa system used to place the birth Moon in its nakshatra, which sets every dasha start and end date. "lahiri" uses Lahiri/Chitrapaksha, the traditional Vedic standard, and is the default. "kp-newcomb" uses the KP-Newcomb dynamic formula, matching Krishnamurti Paddhati software. "kp-old" uses the Krishnamurti original table from KP Reader-1. "custom" takes your own value in degrees via ayanamsaValue, for reconciling exactly against a specific reference program. Switching frames shifts every dasha boundary by weeks, so pick the one your reference software uses.
 	Ayanamsa *GetMajorDashasJSONBodyAyanamsa `json:"ayanamsa,omitempty"`
+
+	// AyanamsaValue Custom ayanamsa value in degrees. When provided, overrides the computed ayanamsa from the selected type. Use for testing with specific ayanamsa values or matching a particular reference source.
+	AyanamsaValue *float32 `json:"ayanamsaValue,omitempty"`
 
 	// Date Birth date in YYYY-MM-DD format. Date determines planetary positions and nakshatra calculations for Vedic kundli (janam patri). Accurate birth date is essential for dashas, yoga calculations, and divisional charts (vargas).
 	Date openapi_types.Date `json:"date"`
@@ -25499,8 +25719,11 @@ type GetMajorDashas200JSONResponseBodyNakshatraLord string
 
 // GetSubDashasJSONBody defines parameters for GetSubDashas.
 type GetSubDashasJSONBody struct {
-	// Ayanamsa Ayanamsa system used to place the birth Moon in its nakshatra, which sets every dasha start and end date. "lahiri" uses Lahiri/Chitrapaksha, the traditional Vedic standard, and is the default. "kp-newcomb" uses the KP-Newcomb dynamic formula, matching Krishnamurti Paddhati software. "kp-old" uses the Krishnamurti original table from KP Reader-1. Switching frames shifts every dasha boundary by weeks, so pick the one your reference software uses.
+	// Ayanamsa Ayanamsa system used to place the birth Moon in its nakshatra, which sets every dasha start and end date. "lahiri" uses Lahiri/Chitrapaksha, the traditional Vedic standard, and is the default. "kp-newcomb" uses the KP-Newcomb dynamic formula, matching Krishnamurti Paddhati software. "kp-old" uses the Krishnamurti original table from KP Reader-1. "custom" takes your own value in degrees via ayanamsaValue, for reconciling exactly against a specific reference program. Switching frames shifts every dasha boundary by weeks, so pick the one your reference software uses.
 	Ayanamsa *GetSubDashasJSONBodyAyanamsa `json:"ayanamsa,omitempty"`
+
+	// AyanamsaValue Custom ayanamsa value in degrees. When provided, overrides the computed ayanamsa from the selected type. Use for testing with specific ayanamsa values or matching a particular reference source.
+	AyanamsaValue *float32 `json:"ayanamsaValue,omitempty"`
 
 	// Date Birth date in YYYY-MM-DD format. Date determines planetary positions and nakshatra calculations for Vedic kundli (janam patri). Accurate birth date is essential for dashas, yoga calculations, and divisional charts (vargas).
 	Date openapi_types.Date `json:"date"`
@@ -25588,8 +25811,11 @@ type GetSubDashas200JSONResponseBodyMahadashaPeriodSignificatorsStrengthLabel st
 
 // GetPratyantardashasJSONBody defines parameters for GetPratyantardashas.
 type GetPratyantardashasJSONBody struct {
-	// Ayanamsa Ayanamsa system used to place the birth Moon in its nakshatra, which sets every dasha start and end date. "lahiri" uses Lahiri/Chitrapaksha, the traditional Vedic standard, and is the default. "kp-newcomb" uses the KP-Newcomb dynamic formula, matching Krishnamurti Paddhati software. "kp-old" uses the Krishnamurti original table from KP Reader-1. Switching frames shifts every dasha boundary by weeks, so pick the one your reference software uses.
+	// Ayanamsa Ayanamsa system used to place the birth Moon in its nakshatra, which sets every dasha start and end date. "lahiri" uses Lahiri/Chitrapaksha, the traditional Vedic standard, and is the default. "kp-newcomb" uses the KP-Newcomb dynamic formula, matching Krishnamurti Paddhati software. "kp-old" uses the Krishnamurti original table from KP Reader-1. "custom" takes your own value in degrees via ayanamsaValue, for reconciling exactly against a specific reference program. Switching frames shifts every dasha boundary by weeks, so pick the one your reference software uses.
 	Ayanamsa *GetPratyantardashasJSONBodyAyanamsa `json:"ayanamsa,omitempty"`
+
+	// AyanamsaValue Custom ayanamsa value in degrees. When provided, overrides the computed ayanamsa from the selected type. Use for testing with specific ayanamsa values or matching a particular reference source.
+	AyanamsaValue *float32 `json:"ayanamsaValue,omitempty"`
 
 	// Date Birth date in YYYY-MM-DD format. Date determines planetary positions and nakshatra calculations for Vedic kundli (janam patri). Accurate birth date is essential for dashas, yoga calculations, and divisional charts (vargas).
 	Date openapi_types.Date `json:"date"`
@@ -25689,8 +25915,11 @@ type GetPratyantardashas200JSONResponseBodyPratyantardashasSignificatorsStrength
 
 // GetSookshmaDashasJSONBody defines parameters for GetSookshmaDashas.
 type GetSookshmaDashasJSONBody struct {
-	// Ayanamsa Ayanamsa system used to place the birth Moon in its nakshatra, which sets every dasha start and end date. "lahiri" uses Lahiri/Chitrapaksha, the traditional Vedic standard, and is the default. "kp-newcomb" uses the KP-Newcomb dynamic formula, matching Krishnamurti Paddhati software. "kp-old" uses the Krishnamurti original table from KP Reader-1. Switching frames shifts every dasha boundary by weeks, so pick the one your reference software uses.
+	// Ayanamsa Ayanamsa system used to place the birth Moon in its nakshatra, which sets every dasha start and end date. "lahiri" uses Lahiri/Chitrapaksha, the traditional Vedic standard, and is the default. "kp-newcomb" uses the KP-Newcomb dynamic formula, matching Krishnamurti Paddhati software. "kp-old" uses the Krishnamurti original table from KP Reader-1. "custom" takes your own value in degrees via ayanamsaValue, for reconciling exactly against a specific reference program. Switching frames shifts every dasha boundary by weeks, so pick the one your reference software uses.
 	Ayanamsa *GetSookshmaDashasJSONBodyAyanamsa `json:"ayanamsa,omitempty"`
+
+	// AyanamsaValue Custom ayanamsa value in degrees. When provided, overrides the computed ayanamsa from the selected type. Use for testing with specific ayanamsa values or matching a particular reference source.
+	AyanamsaValue *float32 `json:"ayanamsaValue,omitempty"`
 
 	// Date Birth date in YYYY-MM-DD format. Date determines planetary positions and nakshatra calculations for Vedic kundli (janam patri). Accurate birth date is essential for dashas, yoga calculations, and divisional charts (vargas).
 	Date openapi_types.Date `json:"date"`
@@ -25802,8 +26031,11 @@ type GetSookshmaDashas200JSONResponseBodySookshmaDashasSignificatorsStrengthLabe
 
 // GetPranaDashasJSONBody defines parameters for GetPranaDashas.
 type GetPranaDashasJSONBody struct {
-	// Ayanamsa Ayanamsa system used to place the birth Moon in its nakshatra, which sets every dasha start and end date. "lahiri" uses Lahiri/Chitrapaksha, the traditional Vedic standard, and is the default. "kp-newcomb" uses the KP-Newcomb dynamic formula, matching Krishnamurti Paddhati software. "kp-old" uses the Krishnamurti original table from KP Reader-1. Switching frames shifts every dasha boundary by weeks, so pick the one your reference software uses.
+	// Ayanamsa Ayanamsa system used to place the birth Moon in its nakshatra, which sets every dasha start and end date. "lahiri" uses Lahiri/Chitrapaksha, the traditional Vedic standard, and is the default. "kp-newcomb" uses the KP-Newcomb dynamic formula, matching Krishnamurti Paddhati software. "kp-old" uses the Krishnamurti original table from KP Reader-1. "custom" takes your own value in degrees via ayanamsaValue, for reconciling exactly against a specific reference program. Switching frames shifts every dasha boundary by weeks, so pick the one your reference software uses.
 	Ayanamsa *GetPranaDashasJSONBodyAyanamsa `json:"ayanamsa,omitempty"`
+
+	// AyanamsaValue Custom ayanamsa value in degrees. When provided, overrides the computed ayanamsa from the selected type. Use for testing with specific ayanamsa values or matching a particular reference source.
+	AyanamsaValue *float32 `json:"ayanamsaValue,omitempty"`
 
 	// Date Birth date in YYYY-MM-DD format. Date determines planetary positions and nakshatra calculations for Vedic kundli (janam patri). Accurate birth date is essential for dashas, yoga calculations, and divisional charts (vargas).
 	Date openapi_types.Date `json:"date"`
@@ -25967,6 +26199,12 @@ type GetEclipticCrossings200JSONResponseBodyEventsDirection string
 type GetKpAyanamsaParams struct {
 	// Date Date for ayanamsa calculation in YYYY-MM-DD format. Defaults to today if not provided. Ayanamsa changes by ~0.01 degrees per month due to the precession of Earth.
 	Date *openapi_types.Date `form:"date,omitempty" json:"date,omitempty"`
+
+	// Time Time of day in 24-hour HH:MM:SS format, interpreted in the timezone below. Omit for midnight UTC. The ayanamsa moves about 0.14 arcseconds across a day, so supplying the time matters only when reconciling a chart against reference software to the arcsecond.
+	Time *string `form:"time,omitempty" json:"time,omitempty"`
+
+	// Timezone IANA name (e.g. "Asia/Kolkata", "America/New_York"), decimal hours (e.g. 5.5 for IST, -5 for EST), or a fixed UTC offset (e.g. "+05:30"). IANA resolved to the DST-correct offset for the given date. Applies to the time field above. Defaults to 0 (UTC).
+	Timezone *string `form:"timezone,omitempty" json:"timezone,omitempty"`
 }
 
 // GenerateKpChartParams defines parameters for GenerateKpChart.
@@ -25983,6 +26221,21 @@ type GenerateKpChartParamsLang string
 
 // GenerateKpChartParamsFocus defines parameters for GenerateKpChart.
 type GenerateKpChartParamsFocus string
+
+// GetKpCuspsParams defines parameters for GetKpCusps.
+type GetKpCuspsParams struct {
+	// Lang Response language (ISO 639-1). Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en. Languages without translations yet return English.
+	Lang *GetKpCuspsParamsLang `form:"lang,omitempty" json:"lang,omitempty"`
+
+	// Focus Which signification vocabulary the houseThemes map returns. "general" gives the classical bhava significations (self, wealth, siblings, home, and so on). "finance" gives the money reading of the same twelve bhavas, so house 2 returns income and savings, 5 speculation and risk appetite, 8 sudden money and leverage, 11 gains and profits, and 12 expenses and capital outflow. Use "finance" for wealth, income, business and market timing questions in Krishnamurti Paddhati, where the significator house groups 2, 6, 10, 11 for earned income and 5, 8, 11 for speculation are read against a running dasha. Defaults to "general".
+	Focus *GetKpCuspsParamsFocus `form:"focus,omitempty" json:"focus,omitempty"`
+}
+
+// GetKpCuspsParamsLang defines parameters for GetKpCusps.
+type GetKpCuspsParamsLang string
+
+// GetKpCuspsParamsFocus defines parameters for GetKpCusps.
+type GetKpCuspsParamsFocus string
 
 // GetKpRulingPlanetsJSONBody defines parameters for GetKpRulingPlanets.
 type GetKpRulingPlanetsJSONBody struct {
@@ -26007,6 +26260,21 @@ type GetKpRulingPlanetsJSONBody struct {
 	// Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC. IANA resolved to the DST-correct offset based on birthDate or datetime. Defaults to 5.5.
 	Timezone *GetKpRulingPlanetsJSONBody_Timezone `json:"timezone,omitempty"`
 }
+
+// GetKpRulingPlanetsParams defines parameters for GetKpRulingPlanets.
+type GetKpRulingPlanetsParams struct {
+	// Lang Response language (ISO 639-1). Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en. Languages without translations yet return English.
+	Lang *GetKpRulingPlanetsParamsLang `form:"lang,omitempty" json:"lang,omitempty"`
+
+	// Focus Which signification vocabulary the houseThemes map returns. "general" gives the classical bhava significations (self, wealth, siblings, home, and so on). "finance" gives the money reading of the same twelve bhavas, so house 2 returns income and savings, 5 speculation and risk appetite, 8 sudden money and leverage, 11 gains and profits, and 12 expenses and capital outflow. Use "finance" for wealth, income, business and market timing questions in Krishnamurti Paddhati, where the significator house groups 2, 6, 10, 11 for earned income and 5, 8, 11 for speculation are read against a running dasha. Defaults to "general".
+	Focus *GetKpRulingPlanetsParamsFocus `form:"focus,omitempty" json:"focus,omitempty"`
+}
+
+// GetKpRulingPlanetsParamsLang defines parameters for GetKpRulingPlanets.
+type GetKpRulingPlanetsParamsLang string
+
+// GetKpRulingPlanetsParamsFocus defines parameters for GetKpRulingPlanets.
+type GetKpRulingPlanetsParamsFocus string
 
 // GetKpRulingPlanetsJSONBodyNodeType defines parameters for GetKpRulingPlanets.
 type GetKpRulingPlanetsJSONBodyNodeType string
@@ -26048,6 +26316,21 @@ type GetKpRulingIntervalJSONBody struct {
 	// Timezone Timezone offset from UTC in decimal hours. When non-zero, all datetimes are treated as local time in this timezone (Z suffix is ignored). Output times are also converted to this timezone. Defaults to 5.5 (IST).
 	Timezone *GetKpRulingIntervalJSONBody_Timezone `json:"timezone,omitempty"`
 }
+
+// GetKpRulingIntervalParams defines parameters for GetKpRulingInterval.
+type GetKpRulingIntervalParams struct {
+	// Lang Response language (ISO 639-1). Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en. Languages without translations yet return English.
+	Lang *GetKpRulingIntervalParamsLang `form:"lang,omitempty" json:"lang,omitempty"`
+
+	// Focus Which signification vocabulary the houseThemes map returns. "general" gives the classical bhava significations (self, wealth, siblings, home, and so on). "finance" gives the money reading of the same twelve bhavas, so house 2 returns income and savings, 5 speculation and risk appetite, 8 sudden money and leverage, 11 gains and profits, and 12 expenses and capital outflow. Use "finance" for wealth, income, business and market timing questions in Krishnamurti Paddhati, where the significator house groups 2, 6, 10, 11 for earned income and 5, 8, 11 for speculation are read against a running dasha. Defaults to "general".
+	Focus *GetKpRulingIntervalParamsFocus `form:"focus,omitempty" json:"focus,omitempty"`
+}
+
+// GetKpRulingIntervalParamsLang defines parameters for GetKpRulingInterval.
+type GetKpRulingIntervalParamsLang string
+
+// GetKpRulingIntervalParamsFocus defines parameters for GetKpRulingInterval.
+type GetKpRulingIntervalParamsFocus string
 
 // GetKpRulingIntervalJSONBodyAyanamsa defines parameters for GetKpRulingInterval.
 type GetKpRulingIntervalJSONBodyAyanamsa string
@@ -33169,9 +33452,9 @@ type ClientInterface interface {
 	GenerateKpChart(ctx context.Context, params *GenerateKpChartParams, body GenerateKpChartJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetKpCuspsWithBody request with any body
-	GetKpCuspsWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	GetKpCuspsWithBody(ctx context.Context, params *GetKpCuspsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	GetKpCusps(ctx context.Context, body GetKpCuspsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	GetKpCusps(ctx context.Context, params *GetKpCuspsParams, body GetKpCuspsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetKpPlanetsWithBody request with any body
 	GetKpPlanetsWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -33189,14 +33472,14 @@ type ClientInterface interface {
 	GetKpRasiChanges(ctx context.Context, body GetKpRasiChangesJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetKpRulingPlanetsWithBody request with any body
-	GetKpRulingPlanetsWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	GetKpRulingPlanetsWithBody(ctx context.Context, params *GetKpRulingPlanetsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	GetKpRulingPlanets(ctx context.Context, body GetKpRulingPlanetsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	GetKpRulingPlanets(ctx context.Context, params *GetKpRulingPlanetsParams, body GetKpRulingPlanetsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetKpRulingIntervalWithBody request with any body
-	GetKpRulingIntervalWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	GetKpRulingIntervalWithBody(ctx context.Context, params *GetKpRulingIntervalParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	GetKpRulingInterval(ctx context.Context, body GetKpRulingIntervalJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	GetKpRulingInterval(ctx context.Context, params *GetKpRulingIntervalParams, body GetKpRulingIntervalJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetKpSublordChangesWithBody request with any body
 	GetKpSublordChangesWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -36160,8 +36443,8 @@ func (c *Client) GenerateKpChart(ctx context.Context, params *GenerateKpChartPar
 	return c.Client.Do(req)
 }
 
-func (c *Client) GetKpCuspsWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetKpCuspsRequestWithBody(c.Server, contentType, body)
+func (c *Client) GetKpCuspsWithBody(ctx context.Context, params *GetKpCuspsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetKpCuspsRequestWithBody(c.Server, params, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -36172,8 +36455,8 @@ func (c *Client) GetKpCuspsWithBody(ctx context.Context, contentType string, bod
 	return c.Client.Do(req)
 }
 
-func (c *Client) GetKpCusps(ctx context.Context, body GetKpCuspsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetKpCuspsRequest(c.Server, body)
+func (c *Client) GetKpCusps(ctx context.Context, params *GetKpCuspsParams, body GetKpCuspsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetKpCuspsRequest(c.Server, params, body)
 	if err != nil {
 		return nil, err
 	}
@@ -36256,8 +36539,8 @@ func (c *Client) GetKpRasiChanges(ctx context.Context, body GetKpRasiChangesJSON
 	return c.Client.Do(req)
 }
 
-func (c *Client) GetKpRulingPlanetsWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetKpRulingPlanetsRequestWithBody(c.Server, contentType, body)
+func (c *Client) GetKpRulingPlanetsWithBody(ctx context.Context, params *GetKpRulingPlanetsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetKpRulingPlanetsRequestWithBody(c.Server, params, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -36268,8 +36551,8 @@ func (c *Client) GetKpRulingPlanetsWithBody(ctx context.Context, contentType str
 	return c.Client.Do(req)
 }
 
-func (c *Client) GetKpRulingPlanets(ctx context.Context, body GetKpRulingPlanetsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetKpRulingPlanetsRequest(c.Server, body)
+func (c *Client) GetKpRulingPlanets(ctx context.Context, params *GetKpRulingPlanetsParams, body GetKpRulingPlanetsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetKpRulingPlanetsRequest(c.Server, params, body)
 	if err != nil {
 		return nil, err
 	}
@@ -36280,8 +36563,8 @@ func (c *Client) GetKpRulingPlanets(ctx context.Context, body GetKpRulingPlanets
 	return c.Client.Do(req)
 }
 
-func (c *Client) GetKpRulingIntervalWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetKpRulingIntervalRequestWithBody(c.Server, contentType, body)
+func (c *Client) GetKpRulingIntervalWithBody(ctx context.Context, params *GetKpRulingIntervalParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetKpRulingIntervalRequestWithBody(c.Server, params, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -36292,8 +36575,8 @@ func (c *Client) GetKpRulingIntervalWithBody(ctx context.Context, contentType st
 	return c.Client.Do(req)
 }
 
-func (c *Client) GetKpRulingInterval(ctx context.Context, body GetKpRulingIntervalJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetKpRulingIntervalRequest(c.Server, body)
+func (c *Client) GetKpRulingInterval(ctx context.Context, params *GetKpRulingIntervalParams, body GetKpRulingIntervalJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetKpRulingIntervalRequest(c.Server, params, body)
 	if err != nil {
 		return nil, err
 	}
@@ -37671,6 +37954,18 @@ func NewGetDailyHoroscopeRequest(server string, sign GetDailyHoroscopeParamsSign
 
 		}
 
+		if params.Timezone != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "timezone", *params.Timezone, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
 		if encoded := queryValues.Encode(); encoded != "" {
 			rawQueryFragments = append(rawQueryFragments, encoded)
 		}
@@ -37732,6 +38027,30 @@ func NewGetMonthlyHoroscopeRequest(server string, sign GetMonthlyHoroscopeParams
 
 		}
 
+		if params.Date != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "date", *params.Date, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: "date"}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Timezone != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "timezone", *params.Timezone, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
 		if encoded := queryValues.Encode(); encoded != "" {
 			rawQueryFragments = append(rawQueryFragments, encoded)
 		}
@@ -37784,6 +38103,30 @@ func NewGetWeeklyHoroscopeRequest(server string, sign GetWeeklyHoroscopeParamsSi
 		if params.Lang != nil {
 
 			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "lang", *params.Lang, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Date != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "date", *params.Date, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: "date"}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Timezone != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "timezone", *params.Timezone, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
 				return nil, err
 			} else {
 				for _, qp := range strings.Split(queryFrag, "&") {
@@ -38221,7 +38564,7 @@ func NewGetCurrentMoonPhaseRequest(server string, params *GetCurrentMoonPhasePar
 
 		if params.Timezone != nil {
 
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "timezone", *params.Timezone, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "", Format: ""}); err != nil {
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "timezone", *params.Timezone, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
 				return nil, err
 			} else {
 				for _, qp := range strings.Split(queryFrag, "&") {
@@ -46155,6 +46498,30 @@ func NewGetKpAyanamsaRequest(server string, params *GetKpAyanamsaParams) (*http.
 
 		}
 
+		if params.Time != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "time", *params.Time, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: "time"}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Timezone != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "timezone", *params.Timezone, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
 		if encoded := queryValues.Encode(); encoded != "" {
 			rawQueryFragments = append(rawQueryFragments, encoded)
 		}
@@ -46249,18 +46616,18 @@ func NewGenerateKpChartRequestWithBody(server string, params *GenerateKpChartPar
 }
 
 // NewGetKpCuspsRequest calls the generic GetKpCusps builder with application/json body
-func NewGetKpCuspsRequest(server string, body GetKpCuspsJSONRequestBody) (*http.Request, error) {
+func NewGetKpCuspsRequest(server string, params *GetKpCuspsParams, body GetKpCuspsJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewGetKpCuspsRequestWithBody(server, "application/json", bodyReader)
+	return NewGetKpCuspsRequestWithBody(server, params, "application/json", bodyReader)
 }
 
 // NewGetKpCuspsRequestWithBody generates requests for GetKpCusps with any type of body
-func NewGetKpCuspsRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+func NewGetKpCuspsRequestWithBody(server string, params *GetKpCuspsParams, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	serverURL, err := url.Parse(server)
@@ -46276,6 +46643,45 @@ func NewGetKpCuspsRequestWithBody(server string, contentType string, body io.Rea
 	queryURL, err := serverURL.Parse(operationPath)
 	if err != nil {
 		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Lang != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "lang", *params.Lang, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Focus != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "focus", *params.Focus, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
 	}
 
 	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
@@ -46409,18 +46815,18 @@ func NewGetKpRasiChangesRequestWithBody(server string, contentType string, body 
 }
 
 // NewGetKpRulingPlanetsRequest calls the generic GetKpRulingPlanets builder with application/json body
-func NewGetKpRulingPlanetsRequest(server string, body GetKpRulingPlanetsJSONRequestBody) (*http.Request, error) {
+func NewGetKpRulingPlanetsRequest(server string, params *GetKpRulingPlanetsParams, body GetKpRulingPlanetsJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewGetKpRulingPlanetsRequestWithBody(server, "application/json", bodyReader)
+	return NewGetKpRulingPlanetsRequestWithBody(server, params, "application/json", bodyReader)
 }
 
 // NewGetKpRulingPlanetsRequestWithBody generates requests for GetKpRulingPlanets with any type of body
-func NewGetKpRulingPlanetsRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+func NewGetKpRulingPlanetsRequestWithBody(server string, params *GetKpRulingPlanetsParams, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	serverURL, err := url.Parse(server)
@@ -46438,6 +46844,45 @@ func NewGetKpRulingPlanetsRequestWithBody(server string, contentType string, bod
 		return nil, err
 	}
 
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Lang != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "lang", *params.Lang, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Focus != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "focus", *params.Focus, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
 	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
 	if err != nil {
 		return nil, err
@@ -46449,18 +46894,18 @@ func NewGetKpRulingPlanetsRequestWithBody(server string, contentType string, bod
 }
 
 // NewGetKpRulingIntervalRequest calls the generic GetKpRulingInterval builder with application/json body
-func NewGetKpRulingIntervalRequest(server string, body GetKpRulingIntervalJSONRequestBody) (*http.Request, error) {
+func NewGetKpRulingIntervalRequest(server string, params *GetKpRulingIntervalParams, body GetKpRulingIntervalJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewGetKpRulingIntervalRequestWithBody(server, "application/json", bodyReader)
+	return NewGetKpRulingIntervalRequestWithBody(server, params, "application/json", bodyReader)
 }
 
 // NewGetKpRulingIntervalRequestWithBody generates requests for GetKpRulingInterval with any type of body
-func NewGetKpRulingIntervalRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+func NewGetKpRulingIntervalRequestWithBody(server string, params *GetKpRulingIntervalParams, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	serverURL, err := url.Parse(server)
@@ -46476,6 +46921,45 @@ func NewGetKpRulingIntervalRequestWithBody(server string, contentType string, bo
 	queryURL, err := serverURL.Parse(operationPath)
 	if err != nil {
 		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Lang != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "lang", *params.Lang, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Focus != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "focus", *params.Focus, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
 	}
 
 	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
@@ -48234,9 +48718,9 @@ type ClientWithResponsesInterface interface {
 	GenerateKpChartWithResponse(ctx context.Context, params *GenerateKpChartParams, body GenerateKpChartJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateKpChartResponse, error)
 
 	// GetKpCuspsWithBodyWithResponse request with any body
-	GetKpCuspsWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetKpCuspsResponse, error)
+	GetKpCuspsWithBodyWithResponse(ctx context.Context, params *GetKpCuspsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetKpCuspsResponse, error)
 
-	GetKpCuspsWithResponse(ctx context.Context, body GetKpCuspsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetKpCuspsResponse, error)
+	GetKpCuspsWithResponse(ctx context.Context, params *GetKpCuspsParams, body GetKpCuspsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetKpCuspsResponse, error)
 
 	// GetKpPlanetsWithBodyWithResponse request with any body
 	GetKpPlanetsWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetKpPlanetsResponse, error)
@@ -48254,14 +48738,14 @@ type ClientWithResponsesInterface interface {
 	GetKpRasiChangesWithResponse(ctx context.Context, body GetKpRasiChangesJSONRequestBody, reqEditors ...RequestEditorFn) (*GetKpRasiChangesResponse, error)
 
 	// GetKpRulingPlanetsWithBodyWithResponse request with any body
-	GetKpRulingPlanetsWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetKpRulingPlanetsResponse, error)
+	GetKpRulingPlanetsWithBodyWithResponse(ctx context.Context, params *GetKpRulingPlanetsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetKpRulingPlanetsResponse, error)
 
-	GetKpRulingPlanetsWithResponse(ctx context.Context, body GetKpRulingPlanetsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetKpRulingPlanetsResponse, error)
+	GetKpRulingPlanetsWithResponse(ctx context.Context, params *GetKpRulingPlanetsParams, body GetKpRulingPlanetsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetKpRulingPlanetsResponse, error)
 
 	// GetKpRulingIntervalWithBodyWithResponse request with any body
-	GetKpRulingIntervalWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetKpRulingIntervalResponse, error)
+	GetKpRulingIntervalWithBodyWithResponse(ctx context.Context, params *GetKpRulingIntervalParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetKpRulingIntervalResponse, error)
 
-	GetKpRulingIntervalWithResponse(ctx context.Context, body GetKpRulingIntervalJSONRequestBody, reqEditors ...RequestEditorFn) (*GetKpRulingIntervalResponse, error)
+	GetKpRulingIntervalWithResponse(ctx context.Context, params *GetKpRulingIntervalParams, body GetKpRulingIntervalJSONRequestBody, reqEditors ...RequestEditorFn) (*GetKpRulingIntervalResponse, error)
 
 	// GetKpSublordChangesWithBodyWithResponse request with any body
 	GetKpSublordChangesWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetKpSublordChangesResponse, error)
@@ -59525,7 +60009,7 @@ type GetCurrentDashaResponse struct {
 		// Ayanamsa Ayanamsa actually applied, in degrees. The precession offset subtracted from the tropical (sayana) longitude to get the sidereal (nirayana) one. Lahiri sits near 23 deg 43 min for a 1990 birth, KP-Newcomb near 23 deg 38 min.
 		Ayanamsa float32 `json:"ayanamsa"`
 
-		// AyanamsaType Ayanamsa system used, echoing the request field. One of "lahiri", "kp-newcomb", "kp-old". Echoed so a client can confirm which frame produced these dates without re-deriving it.
+		// AyanamsaType Ayanamsa system used, echoing the request field. One of "lahiri", "kp-newcomb", "kp-old" or "custom". Echoed so a client can confirm which frame produced these dates without re-deriving it. When it reads "custom" the ayanamsa field above carries the exact value you supplied.
 		AyanamsaType GetCurrentDasha200JSONResponseBodyAyanamsaType `json:"ayanamsaType"`
 
 		// CommonHouses Houses common to the significators of the running dasha lords. In KP a matter fructifies under lords that jointly signify the houses of that matter, so these two sets are what a prediction is checked against.
@@ -59961,7 +60445,7 @@ type GetMajorDashasResponse struct {
 		// Ayanamsa Ayanamsa actually applied, in degrees. The precession offset subtracted from the tropical (sayana) longitude to get the sidereal (nirayana) one. Lahiri sits near 23 deg 43 min for a 1990 birth, KP-Newcomb near 23 deg 38 min.
 		Ayanamsa float32 `json:"ayanamsa"`
 
-		// AyanamsaType Ayanamsa system used, echoing the request field. One of "lahiri", "kp-newcomb", "kp-old". Echoed so a client can confirm which frame produced these dates without re-deriving it.
+		// AyanamsaType Ayanamsa system used, echoing the request field. One of "lahiri", "kp-newcomb", "kp-old" or "custom". Echoed so a client can confirm which frame produced these dates without re-deriving it. When it reads "custom" the ayanamsa field above carries the exact value you supplied.
 		AyanamsaType GetMajorDashas200JSONResponseBodyAyanamsaType `json:"ayanamsaType"`
 
 		// BirthDashaBalance Remaining balance of the first Mahadasha at birth. Based on Moon degree within the birth nakshatra. partial dasha already elapsed before birth.
@@ -60175,7 +60659,7 @@ type GetSubDashasResponse struct {
 		// Ayanamsa Ayanamsa actually applied, in degrees. The precession offset subtracted from the tropical (sayana) longitude to get the sidereal (nirayana) one. Lahiri sits near 23 deg 43 min for a 1990 birth, KP-Newcomb near 23 deg 38 min.
 		Ayanamsa float32 `json:"ayanamsa"`
 
-		// AyanamsaType Ayanamsa system used, echoing the request field. One of "lahiri", "kp-newcomb", "kp-old". Echoed so a client can confirm which frame produced these dates without re-deriving it.
+		// AyanamsaType Ayanamsa system used, echoing the request field. One of "lahiri", "kp-newcomb", "kp-old" or "custom". Echoed so a client can confirm which frame produced these dates without re-deriving it. When it reads "custom" the ayanamsa field above carries the exact value you supplied.
 		AyanamsaType GetSubDashas200JSONResponseBodyAyanamsaType `json:"ayanamsaType"`
 
 		// HouseThemes Significations of each of the twelve bhavas (houses), keyed by house number 1 to 12, as short keywords. Bhava 1 is the Lagna (self, body, vitality), 2 wealth and speech, 4 home and mother, 7 marriage and partnership, 10 career and status, 11 gains. Use it to label the house numbers returned elsewhere in the response: a Vimshottari dasha period signifying houses 2, 7 and 8, or a KP significator carrying houses 11 and 6, becomes readable text without a separate lookup call. Returned once per response rather than repeated per period, and localized by the lang query parameter alongside every other interpretation field.
@@ -60368,7 +60852,7 @@ type GetPratyantardashasResponse struct {
 		// Ayanamsa Ayanamsa actually applied, in degrees. The precession offset subtracted from the tropical (sayana) longitude to get the sidereal (nirayana) one. Lahiri sits near 23 deg 43 min for a 1990 birth, KP-Newcomb near 23 deg 38 min.
 		Ayanamsa float32 `json:"ayanamsa"`
 
-		// AyanamsaType Ayanamsa system used, echoing the request field. One of "lahiri", "kp-newcomb", "kp-old". Echoed so a client can confirm which frame produced these dates without re-deriving it.
+		// AyanamsaType Ayanamsa system used, echoing the request field. One of "lahiri", "kp-newcomb", "kp-old" or "custom". Echoed so a client can confirm which frame produced these dates without re-deriving it. When it reads "custom" the ayanamsa field above carries the exact value you supplied.
 		AyanamsaType GetPratyantardashas200JSONResponseBodyAyanamsaType `json:"ayanamsaType"`
 
 		// HouseThemes Significations of each of the twelve bhavas (houses), keyed by house number 1 to 12, as short keywords. Bhava 1 is the Lagna (self, body, vitality), 2 wealth and speech, 4 home and mother, 7 marriage and partnership, 10 career and status, 11 gains. Use it to label the house numbers returned elsewhere in the response: a Vimshottari dasha period signifying houses 2, 7 and 8, or a KP significator carrying houses 11 and 6, becomes readable text without a separate lookup call. Returned once per response rather than repeated per period, and localized by the lang query parameter alongside every other interpretation field.
@@ -60498,7 +60982,7 @@ type GetSookshmaDashasResponse struct {
 		// Ayanamsa Ayanamsa actually applied, in degrees. The precession offset subtracted from the tropical (sayana) longitude to get the sidereal (nirayana) one. Lahiri sits near 23 deg 43 min for a 1990 birth, KP-Newcomb near 23 deg 38 min.
 		Ayanamsa float32 `json:"ayanamsa"`
 
-		// AyanamsaType Ayanamsa system used, echoing the request field. One of "lahiri", "kp-newcomb", "kp-old". Echoed so a client can confirm which frame produced these dates without re-deriving it.
+		// AyanamsaType Ayanamsa system used, echoing the request field. One of "lahiri", "kp-newcomb", "kp-old" or "custom". Echoed so a client can confirm which frame produced these dates without re-deriving it. When it reads "custom" the ayanamsa field above carries the exact value you supplied.
 		AyanamsaType GetSookshmaDashas200JSONResponseBodyAyanamsaType `json:"ayanamsaType"`
 
 		// HouseThemes Significations of each of the twelve bhavas (houses), keyed by house number 1 to 12, as short keywords. Bhava 1 is the Lagna (self, body, vitality), 2 wealth and speech, 4 home and mother, 7 marriage and partnership, 10 career and status, 11 gains. Use it to label the house numbers returned elsewhere in the response: a Vimshottari dasha period signifying houses 2, 7 and 8, or a KP significator carrying houses 11 and 6, becomes readable text without a separate lookup call. Returned once per response rather than repeated per period, and localized by the lang query parameter alongside every other interpretation field.
@@ -60706,7 +61190,7 @@ type GetPranaDashasResponse struct {
 		// Ayanamsa Ayanamsa actually applied, in degrees. The precession offset subtracted from the tropical (sayana) longitude to get the sidereal (nirayana) one. Lahiri sits near 23 deg 43 min for a 1990 birth, KP-Newcomb near 23 deg 38 min.
 		Ayanamsa float32 `json:"ayanamsa"`
 
-		// AyanamsaType Ayanamsa system used, echoing the request field. One of "lahiri", "kp-newcomb", "kp-old". Echoed so a client can confirm which frame produced these dates without re-deriving it.
+		// AyanamsaType Ayanamsa system used, echoing the request field. One of "lahiri", "kp-newcomb", "kp-old" or "custom". Echoed so a client can confirm which frame produced these dates without re-deriving it. When it reads "custom" the ayanamsa field above carries the exact value you supplied.
 		AyanamsaType GetPranaDashas200JSONResponseBodyAyanamsaType `json:"ayanamsaType"`
 
 		// HouseThemes Significations of each of the twelve bhavas (houses), keyed by house number 1 to 12, as short keywords. Bhava 1 is the Lagna (self, body, vitality), 2 wealth and speech, 4 home and mother, 7 marriage and partnership, 10 career and status, 11 gains. Use it to label the house numbers returned elsewhere in the response: a Vimshottari dasha period signifying houses 2, 7 and 8, or a KP significator carrying houses 11 and 6, becomes readable text without a separate lookup call. Returned once per response rather than repeated per period, and localized by the lang query parameter alongside every other interpretation field.
@@ -65109,16 +65593,16 @@ func (c *ClientWithResponses) GenerateKpChartWithResponse(ctx context.Context, p
 }
 
 // GetKpCuspsWithBodyWithResponse request with arbitrary body returning *GetKpCuspsResponse
-func (c *ClientWithResponses) GetKpCuspsWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetKpCuspsResponse, error) {
-	rsp, err := c.GetKpCuspsWithBody(ctx, contentType, body, reqEditors...)
+func (c *ClientWithResponses) GetKpCuspsWithBodyWithResponse(ctx context.Context, params *GetKpCuspsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetKpCuspsResponse, error) {
+	rsp, err := c.GetKpCuspsWithBody(ctx, params, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
 	return ParseGetKpCuspsResponse(rsp)
 }
 
-func (c *ClientWithResponses) GetKpCuspsWithResponse(ctx context.Context, body GetKpCuspsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetKpCuspsResponse, error) {
-	rsp, err := c.GetKpCusps(ctx, body, reqEditors...)
+func (c *ClientWithResponses) GetKpCuspsWithResponse(ctx context.Context, params *GetKpCuspsParams, body GetKpCuspsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetKpCuspsResponse, error) {
+	rsp, err := c.GetKpCusps(ctx, params, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -65177,16 +65661,16 @@ func (c *ClientWithResponses) GetKpRasiChangesWithResponse(ctx context.Context, 
 }
 
 // GetKpRulingPlanetsWithBodyWithResponse request with arbitrary body returning *GetKpRulingPlanetsResponse
-func (c *ClientWithResponses) GetKpRulingPlanetsWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetKpRulingPlanetsResponse, error) {
-	rsp, err := c.GetKpRulingPlanetsWithBody(ctx, contentType, body, reqEditors...)
+func (c *ClientWithResponses) GetKpRulingPlanetsWithBodyWithResponse(ctx context.Context, params *GetKpRulingPlanetsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetKpRulingPlanetsResponse, error) {
+	rsp, err := c.GetKpRulingPlanetsWithBody(ctx, params, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
 	return ParseGetKpRulingPlanetsResponse(rsp)
 }
 
-func (c *ClientWithResponses) GetKpRulingPlanetsWithResponse(ctx context.Context, body GetKpRulingPlanetsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetKpRulingPlanetsResponse, error) {
-	rsp, err := c.GetKpRulingPlanets(ctx, body, reqEditors...)
+func (c *ClientWithResponses) GetKpRulingPlanetsWithResponse(ctx context.Context, params *GetKpRulingPlanetsParams, body GetKpRulingPlanetsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetKpRulingPlanetsResponse, error) {
+	rsp, err := c.GetKpRulingPlanets(ctx, params, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -65194,16 +65678,16 @@ func (c *ClientWithResponses) GetKpRulingPlanetsWithResponse(ctx context.Context
 }
 
 // GetKpRulingIntervalWithBodyWithResponse request with arbitrary body returning *GetKpRulingIntervalResponse
-func (c *ClientWithResponses) GetKpRulingIntervalWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetKpRulingIntervalResponse, error) {
-	rsp, err := c.GetKpRulingIntervalWithBody(ctx, contentType, body, reqEditors...)
+func (c *ClientWithResponses) GetKpRulingIntervalWithBodyWithResponse(ctx context.Context, params *GetKpRulingIntervalParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetKpRulingIntervalResponse, error) {
+	rsp, err := c.GetKpRulingIntervalWithBody(ctx, params, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
 	return ParseGetKpRulingIntervalResponse(rsp)
 }
 
-func (c *ClientWithResponses) GetKpRulingIntervalWithResponse(ctx context.Context, body GetKpRulingIntervalJSONRequestBody, reqEditors ...RequestEditorFn) (*GetKpRulingIntervalResponse, error) {
-	rsp, err := c.GetKpRulingInterval(ctx, body, reqEditors...)
+func (c *ClientWithResponses) GetKpRulingIntervalWithResponse(ctx context.Context, params *GetKpRulingIntervalParams, body GetKpRulingIntervalJSONRequestBody, reqEditors ...RequestEditorFn) (*GetKpRulingIntervalResponse, error) {
+	rsp, err := c.GetKpRulingInterval(ctx, params, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -79540,7 +80024,7 @@ func ParseGetCurrentDashaResponse(rsp *http.Response) (*GetCurrentDashaResponse,
 			// Ayanamsa Ayanamsa actually applied, in degrees. The precession offset subtracted from the tropical (sayana) longitude to get the sidereal (nirayana) one. Lahiri sits near 23 deg 43 min for a 1990 birth, KP-Newcomb near 23 deg 38 min.
 			Ayanamsa float32 `json:"ayanamsa"`
 
-			// AyanamsaType Ayanamsa system used, echoing the request field. One of "lahiri", "kp-newcomb", "kp-old". Echoed so a client can confirm which frame produced these dates without re-deriving it.
+			// AyanamsaType Ayanamsa system used, echoing the request field. One of "lahiri", "kp-newcomb", "kp-old" or "custom". Echoed so a client can confirm which frame produced these dates without re-deriving it. When it reads "custom" the ayanamsa field above carries the exact value you supplied.
 			AyanamsaType GetCurrentDasha200JSONResponseBodyAyanamsaType `json:"ayanamsaType"`
 
 			// CommonHouses Houses common to the significators of the running dasha lords. In KP a matter fructifies under lords that jointly signify the houses of that matter, so these two sets are what a prediction is checked against.
@@ -79997,7 +80481,7 @@ func ParseGetMajorDashasResponse(rsp *http.Response) (*GetMajorDashasResponse, e
 			// Ayanamsa Ayanamsa actually applied, in degrees. The precession offset subtracted from the tropical (sayana) longitude to get the sidereal (nirayana) one. Lahiri sits near 23 deg 43 min for a 1990 birth, KP-Newcomb near 23 deg 38 min.
 			Ayanamsa float32 `json:"ayanamsa"`
 
-			// AyanamsaType Ayanamsa system used, echoing the request field. One of "lahiri", "kp-newcomb", "kp-old". Echoed so a client can confirm which frame produced these dates without re-deriving it.
+			// AyanamsaType Ayanamsa system used, echoing the request field. One of "lahiri", "kp-newcomb", "kp-old" or "custom". Echoed so a client can confirm which frame produced these dates without re-deriving it. When it reads "custom" the ayanamsa field above carries the exact value you supplied.
 			AyanamsaType GetMajorDashas200JSONResponseBodyAyanamsaType `json:"ayanamsaType"`
 
 			// BirthDashaBalance Remaining balance of the first Mahadasha at birth. Based on Moon degree within the birth nakshatra. partial dasha already elapsed before birth.
@@ -80232,7 +80716,7 @@ func ParseGetSubDashasResponse(rsp *http.Response) (*GetSubDashasResponse, error
 			// Ayanamsa Ayanamsa actually applied, in degrees. The precession offset subtracted from the tropical (sayana) longitude to get the sidereal (nirayana) one. Lahiri sits near 23 deg 43 min for a 1990 birth, KP-Newcomb near 23 deg 38 min.
 			Ayanamsa float32 `json:"ayanamsa"`
 
-			// AyanamsaType Ayanamsa system used, echoing the request field. One of "lahiri", "kp-newcomb", "kp-old". Echoed so a client can confirm which frame produced these dates without re-deriving it.
+			// AyanamsaType Ayanamsa system used, echoing the request field. One of "lahiri", "kp-newcomb", "kp-old" or "custom". Echoed so a client can confirm which frame produced these dates without re-deriving it. When it reads "custom" the ayanamsa field above carries the exact value you supplied.
 			AyanamsaType GetSubDashas200JSONResponseBodyAyanamsaType `json:"ayanamsaType"`
 
 			// HouseThemes Significations of each of the twelve bhavas (houses), keyed by house number 1 to 12, as short keywords. Bhava 1 is the Lagna (self, body, vitality), 2 wealth and speech, 4 home and mother, 7 marriage and partnership, 10 career and status, 11 gains. Use it to label the house numbers returned elsewhere in the response: a Vimshottari dasha period signifying houses 2, 7 and 8, or a KP significator carrying houses 11 and 6, becomes readable text without a separate lookup call. Returned once per response rather than repeated per period, and localized by the lang query parameter alongside every other interpretation field.
@@ -80446,7 +80930,7 @@ func ParseGetPratyantardashasResponse(rsp *http.Response) (*GetPratyantardashasR
 			// Ayanamsa Ayanamsa actually applied, in degrees. The precession offset subtracted from the tropical (sayana) longitude to get the sidereal (nirayana) one. Lahiri sits near 23 deg 43 min for a 1990 birth, KP-Newcomb near 23 deg 38 min.
 			Ayanamsa float32 `json:"ayanamsa"`
 
-			// AyanamsaType Ayanamsa system used, echoing the request field. One of "lahiri", "kp-newcomb", "kp-old". Echoed so a client can confirm which frame produced these dates without re-deriving it.
+			// AyanamsaType Ayanamsa system used, echoing the request field. One of "lahiri", "kp-newcomb", "kp-old" or "custom". Echoed so a client can confirm which frame produced these dates without re-deriving it. When it reads "custom" the ayanamsa field above carries the exact value you supplied.
 			AyanamsaType GetPratyantardashas200JSONResponseBodyAyanamsaType `json:"ayanamsaType"`
 
 			// HouseThemes Significations of each of the twelve bhavas (houses), keyed by house number 1 to 12, as short keywords. Bhava 1 is the Lagna (self, body, vitality), 2 wealth and speech, 4 home and mother, 7 marriage and partnership, 10 career and status, 11 gains. Use it to label the house numbers returned elsewhere in the response: a Vimshottari dasha period signifying houses 2, 7 and 8, or a KP significator carrying houses 11 and 6, becomes readable text without a separate lookup call. Returned once per response rather than repeated per period, and localized by the lang query parameter alongside every other interpretation field.
@@ -80597,7 +81081,7 @@ func ParseGetSookshmaDashasResponse(rsp *http.Response) (*GetSookshmaDashasRespo
 			// Ayanamsa Ayanamsa actually applied, in degrees. The precession offset subtracted from the tropical (sayana) longitude to get the sidereal (nirayana) one. Lahiri sits near 23 deg 43 min for a 1990 birth, KP-Newcomb near 23 deg 38 min.
 			Ayanamsa float32 `json:"ayanamsa"`
 
-			// AyanamsaType Ayanamsa system used, echoing the request field. One of "lahiri", "kp-newcomb", "kp-old". Echoed so a client can confirm which frame produced these dates without re-deriving it.
+			// AyanamsaType Ayanamsa system used, echoing the request field. One of "lahiri", "kp-newcomb", "kp-old" or "custom". Echoed so a client can confirm which frame produced these dates without re-deriving it. When it reads "custom" the ayanamsa field above carries the exact value you supplied.
 			AyanamsaType GetSookshmaDashas200JSONResponseBodyAyanamsaType `json:"ayanamsaType"`
 
 			// HouseThemes Significations of each of the twelve bhavas (houses), keyed by house number 1 to 12, as short keywords. Bhava 1 is the Lagna (self, body, vitality), 2 wealth and speech, 4 home and mother, 7 marriage and partnership, 10 career and status, 11 gains. Use it to label the house numbers returned elsewhere in the response: a Vimshottari dasha period signifying houses 2, 7 and 8, or a KP significator carrying houses 11 and 6, becomes readable text without a separate lookup call. Returned once per response rather than repeated per period, and localized by the lang query parameter alongside every other interpretation field.
@@ -80826,7 +81310,7 @@ func ParseGetPranaDashasResponse(rsp *http.Response) (*GetPranaDashasResponse, e
 			// Ayanamsa Ayanamsa actually applied, in degrees. The precession offset subtracted from the tropical (sayana) longitude to get the sidereal (nirayana) one. Lahiri sits near 23 deg 43 min for a 1990 birth, KP-Newcomb near 23 deg 38 min.
 			Ayanamsa float32 `json:"ayanamsa"`
 
-			// AyanamsaType Ayanamsa system used, echoing the request field. One of "lahiri", "kp-newcomb", "kp-old". Echoed so a client can confirm which frame produced these dates without re-deriving it.
+			// AyanamsaType Ayanamsa system used, echoing the request field. One of "lahiri", "kp-newcomb", "kp-old" or "custom". Echoed so a client can confirm which frame produced these dates without re-deriving it. When it reads "custom" the ayanamsa field above carries the exact value you supplied.
 			AyanamsaType GetPranaDashas200JSONResponseBodyAyanamsaType `json:"ayanamsaType"`
 
 			// HouseThemes Significations of each of the twelve bhavas (houses), keyed by house number 1 to 12, as short keywords. Bhava 1 is the Lagna (self, body, vitality), 2 wealth and speech, 4 home and mother, 7 marriage and partnership, 10 career and status, 11 gains. Use it to label the house numbers returned elsewhere in the response: a Vimshottari dasha period signifying houses 2, 7 and 8, or a KP significator carrying houses 11 and 6, becomes readable text without a separate lookup call. Returned once per response rather than repeated per period, and localized by the lang query parameter alongside every other interpretation field.
