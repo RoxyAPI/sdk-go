@@ -2014,6 +2014,33 @@ func (e BirthChartResponseVirgoSignsNakshatraLord) Valid() bool {
 	}
 }
 
+// Defines values for BirthChartResponseYogasFamily.
+const (
+	BirthChartResponseYogasFamilyAkriti    BirthChartResponseYogasFamily = "akriti"
+	BirthChartResponseYogasFamilyAsraya    BirthChartResponseYogasFamily = "asraya"
+	BirthChartResponseYogasFamilyClassical BirthChartResponseYogasFamily = "classical"
+	BirthChartResponseYogasFamilyDala      BirthChartResponseYogasFamily = "dala"
+	BirthChartResponseYogasFamilySankhya   BirthChartResponseYogasFamily = "sankhya"
+)
+
+// Valid indicates whether the value is a known member of the BirthChartResponseYogasFamily enum.
+func (e BirthChartResponseYogasFamily) Valid() bool {
+	switch e {
+	case BirthChartResponseYogasFamilyAkriti:
+		return true
+	case BirthChartResponseYogasFamilyAsraya:
+		return true
+	case BirthChartResponseYogasFamilyClassical:
+		return true
+	case BirthChartResponseYogasFamilyDala:
+		return true
+	case BirthChartResponseYogasFamilySankhya:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for BirthChartResponseYogasQuality.
 const (
 	BirthChartResponseYogasQualityBoth     BirthChartResponseYogasQuality = "Both"
@@ -2029,6 +2056,33 @@ func (e BirthChartResponseYogasQuality) Valid() bool {
 	case BirthChartResponseYogasQualityNegative:
 		return true
 	case BirthChartResponseYogasQualityPositive:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for BirthChartResponseYogasSuppressedBy.
+const (
+	BirthChartResponseYogasSuppressedByAkriti    BirthChartResponseYogasSuppressedBy = "akriti"
+	BirthChartResponseYogasSuppressedByAsraya    BirthChartResponseYogasSuppressedBy = "asraya"
+	BirthChartResponseYogasSuppressedByClassical BirthChartResponseYogasSuppressedBy = "classical"
+	BirthChartResponseYogasSuppressedByDala      BirthChartResponseYogasSuppressedBy = "dala"
+	BirthChartResponseYogasSuppressedBySankhya   BirthChartResponseYogasSuppressedBy = "sankhya"
+)
+
+// Valid indicates whether the value is a known member of the BirthChartResponseYogasSuppressedBy enum.
+func (e BirthChartResponseYogasSuppressedBy) Valid() bool {
+	switch e {
+	case BirthChartResponseYogasSuppressedByAkriti:
+		return true
+	case BirthChartResponseYogasSuppressedByAsraya:
+		return true
+	case BirthChartResponseYogasSuppressedByClassical:
+		return true
+	case BirthChartResponseYogasSuppressedByDala:
+		return true
+	case BirthChartResponseYogasSuppressedBySankhya:
 		return true
 	default:
 		return false
@@ -2275,6 +2329,24 @@ func (e KPChartRequestNodeType) Valid() bool {
 	}
 }
 
+// Defines values for KPChartResponseFocus.
+const (
+	KPChartResponseFocusFinance KPChartResponseFocus = "finance"
+	KPChartResponseFocusGeneral KPChartResponseFocus = "general"
+)
+
+// Valid indicates whether the value is a known member of the KPChartResponseFocus enum.
+func (e KPChartResponseFocus) Valid() bool {
+	switch e {
+	case KPChartResponseFocusFinance:
+		return true
+	case KPChartResponseFocusGeneral:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for KPCuspsRequestAyanamsa.
 const (
 	KPCuspsRequestAyanamsaCustom    KPCuspsRequestAyanamsa = "custom"
@@ -2293,6 +2365,24 @@ func (e KPCuspsRequestAyanamsa) Valid() bool {
 	case KPCuspsRequestAyanamsaKpOld:
 		return true
 	case KPCuspsRequestAyanamsaLahiri:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for KPCuspsResponseFocus.
+const (
+	KPCuspsResponseFocusFinance KPCuspsResponseFocus = "finance"
+	KPCuspsResponseFocusGeneral KPCuspsResponseFocus = "general"
+)
+
+// Valid indicates whether the value is a known member of the KPCuspsResponseFocus enum.
+func (e KPCuspsResponseFocus) Valid() bool {
+	switch e {
+	case KPCuspsResponseFocusFinance:
+		return true
+	case KPCuspsResponseFocusGeneral:
 		return true
 	default:
 		return false
@@ -2413,6 +2503,42 @@ func (e KPRasiChangesRequestNodeType) Valid() bool {
 	case KPRasiChangesRequestNodeTypeMean:
 		return true
 	case KPRasiChangesRequestNodeTypeTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for KPRulingPlanetsIntervalResponseFocus.
+const (
+	KPRulingPlanetsIntervalResponseFocusFinance KPRulingPlanetsIntervalResponseFocus = "finance"
+	KPRulingPlanetsIntervalResponseFocusGeneral KPRulingPlanetsIntervalResponseFocus = "general"
+)
+
+// Valid indicates whether the value is a known member of the KPRulingPlanetsIntervalResponseFocus enum.
+func (e KPRulingPlanetsIntervalResponseFocus) Valid() bool {
+	switch e {
+	case KPRulingPlanetsIntervalResponseFocusFinance:
+		return true
+	case KPRulingPlanetsIntervalResponseFocusGeneral:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for KPRulingPlanetsResponseFocus.
+const (
+	KPRulingPlanetsResponseFocusFinance KPRulingPlanetsResponseFocus = "finance"
+	KPRulingPlanetsResponseFocusGeneral KPRulingPlanetsResponseFocus = "general"
+)
+
+// Valid indicates whether the value is a known member of the KPRulingPlanetsResponseFocus enum.
+func (e KPRulingPlanetsResponseFocus) Valid() bool {
+	switch e {
+	case KPRulingPlanetsResponseFocusFinance:
+		return true
+	case KPRulingPlanetsResponseFocusGeneral:
 		return true
 	default:
 		return false
@@ -2896,6 +3022,33 @@ func (e SadhesatiResponseSeverity) Valid() bool {
 	}
 }
 
+// Defines values for YogaDetailFamily.
+const (
+	YogaDetailFamilyAkriti    YogaDetailFamily = "akriti"
+	YogaDetailFamilyAsraya    YogaDetailFamily = "asraya"
+	YogaDetailFamilyClassical YogaDetailFamily = "classical"
+	YogaDetailFamilyDala      YogaDetailFamily = "dala"
+	YogaDetailFamilySankhya   YogaDetailFamily = "sankhya"
+)
+
+// Valid indicates whether the value is a known member of the YogaDetailFamily enum.
+func (e YogaDetailFamily) Valid() bool {
+	switch e {
+	case YogaDetailFamilyAkriti:
+		return true
+	case YogaDetailFamilyAsraya:
+		return true
+	case YogaDetailFamilyClassical:
+		return true
+	case YogaDetailFamilyDala:
+		return true
+	case YogaDetailFamilySankhya:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for YogaDetailQuality.
 const (
 	YogaDetailQualityBoth     YogaDetailQuality = "Both"
@@ -2917,6 +3070,33 @@ func (e YogaDetailQuality) Valid() bool {
 	}
 }
 
+// Defines values for YogaDetectResponseYogasFamily.
+const (
+	YogaDetectResponseYogasFamilyAkriti    YogaDetectResponseYogasFamily = "akriti"
+	YogaDetectResponseYogasFamilyAsraya    YogaDetectResponseYogasFamily = "asraya"
+	YogaDetectResponseYogasFamilyClassical YogaDetectResponseYogasFamily = "classical"
+	YogaDetectResponseYogasFamilyDala      YogaDetectResponseYogasFamily = "dala"
+	YogaDetectResponseYogasFamilySankhya   YogaDetectResponseYogasFamily = "sankhya"
+)
+
+// Valid indicates whether the value is a known member of the YogaDetectResponseYogasFamily enum.
+func (e YogaDetectResponseYogasFamily) Valid() bool {
+	switch e {
+	case YogaDetectResponseYogasFamilyAkriti:
+		return true
+	case YogaDetectResponseYogasFamilyAsraya:
+		return true
+	case YogaDetectResponseYogasFamilyClassical:
+		return true
+	case YogaDetectResponseYogasFamilyDala:
+		return true
+	case YogaDetectResponseYogasFamilySankhya:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for YogaDetectResponseYogasQuality.
 const (
 	Both     YogaDetectResponseYogasQuality = "Both"
@@ -2932,6 +3112,33 @@ func (e YogaDetectResponseYogasQuality) Valid() bool {
 	case Negative:
 		return true
 	case Positive:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for YogaDetectResponseYogasSuppressedBy.
+const (
+	YogaDetectResponseYogasSuppressedByAkriti    YogaDetectResponseYogasSuppressedBy = "akriti"
+	YogaDetectResponseYogasSuppressedByAsraya    YogaDetectResponseYogasSuppressedBy = "asraya"
+	YogaDetectResponseYogasSuppressedByClassical YogaDetectResponseYogasSuppressedBy = "classical"
+	YogaDetectResponseYogasSuppressedByDala      YogaDetectResponseYogasSuppressedBy = "dala"
+	YogaDetectResponseYogasSuppressedBySankhya   YogaDetectResponseYogasSuppressedBy = "sankhya"
+)
+
+// Valid indicates whether the value is a known member of the YogaDetectResponseYogasSuppressedBy enum.
+func (e YogaDetectResponseYogasSuppressedBy) Valid() bool {
+	switch e {
+	case YogaDetectResponseYogasSuppressedByAkriti:
+		return true
+	case YogaDetectResponseYogasSuppressedByAsraya:
+		return true
+	case YogaDetectResponseYogasSuppressedByClassical:
+		return true
+	case YogaDetectResponseYogasSuppressedByDala:
+		return true
+	case YogaDetectResponseYogasSuppressedBySankhya:
 		return true
 	default:
 		return false
@@ -11428,6 +11635,24 @@ func (e GetCurrentDasha200JSONResponseBodyAyanamsaType) Valid() bool {
 	}
 }
 
+// Defines values for GetCurrentDasha200JSONResponseBodyFocus.
+const (
+	GetCurrentDasha200JSONResponseBodyFocusFinance GetCurrentDasha200JSONResponseBodyFocus = "finance"
+	GetCurrentDasha200JSONResponseBodyFocusGeneral GetCurrentDasha200JSONResponseBodyFocus = "general"
+)
+
+// Valid indicates whether the value is a known member of the GetCurrentDasha200JSONResponseBodyFocus enum.
+func (e GetCurrentDasha200JSONResponseBodyFocus) Valid() bool {
+	switch e {
+	case GetCurrentDasha200JSONResponseBodyFocusFinance:
+		return true
+	case GetCurrentDasha200JSONResponseBodyFocusGeneral:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for GetCurrentDasha200JSONResponseBodyMahadashaPlanet.
 const (
 	GetCurrentDasha200JSONResponseBodyMahadashaPlanetJupiter GetCurrentDasha200JSONResponseBodyMahadashaPlanet = "Jupiter"
@@ -12286,6 +12511,24 @@ func (e GetMajorDashas200JSONResponseBodyAyanamsaType) Valid() bool {
 	}
 }
 
+// Defines values for GetMajorDashas200JSONResponseBodyFocus.
+const (
+	GetMajorDashas200JSONResponseBodyFocusFinance GetMajorDashas200JSONResponseBodyFocus = "finance"
+	GetMajorDashas200JSONResponseBodyFocusGeneral GetMajorDashas200JSONResponseBodyFocus = "general"
+)
+
+// Valid indicates whether the value is a known member of the GetMajorDashas200JSONResponseBodyFocus enum.
+func (e GetMajorDashas200JSONResponseBodyFocus) Valid() bool {
+	switch e {
+	case GetMajorDashas200JSONResponseBodyFocusFinance:
+		return true
+	case GetMajorDashas200JSONResponseBodyFocusGeneral:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for GetMajorDashas200JSONResponseBodyMahadashasPlanet.
 const (
 	GetMajorDashas200JSONResponseBodyMahadashasPlanetJupiter GetMajorDashas200JSONResponseBodyMahadashasPlanet = "Jupiter"
@@ -12691,6 +12934,24 @@ func (e GetSubDashas200JSONResponseBodyAyanamsaType) Valid() bool {
 	case GetSubDashas200JSONResponseBodyAyanamsaTypeKpOld:
 		return true
 	case GetSubDashas200JSONResponseBodyAyanamsaTypeLahiri:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetSubDashas200JSONResponseBodyFocus.
+const (
+	GetSubDashas200JSONResponseBodyFocusFinance GetSubDashas200JSONResponseBodyFocus = "finance"
+	GetSubDashas200JSONResponseBodyFocusGeneral GetSubDashas200JSONResponseBodyFocus = "general"
+)
+
+// Valid indicates whether the value is a known member of the GetSubDashas200JSONResponseBodyFocus enum.
+func (e GetSubDashas200JSONResponseBodyFocus) Valid() bool {
+	switch e {
+	case GetSubDashas200JSONResponseBodyFocusFinance:
+		return true
+	case GetSubDashas200JSONResponseBodyFocusGeneral:
 		return true
 	default:
 		return false
@@ -13186,6 +13447,24 @@ func (e GetPratyantardashas200JSONResponseBodyAyanamsaType) Valid() bool {
 	}
 }
 
+// Defines values for GetPratyantardashas200JSONResponseBodyFocus.
+const (
+	GetPratyantardashas200JSONResponseBodyFocusFinance GetPratyantardashas200JSONResponseBodyFocus = "finance"
+	GetPratyantardashas200JSONResponseBodyFocusGeneral GetPratyantardashas200JSONResponseBodyFocus = "general"
+)
+
+// Valid indicates whether the value is a known member of the GetPratyantardashas200JSONResponseBodyFocus enum.
+func (e GetPratyantardashas200JSONResponseBodyFocus) Valid() bool {
+	switch e {
+	case GetPratyantardashas200JSONResponseBodyFocusFinance:
+		return true
+	case GetPratyantardashas200JSONResponseBodyFocusGeneral:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for GetPratyantardashas200JSONResponseBodyMahadashaLord.
 const (
 	GetPratyantardashas200JSONResponseBodyMahadashaLordJupiter GetPratyantardashas200JSONResponseBodyMahadashaLord = "Jupiter"
@@ -13660,6 +13939,24 @@ func (e GetSookshmaDashas200JSONResponseBodyAyanamsaType) Valid() bool {
 	case GetSookshmaDashas200JSONResponseBodyAyanamsaTypeKpOld:
 		return true
 	case GetSookshmaDashas200JSONResponseBodyAyanamsaTypeLahiri:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetSookshmaDashas200JSONResponseBodyFocus.
+const (
+	GetSookshmaDashas200JSONResponseBodyFocusFinance GetSookshmaDashas200JSONResponseBodyFocus = "finance"
+	GetSookshmaDashas200JSONResponseBodyFocusGeneral GetSookshmaDashas200JSONResponseBodyFocus = "general"
+)
+
+// Valid indicates whether the value is a known member of the GetSookshmaDashas200JSONResponseBodyFocus enum.
+func (e GetSookshmaDashas200JSONResponseBodyFocus) Valid() bool {
+	switch e {
+	case GetSookshmaDashas200JSONResponseBodyFocusFinance:
+		return true
+	case GetSookshmaDashas200JSONResponseBodyFocusGeneral:
 		return true
 	default:
 		return false
@@ -14422,6 +14719,24 @@ func (e GetPranaDashas200JSONResponseBodyAyanamsaType) Valid() bool {
 	case GetPranaDashas200JSONResponseBodyAyanamsaTypeKpOld:
 		return true
 	case GetPranaDashas200JSONResponseBodyAyanamsaTypeLahiri:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetPranaDashas200JSONResponseBodyFocus.
+const (
+	GetPranaDashas200JSONResponseBodyFocusFinance GetPranaDashas200JSONResponseBodyFocus = "finance"
+	GetPranaDashas200JSONResponseBodyFocusGeneral GetPranaDashas200JSONResponseBodyFocus = "general"
+)
+
+// Valid indicates whether the value is a known member of the GetPranaDashas200JSONResponseBodyFocus enum.
+func (e GetPranaDashas200JSONResponseBodyFocus) Valid() bool {
+	switch e {
+	case GetPranaDashas200JSONResponseBodyFocusFinance:
+		return true
+	case GetPranaDashas200JSONResponseBodyFocusGeneral:
 		return true
 	default:
 		return false
@@ -16024,6 +16339,60 @@ func (e ListYogasParamsLang) Valid() bool {
 	case ListYogasParamsLangRu:
 		return true
 	case ListYogasParamsLangTr:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ListYogasParamsFamily.
+const (
+	ListYogasParamsFamilyAkriti    ListYogasParamsFamily = "akriti"
+	ListYogasParamsFamilyAsraya    ListYogasParamsFamily = "asraya"
+	ListYogasParamsFamilyClassical ListYogasParamsFamily = "classical"
+	ListYogasParamsFamilyDala      ListYogasParamsFamily = "dala"
+	ListYogasParamsFamilySankhya   ListYogasParamsFamily = "sankhya"
+)
+
+// Valid indicates whether the value is a known member of the ListYogasParamsFamily enum.
+func (e ListYogasParamsFamily) Valid() bool {
+	switch e {
+	case ListYogasParamsFamilyAkriti:
+		return true
+	case ListYogasParamsFamilyAsraya:
+		return true
+	case ListYogasParamsFamilyClassical:
+		return true
+	case ListYogasParamsFamilyDala:
+		return true
+	case ListYogasParamsFamilySankhya:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ListYogas200JSONResponseBodyYogasFamily.
+const (
+	Akriti    ListYogas200JSONResponseBodyYogasFamily = "akriti"
+	Asraya    ListYogas200JSONResponseBodyYogasFamily = "asraya"
+	Classical ListYogas200JSONResponseBodyYogasFamily = "classical"
+	Dala      ListYogas200JSONResponseBodyYogasFamily = "dala"
+	Sankhya   ListYogas200JSONResponseBodyYogasFamily = "sankhya"
+)
+
+// Valid indicates whether the value is a known member of the ListYogas200JSONResponseBodyYogasFamily enum.
+func (e ListYogas200JSONResponseBodyYogasFamily) Valid() bool {
+	switch e {
+	case Akriti:
+		return true
+	case Asraya:
+		return true
+	case Classical:
+		return true
+	case Dala:
+		return true
+	case Sankhya:
 		return true
 	default:
 		return false
@@ -17805,6 +18174,9 @@ type BasicTrigram struct {
 
 // BirthChartRequest defines model for BirthChartRequest.
 type BirthChartRequest struct {
+	// AvasthaInfo Set true to include a localized meaning and one-sentence classical interpretation beside each graha avastha state, under avasthaInfo on that graha in meta. Defaults to false, so an existing integration is byte-identical until it opts in. Saves a second call to GET /avasthas and the client-side join that would otherwise be needed to turn Yuva or Swapna into readable text.
+	AvasthaInfo *bool `json:"avasthaInfo,omitempty"`
+
 	// Date Birth date in YYYY-MM-DD format. Date determines planetary positions and nakshatra calculations for Vedic kundli (janam patri). Accurate birth date is essential for dashas, yoga calculations, and divisional charts (vargas).
 	Date openapi_types.Date `json:"date"`
 
@@ -18160,6 +18532,31 @@ type BirthChartResponse struct {
 
 	// Meta Quick lookup of all planet positions keyed by planet name. Contains Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn, Rahu, Ketu, and Lagna (Ascendant).
 	Meta map[string]struct {
+		// AvasthaInfo Localized readings for this graha avastha states, present only when avasthaInfo true was sent. Each key mirrors the state field of the same name and carries a short meaning plus a one-sentence classical interpretation, so a client can label Yuva or Swapna without a second lookup call.
+		AvasthaInfo *struct {
+			Awastha *struct {
+				// Interpretation Single-sentence classical reading of what the state does to the graha results, sourced from BPHS ch. 45, Saravali ch. 5 and Phaladeepika ch. 9. Localized by the lang query parameter.
+				Interpretation string `json:"interpretation"`
+
+				// Meaning One or two word gloss of the state, suitable for a table cell beside the graha.
+				Meaning string `json:"meaning"`
+			} `json:"awastha,omitempty"`
+			Deeptadi *struct {
+				// Interpretation Single-sentence classical reading of what the state does to the graha results, sourced from BPHS ch. 45, Saravali ch. 5 and Phaladeepika ch. 9. Localized by the lang query parameter.
+				Interpretation string `json:"interpretation"`
+
+				// Meaning One or two word gloss of the state, suitable for a table cell beside the graha.
+				Meaning string `json:"meaning"`
+			} `json:"deeptadi,omitempty"`
+			Jagradadi *struct {
+				// Interpretation Single-sentence classical reading of what the state does to the graha results, sourced from BPHS ch. 45, Saravali ch. 5 and Phaladeepika ch. 9. Localized by the lang query parameter.
+				Interpretation string `json:"interpretation"`
+
+				// Meaning One or two word gloss of the state, suitable for a table cell beside the graha.
+				Meaning string `json:"meaning"`
+			} `json:"jagradadi,omitempty"`
+		} `json:"avasthaInfo,omitempty"`
+
 		// Awastha Baladi avastha, the planetary age-state set by the graha degree within its sign: Bala (infant), Kumara (child), Yuva (adult, strongest results), Vriddha (old), Mrita (dead, weakest). Bands run forward in odd signs and reversed in even signs. D1 birth chart only.
 		Awastha *BirthChartResponseMetaAwastha `json:"awastha,omitempty"`
 
@@ -18189,10 +18586,10 @@ type BirthChartResponse struct {
 			// Lord Vimshottari ruling planet of this nakshatra. One of the nine grahas (Ketu, Venus, Sun, Moon, Mars, Rahu, Jupiter, Saturn, Mercury). Drives the dasha sequence and the nakshatra qualities.
 			Lord BirthChartResponseMetaNakshatraLord `json:"lord"`
 
-			// Name Nakshatra (lunar mansion) the planet occupies. One of 27 Vedic nakshatras spanning 13 degrees 20 arcminutes each. Determines dasha lord and behavioral qualities.
+			// Name Nakshatra (lunar mansion) the planet occupies. One of 27 Vedic nakshatras spanning 13 degrees 20 minutes each. Determines dasha lord and behavioral qualities.
 			Name string `json:"name"`
 
-			// Pada Nakshatra pada (quarter, 1-4). Each nakshatra divides into 4 padas of 3 degrees 20 arcminutes. Pada determines Navamsa sign and refines personality traits.
+			// Pada Nakshatra pada (quarter, 1-4). Each nakshatra divides into 4 padas of 3 degrees 20 minutes. Pada determines Navamsa sign and refines personality traits.
 			Pada float32 `json:"pada"`
 		} `json:"nakshatra"`
 
@@ -18428,13 +18825,16 @@ type BirthChartResponse struct {
 		// Evidence Human-readable rationale naming the specific rule that triggered or failed the detection, including planetary positions, dignity, kendradhipati status, lordship, malefic drishti, sign modality, or whole-chart bhava distribution. For a Nabhasa yoga that matched its own rule but was outranked, this names the precedence norm that silenced it, for example that an Akriti yoga outranks Asraya or that any other Nabhasa family suppresses Sankhya.
 		Evidence *string `json:"evidence,omitempty"`
 
+		// Family Classical grouping, ALWAYS present on a detection verdict: one of the four Nabhasa families (asraya, dala, akriti, sankhya) or classical for the twelve single-combination yogas such as Gajakesari and the Pancha Mahapurusha. Group the verdict list on this key to render a Nabhasa result the way the tradition arranges it. Never translated, so grouping works identically under any lang.
+		Family BirthChartResponseYogasFamily `json:"family"`
+
 		// ID Glossary id (lowercase, kebab-case) matching an entry in the 300-entry planetary-yoga catalog. Use with GET /yoga/{id} to retrieve the full glossary text.
 		ID string `json:"id"`
 
 		// Name Classical Sanskrit name of the yoga as referenced in BPHS (Brihat Parashara Hora Shastra), Phaladeepika, and B.V. Raman *Three Hundred Important Combinations*.
 		Name string `json:"name"`
 
-		// Present True if every classical condition for the yoga is satisfied by the given chart. False if any rule fails, including "almost-present" cases where dignity is met but kendra/aspect is not, and Nabhasa cases where the yoga matched its own rule but a stronger family outranked it under the classical precedence norms. Read `evidence` to tell those apart.
+		// Present True if every classical condition for the yoga is satisfied by the given chart. False means one of TWO different things: the rule failed, or the rule held and a stronger family outranked it. Read `suppressedBy` to tell those apart, which is exact and locale-independent; `evidence` says the same thing in English prose.
 		Present bool `json:"present"`
 
 		// Quality Overall nature. Auspicious yogas (Pancha Mahapurusha, Gajakesari) bestow benefits; inauspicious yogas (Kemadruma) indicate challenges; Both denotes context-dependent effects.
@@ -18442,6 +18842,9 @@ type BirthChartResponse struct {
 
 		// Result Classical phala (life-effect) description of the yoga when present, sourced from the parashari and phaladeepika tradition.
 		Result string `json:"result"`
+
+		// SuppressedBy Set ONLY when this yoga matched its own classical rule and was then silenced by a higher-ranking family, so `present` is false for a reason a practitioner reads very differently from a failed rule. Names the family that took precedence, under the four classical norms: Akriti outranks Asraya, and Akriti, Asraya and Dala each outrank Sankhya. Absent means the rule genuinely did not hold.
+		SuppressedBy *BirthChartResponseYogasSuppressedBy `json:"suppressedBy,omitempty"`
 	} `json:"yogas,omitempty"`
 }
 
@@ -18601,8 +19004,14 @@ type BirthChartResponseVirgoSignsJagradadi string
 // BirthChartResponseVirgoSignsNakshatraLord Vimshottari ruling planet of this nakshatra. One of the nine grahas (Ketu, Venus, Sun, Moon, Mars, Rahu, Jupiter, Saturn, Mercury). Drives the dasha sequence and the nakshatra qualities.
 type BirthChartResponseVirgoSignsNakshatraLord string
 
+// BirthChartResponseYogasFamily Classical grouping, ALWAYS present on a detection verdict: one of the four Nabhasa families (asraya, dala, akriti, sankhya) or classical for the twelve single-combination yogas such as Gajakesari and the Pancha Mahapurusha. Group the verdict list on this key to render a Nabhasa result the way the tradition arranges it. Never translated, so grouping works identically under any lang.
+type BirthChartResponseYogasFamily string
+
 // BirthChartResponseYogasQuality Overall nature. Auspicious yogas (Pancha Mahapurusha, Gajakesari) bestow benefits; inauspicious yogas (Kemadruma) indicate challenges; Both denotes context-dependent effects.
 type BirthChartResponseYogasQuality string
+
+// BirthChartResponseYogasSuppressedBy Set ONLY when this yoga matched its own classical rule and was then silenced by a higher-ranking family, so `present` is false for a reason a practitioner reads very differently from a failed rule. Names the family that took precedence, under the four classical norms: Akriti outranks Asraya, and Akriti, Asraya and Dala each outrank Sankhya. Absent means the rule genuinely did not hold.
+type BirthChartResponseYogasSuppressedBy string
 
 // Card defines model for Card.
 type Card struct {
@@ -19020,10 +19429,10 @@ type DivisionalChartResponse_Chart struct {
 			// Lord Vimshottari ruling planet of this nakshatra. One of the nine grahas (Ketu, Venus, Sun, Moon, Mars, Rahu, Jupiter, Saturn, Mercury). Carried over from the D1 nakshatra.
 			Lord DivisionalChartResponseChartMetaNakshatraLord `json:"lord"`
 
-			// Name Nakshatra (lunar mansion) the planet occupies. One of 27 Vedic nakshatras spanning 13 degrees 20 arcminutes each. Determines dasha lord and behavioral qualities.
+			// Name Nakshatra (lunar mansion) the planet occupies. One of 27 Vedic nakshatras spanning 13 degrees 20 minutes each. Determines dasha lord and behavioral qualities.
 			Name string `json:"name"`
 
-			// Pada Nakshatra pada (quarter, 1-4). Each nakshatra divides into 4 padas of 3 degrees 20 arcminutes. Pada determines Navamsa sign and refines personality traits.
+			// Pada Nakshatra pada (quarter, 1-4). Each nakshatra divides into 4 padas of 3 degrees 20 minutes. Pada determines Navamsa sign and refines personality traits.
 			Pada float32 `json:"pada"`
 		} `json:"nakshatra"`
 
@@ -19477,6 +19886,9 @@ type KPChartResponse struct {
 		SubSubLord string `json:"subSubLord"`
 	} `json:"cusps"`
 
+	// Focus Which signification vocabulary produced the houseThemes keywords in this response, echoing the focus query parameter. Always present, and "general" when the parameter was omitted. Read it to label a rendered house legend, or to tell two cached responses apart when only one asked for the finance lens.
+	Focus KPChartResponseFocus `json:"focus"`
+
 	// HouseThemes Significations of each of the twelve bhavas (houses), keyed by house number 1 to 12, as short keywords. Bhava 1 is the Lagna (self, body, vitality), 2 wealth and speech, 4 home and mother, 7 marriage and partnership, 10 career and status, 11 gains. Use it to label the house numbers returned elsewhere in the response: a Vimshottari dasha period signifying houses 2, 7 and 8, or a KP significator carrying houses 11 and 6, becomes readable text without a separate lookup call. Returned once per response rather than repeated per period, and localized by the lang query parameter alongside every other interpretation field.
 	HouseThemes map[string][]string `json:"houseThemes"`
 
@@ -19639,6 +20051,9 @@ type KPChartResponse struct {
 	} `json:"significators"`
 }
 
+// KPChartResponseFocus Which signification vocabulary produced the houseThemes keywords in this response, echoing the focus query parameter. Always present, and "general" when the parameter was omitted. Read it to label a rendered house legend, or to tell two cached responses apart when only one asked for the finance lens.
+type KPChartResponseFocus string
+
 // KPCuspsRequest defines model for KPCuspsRequest.
 type KPCuspsRequest struct {
 	// Ayanamsa Ayanamsa system for sidereal conversion. "kp-newcomb" uses the KP-Newcomb dynamic formula (most common for KP). "kp-old" uses the Krishnamurti original table. "lahiri" uses Lahiri/Chitrapaksha ayanamsa matching most traditional Vedic software. "custom" allows providing your own value via ayanamsaValue. Defaults to "kp-newcomb".
@@ -19716,12 +20131,18 @@ type KPCuspsResponse struct {
 		SubSubLord string `json:"subSubLord"`
 	} `json:"cusps"`
 
+	// Focus Which signification vocabulary produced the houseThemes keywords in this response, echoing the focus query parameter. Always present, and "general" when the parameter was omitted. Read it to label a rendered house legend, or to tell two cached responses apart when only one asked for the finance lens.
+	Focus KPCuspsResponseFocus `json:"focus"`
+
 	// HouseSystem House system used for calculations
 	HouseSystem string `json:"houseSystem"`
 
 	// HouseThemes Significations of each of the twelve bhavas (houses), keyed by house number 1 to 12, as short keywords. Bhava 1 is the Lagna (self, body, vitality), 2 wealth and speech, 4 home and mother, 7 marriage and partnership, 10 career and status, 11 gains. Use it to label the house numbers returned elsewhere in the response: a Vimshottari dasha period signifying houses 2, 7 and 8, or a KP significator carrying houses 11 and 6, becomes readable text without a separate lookup call. Returned once per response rather than repeated per period, and localized by the lang query parameter alongside every other interpretation field.
 	HouseThemes map[string][]string `json:"houseThemes"`
 }
+
+// KPCuspsResponseFocus Which signification vocabulary produced the houseThemes keywords in this response, echoing the focus query parameter. Always present, and "general" when the parameter was omitted. Read it to label a rendered house legend, or to tell two cached responses apart when only one asked for the finance lens.
+type KPCuspsResponseFocus string
 
 // KPPlanetsIntervalRequest defines model for KPPlanetsIntervalRequest.
 type KPPlanetsIntervalRequest struct {
@@ -20005,6 +20426,9 @@ type KPRulingPlanetsIntervalResponse struct {
 	// EndDatetime End of the KP ruling planets interval range (ISO 8601).
 	EndDatetime string `json:"endDatetime"`
 
+	// Focus Which signification vocabulary produced the houseThemes keywords in this response, echoing the focus query parameter. Always present, and "general" when the parameter was omitted. Read it to label a rendered house legend, or to tell two cached responses apart when only one asked for the finance lens.
+	Focus KPRulingPlanetsIntervalResponseFocus `json:"focus"`
+
 	// HouseThemes Significations of each of the twelve bhavas (houses), keyed by house number 1 to 12, as short keywords. Bhava 1 is the Lagna (self, body, vitality), 2 wealth and speech, 4 home and mother, 7 marriage and partnership, 10 career and status, 11 gains. Use it to label the house numbers returned elsewhere in the response: a Vimshottari dasha period signifying houses 2, 7 and 8, or a KP significator carrying houses 11 and 6, becomes readable text without a separate lookup call. Returned once per response rather than repeated per period, and localized by the lang query parameter alongside every other interpretation field.
 	HouseThemes map[string][]string `json:"houseThemes"`
 
@@ -20141,6 +20565,9 @@ type KPRulingPlanetsIntervalResponse struct {
 	TotalIntervals float32 `json:"totalIntervals"`
 }
 
+// KPRulingPlanetsIntervalResponseFocus Which signification vocabulary produced the houseThemes keywords in this response, echoing the focus query parameter. Always present, and "general" when the parameter was omitted. Read it to label a rendered house legend, or to tell two cached responses apart when only one asked for the finance lens.
+type KPRulingPlanetsIntervalResponseFocus string
+
 // KPRulingPlanetsResponse defines model for KPRulingPlanetsResponse.
 type KPRulingPlanetsResponse struct {
 	// Datetime Calculation datetime (ISO 8601)
@@ -20148,6 +20575,9 @@ type KPRulingPlanetsResponse struct {
 
 	// DayLord Lord of the weekday (Sun=Sunday through Saturn=Saturday)
 	DayLord string `json:"dayLord"`
+
+	// Focus Which signification vocabulary produced the houseThemes keywords in this response, echoing the focus query parameter. Always present, and "general" when the parameter was omitted. Read it to label a rendered house legend, or to tell two cached responses apart when only one asked for the finance lens.
+	Focus *KPRulingPlanetsResponseFocus `json:"focus,omitempty"`
 
 	// HouseThemes Significations of each of the twelve bhavas (houses), keyed by house number 1 to 12, as short keywords. Bhava 1 is the Lagna (self, body, vitality), 2 wealth and speech, 4 home and mother, 7 marriage and partnership, 10 career and status, 11 gains. Use it to label the house numbers returned elsewhere in the response: a Vimshottari dasha period signifying houses 2, 7 and 8, or a KP significator carrying houses 11 and 6, becomes readable text without a separate lookup call. Returned once per response rather than repeated per period, and localized by the lang query parameter alongside every other interpretation field.
 	HouseThemes *map[string][]string `json:"houseThemes,omitempty"`
@@ -20195,6 +20625,9 @@ type KPRulingPlanetsResponse struct {
 		Signifies []float32 `json:"signifies"`
 	} `json:"significators,omitempty"`
 }
+
+// KPRulingPlanetsResponseFocus Which signification vocabulary produced the houseThemes keywords in this response, echoing the focus query parameter. Always present, and "general" when the parameter was omitted. Read it to label a rendered house legend, or to tell two cached responses apart when only one asked for the finance lens.
+type KPRulingPlanetsResponseFocus string
 
 // KPSublordChangesRequest defines model for KPSublordChangesRequest.
 type KPSublordChangesRequest struct {
@@ -21033,10 +21466,10 @@ type NavamsaResponse_Chart struct {
 			// Lord Vimshottari ruling planet of this nakshatra. One of the nine grahas (Ketu, Venus, Sun, Moon, Mars, Rahu, Jupiter, Saturn, Mercury). Carried over from the D1 nakshatra.
 			Lord NavamsaResponseChartMetaNakshatraLord `json:"lord"`
 
-			// Name Nakshatra (lunar mansion) the planet occupies. One of 27 Vedic nakshatras spanning 13 degrees 20 arcminutes each. Determines dasha lord and behavioral qualities.
+			// Name Nakshatra (lunar mansion) the planet occupies. One of 27 Vedic nakshatras spanning 13 degrees 20 minutes each. Determines dasha lord and behavioral qualities.
 			Name string `json:"name"`
 
-			// Pada Nakshatra pada (quarter, 1-4). Each nakshatra divides into 4 padas of 3 degrees 20 arcminutes. Pada determines Navamsa sign and refines personality traits.
+			// Pada Nakshatra pada (quarter, 1-4). Each nakshatra divides into 4 padas of 3 degrees 20 minutes. Pada determines Navamsa sign and refines personality traits.
 			Pada float32 `json:"pada"`
 		} `json:"nakshatra"`
 
@@ -21112,10 +21545,10 @@ type PlanetaryPositionsResponse map[string]struct {
 		// Key Nakshatra sequence number (1-27) in zodiac order starting from Ashwini. Used for Tara Bala and dasha calculations.
 		Key float32 `json:"key"`
 
-		// Name Nakshatra (lunar mansion) the planet occupies. One of 27 Vedic nakshatras spanning 13 degrees 20 arcminutes each.
+		// Name Nakshatra (lunar mansion) the planet occupies. One of 27 Vedic nakshatras spanning 13 degrees 20 minutes each.
 		Name string `json:"name"`
 
-		// Pada Nakshatra pada (quarter, 1-4). Each nakshatra divides into 4 padas of 3 degrees 20 arcminutes. Determines Navamsa sign.
+		// Pada Nakshatra pada (quarter, 1-4). Each nakshatra divides into 4 padas of 3 degrees 20 minutes. Determines Navamsa sign.
 		Pada float32 `json:"pada"`
 
 		// Symbol Traditional symbol representing the nakshatra. Reflects core energy and life themes associated with this lunar mansion.
@@ -22096,6 +22529,9 @@ type YogaDetail struct {
 	// Description Brief classical formation rule. Identifies the planetary placement, lordship, dignity, aspect pattern, sign modality, or whole-chart bhava distribution required for the yoga to form.
 	Description string `json:"description"`
 
+	// Family Nabhasa family this yoga belongs to, present only on the 32 Nabhasa distribution yogas: asraya (3, sign modality), dala (2, benefic or malefic kendra tenancy), akriti (20, bhava shape) and sankhya (7, count of occupied rasis). Absent on every other glossary row, which is most of the catalog, since those are single-combination yogas outside the Nabhasa scheme. Group or filter the catalog on this key; it is never translated.
+	Family *YogaDetailFamily `json:"family,omitempty"`
+
 	// ID Glossary id (lowercase, kebab-case) matching an entry in the 300-entry planetary-yoga catalog. Use with GET /yoga/{id} to retrieve the full glossary text.
 	ID string `json:"id"`
 
@@ -22108,6 +22544,9 @@ type YogaDetail struct {
 	// Result Classical phala (life-effect) description of the yoga when present, sourced from the parashari and phaladeepika tradition.
 	Result string `json:"result"`
 }
+
+// YogaDetailFamily Nabhasa family this yoga belongs to, present only on the 32 Nabhasa distribution yogas: asraya (3, sign modality), dala (2, benefic or malefic kendra tenancy), akriti (20, bhava shape) and sankhya (7, count of occupied rasis). Absent on every other glossary row, which is most of the catalog, since those are single-combination yogas outside the Nabhasa scheme. Group or filter the catalog on this key; it is never translated.
+type YogaDetailFamily string
 
 // YogaDetailQuality Overall nature. Auspicious yogas (Pancha Mahapurusha, Gajakesari) bestow benefits; inauspicious yogas (Kemadruma) indicate challenges; Both denotes context-dependent effects.
 type YogaDetailQuality string
@@ -22163,13 +22602,16 @@ type YogaDetectResponse struct {
 		// Evidence Human-readable rationale naming the specific rule that triggered or failed the detection, including planetary positions, dignity, kendradhipati status, lordship, malefic drishti, sign modality, or whole-chart bhava distribution. For a Nabhasa yoga that matched its own rule but was outranked, this names the precedence norm that silenced it, for example that an Akriti yoga outranks Asraya or that any other Nabhasa family suppresses Sankhya.
 		Evidence *string `json:"evidence,omitempty"`
 
+		// Family Classical grouping, ALWAYS present on a detection verdict: one of the four Nabhasa families (asraya, dala, akriti, sankhya) or classical for the twelve single-combination yogas such as Gajakesari and the Pancha Mahapurusha. Group the verdict list on this key to render a Nabhasa result the way the tradition arranges it. Never translated, so grouping works identically under any lang.
+		Family YogaDetectResponseYogasFamily `json:"family"`
+
 		// ID Glossary id (lowercase, kebab-case) matching an entry in the 300-entry planetary-yoga catalog. Use with GET /yoga/{id} to retrieve the full glossary text.
 		ID string `json:"id"`
 
 		// Name Classical Sanskrit name of the yoga as referenced in BPHS (Brihat Parashara Hora Shastra), Phaladeepika, and B.V. Raman *Three Hundred Important Combinations*.
 		Name string `json:"name"`
 
-		// Present True if every classical condition for the yoga is satisfied by the given chart. False if any rule fails, including "almost-present" cases where dignity is met but kendra/aspect is not, and Nabhasa cases where the yoga matched its own rule but a stronger family outranked it under the classical precedence norms. Read `evidence` to tell those apart.
+		// Present True if every classical condition for the yoga is satisfied by the given chart. False means one of TWO different things: the rule failed, or the rule held and a stronger family outranked it. Read `suppressedBy` to tell those apart, which is exact and locale-independent; `evidence` says the same thing in English prose.
 		Present bool `json:"present"`
 
 		// Quality Overall nature. Auspicious yogas (Pancha Mahapurusha, Gajakesari) bestow benefits; inauspicious yogas (Kemadruma) indicate challenges; Both denotes context-dependent effects.
@@ -22177,11 +22619,20 @@ type YogaDetectResponse struct {
 
 		// Result Classical phala (life-effect) description of the yoga when present, sourced from the parashari and phaladeepika tradition.
 		Result string `json:"result"`
+
+		// SuppressedBy Set ONLY when this yoga matched its own classical rule and was then silenced by a higher-ranking family, so `present` is false for a reason a practitioner reads very differently from a failed rule. Names the family that took precedence, under the four classical norms: Akriti outranks Asraya, and Akriti, Asraya and Dala each outrank Sankhya. Absent means the rule genuinely did not hold.
+		SuppressedBy *YogaDetectResponseYogasSuppressedBy `json:"suppressedBy,omitempty"`
 	} `json:"yogas"`
 }
 
+// YogaDetectResponseYogasFamily Classical grouping, ALWAYS present on a detection verdict: one of the four Nabhasa families (asraya, dala, akriti, sankhya) or classical for the twelve single-combination yogas such as Gajakesari and the Pancha Mahapurusha. Group the verdict list on this key to render a Nabhasa result the way the tradition arranges it. Never translated, so grouping works identically under any lang.
+type YogaDetectResponseYogasFamily string
+
 // YogaDetectResponseYogasQuality Overall nature. Auspicious yogas (Pancha Mahapurusha, Gajakesari) bestow benefits; inauspicious yogas (Kemadruma) indicate challenges; Both denotes context-dependent effects.
 type YogaDetectResponseYogasQuality string
+
+// YogaDetectResponseYogasSuppressedBy Set ONLY when this yoga matched its own classical rule and was then silenced by a higher-ranking family, so `present` is false for a reason a practitioner reads very differently from a failed rule. Names the family that took precedence, under the four classical norms: Akriti outranks Asraya, and Akriti, Asraya and Dala each outrank Sankhya. Absent means the rule genuinely did not hold.
+type YogaDetectResponseYogasSuppressedBy string
 
 // aPIKeyContextKey is the context key for apiKey security scheme
 type aPIKeyContextKey string
@@ -23641,17 +24092,6 @@ type GenerateDigestJSONBody_BirthData_Timezone struct {
 // GenerateDigestJSONBodyDomains defines parameters for GenerateDigest.
 type GenerateDigestJSONBodyDomains string
 
-// GenerateDigest200JSONResponseBodyBirthDataTimezone0 defines parameters for GenerateDigest.
-type GenerateDigest200JSONResponseBodyBirthDataTimezone0 = float32
-
-// GenerateDigest200JSONResponseBodyBirthDataTimezone1 defines parameters for GenerateDigest.
-type GenerateDigest200JSONResponseBodyBirthDataTimezone1 = string
-
-// GenerateDigest200JSONResponseBody_BirthData_Timezone defines parameters for GenerateDigest.
-type GenerateDigest200JSONResponseBody_BirthData_Timezone struct {
-	union json.RawMessage
-}
-
 // GenerateDigest200JSONResponseBodyWindowsTopDomain defines parameters for GenerateDigest.
 type GenerateDigest200JSONResponseBodyWindowsTopDomain string
 
@@ -23734,17 +24174,6 @@ type FindSignificantDatesJSONBody_BirthData_Timezone struct {
 
 // FindSignificantDatesJSONBodyDomains defines parameters for FindSignificantDates.
 type FindSignificantDatesJSONBodyDomains string
-
-// FindSignificantDates200JSONResponseBodyBirthDataTimezone0 defines parameters for FindSignificantDates.
-type FindSignificantDates200JSONResponseBodyBirthDataTimezone0 = float32
-
-// FindSignificantDates200JSONResponseBodyBirthDataTimezone1 defines parameters for FindSignificantDates.
-type FindSignificantDates200JSONResponseBodyBirthDataTimezone1 = string
-
-// FindSignificantDates200JSONResponseBody_BirthData_Timezone defines parameters for FindSignificantDates.
-type FindSignificantDates200JSONResponseBody_BirthData_Timezone struct {
-	union json.RawMessage
-}
 
 // FindSignificantDates200JSONResponseBodyEventsDomain defines parameters for FindSignificantDates.
 type FindSignificantDates200JSONResponseBodyEventsDomain string
@@ -23897,17 +24326,6 @@ type GenerateTimelineJSONBody_BirthData_Timezone struct {
 // GenerateTimelineJSONBodyDomains defines parameters for GenerateTimeline.
 type GenerateTimelineJSONBodyDomains string
 
-// GenerateTimeline200JSONResponseBodyBirthDataTimezone0 defines parameters for GenerateTimeline.
-type GenerateTimeline200JSONResponseBodyBirthDataTimezone0 = float32
-
-// GenerateTimeline200JSONResponseBodyBirthDataTimezone1 defines parameters for GenerateTimeline.
-type GenerateTimeline200JSONResponseBodyBirthDataTimezone1 = string
-
-// GenerateTimeline200JSONResponseBody_BirthData_Timezone defines parameters for GenerateTimeline.
-type GenerateTimeline200JSONResponseBody_BirthData_Timezone struct {
-	union json.RawMessage
-}
-
 // GenerateTimeline200JSONResponseBodyEventsDomain defines parameters for GenerateTimeline.
 type GenerateTimeline200JSONResponseBodyEventsDomain string
 
@@ -23970,17 +24388,6 @@ type ForecastTransitsJSONBodyBirthDataTimezone1 = string
 
 // ForecastTransitsJSONBody_BirthData_Timezone defines parameters for ForecastTransits.
 type ForecastTransitsJSONBody_BirthData_Timezone struct {
-	union json.RawMessage
-}
-
-// ForecastTransits200JSONResponseBodyBirthDataTimezone0 defines parameters for ForecastTransits.
-type ForecastTransits200JSONResponseBodyBirthDataTimezone0 = float32
-
-// ForecastTransits200JSONResponseBodyBirthDataTimezone1 defines parameters for ForecastTransits.
-type ForecastTransits200JSONResponseBodyBirthDataTimezone1 = string
-
-// ForecastTransits200JSONResponseBody_BirthData_Timezone defines parameters for ForecastTransits.
-type ForecastTransits200JSONResponseBody_BirthData_Timezone struct {
 	union json.RawMessage
 }
 
@@ -25574,6 +25981,9 @@ type GetCurrentDasha200JSONResponseBodyAntardashaSignificatorsStrengthLabel stri
 // GetCurrentDasha200JSONResponseBodyAyanamsaType defines parameters for GetCurrentDasha.
 type GetCurrentDasha200JSONResponseBodyAyanamsaType string
 
+// GetCurrentDasha200JSONResponseBodyFocus defines parameters for GetCurrentDasha.
+type GetCurrentDasha200JSONResponseBodyFocus string
+
 // GetCurrentDasha200JSONResponseBodyMahadashaPlanet defines parameters for GetCurrentDasha.
 type GetCurrentDasha200JSONResponseBodyMahadashaPlanet string
 
@@ -25705,6 +26115,9 @@ type GetMajorDashasJSONBody_Timezone struct {
 // GetMajorDashas200JSONResponseBodyAyanamsaType defines parameters for GetMajorDashas.
 type GetMajorDashas200JSONResponseBodyAyanamsaType string
 
+// GetMajorDashas200JSONResponseBodyFocus defines parameters for GetMajorDashas.
+type GetMajorDashas200JSONResponseBodyFocus string
+
 // GetMajorDashas200JSONResponseBodyMahadashasPlanet defines parameters for GetMajorDashas.
 type GetMajorDashas200JSONResponseBodyMahadashasPlanet string
 
@@ -25796,6 +26209,9 @@ type GetSubDashas200JSONResponseBodyAntardashasSignificatorsStrengthLabel string
 
 // GetSubDashas200JSONResponseBodyAyanamsaType defines parameters for GetSubDashas.
 type GetSubDashas200JSONResponseBodyAyanamsaType string
+
+// GetSubDashas200JSONResponseBodyFocus defines parameters for GetSubDashas.
+type GetSubDashas200JSONResponseBodyFocus string
 
 // GetSubDashas200JSONResponseBodyMahadashaLord defines parameters for GetSubDashas.
 type GetSubDashas200JSONResponseBodyMahadashaLord string
@@ -25895,6 +26311,9 @@ type GetPratyantardashas200JSONResponseBodyAntardashaPeriodSignificatorsStrength
 // GetPratyantardashas200JSONResponseBodyAyanamsaType defines parameters for GetPratyantardashas.
 type GetPratyantardashas200JSONResponseBodyAyanamsaType string
 
+// GetPratyantardashas200JSONResponseBodyFocus defines parameters for GetPratyantardashas.
+type GetPratyantardashas200JSONResponseBodyFocus string
+
 // GetPratyantardashas200JSONResponseBodyMahadashaLord defines parameters for GetPratyantardashas.
 type GetPratyantardashas200JSONResponseBodyMahadashaLord string
 
@@ -25989,6 +26408,9 @@ type GetSookshmaDashas200JSONResponseBodyAntardashaLord string
 
 // GetSookshmaDashas200JSONResponseBodyAyanamsaType defines parameters for GetSookshmaDashas.
 type GetSookshmaDashas200JSONResponseBodyAyanamsaType string
+
+// GetSookshmaDashas200JSONResponseBodyFocus defines parameters for GetSookshmaDashas.
+type GetSookshmaDashas200JSONResponseBodyFocus string
 
 // GetSookshmaDashas200JSONResponseBodyMahadashaLord defines parameters for GetSookshmaDashas.
 type GetSookshmaDashas200JSONResponseBodyMahadashaLord string
@@ -26108,6 +26530,9 @@ type GetPranaDashas200JSONResponseBodyAntardashaLord string
 
 // GetPranaDashas200JSONResponseBodyAyanamsaType defines parameters for GetPranaDashas.
 type GetPranaDashas200JSONResponseBodyAyanamsaType string
+
+// GetPranaDashas200JSONResponseBodyFocus defines parameters for GetPranaDashas.
+type GetPranaDashas200JSONResponseBodyFocus string
 
 // GetPranaDashas200JSONResponseBodyMahadashaLord defines parameters for GetPranaDashas.
 type GetPranaDashas200JSONResponseBodyMahadashaLord string
@@ -26702,10 +27127,19 @@ type GetMonthlyTransitsJSONBody_Timezone struct {
 type ListYogasParams struct {
 	// Lang Response language (ISO 639-1). Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en. Languages without translations yet return English.
 	Lang *ListYogasParamsLang `form:"lang,omitempty" json:"lang,omitempty"`
+
+	// Family Filter the catalog to one Nabhasa family: asraya (3), dala (2), akriti (20) or sankhya (7). Omit for the full catalog. `classical` is accepted but matches nothing here, because it is a detection-verdict value for single-combination yogas rather than a catalog grouping.
+	Family *ListYogasParamsFamily `form:"family,omitempty" json:"family,omitempty"`
 }
 
 // ListYogasParamsLang defines parameters for ListYogas.
 type ListYogasParamsLang string
+
+// ListYogasParamsFamily defines parameters for ListYogas.
+type ListYogasParamsFamily string
+
+// ListYogas200JSONResponseBodyYogasFamily defines parameters for ListYogas.
+type ListYogas200JSONResponseBodyYogasFamily string
 
 // DetectYogasParams defines parameters for DetectYogas.
 type DetectYogasParams struct {
@@ -30338,68 +30772,6 @@ func (t *GenerateDigestJSONBody_BirthData_Timezone) UnmarshalJSON(b []byte) erro
 	return err
 }
 
-// AsGenerateDigest200JSONResponseBodyBirthDataTimezone0 returns the union data inside the GenerateDigest200JSONResponseBody_BirthData_Timezone as a GenerateDigest200JSONResponseBodyBirthDataTimezone0
-func (t GenerateDigest200JSONResponseBody_BirthData_Timezone) AsGenerateDigest200JSONResponseBodyBirthDataTimezone0() (GenerateDigest200JSONResponseBodyBirthDataTimezone0, error) {
-	var body GenerateDigest200JSONResponseBodyBirthDataTimezone0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromGenerateDigest200JSONResponseBodyBirthDataTimezone0 overwrites any union data inside the GenerateDigest200JSONResponseBody_BirthData_Timezone as the provided GenerateDigest200JSONResponseBodyBirthDataTimezone0
-func (t *GenerateDigest200JSONResponseBody_BirthData_Timezone) FromGenerateDigest200JSONResponseBodyBirthDataTimezone0(v GenerateDigest200JSONResponseBodyBirthDataTimezone0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeGenerateDigest200JSONResponseBodyBirthDataTimezone0 performs a merge with any union data inside the GenerateDigest200JSONResponseBody_BirthData_Timezone, using the provided GenerateDigest200JSONResponseBodyBirthDataTimezone0
-func (t *GenerateDigest200JSONResponseBody_BirthData_Timezone) MergeGenerateDigest200JSONResponseBodyBirthDataTimezone0(v GenerateDigest200JSONResponseBodyBirthDataTimezone0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsGenerateDigest200JSONResponseBodyBirthDataTimezone1 returns the union data inside the GenerateDigest200JSONResponseBody_BirthData_Timezone as a GenerateDigest200JSONResponseBodyBirthDataTimezone1
-func (t GenerateDigest200JSONResponseBody_BirthData_Timezone) AsGenerateDigest200JSONResponseBodyBirthDataTimezone1() (GenerateDigest200JSONResponseBodyBirthDataTimezone1, error) {
-	var body GenerateDigest200JSONResponseBodyBirthDataTimezone1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromGenerateDigest200JSONResponseBodyBirthDataTimezone1 overwrites any union data inside the GenerateDigest200JSONResponseBody_BirthData_Timezone as the provided GenerateDigest200JSONResponseBodyBirthDataTimezone1
-func (t *GenerateDigest200JSONResponseBody_BirthData_Timezone) FromGenerateDigest200JSONResponseBodyBirthDataTimezone1(v GenerateDigest200JSONResponseBodyBirthDataTimezone1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeGenerateDigest200JSONResponseBodyBirthDataTimezone1 performs a merge with any union data inside the GenerateDigest200JSONResponseBody_BirthData_Timezone, using the provided GenerateDigest200JSONResponseBodyBirthDataTimezone1
-func (t *GenerateDigest200JSONResponseBody_BirthData_Timezone) MergeGenerateDigest200JSONResponseBodyBirthDataTimezone1(v GenerateDigest200JSONResponseBodyBirthDataTimezone1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t GenerateDigest200JSONResponseBody_BirthData_Timezone) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *GenerateDigest200JSONResponseBody_BirthData_Timezone) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
 // AsFindSignificantDatesJSONBodyBirthDataTimezone0 returns the union data inside the FindSignificantDatesJSONBody_BirthData_Timezone as a FindSignificantDatesJSONBodyBirthDataTimezone0
 func (t FindSignificantDatesJSONBody_BirthData_Timezone) AsFindSignificantDatesJSONBodyBirthDataTimezone0() (FindSignificantDatesJSONBodyBirthDataTimezone0, error) {
 	var body FindSignificantDatesJSONBodyBirthDataTimezone0
@@ -30458,68 +30830,6 @@ func (t FindSignificantDatesJSONBody_BirthData_Timezone) MarshalJSON() ([]byte, 
 }
 
 func (t *FindSignificantDatesJSONBody_BirthData_Timezone) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsFindSignificantDates200JSONResponseBodyBirthDataTimezone0 returns the union data inside the FindSignificantDates200JSONResponseBody_BirthData_Timezone as a FindSignificantDates200JSONResponseBodyBirthDataTimezone0
-func (t FindSignificantDates200JSONResponseBody_BirthData_Timezone) AsFindSignificantDates200JSONResponseBodyBirthDataTimezone0() (FindSignificantDates200JSONResponseBodyBirthDataTimezone0, error) {
-	var body FindSignificantDates200JSONResponseBodyBirthDataTimezone0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromFindSignificantDates200JSONResponseBodyBirthDataTimezone0 overwrites any union data inside the FindSignificantDates200JSONResponseBody_BirthData_Timezone as the provided FindSignificantDates200JSONResponseBodyBirthDataTimezone0
-func (t *FindSignificantDates200JSONResponseBody_BirthData_Timezone) FromFindSignificantDates200JSONResponseBodyBirthDataTimezone0(v FindSignificantDates200JSONResponseBodyBirthDataTimezone0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeFindSignificantDates200JSONResponseBodyBirthDataTimezone0 performs a merge with any union data inside the FindSignificantDates200JSONResponseBody_BirthData_Timezone, using the provided FindSignificantDates200JSONResponseBodyBirthDataTimezone0
-func (t *FindSignificantDates200JSONResponseBody_BirthData_Timezone) MergeFindSignificantDates200JSONResponseBodyBirthDataTimezone0(v FindSignificantDates200JSONResponseBodyBirthDataTimezone0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsFindSignificantDates200JSONResponseBodyBirthDataTimezone1 returns the union data inside the FindSignificantDates200JSONResponseBody_BirthData_Timezone as a FindSignificantDates200JSONResponseBodyBirthDataTimezone1
-func (t FindSignificantDates200JSONResponseBody_BirthData_Timezone) AsFindSignificantDates200JSONResponseBodyBirthDataTimezone1() (FindSignificantDates200JSONResponseBodyBirthDataTimezone1, error) {
-	var body FindSignificantDates200JSONResponseBodyBirthDataTimezone1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromFindSignificantDates200JSONResponseBodyBirthDataTimezone1 overwrites any union data inside the FindSignificantDates200JSONResponseBody_BirthData_Timezone as the provided FindSignificantDates200JSONResponseBodyBirthDataTimezone1
-func (t *FindSignificantDates200JSONResponseBody_BirthData_Timezone) FromFindSignificantDates200JSONResponseBodyBirthDataTimezone1(v FindSignificantDates200JSONResponseBodyBirthDataTimezone1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeFindSignificantDates200JSONResponseBodyBirthDataTimezone1 performs a merge with any union data inside the FindSignificantDates200JSONResponseBody_BirthData_Timezone, using the provided FindSignificantDates200JSONResponseBodyBirthDataTimezone1
-func (t *FindSignificantDates200JSONResponseBody_BirthData_Timezone) MergeFindSignificantDates200JSONResponseBodyBirthDataTimezone1(v FindSignificantDates200JSONResponseBodyBirthDataTimezone1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t FindSignificantDates200JSONResponseBody_BirthData_Timezone) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *FindSignificantDates200JSONResponseBody_BirthData_Timezone) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }
@@ -30648,68 +30958,6 @@ func (t *GenerateTimelineJSONBody_BirthData_Timezone) UnmarshalJSON(b []byte) er
 	return err
 }
 
-// AsGenerateTimeline200JSONResponseBodyBirthDataTimezone0 returns the union data inside the GenerateTimeline200JSONResponseBody_BirthData_Timezone as a GenerateTimeline200JSONResponseBodyBirthDataTimezone0
-func (t GenerateTimeline200JSONResponseBody_BirthData_Timezone) AsGenerateTimeline200JSONResponseBodyBirthDataTimezone0() (GenerateTimeline200JSONResponseBodyBirthDataTimezone0, error) {
-	var body GenerateTimeline200JSONResponseBodyBirthDataTimezone0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromGenerateTimeline200JSONResponseBodyBirthDataTimezone0 overwrites any union data inside the GenerateTimeline200JSONResponseBody_BirthData_Timezone as the provided GenerateTimeline200JSONResponseBodyBirthDataTimezone0
-func (t *GenerateTimeline200JSONResponseBody_BirthData_Timezone) FromGenerateTimeline200JSONResponseBodyBirthDataTimezone0(v GenerateTimeline200JSONResponseBodyBirthDataTimezone0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeGenerateTimeline200JSONResponseBodyBirthDataTimezone0 performs a merge with any union data inside the GenerateTimeline200JSONResponseBody_BirthData_Timezone, using the provided GenerateTimeline200JSONResponseBodyBirthDataTimezone0
-func (t *GenerateTimeline200JSONResponseBody_BirthData_Timezone) MergeGenerateTimeline200JSONResponseBodyBirthDataTimezone0(v GenerateTimeline200JSONResponseBodyBirthDataTimezone0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsGenerateTimeline200JSONResponseBodyBirthDataTimezone1 returns the union data inside the GenerateTimeline200JSONResponseBody_BirthData_Timezone as a GenerateTimeline200JSONResponseBodyBirthDataTimezone1
-func (t GenerateTimeline200JSONResponseBody_BirthData_Timezone) AsGenerateTimeline200JSONResponseBodyBirthDataTimezone1() (GenerateTimeline200JSONResponseBodyBirthDataTimezone1, error) {
-	var body GenerateTimeline200JSONResponseBodyBirthDataTimezone1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromGenerateTimeline200JSONResponseBodyBirthDataTimezone1 overwrites any union data inside the GenerateTimeline200JSONResponseBody_BirthData_Timezone as the provided GenerateTimeline200JSONResponseBodyBirthDataTimezone1
-func (t *GenerateTimeline200JSONResponseBody_BirthData_Timezone) FromGenerateTimeline200JSONResponseBodyBirthDataTimezone1(v GenerateTimeline200JSONResponseBodyBirthDataTimezone1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeGenerateTimeline200JSONResponseBodyBirthDataTimezone1 performs a merge with any union data inside the GenerateTimeline200JSONResponseBody_BirthData_Timezone, using the provided GenerateTimeline200JSONResponseBodyBirthDataTimezone1
-func (t *GenerateTimeline200JSONResponseBody_BirthData_Timezone) MergeGenerateTimeline200JSONResponseBodyBirthDataTimezone1(v GenerateTimeline200JSONResponseBodyBirthDataTimezone1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t GenerateTimeline200JSONResponseBody_BirthData_Timezone) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *GenerateTimeline200JSONResponseBody_BirthData_Timezone) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
 // AsForecastTransitsJSONBodyBirthDataTimezone0 returns the union data inside the ForecastTransitsJSONBody_BirthData_Timezone as a ForecastTransitsJSONBodyBirthDataTimezone0
 func (t ForecastTransitsJSONBody_BirthData_Timezone) AsForecastTransitsJSONBodyBirthDataTimezone0() (ForecastTransitsJSONBodyBirthDataTimezone0, error) {
 	var body ForecastTransitsJSONBodyBirthDataTimezone0
@@ -30768,68 +31016,6 @@ func (t ForecastTransitsJSONBody_BirthData_Timezone) MarshalJSON() ([]byte, erro
 }
 
 func (t *ForecastTransitsJSONBody_BirthData_Timezone) UnmarshalJSON(b []byte) error {
-	err := t.union.UnmarshalJSON(b)
-	return err
-}
-
-// AsForecastTransits200JSONResponseBodyBirthDataTimezone0 returns the union data inside the ForecastTransits200JSONResponseBody_BirthData_Timezone as a ForecastTransits200JSONResponseBodyBirthDataTimezone0
-func (t ForecastTransits200JSONResponseBody_BirthData_Timezone) AsForecastTransits200JSONResponseBodyBirthDataTimezone0() (ForecastTransits200JSONResponseBodyBirthDataTimezone0, error) {
-	var body ForecastTransits200JSONResponseBodyBirthDataTimezone0
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromForecastTransits200JSONResponseBodyBirthDataTimezone0 overwrites any union data inside the ForecastTransits200JSONResponseBody_BirthData_Timezone as the provided ForecastTransits200JSONResponseBodyBirthDataTimezone0
-func (t *ForecastTransits200JSONResponseBody_BirthData_Timezone) FromForecastTransits200JSONResponseBodyBirthDataTimezone0(v ForecastTransits200JSONResponseBodyBirthDataTimezone0) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeForecastTransits200JSONResponseBodyBirthDataTimezone0 performs a merge with any union data inside the ForecastTransits200JSONResponseBody_BirthData_Timezone, using the provided ForecastTransits200JSONResponseBodyBirthDataTimezone0
-func (t *ForecastTransits200JSONResponseBody_BirthData_Timezone) MergeForecastTransits200JSONResponseBodyBirthDataTimezone0(v ForecastTransits200JSONResponseBodyBirthDataTimezone0) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-// AsForecastTransits200JSONResponseBodyBirthDataTimezone1 returns the union data inside the ForecastTransits200JSONResponseBody_BirthData_Timezone as a ForecastTransits200JSONResponseBodyBirthDataTimezone1
-func (t ForecastTransits200JSONResponseBody_BirthData_Timezone) AsForecastTransits200JSONResponseBodyBirthDataTimezone1() (ForecastTransits200JSONResponseBodyBirthDataTimezone1, error) {
-	var body ForecastTransits200JSONResponseBodyBirthDataTimezone1
-	err := json.Unmarshal(t.union, &body)
-	return body, err
-}
-
-// FromForecastTransits200JSONResponseBodyBirthDataTimezone1 overwrites any union data inside the ForecastTransits200JSONResponseBody_BirthData_Timezone as the provided ForecastTransits200JSONResponseBodyBirthDataTimezone1
-func (t *ForecastTransits200JSONResponseBody_BirthData_Timezone) FromForecastTransits200JSONResponseBodyBirthDataTimezone1(v ForecastTransits200JSONResponseBodyBirthDataTimezone1) error {
-	b, err := json.Marshal(v)
-	t.union = b
-	return err
-}
-
-// MergeForecastTransits200JSONResponseBodyBirthDataTimezone1 performs a merge with any union data inside the ForecastTransits200JSONResponseBody_BirthData_Timezone, using the provided ForecastTransits200JSONResponseBodyBirthDataTimezone1
-func (t *ForecastTransits200JSONResponseBody_BirthData_Timezone) MergeForecastTransits200JSONResponseBodyBirthDataTimezone1(v ForecastTransits200JSONResponseBodyBirthDataTimezone1) error {
-	b, err := json.Marshal(v)
-	if err != nil {
-		return err
-	}
-
-	merged, err := runtime.JSONMerge(t.union, b)
-	t.union = merged
-	return err
-}
-
-func (t ForecastTransits200JSONResponseBody_BirthData_Timezone) MarshalJSON() ([]byte, error) {
-	b, err := t.union.MarshalJSON()
-	return b, err
-}
-
-func (t *ForecastTransits200JSONResponseBody_BirthData_Timezone) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }
@@ -47910,6 +48096,18 @@ func NewListYogasRequest(server string, params *ListYogasParams) (*http.Request,
 
 		}
 
+		if params.Family != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "family", *params.Family, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
 		if encoded := queryValues.Encode(); encoded != "" {
 			rawQueryFragments = append(rawQueryFragments, encoded)
 		}
@@ -53772,8 +53970,8 @@ type GenerateDigestResponse struct {
 			// Time Birth time in 24-hour HH:MM:SS format. Precision matters for the natal positions the transit aspects are measured against.
 			Time string `json:"time"`
 
-			// Timezone IANA name (e.g. "America/New_York", "Europe/London", "UTC"), decimal hours (e.g. -5 for EST, 1 for CET), or a fixed UTC offset (e.g. "-05:00", "+01:00"). Prefer the IANA name: it is resolved to the DST-correct offset for the birth date, while a fixed offset or decimal is taken literally and will be wrong if it does not match the daylight-saving state on that date. Invalid timezones return 400 with a validation error.
-			Timezone GenerateDigest200JSONResponseBody_BirthData_Timezone `json:"timezone"`
+			// Timezone Decimal UTC offset the forecast was computed with, resolved from whatever the request sent. An IANA name is resolved to the DST-correct offset for the birth date, so this is the literal number applied, never the name.
+			Timezone float32 `json:"timezone"`
 		} `json:"birthData"`
 
 		// EndDate Last day of the resolved 90 day horizon the timeline was built over before slicing.
@@ -53914,8 +54112,8 @@ type FindSignificantDatesResponse struct {
 			// Time Birth time in 24-hour HH:MM:SS format. Precision matters for the natal positions the transit aspects are measured against.
 			Time string `json:"time"`
 
-			// Timezone IANA name (e.g. "America/New_York", "Europe/London", "UTC"), decimal hours (e.g. -5 for EST, 1 for CET), or a fixed UTC offset (e.g. "-05:00", "+01:00"). Prefer the IANA name: it is resolved to the DST-correct offset for the birth date, while a fixed offset or decimal is taken literally and will be wrong if it does not match the daylight-saving state on that date. Invalid timezones return 400 with a validation error.
-			Timezone FindSignificantDates200JSONResponseBody_BirthData_Timezone `json:"timezone"`
+			// Timezone Decimal UTC offset the forecast was computed with, resolved from whatever the request sent. An IANA name is resolved to the DST-correct offset for the birth date, so this is the literal number applied, never the name.
+			Timezone float32 `json:"timezone"`
 		} `json:"birthData"`
 
 		// Count Number of events in the timeline after deduplication, filtering, and the event cap.
@@ -54219,8 +54417,8 @@ type GenerateTimelineResponse struct {
 			// Time Birth time in 24-hour HH:MM:SS format. Precision matters for the natal positions the transit aspects are measured against.
 			Time string `json:"time"`
 
-			// Timezone IANA name (e.g. "America/New_York", "Europe/London", "UTC"), decimal hours (e.g. -5 for EST, 1 for CET), or a fixed UTC offset (e.g. "-05:00", "+01:00"). Prefer the IANA name: it is resolved to the DST-correct offset for the birth date, while a fixed offset or decimal is taken literally and will be wrong if it does not match the daylight-saving state on that date. Invalid timezones return 400 with a validation error.
-			Timezone GenerateTimeline200JSONResponseBody_BirthData_Timezone `json:"timezone"`
+			// Timezone Decimal UTC offset the forecast was computed with, resolved from whatever the request sent. An IANA name is resolved to the DST-correct offset for the birth date, so this is the literal number applied, never the name.
+			Timezone float32 `json:"timezone"`
 		} `json:"birthData"`
 
 		// Count Number of events in the timeline after deduplication, filtering, and the event cap.
@@ -54331,8 +54529,8 @@ type ForecastTransitsResponse struct {
 			// Time Birth time in 24-hour HH:MM:SS format. Precision matters for the natal positions the transit aspects are measured against.
 			Time string `json:"time"`
 
-			// Timezone IANA name (e.g. "America/New_York", "Europe/London", "UTC"), decimal hours (e.g. -5 for EST, 1 for CET), or a fixed UTC offset (e.g. "-05:00", "+01:00"). Prefer the IANA name: it is resolved to the DST-correct offset for the birth date, while a fixed offset or decimal is taken literally and will be wrong if it does not match the daylight-saving state on that date. Invalid timezones return 400 with a validation error.
-			Timezone ForecastTransits200JSONResponseBody_BirthData_Timezone `json:"timezone"`
+			// Timezone Decimal UTC offset the forecast was computed with, resolved from whatever the request sent. An IANA name is resolved to the DST-correct offset for the birth date, so this is the literal number applied, never the name.
+			Timezone float32 `json:"timezone"`
 		} `json:"birthData"`
 
 		// Count Number of events in the timeline after deduplication, filtering, and the event cap.
@@ -59270,6 +59468,9 @@ type CastYesNoResponse struct {
 		// Question The querent question that was asked, if one was provided.
 		Question *string `json:"question,omitempty"`
 
+		// Seed The seed used for this draw, echoed back when one was supplied. Present only if the request carried a seed. Makes a cached or forwarded response self describing, so a reading can be reproduced or shared without the original request beside it.
+		Seed *string `json:"seed,omitempty"`
+
 		// Strength Confidence level of the answer. Strong = Major Arcana card drawn (powerful, definitive cosmic energy). Qualified = Minor Arcana card drawn (nuanced, situational guidance).
 		Strength CastYesNo200JSONResponseBodyStrength `json:"strength"`
 	}
@@ -60021,6 +60222,9 @@ type GetCurrentDashaResponse struct {
 			DashaBhuktiAntara []int `json:"dashaBhuktiAntara"`
 		} `json:"commonHouses,omitempty"`
 
+		// Focus Which signification vocabulary produced the houseThemes keywords in this response, echoing the focus query parameter. Always present, and "general" when the parameter was omitted. Read it to label a rendered house legend, or to tell two cached responses apart when only one asked for the finance lens.
+		Focus *GetCurrentDasha200JSONResponseBodyFocus `json:"focus,omitempty"`
+
 		// HouseThemes Significations of each of the twelve bhavas (houses), keyed by house number 1 to 12, as short keywords. Bhava 1 is the Lagna (self, body, vitality), 2 wealth and speech, 4 home and mother, 7 marriage and partnership, 10 career and status, 11 gains. Use it to label the house numbers returned elsewhere in the response: a Vimshottari dasha period signifying houses 2, 7 and 8, or a KP significator carrying houses 11 and 6, becomes readable text without a separate lookup call. Returned once per response rather than repeated per period, and localized by the lang query parameter alongside every other interpretation field.
 		HouseThemes *map[string][]string `json:"houseThemes,omitempty"`
 
@@ -60463,6 +60667,9 @@ type GetMajorDashasResponse struct {
 			Years float32 `json:"years"`
 		} `json:"birthDashaBalance"`
 
+		// Focus Which signification vocabulary produced the houseThemes keywords in this response, echoing the focus query parameter. Always present, and "general" when the parameter was omitted. Read it to label a rendered house legend, or to tell two cached responses apart when only one asked for the finance lens.
+		Focus *GetMajorDashas200JSONResponseBodyFocus `json:"focus,omitempty"`
+
 		// HouseThemes Significations of each of the twelve bhavas (houses), keyed by house number 1 to 12, as short keywords. Bhava 1 is the Lagna (self, body, vitality), 2 wealth and speech, 4 home and mother, 7 marriage and partnership, 10 career and status, 11 gains. Use it to label the house numbers returned elsewhere in the response: a Vimshottari dasha period signifying houses 2, 7 and 8, or a KP significator carrying houses 11 and 6, becomes readable text without a separate lookup call. Returned once per response rather than repeated per period, and localized by the lang query parameter alongside every other interpretation field.
 		HouseThemes *map[string][]string `json:"houseThemes,omitempty"`
 
@@ -60662,6 +60869,9 @@ type GetSubDashasResponse struct {
 		// AyanamsaType Ayanamsa system used, echoing the request field. One of "lahiri", "kp-newcomb", "kp-old" or "custom". Echoed so a client can confirm which frame produced these dates without re-deriving it. When it reads "custom" the ayanamsa field above carries the exact value you supplied.
 		AyanamsaType GetSubDashas200JSONResponseBodyAyanamsaType `json:"ayanamsaType"`
 
+		// Focus Which signification vocabulary produced the houseThemes keywords in this response, echoing the focus query parameter. Always present, and "general" when the parameter was omitted. Read it to label a rendered house legend, or to tell two cached responses apart when only one asked for the finance lens.
+		Focus *GetSubDashas200JSONResponseBodyFocus `json:"focus,omitempty"`
+
 		// HouseThemes Significations of each of the twelve bhavas (houses), keyed by house number 1 to 12, as short keywords. Bhava 1 is the Lagna (self, body, vitality), 2 wealth and speech, 4 home and mother, 7 marriage and partnership, 10 career and status, 11 gains. Use it to label the house numbers returned elsewhere in the response: a Vimshottari dasha period signifying houses 2, 7 and 8, or a KP significator carrying houses 11 and 6, becomes readable text without a separate lookup call. Returned once per response rather than repeated per period, and localized by the lang query parameter alongside every other interpretation field.
 		HouseThemes *map[string][]string `json:"houseThemes,omitempty"`
 
@@ -60855,6 +61065,9 @@ type GetPratyantardashasResponse struct {
 		// AyanamsaType Ayanamsa system used, echoing the request field. One of "lahiri", "kp-newcomb", "kp-old" or "custom". Echoed so a client can confirm which frame produced these dates without re-deriving it. When it reads "custom" the ayanamsa field above carries the exact value you supplied.
 		AyanamsaType GetPratyantardashas200JSONResponseBodyAyanamsaType `json:"ayanamsaType"`
 
+		// Focus Which signification vocabulary produced the houseThemes keywords in this response, echoing the focus query parameter. Always present, and "general" when the parameter was omitted. Read it to label a rendered house legend, or to tell two cached responses apart when only one asked for the finance lens.
+		Focus *GetPratyantardashas200JSONResponseBodyFocus `json:"focus,omitempty"`
+
 		// HouseThemes Significations of each of the twelve bhavas (houses), keyed by house number 1 to 12, as short keywords. Bhava 1 is the Lagna (self, body, vitality), 2 wealth and speech, 4 home and mother, 7 marriage and partnership, 10 career and status, 11 gains. Use it to label the house numbers returned elsewhere in the response: a Vimshottari dasha period signifying houses 2, 7 and 8, or a KP significator carrying houses 11 and 6, becomes readable text without a separate lookup call. Returned once per response rather than repeated per period, and localized by the lang query parameter alongside every other interpretation field.
 		HouseThemes *map[string][]string `json:"houseThemes,omitempty"`
 
@@ -60984,6 +61197,9 @@ type GetSookshmaDashasResponse struct {
 
 		// AyanamsaType Ayanamsa system used, echoing the request field. One of "lahiri", "kp-newcomb", "kp-old" or "custom". Echoed so a client can confirm which frame produced these dates without re-deriving it. When it reads "custom" the ayanamsa field above carries the exact value you supplied.
 		AyanamsaType GetSookshmaDashas200JSONResponseBodyAyanamsaType `json:"ayanamsaType"`
+
+		// Focus Which signification vocabulary produced the houseThemes keywords in this response, echoing the focus query parameter. Always present, and "general" when the parameter was omitted. Read it to label a rendered house legend, or to tell two cached responses apart when only one asked for the finance lens.
+		Focus *GetSookshmaDashas200JSONResponseBodyFocus `json:"focus,omitempty"`
 
 		// HouseThemes Significations of each of the twelve bhavas (houses), keyed by house number 1 to 12, as short keywords. Bhava 1 is the Lagna (self, body, vitality), 2 wealth and speech, 4 home and mother, 7 marriage and partnership, 10 career and status, 11 gains. Use it to label the house numbers returned elsewhere in the response: a Vimshottari dasha period signifying houses 2, 7 and 8, or a KP significator carrying houses 11 and 6, becomes readable text without a separate lookup call. Returned once per response rather than repeated per period, and localized by the lang query parameter alongside every other interpretation field.
 		HouseThemes *map[string][]string `json:"houseThemes,omitempty"`
@@ -61192,6 +61408,9 @@ type GetPranaDashasResponse struct {
 
 		// AyanamsaType Ayanamsa system used, echoing the request field. One of "lahiri", "kp-newcomb", "kp-old" or "custom". Echoed so a client can confirm which frame produced these dates without re-deriving it. When it reads "custom" the ayanamsa field above carries the exact value you supplied.
 		AyanamsaType GetPranaDashas200JSONResponseBodyAyanamsaType `json:"ayanamsaType"`
+
+		// Focus Which signification vocabulary produced the houseThemes keywords in this response, echoing the focus query parameter. Always present, and "general" when the parameter was omitted. Read it to label a rendered house legend, or to tell two cached responses apart when only one asked for the finance lens.
+		Focus *GetPranaDashas200JSONResponseBodyFocus `json:"focus,omitempty"`
 
 		// HouseThemes Significations of each of the twelve bhavas (houses), keyed by house number 1 to 12, as short keywords. Bhava 1 is the Lagna (self, body, vitality), 2 wealth and speech, 4 home and mother, 7 marriage and partnership, 10 career and status, 11 gains. Use it to label the house numbers returned elsewhere in the response: a Vimshottari dasha period signifying houses 2, 7 and 8, or a KP significator carrying houses 11 and 6, becomes readable text without a separate lookup call. Returned once per response rather than repeated per period, and localized by the lang query parameter alongside every other interpretation field.
 		HouseThemes *map[string][]string `json:"houseThemes,omitempty"`
@@ -63407,12 +63626,15 @@ type ListYogasResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *struct {
-		// Total Total count of planetary yogas in the database. Includes Raj Yogas, Dhan Yogas, Pancha Mahapurusha Yogas, Nabhasa Yogas, and more.
+		// Total Number of yogas in this response, which is the filtered count when `family` is supplied and the full catalog size otherwise. Includes Raj Yogas, Dhan Yogas, Pancha Mahapurusha Yogas, Nabhasa Yogas, and more.
 		Total float32 `json:"total"`
 
-		// Yogas Array of all planetary yogas with basic identifiers. Use GET /yogas/:id for formation rules, effects, and quality classification.
+		// Yogas Array of planetary yogas with basic identifiers, narrowed by `family` when that filter is supplied. Use GET /yoga/{id} for formation rules, effects, and quality classification.
 		Yogas []struct {
-			// ID Unique yoga identifier in lowercase kebab-case. Use this to fetch full details via GET /yogas/:id.
+			// Family Nabhasa family, present only on the 32 Nabhasa distribution yogas and absent on every other catalog row. Never translated, so it groups identically under any lang.
+			Family *ListYogas200JSONResponseBodyYogasFamily `json:"family,omitempty"`
+
+			// ID Unique yoga identifier in lowercase kebab-case. Use this to fetch full details via GET /yoga/{id}.
 			ID string `json:"id"`
 
 			// Name Traditional Sanskrit name of the planetary yoga combination.
@@ -72242,8 +72464,8 @@ func ParseGenerateDigestResponse(rsp *http.Response) (*GenerateDigestResponse, e
 				// Time Birth time in 24-hour HH:MM:SS format. Precision matters for the natal positions the transit aspects are measured against.
 				Time string `json:"time"`
 
-				// Timezone IANA name (e.g. "America/New_York", "Europe/London", "UTC"), decimal hours (e.g. -5 for EST, 1 for CET), or a fixed UTC offset (e.g. "-05:00", "+01:00"). Prefer the IANA name: it is resolved to the DST-correct offset for the birth date, while a fixed offset or decimal is taken literally and will be wrong if it does not match the daylight-saving state on that date. Invalid timezones return 400 with a validation error.
-				Timezone GenerateDigest200JSONResponseBody_BirthData_Timezone `json:"timezone"`
+				// Timezone Decimal UTC offset the forecast was computed with, resolved from whatever the request sent. An IANA name is resolved to the DST-correct offset for the birth date, so this is the literal number applied, never the name.
+				Timezone float32 `json:"timezone"`
 			} `json:"birthData"`
 
 			// EndDate Last day of the resolved 90 day horizon the timeline was built over before slicing.
@@ -72405,8 +72627,8 @@ func ParseFindSignificantDatesResponse(rsp *http.Response) (*FindSignificantDate
 				// Time Birth time in 24-hour HH:MM:SS format. Precision matters for the natal positions the transit aspects are measured against.
 				Time string `json:"time"`
 
-				// Timezone IANA name (e.g. "America/New_York", "Europe/London", "UTC"), decimal hours (e.g. -5 for EST, 1 for CET), or a fixed UTC offset (e.g. "-05:00", "+01:00"). Prefer the IANA name: it is resolved to the DST-correct offset for the birth date, while a fixed offset or decimal is taken literally and will be wrong if it does not match the daylight-saving state on that date. Invalid timezones return 400 with a validation error.
-				Timezone FindSignificantDates200JSONResponseBody_BirthData_Timezone `json:"timezone"`
+				// Timezone Decimal UTC offset the forecast was computed with, resolved from whatever the request sent. An IANA name is resolved to the DST-correct offset for the birth date, so this is the literal number applied, never the name.
+				Timezone float32 `json:"timezone"`
 			} `json:"birthData"`
 
 			// Count Number of events in the timeline after deduplication, filtering, and the event cap.
@@ -72752,8 +72974,8 @@ func ParseGenerateTimelineResponse(rsp *http.Response) (*GenerateTimelineRespons
 				// Time Birth time in 24-hour HH:MM:SS format. Precision matters for the natal positions the transit aspects are measured against.
 				Time string `json:"time"`
 
-				// Timezone IANA name (e.g. "America/New_York", "Europe/London", "UTC"), decimal hours (e.g. -5 for EST, 1 for CET), or a fixed UTC offset (e.g. "-05:00", "+01:00"). Prefer the IANA name: it is resolved to the DST-correct offset for the birth date, while a fixed offset or decimal is taken literally and will be wrong if it does not match the daylight-saving state on that date. Invalid timezones return 400 with a validation error.
-				Timezone GenerateTimeline200JSONResponseBody_BirthData_Timezone `json:"timezone"`
+				// Timezone Decimal UTC offset the forecast was computed with, resolved from whatever the request sent. An IANA name is resolved to the DST-correct offset for the birth date, so this is the literal number applied, never the name.
+				Timezone float32 `json:"timezone"`
 			} `json:"birthData"`
 
 			// Count Number of events in the timeline after deduplication, filtering, and the event cap.
@@ -72885,8 +73107,8 @@ func ParseForecastTransitsResponse(rsp *http.Response) (*ForecastTransitsRespons
 				// Time Birth time in 24-hour HH:MM:SS format. Precision matters for the natal positions the transit aspects are measured against.
 				Time string `json:"time"`
 
-				// Timezone IANA name (e.g. "America/New_York", "Europe/London", "UTC"), decimal hours (e.g. -5 for EST, 1 for CET), or a fixed UTC offset (e.g. "-05:00", "+01:00"). Prefer the IANA name: it is resolved to the DST-correct offset for the birth date, while a fixed offset or decimal is taken literally and will be wrong if it does not match the daylight-saving state on that date. Invalid timezones return 400 with a validation error.
-				Timezone ForecastTransits200JSONResponseBody_BirthData_Timezone `json:"timezone"`
+				// Timezone Decimal UTC offset the forecast was computed with, resolved from whatever the request sent. An IANA name is resolved to the DST-correct offset for the birth date, so this is the literal number applied, never the name.
+				Timezone float32 `json:"timezone"`
 			} `json:"birthData"`
 
 			// Count Number of events in the timeline after deduplication, filtering, and the event cap.
@@ -79021,6 +79243,9 @@ func ParseCastYesNoResponse(rsp *http.Response) (*CastYesNoResponse, error) {
 			// Question The querent question that was asked, if one was provided.
 			Question *string `json:"question,omitempty"`
 
+			// Seed The seed used for this draw, echoed back when one was supplied. Present only if the request carried a seed. Makes a cached or forwarded response self describing, so a reading can be reproduced or shared without the original request beside it.
+			Seed *string `json:"seed,omitempty"`
+
 			// Strength Confidence level of the answer. Strong = Major Arcana card drawn (powerful, definitive cosmic energy). Qualified = Minor Arcana card drawn (nuanced, situational guidance).
 			Strength CastYesNo200JSONResponseBodyStrength `json:"strength"`
 		}
@@ -80036,6 +80261,9 @@ func ParseGetCurrentDashaResponse(rsp *http.Response) (*GetCurrentDashaResponse,
 				DashaBhuktiAntara []int `json:"dashaBhuktiAntara"`
 			} `json:"commonHouses,omitempty"`
 
+			// Focus Which signification vocabulary produced the houseThemes keywords in this response, echoing the focus query parameter. Always present, and "general" when the parameter was omitted. Read it to label a rendered house legend, or to tell two cached responses apart when only one asked for the finance lens.
+			Focus *GetCurrentDasha200JSONResponseBodyFocus `json:"focus,omitempty"`
+
 			// HouseThemes Significations of each of the twelve bhavas (houses), keyed by house number 1 to 12, as short keywords. Bhava 1 is the Lagna (self, body, vitality), 2 wealth and speech, 4 home and mother, 7 marriage and partnership, 10 career and status, 11 gains. Use it to label the house numbers returned elsewhere in the response: a Vimshottari dasha period signifying houses 2, 7 and 8, or a KP significator carrying houses 11 and 6, becomes readable text without a separate lookup call. Returned once per response rather than repeated per period, and localized by the lang query parameter alongside every other interpretation field.
 			HouseThemes *map[string][]string `json:"houseThemes,omitempty"`
 
@@ -80499,6 +80727,9 @@ func ParseGetMajorDashasResponse(rsp *http.Response) (*GetMajorDashasResponse, e
 				Years float32 `json:"years"`
 			} `json:"birthDashaBalance"`
 
+			// Focus Which signification vocabulary produced the houseThemes keywords in this response, echoing the focus query parameter. Always present, and "general" when the parameter was omitted. Read it to label a rendered house legend, or to tell two cached responses apart when only one asked for the finance lens.
+			Focus *GetMajorDashas200JSONResponseBodyFocus `json:"focus,omitempty"`
+
 			// HouseThemes Significations of each of the twelve bhavas (houses), keyed by house number 1 to 12, as short keywords. Bhava 1 is the Lagna (self, body, vitality), 2 wealth and speech, 4 home and mother, 7 marriage and partnership, 10 career and status, 11 gains. Use it to label the house numbers returned elsewhere in the response: a Vimshottari dasha period signifying houses 2, 7 and 8, or a KP significator carrying houses 11 and 6, becomes readable text without a separate lookup call. Returned once per response rather than repeated per period, and localized by the lang query parameter alongside every other interpretation field.
 			HouseThemes *map[string][]string `json:"houseThemes,omitempty"`
 
@@ -80719,6 +80950,9 @@ func ParseGetSubDashasResponse(rsp *http.Response) (*GetSubDashasResponse, error
 			// AyanamsaType Ayanamsa system used, echoing the request field. One of "lahiri", "kp-newcomb", "kp-old" or "custom". Echoed so a client can confirm which frame produced these dates without re-deriving it. When it reads "custom" the ayanamsa field above carries the exact value you supplied.
 			AyanamsaType GetSubDashas200JSONResponseBodyAyanamsaType `json:"ayanamsaType"`
 
+			// Focus Which signification vocabulary produced the houseThemes keywords in this response, echoing the focus query parameter. Always present, and "general" when the parameter was omitted. Read it to label a rendered house legend, or to tell two cached responses apart when only one asked for the finance lens.
+			Focus *GetSubDashas200JSONResponseBodyFocus `json:"focus,omitempty"`
+
 			// HouseThemes Significations of each of the twelve bhavas (houses), keyed by house number 1 to 12, as short keywords. Bhava 1 is the Lagna (self, body, vitality), 2 wealth and speech, 4 home and mother, 7 marriage and partnership, 10 career and status, 11 gains. Use it to label the house numbers returned elsewhere in the response: a Vimshottari dasha period signifying houses 2, 7 and 8, or a KP significator carrying houses 11 and 6, becomes readable text without a separate lookup call. Returned once per response rather than repeated per period, and localized by the lang query parameter alongside every other interpretation field.
 			HouseThemes *map[string][]string `json:"houseThemes,omitempty"`
 
@@ -80933,6 +81167,9 @@ func ParseGetPratyantardashasResponse(rsp *http.Response) (*GetPratyantardashasR
 			// AyanamsaType Ayanamsa system used, echoing the request field. One of "lahiri", "kp-newcomb", "kp-old" or "custom". Echoed so a client can confirm which frame produced these dates without re-deriving it. When it reads "custom" the ayanamsa field above carries the exact value you supplied.
 			AyanamsaType GetPratyantardashas200JSONResponseBodyAyanamsaType `json:"ayanamsaType"`
 
+			// Focus Which signification vocabulary produced the houseThemes keywords in this response, echoing the focus query parameter. Always present, and "general" when the parameter was omitted. Read it to label a rendered house legend, or to tell two cached responses apart when only one asked for the finance lens.
+			Focus *GetPratyantardashas200JSONResponseBodyFocus `json:"focus,omitempty"`
+
 			// HouseThemes Significations of each of the twelve bhavas (houses), keyed by house number 1 to 12, as short keywords. Bhava 1 is the Lagna (self, body, vitality), 2 wealth and speech, 4 home and mother, 7 marriage and partnership, 10 career and status, 11 gains. Use it to label the house numbers returned elsewhere in the response: a Vimshottari dasha period signifying houses 2, 7 and 8, or a KP significator carrying houses 11 and 6, becomes readable text without a separate lookup call. Returned once per response rather than repeated per period, and localized by the lang query parameter alongside every other interpretation field.
 			HouseThemes *map[string][]string `json:"houseThemes,omitempty"`
 
@@ -81083,6 +81320,9 @@ func ParseGetSookshmaDashasResponse(rsp *http.Response) (*GetSookshmaDashasRespo
 
 			// AyanamsaType Ayanamsa system used, echoing the request field. One of "lahiri", "kp-newcomb", "kp-old" or "custom". Echoed so a client can confirm which frame produced these dates without re-deriving it. When it reads "custom" the ayanamsa field above carries the exact value you supplied.
 			AyanamsaType GetSookshmaDashas200JSONResponseBodyAyanamsaType `json:"ayanamsaType"`
+
+			// Focus Which signification vocabulary produced the houseThemes keywords in this response, echoing the focus query parameter. Always present, and "general" when the parameter was omitted. Read it to label a rendered house legend, or to tell two cached responses apart when only one asked for the finance lens.
+			Focus *GetSookshmaDashas200JSONResponseBodyFocus `json:"focus,omitempty"`
 
 			// HouseThemes Significations of each of the twelve bhavas (houses), keyed by house number 1 to 12, as short keywords. Bhava 1 is the Lagna (self, body, vitality), 2 wealth and speech, 4 home and mother, 7 marriage and partnership, 10 career and status, 11 gains. Use it to label the house numbers returned elsewhere in the response: a Vimshottari dasha period signifying houses 2, 7 and 8, or a KP significator carrying houses 11 and 6, becomes readable text without a separate lookup call. Returned once per response rather than repeated per period, and localized by the lang query parameter alongside every other interpretation field.
 			HouseThemes *map[string][]string `json:"houseThemes,omitempty"`
@@ -81312,6 +81552,9 @@ func ParseGetPranaDashasResponse(rsp *http.Response) (*GetPranaDashasResponse, e
 
 			// AyanamsaType Ayanamsa system used, echoing the request field. One of "lahiri", "kp-newcomb", "kp-old" or "custom". Echoed so a client can confirm which frame produced these dates without re-deriving it. When it reads "custom" the ayanamsa field above carries the exact value you supplied.
 			AyanamsaType GetPranaDashas200JSONResponseBodyAyanamsaType `json:"ayanamsaType"`
+
+			// Focus Which signification vocabulary produced the houseThemes keywords in this response, echoing the focus query parameter. Always present, and "general" when the parameter was omitted. Read it to label a rendered house legend, or to tell two cached responses apart when only one asked for the finance lens.
+			Focus *GetPranaDashas200JSONResponseBodyFocus `json:"focus,omitempty"`
 
 			// HouseThemes Significations of each of the twelve bhavas (houses), keyed by house number 1 to 12, as short keywords. Bhava 1 is the Lagna (self, body, vitality), 2 wealth and speech, 4 home and mother, 7 marriage and partnership, 10 career and status, 11 gains. Use it to label the house numbers returned elsewhere in the response: a Vimshottari dasha period signifying houses 2, 7 and 8, or a KP significator carrying houses 11 and 6, becomes readable text without a separate lookup call. Returned once per response rather than repeated per period, and localized by the lang query parameter alongside every other interpretation field.
 			HouseThemes *map[string][]string `json:"houseThemes,omitempty"`
@@ -84211,12 +84454,15 @@ func ParseListYogasResponse(rsp *http.Response) (*ListYogasResponse, error) {
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
-			// Total Total count of planetary yogas in the database. Includes Raj Yogas, Dhan Yogas, Pancha Mahapurusha Yogas, Nabhasa Yogas, and more.
+			// Total Number of yogas in this response, which is the filtered count when `family` is supplied and the full catalog size otherwise. Includes Raj Yogas, Dhan Yogas, Pancha Mahapurusha Yogas, Nabhasa Yogas, and more.
 			Total float32 `json:"total"`
 
-			// Yogas Array of all planetary yogas with basic identifiers. Use GET /yogas/:id for formation rules, effects, and quality classification.
+			// Yogas Array of planetary yogas with basic identifiers, narrowed by `family` when that filter is supplied. Use GET /yoga/{id} for formation rules, effects, and quality classification.
 			Yogas []struct {
-				// ID Unique yoga identifier in lowercase kebab-case. Use this to fetch full details via GET /yogas/:id.
+				// Family Nabhasa family, present only on the 32 Nabhasa distribution yogas and absent on every other catalog row. Never translated, so it groups identically under any lang.
+				Family *ListYogas200JSONResponseBodyYogasFamily `json:"family,omitempty"`
+
+				// ID Unique yoga identifier in lowercase kebab-case. Use this to fetch full details via GET /yoga/{id}.
 				ID string `json:"id"`
 
 				// Name Traditional Sanskrit name of the planetary yoga combination.
