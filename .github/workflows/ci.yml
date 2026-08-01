@@ -18,7 +18,12 @@ jobs:
         with:
           go-version: stable
 
+      # Hermetic: regenerates from the committed spec, so this verifies that the committed
+      # generated code still reproduces from it, with no network dependency. Refreshing the
+      # spec itself is the release workflow's job.
       - name: Codegen drift check
+        env:
+          ROXYAPI_SPEC_FILE: specs/openapi.json
         run: |
           go run ./tools/roxygen generate
           git diff --exit-code -- specs/openapi.json roxyapi.gen.go roxy.gen.go \

@@ -74,8 +74,7 @@ func check(err error, msg string) {
 // ─── generate ────────────────────────────────────────────────────────────────
 
 func generate() {
-	fmt.Printf("Fetching OpenAPI spec from %s\n", specURL)
-	raw := fetchSpec()
+	raw := loadSpec()
 
 	dec := json.NewDecoder(bytes.NewReader(raw))
 	dec.UseNumber()
@@ -112,6 +111,20 @@ func generate() {
 
 	buildFacade(spec)
 	syncDocs()
+}
+
+// loadSpec returns the raw spec bytes, from disk when ROXYAPI_SPEC_FILE is set and from the API
+// otherwise. Reading from a file keeps generation offline and byte-reproducible, which is what the
+// codegen drift check in CI relies on.
+func loadSpec() []byte {
+	if path := os.Getenv("ROXYAPI_SPEC_FILE"); path != "" {
+		fmt.Printf("Reading OpenAPI spec from %s (offline, ROXYAPI_SPEC_FILE)\n", path)
+		raw, err := os.ReadFile(path)
+		check(err, "read spec file")
+		return raw
+	}
+	fmt.Printf("Fetching OpenAPI spec from %s\n", specURL)
+	return fetchSpec()
 }
 
 // fetchSpec retries with exponential backoff: a transient upstream error (e.g. a
