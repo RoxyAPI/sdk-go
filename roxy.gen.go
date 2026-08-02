@@ -382,8 +382,8 @@ func (s *VedicAstrologyService) CalculateParallels(ctx context.Context, body Cal
 	return resp, asRoxyError(resp)
 }
 
-func (s *VedicAstrologyService) CalculateShadbala(ctx context.Context, body CalculateShadbalaJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateShadbalaResponse, error) {
-	resp, err := s.client.CalculateShadbalaWithResponse(ctx, body, reqEditors...)
+func (s *VedicAstrologyService) CalculateShadbala(ctx context.Context, params *CalculateShadbalaParams, body CalculateShadbalaJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateShadbalaResponse, error) {
+	resp, err := s.client.CalculateShadbalaWithResponse(ctx, params, body, reqEditors...)
 	if err != nil {
 		return resp, err
 	}
@@ -398,24 +398,32 @@ func (s *VedicAstrologyService) CalculateTransit(ctx context.Context, body Calcu
 	return resp, asRoxyError(resp)
 }
 
-func (s *VedicAstrologyService) CheckKalsarpaDosha(ctx context.Context, body CheckKalsarpaDoshaJSONRequestBody, reqEditors ...RequestEditorFn) (*CheckKalsarpaDoshaResponse, error) {
-	resp, err := s.client.CheckKalsarpaDoshaWithResponse(ctx, body, reqEditors...)
+func (s *VedicAstrologyService) CastKpHoraryChart(ctx context.Context, params *CastKpHoraryChartParams, body CastKpHoraryChartJSONRequestBody, reqEditors ...RequestEditorFn) (*CastKpHoraryChartResponse, error) {
+	resp, err := s.client.CastKpHoraryChartWithResponse(ctx, params, body, reqEditors...)
 	if err != nil {
 		return resp, err
 	}
 	return resp, asRoxyError(resp)
 }
 
-func (s *VedicAstrologyService) CheckManglikDosha(ctx context.Context, body CheckManglikDoshaJSONRequestBody, reqEditors ...RequestEditorFn) (*CheckManglikDoshaResponse, error) {
-	resp, err := s.client.CheckManglikDoshaWithResponse(ctx, body, reqEditors...)
+func (s *VedicAstrologyService) CheckKalsarpaDosha(ctx context.Context, params *CheckKalsarpaDoshaParams, body CheckKalsarpaDoshaJSONRequestBody, reqEditors ...RequestEditorFn) (*CheckKalsarpaDoshaResponse, error) {
+	resp, err := s.client.CheckKalsarpaDoshaWithResponse(ctx, params, body, reqEditors...)
 	if err != nil {
 		return resp, err
 	}
 	return resp, asRoxyError(resp)
 }
 
-func (s *VedicAstrologyService) CheckSadhesati(ctx context.Context, body CheckSadhesatiJSONRequestBody, reqEditors ...RequestEditorFn) (*CheckSadhesatiResponse, error) {
-	resp, err := s.client.CheckSadhesatiWithResponse(ctx, body, reqEditors...)
+func (s *VedicAstrologyService) CheckManglikDosha(ctx context.Context, params *CheckManglikDoshaParams, body CheckManglikDoshaJSONRequestBody, reqEditors ...RequestEditorFn) (*CheckManglikDoshaResponse, error) {
+	resp, err := s.client.CheckManglikDoshaWithResponse(ctx, params, body, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *VedicAstrologyService) CheckSadhesati(ctx context.Context, params *CheckSadhesatiParams, body CheckSadhesatiJSONRequestBody, reqEditors ...RequestEditorFn) (*CheckSadhesatiResponse, error) {
+	resp, err := s.client.CheckSadhesatiWithResponse(ctx, params, body, reqEditors...)
 	if err != nil {
 		return resp, err
 	}
@@ -504,6 +512,14 @@ func (s *VedicAstrologyService) GetDetailedPanchang(ctx context.Context, params 
 
 func (s *VedicAstrologyService) GetEclipticCrossings(ctx context.Context, body GetEclipticCrossingsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetEclipticCrossingsResponse, error) {
 	resp, err := s.client.GetEclipticCrossingsWithResponse(ctx, body, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *VedicAstrologyService) GetHeliacalVisibility(ctx context.Context, body GetHeliacalVisibilityJSONRequestBody, reqEditors ...RequestEditorFn) (*GetHeliacalVisibilityResponse, error) {
+	resp, err := s.client.GetHeliacalVisibilityWithResponse(ctx, body, reqEditors...)
 	if err != nil {
 		return resp, err
 	}

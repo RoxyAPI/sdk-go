@@ -82,9 +82,11 @@ Vedic astrology (Jyotish) and KP API for kundli generation with 15 divisional ch
 - `checkManglikDosha` - POST `/vedic-astrology/dosha/manglik` - Check Manglik Dosha - Mangal Dosha Calculator API
 - `checkSadhesati` - POST `/vedic-astrology/dosha/sadhesati` - Check Sadhesati - Sade Sati Calculator API (Saturn Transit)
 - `getEclipticCrossings` - POST `/vedic-astrology/ecliptic-crossings` - Ecliptic Crossings - When planets cross the ecliptic plane
+- `getHeliacalVisibility` - POST `/vedic-astrology/heliacal` - Heliacal rising and setting (udaya and asta) - Graha Asta Calculator API
 - `getKpAyanamsa` - GET `/vedic-astrology/kp/ayanamsa` - Get KP-Newcomb ayanamsa - Dynamic daily calculation
 - `generateKpChart` - POST `/vedic-astrology/kp/chart` - Generate complete KP birth chart
 - `getKpCusps` - POST `/vedic-astrology/kp/cusps` - Get KP Placidus house cusps with sub-lords
+- `castKpHoraryChart` - POST `/vedic-astrology/kp/horary` - Cast a KP horary (Prashna) chart from a number 1-249 - KP Horary API
 - `getKpPlanets` - POST `/vedic-astrology/kp/planets` - Get KP planetary positions with sub-lords
 - `getKpPlanetsInterval` - POST `/vedic-astrology/kp/planets-interval` - Get KP planets at time intervals
 - `getKpRasiChanges` - POST `/vedic-astrology/kp/rasi-changes` - Find KP rasi ingress times

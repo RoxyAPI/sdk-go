@@ -81,8 +81,6 @@ func generate() {
 	var spec map[string]any
 	check(dec.Decode(&spec), "parse spec")
 
-	guardOpenAPI31(spec)
-	spec["openapi"] = "3.0.3"
 	patchServerURL(spec)
 	patchPathParameters(spec)
 	simplifyFreeFormAdditionalProps(spec)
@@ -166,33 +164,6 @@ func fetchSpecOnce() ([]byte, error) {
 }
 
 // ─── spec normalization ──────────────────────────────────────────────────────
-
-// guardOpenAPI31 fails loudly if the spec uses an OpenAPI 3.1-only construct that
-// the 3.0-targeting code generator cannot consume. Today the spec declares 3.1 but
-// uses only 3.0 features, so a version-string downconvert is enough; if that ever
-// changes this guard surfaces it instead of emitting silently-wrong code.
-func guardOpenAPI31(node any) {
-	switch n := node.(type) {
-	case map[string]any:
-		if t, ok := n["type"]; ok {
-			if _, isArray := t.([]any); isArray {
-				fail("spec uses OpenAPI 3.1 type-array (nullable union); add a real 3.1->3.0 downconverter to roxygen")
-			}
-		}
-		for _, k := range []string{"const", "prefixItems"} {
-			if _, ok := n[k]; ok {
-				fail("spec uses OpenAPI 3.1-only keyword %q; add a real 3.1->3.0 downconverter to roxygen", k)
-			}
-		}
-		for _, v := range n {
-			guardOpenAPI31(v)
-		}
-	case []any:
-		for _, v := range n {
-			guardOpenAPI31(v)
-		}
-	}
-}
 
 // simplifyFreeFormAdditionalProps collapses a free-form `additionalProperties`
 // schema (one carrying no structural keyword, e.g. `{ nullable: true }`) to the
