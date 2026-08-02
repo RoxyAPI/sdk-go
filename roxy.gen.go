@@ -334,6 +334,22 @@ func (s *VedicAstrologyService) CalculateAshtakavarga(ctx context.Context, body 
 	return resp, asRoxyError(resp)
 }
 
+func (s *VedicAstrologyService) CalculateBhavChalit(ctx context.Context, params *CalculateBhavChalitParams, body CalculateBhavChalitJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateBhavChalitResponse, error) {
+	resp, err := s.client.CalculateBhavChalitWithResponse(ctx, params, body, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *VedicAstrologyService) CalculateBhavaBala(ctx context.Context, params *CalculateBhavaBalaParams, body CalculateBhavaBalaJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateBhavaBalaResponse, error) {
+	resp, err := s.client.CalculateBhavaBalaWithResponse(ctx, params, body, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
 func (s *VedicAstrologyService) CalculateCharaKarakas(ctx context.Context, params *CalculateCharaKarakasParams, body CalculateCharaKarakasJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateCharaKarakasResponse, error) {
 	resp, err := s.client.CalculateCharaKarakasWithResponse(ctx, params, body, reqEditors...)
 	if err != nil {

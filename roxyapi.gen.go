@@ -376,6 +376,42 @@ func (e BasicCardSuit) Valid() bool {
 	}
 }
 
+// Defines values for BhavChalitResponseFocus.
+const (
+	BhavChalitResponseFocusFinance BhavChalitResponseFocus = "finance"
+	BhavChalitResponseFocusGeneral BhavChalitResponseFocus = "general"
+)
+
+// Valid indicates whether the value is a known member of the BhavChalitResponseFocus enum.
+func (e BhavChalitResponseFocus) Valid() bool {
+	switch e {
+	case BhavChalitResponseFocusFinance:
+		return true
+	case BhavChalitResponseFocusGeneral:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for BhavaBalaResponseFocus.
+const (
+	BhavaBalaResponseFocusFinance BhavaBalaResponseFocus = "finance"
+	BhavaBalaResponseFocusGeneral BhavaBalaResponseFocus = "general"
+)
+
+// Valid indicates whether the value is a known member of the BhavaBalaResponseFocus enum.
+func (e BhavaBalaResponseFocus) Valid() bool {
+	switch e {
+	case BhavaBalaResponseFocusFinance:
+		return true
+	case BhavaBalaResponseFocusGeneral:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for BirthChartResponseAquariusSignsAwastha.
 const (
 	BirthChartResponseAquariusSignsAwasthaBala    BirthChartResponseAquariusSignsAwastha = "Bala"
@@ -2293,6 +2329,7 @@ const (
 	KPChartRequestAyanamsaKpNewcomb KPChartRequestAyanamsa = "kp-newcomb"
 	KPChartRequestAyanamsaKpOld     KPChartRequestAyanamsa = "kp-old"
 	KPChartRequestAyanamsaLahiri    KPChartRequestAyanamsa = "lahiri"
+	KPChartRequestAyanamsaRaman     KPChartRequestAyanamsa = "raman"
 )
 
 // Valid indicates whether the value is a known member of the KPChartRequestAyanamsa enum.
@@ -2305,6 +2342,8 @@ func (e KPChartRequestAyanamsa) Valid() bool {
 	case KPChartRequestAyanamsaKpOld:
 		return true
 	case KPChartRequestAyanamsaLahiri:
+		return true
+	case KPChartRequestAyanamsaRaman:
 		return true
 	default:
 		return false
@@ -2353,6 +2392,7 @@ const (
 	KPCuspsRequestAyanamsaKpNewcomb KPCuspsRequestAyanamsa = "kp-newcomb"
 	KPCuspsRequestAyanamsaKpOld     KPCuspsRequestAyanamsa = "kp-old"
 	KPCuspsRequestAyanamsaLahiri    KPCuspsRequestAyanamsa = "lahiri"
+	KPCuspsRequestAyanamsaRaman     KPCuspsRequestAyanamsa = "raman"
 )
 
 // Valid indicates whether the value is a known member of the KPCuspsRequestAyanamsa enum.
@@ -2365,6 +2405,8 @@ func (e KPCuspsRequestAyanamsa) Valid() bool {
 	case KPCuspsRequestAyanamsaKpOld:
 		return true
 	case KPCuspsRequestAyanamsaLahiri:
+		return true
+	case KPCuspsRequestAyanamsaRaman:
 		return true
 	default:
 		return false
@@ -2394,6 +2436,7 @@ const (
 	KPPlanetsIntervalRequestAyanamsaKpNewcomb KPPlanetsIntervalRequestAyanamsa = "kp-newcomb"
 	KPPlanetsIntervalRequestAyanamsaKpOld     KPPlanetsIntervalRequestAyanamsa = "kp-old"
 	KPPlanetsIntervalRequestAyanamsaLahiri    KPPlanetsIntervalRequestAyanamsa = "lahiri"
+	KPPlanetsIntervalRequestAyanamsaRaman     KPPlanetsIntervalRequestAyanamsa = "raman"
 )
 
 // Valid indicates whether the value is a known member of the KPPlanetsIntervalRequestAyanamsa enum.
@@ -2404,6 +2447,8 @@ func (e KPPlanetsIntervalRequestAyanamsa) Valid() bool {
 	case KPPlanetsIntervalRequestAyanamsaKpOld:
 		return true
 	case KPPlanetsIntervalRequestAyanamsaLahiri:
+		return true
+	case KPPlanetsIntervalRequestAyanamsaRaman:
 		return true
 	default:
 		return false
@@ -2434,6 +2479,7 @@ const (
 	KPPlanetsRequestAyanamsaKpNewcomb KPPlanetsRequestAyanamsa = "kp-newcomb"
 	KPPlanetsRequestAyanamsaKpOld     KPPlanetsRequestAyanamsa = "kp-old"
 	KPPlanetsRequestAyanamsaLahiri    KPPlanetsRequestAyanamsa = "lahiri"
+	KPPlanetsRequestAyanamsaRaman     KPPlanetsRequestAyanamsa = "raman"
 )
 
 // Valid indicates whether the value is a known member of the KPPlanetsRequestAyanamsa enum.
@@ -2446,6 +2492,8 @@ func (e KPPlanetsRequestAyanamsa) Valid() bool {
 	case KPPlanetsRequestAyanamsaKpOld:
 		return true
 	case KPPlanetsRequestAyanamsaLahiri:
+		return true
+	case KPPlanetsRequestAyanamsaRaman:
 		return true
 	default:
 		return false
@@ -2475,6 +2523,7 @@ const (
 	KPRasiChangesRequestAyanamsaKpNewcomb KPRasiChangesRequestAyanamsa = "kp-newcomb"
 	KPRasiChangesRequestAyanamsaKpOld     KPRasiChangesRequestAyanamsa = "kp-old"
 	KPRasiChangesRequestAyanamsaLahiri    KPRasiChangesRequestAyanamsa = "lahiri"
+	KPRasiChangesRequestAyanamsaRaman     KPRasiChangesRequestAyanamsa = "raman"
 )
 
 // Valid indicates whether the value is a known member of the KPRasiChangesRequestAyanamsa enum.
@@ -2485,6 +2534,8 @@ func (e KPRasiChangesRequestAyanamsa) Valid() bool {
 	case KPRasiChangesRequestAyanamsaKpOld:
 		return true
 	case KPRasiChangesRequestAyanamsaLahiri:
+		return true
+	case KPRasiChangesRequestAyanamsaRaman:
 		return true
 	default:
 		return false
@@ -2550,6 +2601,7 @@ const (
 	KPSublordChangesRequestAyanamsaKpNewcomb KPSublordChangesRequestAyanamsa = "kp-newcomb"
 	KPSublordChangesRequestAyanamsaKpOld     KPSublordChangesRequestAyanamsa = "kp-old"
 	KPSublordChangesRequestAyanamsaLahiri    KPSublordChangesRequestAyanamsa = "lahiri"
+	KPSublordChangesRequestAyanamsaRaman     KPSublordChangesRequestAyanamsa = "raman"
 )
 
 // Valid indicates whether the value is a known member of the KPSublordChangesRequestAyanamsa enum.
@@ -2560,6 +2612,8 @@ func (e KPSublordChangesRequestAyanamsa) Valid() bool {
 	case KPSublordChangesRequestAyanamsaKpOld:
 		return true
 	case KPSublordChangesRequestAyanamsaLahiri:
+		return true
+	case KPSublordChangesRequestAyanamsaRaman:
 		return true
 	default:
 		return false
@@ -11263,6 +11317,114 @@ func (e GetAvastha200JSONResponseBodySystem) Valid() bool {
 	}
 }
 
+// Defines values for CalculateBhavChalitParamsLang.
+const (
+	CalculateBhavChalitParamsLangDe CalculateBhavChalitParamsLang = "de"
+	CalculateBhavChalitParamsLangEn CalculateBhavChalitParamsLang = "en"
+	CalculateBhavChalitParamsLangEs CalculateBhavChalitParamsLang = "es"
+	CalculateBhavChalitParamsLangFr CalculateBhavChalitParamsLang = "fr"
+	CalculateBhavChalitParamsLangHi CalculateBhavChalitParamsLang = "hi"
+	CalculateBhavChalitParamsLangPt CalculateBhavChalitParamsLang = "pt"
+	CalculateBhavChalitParamsLangRu CalculateBhavChalitParamsLang = "ru"
+	CalculateBhavChalitParamsLangTr CalculateBhavChalitParamsLang = "tr"
+)
+
+// Valid indicates whether the value is a known member of the CalculateBhavChalitParamsLang enum.
+func (e CalculateBhavChalitParamsLang) Valid() bool {
+	switch e {
+	case CalculateBhavChalitParamsLangDe:
+		return true
+	case CalculateBhavChalitParamsLangEn:
+		return true
+	case CalculateBhavChalitParamsLangEs:
+		return true
+	case CalculateBhavChalitParamsLangFr:
+		return true
+	case CalculateBhavChalitParamsLangHi:
+		return true
+	case CalculateBhavChalitParamsLangPt:
+		return true
+	case CalculateBhavChalitParamsLangRu:
+		return true
+	case CalculateBhavChalitParamsLangTr:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for CalculateBhavChalitParamsFocus.
+const (
+	CalculateBhavChalitParamsFocusFinance CalculateBhavChalitParamsFocus = "finance"
+	CalculateBhavChalitParamsFocusGeneral CalculateBhavChalitParamsFocus = "general"
+)
+
+// Valid indicates whether the value is a known member of the CalculateBhavChalitParamsFocus enum.
+func (e CalculateBhavChalitParamsFocus) Valid() bool {
+	switch e {
+	case CalculateBhavChalitParamsFocusFinance:
+		return true
+	case CalculateBhavChalitParamsFocusGeneral:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for CalculateBhavaBalaParamsLang.
+const (
+	CalculateBhavaBalaParamsLangDe CalculateBhavaBalaParamsLang = "de"
+	CalculateBhavaBalaParamsLangEn CalculateBhavaBalaParamsLang = "en"
+	CalculateBhavaBalaParamsLangEs CalculateBhavaBalaParamsLang = "es"
+	CalculateBhavaBalaParamsLangFr CalculateBhavaBalaParamsLang = "fr"
+	CalculateBhavaBalaParamsLangHi CalculateBhavaBalaParamsLang = "hi"
+	CalculateBhavaBalaParamsLangPt CalculateBhavaBalaParamsLang = "pt"
+	CalculateBhavaBalaParamsLangRu CalculateBhavaBalaParamsLang = "ru"
+	CalculateBhavaBalaParamsLangTr CalculateBhavaBalaParamsLang = "tr"
+)
+
+// Valid indicates whether the value is a known member of the CalculateBhavaBalaParamsLang enum.
+func (e CalculateBhavaBalaParamsLang) Valid() bool {
+	switch e {
+	case CalculateBhavaBalaParamsLangDe:
+		return true
+	case CalculateBhavaBalaParamsLangEn:
+		return true
+	case CalculateBhavaBalaParamsLangEs:
+		return true
+	case CalculateBhavaBalaParamsLangFr:
+		return true
+	case CalculateBhavaBalaParamsLangHi:
+		return true
+	case CalculateBhavaBalaParamsLangPt:
+		return true
+	case CalculateBhavaBalaParamsLangRu:
+		return true
+	case CalculateBhavaBalaParamsLangTr:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for CalculateBhavaBalaParamsFocus.
+const (
+	CalculateBhavaBalaParamsFocusFinance CalculateBhavaBalaParamsFocus = "finance"
+	CalculateBhavaBalaParamsFocusGeneral CalculateBhavaBalaParamsFocus = "general"
+)
+
+// Valid indicates whether the value is a known member of the CalculateBhavaBalaParamsFocus enum.
+func (e CalculateBhavaBalaParamsFocus) Valid() bool {
+	switch e {
+	case CalculateBhavaBalaParamsFocusFinance:
+		return true
+	case CalculateBhavaBalaParamsFocusGeneral:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for GenerateBirthChartParamsLang.
 const (
 	GenerateBirthChartParamsLangDe GenerateBirthChartParamsLang = "de"
@@ -11449,6 +11611,7 @@ const (
 	GetCurrentDashaJSONBodyAyanamsaKpNewcomb GetCurrentDashaJSONBodyAyanamsa = "kp-newcomb"
 	GetCurrentDashaJSONBodyAyanamsaKpOld     GetCurrentDashaJSONBodyAyanamsa = "kp-old"
 	GetCurrentDashaJSONBodyAyanamsaLahiri    GetCurrentDashaJSONBodyAyanamsa = "lahiri"
+	GetCurrentDashaJSONBodyAyanamsaRaman     GetCurrentDashaJSONBodyAyanamsa = "raman"
 )
 
 // Valid indicates whether the value is a known member of the GetCurrentDashaJSONBodyAyanamsa enum.
@@ -11461,6 +11624,8 @@ func (e GetCurrentDashaJSONBodyAyanamsa) Valid() bool {
 	case GetCurrentDashaJSONBodyAyanamsaKpOld:
 		return true
 	case GetCurrentDashaJSONBodyAyanamsaLahiri:
+		return true
+	case GetCurrentDashaJSONBodyAyanamsaRaman:
 		return true
 	default:
 		return false
@@ -11617,6 +11782,7 @@ const (
 	GetCurrentDasha200JSONResponseBodyAyanamsaTypeKpNewcomb GetCurrentDasha200JSONResponseBodyAyanamsaType = "kp-newcomb"
 	GetCurrentDasha200JSONResponseBodyAyanamsaTypeKpOld     GetCurrentDasha200JSONResponseBodyAyanamsaType = "kp-old"
 	GetCurrentDasha200JSONResponseBodyAyanamsaTypeLahiri    GetCurrentDasha200JSONResponseBodyAyanamsaType = "lahiri"
+	GetCurrentDasha200JSONResponseBodyAyanamsaTypeRaman     GetCurrentDasha200JSONResponseBodyAyanamsaType = "raman"
 )
 
 // Valid indicates whether the value is a known member of the GetCurrentDasha200JSONResponseBodyAyanamsaType enum.
@@ -11629,6 +11795,8 @@ func (e GetCurrentDasha200JSONResponseBodyAyanamsaType) Valid() bool {
 	case GetCurrentDasha200JSONResponseBodyAyanamsaTypeKpOld:
 		return true
 	case GetCurrentDasha200JSONResponseBodyAyanamsaTypeLahiri:
+		return true
+	case GetCurrentDasha200JSONResponseBodyAyanamsaTypeRaman:
 		return true
 	default:
 		return false
@@ -12451,6 +12619,7 @@ const (
 	GetMajorDashasJSONBodyAyanamsaKpNewcomb GetMajorDashasJSONBodyAyanamsa = "kp-newcomb"
 	GetMajorDashasJSONBodyAyanamsaKpOld     GetMajorDashasJSONBodyAyanamsa = "kp-old"
 	GetMajorDashasJSONBodyAyanamsaLahiri    GetMajorDashasJSONBodyAyanamsa = "lahiri"
+	GetMajorDashasJSONBodyAyanamsaRaman     GetMajorDashasJSONBodyAyanamsa = "raman"
 )
 
 // Valid indicates whether the value is a known member of the GetMajorDashasJSONBodyAyanamsa enum.
@@ -12463,6 +12632,8 @@ func (e GetMajorDashasJSONBodyAyanamsa) Valid() bool {
 	case GetMajorDashasJSONBodyAyanamsaKpOld:
 		return true
 	case GetMajorDashasJSONBodyAyanamsaLahiri:
+		return true
+	case GetMajorDashasJSONBodyAyanamsaRaman:
 		return true
 	default:
 		return false
@@ -12493,6 +12664,7 @@ const (
 	GetMajorDashas200JSONResponseBodyAyanamsaTypeKpNewcomb GetMajorDashas200JSONResponseBodyAyanamsaType = "kp-newcomb"
 	GetMajorDashas200JSONResponseBodyAyanamsaTypeKpOld     GetMajorDashas200JSONResponseBodyAyanamsaType = "kp-old"
 	GetMajorDashas200JSONResponseBodyAyanamsaTypeLahiri    GetMajorDashas200JSONResponseBodyAyanamsaType = "lahiri"
+	GetMajorDashas200JSONResponseBodyAyanamsaTypeRaman     GetMajorDashas200JSONResponseBodyAyanamsaType = "raman"
 )
 
 // Valid indicates whether the value is a known member of the GetMajorDashas200JSONResponseBodyAyanamsaType enum.
@@ -12505,6 +12677,8 @@ func (e GetMajorDashas200JSONResponseBodyAyanamsaType) Valid() bool {
 	case GetMajorDashas200JSONResponseBodyAyanamsaTypeKpOld:
 		return true
 	case GetMajorDashas200JSONResponseBodyAyanamsaTypeLahiri:
+		return true
+	case GetMajorDashas200JSONResponseBodyAyanamsaTypeRaman:
 		return true
 	default:
 		return false
@@ -12754,6 +12928,7 @@ const (
 	GetSubDashasJSONBodyAyanamsaKpNewcomb GetSubDashasJSONBodyAyanamsa = "kp-newcomb"
 	GetSubDashasJSONBodyAyanamsaKpOld     GetSubDashasJSONBodyAyanamsa = "kp-old"
 	GetSubDashasJSONBodyAyanamsaLahiri    GetSubDashasJSONBodyAyanamsa = "lahiri"
+	GetSubDashasJSONBodyAyanamsaRaman     GetSubDashasJSONBodyAyanamsa = "raman"
 )
 
 // Valid indicates whether the value is a known member of the GetSubDashasJSONBodyAyanamsa enum.
@@ -12766,6 +12941,8 @@ func (e GetSubDashasJSONBodyAyanamsa) Valid() bool {
 	case GetSubDashasJSONBodyAyanamsaKpOld:
 		return true
 	case GetSubDashasJSONBodyAyanamsaLahiri:
+		return true
+	case GetSubDashasJSONBodyAyanamsaRaman:
 		return true
 	default:
 		return false
@@ -12922,6 +13099,7 @@ const (
 	GetSubDashas200JSONResponseBodyAyanamsaTypeKpNewcomb GetSubDashas200JSONResponseBodyAyanamsaType = "kp-newcomb"
 	GetSubDashas200JSONResponseBodyAyanamsaTypeKpOld     GetSubDashas200JSONResponseBodyAyanamsaType = "kp-old"
 	GetSubDashas200JSONResponseBodyAyanamsaTypeLahiri    GetSubDashas200JSONResponseBodyAyanamsaType = "lahiri"
+	GetSubDashas200JSONResponseBodyAyanamsaTypeRaman     GetSubDashas200JSONResponseBodyAyanamsaType = "raman"
 )
 
 // Valid indicates whether the value is a known member of the GetSubDashas200JSONResponseBodyAyanamsaType enum.
@@ -12934,6 +13112,8 @@ func (e GetSubDashas200JSONResponseBodyAyanamsaType) Valid() bool {
 	case GetSubDashas200JSONResponseBodyAyanamsaTypeKpOld:
 		return true
 	case GetSubDashas200JSONResponseBodyAyanamsaTypeLahiri:
+		return true
+	case GetSubDashas200JSONResponseBodyAyanamsaTypeRaman:
 		return true
 	default:
 		return false
@@ -13222,6 +13402,7 @@ const (
 	GetPratyantardashasJSONBodyAyanamsaKpNewcomb GetPratyantardashasJSONBodyAyanamsa = "kp-newcomb"
 	GetPratyantardashasJSONBodyAyanamsaKpOld     GetPratyantardashasJSONBodyAyanamsa = "kp-old"
 	GetPratyantardashasJSONBodyAyanamsaLahiri    GetPratyantardashasJSONBodyAyanamsa = "lahiri"
+	GetPratyantardashasJSONBodyAyanamsaRaman     GetPratyantardashasJSONBodyAyanamsa = "raman"
 )
 
 // Valid indicates whether the value is a known member of the GetPratyantardashasJSONBodyAyanamsa enum.
@@ -13234,6 +13415,8 @@ func (e GetPratyantardashasJSONBodyAyanamsa) Valid() bool {
 	case GetPratyantardashasJSONBodyAyanamsaKpOld:
 		return true
 	case GetPratyantardashasJSONBodyAyanamsaLahiri:
+		return true
+	case GetPratyantardashasJSONBodyAyanamsaRaman:
 		return true
 	default:
 		return false
@@ -13429,6 +13612,7 @@ const (
 	GetPratyantardashas200JSONResponseBodyAyanamsaTypeKpNewcomb GetPratyantardashas200JSONResponseBodyAyanamsaType = "kp-newcomb"
 	GetPratyantardashas200JSONResponseBodyAyanamsaTypeKpOld     GetPratyantardashas200JSONResponseBodyAyanamsaType = "kp-old"
 	GetPratyantardashas200JSONResponseBodyAyanamsaTypeLahiri    GetPratyantardashas200JSONResponseBodyAyanamsaType = "lahiri"
+	GetPratyantardashas200JSONResponseBodyAyanamsaTypeRaman     GetPratyantardashas200JSONResponseBodyAyanamsaType = "raman"
 )
 
 // Valid indicates whether the value is a known member of the GetPratyantardashas200JSONResponseBodyAyanamsaType enum.
@@ -13441,6 +13625,8 @@ func (e GetPratyantardashas200JSONResponseBodyAyanamsaType) Valid() bool {
 	case GetPratyantardashas200JSONResponseBodyAyanamsaTypeKpOld:
 		return true
 	case GetPratyantardashas200JSONResponseBodyAyanamsaTypeLahiri:
+		return true
+	case GetPratyantardashas200JSONResponseBodyAyanamsaTypeRaman:
 		return true
 	default:
 		return false
@@ -13846,6 +14032,7 @@ const (
 	GetSookshmaDashasJSONBodyAyanamsaKpNewcomb GetSookshmaDashasJSONBodyAyanamsa = "kp-newcomb"
 	GetSookshmaDashasJSONBodyAyanamsaKpOld     GetSookshmaDashasJSONBodyAyanamsa = "kp-old"
 	GetSookshmaDashasJSONBodyAyanamsaLahiri    GetSookshmaDashasJSONBodyAyanamsa = "lahiri"
+	GetSookshmaDashasJSONBodyAyanamsaRaman     GetSookshmaDashasJSONBodyAyanamsa = "raman"
 )
 
 // Valid indicates whether the value is a known member of the GetSookshmaDashasJSONBodyAyanamsa enum.
@@ -13858,6 +14045,8 @@ func (e GetSookshmaDashasJSONBodyAyanamsa) Valid() bool {
 	case GetSookshmaDashasJSONBodyAyanamsaKpOld:
 		return true
 	case GetSookshmaDashasJSONBodyAyanamsaLahiri:
+		return true
+	case GetSookshmaDashasJSONBodyAyanamsaRaman:
 		return true
 	default:
 		return false
@@ -13927,6 +14116,7 @@ const (
 	GetSookshmaDashas200JSONResponseBodyAyanamsaTypeKpNewcomb GetSookshmaDashas200JSONResponseBodyAyanamsaType = "kp-newcomb"
 	GetSookshmaDashas200JSONResponseBodyAyanamsaTypeKpOld     GetSookshmaDashas200JSONResponseBodyAyanamsaType = "kp-old"
 	GetSookshmaDashas200JSONResponseBodyAyanamsaTypeLahiri    GetSookshmaDashas200JSONResponseBodyAyanamsaType = "lahiri"
+	GetSookshmaDashas200JSONResponseBodyAyanamsaTypeRaman     GetSookshmaDashas200JSONResponseBodyAyanamsaType = "raman"
 )
 
 // Valid indicates whether the value is a known member of the GetSookshmaDashas200JSONResponseBodyAyanamsaType enum.
@@ -13939,6 +14129,8 @@ func (e GetSookshmaDashas200JSONResponseBodyAyanamsaType) Valid() bool {
 	case GetSookshmaDashas200JSONResponseBodyAyanamsaTypeKpOld:
 		return true
 	case GetSookshmaDashas200JSONResponseBodyAyanamsaTypeLahiri:
+		return true
+	case GetSookshmaDashas200JSONResponseBodyAyanamsaTypeRaman:
 		return true
 	default:
 		return false
@@ -14626,6 +14818,7 @@ const (
 	GetPranaDashasJSONBodyAyanamsaKpNewcomb GetPranaDashasJSONBodyAyanamsa = "kp-newcomb"
 	GetPranaDashasJSONBodyAyanamsaKpOld     GetPranaDashasJSONBodyAyanamsa = "kp-old"
 	GetPranaDashasJSONBodyAyanamsaLahiri    GetPranaDashasJSONBodyAyanamsa = "lahiri"
+	GetPranaDashasJSONBodyAyanamsaRaman     GetPranaDashasJSONBodyAyanamsa = "raman"
 )
 
 // Valid indicates whether the value is a known member of the GetPranaDashasJSONBodyAyanamsa enum.
@@ -14638,6 +14831,8 @@ func (e GetPranaDashasJSONBodyAyanamsa) Valid() bool {
 	case GetPranaDashasJSONBodyAyanamsaKpOld:
 		return true
 	case GetPranaDashasJSONBodyAyanamsaLahiri:
+		return true
+	case GetPranaDashasJSONBodyAyanamsaRaman:
 		return true
 	default:
 		return false
@@ -14707,6 +14902,7 @@ const (
 	GetPranaDashas200JSONResponseBodyAyanamsaTypeKpNewcomb GetPranaDashas200JSONResponseBodyAyanamsaType = "kp-newcomb"
 	GetPranaDashas200JSONResponseBodyAyanamsaTypeKpOld     GetPranaDashas200JSONResponseBodyAyanamsaType = "kp-old"
 	GetPranaDashas200JSONResponseBodyAyanamsaTypeLahiri    GetPranaDashas200JSONResponseBodyAyanamsaType = "lahiri"
+	GetPranaDashas200JSONResponseBodyAyanamsaTypeRaman     GetPranaDashas200JSONResponseBodyAyanamsaType = "raman"
 )
 
 // Valid indicates whether the value is a known member of the GetPranaDashas200JSONResponseBodyAyanamsaType enum.
@@ -14719,6 +14915,8 @@ func (e GetPranaDashas200JSONResponseBodyAyanamsaType) Valid() bool {
 	case GetPranaDashas200JSONResponseBodyAyanamsaTypeKpOld:
 		return true
 	case GetPranaDashas200JSONResponseBodyAyanamsaTypeLahiri:
+		return true
+	case GetPranaDashas200JSONResponseBodyAyanamsaTypeRaman:
 		return true
 	default:
 		return false
@@ -15618,6 +15816,7 @@ const (
 	KpNewcomb GetKpRulingIntervalJSONBodyAyanamsa = "kp-newcomb"
 	KpOld     GetKpRulingIntervalJSONBodyAyanamsa = "kp-old"
 	Lahiri    GetKpRulingIntervalJSONBodyAyanamsa = "lahiri"
+	Raman     GetKpRulingIntervalJSONBodyAyanamsa = "raman"
 )
 
 // Valid indicates whether the value is a known member of the GetKpRulingIntervalJSONBodyAyanamsa enum.
@@ -15628,6 +15827,8 @@ func (e GetKpRulingIntervalJSONBodyAyanamsa) Valid() bool {
 	case KpOld:
 		return true
 	case Lahiri:
+		return true
+	case Raman:
 		return true
 	default:
 		return false
@@ -18172,6 +18373,181 @@ type BasicTrigram struct {
 	Symbol string `json:"symbol"`
 }
 
+// BhavChalitRequest defines model for BhavChalitRequest.
+type BhavChalitRequest struct {
+	// Date Birth date in YYYY-MM-DD format. Date determines planetary positions and nakshatra calculations for Vedic kundli (janam patri). Accurate birth date is essential for dashas, yoga calculations, and divisional charts (vargas).
+	Date openapi_types.Date `json:"date"`
+
+	// Latitude Birth location latitude in decimal degrees. Location determines local sidereal time for Lagna calculation and affects bhava (house) cusps. Example: Delhi 28.6139, Mumbai 19.0760, Kathmandu 27.7172.
+	Latitude float32 `json:"latitude"`
+
+	// Longitude Birth location longitude in decimal degrees. Affects local time calculations and ayanamsha adjustments. Example: Delhi 77.2090, Mumbai 72.8777, Kathmandu 85.3240.
+	Longitude float32 `json:"longitude"`
+
+	// Time Birth time in 24-hour HH:MM:SS format. Time is CRITICAL for Lagna (Ascendant) calculation and house divisions. It changes every two hours roughly. Even minutes matter for accurate nakshatra pada and divisional chart (D9, D10) calculations. Without exact time, Lagna and house-based predictions will be incorrect.
+	Time string `json:"time"`
+
+	// Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5.
+	Timezone *BhavChalitRequest_Timezone `json:"timezone,omitempty"`
+}
+
+// BhavChalitRequestTimezone0 defines model for .
+type BhavChalitRequestTimezone0 = float32
+
+// BhavChalitRequestTimezone1 defines model for .
+type BhavChalitRequestTimezone1 = string
+
+// BhavChalitRequest_Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5.
+type BhavChalitRequest_Timezone struct {
+	union json.RawMessage
+}
+
+// BhavChalitResponse Bhav Chalit (Chalit Kundli): every graha placed by unequal Sripati bhava, with the whole-sign placement beside it for comparison.
+type BhavChalitResponse struct {
+	// Ascendant Sidereal Lahiri Ascendant in degrees. The madhya of bhava 1.
+	Ascendant float32 `json:"ascendant"`
+
+	// Bhavas The twelve Sripati bhavas in order with their boundaries and occupants.
+	Bhavas []struct {
+		// End Bhava sandhi closing this bhava. Identical to the next bhavas start, so the twelve bhavas tile the zodiac with no gap.
+		End float32 `json:"end"`
+
+		// Grahas Grahas falling inside this bhava. Empty when the bhava is unoccupied.
+		Grahas []string `json:"grahas"`
+
+		// House Bhava number 1 to 12.
+		House float32 `json:"house"`
+
+		// Madhya Bhava madhya (mid-cusp) in degrees. Bhavas 1, 4, 7 and 10 sit exactly on the Ascendant, IC, Descendant and Midheaven; the other eight trisect the quadrant arcs between them.
+		Madhya float32 `json:"madhya"`
+
+		// Rashi Sign holding the madhya. Because bhavas are unequal, two bhavas can share a sign while another sign holds no madhya at all.
+		Rashi string `json:"rashi"`
+
+		// Span Width of the bhava in degrees. Rarely 30: the Ascendant and Midheaven are only 90 degrees apart by coincidence of latitude and epoch, so quadrants stretch and squeeze and the bhavas with them.
+		Span float32 `json:"span"`
+
+		// Start Bhava sandhi (junction) opening this bhava, in degrees. The midpoint between this madhya and the previous one. A graha exactly on a sandhi belongs to the bhava it opens.
+		Start float32 `json:"start"`
+	} `json:"bhavas"`
+
+	// Focus Which signification vocabulary produced the houseThemes keywords in this response, echoing the focus query parameter. Always present, and "general" when the parameter was omitted. Read it to label a rendered house legend, or to tell two cached responses apart when only one asked for the finance lens.
+	Focus BhavChalitResponseFocus `json:"focus"`
+
+	// Grahas All nine grahas with both their Chalit bhava and their whole-sign Rashi house, plus a moved flag.
+	Grahas []struct {
+		// Bhava Bhava the graha falls in under the unequal Sripati cusps. This is the Bhav Chalit placement and the reason the chart exists.
+		Bhava float32 `json:"bhava"`
+
+		// Graha Graha name. All nine are placed, the seven classical grahas plus the lunar nodes Rahu and Ketu.
+		Graha string `json:"graha"`
+
+		// Longitude Sidereal Lahiri longitude in degrees.
+		Longitude float32 `json:"longitude"`
+
+		// Moved True when bhava and rashiHouse disagree, i.e. the graha changes house between the Rashi chart and the Chalit chart. These are the placements a practitioner opens this chart to check.
+		Moved bool `json:"moved"`
+
+		// Rashi Zodiac sign the graha occupies. Identical to the Rashi (D1) chart.
+		Rashi string `json:"rashi"`
+
+		// RashiHouse House the same graha occupies in the whole-sign Rashi chart, counted from the Lagna sign. Returned alongside bhava so the difference is visible without a second request.
+		RashiHouse float32 `json:"rashiHouse"`
+	} `json:"grahas"`
+
+	// HouseSystem House frame used to build the bhavas. Always sripati for the Chalit chart.
+	HouseSystem string `json:"houseSystem"`
+
+	// HouseThemes Significations of each of the twelve bhavas (houses), keyed by house number 1 to 12, as short keywords. Bhava 1 is the Lagna (self, body, vitality), 2 wealth and speech, 4 home and mother, 7 marriage and partnership, 10 career and status, 11 gains. Use it to label the house numbers returned elsewhere in the response: a Vimshottari dasha period signifying houses 2, 7 and 8, or a KP significator carrying houses 11 and 6, becomes readable text without a separate lookup call. Returned once per response rather than repeated per period, and localized by the lang query parameter alongside every other interpretation field.
+	HouseThemes map[string][]string `json:"houseThemes"`
+
+	// Midheaven Sidereal Lahiri Midheaven in degrees. The madhya of bhava 10.
+	Midheaven float32 `json:"midheaven"`
+
+	// MovedCount How many of the nine grahas change house between the Rashi chart and the Chalit chart. Zero is a perfectly normal result and means the two charts agree for this nativity.
+	MovedCount float32 `json:"movedCount"`
+}
+
+// BhavChalitResponseFocus Which signification vocabulary produced the houseThemes keywords in this response, echoing the focus query parameter. Always present, and "general" when the parameter was omitted. Read it to label a rendered house legend, or to tell two cached responses apart when only one asked for the finance lens.
+type BhavChalitResponseFocus string
+
+// BhavaBalaRequest defines model for BhavaBalaRequest.
+type BhavaBalaRequest struct {
+	// Date Birth date in YYYY-MM-DD format. Date determines planetary positions and nakshatra calculations for Vedic kundli (janam patri). Accurate birth date is essential for dashas, yoga calculations, and divisional charts (vargas).
+	Date openapi_types.Date `json:"date"`
+
+	// Latitude Birth location latitude in decimal degrees. Location determines local sidereal time for Lagna calculation and affects bhava (house) cusps. Example: Delhi 28.6139, Mumbai 19.0760, Kathmandu 27.7172.
+	Latitude float32 `json:"latitude"`
+
+	// Longitude Birth location longitude in decimal degrees. Affects local time calculations and ayanamsha adjustments. Example: Delhi 77.2090, Mumbai 72.8777, Kathmandu 85.3240.
+	Longitude float32 `json:"longitude"`
+
+	// Time Birth time in 24-hour HH:MM:SS format. Time is CRITICAL for Lagna (Ascendant) calculation and house divisions. It changes every two hours roughly. Even minutes matter for accurate nakshatra pada and divisional chart (D9, D10) calculations. Without exact time, Lagna and house-based predictions will be incorrect.
+	Time string `json:"time"`
+
+	// Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5.
+	Timezone *BhavaBalaRequest_Timezone `json:"timezone,omitempty"`
+}
+
+// BhavaBalaRequestTimezone0 defines model for .
+type BhavaBalaRequestTimezone0 = float32
+
+// BhavaBalaRequestTimezone1 defines model for .
+type BhavaBalaRequestTimezone1 = string
+
+// BhavaBalaRequest_Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5.
+type BhavaBalaRequest_Timezone struct {
+	union json.RawMessage
+}
+
+// BhavaBalaResponse Complete Bhava Bala (house strength) analysis per Brihat Parashara Hora Shastra, with a localized house-meaning legend.
+type BhavaBalaResponse struct {
+	// Bhavas Bhava Bala for all twelve houses in order, house 1 first. Each entry carries its own components so a client can explain a score rather than just display it.
+	Bhavas []struct {
+		// BhavadhipatiBala Bhavadhipati Bala in virupas: the total Shadbala of the house lord, carried across unchanged. The dominant term of the three, typically 250 to 650. Two bhavas ruled by the same graha therefore share this value exactly.
+		BhavadhipatiBala float32 `json:"bhavadhipatiBala"`
+
+		// DigBala Bhava Digbala (directional strength) in virupas, 0 to 60 in steps of 10. Each rashi class is strongest in one cardinal bhava (human signs at the Lagna, quadruped at the 10th, watery at the 4th, Scorpio at the 7th) and loses 10 virupas per bhava of separation, reaching 0 at the seventh from it.
+		DigBala float32 `json:"digBala"`
+
+		// DrishtiBala Bhava Drishti Bala (aspectual strength) in virupas, computed on the bhava madhya exactly as Graha Drik Bala is computed on a graha. Benefic aspects add and malefic aspects subtract, so this term is often negative.
+		DrishtiBala float32 `json:"drishtiBala"`
+
+		// House Bhava (house) number 1 to 12, counted from the Lagna. House 1 is the Ascendant bhava, house 10 the career bhava, house 7 the partnership bhava.
+		House float32 `json:"house"`
+
+		// Lord Bhavadhipati (house lord), the ruler of the sign holding the madhya. Its Shadbala is what this bhava inherits, so a house ruled by a strong graha starts strong.
+		Lord string `json:"lord"`
+
+		// Madhya Bhava madhya (mid-cusp) longitude in degrees, sidereal Lahiri. The point every strength component below is measured at. Bhavas 1, 4, 7 and 10 sit on the Ascendant, IC, Descendant and Midheaven; the rest trisect the quadrants between them.
+		Madhya float32 `json:"madhya"`
+
+		// Rank Strength rank among the twelve bhavas, 1 = strongest. Ranked on totalVirupas, so it never disagrees with the published totals.
+		Rank float32 `json:"rank"`
+
+		// Rashi Zodiac sign holding this bhavas madhya (mid-cusp). Under the Sripati house system the bhavas are unequal, so this is NOT always the nth sign from the Lagna, and two bhavas can share a sign while another sign holds none.
+		Rashi string `json:"rashi"`
+
+		// TotalRupas Total Bhava Bala in rupas (totalVirupas / 60). 1 rupa equals 60 virupas. Rupas are the conventional unit in classical tables.
+		TotalRupas float32 `json:"totalRupas"`
+
+		// TotalVirupas Total Bhava Bala in virupas, the sum of the three components above. Use it to compare houses within one chart: the strongest bhavas are the life areas that unfold with least resistance.
+		TotalVirupas float32 `json:"totalVirupas"`
+	} `json:"bhavas"`
+
+	// Focus Which signification vocabulary produced the houseThemes keywords in this response, echoing the focus query parameter. Always present, and "general" when the parameter was omitted. Read it to label a rendered house legend, or to tell two cached responses apart when only one asked for the finance lens.
+	Focus BhavaBalaResponseFocus `json:"focus"`
+
+	// HouseSystem House frame the bhavas were built on. Always sripati: Bhava Bala is defined on unequal bhava madhyas, not on whole signs.
+	HouseSystem string `json:"houseSystem"`
+
+	// HouseThemes Significations of each of the twelve bhavas (houses), keyed by house number 1 to 12, as short keywords. Bhava 1 is the Lagna (self, body, vitality), 2 wealth and speech, 4 home and mother, 7 marriage and partnership, 10 career and status, 11 gains. Use it to label the house numbers returned elsewhere in the response: a Vimshottari dasha period signifying houses 2, 7 and 8, or a KP significator carrying houses 11 and 6, becomes readable text without a separate lookup call. Returned once per response rather than repeated per period, and localized by the lang query parameter alongside every other interpretation field.
+	HouseThemes map[string][]string `json:"houseThemes"`
+}
+
+// BhavaBalaResponseFocus Which signification vocabulary produced the houseThemes keywords in this response, echoing the focus query parameter. Always present, and "general" when the parameter was omitted. Read it to label a rendered house legend, or to tell two cached responses apart when only one asked for the finance lens.
+type BhavaBalaResponseFocus string
+
 // BirthChartRequest defines model for BirthChartRequest.
 type BirthChartRequest struct {
 	// AvasthaInfo Set true to include a localized meaning and one-sentence classical interpretation beside each graha avastha state, under avasthaInfo on that graha in meta. Defaults to false, so an existing integration is byte-identical until it opts in. Saves a second call to GET /avasthas and the client-side join that would otherwise be needed to turn Yuva or Swapna into readable text.
@@ -18207,7 +18583,7 @@ type BirthChartRequest_Timezone struct {
 // BirthChartResponse defines model for BirthChartResponse.
 type BirthChartResponse struct {
 	Aquarius struct {
-		// Rashi Zodiac sign name in lowercase.
+		// Rashi Zodiac sign name in lowercase. Always equals the key of the block it sits in, so the aries block carries "aries" and the pisces block carries "pisces".
 		Rashi string `json:"rashi"`
 
 		// Signs Planets placed in this zodiac sign.
@@ -18248,7 +18624,7 @@ type BirthChartResponse struct {
 		} `json:"signs"`
 	} `json:"aquarius"`
 	Aries struct {
-		// Rashi Zodiac sign name in lowercase.
+		// Rashi Zodiac sign name in lowercase. Always equals the key of the block it sits in, so the aries block carries "aries" and the pisces block carries "pisces".
 		Rashi string `json:"rashi"`
 
 		// Signs Planets placed in this zodiac sign.
@@ -18289,7 +18665,7 @@ type BirthChartResponse struct {
 		} `json:"signs"`
 	} `json:"aries"`
 	Cancer struct {
-		// Rashi Zodiac sign name in lowercase.
+		// Rashi Zodiac sign name in lowercase. Always equals the key of the block it sits in, so the aries block carries "aries" and the pisces block carries "pisces".
 		Rashi string `json:"rashi"`
 
 		// Signs Planets placed in this zodiac sign.
@@ -18330,7 +18706,7 @@ type BirthChartResponse struct {
 		} `json:"signs"`
 	} `json:"cancer"`
 	Capricorn struct {
-		// Rashi Zodiac sign name in lowercase.
+		// Rashi Zodiac sign name in lowercase. Always equals the key of the block it sits in, so the aries block carries "aries" and the pisces block carries "pisces".
 		Rashi string `json:"rashi"`
 
 		// Signs Planets placed in this zodiac sign.
@@ -18383,7 +18759,7 @@ type BirthChartResponse struct {
 		Planet string `json:"planet"`
 	} `json:"combustion"`
 	Gemini struct {
-		// Rashi Zodiac sign name in lowercase.
+		// Rashi Zodiac sign name in lowercase. Always equals the key of the block it sits in, so the aries block carries "aries" and the pisces block carries "pisces".
 		Rashi string `json:"rashi"`
 
 		// Signs Planets placed in this zodiac sign.
@@ -18448,7 +18824,7 @@ type BirthChartResponse struct {
 		Rashi string `json:"rashi"`
 	} `json:"interpretations"`
 	Leo struct {
-		// Rashi Zodiac sign name in lowercase.
+		// Rashi Zodiac sign name in lowercase. Always equals the key of the block it sits in, so the aries block carries "aries" and the pisces block carries "pisces".
 		Rashi string `json:"rashi"`
 
 		// Signs Planets placed in this zodiac sign.
@@ -18489,7 +18865,7 @@ type BirthChartResponse struct {
 		} `json:"signs"`
 	} `json:"leo"`
 	Libra struct {
-		// Rashi Zodiac sign name in lowercase.
+		// Rashi Zodiac sign name in lowercase. Always equals the key of the block it sits in, so the aries block carries "aries" and the pisces block carries "pisces".
 		Rashi string `json:"rashi"`
 
 		// Signs Planets placed in this zodiac sign.
@@ -18597,7 +18973,7 @@ type BirthChartResponse struct {
 		Rashi string `json:"rashi"`
 	} `json:"meta"`
 	Pisces struct {
-		// Rashi Zodiac sign name in lowercase.
+		// Rashi Zodiac sign name in lowercase. Always equals the key of the block it sits in, so the aries block carries "aries" and the pisces block carries "pisces".
 		Rashi string `json:"rashi"`
 
 		// Signs Planets placed in this zodiac sign.
@@ -18653,7 +19029,7 @@ type BirthChartResponse struct {
 		Winner string `json:"winner"`
 	} `json:"planetaryWar"`
 	Sagittarius struct {
-		// Rashi Zodiac sign name in lowercase.
+		// Rashi Zodiac sign name in lowercase. Always equals the key of the block it sits in, so the aries block carries "aries" and the pisces block carries "pisces".
 		Rashi string `json:"rashi"`
 
 		// Signs Planets placed in this zodiac sign.
@@ -18694,7 +19070,7 @@ type BirthChartResponse struct {
 		} `json:"signs"`
 	} `json:"sagittarius"`
 	Scorpio struct {
-		// Rashi Zodiac sign name in lowercase.
+		// Rashi Zodiac sign name in lowercase. Always equals the key of the block it sits in, so the aries block carries "aries" and the pisces block carries "pisces".
 		Rashi string `json:"rashi"`
 
 		// Signs Planets placed in this zodiac sign.
@@ -18735,7 +19111,7 @@ type BirthChartResponse struct {
 		} `json:"signs"`
 	} `json:"scorpio"`
 	Taurus struct {
-		// Rashi Zodiac sign name in lowercase.
+		// Rashi Zodiac sign name in lowercase. Always equals the key of the block it sits in, so the aries block carries "aries" and the pisces block carries "pisces".
 		Rashi string `json:"rashi"`
 
 		// Signs Planets placed in this zodiac sign.
@@ -18776,7 +19152,7 @@ type BirthChartResponse struct {
 		} `json:"signs"`
 	} `json:"taurus"`
 	Virgo struct {
-		// Rashi Zodiac sign name in lowercase.
+		// Rashi Zodiac sign name in lowercase. Always equals the key of the block it sits in, so the aries block carries "aries" and the pisces block carries "pisces".
 		Rashi string `json:"rashi"`
 
 		// Signs Planets placed in this zodiac sign.
@@ -19373,7 +19749,7 @@ type DivisionalChartResponseChartMetaNakshatraLord string
 type DivisionalChartResponse_Chart struct {
 	// Aries One of the 12 divisional rashi-house buckets (aries shown; taurus through pisces follow the identical shape). Each lists the planets placed in that sign.
 	Aries struct {
-		// Rashi Zodiac sign name in lowercase.
+		// Rashi Zodiac sign name in lowercase. Always equals the key of the divisional rashi-house block it sits in.
 		Rashi string `json:"rashi"`
 
 		// Signs Planets placed in this divisional sign.
@@ -19678,11 +20054,19 @@ type HousesResponse struct {
 
 	// Comparison Side-by-side house cusp comparison across all four systems (Placidus, Whole Sign, Equal, Koch). Only included when houseSystem is set to "all". Useful for educational tools and system comparison.
 	Comparison *map[string]struct {
+		// Houses All 12 house cusps as this system computes them. Compare the same house number across the four keys to see how far the systems disagree, which is largest at high latitudes and for the intermediate cusps.
 		Houses []struct {
-			Degree    float32 `json:"degree"`
+			// Degree Degree within the zodiac sign on this cusp (0-29.999).
+			Degree float32 `json:"degree"`
+
+			// Longitude Ecliptic longitude of this house cusp in degrees (0-360), as this house system places it.
 			Longitude float32 `json:"longitude"`
-			Number    float32 `json:"number"`
-			Sign      string  `json:"sign"`
+
+			// Number House number (1-12). Each house governs specific life areas.
+			Number float32 `json:"number"`
+
+			// Sign Zodiac sign on this house cusp in this house system.
+			Sign string `json:"sign"`
 		} `json:"houses"`
 	} `json:"comparison,omitempty"`
 
@@ -19773,7 +20157,7 @@ type KPAyanamsaResponse struct {
 
 // KPChartRequest defines model for KPChartRequest.
 type KPChartRequest struct {
-	// Ayanamsa Ayanamsa system for sidereal conversion. "kp-newcomb" uses the KP-Newcomb dynamic formula (most common for KP). "kp-old" uses the Krishnamurti original table. "lahiri" uses Lahiri/Chitrapaksha ayanamsa matching most traditional Vedic software. "custom" allows providing your own value via ayanamsaValue. Defaults to "kp-newcomb".
+	// Ayanamsa Ayanamsa system for sidereal conversion. "kp-newcomb" uses the KP-Newcomb dynamic formula (most common for KP). "kp-old" uses the Krishnamurti original table. "lahiri" uses Lahiri/Chitrapaksha ayanamsa matching most traditional Vedic software. "raman" uses the B.V. Raman ayanamsa, about 1.45 degrees below Lahiri. "custom" allows providing your own value via ayanamsaValue. Defaults to "kp-newcomb".
 	Ayanamsa *KPChartRequestAyanamsa `json:"ayanamsa,omitempty"`
 
 	// AyanamsaValue Custom ayanamsa value in degrees. When provided, overrides the computed ayanamsa from the selected type. Use for testing with specific ayanamsa values or matching a particular reference source.
@@ -19798,7 +20182,7 @@ type KPChartRequest struct {
 	Timezone *KPChartRequest_Timezone `json:"timezone,omitempty"`
 }
 
-// KPChartRequestAyanamsa Ayanamsa system for sidereal conversion. "kp-newcomb" uses the KP-Newcomb dynamic formula (most common for KP). "kp-old" uses the Krishnamurti original table. "lahiri" uses Lahiri/Chitrapaksha ayanamsa matching most traditional Vedic software. "custom" allows providing your own value via ayanamsaValue. Defaults to "kp-newcomb".
+// KPChartRequestAyanamsa Ayanamsa system for sidereal conversion. "kp-newcomb" uses the KP-Newcomb dynamic formula (most common for KP). "kp-old" uses the Krishnamurti original table. "lahiri" uses Lahiri/Chitrapaksha ayanamsa matching most traditional Vedic software. "raman" uses the B.V. Raman ayanamsa, about 1.45 degrees below Lahiri. "custom" allows providing your own value via ayanamsaValue. Defaults to "kp-newcomb".
 type KPChartRequestAyanamsa string
 
 // KPChartRequestNodeType Lunar node type for Rahu and Ketu positions. "mean" uses the smooth mean node (traditional Vedic astrology default). "true" uses the osculating node with perturbation corrections, oscillating up to 1.5 degrees from mean with a 173-day period. Impacts KP sub-lord assignments in narrow boundary cases. Defaults to "mean".
@@ -19897,7 +20281,7 @@ type KPChartResponse struct {
 		// Ayanamsa KP Newcomb ayanamsa value in degrees. Precession correction applied to convert tropical to sidereal positions.
 		Ayanamsa float32 `json:"ayanamsa"`
 
-		// AyanamsaType Ayanamsa system used (KP Newcomb).
+		// AyanamsaType Ayanamsa system used, echoing the ayanamsa field of the request: "kp-newcomb", "kp-old", "lahiri", "raman" or "custom".
 		AyanamsaType string `json:"ayanamsaType"`
 
 		// Date Birth date in YYYY-MM-DD format used for this KP chart calculation.
@@ -20056,7 +20440,7 @@ type KPChartResponseFocus string
 
 // KPCuspsRequest defines model for KPCuspsRequest.
 type KPCuspsRequest struct {
-	// Ayanamsa Ayanamsa system for sidereal conversion. "kp-newcomb" uses the KP-Newcomb dynamic formula (most common for KP). "kp-old" uses the Krishnamurti original table. "lahiri" uses Lahiri/Chitrapaksha ayanamsa matching most traditional Vedic software. "custom" allows providing your own value via ayanamsaValue. Defaults to "kp-newcomb".
+	// Ayanamsa Ayanamsa system for sidereal conversion. "kp-newcomb" uses the KP-Newcomb dynamic formula (most common for KP). "kp-old" uses the Krishnamurti original table. "lahiri" uses Lahiri/Chitrapaksha ayanamsa matching most traditional Vedic software. "raman" uses the B.V. Raman ayanamsa, about 1.45 degrees below Lahiri. "custom" allows providing your own value via ayanamsaValue. Defaults to "kp-newcomb".
 	Ayanamsa *KPCuspsRequestAyanamsa `json:"ayanamsa,omitempty"`
 
 	// AyanamsaValue Custom ayanamsa value in degrees. When provided, overrides the computed ayanamsa from the selected type. Use for testing with specific ayanamsa values or matching a particular reference source.
@@ -20078,7 +20462,7 @@ type KPCuspsRequest struct {
 	Timezone *KPCuspsRequest_Timezone `json:"timezone,omitempty"`
 }
 
-// KPCuspsRequestAyanamsa Ayanamsa system for sidereal conversion. "kp-newcomb" uses the KP-Newcomb dynamic formula (most common for KP). "kp-old" uses the Krishnamurti original table. "lahiri" uses Lahiri/Chitrapaksha ayanamsa matching most traditional Vedic software. "custom" allows providing your own value via ayanamsaValue. Defaults to "kp-newcomb".
+// KPCuspsRequestAyanamsa Ayanamsa system for sidereal conversion. "kp-newcomb" uses the KP-Newcomb dynamic formula (most common for KP). "kp-old" uses the Krishnamurti original table. "lahiri" uses Lahiri/Chitrapaksha ayanamsa matching most traditional Vedic software. "raman" uses the B.V. Raman ayanamsa, about 1.45 degrees below Lahiri. "custom" allows providing your own value via ayanamsaValue. Defaults to "kp-newcomb".
 type KPCuspsRequestAyanamsa string
 
 // KPCuspsRequestTimezone0 defines model for .
@@ -20146,7 +20530,7 @@ type KPCuspsResponseFocus string
 
 // KPPlanetsIntervalRequest defines model for KPPlanetsIntervalRequest.
 type KPPlanetsIntervalRequest struct {
-	// Ayanamsa Ayanamsa system for sidereal conversion. "kp-newcomb" uses the KP-Newcomb dynamic formula, the most common choice for KP astrology. "kp-old" uses the Krishnamurti original table from KP Reader-1 with constant precession rate. "lahiri" uses Lahiri/Chitrapaksha ayanamsa, matching most traditional Vedic software. Defaults to "kp-newcomb".
+	// Ayanamsa Ayanamsa system for sidereal conversion. "kp-newcomb" uses the KP-Newcomb dynamic formula, the most common choice for KP astrology. "kp-old" uses the Krishnamurti original table from KP Reader-1 with constant precession rate. "lahiri" uses Lahiri/Chitrapaksha ayanamsa, matching most traditional Vedic software. "raman" uses the B.V. Raman ayanamsa from Hindu Predictive Astrology, a recognised traditional school that sits about 1.45 degrees below Lahiri. Defaults to "kp-newcomb".
 	Ayanamsa *KPPlanetsIntervalRequestAyanamsa `json:"ayanamsa,omitempty"`
 
 	// EndDatetime End datetime in ISO 8601 (YYYY-MM-DDTHH:MM:SS). Maximum 7 days from start. Interpreted as local time when a non-zero timezone is provided (a trailing Z is accepted but ignored); with timezone 0 it is UTC.
@@ -20171,7 +20555,7 @@ type KPPlanetsIntervalRequest struct {
 	Timezone *KPPlanetsIntervalRequest_Timezone `json:"timezone,omitempty"`
 }
 
-// KPPlanetsIntervalRequestAyanamsa Ayanamsa system for sidereal conversion. "kp-newcomb" uses the KP-Newcomb dynamic formula, the most common choice for KP astrology. "kp-old" uses the Krishnamurti original table from KP Reader-1 with constant precession rate. "lahiri" uses Lahiri/Chitrapaksha ayanamsa, matching most traditional Vedic software. Defaults to "kp-newcomb".
+// KPPlanetsIntervalRequestAyanamsa Ayanamsa system for sidereal conversion. "kp-newcomb" uses the KP-Newcomb dynamic formula, the most common choice for KP astrology. "kp-old" uses the Krishnamurti original table from KP Reader-1 with constant precession rate. "lahiri" uses Lahiri/Chitrapaksha ayanamsa, matching most traditional Vedic software. "raman" uses the B.V. Raman ayanamsa from Hindu Predictive Astrology, a recognised traditional school that sits about 1.45 degrees below Lahiri. Defaults to "kp-newcomb".
 type KPPlanetsIntervalRequestAyanamsa string
 
 // KPPlanetsIntervalRequestNodeType Lunar node type for Rahu and Ketu positions. "mean" uses the smooth mean node (traditional Vedic astrology default). "true" uses the osculating node with perturbation corrections, oscillating up to 1.5 degrees from mean with a 173-day period. Impacts KP sub-lord assignments in narrow boundary cases. Defaults to "mean".
@@ -20256,7 +20640,7 @@ type KPPlanetsIntervalResponse struct {
 
 // KPPlanetsRequest defines model for KPPlanetsRequest.
 type KPPlanetsRequest struct {
-	// Ayanamsa Ayanamsa system for sidereal conversion. "kp-newcomb" uses the KP-Newcomb dynamic formula (most common for KP). "kp-old" uses the Krishnamurti original table. "lahiri" uses Lahiri/Chitrapaksha ayanamsa matching most traditional Vedic software. "custom" allows providing your own value via ayanamsaValue. Defaults to "kp-newcomb".
+	// Ayanamsa Ayanamsa system for sidereal conversion. "kp-newcomb" uses the KP-Newcomb dynamic formula (most common for KP). "kp-old" uses the Krishnamurti original table. "lahiri" uses Lahiri/Chitrapaksha ayanamsa matching most traditional Vedic software. "raman" uses the B.V. Raman ayanamsa, about 1.45 degrees below Lahiri. "custom" allows providing your own value via ayanamsaValue. Defaults to "kp-newcomb".
 	Ayanamsa *KPPlanetsRequestAyanamsa `json:"ayanamsa,omitempty"`
 
 	// AyanamsaValue Custom ayanamsa value in degrees. When provided, overrides the computed ayanamsa from the selected type. Use for testing with specific ayanamsa values or matching a particular reference source.
@@ -20281,7 +20665,7 @@ type KPPlanetsRequest struct {
 	Timezone *KPPlanetsRequest_Timezone `json:"timezone,omitempty"`
 }
 
-// KPPlanetsRequestAyanamsa Ayanamsa system for sidereal conversion. "kp-newcomb" uses the KP-Newcomb dynamic formula (most common for KP). "kp-old" uses the Krishnamurti original table. "lahiri" uses Lahiri/Chitrapaksha ayanamsa matching most traditional Vedic software. "custom" allows providing your own value via ayanamsaValue. Defaults to "kp-newcomb".
+// KPPlanetsRequestAyanamsa Ayanamsa system for sidereal conversion. "kp-newcomb" uses the KP-Newcomb dynamic formula (most common for KP). "kp-old" uses the Krishnamurti original table. "lahiri" uses Lahiri/Chitrapaksha ayanamsa matching most traditional Vedic software. "raman" uses the B.V. Raman ayanamsa, about 1.45 degrees below Lahiri. "custom" allows providing your own value via ayanamsaValue. Defaults to "kp-newcomb".
 type KPPlanetsRequestAyanamsa string
 
 // KPPlanetsRequestNodeType Lunar node type for Rahu and Ketu positions. "mean" uses the smooth mean node (traditional Vedic astrology default). "true" uses the osculating node with perturbation corrections, oscillating up to 1.5 degrees from mean with a 173-day period. Impacts KP sub-lord assignments in narrow boundary cases. Defaults to "mean".
@@ -20346,7 +20730,7 @@ type KPPlanetsResponse struct {
 
 // KPRasiChangesRequest defines model for KPRasiChangesRequest.
 type KPRasiChangesRequest struct {
-	// Ayanamsa Ayanamsa system for sidereal conversion. "kp-newcomb" uses the KP-Newcomb dynamic formula, the most common choice for KP astrology. "kp-old" uses the Krishnamurti original table from KP Reader-1 with constant precession rate. "lahiri" uses Lahiri/Chitrapaksha ayanamsa, matching most traditional Vedic software. Defaults to "kp-newcomb".
+	// Ayanamsa Ayanamsa system for sidereal conversion. "kp-newcomb" uses the KP-Newcomb dynamic formula, the most common choice for KP astrology. "kp-old" uses the Krishnamurti original table from KP Reader-1 with constant precession rate. "lahiri" uses Lahiri/Chitrapaksha ayanamsa, matching most traditional Vedic software. "raman" uses the B.V. Raman ayanamsa from Hindu Predictive Astrology, a recognised traditional school that sits about 1.45 degrees below Lahiri. Defaults to "kp-newcomb".
 	Ayanamsa *KPRasiChangesRequestAyanamsa `json:"ayanamsa,omitempty"`
 
 	// EndDate End date for sign ingress search (YYYY-MM-DD format)
@@ -20365,7 +20749,7 @@ type KPRasiChangesRequest struct {
 	Timezone *KPRasiChangesRequest_Timezone `json:"timezone,omitempty"`
 }
 
-// KPRasiChangesRequestAyanamsa Ayanamsa system for sidereal conversion. "kp-newcomb" uses the KP-Newcomb dynamic formula, the most common choice for KP astrology. "kp-old" uses the Krishnamurti original table from KP Reader-1 with constant precession rate. "lahiri" uses Lahiri/Chitrapaksha ayanamsa, matching most traditional Vedic software. Defaults to "kp-newcomb".
+// KPRasiChangesRequestAyanamsa Ayanamsa system for sidereal conversion. "kp-newcomb" uses the KP-Newcomb dynamic formula, the most common choice for KP astrology. "kp-old" uses the Krishnamurti original table from KP Reader-1 with constant precession rate. "lahiri" uses Lahiri/Chitrapaksha ayanamsa, matching most traditional Vedic software. "raman" uses the B.V. Raman ayanamsa from Hindu Predictive Astrology, a recognised traditional school that sits about 1.45 degrees below Lahiri. Defaults to "kp-newcomb".
 type KPRasiChangesRequestAyanamsa string
 
 // KPRasiChangesRequestNodeType Lunar node type for Rahu and Ketu positions. "mean" uses the smooth mean node (traditional Vedic astrology default). "true" uses the osculating node with perturbation corrections, oscillating up to 1.5 degrees from mean with a 173-day period. Impacts KP sub-lord assignments in narrow boundary cases. Defaults to "mean".
@@ -20596,9 +20980,14 @@ type KPRulingPlanetsResponse struct {
 
 	// Location Observer location coordinates
 	Location struct {
-		Latitude  float32 `json:"latitude"`
+		// Latitude Observer latitude in decimal degrees, echoed back from the request. Sets the local sidereal time behind the KP ascendant and therefore the Lagna sublord.
+		Latitude float32 `json:"latitude"`
+
+		// Longitude Observer longitude in decimal degrees, echoed back from the request. East is positive, west is negative.
 		Longitude float32 `json:"longitude"`
-		Timezone  float32 `json:"timezone"`
+
+		// Timezone Numeric UTC offset in decimal hours the calculation consumed. An IANA name sent on the request is resolved to its DST-correct offset upstream, so this is always a number.
+		Timezone float32 `json:"timezone"`
 	} `json:"location"`
 
 	// MoonSignLord Lord of the zodiac sign where Moon is placed
@@ -20631,7 +21020,7 @@ type KPRulingPlanetsResponseFocus string
 
 // KPSublordChangesRequest defines model for KPSublordChangesRequest.
 type KPSublordChangesRequest struct {
-	// Ayanamsa Ayanamsa system for sidereal conversion. "kp-newcomb" uses the KP-Newcomb dynamic formula, the most common choice for KP astrology. "kp-old" uses the Krishnamurti original table from KP Reader-1 with constant precession rate. "lahiri" uses Lahiri/Chitrapaksha ayanamsa, matching most traditional Vedic software. Defaults to "kp-newcomb".
+	// Ayanamsa Ayanamsa system for sidereal conversion. "kp-newcomb" uses the KP-Newcomb dynamic formula, the most common choice for KP astrology. "kp-old" uses the Krishnamurti original table from KP Reader-1 with constant precession rate. "lahiri" uses Lahiri/Chitrapaksha ayanamsa, matching most traditional Vedic software. "raman" uses the B.V. Raman ayanamsa from Hindu Predictive Astrology, a recognised traditional school that sits about 1.45 degrees below Lahiri. Defaults to "kp-newcomb".
 	Ayanamsa *KPSublordChangesRequestAyanamsa `json:"ayanamsa,omitempty"`
 
 	// EndDate End date for sublord change search (YYYY-MM-DD format)
@@ -20650,7 +21039,7 @@ type KPSublordChangesRequest struct {
 	Timezone *KPSublordChangesRequest_Timezone `json:"timezone,omitempty"`
 }
 
-// KPSublordChangesRequestAyanamsa Ayanamsa system for sidereal conversion. "kp-newcomb" uses the KP-Newcomb dynamic formula, the most common choice for KP astrology. "kp-old" uses the Krishnamurti original table from KP Reader-1 with constant precession rate. "lahiri" uses Lahiri/Chitrapaksha ayanamsa, matching most traditional Vedic software. Defaults to "kp-newcomb".
+// KPSublordChangesRequestAyanamsa Ayanamsa system for sidereal conversion. "kp-newcomb" uses the KP-Newcomb dynamic formula, the most common choice for KP astrology. "kp-old" uses the Krishnamurti original table from KP Reader-1 with constant precession rate. "lahiri" uses Lahiri/Chitrapaksha ayanamsa, matching most traditional Vedic software. "raman" uses the B.V. Raman ayanamsa from Hindu Predictive Astrology, a recognised traditional school that sits about 1.45 degrees below Lahiri. Defaults to "kp-newcomb".
 type KPSublordChangesRequestAyanamsa string
 
 // KPSublordChangesRequestNodeType Lunar node type for Rahu and Ketu positions. "mean" uses the smooth mean node (traditional Vedic astrology default). "true" uses the osculating node with perturbation corrections, oscillating up to 1.5 degrees from mean with a 173-day period. Impacts KP sub-lord assignments in narrow boundary cases. Defaults to "mean".
@@ -21410,7 +21799,7 @@ type NavamsaResponseChartMetaNakshatraLord string
 type NavamsaResponse_Chart struct {
 	// Aries One of the 12 navamsa rashi-house buckets (aries shown; taurus through pisces follow the identical shape). Each lists the planets placed in that sign.
 	Aries struct {
-		// Rashi Zodiac sign name in lowercase.
+		// Rashi Zodiac sign name in lowercase. Always equals the key of the navamsa rashi-house block it sits in.
 		Rashi string `json:"rashi"`
 
 		// Signs Planets placed in this navamsa sign.
@@ -22125,13 +22514,13 @@ type ShadbalaRequest_Timezone struct {
 type ShadbalaResponse struct {
 	// Planets Shadbala analysis for all 7 classical planets. Ordered: Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn. Each entry contains all 6 strength components, total strength in virupas and Rupas, Ishta/Kashta Phala, minimum required threshold, strength ratio, and relative rank.
 	Planets []struct {
-		// ChestaBala Chesta Bala (Motional Strength) in virupas. Based on planetary motion and retrogression. Retrograde planets score higher. Sun uses Ayana Chesta Bala (declination arc), Moon uses elongation from Sun. Other planets use Sheeghrochcha (mean anomaly) from Surya Siddhanta elements. Range 0 to 60.
+		// ChestaBala Chesta Bala (Motional Strength) in virupas. Based on planetary motion, so a retrograde graha scores higher because it is closer to Earth and working hardest. The Sun uses its Ayana Bala and the Moon its elongation from the Sun, per BPHS. Mars, Mercury, Jupiter, Venus and Saturn use the Sheeghra Kendra, the arc between the sheeghrochcha and the mean of the true and mean longitudes, with the roles of the mean Sun and the graha swapped for Mercury and Venus. Range 0 to 60.
 		ChestaBala float32 `json:"chestaBala"`
 
 		// DigBala Dig Bala (Directional Strength) in virupas. Based on angular distance from the planets directional strength house. Sun and Mars are strong at MC (10th), Moon and Venus at IC (4th), Mercury and Jupiter at ASC (1st), Saturn at DSC (7th). Range 0 to 60.
 		DigBala float32 `json:"digBala"`
 
-		// DrikBala Drik Bala (Aspectual Strength) in virupas. Strength gained or lost from aspects received by other planets. Benefic aspects (Jupiter, Venus) add strength, malefic aspects (Sun, Mars, Saturn) reduce it. Can be negative when malefic aspects dominate. Uses Sputa Drishti with Vishesha (special) aspects for Mars, Jupiter, and Saturn.
+		// DrikBala Drik Bala (Aspectual Strength) in virupas. Strength gained or lost from the aspects a graha receives. Benefic aspects add strength and malefic aspects reduce it, so this value is negative when malefics dominate. Mercury counts as benefic or malefic by the company it keeps in its own sign, decided by count with the nearest graha breaking a tie, and the Moon by its paksha. Uses the graded Sputa Drishti curve of BPHS Ch. 26 with the Vishesha (special) aspects of Mars, Jupiter and Saturn applied at their precise DEGREE ranges rather than by whole sign.
 		DrikBala float32 `json:"drikBala"`
 
 		// IshtaPhala Ishta Phala (auspicious strength) in virupas. Derived from Uchcha Bala and Chesta Bala: sqrt(ucchaBala * chestaBala). Indicates the planets capacity to produce favorable results during its dasha and transit periods.
@@ -22260,9 +22649,13 @@ type TransitsRequest struct {
 	// NatalChart Optional natal chart data to compare transits against
 	NatalChart *struct {
 		// Date Date in YYYY-MM-DD format. A single-digit month or day is accepted and zero-padded (2026-3-5 becomes 2026-03-05). Impossible calendar dates are rejected.
-		Date      openapi_types.Date `json:"date"`
-		Latitude  float32            `json:"latitude"`
-		Longitude float32            `json:"longitude"`
+		Date openapi_types.Date `json:"date"`
+
+		// Latitude Natal birth latitude in decimal degrees, positive north. Sets the local sidereal time behind the natal Ascendant and house cusps that the transits are measured against.
+		Latitude float32 `json:"latitude"`
+
+		// Longitude Natal birth longitude in decimal degrees, positive east and negative west. Example: New York -74.0060, London -0.1276, Sydney 151.2093.
+		Longitude float32 `json:"longitude"`
 
 		// Time Time in 24-hour format. Seconds are optional and default to 00 (14:30 becomes 14:30:00); a single-digit hour is zero-padded. Out-of-range values are rejected.
 		Time string `json:"time"`
@@ -22339,7 +22732,7 @@ type TransitsResponse struct {
 			// Summary Narrative interpretation of what this transit aspect means and how it manifests.
 			Summary string `json:"summary"`
 
-			// Timing How long this transit influence lasts based on the transiting planet speed.
+			// Timing How long this transit influence lasts, localized. The bucket follows the speed of the transiting body: a few hours for the Moon, a few days for the Sun, Mercury, Venus and Mars, one to two weeks for Jupiter, several weeks for Saturn, and an extended period for Uranus, Neptune and Pluto.
 			Timing string `json:"timing"`
 		} `json:"interpretation"`
 
@@ -22584,11 +22977,20 @@ type YogaDetectRequest_Timezone struct {
 type YogaDetectResponse struct {
 	// BirthDetails Echo of the resolved birth data used for detection. Timezone is the numeric offset that the chart engine consumed (IANA names are resolved upstream).
 	BirthDetails struct {
-		Date      string  `json:"date"`
-		Latitude  float32 `json:"latitude"`
+		// Date Birth date the kundli was cast for, YYYY-MM-DD, echoed back from the request.
+		Date string `json:"date"`
+
+		// Latitude Birth latitude in decimal degrees, echoed back from the request. Feeds the local sidereal time behind the Lagna.
+		Latitude float32 `json:"latitude"`
+
+		// Longitude Birth longitude in decimal degrees, echoed back from the request. East is positive, west is negative.
 		Longitude float32 `json:"longitude"`
-		Time      string  `json:"time"`
-		Timezone  float32 `json:"timezone"`
+
+		// Time Birth time the kundli was cast for, 24-hour HH:MM:SS, echoed back from the request. Lagna moves roughly one rashi every two hours, so this is what pins the bhava-dependent yogas.
+		Time string `json:"time"`
+
+		// Timezone Numeric UTC offset in decimal hours that the chart engine actually consumed. An IANA name sent on the request is resolved to its DST-correct offset upstream, so this is always a number.
+		Timezone float32 `json:"timezone"`
 	} `json:"birthDetails"`
 
 	// Total Count of yogas where present === true in this chart. Range 0-44, though real charts sit in the low single digits: the Nabhasa families are mutually constrained by the precedence norms, and most shape yogas are rare.
@@ -25615,8 +26017,11 @@ type DrawCardsParamsLang string
 
 // CastCareerSpreadJSONBody defines parameters for CastCareerSpread.
 type CastCareerSpreadJSONBody struct {
+	// Question Optional querent question to focus the career spread. It is echoed back on the reading and gives the five career positions their context. Omit for general work and vocation guidance.
 	Question *string `json:"question,omitempty"`
-	Seed     *string `json:"seed,omitempty"`
+
+	// Seed Optional seed for reproducible results. The same seed always draws the same five cards into the same career positions, which is what lets a reading be shared or re-rendered. Omit for a random draw.
+	Seed *string `json:"seed,omitempty"`
 }
 
 // CastCareerSpreadParams defines parameters for CastCareerSpread.
@@ -25630,8 +26035,11 @@ type CastCareerSpreadParamsLang string
 
 // CastCelticCrossJSONBody defines parameters for CastCelticCross.
 type CastCelticCrossJSONBody struct {
+	// Question Optional querent question to focus the Celtic Cross. It is echoed back on the reading and gives the ten positions their context. Omit for a general reading of the situation.
 	Question *string `json:"question,omitempty"`
-	Seed     *string `json:"seed,omitempty"`
+
+	// Seed Optional seed for reproducible results. The same seed always draws the same ten cards into the same Celtic Cross positions, which is what lets a reading be shared or re-rendered. Omit for a random draw.
+	Seed *string `json:"seed,omitempty"`
 }
 
 // CastCelticCrossParams defines parameters for CastCelticCross.
@@ -25675,8 +26083,11 @@ type CastCustomSpreadParamsLang string
 
 // CastLoveSpreadJSONBody defines parameters for CastLoveSpread.
 type CastLoveSpreadJSONBody struct {
+	// Question Optional querent question to focus the love spread. It is echoed back on the reading and gives the five relationship positions their context. Omit for general relationship guidance.
 	Question *string `json:"question,omitempty"`
-	Seed     *string `json:"seed,omitempty"`
+
+	// Seed Optional seed for reproducible results. The same seed always draws the same five cards into the same love positions, which is what lets a reading be shared or re-rendered. Omit for a random draw.
+	Seed *string `json:"seed,omitempty"`
 }
 
 // CastLoveSpreadParams defines parameters for CastLoveSpread.
@@ -25871,6 +26282,36 @@ type GetAvasthaParamsID string
 // GetAvastha200JSONResponseBodySystem defines parameters for GetAvastha.
 type GetAvastha200JSONResponseBodySystem string
 
+// CalculateBhavChalitParams defines parameters for CalculateBhavChalit.
+type CalculateBhavChalitParams struct {
+	// Lang Response language (ISO 639-1). Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en. Languages without translations yet return English.
+	Lang *CalculateBhavChalitParamsLang `form:"lang,omitempty" json:"lang,omitempty"`
+
+	// Focus Which signification vocabulary the houseThemes map returns. "general" gives the classical bhava significations (self, wealth, siblings, home, and so on). "finance" gives the money reading of the same twelve bhavas, so house 2 returns income and savings, 5 speculation and risk appetite, 8 sudden money and leverage, 11 gains and profits, and 12 expenses and capital outflow. Use "finance" for wealth, income, business and market timing questions in Krishnamurti Paddhati, where the significator house groups 2, 6, 10, 11 for earned income and 5, 8, 11 for speculation are read against a running dasha. Defaults to "general".
+	Focus *CalculateBhavChalitParamsFocus `form:"focus,omitempty" json:"focus,omitempty"`
+}
+
+// CalculateBhavChalitParamsLang defines parameters for CalculateBhavChalit.
+type CalculateBhavChalitParamsLang string
+
+// CalculateBhavChalitParamsFocus defines parameters for CalculateBhavChalit.
+type CalculateBhavChalitParamsFocus string
+
+// CalculateBhavaBalaParams defines parameters for CalculateBhavaBala.
+type CalculateBhavaBalaParams struct {
+	// Lang Response language (ISO 639-1). Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en. Languages without translations yet return English.
+	Lang *CalculateBhavaBalaParamsLang `form:"lang,omitempty" json:"lang,omitempty"`
+
+	// Focus Which signification vocabulary the houseThemes map returns. "general" gives the classical bhava significations (self, wealth, siblings, home, and so on). "finance" gives the money reading of the same twelve bhavas, so house 2 returns income and savings, 5 speculation and risk appetite, 8 sudden money and leverage, 11 gains and profits, and 12 expenses and capital outflow. Use "finance" for wealth, income, business and market timing questions in Krishnamurti Paddhati, where the significator house groups 2, 6, 10, 11 for earned income and 5, 8, 11 for speculation are read against a running dasha. Defaults to "general".
+	Focus *CalculateBhavaBalaParamsFocus `form:"focus,omitempty" json:"focus,omitempty"`
+}
+
+// CalculateBhavaBalaParamsLang defines parameters for CalculateBhavaBala.
+type CalculateBhavaBalaParamsLang string
+
+// CalculateBhavaBalaParamsFocus defines parameters for CalculateBhavaBala.
+type CalculateBhavaBalaParamsFocus string
+
 // GenerateBirthChartParams defines parameters for GenerateBirthChart.
 type GenerateBirthChartParams struct {
 	// Lang Response language (ISO 639-1). Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en. Languages without translations yet return English.
@@ -25906,7 +26347,7 @@ type CalculateGunMilanParamsLang string
 
 // GetCurrentDashaJSONBody defines parameters for GetCurrentDasha.
 type GetCurrentDashaJSONBody struct {
-	// Ayanamsa Ayanamsa system used to place the birth Moon in its nakshatra, which sets every dasha start and end date. "lahiri" uses Lahiri/Chitrapaksha, the traditional Vedic standard, and is the default. "kp-newcomb" uses the KP-Newcomb dynamic formula, matching Krishnamurti Paddhati software. "kp-old" uses the Krishnamurti original table from KP Reader-1. "custom" takes your own value in degrees via ayanamsaValue, for reconciling exactly against a specific reference program. Switching frames shifts every dasha boundary by weeks, so pick the one your reference software uses.
+	// Ayanamsa Ayanamsa system used to place the birth Moon in its nakshatra, which sets every dasha start and end date. "lahiri" uses Lahiri/Chitrapaksha, the traditional Vedic standard, and is the default. "kp-newcomb" uses the KP-Newcomb dynamic formula, matching Krishnamurti Paddhati software. "kp-old" uses the Krishnamurti original table from KP Reader-1. "raman" uses the B.V. Raman ayanamsa, the second frame traditional Indian software commonly offers beside Lahiri. "custom" takes your own value in degrees via ayanamsaValue, for reconciling exactly against a specific reference program. Switching frames shifts every dasha boundary by weeks, so pick the one your reference software uses.
 	Ayanamsa *GetCurrentDashaJSONBodyAyanamsa `json:"ayanamsa,omitempty"`
 
 	// AyanamsaValue Custom ayanamsa value in degrees. When provided, overrides the computed ayanamsa from the selected type. Use for testing with specific ayanamsa values or matching a particular reference source.
@@ -26052,7 +26493,7 @@ type GetCurrentDasha200JSONResponseBodySookshmaDashaSignificatorsStrengthLabel s
 
 // GetMajorDashasJSONBody defines parameters for GetMajorDashas.
 type GetMajorDashasJSONBody struct {
-	// Ayanamsa Ayanamsa system used to place the birth Moon in its nakshatra, which sets every dasha start and end date. "lahiri" uses Lahiri/Chitrapaksha, the traditional Vedic standard, and is the default. "kp-newcomb" uses the KP-Newcomb dynamic formula, matching Krishnamurti Paddhati software. "kp-old" uses the Krishnamurti original table from KP Reader-1. "custom" takes your own value in degrees via ayanamsaValue, for reconciling exactly against a specific reference program. Switching frames shifts every dasha boundary by weeks, so pick the one your reference software uses.
+	// Ayanamsa Ayanamsa system used to place the birth Moon in its nakshatra, which sets every dasha start and end date. "lahiri" uses Lahiri/Chitrapaksha, the traditional Vedic standard, and is the default. "kp-newcomb" uses the KP-Newcomb dynamic formula, matching Krishnamurti Paddhati software. "kp-old" uses the Krishnamurti original table from KP Reader-1. "raman" uses the B.V. Raman ayanamsa, the second frame traditional Indian software commonly offers beside Lahiri. "custom" takes your own value in degrees via ayanamsaValue, for reconciling exactly against a specific reference program. Switching frames shifts every dasha boundary by weeks, so pick the one your reference software uses.
 	Ayanamsa *GetMajorDashasJSONBodyAyanamsa `json:"ayanamsa,omitempty"`
 
 	// AyanamsaValue Custom ayanamsa value in degrees. When provided, overrides the computed ayanamsa from the selected type. Use for testing with specific ayanamsa values or matching a particular reference source.
@@ -26132,7 +26573,7 @@ type GetMajorDashas200JSONResponseBodyNakshatraLord string
 
 // GetSubDashasJSONBody defines parameters for GetSubDashas.
 type GetSubDashasJSONBody struct {
-	// Ayanamsa Ayanamsa system used to place the birth Moon in its nakshatra, which sets every dasha start and end date. "lahiri" uses Lahiri/Chitrapaksha, the traditional Vedic standard, and is the default. "kp-newcomb" uses the KP-Newcomb dynamic formula, matching Krishnamurti Paddhati software. "kp-old" uses the Krishnamurti original table from KP Reader-1. "custom" takes your own value in degrees via ayanamsaValue, for reconciling exactly against a specific reference program. Switching frames shifts every dasha boundary by weeks, so pick the one your reference software uses.
+	// Ayanamsa Ayanamsa system used to place the birth Moon in its nakshatra, which sets every dasha start and end date. "lahiri" uses Lahiri/Chitrapaksha, the traditional Vedic standard, and is the default. "kp-newcomb" uses the KP-Newcomb dynamic formula, matching Krishnamurti Paddhati software. "kp-old" uses the Krishnamurti original table from KP Reader-1. "raman" uses the B.V. Raman ayanamsa, the second frame traditional Indian software commonly offers beside Lahiri. "custom" takes your own value in degrees via ayanamsaValue, for reconciling exactly against a specific reference program. Switching frames shifts every dasha boundary by weeks, so pick the one your reference software uses.
 	Ayanamsa *GetSubDashasJSONBodyAyanamsa `json:"ayanamsa,omitempty"`
 
 	// AyanamsaValue Custom ayanamsa value in degrees. When provided, overrides the computed ayanamsa from the selected type. Use for testing with specific ayanamsa values or matching a particular reference source.
@@ -26227,7 +26668,7 @@ type GetSubDashas200JSONResponseBodyMahadashaPeriodSignificatorsStrengthLabel st
 
 // GetPratyantardashasJSONBody defines parameters for GetPratyantardashas.
 type GetPratyantardashasJSONBody struct {
-	// Ayanamsa Ayanamsa system used to place the birth Moon in its nakshatra, which sets every dasha start and end date. "lahiri" uses Lahiri/Chitrapaksha, the traditional Vedic standard, and is the default. "kp-newcomb" uses the KP-Newcomb dynamic formula, matching Krishnamurti Paddhati software. "kp-old" uses the Krishnamurti original table from KP Reader-1. "custom" takes your own value in degrees via ayanamsaValue, for reconciling exactly against a specific reference program. Switching frames shifts every dasha boundary by weeks, so pick the one your reference software uses.
+	// Ayanamsa Ayanamsa system used to place the birth Moon in its nakshatra, which sets every dasha start and end date. "lahiri" uses Lahiri/Chitrapaksha, the traditional Vedic standard, and is the default. "kp-newcomb" uses the KP-Newcomb dynamic formula, matching Krishnamurti Paddhati software. "kp-old" uses the Krishnamurti original table from KP Reader-1. "raman" uses the B.V. Raman ayanamsa, the second frame traditional Indian software commonly offers beside Lahiri. "custom" takes your own value in degrees via ayanamsaValue, for reconciling exactly against a specific reference program. Switching frames shifts every dasha boundary by weeks, so pick the one your reference software uses.
 	Ayanamsa *GetPratyantardashasJSONBodyAyanamsa `json:"ayanamsa,omitempty"`
 
 	// AyanamsaValue Custom ayanamsa value in degrees. When provided, overrides the computed ayanamsa from the selected type. Use for testing with specific ayanamsa values or matching a particular reference source.
@@ -26334,7 +26775,7 @@ type GetPratyantardashas200JSONResponseBodyPratyantardashasSignificatorsStrength
 
 // GetSookshmaDashasJSONBody defines parameters for GetSookshmaDashas.
 type GetSookshmaDashasJSONBody struct {
-	// Ayanamsa Ayanamsa system used to place the birth Moon in its nakshatra, which sets every dasha start and end date. "lahiri" uses Lahiri/Chitrapaksha, the traditional Vedic standard, and is the default. "kp-newcomb" uses the KP-Newcomb dynamic formula, matching Krishnamurti Paddhati software. "kp-old" uses the Krishnamurti original table from KP Reader-1. "custom" takes your own value in degrees via ayanamsaValue, for reconciling exactly against a specific reference program. Switching frames shifts every dasha boundary by weeks, so pick the one your reference software uses.
+	// Ayanamsa Ayanamsa system used to place the birth Moon in its nakshatra, which sets every dasha start and end date. "lahiri" uses Lahiri/Chitrapaksha, the traditional Vedic standard, and is the default. "kp-newcomb" uses the KP-Newcomb dynamic formula, matching Krishnamurti Paddhati software. "kp-old" uses the Krishnamurti original table from KP Reader-1. "raman" uses the B.V. Raman ayanamsa, the second frame traditional Indian software commonly offers beside Lahiri. "custom" takes your own value in degrees via ayanamsaValue, for reconciling exactly against a specific reference program. Switching frames shifts every dasha boundary by weeks, so pick the one your reference software uses.
 	Ayanamsa *GetSookshmaDashasJSONBodyAyanamsa `json:"ayanamsa,omitempty"`
 
 	// AyanamsaValue Custom ayanamsa value in degrees. When provided, overrides the computed ayanamsa from the selected type. Use for testing with specific ayanamsa values or matching a particular reference source.
@@ -26453,7 +26894,7 @@ type GetSookshmaDashas200JSONResponseBodySookshmaDashasSignificatorsStrengthLabe
 
 // GetPranaDashasJSONBody defines parameters for GetPranaDashas.
 type GetPranaDashasJSONBody struct {
-	// Ayanamsa Ayanamsa system used to place the birth Moon in its nakshatra, which sets every dasha start and end date. "lahiri" uses Lahiri/Chitrapaksha, the traditional Vedic standard, and is the default. "kp-newcomb" uses the KP-Newcomb dynamic formula, matching Krishnamurti Paddhati software. "kp-old" uses the Krishnamurti original table from KP Reader-1. "custom" takes your own value in degrees via ayanamsaValue, for reconciling exactly against a specific reference program. Switching frames shifts every dasha boundary by weeks, so pick the one your reference software uses.
+	// Ayanamsa Ayanamsa system used to place the birth Moon in its nakshatra, which sets every dasha start and end date. "lahiri" uses Lahiri/Chitrapaksha, the traditional Vedic standard, and is the default. "kp-newcomb" uses the KP-Newcomb dynamic formula, matching Krishnamurti Paddhati software. "kp-old" uses the Krishnamurti original table from KP Reader-1. "raman" uses the B.V. Raman ayanamsa, the second frame traditional Indian software commonly offers beside Lahiri. "custom" takes your own value in degrees via ayanamsaValue, for reconciling exactly against a specific reference program. Switching frames shifts every dasha boundary by weeks, so pick the one your reference software uses.
 	Ayanamsa *GetPranaDashasJSONBodyAyanamsa `json:"ayanamsa,omitempty"`
 
 	// AyanamsaValue Custom ayanamsa value in degrees. When provided, overrides the computed ayanamsa from the selected type. Use for testing with specific ayanamsa values or matching a particular reference source.
@@ -26717,7 +27158,7 @@ type GetKpRulingPlanetsJSONBody_Timezone struct {
 
 // GetKpRulingIntervalJSONBody defines parameters for GetKpRulingInterval.
 type GetKpRulingIntervalJSONBody struct {
-	// Ayanamsa Ayanamsa system for sidereal conversion. "kp-newcomb" uses the KP-Newcomb dynamic formula, the most common choice for KP astrology. "kp-old" uses the Krishnamurti original table from KP Reader-1 with constant precession rate. "lahiri" uses Lahiri/Chitrapaksha ayanamsa, matching most traditional Vedic software. Defaults to "kp-newcomb".
+	// Ayanamsa Ayanamsa system for sidereal conversion. "kp-newcomb" uses the KP-Newcomb dynamic formula, the most common choice for KP astrology. "kp-old" uses the Krishnamurti original table from KP Reader-1 with constant precession rate. "lahiri" uses Lahiri/Chitrapaksha ayanamsa, matching most traditional Vedic software. "raman" uses the B.V. Raman ayanamsa from Hindu Predictive Astrology, a recognised traditional school that sits about 1.45 degrees below Lahiri. Defaults to "kp-newcomb".
 	Ayanamsa *GetKpRulingIntervalJSONBodyAyanamsa `json:"ayanamsa,omitempty"`
 
 	// EndDatetime End of the interval range in ISO 8601 (YYYY-MM-DDTHH:MM:SS). Interpreted as local time when a non-zero timezone is provided (a trailing Z is accepted but ignored); with timezone 0 it is UTC.
@@ -27402,6 +27843,12 @@ type GetLunarAspectsJSONRequestBody GetLunarAspectsJSONBody
 // GetMonthlyAspectsJSONRequestBody defines body for GetMonthlyAspects for application/json ContentType.
 type GetMonthlyAspectsJSONRequestBody GetMonthlyAspectsJSONBody
 
+// CalculateBhavChalitJSONRequestBody defines body for CalculateBhavChalit for application/json ContentType.
+type CalculateBhavChalitJSONRequestBody = BhavChalitRequest
+
+// CalculateBhavaBalaJSONRequestBody defines body for CalculateBhavaBala for application/json ContentType.
+type CalculateBhavaBalaJSONRequestBody = BhavaBalaRequest
+
 // GenerateBirthChartJSONRequestBody defines body for GenerateBirthChart for application/json ContentType.
 type GenerateBirthChartJSONRequestBody = BirthChartRequest
 
@@ -28040,6 +28487,130 @@ func (t AsteroidsRequest_Timezone) MarshalJSON() ([]byte, error) {
 }
 
 func (t *AsteroidsRequest_Timezone) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsBhavChalitRequestTimezone0 returns the union data inside the BhavChalitRequest_Timezone as a BhavChalitRequestTimezone0
+func (t BhavChalitRequest_Timezone) AsBhavChalitRequestTimezone0() (BhavChalitRequestTimezone0, error) {
+	var body BhavChalitRequestTimezone0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromBhavChalitRequestTimezone0 overwrites any union data inside the BhavChalitRequest_Timezone as the provided BhavChalitRequestTimezone0
+func (t *BhavChalitRequest_Timezone) FromBhavChalitRequestTimezone0(v BhavChalitRequestTimezone0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeBhavChalitRequestTimezone0 performs a merge with any union data inside the BhavChalitRequest_Timezone, using the provided BhavChalitRequestTimezone0
+func (t *BhavChalitRequest_Timezone) MergeBhavChalitRequestTimezone0(v BhavChalitRequestTimezone0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsBhavChalitRequestTimezone1 returns the union data inside the BhavChalitRequest_Timezone as a BhavChalitRequestTimezone1
+func (t BhavChalitRequest_Timezone) AsBhavChalitRequestTimezone1() (BhavChalitRequestTimezone1, error) {
+	var body BhavChalitRequestTimezone1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromBhavChalitRequestTimezone1 overwrites any union data inside the BhavChalitRequest_Timezone as the provided BhavChalitRequestTimezone1
+func (t *BhavChalitRequest_Timezone) FromBhavChalitRequestTimezone1(v BhavChalitRequestTimezone1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeBhavChalitRequestTimezone1 performs a merge with any union data inside the BhavChalitRequest_Timezone, using the provided BhavChalitRequestTimezone1
+func (t *BhavChalitRequest_Timezone) MergeBhavChalitRequestTimezone1(v BhavChalitRequestTimezone1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t BhavChalitRequest_Timezone) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *BhavChalitRequest_Timezone) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsBhavaBalaRequestTimezone0 returns the union data inside the BhavaBalaRequest_Timezone as a BhavaBalaRequestTimezone0
+func (t BhavaBalaRequest_Timezone) AsBhavaBalaRequestTimezone0() (BhavaBalaRequestTimezone0, error) {
+	var body BhavaBalaRequestTimezone0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromBhavaBalaRequestTimezone0 overwrites any union data inside the BhavaBalaRequest_Timezone as the provided BhavaBalaRequestTimezone0
+func (t *BhavaBalaRequest_Timezone) FromBhavaBalaRequestTimezone0(v BhavaBalaRequestTimezone0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeBhavaBalaRequestTimezone0 performs a merge with any union data inside the BhavaBalaRequest_Timezone, using the provided BhavaBalaRequestTimezone0
+func (t *BhavaBalaRequest_Timezone) MergeBhavaBalaRequestTimezone0(v BhavaBalaRequestTimezone0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsBhavaBalaRequestTimezone1 returns the union data inside the BhavaBalaRequest_Timezone as a BhavaBalaRequestTimezone1
+func (t BhavaBalaRequest_Timezone) AsBhavaBalaRequestTimezone1() (BhavaBalaRequestTimezone1, error) {
+	var body BhavaBalaRequestTimezone1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromBhavaBalaRequestTimezone1 overwrites any union data inside the BhavaBalaRequest_Timezone as the provided BhavaBalaRequestTimezone1
+func (t *BhavaBalaRequest_Timezone) FromBhavaBalaRequestTimezone1(v BhavaBalaRequestTimezone1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeBhavaBalaRequestTimezone1 performs a merge with any union data inside the BhavaBalaRequest_Timezone, using the provided BhavaBalaRequestTimezone1
+func (t *BhavaBalaRequest_Timezone) MergeBhavaBalaRequestTimezone1(v BhavaBalaRequestTimezone1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t BhavaBalaRequest_Timezone) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *BhavaBalaRequest_Timezone) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }
@@ -33559,6 +34130,16 @@ type ClientInterface interface {
 	// GetAvastha request
 	GetAvastha(ctx context.Context, id GetAvasthaParamsID, params *GetAvasthaParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// CalculateBhavChalitWithBody request with any body
+	CalculateBhavChalitWithBody(ctx context.Context, params *CalculateBhavChalitParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	CalculateBhavChalit(ctx context.Context, params *CalculateBhavChalitParams, body CalculateBhavChalitJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CalculateBhavaBalaWithBody request with any body
+	CalculateBhavaBalaWithBody(ctx context.Context, params *CalculateBhavaBalaParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	CalculateBhavaBala(ctx context.Context, params *CalculateBhavaBalaParams, body CalculateBhavaBalaJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// GenerateBirthChartWithBody request with any body
 	GenerateBirthChartWithBody(ctx context.Context, params *GenerateBirthChartParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
@@ -36247,6 +36828,54 @@ func (c *Client) ListAvasthas(ctx context.Context, params *ListAvasthasParams, r
 
 func (c *Client) GetAvastha(ctx context.Context, id GetAvasthaParamsID, params *GetAvasthaParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewGetAvasthaRequest(c.Server, id, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) CalculateBhavChalitWithBody(ctx context.Context, params *CalculateBhavChalitParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCalculateBhavChalitRequestWithBody(c.Server, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) CalculateBhavChalit(ctx context.Context, params *CalculateBhavChalitParams, body CalculateBhavChalitJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCalculateBhavChalitRequest(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) CalculateBhavaBalaWithBody(ctx context.Context, params *CalculateBhavaBalaParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCalculateBhavaBalaRequestWithBody(c.Server, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+func (c *Client) CalculateBhavaBala(ctx context.Context, params *CalculateBhavaBalaParams, body CalculateBhavaBalaJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCalculateBhavaBalaRequest(c.Server, params, body)
 	if err != nil {
 		return nil, err
 	}
@@ -45660,6 +46289,164 @@ func NewGetAvasthaRequest(server string, id GetAvasthaParamsID, params *GetAvast
 	return req, nil
 }
 
+// NewCalculateBhavChalitRequest calls the generic CalculateBhavChalit builder with application/json body
+func NewCalculateBhavChalitRequest(server string, params *CalculateBhavChalitParams, body CalculateBhavChalitJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewCalculateBhavChalitRequestWithBody(server, params, "application/json", bodyReader)
+}
+
+// NewCalculateBhavChalitRequestWithBody generates requests for CalculateBhavChalit with any type of body
+func NewCalculateBhavChalitRequestWithBody(server string, params *CalculateBhavChalitParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/vedic-astrology/bhav-chalit")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Lang != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "lang", *params.Lang, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Focus != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "focus", *params.Focus, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewCalculateBhavaBalaRequest calls the generic CalculateBhavaBala builder with application/json body
+func NewCalculateBhavaBalaRequest(server string, params *CalculateBhavaBalaParams, body CalculateBhavaBalaJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewCalculateBhavaBalaRequestWithBody(server, params, "application/json", bodyReader)
+}
+
+// NewCalculateBhavaBalaRequestWithBody generates requests for CalculateBhavaBala with any type of body
+func NewCalculateBhavaBalaRequestWithBody(server string, params *CalculateBhavaBalaParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/vedic-astrology/bhava-bala")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Lang != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "lang", *params.Lang, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Focus != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "focus", *params.Focus, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
 // NewGenerateBirthChartRequest calls the generic GenerateBirthChart builder with application/json body
 func NewGenerateBirthChartRequest(server string, params *GenerateBirthChartParams, body GenerateBirthChartJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
@@ -48837,6 +49624,16 @@ type ClientWithResponsesInterface interface {
 	// GetAvasthaWithResponse request
 	GetAvasthaWithResponse(ctx context.Context, id GetAvasthaParamsID, params *GetAvasthaParams, reqEditors ...RequestEditorFn) (*GetAvasthaResponse, error)
 
+	// CalculateBhavChalitWithBodyWithResponse request with any body
+	CalculateBhavChalitWithBodyWithResponse(ctx context.Context, params *CalculateBhavChalitParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CalculateBhavChalitResponse, error)
+
+	CalculateBhavChalitWithResponse(ctx context.Context, params *CalculateBhavChalitParams, body CalculateBhavChalitJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateBhavChalitResponse, error)
+
+	// CalculateBhavaBalaWithBodyWithResponse request with any body
+	CalculateBhavaBalaWithBodyWithResponse(ctx context.Context, params *CalculateBhavaBalaParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CalculateBhavaBalaResponse, error)
+
+	CalculateBhavaBalaWithResponse(ctx context.Context, params *CalculateBhavaBalaParams, body CalculateBhavaBalaJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateBhavaBalaResponse, error)
+
 	// GenerateBirthChartWithBodyWithResponse request with any body
 	GenerateBirthChartWithBodyWithResponse(ctx context.Context, params *GenerateBirthChartParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GenerateBirthChartResponse, error)
 
@@ -49159,10 +49956,19 @@ type AnalyzeNumberSequenceResponse struct {
 
 			// Meaning Full life-area interpretation of the underlying root digit. For an unknown sequence this is the substantive reading to display, so a synchronicity app never dead-ends on an arbitrary number.
 			Meaning struct {
-				Career    string `json:"career"`
-				Love      string `json:"love"`
-				Money     string `json:"money"`
+				// Career Career and vocation guidance for the root digit. Money and finances are returned separately in the money field.
+				Career string `json:"career"`
+
+				// Love Love and relationship interpretation of the root digit, for singles, couples, and those healing from past relationships.
+				Love string `json:"love"`
+
+				// Money Money, finances, and material abundance guidance for the root digit, kept distinct from career.
+				Money string `json:"money"`
+
+				// Spiritual Spiritual interpretation of the root digit, covering divine guidance, higher purpose, and metaphysical significance.
 				Spiritual string `json:"spiritual"`
+
+				// TwinFlame Twin flame interpretation of the root digit, covering union, separation, and spiritual growth.
 				TwinFlame string `json:"twinFlame"`
 			} `json:"meaning"`
 
@@ -52195,7 +53001,7 @@ type CalculateTransitAspectsResponse struct {
 				// Summary Narrative interpretation of this transit aspect and its life impact.
 				Summary string `json:"summary"`
 
-				// Timing When this transit is most active and how long its influence lasts.
+				// Timing When this transit is most active and how long its influence lasts, localized. The bucket follows the speed of the transiting body: a few hours for the Moon, a few days for the Sun, Mercury, Venus and Mars, one to two weeks for Jupiter, several weeks for Saturn, and an extended period for Uranus, Neptune and Pluto.
 				Timing string `json:"timing"`
 			} `json:"transitInterpretation,omitempty"`
 
@@ -53642,7 +54448,7 @@ type GetCrystalResponse struct {
 		// ImageURL URL to a high-quality crystal photograph. Use for visual crystal guides, product listings, and crystal identification features.
 		ImageURL *string `json:"imageUrl"`
 
-		// Keywords Five to nine keywords capturing the core healing properties and spiritual themes of this crystal. Null when keyword data is unavailable.
+		// Keywords Keywords capturing the core healing properties and spiritual themes of this crystal. The count varies by stone, from a single keyword up to twenty. Null when keyword data is unavailable.
 		Keywords *[]string `json:"keywords"`
 
 		// Meaning Detailed healing interpretations across three areas: spiritual and metaphysical, emotional and psychological, and physical body associations.
@@ -53984,20 +54790,38 @@ type GenerateDigestResponse struct {
 		Windows []struct {
 			// ByDomain Count of events in this window broken down by domain. Only domains with at least one event in the window are present. The values sum to count.
 			ByDomain struct {
+				// Biorhythm Number of events in this window produced by this forecast domain. Absent when the domain contributed nothing, so a zero is never written.
 				Biorhythm *float32 `json:"biorhythm,omitempty"`
-				Vedic     *float32 `json:"vedic,omitempty"`
-				Western   *float32 `json:"western,omitempty"`
+
+				// Vedic Number of events in this window produced by this forecast domain. Absent when the domain contributed nothing, so a zero is never written.
+				Vedic *float32 `json:"vedic,omitempty"`
+
+				// Western Number of events in this window produced by this forecast domain. Absent when the domain contributed nothing, so a zero is never written.
+				Western *float32 `json:"western,omitempty"`
 			} `json:"byDomain"`
 
 			// ByType Count of events in this window broken down by event type. Only types with at least one event in the window are present. The values sum to count.
 			ByType struct {
-				CriticalDay       *float32 `json:"critical-day,omitempty"`
-				DashaChange       *float32 `json:"dasha-change,omitempty"`
-				Eclipse           *float32 `json:"eclipse,omitempty"`
-				LunarPhase        *float32 `json:"lunar-phase,omitempty"`
+				// CriticalDay Number of events in this window of this event type. Absent when the type did not occur, so a zero is never written.
+				CriticalDay *float32 `json:"critical-day,omitempty"`
+
+				// DashaChange Number of events in this window of this event type. Absent when the type did not occur, so a zero is never written.
+				DashaChange *float32 `json:"dasha-change,omitempty"`
+
+				// Eclipse Number of events in this window of this event type. Absent when the type did not occur, so a zero is never written.
+				Eclipse *float32 `json:"eclipse,omitempty"`
+
+				// LunarPhase Number of events in this window of this event type. Absent when the type did not occur, so a zero is never written.
+				LunarPhase *float32 `json:"lunar-phase,omitempty"`
+
+				// RetrogradeStation Number of events in this window of this event type. Absent when the type did not occur, so a zero is never written.
 				RetrogradeStation *float32 `json:"retrograde-station,omitempty"`
-				SignIngress       *float32 `json:"sign-ingress,omitempty"`
-				TransitAspect     *float32 `json:"transit-aspect,omitempty"`
+
+				// SignIngress Number of events in this window of this event type. Absent when the type did not occur, so a zero is never written.
+				SignIngress *float32 `json:"sign-ingress,omitempty"`
+
+				// TransitAspect Number of events in this window of this event type. Absent when the type did not occur, so a zero is never written.
+				TransitAspect *float32 `json:"transit-aspect,omitempty"`
 			} `json:"byType"`
 
 			// Count Number of events whose datetime falls inside this window.
@@ -55681,8 +56505,11 @@ type CalculateVariablesResponse struct {
 
 			// Cognition Cognition, the strongest sense, read off the Determination Tone. Present on the determination arrow ONLY: no authority supports reading Cognition from the other three arrows, so it is omitted rather than invented.
 			Cognition *struct {
+				// Description How this Cognition discriminates what is correct for the body, and the conditions that sharpen it. Renderable as the Cognition paragraph of a Variables or Primary Health System report.
 				Description string `json:"description"`
-				Label       string `json:"label"`
+
+				// Label Name of the Cognition, the strongest sense. One of six read off the Determination Tone: Smell, Taste, Outer Vision, Inner Vision, Feeling, Touch.
+				Label string `json:"label"`
 			} `json:"cognition,omitempty"`
 
 			// Color Color number from 1 to 6, the substructure level one octave finer than the line. Color selects the arrow theme, for example the determination family or the motivation.
@@ -59133,7 +59960,7 @@ type CastCareerSpreadResponse struct {
 		// Spread Name of the tarot spread used (e.g. Three-Card, Celtic Cross, Career, Love).
 		Spread string `json:"spread"`
 
-		// Summary AI-generated narrative connecting all cards in the spread into a cohesive reading.
+		// Summary Narrative summary that connects the cards drawn across the spread positions into one cohesive reading.
 		Summary *string `json:"summary,omitempty"`
 	}
 	JSON400 *ErrorResponse
@@ -59199,7 +60026,7 @@ type CastCelticCrossResponse struct {
 		// Spread Name of the tarot spread used (e.g. Three-Card, Celtic Cross, Career, Love).
 		Spread string `json:"spread"`
 
-		// Summary AI-generated narrative connecting all cards in the spread into a cohesive reading.
+		// Summary Narrative summary that connects the cards drawn across the spread positions into one cohesive reading.
 		Summary *string `json:"summary,omitempty"`
 	}
 	JSON400 *ErrorResponse
@@ -59264,9 +60091,6 @@ type CastCustomSpreadResponse struct {
 
 		// Spread Name of the tarot spread used (e.g. Three-Card, Celtic Cross, Career, Love).
 		Spread string `json:"spread"`
-
-		// Summary AI-generated narrative connecting all cards in the spread into a cohesive reading.
-		Summary *string `json:"summary,omitempty"`
 	}
 	JSON400 *ErrorResponse
 	JSON401 *ErrorResponse
@@ -59331,7 +60155,7 @@ type CastLoveSpreadResponse struct {
 		// Spread Name of the tarot spread used (e.g. Three-Card, Celtic Cross, Career, Love).
 		Spread string `json:"spread"`
 
-		// Summary AI-generated narrative connecting all cards in the spread into a cohesive reading.
+		// Summary Narrative summary that connects the cards drawn across the spread positions into one cohesive reading.
 		Summary *string `json:"summary,omitempty"`
 	}
 	JSON400 *ErrorResponse
@@ -59397,7 +60221,7 @@ type CastThreeCardResponse struct {
 		// Spread Name of the tarot spread used (e.g. Three-Card, Celtic Cross, Career, Love).
 		Spread string `json:"spread"`
 
-		// Summary AI-generated narrative connecting all cards in the spread into a cohesive reading.
+		// Summary Narrative summary that connects the cards drawn across the spread positions into one cohesive reading.
 		Summary *string `json:"summary,omitempty"`
 	}
 	JSON400 *ErrorResponse
@@ -59514,13 +60338,26 @@ type GetUsageStatsResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *struct {
-		Email              openapi_types.Email `json:"email"`
-		EndDate            time.Time           `json:"endDate"`
-		Plan               string              `json:"plan"`
-		RemainingThisMonth float32             `json:"remainingThisMonth"`
-		RequestsPerMonth   float32             `json:"requestsPerMonth"`
-		Status             string              `json:"status"`
-		UsedThisMonth      float32             `json:"usedThisMonth"`
+		// Email Billing email the subscription is registered under.
+		Email openapi_types.Email `json:"email"`
+
+		// EndDate ISO 8601 timestamp when the current billing period ends. A renewal extends this date in place. API access survives a cancelled or suspended status until this moment passes.
+		EndDate time.Time `json:"endDate"`
+
+		// Plan Name of the subscription plan the API key belongs to. One flat plan covers every domain and the Remote MCP servers, so this is a quota tier, never a per product entitlement.
+		Plan string `json:"plan"`
+
+		// RemainingThisMonth Requests left before the monthly allowance is exhausted, floored at zero. Equal to requestsPerMonth minus usedThisMonth.
+		RemainingThisMonth float32 `json:"remainingThisMonth"`
+
+		// RequestsPerMonth Monthly request allowance for the plan. One request, API or MCP, equals one unit: there is no credit weighting and no per domain fee.
+		RequestsPerMonth float32 `json:"requestsPerMonth"`
+
+		// Status Subscription lifecycle state. Values: active, cancelled (no longer renewing but usable until endDate), suspended (payment failed, usable until endDate), expired (past endDate), pending (checkout started, payment not captured).
+		Status string `json:"status"`
+
+		// UsedThisMonth Billable requests counted against the current calendar month. Read from the same counter the rate limiter enforces on, so it never reports a rosier number than the limit that will 429 you. Cached responses still count.
+		UsedThisMonth float32 `json:"usedThisMonth"`
 	}
 	JSON400 *ErrorResponse
 	JSON401 *ErrorResponse
@@ -60008,6 +60845,86 @@ func (r GetAvasthaResponse) Bytes() []byte {
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r GetAvasthaResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type CalculateBhavChalitResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *BhavChalitResponse
+	JSON400      *ErrorResponse
+	JSON401      *ErrorResponse
+	JSON405      *ErrorResponse
+	JSON429      *ErrorResponse
+	JSON500      *ErrorResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r CalculateBhavChalitResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CalculateBhavChalitResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// Bytes is a convenience method to retrieve the raw bytes from the HTTP response
+func (r CalculateBhavChalitResponse) Bytes() []byte {
+	return r.Body
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r CalculateBhavChalitResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+type CalculateBhavaBalaResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	JSON200      *BhavaBalaResponse
+	JSON400      *ErrorResponse
+	JSON401      *ErrorResponse
+	JSON405      *ErrorResponse
+	JSON429      *ErrorResponse
+	JSON500      *ErrorResponse
+}
+
+// Status returns HTTPResponse.Status
+func (r CalculateBhavaBalaResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CalculateBhavaBalaResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// Bytes is a convenience method to retrieve the raw bytes from the HTTP response
+func (r CalculateBhavaBalaResponse) Bytes() []byte {
+	return r.Body
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r CalculateBhavaBalaResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -62452,6 +63369,7 @@ type GetChoghadiyaResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *struct {
+		// Date Calendar date the choghadiya muhurta table was computed for, YYYY-MM-DD, echoed back from the request. The day periods run from that date sunrise to its sunset, and the night periods run on to the next sunrise.
 		Date string `json:"date"`
 
 		// DayChoghadiya 8 daytime choghadiya periods (sunrise to sunset)
@@ -62613,13 +63531,13 @@ type GetDetailedPanchangResponse struct {
 			// Current Planet ruling the current hora (planetary hour). Each hora lasts ~1 hour.
 			Current string `json:"current"`
 
-			// End End time of the current hora in UTC.
+			// End End time of the current hora, as local civil time in the requested timezone offset. Day horas and night horas have different lengths, so a hora is only approximately 60 minutes.
 			End string `json:"end"`
 
 			// Number Hora number within the day sequence (1-24).
 			Number float32 `json:"number"`
 
-			// Start Start time of the current hora in UTC.
+			// Start Start time of the current hora, as local civil time in the requested timezone offset. The first hora of any day begins at local sunrise, so this equals the sunrise field when the hora number is 1.
 			Start string `json:"start"`
 		} `json:"hora"`
 
@@ -62764,10 +63682,10 @@ type GetDetailedPanchangResponse struct {
 			SanskritName string `json:"sanskritName"`
 		} `json:"sunSign"`
 
-		// Sunrise Local sunrise time in UTC. Marks the start of the Hindu day.
+		// Sunrise Local sunrise in the requested timezone as YYYY-MM-DDTHH:MM:SS, with no zone suffix. Marks the start of the Hindu day.
 		Sunrise string `json:"sunrise"`
 
-		// Sunset Local sunset time in UTC. Marks the transition to night muhurtas.
+		// Sunset Local sunset in the requested timezone as YYYY-MM-DDTHH:MM:SS, with no zone suffix. Marks the transition to night muhurtas.
 		Sunset string `json:"sunset"`
 
 		// Tarabalam Tarabalam (Star strength). based on the 9-Tara nakshatra cycle. Determines favorability of Moon nakshatra transit relative to each of the 27 birth nakshatras.
@@ -62862,8 +63780,11 @@ type GetDetailedPanchangResponse struct {
 			// Lord Ruling planet of the day (Vara lord). Influences day-level auspiciousness.
 			Lord string `json:"lord"`
 
-			// Name Hindu weekday name. Vara begins at local sunrise, not midnight.
+			// Name Weekday name in English. Vara begins at local sunrise, not at midnight, so a time before sunrise belongs to the previous vara.
 			Name string `json:"name"`
+
+			// SanskritName Vara name transliterated from Sanskrit: Ravivara, Somavara, Mangalavara, Budhavara, Guruvara, Shukravara, Shanivara. Use this rather than name for a Jyotish-facing reading, since it is the form the classical texts use and it does not change with the lang parameter.
+			SanskritName string `json:"sanskritName"`
 		} `json:"vara"`
 
 		// Varjyam Varjyam (Thyajyam, Vishghati, Nakshatra Thyajyam), inauspicious ~96-minute period based on Moon transit through specific ghati fractions within the current nakshatra. Each of the 27 nakshatras has a fixed Varjyam window measured in ghatikas (1 ghati = 24 minutes). Avoid starting new ventures, travel, or auspicious ceremonies during Varjyam. Usually 1-2 periods per panchang day.
@@ -63018,7 +63939,7 @@ type CalculateParallelsResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *struct {
-		// Datetime UTC datetime used for declination calculation (ISO 8601).
+		// Datetime Datetime used for the declination calculation, echoed as the local civil date and time supplied in the request (YYYY-MM-DDTHH:MM:SS). The timezone field of the request is what converts it to the instant the declinations are computed for.
 		Datetime string `json:"datetime"`
 
 		// Parallels All parallel and contraparallel aspects found within the specified orb. Parallels are powerful hidden aspects often overlooked in standard chart analysis.
@@ -63401,7 +64322,7 @@ type CalculateTransitResponse struct {
 	Body         []byte
 	HTTPResponse *http.Response
 	JSON200      *struct {
-		// BirthDatetime Birth datetime used for the natal chart (UTC ISO 8601).
+		// BirthDatetime Birth datetime used for the natal chart, echoed as the local civil date and time supplied in the request (YYYY-MM-DDTHH:MM:SS). Combine it with the timezone field to recover the UTC instant.
 		BirthDatetime string `json:"birthDatetime"`
 
 		// KeyTransits Highlighted transits from slow-moving planets (Jupiter, Saturn, Rahu, Ketu), most impactful for Gochar analysis.
@@ -63434,7 +64355,7 @@ type CalculateTransitResponse struct {
 			Sign string `json:"sign"`
 		} `json:"natalPlanets"`
 
-		// TransitDatetime Transit datetime being analyzed (UTC ISO 8601).
+		// TransitDatetime Transit datetime being analyzed, echoed as the local civil date and time supplied in the request (YYYY-MM-DDTHH:MM:SS). Gochar positions are computed for this moment and overlaid on the natal chart.
 		TransitDatetime string `json:"transitDatetime"`
 
 		// TransitingPlanets Current planetary positions overlaid on the natal chart with house placements and aspects.
@@ -65550,6 +66471,40 @@ func (c *ClientWithResponses) GetAvasthaWithResponse(ctx context.Context, id Get
 	return ParseGetAvasthaResponse(rsp)
 }
 
+// CalculateBhavChalitWithBodyWithResponse request with arbitrary body returning *CalculateBhavChalitResponse
+func (c *ClientWithResponses) CalculateBhavChalitWithBodyWithResponse(ctx context.Context, params *CalculateBhavChalitParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CalculateBhavChalitResponse, error) {
+	rsp, err := c.CalculateBhavChalitWithBody(ctx, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCalculateBhavChalitResponse(rsp)
+}
+
+func (c *ClientWithResponses) CalculateBhavChalitWithResponse(ctx context.Context, params *CalculateBhavChalitParams, body CalculateBhavChalitJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateBhavChalitResponse, error) {
+	rsp, err := c.CalculateBhavChalit(ctx, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCalculateBhavChalitResponse(rsp)
+}
+
+// CalculateBhavaBalaWithBodyWithResponse request with arbitrary body returning *CalculateBhavaBalaResponse
+func (c *ClientWithResponses) CalculateBhavaBalaWithBodyWithResponse(ctx context.Context, params *CalculateBhavaBalaParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CalculateBhavaBalaResponse, error) {
+	rsp, err := c.CalculateBhavaBalaWithBody(ctx, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCalculateBhavaBalaResponse(rsp)
+}
+
+func (c *ClientWithResponses) CalculateBhavaBalaWithResponse(ctx context.Context, params *CalculateBhavaBalaParams, body CalculateBhavaBalaJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateBhavaBalaResponse, error) {
+	rsp, err := c.CalculateBhavaBala(ctx, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCalculateBhavaBalaResponse(rsp)
+}
+
 // GenerateBirthChartWithBodyWithResponse request with arbitrary body returning *GenerateBirthChartResponse
 func (c *ClientWithResponses) GenerateBirthChartWithBodyWithResponse(ctx context.Context, params *GenerateBirthChartParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GenerateBirthChartResponse, error) {
 	rsp, err := c.GenerateBirthChartWithBody(ctx, params, contentType, body, reqEditors...)
@@ -66378,10 +67333,19 @@ func ParseAnalyzeNumberSequenceResponse(rsp *http.Response) (*AnalyzeNumberSeque
 
 				// Meaning Full life-area interpretation of the underlying root digit. For an unknown sequence this is the substantive reading to display, so a synchronicity app never dead-ends on an arbitrary number.
 				Meaning struct {
-					Career    string `json:"career"`
-					Love      string `json:"love"`
-					Money     string `json:"money"`
+					// Career Career and vocation guidance for the root digit. Money and finances are returned separately in the money field.
+					Career string `json:"career"`
+
+					// Love Love and relationship interpretation of the root digit, for singles, couples, and those healing from past relationships.
+					Love string `json:"love"`
+
+					// Money Money, finances, and material abundance guidance for the root digit, kept distinct from career.
+					Money string `json:"money"`
+
+					// Spiritual Spiritual interpretation of the root digit, covering divine guidance, higher purpose, and metaphysical significance.
 					Spiritual string `json:"spiritual"`
+
+					// TwinFlame Twin flame interpretation of the root digit, covering union, separation, and spiritual growth.
 					TwinFlame string `json:"twinFlame"`
 				} `json:"meaning"`
 
@@ -70146,7 +71110,7 @@ func ParseCalculateTransitAspectsResponse(rsp *http.Response) (*CalculateTransit
 					// Summary Narrative interpretation of this transit aspect and its life impact.
 					Summary string `json:"summary"`
 
-					// Timing When this transit is most active and how long its influence lasts.
+					// Timing When this transit is most active and how long its influence lasts, localized. The bucket follows the speed of the transiting body: a few hours for the Moon, a few days for the Sun, Mercury, Venus and Mars, one to two weeks for Jupiter, several weeks for Saturn, and an extended period for Uranus, Neptune and Pluto.
 					Timing string `json:"timing"`
 				} `json:"transitInterpretation,omitempty"`
 
@@ -71998,7 +72962,7 @@ func ParseGetCrystalResponse(rsp *http.Response) (*GetCrystalResponse, error) {
 			// ImageURL URL to a high-quality crystal photograph. Use for visual crystal guides, product listings, and crystal identification features.
 			ImageURL *string `json:"imageUrl"`
 
-			// Keywords Five to nine keywords capturing the core healing properties and spiritual themes of this crystal. Null when keyword data is unavailable.
+			// Keywords Keywords capturing the core healing properties and spiritual themes of this crystal. The count varies by stone, from a single keyword up to twenty. Null when keyword data is unavailable.
 			Keywords *[]string `json:"keywords"`
 
 			// Meaning Detailed healing interpretations across three areas: spiritual and metaphysical, emotional and psychological, and physical body associations.
@@ -72478,20 +73442,38 @@ func ParseGenerateDigestResponse(rsp *http.Response) (*GenerateDigestResponse, e
 			Windows []struct {
 				// ByDomain Count of events in this window broken down by domain. Only domains with at least one event in the window are present. The values sum to count.
 				ByDomain struct {
+					// Biorhythm Number of events in this window produced by this forecast domain. Absent when the domain contributed nothing, so a zero is never written.
 					Biorhythm *float32 `json:"biorhythm,omitempty"`
-					Vedic     *float32 `json:"vedic,omitempty"`
-					Western   *float32 `json:"western,omitempty"`
+
+					// Vedic Number of events in this window produced by this forecast domain. Absent when the domain contributed nothing, so a zero is never written.
+					Vedic *float32 `json:"vedic,omitempty"`
+
+					// Western Number of events in this window produced by this forecast domain. Absent when the domain contributed nothing, so a zero is never written.
+					Western *float32 `json:"western,omitempty"`
 				} `json:"byDomain"`
 
 				// ByType Count of events in this window broken down by event type. Only types with at least one event in the window are present. The values sum to count.
 				ByType struct {
-					CriticalDay       *float32 `json:"critical-day,omitempty"`
-					DashaChange       *float32 `json:"dasha-change,omitempty"`
-					Eclipse           *float32 `json:"eclipse,omitempty"`
-					LunarPhase        *float32 `json:"lunar-phase,omitempty"`
+					// CriticalDay Number of events in this window of this event type. Absent when the type did not occur, so a zero is never written.
+					CriticalDay *float32 `json:"critical-day,omitempty"`
+
+					// DashaChange Number of events in this window of this event type. Absent when the type did not occur, so a zero is never written.
+					DashaChange *float32 `json:"dasha-change,omitempty"`
+
+					// Eclipse Number of events in this window of this event type. Absent when the type did not occur, so a zero is never written.
+					Eclipse *float32 `json:"eclipse,omitempty"`
+
+					// LunarPhase Number of events in this window of this event type. Absent when the type did not occur, so a zero is never written.
+					LunarPhase *float32 `json:"lunar-phase,omitempty"`
+
+					// RetrogradeStation Number of events in this window of this event type. Absent when the type did not occur, so a zero is never written.
 					RetrogradeStation *float32 `json:"retrograde-station,omitempty"`
-					SignIngress       *float32 `json:"sign-ingress,omitempty"`
-					TransitAspect     *float32 `json:"transit-aspect,omitempty"`
+
+					// SignIngress Number of events in this window of this event type. Absent when the type did not occur, so a zero is never written.
+					SignIngress *float32 `json:"sign-ingress,omitempty"`
+
+					// TransitAspect Number of events in this window of this event type. Absent when the type did not occur, so a zero is never written.
+					TransitAspect *float32 `json:"transit-aspect,omitempty"`
 				} `json:"byType"`
 
 				// Count Number of events whose datetime falls inside this window.
@@ -74517,8 +75499,11 @@ func ParseCalculateVariablesResponse(rsp *http.Response) (*CalculateVariablesRes
 
 				// Cognition Cognition, the strongest sense, read off the Determination Tone. Present on the determination arrow ONLY: no authority supports reading Cognition from the other three arrows, so it is omitted rather than invented.
 				Cognition *struct {
+					// Description How this Cognition discriminates what is correct for the body, and the conditions that sharpen it. Renderable as the Cognition paragraph of a Variables or Primary Health System report.
 					Description string `json:"description"`
-					Label       string `json:"label"`
+
+					// Label Name of the Cognition, the strongest sense. One of six read off the Determination Tone: Smell, Taste, Outer Vision, Inner Vision, Feeling, Touch.
+					Label string `json:"label"`
 				} `json:"cognition,omitempty"`
 
 				// Color Color number from 1 to 6, the substructure level one octave finer than the line. Color selects the arrow theme, for example the determination family or the motivation.
@@ -78803,7 +79788,7 @@ func ParseCastCareerSpreadResponse(rsp *http.Response) (*CastCareerSpreadRespons
 			// Spread Name of the tarot spread used (e.g. Three-Card, Celtic Cross, Career, Love).
 			Spread string `json:"spread"`
 
-			// Summary AI-generated narrative connecting all cards in the spread into a cohesive reading.
+			// Summary Narrative summary that connects the cards drawn across the spread positions into one cohesive reading.
 			Summary *string `json:"summary,omitempty"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
@@ -78890,7 +79875,7 @@ func ParseCastCelticCrossResponse(rsp *http.Response) (*CastCelticCrossResponse,
 			// Spread Name of the tarot spread used (e.g. Three-Card, Celtic Cross, Career, Love).
 			Spread string `json:"spread"`
 
-			// Summary AI-generated narrative connecting all cards in the spread into a cohesive reading.
+			// Summary Narrative summary that connects the cards drawn across the spread positions into one cohesive reading.
 			Summary *string `json:"summary,omitempty"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
@@ -78976,9 +79961,6 @@ func ParseCastCustomSpreadResponse(rsp *http.Response) (*CastCustomSpreadRespons
 
 			// Spread Name of the tarot spread used (e.g. Three-Card, Celtic Cross, Career, Love).
 			Spread string `json:"spread"`
-
-			// Summary AI-generated narrative connecting all cards in the spread into a cohesive reading.
-			Summary *string `json:"summary,omitempty"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -79064,7 +80046,7 @@ func ParseCastLoveSpreadResponse(rsp *http.Response) (*CastLoveSpreadResponse, e
 			// Spread Name of the tarot spread used (e.g. Three-Card, Celtic Cross, Career, Love).
 			Spread string `json:"spread"`
 
-			// Summary AI-generated narrative connecting all cards in the spread into a cohesive reading.
+			// Summary Narrative summary that connects the cards drawn across the spread positions into one cohesive reading.
 			Summary *string `json:"summary,omitempty"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
@@ -79151,7 +80133,7 @@ func ParseCastThreeCardResponse(rsp *http.Response) (*CastThreeCardResponse, err
 			// Spread Name of the tarot spread used (e.g. Three-Card, Celtic Cross, Career, Love).
 			Spread string `json:"spread"`
 
-			// Summary AI-generated narrative connecting all cards in the spread into a cohesive reading.
+			// Summary Narrative summary that connects the cards drawn across the spread positions into one cohesive reading.
 			Summary *string `json:"summary,omitempty"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
@@ -79310,13 +80292,26 @@ func ParseGetUsageStatsResponse(rsp *http.Response) (*GetUsageStatsResponse, err
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
-			Email              openapi_types.Email `json:"email"`
-			EndDate            time.Time           `json:"endDate"`
-			Plan               string              `json:"plan"`
-			RemainingThisMonth float32             `json:"remainingThisMonth"`
-			RequestsPerMonth   float32             `json:"requestsPerMonth"`
-			Status             string              `json:"status"`
-			UsedThisMonth      float32             `json:"usedThisMonth"`
+			// Email Billing email the subscription is registered under.
+			Email openapi_types.Email `json:"email"`
+
+			// EndDate ISO 8601 timestamp when the current billing period ends. A renewal extends this date in place. API access survives a cancelled or suspended status until this moment passes.
+			EndDate time.Time `json:"endDate"`
+
+			// Plan Name of the subscription plan the API key belongs to. One flat plan covers every domain and the Remote MCP servers, so this is a quota tier, never a per product entitlement.
+			Plan string `json:"plan"`
+
+			// RemainingThisMonth Requests left before the monthly allowance is exhausted, floored at zero. Equal to requestsPerMonth minus usedThisMonth.
+			RemainingThisMonth float32 `json:"remainingThisMonth"`
+
+			// RequestsPerMonth Monthly request allowance for the plan. One request, API or MCP, equals one unit: there is no credit weighting and no per domain fee.
+			RequestsPerMonth float32 `json:"requestsPerMonth"`
+
+			// Status Subscription lifecycle state. Values: active, cancelled (no longer renewing but usable until endDate), suspended (payment failed, usable until endDate), expired (past endDate), pending (checkout started, payment not captured).
+			Status string `json:"status"`
+
+			// UsedThisMonth Billable requests counted against the current calendar month. Read from the same counter the rate limiter enforces on, so it never reports a rosier number than the limit that will 429 you. Cached responses still count.
+			UsedThisMonth float32 `json:"usedThisMonth"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -79951,6 +80946,128 @@ func ParseGetAvasthaResponse(rsp *http.Response) (*GetAvasthaResponse, error) {
 			return nil, err
 		}
 		response.JSON404 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 405:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON405 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseCalculateBhavChalitResponse parses an HTTP response from a CalculateBhavChalitWithResponse call
+func ParseCalculateBhavChalitResponse(rsp *http.Response) (*CalculateBhavChalitResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CalculateBhavChalitResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest BhavChalitResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 405:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON405 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	return response, nil
+}
+
+// ParseCalculateBhavaBalaResponse parses an HTTP response from a CalculateBhavaBalaWithResponse call
+func ParseCalculateBhavaBalaResponse(rsp *http.Response) (*CalculateBhavaBalaResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CalculateBhavaBalaResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest BhavaBalaResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 405:
 		var dest ErrorResponse
@@ -83001,6 +84118,7 @@ func ParseGetChoghadiyaResponse(rsp *http.Response) (*GetChoghadiyaResponse, err
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
+			// Date Calendar date the choghadiya muhurta table was computed for, YYYY-MM-DD, echoed back from the request. The day periods run from that date sunrise to its sunset, and the night periods run on to the next sunrise.
 			Date string `json:"date"`
 
 			// DayChoghadiya 8 daytime choghadiya periods (sunrise to sunset)
@@ -83183,13 +84301,13 @@ func ParseGetDetailedPanchangResponse(rsp *http.Response) (*GetDetailedPanchangR
 				// Current Planet ruling the current hora (planetary hour). Each hora lasts ~1 hour.
 				Current string `json:"current"`
 
-				// End End time of the current hora in UTC.
+				// End End time of the current hora, as local civil time in the requested timezone offset. Day horas and night horas have different lengths, so a hora is only approximately 60 minutes.
 				End string `json:"end"`
 
 				// Number Hora number within the day sequence (1-24).
 				Number float32 `json:"number"`
 
-				// Start Start time of the current hora in UTC.
+				// Start Start time of the current hora, as local civil time in the requested timezone offset. The first hora of any day begins at local sunrise, so this equals the sunrise field when the hora number is 1.
 				Start string `json:"start"`
 			} `json:"hora"`
 
@@ -83334,10 +84452,10 @@ func ParseGetDetailedPanchangResponse(rsp *http.Response) (*GetDetailedPanchangR
 				SanskritName string `json:"sanskritName"`
 			} `json:"sunSign"`
 
-			// Sunrise Local sunrise time in UTC. Marks the start of the Hindu day.
+			// Sunrise Local sunrise in the requested timezone as YYYY-MM-DDTHH:MM:SS, with no zone suffix. Marks the start of the Hindu day.
 			Sunrise string `json:"sunrise"`
 
-			// Sunset Local sunset time in UTC. Marks the transition to night muhurtas.
+			// Sunset Local sunset in the requested timezone as YYYY-MM-DDTHH:MM:SS, with no zone suffix. Marks the transition to night muhurtas.
 			Sunset string `json:"sunset"`
 
 			// Tarabalam Tarabalam (Star strength). based on the 9-Tara nakshatra cycle. Determines favorability of Moon nakshatra transit relative to each of the 27 birth nakshatras.
@@ -83432,8 +84550,11 @@ func ParseGetDetailedPanchangResponse(rsp *http.Response) (*GetDetailedPanchangR
 				// Lord Ruling planet of the day (Vara lord). Influences day-level auspiciousness.
 				Lord string `json:"lord"`
 
-				// Name Hindu weekday name. Vara begins at local sunrise, not midnight.
+				// Name Weekday name in English. Vara begins at local sunrise, not at midnight, so a time before sunrise belongs to the previous vara.
 				Name string `json:"name"`
+
+				// SanskritName Vara name transliterated from Sanskrit: Ravivara, Somavara, Mangalavara, Budhavara, Guruvara, Shukravara, Shanivara. Use this rather than name for a Jyotish-facing reading, since it is the form the classical texts use and it does not change with the lang parameter.
+				SanskritName string `json:"sanskritName"`
 			} `json:"vara"`
 
 			// Varjyam Varjyam (Thyajyam, Vishghati, Nakshatra Thyajyam), inauspicious ~96-minute period based on Moon transit through specific ghati fractions within the current nakshatra. Each of the 27 nakshatras has a fixed Varjyam window measured in ghatikas (1 ghati = 24 minutes). Avoid starting new ventures, travel, or auspicious ceremonies during Varjyam. Usually 1-2 periods per panchang day.
@@ -83630,7 +84751,7 @@ func ParseCalculateParallelsResponse(rsp *http.Response) (*CalculateParallelsRes
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
-			// Datetime UTC datetime used for declination calculation (ISO 8601).
+			// Datetime Datetime used for the declination calculation, echoed as the local civil date and time supplied in the request (YYYY-MM-DDTHH:MM:SS). The timezone field of the request is what converts it to the instant the declinations are computed for.
 			Datetime string `json:"datetime"`
 
 			// Parallels All parallel and contraparallel aspects found within the specified orb. Parallels are powerful hidden aspects often overlooked in standard chart analysis.
@@ -84166,7 +85287,7 @@ func ParseCalculateTransitResponse(rsp *http.Response) (*CalculateTransitRespons
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
-			// BirthDatetime Birth datetime used for the natal chart (UTC ISO 8601).
+			// BirthDatetime Birth datetime used for the natal chart, echoed as the local civil date and time supplied in the request (YYYY-MM-DDTHH:MM:SS). Combine it with the timezone field to recover the UTC instant.
 			BirthDatetime string `json:"birthDatetime"`
 
 			// KeyTransits Highlighted transits from slow-moving planets (Jupiter, Saturn, Rahu, Ketu), most impactful for Gochar analysis.
@@ -84199,7 +85320,7 @@ func ParseCalculateTransitResponse(rsp *http.Response) (*CalculateTransitRespons
 				Sign string `json:"sign"`
 			} `json:"natalPlanets"`
 
-			// TransitDatetime Transit datetime being analyzed (UTC ISO 8601).
+			// TransitDatetime Transit datetime being analyzed, echoed as the local civil date and time supplied in the request (YYYY-MM-DDTHH:MM:SS). Gochar positions are computed for this moment and overlaid on the natal chart.
 			TransitDatetime string `json:"transitDatetime"`
 
 			// TransitingPlanets Current planetary positions overlaid on the natal chart with house placements and aspects.

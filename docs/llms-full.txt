@@ -66,6 +66,8 @@ Vedic astrology (Jyotish) and KP API for kundli generation with 15 divisional ch
 - `getMonthlyAspects` - POST `/vedic-astrology/aspects/monthly` - Monthly Planetary Aspects - Major and minor aspect events for a month
 - `listAvasthas` - GET `/vedic-astrology/avasthas` - List all 17 avastha states - Planetary State Reference
 - `getAvastha` - GET `/vedic-astrology/avasthas/{id}` - Get avastha by ID - Planetary State Detail
+- `calculateBhavChalit` - POST `/vedic-astrology/bhav-chalit` - Get the Bhav Chalit (Chalit Kundli) cusp-based house chart - Bhav Chalit API
+- `calculateBhavaBala` - POST `/vedic-astrology/bhava-bala` - Get Bhava Bala (house strength) for all twelve houses - Bhava Bala Calculator API
 - `generateBirthChart` - POST `/vedic-astrology/birth-chart` - Get birth chart (D1 Rashi chart) - Kundli Calculator API
 - `calculateCharaKarakas` - POST `/vedic-astrology/chara-karakas` - Get Chara Karakas including Atmakaraka - Jaimini Karaka Calculator API
 - `calculateGunMilan` - POST `/vedic-astrology/compatibility` - Calculate compatibility score - Gun Milan API (Ashtakoot Matching)
