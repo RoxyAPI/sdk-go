@@ -4585,7 +4585,7 @@
                   "type": "string"
                 },
                 "id": {
-                  "description": "Glossary id (lowercase, kebab-case) matching an entry in the 300-entry planetary-yoga catalog. Use with GET /yoga/{id} to retrieve the full glossary text.",
+                  "description": "Glossary id (lowercase, kebab-case) matching an entry in the 301-entry planetary-yoga catalog. Use with GET /yoga/{id} to retrieve the full glossary text.",
                   "example": "gajakesari",
                   "type": "string"
                 },
@@ -13925,7 +13925,7 @@
             "type": "string"
           },
           "id": {
-            "description": "Glossary id (lowercase, kebab-case) matching an entry in the 300-entry planetary-yoga catalog. Use with GET /yoga/{id} to retrieve the full glossary text.",
+            "description": "Glossary id (lowercase, kebab-case) matching an entry in the 301-entry planetary-yoga catalog. Use with GET /yoga/{id} to retrieve the full glossary text.",
             "example": "gajakesari",
             "type": "string"
           },
@@ -14121,7 +14121,7 @@
                   "type": "string"
                 },
                 "id": {
-                  "description": "Glossary id (lowercase, kebab-case) matching an entry in the 300-entry planetary-yoga catalog. Use with GET /yoga/{id} to retrieve the full glossary text.",
+                  "description": "Glossary id (lowercase, kebab-case) matching an entry in the 301-entry planetary-yoga catalog. Use with GET /yoga/{id} to retrieve the full glossary text.",
                   "example": "gajakesari",
                   "type": "string"
                 },
@@ -45881,12 +45881,12 @@
               "schema": {
                 "properties": {
                   "question": {
-                    "description": "Optional querent question to focus the career spread. It is echoed back on the reading and gives the five career positions their context. Omit for general work and vocation guidance.",
+                    "description": "Optional querent question to focus the career spread. It is echoed back on the reading and gives the seven career positions their context. Omit for general work and vocation guidance.",
                     "example": "What do I need to know about my career path?",
                     "type": "string"
                   },
                   "seed": {
-                    "description": "Optional seed for reproducible results. The same seed always draws the same five cards into the same career positions, which is what lets a reading be shared or re-rendered. Omit for a random draw.",
+                    "description": "Optional seed for reproducible results. The same seed always draws the same seven cards into the same career positions, which is what lets a reading be shared or re-rendered. Omit for a random draw.",
                     "example": "reading-2f9c1a",
                     "type": "string"
                   }
@@ -61220,7 +61220,7 @@
     },
     "/vedic-astrology/yoga": {
       "get": {
-        "description": "Browse the 300+ entry Vedic planetary-yoga glossary. Returns id and name for every cataloged yoga (Raja, Dhana, Pancha Mahapurusha, Nabhasa, Chandra-Mangala, and more). This is a dictionary lookup, not chart-driven detection: it does not inspect a birth chart. Use GET /yoga/{id} for the full glossary entry, or POST /yoga/detect to run all 44 detection rules against a specific kundli. Ideal for yoga-browser UIs, search, and progressive data loading.",
+        "description": "Browse the 301-entry Vedic planetary-yoga glossary. Returns id and name for every cataloged yoga (Raja, Dhana, Pancha Mahapurusha, Nabhasa, Chandra-Mangala, and more). This is a dictionary lookup, not chart-driven detection: it does not inspect a birth chart. Use GET /yoga/{id} for the full glossary entry, or POST /yoga/detect to run all 44 detection rules against a specific kundli. Ideal for yoga-browser UIs, search, and progressive data loading.",
         "operationId": "listYogas",
         "parameters": [
           {
@@ -61385,7 +61385,7 @@
             "apiKey": []
           }
         ],
-        "summary": "List all planetary yogas - 300+ Vedic Yoga Glossary",
+        "summary": "List all planetary yogas - 301 entry Vedic Yoga Glossary",
         "tags": [
           "Vedic Astrology"
         ]

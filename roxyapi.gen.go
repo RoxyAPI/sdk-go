@@ -20193,7 +20193,7 @@ type BirthChartResponse struct {
 		// Family Classical grouping, ALWAYS present on a detection verdict: one of the four Nabhasa families (asraya, dala, akriti, sankhya) or classical for the twelve single-combination yogas such as Gajakesari and the Pancha Mahapurusha. Group the verdict list on this key to render a Nabhasa result the way the tradition arranges it. Never translated, so grouping works identically under any lang.
 		Family BirthChartResponseYogasFamily `json:"family"`
 
-		// ID Glossary id (lowercase, kebab-case) matching an entry in the 300-entry planetary-yoga catalog. Use with GET /yoga/{id} to retrieve the full glossary text.
+		// ID Glossary id (lowercase, kebab-case) matching an entry in the 301-entry planetary-yoga catalog. Use with GET /yoga/{id} to retrieve the full glossary text.
 		ID string `json:"id"`
 
 		// Name Classical Sanskrit name of the yoga as referenced in BPHS (Brihat Parashara Hora Shastra), Phaladeepika, and B.V. Raman *Three Hundred Important Combinations*.
@@ -24484,7 +24484,7 @@ type YogaDetail struct {
 	// Family Nabhasa family this yoga belongs to, present only on the 32 Nabhasa distribution yogas: asraya (3, sign modality), dala (2, benefic or malefic kendra tenancy), akriti (20, bhava shape) and sankhya (7, count of occupied rasis). Absent on every other glossary row, which is most of the catalog, since those are single-combination yogas outside the Nabhasa scheme. Group or filter the catalog on this key; it is never translated.
 	Family *YogaDetailFamily `json:"family,omitempty"`
 
-	// ID Glossary id (lowercase, kebab-case) matching an entry in the 300-entry planetary-yoga catalog. Use with GET /yoga/{id} to retrieve the full glossary text.
+	// ID Glossary id (lowercase, kebab-case) matching an entry in the 301-entry planetary-yoga catalog. Use with GET /yoga/{id} to retrieve the full glossary text.
 	ID string `json:"id"`
 
 	// Name Classical Sanskrit name of the yoga as referenced in BPHS (Brihat Parashara Hora Shastra), Phaladeepika, and B.V. Raman *Three Hundred Important Combinations*.
@@ -24584,7 +24584,7 @@ type YogaDetectResponse struct {
 		// Family Classical grouping, ALWAYS present on a detection verdict: one of the four Nabhasa families (asraya, dala, akriti, sankhya) or classical for the twelve single-combination yogas such as Gajakesari and the Pancha Mahapurusha. Group the verdict list on this key to render a Nabhasa result the way the tradition arranges it. Never translated, so grouping works identically under any lang.
 		Family YogaDetectResponseYogasFamily `json:"family"`
 
-		// ID Glossary id (lowercase, kebab-case) matching an entry in the 300-entry planetary-yoga catalog. Use with GET /yoga/{id} to retrieve the full glossary text.
+		// ID Glossary id (lowercase, kebab-case) matching an entry in the 301-entry planetary-yoga catalog. Use with GET /yoga/{id} to retrieve the full glossary text.
 		ID string `json:"id"`
 
 		// Name Classical Sanskrit name of the yoga as referenced in BPHS (Brihat Parashara Hora Shastra), Phaladeepika, and B.V. Raman *Three Hundred Important Combinations*.
@@ -27591,10 +27591,10 @@ type DrawCardsParamsLang string
 
 // CastCareerSpreadJSONBody defines parameters for CastCareerSpread.
 type CastCareerSpreadJSONBody struct {
-	// Question Optional querent question to focus the career spread. It is echoed back on the reading and gives the five career positions their context. Omit for general work and vocation guidance.
+	// Question Optional querent question to focus the career spread. It is echoed back on the reading and gives the seven career positions their context. Omit for general work and vocation guidance.
 	Question *string `json:"question,omitempty"`
 
-	// Seed Optional seed for reproducible results. The same seed always draws the same five cards into the same career positions, which is what lets a reading be shared or re-rendered. Omit for a random draw.
+	// Seed Optional seed for reproducible results. The same seed always draws the same seven cards into the same career positions, which is what lets a reading be shared or re-rendered. Omit for a random draw.
 	Seed *string `json:"seed,omitempty"`
 }
 
@@ -37855,9 +37855,9 @@ type ClientInterface interface {
 	// Corresponds with POST /vedic-astrology/upagraha (the `GetUpagrahaPositions` operationId).
 	GetUpagrahaPositions(ctx context.Context, body GetUpagrahaPositionsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// ListYogas List all planetary yogas - 300+ Vedic Yoga Glossary
+	// ListYogas List all planetary yogas - 301 entry Vedic Yoga Glossary
 	//
-	// Browse the 300+ entry Vedic planetary-yoga glossary. Returns id and name for every cataloged yoga (Raja, Dhana, Pancha Mahapurusha, Nabhasa, Chandra-Mangala, and more). This is a dictionary lookup, not chart-driven detection: it does not inspect a birth chart. Use GET /yoga/{id} for the full glossary entry, or POST /yoga/detect to run all 44 detection rules against a specific kundli. Ideal for yoga-browser UIs, search, and progressive data loading.
+	// Browse the 301-entry Vedic planetary-yoga glossary. Returns id and name for every cataloged yoga (Raja, Dhana, Pancha Mahapurusha, Nabhasa, Chandra-Mangala, and more). This is a dictionary lookup, not chart-driven detection: it does not inspect a birth chart. Use GET /yoga/{id} for the full glossary entry, or POST /yoga/detect to run all 44 detection rules against a specific kundli. Ideal for yoga-browser UIs, search, and progressive data loading.
 	//
 	// Corresponds with GET /vedic-astrology/yoga (the `ListYogas` operationId).
 	ListYogas(ctx context.Context, params *ListYogasParams, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -43311,9 +43311,9 @@ func (c *Client) GetUpagrahaPositions(ctx context.Context, body GetUpagrahaPosit
 	return c.Client.Do(req)
 }
 
-// ListYogas List all planetary yogas - 300+ Vedic Yoga Glossary
+// ListYogas List all planetary yogas - 301 entry Vedic Yoga Glossary
 //
-// Browse the 300+ entry Vedic planetary-yoga glossary. Returns id and name for every cataloged yoga (Raja, Dhana, Pancha Mahapurusha, Nabhasa, Chandra-Mangala, and more). This is a dictionary lookup, not chart-driven detection: it does not inspect a birth chart. Use GET /yoga/{id} for the full glossary entry, or POST /yoga/detect to run all 44 detection rules against a specific kundli. Ideal for yoga-browser UIs, search, and progressive data loading.
+// Browse the 301-entry Vedic planetary-yoga glossary. Returns id and name for every cataloged yoga (Raja, Dhana, Pancha Mahapurusha, Nabhasa, Chandra-Mangala, and more). This is a dictionary lookup, not chart-driven detection: it does not inspect a birth chart. Use GET /yoga/{id} for the full glossary entry, or POST /yoga/detect to run all 44 detection rules against a specific kundli. Ideal for yoga-browser UIs, search, and progressive data loading.
 //
 // Corresponds with GET /vedic-astrology/yoga (the `ListYogas` operationId).
 func (c *Client) ListYogas(ctx context.Context, params *ListYogasParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
@@ -57476,9 +57476,9 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with POST /vedic-astrology/upagraha (the `GetUpagrahaPositions` operationId).
 	GetUpagrahaPositionsWithResponse(ctx context.Context, body GetUpagrahaPositionsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetUpagrahaPositionsResponse, error)
 
-	// ListYogasWithResponse List all planetary yogas - 300+ Vedic Yoga Glossary
+	// ListYogasWithResponse List all planetary yogas - 301 entry Vedic Yoga Glossary
 	//
-	// Browse the 300+ entry Vedic planetary-yoga glossary. Returns id and name for every cataloged yoga (Raja, Dhana, Pancha Mahapurusha, Nabhasa, Chandra-Mangala, and more). This is a dictionary lookup, not chart-driven detection: it does not inspect a birth chart. Use GET /yoga/{id} for the full glossary entry, or POST /yoga/detect to run all 44 detection rules against a specific kundli. Ideal for yoga-browser UIs, search, and progressive data loading.
+	// Browse the 301-entry Vedic planetary-yoga glossary. Returns id and name for every cataloged yoga (Raja, Dhana, Pancha Mahapurusha, Nabhasa, Chandra-Mangala, and more). This is a dictionary lookup, not chart-driven detection: it does not inspect a birth chart. Use GET /yoga/{id} for the full glossary entry, or POST /yoga/detect to run all 44 detection rules against a specific kundli. Ideal for yoga-browser UIs, search, and progressive data loading.
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
@@ -93256,9 +93256,9 @@ func (c *ClientWithResponses) GetUpagrahaPositionsWithResponse(ctx context.Conte
 	return ParseGetUpagrahaPositionsResponse(rsp)
 }
 
-// ListYogasWithResponse List all planetary yogas - 300+ Vedic Yoga Glossary
+// ListYogasWithResponse List all planetary yogas - 301 entry Vedic Yoga Glossary
 //
-// Browse the 300+ entry Vedic planetary-yoga glossary. Returns id and name for every cataloged yoga (Raja, Dhana, Pancha Mahapurusha, Nabhasa, Chandra-Mangala, and more). This is a dictionary lookup, not chart-driven detection: it does not inspect a birth chart. Use GET /yoga/{id} for the full glossary entry, or POST /yoga/detect to run all 44 detection rules against a specific kundli. Ideal for yoga-browser UIs, search, and progressive data loading.
+// Browse the 301-entry Vedic planetary-yoga glossary. Returns id and name for every cataloged yoga (Raja, Dhana, Pancha Mahapurusha, Nabhasa, Chandra-Mangala, and more). This is a dictionary lookup, not chart-driven detection: it does not inspect a birth chart. Use GET /yoga/{id} for the full glossary entry, or POST /yoga/detect to run all 44 detection rules against a specific kundli. Ideal for yoga-browser UIs, search, and progressive data loading.
 //
 // Returns a wrapper object for the known response body format(s).
 //

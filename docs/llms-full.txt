@@ -110,7 +110,7 @@ Vedic astrology (Jyotish) and KP API for kundli generation with 15 divisional ch
 - `calculateTransit` - POST `/vedic-astrology/transit` - Transit Analysis - Compare current planets to natal chart (Gochar)
 - `getMonthlyTransits` - POST `/vedic-astrology/transit/monthly` - Monthly Transit - Planetary sign changes for an entire month
 - `getUpagrahaPositions` - POST `/vedic-astrology/upagraha` - Get upagraha (sub-planet) positions - Upagraha Calculator API
-- `listYogas` - GET `/vedic-astrology/yoga` - List all planetary yogas - 300+ Vedic Yoga Glossary
+- `listYogas` - GET `/vedic-astrology/yoga` - List all planetary yogas - 301 entry Vedic Yoga Glossary
 - `detectYogas` - POST `/vedic-astrology/yoga/detect` - Detect classical Vedic yogas in a birth chart
 - `getYoga` - GET `/vedic-astrology/yoga/{id}` - Get yoga details by ID - Vedic Yoga Glossary Entry
 
