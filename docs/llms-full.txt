@@ -116,7 +116,7 @@ Vedic astrology (Jyotish) and KP API for kundli generation with 15 divisional ch
 
 ## Forecast - `roxy.Forecast`
 
-Merge upcoming transit aspects, sign ingresses, retrograde stations, new and full moons, biorhythm critical days, and...
+Forecast API that merges upcoming transit aspects, sign ingresses, retrograde stations, new and full moons, biorhythm...
 
 - `generateDigest` - POST `/forecast/digest` - Forecast digest - Pre-summarized next 24h, 7d, 30d, and 90d rollups
 - `findSignificantDates` - POST `/forecast/significant-dates` - Significant dates - High-significance cross-domain forecast highlights
@@ -244,7 +244,7 @@ Angel numbers API with meanings for 111, 222, 333, 444, 555, 666, 777, 888, 999,
 
 ## Location and Timezone - `roxy.Location`
 
-City search and geocoding API with 23,000+ cities across 240+ countries, returning latitude, longitude, IANA timezone...
+Location and timezone API with city search and geocoding across 23,000+ cities in 240+ countries, returning latitude,...
 
 - `listCountries` - GET `/location/countries` - List all countries - ISO codes and city coverage
 - `getCitiesByCountry` - GET `/location/countries/{iso2}` - Get cities in a country - Geocoding directory sorted by population
