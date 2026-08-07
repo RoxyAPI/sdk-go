@@ -6714,6 +6714,30 @@ func (e CalculateTransitAspectsJSONBodyAspectTypes) Valid() bool {
 	}
 }
 
+// Defines values for CalculateTransitAspectsJSONBodyHouseSystem.
+const (
+	CalculateTransitAspectsJSONBodyHouseSystemEqual     CalculateTransitAspectsJSONBodyHouseSystem = "equal"
+	CalculateTransitAspectsJSONBodyHouseSystemKoch      CalculateTransitAspectsJSONBodyHouseSystem = "koch"
+	CalculateTransitAspectsJSONBodyHouseSystemPlacidus  CalculateTransitAspectsJSONBodyHouseSystem = "placidus"
+	CalculateTransitAspectsJSONBodyHouseSystemWholeSign CalculateTransitAspectsJSONBodyHouseSystem = "whole-sign"
+)
+
+// Valid indicates whether the value is a known member of the CalculateTransitAspectsJSONBodyHouseSystem enum.
+func (e CalculateTransitAspectsJSONBodyHouseSystem) Valid() bool {
+	switch e {
+	case CalculateTransitAspectsJSONBodyHouseSystemEqual:
+		return true
+	case CalculateTransitAspectsJSONBodyHouseSystemKoch:
+		return true
+	case CalculateTransitAspectsJSONBodyHouseSystemPlacidus:
+		return true
+	case CalculateTransitAspectsJSONBodyHouseSystemWholeSign:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for CalculateTransitAspectsJSONBodyPlanets.
 const (
 	CalculateTransitAspectsJSONBodyPlanetsBlackMoonLilith CalculateTransitAspectsJSONBodyPlanets = "Black Moon Lilith"
@@ -6930,6 +6954,30 @@ func (e CalculateTransitAspects200JSONResponseBodyAspectsType) Valid() bool {
 	case CalculateTransitAspects200JSONResponseBodyAspectsTypeSQUARE:
 		return true
 	case CalculateTransitAspects200JSONResponseBodyAspectsTypeTRINE:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for CalculateTransitAspects200JSONResponseBodyHouseSystem.
+const (
+	CalculateTransitAspects200JSONResponseBodyHouseSystemEqual     CalculateTransitAspects200JSONResponseBodyHouseSystem = "equal"
+	CalculateTransitAspects200JSONResponseBodyHouseSystemKoch      CalculateTransitAspects200JSONResponseBodyHouseSystem = "koch"
+	CalculateTransitAspects200JSONResponseBodyHouseSystemPlacidus  CalculateTransitAspects200JSONResponseBodyHouseSystem = "placidus"
+	CalculateTransitAspects200JSONResponseBodyHouseSystemWholeSign CalculateTransitAspects200JSONResponseBodyHouseSystem = "whole-sign"
+)
+
+// Valid indicates whether the value is a known member of the CalculateTransitAspects200JSONResponseBodyHouseSystem enum.
+func (e CalculateTransitAspects200JSONResponseBodyHouseSystem) Valid() bool {
+	switch e {
+	case CalculateTransitAspects200JSONResponseBodyHouseSystemEqual:
+		return true
+	case CalculateTransitAspects200JSONResponseBodyHouseSystemKoch:
+		return true
+	case CalculateTransitAspects200JSONResponseBodyHouseSystemPlacidus:
+		return true
+	case CalculateTransitAspects200JSONResponseBodyHouseSystemWholeSign:
 		return true
 	default:
 		return false
@@ -25589,6 +25637,9 @@ type CalculateTransitAspectsJSONBody struct {
 	// AspectTypes Filter to specific aspect types (conjunction, opposition, trine, square, sextile, etc.). Omit to include all aspect types.
 	AspectTypes *[]CalculateTransitAspectsJSONBodyAspectTypes `json:"aspectTypes,omitempty"`
 
+	// HouseSystem House system used to divide the natal chart into 12 houses. Every house number in the response is read against these natal cusps, for the natal bodies and the transiting bodies alike. Placidus (default) is time sensitive and the most widely used in Western astrology. Whole Sign assigns one sign per house. Equal divides into 30 degree segments from the Ascendant. Koch emphasizes higher latitudes. Quadrant systems fall back to Whole Sign above the polar circle.
+	HouseSystem *CalculateTransitAspectsJSONBodyHouseSystem `json:"houseSystem,omitempty"`
+
 	// MinStrength Minimum aspect strength threshold (0-100). Higher values return only tighter, more potent aspects. Useful for filtering out wide-orb aspects.
 	MinStrength *float32 `json:"minStrength,omitempty"`
 
@@ -25632,6 +25683,9 @@ type CalculateTransitAspectsParamsLang string
 // CalculateTransitAspectsJSONBodyAspectTypes defines parameters for CalculateTransitAspects.
 type CalculateTransitAspectsJSONBodyAspectTypes string
 
+// CalculateTransitAspectsJSONBodyHouseSystem defines parameters for CalculateTransitAspects.
+type CalculateTransitAspectsJSONBodyHouseSystem string
+
 // CalculateTransitAspectsJSONBodyNatalChartTimezone0 defines parameters for CalculateTransitAspects.
 type CalculateTransitAspectsJSONBodyNatalChartTimezone0 = float32
 
@@ -25657,6 +25711,9 @@ type CalculateTransitAspects200JSONResponseBodyAspectsPlanet2 string
 
 // CalculateTransitAspects200JSONResponseBodyAspectsType defines parameters for CalculateTransitAspects.
 type CalculateTransitAspects200JSONResponseBodyAspectsType string
+
+// CalculateTransitAspects200JSONResponseBodyHouseSystem defines parameters for CalculateTransitAspects.
+type CalculateTransitAspects200JSONResponseBodyHouseSystem string
 
 // CalculateTransitAspects200JSONResponseBodyNatalPlanetsName defines parameters for CalculateTransitAspects.
 type CalculateTransitAspects200JSONResponseBodyNatalPlanetsName string
@@ -64113,7 +64170,10 @@ type CalculateTransitAspectsResponse struct {
 			Type CalculateTransitAspects200JSONResponseBodyAspectsType `json:"type"`
 		} `json:"aspects"`
 
-		// NatalPlanets Natal (birth chart) planetary positions used as the baseline for transit aspect comparison.
+		// HouseSystem House system actually used for the natal cusps behind every house number in this response. Differs from the requested system only above the polar circle, where quadrant systems fall back to Whole Sign.
+		HouseSystem CalculateTransitAspects200JSONResponseBodyHouseSystem `json:"houseSystem"`
+
+		// NatalPlanets Natal (birth chart) planetary positions used as the baseline for transit aspect comparison, each placed in its natal house.
 		NatalPlanets []struct {
 			// Degree Degree within the zodiac sign (0-29.999). Indicates how far the planet has progressed through the sign.
 			Degree float32 `json:"degree"`
@@ -64188,12 +64248,12 @@ type CalculateTransitAspectsResponse struct {
 		// TransitDate Date and time of the transit calculation.
 		TransitDate string `json:"transitDate"`
 
-		// TransitPlanets Current transiting positions in the tropical zodiac. All 14 celestial bodies: the 10 classical planets (Sun through Pluto), the lunar nodes, Chiron, and Black Moon Lilith.
+		// TransitPlanets Current transiting positions in the tropical zodiac, each placed in the natal house it is passing through. All 14 celestial bodies: the 10 classical planets (Sun through Pluto), the lunar nodes, Chiron, and Black Moon Lilith.
 		TransitPlanets []struct {
 			// Degree Degree within the zodiac sign (0-29.999). Indicates how far the planet has progressed through the sign.
 			Degree float32 `json:"degree"`
 
-			// House House placement (1-12). Determined by the selected house system and birth location.
+			// House Natal house (1-12) this transiting body is currently passing through, read against the natal house cusps. This is the life area the transit activates, so it is driven by the natal birth time and location rather than by the transit moment.
 			House int `json:"house"`
 
 			// IsRetrograde Whether the planet appears to move backward from Earth perspective. Retrograde periods signal review and introspection.
@@ -64274,7 +64334,10 @@ func (r CalculateTransitAspectsResponse) GetJSON200() *struct {
 		Type CalculateTransitAspects200JSONResponseBodyAspectsType `json:"type"`
 	} `json:"aspects"`
 
-	// NatalPlanets Natal (birth chart) planetary positions used as the baseline for transit aspect comparison.
+	// HouseSystem House system actually used for the natal cusps behind every house number in this response. Differs from the requested system only above the polar circle, where quadrant systems fall back to Whole Sign.
+	HouseSystem CalculateTransitAspects200JSONResponseBodyHouseSystem `json:"houseSystem"`
+
+	// NatalPlanets Natal (birth chart) planetary positions used as the baseline for transit aspect comparison, each placed in its natal house.
 	NatalPlanets []struct {
 		// Degree Degree within the zodiac sign (0-29.999). Indicates how far the planet has progressed through the sign.
 		Degree float32 `json:"degree"`
@@ -64349,12 +64412,12 @@ func (r CalculateTransitAspectsResponse) GetJSON200() *struct {
 	// TransitDate Date and time of the transit calculation.
 	TransitDate string `json:"transitDate"`
 
-	// TransitPlanets Current transiting positions in the tropical zodiac. All 14 celestial bodies: the 10 classical planets (Sun through Pluto), the lunar nodes, Chiron, and Black Moon Lilith.
+	// TransitPlanets Current transiting positions in the tropical zodiac, each placed in the natal house it is passing through. All 14 celestial bodies: the 10 classical planets (Sun through Pluto), the lunar nodes, Chiron, and Black Moon Lilith.
 	TransitPlanets []struct {
 		// Degree Degree within the zodiac sign (0-29.999). Indicates how far the planet has progressed through the sign.
 		Degree float32 `json:"degree"`
 
-		// House House placement (1-12). Determined by the selected house system and birth location.
+		// House Natal house (1-12) this transiting body is currently passing through, read against the natal house cusps. This is the life area the transit activates, so it is driven by the natal birth time and location rather than by the transit moment.
 		House int `json:"house"`
 
 		// IsRetrograde Whether the planet appears to move backward from Earth perspective. Retrograde periods signal review and introspection.
@@ -97709,7 +97772,10 @@ func ParseCalculateTransitAspectsResponse(rsp *http.Response) (*CalculateTransit
 				Type CalculateTransitAspects200JSONResponseBodyAspectsType `json:"type"`
 			} `json:"aspects"`
 
-			// NatalPlanets Natal (birth chart) planetary positions used as the baseline for transit aspect comparison.
+			// HouseSystem House system actually used for the natal cusps behind every house number in this response. Differs from the requested system only above the polar circle, where quadrant systems fall back to Whole Sign.
+			HouseSystem CalculateTransitAspects200JSONResponseBodyHouseSystem `json:"houseSystem"`
+
+			// NatalPlanets Natal (birth chart) planetary positions used as the baseline for transit aspect comparison, each placed in its natal house.
 			NatalPlanets []struct {
 				// Degree Degree within the zodiac sign (0-29.999). Indicates how far the planet has progressed through the sign.
 				Degree float32 `json:"degree"`
@@ -97784,12 +97850,12 @@ func ParseCalculateTransitAspectsResponse(rsp *http.Response) (*CalculateTransit
 			// TransitDate Date and time of the transit calculation.
 			TransitDate string `json:"transitDate"`
 
-			// TransitPlanets Current transiting positions in the tropical zodiac. All 14 celestial bodies: the 10 classical planets (Sun through Pluto), the lunar nodes, Chiron, and Black Moon Lilith.
+			// TransitPlanets Current transiting positions in the tropical zodiac, each placed in the natal house it is passing through. All 14 celestial bodies: the 10 classical planets (Sun through Pluto), the lunar nodes, Chiron, and Black Moon Lilith.
 			TransitPlanets []struct {
 				// Degree Degree within the zodiac sign (0-29.999). Indicates how far the planet has progressed through the sign.
 				Degree float32 `json:"degree"`
 
-				// House House placement (1-12). Determined by the selected house system and birth location.
+				// House Natal house (1-12) this transiting body is currently passing through, read against the natal house cusps. This is the life area the transit activates, so it is driven by the natal birth time and location rather than by the transit moment.
 				House int `json:"house"`
 
 				// IsRetrograde Whether the planet appears to move backward from Earth perspective. Retrograde periods signal review and introspection.
