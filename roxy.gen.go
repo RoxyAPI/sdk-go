@@ -251,6 +251,14 @@ func (s *AstrologyService) GetMonthlyHoroscope(ctx context.Context, sign GetMont
 	return resp, asRoxyError(resp)
 }
 
+func (s *AstrologyService) GetMonthlyTropicalEphemeris(ctx context.Context, params *GetMonthlyTropicalEphemerisParams, body GetMonthlyTropicalEphemerisJSONRequestBody, reqEditors ...RequestEditorFn) (*GetMonthlyTropicalEphemerisResponse, error) {
+	resp, err := s.client.GetMonthlyTropicalEphemerisWithResponse(ctx, params, body, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
 func (s *AstrologyService) GetMoonCalendar(ctx context.Context, year float32, month float32, params *GetMoonCalendarParams, reqEditors ...RequestEditorFn) (*GetMoonCalendarResponse, error) {
 	resp, err := s.client.GetMoonCalendarWithResponse(ctx, year, month, params, reqEditors...)
 	if err != nil {
@@ -598,8 +606,8 @@ func (s *VedicAstrologyService) GetKpSublordChanges(ctx context.Context, body Ge
 	return resp, asRoxyError(resp)
 }
 
-func (s *VedicAstrologyService) GetLunarAspects(ctx context.Context, body GetLunarAspectsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetLunarAspectsResponse, error) {
-	resp, err := s.client.GetLunarAspectsWithResponse(ctx, body, reqEditors...)
+func (s *VedicAstrologyService) GetLunarAspects(ctx context.Context, params *GetLunarAspectsParams, body GetLunarAspectsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetLunarAspectsResponse, error) {
+	resp, err := s.client.GetLunarAspectsWithResponse(ctx, params, body, reqEditors...)
 	if err != nil {
 		return resp, err
 	}
@@ -614,32 +622,32 @@ func (s *VedicAstrologyService) GetMajorDashas(ctx context.Context, params *GetM
 	return resp, asRoxyError(resp)
 }
 
-func (s *VedicAstrologyService) GetMonthlyAspects(ctx context.Context, body GetMonthlyAspectsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetMonthlyAspectsResponse, error) {
-	resp, err := s.client.GetMonthlyAspectsWithResponse(ctx, body, reqEditors...)
+func (s *VedicAstrologyService) GetMonthlyAspects(ctx context.Context, params *GetMonthlyAspectsParams, body GetMonthlyAspectsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetMonthlyAspectsResponse, error) {
+	resp, err := s.client.GetMonthlyAspectsWithResponse(ctx, params, body, reqEditors...)
 	if err != nil {
 		return resp, err
 	}
 	return resp, asRoxyError(resp)
 }
 
-func (s *VedicAstrologyService) GetMonthlyEphemeris(ctx context.Context, body GetMonthlyEphemerisJSONRequestBody, reqEditors ...RequestEditorFn) (*GetMonthlyEphemerisResponse, error) {
-	resp, err := s.client.GetMonthlyEphemerisWithResponse(ctx, body, reqEditors...)
+func (s *VedicAstrologyService) GetMonthlyEphemeris(ctx context.Context, params *GetMonthlyEphemerisParams, body GetMonthlyEphemerisJSONRequestBody, reqEditors ...RequestEditorFn) (*GetMonthlyEphemerisResponse, error) {
+	resp, err := s.client.GetMonthlyEphemerisWithResponse(ctx, params, body, reqEditors...)
 	if err != nil {
 		return resp, err
 	}
 	return resp, asRoxyError(resp)
 }
 
-func (s *VedicAstrologyService) GetMonthlyParallels(ctx context.Context, body GetMonthlyParallelsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetMonthlyParallelsResponse, error) {
-	resp, err := s.client.GetMonthlyParallelsWithResponse(ctx, body, reqEditors...)
+func (s *VedicAstrologyService) GetMonthlyParallels(ctx context.Context, params *GetMonthlyParallelsParams, body GetMonthlyParallelsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetMonthlyParallelsResponse, error) {
+	resp, err := s.client.GetMonthlyParallelsWithResponse(ctx, params, body, reqEditors...)
 	if err != nil {
 		return resp, err
 	}
 	return resp, asRoxyError(resp)
 }
 
-func (s *VedicAstrologyService) GetMonthlyTransits(ctx context.Context, body GetMonthlyTransitsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetMonthlyTransitsResponse, error) {
-	resp, err := s.client.GetMonthlyTransitsWithResponse(ctx, body, reqEditors...)
+func (s *VedicAstrologyService) GetMonthlyTransits(ctx context.Context, params *GetMonthlyTransitsParams, body GetMonthlyTransitsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetMonthlyTransitsResponse, error) {
+	resp, err := s.client.GetMonthlyTransitsWithResponse(ctx, params, body, reqEditors...)
 	if err != nil {
 		return resp, err
 	}

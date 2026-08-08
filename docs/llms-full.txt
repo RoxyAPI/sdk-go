@@ -44,6 +44,7 @@ Western astrology API for natal birth charts, daily, weekly, and monthly horosco
 - `getPlanetMeaning` - GET `/astrology/planet-meanings/{id}` - Get planet meaning details - Complete astrology planet interpretation
 - `generatePlanetaryReturn` - POST `/astrology/planetary-returns` - Planetary Return Chart - Saturn return, Jupiter return, and inner planet cycles
 - `getPlanetaryPositions` - POST `/astrology/planets` - Get planetary positions - Ephemeris calculator for all planets
+- `getMonthlyTropicalEphemeris` - POST `/astrology/planets/monthly` - Monthly Ephemeris - Daily tropical planetary positions for a month
 - `generateProfections` - POST `/astrology/profections` - Annual profections calculator - lord of the year and yearly time lord by age
 - `generateProgressions` - POST `/astrology/progressions` - Secondary progressions calculator - progressed chart, progressed Sun and Moon
 - `generateRelocationChart` - POST `/astrology/relocation-chart` - Generate relocation chart - Relocated birth chart calculator with shifted houses and angles

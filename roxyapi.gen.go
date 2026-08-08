@@ -5970,6 +5970,42 @@ func (e GetPlanetaryPositionsParamsLang) Valid() bool {
 	}
 }
 
+// Defines values for GetMonthlyTropicalEphemerisParamsLang.
+const (
+	GetMonthlyTropicalEphemerisParamsLangDe GetMonthlyTropicalEphemerisParamsLang = "de"
+	GetMonthlyTropicalEphemerisParamsLangEn GetMonthlyTropicalEphemerisParamsLang = "en"
+	GetMonthlyTropicalEphemerisParamsLangEs GetMonthlyTropicalEphemerisParamsLang = "es"
+	GetMonthlyTropicalEphemerisParamsLangFr GetMonthlyTropicalEphemerisParamsLang = "fr"
+	GetMonthlyTropicalEphemerisParamsLangHi GetMonthlyTropicalEphemerisParamsLang = "hi"
+	GetMonthlyTropicalEphemerisParamsLangPt GetMonthlyTropicalEphemerisParamsLang = "pt"
+	GetMonthlyTropicalEphemerisParamsLangRu GetMonthlyTropicalEphemerisParamsLang = "ru"
+	GetMonthlyTropicalEphemerisParamsLangTr GetMonthlyTropicalEphemerisParamsLang = "tr"
+)
+
+// Valid indicates whether the value is a known member of the GetMonthlyTropicalEphemerisParamsLang enum.
+func (e GetMonthlyTropicalEphemerisParamsLang) Valid() bool {
+	switch e {
+	case GetMonthlyTropicalEphemerisParamsLangDe:
+		return true
+	case GetMonthlyTropicalEphemerisParamsLangEn:
+		return true
+	case GetMonthlyTropicalEphemerisParamsLangEs:
+		return true
+	case GetMonthlyTropicalEphemerisParamsLangFr:
+		return true
+	case GetMonthlyTropicalEphemerisParamsLangHi:
+		return true
+	case GetMonthlyTropicalEphemerisParamsLangPt:
+		return true
+	case GetMonthlyTropicalEphemerisParamsLangRu:
+		return true
+	case GetMonthlyTropicalEphemerisParamsLangTr:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for GenerateProfectionsParamsLang.
 const (
 	GenerateProfectionsParamsLangDe GenerateProfectionsParamsLang = "de"
@@ -11793,6 +11829,42 @@ func (e CalculateDrishti200JSONResponseBodyAspectsAspectType) Valid() bool {
 	}
 }
 
+// Defines values for GetLunarAspectsParamsLang.
+const (
+	GetLunarAspectsParamsLangDe GetLunarAspectsParamsLang = "de"
+	GetLunarAspectsParamsLangEn GetLunarAspectsParamsLang = "en"
+	GetLunarAspectsParamsLangEs GetLunarAspectsParamsLang = "es"
+	GetLunarAspectsParamsLangFr GetLunarAspectsParamsLang = "fr"
+	GetLunarAspectsParamsLangHi GetLunarAspectsParamsLang = "hi"
+	GetLunarAspectsParamsLangPt GetLunarAspectsParamsLang = "pt"
+	GetLunarAspectsParamsLangRu GetLunarAspectsParamsLang = "ru"
+	GetLunarAspectsParamsLangTr GetLunarAspectsParamsLang = "tr"
+)
+
+// Valid indicates whether the value is a known member of the GetLunarAspectsParamsLang enum.
+func (e GetLunarAspectsParamsLang) Valid() bool {
+	switch e {
+	case GetLunarAspectsParamsLangDe:
+		return true
+	case GetLunarAspectsParamsLangEn:
+		return true
+	case GetLunarAspectsParamsLangEs:
+		return true
+	case GetLunarAspectsParamsLangFr:
+		return true
+	case GetLunarAspectsParamsLangHi:
+		return true
+	case GetLunarAspectsParamsLangPt:
+		return true
+	case GetLunarAspectsParamsLangRu:
+		return true
+	case GetLunarAspectsParamsLangTr:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for GetLunarAspectsJSONBodyCoordinateSystem.
 const (
 	GetLunarAspectsJSONBodyCoordinateSystemSidereal GetLunarAspectsJSONBodyCoordinateSystem = "sidereal"
@@ -11805,6 +11877,42 @@ func (e GetLunarAspectsJSONBodyCoordinateSystem) Valid() bool {
 	case GetLunarAspectsJSONBodyCoordinateSystemSidereal:
 		return true
 	case GetLunarAspectsJSONBodyCoordinateSystemTropical:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetMonthlyAspectsParamsLang.
+const (
+	GetMonthlyAspectsParamsLangDe GetMonthlyAspectsParamsLang = "de"
+	GetMonthlyAspectsParamsLangEn GetMonthlyAspectsParamsLang = "en"
+	GetMonthlyAspectsParamsLangEs GetMonthlyAspectsParamsLang = "es"
+	GetMonthlyAspectsParamsLangFr GetMonthlyAspectsParamsLang = "fr"
+	GetMonthlyAspectsParamsLangHi GetMonthlyAspectsParamsLang = "hi"
+	GetMonthlyAspectsParamsLangPt GetMonthlyAspectsParamsLang = "pt"
+	GetMonthlyAspectsParamsLangRu GetMonthlyAspectsParamsLang = "ru"
+	GetMonthlyAspectsParamsLangTr GetMonthlyAspectsParamsLang = "tr"
+)
+
+// Valid indicates whether the value is a known member of the GetMonthlyAspectsParamsLang enum.
+func (e GetMonthlyAspectsParamsLang) Valid() bool {
+	switch e {
+	case GetMonthlyAspectsParamsLangDe:
+		return true
+	case GetMonthlyAspectsParamsLangEn:
+		return true
+	case GetMonthlyAspectsParamsLangEs:
+		return true
+	case GetMonthlyAspectsParamsLangFr:
+		return true
+	case GetMonthlyAspectsParamsLangHi:
+		return true
+	case GetMonthlyAspectsParamsLangPt:
+		return true
+	case GetMonthlyAspectsParamsLangRu:
+		return true
+	case GetMonthlyAspectsParamsLangTr:
 		return true
 	default:
 		return false
@@ -17154,6 +17262,42 @@ func (e CalculateParallels200JSONResponseBodyParallelsType) Valid() bool {
 	}
 }
 
+// Defines values for GetMonthlyParallelsParamsLang.
+const (
+	GetMonthlyParallelsParamsLangDe GetMonthlyParallelsParamsLang = "de"
+	GetMonthlyParallelsParamsLangEn GetMonthlyParallelsParamsLang = "en"
+	GetMonthlyParallelsParamsLangEs GetMonthlyParallelsParamsLang = "es"
+	GetMonthlyParallelsParamsLangFr GetMonthlyParallelsParamsLang = "fr"
+	GetMonthlyParallelsParamsLangHi GetMonthlyParallelsParamsLang = "hi"
+	GetMonthlyParallelsParamsLangPt GetMonthlyParallelsParamsLang = "pt"
+	GetMonthlyParallelsParamsLangRu GetMonthlyParallelsParamsLang = "ru"
+	GetMonthlyParallelsParamsLangTr GetMonthlyParallelsParamsLang = "tr"
+)
+
+// Valid indicates whether the value is a known member of the GetMonthlyParallelsParamsLang enum.
+func (e GetMonthlyParallelsParamsLang) Valid() bool {
+	switch e {
+	case GetMonthlyParallelsParamsLangDe:
+		return true
+	case GetMonthlyParallelsParamsLangEn:
+		return true
+	case GetMonthlyParallelsParamsLangEs:
+		return true
+	case GetMonthlyParallelsParamsLangFr:
+		return true
+	case GetMonthlyParallelsParamsLangHi:
+		return true
+	case GetMonthlyParallelsParamsLangPt:
+		return true
+	case GetMonthlyParallelsParamsLangRu:
+		return true
+	case GetMonthlyParallelsParamsLangTr:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for GetMonthlyParallels200JSONResponseBodyEventsType.
 const (
 	GetMonthlyParallels200JSONResponseBodyEventsTypeContraparallel GetMonthlyParallels200JSONResponseBodyEventsType = "contraparallel"
@@ -17202,6 +17346,42 @@ func (e GetPlanetPositionsParamsLang) Valid() bool {
 	case GetPlanetPositionsParamsLangRu:
 		return true
 	case GetPlanetPositionsParamsLangTr:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetMonthlyEphemerisParamsLang.
+const (
+	GetMonthlyEphemerisParamsLangDe GetMonthlyEphemerisParamsLang = "de"
+	GetMonthlyEphemerisParamsLangEn GetMonthlyEphemerisParamsLang = "en"
+	GetMonthlyEphemerisParamsLangEs GetMonthlyEphemerisParamsLang = "es"
+	GetMonthlyEphemerisParamsLangFr GetMonthlyEphemerisParamsLang = "fr"
+	GetMonthlyEphemerisParamsLangHi GetMonthlyEphemerisParamsLang = "hi"
+	GetMonthlyEphemerisParamsLangPt GetMonthlyEphemerisParamsLang = "pt"
+	GetMonthlyEphemerisParamsLangRu GetMonthlyEphemerisParamsLang = "ru"
+	GetMonthlyEphemerisParamsLangTr GetMonthlyEphemerisParamsLang = "tr"
+)
+
+// Valid indicates whether the value is a known member of the GetMonthlyEphemerisParamsLang enum.
+func (e GetMonthlyEphemerisParamsLang) Valid() bool {
+	switch e {
+	case GetMonthlyEphemerisParamsLangDe:
+		return true
+	case GetMonthlyEphemerisParamsLangEn:
+		return true
+	case GetMonthlyEphemerisParamsLangEs:
+		return true
+	case GetMonthlyEphemerisParamsLangFr:
+		return true
+	case GetMonthlyEphemerisParamsLangHi:
+		return true
+	case GetMonthlyEphemerisParamsLangPt:
+		return true
+	case GetMonthlyEphemerisParamsLangRu:
+		return true
+	case GetMonthlyEphemerisParamsLangTr:
 		return true
 	default:
 		return false
@@ -17394,6 +17574,42 @@ func (e CalculateTransitJSONBodyCoordinateSystem) Valid() bool {
 	case CalculateTransitJSONBodyCoordinateSystemSidereal:
 		return true
 	case CalculateTransitJSONBodyCoordinateSystemTropical:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetMonthlyTransitsParamsLang.
+const (
+	GetMonthlyTransitsParamsLangDe GetMonthlyTransitsParamsLang = "de"
+	GetMonthlyTransitsParamsLangEn GetMonthlyTransitsParamsLang = "en"
+	GetMonthlyTransitsParamsLangEs GetMonthlyTransitsParamsLang = "es"
+	GetMonthlyTransitsParamsLangFr GetMonthlyTransitsParamsLang = "fr"
+	GetMonthlyTransitsParamsLangHi GetMonthlyTransitsParamsLang = "hi"
+	GetMonthlyTransitsParamsLangPt GetMonthlyTransitsParamsLang = "pt"
+	GetMonthlyTransitsParamsLangRu GetMonthlyTransitsParamsLang = "ru"
+	GetMonthlyTransitsParamsLangTr GetMonthlyTransitsParamsLang = "tr"
+)
+
+// Valid indicates whether the value is a known member of the GetMonthlyTransitsParamsLang enum.
+func (e GetMonthlyTransitsParamsLang) Valid() bool {
+	switch e {
+	case GetMonthlyTransitsParamsLangDe:
+		return true
+	case GetMonthlyTransitsParamsLangEn:
+		return true
+	case GetMonthlyTransitsParamsLangEs:
+		return true
+	case GetMonthlyTransitsParamsLangFr:
+		return true
+	case GetMonthlyTransitsParamsLangHi:
+		return true
+	case GetMonthlyTransitsParamsLangPt:
+		return true
+	case GetMonthlyTransitsParamsLangRu:
+		return true
+	case GetMonthlyTransitsParamsLangTr:
 		return true
 	default:
 		return false
@@ -18953,17 +19169,26 @@ type AspectsResponse struct {
 		// Orb Distance from exact aspect in degrees. Tighter orb means stronger influence.
 		Orb float32 `json:"orb"`
 
-		// Planet1 First planet in the aspect pair.
+		// Planet1 First planet in the aspect pair. Always English, whatever the lang parameter says. Use planet1Localized for anything a reader sees.
 		Planet1 string `json:"planet1"`
 
-		// Planet2 Second planet in the aspect pair.
+		// Planet1Localized First planet name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		Planet1Localized *string `json:"planet1Localized,omitempty"`
+
+		// Planet2 Second planet in the aspect pair. Always English, whatever the lang parameter says. Use planet2Localized for anything a reader sees.
 		Planet2 string `json:"planet2"`
+
+		// Planet2Localized Second planet name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		Planet2Localized *string `json:"planet2Localized,omitempty"`
 
 		// Strength Aspect strength (0-100) based on orb tightness.
 		Strength float32 `json:"strength"`
 
-		// Type Aspect type (CONJUNCTION, OPPOSITION, TRINE, SQUARE, SEXTILE, etc.).
+		// Type Aspect type (CONJUNCTION, OPPOSITION, TRINE, SQUARE, SEXTILE, etc.). Always English, whatever the lang parameter says. Use typeLocalized for anything a reader sees.
 		Type string `json:"type"`
+
+		// TypeLocalized Aspect type name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		TypeLocalized *string `json:"typeLocalized,omitempty"`
 	} `json:"aspects"`
 
 	// AspectsFound Total number of aspects found after any filters applied.
@@ -22987,8 +23212,11 @@ type NatalChartResponse struct {
 		// Longitude Absolute ecliptic longitude of the Ascendant (0-360).
 		Longitude float32 `json:"longitude"`
 
-		// Sign Zodiac sign on the Ascendant (rising sign).
+		// Sign Zodiac sign on the Ascendant (rising sign). Always English, whatever the lang parameter says. Use signLocalized for anything a reader sees.
 		Sign string `json:"sign"`
+
+		// SignLocalized Ascendant sign name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		SignLocalized *string `json:"signLocalized,omitempty"`
 	} `json:"ascendant"`
 
 	// Aspects All planetary aspects found in this chart with orbs, strength, and interpretation.
@@ -23005,17 +23233,26 @@ type NatalChartResponse struct {
 		// Orb Distance from exact aspect in degrees. Tighter orb means stronger influence.
 		Orb float32 `json:"orb"`
 
-		// Planet1 First planet in the aspect pair.
+		// Planet1 First planet in the aspect pair. Always English, whatever the lang parameter says. Use planet1Localized for anything a reader sees.
 		Planet1 string `json:"planet1"`
 
-		// Planet2 Second planet in the aspect pair.
+		// Planet1Localized First planet name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		Planet1Localized *string `json:"planet1Localized,omitempty"`
+
+		// Planet2 Second planet in the aspect pair. Always English, whatever the lang parameter says. Use planet2Localized for anything a reader sees.
 		Planet2 string `json:"planet2"`
+
+		// Planet2Localized Second planet name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		Planet2Localized *string `json:"planet2Localized,omitempty"`
 
 		// Strength Aspect strength percentage (0-100) based on orb tightness.
 		Strength float32 `json:"strength"`
 
-		// Type Aspect type (CONJUNCTION, OPPOSITION, TRINE, SQUARE, SEXTILE, etc.).
+		// Type Aspect type (CONJUNCTION, OPPOSITION, TRINE, SQUARE, SEXTILE, etc.). Always English, whatever the lang parameter says. Use typeLocalized for anything a reader sees.
 		Type string `json:"type"`
+
+		// TypeLocalized Aspect type name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		TypeLocalized *string `json:"typeLocalized,omitempty"`
 	} `json:"aspects"`
 
 	// AspectsInterpretation Aspect pattern analysis showing the balance of harmonious vs challenging energies in the chart.
@@ -23068,8 +23305,11 @@ type NatalChartResponse struct {
 		// Number House number (1-12).
 		Number float32 `json:"number"`
 
-		// Sign Zodiac sign on this house cusp.
+		// Sign Zodiac sign on this house cusp. Always English, whatever the lang parameter says. Use signLocalized for anything a reader sees.
 		Sign string `json:"sign"`
+
+		// SignLocalized Zodiac sign name on this cusp in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		SignLocalized *string `json:"signLocalized,omitempty"`
 	} `json:"houses"`
 
 	// Midheaven Midheaven (MC). The highest point of the ecliptic at birth, representing career direction and public image.
@@ -23080,8 +23320,11 @@ type NatalChartResponse struct {
 		// Longitude Absolute ecliptic longitude of the Midheaven (0-360).
 		Longitude float32 `json:"longitude"`
 
-		// Sign Zodiac sign on the Midheaven (MC).
+		// Sign Zodiac sign on the Midheaven (MC). Always English, whatever the lang parameter says. Use signLocalized for anything a reader sees.
 		Sign string `json:"sign"`
+
+		// SignLocalized Midheaven sign name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		SignLocalized *string `json:"signLocalized,omitempty"`
 	} `json:"midheaven"`
 
 	// PartOfFortune Part of Fortune (Lot of Fortune). A point derived from the Ascendant and the two luminaries that marks an area of ease, vitality, and material wellbeing in the chart.
@@ -23097,6 +23340,9 @@ type NatalChartResponse struct {
 
 		// Sign Zodiac sign holding the Part of Fortune.
 		Sign string `json:"sign"`
+
+		// SignLocalized Part of Fortune sign name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		SignLocalized *string `json:"signLocalized,omitempty"`
 	} `json:"partOfFortune"`
 
 	// Patterns Detected multi-planet aspect configurations (Grand Trine, Kite, T-Square, Grand Cross, Yod, Mystic Rectangle, Stellium). Grand Cross suppresses contained T-Squares, Kite suppresses underlying Grand Trine.
@@ -23164,11 +23410,17 @@ type NatalChartResponse struct {
 		// Longitude Tropical ecliptic longitude in degrees (0-360).
 		Longitude float32 `json:"longitude"`
 
-		// Name Planet or point name (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto, North Node, South Node, Chiron, Black Moon Lilith). The lunar nodes are the mean node; software using the true node may show node positions up to 1.75 degrees different.
+		// Name Planet or point name (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto, North Node, South Node, Chiron, Black Moon Lilith). Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use nameLocalized for anything a reader sees. The lunar nodes are the mean node; software using the true node may show node positions up to 1.75 degrees different.
 		Name string `json:"name"`
 
-		// Sign Tropical zodiac sign this planet occupies.
+		// NameLocalized Planet or point name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		NameLocalized *string `json:"nameLocalized,omitempty"`
+
+		// Sign Tropical zodiac sign this planet occupies. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use signLocalized for anything a reader sees.
 		Sign string `json:"sign"`
+
+		// SignLocalized Zodiac sign name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		SignLocalized *string `json:"signLocalized,omitempty"`
 
 		// Speed Daily motion in degrees per day. Negative values indicate retrograde.
 		Speed float32 `json:"speed"`
@@ -23176,11 +23428,17 @@ type NatalChartResponse struct {
 
 	// Summary Chart summary with dominant element, modality, retrograde planets, and distribution analysis.
 	Summary struct {
-		// DominantElement Most represented element in the chart (Fire, Earth, Air, Water).
+		// DominantElement Most represented element in the chart (Fire, Earth, Air, Water). Always English, whatever the lang parameter says. Use dominantElementLocalized for anything a reader sees.
 		DominantElement string `json:"dominantElement"`
 
-		// DominantModality Most represented modality in the chart (Cardinal, Fixed, Mutable).
+		// DominantElementLocalized Element name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		DominantElementLocalized *string `json:"dominantElementLocalized,omitempty"`
+
+		// DominantModality Most represented modality in the chart (Cardinal, Fixed, Mutable). Always English, whatever the lang parameter says. Use dominantModalityLocalized for anything a reader sees.
 		DominantModality string `json:"dominantModality"`
+
+		// DominantModalityLocalized Modality name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		DominantModalityLocalized *string `json:"dominantModalityLocalized,omitempty"`
 
 		// ElementDistribution Count of planets in each element. Shows elemental emphasis in the personality.
 		ElementDistribution map[string]float32 `json:"elementDistribution"`
@@ -23188,8 +23446,11 @@ type NatalChartResponse struct {
 		// ModalityDistribution Count of planets in each modality. Shows the dominant operating mode.
 		ModalityDistribution map[string]float32 `json:"modalityDistribution"`
 
-		// RetrogradePlanets Planets in retrograde motion at the time of birth.
+		// RetrogradePlanets Planets in retrograde motion at the time of birth. Always English, whatever the lang parameter says. Use retrogradePlanetsLocalized for anything a reader sees.
 		RetrogradePlanets []string `json:"retrogradePlanets"`
+
+		// RetrogradePlanetsLocalized The same retrograde bodies in the requested language, for display only. Index aligned with retrogradePlanets, so entry n of one names entry n of the other. Present only when lang is set to a language other than English, since in English it would repeat retrogradePlanets exactly.
+		RetrogradePlanetsLocalized *[]string `json:"retrogradePlanetsLocalized,omitempty"`
 	} `json:"summary"`
 
 	// Vertex Vertex. The western intersection of the prime vertical with the ecliptic, often read as a point of fated encounters and turning-point relationships. The opposite point is the Anti-Vertex.
@@ -23202,6 +23463,9 @@ type NatalChartResponse struct {
 
 		// Sign Zodiac sign holding the Vertex.
 		Sign string `json:"sign"`
+
+		// SignLocalized Vertex sign name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		SignLocalized *string `json:"signLocalized,omitempty"`
 	} `json:"vertex"`
 }
 
@@ -23593,8 +23857,11 @@ type ProgressionsResponse struct {
 		// Longitude Absolute tropical ecliptic longitude of the progressed angle in degrees (0 to 360).
 		Longitude float32 `json:"longitude"`
 
-		// Sign Tropical zodiac sign the progressed angle falls in.
+		// Sign Tropical zodiac sign the progressed angle falls in. Always English, whatever the lang parameter says. Use signLocalized for anything a reader sees.
 		Sign string `json:"sign"`
+
+		// SignLocalized Zodiac sign name on this angle in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		SignLocalized *string `json:"signLocalized,omitempty"`
 	} `json:"ascendant"`
 
 	// BirthDetails Echo of the birth moment and place the progressed chart is built from.
@@ -23626,8 +23893,11 @@ type ProgressionsResponse struct {
 		// Longitude Absolute tropical ecliptic longitude of the progressed angle in degrees (0 to 360).
 		Longitude float32 `json:"longitude"`
 
-		// Sign Tropical zodiac sign the progressed angle falls in.
+		// Sign Tropical zodiac sign the progressed angle falls in. Always English, whatever the lang parameter says. Use signLocalized for anything a reader sees.
 		Sign string `json:"sign"`
+
+		// SignLocalized Zodiac sign name on this angle in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		SignLocalized *string `json:"signLocalized,omitempty"`
 	} `json:"midheaven"`
 
 	// Planets Every progressed body in canonical order: the 10 classical planets, the lunar nodes, Chiron, and Black Moon Lilith. The progressed Sun moves about one degree per year and the progressed Moon about one sign per two and a half years, so these two are the headline movers in any progressed reading.
@@ -23647,11 +23917,17 @@ type ProgressionsResponse struct {
 		// Longitude Progressed tropical ecliptic longitude in degrees (0 to 360).
 		Longitude float32 `json:"longitude"`
 
-		// Name Body name in canonical English. One of the 10 classical planets, the lunar nodes, Chiron, or Black Moon Lilith.
+		// Name Body name in canonical English. One of the 10 classical planets, the lunar nodes, Chiron, or Black Moon Lilith. Unchanged by the lang parameter, so it stays safe to compare against in code. Use nameLocalized for anything a reader sees.
 		Name string `json:"name"`
 
-		// Sign Tropical zodiac sign the progressed body falls in.
+		// NameLocalized Body name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		NameLocalized *string `json:"nameLocalized,omitempty"`
+
+		// Sign Tropical zodiac sign the progressed body falls in. Always English, whatever the lang parameter says. Use signLocalized for anything a reader sees.
 		Sign string `json:"sign"`
+
+		// SignLocalized Zodiac sign name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		SignLocalized *string `json:"signLocalized,omitempty"`
 
 		// Speed Daily motion of the body at the progressed instant in degrees per day. Negative values indicate retrograde motion.
 		Speed float32 `json:"speed"`
@@ -23766,8 +24042,11 @@ type RelocationChartResponse struct {
 		// Longitude Absolute ecliptic longitude of this angle in degrees (0-360).
 		Longitude float32 `json:"longitude"`
 
-		// Sign Tropical zodiac sign on this relocated angle.
+		// Sign Tropical zodiac sign on this relocated angle. Always English, whatever the lang parameter says. Use signLocalized for anything a reader sees.
 		Sign string `json:"sign"`
+
+		// SignLocalized Zodiac sign name on this angle in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		SignLocalized *string `json:"signLocalized,omitempty"`
 	} `json:"ascendant"`
 
 	// BirthDetails Birthplace details echoed back. The birth instant is unchanged by relocation.
@@ -23790,8 +24069,11 @@ type RelocationChartResponse struct {
 
 	// Changes How relocation reshapes the chart: Ascendant shift, planets that change house, angular planets, and the move geometry from the birthplace.
 	Changes struct {
-		// AngularPlanets Bodies within three degrees of a relocated angle (Ascendant, Imum Coeli, Descendant, or Midheaven), where their influence is strongest at this location.
+		// AngularPlanets Bodies within three degrees of a relocated angle (Ascendant, Imum Coeli, Descendant, or Midheaven), where their influence is strongest at this location. Always English, whatever the lang parameter says. Use angularPlanetsLocalized for anything a reader sees.
 		AngularPlanets []string `json:"angularPlanets"`
+
+		// AngularPlanetsLocalized The same angular bodies in the requested language, for display only. Index aligned with angularPlanets. Present only when lang is set to a language other than English.
+		AngularPlanetsLocalized *[]string `json:"angularPlanetsLocalized,omitempty"`
 
 		// AscendantSignChanged Whether the Ascendant sign differs between the birthplace chart and the relocated chart.
 		AscendantSignChanged bool `json:"ascendantSignChanged"`
@@ -23807,8 +24089,11 @@ type RelocationChartResponse struct {
 			// NatalHouse House this body occupied in the birthplace chart (1-12).
 			NatalHouse float32 `json:"natalHouse"`
 
-			// Planet Body that occupies a different house after relocation.
+			// Planet Body that occupies a different house after relocation. Always English, whatever the lang parameter says. Use planetLocalized for anything a reader sees.
 			Planet string `json:"planet"`
+
+			// PlanetLocalized Body name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			PlanetLocalized *string `json:"planetLocalized,omitempty"`
 
 			// RelocatedHouse House this body occupies in the relocated chart (1-12).
 			RelocatedHouse float32 `json:"relocatedHouse"`
@@ -23831,6 +24116,9 @@ type RelocationChartResponse struct {
 
 		// Sign Zodiac sign on this house cusp. Colors the themes of this life area.
 		Sign string `json:"sign"`
+
+		// SignLocalized Zodiac sign name on this cusp in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		SignLocalized *string `json:"signLocalized,omitempty"`
 	} `json:"houses"`
 
 	// Interpretation Relocation interpretation summary.
@@ -23847,8 +24135,11 @@ type RelocationChartResponse struct {
 		// Longitude Absolute ecliptic longitude of this angle in degrees (0-360).
 		Longitude float32 `json:"longitude"`
 
-		// Sign Tropical zodiac sign on this relocated angle.
+		// Sign Tropical zodiac sign on this relocated angle. Always English, whatever the lang parameter says. Use signLocalized for anything a reader sees.
 		Sign string `json:"sign"`
+
+		// SignLocalized Zodiac sign name on this angle in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		SignLocalized *string `json:"signLocalized,omitempty"`
 	} `json:"midheaven"`
 
 	// Planets All 14 celestial bodies with their unchanged natal signs and degrees, reassigned to the houses they occupy in the relocated chart.
@@ -23873,6 +24164,9 @@ type RelocationChartResponse struct {
 
 		// Sign Zodiac sign holding the Vertex.
 		Sign string `json:"sign"`
+
+		// SignLocalized Vertex sign name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		SignLocalized *string `json:"signLocalized,omitempty"`
 	} `json:"vertex"`
 }
 
@@ -23908,8 +24202,14 @@ type RelocationPlanet struct {
 	// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee).
 	Name RelocationPlanetName `json:"name"`
 
+	// NameLocalized Body name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+	NameLocalized *string `json:"nameLocalized,omitempty"`
+
 	// Sign Tropical zodiac sign this planet occupies. Determined by 30-degree divisions of ecliptic longitude.
 	Sign string `json:"sign"`
+
+	// SignLocalized Zodiac sign name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+	SignLocalized *string `json:"signLocalized,omitempty"`
 
 	// Speed Daily motion in degrees per day. Negative values indicate retrograde motion.
 	Speed float32 `json:"speed"`
@@ -24328,8 +24628,11 @@ type TransitsResponse struct {
 		// IsApplying Whether the transiting planet is moving toward exactitude (applying) or away from it (separating). Applying aspects grow stronger.
 		IsApplying bool `json:"isApplying"`
 
-		// NatalPlanet Natal planet being aspected.
+		// NatalPlanet Natal planet being aspected. Always English, whatever the lang parameter says. Use natalPlanetLocalized for anything a reader sees.
 		NatalPlanet string `json:"natalPlanet"`
+
+		// NatalPlanetLocalized Natal planet name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		NatalPlanetLocalized *string `json:"natalPlanetLocalized,omitempty"`
 
 		// Nature Aspect nature: harmonious (trine, sextile), challenging (square, opposition), or neutral (conjunction).
 		Nature string `json:"nature"`
@@ -24340,11 +24643,17 @@ type TransitsResponse struct {
 		// Strength Aspect strength percentage (0-100) based on orb tightness, where 100 is exact.
 		Strength float32 `json:"strength"`
 
-		// TransitPlanet Transiting planet forming the aspect.
+		// TransitPlanet Transiting planet forming the aspect. Always English, whatever the lang parameter says. Use transitPlanetLocalized for anything a reader sees.
 		TransitPlanet string `json:"transitPlanet"`
 
-		// Type Aspect type (CONJUNCTION, OPPOSITION, TRINE, SQUARE, SEXTILE, etc.).
+		// TransitPlanetLocalized Transiting planet name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		TransitPlanetLocalized *string `json:"transitPlanetLocalized,omitempty"`
+
+		// Type Aspect type (CONJUNCTION, OPPOSITION, TRINE, SQUARE, SEXTILE, etc.). Always English, whatever the lang parameter says. Use typeLocalized for anything a reader sees.
 		Type string `json:"type"`
+
+		// TypeLocalized Aspect type name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		TypeLocalized *string `json:"typeLocalized,omitempty"`
 	} `json:"transitAspects,omitempty"`
 
 	// TransitDate Date of the transit calculation (YYYY-MM-DD).
@@ -24364,11 +24673,17 @@ type TransitsResponse struct {
 		// Longitude Tropical ecliptic longitude in degrees (0-360). Primary coordinate for sign and aspect calculation.
 		Longitude float32 `json:"longitude"`
 
-		// Name Planet name (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto, North Node, South Node, Chiron, Black Moon Lilith). The lunar nodes are the mean node; software using the true node may show node positions up to 1.75 degrees different.
+		// Name Planet name (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto, North Node, South Node, Chiron, Black Moon Lilith). Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use nameLocalized for anything a reader sees. The lunar nodes are the mean node; software using the true node may show node positions up to 1.75 degrees different.
 		Name string `json:"name"`
 
-		// Sign Tropical zodiac sign the planet currently occupies. Changes when longitude crosses a 30-degree boundary.
+		// NameLocalized Planet name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		NameLocalized *string `json:"nameLocalized,omitempty"`
+
+		// Sign Tropical zodiac sign the planet currently occupies. Changes when longitude crosses a 30-degree boundary. Always English, whatever the lang parameter says. Use signLocalized for anything a reader sees.
 		Sign string `json:"sign"`
+
+		// SignLocalized Zodiac sign name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		SignLocalized *string `json:"signLocalized,omitempty"`
 
 		// Speed Daily motion in degrees per day. Negative values indicate retrograde motion.
 		Speed float32 `json:"speed"`
@@ -25422,6 +25737,24 @@ type GetPlanetaryPositionsJSONBodyTimezone1 = string
 type GetPlanetaryPositionsJSONBody_Timezone struct {
 	union json.RawMessage
 }
+
+// GetMonthlyTropicalEphemerisJSONBody defines parameters for GetMonthlyTropicalEphemeris.
+type GetMonthlyTropicalEphemerisJSONBody struct {
+	// Month Month number (1-12) for the ephemeris. Defaults to the current month (UTC).
+	Month *int `json:"month,omitempty"`
+
+	// Year Year for the monthly ephemeris (1900-2100). Defaults to the current year (UTC).
+	Year *int `json:"year,omitempty"`
+}
+
+// GetMonthlyTropicalEphemerisParams defines parameters for GetMonthlyTropicalEphemeris.
+type GetMonthlyTropicalEphemerisParams struct {
+	// Lang Response language (ISO 639-1). Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en. Languages without translations yet return English.
+	Lang *GetMonthlyTropicalEphemerisParamsLang `form:"lang,omitempty" json:"lang,omitempty"`
+}
+
+// GetMonthlyTropicalEphemerisParamsLang defines parameters for GetMonthlyTropicalEphemeris.
+type GetMonthlyTropicalEphemerisParamsLang string
 
 // GenerateProfectionsParams defines parameters for GenerateProfections.
 type GenerateProfectionsParams struct {
@@ -27827,15 +28160,24 @@ type GetLunarAspectsJSONBody struct {
 	// CoordinateSystem Coordinate system for longitude output. "sidereal" (Nirayana) uses Lahiri ayanamsa - standard for Vedic astrology. "tropical" (Sayana) uses raw ecliptic longitude matching Western astrology. Defaults to "sidereal".
 	CoordinateSystem *GetLunarAspectsJSONBodyCoordinateSystem `json:"coordinateSystem,omitempty"`
 
-	// Month Month number (1-12).
-	Month int `json:"month"`
+	// Month Month number (1-12). Defaults to the current month (UTC).
+	Month *int `json:"month,omitempty"`
 
 	// Timezone Timezone offset from UTC in hours. Output times are converted to this timezone. Defaults to 0 (UTC).
 	Timezone *GetLunarAspectsJSONBody_Timezone `json:"timezone,omitempty"`
 
-	// Year Year for monthly analysis (1900-2100).
-	Year int `json:"year"`
+	// Year Year for monthly analysis (1900-2100). Defaults to the current year (UTC).
+	Year *int `json:"year,omitempty"`
 }
+
+// GetLunarAspectsParams defines parameters for GetLunarAspects.
+type GetLunarAspectsParams struct {
+	// Lang Response language (ISO 639-1). Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en. Languages without translations yet return English.
+	Lang *GetLunarAspectsParamsLang `form:"lang,omitempty" json:"lang,omitempty"`
+}
+
+// GetLunarAspectsParamsLang defines parameters for GetLunarAspects.
+type GetLunarAspectsParamsLang string
 
 // GetLunarAspectsJSONBodyCoordinateSystem defines parameters for GetLunarAspects.
 type GetLunarAspectsJSONBodyCoordinateSystem string
@@ -27856,15 +28198,24 @@ type GetMonthlyAspectsJSONBody struct {
 	// CoordinateSystem Coordinate system for longitude output. "sidereal" (Nirayana) uses Lahiri ayanamsa - standard for Vedic astrology. "tropical" (Sayana) uses raw ecliptic longitude matching Western astrology. Defaults to "sidereal".
 	CoordinateSystem *GetMonthlyAspectsJSONBodyCoordinateSystem `json:"coordinateSystem,omitempty"`
 
-	// Month Month number (1-12).
-	Month int `json:"month"`
+	// Month Month number (1-12). Defaults to the current month (UTC).
+	Month *int `json:"month,omitempty"`
 
 	// Timezone Timezone offset from UTC in hours. Output times are converted to this timezone. Defaults to 0 (UTC).
 	Timezone *GetMonthlyAspectsJSONBody_Timezone `json:"timezone,omitempty"`
 
-	// Year Year for monthly analysis (1900-2100).
-	Year int `json:"year"`
+	// Year Year for monthly analysis (1900-2100). Defaults to the current year (UTC).
+	Year *int `json:"year,omitempty"`
 }
+
+// GetMonthlyAspectsParams defines parameters for GetMonthlyAspects.
+type GetMonthlyAspectsParams struct {
+	// Lang Response language (ISO 639-1). Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en. Languages without translations yet return English.
+	Lang *GetMonthlyAspectsParamsLang `form:"lang,omitempty" json:"lang,omitempty"`
+}
+
+// GetMonthlyAspectsParamsLang defines parameters for GetMonthlyAspects.
+type GetMonthlyAspectsParamsLang string
 
 // GetMonthlyAspectsJSONBodyCoordinateSystem defines parameters for GetMonthlyAspects.
 type GetMonthlyAspectsJSONBodyCoordinateSystem string
@@ -29098,15 +29449,24 @@ type CalculateParallels200JSONResponseBodyParallelsType string
 
 // GetMonthlyParallelsJSONBody defines parameters for GetMonthlyParallels.
 type GetMonthlyParallelsJSONBody struct {
-	// Month Month number (1-12) for parallel analysis.
-	Month int `json:"month"`
+	// Month Month number (1-12) for parallel analysis. Defaults to the current month (UTC).
+	Month *int `json:"month,omitempty"`
 
 	// Timezone Timezone offset from UTC in hours. Output times are converted to this timezone. Defaults to 0 (UTC).
 	Timezone *GetMonthlyParallelsJSONBody_Timezone `json:"timezone,omitempty"`
 
-	// Year Year for monthly parallel analysis (1900-2100).
-	Year int `json:"year"`
+	// Year Year for monthly parallel analysis (1900-2100). Defaults to the current year (UTC).
+	Year *int `json:"year,omitempty"`
 }
+
+// GetMonthlyParallelsParams defines parameters for GetMonthlyParallels.
+type GetMonthlyParallelsParams struct {
+	// Lang Response language (ISO 639-1). Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en. Languages without translations yet return English.
+	Lang *GetMonthlyParallelsParamsLang `form:"lang,omitempty" json:"lang,omitempty"`
+}
+
+// GetMonthlyParallelsParamsLang defines parameters for GetMonthlyParallels.
+type GetMonthlyParallelsParamsLang string
 
 // GetMonthlyParallelsJSONBodyTimezone0 defines parameters for GetMonthlyParallels.
 type GetMonthlyParallelsJSONBodyTimezone0 = float32
@@ -29136,12 +29496,21 @@ type GetMonthlyEphemerisJSONBody struct {
 	// CoordinateSystem Coordinate system for longitude output. "sidereal" (Nirayana) uses Lahiri ayanamsa - standard for Vedic astrology. "tropical" (Sayana) uses raw ecliptic longitude matching Western astrology. Defaults to "sidereal".
 	CoordinateSystem *GetMonthlyEphemerisJSONBodyCoordinateSystem `json:"coordinateSystem,omitempty"`
 
-	// Month Month number (1-12) for ephemeris.
-	Month int `json:"month"`
+	// Month Month number (1-12) for ephemeris. Defaults to the current month (UTC).
+	Month *int `json:"month,omitempty"`
 
-	// Year Year for monthly ephemeris (1900-2100).
-	Year int `json:"year"`
+	// Year Year for monthly ephemeris (1900-2100). Defaults to the current year (UTC).
+	Year *int `json:"year,omitempty"`
 }
+
+// GetMonthlyEphemerisParams defines parameters for GetMonthlyEphemeris.
+type GetMonthlyEphemerisParams struct {
+	// Lang Response language (ISO 639-1). Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en. Languages without translations yet return English.
+	Lang *GetMonthlyEphemerisParamsLang `form:"lang,omitempty" json:"lang,omitempty"`
+}
+
+// GetMonthlyEphemerisParamsLang defines parameters for GetMonthlyEphemeris.
+type GetMonthlyEphemerisParamsLang string
 
 // GetMonthlyEphemerisJSONBodyCoordinateSystem defines parameters for GetMonthlyEphemeris.
 type GetMonthlyEphemerisJSONBodyCoordinateSystem string
@@ -29222,15 +29591,24 @@ type GetMonthlyTransitsJSONBody struct {
 	// CoordinateSystem Coordinate system for longitude output. "sidereal" (Nirayana) uses Lahiri ayanamsa - standard for Vedic astrology. "tropical" (Sayana) uses raw ecliptic longitude matching Western astrology. Defaults to "sidereal".
 	CoordinateSystem *GetMonthlyTransitsJSONBodyCoordinateSystem `json:"coordinateSystem,omitempty"`
 
-	// Month Month number (1-12) for transit analysis.
-	Month int `json:"month"`
+	// Month Month number (1-12) for transit analysis. Defaults to the current month (UTC).
+	Month *int `json:"month,omitempty"`
 
 	// Timezone Timezone offset from UTC in hours. Output times are converted to this timezone. Defaults to 0 (UTC).
 	Timezone *GetMonthlyTransitsJSONBody_Timezone `json:"timezone,omitempty"`
 
-	// Year Year for monthly transit analysis (1900-2100).
-	Year int `json:"year"`
+	// Year Year for monthly transit analysis (1900-2100). Defaults to the current year (UTC).
+	Year *int `json:"year,omitempty"`
 }
+
+// GetMonthlyTransitsParams defines parameters for GetMonthlyTransits.
+type GetMonthlyTransitsParams struct {
+	// Lang Response language (ISO 639-1). Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en. Languages without translations yet return English.
+	Lang *GetMonthlyTransitsParamsLang `form:"lang,omitempty" json:"lang,omitempty"`
+}
+
+// GetMonthlyTransitsParamsLang defines parameters for GetMonthlyTransits.
+type GetMonthlyTransitsParamsLang string
 
 // GetMonthlyTransitsJSONBodyCoordinateSystem defines parameters for GetMonthlyTransits.
 type GetMonthlyTransitsJSONBodyCoordinateSystem string
@@ -29332,6 +29710,9 @@ type GeneratePlanetaryReturnJSONRequestBody GeneratePlanetaryReturnJSONBody
 
 // GetPlanetaryPositionsJSONRequestBody defines body for GetPlanetaryPositions for application/json ContentType.
 type GetPlanetaryPositionsJSONRequestBody GetPlanetaryPositionsJSONBody
+
+// GetMonthlyTropicalEphemerisJSONRequestBody defines body for GetMonthlyTropicalEphemeris for application/json ContentType.
+type GetMonthlyTropicalEphemerisJSONRequestBody GetMonthlyTropicalEphemerisJSONBody
 
 // GenerateProfectionsJSONRequestBody defines body for GenerateProfections for application/json ContentType.
 type GenerateProfectionsJSONRequestBody = ProfectionsRequest
@@ -35764,6 +36145,24 @@ type ClientInterface interface {
 	// Corresponds with POST /astrology/planets (the `GetPlanetaryPositions` operationId).
 	GetPlanetaryPositions(ctx context.Context, params *GetPlanetaryPositionsParams, body GetPlanetaryPositionsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// GetMonthlyTropicalEphemerisWithBody Monthly Ephemeris - Daily tropical planetary positions for a month
+	//
+	// Get daily tropical ecliptic positions for all 14 Western bodies (the 10 classical planets Sun through Pluto, the lunar nodes, Chiron, and Black Moon Lilith) for an entire month. Returns longitude, zodiac sign, degree within sign, and retrograde status for each body on each day, calculated at noon UTC. Omit year and month to get the month in progress, so a published ephemeris page stays current without a redeploy. Essential for ephemeris tables, transit tracking, retrograde calendars, and planetary movement charts. Monthly ephemeris API, tropical position table, daily planet transit positions, ecliptic longitude calculator. Verified against NASA JPL Horizons.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /astrology/planets/monthly (the `GetMonthlyTropicalEphemeris` operationId).
+	GetMonthlyTropicalEphemerisWithBody(ctx context.Context, params *GetMonthlyTropicalEphemerisParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetMonthlyTropicalEphemeris Monthly Ephemeris - Daily tropical planetary positions for a month
+	//
+	// Get daily tropical ecliptic positions for all 14 Western bodies (the 10 classical planets Sun through Pluto, the lunar nodes, Chiron, and Black Moon Lilith) for an entire month. Returns longitude, zodiac sign, degree within sign, and retrograde status for each body on each day, calculated at noon UTC. Omit year and month to get the month in progress, so a published ephemeris page stays current without a redeploy. Essential for ephemeris tables, transit tracking, retrograde calendars, and planetary movement charts. Monthly ephemeris API, tropical position table, daily planet transit positions, ecliptic longitude calculator. Verified against NASA JPL Horizons.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /astrology/planets/monthly (the `GetMonthlyTropicalEphemeris` operationId).
+	GetMonthlyTropicalEphemeris(ctx context.Context, params *GetMonthlyTropicalEphemerisParams, body GetMonthlyTropicalEphemerisJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// GenerateProfectionsWithBody Annual profections calculator - lord of the year and yearly time lord by age
 	//
 	// Calculate the annual profection and lord of the year for any birth chart and target date using the Hellenistic time lord technique. Each completed year of life advances the rising sign by one whole sign house, activating a new profected house, profected sign, and ruling planet that sets the tone of the year. Returns the age, profected house and sign, the lord of the year with its natal sign and house placement, and a plain language interpretation for traditional and Hellenistic astrology apps.
@@ -37127,39 +37526,39 @@ type ClientInterface interface {
 
 	// GetLunarAspectsWithBody Monthly Lunar Aspects - Moon aspect events with all planets for a month
 	//
-	// Track all lunar aspect events for a given month including major and minor aspects. The Moon traverses approximately 13 degrees per day, forming 22 aspect types with each planet. 5 major (conjunction, opposition, trine, square, sextile) and 17 minor (vigintile, semi-sextile, undecile, semi-quintile, novile, semi-square, septile, quintile, binovile, centile, biseptile, tredecile, sesqui-square, bi-quintile, quincunx, triseptile, quadranovile). Returns exact date and time of each Moon aspect event with ternary search refinement to the minute. Essential for muhurta selection, daily panchang analysis, and chandra gochar predictions. Monthly lunar aspects API, Moon transit calendar, chandra drishti ephemeris, minor lunar aspects.
+	// Track all lunar aspect events for a given month including major and minor aspects. The Moon traverses approximately 13 degrees per day, forming 22 aspect types with each planet. 5 major (conjunction, opposition, trine, square, sextile) and 17 minor (vigintile, semi-sextile, undecile, semi-quintile, novile, semi-square, septile, quintile, binovile, centile, biseptile, tredecile, sesqui-square, bi-quintile, quincunx, triseptile, quadranovile). Returns exact date and time of each Moon aspect event with ternary search refinement to the minute. Omit year and month to get the month in progress, so a published lunar calendar stays current without a redeploy. Essential for muhurta selection, daily panchang analysis, and chandra gochar predictions. Monthly lunar aspects API, Moon transit calendar, chandra drishti ephemeris, minor lunar aspects.
 	//
 	// Takes any type of body and a specified content type.
 	//
 	// Corresponds with POST /vedic-astrology/aspects/lunar (the `GetLunarAspects` operationId).
-	GetLunarAspectsWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	GetLunarAspectsWithBody(ctx context.Context, params *GetLunarAspectsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetLunarAspects Monthly Lunar Aspects - Moon aspect events with all planets for a month
 	//
-	// Track all lunar aspect events for a given month including major and minor aspects. The Moon traverses approximately 13 degrees per day, forming 22 aspect types with each planet. 5 major (conjunction, opposition, trine, square, sextile) and 17 minor (vigintile, semi-sextile, undecile, semi-quintile, novile, semi-square, septile, quintile, binovile, centile, biseptile, tredecile, sesqui-square, bi-quintile, quincunx, triseptile, quadranovile). Returns exact date and time of each Moon aspect event with ternary search refinement to the minute. Essential for muhurta selection, daily panchang analysis, and chandra gochar predictions. Monthly lunar aspects API, Moon transit calendar, chandra drishti ephemeris, minor lunar aspects.
+	// Track all lunar aspect events for a given month including major and minor aspects. The Moon traverses approximately 13 degrees per day, forming 22 aspect types with each planet. 5 major (conjunction, opposition, trine, square, sextile) and 17 minor (vigintile, semi-sextile, undecile, semi-quintile, novile, semi-square, septile, quintile, binovile, centile, biseptile, tredecile, sesqui-square, bi-quintile, quincunx, triseptile, quadranovile). Returns exact date and time of each Moon aspect event with ternary search refinement to the minute. Omit year and month to get the month in progress, so a published lunar calendar stays current without a redeploy. Essential for muhurta selection, daily panchang analysis, and chandra gochar predictions. Monthly lunar aspects API, Moon transit calendar, chandra drishti ephemeris, minor lunar aspects.
 	//
 	// Takes a body of the `application/json` content type.
 	//
 	// Corresponds with POST /vedic-astrology/aspects/lunar (the `GetLunarAspects` operationId).
-	GetLunarAspects(ctx context.Context, body GetLunarAspectsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	GetLunarAspects(ctx context.Context, params *GetLunarAspectsParams, body GetLunarAspectsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetMonthlyAspectsWithBody Monthly Planetary Aspects - Major and minor aspect events for a month
 	//
-	// Calculate all planetary aspect events (excluding Moon) for a given month. Detects 22 aspect types. 5 major (conjunction, opposition, trine, square, sextile) and 17 minor (vigintile, semi-sextile, undecile, semi-quintile, novile, semi-square, septile, quintile, binovile, centile, biseptile, tredecile, sesqui-square, bi-quintile, quincunx, triseptile, quadranovile). Returns exact date and time of closest approach using ternary search refinement. Uses degree-based aspect methodology on sidereal positions (Lahiri ayanamsa). For Moon-specific aspects, use the /aspects/lunar endpoint. Essential for transit timing, muhurta selection, and monthly astrological forecasting. Monthly planetary aspects API, graha drishti calendar, mutual aspect ephemeris, minor aspects.
+	// Calculate all planetary aspect events (excluding Moon) for a given month. Detects 22 aspect types. 5 major (conjunction, opposition, trine, square, sextile) and 17 minor (vigintile, semi-sextile, undecile, semi-quintile, novile, semi-square, septile, quintile, binovile, centile, biseptile, tredecile, sesqui-square, bi-quintile, quincunx, triseptile, quadranovile). Returns exact date and time of closest approach using ternary search refinement. Uses degree-based aspect methodology on sidereal positions (Lahiri ayanamsa). Omit year and month to get the month in progress, so a published aspect calendar stays current without a redeploy. For Moon-specific aspects, use the /aspects/lunar endpoint. Essential for transit timing, muhurta selection, and monthly astrological forecasting. Monthly planetary aspects API, graha drishti calendar, mutual aspect ephemeris, minor aspects.
 	//
 	// Takes any type of body and a specified content type.
 	//
 	// Corresponds with POST /vedic-astrology/aspects/monthly (the `GetMonthlyAspects` operationId).
-	GetMonthlyAspectsWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	GetMonthlyAspectsWithBody(ctx context.Context, params *GetMonthlyAspectsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetMonthlyAspects Monthly Planetary Aspects - Major and minor aspect events for a month
 	//
-	// Calculate all planetary aspect events (excluding Moon) for a given month. Detects 22 aspect types. 5 major (conjunction, opposition, trine, square, sextile) and 17 minor (vigintile, semi-sextile, undecile, semi-quintile, novile, semi-square, septile, quintile, binovile, centile, biseptile, tredecile, sesqui-square, bi-quintile, quincunx, triseptile, quadranovile). Returns exact date and time of closest approach using ternary search refinement. Uses degree-based aspect methodology on sidereal positions (Lahiri ayanamsa). For Moon-specific aspects, use the /aspects/lunar endpoint. Essential for transit timing, muhurta selection, and monthly astrological forecasting. Monthly planetary aspects API, graha drishti calendar, mutual aspect ephemeris, minor aspects.
+	// Calculate all planetary aspect events (excluding Moon) for a given month. Detects 22 aspect types. 5 major (conjunction, opposition, trine, square, sextile) and 17 minor (vigintile, semi-sextile, undecile, semi-quintile, novile, semi-square, septile, quintile, binovile, centile, biseptile, tredecile, sesqui-square, bi-quintile, quincunx, triseptile, quadranovile). Returns exact date and time of closest approach using ternary search refinement. Uses degree-based aspect methodology on sidereal positions (Lahiri ayanamsa). Omit year and month to get the month in progress, so a published aspect calendar stays current without a redeploy. For Moon-specific aspects, use the /aspects/lunar endpoint. Essential for transit timing, muhurta selection, and monthly astrological forecasting. Monthly planetary aspects API, graha drishti calendar, mutual aspect ephemeris, minor aspects.
 	//
 	// Takes a body of the `application/json` content type.
 	//
 	// Corresponds with POST /vedic-astrology/aspects/monthly (the `GetMonthlyAspects` operationId).
-	GetMonthlyAspects(ctx context.Context, body GetMonthlyAspectsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	GetMonthlyAspects(ctx context.Context, params *GetMonthlyAspectsParams, body GetMonthlyAspectsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// ListAvasthas List all 17 avastha states - Planetary State Reference
 	//
@@ -37774,21 +38173,21 @@ type ClientInterface interface {
 
 	// GetMonthlyParallelsWithBody Monthly Declination Parallels - Parallel and contraparallel events for a month
 	//
-	// Find all declination parallel and contraparallel events between the 7 visible planets for a given month. Parallels occur when two planets share the same celestial declination (equivalent to conjunction in strength). Contraparallels occur at opposite declinations (equivalent to opposition). Scanned daily at noon UTC. Essential for advanced transit analysis and hidden aspect discovery. Monthly declination parallels API, planetary parallel ephemeris, contraparallel event calendar.
+	// Find all declination parallel and contraparallel events between the 7 visible planets for a given month. Parallels occur when two planets share the same celestial declination (equivalent to conjunction in strength). Contraparallels occur at opposite declinations (equivalent to opposition). Scanned daily at noon UTC. Omit year and month to get the month in progress, so a published parallel calendar stays current without a redeploy. Essential for advanced transit analysis and hidden aspect discovery. Monthly declination parallels API, planetary parallel ephemeris, contraparallel event calendar.
 	//
 	// Takes any type of body and a specified content type.
 	//
 	// Corresponds with POST /vedic-astrology/parallels/monthly (the `GetMonthlyParallels` operationId).
-	GetMonthlyParallelsWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	GetMonthlyParallelsWithBody(ctx context.Context, params *GetMonthlyParallelsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetMonthlyParallels Monthly Declination Parallels - Parallel and contraparallel events for a month
 	//
-	// Find all declination parallel and contraparallel events between the 7 visible planets for a given month. Parallels occur when two planets share the same celestial declination (equivalent to conjunction in strength). Contraparallels occur at opposite declinations (equivalent to opposition). Scanned daily at noon UTC. Essential for advanced transit analysis and hidden aspect discovery. Monthly declination parallels API, planetary parallel ephemeris, contraparallel event calendar.
+	// Find all declination parallel and contraparallel events between the 7 visible planets for a given month. Parallels occur when two planets share the same celestial declination (equivalent to conjunction in strength). Contraparallels occur at opposite declinations (equivalent to opposition). Scanned daily at noon UTC. Omit year and month to get the month in progress, so a published parallel calendar stays current without a redeploy. Essential for advanced transit analysis and hidden aspect discovery. Monthly declination parallels API, planetary parallel ephemeris, contraparallel event calendar.
 	//
 	// Takes a body of the `application/json` content type.
 	//
 	// Corresponds with POST /vedic-astrology/parallels/monthly (the `GetMonthlyParallels` operationId).
-	GetMonthlyParallels(ctx context.Context, body GetMonthlyParallelsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	GetMonthlyParallels(ctx context.Context, params *GetMonthlyParallelsParams, body GetMonthlyParallelsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetPlanetPositionsWithBody Get planetary positions - Graha Positions API
 	//
@@ -37810,21 +38209,21 @@ type ClientInterface interface {
 
 	// GetMonthlyEphemerisWithBody Monthly Ephemeris - Daily sidereal planetary positions for a month
 	//
-	// Get daily sidereal ecliptic positions for all 9 Vedic planets (Navagraha) for an entire month. Returns longitude, zodiac sign, degree within sign, and retrograde status for each planet on each day. Calculated at noon UTC. Essential for ephemeris generation, transit tracking, and planetary movement visualization. Monthly planetary ephemeris API, sidereal position table, daily graha gochara positions, ecliptic longitude calculator.
+	// Get daily sidereal ecliptic positions for all 9 Vedic planets (Navagraha) for an entire month. Returns longitude, zodiac sign, degree within sign, and retrograde status for each planet on each day. Calculated at noon UTC. Omit year and month to get the month in progress, so a published ephemeris page stays current without a redeploy. Essential for ephemeris generation, transit tracking, and planetary movement visualization. Monthly planetary ephemeris API, sidereal position table, daily graha gochara positions, ecliptic longitude calculator.
 	//
 	// Takes any type of body and a specified content type.
 	//
 	// Corresponds with POST /vedic-astrology/planetary-positions/monthly (the `GetMonthlyEphemeris` operationId).
-	GetMonthlyEphemerisWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	GetMonthlyEphemerisWithBody(ctx context.Context, params *GetMonthlyEphemerisParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetMonthlyEphemeris Monthly Ephemeris - Daily sidereal planetary positions for a month
 	//
-	// Get daily sidereal ecliptic positions for all 9 Vedic planets (Navagraha) for an entire month. Returns longitude, zodiac sign, degree within sign, and retrograde status for each planet on each day. Calculated at noon UTC. Essential for ephemeris generation, transit tracking, and planetary movement visualization. Monthly planetary ephemeris API, sidereal position table, daily graha gochara positions, ecliptic longitude calculator.
+	// Get daily sidereal ecliptic positions for all 9 Vedic planets (Navagraha) for an entire month. Returns longitude, zodiac sign, degree within sign, and retrograde status for each planet on each day. Calculated at noon UTC. Omit year and month to get the month in progress, so a published ephemeris page stays current without a redeploy. Essential for ephemeris generation, transit tracking, and planetary movement visualization. Monthly planetary ephemeris API, sidereal position table, daily graha gochara positions, ecliptic longitude calculator.
 	//
 	// Takes a body of the `application/json` content type.
 	//
 	// Corresponds with POST /vedic-astrology/planetary-positions/monthly (the `GetMonthlyEphemeris` operationId).
-	GetMonthlyEphemeris(ctx context.Context, body GetMonthlyEphemerisJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	GetMonthlyEphemeris(ctx context.Context, params *GetMonthlyEphemerisParams, body GetMonthlyEphemerisJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// ListRashis List all 12 Rashis - Vedic Zodiac Signs Reference
 	//
@@ -37878,21 +38277,21 @@ type ClientInterface interface {
 
 	// GetMonthlyTransitsWithBody Monthly Transit - Planetary sign changes for an entire month
 	//
-	// Get all planetary sign (rashi) changes for a given month. Shows when each planet transitions from one zodiac sign to another. Covers all 9 Vedic planets: Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn, Rahu, Ketu. Includes starting positions at the beginning of the month. Essential for transit prediction, monthly horoscope generation, and muhurta planning. Monthly planetary transit API, gochar calendar, rashi parivartan dates.
+	// Get all planetary sign (rashi) changes for a given month. Shows when each planet transitions from one zodiac sign to another. Covers all 9 Vedic planets: Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn, Rahu, Ketu. Includes starting positions at the beginning of the month. Omit year and month to get the month in progress, so a published gochar calendar stays current without a redeploy. Essential for transit prediction, monthly horoscope generation, and muhurta planning. Monthly planetary transit API, gochar calendar, rashi parivartan dates.
 	//
 	// Takes any type of body and a specified content type.
 	//
 	// Corresponds with POST /vedic-astrology/transit/monthly (the `GetMonthlyTransits` operationId).
-	GetMonthlyTransitsWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	GetMonthlyTransitsWithBody(ctx context.Context, params *GetMonthlyTransitsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetMonthlyTransits Monthly Transit - Planetary sign changes for an entire month
 	//
-	// Get all planetary sign (rashi) changes for a given month. Shows when each planet transitions from one zodiac sign to another. Covers all 9 Vedic planets: Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn, Rahu, Ketu. Includes starting positions at the beginning of the month. Essential for transit prediction, monthly horoscope generation, and muhurta planning. Monthly planetary transit API, gochar calendar, rashi parivartan dates.
+	// Get all planetary sign (rashi) changes for a given month. Shows when each planet transitions from one zodiac sign to another. Covers all 9 Vedic planets: Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn, Rahu, Ketu. Includes starting positions at the beginning of the month. Omit year and month to get the month in progress, so a published gochar calendar stays current without a redeploy. Essential for transit prediction, monthly horoscope generation, and muhurta planning. Monthly planetary transit API, gochar calendar, rashi parivartan dates.
 	//
 	// Takes a body of the `application/json` content type.
 	//
 	// Corresponds with POST /vedic-astrology/transit/monthly (the `GetMonthlyTransits` operationId).
-	GetMonthlyTransits(ctx context.Context, body GetMonthlyTransitsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	GetMonthlyTransits(ctx context.Context, params *GetMonthlyTransitsParams, body GetMonthlyTransitsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetUpagrahaPositionsWithBody Get upagraha (sub-planet) positions - Upagraha Calculator API
 	//
@@ -38730,6 +39129,44 @@ func (c *Client) GetPlanetaryPositionsWithBody(ctx context.Context, params *GetP
 // Corresponds with POST /astrology/planets (the `GetPlanetaryPositions` operationId).
 func (c *Client) GetPlanetaryPositions(ctx context.Context, params *GetPlanetaryPositionsParams, body GetPlanetaryPositionsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewGetPlanetaryPositionsRequest(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetMonthlyTropicalEphemerisWithBody Monthly Ephemeris - Daily tropical planetary positions for a month
+//
+// Get daily tropical ecliptic positions for all 14 Western bodies (the 10 classical planets Sun through Pluto, the lunar nodes, Chiron, and Black Moon Lilith) for an entire month. Returns longitude, zodiac sign, degree within sign, and retrograde status for each body on each day, calculated at noon UTC. Omit year and month to get the month in progress, so a published ephemeris page stays current without a redeploy. Essential for ephemeris tables, transit tracking, retrograde calendars, and planetary movement charts. Monthly ephemeris API, tropical position table, daily planet transit positions, ecliptic longitude calculator. Verified against NASA JPL Horizons.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /astrology/planets/monthly (the `GetMonthlyTropicalEphemeris` operationId).
+func (c *Client) GetMonthlyTropicalEphemerisWithBody(ctx context.Context, params *GetMonthlyTropicalEphemerisParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetMonthlyTropicalEphemerisRequestWithBody(c.Server, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetMonthlyTropicalEphemeris Monthly Ephemeris - Daily tropical planetary positions for a month
+//
+// Get daily tropical ecliptic positions for all 14 Western bodies (the 10 classical planets Sun through Pluto, the lunar nodes, Chiron, and Black Moon Lilith) for an entire month. Returns longitude, zodiac sign, degree within sign, and retrograde status for each body on each day, calculated at noon UTC. Omit year and month to get the month in progress, so a published ephemeris page stays current without a redeploy. Essential for ephemeris tables, transit tracking, retrograde calendars, and planetary movement charts. Monthly ephemeris API, tropical position table, daily planet transit positions, ecliptic longitude calculator. Verified against NASA JPL Horizons.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /astrology/planets/monthly (the `GetMonthlyTropicalEphemeris` operationId).
+func (c *Client) GetMonthlyTropicalEphemeris(ctx context.Context, params *GetMonthlyTropicalEphemerisParams, body GetMonthlyTropicalEphemerisJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetMonthlyTropicalEphemerisRequest(c.Server, params, body)
 	if err != nil {
 		return nil, err
 	}
@@ -41693,13 +42130,13 @@ func (c *Client) CalculateDrishti(ctx context.Context, body CalculateDrishtiJSON
 
 // GetLunarAspectsWithBody Monthly Lunar Aspects - Moon aspect events with all planets for a month
 //
-// Track all lunar aspect events for a given month including major and minor aspects. The Moon traverses approximately 13 degrees per day, forming 22 aspect types with each planet. 5 major (conjunction, opposition, trine, square, sextile) and 17 minor (vigintile, semi-sextile, undecile, semi-quintile, novile, semi-square, septile, quintile, binovile, centile, biseptile, tredecile, sesqui-square, bi-quintile, quincunx, triseptile, quadranovile). Returns exact date and time of each Moon aspect event with ternary search refinement to the minute. Essential for muhurta selection, daily panchang analysis, and chandra gochar predictions. Monthly lunar aspects API, Moon transit calendar, chandra drishti ephemeris, minor lunar aspects.
+// Track all lunar aspect events for a given month including major and minor aspects. The Moon traverses approximately 13 degrees per day, forming 22 aspect types with each planet. 5 major (conjunction, opposition, trine, square, sextile) and 17 minor (vigintile, semi-sextile, undecile, semi-quintile, novile, semi-square, septile, quintile, binovile, centile, biseptile, tredecile, sesqui-square, bi-quintile, quincunx, triseptile, quadranovile). Returns exact date and time of each Moon aspect event with ternary search refinement to the minute. Omit year and month to get the month in progress, so a published lunar calendar stays current without a redeploy. Essential for muhurta selection, daily panchang analysis, and chandra gochar predictions. Monthly lunar aspects API, Moon transit calendar, chandra drishti ephemeris, minor lunar aspects.
 //
 // Takes any type of body and a specified content type.
 //
 // Corresponds with POST /vedic-astrology/aspects/lunar (the `GetLunarAspects` operationId).
-func (c *Client) GetLunarAspectsWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetLunarAspectsRequestWithBody(c.Server, contentType, body)
+func (c *Client) GetLunarAspectsWithBody(ctx context.Context, params *GetLunarAspectsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetLunarAspectsRequestWithBody(c.Server, params, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -41712,13 +42149,13 @@ func (c *Client) GetLunarAspectsWithBody(ctx context.Context, contentType string
 
 // GetLunarAspects Monthly Lunar Aspects - Moon aspect events with all planets for a month
 //
-// Track all lunar aspect events for a given month including major and minor aspects. The Moon traverses approximately 13 degrees per day, forming 22 aspect types with each planet. 5 major (conjunction, opposition, trine, square, sextile) and 17 minor (vigintile, semi-sextile, undecile, semi-quintile, novile, semi-square, septile, quintile, binovile, centile, biseptile, tredecile, sesqui-square, bi-quintile, quincunx, triseptile, quadranovile). Returns exact date and time of each Moon aspect event with ternary search refinement to the minute. Essential for muhurta selection, daily panchang analysis, and chandra gochar predictions. Monthly lunar aspects API, Moon transit calendar, chandra drishti ephemeris, minor lunar aspects.
+// Track all lunar aspect events for a given month including major and minor aspects. The Moon traverses approximately 13 degrees per day, forming 22 aspect types with each planet. 5 major (conjunction, opposition, trine, square, sextile) and 17 minor (vigintile, semi-sextile, undecile, semi-quintile, novile, semi-square, septile, quintile, binovile, centile, biseptile, tredecile, sesqui-square, bi-quintile, quincunx, triseptile, quadranovile). Returns exact date and time of each Moon aspect event with ternary search refinement to the minute. Omit year and month to get the month in progress, so a published lunar calendar stays current without a redeploy. Essential for muhurta selection, daily panchang analysis, and chandra gochar predictions. Monthly lunar aspects API, Moon transit calendar, chandra drishti ephemeris, minor lunar aspects.
 //
 // Takes a body of the `application/json` content type.
 //
 // Corresponds with POST /vedic-astrology/aspects/lunar (the `GetLunarAspects` operationId).
-func (c *Client) GetLunarAspects(ctx context.Context, body GetLunarAspectsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetLunarAspectsRequest(c.Server, body)
+func (c *Client) GetLunarAspects(ctx context.Context, params *GetLunarAspectsParams, body GetLunarAspectsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetLunarAspectsRequest(c.Server, params, body)
 	if err != nil {
 		return nil, err
 	}
@@ -41731,13 +42168,13 @@ func (c *Client) GetLunarAspects(ctx context.Context, body GetLunarAspectsJSONRe
 
 // GetMonthlyAspectsWithBody Monthly Planetary Aspects - Major and minor aspect events for a month
 //
-// Calculate all planetary aspect events (excluding Moon) for a given month. Detects 22 aspect types. 5 major (conjunction, opposition, trine, square, sextile) and 17 minor (vigintile, semi-sextile, undecile, semi-quintile, novile, semi-square, septile, quintile, binovile, centile, biseptile, tredecile, sesqui-square, bi-quintile, quincunx, triseptile, quadranovile). Returns exact date and time of closest approach using ternary search refinement. Uses degree-based aspect methodology on sidereal positions (Lahiri ayanamsa). For Moon-specific aspects, use the /aspects/lunar endpoint. Essential for transit timing, muhurta selection, and monthly astrological forecasting. Monthly planetary aspects API, graha drishti calendar, mutual aspect ephemeris, minor aspects.
+// Calculate all planetary aspect events (excluding Moon) for a given month. Detects 22 aspect types. 5 major (conjunction, opposition, trine, square, sextile) and 17 minor (vigintile, semi-sextile, undecile, semi-quintile, novile, semi-square, septile, quintile, binovile, centile, biseptile, tredecile, sesqui-square, bi-quintile, quincunx, triseptile, quadranovile). Returns exact date and time of closest approach using ternary search refinement. Uses degree-based aspect methodology on sidereal positions (Lahiri ayanamsa). Omit year and month to get the month in progress, so a published aspect calendar stays current without a redeploy. For Moon-specific aspects, use the /aspects/lunar endpoint. Essential for transit timing, muhurta selection, and monthly astrological forecasting. Monthly planetary aspects API, graha drishti calendar, mutual aspect ephemeris, minor aspects.
 //
 // Takes any type of body and a specified content type.
 //
 // Corresponds with POST /vedic-astrology/aspects/monthly (the `GetMonthlyAspects` operationId).
-func (c *Client) GetMonthlyAspectsWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetMonthlyAspectsRequestWithBody(c.Server, contentType, body)
+func (c *Client) GetMonthlyAspectsWithBody(ctx context.Context, params *GetMonthlyAspectsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetMonthlyAspectsRequestWithBody(c.Server, params, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -41750,13 +42187,13 @@ func (c *Client) GetMonthlyAspectsWithBody(ctx context.Context, contentType stri
 
 // GetMonthlyAspects Monthly Planetary Aspects - Major and minor aspect events for a month
 //
-// Calculate all planetary aspect events (excluding Moon) for a given month. Detects 22 aspect types. 5 major (conjunction, opposition, trine, square, sextile) and 17 minor (vigintile, semi-sextile, undecile, semi-quintile, novile, semi-square, septile, quintile, binovile, centile, biseptile, tredecile, sesqui-square, bi-quintile, quincunx, triseptile, quadranovile). Returns exact date and time of closest approach using ternary search refinement. Uses degree-based aspect methodology on sidereal positions (Lahiri ayanamsa). For Moon-specific aspects, use the /aspects/lunar endpoint. Essential for transit timing, muhurta selection, and monthly astrological forecasting. Monthly planetary aspects API, graha drishti calendar, mutual aspect ephemeris, minor aspects.
+// Calculate all planetary aspect events (excluding Moon) for a given month. Detects 22 aspect types. 5 major (conjunction, opposition, trine, square, sextile) and 17 minor (vigintile, semi-sextile, undecile, semi-quintile, novile, semi-square, septile, quintile, binovile, centile, biseptile, tredecile, sesqui-square, bi-quintile, quincunx, triseptile, quadranovile). Returns exact date and time of closest approach using ternary search refinement. Uses degree-based aspect methodology on sidereal positions (Lahiri ayanamsa). Omit year and month to get the month in progress, so a published aspect calendar stays current without a redeploy. For Moon-specific aspects, use the /aspects/lunar endpoint. Essential for transit timing, muhurta selection, and monthly astrological forecasting. Monthly planetary aspects API, graha drishti calendar, mutual aspect ephemeris, minor aspects.
 //
 // Takes a body of the `application/json` content type.
 //
 // Corresponds with POST /vedic-astrology/aspects/monthly (the `GetMonthlyAspects` operationId).
-func (c *Client) GetMonthlyAspects(ctx context.Context, body GetMonthlyAspectsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetMonthlyAspectsRequest(c.Server, body)
+func (c *Client) GetMonthlyAspects(ctx context.Context, params *GetMonthlyAspectsParams, body GetMonthlyAspectsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetMonthlyAspectsRequest(c.Server, params, body)
 	if err != nil {
 		return nil, err
 	}
@@ -43070,13 +43507,13 @@ func (c *Client) CalculateParallels(ctx context.Context, body CalculateParallels
 
 // GetMonthlyParallelsWithBody Monthly Declination Parallels - Parallel and contraparallel events for a month
 //
-// Find all declination parallel and contraparallel events between the 7 visible planets for a given month. Parallels occur when two planets share the same celestial declination (equivalent to conjunction in strength). Contraparallels occur at opposite declinations (equivalent to opposition). Scanned daily at noon UTC. Essential for advanced transit analysis and hidden aspect discovery. Monthly declination parallels API, planetary parallel ephemeris, contraparallel event calendar.
+// Find all declination parallel and contraparallel events between the 7 visible planets for a given month. Parallels occur when two planets share the same celestial declination (equivalent to conjunction in strength). Contraparallels occur at opposite declinations (equivalent to opposition). Scanned daily at noon UTC. Omit year and month to get the month in progress, so a published parallel calendar stays current without a redeploy. Essential for advanced transit analysis and hidden aspect discovery. Monthly declination parallels API, planetary parallel ephemeris, contraparallel event calendar.
 //
 // Takes any type of body and a specified content type.
 //
 // Corresponds with POST /vedic-astrology/parallels/monthly (the `GetMonthlyParallels` operationId).
-func (c *Client) GetMonthlyParallelsWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetMonthlyParallelsRequestWithBody(c.Server, contentType, body)
+func (c *Client) GetMonthlyParallelsWithBody(ctx context.Context, params *GetMonthlyParallelsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetMonthlyParallelsRequestWithBody(c.Server, params, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -43089,13 +43526,13 @@ func (c *Client) GetMonthlyParallelsWithBody(ctx context.Context, contentType st
 
 // GetMonthlyParallels Monthly Declination Parallels - Parallel and contraparallel events for a month
 //
-// Find all declination parallel and contraparallel events between the 7 visible planets for a given month. Parallels occur when two planets share the same celestial declination (equivalent to conjunction in strength). Contraparallels occur at opposite declinations (equivalent to opposition). Scanned daily at noon UTC. Essential for advanced transit analysis and hidden aspect discovery. Monthly declination parallels API, planetary parallel ephemeris, contraparallel event calendar.
+// Find all declination parallel and contraparallel events between the 7 visible planets for a given month. Parallels occur when two planets share the same celestial declination (equivalent to conjunction in strength). Contraparallels occur at opposite declinations (equivalent to opposition). Scanned daily at noon UTC. Omit year and month to get the month in progress, so a published parallel calendar stays current without a redeploy. Essential for advanced transit analysis and hidden aspect discovery. Monthly declination parallels API, planetary parallel ephemeris, contraparallel event calendar.
 //
 // Takes a body of the `application/json` content type.
 //
 // Corresponds with POST /vedic-astrology/parallels/monthly (the `GetMonthlyParallels` operationId).
-func (c *Client) GetMonthlyParallels(ctx context.Context, body GetMonthlyParallelsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetMonthlyParallelsRequest(c.Server, body)
+func (c *Client) GetMonthlyParallels(ctx context.Context, params *GetMonthlyParallelsParams, body GetMonthlyParallelsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetMonthlyParallelsRequest(c.Server, params, body)
 	if err != nil {
 		return nil, err
 	}
@@ -43146,13 +43583,13 @@ func (c *Client) GetPlanetPositions(ctx context.Context, params *GetPlanetPositi
 
 // GetMonthlyEphemerisWithBody Monthly Ephemeris - Daily sidereal planetary positions for a month
 //
-// Get daily sidereal ecliptic positions for all 9 Vedic planets (Navagraha) for an entire month. Returns longitude, zodiac sign, degree within sign, and retrograde status for each planet on each day. Calculated at noon UTC. Essential for ephemeris generation, transit tracking, and planetary movement visualization. Monthly planetary ephemeris API, sidereal position table, daily graha gochara positions, ecliptic longitude calculator.
+// Get daily sidereal ecliptic positions for all 9 Vedic planets (Navagraha) for an entire month. Returns longitude, zodiac sign, degree within sign, and retrograde status for each planet on each day. Calculated at noon UTC. Omit year and month to get the month in progress, so a published ephemeris page stays current without a redeploy. Essential for ephemeris generation, transit tracking, and planetary movement visualization. Monthly planetary ephemeris API, sidereal position table, daily graha gochara positions, ecliptic longitude calculator.
 //
 // Takes any type of body and a specified content type.
 //
 // Corresponds with POST /vedic-astrology/planetary-positions/monthly (the `GetMonthlyEphemeris` operationId).
-func (c *Client) GetMonthlyEphemerisWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetMonthlyEphemerisRequestWithBody(c.Server, contentType, body)
+func (c *Client) GetMonthlyEphemerisWithBody(ctx context.Context, params *GetMonthlyEphemerisParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetMonthlyEphemerisRequestWithBody(c.Server, params, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -43165,13 +43602,13 @@ func (c *Client) GetMonthlyEphemerisWithBody(ctx context.Context, contentType st
 
 // GetMonthlyEphemeris Monthly Ephemeris - Daily sidereal planetary positions for a month
 //
-// Get daily sidereal ecliptic positions for all 9 Vedic planets (Navagraha) for an entire month. Returns longitude, zodiac sign, degree within sign, and retrograde status for each planet on each day. Calculated at noon UTC. Essential for ephemeris generation, transit tracking, and planetary movement visualization. Monthly planetary ephemeris API, sidereal position table, daily graha gochara positions, ecliptic longitude calculator.
+// Get daily sidereal ecliptic positions for all 9 Vedic planets (Navagraha) for an entire month. Returns longitude, zodiac sign, degree within sign, and retrograde status for each planet on each day. Calculated at noon UTC. Omit year and month to get the month in progress, so a published ephemeris page stays current without a redeploy. Essential for ephemeris generation, transit tracking, and planetary movement visualization. Monthly planetary ephemeris API, sidereal position table, daily graha gochara positions, ecliptic longitude calculator.
 //
 // Takes a body of the `application/json` content type.
 //
 // Corresponds with POST /vedic-astrology/planetary-positions/monthly (the `GetMonthlyEphemeris` operationId).
-func (c *Client) GetMonthlyEphemeris(ctx context.Context, body GetMonthlyEphemerisJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetMonthlyEphemerisRequest(c.Server, body)
+func (c *Client) GetMonthlyEphemeris(ctx context.Context, params *GetMonthlyEphemerisParams, body GetMonthlyEphemerisJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetMonthlyEphemerisRequest(c.Server, params, body)
 	if err != nil {
 		return nil, err
 	}
@@ -43294,13 +43731,13 @@ func (c *Client) CalculateTransit(ctx context.Context, body CalculateTransitJSON
 
 // GetMonthlyTransitsWithBody Monthly Transit - Planetary sign changes for an entire month
 //
-// Get all planetary sign (rashi) changes for a given month. Shows when each planet transitions from one zodiac sign to another. Covers all 9 Vedic planets: Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn, Rahu, Ketu. Includes starting positions at the beginning of the month. Essential for transit prediction, monthly horoscope generation, and muhurta planning. Monthly planetary transit API, gochar calendar, rashi parivartan dates.
+// Get all planetary sign (rashi) changes for a given month. Shows when each planet transitions from one zodiac sign to another. Covers all 9 Vedic planets: Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn, Rahu, Ketu. Includes starting positions at the beginning of the month. Omit year and month to get the month in progress, so a published gochar calendar stays current without a redeploy. Essential for transit prediction, monthly horoscope generation, and muhurta planning. Monthly planetary transit API, gochar calendar, rashi parivartan dates.
 //
 // Takes any type of body and a specified content type.
 //
 // Corresponds with POST /vedic-astrology/transit/monthly (the `GetMonthlyTransits` operationId).
-func (c *Client) GetMonthlyTransitsWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetMonthlyTransitsRequestWithBody(c.Server, contentType, body)
+func (c *Client) GetMonthlyTransitsWithBody(ctx context.Context, params *GetMonthlyTransitsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetMonthlyTransitsRequestWithBody(c.Server, params, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -43313,13 +43750,13 @@ func (c *Client) GetMonthlyTransitsWithBody(ctx context.Context, contentType str
 
 // GetMonthlyTransits Monthly Transit - Planetary sign changes for an entire month
 //
-// Get all planetary sign (rashi) changes for a given month. Shows when each planet transitions from one zodiac sign to another. Covers all 9 Vedic planets: Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn, Rahu, Ketu. Includes starting positions at the beginning of the month. Essential for transit prediction, monthly horoscope generation, and muhurta planning. Monthly planetary transit API, gochar calendar, rashi parivartan dates.
+// Get all planetary sign (rashi) changes for a given month. Shows when each planet transitions from one zodiac sign to another. Covers all 9 Vedic planets: Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn, Rahu, Ketu. Includes starting positions at the beginning of the month. Omit year and month to get the month in progress, so a published gochar calendar stays current without a redeploy. Essential for transit prediction, monthly horoscope generation, and muhurta planning. Monthly planetary transit API, gochar calendar, rashi parivartan dates.
 //
 // Takes a body of the `application/json` content type.
 //
 // Corresponds with POST /vedic-astrology/transit/monthly (the `GetMonthlyTransits` operationId).
-func (c *Client) GetMonthlyTransits(ctx context.Context, body GetMonthlyTransitsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetMonthlyTransitsRequest(c.Server, body)
+func (c *Client) GetMonthlyTransits(ctx context.Context, params *GetMonthlyTransitsParams, body GetMonthlyTransitsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetMonthlyTransitsRequest(c.Server, params, body)
 	if err != nil {
 		return nil, err
 	}
@@ -45357,6 +45794,73 @@ func NewGetPlanetaryPositionsRequestWithBody(server string, params *GetPlanetary
 	}
 
 	operationPath := fmt.Sprintf("/astrology/planets")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Lang != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "lang", *params.Lang, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewGetMonthlyTropicalEphemerisRequest calls the generic GetMonthlyTropicalEphemeris builder with application/json body
+func NewGetMonthlyTropicalEphemerisRequest(server string, params *GetMonthlyTropicalEphemerisParams, body GetMonthlyTropicalEphemerisJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewGetMonthlyTropicalEphemerisRequestWithBody(server, params, "application/json", bodyReader)
+}
+
+// NewGetMonthlyTropicalEphemerisRequestWithBody constructs an http.Request for the GetMonthlyTropicalEphemeris method, with any body, and a specified content type
+func NewGetMonthlyTropicalEphemerisRequestWithBody(server string, params *GetMonthlyTropicalEphemerisParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/astrology/planets/monthly")
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -51689,18 +52193,18 @@ func NewCalculateDrishtiRequestWithBody(server string, contentType string, body 
 }
 
 // NewGetLunarAspectsRequest calls the generic GetLunarAspects builder with application/json body
-func NewGetLunarAspectsRequest(server string, body GetLunarAspectsJSONRequestBody) (*http.Request, error) {
+func NewGetLunarAspectsRequest(server string, params *GetLunarAspectsParams, body GetLunarAspectsJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewGetLunarAspectsRequestWithBody(server, "application/json", bodyReader)
+	return NewGetLunarAspectsRequestWithBody(server, params, "application/json", bodyReader)
 }
 
 // NewGetLunarAspectsRequestWithBody constructs an http.Request for the GetLunarAspects method, with any body, and a specified content type
-func NewGetLunarAspectsRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+func NewGetLunarAspectsRequestWithBody(server string, params *GetLunarAspectsParams, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	serverURL, err := url.Parse(server)
@@ -51718,6 +52222,33 @@ func NewGetLunarAspectsRequestWithBody(server string, contentType string, body i
 		return nil, err
 	}
 
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Lang != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "lang", *params.Lang, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
 	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
 	if err != nil {
 		return nil, err
@@ -51729,18 +52260,18 @@ func NewGetLunarAspectsRequestWithBody(server string, contentType string, body i
 }
 
 // NewGetMonthlyAspectsRequest calls the generic GetMonthlyAspects builder with application/json body
-func NewGetMonthlyAspectsRequest(server string, body GetMonthlyAspectsJSONRequestBody) (*http.Request, error) {
+func NewGetMonthlyAspectsRequest(server string, params *GetMonthlyAspectsParams, body GetMonthlyAspectsJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewGetMonthlyAspectsRequestWithBody(server, "application/json", bodyReader)
+	return NewGetMonthlyAspectsRequestWithBody(server, params, "application/json", bodyReader)
 }
 
 // NewGetMonthlyAspectsRequestWithBody constructs an http.Request for the GetMonthlyAspects method, with any body, and a specified content type
-func NewGetMonthlyAspectsRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+func NewGetMonthlyAspectsRequestWithBody(server string, params *GetMonthlyAspectsParams, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	serverURL, err := url.Parse(server)
@@ -51756,6 +52287,33 @@ func NewGetMonthlyAspectsRequestWithBody(server string, contentType string, body
 	queryURL, err := serverURL.Parse(operationPath)
 	if err != nil {
 		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Lang != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "lang", *params.Lang, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
 	}
 
 	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
@@ -54228,18 +54786,18 @@ func NewCalculateParallelsRequestWithBody(server string, contentType string, bod
 }
 
 // NewGetMonthlyParallelsRequest calls the generic GetMonthlyParallels builder with application/json body
-func NewGetMonthlyParallelsRequest(server string, body GetMonthlyParallelsJSONRequestBody) (*http.Request, error) {
+func NewGetMonthlyParallelsRequest(server string, params *GetMonthlyParallelsParams, body GetMonthlyParallelsJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewGetMonthlyParallelsRequestWithBody(server, "application/json", bodyReader)
+	return NewGetMonthlyParallelsRequestWithBody(server, params, "application/json", bodyReader)
 }
 
 // NewGetMonthlyParallelsRequestWithBody constructs an http.Request for the GetMonthlyParallels method, with any body, and a specified content type
-func NewGetMonthlyParallelsRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+func NewGetMonthlyParallelsRequestWithBody(server string, params *GetMonthlyParallelsParams, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	serverURL, err := url.Parse(server)
@@ -54255,6 +54813,33 @@ func NewGetMonthlyParallelsRequestWithBody(server string, contentType string, bo
 	queryURL, err := serverURL.Parse(operationPath)
 	if err != nil {
 		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Lang != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "lang", *params.Lang, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
 	}
 
 	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
@@ -54335,18 +54920,18 @@ func NewGetPlanetPositionsRequestWithBody(server string, params *GetPlanetPositi
 }
 
 // NewGetMonthlyEphemerisRequest calls the generic GetMonthlyEphemeris builder with application/json body
-func NewGetMonthlyEphemerisRequest(server string, body GetMonthlyEphemerisJSONRequestBody) (*http.Request, error) {
+func NewGetMonthlyEphemerisRequest(server string, params *GetMonthlyEphemerisParams, body GetMonthlyEphemerisJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewGetMonthlyEphemerisRequestWithBody(server, "application/json", bodyReader)
+	return NewGetMonthlyEphemerisRequestWithBody(server, params, "application/json", bodyReader)
 }
 
 // NewGetMonthlyEphemerisRequestWithBody constructs an http.Request for the GetMonthlyEphemeris method, with any body, and a specified content type
-func NewGetMonthlyEphemerisRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+func NewGetMonthlyEphemerisRequestWithBody(server string, params *GetMonthlyEphemerisParams, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	serverURL, err := url.Parse(server)
@@ -54362,6 +54947,33 @@ func NewGetMonthlyEphemerisRequestWithBody(server string, contentType string, bo
 	queryURL, err := serverURL.Parse(operationPath)
 	if err != nil {
 		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Lang != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "lang", *params.Lang, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
 	}
 
 	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
@@ -54597,18 +55209,18 @@ func NewCalculateTransitRequestWithBody(server string, contentType string, body 
 }
 
 // NewGetMonthlyTransitsRequest calls the generic GetMonthlyTransits builder with application/json body
-func NewGetMonthlyTransitsRequest(server string, body GetMonthlyTransitsJSONRequestBody) (*http.Request, error) {
+func NewGetMonthlyTransitsRequest(server string, params *GetMonthlyTransitsParams, body GetMonthlyTransitsJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewGetMonthlyTransitsRequestWithBody(server, "application/json", bodyReader)
+	return NewGetMonthlyTransitsRequestWithBody(server, params, "application/json", bodyReader)
 }
 
 // NewGetMonthlyTransitsRequestWithBody constructs an http.Request for the GetMonthlyTransits method, with any body, and a specified content type
-func NewGetMonthlyTransitsRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+func NewGetMonthlyTransitsRequestWithBody(server string, params *GetMonthlyTransitsParams, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	serverURL, err := url.Parse(server)
@@ -54624,6 +55236,33 @@ func NewGetMonthlyTransitsRequestWithBody(server string, contentType string, bod
 	queryURL, err := serverURL.Parse(operationPath)
 	if err != nil {
 		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Lang != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "lang", *params.Lang, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
 	}
 
 	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
@@ -55300,6 +55939,24 @@ type ClientWithResponsesInterface interface {
 	//
 	// Corresponds with POST /astrology/planets (the `GetPlanetaryPositions` operationId).
 	GetPlanetaryPositionsWithResponse(ctx context.Context, params *GetPlanetaryPositionsParams, body GetPlanetaryPositionsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetPlanetaryPositionsResponse, error)
+
+	// GetMonthlyTropicalEphemerisWithBodyWithResponse Monthly Ephemeris - Daily tropical planetary positions for a month
+	//
+	// Get daily tropical ecliptic positions for all 14 Western bodies (the 10 classical planets Sun through Pluto, the lunar nodes, Chiron, and Black Moon Lilith) for an entire month. Returns longitude, zodiac sign, degree within sign, and retrograde status for each body on each day, calculated at noon UTC. Omit year and month to get the month in progress, so a published ephemeris page stays current without a redeploy. Essential for ephemeris tables, transit tracking, retrograde calendars, and planetary movement charts. Monthly ephemeris API, tropical position table, daily planet transit positions, ecliptic longitude calculator. Verified against NASA JPL Horizons.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /astrology/planets/monthly (the `GetMonthlyTropicalEphemeris` operationId).
+	GetMonthlyTropicalEphemerisWithBodyWithResponse(ctx context.Context, params *GetMonthlyTropicalEphemerisParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetMonthlyTropicalEphemerisResponse, error)
+
+	// GetMonthlyTropicalEphemerisWithResponse Monthly Ephemeris - Daily tropical planetary positions for a month
+	//
+	// Get daily tropical ecliptic positions for all 14 Western bodies (the 10 classical planets Sun through Pluto, the lunar nodes, Chiron, and Black Moon Lilith) for an entire month. Returns longitude, zodiac sign, degree within sign, and retrograde status for each body on each day, calculated at noon UTC. Omit year and month to get the month in progress, so a published ephemeris page stays current without a redeploy. Essential for ephemeris tables, transit tracking, retrograde calendars, and planetary movement charts. Monthly ephemeris API, tropical position table, daily planet transit positions, ecliptic longitude calculator. Verified against NASA JPL Horizons.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /astrology/planets/monthly (the `GetMonthlyTropicalEphemeris` operationId).
+	GetMonthlyTropicalEphemerisWithResponse(ctx context.Context, params *GetMonthlyTropicalEphemerisParams, body GetMonthlyTropicalEphemerisJSONRequestBody, reqEditors ...RequestEditorFn) (*GetMonthlyTropicalEphemerisResponse, error)
 
 	// GenerateProfectionsWithBodyWithResponse Annual profections calculator - lord of the year and yearly time lord by age
 	//
@@ -56734,39 +57391,39 @@ type ClientWithResponsesInterface interface {
 
 	// GetLunarAspectsWithBodyWithResponse Monthly Lunar Aspects - Moon aspect events with all planets for a month
 	//
-	// Track all lunar aspect events for a given month including major and minor aspects. The Moon traverses approximately 13 degrees per day, forming 22 aspect types with each planet. 5 major (conjunction, opposition, trine, square, sextile) and 17 minor (vigintile, semi-sextile, undecile, semi-quintile, novile, semi-square, septile, quintile, binovile, centile, biseptile, tredecile, sesqui-square, bi-quintile, quincunx, triseptile, quadranovile). Returns exact date and time of each Moon aspect event with ternary search refinement to the minute. Essential for muhurta selection, daily panchang analysis, and chandra gochar predictions. Monthly lunar aspects API, Moon transit calendar, chandra drishti ephemeris, minor lunar aspects.
+	// Track all lunar aspect events for a given month including major and minor aspects. The Moon traverses approximately 13 degrees per day, forming 22 aspect types with each planet. 5 major (conjunction, opposition, trine, square, sextile) and 17 minor (vigintile, semi-sextile, undecile, semi-quintile, novile, semi-square, septile, quintile, binovile, centile, biseptile, tredecile, sesqui-square, bi-quintile, quincunx, triseptile, quadranovile). Returns exact date and time of each Moon aspect event with ternary search refinement to the minute. Omit year and month to get the month in progress, so a published lunar calendar stays current without a redeploy. Essential for muhurta selection, daily panchang analysis, and chandra gochar predictions. Monthly lunar aspects API, Moon transit calendar, chandra drishti ephemeris, minor lunar aspects.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with POST /vedic-astrology/aspects/lunar (the `GetLunarAspects` operationId).
-	GetLunarAspectsWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetLunarAspectsResponse, error)
+	GetLunarAspectsWithBodyWithResponse(ctx context.Context, params *GetLunarAspectsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetLunarAspectsResponse, error)
 
 	// GetLunarAspectsWithResponse Monthly Lunar Aspects - Moon aspect events with all planets for a month
 	//
-	// Track all lunar aspect events for a given month including major and minor aspects. The Moon traverses approximately 13 degrees per day, forming 22 aspect types with each planet. 5 major (conjunction, opposition, trine, square, sextile) and 17 minor (vigintile, semi-sextile, undecile, semi-quintile, novile, semi-square, septile, quintile, binovile, centile, biseptile, tredecile, sesqui-square, bi-quintile, quincunx, triseptile, quadranovile). Returns exact date and time of each Moon aspect event with ternary search refinement to the minute. Essential for muhurta selection, daily panchang analysis, and chandra gochar predictions. Monthly lunar aspects API, Moon transit calendar, chandra drishti ephemeris, minor lunar aspects.
+	// Track all lunar aspect events for a given month including major and minor aspects. The Moon traverses approximately 13 degrees per day, forming 22 aspect types with each planet. 5 major (conjunction, opposition, trine, square, sextile) and 17 minor (vigintile, semi-sextile, undecile, semi-quintile, novile, semi-square, septile, quintile, binovile, centile, biseptile, tredecile, sesqui-square, bi-quintile, quincunx, triseptile, quadranovile). Returns exact date and time of each Moon aspect event with ternary search refinement to the minute. Omit year and month to get the month in progress, so a published lunar calendar stays current without a redeploy. Essential for muhurta selection, daily panchang analysis, and chandra gochar predictions. Monthly lunar aspects API, Moon transit calendar, chandra drishti ephemeris, minor lunar aspects.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with POST /vedic-astrology/aspects/lunar (the `GetLunarAspects` operationId).
-	GetLunarAspectsWithResponse(ctx context.Context, body GetLunarAspectsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetLunarAspectsResponse, error)
+	GetLunarAspectsWithResponse(ctx context.Context, params *GetLunarAspectsParams, body GetLunarAspectsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetLunarAspectsResponse, error)
 
 	// GetMonthlyAspectsWithBodyWithResponse Monthly Planetary Aspects - Major and minor aspect events for a month
 	//
-	// Calculate all planetary aspect events (excluding Moon) for a given month. Detects 22 aspect types. 5 major (conjunction, opposition, trine, square, sextile) and 17 minor (vigintile, semi-sextile, undecile, semi-quintile, novile, semi-square, septile, quintile, binovile, centile, biseptile, tredecile, sesqui-square, bi-quintile, quincunx, triseptile, quadranovile). Returns exact date and time of closest approach using ternary search refinement. Uses degree-based aspect methodology on sidereal positions (Lahiri ayanamsa). For Moon-specific aspects, use the /aspects/lunar endpoint. Essential for transit timing, muhurta selection, and monthly astrological forecasting. Monthly planetary aspects API, graha drishti calendar, mutual aspect ephemeris, minor aspects.
+	// Calculate all planetary aspect events (excluding Moon) for a given month. Detects 22 aspect types. 5 major (conjunction, opposition, trine, square, sextile) and 17 minor (vigintile, semi-sextile, undecile, semi-quintile, novile, semi-square, septile, quintile, binovile, centile, biseptile, tredecile, sesqui-square, bi-quintile, quincunx, triseptile, quadranovile). Returns exact date and time of closest approach using ternary search refinement. Uses degree-based aspect methodology on sidereal positions (Lahiri ayanamsa). Omit year and month to get the month in progress, so a published aspect calendar stays current without a redeploy. For Moon-specific aspects, use the /aspects/lunar endpoint. Essential for transit timing, muhurta selection, and monthly astrological forecasting. Monthly planetary aspects API, graha drishti calendar, mutual aspect ephemeris, minor aspects.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with POST /vedic-astrology/aspects/monthly (the `GetMonthlyAspects` operationId).
-	GetMonthlyAspectsWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetMonthlyAspectsResponse, error)
+	GetMonthlyAspectsWithBodyWithResponse(ctx context.Context, params *GetMonthlyAspectsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetMonthlyAspectsResponse, error)
 
 	// GetMonthlyAspectsWithResponse Monthly Planetary Aspects - Major and minor aspect events for a month
 	//
-	// Calculate all planetary aspect events (excluding Moon) for a given month. Detects 22 aspect types. 5 major (conjunction, opposition, trine, square, sextile) and 17 minor (vigintile, semi-sextile, undecile, semi-quintile, novile, semi-square, septile, quintile, binovile, centile, biseptile, tredecile, sesqui-square, bi-quintile, quincunx, triseptile, quadranovile). Returns exact date and time of closest approach using ternary search refinement. Uses degree-based aspect methodology on sidereal positions (Lahiri ayanamsa). For Moon-specific aspects, use the /aspects/lunar endpoint. Essential for transit timing, muhurta selection, and monthly astrological forecasting. Monthly planetary aspects API, graha drishti calendar, mutual aspect ephemeris, minor aspects.
+	// Calculate all planetary aspect events (excluding Moon) for a given month. Detects 22 aspect types. 5 major (conjunction, opposition, trine, square, sextile) and 17 minor (vigintile, semi-sextile, undecile, semi-quintile, novile, semi-square, septile, quintile, binovile, centile, biseptile, tredecile, sesqui-square, bi-quintile, quincunx, triseptile, quadranovile). Returns exact date and time of closest approach using ternary search refinement. Uses degree-based aspect methodology on sidereal positions (Lahiri ayanamsa). Omit year and month to get the month in progress, so a published aspect calendar stays current without a redeploy. For Moon-specific aspects, use the /aspects/lunar endpoint. Essential for transit timing, muhurta selection, and monthly astrological forecasting. Monthly planetary aspects API, graha drishti calendar, mutual aspect ephemeris, minor aspects.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with POST /vedic-astrology/aspects/monthly (the `GetMonthlyAspects` operationId).
-	GetMonthlyAspectsWithResponse(ctx context.Context, body GetMonthlyAspectsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetMonthlyAspectsResponse, error)
+	GetMonthlyAspectsWithResponse(ctx context.Context, params *GetMonthlyAspectsParams, body GetMonthlyAspectsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetMonthlyAspectsResponse, error)
 
 	// ListAvasthasWithResponse List all 17 avastha states - Planetary State Reference
 	//
@@ -57391,21 +58048,21 @@ type ClientWithResponsesInterface interface {
 
 	// GetMonthlyParallelsWithBodyWithResponse Monthly Declination Parallels - Parallel and contraparallel events for a month
 	//
-	// Find all declination parallel and contraparallel events between the 7 visible planets for a given month. Parallels occur when two planets share the same celestial declination (equivalent to conjunction in strength). Contraparallels occur at opposite declinations (equivalent to opposition). Scanned daily at noon UTC. Essential for advanced transit analysis and hidden aspect discovery. Monthly declination parallels API, planetary parallel ephemeris, contraparallel event calendar.
+	// Find all declination parallel and contraparallel events between the 7 visible planets for a given month. Parallels occur when two planets share the same celestial declination (equivalent to conjunction in strength). Contraparallels occur at opposite declinations (equivalent to opposition). Scanned daily at noon UTC. Omit year and month to get the month in progress, so a published parallel calendar stays current without a redeploy. Essential for advanced transit analysis and hidden aspect discovery. Monthly declination parallels API, planetary parallel ephemeris, contraparallel event calendar.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with POST /vedic-astrology/parallels/monthly (the `GetMonthlyParallels` operationId).
-	GetMonthlyParallelsWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetMonthlyParallelsResponse, error)
+	GetMonthlyParallelsWithBodyWithResponse(ctx context.Context, params *GetMonthlyParallelsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetMonthlyParallelsResponse, error)
 
 	// GetMonthlyParallelsWithResponse Monthly Declination Parallels - Parallel and contraparallel events for a month
 	//
-	// Find all declination parallel and contraparallel events between the 7 visible planets for a given month. Parallels occur when two planets share the same celestial declination (equivalent to conjunction in strength). Contraparallels occur at opposite declinations (equivalent to opposition). Scanned daily at noon UTC. Essential for advanced transit analysis and hidden aspect discovery. Monthly declination parallels API, planetary parallel ephemeris, contraparallel event calendar.
+	// Find all declination parallel and contraparallel events between the 7 visible planets for a given month. Parallels occur when two planets share the same celestial declination (equivalent to conjunction in strength). Contraparallels occur at opposite declinations (equivalent to opposition). Scanned daily at noon UTC. Omit year and month to get the month in progress, so a published parallel calendar stays current without a redeploy. Essential for advanced transit analysis and hidden aspect discovery. Monthly declination parallels API, planetary parallel ephemeris, contraparallel event calendar.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with POST /vedic-astrology/parallels/monthly (the `GetMonthlyParallels` operationId).
-	GetMonthlyParallelsWithResponse(ctx context.Context, body GetMonthlyParallelsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetMonthlyParallelsResponse, error)
+	GetMonthlyParallelsWithResponse(ctx context.Context, params *GetMonthlyParallelsParams, body GetMonthlyParallelsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetMonthlyParallelsResponse, error)
 
 	// GetPlanetPositionsWithBodyWithResponse Get planetary positions - Graha Positions API
 	//
@@ -57427,21 +58084,21 @@ type ClientWithResponsesInterface interface {
 
 	// GetMonthlyEphemerisWithBodyWithResponse Monthly Ephemeris - Daily sidereal planetary positions for a month
 	//
-	// Get daily sidereal ecliptic positions for all 9 Vedic planets (Navagraha) for an entire month. Returns longitude, zodiac sign, degree within sign, and retrograde status for each planet on each day. Calculated at noon UTC. Essential for ephemeris generation, transit tracking, and planetary movement visualization. Monthly planetary ephemeris API, sidereal position table, daily graha gochara positions, ecliptic longitude calculator.
+	// Get daily sidereal ecliptic positions for all 9 Vedic planets (Navagraha) for an entire month. Returns longitude, zodiac sign, degree within sign, and retrograde status for each planet on each day. Calculated at noon UTC. Omit year and month to get the month in progress, so a published ephemeris page stays current without a redeploy. Essential for ephemeris generation, transit tracking, and planetary movement visualization. Monthly planetary ephemeris API, sidereal position table, daily graha gochara positions, ecliptic longitude calculator.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with POST /vedic-astrology/planetary-positions/monthly (the `GetMonthlyEphemeris` operationId).
-	GetMonthlyEphemerisWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetMonthlyEphemerisResponse, error)
+	GetMonthlyEphemerisWithBodyWithResponse(ctx context.Context, params *GetMonthlyEphemerisParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetMonthlyEphemerisResponse, error)
 
 	// GetMonthlyEphemerisWithResponse Monthly Ephemeris - Daily sidereal planetary positions for a month
 	//
-	// Get daily sidereal ecliptic positions for all 9 Vedic planets (Navagraha) for an entire month. Returns longitude, zodiac sign, degree within sign, and retrograde status for each planet on each day. Calculated at noon UTC. Essential for ephemeris generation, transit tracking, and planetary movement visualization. Monthly planetary ephemeris API, sidereal position table, daily graha gochara positions, ecliptic longitude calculator.
+	// Get daily sidereal ecliptic positions for all 9 Vedic planets (Navagraha) for an entire month. Returns longitude, zodiac sign, degree within sign, and retrograde status for each planet on each day. Calculated at noon UTC. Omit year and month to get the month in progress, so a published ephemeris page stays current without a redeploy. Essential for ephemeris generation, transit tracking, and planetary movement visualization. Monthly planetary ephemeris API, sidereal position table, daily graha gochara positions, ecliptic longitude calculator.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with POST /vedic-astrology/planetary-positions/monthly (the `GetMonthlyEphemeris` operationId).
-	GetMonthlyEphemerisWithResponse(ctx context.Context, body GetMonthlyEphemerisJSONRequestBody, reqEditors ...RequestEditorFn) (*GetMonthlyEphemerisResponse, error)
+	GetMonthlyEphemerisWithResponse(ctx context.Context, params *GetMonthlyEphemerisParams, body GetMonthlyEphemerisJSONRequestBody, reqEditors ...RequestEditorFn) (*GetMonthlyEphemerisResponse, error)
 
 	// ListRashisWithResponse List all 12 Rashis - Vedic Zodiac Signs Reference
 	//
@@ -57499,21 +58156,21 @@ type ClientWithResponsesInterface interface {
 
 	// GetMonthlyTransitsWithBodyWithResponse Monthly Transit - Planetary sign changes for an entire month
 	//
-	// Get all planetary sign (rashi) changes for a given month. Shows when each planet transitions from one zodiac sign to another. Covers all 9 Vedic planets: Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn, Rahu, Ketu. Includes starting positions at the beginning of the month. Essential for transit prediction, monthly horoscope generation, and muhurta planning. Monthly planetary transit API, gochar calendar, rashi parivartan dates.
+	// Get all planetary sign (rashi) changes for a given month. Shows when each planet transitions from one zodiac sign to another. Covers all 9 Vedic planets: Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn, Rahu, Ketu. Includes starting positions at the beginning of the month. Omit year and month to get the month in progress, so a published gochar calendar stays current without a redeploy. Essential for transit prediction, monthly horoscope generation, and muhurta planning. Monthly planetary transit API, gochar calendar, rashi parivartan dates.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with POST /vedic-astrology/transit/monthly (the `GetMonthlyTransits` operationId).
-	GetMonthlyTransitsWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetMonthlyTransitsResponse, error)
+	GetMonthlyTransitsWithBodyWithResponse(ctx context.Context, params *GetMonthlyTransitsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetMonthlyTransitsResponse, error)
 
 	// GetMonthlyTransitsWithResponse Monthly Transit - Planetary sign changes for an entire month
 	//
-	// Get all planetary sign (rashi) changes for a given month. Shows when each planet transitions from one zodiac sign to another. Covers all 9 Vedic planets: Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn, Rahu, Ketu. Includes starting positions at the beginning of the month. Essential for transit prediction, monthly horoscope generation, and muhurta planning. Monthly planetary transit API, gochar calendar, rashi parivartan dates.
+	// Get all planetary sign (rashi) changes for a given month. Shows when each planet transitions from one zodiac sign to another. Covers all 9 Vedic planets: Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn, Rahu, Ketu. Includes starting positions at the beginning of the month. Omit year and month to get the month in progress, so a published gochar calendar stays current without a redeploy. Essential for transit prediction, monthly horoscope generation, and muhurta planning. Monthly planetary transit API, gochar calendar, rashi parivartan dates.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with POST /vedic-astrology/transit/monthly (the `GetMonthlyTransits` operationId).
-	GetMonthlyTransitsWithResponse(ctx context.Context, body GetMonthlyTransitsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetMonthlyTransitsResponse, error)
+	GetMonthlyTransitsWithResponse(ctx context.Context, params *GetMonthlyTransitsParams, body GetMonthlyTransitsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetMonthlyTransitsResponse, error)
 
 	// GetUpagrahaPositionsWithBodyWithResponse Get upagraha (sub-planet) positions - Upagraha Calculator API
 	//
@@ -62572,6 +63229,166 @@ func (r GetPlanetaryPositionsResponse) ContentType() string {
 	return ""
 }
 
+// GetMonthlyTropicalEphemerisResponse405Headers the declared response headers of an HTTP 405 response for GetMonthlyTropicalEphemeris
+type GetMonthlyTropicalEphemerisResponse405Headers struct {
+	Allow *string
+}
+
+type GetMonthlyTropicalEphemerisResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// Days Daily planetary position entries for the entire month.
+		Days []struct {
+			// Date Date in YYYY-MM-DD format.
+			Date string `json:"date"`
+
+			// Positions Tropical positions of all 14 Western bodies on this date at noon UTC.
+			Positions []struct {
+				// DegreeInSign Degrees traversed within the current sign (0-30). Useful for precise transit tracking and for printing a position as sign plus degree.
+				DegreeInSign float32 `json:"degreeInSign"`
+
+				// IsRetrograde Whether the body is in apparent retrograde motion on this date. The lunar nodes are always retrograde and Black Moon Lilith is always direct.
+				IsRetrograde bool `json:"isRetrograde"`
+
+				// Longitude Tropical ecliptic longitude in degrees (0-360), measured from the vernal equinox. This is the Western zodiac, not the sidereal one, so the two differ by the ayanamsa of roughly 24 degrees.
+				Longitude float32 `json:"longitude"`
+
+				// Planet Body name, one of the 14 bodies Western astrology reads: Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto, North Node, South Node, Chiron, Black Moon Lilith. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use planetLocalized for anything a reader sees.
+				Planet string `json:"planet"`
+
+				// PlanetLocalized Body name in the requested language, for display. Present only when lang is set to a language other than English, since in English it would repeat planet exactly.
+				PlanetLocalized *string `json:"planetLocalized,omitempty"`
+
+				// Sign Tropical zodiac sign the body occupies on this date. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use signLocalized for anything a reader sees.
+				Sign string `json:"sign"`
+
+				// SignLocalized Zodiac sign name in the requested language, for display. Present only when lang is set to a language other than English, since in English it would repeat sign exactly.
+				SignLocalized *string `json:"signLocalized,omitempty"`
+			} `json:"positions"`
+		} `json:"days"`
+
+		// Month Month of the ephemeris. Echoes the month that was requested, or the current UTC month when it was omitted.
+		Month float32 `json:"month"`
+
+		// Year Year of the ephemeris. Echoes the year that was requested, or the current UTC year when it was omitted.
+		Year float32 `json:"year"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON405 the response for an HTTP 405 `application/json` response
+	JSON405 *ErrorResponse
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+	// Headers405 the parsed response headers for an HTTP 405 response
+	Headers405 *GetMonthlyTropicalEphemerisResponse405Headers
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetMonthlyTropicalEphemerisResponse) GetJSON200() *struct {
+	// Days Daily planetary position entries for the entire month.
+	Days []struct {
+		// Date Date in YYYY-MM-DD format.
+		Date string `json:"date"`
+
+		// Positions Tropical positions of all 14 Western bodies on this date at noon UTC.
+		Positions []struct {
+			// DegreeInSign Degrees traversed within the current sign (0-30). Useful for precise transit tracking and for printing a position as sign plus degree.
+			DegreeInSign float32 `json:"degreeInSign"`
+
+			// IsRetrograde Whether the body is in apparent retrograde motion on this date. The lunar nodes are always retrograde and Black Moon Lilith is always direct.
+			IsRetrograde bool `json:"isRetrograde"`
+
+			// Longitude Tropical ecliptic longitude in degrees (0-360), measured from the vernal equinox. This is the Western zodiac, not the sidereal one, so the two differ by the ayanamsa of roughly 24 degrees.
+			Longitude float32 `json:"longitude"`
+
+			// Planet Body name, one of the 14 bodies Western astrology reads: Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto, North Node, South Node, Chiron, Black Moon Lilith. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use planetLocalized for anything a reader sees.
+			Planet string `json:"planet"`
+
+			// PlanetLocalized Body name in the requested language, for display. Present only when lang is set to a language other than English, since in English it would repeat planet exactly.
+			PlanetLocalized *string `json:"planetLocalized,omitempty"`
+
+			// Sign Tropical zodiac sign the body occupies on this date. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use signLocalized for anything a reader sees.
+			Sign string `json:"sign"`
+
+			// SignLocalized Zodiac sign name in the requested language, for display. Present only when lang is set to a language other than English, since in English it would repeat sign exactly.
+			SignLocalized *string `json:"signLocalized,omitempty"`
+		} `json:"positions"`
+	} `json:"days"`
+
+	// Month Month of the ephemeris. Echoes the month that was requested, or the current UTC month when it was omitted.
+	Month float32 `json:"month"`
+
+	// Year Year of the ephemeris. Echoes the year that was requested, or the current UTC year when it was omitted.
+	Year float32 `json:"year"`
+} {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r GetMonthlyTropicalEphemerisResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r GetMonthlyTropicalEphemerisResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON405 returns the response for an HTTP 405 `application/json` response
+func (r GetMonthlyTropicalEphemerisResponse) GetJSON405() *ErrorResponse {
+	return r.JSON405
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r GetMonthlyTropicalEphemerisResponse) GetJSON429() *ErrorResponse {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GetMonthlyTropicalEphemerisResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r GetMonthlyTropicalEphemerisResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetMonthlyTropicalEphemerisResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetMonthlyTropicalEphemerisResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// Bytes is a convenience method to retrieve the raw bytes from the HTTP response
+func (r GetMonthlyTropicalEphemerisResponse) Bytes() []byte {
+	return r.Body
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetMonthlyTropicalEphemerisResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
 // GenerateProfectionsResponse405Headers the declared response headers of an HTTP 405 response for GenerateProfections
 type GenerateProfectionsResponse405Headers struct {
 	Allow *string
@@ -63759,17 +64576,26 @@ type CalculateSynastryResponse struct {
 			// Orb Distance from exact aspect in degrees. Tighter orb means stronger influence.
 			Orb float32 `json:"orb"`
 
-			// Planet1 Planet from person 1 chart.
+			// Planet1 Planet from person 1 chart. Always English, whatever the lang parameter says. Use planet1Localized for anything a reader sees.
 			Planet1 string `json:"planet1"`
 
-			// Planet2 Planet from person 2 chart.
+			// Planet1Localized Person 1 planet name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			Planet1Localized *string `json:"planet1Localized,omitempty"`
+
+			// Planet2 Planet from person 2 chart. Always English, whatever the lang parameter says. Use planet2Localized for anything a reader sees.
 			Planet2 string `json:"planet2"`
+
+			// Planet2Localized Person 2 planet name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			Planet2Localized *string `json:"planet2Localized,omitempty"`
 
 			// Strength Aspect strength percentage (0-100) based on orb tightness.
 			Strength float32 `json:"strength"`
 
-			// Type Aspect type (CONJUNCTION, OPPOSITION, TRINE, SQUARE, SEXTILE, etc.).
+			// Type Aspect type (CONJUNCTION, OPPOSITION, TRINE, SQUARE, SEXTILE, etc.). Always English, whatever the lang parameter says. Use typeLocalized for anything a reader sees.
 			Type string `json:"type"`
+
+			// TypeLocalized Aspect type name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			TypeLocalized *string `json:"typeLocalized,omitempty"`
 		} `json:"interAspects"`
 
 		// Person1 Person 1 chart highlights: Ascendant, Sun sign, Moon sign, and plotting positions.
@@ -63779,12 +64605,18 @@ type CalculateSynastryResponse struct {
 				// Degree Degree within the Ascendant sign (0-29.999).
 				Degree float32 `json:"degree"`
 
-				// Sign Ascendant (rising sign) of this person.
+				// Sign Ascendant (rising sign) of this person. Always English, whatever the lang parameter says. Use signLocalized for anything a reader sees.
 				Sign string `json:"sign"`
+
+				// SignLocalized Ascendant sign name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				SignLocalized *string `json:"signLocalized,omitempty"`
 			} `json:"ascendant"`
 
-			// MoonSign Moon sign of this person. Emotional nature and inner needs.
+			// MoonSign Moon sign of this person. Emotional nature and inner needs. Always English, whatever the lang parameter says. Use moonSignLocalized for anything a reader sees.
 			MoonSign string `json:"moonSign"`
+
+			// MoonSignLocalized Moon sign name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			MoonSignLocalized *string `json:"moonSignLocalized,omitempty"`
 
 			// Name Display name if provided in the request.
 			Name *string `json:"name,omitempty"`
@@ -63803,15 +64635,24 @@ type CalculateSynastryResponse struct {
 				// Longitude Ecliptic longitude in degrees (0-360) measured from 0 Aries. This is the value a wheel plots.
 				Longitude float32 `json:"longitude"`
 
-				// Name Planet or point name. Matches the names used in interAspects.
+				// Name Planet or point name. Matches the names used in interAspects. Always English, whatever the lang parameter says. Use nameLocalized for anything a reader sees.
 				Name string `json:"name"`
 
-				// Sign Zodiac sign containing the planet.
+				// NameLocalized Planet or point name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				NameLocalized *string `json:"nameLocalized,omitempty"`
+
+				// Sign Zodiac sign containing the planet. Always English, whatever the lang parameter says. Use signLocalized for anything a reader sees.
 				Sign string `json:"sign"`
+
+				// SignLocalized Zodiac sign name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				SignLocalized *string `json:"signLocalized,omitempty"`
 			} `json:"planets"`
 
-			// SunSign Sun sign (zodiac sign) of this person. Core identity and ego expression.
+			// SunSign Sun sign (zodiac sign) of this person. Core identity and ego expression. Always English, whatever the lang parameter says. Use sunSignLocalized for anything a reader sees.
 			SunSign string `json:"sunSign"`
+
+			// SunSignLocalized Sun sign name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			SunSignLocalized *string `json:"sunSignLocalized,omitempty"`
 		} `json:"person1"`
 
 		// Person2 Person 2 chart highlights: Ascendant, Sun sign, Moon sign, and plotting positions.
@@ -63821,12 +64662,18 @@ type CalculateSynastryResponse struct {
 				// Degree Degree within the Ascendant sign (0-29.999).
 				Degree float32 `json:"degree"`
 
-				// Sign Ascendant (rising sign) of this person.
+				// Sign Ascendant (rising sign) of this person. Always English, whatever the lang parameter says. Use signLocalized for anything a reader sees.
 				Sign string `json:"sign"`
+
+				// SignLocalized Ascendant sign name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				SignLocalized *string `json:"signLocalized,omitempty"`
 			} `json:"ascendant"`
 
-			// MoonSign Moon sign of this person. Emotional nature and inner needs.
+			// MoonSign Moon sign of this person. Emotional nature and inner needs. Always English, whatever the lang parameter says. Use moonSignLocalized for anything a reader sees.
 			MoonSign string `json:"moonSign"`
+
+			// MoonSignLocalized Moon sign name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			MoonSignLocalized *string `json:"moonSignLocalized,omitempty"`
 
 			// Name Display name if provided in the request.
 			Name *string `json:"name,omitempty"`
@@ -63845,15 +64692,24 @@ type CalculateSynastryResponse struct {
 				// Longitude Ecliptic longitude in degrees (0-360) measured from 0 Aries. This is the value a wheel plots.
 				Longitude float32 `json:"longitude"`
 
-				// Name Planet or point name. Matches the names used in interAspects.
+				// Name Planet or point name. Matches the names used in interAspects. Always English, whatever the lang parameter says. Use nameLocalized for anything a reader sees.
 				Name string `json:"name"`
 
-				// Sign Zodiac sign containing the planet.
+				// NameLocalized Planet or point name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				NameLocalized *string `json:"nameLocalized,omitempty"`
+
+				// Sign Zodiac sign containing the planet. Always English, whatever the lang parameter says. Use signLocalized for anything a reader sees.
 				Sign string `json:"sign"`
+
+				// SignLocalized Zodiac sign name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				SignLocalized *string `json:"signLocalized,omitempty"`
 			} `json:"planets"`
 
-			// SunSign Sun sign (zodiac sign) of this person. Core identity and ego expression.
+			// SunSign Sun sign (zodiac sign) of this person. Core identity and ego expression. Always English, whatever the lang parameter says. Use sunSignLocalized for anything a reader sees.
 			SunSign string `json:"sunSign"`
+
+			// SunSignLocalized Sun sign name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			SunSignLocalized *string `json:"sunSignLocalized,omitempty"`
 		} `json:"person2"`
 
 		// Summary Synastry aspect summary showing the balance of harmonious vs challenging inter-chart connections.
@@ -63940,17 +64796,26 @@ func (r CalculateSynastryResponse) GetJSON200() *struct {
 		// Orb Distance from exact aspect in degrees. Tighter orb means stronger influence.
 		Orb float32 `json:"orb"`
 
-		// Planet1 Planet from person 1 chart.
+		// Planet1 Planet from person 1 chart. Always English, whatever the lang parameter says. Use planet1Localized for anything a reader sees.
 		Planet1 string `json:"planet1"`
 
-		// Planet2 Planet from person 2 chart.
+		// Planet1Localized Person 1 planet name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		Planet1Localized *string `json:"planet1Localized,omitempty"`
+
+		// Planet2 Planet from person 2 chart. Always English, whatever the lang parameter says. Use planet2Localized for anything a reader sees.
 		Planet2 string `json:"planet2"`
+
+		// Planet2Localized Person 2 planet name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		Planet2Localized *string `json:"planet2Localized,omitempty"`
 
 		// Strength Aspect strength percentage (0-100) based on orb tightness.
 		Strength float32 `json:"strength"`
 
-		// Type Aspect type (CONJUNCTION, OPPOSITION, TRINE, SQUARE, SEXTILE, etc.).
+		// Type Aspect type (CONJUNCTION, OPPOSITION, TRINE, SQUARE, SEXTILE, etc.). Always English, whatever the lang parameter says. Use typeLocalized for anything a reader sees.
 		Type string `json:"type"`
+
+		// TypeLocalized Aspect type name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		TypeLocalized *string `json:"typeLocalized,omitempty"`
 	} `json:"interAspects"`
 
 	// Person1 Person 1 chart highlights: Ascendant, Sun sign, Moon sign, and plotting positions.
@@ -63960,12 +64825,18 @@ func (r CalculateSynastryResponse) GetJSON200() *struct {
 			// Degree Degree within the Ascendant sign (0-29.999).
 			Degree float32 `json:"degree"`
 
-			// Sign Ascendant (rising sign) of this person.
+			// Sign Ascendant (rising sign) of this person. Always English, whatever the lang parameter says. Use signLocalized for anything a reader sees.
 			Sign string `json:"sign"`
+
+			// SignLocalized Ascendant sign name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			SignLocalized *string `json:"signLocalized,omitempty"`
 		} `json:"ascendant"`
 
-		// MoonSign Moon sign of this person. Emotional nature and inner needs.
+		// MoonSign Moon sign of this person. Emotional nature and inner needs. Always English, whatever the lang parameter says. Use moonSignLocalized for anything a reader sees.
 		MoonSign string `json:"moonSign"`
+
+		// MoonSignLocalized Moon sign name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		MoonSignLocalized *string `json:"moonSignLocalized,omitempty"`
 
 		// Name Display name if provided in the request.
 		Name *string `json:"name,omitempty"`
@@ -63984,15 +64855,24 @@ func (r CalculateSynastryResponse) GetJSON200() *struct {
 			// Longitude Ecliptic longitude in degrees (0-360) measured from 0 Aries. This is the value a wheel plots.
 			Longitude float32 `json:"longitude"`
 
-			// Name Planet or point name. Matches the names used in interAspects.
+			// Name Planet or point name. Matches the names used in interAspects. Always English, whatever the lang parameter says. Use nameLocalized for anything a reader sees.
 			Name string `json:"name"`
 
-			// Sign Zodiac sign containing the planet.
+			// NameLocalized Planet or point name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			NameLocalized *string `json:"nameLocalized,omitempty"`
+
+			// Sign Zodiac sign containing the planet. Always English, whatever the lang parameter says. Use signLocalized for anything a reader sees.
 			Sign string `json:"sign"`
+
+			// SignLocalized Zodiac sign name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			SignLocalized *string `json:"signLocalized,omitempty"`
 		} `json:"planets"`
 
-		// SunSign Sun sign (zodiac sign) of this person. Core identity and ego expression.
+		// SunSign Sun sign (zodiac sign) of this person. Core identity and ego expression. Always English, whatever the lang parameter says. Use sunSignLocalized for anything a reader sees.
 		SunSign string `json:"sunSign"`
+
+		// SunSignLocalized Sun sign name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		SunSignLocalized *string `json:"sunSignLocalized,omitempty"`
 	} `json:"person1"`
 
 	// Person2 Person 2 chart highlights: Ascendant, Sun sign, Moon sign, and plotting positions.
@@ -64002,12 +64882,18 @@ func (r CalculateSynastryResponse) GetJSON200() *struct {
 			// Degree Degree within the Ascendant sign (0-29.999).
 			Degree float32 `json:"degree"`
 
-			// Sign Ascendant (rising sign) of this person.
+			// Sign Ascendant (rising sign) of this person. Always English, whatever the lang parameter says. Use signLocalized for anything a reader sees.
 			Sign string `json:"sign"`
+
+			// SignLocalized Ascendant sign name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			SignLocalized *string `json:"signLocalized,omitempty"`
 		} `json:"ascendant"`
 
-		// MoonSign Moon sign of this person. Emotional nature and inner needs.
+		// MoonSign Moon sign of this person. Emotional nature and inner needs. Always English, whatever the lang parameter says. Use moonSignLocalized for anything a reader sees.
 		MoonSign string `json:"moonSign"`
+
+		// MoonSignLocalized Moon sign name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		MoonSignLocalized *string `json:"moonSignLocalized,omitempty"`
 
 		// Name Display name if provided in the request.
 		Name *string `json:"name,omitempty"`
@@ -64026,15 +64912,24 @@ func (r CalculateSynastryResponse) GetJSON200() *struct {
 			// Longitude Ecliptic longitude in degrees (0-360) measured from 0 Aries. This is the value a wheel plots.
 			Longitude float32 `json:"longitude"`
 
-			// Name Planet or point name. Matches the names used in interAspects.
+			// Name Planet or point name. Matches the names used in interAspects. Always English, whatever the lang parameter says. Use nameLocalized for anything a reader sees.
 			Name string `json:"name"`
 
-			// Sign Zodiac sign containing the planet.
+			// NameLocalized Planet or point name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			NameLocalized *string `json:"nameLocalized,omitempty"`
+
+			// Sign Zodiac sign containing the planet. Always English, whatever the lang parameter says. Use signLocalized for anything a reader sees.
 			Sign string `json:"sign"`
+
+			// SignLocalized Zodiac sign name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			SignLocalized *string `json:"signLocalized,omitempty"`
 		} `json:"planets"`
 
-		// SunSign Sun sign (zodiac sign) of this person. Core identity and ego expression.
+		// SunSign Sun sign (zodiac sign) of this person. Core identity and ego expression. Always English, whatever the lang parameter says. Use sunSignLocalized for anything a reader sees.
 		SunSign string `json:"sunSign"`
+
+		// SunSignLocalized Sun sign name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		SunSignLocalized *string `json:"sunSignLocalized,omitempty"`
 	} `json:"person2"`
 
 	// Summary Synastry aspect summary showing the balance of harmonious vs challenging inter-chart connections.
@@ -64144,8 +65039,14 @@ type CalculateTransitAspectsResponse struct {
 			// Planet1 First planet in the aspect pair.
 			Planet1 CalculateTransitAspects200JSONResponseBodyAspectsPlanet1 `json:"planet1"`
 
+			// Planet1Localized First planet name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			Planet1Localized *string `json:"planet1Localized,omitempty"`
+
 			// Planet2 Second planet in the aspect pair.
 			Planet2 CalculateTransitAspects200JSONResponseBodyAspectsPlanet2 `json:"planet2"`
+
+			// Planet2Localized Second planet name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			Planet2Localized *string `json:"planet2Localized,omitempty"`
 
 			// Strength Aspect strength percentage (0-100). Based on orb tightness relative to the allowed maximum.
 			Strength              float32 `json:"strength"`
@@ -64168,6 +65069,9 @@ type CalculateTransitAspectsResponse struct {
 
 			// Type Aspect type. Major: conjunction (0), opposition (180), trine (120), square (90), sextile (60). Minor: semi-sextile, quincunx, semi-square, sesquiquadrate.
 			Type CalculateTransitAspects200JSONResponseBodyAspectsType `json:"type"`
+
+			// TypeLocalized Aspect type name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			TypeLocalized *string `json:"typeLocalized,omitempty"`
 		} `json:"aspects"`
 
 		// HouseSystem House system actually used for the natal cusps behind every house number in this response. Differs from the requested system only above the polar circle, where quadrant systems fall back to Whole Sign.
@@ -64193,8 +65097,14 @@ type CalculateTransitAspectsResponse struct {
 			// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee).
 			Name CalculateTransitAspects200JSONResponseBodyNatalPlanetsName `json:"name"`
 
+			// NameLocalized Body name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			NameLocalized *string `json:"nameLocalized,omitempty"`
+
 			// Sign Tropical zodiac sign this planet occupies. Determined by 30-degree divisions of ecliptic longitude.
 			Sign string `json:"sign"`
+
+			// SignLocalized Zodiac sign name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			SignLocalized *string `json:"signLocalized,omitempty"`
 
 			// Speed Daily motion in degrees per day. Negative values indicate retrograde motion.
 			Speed float32 `json:"speed"`
@@ -64231,14 +65141,23 @@ type CalculateTransitAspectsResponse struct {
 				// Planet1 First planet in the aspect pair.
 				Planet1 CalculateTransitAspects200JSONResponseBodySummaryStrongestPlanet1 `json:"planet1"`
 
+				// Planet1Localized First planet name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				Planet1Localized *string `json:"planet1Localized,omitempty"`
+
 				// Planet2 Second planet in the aspect pair.
 				Planet2 CalculateTransitAspects200JSONResponseBodySummaryStrongestPlanet2 `json:"planet2"`
+
+				// Planet2Localized Second planet name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				Planet2Localized *string `json:"planet2Localized,omitempty"`
 
 				// Strength Aspect strength percentage (0-100). Based on orb tightness relative to the allowed maximum.
 				Strength float32 `json:"strength"`
 
 				// Type Aspect type. Major: conjunction (0), opposition (180), trine (120), square (90), sextile (60). Minor: semi-sextile, quincunx, semi-square, sesquiquadrate.
 				Type CalculateTransitAspects200JSONResponseBodySummaryStrongestType `json:"type"`
+
+				// TypeLocalized Aspect type name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				TypeLocalized *string `json:"typeLocalized,omitempty"`
 			} `json:"strongest"`
 
 			// Total Total number of transit-to-natal aspects found.
@@ -64268,8 +65187,14 @@ type CalculateTransitAspectsResponse struct {
 			// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee).
 			Name CalculateTransitAspects200JSONResponseBodyTransitPlanetsName `json:"name"`
 
+			// NameLocalized Body name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			NameLocalized *string `json:"nameLocalized,omitempty"`
+
 			// Sign Tropical zodiac sign this planet occupies. Determined by 30-degree divisions of ecliptic longitude.
 			Sign string `json:"sign"`
+
+			// SignLocalized Zodiac sign name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			SignLocalized *string `json:"signLocalized,omitempty"`
 
 			// Speed Daily motion in degrees per day. Negative values indicate retrograde motion.
 			Speed float32 `json:"speed"`
@@ -64308,8 +65233,14 @@ func (r CalculateTransitAspectsResponse) GetJSON200() *struct {
 		// Planet1 First planet in the aspect pair.
 		Planet1 CalculateTransitAspects200JSONResponseBodyAspectsPlanet1 `json:"planet1"`
 
+		// Planet1Localized First planet name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		Planet1Localized *string `json:"planet1Localized,omitempty"`
+
 		// Planet2 Second planet in the aspect pair.
 		Planet2 CalculateTransitAspects200JSONResponseBodyAspectsPlanet2 `json:"planet2"`
+
+		// Planet2Localized Second planet name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		Planet2Localized *string `json:"planet2Localized,omitempty"`
 
 		// Strength Aspect strength percentage (0-100). Based on orb tightness relative to the allowed maximum.
 		Strength              float32 `json:"strength"`
@@ -64332,6 +65263,9 @@ func (r CalculateTransitAspectsResponse) GetJSON200() *struct {
 
 		// Type Aspect type. Major: conjunction (0), opposition (180), trine (120), square (90), sextile (60). Minor: semi-sextile, quincunx, semi-square, sesquiquadrate.
 		Type CalculateTransitAspects200JSONResponseBodyAspectsType `json:"type"`
+
+		// TypeLocalized Aspect type name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		TypeLocalized *string `json:"typeLocalized,omitempty"`
 	} `json:"aspects"`
 
 	// HouseSystem House system actually used for the natal cusps behind every house number in this response. Differs from the requested system only above the polar circle, where quadrant systems fall back to Whole Sign.
@@ -64357,8 +65291,14 @@ func (r CalculateTransitAspectsResponse) GetJSON200() *struct {
 		// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee).
 		Name CalculateTransitAspects200JSONResponseBodyNatalPlanetsName `json:"name"`
 
+		// NameLocalized Body name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		NameLocalized *string `json:"nameLocalized,omitempty"`
+
 		// Sign Tropical zodiac sign this planet occupies. Determined by 30-degree divisions of ecliptic longitude.
 		Sign string `json:"sign"`
+
+		// SignLocalized Zodiac sign name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		SignLocalized *string `json:"signLocalized,omitempty"`
 
 		// Speed Daily motion in degrees per day. Negative values indicate retrograde motion.
 		Speed float32 `json:"speed"`
@@ -64395,14 +65335,23 @@ func (r CalculateTransitAspectsResponse) GetJSON200() *struct {
 			// Planet1 First planet in the aspect pair.
 			Planet1 CalculateTransitAspects200JSONResponseBodySummaryStrongestPlanet1 `json:"planet1"`
 
+			// Planet1Localized First planet name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			Planet1Localized *string `json:"planet1Localized,omitempty"`
+
 			// Planet2 Second planet in the aspect pair.
 			Planet2 CalculateTransitAspects200JSONResponseBodySummaryStrongestPlanet2 `json:"planet2"`
+
+			// Planet2Localized Second planet name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			Planet2Localized *string `json:"planet2Localized,omitempty"`
 
 			// Strength Aspect strength percentage (0-100). Based on orb tightness relative to the allowed maximum.
 			Strength float32 `json:"strength"`
 
 			// Type Aspect type. Major: conjunction (0), opposition (180), trine (120), square (90), sextile (60). Minor: semi-sextile, quincunx, semi-square, sesquiquadrate.
 			Type CalculateTransitAspects200JSONResponseBodySummaryStrongestType `json:"type"`
+
+			// TypeLocalized Aspect type name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			TypeLocalized *string `json:"typeLocalized,omitempty"`
 		} `json:"strongest"`
 
 		// Total Total number of transit-to-natal aspects found.
@@ -64432,8 +65381,14 @@ func (r CalculateTransitAspectsResponse) GetJSON200() *struct {
 		// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee).
 		Name CalculateTransitAspects200JSONResponseBodyTransitPlanetsName `json:"name"`
 
+		// NameLocalized Body name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		NameLocalized *string `json:"nameLocalized,omitempty"`
+
 		// Sign Tropical zodiac sign this planet occupies. Determined by 30-degree divisions of ecliptic longitude.
 		Sign string `json:"sign"`
+
+		// SignLocalized Zodiac sign name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		SignLocalized *string `json:"signLocalized,omitempty"`
 
 		// Speed Daily motion in degrees per day. Negative values indicate retrograde motion.
 		Speed float32 `json:"speed"`
@@ -80154,8 +81109,11 @@ type GetLunarAspectsResponse struct {
 			// Orb Angular distance from exact lunar aspect in degrees. Smaller orb = stronger Moon influence.
 			Orb float32 `json:"orb"`
 
-			// Planet Planet that the Moon forms an aspect with.
+			// Planet Planet that the Moon forms an aspect with. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use planetLocalized for anything a reader sees.
 			Planet string `json:"planet"`
+
+			// PlanetLocalized Planet name in the requested language, for display. Present only when lang is set to a language other than English, since in English it would repeat planet exactly.
+			PlanetLocalized *string `json:"planetLocalized,omitempty"`
 
 			// PlanetLongitude Sidereal longitude of the aspected planet at the time of aspect.
 			PlanetLongitude float32 `json:"planetLongitude"`
@@ -80164,13 +81122,13 @@ type GetLunarAspectsResponse struct {
 			Time string `json:"time"`
 		} `json:"events"`
 
-		// Month Month of the lunar aspect analysis.
+		// Month Month of the lunar aspect analysis. Echoes the month that was requested, or the current UTC month when it was omitted.
 		Month float32 `json:"month"`
 
 		// Timezone Timezone offset from UTC in hours that the event dates and times are reported in. Echoes the requested timezone.
 		Timezone float32 `json:"timezone"`
 
-		// Year Year of the lunar aspect analysis.
+		// Year Year of the lunar aspect analysis. Echoes the year that was requested, or the current UTC year when it was omitted.
 		Year float32 `json:"year"`
 	}
 	// JSON400 the response for an HTTP 400 `application/json` response
@@ -80209,8 +81167,11 @@ func (r GetLunarAspectsResponse) GetJSON200() *struct {
 		// Orb Angular distance from exact lunar aspect in degrees. Smaller orb = stronger Moon influence.
 		Orb float32 `json:"orb"`
 
-		// Planet Planet that the Moon forms an aspect with.
+		// Planet Planet that the Moon forms an aspect with. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use planetLocalized for anything a reader sees.
 		Planet string `json:"planet"`
+
+		// PlanetLocalized Planet name in the requested language, for display. Present only when lang is set to a language other than English, since in English it would repeat planet exactly.
+		PlanetLocalized *string `json:"planetLocalized,omitempty"`
 
 		// PlanetLongitude Sidereal longitude of the aspected planet at the time of aspect.
 		PlanetLongitude float32 `json:"planetLongitude"`
@@ -80219,13 +81180,13 @@ func (r GetLunarAspectsResponse) GetJSON200() *struct {
 		Time string `json:"time"`
 	} `json:"events"`
 
-	// Month Month of the lunar aspect analysis.
+	// Month Month of the lunar aspect analysis. Echoes the month that was requested, or the current UTC month when it was omitted.
 	Month float32 `json:"month"`
 
 	// Timezone Timezone offset from UTC in hours that the event dates and times are reported in. Echoes the requested timezone.
 	Timezone float32 `json:"timezone"`
 
-	// Year Year of the lunar aspect analysis.
+	// Year Year of the lunar aspect analysis. Echoes the year that was requested, or the current UTC year when it was omitted.
 	Year float32 `json:"year"`
 } {
 	return r.JSON200
@@ -80317,14 +81278,20 @@ type GetMonthlyAspectsResponse struct {
 			// Orb Angular distance from exact aspect in degrees at closest approach. Smaller orb indicates a more powerful aspect.
 			Orb float32 `json:"orb"`
 
-			// Planet1 First planet forming the aspect. One of the Navagraha, Sun through Ketu.
+			// Planet1 First planet forming the aspect. One of the Navagraha, Sun through Ketu. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use planet1Localized for anything a reader sees.
 			Planet1 string `json:"planet1"`
+
+			// Planet1Localized First planet name in the requested language, for display. Present only when lang is set to a language other than English, since in English it would repeat planet1 exactly.
+			Planet1Localized *string `json:"planet1Localized,omitempty"`
 
 			// Planet1Longitude Sidereal longitude of the first planet at time of aspect (Lahiri ayanamsa).
 			Planet1Longitude float32 `json:"planet1Longitude"`
 
-			// Planet2 Second planet forming the aspect.
+			// Planet2 Second planet forming the aspect. Always English, whatever the lang parameter says. Use planet2Localized for anything a reader sees.
 			Planet2 string `json:"planet2"`
+
+			// Planet2Localized Second planet name in the requested language, for display. Present only when lang is set to a language other than English.
+			Planet2Localized *string `json:"planet2Localized,omitempty"`
 
 			// Planet2Longitude Sidereal longitude of the second planet at time of aspect.
 			Planet2Longitude float32 `json:"planet2Longitude"`
@@ -80333,13 +81300,13 @@ type GetMonthlyAspectsResponse struct {
 			Time string `json:"time"`
 		} `json:"events"`
 
-		// Month Month of the aspect analysis.
+		// Month Month of the aspect analysis. Echoes the month that was requested, or the current UTC month when it was omitted.
 		Month float32 `json:"month"`
 
 		// Timezone Timezone offset from UTC in hours that the event dates and times are reported in. Echoes the requested timezone.
 		Timezone float32 `json:"timezone"`
 
-		// Year Year of the aspect analysis.
+		// Year Year of the aspect analysis. Echoes the year that was requested, or the current UTC year when it was omitted.
 		Year float32 `json:"year"`
 	}
 	// JSON400 the response for an HTTP 400 `application/json` response
@@ -80375,14 +81342,20 @@ func (r GetMonthlyAspectsResponse) GetJSON200() *struct {
 		// Orb Angular distance from exact aspect in degrees at closest approach. Smaller orb indicates a more powerful aspect.
 		Orb float32 `json:"orb"`
 
-		// Planet1 First planet forming the aspect. One of the Navagraha, Sun through Ketu.
+		// Planet1 First planet forming the aspect. One of the Navagraha, Sun through Ketu. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use planet1Localized for anything a reader sees.
 		Planet1 string `json:"planet1"`
+
+		// Planet1Localized First planet name in the requested language, for display. Present only when lang is set to a language other than English, since in English it would repeat planet1 exactly.
+		Planet1Localized *string `json:"planet1Localized,omitempty"`
 
 		// Planet1Longitude Sidereal longitude of the first planet at time of aspect (Lahiri ayanamsa).
 		Planet1Longitude float32 `json:"planet1Longitude"`
 
-		// Planet2 Second planet forming the aspect.
+		// Planet2 Second planet forming the aspect. Always English, whatever the lang parameter says. Use planet2Localized for anything a reader sees.
 		Planet2 string `json:"planet2"`
+
+		// Planet2Localized Second planet name in the requested language, for display. Present only when lang is set to a language other than English.
+		Planet2Localized *string `json:"planet2Localized,omitempty"`
 
 		// Planet2Longitude Sidereal longitude of the second planet at time of aspect.
 		Planet2Longitude float32 `json:"planet2Longitude"`
@@ -80391,13 +81364,13 @@ func (r GetMonthlyAspectsResponse) GetJSON200() *struct {
 		Time string `json:"time"`
 	} `json:"events"`
 
-	// Month Month of the aspect analysis.
+	// Month Month of the aspect analysis. Echoes the month that was requested, or the current UTC month when it was omitted.
 	Month float32 `json:"month"`
 
 	// Timezone Timezone offset from UTC in hours that the event dates and times are reported in. Echoes the requested timezone.
 	Timezone float32 `json:"timezone"`
 
-	// Year Year of the aspect analysis.
+	// Year Year of the aspect analysis. Echoes the year that was requested, or the current UTC year when it was omitted.
 	Year float32 `json:"year"`
 } {
 	return r.JSON200
@@ -87497,11 +88470,17 @@ type GetMonthlyParallelsResponse struct {
 			// Orb Declination difference from exact parallel/contraparallel in degrees. Smaller = stronger.
 			Orb float32 `json:"orb"`
 
-			// Planet1 First planet in the parallel or contraparallel pair.
+			// Planet1 First planet in the parallel or contraparallel pair. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use planet1Localized for anything a reader sees.
 			Planet1 string `json:"planet1"`
 
-			// Planet2 Second planet in the pair.
+			// Planet1Localized First planet name in the requested language, for display. Present only when lang is set to a language other than English, since in English it would repeat planet1 exactly.
+			Planet1Localized *string `json:"planet1Localized,omitempty"`
+
+			// Planet2 Second planet in the pair. Always English, whatever the lang parameter says. Use planet2Localized for anything a reader sees.
 			Planet2 string `json:"planet2"`
+
+			// Planet2Localized Second planet name in the requested language, for display. Present only when lang is set to a language other than English.
+			Planet2Localized *string `json:"planet2Localized,omitempty"`
 
 			// Time Time of closest declination match (HH:MM, 24-hour). Adjusted to requested timezone.
 			Time string `json:"time"`
@@ -87510,10 +88489,10 @@ type GetMonthlyParallelsResponse struct {
 			Type GetMonthlyParallels200JSONResponseBodyEventsType `json:"type"`
 		} `json:"events"`
 
-		// Month Month of the parallel analysis.
+		// Month Month of the parallel analysis. Echoes the month that was requested, or the current UTC month when it was omitted.
 		Month float32 `json:"month"`
 
-		// Year Year of the parallel analysis.
+		// Year Year of the parallel analysis. Echoes the year that was requested, or the current UTC year when it was omitted.
 		Year float32 `json:"year"`
 	}
 	// JSON400 the response for an HTTP 400 `application/json` response
@@ -87549,11 +88528,17 @@ func (r GetMonthlyParallelsResponse) GetJSON200() *struct {
 		// Orb Declination difference from exact parallel/contraparallel in degrees. Smaller = stronger.
 		Orb float32 `json:"orb"`
 
-		// Planet1 First planet in the parallel or contraparallel pair.
+		// Planet1 First planet in the parallel or contraparallel pair. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use planet1Localized for anything a reader sees.
 		Planet1 string `json:"planet1"`
 
-		// Planet2 Second planet in the pair.
+		// Planet1Localized First planet name in the requested language, for display. Present only when lang is set to a language other than English, since in English it would repeat planet1 exactly.
+		Planet1Localized *string `json:"planet1Localized,omitempty"`
+
+		// Planet2 Second planet in the pair. Always English, whatever the lang parameter says. Use planet2Localized for anything a reader sees.
 		Planet2 string `json:"planet2"`
+
+		// Planet2Localized Second planet name in the requested language, for display. Present only when lang is set to a language other than English.
+		Planet2Localized *string `json:"planet2Localized,omitempty"`
 
 		// Time Time of closest declination match (HH:MM, 24-hour). Adjusted to requested timezone.
 		Time string `json:"time"`
@@ -87562,10 +88547,10 @@ func (r GetMonthlyParallelsResponse) GetJSON200() *struct {
 		Type GetMonthlyParallels200JSONResponseBodyEventsType `json:"type"`
 	} `json:"events"`
 
-	// Month Month of the parallel analysis.
+	// Month Month of the parallel analysis. Echoes the month that was requested, or the current UTC month when it was omitted.
 	Month float32 `json:"month"`
 
-	// Year Year of the parallel analysis.
+	// Year Year of the parallel analysis. Echoes the year that was requested, or the current UTC year when it was omitted.
 	Year float32 `json:"year"`
 } {
 	return r.JSON200
@@ -87744,18 +88729,24 @@ type GetMonthlyEphemerisResponse struct {
 				// Longitude Sidereal ecliptic longitude in degrees (0-360) using Lahiri ayanamsa.
 				Longitude float32 `json:"longitude"`
 
-				// Planet Planet name, one of the Navagraha (Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn, Rahu, Ketu).
+				// Planet Planet name, one of the Navagraha (Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn, Rahu, Ketu). Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use planetLocalized for anything a reader sees.
 				Planet string `json:"planet"`
 
-				// Sign Zodiac sign (rashi) the planet occupies on this date.
+				// PlanetLocalized Planet name in the requested language, for display. Present only when lang is set to a language other than English, since in English it would repeat planet exactly. Rahu and Ketu are rendered as the lunar nodes they are, so Spanish returns Nodo Norte and Nodo Sur while Hindi returns their Sanskrit names.
+				PlanetLocalized *string `json:"planetLocalized,omitempty"`
+
+				// Sign Zodiac sign (rashi) the planet occupies on this date. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use signLocalized for anything a reader sees.
 				Sign string `json:"sign"`
+
+				// SignLocalized Zodiac sign name in the requested language, for display. Present only when lang is set to a language other than English, since in English it would repeat sign exactly.
+				SignLocalized *string `json:"signLocalized,omitempty"`
 			} `json:"positions"`
 		} `json:"days"`
 
-		// Month Month of the ephemeris.
+		// Month Month of the ephemeris. Echoes the month that was requested, or the current UTC month when it was omitted.
 		Month float32 `json:"month"`
 
-		// Year Year of the ephemeris.
+		// Year Year of the ephemeris. Echoes the year that was requested, or the current UTC year when it was omitted.
 		Year float32 `json:"year"`
 	}
 	// JSON400 the response for an HTTP 400 `application/json` response
@@ -87790,18 +88781,24 @@ func (r GetMonthlyEphemerisResponse) GetJSON200() *struct {
 			// Longitude Sidereal ecliptic longitude in degrees (0-360) using Lahiri ayanamsa.
 			Longitude float32 `json:"longitude"`
 
-			// Planet Planet name, one of the Navagraha (Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn, Rahu, Ketu).
+			// Planet Planet name, one of the Navagraha (Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn, Rahu, Ketu). Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use planetLocalized for anything a reader sees.
 			Planet string `json:"planet"`
 
-			// Sign Zodiac sign (rashi) the planet occupies on this date.
+			// PlanetLocalized Planet name in the requested language, for display. Present only when lang is set to a language other than English, since in English it would repeat planet exactly. Rahu and Ketu are rendered as the lunar nodes they are, so Spanish returns Nodo Norte and Nodo Sur while Hindi returns their Sanskrit names.
+			PlanetLocalized *string `json:"planetLocalized,omitempty"`
+
+			// Sign Zodiac sign (rashi) the planet occupies on this date. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use signLocalized for anything a reader sees.
 			Sign string `json:"sign"`
+
+			// SignLocalized Zodiac sign name in the requested language, for display. Present only when lang is set to a language other than English, since in English it would repeat sign exactly.
+			SignLocalized *string `json:"signLocalized,omitempty"`
 		} `json:"positions"`
 	} `json:"days"`
 
-	// Month Month of the ephemeris.
+	// Month Month of the ephemeris. Echoes the month that was requested, or the current UTC month when it was omitted.
 	Month float32 `json:"month"`
 
-	// Year Year of the ephemeris.
+	// Year Year of the ephemeris. Echoes the year that was requested, or the current UTC year when it was omitted.
 	Year float32 `json:"year"`
 } {
 	return r.JSON200
@@ -88403,7 +89400,7 @@ type GetMonthlyTransitsResponse struct {
 	HTTPResponse *http.Response
 	// JSON200 the response for an HTTP 200 `application/json` response
 	JSON200 *struct {
-		// Month Month of the monthly transit analysis.
+		// Month Month of the monthly transit analysis. Echoes the month that was requested, or the current UTC month when it was omitted.
 		Month float32 `json:"month"`
 
 		// StartingPositions Planetary positions at the beginning of the month (day 1, 00:00 UTC).
@@ -88411,12 +89408,21 @@ type GetMonthlyTransitsResponse struct {
 			// Longitude Sidereal longitude at the start of the month.
 			Longitude float32 `json:"longitude"`
 
-			// Planet Planet (graha) name. One of the 9 Navagraha used in Vedic transit (Gochar) analysis.
+			// Planet Planet (graha) name. One of the 9 Navagraha used in Vedic transit (Gochar) analysis. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use planetLocalized for anything a reader sees.
 			Planet string `json:"planet"`
 
-			// Sign Zodiac sign (rashi) the planet occupies at the start of the month.
+			// PlanetLocalized Planet name in the requested language, for display. Present only when lang is set to a language other than English.
+			PlanetLocalized *string `json:"planetLocalized,omitempty"`
+
+			// Sign Zodiac sign (rashi) the planet occupies at the start of the month. Always English. Use signLocalized for anything a reader sees.
 			Sign string `json:"sign"`
+
+			// SignLocalized Zodiac sign name in the requested language, for display. Present only when lang is set to a language other than English.
+			SignLocalized *string `json:"signLocalized,omitempty"`
 		} `json:"startingPositions"`
+
+		// Timezone Timezone offset from UTC in hours that the event dates and times are reported in. Echoes the requested timezone.
+		Timezone float32 `json:"timezone"`
 
 		// TransitEvents All sign change events during the month, sorted chronologically. Moon changes sign roughly every 2.25 days, Sun once a month, slow planets less frequently.
 		TransitEvents []struct {
@@ -88426,23 +89432,32 @@ type GetMonthlyTransitsResponse struct {
 			// Datetime Full datetime of the sign change. Adjusted to requested timezone.
 			Datetime string `json:"datetime"`
 
-			// FromSign Zodiac sign the planet is leaving (previous rashi).
+			// FromSign Zodiac sign the planet is leaving (previous rashi). Always English. Use fromSignLocalized for anything a reader sees.
 			FromSign string `json:"fromSign"`
+
+			// FromSignLocalized Name of the sign being left, in the requested language, for display. Present only when lang is set to a language other than English.
+			FromSignLocalized *string `json:"fromSignLocalized,omitempty"`
 
 			// IsRetrograde Whether the planet is in retrograde motion (vakri) at the time of sign change. A retrograde ingress means the planet is moving backward into the previous sign, which carries different astrological significance than a direct (forward) ingress. Rahu and Ketu are always retrograde.
 			IsRetrograde bool `json:"isRetrograde"`
 
-			// Planet Planet that changes sign (rashi) during this month. One of the Navagraha: Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn, Rahu, Ketu.
+			// Planet Planet that changes sign (rashi) during this month. One of the Navagraha: Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn, Rahu, Ketu. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use planetLocalized for anything a reader sees.
 			Planet string `json:"planet"`
+
+			// PlanetLocalized Planet name in the requested language, for display. Present only when lang is set to a language other than English, since in English it would repeat planet exactly.
+			PlanetLocalized *string `json:"planetLocalized,omitempty"`
 
 			// Time Time of the sign change (HH:MM, 24-hour). Adjusted to requested timezone. Precise to ~1 minute via binary search.
 			Time string `json:"time"`
 
-			// ToSign Zodiac sign the planet is entering (new rashi transit).
+			// ToSign Zodiac sign the planet is entering (new rashi transit). Always English. Use toSignLocalized for anything a reader sees.
 			ToSign string `json:"toSign"`
+
+			// ToSignLocalized Name of the sign being entered, in the requested language, for display. Present only when lang is set to a language other than English.
+			ToSignLocalized *string `json:"toSignLocalized,omitempty"`
 		} `json:"transitEvents"`
 
-		// Year Year of the monthly transit analysis.
+		// Year Year of the monthly transit analysis. Echoes the year that was requested, or the current UTC year when it was omitted.
 		Year float32 `json:"year"`
 	}
 	// JSON400 the response for an HTTP 400 `application/json` response
@@ -88461,7 +89476,7 @@ type GetMonthlyTransitsResponse struct {
 
 // GetJSON200 returns the response for an HTTP 200 `application/json` response
 func (r GetMonthlyTransitsResponse) GetJSON200() *struct {
-	// Month Month of the monthly transit analysis.
+	// Month Month of the monthly transit analysis. Echoes the month that was requested, or the current UTC month when it was omitted.
 	Month float32 `json:"month"`
 
 	// StartingPositions Planetary positions at the beginning of the month (day 1, 00:00 UTC).
@@ -88469,12 +89484,21 @@ func (r GetMonthlyTransitsResponse) GetJSON200() *struct {
 		// Longitude Sidereal longitude at the start of the month.
 		Longitude float32 `json:"longitude"`
 
-		// Planet Planet (graha) name. One of the 9 Navagraha used in Vedic transit (Gochar) analysis.
+		// Planet Planet (graha) name. One of the 9 Navagraha used in Vedic transit (Gochar) analysis. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use planetLocalized for anything a reader sees.
 		Planet string `json:"planet"`
 
-		// Sign Zodiac sign (rashi) the planet occupies at the start of the month.
+		// PlanetLocalized Planet name in the requested language, for display. Present only when lang is set to a language other than English.
+		PlanetLocalized *string `json:"planetLocalized,omitempty"`
+
+		// Sign Zodiac sign (rashi) the planet occupies at the start of the month. Always English. Use signLocalized for anything a reader sees.
 		Sign string `json:"sign"`
+
+		// SignLocalized Zodiac sign name in the requested language, for display. Present only when lang is set to a language other than English.
+		SignLocalized *string `json:"signLocalized,omitempty"`
 	} `json:"startingPositions"`
+
+	// Timezone Timezone offset from UTC in hours that the event dates and times are reported in. Echoes the requested timezone.
+	Timezone float32 `json:"timezone"`
 
 	// TransitEvents All sign change events during the month, sorted chronologically. Moon changes sign roughly every 2.25 days, Sun once a month, slow planets less frequently.
 	TransitEvents []struct {
@@ -88484,23 +89508,32 @@ func (r GetMonthlyTransitsResponse) GetJSON200() *struct {
 		// Datetime Full datetime of the sign change. Adjusted to requested timezone.
 		Datetime string `json:"datetime"`
 
-		// FromSign Zodiac sign the planet is leaving (previous rashi).
+		// FromSign Zodiac sign the planet is leaving (previous rashi). Always English. Use fromSignLocalized for anything a reader sees.
 		FromSign string `json:"fromSign"`
+
+		// FromSignLocalized Name of the sign being left, in the requested language, for display. Present only when lang is set to a language other than English.
+		FromSignLocalized *string `json:"fromSignLocalized,omitempty"`
 
 		// IsRetrograde Whether the planet is in retrograde motion (vakri) at the time of sign change. A retrograde ingress means the planet is moving backward into the previous sign, which carries different astrological significance than a direct (forward) ingress. Rahu and Ketu are always retrograde.
 		IsRetrograde bool `json:"isRetrograde"`
 
-		// Planet Planet that changes sign (rashi) during this month. One of the Navagraha: Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn, Rahu, Ketu.
+		// Planet Planet that changes sign (rashi) during this month. One of the Navagraha: Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn, Rahu, Ketu. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use planetLocalized for anything a reader sees.
 		Planet string `json:"planet"`
+
+		// PlanetLocalized Planet name in the requested language, for display. Present only when lang is set to a language other than English, since in English it would repeat planet exactly.
+		PlanetLocalized *string `json:"planetLocalized,omitempty"`
 
 		// Time Time of the sign change (HH:MM, 24-hour). Adjusted to requested timezone. Precise to ~1 minute via binary search.
 		Time string `json:"time"`
 
-		// ToSign Zodiac sign the planet is entering (new rashi transit).
+		// ToSign Zodiac sign the planet is entering (new rashi transit). Always English. Use toSignLocalized for anything a reader sees.
 		ToSign string `json:"toSign"`
+
+		// ToSignLocalized Name of the sign being entered, in the requested language, for display. Present only when lang is set to a language other than English.
+		ToSignLocalized *string `json:"toSignLocalized,omitempty"`
 	} `json:"transitEvents"`
 
-	// Year Year of the monthly transit analysis.
+	// Year Year of the monthly transit analysis. Echoes the year that was requested, or the current UTC year when it was omitted.
 	Year float32 `json:"year"`
 } {
 	return r.JSON200
@@ -89597,6 +90630,36 @@ func (c *ClientWithResponses) GetPlanetaryPositionsWithResponse(ctx context.Cont
 		return nil, err
 	}
 	return ParseGetPlanetaryPositionsResponse(rsp)
+}
+
+// GetMonthlyTropicalEphemerisWithBodyWithResponse Monthly Ephemeris - Daily tropical planetary positions for a month
+//
+// Get daily tropical ecliptic positions for all 14 Western bodies (the 10 classical planets Sun through Pluto, the lunar nodes, Chiron, and Black Moon Lilith) for an entire month. Returns longitude, zodiac sign, degree within sign, and retrograde status for each body on each day, calculated at noon UTC. Omit year and month to get the month in progress, so a published ephemeris page stays current without a redeploy. Essential for ephemeris tables, transit tracking, retrograde calendars, and planetary movement charts. Monthly ephemeris API, tropical position table, daily planet transit positions, ecliptic longitude calculator. Verified against NASA JPL Horizons.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /astrology/planets/monthly (the `GetMonthlyTropicalEphemeris` operationId).
+func (c *ClientWithResponses) GetMonthlyTropicalEphemerisWithBodyWithResponse(ctx context.Context, params *GetMonthlyTropicalEphemerisParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetMonthlyTropicalEphemerisResponse, error) {
+	rsp, err := c.GetMonthlyTropicalEphemerisWithBody(ctx, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetMonthlyTropicalEphemerisResponse(rsp)
+}
+
+// GetMonthlyTropicalEphemerisWithResponse Monthly Ephemeris - Daily tropical planetary positions for a month
+//
+// Get daily tropical ecliptic positions for all 14 Western bodies (the 10 classical planets Sun through Pluto, the lunar nodes, Chiron, and Black Moon Lilith) for an entire month. Returns longitude, zodiac sign, degree within sign, and retrograde status for each body on each day, calculated at noon UTC. Omit year and month to get the month in progress, so a published ephemeris page stays current without a redeploy. Essential for ephemeris tables, transit tracking, retrograde calendars, and planetary movement charts. Monthly ephemeris API, tropical position table, daily planet transit positions, ecliptic longitude calculator. Verified against NASA JPL Horizons.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /astrology/planets/monthly (the `GetMonthlyTropicalEphemeris` operationId).
+func (c *ClientWithResponses) GetMonthlyTropicalEphemerisWithResponse(ctx context.Context, params *GetMonthlyTropicalEphemerisParams, body GetMonthlyTropicalEphemerisJSONRequestBody, reqEditors ...RequestEditorFn) (*GetMonthlyTropicalEphemerisResponse, error) {
+	rsp, err := c.GetMonthlyTropicalEphemeris(ctx, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetMonthlyTropicalEphemerisResponse(rsp)
 }
 
 // GenerateProfectionsWithBodyWithResponse Annual profections calculator - lord of the year and yearly time lord by age
@@ -91986,13 +93049,13 @@ func (c *ClientWithResponses) CalculateDrishtiWithResponse(ctx context.Context, 
 
 // GetLunarAspectsWithBodyWithResponse Monthly Lunar Aspects - Moon aspect events with all planets for a month
 //
-// Track all lunar aspect events for a given month including major and minor aspects. The Moon traverses approximately 13 degrees per day, forming 22 aspect types with each planet. 5 major (conjunction, opposition, trine, square, sextile) and 17 minor (vigintile, semi-sextile, undecile, semi-quintile, novile, semi-square, septile, quintile, binovile, centile, biseptile, tredecile, sesqui-square, bi-quintile, quincunx, triseptile, quadranovile). Returns exact date and time of each Moon aspect event with ternary search refinement to the minute. Essential for muhurta selection, daily panchang analysis, and chandra gochar predictions. Monthly lunar aspects API, Moon transit calendar, chandra drishti ephemeris, minor lunar aspects.
+// Track all lunar aspect events for a given month including major and minor aspects. The Moon traverses approximately 13 degrees per day, forming 22 aspect types with each planet. 5 major (conjunction, opposition, trine, square, sextile) and 17 minor (vigintile, semi-sextile, undecile, semi-quintile, novile, semi-square, septile, quintile, binovile, centile, biseptile, tredecile, sesqui-square, bi-quintile, quincunx, triseptile, quadranovile). Returns exact date and time of each Moon aspect event with ternary search refinement to the minute. Omit year and month to get the month in progress, so a published lunar calendar stays current without a redeploy. Essential for muhurta selection, daily panchang analysis, and chandra gochar predictions. Monthly lunar aspects API, Moon transit calendar, chandra drishti ephemeris, minor lunar aspects.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
 // Corresponds with POST /vedic-astrology/aspects/lunar (the `GetLunarAspects` operationId).
-func (c *ClientWithResponses) GetLunarAspectsWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetLunarAspectsResponse, error) {
-	rsp, err := c.GetLunarAspectsWithBody(ctx, contentType, body, reqEditors...)
+func (c *ClientWithResponses) GetLunarAspectsWithBodyWithResponse(ctx context.Context, params *GetLunarAspectsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetLunarAspectsResponse, error) {
+	rsp, err := c.GetLunarAspectsWithBody(ctx, params, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -92001,13 +93064,13 @@ func (c *ClientWithResponses) GetLunarAspectsWithBodyWithResponse(ctx context.Co
 
 // GetLunarAspectsWithResponse Monthly Lunar Aspects - Moon aspect events with all planets for a month
 //
-// Track all lunar aspect events for a given month including major and minor aspects. The Moon traverses approximately 13 degrees per day, forming 22 aspect types with each planet. 5 major (conjunction, opposition, trine, square, sextile) and 17 minor (vigintile, semi-sextile, undecile, semi-quintile, novile, semi-square, septile, quintile, binovile, centile, biseptile, tredecile, sesqui-square, bi-quintile, quincunx, triseptile, quadranovile). Returns exact date and time of each Moon aspect event with ternary search refinement to the minute. Essential for muhurta selection, daily panchang analysis, and chandra gochar predictions. Monthly lunar aspects API, Moon transit calendar, chandra drishti ephemeris, minor lunar aspects.
+// Track all lunar aspect events for a given month including major and minor aspects. The Moon traverses approximately 13 degrees per day, forming 22 aspect types with each planet. 5 major (conjunction, opposition, trine, square, sextile) and 17 minor (vigintile, semi-sextile, undecile, semi-quintile, novile, semi-square, septile, quintile, binovile, centile, biseptile, tredecile, sesqui-square, bi-quintile, quincunx, triseptile, quadranovile). Returns exact date and time of each Moon aspect event with ternary search refinement to the minute. Omit year and month to get the month in progress, so a published lunar calendar stays current without a redeploy. Essential for muhurta selection, daily panchang analysis, and chandra gochar predictions. Monthly lunar aspects API, Moon transit calendar, chandra drishti ephemeris, minor lunar aspects.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
 // Corresponds with POST /vedic-astrology/aspects/lunar (the `GetLunarAspects` operationId).
-func (c *ClientWithResponses) GetLunarAspectsWithResponse(ctx context.Context, body GetLunarAspectsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetLunarAspectsResponse, error) {
-	rsp, err := c.GetLunarAspects(ctx, body, reqEditors...)
+func (c *ClientWithResponses) GetLunarAspectsWithResponse(ctx context.Context, params *GetLunarAspectsParams, body GetLunarAspectsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetLunarAspectsResponse, error) {
+	rsp, err := c.GetLunarAspects(ctx, params, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -92016,13 +93079,13 @@ func (c *ClientWithResponses) GetLunarAspectsWithResponse(ctx context.Context, b
 
 // GetMonthlyAspectsWithBodyWithResponse Monthly Planetary Aspects - Major and minor aspect events for a month
 //
-// Calculate all planetary aspect events (excluding Moon) for a given month. Detects 22 aspect types. 5 major (conjunction, opposition, trine, square, sextile) and 17 minor (vigintile, semi-sextile, undecile, semi-quintile, novile, semi-square, septile, quintile, binovile, centile, biseptile, tredecile, sesqui-square, bi-quintile, quincunx, triseptile, quadranovile). Returns exact date and time of closest approach using ternary search refinement. Uses degree-based aspect methodology on sidereal positions (Lahiri ayanamsa). For Moon-specific aspects, use the /aspects/lunar endpoint. Essential for transit timing, muhurta selection, and monthly astrological forecasting. Monthly planetary aspects API, graha drishti calendar, mutual aspect ephemeris, minor aspects.
+// Calculate all planetary aspect events (excluding Moon) for a given month. Detects 22 aspect types. 5 major (conjunction, opposition, trine, square, sextile) and 17 minor (vigintile, semi-sextile, undecile, semi-quintile, novile, semi-square, septile, quintile, binovile, centile, biseptile, tredecile, sesqui-square, bi-quintile, quincunx, triseptile, quadranovile). Returns exact date and time of closest approach using ternary search refinement. Uses degree-based aspect methodology on sidereal positions (Lahiri ayanamsa). Omit year and month to get the month in progress, so a published aspect calendar stays current without a redeploy. For Moon-specific aspects, use the /aspects/lunar endpoint. Essential for transit timing, muhurta selection, and monthly astrological forecasting. Monthly planetary aspects API, graha drishti calendar, mutual aspect ephemeris, minor aspects.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
 // Corresponds with POST /vedic-astrology/aspects/monthly (the `GetMonthlyAspects` operationId).
-func (c *ClientWithResponses) GetMonthlyAspectsWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetMonthlyAspectsResponse, error) {
-	rsp, err := c.GetMonthlyAspectsWithBody(ctx, contentType, body, reqEditors...)
+func (c *ClientWithResponses) GetMonthlyAspectsWithBodyWithResponse(ctx context.Context, params *GetMonthlyAspectsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetMonthlyAspectsResponse, error) {
+	rsp, err := c.GetMonthlyAspectsWithBody(ctx, params, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -92031,13 +93094,13 @@ func (c *ClientWithResponses) GetMonthlyAspectsWithBodyWithResponse(ctx context.
 
 // GetMonthlyAspectsWithResponse Monthly Planetary Aspects - Major and minor aspect events for a month
 //
-// Calculate all planetary aspect events (excluding Moon) for a given month. Detects 22 aspect types. 5 major (conjunction, opposition, trine, square, sextile) and 17 minor (vigintile, semi-sextile, undecile, semi-quintile, novile, semi-square, septile, quintile, binovile, centile, biseptile, tredecile, sesqui-square, bi-quintile, quincunx, triseptile, quadranovile). Returns exact date and time of closest approach using ternary search refinement. Uses degree-based aspect methodology on sidereal positions (Lahiri ayanamsa). For Moon-specific aspects, use the /aspects/lunar endpoint. Essential for transit timing, muhurta selection, and monthly astrological forecasting. Monthly planetary aspects API, graha drishti calendar, mutual aspect ephemeris, minor aspects.
+// Calculate all planetary aspect events (excluding Moon) for a given month. Detects 22 aspect types. 5 major (conjunction, opposition, trine, square, sextile) and 17 minor (vigintile, semi-sextile, undecile, semi-quintile, novile, semi-square, septile, quintile, binovile, centile, biseptile, tredecile, sesqui-square, bi-quintile, quincunx, triseptile, quadranovile). Returns exact date and time of closest approach using ternary search refinement. Uses degree-based aspect methodology on sidereal positions (Lahiri ayanamsa). Omit year and month to get the month in progress, so a published aspect calendar stays current without a redeploy. For Moon-specific aspects, use the /aspects/lunar endpoint. Essential for transit timing, muhurta selection, and monthly astrological forecasting. Monthly planetary aspects API, graha drishti calendar, mutual aspect ephemeris, minor aspects.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
 // Corresponds with POST /vedic-astrology/aspects/monthly (the `GetMonthlyAspects` operationId).
-func (c *ClientWithResponses) GetMonthlyAspectsWithResponse(ctx context.Context, body GetMonthlyAspectsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetMonthlyAspectsResponse, error) {
-	rsp, err := c.GetMonthlyAspects(ctx, body, reqEditors...)
+func (c *ClientWithResponses) GetMonthlyAspectsWithResponse(ctx context.Context, params *GetMonthlyAspectsParams, body GetMonthlyAspectsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetMonthlyAspectsResponse, error) {
+	rsp, err := c.GetMonthlyAspects(ctx, params, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -93081,13 +94144,13 @@ func (c *ClientWithResponses) CalculateParallelsWithResponse(ctx context.Context
 
 // GetMonthlyParallelsWithBodyWithResponse Monthly Declination Parallels - Parallel and contraparallel events for a month
 //
-// Find all declination parallel and contraparallel events between the 7 visible planets for a given month. Parallels occur when two planets share the same celestial declination (equivalent to conjunction in strength). Contraparallels occur at opposite declinations (equivalent to opposition). Scanned daily at noon UTC. Essential for advanced transit analysis and hidden aspect discovery. Monthly declination parallels API, planetary parallel ephemeris, contraparallel event calendar.
+// Find all declination parallel and contraparallel events between the 7 visible planets for a given month. Parallels occur when two planets share the same celestial declination (equivalent to conjunction in strength). Contraparallels occur at opposite declinations (equivalent to opposition). Scanned daily at noon UTC. Omit year and month to get the month in progress, so a published parallel calendar stays current without a redeploy. Essential for advanced transit analysis and hidden aspect discovery. Monthly declination parallels API, planetary parallel ephemeris, contraparallel event calendar.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
 // Corresponds with POST /vedic-astrology/parallels/monthly (the `GetMonthlyParallels` operationId).
-func (c *ClientWithResponses) GetMonthlyParallelsWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetMonthlyParallelsResponse, error) {
-	rsp, err := c.GetMonthlyParallelsWithBody(ctx, contentType, body, reqEditors...)
+func (c *ClientWithResponses) GetMonthlyParallelsWithBodyWithResponse(ctx context.Context, params *GetMonthlyParallelsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetMonthlyParallelsResponse, error) {
+	rsp, err := c.GetMonthlyParallelsWithBody(ctx, params, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -93096,13 +94159,13 @@ func (c *ClientWithResponses) GetMonthlyParallelsWithBodyWithResponse(ctx contex
 
 // GetMonthlyParallelsWithResponse Monthly Declination Parallels - Parallel and contraparallel events for a month
 //
-// Find all declination parallel and contraparallel events between the 7 visible planets for a given month. Parallels occur when two planets share the same celestial declination (equivalent to conjunction in strength). Contraparallels occur at opposite declinations (equivalent to opposition). Scanned daily at noon UTC. Essential for advanced transit analysis and hidden aspect discovery. Monthly declination parallels API, planetary parallel ephemeris, contraparallel event calendar.
+// Find all declination parallel and contraparallel events between the 7 visible planets for a given month. Parallels occur when two planets share the same celestial declination (equivalent to conjunction in strength). Contraparallels occur at opposite declinations (equivalent to opposition). Scanned daily at noon UTC. Omit year and month to get the month in progress, so a published parallel calendar stays current without a redeploy. Essential for advanced transit analysis and hidden aspect discovery. Monthly declination parallels API, planetary parallel ephemeris, contraparallel event calendar.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
 // Corresponds with POST /vedic-astrology/parallels/monthly (the `GetMonthlyParallels` operationId).
-func (c *ClientWithResponses) GetMonthlyParallelsWithResponse(ctx context.Context, body GetMonthlyParallelsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetMonthlyParallelsResponse, error) {
-	rsp, err := c.GetMonthlyParallels(ctx, body, reqEditors...)
+func (c *ClientWithResponses) GetMonthlyParallelsWithResponse(ctx context.Context, params *GetMonthlyParallelsParams, body GetMonthlyParallelsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetMonthlyParallelsResponse, error) {
+	rsp, err := c.GetMonthlyParallels(ctx, params, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -93141,13 +94204,13 @@ func (c *ClientWithResponses) GetPlanetPositionsWithResponse(ctx context.Context
 
 // GetMonthlyEphemerisWithBodyWithResponse Monthly Ephemeris - Daily sidereal planetary positions for a month
 //
-// Get daily sidereal ecliptic positions for all 9 Vedic planets (Navagraha) for an entire month. Returns longitude, zodiac sign, degree within sign, and retrograde status for each planet on each day. Calculated at noon UTC. Essential for ephemeris generation, transit tracking, and planetary movement visualization. Monthly planetary ephemeris API, sidereal position table, daily graha gochara positions, ecliptic longitude calculator.
+// Get daily sidereal ecliptic positions for all 9 Vedic planets (Navagraha) for an entire month. Returns longitude, zodiac sign, degree within sign, and retrograde status for each planet on each day. Calculated at noon UTC. Omit year and month to get the month in progress, so a published ephemeris page stays current without a redeploy. Essential for ephemeris generation, transit tracking, and planetary movement visualization. Monthly planetary ephemeris API, sidereal position table, daily graha gochara positions, ecliptic longitude calculator.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
 // Corresponds with POST /vedic-astrology/planetary-positions/monthly (the `GetMonthlyEphemeris` operationId).
-func (c *ClientWithResponses) GetMonthlyEphemerisWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetMonthlyEphemerisResponse, error) {
-	rsp, err := c.GetMonthlyEphemerisWithBody(ctx, contentType, body, reqEditors...)
+func (c *ClientWithResponses) GetMonthlyEphemerisWithBodyWithResponse(ctx context.Context, params *GetMonthlyEphemerisParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetMonthlyEphemerisResponse, error) {
+	rsp, err := c.GetMonthlyEphemerisWithBody(ctx, params, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -93156,13 +94219,13 @@ func (c *ClientWithResponses) GetMonthlyEphemerisWithBodyWithResponse(ctx contex
 
 // GetMonthlyEphemerisWithResponse Monthly Ephemeris - Daily sidereal planetary positions for a month
 //
-// Get daily sidereal ecliptic positions for all 9 Vedic planets (Navagraha) for an entire month. Returns longitude, zodiac sign, degree within sign, and retrograde status for each planet on each day. Calculated at noon UTC. Essential for ephemeris generation, transit tracking, and planetary movement visualization. Monthly planetary ephemeris API, sidereal position table, daily graha gochara positions, ecliptic longitude calculator.
+// Get daily sidereal ecliptic positions for all 9 Vedic planets (Navagraha) for an entire month. Returns longitude, zodiac sign, degree within sign, and retrograde status for each planet on each day. Calculated at noon UTC. Omit year and month to get the month in progress, so a published ephemeris page stays current without a redeploy. Essential for ephemeris generation, transit tracking, and planetary movement visualization. Monthly planetary ephemeris API, sidereal position table, daily graha gochara positions, ecliptic longitude calculator.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
 // Corresponds with POST /vedic-astrology/planetary-positions/monthly (the `GetMonthlyEphemeris` operationId).
-func (c *ClientWithResponses) GetMonthlyEphemerisWithResponse(ctx context.Context, body GetMonthlyEphemerisJSONRequestBody, reqEditors ...RequestEditorFn) (*GetMonthlyEphemerisResponse, error) {
-	rsp, err := c.GetMonthlyEphemeris(ctx, body, reqEditors...)
+func (c *ClientWithResponses) GetMonthlyEphemerisWithResponse(ctx context.Context, params *GetMonthlyEphemerisParams, body GetMonthlyEphemerisJSONRequestBody, reqEditors ...RequestEditorFn) (*GetMonthlyEphemerisResponse, error) {
+	rsp, err := c.GetMonthlyEphemeris(ctx, params, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -93261,13 +94324,13 @@ func (c *ClientWithResponses) CalculateTransitWithResponse(ctx context.Context, 
 
 // GetMonthlyTransitsWithBodyWithResponse Monthly Transit - Planetary sign changes for an entire month
 //
-// Get all planetary sign (rashi) changes for a given month. Shows when each planet transitions from one zodiac sign to another. Covers all 9 Vedic planets: Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn, Rahu, Ketu. Includes starting positions at the beginning of the month. Essential for transit prediction, monthly horoscope generation, and muhurta planning. Monthly planetary transit API, gochar calendar, rashi parivartan dates.
+// Get all planetary sign (rashi) changes for a given month. Shows when each planet transitions from one zodiac sign to another. Covers all 9 Vedic planets: Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn, Rahu, Ketu. Includes starting positions at the beginning of the month. Omit year and month to get the month in progress, so a published gochar calendar stays current without a redeploy. Essential for transit prediction, monthly horoscope generation, and muhurta planning. Monthly planetary transit API, gochar calendar, rashi parivartan dates.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
 // Corresponds with POST /vedic-astrology/transit/monthly (the `GetMonthlyTransits` operationId).
-func (c *ClientWithResponses) GetMonthlyTransitsWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetMonthlyTransitsResponse, error) {
-	rsp, err := c.GetMonthlyTransitsWithBody(ctx, contentType, body, reqEditors...)
+func (c *ClientWithResponses) GetMonthlyTransitsWithBodyWithResponse(ctx context.Context, params *GetMonthlyTransitsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetMonthlyTransitsResponse, error) {
+	rsp, err := c.GetMonthlyTransitsWithBody(ctx, params, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -93276,13 +94339,13 @@ func (c *ClientWithResponses) GetMonthlyTransitsWithBodyWithResponse(ctx context
 
 // GetMonthlyTransitsWithResponse Monthly Transit - Planetary sign changes for an entire month
 //
-// Get all planetary sign (rashi) changes for a given month. Shows when each planet transitions from one zodiac sign to another. Covers all 9 Vedic planets: Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn, Rahu, Ketu. Includes starting positions at the beginning of the month. Essential for transit prediction, monthly horoscope generation, and muhurta planning. Monthly planetary transit API, gochar calendar, rashi parivartan dates.
+// Get all planetary sign (rashi) changes for a given month. Shows when each planet transitions from one zodiac sign to another. Covers all 9 Vedic planets: Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn, Rahu, Ketu. Includes starting positions at the beginning of the month. Omit year and month to get the month in progress, so a published gochar calendar stays current without a redeploy. Essential for transit prediction, monthly horoscope generation, and muhurta planning. Monthly planetary transit API, gochar calendar, rashi parivartan dates.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
 // Corresponds with POST /vedic-astrology/transit/monthly (the `GetMonthlyTransits` operationId).
-func (c *ClientWithResponses) GetMonthlyTransitsWithResponse(ctx context.Context, body GetMonthlyTransitsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetMonthlyTransitsResponse, error) {
-	rsp, err := c.GetMonthlyTransits(ctx, body, reqEditors...)
+func (c *ClientWithResponses) GetMonthlyTransitsWithResponse(ctx context.Context, params *GetMonthlyTransitsParams, body GetMonthlyTransitsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetMonthlyTransitsResponse, error) {
+	rsp, err := c.GetMonthlyTransits(ctx, params, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -96697,6 +97760,116 @@ func ParseGetPlanetaryPositionsResponse(rsp *http.Response) (*GetPlanetaryPositi
 	return response, nil
 }
 
+// ParseGetMonthlyTropicalEphemerisResponse parses an HTTP response from a GetMonthlyTropicalEphemerisWithResponse call
+func ParseGetMonthlyTropicalEphemerisResponse(rsp *http.Response) (*GetMonthlyTropicalEphemerisResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetMonthlyTropicalEphemerisResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Days Daily planetary position entries for the entire month.
+			Days []struct {
+				// Date Date in YYYY-MM-DD format.
+				Date string `json:"date"`
+
+				// Positions Tropical positions of all 14 Western bodies on this date at noon UTC.
+				Positions []struct {
+					// DegreeInSign Degrees traversed within the current sign (0-30). Useful for precise transit tracking and for printing a position as sign plus degree.
+					DegreeInSign float32 `json:"degreeInSign"`
+
+					// IsRetrograde Whether the body is in apparent retrograde motion on this date. The lunar nodes are always retrograde and Black Moon Lilith is always direct.
+					IsRetrograde bool `json:"isRetrograde"`
+
+					// Longitude Tropical ecliptic longitude in degrees (0-360), measured from the vernal equinox. This is the Western zodiac, not the sidereal one, so the two differ by the ayanamsa of roughly 24 degrees.
+					Longitude float32 `json:"longitude"`
+
+					// Planet Body name, one of the 14 bodies Western astrology reads: Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto, North Node, South Node, Chiron, Black Moon Lilith. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use planetLocalized for anything a reader sees.
+					Planet string `json:"planet"`
+
+					// PlanetLocalized Body name in the requested language, for display. Present only when lang is set to a language other than English, since in English it would repeat planet exactly.
+					PlanetLocalized *string `json:"planetLocalized,omitempty"`
+
+					// Sign Tropical zodiac sign the body occupies on this date. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use signLocalized for anything a reader sees.
+					Sign string `json:"sign"`
+
+					// SignLocalized Zodiac sign name in the requested language, for display. Present only when lang is set to a language other than English, since in English it would repeat sign exactly.
+					SignLocalized *string `json:"signLocalized,omitempty"`
+				} `json:"positions"`
+			} `json:"days"`
+
+			// Month Month of the ephemeris. Echoes the month that was requested, or the current UTC month when it was omitted.
+			Month float32 `json:"month"`
+
+			// Year Year of the ephemeris. Echoes the year that was requested, or the current UTC year when it was omitted.
+			Year float32 `json:"year"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 405:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON405 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	switch {
+	case rsp.StatusCode == 405:
+		var headers GetMonthlyTropicalEphemerisResponse405Headers
+		if values := rsp.Header.Values("Allow"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "Allow", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.Allow = &value
+		}
+		response.Headers405 = &headers
+	}
+
+	return response, nil
+}
+
 // ParseGenerateProfectionsResponse parses an HTTP response from a GenerateProfectionsWithResponse call
 func ParseGenerateProfectionsResponse(rsp *http.Response) (*GenerateProfectionsResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -97540,17 +98713,26 @@ func ParseCalculateSynastryResponse(rsp *http.Response) (*CalculateSynastryRespo
 				// Orb Distance from exact aspect in degrees. Tighter orb means stronger influence.
 				Orb float32 `json:"orb"`
 
-				// Planet1 Planet from person 1 chart.
+				// Planet1 Planet from person 1 chart. Always English, whatever the lang parameter says. Use planet1Localized for anything a reader sees.
 				Planet1 string `json:"planet1"`
 
-				// Planet2 Planet from person 2 chart.
+				// Planet1Localized Person 1 planet name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				Planet1Localized *string `json:"planet1Localized,omitempty"`
+
+				// Planet2 Planet from person 2 chart. Always English, whatever the lang parameter says. Use planet2Localized for anything a reader sees.
 				Planet2 string `json:"planet2"`
+
+				// Planet2Localized Person 2 planet name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				Planet2Localized *string `json:"planet2Localized,omitempty"`
 
 				// Strength Aspect strength percentage (0-100) based on orb tightness.
 				Strength float32 `json:"strength"`
 
-				// Type Aspect type (CONJUNCTION, OPPOSITION, TRINE, SQUARE, SEXTILE, etc.).
+				// Type Aspect type (CONJUNCTION, OPPOSITION, TRINE, SQUARE, SEXTILE, etc.). Always English, whatever the lang parameter says. Use typeLocalized for anything a reader sees.
 				Type string `json:"type"`
+
+				// TypeLocalized Aspect type name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				TypeLocalized *string `json:"typeLocalized,omitempty"`
 			} `json:"interAspects"`
 
 			// Person1 Person 1 chart highlights: Ascendant, Sun sign, Moon sign, and plotting positions.
@@ -97560,12 +98742,18 @@ func ParseCalculateSynastryResponse(rsp *http.Response) (*CalculateSynastryRespo
 					// Degree Degree within the Ascendant sign (0-29.999).
 					Degree float32 `json:"degree"`
 
-					// Sign Ascendant (rising sign) of this person.
+					// Sign Ascendant (rising sign) of this person. Always English, whatever the lang parameter says. Use signLocalized for anything a reader sees.
 					Sign string `json:"sign"`
+
+					// SignLocalized Ascendant sign name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+					SignLocalized *string `json:"signLocalized,omitempty"`
 				} `json:"ascendant"`
 
-				// MoonSign Moon sign of this person. Emotional nature and inner needs.
+				// MoonSign Moon sign of this person. Emotional nature and inner needs. Always English, whatever the lang parameter says. Use moonSignLocalized for anything a reader sees.
 				MoonSign string `json:"moonSign"`
+
+				// MoonSignLocalized Moon sign name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				MoonSignLocalized *string `json:"moonSignLocalized,omitempty"`
 
 				// Name Display name if provided in the request.
 				Name *string `json:"name,omitempty"`
@@ -97584,15 +98772,24 @@ func ParseCalculateSynastryResponse(rsp *http.Response) (*CalculateSynastryRespo
 					// Longitude Ecliptic longitude in degrees (0-360) measured from 0 Aries. This is the value a wheel plots.
 					Longitude float32 `json:"longitude"`
 
-					// Name Planet or point name. Matches the names used in interAspects.
+					// Name Planet or point name. Matches the names used in interAspects. Always English, whatever the lang parameter says. Use nameLocalized for anything a reader sees.
 					Name string `json:"name"`
 
-					// Sign Zodiac sign containing the planet.
+					// NameLocalized Planet or point name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+					NameLocalized *string `json:"nameLocalized,omitempty"`
+
+					// Sign Zodiac sign containing the planet. Always English, whatever the lang parameter says. Use signLocalized for anything a reader sees.
 					Sign string `json:"sign"`
+
+					// SignLocalized Zodiac sign name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+					SignLocalized *string `json:"signLocalized,omitempty"`
 				} `json:"planets"`
 
-				// SunSign Sun sign (zodiac sign) of this person. Core identity and ego expression.
+				// SunSign Sun sign (zodiac sign) of this person. Core identity and ego expression. Always English, whatever the lang parameter says. Use sunSignLocalized for anything a reader sees.
 				SunSign string `json:"sunSign"`
+
+				// SunSignLocalized Sun sign name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				SunSignLocalized *string `json:"sunSignLocalized,omitempty"`
 			} `json:"person1"`
 
 			// Person2 Person 2 chart highlights: Ascendant, Sun sign, Moon sign, and plotting positions.
@@ -97602,12 +98799,18 @@ func ParseCalculateSynastryResponse(rsp *http.Response) (*CalculateSynastryRespo
 					// Degree Degree within the Ascendant sign (0-29.999).
 					Degree float32 `json:"degree"`
 
-					// Sign Ascendant (rising sign) of this person.
+					// Sign Ascendant (rising sign) of this person. Always English, whatever the lang parameter says. Use signLocalized for anything a reader sees.
 					Sign string `json:"sign"`
+
+					// SignLocalized Ascendant sign name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+					SignLocalized *string `json:"signLocalized,omitempty"`
 				} `json:"ascendant"`
 
-				// MoonSign Moon sign of this person. Emotional nature and inner needs.
+				// MoonSign Moon sign of this person. Emotional nature and inner needs. Always English, whatever the lang parameter says. Use moonSignLocalized for anything a reader sees.
 				MoonSign string `json:"moonSign"`
+
+				// MoonSignLocalized Moon sign name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				MoonSignLocalized *string `json:"moonSignLocalized,omitempty"`
 
 				// Name Display name if provided in the request.
 				Name *string `json:"name,omitempty"`
@@ -97626,15 +98829,24 @@ func ParseCalculateSynastryResponse(rsp *http.Response) (*CalculateSynastryRespo
 					// Longitude Ecliptic longitude in degrees (0-360) measured from 0 Aries. This is the value a wheel plots.
 					Longitude float32 `json:"longitude"`
 
-					// Name Planet or point name. Matches the names used in interAspects.
+					// Name Planet or point name. Matches the names used in interAspects. Always English, whatever the lang parameter says. Use nameLocalized for anything a reader sees.
 					Name string `json:"name"`
 
-					// Sign Zodiac sign containing the planet.
+					// NameLocalized Planet or point name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+					NameLocalized *string `json:"nameLocalized,omitempty"`
+
+					// Sign Zodiac sign containing the planet. Always English, whatever the lang parameter says. Use signLocalized for anything a reader sees.
 					Sign string `json:"sign"`
+
+					// SignLocalized Zodiac sign name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+					SignLocalized *string `json:"signLocalized,omitempty"`
 				} `json:"planets"`
 
-				// SunSign Sun sign (zodiac sign) of this person. Core identity and ego expression.
+				// SunSign Sun sign (zodiac sign) of this person. Core identity and ego expression. Always English, whatever the lang parameter says. Use sunSignLocalized for anything a reader sees.
 				SunSign string `json:"sunSign"`
+
+				// SunSignLocalized Sun sign name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				SunSignLocalized *string `json:"sunSignLocalized,omitempty"`
 			} `json:"person2"`
 
 			// Summary Synastry aspect summary showing the balance of harmonious vs challenging inter-chart connections.
@@ -97746,8 +98958,14 @@ func ParseCalculateTransitAspectsResponse(rsp *http.Response) (*CalculateTransit
 				// Planet1 First planet in the aspect pair.
 				Planet1 CalculateTransitAspects200JSONResponseBodyAspectsPlanet1 `json:"planet1"`
 
+				// Planet1Localized First planet name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				Planet1Localized *string `json:"planet1Localized,omitempty"`
+
 				// Planet2 Second planet in the aspect pair.
 				Planet2 CalculateTransitAspects200JSONResponseBodyAspectsPlanet2 `json:"planet2"`
+
+				// Planet2Localized Second planet name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				Planet2Localized *string `json:"planet2Localized,omitempty"`
 
 				// Strength Aspect strength percentage (0-100). Based on orb tightness relative to the allowed maximum.
 				Strength              float32 `json:"strength"`
@@ -97770,6 +98988,9 @@ func ParseCalculateTransitAspectsResponse(rsp *http.Response) (*CalculateTransit
 
 				// Type Aspect type. Major: conjunction (0), opposition (180), trine (120), square (90), sextile (60). Minor: semi-sextile, quincunx, semi-square, sesquiquadrate.
 				Type CalculateTransitAspects200JSONResponseBodyAspectsType `json:"type"`
+
+				// TypeLocalized Aspect type name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				TypeLocalized *string `json:"typeLocalized,omitempty"`
 			} `json:"aspects"`
 
 			// HouseSystem House system actually used for the natal cusps behind every house number in this response. Differs from the requested system only above the polar circle, where quadrant systems fall back to Whole Sign.
@@ -97795,8 +99016,14 @@ func ParseCalculateTransitAspectsResponse(rsp *http.Response) (*CalculateTransit
 				// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee).
 				Name CalculateTransitAspects200JSONResponseBodyNatalPlanetsName `json:"name"`
 
+				// NameLocalized Body name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				NameLocalized *string `json:"nameLocalized,omitempty"`
+
 				// Sign Tropical zodiac sign this planet occupies. Determined by 30-degree divisions of ecliptic longitude.
 				Sign string `json:"sign"`
+
+				// SignLocalized Zodiac sign name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				SignLocalized *string `json:"signLocalized,omitempty"`
 
 				// Speed Daily motion in degrees per day. Negative values indicate retrograde motion.
 				Speed float32 `json:"speed"`
@@ -97833,14 +99060,23 @@ func ParseCalculateTransitAspectsResponse(rsp *http.Response) (*CalculateTransit
 					// Planet1 First planet in the aspect pair.
 					Planet1 CalculateTransitAspects200JSONResponseBodySummaryStrongestPlanet1 `json:"planet1"`
 
+					// Planet1Localized First planet name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+					Planet1Localized *string `json:"planet1Localized,omitempty"`
+
 					// Planet2 Second planet in the aspect pair.
 					Planet2 CalculateTransitAspects200JSONResponseBodySummaryStrongestPlanet2 `json:"planet2"`
+
+					// Planet2Localized Second planet name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+					Planet2Localized *string `json:"planet2Localized,omitempty"`
 
 					// Strength Aspect strength percentage (0-100). Based on orb tightness relative to the allowed maximum.
 					Strength float32 `json:"strength"`
 
 					// Type Aspect type. Major: conjunction (0), opposition (180), trine (120), square (90), sextile (60). Minor: semi-sextile, quincunx, semi-square, sesquiquadrate.
 					Type CalculateTransitAspects200JSONResponseBodySummaryStrongestType `json:"type"`
+
+					// TypeLocalized Aspect type name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+					TypeLocalized *string `json:"typeLocalized,omitempty"`
 				} `json:"strongest"`
 
 				// Total Total number of transit-to-natal aspects found.
@@ -97870,8 +99106,14 @@ func ParseCalculateTransitAspectsResponse(rsp *http.Response) (*CalculateTransit
 				// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee).
 				Name CalculateTransitAspects200JSONResponseBodyTransitPlanetsName `json:"name"`
 
+				// NameLocalized Body name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				NameLocalized *string `json:"nameLocalized,omitempty"`
+
 				// Sign Tropical zodiac sign this planet occupies. Determined by 30-degree divisions of ecliptic longitude.
 				Sign string `json:"sign"`
+
+				// SignLocalized Zodiac sign name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				SignLocalized *string `json:"signLocalized,omitempty"`
 
 				// Speed Daily motion in degrees per day. Negative values indicate retrograde motion.
 				Speed float32 `json:"speed"`
@@ -108461,8 +109703,11 @@ func ParseGetLunarAspectsResponse(rsp *http.Response) (*GetLunarAspectsResponse,
 				// Orb Angular distance from exact lunar aspect in degrees. Smaller orb = stronger Moon influence.
 				Orb float32 `json:"orb"`
 
-				// Planet Planet that the Moon forms an aspect with.
+				// Planet Planet that the Moon forms an aspect with. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use planetLocalized for anything a reader sees.
 				Planet string `json:"planet"`
+
+				// PlanetLocalized Planet name in the requested language, for display. Present only when lang is set to a language other than English, since in English it would repeat planet exactly.
+				PlanetLocalized *string `json:"planetLocalized,omitempty"`
 
 				// PlanetLongitude Sidereal longitude of the aspected planet at the time of aspect.
 				PlanetLongitude float32 `json:"planetLongitude"`
@@ -108471,13 +109716,13 @@ func ParseGetLunarAspectsResponse(rsp *http.Response) (*GetLunarAspectsResponse,
 				Time string `json:"time"`
 			} `json:"events"`
 
-			// Month Month of the lunar aspect analysis.
+			// Month Month of the lunar aspect analysis. Echoes the month that was requested, or the current UTC month when it was omitted.
 			Month float32 `json:"month"`
 
 			// Timezone Timezone offset from UTC in hours that the event dates and times are reported in. Echoes the requested timezone.
 			Timezone float32 `json:"timezone"`
 
-			// Year Year of the lunar aspect analysis.
+			// Year Year of the lunar aspect analysis. Echoes the year that was requested, or the current UTC year when it was omitted.
 			Year float32 `json:"year"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
@@ -108571,14 +109816,20 @@ func ParseGetMonthlyAspectsResponse(rsp *http.Response) (*GetMonthlyAspectsRespo
 				// Orb Angular distance from exact aspect in degrees at closest approach. Smaller orb indicates a more powerful aspect.
 				Orb float32 `json:"orb"`
 
-				// Planet1 First planet forming the aspect. One of the Navagraha, Sun through Ketu.
+				// Planet1 First planet forming the aspect. One of the Navagraha, Sun through Ketu. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use planet1Localized for anything a reader sees.
 				Planet1 string `json:"planet1"`
+
+				// Planet1Localized First planet name in the requested language, for display. Present only when lang is set to a language other than English, since in English it would repeat planet1 exactly.
+				Planet1Localized *string `json:"planet1Localized,omitempty"`
 
 				// Planet1Longitude Sidereal longitude of the first planet at time of aspect (Lahiri ayanamsa).
 				Planet1Longitude float32 `json:"planet1Longitude"`
 
-				// Planet2 Second planet forming the aspect.
+				// Planet2 Second planet forming the aspect. Always English, whatever the lang parameter says. Use planet2Localized for anything a reader sees.
 				Planet2 string `json:"planet2"`
+
+				// Planet2Localized Second planet name in the requested language, for display. Present only when lang is set to a language other than English.
+				Planet2Localized *string `json:"planet2Localized,omitempty"`
 
 				// Planet2Longitude Sidereal longitude of the second planet at time of aspect.
 				Planet2Longitude float32 `json:"planet2Longitude"`
@@ -108587,13 +109838,13 @@ func ParseGetMonthlyAspectsResponse(rsp *http.Response) (*GetMonthlyAspectsRespo
 				Time string `json:"time"`
 			} `json:"events"`
 
-			// Month Month of the aspect analysis.
+			// Month Month of the aspect analysis. Echoes the month that was requested, or the current UTC month when it was omitted.
 			Month float32 `json:"month"`
 
 			// Timezone Timezone offset from UTC in hours that the event dates and times are reported in. Echoes the requested timezone.
 			Timezone float32 `json:"timezone"`
 
-			// Year Year of the aspect analysis.
+			// Year Year of the aspect analysis. Echoes the year that was requested, or the current UTC year when it was omitted.
 			Year float32 `json:"year"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
@@ -113308,11 +114559,17 @@ func ParseGetMonthlyParallelsResponse(rsp *http.Response) (*GetMonthlyParallelsR
 				// Orb Declination difference from exact parallel/contraparallel in degrees. Smaller = stronger.
 				Orb float32 `json:"orb"`
 
-				// Planet1 First planet in the parallel or contraparallel pair.
+				// Planet1 First planet in the parallel or contraparallel pair. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use planet1Localized for anything a reader sees.
 				Planet1 string `json:"planet1"`
 
-				// Planet2 Second planet in the pair.
+				// Planet1Localized First planet name in the requested language, for display. Present only when lang is set to a language other than English, since in English it would repeat planet1 exactly.
+				Planet1Localized *string `json:"planet1Localized,omitempty"`
+
+				// Planet2 Second planet in the pair. Always English, whatever the lang parameter says. Use planet2Localized for anything a reader sees.
 				Planet2 string `json:"planet2"`
+
+				// Planet2Localized Second planet name in the requested language, for display. Present only when lang is set to a language other than English.
+				Planet2Localized *string `json:"planet2Localized,omitempty"`
 
 				// Time Time of closest declination match (HH:MM, 24-hour). Adjusted to requested timezone.
 				Time string `json:"time"`
@@ -113321,10 +114578,10 @@ func ParseGetMonthlyParallelsResponse(rsp *http.Response) (*GetMonthlyParallelsR
 				Type GetMonthlyParallels200JSONResponseBodyEventsType `json:"type"`
 			} `json:"events"`
 
-			// Month Month of the parallel analysis.
+			// Month Month of the parallel analysis. Echoes the month that was requested, or the current UTC month when it was omitted.
 			Month float32 `json:"month"`
 
-			// Year Year of the parallel analysis.
+			// Year Year of the parallel analysis. Echoes the year that was requested, or the current UTC year when it was omitted.
 			Year float32 `json:"year"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
@@ -113491,18 +114748,24 @@ func ParseGetMonthlyEphemerisResponse(rsp *http.Response) (*GetMonthlyEphemerisR
 					// Longitude Sidereal ecliptic longitude in degrees (0-360) using Lahiri ayanamsa.
 					Longitude float32 `json:"longitude"`
 
-					// Planet Planet name, one of the Navagraha (Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn, Rahu, Ketu).
+					// Planet Planet name, one of the Navagraha (Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn, Rahu, Ketu). Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use planetLocalized for anything a reader sees.
 					Planet string `json:"planet"`
 
-					// Sign Zodiac sign (rashi) the planet occupies on this date.
+					// PlanetLocalized Planet name in the requested language, for display. Present only when lang is set to a language other than English, since in English it would repeat planet exactly. Rahu and Ketu are rendered as the lunar nodes they are, so Spanish returns Nodo Norte and Nodo Sur while Hindi returns their Sanskrit names.
+					PlanetLocalized *string `json:"planetLocalized,omitempty"`
+
+					// Sign Zodiac sign (rashi) the planet occupies on this date. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use signLocalized for anything a reader sees.
 					Sign string `json:"sign"`
+
+					// SignLocalized Zodiac sign name in the requested language, for display. Present only when lang is set to a language other than English, since in English it would repeat sign exactly.
+					SignLocalized *string `json:"signLocalized,omitempty"`
 				} `json:"positions"`
 			} `json:"days"`
 
-			// Month Month of the ephemeris.
+			// Month Month of the ephemeris. Echoes the month that was requested, or the current UTC month when it was omitted.
 			Month float32 `json:"month"`
 
-			// Year Year of the ephemeris.
+			// Year Year of the ephemeris. Echoes the year that was requested, or the current UTC year when it was omitted.
 			Year float32 `json:"year"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
@@ -113966,7 +115229,7 @@ func ParseGetMonthlyTransitsResponse(rsp *http.Response) (*GetMonthlyTransitsRes
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
-			// Month Month of the monthly transit analysis.
+			// Month Month of the monthly transit analysis. Echoes the month that was requested, or the current UTC month when it was omitted.
 			Month float32 `json:"month"`
 
 			// StartingPositions Planetary positions at the beginning of the month (day 1, 00:00 UTC).
@@ -113974,12 +115237,21 @@ func ParseGetMonthlyTransitsResponse(rsp *http.Response) (*GetMonthlyTransitsRes
 				// Longitude Sidereal longitude at the start of the month.
 				Longitude float32 `json:"longitude"`
 
-				// Planet Planet (graha) name. One of the 9 Navagraha used in Vedic transit (Gochar) analysis.
+				// Planet Planet (graha) name. One of the 9 Navagraha used in Vedic transit (Gochar) analysis. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use planetLocalized for anything a reader sees.
 				Planet string `json:"planet"`
 
-				// Sign Zodiac sign (rashi) the planet occupies at the start of the month.
+				// PlanetLocalized Planet name in the requested language, for display. Present only when lang is set to a language other than English.
+				PlanetLocalized *string `json:"planetLocalized,omitempty"`
+
+				// Sign Zodiac sign (rashi) the planet occupies at the start of the month. Always English. Use signLocalized for anything a reader sees.
 				Sign string `json:"sign"`
+
+				// SignLocalized Zodiac sign name in the requested language, for display. Present only when lang is set to a language other than English.
+				SignLocalized *string `json:"signLocalized,omitempty"`
 			} `json:"startingPositions"`
+
+			// Timezone Timezone offset from UTC in hours that the event dates and times are reported in. Echoes the requested timezone.
+			Timezone float32 `json:"timezone"`
 
 			// TransitEvents All sign change events during the month, sorted chronologically. Moon changes sign roughly every 2.25 days, Sun once a month, slow planets less frequently.
 			TransitEvents []struct {
@@ -113989,23 +115261,32 @@ func ParseGetMonthlyTransitsResponse(rsp *http.Response) (*GetMonthlyTransitsRes
 				// Datetime Full datetime of the sign change. Adjusted to requested timezone.
 				Datetime string `json:"datetime"`
 
-				// FromSign Zodiac sign the planet is leaving (previous rashi).
+				// FromSign Zodiac sign the planet is leaving (previous rashi). Always English. Use fromSignLocalized for anything a reader sees.
 				FromSign string `json:"fromSign"`
+
+				// FromSignLocalized Name of the sign being left, in the requested language, for display. Present only when lang is set to a language other than English.
+				FromSignLocalized *string `json:"fromSignLocalized,omitempty"`
 
 				// IsRetrograde Whether the planet is in retrograde motion (vakri) at the time of sign change. A retrograde ingress means the planet is moving backward into the previous sign, which carries different astrological significance than a direct (forward) ingress. Rahu and Ketu are always retrograde.
 				IsRetrograde bool `json:"isRetrograde"`
 
-				// Planet Planet that changes sign (rashi) during this month. One of the Navagraha: Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn, Rahu, Ketu.
+				// Planet Planet that changes sign (rashi) during this month. One of the Navagraha: Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn, Rahu, Ketu. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use planetLocalized for anything a reader sees.
 				Planet string `json:"planet"`
+
+				// PlanetLocalized Planet name in the requested language, for display. Present only when lang is set to a language other than English, since in English it would repeat planet exactly.
+				PlanetLocalized *string `json:"planetLocalized,omitempty"`
 
 				// Time Time of the sign change (HH:MM, 24-hour). Adjusted to requested timezone. Precise to ~1 minute via binary search.
 				Time string `json:"time"`
 
-				// ToSign Zodiac sign the planet is entering (new rashi transit).
+				// ToSign Zodiac sign the planet is entering (new rashi transit). Always English. Use toSignLocalized for anything a reader sees.
 				ToSign string `json:"toSign"`
+
+				// ToSignLocalized Name of the sign being entered, in the requested language, for display. Present only when lang is set to a language other than English.
+				ToSignLocalized *string `json:"toSignLocalized,omitempty"`
 			} `json:"transitEvents"`
 
-			// Year Year of the monthly transit analysis.
+			// Year Year of the monthly transit analysis. Echoes the year that was requested, or the current UTC year when it was omitted.
 			Year float32 `json:"year"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
