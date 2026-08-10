@@ -42,6 +42,24 @@ func (e ArabicLotsRequestHouseSystem) Valid() bool {
 	}
 }
 
+// Defines values for ArabicLotsRequestNodeType.
+const (
+	ArabicLotsRequestNodeTypeMean ArabicLotsRequestNodeType = "mean"
+	ArabicLotsRequestNodeTypeTrue ArabicLotsRequestNodeType = "true"
+)
+
+// Valid indicates whether the value is a known member of the ArabicLotsRequestNodeType enum.
+func (e ArabicLotsRequestNodeType) Valid() bool {
+	switch e {
+	case ArabicLotsRequestNodeTypeMean:
+		return true
+	case ArabicLotsRequestNodeTypeTrue:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for ArabicLotsResponseSect.
 const (
 	ArabicLotsResponseSectDay   ArabicLotsResponseSect = "day"
@@ -156,6 +174,24 @@ func (e AshtakavargaResponseSigns) Valid() bool {
 	case AshtakavargaResponseSignsTaurus:
 		return true
 	case AshtakavargaResponseSignsVirgo:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AspectPatternsRequestNodeType.
+const (
+	AspectPatternsRequestNodeTypeMean AspectPatternsRequestNodeType = "mean"
+	AspectPatternsRequestNodeTypeTrue AspectPatternsRequestNodeType = "true"
+)
+
+// Valid indicates whether the value is a known member of the AspectPatternsRequestNodeType enum.
+func (e AspectPatternsRequestNodeType) Valid() bool {
+	switch e {
+	case AspectPatternsRequestNodeTypeMean:
+		return true
+	case AspectPatternsRequestNodeTypeTrue:
 		return true
 	default:
 		return false
@@ -354,6 +390,24 @@ func (e AsteroidsRequestHouseSystem) Valid() bool {
 	case AsteroidsRequestHouseSystemPlacidus:
 		return true
 	case AsteroidsRequestHouseSystemWholeSign:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for AsteroidsRequestNodeType.
+const (
+	AsteroidsRequestNodeTypeMean AsteroidsRequestNodeType = "mean"
+	AsteroidsRequestNodeTypeTrue AsteroidsRequestNodeType = "true"
+)
+
+// Valid indicates whether the value is a known member of the AsteroidsRequestNodeType enum.
+func (e AsteroidsRequestNodeType) Valid() bool {
+	switch e {
+	case AsteroidsRequestNodeTypeMean:
+		return true
+	case AsteroidsRequestNodeTypeTrue:
 		return true
 	default:
 		return false
@@ -3156,6 +3210,24 @@ func (e LilithRequestHouseSystem) Valid() bool {
 	}
 }
 
+// Defines values for LilithRequestNodeType.
+const (
+	LilithRequestNodeTypeMean LilithRequestNodeType = "mean"
+	LilithRequestNodeTypeTrue LilithRequestNodeType = "true"
+)
+
+// Valid indicates whether the value is a known member of the LilithRequestNodeType enum.
+func (e LilithRequestNodeType) Valid() bool {
+	switch e {
+	case LilithRequestNodeTypeMean:
+		return true
+	case LilithRequestNodeTypeTrue:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for LilithResponseHouseSystem.
 const (
 	LilithResponseHouseSystemEqual     LilithResponseHouseSystem = "equal"
@@ -3174,6 +3246,24 @@ func (e LilithResponseHouseSystem) Valid() bool {
 	case LilithResponseHouseSystemPlacidus:
 		return true
 	case LilithResponseHouseSystemWholeSign:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for LilithResponseLilithVariant.
+const (
+	LilithResponseLilithVariantMean LilithResponseLilithVariant = "mean"
+	LilithResponseLilithVariantTrue LilithResponseLilithVariant = "true"
+)
+
+// Valid indicates whether the value is a known member of the LilithResponseLilithVariant enum.
+func (e LilithResponseLilithVariant) Valid() bool {
+	switch e {
+	case LilithResponseLilithVariantMean:
+		return true
+	case LilithResponseLilithVariantTrue:
 		return true
 	default:
 		return false
@@ -3246,6 +3336,24 @@ func (e NatalChartRequestHouseSystem) Valid() bool {
 	case NatalChartRequestHouseSystemPlacidus:
 		return true
 	case NatalChartRequestHouseSystemWholeSign:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for NatalChartRequestNodeType.
+const (
+	NatalChartRequestNodeTypeMean NatalChartRequestNodeType = "mean"
+	NatalChartRequestNodeTypeTrue NatalChartRequestNodeType = "true"
+)
+
+// Valid indicates whether the value is a known member of the NatalChartRequestNodeType enum.
+func (e NatalChartRequestNodeType) Valid() bool {
+	switch e {
+	case NatalChartRequestNodeTypeMean:
+		return true
+	case NatalChartRequestNodeTypeTrue:
 		return true
 	default:
 		return false
@@ -3531,6 +3639,42 @@ func (e ProfectionsRequestHouseSystem) Valid() bool {
 	}
 }
 
+// Defines values for ProfectionsRequestNodeType.
+const (
+	ProfectionsRequestNodeTypeMean ProfectionsRequestNodeType = "mean"
+	ProfectionsRequestNodeTypeTrue ProfectionsRequestNodeType = "true"
+)
+
+// Valid indicates whether the value is a known member of the ProfectionsRequestNodeType enum.
+func (e ProfectionsRequestNodeType) Valid() bool {
+	switch e {
+	case ProfectionsRequestNodeTypeMean:
+		return true
+	case ProfectionsRequestNodeTypeTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for ProgressionsRequestNodeType.
+const (
+	ProgressionsRequestNodeTypeMean ProgressionsRequestNodeType = "mean"
+	ProgressionsRequestNodeTypeTrue ProgressionsRequestNodeType = "true"
+)
+
+// Valid indicates whether the value is a known member of the ProgressionsRequestNodeType enum.
+func (e ProgressionsRequestNodeType) Valid() bool {
+	switch e {
+	case ProgressionsRequestNodeTypeMean:
+		return true
+	case ProgressionsRequestNodeTypeTrue:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for RelocationChartRequestHouseSystem.
 const (
 	RelocationChartRequestHouseSystemEqual     RelocationChartRequestHouseSystem = "equal"
@@ -3678,6 +3822,42 @@ func (e ShadbalaRequestAyanamsa) Valid() bool {
 	case ShadbalaRequestAyanamsaLahiri:
 		return true
 	case ShadbalaRequestAyanamsaRaman:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for SolarArcRequestNodeType.
+const (
+	SolarArcRequestNodeTypeMean SolarArcRequestNodeType = "mean"
+	SolarArcRequestNodeTypeTrue SolarArcRequestNodeType = "true"
+)
+
+// Valid indicates whether the value is a known member of the SolarArcRequestNodeType enum.
+func (e SolarArcRequestNodeType) Valid() bool {
+	switch e {
+	case SolarArcRequestNodeTypeMean:
+		return true
+	case SolarArcRequestNodeTypeTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for TransitsRequestNodeType.
+const (
+	TransitsRequestNodeTypeMean TransitsRequestNodeType = "mean"
+	TransitsRequestNodeTypeTrue TransitsRequestNodeType = "true"
+)
+
+// Valid indicates whether the value is a known member of the TransitsRequestNodeType enum.
+func (e TransitsRequestNodeType) Valid() bool {
+	switch e {
+	case TransitsRequestNodeTypeMean:
+		return true
+	case TransitsRequestNodeTypeTrue:
 		return true
 	default:
 		return false
@@ -4245,6 +4425,24 @@ func (e GenerateAstrocartographyParamsLang) Valid() bool {
 	}
 }
 
+// Defines values for GenerateAstrocartographyJSONBodyNodeType.
+const (
+	GenerateAstrocartographyJSONBodyNodeTypeMean GenerateAstrocartographyJSONBodyNodeType = "mean"
+	GenerateAstrocartographyJSONBodyNodeTypeTrue GenerateAstrocartographyJSONBodyNodeType = "true"
+)
+
+// Valid indicates whether the value is a known member of the GenerateAstrocartographyJSONBodyNodeType enum.
+func (e GenerateAstrocartographyJSONBodyNodeType) Valid() bool {
+	switch e {
+	case GenerateAstrocartographyJSONBodyNodeTypeMean:
+		return true
+	case GenerateAstrocartographyJSONBodyNodeTypeTrue:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for CalculateCompatibilityParamsLang.
 const (
 	CalculateCompatibilityParamsLangDe CalculateCompatibilityParamsLang = "de"
@@ -4275,6 +4473,42 @@ func (e CalculateCompatibilityParamsLang) Valid() bool {
 	case CalculateCompatibilityParamsLangRu:
 		return true
 	case CalculateCompatibilityParamsLangTr:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for CalculateCompatibilityJSONBodyPerson1NodeType.
+const (
+	CalculateCompatibilityJSONBodyPerson1NodeTypeMean CalculateCompatibilityJSONBodyPerson1NodeType = "mean"
+	CalculateCompatibilityJSONBodyPerson1NodeTypeTrue CalculateCompatibilityJSONBodyPerson1NodeType = "true"
+)
+
+// Valid indicates whether the value is a known member of the CalculateCompatibilityJSONBodyPerson1NodeType enum.
+func (e CalculateCompatibilityJSONBodyPerson1NodeType) Valid() bool {
+	switch e {
+	case CalculateCompatibilityJSONBodyPerson1NodeTypeMean:
+		return true
+	case CalculateCompatibilityJSONBodyPerson1NodeTypeTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for CalculateCompatibilityJSONBodyPerson2NodeType.
+const (
+	CalculateCompatibilityJSONBodyPerson2NodeTypeMean CalculateCompatibilityJSONBodyPerson2NodeType = "mean"
+	CalculateCompatibilityJSONBodyPerson2NodeTypeTrue CalculateCompatibilityJSONBodyPerson2NodeType = "true"
+)
+
+// Valid indicates whether the value is a known member of the CalculateCompatibilityJSONBodyPerson2NodeType enum.
+func (e CalculateCompatibilityJSONBodyPerson2NodeType) Valid() bool {
+	switch e {
+	case CalculateCompatibilityJSONBodyPerson2NodeTypeMean:
+		return true
+	case CalculateCompatibilityJSONBodyPerson2NodeTypeTrue:
 		return true
 	default:
 		return false
@@ -4356,6 +4590,42 @@ func (e GenerateCompositeChartJSONBodyHouseSystem) Valid() bool {
 	case GenerateCompositeChartJSONBodyHouseSystemPlacidus:
 		return true
 	case GenerateCompositeChartJSONBodyHouseSystemWholeSign:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GenerateCompositeChartJSONBodyPerson1NodeType.
+const (
+	GenerateCompositeChartJSONBodyPerson1NodeTypeMean GenerateCompositeChartJSONBodyPerson1NodeType = "mean"
+	GenerateCompositeChartJSONBodyPerson1NodeTypeTrue GenerateCompositeChartJSONBodyPerson1NodeType = "true"
+)
+
+// Valid indicates whether the value is a known member of the GenerateCompositeChartJSONBodyPerson1NodeType enum.
+func (e GenerateCompositeChartJSONBodyPerson1NodeType) Valid() bool {
+	switch e {
+	case GenerateCompositeChartJSONBodyPerson1NodeTypeMean:
+		return true
+	case GenerateCompositeChartJSONBodyPerson1NodeTypeTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GenerateCompositeChartJSONBodyPerson2NodeType.
+const (
+	GenerateCompositeChartJSONBodyPerson2NodeTypeMean GenerateCompositeChartJSONBodyPerson2NodeType = "mean"
+	GenerateCompositeChartJSONBodyPerson2NodeTypeTrue GenerateCompositeChartJSONBodyPerson2NodeType = "true"
+)
+
+// Valid indicates whether the value is a known member of the GenerateCompositeChartJSONBodyPerson2NodeType enum.
+func (e GenerateCompositeChartJSONBodyPerson2NodeType) Valid() bool {
+	switch e {
+	case GenerateCompositeChartJSONBodyPerson2NodeTypeMean:
+		return true
+	case GenerateCompositeChartJSONBodyPerson2NodeTypeTrue:
 		return true
 	default:
 		return false
@@ -4614,6 +4884,24 @@ func (e GenerateFixedStarsParamsLang) Valid() bool {
 	case GenerateFixedStarsParamsLangRu:
 		return true
 	case GenerateFixedStarsParamsLangTr:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GenerateFixedStarsJSONBodyNodeType.
+const (
+	GenerateFixedStarsJSONBodyNodeTypeMean GenerateFixedStarsJSONBodyNodeType = "mean"
+	GenerateFixedStarsJSONBodyNodeTypeTrue GenerateFixedStarsJSONBodyNodeType = "true"
+)
+
+// Valid indicates whether the value is a known member of the GenerateFixedStarsJSONBodyNodeType enum.
+func (e GenerateFixedStarsJSONBodyNodeType) Valid() bool {
+	switch e {
+	case GenerateFixedStarsJSONBodyNodeTypeMean:
+		return true
+	case GenerateFixedStarsJSONBodyNodeTypeTrue:
 		return true
 	default:
 		return false
@@ -5970,6 +6258,24 @@ func (e GetPlanetaryPositionsParamsLang) Valid() bool {
 	}
 }
 
+// Defines values for GetPlanetaryPositionsJSONBodyNodeType.
+const (
+	GetPlanetaryPositionsJSONBodyNodeTypeMean GetPlanetaryPositionsJSONBodyNodeType = "mean"
+	GetPlanetaryPositionsJSONBodyNodeTypeTrue GetPlanetaryPositionsJSONBodyNodeType = "true"
+)
+
+// Valid indicates whether the value is a known member of the GetPlanetaryPositionsJSONBodyNodeType enum.
+func (e GetPlanetaryPositionsJSONBodyNodeType) Valid() bool {
+	switch e {
+	case GetPlanetaryPositionsJSONBodyNodeTypeMean:
+		return true
+	case GetPlanetaryPositionsJSONBodyNodeTypeTrue:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for GetMonthlyTropicalEphemerisParamsLang.
 const (
 	GetMonthlyTropicalEphemerisParamsLangDe GetMonthlyTropicalEphemerisParamsLang = "de"
@@ -6675,6 +6981,42 @@ func (e CalculateSynastryJSONBodyHouseSystem) Valid() bool {
 	}
 }
 
+// Defines values for CalculateSynastryJSONBodyPerson1NodeType.
+const (
+	CalculateSynastryJSONBodyPerson1NodeTypeMean CalculateSynastryJSONBodyPerson1NodeType = "mean"
+	CalculateSynastryJSONBodyPerson1NodeTypeTrue CalculateSynastryJSONBodyPerson1NodeType = "true"
+)
+
+// Valid indicates whether the value is a known member of the CalculateSynastryJSONBodyPerson1NodeType enum.
+func (e CalculateSynastryJSONBodyPerson1NodeType) Valid() bool {
+	switch e {
+	case CalculateSynastryJSONBodyPerson1NodeTypeMean:
+		return true
+	case CalculateSynastryJSONBodyPerson1NodeTypeTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for CalculateSynastryJSONBodyPerson2NodeType.
+const (
+	CalculateSynastryJSONBodyPerson2NodeTypeMean CalculateSynastryJSONBodyPerson2NodeType = "mean"
+	CalculateSynastryJSONBodyPerson2NodeTypeTrue CalculateSynastryJSONBodyPerson2NodeType = "true"
+)
+
+// Valid indicates whether the value is a known member of the CalculateSynastryJSONBodyPerson2NodeType enum.
+func (e CalculateSynastryJSONBodyPerson2NodeType) Valid() bool {
+	switch e {
+	case CalculateSynastryJSONBodyPerson2NodeTypeMean:
+		return true
+	case CalculateSynastryJSONBodyPerson2NodeTypeTrue:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for CalculateTransitAspectsParamsLang.
 const (
 	CalculateTransitAspectsParamsLangDe CalculateTransitAspectsParamsLang = "de"
@@ -6768,6 +7110,24 @@ func (e CalculateTransitAspectsJSONBodyHouseSystem) Valid() bool {
 	case CalculateTransitAspectsJSONBodyHouseSystemPlacidus:
 		return true
 	case CalculateTransitAspectsJSONBodyHouseSystemWholeSign:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for CalculateTransitAspectsJSONBodyNatalChartNodeType.
+const (
+	CalculateTransitAspectsJSONBodyNatalChartNodeTypeMean CalculateTransitAspectsJSONBodyNatalChartNodeType = "mean"
+	CalculateTransitAspectsJSONBodyNatalChartNodeTypeTrue CalculateTransitAspectsJSONBodyNatalChartNodeType = "true"
+)
+
+// Valid indicates whether the value is a known member of the CalculateTransitAspectsJSONBodyNatalChartNodeType enum.
+func (e CalculateTransitAspectsJSONBodyNatalChartNodeType) Valid() bool {
+	switch e {
+	case CalculateTransitAspectsJSONBodyNatalChartNodeTypeMean:
+		return true
+	case CalculateTransitAspectsJSONBodyNatalChartNodeTypeTrue:
 		return true
 	default:
 		return false
@@ -11795,34 +12155,34 @@ func (e CalculateDrishtiJSONBodyCoordinateSystem) Valid() bool {
 
 // Defines values for CalculateDrishti200JSONResponseBodyAspectsAspectType.
 const (
-	Conjunction CalculateDrishti200JSONResponseBodyAspectsAspectType = "conjunction"
-	N10Th       CalculateDrishti200JSONResponseBodyAspectsAspectType = "10th"
-	N3Rd        CalculateDrishti200JSONResponseBodyAspectsAspectType = "3rd"
-	N4Th        CalculateDrishti200JSONResponseBodyAspectsAspectType = "4th"
-	N5Th        CalculateDrishti200JSONResponseBodyAspectsAspectType = "5th"
-	N7Th        CalculateDrishti200JSONResponseBodyAspectsAspectType = "7th"
-	N8Th        CalculateDrishti200JSONResponseBodyAspectsAspectType = "8th"
-	N9Th        CalculateDrishti200JSONResponseBodyAspectsAspectType = "9th"
+	CalculateDrishti200JSONResponseBodyAspectsAspectTypeConjunction CalculateDrishti200JSONResponseBodyAspectsAspectType = "conjunction"
+	CalculateDrishti200JSONResponseBodyAspectsAspectTypeN10Th       CalculateDrishti200JSONResponseBodyAspectsAspectType = "10th"
+	CalculateDrishti200JSONResponseBodyAspectsAspectTypeN3Rd        CalculateDrishti200JSONResponseBodyAspectsAspectType = "3rd"
+	CalculateDrishti200JSONResponseBodyAspectsAspectTypeN4Th        CalculateDrishti200JSONResponseBodyAspectsAspectType = "4th"
+	CalculateDrishti200JSONResponseBodyAspectsAspectTypeN5Th        CalculateDrishti200JSONResponseBodyAspectsAspectType = "5th"
+	CalculateDrishti200JSONResponseBodyAspectsAspectTypeN7Th        CalculateDrishti200JSONResponseBodyAspectsAspectType = "7th"
+	CalculateDrishti200JSONResponseBodyAspectsAspectTypeN8Th        CalculateDrishti200JSONResponseBodyAspectsAspectType = "8th"
+	CalculateDrishti200JSONResponseBodyAspectsAspectTypeN9Th        CalculateDrishti200JSONResponseBodyAspectsAspectType = "9th"
 )
 
 // Valid indicates whether the value is a known member of the CalculateDrishti200JSONResponseBodyAspectsAspectType enum.
 func (e CalculateDrishti200JSONResponseBodyAspectsAspectType) Valid() bool {
 	switch e {
-	case Conjunction:
+	case CalculateDrishti200JSONResponseBodyAspectsAspectTypeConjunction:
 		return true
-	case N10Th:
+	case CalculateDrishti200JSONResponseBodyAspectsAspectTypeN10Th:
 		return true
-	case N3Rd:
+	case CalculateDrishti200JSONResponseBodyAspectsAspectTypeN3Rd:
 		return true
-	case N4Th:
+	case CalculateDrishti200JSONResponseBodyAspectsAspectTypeN4Th:
 		return true
-	case N5Th:
+	case CalculateDrishti200JSONResponseBodyAspectsAspectTypeN5Th:
 		return true
-	case N7Th:
+	case CalculateDrishti200JSONResponseBodyAspectsAspectTypeN7Th:
 		return true
-	case N8Th:
+	case CalculateDrishti200JSONResponseBodyAspectsAspectTypeN8Th:
 		return true
-	case N9Th:
+	case CalculateDrishti200JSONResponseBodyAspectsAspectTypeN9Th:
 		return true
 	default:
 		return false
@@ -17580,6 +17940,42 @@ func (e CalculateTransitJSONBodyCoordinateSystem) Valid() bool {
 	}
 }
 
+// Defines values for CalculateTransit200JSONResponseBodyTransitingPlanetsDrishtiToNatalAspectType.
+const (
+	CalculateTransit200JSONResponseBodyTransitingPlanetsDrishtiToNatalAspectTypeConjunction CalculateTransit200JSONResponseBodyTransitingPlanetsDrishtiToNatalAspectType = "conjunction"
+	CalculateTransit200JSONResponseBodyTransitingPlanetsDrishtiToNatalAspectTypeN10Th       CalculateTransit200JSONResponseBodyTransitingPlanetsDrishtiToNatalAspectType = "10th"
+	CalculateTransit200JSONResponseBodyTransitingPlanetsDrishtiToNatalAspectTypeN3Rd        CalculateTransit200JSONResponseBodyTransitingPlanetsDrishtiToNatalAspectType = "3rd"
+	CalculateTransit200JSONResponseBodyTransitingPlanetsDrishtiToNatalAspectTypeN4Th        CalculateTransit200JSONResponseBodyTransitingPlanetsDrishtiToNatalAspectType = "4th"
+	CalculateTransit200JSONResponseBodyTransitingPlanetsDrishtiToNatalAspectTypeN5Th        CalculateTransit200JSONResponseBodyTransitingPlanetsDrishtiToNatalAspectType = "5th"
+	CalculateTransit200JSONResponseBodyTransitingPlanetsDrishtiToNatalAspectTypeN7Th        CalculateTransit200JSONResponseBodyTransitingPlanetsDrishtiToNatalAspectType = "7th"
+	CalculateTransit200JSONResponseBodyTransitingPlanetsDrishtiToNatalAspectTypeN8Th        CalculateTransit200JSONResponseBodyTransitingPlanetsDrishtiToNatalAspectType = "8th"
+	CalculateTransit200JSONResponseBodyTransitingPlanetsDrishtiToNatalAspectTypeN9Th        CalculateTransit200JSONResponseBodyTransitingPlanetsDrishtiToNatalAspectType = "9th"
+)
+
+// Valid indicates whether the value is a known member of the CalculateTransit200JSONResponseBodyTransitingPlanetsDrishtiToNatalAspectType enum.
+func (e CalculateTransit200JSONResponseBodyTransitingPlanetsDrishtiToNatalAspectType) Valid() bool {
+	switch e {
+	case CalculateTransit200JSONResponseBodyTransitingPlanetsDrishtiToNatalAspectTypeConjunction:
+		return true
+	case CalculateTransit200JSONResponseBodyTransitingPlanetsDrishtiToNatalAspectTypeN10Th:
+		return true
+	case CalculateTransit200JSONResponseBodyTransitingPlanetsDrishtiToNatalAspectTypeN3Rd:
+		return true
+	case CalculateTransit200JSONResponseBodyTransitingPlanetsDrishtiToNatalAspectTypeN4Th:
+		return true
+	case CalculateTransit200JSONResponseBodyTransitingPlanetsDrishtiToNatalAspectTypeN5Th:
+		return true
+	case CalculateTransit200JSONResponseBodyTransitingPlanetsDrishtiToNatalAspectTypeN7Th:
+		return true
+	case CalculateTransit200JSONResponseBodyTransitingPlanetsDrishtiToNatalAspectTypeN8Th:
+		return true
+	case CalculateTransit200JSONResponseBodyTransitingPlanetsDrishtiToNatalAspectTypeN9Th:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for GetMonthlyTransitsParamsLang.
 const (
 	GetMonthlyTransitsParamsLangDe GetMonthlyTransitsParamsLang = "de"
@@ -18725,6 +19121,9 @@ type ArabicLotsRequest struct {
 	// Longitude Birth location longitude in decimal degrees (-180 to 180). Positive = East, negative = West.
 	Longitude float32 `json:"longitude"`
 
+	// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass "mean" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
+	NodeType *ArabicLotsRequestNodeType `json:"nodeType,omitempty"`
+
 	// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
 	Time string `json:"time"`
 
@@ -18734,6 +19133,9 @@ type ArabicLotsRequest struct {
 
 // ArabicLotsRequestHouseSystem House system used to place the Sun, which determines the chart sect (day when the Sun is above the horizon, night when below) and therefore which lot formula applies. Placidus (default), Whole Sign, Equal, or Koch.
 type ArabicLotsRequestHouseSystem string
+
+// ArabicLotsRequestNodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass "mean" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
+type ArabicLotsRequestNodeType string
 
 // ArabicLotsRequestTimezone0 defines model for ArabicLotsRequest.Timezone.0.
 type ArabicLotsRequestTimezone0 = float32
@@ -18774,7 +19176,7 @@ type ArabicLotsResponse struct {
 		// Formula Human readable arc used for this chart, with the day or night term order already applied by sect.
 		Formula string `json:"formula"`
 
-		// ID Stable machine identifier for the lot (fortune, spirit, eros, necessity, courage, victory, nemesis). Use this for lookups; the name field carries the localized display label.
+		// ID Stable machine identifier for the lot (fortune, spirit, eros, necessity, courage, victory, nemesis). Use this for lookups.
 		ID string `json:"id"`
 
 		// Interpretation Plain language meaning of this lot in its sign, suitable for chart reports and AI agents. Localized to the requested language.
@@ -18783,8 +19185,11 @@ type ArabicLotsResponse struct {
 		// Longitude Absolute tropical ecliptic longitude of the lot in degrees (0 to 360).
 		Longitude float32 `json:"longitude"`
 
-		// Name Display name of the lot, localized to the requested language.
+		// Name Name of the lot. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use nameLocalized for anything a reader sees.
 		Name string `json:"name"`
+
+		// NameLocalized Lot name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		NameLocalized *string `json:"nameLocalized,omitempty"`
 
 		// Sign Tropical zodiac sign the lot falls in.
 		Sign string `json:"sign"`
@@ -19022,12 +19427,18 @@ type AspectPatternsRequest struct {
 	// Longitude Birth location longitude in decimal degrees (-180 to 180). Positive = East, negative = West.
 	Longitude float32 `json:"longitude"`
 
+	// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass "mean" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
+	NodeType *AspectPatternsRequestNodeType `json:"nodeType,omitempty"`
+
 	// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
 	Time string `json:"time"`
 
 	// Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly.
 	Timezone AspectPatternsRequest_Timezone `json:"timezone"`
 }
+
+// AspectPatternsRequestNodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass "mean" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
+type AspectPatternsRequestNodeType string
 
 // AspectPatternsRequestTimezone0 defines model for AspectPatternsRequest.Timezone.0.
 type AspectPatternsRequestTimezone0 = float32
@@ -19281,6 +19692,9 @@ type AsteroidsRequest struct {
 	// Longitude Birth location longitude in decimal degrees (-180 to 180). Positive = East, negative = West.
 	Longitude float32 `json:"longitude"`
 
+	// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass "mean" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
+	NodeType *AsteroidsRequestNodeType `json:"nodeType,omitempty"`
+
 	// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
 	Time string `json:"time"`
 
@@ -19290,6 +19704,9 @@ type AsteroidsRequest struct {
 
 // AsteroidsRequestHouseSystem House system used to assign each asteroid to a natal house. Placidus (default), Whole Sign, Equal, or Koch. Above the polar circle, quadrant systems fall back to Whole Sign and the echoed houseSystem reports the system actually used.
 type AsteroidsRequestHouseSystem string
+
+// AsteroidsRequestNodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass "mean" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
+type AsteroidsRequestNodeType string
 
 // AsteroidsRequestTimezone0 defines model for AsteroidsRequest.Timezone.0.
 type AsteroidsRequestTimezone0 = float32
@@ -19324,8 +19741,11 @@ type AsteroidsResponse struct {
 		// Longitude Absolute tropical ecliptic longitude of the asteroid in degrees (0 to 360).
 		Longitude float32 `json:"longitude"`
 
-		// Name Display name of the asteroid, localized to the requested language.
+		// Name Name of the asteroid: Ceres, Pallas, Juno, or Vesta. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use nameLocalized for anything a reader sees.
 		Name string `json:"name"`
+
+		// NameLocalized Asteroid name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		NameLocalized *string `json:"nameLocalized,omitempty"`
 
 		// Sign Tropical zodiac sign the asteroid falls in.
 		Sign string `json:"sign"`
@@ -19441,8 +19861,11 @@ type AstrocartographyResponse struct {
 			Longitude float32 `json:"longitude"`
 		} `json:"mc"`
 
-		// Planet Celestial body this set of planetary lines belongs to.
+		// Planet Celestial body this set of planetary lines belongs to. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use planetLocalized for anything a reader sees.
 		Planet string `json:"planet"`
+
+		// PlanetLocalized Body name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		PlanetLocalized *string `json:"planetLocalized,omitempty"`
 
 		// RightAscension Equatorial right ascension of the body in degrees (0 to 360), the basis for every line.
 		RightAscension float32 `json:"rightAscension"`
@@ -21273,8 +21696,11 @@ type FixedStarsResponse struct {
 		// Orb Angular separation in degrees between the star and the natal point.
 		Orb float32 `json:"orb"`
 
-		// Point Natal point conjunct the star: a localized planet name, or the chart angles MC and ASC.
+		// Point Natal point conjunct the star: a planet name, or the chart angles MC and ASC. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use pointLocalized for anything a reader sees.
 		Point string `json:"point"`
+
+		// PointLocalized Natal point name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		PointLocalized *string `json:"pointLocalized,omitempty"`
 
 		// Star Proper name of the conjunct fixed star.
 		Star string `json:"star"`
@@ -21290,8 +21716,11 @@ type FixedStarsResponse struct {
 			// Orb Angular separation in degrees between the star and the natal point. Smaller means a tighter, stronger contact.
 			Orb float32 `json:"orb"`
 
-			// Point Natal point conjunct this star: a planet name, or the chart angles MC and ASC. Planet names are localized to the requested language.
+			// Point Natal point conjunct this star: a planet name, or the chart angles MC and ASC. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use pointLocalized for anything a reader sees.
 			Point string `json:"point"`
+
+			// PointLocalized Natal point name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			PointLocalized *string `json:"pointLocalized,omitempty"`
 
 			// PointLongitude Tropical ecliptic longitude of the natal point in degrees (0-360).
 			PointLongitude float32 `json:"pointLongitude"`
@@ -21604,7 +22033,7 @@ type KPChartRequest struct {
 	// Longitude Birth location longitude in decimal degrees
 	Longitude float32 `json:"longitude"`
 
-	// NodeType Lunar node type for Rahu and Ketu positions. "mean" uses the smooth mean node (traditional Vedic astrology default). "true" uses the osculating node with perturbation corrections, oscillating up to 1.5 degrees from mean with a 173-day period. Impacts KP sub-lord assignments in narrow boundary cases. Defaults to "mean".
+	// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the Rahu and Ketu positions. Mean is the traditional Vedic default and what printed panchangs use; the choice can move a KP sub-lord in narrow boundary cases, where a span can be as small as 0.5 degrees. Defaults to "mean".
 	NodeType *KPChartRequestNodeType `json:"nodeType,omitempty"`
 
 	// Time Birth time in 24-hour HH:MM:SS format. CRITICAL for accurate Lagna and house calculations.
@@ -21617,7 +22046,7 @@ type KPChartRequest struct {
 // KPChartRequestAyanamsa Ayanamsa system for sidereal conversion. "kp-newcomb" uses the KP-Newcomb dynamic formula (most common for KP). "kp-old" uses the Krishnamurti original table. "lahiri" uses Lahiri/Chitrapaksha ayanamsa matching most traditional Vedic software. "raman" uses the B.V. Raman ayanamsa, about 1.45 degrees below Lahiri. "custom" allows providing your own value via ayanamsaValue. Defaults to "kp-newcomb".
 type KPChartRequestAyanamsa string
 
-// KPChartRequestNodeType Lunar node type for Rahu and Ketu positions. "mean" uses the smooth mean node (traditional Vedic astrology default). "true" uses the osculating node with perturbation corrections, oscillating up to 1.5 degrees from mean with a 173-day period. Impacts KP sub-lord assignments in narrow boundary cases. Defaults to "mean".
+// KPChartRequestNodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the Rahu and Ketu positions. Mean is the traditional Vedic default and what printed panchangs use; the choice can move a KP sub-lord in narrow boundary cases, where a span can be as small as 0.5 degrees. Defaults to "mean".
 type KPChartRequestNodeType string
 
 // KPChartRequestTimezone0 defines model for KPChartRequest.Timezone.0.
@@ -21980,7 +22409,7 @@ type KPHoraryRequest struct {
 	// Longitude Longitude where the question is judged, decimal degrees.
 	Longitude float32 `json:"longitude"`
 
-	// NodeType Lunar node type for Rahu and Ketu positions. "mean" uses the smooth mean node (traditional Vedic astrology default). "true" uses the osculating node with perturbation corrections, oscillating up to 1.5 degrees from mean with a 173-day period. Impacts KP sub-lord assignments in narrow boundary cases. Defaults to "mean".
+	// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the Rahu and Ketu positions. Mean is the traditional Vedic default and what printed panchangs use; the choice can move a KP sub-lord in narrow boundary cases, where a span can be as small as 0.5 degrees. Defaults to "mean".
 	NodeType *KPHoraryRequestNodeType `json:"nodeType,omitempty"`
 
 	// Time Time the question was taken up for judgment, 24-hour HH:MM:SS. In KP practice this is the moment the astrologer receives and understands the question, not the moment the querent first thought of it. It sets every planetary position and all twelve cusps except the Ascendant.
@@ -21993,7 +22422,7 @@ type KPHoraryRequest struct {
 // KPHoraryRequestAyanamsa Ayanamsa system for sidereal conversion. "kp-newcomb" uses the KP-Newcomb dynamic formula (most common for KP). "kp-old" uses the Krishnamurti original table. "lahiri" uses Lahiri/Chitrapaksha ayanamsa matching most traditional Vedic software. "raman" uses the B.V. Raman ayanamsa, about 1.45 degrees below Lahiri. "custom" allows providing your own value via ayanamsaValue. Defaults to "kp-newcomb".
 type KPHoraryRequestAyanamsa string
 
-// KPHoraryRequestNodeType Lunar node type for Rahu and Ketu positions. "mean" uses the smooth mean node (traditional Vedic astrology default). "true" uses the osculating node with perturbation corrections, oscillating up to 1.5 degrees from mean with a 173-day period. Impacts KP sub-lord assignments in narrow boundary cases. Defaults to "mean".
+// KPHoraryRequestNodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the Rahu and Ketu positions. Mean is the traditional Vedic default and what printed panchangs use; the choice can move a KP sub-lord in narrow boundary cases, where a span can be as small as 0.5 degrees. Defaults to "mean".
 type KPHoraryRequestNodeType string
 
 // KPHoraryRequestTimezone0 defines model for KPHoraryRequest.Timezone.0.
@@ -22203,7 +22632,7 @@ type KPPlanetsIntervalRequest struct {
 	// Longitude Observer longitude in decimal degrees (for future Lagna calculations)
 	Longitude float32 `json:"longitude"`
 
-	// NodeType Lunar node type for Rahu and Ketu positions. "mean" uses the smooth mean node (traditional Vedic astrology default). "true" uses the osculating node with perturbation corrections, oscillating up to 1.5 degrees from mean with a 173-day period. Impacts KP sub-lord assignments in narrow boundary cases. Defaults to "mean".
+	// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the Rahu and Ketu positions. Mean is the traditional Vedic default and what printed panchangs use; the choice can move a KP sub-lord in narrow boundary cases, where a span can be as small as 0.5 degrees. Defaults to "mean".
 	NodeType *KPPlanetsIntervalRequestNodeType `json:"nodeType,omitempty"`
 
 	// StartDatetime Start datetime in ISO 8601 (YYYY-MM-DDTHH:MM:SS). Interpreted as local time when a non-zero timezone is provided (a trailing Z is accepted but ignored); with timezone 0 it is UTC.
@@ -22216,7 +22645,7 @@ type KPPlanetsIntervalRequest struct {
 // KPPlanetsIntervalRequestAyanamsa Ayanamsa system for sidereal conversion. "kp-newcomb" uses the KP-Newcomb dynamic formula, the most common choice for KP astrology. "kp-old" uses the Krishnamurti original table from KP Reader-1 with constant precession rate. "lahiri" uses Lahiri/Chitrapaksha ayanamsa, matching most traditional Vedic software. "raman" uses the B.V. Raman ayanamsa from Hindu Predictive Astrology, a recognised traditional school that sits about 1.45 degrees below Lahiri. Defaults to "kp-newcomb".
 type KPPlanetsIntervalRequestAyanamsa string
 
-// KPPlanetsIntervalRequestNodeType Lunar node type for Rahu and Ketu positions. "mean" uses the smooth mean node (traditional Vedic astrology default). "true" uses the osculating node with perturbation corrections, oscillating up to 1.5 degrees from mean with a 173-day period. Impacts KP sub-lord assignments in narrow boundary cases. Defaults to "mean".
+// KPPlanetsIntervalRequestNodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the Rahu and Ketu positions. Mean is the traditional Vedic default and what printed panchangs use; the choice can move a KP sub-lord in narrow boundary cases, where a span can be as small as 0.5 degrees. Defaults to "mean".
 type KPPlanetsIntervalRequestNodeType string
 
 // KPPlanetsIntervalRequestTimezone0 defines model for KPPlanetsIntervalRequest.Timezone.0.
@@ -22313,7 +22742,7 @@ type KPPlanetsRequest struct {
 	// Longitude Birth location longitude in decimal degrees
 	Longitude float32 `json:"longitude"`
 
-	// NodeType Lunar node type for Rahu and Ketu positions. "mean" uses the smooth mean node (traditional Vedic astrology default). "true" uses the osculating node with perturbation corrections, oscillating up to 1.5 degrees from mean with a 173-day period. Impacts KP sub-lord assignments in narrow boundary cases. Defaults to "mean".
+	// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the Rahu and Ketu positions. Mean is the traditional Vedic default and what printed panchangs use; the choice can move a KP sub-lord in narrow boundary cases, where a span can be as small as 0.5 degrees. Defaults to "mean".
 	NodeType *KPPlanetsRequestNodeType `json:"nodeType,omitempty"`
 
 	// Time Birth time in 24-hour HH:MM:SS format
@@ -22326,7 +22755,7 @@ type KPPlanetsRequest struct {
 // KPPlanetsRequestAyanamsa Ayanamsa system for sidereal conversion. "kp-newcomb" uses the KP-Newcomb dynamic formula (most common for KP). "kp-old" uses the Krishnamurti original table. "lahiri" uses Lahiri/Chitrapaksha ayanamsa matching most traditional Vedic software. "raman" uses the B.V. Raman ayanamsa, about 1.45 degrees below Lahiri. "custom" allows providing your own value via ayanamsaValue. Defaults to "kp-newcomb".
 type KPPlanetsRequestAyanamsa string
 
-// KPPlanetsRequestNodeType Lunar node type for Rahu and Ketu positions. "mean" uses the smooth mean node (traditional Vedic astrology default). "true" uses the osculating node with perturbation corrections, oscillating up to 1.5 degrees from mean with a 173-day period. Impacts KP sub-lord assignments in narrow boundary cases. Defaults to "mean".
+// KPPlanetsRequestNodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the Rahu and Ketu positions. Mean is the traditional Vedic default and what printed panchangs use; the choice can move a KP sub-lord in narrow boundary cases, where a span can be as small as 0.5 degrees. Defaults to "mean".
 type KPPlanetsRequestNodeType string
 
 // KPPlanetsRequestTimezone0 defines model for KPPlanetsRequest.Timezone.0.
@@ -22394,7 +22823,7 @@ type KPRasiChangesRequest struct {
 	// EndDate End date for sign ingress search (YYYY-MM-DD format)
 	EndDate openapi_types.Date `json:"endDate"`
 
-	// NodeType Lunar node type for Rahu and Ketu positions. "mean" uses the smooth mean node (traditional Vedic astrology default). "true" uses the osculating node with perturbation corrections, oscillating up to 1.5 degrees from mean with a 173-day period. Impacts KP sub-lord assignments in narrow boundary cases. Defaults to "mean".
+	// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the Rahu and Ketu positions. Mean is the traditional Vedic default and what printed panchangs use; the choice can move a KP sub-lord in narrow boundary cases, where a span can be as small as 0.5 degrees. Defaults to "mean".
 	NodeType *KPRasiChangesRequestNodeType `json:"nodeType,omitempty"`
 
 	// Planet Planet to track (case-insensitive). Valid values: Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn
@@ -22410,7 +22839,7 @@ type KPRasiChangesRequest struct {
 // KPRasiChangesRequestAyanamsa Ayanamsa system for sidereal conversion. "kp-newcomb" uses the KP-Newcomb dynamic formula, the most common choice for KP astrology. "kp-old" uses the Krishnamurti original table from KP Reader-1 with constant precession rate. "lahiri" uses Lahiri/Chitrapaksha ayanamsa, matching most traditional Vedic software. "raman" uses the B.V. Raman ayanamsa from Hindu Predictive Astrology, a recognised traditional school that sits about 1.45 degrees below Lahiri. Defaults to "kp-newcomb".
 type KPRasiChangesRequestAyanamsa string
 
-// KPRasiChangesRequestNodeType Lunar node type for Rahu and Ketu positions. "mean" uses the smooth mean node (traditional Vedic astrology default). "true" uses the osculating node with perturbation corrections, oscillating up to 1.5 degrees from mean with a 173-day period. Impacts KP sub-lord assignments in narrow boundary cases. Defaults to "mean".
+// KPRasiChangesRequestNodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the Rahu and Ketu positions. Mean is the traditional Vedic default and what printed panchangs use; the choice can move a KP sub-lord in narrow boundary cases, where a span can be as small as 0.5 degrees. Defaults to "mean".
 type KPRasiChangesRequestNodeType string
 
 // KPRasiChangesRequestTimezone0 defines model for KPRasiChangesRequest.Timezone.0.
@@ -22684,7 +23113,7 @@ type KPSublordChangesRequest struct {
 	// EndDate End date for sublord change search (YYYY-MM-DD format)
 	EndDate openapi_types.Date `json:"endDate"`
 
-	// NodeType Lunar node type for Rahu and Ketu positions. "mean" uses the smooth mean node (traditional Vedic astrology default). "true" uses the osculating node with perturbation corrections, oscillating up to 1.5 degrees from mean with a 173-day period. Impacts KP sub-lord assignments in narrow boundary cases. Defaults to "mean".
+	// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the Rahu and Ketu positions. Mean is the traditional Vedic default and what printed panchangs use; the choice can move a KP sub-lord in narrow boundary cases, where a span can be as small as 0.5 degrees. Defaults to "mean".
 	NodeType *KPSublordChangesRequestNodeType `json:"nodeType,omitempty"`
 
 	// Planet Planet to track (case-insensitive). Valid values: Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn
@@ -22700,7 +23129,7 @@ type KPSublordChangesRequest struct {
 // KPSublordChangesRequestAyanamsa Ayanamsa system for sidereal conversion. "kp-newcomb" uses the KP-Newcomb dynamic formula, the most common choice for KP astrology. "kp-old" uses the Krishnamurti original table from KP Reader-1 with constant precession rate. "lahiri" uses Lahiri/Chitrapaksha ayanamsa, matching most traditional Vedic software. "raman" uses the B.V. Raman ayanamsa from Hindu Predictive Astrology, a recognised traditional school that sits about 1.45 degrees below Lahiri. Defaults to "kp-newcomb".
 type KPSublordChangesRequestAyanamsa string
 
-// KPSublordChangesRequestNodeType Lunar node type for Rahu and Ketu positions. "mean" uses the smooth mean node (traditional Vedic astrology default). "true" uses the osculating node with perturbation corrections, oscillating up to 1.5 degrees from mean with a 173-day period. Impacts KP sub-lord assignments in narrow boundary cases. Defaults to "mean".
+// KPSublordChangesRequestNodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the Rahu and Ketu positions. Mean is the traditional Vedic default and what printed panchangs use; the choice can move a KP sub-lord in narrow boundary cases, where a span can be as small as 0.5 degrees. Defaults to "mean".
 type KPSublordChangesRequestNodeType string
 
 // KPSublordChangesRequestTimezone0 defines model for KPSublordChangesRequest.Timezone.0.
@@ -22862,6 +23291,9 @@ type LilithRequest struct {
 	// Longitude Birth location longitude in decimal degrees (-180 to 180). Positive = East, negative = West.
 	Longitude float32 `json:"longitude"`
 
+	// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass "mean" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
+	NodeType *LilithRequestNodeType `json:"nodeType,omitempty"`
+
 	// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
 	Time string `json:"time"`
 
@@ -22871,6 +23303,9 @@ type LilithRequest struct {
 
 // LilithRequestHouseSystem House system used to place each Lilith variant in a house. Placidus (default), Whole Sign, Equal, or Koch.
 type LilithRequestHouseSystem string
+
+// LilithRequestNodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass "mean" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
+type LilithRequestNodeType string
 
 // LilithRequestTimezone0 defines model for LilithRequest.Timezone.0.
 type LilithRequestTimezone0 = float32
@@ -22935,8 +23370,11 @@ type LilithResponse struct {
 		// Speed Daily motion in degrees per day. The mean apogee is always positive (direct); the true apogee can be negative (retrograde).
 		Speed float32 `json:"speed"`
 
-		// Variant Which lunar apogee this entry describes, localized to the requested language. The mean variant is the smoothed average apogee; the true variant is the instantaneous osculating apogee.
-		Variant string `json:"variant"`
+		// Variant Which lunar apogee this entry describes. The mean variant is the smoothed average apogee; the true variant is the instantaneous osculating apogee. Always one of these two English literals, whatever the lang parameter says, so it stays safe to compare against in code. Use variantLocalized for anything a reader sees.
+		Variant LilithResponseLilithVariant `json:"variant"`
+
+		// VariantLocalized Apogee variant label in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		VariantLocalized *string `json:"variantLocalized,omitempty"`
 	} `json:"lilith"`
 
 	// Summary Short overview of both variants for previews and report intros.
@@ -22945,6 +23383,9 @@ type LilithResponse struct {
 
 // LilithResponseHouseSystem House system applied when placing each variant in a house.
 type LilithResponseHouseSystem string
+
+// LilithResponseLilithVariant Which lunar apogee this entry describes. The mean variant is the smoothed average apogee; the true variant is the instantaneous osculating apogee. Always one of these two English literals, whatever the lang parameter says, so it stays safe to compare against in code. Use variantLocalized for anything a reader sees.
+type LilithResponseLilithVariant string
 
 // LocalSpaceResponse defines model for LocalSpaceResponse.
 type LocalSpaceResponse struct {
@@ -22995,8 +23436,11 @@ type LocalSpaceResponse struct {
 			} `json:"points"`
 		} `json:"line"`
 
-		// Planet Body name (Sun, Moon, Mercury through Pluto, plus North Node, Chiron, or Black Moon Lilith when requested). Localized when a translation exists.
+		// Planet Body name (Sun, Moon, Mercury through Pluto, plus North Node, Chiron, or Black Moon Lilith when requested). Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use planetLocalized for anything a reader sees.
 		Planet string `json:"planet"`
+
+		// PlanetLocalized Body name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		PlanetLocalized *string `json:"planetLocalized,omitempty"`
 
 		// Symbol Unicode astronomical symbol for this body.
 		Symbol *string `json:"symbol,omitempty"`
@@ -23181,6 +23625,9 @@ type NatalChartRequest struct {
 	// Longitude Birth location longitude in decimal degrees (-180 to 180). Positive = East, negative = West.
 	Longitude float32 `json:"longitude"`
 
+	// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass "mean" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
+	NodeType *NatalChartRequestNodeType `json:"nodeType,omitempty"`
+
 	// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
 	Time string `json:"time"`
 
@@ -23190,6 +23637,9 @@ type NatalChartRequest struct {
 
 // NatalChartRequestHouseSystem House system for dividing the chart into 12 houses. Placidus (default) is most popular in Western astrology and time-sensitive. Whole Sign assigns one sign per house (simpler, ancient). Equal houses divide chart into 30° segments from Ascendant. Koch emphasizes houses in high latitudes.
 type NatalChartRequestHouseSystem string
+
+// NatalChartRequestNodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass "mean" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
+type NatalChartRequestNodeType string
 
 // NatalChartRequestTimezone0 defines model for NatalChartRequest.Timezone.0.
 type NatalChartRequestTimezone0 = float32
@@ -23740,6 +24190,9 @@ type ProfectionsRequest struct {
 	// Longitude Birth location longitude in decimal degrees (-180 to 180). Positive = East, negative = West.
 	Longitude float32 `json:"longitude"`
 
+	// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass "mean" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
+	NodeType *ProfectionsRequestNodeType `json:"nodeType,omitempty"`
+
 	// TargetDate Date whose profection year you want, in YYYY-MM-DD format. The completed whole years from the birth date to this date select the profected house and sign. Must fall on or after the birth date.
 	TargetDate openapi_types.Date `json:"targetDate"`
 
@@ -23752,6 +24205,9 @@ type ProfectionsRequest struct {
 
 // ProfectionsRequestHouseSystem House system used only to report where the lord of the year sits in the natal chart. The profected house and sign always use whole sign profection from the rising sign. Placidus (default), Whole Sign, Equal, or Koch.
 type ProfectionsRequestHouseSystem string
+
+// ProfectionsRequestNodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass "mean" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
+type ProfectionsRequestNodeType string
 
 // ProfectionsRequestTimezone0 defines model for ProfectionsRequest.Timezone.0.
 type ProfectionsRequestTimezone0 = float32
@@ -23826,6 +24282,9 @@ type ProgressionsRequest struct {
 	// Longitude Birth location longitude in decimal degrees (-180 to 180). Positive = East, negative = West.
 	Longitude float32 `json:"longitude"`
 
+	// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass "mean" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
+	NodeType *ProgressionsRequestNodeType `json:"nodeType,omitempty"`
+
 	// TargetDate Date to progress the chart to, in YYYY-MM-DD format. Usually today or a forecast date. The day-for-a-year key turns the elapsed years since birth into the same number of ephemeris days after the birth moment.
 	TargetDate openapi_types.Date `json:"targetDate"`
 
@@ -23835,6 +24294,9 @@ type ProgressionsRequest struct {
 	// Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly.
 	Timezone ProgressionsRequest_Timezone `json:"timezone"`
 }
+
+// ProgressionsRequestNodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass "mean" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
+type ProgressionsRequestNodeType string
 
 // ProgressionsRequestTimezone0 defines model for ProgressionsRequest.Timezone.0.
 type ProgressionsRequestTimezone0 = float32
@@ -24199,7 +24661,7 @@ type RelocationPlanet struct {
 	// Longitude Tropical ecliptic longitude in degrees (0-360). Primary coordinate for zodiac sign and aspect calculations.
 	Longitude float32 `json:"longitude"`
 
-	// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee).
+	// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The nodes follow the request `nodeType`, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
 	Name RelocationPlanetName `json:"name"`
 
 	// NameLocalized Body name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
@@ -24215,7 +24677,7 @@ type RelocationPlanet struct {
 	Speed float32 `json:"speed"`
 }
 
-// RelocationPlanetName Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee).
+// RelocationPlanetName Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The nodes follow the request `nodeType`, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
 type RelocationPlanetName string
 
 // SadhesatiRequest defines model for SadhesatiRequest.
@@ -24458,6 +24920,9 @@ type SolarArcRequest struct {
 	// Longitude Birth location longitude in decimal degrees (-180 to 180). Positive = East, negative = West.
 	Longitude float32 `json:"longitude"`
 
+	// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass "mean" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
+	NodeType *SolarArcRequestNodeType `json:"nodeType,omitempty"`
+
 	// TargetDate Date to direct the chart to, in YYYY-MM-DD format. Every natal point is advanced by the solar arc accumulated from birth to this date, about one degree for each year of life.
 	TargetDate openapi_types.Date `json:"targetDate"`
 
@@ -24467,6 +24932,9 @@ type SolarArcRequest struct {
 	// Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the DST-correct offset for the given date, so you can pass `cities[0].timezone` from /location/search directly.
 	Timezone SolarArcRequest_Timezone `json:"timezone"`
 }
+
+// SolarArcRequestNodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass "mean" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
+type SolarArcRequestNodeType string
 
 // SolarArcRequestTimezone0 defines model for SolarArcRequest.Timezone.0.
 type SolarArcRequestTimezone0 = float32
@@ -24510,8 +24978,11 @@ type SolarArcResponse struct {
 		// Interpretation Plain language meaning of this directed point, suitable for chart reports and AI agents. Localized to the requested language.
 		Interpretation string `json:"interpretation"`
 
-		// Name Name of the directed point, localized to the requested language. This covers the planets and the two angles, the Ascendant and the Midheaven, alike.
+		// Name Name of the directed point, covering the planets and the two angles, the Ascendant and the Midheaven, alike. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use nameLocalized for anything a reader sees.
 		Name string `json:"name"`
+
+		// NameLocalized Directed point name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		NameLocalized *string `json:"nameLocalized,omitempty"`
 
 		// NatalLongitude Absolute tropical ecliptic longitude of the point in the natal chart, in degrees (0 to 360).
 		NatalLongitude float32 `json:"natalLongitude"`
@@ -24553,6 +25024,9 @@ type TransitsRequest struct {
 		Timezone TransitsRequest_NatalChart_Timezone `json:"timezone"`
 	} `json:"natalChart,omitempty"`
 
+	// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass "mean" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
+	NodeType *TransitsRequestNodeType `json:"nodeType,omitempty"`
+
 	// Time Transit time in HH:MM:SS format (defaults to current time)
 	Time *string `json:"time,omitempty"`
 
@@ -24570,6 +25044,9 @@ type TransitsRequestNatalChartTimezone1 = string
 type TransitsRequest_NatalChart_Timezone struct {
 	union json.RawMessage
 }
+
+// TransitsRequestNodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass "mean" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
+type TransitsRequestNodeType string
 
 // TransitsRequestTimezone0 defines model for TransitsRequest.Timezone.0.
 type TransitsRequestTimezone0 = float32
@@ -25095,6 +25572,9 @@ type GenerateAstrocartographyJSONBody struct {
 	// Longitude Birth location longitude in decimal degrees (-180 to 180). Positive = East, negative = West.
 	Longitude float32 `json:"longitude"`
 
+	// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass "mean" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
+	NodeType *GenerateAstrocartographyJSONBodyNodeType `json:"nodeType,omitempty"`
+
 	// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
 	Time string `json:"time"`
 
@@ -25113,6 +25593,9 @@ type GenerateAstrocartographyParams struct {
 
 // GenerateAstrocartographyParamsLang defines parameters for GenerateAstrocartography.
 type GenerateAstrocartographyParamsLang string
+
+// GenerateAstrocartographyJSONBodyNodeType defines parameters for GenerateAstrocartography.
+type GenerateAstrocartographyJSONBodyNodeType string
 
 // GenerateAstrocartographyJSONBodyTimezone0 defines parameters for GenerateAstrocartography.
 type GenerateAstrocartographyJSONBodyTimezone0 = float32
@@ -25138,6 +25621,9 @@ type CalculateCompatibilityJSONBody struct {
 		// Longitude Birth location longitude in decimal degrees (-180 to 180). Positive = East, negative = West.
 		Longitude float32 `json:"longitude"`
 
+		// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass "mean" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
+		NodeType *CalculateCompatibilityJSONBodyPerson1NodeType `json:"nodeType,omitempty"`
+
 		// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
 		Time string `json:"time"`
 
@@ -25156,6 +25642,9 @@ type CalculateCompatibilityJSONBody struct {
 		// Longitude Birth location longitude in decimal degrees (-180 to 180). Positive = East, negative = West.
 		Longitude float32 `json:"longitude"`
 
+		// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass "mean" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
+		NodeType *CalculateCompatibilityJSONBodyPerson2NodeType `json:"nodeType,omitempty"`
+
 		// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
 		Time string `json:"time"`
 
@@ -25173,6 +25662,9 @@ type CalculateCompatibilityParams struct {
 // CalculateCompatibilityParamsLang defines parameters for CalculateCompatibility.
 type CalculateCompatibilityParamsLang string
 
+// CalculateCompatibilityJSONBodyPerson1NodeType defines parameters for CalculateCompatibility.
+type CalculateCompatibilityJSONBodyPerson1NodeType string
+
 // CalculateCompatibilityJSONBodyPerson1Timezone0 defines parameters for CalculateCompatibility.
 type CalculateCompatibilityJSONBodyPerson1Timezone0 = float32
 
@@ -25183,6 +25675,9 @@ type CalculateCompatibilityJSONBodyPerson1Timezone1 = string
 type CalculateCompatibilityJSONBody_Person1_Timezone struct {
 	union json.RawMessage
 }
+
+// CalculateCompatibilityJSONBodyPerson2NodeType defines parameters for CalculateCompatibility.
+type CalculateCompatibilityJSONBodyPerson2NodeType string
 
 // CalculateCompatibilityJSONBodyPerson2Timezone0 defines parameters for CalculateCompatibility.
 type CalculateCompatibilityJSONBodyPerson2Timezone0 = float32
@@ -25214,6 +25709,9 @@ type GenerateCompositeChartJSONBody struct {
 		// Longitude Birth location longitude in decimal degrees (-180 to 180). Positive = East, negative = West.
 		Longitude float32 `json:"longitude"`
 
+		// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass "mean" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
+		NodeType *GenerateCompositeChartJSONBodyPerson1NodeType `json:"nodeType,omitempty"`
+
 		// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
 		Time string `json:"time"`
 
@@ -25231,6 +25729,9 @@ type GenerateCompositeChartJSONBody struct {
 
 		// Longitude Birth location longitude in decimal degrees (-180 to 180). Positive = East, negative = West.
 		Longitude float32 `json:"longitude"`
+
+		// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass "mean" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
+		NodeType *GenerateCompositeChartJSONBodyPerson2NodeType `json:"nodeType,omitempty"`
 
 		// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
 		Time string `json:"time"`
@@ -25252,6 +25753,9 @@ type GenerateCompositeChartParamsLang string
 // GenerateCompositeChartJSONBodyHouseSystem defines parameters for GenerateCompositeChart.
 type GenerateCompositeChartJSONBodyHouseSystem string
 
+// GenerateCompositeChartJSONBodyPerson1NodeType defines parameters for GenerateCompositeChart.
+type GenerateCompositeChartJSONBodyPerson1NodeType string
+
 // GenerateCompositeChartJSONBodyPerson1Timezone0 defines parameters for GenerateCompositeChart.
 type GenerateCompositeChartJSONBodyPerson1Timezone0 = float32
 
@@ -25262,6 +25766,9 @@ type GenerateCompositeChartJSONBodyPerson1Timezone1 = string
 type GenerateCompositeChartJSONBody_Person1_Timezone struct {
 	union json.RawMessage
 }
+
+// GenerateCompositeChartJSONBodyPerson2NodeType defines parameters for GenerateCompositeChart.
+type GenerateCompositeChartJSONBodyPerson2NodeType string
 
 // GenerateCompositeChartJSONBodyPerson2Timezone0 defines parameters for GenerateCompositeChart.
 type GenerateCompositeChartJSONBodyPerson2Timezone0 = float32
@@ -25300,6 +25807,9 @@ type GenerateFixedStarsJSONBody struct {
 	// Longitude Birth location longitude in decimal degrees (-180 to 180). Positive = East, negative = West.
 	Longitude float32 `json:"longitude"`
 
+	// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass "mean" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
+	NodeType *GenerateFixedStarsJSONBodyNodeType `json:"nodeType,omitempty"`
+
 	// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
 	Time string `json:"time"`
 
@@ -25318,6 +25828,9 @@ type GenerateFixedStarsParams struct {
 
 // GenerateFixedStarsParamsLang defines parameters for GenerateFixedStars.
 type GenerateFixedStarsParamsLang string
+
+// GenerateFixedStarsJSONBodyNodeType defines parameters for GenerateFixedStars.
+type GenerateFixedStarsJSONBodyNodeType string
 
 // GenerateFixedStarsJSONBodyTimezone0 defines parameters for GenerateFixedStars.
 type GenerateFixedStarsJSONBodyTimezone0 = float32
@@ -25711,6 +26224,9 @@ type GetPlanetaryPositionsJSONBody struct {
 	// Longitude Observer longitude in decimal degrees (-180 to 180). Used for precise local time conversion. For basic planetary positions, this has minimal impact but ensures accuracy.
 	Longitude float32 `json:"longitude"`
 
+	// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass "mean" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
+	NodeType *GetPlanetaryPositionsJSONBodyNodeType `json:"nodeType,omitempty"`
+
 	// Time Time in 24-hour HH:MM:SS format for precise calculations. Moon moves ~13° per day, so time matters for accurate lunar position. Use 12:00:00 (noon) as default if exact time not needed.
 	Time string `json:"time"`
 
@@ -25726,6 +26242,9 @@ type GetPlanetaryPositionsParams struct {
 
 // GetPlanetaryPositionsParamsLang defines parameters for GetPlanetaryPositions.
 type GetPlanetaryPositionsParamsLang string
+
+// GetPlanetaryPositionsJSONBodyNodeType defines parameters for GetPlanetaryPositions.
+type GetPlanetaryPositionsJSONBodyNodeType string
 
 // GetPlanetaryPositionsJSONBodyTimezone0 defines parameters for GetPlanetaryPositions.
 type GetPlanetaryPositionsJSONBodyTimezone0 = float32
@@ -25904,6 +26423,9 @@ type CalculateSynastryJSONBody struct {
 		// Name Optional display name for this person. Included in the response for easy identification.
 		Name *string `json:"name,omitempty"`
 
+		// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass "mean" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
+		NodeType *CalculateSynastryJSONBodyPerson1NodeType `json:"nodeType,omitempty"`
+
 		// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
 		Time string `json:"time"`
 
@@ -25922,6 +26444,9 @@ type CalculateSynastryJSONBody struct {
 
 		// Name Optional display name for this person. Included in the response for easy identification.
 		Name *string `json:"name,omitempty"`
+
+		// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass "mean" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
+		NodeType *CalculateSynastryJSONBodyPerson2NodeType `json:"nodeType,omitempty"`
 
 		// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
 		Time string `json:"time"`
@@ -25943,6 +26468,9 @@ type CalculateSynastryParamsLang string
 // CalculateSynastryJSONBodyHouseSystem defines parameters for CalculateSynastry.
 type CalculateSynastryJSONBodyHouseSystem string
 
+// CalculateSynastryJSONBodyPerson1NodeType defines parameters for CalculateSynastry.
+type CalculateSynastryJSONBodyPerson1NodeType string
+
 // CalculateSynastryJSONBodyPerson1Timezone0 defines parameters for CalculateSynastry.
 type CalculateSynastryJSONBodyPerson1Timezone0 = float32
 
@@ -25953,6 +26481,9 @@ type CalculateSynastryJSONBodyPerson1Timezone1 = string
 type CalculateSynastryJSONBody_Person1_Timezone struct {
 	union json.RawMessage
 }
+
+// CalculateSynastryJSONBodyPerson2NodeType defines parameters for CalculateSynastry.
+type CalculateSynastryJSONBodyPerson2NodeType string
 
 // CalculateSynastryJSONBodyPerson2Timezone0 defines parameters for CalculateSynastry.
 type CalculateSynastryJSONBodyPerson2Timezone0 = float32
@@ -25987,6 +26518,9 @@ type CalculateTransitAspectsJSONBody struct {
 		// Longitude Birth location longitude in decimal degrees (-180 to 180). Positive = East, negative = West.
 		Longitude float32 `json:"longitude"`
 
+		// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass "mean" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
+		NodeType *CalculateTransitAspectsJSONBodyNatalChartNodeType `json:"nodeType,omitempty"`
+
 		// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
 		Time string `json:"time"`
 
@@ -26018,6 +26552,9 @@ type CalculateTransitAspectsJSONBodyAspectTypes string
 
 // CalculateTransitAspectsJSONBodyHouseSystem defines parameters for CalculateTransitAspects.
 type CalculateTransitAspectsJSONBodyHouseSystem string
+
+// CalculateTransitAspectsJSONBodyNatalChartNodeType defines parameters for CalculateTransitAspects.
+type CalculateTransitAspectsJSONBodyNatalChartNodeType string
 
 // CalculateTransitAspectsJSONBodyNatalChartTimezone0 defines parameters for CalculateTransitAspects.
 type CalculateTransitAspectsJSONBodyNatalChartTimezone0 = float32
@@ -26783,7 +27320,7 @@ type GenerateBodygraphJSONBody struct {
 	// Longitude Birth longitude in decimal degrees. Optional and does not affect the bodygraph. Defaults to 0.
 	Longitude *float32 `json:"longitude,omitempty"`
 
-	// NodeType Lunar node convention for the North and South Node activations. Leave unset (or "true") for the standard Human Design chart: "true" is the osculating node used by professional Human Design software (HumanDesign.ai, Total Human Design) and is the value RoxyAPI verifies against. Pass "mean" to match a calculator that uses the smoothed mean node (the traditional Western-astrology default, common in free chart tools). The two agree on almost every chart; they diverge by up to ~1.75 degrees only when a node sits on a gate boundary, where the choice can move a node gate and, rarely, change the completed channels and therefore the type, authority, or definition. If another calculator shows a different type, it is likely using the mean node: pass "mean" to match it.
+	// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node activations. True is what professional Human Design software uses (HumanDesign.ai, Total Human Design) and is the value RoxyAPI verifies against, so leave it unset for a standard chart. It matters only when a node sits on a gate boundary, where the choice can move a node gate and, rarely, change the completed channels and therefore the type, authority or definition. If another calculator shows a different type, it is almost certainly using the mean node: pass "mean" to match it. Defaults to "true".
 	NodeType *GenerateBodygraphJSONBodyNodeType `json:"nodeType,omitempty"`
 
 	// Time Birth time in 24-hour HH:MM:SS format. Precision matters: the profile lines and gate boundaries shift with the exact minute of birth.
@@ -26827,7 +27364,7 @@ type CalculateCentersJSONBody struct {
 	// Longitude Birth longitude in decimal degrees. Optional and does not affect the bodygraph. Defaults to 0.
 	Longitude *float32 `json:"longitude,omitempty"`
 
-	// NodeType Lunar node convention for the North and South Node activations. Leave unset (or "true") for the standard Human Design chart: "true" is the osculating node used by professional Human Design software (HumanDesign.ai, Total Human Design) and is the value RoxyAPI verifies against. Pass "mean" to match a calculator that uses the smoothed mean node (the traditional Western-astrology default, common in free chart tools). The two agree on almost every chart; they diverge by up to ~1.75 degrees only when a node sits on a gate boundary, where the choice can move a node gate and, rarely, change the completed channels and therefore the type, authority, or definition. If another calculator shows a different type, it is likely using the mean node: pass "mean" to match it.
+	// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node activations. True is what professional Human Design software uses (HumanDesign.ai, Total Human Design) and is the value RoxyAPI verifies against, so leave it unset for a standard chart. It matters only when a node sits on a gate boundary, where the choice can move a node gate and, rarely, change the completed channels and therefore the type, authority or definition. If another calculator shows a different type, it is almost certainly using the mean node: pass "mean" to match it. Defaults to "true".
 	NodeType *CalculateCentersJSONBodyNodeType `json:"nodeType,omitempty"`
 
 	// Time Birth time in 24-hour HH:MM:SS format. Precision matters: the profile lines and gate boundaries shift with the exact minute of birth.
@@ -26883,7 +27420,7 @@ type CalculateChannelsJSONBody struct {
 	// Longitude Birth longitude in decimal degrees. Optional and does not affect the bodygraph. Defaults to 0.
 	Longitude *float32 `json:"longitude,omitempty"`
 
-	// NodeType Lunar node convention for the North and South Node activations. Leave unset (or "true") for the standard Human Design chart: "true" is the osculating node used by professional Human Design software (HumanDesign.ai, Total Human Design) and is the value RoxyAPI verifies against. Pass "mean" to match a calculator that uses the smoothed mean node (the traditional Western-astrology default, common in free chart tools). The two agree on almost every chart; they diverge by up to ~1.75 degrees only when a node sits on a gate boundary, where the choice can move a node gate and, rarely, change the completed channels and therefore the type, authority, or definition. If another calculator shows a different type, it is likely using the mean node: pass "mean" to match it.
+	// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node activations. True is what professional Human Design software uses (HumanDesign.ai, Total Human Design) and is the value RoxyAPI verifies against, so leave it unset for a standard chart. It matters only when a node sits on a gate boundary, where the choice can move a node gate and, rarely, change the completed channels and therefore the type, authority or definition. If another calculator shows a different type, it is almost certainly using the mean node: pass "mean" to match it. Defaults to "true".
 	NodeType *CalculateChannelsJSONBodyNodeType `json:"nodeType,omitempty"`
 
 	// Time Birth time in 24-hour HH:MM:SS format. Precision matters: the profile lines and gate boundaries shift with the exact minute of birth.
@@ -26929,7 +27466,7 @@ type CalculateConnectionJSONBody struct {
 		// Longitude Birth longitude in decimal degrees. Optional and does not affect the bodygraph. Defaults to 0.
 		Longitude *float32 `json:"longitude,omitempty"`
 
-		// NodeType Lunar node convention for the North and South Node activations. Leave unset (or "true") for the standard Human Design chart: "true" is the osculating node used by professional Human Design software (HumanDesign.ai, Total Human Design) and is the value RoxyAPI verifies against. Pass "mean" to match a calculator that uses the smoothed mean node (the traditional Western-astrology default, common in free chart tools). The two agree on almost every chart; they diverge by up to ~1.75 degrees only when a node sits on a gate boundary, where the choice can move a node gate and, rarely, change the completed channels and therefore the type, authority, or definition. If another calculator shows a different type, it is likely using the mean node: pass "mean" to match it.
+		// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node activations. True is what professional Human Design software uses (HumanDesign.ai, Total Human Design) and is the value RoxyAPI verifies against, so leave it unset for a standard chart. It matters only when a node sits on a gate boundary, where the choice can move a node gate and, rarely, change the completed channels and therefore the type, authority or definition. If another calculator shows a different type, it is almost certainly using the mean node: pass "mean" to match it. Defaults to "true".
 		NodeType *CalculateConnectionJSONBodyPersonANodeType `json:"nodeType,omitempty"`
 
 		// Time Birth time in 24-hour HH:MM:SS format. Precision matters: the profile lines and gate boundaries shift with the exact minute of birth.
@@ -26950,7 +27487,7 @@ type CalculateConnectionJSONBody struct {
 		// Longitude Birth longitude in decimal degrees. Optional and does not affect the bodygraph. Defaults to 0.
 		Longitude *float32 `json:"longitude,omitempty"`
 
-		// NodeType Lunar node convention for the North and South Node activations. Leave unset (or "true") for the standard Human Design chart: "true" is the osculating node used by professional Human Design software (HumanDesign.ai, Total Human Design) and is the value RoxyAPI verifies against. Pass "mean" to match a calculator that uses the smoothed mean node (the traditional Western-astrology default, common in free chart tools). The two agree on almost every chart; they diverge by up to ~1.75 degrees only when a node sits on a gate boundary, where the choice can move a node gate and, rarely, change the completed channels and therefore the type, authority, or definition. If another calculator shows a different type, it is likely using the mean node: pass "mean" to match it.
+		// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node activations. True is what professional Human Design software uses (HumanDesign.ai, Total Human Design) and is the value RoxyAPI verifies against, so leave it unset for a standard chart. It matters only when a node sits on a gate boundary, where the choice can move a node gate and, rarely, change the completed channels and therefore the type, authority or definition. If another calculator shows a different type, it is almost certainly using the mean node: pass "mean" to match it. Defaults to "true".
 		NodeType *CalculateConnectionJSONBodyPersonBNodeType `json:"nodeType,omitempty"`
 
 		// Time Birth time in 24-hour HH:MM:SS format. Precision matters: the profile lines and gate boundaries shift with the exact minute of birth.
@@ -27009,7 +27546,7 @@ type CalculateGatesJSONBody struct {
 	// Longitude Birth longitude in decimal degrees. Optional and does not affect the bodygraph. Defaults to 0.
 	Longitude *float32 `json:"longitude,omitempty"`
 
-	// NodeType Lunar node convention for the North and South Node activations. Leave unset (or "true") for the standard Human Design chart: "true" is the osculating node used by professional Human Design software (HumanDesign.ai, Total Human Design) and is the value RoxyAPI verifies against. Pass "mean" to match a calculator that uses the smoothed mean node (the traditional Western-astrology default, common in free chart tools). The two agree on almost every chart; they diverge by up to ~1.75 degrees only when a node sits on a gate boundary, where the choice can move a node gate and, rarely, change the completed channels and therefore the type, authority, or definition. If another calculator shows a different type, it is likely using the mean node: pass "mean" to match it.
+	// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node activations. True is what professional Human Design software uses (HumanDesign.ai, Total Human Design) and is the value RoxyAPI verifies against, so leave it unset for a standard chart. It matters only when a node sits on a gate boundary, where the choice can move a node gate and, rarely, change the completed channels and therefore the type, authority or definition. If another calculator shows a different type, it is almost certainly using the mean node: pass "mean" to match it. Defaults to "true".
 	NodeType *CalculateGatesJSONBodyNodeType `json:"nodeType,omitempty"`
 
 	// Time Birth time in 24-hour HH:MM:SS format. Precision matters: the profile lines and gate boundaries shift with the exact minute of birth.
@@ -27064,7 +27601,7 @@ type CalculatePentaJSONBody struct {
 		// Longitude Birth longitude in decimal degrees. Optional and does not affect the bodygraph. Defaults to 0.
 		Longitude *float32 `json:"longitude,omitempty"`
 
-		// NodeType Lunar node convention for the North and South Node activations. Leave unset (or "true") for the standard Human Design chart: "true" is the osculating node used by professional Human Design software (HumanDesign.ai, Total Human Design) and is the value RoxyAPI verifies against. Pass "mean" to match a calculator that uses the smoothed mean node (the traditional Western-astrology default, common in free chart tools). The two agree on almost every chart; they diverge by up to ~1.75 degrees only when a node sits on a gate boundary, where the choice can move a node gate and, rarely, change the completed channels and therefore the type, authority, or definition. If another calculator shows a different type, it is likely using the mean node: pass "mean" to match it.
+		// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node activations. True is what professional Human Design software uses (HumanDesign.ai, Total Human Design) and is the value RoxyAPI verifies against, so leave it unset for a standard chart. It matters only when a node sits on a gate boundary, where the choice can move a node gate and, rarely, change the completed channels and therefore the type, authority or definition. If another calculator shows a different type, it is almost certainly using the mean node: pass "mean" to match it. Defaults to "true".
 		NodeType *CalculatePentaJSONBodyMembersNodeType `json:"nodeType,omitempty"`
 
 		// Time Birth time in 24-hour HH:MM:SS format. Precision matters: the profile lines and gate boundaries shift with the exact minute of birth.
@@ -27109,7 +27646,7 @@ type CalculateProfileJSONBody struct {
 	// Longitude Birth longitude in decimal degrees. Optional and does not affect the bodygraph. Defaults to 0.
 	Longitude *float32 `json:"longitude,omitempty"`
 
-	// NodeType Lunar node convention for the North and South Node activations. Leave unset (or "true") for the standard Human Design chart: "true" is the osculating node used by professional Human Design software (HumanDesign.ai, Total Human Design) and is the value RoxyAPI verifies against. Pass "mean" to match a calculator that uses the smoothed mean node (the traditional Western-astrology default, common in free chart tools). The two agree on almost every chart; they diverge by up to ~1.75 degrees only when a node sits on a gate boundary, where the choice can move a node gate and, rarely, change the completed channels and therefore the type, authority, or definition. If another calculator shows a different type, it is likely using the mean node: pass "mean" to match it.
+	// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node activations. True is what professional Human Design software uses (HumanDesign.ai, Total Human Design) and is the value RoxyAPI verifies against, so leave it unset for a standard chart. It matters only when a node sits on a gate boundary, where the choice can move a node gate and, rarely, change the completed channels and therefore the type, authority or definition. If another calculator shows a different type, it is almost certainly using the mean node: pass "mean" to match it. Defaults to "true".
 	NodeType *CalculateProfileJSONBodyNodeType `json:"nodeType,omitempty"`
 
 	// Time Birth time in 24-hour HH:MM:SS format. Precision matters: the profile lines and gate boundaries shift with the exact minute of birth.
@@ -27155,7 +27692,7 @@ type GenerateTransitJSONBody struct {
 		// Longitude Birth longitude in decimal degrees. Optional and does not affect the bodygraph. Defaults to 0.
 		Longitude *float32 `json:"longitude,omitempty"`
 
-		// NodeType Lunar node convention for the North and South Node activations. Leave unset (or "true") for the standard Human Design chart: "true" is the osculating node used by professional Human Design software (HumanDesign.ai, Total Human Design) and is the value RoxyAPI verifies against. Pass "mean" to match a calculator that uses the smoothed mean node (the traditional Western-astrology default, common in free chart tools). The two agree on almost every chart; they diverge by up to ~1.75 degrees only when a node sits on a gate boundary, where the choice can move a node gate and, rarely, change the completed channels and therefore the type, authority, or definition. If another calculator shows a different type, it is likely using the mean node: pass "mean" to match it.
+		// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node activations. True is what professional Human Design software uses (HumanDesign.ai, Total Human Design) and is the value RoxyAPI verifies against, so leave it unset for a standard chart. It matters only when a node sits on a gate boundary, where the choice can move a node gate and, rarely, change the completed channels and therefore the type, authority or definition. If another calculator shows a different type, it is almost certainly using the mean node: pass "mean" to match it. Defaults to "true".
 		NodeType *GenerateTransitJSONBodyBirthDataNodeType `json:"nodeType,omitempty"`
 
 		// Time Birth time in 24-hour HH:MM:SS format. Precision matters: the profile lines and gate boundaries shift with the exact minute of birth.
@@ -27206,7 +27743,7 @@ type CalculateTypeJSONBody struct {
 	// Longitude Birth longitude in decimal degrees. Optional and does not affect the bodygraph. Defaults to 0.
 	Longitude *float32 `json:"longitude,omitempty"`
 
-	// NodeType Lunar node convention for the North and South Node activations. Leave unset (or "true") for the standard Human Design chart: "true" is the osculating node used by professional Human Design software (HumanDesign.ai, Total Human Design) and is the value RoxyAPI verifies against. Pass "mean" to match a calculator that uses the smoothed mean node (the traditional Western-astrology default, common in free chart tools). The two agree on almost every chart; they diverge by up to ~1.75 degrees only when a node sits on a gate boundary, where the choice can move a node gate and, rarely, change the completed channels and therefore the type, authority, or definition. If another calculator shows a different type, it is likely using the mean node: pass "mean" to match it.
+	// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node activations. True is what professional Human Design software uses (HumanDesign.ai, Total Human Design) and is the value RoxyAPI verifies against, so leave it unset for a standard chart. It matters only when a node sits on a gate boundary, where the choice can move a node gate and, rarely, change the completed channels and therefore the type, authority or definition. If another calculator shows a different type, it is almost certainly using the mean node: pass "mean" to match it. Defaults to "true".
 	NodeType *CalculateTypeJSONBodyNodeType `json:"nodeType,omitempty"`
 
 	// Time Birth time in 24-hour HH:MM:SS format. Precision matters: the profile lines and gate boundaries shift with the exact minute of birth.
@@ -27250,7 +27787,7 @@ type CalculateVariablesJSONBody struct {
 	// Longitude Birth longitude in decimal degrees. Optional and does not affect the bodygraph. Defaults to 0.
 	Longitude *float32 `json:"longitude,omitempty"`
 
-	// NodeType Lunar node convention for the North and South Node activations. Leave unset (or "true") for the standard Human Design chart: "true" is the osculating node used by professional Human Design software (HumanDesign.ai, Total Human Design) and is the value RoxyAPI verifies against. Pass "mean" to match a calculator that uses the smoothed mean node (the traditional Western-astrology default, common in free chart tools). The two agree on almost every chart; they diverge by up to ~1.75 degrees only when a node sits on a gate boundary, where the choice can move a node gate and, rarely, change the completed channels and therefore the type, authority, or definition. If another calculator shows a different type, it is likely using the mean node: pass "mean" to match it.
+	// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node activations. True is what professional Human Design software uses (HumanDesign.ai, Total Human Design) and is the value RoxyAPI verifies against, so leave it unset for a standard chart. It matters only when a node sits on a gate boundary, where the choice can move a node gate and, rarely, change the completed channels and therefore the type, authority or definition. If another calculator shows a different type, it is almost certainly using the mean node: pass "mean" to match it. Defaults to "true".
 	NodeType *CalculateVariablesJSONBodyNodeType `json:"nodeType,omitempty"`
 
 	// Time Birth time in 24-hour HH:MM:SS format. Precision matters: the profile lines and gate boundaries shift with the exact minute of birth.
@@ -27417,7 +27954,7 @@ type GetCitiesByCountryParams struct {
 
 // SearchCitiesParams defines parameters for SearchCities.
 type SearchCitiesParams struct {
-	// Q City name to search for. Accepts bare city ("berlin"), city plus country ("berlin germany"), or comma-qualified ("berlin, germany", "springfield, illinois") for disambiguation. Matches against city name, province/state, or combined "city country" queries. Case-insensitive with partial matching (e.g. "ber" matches Berlin, Bern, Bergen).
+	// Q Place to search for, written the way a person would. Accepts a bare city (berlin), a city plus country (berlin germany), a comma-qualified place (richfield, utah), a fully qualified place (richfield, utah, united states), or a historic name (bombay, peking, constantinople). Commas are optional, and a qualifier the dataset spells differently, such as USA for United States, still resolves. Matched against city name, alternate names, state or province, and country. Add the state or country whenever the name is common, since that is what separates the six Springfields, and Richfield, Utah from Richfield, Minnesota.
 	Q string `form:"q" json:"q"`
 
 	// Limit Maximum items to return per page. Range: 1-50, default 10.
@@ -29144,7 +29681,7 @@ type GetKpRulingPlanetsJSONBody struct {
 	// Longitude Observer longitude in decimal degrees
 	Longitude float32 `json:"longitude"`
 
-	// NodeType Lunar node type for Rahu and Ketu positions. "mean" uses the smooth mean node (traditional Vedic astrology default). "true" uses the osculating node with perturbation corrections, oscillating up to 1.5 degrees from mean with a 173-day period. Impacts KP sub-lord assignments in narrow boundary cases. Defaults to "mean".
+	// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the Rahu and Ketu positions. Mean is the traditional Vedic default and what printed panchangs use; the choice can move a KP sub-lord in narrow boundary cases, where a span can be as small as 0.5 degrees. Defaults to "mean".
 	NodeType *GetKpRulingPlanetsJSONBodyNodeType `json:"nodeType,omitempty"`
 
 	// Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC. IANA resolved to the DST-correct offset based on birthDate or datetime. Defaults to 5.5.
@@ -29197,7 +29734,7 @@ type GetKpRulingIntervalJSONBody struct {
 	// Longitude Observer longitude in decimal degrees
 	Longitude float32 `json:"longitude"`
 
-	// NodeType Lunar node type for Rahu and Ketu positions. "mean" uses the smooth mean node (traditional Vedic astrology default). "true" uses the osculating node with perturbation corrections, oscillating up to 1.5 degrees from mean with a 173-day period. Impacts KP sub-lord assignments in narrow boundary cases. Defaults to "mean".
+	// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the Rahu and Ketu positions. Mean is the traditional Vedic default and what printed panchangs use; the choice can move a KP sub-lord in narrow boundary cases, where a span can be as small as 0.5 degrees. Defaults to "mean".
 	NodeType *GetKpRulingIntervalJSONBodyNodeType `json:"nodeType,omitempty"`
 
 	// StartDatetime Start of the interval range in ISO 8601 (YYYY-MM-DDTHH:MM:SS). Interpreted as local time when a non-zero timezone is provided (a trailing Z is accepted but ignored); with timezone 0 it is UTC.
@@ -29585,6 +30122,9 @@ type CalculateTransitJSONBodyTimezone1 = string
 type CalculateTransitJSONBody_Timezone struct {
 	union json.RawMessage
 }
+
+// CalculateTransit200JSONResponseBodyTransitingPlanetsDrishtiToNatalAspectType defines parameters for CalculateTransit.
+type CalculateTransit200JSONResponseBodyTransitingPlanetsDrishtiToNatalAspectType string
 
 // GetMonthlyTransitsJSONBody defines parameters for GetMonthlyTransits.
 type GetMonthlyTransitsJSONBody struct {
@@ -36962,7 +37502,7 @@ type ClientInterface interface {
 
 	// SearchCities Search cities worldwide - Geocoding autocomplete with coordinates and timezone
 	//
-	// City autocomplete and geocoding search across 23,000+ locations in 240+ countries, including deep coverage of Indian tier-2 and tier-3 cities. Returns geographic coordinates (latitude, longitude), IANA timezone, and DST-aware UTC offset for each match. Built for birth chart location pickers, horoscope apps, event scheduling, and any feature requiring place-to-coordinates resolution. Partial name matching with intelligent ranking: exact prefix matches first, then sorted by population for relevance. Common alternate names like Bombay, Calcutta, Madras, and Banaras transparently resolve to their canonical entries.
+	// Turn a place name into coordinates, an IANA timezone and a DST-aware UTC offset, across 235,000+ cities and towns in 240+ countries. Coverage reaches rural towns of a few hundred people and every administrative seat, so a birthplace outside a major metro resolves as reliably as a capital. Matching is case-insensitive, accent-insensitive and partial, so ber matches Berlin, Bern and Bergen, native scripts are transliterated, and historic names resolve to the current place, so bombay returns Mumbai and peking returns Beijing. Results are ordered by match quality first and population second, so an exactly named small town is never buried under a larger city that merely shares its opening letters. Built for birth chart location pickers, horoscope apps, event scheduling, and any feature that needs place-to-coordinates resolution.
 	//
 	// Corresponds with GET /location/search (the `SearchCities` operationId).
 	SearchCities(ctx context.Context, params *SearchCitiesParams, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -38259,7 +38799,7 @@ type ClientInterface interface {
 
 	// CalculateTransitWithBody Transit Analysis - Compare current planets to natal chart (Gochar)
 	//
-	// Analyze planetary transits (Gochar) over natal chart positions. Returns transiting planets with their natal house positions, aspects to natal planets, and highlights key transits from slow-moving planets (Jupiter, Saturn, Rahu, Ketu). Essential for timing predictions, event forecasting, and understanding current planetary influences. Transit analysis API, gochar calculator, vedic transit predictions.
+	// Analyze planetary transits (Gochar) over natal chart positions. Each transiting graha comes back with TWO whole-sign house numbers, because the two readings answer different questions: houseFromMoon is counted from the natal Moon sign (Janma Rashi), which is the reference classical Gochara uses, and natalHouse is counted from the Lagna. Also returns graha drishti onto the natal grahas (7th for every graha, plus Mars 4th and 8th, Jupiter 5th and 9th, Saturn 3rd and 10th), degree-based angular aspects with orbs, the Gochara Kaksha verdict, and highlighted transits from the slow-moving grahas (Jupiter, Saturn, Rahu, Ketu). Essential for timing predictions, event forecasting, and understanding current planetary influences. Transit analysis API, gochar calculator, vedic transit predictions, Chandra Lagna gochara, graha drishti.
 	//
 	// Takes any type of body and a specified content type.
 	//
@@ -38268,7 +38808,7 @@ type ClientInterface interface {
 
 	// CalculateTransit Transit Analysis - Compare current planets to natal chart (Gochar)
 	//
-	// Analyze planetary transits (Gochar) over natal chart positions. Returns transiting planets with their natal house positions, aspects to natal planets, and highlights key transits from slow-moving planets (Jupiter, Saturn, Rahu, Ketu). Essential for timing predictions, event forecasting, and understanding current planetary influences. Transit analysis API, gochar calculator, vedic transit predictions.
+	// Analyze planetary transits (Gochar) over natal chart positions. Each transiting graha comes back with TWO whole-sign house numbers, because the two readings answer different questions: houseFromMoon is counted from the natal Moon sign (Janma Rashi), which is the reference classical Gochara uses, and natalHouse is counted from the Lagna. Also returns graha drishti onto the natal grahas (7th for every graha, plus Mars 4th and 8th, Jupiter 5th and 9th, Saturn 3rd and 10th), degree-based angular aspects with orbs, the Gochara Kaksha verdict, and highlighted transits from the slow-moving grahas (Jupiter, Saturn, Rahu, Ketu). Essential for timing predictions, event forecasting, and understanding current planetary influences. Transit analysis API, gochar calculator, vedic transit predictions, Chandra Lagna gochara, graha drishti.
 	//
 	// Takes a body of the `application/json` content type.
 	//
@@ -40926,7 +41466,7 @@ func (c *Client) GetCitiesByCountry(ctx context.Context, iso2 string, params *Ge
 
 // SearchCities Search cities worldwide - Geocoding autocomplete with coordinates and timezone
 //
-// City autocomplete and geocoding search across 23,000+ locations in 240+ countries, including deep coverage of Indian tier-2 and tier-3 cities. Returns geographic coordinates (latitude, longitude), IANA timezone, and DST-aware UTC offset for each match. Built for birth chart location pickers, horoscope apps, event scheduling, and any feature requiring place-to-coordinates resolution. Partial name matching with intelligent ranking: exact prefix matches first, then sorted by population for relevance. Common alternate names like Bombay, Calcutta, Madras, and Banaras transparently resolve to their canonical entries.
+// Turn a place name into coordinates, an IANA timezone and a DST-aware UTC offset, across 235,000+ cities and towns in 240+ countries. Coverage reaches rural towns of a few hundred people and every administrative seat, so a birthplace outside a major metro resolves as reliably as a capital. Matching is case-insensitive, accent-insensitive and partial, so ber matches Berlin, Bern and Bergen, native scripts are transliterated, and historic names resolve to the current place, so bombay returns Mumbai and peking returns Beijing. Results are ordered by match quality first and population second, so an exactly named small town is never buried under a larger city that merely shares its opening letters. Built for birth chart location pickers, horoscope apps, event scheduling, and any feature that needs place-to-coordinates resolution.
 //
 // Corresponds with GET /location/search (the `SearchCities` operationId).
 func (c *Client) SearchCities(ctx context.Context, params *SearchCitiesParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
@@ -43693,7 +44233,7 @@ func (c *Client) CalculateShadbala(ctx context.Context, params *CalculateShadbal
 
 // CalculateTransitWithBody Transit Analysis - Compare current planets to natal chart (Gochar)
 //
-// Analyze planetary transits (Gochar) over natal chart positions. Returns transiting planets with their natal house positions, aspects to natal planets, and highlights key transits from slow-moving planets (Jupiter, Saturn, Rahu, Ketu). Essential for timing predictions, event forecasting, and understanding current planetary influences. Transit analysis API, gochar calculator, vedic transit predictions.
+// Analyze planetary transits (Gochar) over natal chart positions. Each transiting graha comes back with TWO whole-sign house numbers, because the two readings answer different questions: houseFromMoon is counted from the natal Moon sign (Janma Rashi), which is the reference classical Gochara uses, and natalHouse is counted from the Lagna. Also returns graha drishti onto the natal grahas (7th for every graha, plus Mars 4th and 8th, Jupiter 5th and 9th, Saturn 3rd and 10th), degree-based angular aspects with orbs, the Gochara Kaksha verdict, and highlighted transits from the slow-moving grahas (Jupiter, Saturn, Rahu, Ketu). Essential for timing predictions, event forecasting, and understanding current planetary influences. Transit analysis API, gochar calculator, vedic transit predictions, Chandra Lagna gochara, graha drishti.
 //
 // Takes any type of body and a specified content type.
 //
@@ -43712,7 +44252,7 @@ func (c *Client) CalculateTransitWithBody(ctx context.Context, contentType strin
 
 // CalculateTransit Transit Analysis - Compare current planets to natal chart (Gochar)
 //
-// Analyze planetary transits (Gochar) over natal chart positions. Returns transiting planets with their natal house positions, aspects to natal planets, and highlights key transits from slow-moving planets (Jupiter, Saturn, Rahu, Ketu). Essential for timing predictions, event forecasting, and understanding current planetary influences. Transit analysis API, gochar calculator, vedic transit predictions.
+// Analyze planetary transits (Gochar) over natal chart positions. Each transiting graha comes back with TWO whole-sign house numbers, because the two readings answer different questions: houseFromMoon is counted from the natal Moon sign (Janma Rashi), which is the reference classical Gochara uses, and natalHouse is counted from the Lagna. Also returns graha drishti onto the natal grahas (7th for every graha, plus Mars 4th and 8th, Jupiter 5th and 9th, Saturn 3rd and 10th), degree-based angular aspects with orbs, the Gochara Kaksha verdict, and highlighted transits from the slow-moving grahas (Jupiter, Saturn, Rahu, Ketu). Essential for timing predictions, event forecasting, and understanding current planetary influences. Transit analysis API, gochar calculator, vedic transit predictions, Chandra Lagna gochara, graha drishti.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -56815,7 +57355,7 @@ type ClientWithResponsesInterface interface {
 
 	// SearchCitiesWithResponse Search cities worldwide - Geocoding autocomplete with coordinates and timezone
 	//
-	// City autocomplete and geocoding search across 23,000+ locations in 240+ countries, including deep coverage of Indian tier-2 and tier-3 cities. Returns geographic coordinates (latitude, longitude), IANA timezone, and DST-aware UTC offset for each match. Built for birth chart location pickers, horoscope apps, event scheduling, and any feature requiring place-to-coordinates resolution. Partial name matching with intelligent ranking: exact prefix matches first, then sorted by population for relevance. Common alternate names like Bombay, Calcutta, Madras, and Banaras transparently resolve to their canonical entries.
+	// Turn a place name into coordinates, an IANA timezone and a DST-aware UTC offset, across 235,000+ cities and towns in 240+ countries. Coverage reaches rural towns of a few hundred people and every administrative seat, so a birthplace outside a major metro resolves as reliably as a capital. Matching is case-insensitive, accent-insensitive and partial, so ber matches Berlin, Bern and Bergen, native scripts are transliterated, and historic names resolve to the current place, so bombay returns Mumbai and peking returns Beijing. Results are ordered by match quality first and population second, so an exactly named small town is never buried under a larger city that merely shares its opening letters. Built for birth chart location pickers, horoscope apps, event scheduling, and any feature that needs place-to-coordinates resolution.
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
@@ -58138,7 +58678,7 @@ type ClientWithResponsesInterface interface {
 
 	// CalculateTransitWithBodyWithResponse Transit Analysis - Compare current planets to natal chart (Gochar)
 	//
-	// Analyze planetary transits (Gochar) over natal chart positions. Returns transiting planets with their natal house positions, aspects to natal planets, and highlights key transits from slow-moving planets (Jupiter, Saturn, Rahu, Ketu). Essential for timing predictions, event forecasting, and understanding current planetary influences. Transit analysis API, gochar calculator, vedic transit predictions.
+	// Analyze planetary transits (Gochar) over natal chart positions. Each transiting graha comes back with TWO whole-sign house numbers, because the two readings answer different questions: houseFromMoon is counted from the natal Moon sign (Janma Rashi), which is the reference classical Gochara uses, and natalHouse is counted from the Lagna. Also returns graha drishti onto the natal grahas (7th for every graha, plus Mars 4th and 8th, Jupiter 5th and 9th, Saturn 3rd and 10th), degree-based angular aspects with orbs, the Gochara Kaksha verdict, and highlighted transits from the slow-moving grahas (Jupiter, Saturn, Rahu, Ketu). Essential for timing predictions, event forecasting, and understanding current planetary influences. Transit analysis API, gochar calculator, vedic transit predictions, Chandra Lagna gochara, graha drishti.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -58147,7 +58687,7 @@ type ClientWithResponsesInterface interface {
 
 	// CalculateTransitWithResponse Transit Analysis - Compare current planets to natal chart (Gochar)
 	//
-	// Analyze planetary transits (Gochar) over natal chart positions. Returns transiting planets with their natal house positions, aspects to natal planets, and highlights key transits from slow-moving planets (Jupiter, Saturn, Rahu, Ketu). Essential for timing predictions, event forecasting, and understanding current planetary influences. Transit analysis API, gochar calculator, vedic transit predictions.
+	// Analyze planetary transits (Gochar) over natal chart positions. Each transiting graha comes back with TWO whole-sign house numbers, because the two readings answer different questions: houseFromMoon is counted from the natal Moon sign (Janma Rashi), which is the reference classical Gochara uses, and natalHouse is counted from the Lagna. Also returns graha drishti onto the natal grahas (7th for every graha, plus Mars 4th and 8th, Jupiter 5th and 9th, Saturn 3rd and 10th), degree-based angular aspects with orbs, the Gochara Kaksha verdict, and highlighted transits from the slow-moving grahas (Jupiter, Saturn, Rahu, Ketu). Essential for timing predictions, event forecasting, and understanding current planetary influences. Transit analysis API, gochar calculator, vedic transit predictions, Chandra Lagna gochara, graha drishti.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -60205,7 +60745,7 @@ type GenerateCompositeChartResponse struct {
 			// Longitude Tropical ecliptic longitude in degrees (0-360). Primary coordinate for zodiac sign and aspect calculations.
 			Longitude float32 `json:"longitude"`
 
-			// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee).
+			// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The nodes follow the request `nodeType`, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
 			Name GenerateCompositeChart200JSONResponseBodyCompositePlanetsName `json:"name"`
 
 			// Sign Tropical zodiac sign this planet occupies. Determined by 30-degree divisions of ecliptic longitude.
@@ -60374,7 +60914,7 @@ func (r GenerateCompositeChartResponse) GetJSON200() *struct {
 		// Longitude Tropical ecliptic longitude in degrees (0-360). Primary coordinate for zodiac sign and aspect calculations.
 		Longitude float32 `json:"longitude"`
 
-		// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee).
+		// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The nodes follow the request `nodeType`, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
 		Name GenerateCompositeChart200JSONResponseBodyCompositePlanetsName `json:"name"`
 
 		// Sign Tropical zodiac sign this planet occupies. Determined by 30-degree divisions of ecliptic longitude.
@@ -61467,7 +62007,7 @@ type GenerateLunarReturnResponse struct {
 				Sign string `json:"sign"`
 			} `json:"partOfFortune"`
 
-			// Planets All 14 celestial bodies in the tropical zodiac with house placements: the 10 classical planets (Sun through Pluto), the lunar nodes (North Node, South Node), Chiron, and Black Moon Lilith.
+			// Planets All 14 celestial bodies in the tropical zodiac with house placements: the 10 classical planets (Sun through Pluto), the lunar nodes (North Node, South Node, in the requested `nodeType` convention), Chiron, and Black Moon Lilith.
 			Planets []struct {
 				// Degree Degree within the zodiac sign (0-29.999). Indicates how far the planet has progressed through the sign.
 				Degree float32 `json:"degree"`
@@ -61484,7 +62024,7 @@ type GenerateLunarReturnResponse struct {
 				// Longitude Tropical ecliptic longitude in degrees (0-360). Primary coordinate for zodiac sign and aspect calculations.
 				Longitude float32 `json:"longitude"`
 
-				// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee).
+				// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The nodes follow the request `nodeType`, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
 				Name GenerateLunarReturn200JSONResponseBodyChartPlanetsName `json:"name"`
 
 				// Sign Tropical zodiac sign this planet occupies. Determined by 30-degree divisions of ecliptic longitude.
@@ -61645,7 +62185,7 @@ func (r GenerateLunarReturnResponse) GetJSON200() *struct {
 			Sign string `json:"sign"`
 		} `json:"partOfFortune"`
 
-		// Planets All 14 celestial bodies in the tropical zodiac with house placements: the 10 classical planets (Sun through Pluto), the lunar nodes (North Node, South Node), Chiron, and Black Moon Lilith.
+		// Planets All 14 celestial bodies in the tropical zodiac with house placements: the 10 classical planets (Sun through Pluto), the lunar nodes (North Node, South Node, in the requested `nodeType` convention), Chiron, and Black Moon Lilith.
 		Planets []struct {
 			// Degree Degree within the zodiac sign (0-29.999). Indicates how far the planet has progressed through the sign.
 			Degree float32 `json:"degree"`
@@ -61662,7 +62202,7 @@ func (r GenerateLunarReturnResponse) GetJSON200() *struct {
 			// Longitude Tropical ecliptic longitude in degrees (0-360). Primary coordinate for zodiac sign and aspect calculations.
 			Longitude float32 `json:"longitude"`
 
-			// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee).
+			// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The nodes follow the request `nodeType`, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
 			Name GenerateLunarReturn200JSONResponseBodyChartPlanetsName `json:"name"`
 
 			// Sign Tropical zodiac sign this planet occupies. Determined by 30-degree divisions of ecliptic longitude.
@@ -62717,7 +63257,7 @@ type GeneratePlanetaryReturnResponse struct {
 				Sign string `json:"sign"`
 			} `json:"partOfFortune"`
 
-			// Planets All 14 celestial bodies in the tropical zodiac with house placements: the 10 classical planets (Sun through Pluto), the lunar nodes (North Node, South Node), Chiron, and Black Moon Lilith.
+			// Planets All 14 celestial bodies in the tropical zodiac with house placements: the 10 classical planets (Sun through Pluto), the lunar nodes (North Node, South Node, in the requested `nodeType` convention), Chiron, and Black Moon Lilith.
 			Planets []struct {
 				// Degree Degree within the zodiac sign (0-29.999). Indicates how far the planet has progressed through the sign.
 				Degree float32 `json:"degree"`
@@ -62734,7 +63274,7 @@ type GeneratePlanetaryReturnResponse struct {
 				// Longitude Tropical ecliptic longitude in degrees (0-360). Primary coordinate for zodiac sign and aspect calculations.
 				Longitude float32 `json:"longitude"`
 
-				// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee).
+				// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The nodes follow the request `nodeType`, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
 				Name GeneratePlanetaryReturn200JSONResponseBodyChartPlanetsName `json:"name"`
 
 				// Sign Tropical zodiac sign this planet occupies. Determined by 30-degree divisions of ecliptic longitude.
@@ -62898,7 +63438,7 @@ func (r GeneratePlanetaryReturnResponse) GetJSON200() *struct {
 			Sign string `json:"sign"`
 		} `json:"partOfFortune"`
 
-		// Planets All 14 celestial bodies in the tropical zodiac with house placements: the 10 classical planets (Sun through Pluto), the lunar nodes (North Node, South Node), Chiron, and Black Moon Lilith.
+		// Planets All 14 celestial bodies in the tropical zodiac with house placements: the 10 classical planets (Sun through Pluto), the lunar nodes (North Node, South Node, in the requested `nodeType` convention), Chiron, and Black Moon Lilith.
 		Planets []struct {
 			// Degree Degree within the zodiac sign (0-29.999). Indicates how far the planet has progressed through the sign.
 			Degree float32 `json:"degree"`
@@ -62915,7 +63455,7 @@ func (r GeneratePlanetaryReturnResponse) GetJSON200() *struct {
 			// Longitude Tropical ecliptic longitude in degrees (0-360). Primary coordinate for zodiac sign and aspect calculations.
 			Longitude float32 `json:"longitude"`
 
-			// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee).
+			// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The nodes follow the request `nodeType`, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
 			Name GeneratePlanetaryReturn200JSONResponseBodyChartPlanetsName `json:"name"`
 
 			// Sign Tropical zodiac sign this planet occupies. Determined by 30-degree divisions of ecliptic longitude.
@@ -63675,8 +64215,11 @@ type ListZodiacSignsResponse struct {
 		// Description Brief overview of this zodiac sign personality and themes.
 		Description string `json:"description"`
 
-		// Element Elemental classification: Fire, Earth, Air, or Water.
+		// Element Elemental classification: fire, earth, air, or water. Always one of these four English literals, whatever the lang parameter says, so it stays safe to compare against in code. Use elementLocalized for anything a reader sees.
 		Element ListZodiacSigns200JSONResponseBodyElement `json:"element"`
+
+		// ElementLocalized Element name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		ElementLocalized *string `json:"elementLocalized,omitempty"`
 
 		// ID Lowercase sign identifier (e.g., aries, taurus, gemini).
 		ID string `json:"id"`
@@ -63715,8 +64258,11 @@ func (r ListZodiacSignsResponse) GetJSON200() *[]struct {
 	// Description Brief overview of this zodiac sign personality and themes.
 	Description string `json:"description"`
 
-	// Element Elemental classification: Fire, Earth, Air, or Water.
+	// Element Elemental classification: fire, earth, air, or water. Always one of these four English literals, whatever the lang parameter says, so it stays safe to compare against in code. Use elementLocalized for anything a reader sees.
 	Element ListZodiacSigns200JSONResponseBodyElement `json:"element"`
+
+	// ElementLocalized Element name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+	ElementLocalized *string `json:"elementLocalized,omitempty"`
 
 	// ID Lowercase sign identifier (e.g., aries, taurus, gemini).
 	ID string `json:"id"`
@@ -63823,8 +64369,11 @@ type GetZodiacSignResponse struct {
 			Short string `json:"short"`
 		} `json:"description"`
 
-		// Element Elemental classification: Fire, Earth, Air, or Water. Determines temperament and compatibility group.
+		// Element Elemental classification: fire, earth, air, or water. Determines temperament and compatibility group. Always one of these four English literals, whatever the lang parameter says, so it stays safe to compare against in code. Use elementLocalized for anything a reader sees.
 		Element GetZodiacSign200JSONResponseBodyElement `json:"element"`
+
+		// ElementLocalized Element name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		ElementLocalized *string `json:"elementLocalized,omitempty"`
 
 		// Famous Notable people born under this zodiac sign.
 		Famous *[]string `json:"famous,omitempty"`
@@ -63838,8 +64387,11 @@ type GetZodiacSignResponse struct {
 		// Keywords Key personality traits and descriptive words for this sign.
 		Keywords []string `json:"keywords"`
 
-		// Modality Quality/modality: Cardinal (initiating), Fixed (sustaining), or Mutable (adapting).
+		// Modality Quality/modality: cardinal (initiating), fixed (sustaining), or mutable (adapting). Always one of these three English literals, whatever the lang parameter says, so it stays safe to compare against in code. Use modalityLocalized for anything a reader sees.
 		Modality GetZodiacSign200JSONResponseBodyModality `json:"modality"`
+
+		// ModalityLocalized Modality name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		ModalityLocalized *string `json:"modalityLocalized,omitempty"`
 
 		// Motto Signature motto or tagline for this sign.
 		Motto *string `json:"motto,omitempty"`
@@ -63847,8 +64399,11 @@ type GetZodiacSignResponse struct {
 		// Name Display name of the zodiac sign.
 		Name string `json:"name"`
 
-		// RulingPlanet Traditional ruling planet that governs this sign.
+		// RulingPlanet Traditional ruling planet that governs this sign. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use rulingPlanetLocalized for anything a reader sees.
 		RulingPlanet string `json:"rulingPlanet"`
+
+		// RulingPlanetLocalized Ruling planet name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		RulingPlanetLocalized *string `json:"rulingPlanetLocalized,omitempty"`
 
 		// Strengths Key strengths and lovable qualities of this sign.
 		Strengths *[]string `json:"strengths,omitempty"`
@@ -63904,8 +64459,11 @@ func (r GetZodiacSignResponse) GetJSON200() *struct {
 		Short string `json:"short"`
 	} `json:"description"`
 
-	// Element Elemental classification: Fire, Earth, Air, or Water. Determines temperament and compatibility group.
+	// Element Elemental classification: fire, earth, air, or water. Determines temperament and compatibility group. Always one of these four English literals, whatever the lang parameter says, so it stays safe to compare against in code. Use elementLocalized for anything a reader sees.
 	Element GetZodiacSign200JSONResponseBodyElement `json:"element"`
+
+	// ElementLocalized Element name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+	ElementLocalized *string `json:"elementLocalized,omitempty"`
 
 	// Famous Notable people born under this zodiac sign.
 	Famous *[]string `json:"famous,omitempty"`
@@ -63919,8 +64477,11 @@ func (r GetZodiacSignResponse) GetJSON200() *struct {
 	// Keywords Key personality traits and descriptive words for this sign.
 	Keywords []string `json:"keywords"`
 
-	// Modality Quality/modality: Cardinal (initiating), Fixed (sustaining), or Mutable (adapting).
+	// Modality Quality/modality: cardinal (initiating), fixed (sustaining), or mutable (adapting). Always one of these three English literals, whatever the lang parameter says, so it stays safe to compare against in code. Use modalityLocalized for anything a reader sees.
 	Modality GetZodiacSign200JSONResponseBodyModality `json:"modality"`
+
+	// ModalityLocalized Modality name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+	ModalityLocalized *string `json:"modalityLocalized,omitempty"`
 
 	// Motto Signature motto or tagline for this sign.
 	Motto *string `json:"motto,omitempty"`
@@ -63928,8 +64489,11 @@ func (r GetZodiacSignResponse) GetJSON200() *struct {
 	// Name Display name of the zodiac sign.
 	Name string `json:"name"`
 
-	// RulingPlanet Traditional ruling planet that governs this sign.
+	// RulingPlanet Traditional ruling planet that governs this sign. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use rulingPlanetLocalized for anything a reader sees.
 	RulingPlanet string `json:"rulingPlanet"`
+
+	// RulingPlanetLocalized Ruling planet name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+	RulingPlanetLocalized *string `json:"rulingPlanetLocalized,omitempty"`
 
 	// Strengths Key strengths and lovable qualities of this sign.
 	Strengths *[]string `json:"strengths,omitempty"`
@@ -64191,7 +64755,7 @@ type GenerateSolarReturnResponse struct {
 				Sign string `json:"sign"`
 			} `json:"partOfFortune"`
 
-			// Planets All 14 celestial bodies in the tropical zodiac with house placements: the 10 classical planets (Sun through Pluto), the lunar nodes (North Node, South Node), Chiron, and Black Moon Lilith.
+			// Planets All 14 celestial bodies in the tropical zodiac with house placements: the 10 classical planets (Sun through Pluto), the lunar nodes (North Node, South Node, in the requested `nodeType` convention), Chiron, and Black Moon Lilith.
 			Planets []struct {
 				// Degree Degree within the zodiac sign (0-29.999). Indicates how far the planet has progressed through the sign.
 				Degree float32 `json:"degree"`
@@ -64208,7 +64772,7 @@ type GenerateSolarReturnResponse struct {
 				// Longitude Tropical ecliptic longitude in degrees (0-360). Primary coordinate for zodiac sign and aspect calculations.
 				Longitude float32 `json:"longitude"`
 
-				// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee).
+				// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The nodes follow the request `nodeType`, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
 				Name GenerateSolarReturn200JSONResponseBodyChartPlanetsName `json:"name"`
 
 				// Sign Tropical zodiac sign this planet occupies. Determined by 30-degree divisions of ecliptic longitude.
@@ -64372,7 +64936,7 @@ func (r GenerateSolarReturnResponse) GetJSON200() *struct {
 			Sign string `json:"sign"`
 		} `json:"partOfFortune"`
 
-		// Planets All 14 celestial bodies in the tropical zodiac with house placements: the 10 classical planets (Sun through Pluto), the lunar nodes (North Node, South Node), Chiron, and Black Moon Lilith.
+		// Planets All 14 celestial bodies in the tropical zodiac with house placements: the 10 classical planets (Sun through Pluto), the lunar nodes (North Node, South Node, in the requested `nodeType` convention), Chiron, and Black Moon Lilith.
 		Planets []struct {
 			// Degree Degree within the zodiac sign (0-29.999). Indicates how far the planet has progressed through the sign.
 			Degree float32 `json:"degree"`
@@ -64389,7 +64953,7 @@ func (r GenerateSolarReturnResponse) GetJSON200() *struct {
 			// Longitude Tropical ecliptic longitude in degrees (0-360). Primary coordinate for zodiac sign and aspect calculations.
 			Longitude float32 `json:"longitude"`
 
-			// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee).
+			// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The nodes follow the request `nodeType`, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
 			Name GenerateSolarReturn200JSONResponseBodyChartPlanetsName `json:"name"`
 
 			// Sign Tropical zodiac sign this planet occupies. Determined by 30-degree divisions of ecliptic longitude.
@@ -65022,6 +65586,21 @@ type CalculateTransitAspectsResponse struct {
 	HTTPResponse *http.Response
 	// JSON200 the response for an HTTP 200 `application/json` response
 	JSON200 *struct {
+		// Ascendant The natal Ascendant (rising sign): the eastern horizon at birth, and the left-hand horizon a chart wheel is oriented to. Reported alongside the cusps because the two are not the same longitude in every house system: Whole Sign puts the first cusp at 0 degrees of the rising sign, which can sit most of a sign away from the Ascendant itself.
+		Ascendant struct {
+			// Degree Degree within the Ascendant sign (0-29.999).
+			Degree float32 `json:"degree"`
+
+			// Longitude Absolute ecliptic longitude of the natal Ascendant in degrees (0-360).
+			Longitude float32 `json:"longitude"`
+
+			// Sign Tropical zodiac sign on the natal Ascendant. Always English, whatever the lang parameter says. Use signLocalized for anything a reader sees.
+			Sign string `json:"sign"`
+
+			// SignLocalized Ascendant sign name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			SignLocalized *string `json:"signLocalized,omitempty"`
+		} `json:"ascendant"`
+
 		// Aspects Transit-to-natal aspects with interpretations, strength ratings, and guidance. Each aspect represents a transiting planet forming a geometric angle to a natal planet.
 		Aspects []struct {
 			// Angle Exact angular separation that defines this aspect type in degrees.
@@ -65049,8 +65628,10 @@ type CalculateTransitAspectsResponse struct {
 			Planet2Localized *string `json:"planet2Localized,omitempty"`
 
 			// Strength Aspect strength percentage (0-100). Based on orb tightness relative to the allowed maximum.
-			Strength              float32 `json:"strength"`
-			TransitInterpretation *struct {
+			Strength float32 `json:"strength"`
+
+			// TransitInterpretation Rich interpretation of the transit aspect: narrative summary, timing, impact assessment, practical guidance, and keywords.
+			TransitInterpretation struct {
 				// Guidance Practical advice for working with this transit energy.
 				Guidance string `json:"guidance"`
 
@@ -65065,7 +65646,7 @@ type CalculateTransitAspectsResponse struct {
 
 				// Timing When this transit is most active and how long its influence lasts, localized. The bucket follows the speed of the transiting body: a few hours for the Moon, a few days for the Sun, Mercury, Venus and Mars, one to two weeks for Jupiter, several weeks for Saturn, and an extended period for Uranus, Neptune and Pluto.
 				Timing string `json:"timing"`
-			} `json:"transitInterpretation,omitempty"`
+			} `json:"transitInterpretation"`
 
 			// Type Aspect type. Major: conjunction (0), opposition (180), trine (120), square (90), sextile (60). Minor: semi-sextile, quincunx, semi-square, sesquiquadrate.
 			Type CalculateTransitAspects200JSONResponseBodyAspectsType `json:"type"`
@@ -65076,6 +65657,24 @@ type CalculateTransitAspectsResponse struct {
 
 		// HouseSystem House system actually used for the natal cusps behind every house number in this response. Differs from the requested system only above the polar circle, where quadrant systems fall back to Whole Sign.
 		HouseSystem CalculateTransitAspects200JSONResponseBodyHouseSystem `json:"houseSystem"`
+
+		// Houses The twelve NATAL house cusps that every house number in this response is read against, in the house system named by houseSystem. Same shape as the natal-chart houses array, so a bi-wheel can be drawn with real house sectors from this one response instead of pairing it with a second call.
+		Houses []struct {
+			// Degree Degree within the zodiac sign on this cusp (0-29.999).
+			Degree float32 `json:"degree"`
+
+			// Longitude Ecliptic longitude of this house cusp in degrees (0-360).
+			Longitude float32 `json:"longitude"`
+
+			// Number House number (1-12). Each house governs specific life themes in Western astrology.
+			Number int `json:"number"`
+
+			// Sign Zodiac sign on this house cusp. Colors the themes of this life area.
+			Sign string `json:"sign"`
+
+			// SignLocalized Zodiac sign name on this cusp in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			SignLocalized *string `json:"signLocalized,omitempty"`
+		} `json:"houses"`
 
 		// NatalPlanets Natal (birth chart) planetary positions used as the baseline for transit aspect comparison, each placed in its natal house.
 		NatalPlanets []struct {
@@ -65094,7 +65693,7 @@ type CalculateTransitAspectsResponse struct {
 			// Longitude Tropical ecliptic longitude in degrees (0-360). Primary coordinate for zodiac sign and aspect calculations.
 			Longitude float32 `json:"longitude"`
 
-			// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee).
+			// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The nodes follow the request `nodeType`, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
 			Name CalculateTransitAspects200JSONResponseBodyNatalPlanetsName `json:"name"`
 
 			// NameLocalized Body name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
@@ -65153,6 +65752,24 @@ type CalculateTransitAspectsResponse struct {
 				// Strength Aspect strength percentage (0-100). Based on orb tightness relative to the allowed maximum.
 				Strength float32 `json:"strength"`
 
+				// TransitInterpretation Rich interpretation of the transit aspect: narrative summary, timing, impact assessment, practical guidance, and keywords.
+				TransitInterpretation struct {
+					// Guidance Practical advice for working with this transit energy.
+					Guidance string `json:"guidance"`
+
+					// Impact Strength and nature of this transit effect — constructive, challenging, or neutral.
+					Impact string `json:"impact"`
+
+					// Keywords Key themes activated by this transit aspect.
+					Keywords []string `json:"keywords"`
+
+					// Summary Narrative interpretation of this transit aspect and its life impact.
+					Summary string `json:"summary"`
+
+					// Timing When this transit is most active and how long its influence lasts, localized. The bucket follows the speed of the transiting body: a few hours for the Moon, a few days for the Sun, Mercury, Venus and Mars, one to two weeks for Jupiter, several weeks for Saturn, and an extended period for Uranus, Neptune and Pluto.
+					Timing string `json:"timing"`
+				} `json:"transitInterpretation"`
+
 				// Type Aspect type. Major: conjunction (0), opposition (180), trine (120), square (90), sextile (60). Minor: semi-sextile, quincunx, semi-square, sesquiquadrate.
 				Type CalculateTransitAspects200JSONResponseBodySummaryStrongestType `json:"type"`
 
@@ -65184,7 +65801,7 @@ type CalculateTransitAspectsResponse struct {
 			// Longitude Tropical ecliptic longitude in degrees (0-360). Primary coordinate for zodiac sign and aspect calculations.
 			Longitude float32 `json:"longitude"`
 
-			// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee).
+			// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The nodes follow the request `nodeType`, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
 			Name CalculateTransitAspects200JSONResponseBodyTransitPlanetsName `json:"name"`
 
 			// NameLocalized Body name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
@@ -65216,6 +65833,21 @@ type CalculateTransitAspectsResponse struct {
 
 // GetJSON200 returns the response for an HTTP 200 `application/json` response
 func (r CalculateTransitAspectsResponse) GetJSON200() *struct {
+	// Ascendant The natal Ascendant (rising sign): the eastern horizon at birth, and the left-hand horizon a chart wheel is oriented to. Reported alongside the cusps because the two are not the same longitude in every house system: Whole Sign puts the first cusp at 0 degrees of the rising sign, which can sit most of a sign away from the Ascendant itself.
+	Ascendant struct {
+		// Degree Degree within the Ascendant sign (0-29.999).
+		Degree float32 `json:"degree"`
+
+		// Longitude Absolute ecliptic longitude of the natal Ascendant in degrees (0-360).
+		Longitude float32 `json:"longitude"`
+
+		// Sign Tropical zodiac sign on the natal Ascendant. Always English, whatever the lang parameter says. Use signLocalized for anything a reader sees.
+		Sign string `json:"sign"`
+
+		// SignLocalized Ascendant sign name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		SignLocalized *string `json:"signLocalized,omitempty"`
+	} `json:"ascendant"`
+
 	// Aspects Transit-to-natal aspects with interpretations, strength ratings, and guidance. Each aspect represents a transiting planet forming a geometric angle to a natal planet.
 	Aspects []struct {
 		// Angle Exact angular separation that defines this aspect type in degrees.
@@ -65243,8 +65875,10 @@ func (r CalculateTransitAspectsResponse) GetJSON200() *struct {
 		Planet2Localized *string `json:"planet2Localized,omitempty"`
 
 		// Strength Aspect strength percentage (0-100). Based on orb tightness relative to the allowed maximum.
-		Strength              float32 `json:"strength"`
-		TransitInterpretation *struct {
+		Strength float32 `json:"strength"`
+
+		// TransitInterpretation Rich interpretation of the transit aspect: narrative summary, timing, impact assessment, practical guidance, and keywords.
+		TransitInterpretation struct {
 			// Guidance Practical advice for working with this transit energy.
 			Guidance string `json:"guidance"`
 
@@ -65259,7 +65893,7 @@ func (r CalculateTransitAspectsResponse) GetJSON200() *struct {
 
 			// Timing When this transit is most active and how long its influence lasts, localized. The bucket follows the speed of the transiting body: a few hours for the Moon, a few days for the Sun, Mercury, Venus and Mars, one to two weeks for Jupiter, several weeks for Saturn, and an extended period for Uranus, Neptune and Pluto.
 			Timing string `json:"timing"`
-		} `json:"transitInterpretation,omitempty"`
+		} `json:"transitInterpretation"`
 
 		// Type Aspect type. Major: conjunction (0), opposition (180), trine (120), square (90), sextile (60). Minor: semi-sextile, quincunx, semi-square, sesquiquadrate.
 		Type CalculateTransitAspects200JSONResponseBodyAspectsType `json:"type"`
@@ -65270,6 +65904,24 @@ func (r CalculateTransitAspectsResponse) GetJSON200() *struct {
 
 	// HouseSystem House system actually used for the natal cusps behind every house number in this response. Differs from the requested system only above the polar circle, where quadrant systems fall back to Whole Sign.
 	HouseSystem CalculateTransitAspects200JSONResponseBodyHouseSystem `json:"houseSystem"`
+
+	// Houses The twelve NATAL house cusps that every house number in this response is read against, in the house system named by houseSystem. Same shape as the natal-chart houses array, so a bi-wheel can be drawn with real house sectors from this one response instead of pairing it with a second call.
+	Houses []struct {
+		// Degree Degree within the zodiac sign on this cusp (0-29.999).
+		Degree float32 `json:"degree"`
+
+		// Longitude Ecliptic longitude of this house cusp in degrees (0-360).
+		Longitude float32 `json:"longitude"`
+
+		// Number House number (1-12). Each house governs specific life themes in Western astrology.
+		Number int `json:"number"`
+
+		// Sign Zodiac sign on this house cusp. Colors the themes of this life area.
+		Sign string `json:"sign"`
+
+		// SignLocalized Zodiac sign name on this cusp in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		SignLocalized *string `json:"signLocalized,omitempty"`
+	} `json:"houses"`
 
 	// NatalPlanets Natal (birth chart) planetary positions used as the baseline for transit aspect comparison, each placed in its natal house.
 	NatalPlanets []struct {
@@ -65288,7 +65940,7 @@ func (r CalculateTransitAspectsResponse) GetJSON200() *struct {
 		// Longitude Tropical ecliptic longitude in degrees (0-360). Primary coordinate for zodiac sign and aspect calculations.
 		Longitude float32 `json:"longitude"`
 
-		// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee).
+		// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The nodes follow the request `nodeType`, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
 		Name CalculateTransitAspects200JSONResponseBodyNatalPlanetsName `json:"name"`
 
 		// NameLocalized Body name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
@@ -65347,6 +65999,24 @@ func (r CalculateTransitAspectsResponse) GetJSON200() *struct {
 			// Strength Aspect strength percentage (0-100). Based on orb tightness relative to the allowed maximum.
 			Strength float32 `json:"strength"`
 
+			// TransitInterpretation Rich interpretation of the transit aspect: narrative summary, timing, impact assessment, practical guidance, and keywords.
+			TransitInterpretation struct {
+				// Guidance Practical advice for working with this transit energy.
+				Guidance string `json:"guidance"`
+
+				// Impact Strength and nature of this transit effect — constructive, challenging, or neutral.
+				Impact string `json:"impact"`
+
+				// Keywords Key themes activated by this transit aspect.
+				Keywords []string `json:"keywords"`
+
+				// Summary Narrative interpretation of this transit aspect and its life impact.
+				Summary string `json:"summary"`
+
+				// Timing When this transit is most active and how long its influence lasts, localized. The bucket follows the speed of the transiting body: a few hours for the Moon, a few days for the Sun, Mercury, Venus and Mars, one to two weeks for Jupiter, several weeks for Saturn, and an extended period for Uranus, Neptune and Pluto.
+				Timing string `json:"timing"`
+			} `json:"transitInterpretation"`
+
 			// Type Aspect type. Major: conjunction (0), opposition (180), trine (120), square (90), sextile (60). Minor: semi-sextile, quincunx, semi-square, sesquiquadrate.
 			Type CalculateTransitAspects200JSONResponseBodySummaryStrongestType `json:"type"`
 
@@ -65378,7 +66048,7 @@ func (r CalculateTransitAspectsResponse) GetJSON200() *struct {
 		// Longitude Tropical ecliptic longitude in degrees (0-360). Primary coordinate for zodiac sign and aspect calculations.
 		Longitude float32 `json:"longitude"`
 
-		// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee).
+		// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The nodes follow the request `nodeType`, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
 		Name CalculateTransitAspects200JSONResponseBodyTransitPlanetsName `json:"name"`
 
 		// NameLocalized Body name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
@@ -69538,7 +70208,7 @@ type ForecastSolarReturnResponse struct {
 				Sign string `json:"sign"`
 			} `json:"partOfFortune"`
 
-			// Planets All 14 celestial bodies in the tropical zodiac with house placements: the 10 classical planets (Sun through Pluto), the lunar nodes (North Node, South Node), Chiron, and Black Moon Lilith.
+			// Planets All 14 celestial bodies in the tropical zodiac with house placements: the 10 classical planets (Sun through Pluto), the lunar nodes (North Node, South Node, in the requested `nodeType` convention), Chiron, and Black Moon Lilith.
 			Planets []struct {
 				// Degree Degree within the zodiac sign (0-29.999). Indicates how far the planet has progressed through the sign.
 				Degree float32 `json:"degree"`
@@ -69555,7 +70225,7 @@ type ForecastSolarReturnResponse struct {
 				// Longitude Tropical ecliptic longitude in degrees (0-360). Primary coordinate for zodiac sign and aspect calculations.
 				Longitude float32 `json:"longitude"`
 
-				// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee).
+				// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The nodes follow the request `nodeType`, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
 				Name ForecastSolarReturn200JSONResponseBodyChartPlanetsName `json:"name"`
 
 				// Sign Tropical zodiac sign this planet occupies. Determined by 30-degree divisions of ecliptic longitude.
@@ -69707,7 +70377,7 @@ func (r ForecastSolarReturnResponse) GetJSON200() *struct {
 			Sign string `json:"sign"`
 		} `json:"partOfFortune"`
 
-		// Planets All 14 celestial bodies in the tropical zodiac with house placements: the 10 classical planets (Sun through Pluto), the lunar nodes (North Node, South Node), Chiron, and Black Moon Lilith.
+		// Planets All 14 celestial bodies in the tropical zodiac with house placements: the 10 classical planets (Sun through Pluto), the lunar nodes (North Node, South Node, in the requested `nodeType` convention), Chiron, and Black Moon Lilith.
 		Planets []struct {
 			// Degree Degree within the zodiac sign (0-29.999). Indicates how far the planet has progressed through the sign.
 			Degree float32 `json:"degree"`
@@ -69724,7 +70394,7 @@ func (r ForecastSolarReturnResponse) GetJSON200() *struct {
 			// Longitude Tropical ecliptic longitude in degrees (0-360). Primary coordinate for zodiac sign and aspect calculations.
 			Longitude float32 `json:"longitude"`
 
-			// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee).
+			// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The nodes follow the request `nodeType`, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
 			Name ForecastSolarReturn200JSONResponseBodyChartPlanetsName `json:"name"`
 
 			// Sign Tropical zodiac sign this planet occupies. Determined by 30-degree divisions of ecliptic longitude.
@@ -70316,11 +70986,14 @@ type GenerateBodygraphResponse struct {
 		// Aura The aura mechanic of the type: how the energy field itself operates, for example open and enveloping, or closed and repelling.
 		Aura string `json:"aura"`
 
-		// Authority Inner authority for decision making. One of Emotional, Sacral, Splenic, Ego, Self-Projected, Mental, Lunar.
+		// Authority Inner authority for decision making. One of Emotional, Sacral, Splenic, Ego, Self-Projected, Mental, Lunar. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use authorityLocalized for anything a reader sees.
 		Authority string `json:"authority"`
 
 		// AuthorityDescription How the decision is made, the timing it requires, and the characteristic trap. Inner authority is the most actionable output of a Human Design chart, so this is the field to lean on when grounding a reading.
 		AuthorityDescription string `json:"authorityDescription"`
+
+		// AuthorityLocalized Inner authority name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		AuthorityLocalized *string `json:"authorityLocalized,omitempty"`
 
 		// Centers All nine centers with their defined state and active gates.
 		Centers []struct {
@@ -70342,8 +71015,11 @@ type GenerateBodygraphResponse struct {
 			// Motor Whether this is a motor center (energy source). The four motors are Heart, Sacral, Solar Plexus, and Root.
 			Motor bool `json:"motor"`
 
-			// Name Display name of the center.
+			// Name Display name of the center. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use nameLocalized for anything a reader sees.
 			Name string `json:"name"`
+
+			// NameLocalized Center name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			NameLocalized *string `json:"nameLocalized,omitempty"`
 
 			// NotSelfQuestion The conditioning trap of this center when it is open. Returned on every center so a consumer can surface it the moment `defined` is false, which is where the not-self operates.
 			NotSelfQuestion string `json:"notSelfQuestion"`
@@ -70357,11 +71033,14 @@ type GenerateBodygraphResponse struct {
 			// Centers The two centers this channel connects and defines.
 			Centers []string `json:"centers"`
 
-			// Circuit Circuit family of the channel. One of Individual, Collective, Tribal.
+			// Circuit Circuit family of the channel. One of Individual, Collective, Tribal. Always English, whatever the lang parameter says. Use circuitLocalized for anything a reader sees.
 			Circuit string `json:"circuit"`
 
 			// CircuitDescription What the circuit family of this channel governs.
 			CircuitDescription string `json:"circuitDescription"`
+
+			// CircuitLocalized Circuit family name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			CircuitLocalized *string `json:"circuitLocalized,omitempty"`
 
 			// Description What this channel wires between its two centers and the nature of the energy it carries.
 			Description string `json:"description"`
@@ -70372,15 +71051,21 @@ type GenerateBodygraphResponse struct {
 			// GateB Second gate of the channel.
 			GateB float32 `json:"gateB"`
 
-			// Name Name of the defined channel.
+			// Name Name of the defined channel. Always English, whatever the lang parameter says. Use nameLocalized for anything a reader sees.
 			Name string `json:"name"`
+
+			// NameLocalized Channel name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			NameLocalized *string `json:"nameLocalized,omitempty"`
 		} `json:"channels"`
 
-		// Definition Definition type from the number of connected components among defined centers. One of None, Single, Split, Triple Split, Quadruple Split.
+		// Definition Definition type from the number of connected components among defined centers. One of None, Single, Split, Triple Split, Quadruple Split. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use definitionLocalized for anything a reader sees.
 		Definition string `json:"definition"`
 
 		// DefinitionDescription How energy flows through the defined centers in this configuration, and what the configuration needs. For a split, this is where the bridging gates of other people matter.
 		DefinitionDescription string `json:"definitionDescription"`
+
+		// DefinitionLocalized Definition type name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		DefinitionLocalized *string `json:"definitionLocalized,omitempty"`
 
 		// Gates All 26 activations, 13 Personality and 13 Design.
 		Gates []struct {
@@ -70390,8 +71075,11 @@ type GenerateBodygraphResponse struct {
 			// GateDescription Bodygraph function of the gate: what it does in the center it sits in and the channel it forms. This is NOT the meaning of the I-Ching hexagram that shares its number. They share a number, not a definition.
 			GateDescription string `json:"gateDescription"`
 
-			// GateName Human Design keynote name of the gate, describing its bodygraph function.
+			// GateName Human Design keynote name of the gate, describing its bodygraph function. Always English, whatever the lang parameter says. Use gateNameLocalized for anything a reader sees.
 			GateName string `json:"gateName"`
+
+			// GateNameLocalized Gate keynote name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			GateNameLocalized *string `json:"gateNameLocalized,omitempty"`
 
 			// IchingHexagram Cross-reference to the I-Ching hexagram that shares this gate number.
 			IchingHexagram struct {
@@ -70408,11 +71096,14 @@ type GenerateBodygraphResponse struct {
 			// LineMeaning Meaning of this gate at this specific line, one of 384. The finest interpretive layer in the chart and the one that makes a reading specific rather than generic. This is not the six abstract line archetypes: gate 41 line 3 carries its own meaning that neither the gate keynote nor the line-3 archetype holds alone.
 			LineMeaning string `json:"lineMeaning"`
 
-			// Planet Activating body. One of Sun, Earth, Moon, North Node, South Node, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto.
+			// Planet Activating body. One of Sun, Earth, Moon, North Node, South Node, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto. Always English, whatever the lang parameter says, so it stays safe to compare against in code and to key a glyph table on. Use planetLocalized for anything a reader sees.
 			Planet string `json:"planet"`
 
 			// PlanetDescription What this planetary activation contributes in Human Design specifically, which is not its meaning in western astrology.
 			PlanetDescription string `json:"planetDescription"`
+
+			// PlanetLocalized Activating body name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			PlanetLocalized *string `json:"planetLocalized,omitempty"`
 
 			// Side Chart side. personality is the conscious birth-moment activation, design is the unconscious activation 88 degrees of solar arc before birth.
 			Side string `json:"side"`
@@ -70420,11 +71111,14 @@ type GenerateBodygraphResponse struct {
 
 		// IncarnationCross The incarnation cross built from the four cardinal gates and the profile angle.
 		IncarnationCross struct {
-			// Angle Cross angle. One of Right Angle, Juxtaposition, Left Angle.
+			// Angle Cross angle. One of Right Angle, Juxtaposition, Left Angle. Always English, whatever the lang parameter says. Use angleLocalized for anything a reader sees.
 			Angle string `json:"angle"`
 
 			// AngleCode Short code for the angle. One of RAX, JXT, LAX.
 			AngleCode string `json:"angleCode"`
+
+			// AngleLocalized Cross angle name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			AngleLocalized *string `json:"angleLocalized,omitempty"`
 
 			// Description The life theme of the cross, synthesized from its four gates and the orientation the angle gives them. The same Sun gate under a different angle is a genuinely different theme: Right Angle is personal destiny, Left Angle is worked out through other people, Juxtaposition is a fixed fate.
 			Description *string `json:"description,omitempty"`
@@ -70436,8 +71130,11 @@ type GenerateBodygraphResponse struct {
 			Name string `json:"name"`
 		} `json:"incarnationCross"`
 
-		// NotSelf The not-self theme, the recurring feeling that signals being out of alignment.
+		// NotSelf The not-self theme, the recurring feeling that signals being out of alignment. Always English, whatever the lang parameter says. Use notSelfLocalized for anything a reader sees.
 		NotSelf string `json:"notSelf"`
+
+		// NotSelfLocalized Not-self theme name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		NotSelfLocalized *string `json:"notSelfLocalized,omitempty"`
 
 		// Profile Profile in conscious/unconscious form from the Personality Sun line over the Design Sun line.
 		Profile string `json:"profile"`
@@ -70463,20 +71160,29 @@ type GenerateBodygraphResponse struct {
 		// Sides What the two chart sides are: personality is the conscious mind side, design is the unconscious body side computed 88 degrees of solar arc before birth. Returned once at the top level rather than repeated across all 26 activations.
 		Sides map[string]string `json:"sides"`
 
-		// Signature The signature feeling of living in alignment with the type.
+		// Signature The signature feeling of living in alignment with the type. Always English, whatever the lang parameter says. Use signatureLocalized for anything a reader sees.
 		Signature string `json:"signature"`
 
-		// Strategy The aura strategy for engaging life correctly for this type.
+		// SignatureLocalized Signature theme name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		SignatureLocalized *string `json:"signatureLocalized,omitempty"`
+
+		// Strategy The aura strategy for engaging life correctly for this type. Always English, whatever the lang parameter says. Use strategyLocalized for anything a reader sees.
 		Strategy string `json:"strategy"`
 
 		// StrategyDescription How to actually apply the strategy. The strategy field alone is a bare label such as Respond or Inform; this is the operating instruction behind it.
 		StrategyDescription string `json:"strategyDescription"`
 
-		// Type Human Design energy type. One of Manifestor, Generator, Manifesting Generator, Projector, Reflector.
+		// StrategyLocalized Strategy name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		StrategyLocalized *string `json:"strategyLocalized,omitempty"`
+
+		// Type Human Design energy type. One of Manifestor, Generator, Manifesting Generator, Projector, Reflector. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use typeLocalized for anything a reader sees.
 		Type string `json:"type"`
 
 		// TypeDescription What the aura of this type does and how it is designed to engage life. The grounding text for the type label, so a consuming agent does not have to supply the meaning itself.
 		TypeDescription string `json:"typeDescription"`
+
+		// TypeLocalized Energy type name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		TypeLocalized *string `json:"typeLocalized,omitempty"`
 	}
 	// JSON400 the response for an HTTP 400 `application/json` response
 	JSON400 *ErrorResponse
@@ -70497,11 +71203,14 @@ func (r GenerateBodygraphResponse) GetJSON200() *struct {
 	// Aura The aura mechanic of the type: how the energy field itself operates, for example open and enveloping, or closed and repelling.
 	Aura string `json:"aura"`
 
-	// Authority Inner authority for decision making. One of Emotional, Sacral, Splenic, Ego, Self-Projected, Mental, Lunar.
+	// Authority Inner authority for decision making. One of Emotional, Sacral, Splenic, Ego, Self-Projected, Mental, Lunar. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use authorityLocalized for anything a reader sees.
 	Authority string `json:"authority"`
 
 	// AuthorityDescription How the decision is made, the timing it requires, and the characteristic trap. Inner authority is the most actionable output of a Human Design chart, so this is the field to lean on when grounding a reading.
 	AuthorityDescription string `json:"authorityDescription"`
+
+	// AuthorityLocalized Inner authority name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+	AuthorityLocalized *string `json:"authorityLocalized,omitempty"`
 
 	// Centers All nine centers with their defined state and active gates.
 	Centers []struct {
@@ -70523,8 +71232,11 @@ func (r GenerateBodygraphResponse) GetJSON200() *struct {
 		// Motor Whether this is a motor center (energy source). The four motors are Heart, Sacral, Solar Plexus, and Root.
 		Motor bool `json:"motor"`
 
-		// Name Display name of the center.
+		// Name Display name of the center. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use nameLocalized for anything a reader sees.
 		Name string `json:"name"`
+
+		// NameLocalized Center name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		NameLocalized *string `json:"nameLocalized,omitempty"`
 
 		// NotSelfQuestion The conditioning trap of this center when it is open. Returned on every center so a consumer can surface it the moment `defined` is false, which is where the not-self operates.
 		NotSelfQuestion string `json:"notSelfQuestion"`
@@ -70538,11 +71250,14 @@ func (r GenerateBodygraphResponse) GetJSON200() *struct {
 		// Centers The two centers this channel connects and defines.
 		Centers []string `json:"centers"`
 
-		// Circuit Circuit family of the channel. One of Individual, Collective, Tribal.
+		// Circuit Circuit family of the channel. One of Individual, Collective, Tribal. Always English, whatever the lang parameter says. Use circuitLocalized for anything a reader sees.
 		Circuit string `json:"circuit"`
 
 		// CircuitDescription What the circuit family of this channel governs.
 		CircuitDescription string `json:"circuitDescription"`
+
+		// CircuitLocalized Circuit family name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		CircuitLocalized *string `json:"circuitLocalized,omitempty"`
 
 		// Description What this channel wires between its two centers and the nature of the energy it carries.
 		Description string `json:"description"`
@@ -70553,15 +71268,21 @@ func (r GenerateBodygraphResponse) GetJSON200() *struct {
 		// GateB Second gate of the channel.
 		GateB float32 `json:"gateB"`
 
-		// Name Name of the defined channel.
+		// Name Name of the defined channel. Always English, whatever the lang parameter says. Use nameLocalized for anything a reader sees.
 		Name string `json:"name"`
+
+		// NameLocalized Channel name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		NameLocalized *string `json:"nameLocalized,omitempty"`
 	} `json:"channels"`
 
-	// Definition Definition type from the number of connected components among defined centers. One of None, Single, Split, Triple Split, Quadruple Split.
+	// Definition Definition type from the number of connected components among defined centers. One of None, Single, Split, Triple Split, Quadruple Split. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use definitionLocalized for anything a reader sees.
 	Definition string `json:"definition"`
 
 	// DefinitionDescription How energy flows through the defined centers in this configuration, and what the configuration needs. For a split, this is where the bridging gates of other people matter.
 	DefinitionDescription string `json:"definitionDescription"`
+
+	// DefinitionLocalized Definition type name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+	DefinitionLocalized *string `json:"definitionLocalized,omitempty"`
 
 	// Gates All 26 activations, 13 Personality and 13 Design.
 	Gates []struct {
@@ -70571,8 +71292,11 @@ func (r GenerateBodygraphResponse) GetJSON200() *struct {
 		// GateDescription Bodygraph function of the gate: what it does in the center it sits in and the channel it forms. This is NOT the meaning of the I-Ching hexagram that shares its number. They share a number, not a definition.
 		GateDescription string `json:"gateDescription"`
 
-		// GateName Human Design keynote name of the gate, describing its bodygraph function.
+		// GateName Human Design keynote name of the gate, describing its bodygraph function. Always English, whatever the lang parameter says. Use gateNameLocalized for anything a reader sees.
 		GateName string `json:"gateName"`
+
+		// GateNameLocalized Gate keynote name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		GateNameLocalized *string `json:"gateNameLocalized,omitempty"`
 
 		// IchingHexagram Cross-reference to the I-Ching hexagram that shares this gate number.
 		IchingHexagram struct {
@@ -70589,11 +71313,14 @@ func (r GenerateBodygraphResponse) GetJSON200() *struct {
 		// LineMeaning Meaning of this gate at this specific line, one of 384. The finest interpretive layer in the chart and the one that makes a reading specific rather than generic. This is not the six abstract line archetypes: gate 41 line 3 carries its own meaning that neither the gate keynote nor the line-3 archetype holds alone.
 		LineMeaning string `json:"lineMeaning"`
 
-		// Planet Activating body. One of Sun, Earth, Moon, North Node, South Node, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto.
+		// Planet Activating body. One of Sun, Earth, Moon, North Node, South Node, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto. Always English, whatever the lang parameter says, so it stays safe to compare against in code and to key a glyph table on. Use planetLocalized for anything a reader sees.
 		Planet string `json:"planet"`
 
 		// PlanetDescription What this planetary activation contributes in Human Design specifically, which is not its meaning in western astrology.
 		PlanetDescription string `json:"planetDescription"`
+
+		// PlanetLocalized Activating body name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		PlanetLocalized *string `json:"planetLocalized,omitempty"`
 
 		// Side Chart side. personality is the conscious birth-moment activation, design is the unconscious activation 88 degrees of solar arc before birth.
 		Side string `json:"side"`
@@ -70601,11 +71328,14 @@ func (r GenerateBodygraphResponse) GetJSON200() *struct {
 
 	// IncarnationCross The incarnation cross built from the four cardinal gates and the profile angle.
 	IncarnationCross struct {
-		// Angle Cross angle. One of Right Angle, Juxtaposition, Left Angle.
+		// Angle Cross angle. One of Right Angle, Juxtaposition, Left Angle. Always English, whatever the lang parameter says. Use angleLocalized for anything a reader sees.
 		Angle string `json:"angle"`
 
 		// AngleCode Short code for the angle. One of RAX, JXT, LAX.
 		AngleCode string `json:"angleCode"`
+
+		// AngleLocalized Cross angle name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		AngleLocalized *string `json:"angleLocalized,omitempty"`
 
 		// Description The life theme of the cross, synthesized from its four gates and the orientation the angle gives them. The same Sun gate under a different angle is a genuinely different theme: Right Angle is personal destiny, Left Angle is worked out through other people, Juxtaposition is a fixed fate.
 		Description *string `json:"description,omitempty"`
@@ -70617,8 +71347,11 @@ func (r GenerateBodygraphResponse) GetJSON200() *struct {
 		Name string `json:"name"`
 	} `json:"incarnationCross"`
 
-	// NotSelf The not-self theme, the recurring feeling that signals being out of alignment.
+	// NotSelf The not-self theme, the recurring feeling that signals being out of alignment. Always English, whatever the lang parameter says. Use notSelfLocalized for anything a reader sees.
 	NotSelf string `json:"notSelf"`
+
+	// NotSelfLocalized Not-self theme name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+	NotSelfLocalized *string `json:"notSelfLocalized,omitempty"`
 
 	// Profile Profile in conscious/unconscious form from the Personality Sun line over the Design Sun line.
 	Profile string `json:"profile"`
@@ -70644,20 +71377,29 @@ func (r GenerateBodygraphResponse) GetJSON200() *struct {
 	// Sides What the two chart sides are: personality is the conscious mind side, design is the unconscious body side computed 88 degrees of solar arc before birth. Returned once at the top level rather than repeated across all 26 activations.
 	Sides map[string]string `json:"sides"`
 
-	// Signature The signature feeling of living in alignment with the type.
+	// Signature The signature feeling of living in alignment with the type. Always English, whatever the lang parameter says. Use signatureLocalized for anything a reader sees.
 	Signature string `json:"signature"`
 
-	// Strategy The aura strategy for engaging life correctly for this type.
+	// SignatureLocalized Signature theme name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+	SignatureLocalized *string `json:"signatureLocalized,omitempty"`
+
+	// Strategy The aura strategy for engaging life correctly for this type. Always English, whatever the lang parameter says. Use strategyLocalized for anything a reader sees.
 	Strategy string `json:"strategy"`
 
 	// StrategyDescription How to actually apply the strategy. The strategy field alone is a bare label such as Respond or Inform; this is the operating instruction behind it.
 	StrategyDescription string `json:"strategyDescription"`
 
-	// Type Human Design energy type. One of Manifestor, Generator, Manifesting Generator, Projector, Reflector.
+	// StrategyLocalized Strategy name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+	StrategyLocalized *string `json:"strategyLocalized,omitempty"`
+
+	// Type Human Design energy type. One of Manifestor, Generator, Manifesting Generator, Projector, Reflector. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use typeLocalized for anything a reader sees.
 	Type string `json:"type"`
 
 	// TypeDescription What the aura of this type does and how it is designed to engage life. The grounding text for the type label, so a consuming agent does not have to supply the meaning itself.
 	TypeDescription string `json:"typeDescription"`
+
+	// TypeLocalized Energy type name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+	TypeLocalized *string `json:"typeLocalized,omitempty"`
 } {
 	return r.JSON200
 }
@@ -70751,8 +71493,11 @@ type CalculateCentersResponse struct {
 			// Motor Whether this is a motor center (energy source). The four motors are Heart, Sacral, Solar Plexus, and Root.
 			Motor bool `json:"motor"`
 
-			// Name Display name of the center.
+			// Name Display name of the center. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use nameLocalized for anything a reader sees.
 			Name string `json:"name"`
+
+			// NameLocalized Center name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			NameLocalized *string `json:"nameLocalized,omitempty"`
 
 			// NotSelfQuestion The conditioning trap of this center when it is open. Returned on every center so a consumer can surface it the moment `defined` is false, which is where the not-self operates.
 			NotSelfQuestion string `json:"notSelfQuestion"`
@@ -70800,8 +71545,11 @@ func (r CalculateCentersResponse) GetJSON200() *struct {
 		// Motor Whether this is a motor center (energy source). The four motors are Heart, Sacral, Solar Plexus, and Root.
 		Motor bool `json:"motor"`
 
-		// Name Display name of the center.
+		// Name Display name of the center. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use nameLocalized for anything a reader sees.
 		Name string `json:"name"`
+
+		// NameLocalized Center name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		NameLocalized *string `json:"nameLocalized,omitempty"`
 
 		// NotSelfQuestion The conditioning trap of this center when it is open. Returned on every center so a consumer can surface it the moment `defined` is false, which is where the not-self operates.
 		NotSelfQuestion string `json:"notSelfQuestion"`
@@ -70897,8 +71645,11 @@ type GetCenterResponse struct {
 		// Motor Whether this is a motor center.
 		Motor bool `json:"motor"`
 
-		// Name Display name of the center.
+		// Name Display name of the center. Always English, whatever the lang parameter says. Use nameLocalized for anything a reader sees.
 		Name string `json:"name"`
+
+		// NameLocalized Center name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		NameLocalized *string `json:"nameLocalized,omitempty"`
 
 		// UndefinedMeaning What this center means when undefined and open: a place of conditioning and learning.
 		UndefinedMeaning string `json:"undefinedMeaning"`
@@ -70931,8 +71682,11 @@ func (r GetCenterResponse) GetJSON200() *struct {
 	// Motor Whether this is a motor center.
 	Motor bool `json:"motor"`
 
-	// Name Display name of the center.
+	// Name Display name of the center. Always English, whatever the lang parameter says. Use nameLocalized for anything a reader sees.
 	Name string `json:"name"`
+
+	// NameLocalized Center name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+	NameLocalized *string `json:"nameLocalized,omitempty"`
 
 	// UndefinedMeaning What this center means when undefined and open: a place of conditioning and learning.
 	UndefinedMeaning string `json:"undefinedMeaning"`
@@ -71014,11 +71768,14 @@ type CalculateChannelsResponse struct {
 			// Centers The two centers this channel connects and defines.
 			Centers []string `json:"centers"`
 
-			// Circuit Circuit family of the channel. One of Individual, Collective, Tribal.
+			// Circuit Circuit family of the channel. One of Individual, Collective, Tribal. Always English, whatever the lang parameter says. Use circuitLocalized for anything a reader sees.
 			Circuit string `json:"circuit"`
 
 			// CircuitDescription What the circuit family of this channel governs.
 			CircuitDescription string `json:"circuitDescription"`
+
+			// CircuitLocalized Circuit family name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			CircuitLocalized *string `json:"circuitLocalized,omitempty"`
 
 			// Description What this channel wires between its two centers and the nature of the energy it carries.
 			Description string `json:"description"`
@@ -71029,8 +71786,11 @@ type CalculateChannelsResponse struct {
 			// GateB Second gate of the channel.
 			GateB float32 `json:"gateB"`
 
-			// Name Name of the defined channel.
+			// Name Name of the defined channel. Always English, whatever the lang parameter says. Use nameLocalized for anything a reader sees.
 			Name string `json:"name"`
+
+			// NameLocalized Channel name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			NameLocalized *string `json:"nameLocalized,omitempty"`
 		} `json:"channels"`
 
 		// DefinedCenters The centers defined by these channels.
@@ -71060,11 +71820,14 @@ func (r CalculateChannelsResponse) GetJSON200() *struct {
 		// Centers The two centers this channel connects and defines.
 		Centers []string `json:"centers"`
 
-		// Circuit Circuit family of the channel. One of Individual, Collective, Tribal.
+		// Circuit Circuit family of the channel. One of Individual, Collective, Tribal. Always English, whatever the lang parameter says. Use circuitLocalized for anything a reader sees.
 		Circuit string `json:"circuit"`
 
 		// CircuitDescription What the circuit family of this channel governs.
 		CircuitDescription string `json:"circuitDescription"`
+
+		// CircuitLocalized Circuit family name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		CircuitLocalized *string `json:"circuitLocalized,omitempty"`
 
 		// Description What this channel wires between its two centers and the nature of the energy it carries.
 		Description string `json:"description"`
@@ -71075,8 +71838,11 @@ func (r CalculateChannelsResponse) GetJSON200() *struct {
 		// GateB Second gate of the channel.
 		GateB float32 `json:"gateB"`
 
-		// Name Name of the defined channel.
+		// Name Name of the defined channel. Always English, whatever the lang parameter says. Use nameLocalized for anything a reader sees.
 		Name string `json:"name"`
+
+		// NameLocalized Channel name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		NameLocalized *string `json:"nameLocalized,omitempty"`
 	} `json:"channels"`
 
 	// DefinedCenters The centers defined by these channels.
@@ -71168,8 +71934,11 @@ type CalculateConnectionResponse struct {
 			// ID Center identifier. One of head, ajna, throat, g, heart, sacral, solar-plexus, spleen, root.
 			ID string `json:"id"`
 
-			// Name Display name of the center.
+			// Name Display name of the center. Always English, whatever the lang parameter says. Use nameLocalized for anything a reader sees.
 			Name string `json:"name"`
+
+			// NameLocalized Center name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			NameLocalized *string `json:"nameLocalized,omitempty"`
 		} `json:"centers"`
 
 		// Channels Every connected channel between the two people with its dynamic. A channel is connected when the two people together hold both of its gates.
@@ -71177,11 +71946,17 @@ type CalculateConnectionResponse struct {
 			// Centers The two centers this channel connects in the bodygraph.
 			Centers []string `json:"centers"`
 
-			// Circuit Circuit family of the channel. One of Individual, Collective, Tribal.
+			// Circuit Circuit family of the channel. One of Individual, Collective, Tribal. Always English, whatever the lang parameter says. Use circuitLocalized for anything a reader sees.
 			Circuit string `json:"circuit"`
 
-			// Dynamic Connection dynamic for this channel. Electromagnetic means each person holds one of the two gates and the channel completes only together, the classic point of attraction. Dominance means one person holds both gates and the other holds neither, a one-way conditioning. Compromise means one person holds both gates and the other holds a single hanging gate. Companionship means both people independently hold both gates, a shared and familiar frequency.
+			// CircuitLocalized Circuit family name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			CircuitLocalized *string `json:"circuitLocalized,omitempty"`
+
+			// Dynamic Connection dynamic for this channel. Electromagnetic means each person holds one of the two gates and the channel completes only together, the classic point of attraction. Dominance means one person holds both gates and the other holds neither, a one-way conditioning. Compromise means one person holds both gates and the other holds a single hanging gate. Companionship means both people independently hold both gates, a shared and familiar frequency. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use dynamicLocalized for anything a reader sees.
 			Dynamic string `json:"dynamic"`
+
+			// DynamicLocalized Connection dynamic name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			DynamicLocalized *string `json:"dynamicLocalized,omitempty"`
 
 			// GateA First gate of the channel.
 			GateA float32 `json:"gateA"`
@@ -71189,8 +71964,11 @@ type CalculateConnectionResponse struct {
 			// GateB Second gate of the channel.
 			GateB float32 `json:"gateB"`
 
-			// Name Name of the channel whose connection dynamic is reported.
+			// Name Name of the channel whose connection dynamic is reported. Always English, whatever the lang parameter says. Use nameLocalized for anything a reader sees.
 			Name string `json:"name"`
+
+			// NameLocalized Channel name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			NameLocalized *string `json:"nameLocalized,omitempty"`
 
 			// PersonAGates Which of the channel two gates person A holds, from one to both.
 			PersonAGates []float32 `json:"personAGates"`
@@ -71199,8 +71977,11 @@ type CalculateConnectionResponse struct {
 			PersonBGates []float32 `json:"personBGates"`
 		} `json:"channels"`
 
-		// CombinedDefinition Definition of the combined connection bodygraph from connected components among its defined centers. One of None, Single, Split, Triple Split, Quadruple Split.
+		// CombinedDefinition Definition of the combined connection bodygraph from connected components among its defined centers. One of None, Single, Split, Triple Split, Quadruple Split. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use combinedDefinitionLocalized for anything a reader sees.
 		CombinedDefinition string `json:"combinedDefinition"`
+
+		// CombinedDefinitionLocalized Combined definition name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		CombinedDefinitionLocalized *string `json:"combinedDefinitionLocalized,omitempty"`
 
 		// Summary Count of each connection dynamic across all connected channels.
 		Summary struct {
@@ -71247,8 +72028,11 @@ func (r CalculateConnectionResponse) GetJSON200() *struct {
 		// ID Center identifier. One of head, ajna, throat, g, heart, sacral, solar-plexus, spleen, root.
 		ID string `json:"id"`
 
-		// Name Display name of the center.
+		// Name Display name of the center. Always English, whatever the lang parameter says. Use nameLocalized for anything a reader sees.
 		Name string `json:"name"`
+
+		// NameLocalized Center name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		NameLocalized *string `json:"nameLocalized,omitempty"`
 	} `json:"centers"`
 
 	// Channels Every connected channel between the two people with its dynamic. A channel is connected when the two people together hold both of its gates.
@@ -71256,11 +72040,17 @@ func (r CalculateConnectionResponse) GetJSON200() *struct {
 		// Centers The two centers this channel connects in the bodygraph.
 		Centers []string `json:"centers"`
 
-		// Circuit Circuit family of the channel. One of Individual, Collective, Tribal.
+		// Circuit Circuit family of the channel. One of Individual, Collective, Tribal. Always English, whatever the lang parameter says. Use circuitLocalized for anything a reader sees.
 		Circuit string `json:"circuit"`
 
-		// Dynamic Connection dynamic for this channel. Electromagnetic means each person holds one of the two gates and the channel completes only together, the classic point of attraction. Dominance means one person holds both gates and the other holds neither, a one-way conditioning. Compromise means one person holds both gates and the other holds a single hanging gate. Companionship means both people independently hold both gates, a shared and familiar frequency.
+		// CircuitLocalized Circuit family name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		CircuitLocalized *string `json:"circuitLocalized,omitempty"`
+
+		// Dynamic Connection dynamic for this channel. Electromagnetic means each person holds one of the two gates and the channel completes only together, the classic point of attraction. Dominance means one person holds both gates and the other holds neither, a one-way conditioning. Compromise means one person holds both gates and the other holds a single hanging gate. Companionship means both people independently hold both gates, a shared and familiar frequency. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use dynamicLocalized for anything a reader sees.
 		Dynamic string `json:"dynamic"`
+
+		// DynamicLocalized Connection dynamic name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		DynamicLocalized *string `json:"dynamicLocalized,omitempty"`
 
 		// GateA First gate of the channel.
 		GateA float32 `json:"gateA"`
@@ -71268,8 +72058,11 @@ func (r CalculateConnectionResponse) GetJSON200() *struct {
 		// GateB Second gate of the channel.
 		GateB float32 `json:"gateB"`
 
-		// Name Name of the channel whose connection dynamic is reported.
+		// Name Name of the channel whose connection dynamic is reported. Always English, whatever the lang parameter says. Use nameLocalized for anything a reader sees.
 		Name string `json:"name"`
+
+		// NameLocalized Channel name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		NameLocalized *string `json:"nameLocalized,omitempty"`
 
 		// PersonAGates Which of the channel two gates person A holds, from one to both.
 		PersonAGates []float32 `json:"personAGates"`
@@ -71278,8 +72071,11 @@ func (r CalculateConnectionResponse) GetJSON200() *struct {
 		PersonBGates []float32 `json:"personBGates"`
 	} `json:"channels"`
 
-	// CombinedDefinition Definition of the combined connection bodygraph from connected components among its defined centers. One of None, Single, Split, Triple Split, Quadruple Split.
+	// CombinedDefinition Definition of the combined connection bodygraph from connected components among its defined centers. One of None, Single, Split, Triple Split, Quadruple Split. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use combinedDefinitionLocalized for anything a reader sees.
 	CombinedDefinition string `json:"combinedDefinition"`
+
+	// CombinedDefinitionLocalized Combined definition name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+	CombinedDefinitionLocalized *string `json:"combinedDefinitionLocalized,omitempty"`
 
 	// Summary Count of each connection dynamic across all connected channels.
 	Summary struct {
@@ -71379,8 +72175,11 @@ type CalculateGatesResponse struct {
 			// GateDescription Bodygraph function of the gate: what it does in the center it sits in and the channel it forms. This is NOT the meaning of the I-Ching hexagram that shares its number. They share a number, not a definition.
 			GateDescription string `json:"gateDescription"`
 
-			// GateName Human Design keynote name of the gate, describing its bodygraph function.
+			// GateName Human Design keynote name of the gate, describing its bodygraph function. Always English, whatever the lang parameter says. Use gateNameLocalized for anything a reader sees.
 			GateName string `json:"gateName"`
+
+			// GateNameLocalized Gate keynote name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			GateNameLocalized *string `json:"gateNameLocalized,omitempty"`
 
 			// IchingHexagram Cross-reference to the I-Ching hexagram that shares this gate number.
 			IchingHexagram struct {
@@ -71397,11 +72196,14 @@ type CalculateGatesResponse struct {
 			// LineMeaning Meaning of this gate at this specific line, one of 384. The finest interpretive layer in the chart and the one that makes a reading specific rather than generic. This is not the six abstract line archetypes: gate 41 line 3 carries its own meaning that neither the gate keynote nor the line-3 archetype holds alone.
 			LineMeaning string `json:"lineMeaning"`
 
-			// Planet Activating body. One of Sun, Earth, Moon, North Node, South Node, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto.
+			// Planet Activating body. One of Sun, Earth, Moon, North Node, South Node, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto. Always English, whatever the lang parameter says, so it stays safe to compare against in code and to key a glyph table on. Use planetLocalized for anything a reader sees.
 			Planet string `json:"planet"`
 
 			// PlanetDescription What this planetary activation contributes in Human Design specifically, which is not its meaning in western astrology.
 			PlanetDescription string `json:"planetDescription"`
+
+			// PlanetLocalized Activating body name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			PlanetLocalized *string `json:"planetLocalized,omitempty"`
 
 			// Side Chart side. personality is the conscious birth-moment activation, design is the unconscious activation 88 degrees of solar arc before birth.
 			Side string `json:"side"`
@@ -71415,8 +72217,11 @@ type CalculateGatesResponse struct {
 			// GateDescription Bodygraph function of the gate: what it does in the center it sits in and the channel it forms. This is NOT the meaning of the I-Ching hexagram that shares its number. They share a number, not a definition.
 			GateDescription string `json:"gateDescription"`
 
-			// GateName Human Design keynote name of the gate, describing its bodygraph function.
+			// GateName Human Design keynote name of the gate, describing its bodygraph function. Always English, whatever the lang parameter says. Use gateNameLocalized for anything a reader sees.
 			GateName string `json:"gateName"`
+
+			// GateNameLocalized Gate keynote name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			GateNameLocalized *string `json:"gateNameLocalized,omitempty"`
 
 			// IchingHexagram Cross-reference to the I-Ching hexagram that shares this gate number.
 			IchingHexagram struct {
@@ -71433,11 +72238,14 @@ type CalculateGatesResponse struct {
 			// LineMeaning Meaning of this gate at this specific line, one of 384. The finest interpretive layer in the chart and the one that makes a reading specific rather than generic. This is not the six abstract line archetypes: gate 41 line 3 carries its own meaning that neither the gate keynote nor the line-3 archetype holds alone.
 			LineMeaning string `json:"lineMeaning"`
 
-			// Planet Activating body. One of Sun, Earth, Moon, North Node, South Node, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto.
+			// Planet Activating body. One of Sun, Earth, Moon, North Node, South Node, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto. Always English, whatever the lang parameter says, so it stays safe to compare against in code and to key a glyph table on. Use planetLocalized for anything a reader sees.
 			Planet string `json:"planet"`
 
 			// PlanetDescription What this planetary activation contributes in Human Design specifically, which is not its meaning in western astrology.
 			PlanetDescription string `json:"planetDescription"`
+
+			// PlanetLocalized Activating body name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			PlanetLocalized *string `json:"planetLocalized,omitempty"`
 
 			// Side Chart side. personality is the conscious birth-moment activation, design is the unconscious activation 88 degrees of solar arc before birth.
 			Side string `json:"side"`
@@ -71467,8 +72275,11 @@ func (r CalculateGatesResponse) GetJSON200() *struct {
 		// GateDescription Bodygraph function of the gate: what it does in the center it sits in and the channel it forms. This is NOT the meaning of the I-Ching hexagram that shares its number. They share a number, not a definition.
 		GateDescription string `json:"gateDescription"`
 
-		// GateName Human Design keynote name of the gate, describing its bodygraph function.
+		// GateName Human Design keynote name of the gate, describing its bodygraph function. Always English, whatever the lang parameter says. Use gateNameLocalized for anything a reader sees.
 		GateName string `json:"gateName"`
+
+		// GateNameLocalized Gate keynote name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		GateNameLocalized *string `json:"gateNameLocalized,omitempty"`
 
 		// IchingHexagram Cross-reference to the I-Ching hexagram that shares this gate number.
 		IchingHexagram struct {
@@ -71485,11 +72296,14 @@ func (r CalculateGatesResponse) GetJSON200() *struct {
 		// LineMeaning Meaning of this gate at this specific line, one of 384. The finest interpretive layer in the chart and the one that makes a reading specific rather than generic. This is not the six abstract line archetypes: gate 41 line 3 carries its own meaning that neither the gate keynote nor the line-3 archetype holds alone.
 		LineMeaning string `json:"lineMeaning"`
 
-		// Planet Activating body. One of Sun, Earth, Moon, North Node, South Node, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto.
+		// Planet Activating body. One of Sun, Earth, Moon, North Node, South Node, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto. Always English, whatever the lang parameter says, so it stays safe to compare against in code and to key a glyph table on. Use planetLocalized for anything a reader sees.
 		Planet string `json:"planet"`
 
 		// PlanetDescription What this planetary activation contributes in Human Design specifically, which is not its meaning in western astrology.
 		PlanetDescription string `json:"planetDescription"`
+
+		// PlanetLocalized Activating body name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		PlanetLocalized *string `json:"planetLocalized,omitempty"`
 
 		// Side Chart side. personality is the conscious birth-moment activation, design is the unconscious activation 88 degrees of solar arc before birth.
 		Side string `json:"side"`
@@ -71503,8 +72317,11 @@ func (r CalculateGatesResponse) GetJSON200() *struct {
 		// GateDescription Bodygraph function of the gate: what it does in the center it sits in and the channel it forms. This is NOT the meaning of the I-Ching hexagram that shares its number. They share a number, not a definition.
 		GateDescription string `json:"gateDescription"`
 
-		// GateName Human Design keynote name of the gate, describing its bodygraph function.
+		// GateName Human Design keynote name of the gate, describing its bodygraph function. Always English, whatever the lang parameter says. Use gateNameLocalized for anything a reader sees.
 		GateName string `json:"gateName"`
+
+		// GateNameLocalized Gate keynote name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		GateNameLocalized *string `json:"gateNameLocalized,omitempty"`
 
 		// IchingHexagram Cross-reference to the I-Ching hexagram that shares this gate number.
 		IchingHexagram struct {
@@ -71521,11 +72338,14 @@ func (r CalculateGatesResponse) GetJSON200() *struct {
 		// LineMeaning Meaning of this gate at this specific line, one of 384. The finest interpretive layer in the chart and the one that makes a reading specific rather than generic. This is not the six abstract line archetypes: gate 41 line 3 carries its own meaning that neither the gate keynote nor the line-3 archetype holds alone.
 		LineMeaning string `json:"lineMeaning"`
 
-		// Planet Activating body. One of Sun, Earth, Moon, North Node, South Node, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto.
+		// Planet Activating body. One of Sun, Earth, Moon, North Node, South Node, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto. Always English, whatever the lang parameter says, so it stays safe to compare against in code and to key a glyph table on. Use planetLocalized for anything a reader sees.
 		Planet string `json:"planet"`
 
 		// PlanetDescription What this planetary activation contributes in Human Design specifically, which is not its meaning in western astrology.
 		PlanetDescription string `json:"planetDescription"`
+
+		// PlanetLocalized Activating body name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		PlanetLocalized *string `json:"planetLocalized,omitempty"`
 
 		// Side Chart side. personality is the conscious birth-moment activation, design is the unconscious activation 88 degrees of solar arc before birth.
 		Side string `json:"side"`
@@ -71606,13 +72426,19 @@ type GetGateResponse struct {
 		// Center Center the gate sits in.
 		Center string `json:"center"`
 
-		// CenterName Display name of the center.
+		// CenterName Display name of the center. Always English, whatever the lang parameter says. Use centerNameLocalized for anything a reader sees.
 		CenterName string `json:"centerName"`
+
+		// CenterNameLocalized Center name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		CenterNameLocalized *string `json:"centerNameLocalized,omitempty"`
 
 		// ChannelPartners Gates that form a channel with this gate, with the channel name for each.
 		ChannelPartners []struct {
-			// Channel Name of the shared channel.
+			// Channel Name of the shared channel. Always English, whatever the lang parameter says. Use channelLocalized for anything a reader sees.
 			Channel string `json:"channel"`
+
+			// ChannelLocalized Channel name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			ChannelLocalized *string `json:"channelLocalized,omitempty"`
 
 			// Gate Partner gate number.
 			Gate float32 `json:"gate"`
@@ -71627,8 +72453,11 @@ type GetGateResponse struct {
 			Number float32 `json:"number"`
 		} `json:"ichingHexagram"`
 
-		// Name Human Design keynote name of the gate.
+		// Name Human Design keynote name of the gate. Always English, whatever the lang parameter says. Use nameLocalized for anything a reader sees.
 		Name string `json:"name"`
+
+		// NameLocalized Gate keynote name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		NameLocalized *string `json:"nameLocalized,omitempty"`
 
 		// Number Gate number from 1 to 64.
 		Number float32 `json:"number"`
@@ -71654,13 +72483,19 @@ func (r GetGateResponse) GetJSON200() *struct {
 	// Center Center the gate sits in.
 	Center string `json:"center"`
 
-	// CenterName Display name of the center.
+	// CenterName Display name of the center. Always English, whatever the lang parameter says. Use centerNameLocalized for anything a reader sees.
 	CenterName string `json:"centerName"`
+
+	// CenterNameLocalized Center name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+	CenterNameLocalized *string `json:"centerNameLocalized,omitempty"`
 
 	// ChannelPartners Gates that form a channel with this gate, with the channel name for each.
 	ChannelPartners []struct {
-		// Channel Name of the shared channel.
+		// Channel Name of the shared channel. Always English, whatever the lang parameter says. Use channelLocalized for anything a reader sees.
 		Channel string `json:"channel"`
+
+		// ChannelLocalized Channel name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		ChannelLocalized *string `json:"channelLocalized,omitempty"`
 
 		// Gate Partner gate number.
 		Gate float32 `json:"gate"`
@@ -71675,8 +72510,11 @@ func (r GetGateResponse) GetJSON200() *struct {
 		Number float32 `json:"number"`
 	} `json:"ichingHexagram"`
 
-	// Name Human Design keynote name of the gate.
+	// Name Human Design keynote name of the gate. Always English, whatever the lang parameter says. Use nameLocalized for anything a reader sees.
 	Name string `json:"name"`
+
+	// NameLocalized Gate keynote name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+	NameLocalized *string `json:"nameLocalized,omitempty"`
 
 	// Number Gate number from 1 to 64.
 	Number float32 `json:"number"`
@@ -71760,8 +72598,11 @@ type CalculatePentaResponse struct {
 	JSON200 *struct {
 		// Channels The six channels of the Penta with their defined Strength state and which members supply each gate. Three upper channels run G to Throat (The Alpha, Inspiration, The Prodigal); three lower channels run G to Sacral (Rhythm, The Beat, Discovery).
 		Channels []struct {
-			// Circuit Circuit family of the channel. One of Individual, Collective, Tribal.
+			// Circuit Circuit family of the channel. One of Individual, Collective, Tribal. Always English, whatever the lang parameter says. Use circuitLocalized for anything a reader sees.
 			Circuit string `json:"circuit"`
+
+			// CircuitLocalized Circuit family name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			CircuitLocalized *string `json:"circuitLocalized,omitempty"`
 
 			// Defined Whether the channel is a defined Strength: both of its gates are present somewhere in the group, so the function it governs has no gap.
 			Defined bool `json:"defined"`
@@ -71781,8 +72622,11 @@ type CalculatePentaResponse struct {
 			// IsCore Whether this is the 2/14 Channel of the Beat, the material core of the Penta vortex: gate 2 the direction for resources, gate 14 the resources themselves.
 			IsCore bool `json:"isCore"`
 
-			// Name Name of the Penta channel. One of The Alpha, Inspiration, The Prodigal, Rhythm, The Beat, Discovery.
+			// Name Name of the Penta channel. One of The Alpha, Inspiration, The Prodigal, Rhythm, The Beat, Discovery. Always English, whatever the lang parameter says. Use nameLocalized for anything a reader sees.
 			Name string `json:"name"`
+
+			// NameLocalized Penta channel name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			NameLocalized *string `json:"nameLocalized,omitempty"`
 
 			// Position Position of the channel in the Penta. upper channels run from the G Center to the Throat and carry the leadership and how-the-group-presents roles. lower channels run from the G Center to the Sacral and carry the managed, generative, resource roles.
 			Position string `json:"position"`
@@ -71796,8 +72640,11 @@ type CalculatePentaResponse struct {
 			// Gate Penta gate number. One of 1, 2, 5, 7, 8, 13, 14, 15, 29, 31, 33, 46.
 			Gate float32 `json:"gate"`
 
-			// GateName Human Design keynote name of the gate, describing the role it brings to the group.
+			// GateName Human Design keynote name of the gate, describing the role it brings to the group. Always English, whatever the lang parameter says. Use gateNameLocalized for anything a reader sees.
 			GateName string `json:"gateName"`
+
+			// GateNameLocalized Gate keynote name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			GateNameLocalized *string `json:"gateNameLocalized,omitempty"`
 
 			// HeldBy Zero-based indices of the members whose chart holds this gate. Empty when the gate is a gap.
 			HeldBy []float32 `json:"heldBy"`
@@ -71839,8 +72686,11 @@ type CalculatePentaResponse struct {
 func (r CalculatePentaResponse) GetJSON200() *struct {
 	// Channels The six channels of the Penta with their defined Strength state and which members supply each gate. Three upper channels run G to Throat (The Alpha, Inspiration, The Prodigal); three lower channels run G to Sacral (Rhythm, The Beat, Discovery).
 	Channels []struct {
-		// Circuit Circuit family of the channel. One of Individual, Collective, Tribal.
+		// Circuit Circuit family of the channel. One of Individual, Collective, Tribal. Always English, whatever the lang parameter says. Use circuitLocalized for anything a reader sees.
 		Circuit string `json:"circuit"`
+
+		// CircuitLocalized Circuit family name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		CircuitLocalized *string `json:"circuitLocalized,omitempty"`
 
 		// Defined Whether the channel is a defined Strength: both of its gates are present somewhere in the group, so the function it governs has no gap.
 		Defined bool `json:"defined"`
@@ -71860,8 +72710,11 @@ func (r CalculatePentaResponse) GetJSON200() *struct {
 		// IsCore Whether this is the 2/14 Channel of the Beat, the material core of the Penta vortex: gate 2 the direction for resources, gate 14 the resources themselves.
 		IsCore bool `json:"isCore"`
 
-		// Name Name of the Penta channel. One of The Alpha, Inspiration, The Prodigal, Rhythm, The Beat, Discovery.
+		// Name Name of the Penta channel. One of The Alpha, Inspiration, The Prodigal, Rhythm, The Beat, Discovery. Always English, whatever the lang parameter says. Use nameLocalized for anything a reader sees.
 		Name string `json:"name"`
+
+		// NameLocalized Penta channel name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		NameLocalized *string `json:"nameLocalized,omitempty"`
 
 		// Position Position of the channel in the Penta. upper channels run from the G Center to the Throat and carry the leadership and how-the-group-presents roles. lower channels run from the G Center to the Sacral and carry the managed, generative, resource roles.
 		Position string `json:"position"`
@@ -71875,8 +72728,11 @@ func (r CalculatePentaResponse) GetJSON200() *struct {
 		// Gate Penta gate number. One of 1, 2, 5, 7, 8, 13, 14, 15, 29, 31, 33, 46.
 		Gate float32 `json:"gate"`
 
-		// GateName Human Design keynote name of the gate, describing the role it brings to the group.
+		// GateName Human Design keynote name of the gate, describing the role it brings to the group. Always English, whatever the lang parameter says. Use gateNameLocalized for anything a reader sees.
 		GateName string `json:"gateName"`
+
+		// GateNameLocalized Gate keynote name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		GateNameLocalized *string `json:"gateNameLocalized,omitempty"`
 
 		// HeldBy Zero-based indices of the members whose chart holds this gate. Empty when the gate is a gap.
 		HeldBy []float32 `json:"heldBy"`
@@ -72092,14 +72948,20 @@ type GenerateTransitResponse struct {
 	JSON200 *struct {
 		// Activations The 13 transiting bodies at this moment with the gate and line each currently activates. A transit is a single instant, so there is no Design side, only current positions.
 		Activations []struct {
-			// Body Transiting body whose current position lands on this gate. One of Sun, Earth, Moon, North Node, South Node, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto.
+			// Body Transiting body whose current position lands on this gate. One of Sun, Earth, Moon, North Node, South Node, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto. Always English, whatever the lang parameter says, so it stays safe to compare against in code and to key a glyph table on. Use bodyLocalized for anything a reader sees.
 			Body string `json:"body"`
+
+			// BodyLocalized Transiting body name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			BodyLocalized *string `json:"bodyLocalized,omitempty"`
 
 			// Gate Human Design gate number from 1 to 64 this transiting body currently sits in.
 			Gate float32 `json:"gate"`
 
-			// GateName Human Design keynote name of the gate the transiting body activates.
+			// GateName Human Design keynote name of the gate the transiting body activates. Always English, whatever the lang parameter says. Use gateNameLocalized for anything a reader sees.
 			GateName string `json:"gateName"`
+
+			// GateNameLocalized Gate keynote name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			GateNameLocalized *string `json:"gateNameLocalized,omitempty"`
 
 			// IchingHexagram Cross-reference to the I-Ching hexagram that shares this gate number.
 			IchingHexagram struct {
@@ -72119,8 +72981,11 @@ type GenerateTransitResponse struct {
 			// Centers The two centers this channel connects and temporarily defines.
 			Centers []string `json:"centers"`
 
-			// Circuit Circuit family of the channel. One of Individual, Collective, Tribal.
+			// Circuit Circuit family of the channel. One of Individual, Collective, Tribal. Always English, whatever the lang parameter says. Use circuitLocalized for anything a reader sees.
 			Circuit string `json:"circuit"`
+
+			// CircuitLocalized Circuit family name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			CircuitLocalized *string `json:"circuitLocalized,omitempty"`
 
 			// GateA First gate of the completed channel.
 			GateA float32 `json:"gateA"`
@@ -72128,11 +72993,17 @@ type GenerateTransitResponse struct {
 			// GateB Second gate of the completed channel.
 			GateB float32 `json:"gateB"`
 
-			// Kind How the transit completes the channel. personal means the natal chart already holds one gate and the transit supplies the other, the classic electromagnetic completion. educational means both gates are open in the natal chart and the transit supplies both at once.
+			// Kind How the transit completes the channel. personal means the natal chart already holds one gate and the transit supplies the other, the classic electromagnetic completion. educational means both gates are open in the natal chart and the transit supplies both at once. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use kindLocalized for anything a reader sees.
 			Kind string `json:"kind"`
 
-			// Name Name of the channel the transit temporarily completes.
+			// KindLocalized Completion kind name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			KindLocalized *string `json:"kindLocalized,omitempty"`
+
+			// Name Name of the channel the transit temporarily completes. Always English, whatever the lang parameter says. Use nameLocalized for anything a reader sees.
 			Name string `json:"name"`
+
+			// NameLocalized Channel name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			NameLocalized *string `json:"nameLocalized,omitempty"`
 
 			// NatalGates Gate or gates of this channel the natal chart already holds. Empty for an educational channel.
 			NatalGates []float32 `json:"natalGates"`
@@ -72152,8 +73023,11 @@ type GenerateTransitResponse struct {
 			// ID Center identifier. One of head, ajna, throat, g, heart, sacral, solar-plexus, spleen, root.
 			ID string `json:"id"`
 
-			// Name Display name of the center.
+			// Name Display name of the center. Always English, whatever the lang parameter says. Use nameLocalized for anything a reader sees.
 			Name string `json:"name"`
+
+			// NameLocalized Center name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			NameLocalized *string `json:"nameLocalized,omitempty"`
 
 			// TemporarilyDefined Always true. The center is open in the natal chart and temporarily defined by a transit-completed channel for the duration of the transit.
 			TemporarilyDefined bool `json:"temporarilyDefined"`
@@ -72183,14 +73057,20 @@ type GenerateTransitResponse struct {
 func (r GenerateTransitResponse) GetJSON200() *struct {
 	// Activations The 13 transiting bodies at this moment with the gate and line each currently activates. A transit is a single instant, so there is no Design side, only current positions.
 	Activations []struct {
-		// Body Transiting body whose current position lands on this gate. One of Sun, Earth, Moon, North Node, South Node, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto.
+		// Body Transiting body whose current position lands on this gate. One of Sun, Earth, Moon, North Node, South Node, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto. Always English, whatever the lang parameter says, so it stays safe to compare against in code and to key a glyph table on. Use bodyLocalized for anything a reader sees.
 		Body string `json:"body"`
+
+		// BodyLocalized Transiting body name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		BodyLocalized *string `json:"bodyLocalized,omitempty"`
 
 		// Gate Human Design gate number from 1 to 64 this transiting body currently sits in.
 		Gate float32 `json:"gate"`
 
-		// GateName Human Design keynote name of the gate the transiting body activates.
+		// GateName Human Design keynote name of the gate the transiting body activates. Always English, whatever the lang parameter says. Use gateNameLocalized for anything a reader sees.
 		GateName string `json:"gateName"`
+
+		// GateNameLocalized Gate keynote name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		GateNameLocalized *string `json:"gateNameLocalized,omitempty"`
 
 		// IchingHexagram Cross-reference to the I-Ching hexagram that shares this gate number.
 		IchingHexagram struct {
@@ -72210,8 +73090,11 @@ func (r GenerateTransitResponse) GetJSON200() *struct {
 		// Centers The two centers this channel connects and temporarily defines.
 		Centers []string `json:"centers"`
 
-		// Circuit Circuit family of the channel. One of Individual, Collective, Tribal.
+		// Circuit Circuit family of the channel. One of Individual, Collective, Tribal. Always English, whatever the lang parameter says. Use circuitLocalized for anything a reader sees.
 		Circuit string `json:"circuit"`
+
+		// CircuitLocalized Circuit family name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		CircuitLocalized *string `json:"circuitLocalized,omitempty"`
 
 		// GateA First gate of the completed channel.
 		GateA float32 `json:"gateA"`
@@ -72219,11 +73102,17 @@ func (r GenerateTransitResponse) GetJSON200() *struct {
 		// GateB Second gate of the completed channel.
 		GateB float32 `json:"gateB"`
 
-		// Kind How the transit completes the channel. personal means the natal chart already holds one gate and the transit supplies the other, the classic electromagnetic completion. educational means both gates are open in the natal chart and the transit supplies both at once.
+		// Kind How the transit completes the channel. personal means the natal chart already holds one gate and the transit supplies the other, the classic electromagnetic completion. educational means both gates are open in the natal chart and the transit supplies both at once. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use kindLocalized for anything a reader sees.
 		Kind string `json:"kind"`
 
-		// Name Name of the channel the transit temporarily completes.
+		// KindLocalized Completion kind name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		KindLocalized *string `json:"kindLocalized,omitempty"`
+
+		// Name Name of the channel the transit temporarily completes. Always English, whatever the lang parameter says. Use nameLocalized for anything a reader sees.
 		Name string `json:"name"`
+
+		// NameLocalized Channel name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		NameLocalized *string `json:"nameLocalized,omitempty"`
 
 		// NatalGates Gate or gates of this channel the natal chart already holds. Empty for an educational channel.
 		NatalGates []float32 `json:"natalGates"`
@@ -72243,8 +73132,11 @@ func (r GenerateTransitResponse) GetJSON200() *struct {
 		// ID Center identifier. One of head, ajna, throat, g, heart, sacral, solar-plexus, spleen, root.
 		ID string `json:"id"`
 
-		// Name Display name of the center.
+		// Name Display name of the center. Always English, whatever the lang parameter says. Use nameLocalized for anything a reader sees.
 		Name string `json:"name"`
+
+		// NameLocalized Center name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		NameLocalized *string `json:"nameLocalized,omitempty"`
 
 		// TemporarilyDefined Always true. The center is open in the natal chart and temporarily defined by a transit-completed channel for the duration of the transit.
 		TemporarilyDefined bool `json:"temporarilyDefined"`
@@ -72331,32 +73223,47 @@ type CalculateTypeResponse struct {
 		// Aura The aura mechanic of the type: how the energy field itself operates, for example open and enveloping, or closed and repelling.
 		Aura string `json:"aura"`
 
-		// Authority Inner authority for decision making. One of Emotional, Sacral, Splenic, Ego, Self-Projected, Mental, Lunar.
+		// Authority Inner authority for decision making. One of Emotional, Sacral, Splenic, Ego, Self-Projected, Mental, Lunar. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use authorityLocalized for anything a reader sees.
 		Authority string `json:"authority"`
 
 		// AuthorityDescription How the decision is made, the timing it requires, and the characteristic trap. Inner authority is the most actionable output of a Human Design chart.
 		AuthorityDescription string `json:"authorityDescription"`
 
-		// NotSelf The not-self theme that signals being out of alignment.
+		// AuthorityLocalized Inner authority name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		AuthorityLocalized *string `json:"authorityLocalized,omitempty"`
+
+		// NotSelf The not-self theme that signals being out of alignment. Always English, whatever the lang parameter says. Use notSelfLocalized for anything a reader sees.
 		NotSelf string `json:"notSelf"`
+
+		// NotSelfLocalized Not-self theme name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		NotSelfLocalized *string `json:"notSelfLocalized,omitempty"`
 
 		// Profile Profile from the Personality Sun line over the Design Sun line.
 		Profile string `json:"profile"`
 
-		// Signature The signature feeling of living in alignment.
+		// Signature The signature feeling of living in alignment. Always English, whatever the lang parameter says. Use signatureLocalized for anything a reader sees.
 		Signature string `json:"signature"`
 
-		// Strategy The aura strategy for engaging life correctly for this type.
+		// SignatureLocalized Signature theme name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		SignatureLocalized *string `json:"signatureLocalized,omitempty"`
+
+		// Strategy The aura strategy for engaging life correctly for this type. Always English, whatever the lang parameter says. Use strategyLocalized for anything a reader sees.
 		Strategy string `json:"strategy"`
 
 		// StrategyDescription How to actually apply the strategy. The strategy field alone is a bare label such as Respond or Inform; this is the operating instruction behind it.
 		StrategyDescription string `json:"strategyDescription"`
 
-		// Type Human Design energy type. One of Manifestor, Generator, Manifesting Generator, Projector, Reflector.
+		// StrategyLocalized Strategy name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		StrategyLocalized *string `json:"strategyLocalized,omitempty"`
+
+		// Type Human Design energy type. One of Manifestor, Generator, Manifesting Generator, Projector, Reflector. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use typeLocalized for anything a reader sees.
 		Type string `json:"type"`
 
 		// TypeDescription What the aura of this type does and how it is designed to engage life. The grounding text for the type label, so a consuming agent does not have to supply the meaning itself.
 		TypeDescription string `json:"typeDescription"`
+
+		// TypeLocalized Energy type name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		TypeLocalized *string `json:"typeLocalized,omitempty"`
 	}
 	// JSON400 the response for an HTTP 400 `application/json` response
 	JSON400 *ErrorResponse
@@ -72377,32 +73284,47 @@ func (r CalculateTypeResponse) GetJSON200() *struct {
 	// Aura The aura mechanic of the type: how the energy field itself operates, for example open and enveloping, or closed and repelling.
 	Aura string `json:"aura"`
 
-	// Authority Inner authority for decision making. One of Emotional, Sacral, Splenic, Ego, Self-Projected, Mental, Lunar.
+	// Authority Inner authority for decision making. One of Emotional, Sacral, Splenic, Ego, Self-Projected, Mental, Lunar. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use authorityLocalized for anything a reader sees.
 	Authority string `json:"authority"`
 
 	// AuthorityDescription How the decision is made, the timing it requires, and the characteristic trap. Inner authority is the most actionable output of a Human Design chart.
 	AuthorityDescription string `json:"authorityDescription"`
 
-	// NotSelf The not-self theme that signals being out of alignment.
+	// AuthorityLocalized Inner authority name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+	AuthorityLocalized *string `json:"authorityLocalized,omitempty"`
+
+	// NotSelf The not-self theme that signals being out of alignment. Always English, whatever the lang parameter says. Use notSelfLocalized for anything a reader sees.
 	NotSelf string `json:"notSelf"`
+
+	// NotSelfLocalized Not-self theme name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+	NotSelfLocalized *string `json:"notSelfLocalized,omitempty"`
 
 	// Profile Profile from the Personality Sun line over the Design Sun line.
 	Profile string `json:"profile"`
 
-	// Signature The signature feeling of living in alignment.
+	// Signature The signature feeling of living in alignment. Always English, whatever the lang parameter says. Use signatureLocalized for anything a reader sees.
 	Signature string `json:"signature"`
 
-	// Strategy The aura strategy for engaging life correctly for this type.
+	// SignatureLocalized Signature theme name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+	SignatureLocalized *string `json:"signatureLocalized,omitempty"`
+
+	// Strategy The aura strategy for engaging life correctly for this type. Always English, whatever the lang parameter says. Use strategyLocalized for anything a reader sees.
 	Strategy string `json:"strategy"`
 
 	// StrategyDescription How to actually apply the strategy. The strategy field alone is a bare label such as Respond or Inform; this is the operating instruction behind it.
 	StrategyDescription string `json:"strategyDescription"`
 
-	// Type Human Design energy type. One of Manifestor, Generator, Manifesting Generator, Projector, Reflector.
+	// StrategyLocalized Strategy name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+	StrategyLocalized *string `json:"strategyLocalized,omitempty"`
+
+	// Type Human Design energy type. One of Manifestor, Generator, Manifesting Generator, Projector, Reflector. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use typeLocalized for anything a reader sees.
 	Type string `json:"type"`
 
 	// TypeDescription What the aura of this type does and how it is designed to engage life. The grounding text for the type label, so a consuming agent does not have to supply the meaning itself.
 	TypeDescription string `json:"typeDescription"`
+
+	// TypeLocalized Energy type name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+	TypeLocalized *string `json:"typeLocalized,omitempty"`
 } {
 	return r.JSON200
 }
@@ -72490,23 +73412,32 @@ type CalculateVariablesResponse struct {
 			// Base Base number from 1 to 5, the finest published subdivision of the wheel. Returned for completeness but treated as informational, since it is finer than most birth times can resolve.
 			Base float32 `json:"base"`
 
-			// BaseName Name of the Base. Informational only: the Base is finer than any civil birth time can resolve.
+			// BaseName Name of the Base. Informational only: the Base is finer than any civil birth time can resolve. Always English, whatever the lang parameter says. Use baseNameLocalized for anything a reader sees.
 			BaseName string `json:"baseName"`
+
+			// BaseNameLocalized Base name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			BaseNameLocalized *string `json:"baseNameLocalized,omitempty"`
 
 			// Cognition Cognition, the strongest sense, read off the Determination Tone. Present on the determination arrow ONLY: no authority supports reading Cognition from the other three arrows, so it is omitted rather than invented.
 			Cognition *struct {
 				// Description How this Cognition discriminates what is correct for the body, and the conditions that sharpen it. Renderable as the Cognition paragraph of a Variables or Primary Health System report.
 				Description string `json:"description"`
 
-				// Label Name of the Cognition, the strongest sense. One of six read off the Determination Tone: Smell, Taste, Outer Vision, Inner Vision, Feeling, Touch.
+				// Label Name of the Cognition, the strongest sense. One of six read off the Determination Tone: Smell, Taste, Outer Vision, Inner Vision, Feeling, Touch. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use labelLocalized for anything a reader sees.
 				Label string `json:"label"`
+
+				// LabelLocalized Cognition name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				LabelLocalized *string `json:"labelLocalized,omitempty"`
 			} `json:"cognition,omitempty"`
 
 			// Color Color number from 1 to 6, the substructure level one octave finer than the line. Color selects the arrow theme, for example the determination family or the motivation.
 			Color float32 `json:"color"`
 
-			// ColorLabel Name of the Color theme for this arrow, for example a determination family such as Touch, an environment such as Mountains, a perspective such as Personal, or a motivation such as Hope.
+			// ColorLabel Name of the Color theme for this arrow, for example a determination family such as Touch, an environment such as Mountains, a perspective such as Personal, or a motivation such as Hope. Always English, whatever the lang parameter says. Use colorLabelLocalized for anything a reader sees.
 			ColorLabel string `json:"colorLabel"`
+
+			// ColorLabelLocalized Color theme name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			ColorLabelLocalized *string `json:"colorLabelLocalized,omitempty"`
 
 			// ColorMeaning Meaning of the Color for THIS arrow. The same Color number means something different under Determination than under Motivation, so this is the reading of colorLabel in context, not a generic gloss.
 			ColorMeaning string `json:"colorMeaning"`
@@ -72520,8 +73451,11 @@ type CalculateVariablesResponse struct {
 			// Direction Arrow direction derived from the Tone. left for tones 1 to 3, right for tones 4 to 6.
 			Direction string `json:"direction"`
 
-			// DirectionLabel Keynote of the arrow direction for this arrow, for example Active or Passive for Determination, Focused or Peripheral for Perspective.
+			// DirectionLabel Keynote of the arrow direction for this arrow, for example Active or Passive for Determination, Focused or Peripheral for Perspective. Always English, whatever the lang parameter says. Use directionLabelLocalized for anything a reader sees.
 			DirectionLabel string `json:"directionLabel"`
+
+			// DirectionLabelLocalized Arrow direction keynote in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			DirectionLabelLocalized *string `json:"directionLabelLocalized,omitempty"`
 
 			// DirectionMeaning Meaning of the left or right direction for THIS arrow, the reading of directionLabel.
 			DirectionMeaning string `json:"directionMeaning"`
@@ -72529,17 +73463,26 @@ type CalculateVariablesResponse struct {
 			// Key Stable arrow identifier. One of determination, environment, perspective, motivation.
 			Key string `json:"key"`
 
-			// Layer Which half of the advanced layer the arrow belongs to. Primary Health System covers the body-side Determination and Environment arrows, Rave Psychology covers the mind-side Perspective and Motivation arrows.
+			// Layer Which half of the advanced layer the arrow belongs to. Primary Health System covers the body-side Determination and Environment arrows, Rave Psychology covers the mind-side Perspective and Motivation arrows. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use layerLocalized for anything a reader sees.
 			Layer string `json:"layer"`
 
 			// LayerDescription What the layer this arrow belongs to governs, the body side or the mind side.
 			LayerDescription string `json:"layerDescription"`
 
-			// Name Arrow name. Determination is the top-left arrow governing the Primary Health System and digestion, Environment the bottom-left arrow, Perspective the bottom-right arrow also called View, and Motivation the top-right arrow.
+			// LayerLocalized Layer name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			LayerLocalized *string `json:"layerLocalized,omitempty"`
+
+			// Name Arrow name. Determination is the top-left arrow governing the Primary Health System and digestion, Environment the bottom-left arrow, Perspective the bottom-right arrow also called View, and Motivation the top-right arrow. Always English, whatever the lang parameter says. Use nameLocalized for anything a reader sees.
 			Name string `json:"name"`
 
-			// Position Position of the arrow at the head of the bodygraph. One of Top left, Bottom left, Top right, Bottom right.
+			// NameLocalized Arrow name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			NameLocalized *string `json:"nameLocalized,omitempty"`
+
+			// Position Position of the arrow at the head of the bodygraph. One of Top left, Bottom left, Top right, Bottom right. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use positionLocalized for anything a reader sees.
 			Position string `json:"position"`
+
+			// PositionLocalized Arrow position name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			PositionLocalized *string `json:"positionLocalized,omitempty"`
 
 			// Tone Tone number from 1 to 6, the substructure level beneath Color. Tone sets the arrow direction: tones 1 to 3 face left, tones 4 to 6 face right.
 			Tone float32 `json:"tone"`
@@ -72587,23 +73530,32 @@ func (r CalculateVariablesResponse) GetJSON200() *struct {
 		// Base Base number from 1 to 5, the finest published subdivision of the wheel. Returned for completeness but treated as informational, since it is finer than most birth times can resolve.
 		Base float32 `json:"base"`
 
-		// BaseName Name of the Base. Informational only: the Base is finer than any civil birth time can resolve.
+		// BaseName Name of the Base. Informational only: the Base is finer than any civil birth time can resolve. Always English, whatever the lang parameter says. Use baseNameLocalized for anything a reader sees.
 		BaseName string `json:"baseName"`
+
+		// BaseNameLocalized Base name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		BaseNameLocalized *string `json:"baseNameLocalized,omitempty"`
 
 		// Cognition Cognition, the strongest sense, read off the Determination Tone. Present on the determination arrow ONLY: no authority supports reading Cognition from the other three arrows, so it is omitted rather than invented.
 		Cognition *struct {
 			// Description How this Cognition discriminates what is correct for the body, and the conditions that sharpen it. Renderable as the Cognition paragraph of a Variables or Primary Health System report.
 			Description string `json:"description"`
 
-			// Label Name of the Cognition, the strongest sense. One of six read off the Determination Tone: Smell, Taste, Outer Vision, Inner Vision, Feeling, Touch.
+			// Label Name of the Cognition, the strongest sense. One of six read off the Determination Tone: Smell, Taste, Outer Vision, Inner Vision, Feeling, Touch. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use labelLocalized for anything a reader sees.
 			Label string `json:"label"`
+
+			// LabelLocalized Cognition name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			LabelLocalized *string `json:"labelLocalized,omitempty"`
 		} `json:"cognition,omitempty"`
 
 		// Color Color number from 1 to 6, the substructure level one octave finer than the line. Color selects the arrow theme, for example the determination family or the motivation.
 		Color float32 `json:"color"`
 
-		// ColorLabel Name of the Color theme for this arrow, for example a determination family such as Touch, an environment such as Mountains, a perspective such as Personal, or a motivation such as Hope.
+		// ColorLabel Name of the Color theme for this arrow, for example a determination family such as Touch, an environment such as Mountains, a perspective such as Personal, or a motivation such as Hope. Always English, whatever the lang parameter says. Use colorLabelLocalized for anything a reader sees.
 		ColorLabel string `json:"colorLabel"`
+
+		// ColorLabelLocalized Color theme name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		ColorLabelLocalized *string `json:"colorLabelLocalized,omitempty"`
 
 		// ColorMeaning Meaning of the Color for THIS arrow. The same Color number means something different under Determination than under Motivation, so this is the reading of colorLabel in context, not a generic gloss.
 		ColorMeaning string `json:"colorMeaning"`
@@ -72617,8 +73569,11 @@ func (r CalculateVariablesResponse) GetJSON200() *struct {
 		// Direction Arrow direction derived from the Tone. left for tones 1 to 3, right for tones 4 to 6.
 		Direction string `json:"direction"`
 
-		// DirectionLabel Keynote of the arrow direction for this arrow, for example Active or Passive for Determination, Focused or Peripheral for Perspective.
+		// DirectionLabel Keynote of the arrow direction for this arrow, for example Active or Passive for Determination, Focused or Peripheral for Perspective. Always English, whatever the lang parameter says. Use directionLabelLocalized for anything a reader sees.
 		DirectionLabel string `json:"directionLabel"`
+
+		// DirectionLabelLocalized Arrow direction keynote in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		DirectionLabelLocalized *string `json:"directionLabelLocalized,omitempty"`
 
 		// DirectionMeaning Meaning of the left or right direction for THIS arrow, the reading of directionLabel.
 		DirectionMeaning string `json:"directionMeaning"`
@@ -72626,17 +73581,26 @@ func (r CalculateVariablesResponse) GetJSON200() *struct {
 		// Key Stable arrow identifier. One of determination, environment, perspective, motivation.
 		Key string `json:"key"`
 
-		// Layer Which half of the advanced layer the arrow belongs to. Primary Health System covers the body-side Determination and Environment arrows, Rave Psychology covers the mind-side Perspective and Motivation arrows.
+		// Layer Which half of the advanced layer the arrow belongs to. Primary Health System covers the body-side Determination and Environment arrows, Rave Psychology covers the mind-side Perspective and Motivation arrows. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use layerLocalized for anything a reader sees.
 		Layer string `json:"layer"`
 
 		// LayerDescription What the layer this arrow belongs to governs, the body side or the mind side.
 		LayerDescription string `json:"layerDescription"`
 
-		// Name Arrow name. Determination is the top-left arrow governing the Primary Health System and digestion, Environment the bottom-left arrow, Perspective the bottom-right arrow also called View, and Motivation the top-right arrow.
+		// LayerLocalized Layer name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		LayerLocalized *string `json:"layerLocalized,omitempty"`
+
+		// Name Arrow name. Determination is the top-left arrow governing the Primary Health System and digestion, Environment the bottom-left arrow, Perspective the bottom-right arrow also called View, and Motivation the top-right arrow. Always English, whatever the lang parameter says. Use nameLocalized for anything a reader sees.
 		Name string `json:"name"`
 
-		// Position Position of the arrow at the head of the bodygraph. One of Top left, Bottom left, Top right, Bottom right.
+		// NameLocalized Arrow name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		NameLocalized *string `json:"nameLocalized,omitempty"`
+
+		// Position Position of the arrow at the head of the bodygraph. One of Top left, Bottom left, Top right, Bottom right. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use positionLocalized for anything a reader sees.
 		Position string `json:"position"`
+
+		// PositionLocalized Arrow position name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		PositionLocalized *string `json:"positionLocalized,omitempty"`
 
 		// Tone Tone number from 1 to 6, the substructure level beneath Color. Tone sets the arrow direction: tones 1 to 3 face left, tones 4 to 6 face right.
 		Tone float32 `json:"tone"`
@@ -74182,7 +75146,7 @@ type ListCountriesResponse struct {
 	JSON200 *struct {
 		// Countries Countries for the current page, sorted alphabetically by name.
 		Countries []struct {
-			// CityCount Number of searchable cities available for this country. Useful for showing coverage in UI or deciding whether to offer city search for a given country.
+			// CityCount Number of searchable places in this country, including small towns and administrative seats. Useful for showing coverage in a UI or sizing a dependent city dropdown.
 			CityCount float32 `json:"cityCount"`
 
 			// Iso2 ISO 3166-1 alpha-2 country code. Use as the identifier when fetching cities for a specific country via the /countries/{iso2} endpoint.
@@ -74201,7 +75165,7 @@ type ListCountriesResponse struct {
 		// Offset Number of countries skipped. Use with limit for pagination.
 		Offset float32 `json:"offset"`
 
-		// Total Total number of countries available.
+		// Total Total number of countries with at least one place in the dataset.
 		Total float32 `json:"total"`
 	}
 	// JSON400 the response for an HTTP 400 `application/json` response
@@ -74222,7 +75186,7 @@ type ListCountriesResponse struct {
 func (r ListCountriesResponse) GetJSON200() *struct {
 	// Countries Countries for the current page, sorted alphabetically by name.
 	Countries []struct {
-		// CityCount Number of searchable cities available for this country. Useful for showing coverage in UI or deciding whether to offer city search for a given country.
+		// CityCount Number of searchable places in this country, including small towns and administrative seats. Useful for showing coverage in a UI or sizing a dependent city dropdown.
 		CityCount float32 `json:"cityCount"`
 
 		// Iso2 ISO 3166-1 alpha-2 country code. Use as the identifier when fetching cities for a specific country via the /countries/{iso2} endpoint.
@@ -74241,7 +75205,7 @@ func (r ListCountriesResponse) GetJSON200() *struct {
 	// Offset Number of countries skipped. Use with limit for pagination.
 	Offset float32 `json:"offset"`
 
-	// Total Total number of countries available.
+	// Total Total number of countries with at least one place in the dataset.
 	Total float32 `json:"total"`
 } {
 	return r.JSON200
@@ -74333,16 +75297,16 @@ type GetCitiesByCountryResponse struct {
 			// Longitude Geographic longitude in decimal degrees (-180 to 180). Pass directly to astrology, horoscope, and panchang API endpoints alongside latitude.
 			Longitude float32 `json:"longitude"`
 
-			// Population City population estimate from geographic databases. Larger cities rank higher in search results, ensuring major metropolitan areas appear first in autocomplete suggestions.
+			// Population Population estimate for the place. Breaks ties between results of equal match quality, so among several places matching equally well the largest leads. It never outranks a better match, which is why a small town still wins when its name is typed exactly. May be 0 for a hamlet or administrative seat that carries no published figure.
 			Population float32 `json:"population"`
 
-			// Province State, province, canton, or administrative region. Helps disambiguate cities with the same name across regions (e.g. Springfield IL vs Springfield MO).
+			// Province State, province, canton, or administrative region. Show it whenever more than one result comes back: it is what separates Richfield, Utah from Richfield, Minnesota, and the six US Springfields from each other. Empty for the small number of places with no administrative division recorded.
 			Province string `json:"province"`
 
-			// Timezone IANA timezone identifier following the tz database standard (e.g. Europe/Berlin, America/New_York, Asia/Tokyo). Use with JavaScript Date, Luxon, day.js, or any date library for accurate local time conversion.
+			// Timezone IANA timezone identifier following the tz database standard (e.g. Europe/Berlin, America/New_York, Asia/Tokyo). Always present. Pass THIS, not the numeric offset, into any chart or panchang request for a past date: the calculation endpoints resolve it to the offset that was actually in force on that date, including historical daylight saving. Also works directly with JavaScript Date, Luxon, day.js, or any date library.
 			Timezone string `json:"timezone"`
 
-			// UtcOffset Current UTC offset in decimal hours, automatically adjusted for daylight saving time. Pass directly as the timezone parameter in astrology API endpoints. Examples: 1 for CET, 2 for CEST, -5 for EST, 5.5 for IST, 5.75 for Nepal.
+			// UtcOffset UTC offset in decimal hours for TODAY at this place, already adjusted for daylight saving. Convenient for displaying local time now. For a birth date or any past date use the `timezone` field instead, since the offset in force then may differ. Examples: 1 for CET, 2 for CEST, -5 for EST, 5.5 for IST, 5.75 for Nepal.
 			UtcOffset float32 `json:"utcOffset"`
 		} `json:"cities"`
 
@@ -74352,7 +75316,7 @@ type GetCitiesByCountryResponse struct {
 		// Offset Number of cities skipped. Use with limit for pagination.
 		Offset float32 `json:"offset"`
 
-		// Total Total number of cities available for this country.
+		// Total Total number of places available for this country across all pages.
 		Total float32 `json:"total"`
 	}
 	// JSON400 the response for an HTTP 400 `application/json` response
@@ -74388,16 +75352,16 @@ func (r GetCitiesByCountryResponse) GetJSON200() *struct {
 		// Longitude Geographic longitude in decimal degrees (-180 to 180). Pass directly to astrology, horoscope, and panchang API endpoints alongside latitude.
 		Longitude float32 `json:"longitude"`
 
-		// Population City population estimate from geographic databases. Larger cities rank higher in search results, ensuring major metropolitan areas appear first in autocomplete suggestions.
+		// Population Population estimate for the place. Breaks ties between results of equal match quality, so among several places matching equally well the largest leads. It never outranks a better match, which is why a small town still wins when its name is typed exactly. May be 0 for a hamlet or administrative seat that carries no published figure.
 		Population float32 `json:"population"`
 
-		// Province State, province, canton, or administrative region. Helps disambiguate cities with the same name across regions (e.g. Springfield IL vs Springfield MO).
+		// Province State, province, canton, or administrative region. Show it whenever more than one result comes back: it is what separates Richfield, Utah from Richfield, Minnesota, and the six US Springfields from each other. Empty for the small number of places with no administrative division recorded.
 		Province string `json:"province"`
 
-		// Timezone IANA timezone identifier following the tz database standard (e.g. Europe/Berlin, America/New_York, Asia/Tokyo). Use with JavaScript Date, Luxon, day.js, or any date library for accurate local time conversion.
+		// Timezone IANA timezone identifier following the tz database standard (e.g. Europe/Berlin, America/New_York, Asia/Tokyo). Always present. Pass THIS, not the numeric offset, into any chart or panchang request for a past date: the calculation endpoints resolve it to the offset that was actually in force on that date, including historical daylight saving. Also works directly with JavaScript Date, Luxon, day.js, or any date library.
 		Timezone string `json:"timezone"`
 
-		// UtcOffset Current UTC offset in decimal hours, automatically adjusted for daylight saving time. Pass directly as the timezone parameter in astrology API endpoints. Examples: 1 for CET, 2 for CEST, -5 for EST, 5.5 for IST, 5.75 for Nepal.
+		// UtcOffset UTC offset in decimal hours for TODAY at this place, already adjusted for daylight saving. Convenient for displaying local time now. For a birth date or any past date use the `timezone` field instead, since the offset in force then may differ. Examples: 1 for CET, 2 for CEST, -5 for EST, 5.5 for IST, 5.75 for Nepal.
 		UtcOffset float32 `json:"utcOffset"`
 	} `json:"cities"`
 
@@ -74407,7 +75371,7 @@ func (r GetCitiesByCountryResponse) GetJSON200() *struct {
 	// Offset Number of cities skipped. Use with limit for pagination.
 	Offset float32 `json:"offset"`
 
-	// Total Total number of cities available for this country.
+	// Total Total number of places available for this country across all pages.
 	Total float32 `json:"total"`
 } {
 	return r.JSON200
@@ -74482,7 +75446,7 @@ type SearchCitiesResponse struct {
 	HTTPResponse *http.Response
 	// JSON200 the response for an HTTP 200 `application/json` response
 	JSON200 *struct {
-		// Cities City results for the current page, sorted by relevance (prefix match first) then population.
+		// Cities Matching places for the current page, best match first. Ordered by match quality, then population within equal quality: an exact name beats a qualified name such as richfield, utah, which beats a name merely starting with the query, which beats an incidental match on state or country. Take the first entry when total is 1, otherwise disambiguate on province and country.
 		Cities []struct {
 			// City City name as commonly used. Matches the local or internationally recognized name for the location.
 			City string `json:"city"`
@@ -74499,26 +75463,26 @@ type SearchCitiesResponse struct {
 			// Longitude Geographic longitude in decimal degrees (-180 to 180). Pass directly to astrology, horoscope, and panchang API endpoints alongside latitude.
 			Longitude float32 `json:"longitude"`
 
-			// Population City population estimate from geographic databases. Larger cities rank higher in search results, ensuring major metropolitan areas appear first in autocomplete suggestions.
+			// Population Population estimate for the place. Breaks ties between results of equal match quality, so among several places matching equally well the largest leads. It never outranks a better match, which is why a small town still wins when its name is typed exactly. May be 0 for a hamlet or administrative seat that carries no published figure.
 			Population float32 `json:"population"`
 
-			// Province State, province, canton, or administrative region. Helps disambiguate cities with the same name across regions (e.g. Springfield IL vs Springfield MO).
+			// Province State, province, canton, or administrative region. Show it whenever more than one result comes back: it is what separates Richfield, Utah from Richfield, Minnesota, and the six US Springfields from each other. Empty for the small number of places with no administrative division recorded.
 			Province string `json:"province"`
 
-			// Timezone IANA timezone identifier following the tz database standard (e.g. Europe/Berlin, America/New_York, Asia/Tokyo). Use with JavaScript Date, Luxon, day.js, or any date library for accurate local time conversion.
+			// Timezone IANA timezone identifier following the tz database standard (e.g. Europe/Berlin, America/New_York, Asia/Tokyo). Always present. Pass THIS, not the numeric offset, into any chart or panchang request for a past date: the calculation endpoints resolve it to the offset that was actually in force on that date, including historical daylight saving. Also works directly with JavaScript Date, Luxon, day.js, or any date library.
 			Timezone string `json:"timezone"`
 
-			// UtcOffset Current UTC offset in decimal hours, automatically adjusted for daylight saving time. Pass directly as the timezone parameter in astrology API endpoints. Examples: 1 for CET, 2 for CEST, -5 for EST, 5.5 for IST, 5.75 for Nepal.
+			// UtcOffset UTC offset in decimal hours for TODAY at this place, already adjusted for daylight saving. Convenient for displaying local time now. For a birth date or any past date use the `timezone` field instead, since the offset in force then may differ. Examples: 1 for CET, 2 for CEST, -5 for EST, 5.5 for IST, 5.75 for Nepal.
 			UtcOffset float32 `json:"utcOffset"`
 		} `json:"cities"`
 
 		// Limit Page size used for this response.
 		Limit float32 `json:"limit"`
 
-		// Offset Number of cities skipped. Use with limit for pagination.
+		// Offset Number of places skipped. Use with limit to page through results.
 		Offset float32 `json:"offset"`
 
-		// Total Total number of cities matching the search query.
+		// Total Number of places matching the query across all pages, not the number returned in this response. Greater than 1 means the name is ambiguous, so show province and country and let the user confirm before using the result for a chart.
 		Total float32 `json:"total"`
 	}
 	// JSON400 the response for an HTTP 400 `application/json` response
@@ -74537,7 +75501,7 @@ type SearchCitiesResponse struct {
 
 // GetJSON200 returns the response for an HTTP 200 `application/json` response
 func (r SearchCitiesResponse) GetJSON200() *struct {
-	// Cities City results for the current page, sorted by relevance (prefix match first) then population.
+	// Cities Matching places for the current page, best match first. Ordered by match quality, then population within equal quality: an exact name beats a qualified name such as richfield, utah, which beats a name merely starting with the query, which beats an incidental match on state or country. Take the first entry when total is 1, otherwise disambiguate on province and country.
 	Cities []struct {
 		// City City name as commonly used. Matches the local or internationally recognized name for the location.
 		City string `json:"city"`
@@ -74554,26 +75518,26 @@ func (r SearchCitiesResponse) GetJSON200() *struct {
 		// Longitude Geographic longitude in decimal degrees (-180 to 180). Pass directly to astrology, horoscope, and panchang API endpoints alongside latitude.
 		Longitude float32 `json:"longitude"`
 
-		// Population City population estimate from geographic databases. Larger cities rank higher in search results, ensuring major metropolitan areas appear first in autocomplete suggestions.
+		// Population Population estimate for the place. Breaks ties between results of equal match quality, so among several places matching equally well the largest leads. It never outranks a better match, which is why a small town still wins when its name is typed exactly. May be 0 for a hamlet or administrative seat that carries no published figure.
 		Population float32 `json:"population"`
 
-		// Province State, province, canton, or administrative region. Helps disambiguate cities with the same name across regions (e.g. Springfield IL vs Springfield MO).
+		// Province State, province, canton, or administrative region. Show it whenever more than one result comes back: it is what separates Richfield, Utah from Richfield, Minnesota, and the six US Springfields from each other. Empty for the small number of places with no administrative division recorded.
 		Province string `json:"province"`
 
-		// Timezone IANA timezone identifier following the tz database standard (e.g. Europe/Berlin, America/New_York, Asia/Tokyo). Use with JavaScript Date, Luxon, day.js, or any date library for accurate local time conversion.
+		// Timezone IANA timezone identifier following the tz database standard (e.g. Europe/Berlin, America/New_York, Asia/Tokyo). Always present. Pass THIS, not the numeric offset, into any chart or panchang request for a past date: the calculation endpoints resolve it to the offset that was actually in force on that date, including historical daylight saving. Also works directly with JavaScript Date, Luxon, day.js, or any date library.
 		Timezone string `json:"timezone"`
 
-		// UtcOffset Current UTC offset in decimal hours, automatically adjusted for daylight saving time. Pass directly as the timezone parameter in astrology API endpoints. Examples: 1 for CET, 2 for CEST, -5 for EST, 5.5 for IST, 5.75 for Nepal.
+		// UtcOffset UTC offset in decimal hours for TODAY at this place, already adjusted for daylight saving. Convenient for displaying local time now. For a birth date or any past date use the `timezone` field instead, since the offset in force then may differ. Examples: 1 for CET, 2 for CEST, -5 for EST, 5.5 for IST, 5.75 for Nepal.
 		UtcOffset float32 `json:"utcOffset"`
 	} `json:"cities"`
 
 	// Limit Page size used for this response.
 	Limit float32 `json:"limit"`
 
-	// Offset Number of cities skipped. Use with limit for pagination.
+	// Offset Number of places skipped. Use with limit to page through results.
 	Offset float32 `json:"offset"`
 
-	// Total Total number of cities matching the search query.
+	// Total Number of places matching the query across all pages, not the number returned in this response. Greater than 1 means the name is ambiguous, so show province and country and let the user confirm before using the result for a chart.
 	Total float32 `json:"total"`
 } {
 	return r.JSON200
@@ -89147,15 +90111,30 @@ type CalculateTransitResponse struct {
 		// BirthDatetime Birth datetime used for the natal chart, echoed as the local civil date and time supplied in the request (YYYY-MM-DDTHH:MM:SS). Combine it with the timezone field to recover the UTC instant.
 		BirthDatetime string `json:"birthDatetime"`
 
+		// Frame The zodiac frame every longitude in this response was computed in, so a cached or forwarded payload is self describing. Sidereal requests report the Lahiri ayanamsa, read at the birth instant; the transit positions use the same named frame resolved at their own instant, which moves by about 50 arcseconds a year. A tropical request reports "tropical" with 0 degrees subtracted, which is the one case a Vedic table can otherwise be rendered in the wrong zodiac with nothing on screen saying so.
+		Frame struct {
+			// Ayanamsa Sidereal frame this chart was cast in, echoing the ayanamsa request field. "lahiri" when the field was omitted.
+			Ayanamsa string `json:"ayanamsa"`
+
+			// AyanamsaDegrees Degrees actually subtracted from every tropical longitude to produce this chart, read at the birth instant. Subtract it back to recover the tropical positions, or compare it against your reference software to confirm you are in the same frame before chasing a placement difference.
+			AyanamsaDegrees float32 `json:"ayanamsaDegrees"`
+		} `json:"frame"`
+
 		// KeyTransits Highlighted transits from slow-moving planets (Jupiter, Saturn, Rahu, Ketu), most impactful for Gochar analysis.
 		KeyTransits []struct {
-			// Aspects Notable aspects to natal planets from this slow-moving transiting planet.
+			// Aspects Notable degree-based angular aspects to natal planets from this slow-moving transiting planet, in Western vocabulary.
 			Aspects []string `json:"aspects"`
 
-			// Description Human-readable transit summary.
+			// Description Human-readable transit summary, naming the rashi being transited and both house readings: from the Lagna, then from the natal Moon.
 			Description string `json:"description"`
 
-			// NatalHouse Natal house being transited by this slow planet.
+			// Drishti Graha drishti this slow-moving transiting graha casts on the natal grahas, the Vedic reading. Empty for Rahu and Ketu, which cast none.
+			Drishti []string `json:"drishti"`
+
+			// HouseFromMoon House being transited by this slow graha counted from the natal Moon sign (Janma Rashi), the classical Gochara reference. Mirrors houseFromMoon on the matching transitingPlanets entry.
+			HouseFromMoon float32 `json:"houseFromMoon"`
+
+			// NatalHouse Natal house being transited by this slow graha, counted whole-sign from the Lagna. Mirrors natalHouse on the matching transitingPlanets entry.
 			NatalHouse float32 `json:"natalHouse"`
 
 			// Planet Slow-moving planet (Jupiter, Saturn, Rahu, Ketu) forming a significant transit.
@@ -89182,9 +90161,9 @@ type CalculateTransitResponse struct {
 
 		// TransitingPlanets Current planetary positions overlaid on the natal chart with house placements, aspects, and the Gochara Kaksha verdict for each graha.
 		TransitingPlanets []struct {
-			// AspectsToNatal Aspects formed between this transiting planet and natal planets.
+			// AspectsToNatal Degree-based angular aspects between this transiting graha and the natal grahas. Western vocabulary, kept for callers who read a chart that way; drishtiToNatal is the Vedic answer to the same question.
 			AspectsToNatal []struct {
-				// AspectType Aspect type: conjunction, opposition, trine, square, or sextile.
+				// AspectType Degree-based angular aspect between the two longitudes: conjunction, opposition, trine, square, or sextile. This is the Western aspect vocabulary and it is offered for charts read that way. Parashari jyotish has no sextile, square or trine, so for the Vedic reading use drishtiToNatal, which reports graha drishti by house count.
 				AspectType string `json:"aspectType"`
 
 				// NatalPlanet Natal planet being aspected by this transiting planet.
@@ -89193,6 +90172,24 @@ type CalculateTransitResponse struct {
 				// Orb Angular distance from exact aspect in degrees. Smaller orb = stronger influence.
 				Orb float32 `json:"orb"`
 			} `json:"aspectsToNatal"`
+
+			// DrishtiToNatal Graha drishti cast by this transiting graha onto the natal grahas, the Vedic reading of transit-to-natal aspects. Rahu and Ketu cast none. Empty when this graha reaches no occupied natal sign.
+			DrishtiToNatal []struct {
+				// AspectType Which house the drishti falls on, counted whole-sign and inclusively from the transiting graha. Every graha aspects the 7th; Mars adds the 4th and 8th, Jupiter the 5th and 9th, Saturn the 3rd and 10th. Same vocabulary the /aspects endpoint returns, so the two can be compared directly.
+				AspectType CalculateTransit200JSONResponseBodyTransitingPlanetsDrishtiToNatalAspectType `json:"aspectType"`
+
+				// NatalPlanet Natal graha receiving the drishti from this transiting graha.
+				NatalPlanet string `json:"natalPlanet"`
+
+				// Orb Gap between the two degrees-in-sign, in degrees. Graha drishti is whole-sign and does not depend on this, so read it as how exact the sight is inside the pair of rashis rather than as a condition for the aspect.
+				Orb float32 `json:"orb"`
+
+				// Strength Drishti strength as a percentage. Full and special aspects are 100; the partial quarter, half and three-quarter sights are not reported.
+				Strength float32 `json:"strength"`
+			} `json:"drishtiToNatal"`
+
+			// HouseFromMoon Which house this graha is transiting counted from the natal Moon sign (Janma Rashi), 1-12 whole-sign and counted inclusively, so the Moon sign itself is 1. This is the number classical Gochara is reckoned in: Phaladeepika chapter 26 opens by saying that of all the Lagnas only the Moon Lagna matters for transit results, and the Vedha and Ashtakavarga transit rules are counted from the Moon throughout. The reference sign is the sign of the Moon entry in natalPlanets, so a client can label the column without a second request.
+			HouseFromMoon float32 `json:"houseFromMoon"`
 
 			// Kaksha Gochara Kaksha: the ashtakavarga-qualified reading of this transit. The sign says where a graha is, this says whether the exact stretch it currently occupies is one its own Bhinnashtakavarga supports, which is the classical way of refining a transit verdict from sign-level to under four degrees.
 			Kaksha struct {
@@ -89221,7 +90218,7 @@ type CalculateTransitResponse struct {
 			// Name Transiting planet name.
 			Name string `json:"name"`
 
-			// NatalHouse Which natal house (whole-sign bhava from the Lagna) this planet is currently transiting through. Key for Gochar predictions.
+			// NatalHouse Which natal house (whole-sign bhava counted from the Lagna) this graha is currently transiting through. This is the Lagna reading of the transit, which is what a transit chart drawn over the birth chart shows. For the house classical Gochara is judged from, read houseFromMoon instead.
 			NatalHouse float32 `json:"natalHouse"`
 
 			// Sign Current zodiac sign of the transiting planet.
@@ -89247,15 +90244,30 @@ func (r CalculateTransitResponse) GetJSON200() *struct {
 	// BirthDatetime Birth datetime used for the natal chart, echoed as the local civil date and time supplied in the request (YYYY-MM-DDTHH:MM:SS). Combine it with the timezone field to recover the UTC instant.
 	BirthDatetime string `json:"birthDatetime"`
 
+	// Frame The zodiac frame every longitude in this response was computed in, so a cached or forwarded payload is self describing. Sidereal requests report the Lahiri ayanamsa, read at the birth instant; the transit positions use the same named frame resolved at their own instant, which moves by about 50 arcseconds a year. A tropical request reports "tropical" with 0 degrees subtracted, which is the one case a Vedic table can otherwise be rendered in the wrong zodiac with nothing on screen saying so.
+	Frame struct {
+		// Ayanamsa Sidereal frame this chart was cast in, echoing the ayanamsa request field. "lahiri" when the field was omitted.
+		Ayanamsa string `json:"ayanamsa"`
+
+		// AyanamsaDegrees Degrees actually subtracted from every tropical longitude to produce this chart, read at the birth instant. Subtract it back to recover the tropical positions, or compare it against your reference software to confirm you are in the same frame before chasing a placement difference.
+		AyanamsaDegrees float32 `json:"ayanamsaDegrees"`
+	} `json:"frame"`
+
 	// KeyTransits Highlighted transits from slow-moving planets (Jupiter, Saturn, Rahu, Ketu), most impactful for Gochar analysis.
 	KeyTransits []struct {
-		// Aspects Notable aspects to natal planets from this slow-moving transiting planet.
+		// Aspects Notable degree-based angular aspects to natal planets from this slow-moving transiting planet, in Western vocabulary.
 		Aspects []string `json:"aspects"`
 
-		// Description Human-readable transit summary.
+		// Description Human-readable transit summary, naming the rashi being transited and both house readings: from the Lagna, then from the natal Moon.
 		Description string `json:"description"`
 
-		// NatalHouse Natal house being transited by this slow planet.
+		// Drishti Graha drishti this slow-moving transiting graha casts on the natal grahas, the Vedic reading. Empty for Rahu and Ketu, which cast none.
+		Drishti []string `json:"drishti"`
+
+		// HouseFromMoon House being transited by this slow graha counted from the natal Moon sign (Janma Rashi), the classical Gochara reference. Mirrors houseFromMoon on the matching transitingPlanets entry.
+		HouseFromMoon float32 `json:"houseFromMoon"`
+
+		// NatalHouse Natal house being transited by this slow graha, counted whole-sign from the Lagna. Mirrors natalHouse on the matching transitingPlanets entry.
 		NatalHouse float32 `json:"natalHouse"`
 
 		// Planet Slow-moving planet (Jupiter, Saturn, Rahu, Ketu) forming a significant transit.
@@ -89282,9 +90294,9 @@ func (r CalculateTransitResponse) GetJSON200() *struct {
 
 	// TransitingPlanets Current planetary positions overlaid on the natal chart with house placements, aspects, and the Gochara Kaksha verdict for each graha.
 	TransitingPlanets []struct {
-		// AspectsToNatal Aspects formed between this transiting planet and natal planets.
+		// AspectsToNatal Degree-based angular aspects between this transiting graha and the natal grahas. Western vocabulary, kept for callers who read a chart that way; drishtiToNatal is the Vedic answer to the same question.
 		AspectsToNatal []struct {
-			// AspectType Aspect type: conjunction, opposition, trine, square, or sextile.
+			// AspectType Degree-based angular aspect between the two longitudes: conjunction, opposition, trine, square, or sextile. This is the Western aspect vocabulary and it is offered for charts read that way. Parashari jyotish has no sextile, square or trine, so for the Vedic reading use drishtiToNatal, which reports graha drishti by house count.
 			AspectType string `json:"aspectType"`
 
 			// NatalPlanet Natal planet being aspected by this transiting planet.
@@ -89293,6 +90305,24 @@ func (r CalculateTransitResponse) GetJSON200() *struct {
 			// Orb Angular distance from exact aspect in degrees. Smaller orb = stronger influence.
 			Orb float32 `json:"orb"`
 		} `json:"aspectsToNatal"`
+
+		// DrishtiToNatal Graha drishti cast by this transiting graha onto the natal grahas, the Vedic reading of transit-to-natal aspects. Rahu and Ketu cast none. Empty when this graha reaches no occupied natal sign.
+		DrishtiToNatal []struct {
+			// AspectType Which house the drishti falls on, counted whole-sign and inclusively from the transiting graha. Every graha aspects the 7th; Mars adds the 4th and 8th, Jupiter the 5th and 9th, Saturn the 3rd and 10th. Same vocabulary the /aspects endpoint returns, so the two can be compared directly.
+			AspectType CalculateTransit200JSONResponseBodyTransitingPlanetsDrishtiToNatalAspectType `json:"aspectType"`
+
+			// NatalPlanet Natal graha receiving the drishti from this transiting graha.
+			NatalPlanet string `json:"natalPlanet"`
+
+			// Orb Gap between the two degrees-in-sign, in degrees. Graha drishti is whole-sign and does not depend on this, so read it as how exact the sight is inside the pair of rashis rather than as a condition for the aspect.
+			Orb float32 `json:"orb"`
+
+			// Strength Drishti strength as a percentage. Full and special aspects are 100; the partial quarter, half and three-quarter sights are not reported.
+			Strength float32 `json:"strength"`
+		} `json:"drishtiToNatal"`
+
+		// HouseFromMoon Which house this graha is transiting counted from the natal Moon sign (Janma Rashi), 1-12 whole-sign and counted inclusively, so the Moon sign itself is 1. This is the number classical Gochara is reckoned in: Phaladeepika chapter 26 opens by saying that of all the Lagnas only the Moon Lagna matters for transit results, and the Vedha and Ashtakavarga transit rules are counted from the Moon throughout. The reference sign is the sign of the Moon entry in natalPlanets, so a client can label the column without a second request.
+		HouseFromMoon float32 `json:"houseFromMoon"`
 
 		// Kaksha Gochara Kaksha: the ashtakavarga-qualified reading of this transit. The sign says where a graha is, this says whether the exact stretch it currently occupies is one its own Bhinnashtakavarga supports, which is the classical way of refining a transit verdict from sign-level to under four degrees.
 		Kaksha struct {
@@ -89321,7 +90351,7 @@ func (r CalculateTransitResponse) GetJSON200() *struct {
 		// Name Transiting planet name.
 		Name string `json:"name"`
 
-		// NatalHouse Which natal house (whole-sign bhava from the Lagna) this planet is currently transiting through. Key for Gochar predictions.
+		// NatalHouse Which natal house (whole-sign bhava counted from the Lagna) this graha is currently transiting through. This is the Lagna reading of the transit, which is what a transit chart drawn over the birth chart shows. For the house classical Gochara is judged from, read houseFromMoon instead.
 		NatalHouse float32 `json:"natalHouse"`
 
 		// Sign Current zodiac sign of the transiting planet.
@@ -92089,7 +93119,7 @@ func (c *ClientWithResponses) GetCitiesByCountryWithResponse(ctx context.Context
 
 // SearchCitiesWithResponse Search cities worldwide - Geocoding autocomplete with coordinates and timezone
 //
-// City autocomplete and geocoding search across 23,000+ locations in 240+ countries, including deep coverage of Indian tier-2 and tier-3 cities. Returns geographic coordinates (latitude, longitude), IANA timezone, and DST-aware UTC offset for each match. Built for birth chart location pickers, horoscope apps, event scheduling, and any feature requiring place-to-coordinates resolution. Partial name matching with intelligent ranking: exact prefix matches first, then sorted by population for relevance. Common alternate names like Bombay, Calcutta, Madras, and Banaras transparently resolve to their canonical entries.
+// Turn a place name into coordinates, an IANA timezone and a DST-aware UTC offset, across 235,000+ cities and towns in 240+ countries. Coverage reaches rural towns of a few hundred people and every administrative seat, so a birthplace outside a major metro resolves as reliably as a capital. Matching is case-insensitive, accent-insensitive and partial, so ber matches Berlin, Bern and Bergen, native scripts are transliterated, and historic names resolve to the current place, so bombay returns Mumbai and peking returns Beijing. Results are ordered by match quality first and population second, so an exactly named small town is never buried under a larger city that merely shares its opening letters. Built for birth chart location pickers, horoscope apps, event scheduling, and any feature that needs place-to-coordinates resolution.
 //
 // Returns a wrapper object for the known response body format(s).
 //
@@ -94294,7 +95324,7 @@ func (c *ClientWithResponses) CalculateShadbalaWithResponse(ctx context.Context,
 
 // CalculateTransitWithBodyWithResponse Transit Analysis - Compare current planets to natal chart (Gochar)
 //
-// Analyze planetary transits (Gochar) over natal chart positions. Returns transiting planets with their natal house positions, aspects to natal planets, and highlights key transits from slow-moving planets (Jupiter, Saturn, Rahu, Ketu). Essential for timing predictions, event forecasting, and understanding current planetary influences. Transit analysis API, gochar calculator, vedic transit predictions.
+// Analyze planetary transits (Gochar) over natal chart positions. Each transiting graha comes back with TWO whole-sign house numbers, because the two readings answer different questions: houseFromMoon is counted from the natal Moon sign (Janma Rashi), which is the reference classical Gochara uses, and natalHouse is counted from the Lagna. Also returns graha drishti onto the natal grahas (7th for every graha, plus Mars 4th and 8th, Jupiter 5th and 9th, Saturn 3rd and 10th), degree-based angular aspects with orbs, the Gochara Kaksha verdict, and highlighted transits from the slow-moving grahas (Jupiter, Saturn, Rahu, Ketu). Essential for timing predictions, event forecasting, and understanding current planetary influences. Transit analysis API, gochar calculator, vedic transit predictions, Chandra Lagna gochara, graha drishti.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -94309,7 +95339,7 @@ func (c *ClientWithResponses) CalculateTransitWithBodyWithResponse(ctx context.C
 
 // CalculateTransitWithResponse Transit Analysis - Compare current planets to natal chart (Gochar)
 //
-// Analyze planetary transits (Gochar) over natal chart positions. Returns transiting planets with their natal house positions, aspects to natal planets, and highlights key transits from slow-moving planets (Jupiter, Saturn, Rahu, Ketu). Essential for timing predictions, event forecasting, and understanding current planetary influences. Transit analysis API, gochar calculator, vedic transit predictions.
+// Analyze planetary transits (Gochar) over natal chart positions. Each transiting graha comes back with TWO whole-sign house numbers, because the two readings answer different questions: houseFromMoon is counted from the natal Moon sign (Janma Rashi), which is the reference classical Gochara uses, and natalHouse is counted from the Lagna. Also returns graha drishti onto the natal grahas (7th for every graha, plus Mars 4th and 8th, Jupiter 5th and 9th, Saturn 3rd and 10th), degree-based angular aspects with orbs, the Gochara Kaksha verdict, and highlighted transits from the slow-moving grahas (Jupiter, Saturn, Rahu, Ketu). Essential for timing predictions, event forecasting, and understanding current planetary influences. Transit analysis API, gochar calculator, vedic transit predictions, Chandra Lagna gochara, graha drishti.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -95793,7 +96823,7 @@ func ParseGenerateCompositeChartResponse(rsp *http.Response) (*GenerateComposite
 				// Longitude Tropical ecliptic longitude in degrees (0-360). Primary coordinate for zodiac sign and aspect calculations.
 				Longitude float32 `json:"longitude"`
 
-				// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee).
+				// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The nodes follow the request `nodeType`, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
 				Name GenerateCompositeChart200JSONResponseBodyCompositePlanetsName `json:"name"`
 
 				// Sign Tropical zodiac sign this planet occupies. Determined by 30-degree divisions of ecliptic longitude.
@@ -96658,7 +97688,7 @@ func ParseGenerateLunarReturnResponse(rsp *http.Response) (*GenerateLunarReturnR
 					Sign string `json:"sign"`
 				} `json:"partOfFortune"`
 
-				// Planets All 14 celestial bodies in the tropical zodiac with house placements: the 10 classical planets (Sun through Pluto), the lunar nodes (North Node, South Node), Chiron, and Black Moon Lilith.
+				// Planets All 14 celestial bodies in the tropical zodiac with house placements: the 10 classical planets (Sun through Pluto), the lunar nodes (North Node, South Node, in the requested `nodeType` convention), Chiron, and Black Moon Lilith.
 				Planets []struct {
 					// Degree Degree within the zodiac sign (0-29.999). Indicates how far the planet has progressed through the sign.
 					Degree float32 `json:"degree"`
@@ -96675,7 +97705,7 @@ func ParseGenerateLunarReturnResponse(rsp *http.Response) (*GenerateLunarReturnR
 					// Longitude Tropical ecliptic longitude in degrees (0-360). Primary coordinate for zodiac sign and aspect calculations.
 					Longitude float32 `json:"longitude"`
 
-					// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee).
+					// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The nodes follow the request `nodeType`, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
 					Name GenerateLunarReturn200JSONResponseBodyChartPlanetsName `json:"name"`
 
 					// Sign Tropical zodiac sign this planet occupies. Determined by 30-degree divisions of ecliptic longitude.
@@ -97498,7 +98528,7 @@ func ParseGeneratePlanetaryReturnResponse(rsp *http.Response) (*GeneratePlanetar
 					Sign string `json:"sign"`
 				} `json:"partOfFortune"`
 
-				// Planets All 14 celestial bodies in the tropical zodiac with house placements: the 10 classical planets (Sun through Pluto), the lunar nodes (North Node, South Node), Chiron, and Black Moon Lilith.
+				// Planets All 14 celestial bodies in the tropical zodiac with house placements: the 10 classical planets (Sun through Pluto), the lunar nodes (North Node, South Node, in the requested `nodeType` convention), Chiron, and Black Moon Lilith.
 				Planets []struct {
 					// Degree Degree within the zodiac sign (0-29.999). Indicates how far the planet has progressed through the sign.
 					Degree float32 `json:"degree"`
@@ -97515,7 +98545,7 @@ func ParseGeneratePlanetaryReturnResponse(rsp *http.Response) (*GeneratePlanetar
 					// Longitude Tropical ecliptic longitude in degrees (0-360). Primary coordinate for zodiac sign and aspect calculations.
 					Longitude float32 `json:"longitude"`
 
-					// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee).
+					// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The nodes follow the request `nodeType`, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
 					Name GeneratePlanetaryReturn200JSONResponseBodyChartPlanetsName `json:"name"`
 
 					// Sign Tropical zodiac sign this planet occupies. Determined by 30-degree divisions of ecliptic longitude.
@@ -98120,8 +99150,11 @@ func ParseListZodiacSignsResponse(rsp *http.Response) (*ListZodiacSignsResponse,
 			// Description Brief overview of this zodiac sign personality and themes.
 			Description string `json:"description"`
 
-			// Element Elemental classification: Fire, Earth, Air, or Water.
+			// Element Elemental classification: fire, earth, air, or water. Always one of these four English literals, whatever the lang parameter says, so it stays safe to compare against in code. Use elementLocalized for anything a reader sees.
 			Element ListZodiacSigns200JSONResponseBodyElement `json:"element"`
+
+			// ElementLocalized Element name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			ElementLocalized *string `json:"elementLocalized,omitempty"`
 
 			// ID Lowercase sign identifier (e.g., aries, taurus, gemini).
 			ID string `json:"id"`
@@ -98230,8 +99263,11 @@ func ParseGetZodiacSignResponse(rsp *http.Response) (*GetZodiacSignResponse, err
 				Short string `json:"short"`
 			} `json:"description"`
 
-			// Element Elemental classification: Fire, Earth, Air, or Water. Determines temperament and compatibility group.
+			// Element Elemental classification: fire, earth, air, or water. Determines temperament and compatibility group. Always one of these four English literals, whatever the lang parameter says, so it stays safe to compare against in code. Use elementLocalized for anything a reader sees.
 			Element GetZodiacSign200JSONResponseBodyElement `json:"element"`
+
+			// ElementLocalized Element name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			ElementLocalized *string `json:"elementLocalized,omitempty"`
 
 			// Famous Notable people born under this zodiac sign.
 			Famous *[]string `json:"famous,omitempty"`
@@ -98245,8 +99281,11 @@ func ParseGetZodiacSignResponse(rsp *http.Response) (*GetZodiacSignResponse, err
 			// Keywords Key personality traits and descriptive words for this sign.
 			Keywords []string `json:"keywords"`
 
-			// Modality Quality/modality: Cardinal (initiating), Fixed (sustaining), or Mutable (adapting).
+			// Modality Quality/modality: cardinal (initiating), fixed (sustaining), or mutable (adapting). Always one of these three English literals, whatever the lang parameter says, so it stays safe to compare against in code. Use modalityLocalized for anything a reader sees.
 			Modality GetZodiacSign200JSONResponseBodyModality `json:"modality"`
+
+			// ModalityLocalized Modality name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			ModalityLocalized *string `json:"modalityLocalized,omitempty"`
 
 			// Motto Signature motto or tagline for this sign.
 			Motto *string `json:"motto,omitempty"`
@@ -98254,8 +99293,11 @@ func ParseGetZodiacSignResponse(rsp *http.Response) (*GetZodiacSignResponse, err
 			// Name Display name of the zodiac sign.
 			Name string `json:"name"`
 
-			// RulingPlanet Traditional ruling planet that governs this sign.
+			// RulingPlanet Traditional ruling planet that governs this sign. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use rulingPlanetLocalized for anything a reader sees.
 			RulingPlanet string `json:"rulingPlanet"`
+
+			// RulingPlanetLocalized Ruling planet name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			RulingPlanetLocalized *string `json:"rulingPlanetLocalized,omitempty"`
 
 			// Strengths Key strengths and lovable qualities of this sign.
 			Strengths *[]string `json:"strengths,omitempty"`
@@ -98507,7 +99549,7 @@ func ParseGenerateSolarReturnResponse(rsp *http.Response) (*GenerateSolarReturnR
 					Sign string `json:"sign"`
 				} `json:"partOfFortune"`
 
-				// Planets All 14 celestial bodies in the tropical zodiac with house placements: the 10 classical planets (Sun through Pluto), the lunar nodes (North Node, South Node), Chiron, and Black Moon Lilith.
+				// Planets All 14 celestial bodies in the tropical zodiac with house placements: the 10 classical planets (Sun through Pluto), the lunar nodes (North Node, South Node, in the requested `nodeType` convention), Chiron, and Black Moon Lilith.
 				Planets []struct {
 					// Degree Degree within the zodiac sign (0-29.999). Indicates how far the planet has progressed through the sign.
 					Degree float32 `json:"degree"`
@@ -98524,7 +99566,7 @@ func ParseGenerateSolarReturnResponse(rsp *http.Response) (*GenerateSolarReturnR
 					// Longitude Tropical ecliptic longitude in degrees (0-360). Primary coordinate for zodiac sign and aspect calculations.
 					Longitude float32 `json:"longitude"`
 
-					// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee).
+					// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The nodes follow the request `nodeType`, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
 					Name GenerateSolarReturn200JSONResponseBodyChartPlanetsName `json:"name"`
 
 					// Sign Tropical zodiac sign this planet occupies. Determined by 30-degree divisions of ecliptic longitude.
@@ -98941,6 +99983,21 @@ func ParseCalculateTransitAspectsResponse(rsp *http.Response) (*CalculateTransit
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
+			// Ascendant The natal Ascendant (rising sign): the eastern horizon at birth, and the left-hand horizon a chart wheel is oriented to. Reported alongside the cusps because the two are not the same longitude in every house system: Whole Sign puts the first cusp at 0 degrees of the rising sign, which can sit most of a sign away from the Ascendant itself.
+			Ascendant struct {
+				// Degree Degree within the Ascendant sign (0-29.999).
+				Degree float32 `json:"degree"`
+
+				// Longitude Absolute ecliptic longitude of the natal Ascendant in degrees (0-360).
+				Longitude float32 `json:"longitude"`
+
+				// Sign Tropical zodiac sign on the natal Ascendant. Always English, whatever the lang parameter says. Use signLocalized for anything a reader sees.
+				Sign string `json:"sign"`
+
+				// SignLocalized Ascendant sign name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				SignLocalized *string `json:"signLocalized,omitempty"`
+			} `json:"ascendant"`
+
 			// Aspects Transit-to-natal aspects with interpretations, strength ratings, and guidance. Each aspect represents a transiting planet forming a geometric angle to a natal planet.
 			Aspects []struct {
 				// Angle Exact angular separation that defines this aspect type in degrees.
@@ -98968,8 +100025,10 @@ func ParseCalculateTransitAspectsResponse(rsp *http.Response) (*CalculateTransit
 				Planet2Localized *string `json:"planet2Localized,omitempty"`
 
 				// Strength Aspect strength percentage (0-100). Based on orb tightness relative to the allowed maximum.
-				Strength              float32 `json:"strength"`
-				TransitInterpretation *struct {
+				Strength float32 `json:"strength"`
+
+				// TransitInterpretation Rich interpretation of the transit aspect: narrative summary, timing, impact assessment, practical guidance, and keywords.
+				TransitInterpretation struct {
 					// Guidance Practical advice for working with this transit energy.
 					Guidance string `json:"guidance"`
 
@@ -98984,7 +100043,7 @@ func ParseCalculateTransitAspectsResponse(rsp *http.Response) (*CalculateTransit
 
 					// Timing When this transit is most active and how long its influence lasts, localized. The bucket follows the speed of the transiting body: a few hours for the Moon, a few days for the Sun, Mercury, Venus and Mars, one to two weeks for Jupiter, several weeks for Saturn, and an extended period for Uranus, Neptune and Pluto.
 					Timing string `json:"timing"`
-				} `json:"transitInterpretation,omitempty"`
+				} `json:"transitInterpretation"`
 
 				// Type Aspect type. Major: conjunction (0), opposition (180), trine (120), square (90), sextile (60). Minor: semi-sextile, quincunx, semi-square, sesquiquadrate.
 				Type CalculateTransitAspects200JSONResponseBodyAspectsType `json:"type"`
@@ -98995,6 +100054,24 @@ func ParseCalculateTransitAspectsResponse(rsp *http.Response) (*CalculateTransit
 
 			// HouseSystem House system actually used for the natal cusps behind every house number in this response. Differs from the requested system only above the polar circle, where quadrant systems fall back to Whole Sign.
 			HouseSystem CalculateTransitAspects200JSONResponseBodyHouseSystem `json:"houseSystem"`
+
+			// Houses The twelve NATAL house cusps that every house number in this response is read against, in the house system named by houseSystem. Same shape as the natal-chart houses array, so a bi-wheel can be drawn with real house sectors from this one response instead of pairing it with a second call.
+			Houses []struct {
+				// Degree Degree within the zodiac sign on this cusp (0-29.999).
+				Degree float32 `json:"degree"`
+
+				// Longitude Ecliptic longitude of this house cusp in degrees (0-360).
+				Longitude float32 `json:"longitude"`
+
+				// Number House number (1-12). Each house governs specific life themes in Western astrology.
+				Number int `json:"number"`
+
+				// Sign Zodiac sign on this house cusp. Colors the themes of this life area.
+				Sign string `json:"sign"`
+
+				// SignLocalized Zodiac sign name on this cusp in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				SignLocalized *string `json:"signLocalized,omitempty"`
+			} `json:"houses"`
 
 			// NatalPlanets Natal (birth chart) planetary positions used as the baseline for transit aspect comparison, each placed in its natal house.
 			NatalPlanets []struct {
@@ -99013,7 +100090,7 @@ func ParseCalculateTransitAspectsResponse(rsp *http.Response) (*CalculateTransit
 				// Longitude Tropical ecliptic longitude in degrees (0-360). Primary coordinate for zodiac sign and aspect calculations.
 				Longitude float32 `json:"longitude"`
 
-				// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee).
+				// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The nodes follow the request `nodeType`, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
 				Name CalculateTransitAspects200JSONResponseBodyNatalPlanetsName `json:"name"`
 
 				// NameLocalized Body name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
@@ -99072,6 +100149,24 @@ func ParseCalculateTransitAspectsResponse(rsp *http.Response) (*CalculateTransit
 					// Strength Aspect strength percentage (0-100). Based on orb tightness relative to the allowed maximum.
 					Strength float32 `json:"strength"`
 
+					// TransitInterpretation Rich interpretation of the transit aspect: narrative summary, timing, impact assessment, practical guidance, and keywords.
+					TransitInterpretation struct {
+						// Guidance Practical advice for working with this transit energy.
+						Guidance string `json:"guidance"`
+
+						// Impact Strength and nature of this transit effect — constructive, challenging, or neutral.
+						Impact string `json:"impact"`
+
+						// Keywords Key themes activated by this transit aspect.
+						Keywords []string `json:"keywords"`
+
+						// Summary Narrative interpretation of this transit aspect and its life impact.
+						Summary string `json:"summary"`
+
+						// Timing When this transit is most active and how long its influence lasts, localized. The bucket follows the speed of the transiting body: a few hours for the Moon, a few days for the Sun, Mercury, Venus and Mars, one to two weeks for Jupiter, several weeks for Saturn, and an extended period for Uranus, Neptune and Pluto.
+						Timing string `json:"timing"`
+					} `json:"transitInterpretation"`
+
 					// Type Aspect type. Major: conjunction (0), opposition (180), trine (120), square (90), sextile (60). Minor: semi-sextile, quincunx, semi-square, sesquiquadrate.
 					Type CalculateTransitAspects200JSONResponseBodySummaryStrongestType `json:"type"`
 
@@ -99103,7 +100198,7 @@ func ParseCalculateTransitAspectsResponse(rsp *http.Response) (*CalculateTransit
 				// Longitude Tropical ecliptic longitude in degrees (0-360). Primary coordinate for zodiac sign and aspect calculations.
 				Longitude float32 `json:"longitude"`
 
-				// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee).
+				// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The nodes follow the request `nodeType`, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
 				Name CalculateTransitAspects200JSONResponseBodyTransitPlanetsName `json:"name"`
 
 				// NameLocalized Body name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
@@ -102061,7 +103156,7 @@ func ParseForecastSolarReturnResponse(rsp *http.Response) (*ForecastSolarReturnR
 					Sign string `json:"sign"`
 				} `json:"partOfFortune"`
 
-				// Planets All 14 celestial bodies in the tropical zodiac with house placements: the 10 classical planets (Sun through Pluto), the lunar nodes (North Node, South Node), Chiron, and Black Moon Lilith.
+				// Planets All 14 celestial bodies in the tropical zodiac with house placements: the 10 classical planets (Sun through Pluto), the lunar nodes (North Node, South Node, in the requested `nodeType` convention), Chiron, and Black Moon Lilith.
 				Planets []struct {
 					// Degree Degree within the zodiac sign (0-29.999). Indicates how far the planet has progressed through the sign.
 					Degree float32 `json:"degree"`
@@ -102078,7 +103173,7 @@ func ParseForecastSolarReturnResponse(rsp *http.Response) (*ForecastSolarReturnR
 					// Longitude Tropical ecliptic longitude in degrees (0-360). Primary coordinate for zodiac sign and aspect calculations.
 					Longitude float32 `json:"longitude"`
 
-					// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee).
+					// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The nodes follow the request `nodeType`, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
 					Name ForecastSolarReturn200JSONResponseBodyChartPlanetsName `json:"name"`
 
 					// Sign Tropical zodiac sign this planet occupies. Determined by 30-degree divisions of ecliptic longitude.
@@ -102500,11 +103595,14 @@ func ParseGenerateBodygraphResponse(rsp *http.Response) (*GenerateBodygraphRespo
 			// Aura The aura mechanic of the type: how the energy field itself operates, for example open and enveloping, or closed and repelling.
 			Aura string `json:"aura"`
 
-			// Authority Inner authority for decision making. One of Emotional, Sacral, Splenic, Ego, Self-Projected, Mental, Lunar.
+			// Authority Inner authority for decision making. One of Emotional, Sacral, Splenic, Ego, Self-Projected, Mental, Lunar. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use authorityLocalized for anything a reader sees.
 			Authority string `json:"authority"`
 
 			// AuthorityDescription How the decision is made, the timing it requires, and the characteristic trap. Inner authority is the most actionable output of a Human Design chart, so this is the field to lean on when grounding a reading.
 			AuthorityDescription string `json:"authorityDescription"`
+
+			// AuthorityLocalized Inner authority name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			AuthorityLocalized *string `json:"authorityLocalized,omitempty"`
 
 			// Centers All nine centers with their defined state and active gates.
 			Centers []struct {
@@ -102526,8 +103624,11 @@ func ParseGenerateBodygraphResponse(rsp *http.Response) (*GenerateBodygraphRespo
 				// Motor Whether this is a motor center (energy source). The four motors are Heart, Sacral, Solar Plexus, and Root.
 				Motor bool `json:"motor"`
 
-				// Name Display name of the center.
+				// Name Display name of the center. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use nameLocalized for anything a reader sees.
 				Name string `json:"name"`
+
+				// NameLocalized Center name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				NameLocalized *string `json:"nameLocalized,omitempty"`
 
 				// NotSelfQuestion The conditioning trap of this center when it is open. Returned on every center so a consumer can surface it the moment `defined` is false, which is where the not-self operates.
 				NotSelfQuestion string `json:"notSelfQuestion"`
@@ -102541,11 +103642,14 @@ func ParseGenerateBodygraphResponse(rsp *http.Response) (*GenerateBodygraphRespo
 				// Centers The two centers this channel connects and defines.
 				Centers []string `json:"centers"`
 
-				// Circuit Circuit family of the channel. One of Individual, Collective, Tribal.
+				// Circuit Circuit family of the channel. One of Individual, Collective, Tribal. Always English, whatever the lang parameter says. Use circuitLocalized for anything a reader sees.
 				Circuit string `json:"circuit"`
 
 				// CircuitDescription What the circuit family of this channel governs.
 				CircuitDescription string `json:"circuitDescription"`
+
+				// CircuitLocalized Circuit family name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				CircuitLocalized *string `json:"circuitLocalized,omitempty"`
 
 				// Description What this channel wires between its two centers and the nature of the energy it carries.
 				Description string `json:"description"`
@@ -102556,15 +103660,21 @@ func ParseGenerateBodygraphResponse(rsp *http.Response) (*GenerateBodygraphRespo
 				// GateB Second gate of the channel.
 				GateB float32 `json:"gateB"`
 
-				// Name Name of the defined channel.
+				// Name Name of the defined channel. Always English, whatever the lang parameter says. Use nameLocalized for anything a reader sees.
 				Name string `json:"name"`
+
+				// NameLocalized Channel name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				NameLocalized *string `json:"nameLocalized,omitempty"`
 			} `json:"channels"`
 
-			// Definition Definition type from the number of connected components among defined centers. One of None, Single, Split, Triple Split, Quadruple Split.
+			// Definition Definition type from the number of connected components among defined centers. One of None, Single, Split, Triple Split, Quadruple Split. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use definitionLocalized for anything a reader sees.
 			Definition string `json:"definition"`
 
 			// DefinitionDescription How energy flows through the defined centers in this configuration, and what the configuration needs. For a split, this is where the bridging gates of other people matter.
 			DefinitionDescription string `json:"definitionDescription"`
+
+			// DefinitionLocalized Definition type name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			DefinitionLocalized *string `json:"definitionLocalized,omitempty"`
 
 			// Gates All 26 activations, 13 Personality and 13 Design.
 			Gates []struct {
@@ -102574,8 +103684,11 @@ func ParseGenerateBodygraphResponse(rsp *http.Response) (*GenerateBodygraphRespo
 				// GateDescription Bodygraph function of the gate: what it does in the center it sits in and the channel it forms. This is NOT the meaning of the I-Ching hexagram that shares its number. They share a number, not a definition.
 				GateDescription string `json:"gateDescription"`
 
-				// GateName Human Design keynote name of the gate, describing its bodygraph function.
+				// GateName Human Design keynote name of the gate, describing its bodygraph function. Always English, whatever the lang parameter says. Use gateNameLocalized for anything a reader sees.
 				GateName string `json:"gateName"`
+
+				// GateNameLocalized Gate keynote name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				GateNameLocalized *string `json:"gateNameLocalized,omitempty"`
 
 				// IchingHexagram Cross-reference to the I-Ching hexagram that shares this gate number.
 				IchingHexagram struct {
@@ -102592,11 +103705,14 @@ func ParseGenerateBodygraphResponse(rsp *http.Response) (*GenerateBodygraphRespo
 				// LineMeaning Meaning of this gate at this specific line, one of 384. The finest interpretive layer in the chart and the one that makes a reading specific rather than generic. This is not the six abstract line archetypes: gate 41 line 3 carries its own meaning that neither the gate keynote nor the line-3 archetype holds alone.
 				LineMeaning string `json:"lineMeaning"`
 
-				// Planet Activating body. One of Sun, Earth, Moon, North Node, South Node, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto.
+				// Planet Activating body. One of Sun, Earth, Moon, North Node, South Node, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto. Always English, whatever the lang parameter says, so it stays safe to compare against in code and to key a glyph table on. Use planetLocalized for anything a reader sees.
 				Planet string `json:"planet"`
 
 				// PlanetDescription What this planetary activation contributes in Human Design specifically, which is not its meaning in western astrology.
 				PlanetDescription string `json:"planetDescription"`
+
+				// PlanetLocalized Activating body name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				PlanetLocalized *string `json:"planetLocalized,omitempty"`
 
 				// Side Chart side. personality is the conscious birth-moment activation, design is the unconscious activation 88 degrees of solar arc before birth.
 				Side string `json:"side"`
@@ -102604,11 +103720,14 @@ func ParseGenerateBodygraphResponse(rsp *http.Response) (*GenerateBodygraphRespo
 
 			// IncarnationCross The incarnation cross built from the four cardinal gates and the profile angle.
 			IncarnationCross struct {
-				// Angle Cross angle. One of Right Angle, Juxtaposition, Left Angle.
+				// Angle Cross angle. One of Right Angle, Juxtaposition, Left Angle. Always English, whatever the lang parameter says. Use angleLocalized for anything a reader sees.
 				Angle string `json:"angle"`
 
 				// AngleCode Short code for the angle. One of RAX, JXT, LAX.
 				AngleCode string `json:"angleCode"`
+
+				// AngleLocalized Cross angle name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				AngleLocalized *string `json:"angleLocalized,omitempty"`
 
 				// Description The life theme of the cross, synthesized from its four gates and the orientation the angle gives them. The same Sun gate under a different angle is a genuinely different theme: Right Angle is personal destiny, Left Angle is worked out through other people, Juxtaposition is a fixed fate.
 				Description *string `json:"description,omitempty"`
@@ -102620,8 +103739,11 @@ func ParseGenerateBodygraphResponse(rsp *http.Response) (*GenerateBodygraphRespo
 				Name string `json:"name"`
 			} `json:"incarnationCross"`
 
-			// NotSelf The not-self theme, the recurring feeling that signals being out of alignment.
+			// NotSelf The not-self theme, the recurring feeling that signals being out of alignment. Always English, whatever the lang parameter says. Use notSelfLocalized for anything a reader sees.
 			NotSelf string `json:"notSelf"`
+
+			// NotSelfLocalized Not-self theme name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			NotSelfLocalized *string `json:"notSelfLocalized,omitempty"`
 
 			// Profile Profile in conscious/unconscious form from the Personality Sun line over the Design Sun line.
 			Profile string `json:"profile"`
@@ -102647,20 +103769,29 @@ func ParseGenerateBodygraphResponse(rsp *http.Response) (*GenerateBodygraphRespo
 			// Sides What the two chart sides are: personality is the conscious mind side, design is the unconscious body side computed 88 degrees of solar arc before birth. Returned once at the top level rather than repeated across all 26 activations.
 			Sides map[string]string `json:"sides"`
 
-			// Signature The signature feeling of living in alignment with the type.
+			// Signature The signature feeling of living in alignment with the type. Always English, whatever the lang parameter says. Use signatureLocalized for anything a reader sees.
 			Signature string `json:"signature"`
 
-			// Strategy The aura strategy for engaging life correctly for this type.
+			// SignatureLocalized Signature theme name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			SignatureLocalized *string `json:"signatureLocalized,omitempty"`
+
+			// Strategy The aura strategy for engaging life correctly for this type. Always English, whatever the lang parameter says. Use strategyLocalized for anything a reader sees.
 			Strategy string `json:"strategy"`
 
 			// StrategyDescription How to actually apply the strategy. The strategy field alone is a bare label such as Respond or Inform; this is the operating instruction behind it.
 			StrategyDescription string `json:"strategyDescription"`
 
-			// Type Human Design energy type. One of Manifestor, Generator, Manifesting Generator, Projector, Reflector.
+			// StrategyLocalized Strategy name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			StrategyLocalized *string `json:"strategyLocalized,omitempty"`
+
+			// Type Human Design energy type. One of Manifestor, Generator, Manifesting Generator, Projector, Reflector. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use typeLocalized for anything a reader sees.
 			Type string `json:"type"`
 
 			// TypeDescription What the aura of this type does and how it is designed to engage life. The grounding text for the type label, so a consuming agent does not have to supply the meaning itself.
 			TypeDescription string `json:"typeDescription"`
+
+			// TypeLocalized Energy type name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			TypeLocalized *string `json:"typeLocalized,omitempty"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -102756,8 +103887,11 @@ func ParseCalculateCentersResponse(rsp *http.Response) (*CalculateCentersRespons
 				// Motor Whether this is a motor center (energy source). The four motors are Heart, Sacral, Solar Plexus, and Root.
 				Motor bool `json:"motor"`
 
-				// Name Display name of the center.
+				// Name Display name of the center. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use nameLocalized for anything a reader sees.
 				Name string `json:"name"`
+
+				// NameLocalized Center name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				NameLocalized *string `json:"nameLocalized,omitempty"`
 
 				// NotSelfQuestion The conditioning trap of this center when it is open. Returned on every center so a consumer can surface it the moment `defined` is false, which is where the not-self operates.
 				NotSelfQuestion string `json:"notSelfQuestion"`
@@ -102855,8 +103989,11 @@ func ParseGetCenterResponse(rsp *http.Response) (*GetCenterResponse, error) {
 			// Motor Whether this is a motor center.
 			Motor bool `json:"motor"`
 
-			// Name Display name of the center.
+			// Name Display name of the center. Always English, whatever the lang parameter says. Use nameLocalized for anything a reader sees.
 			Name string `json:"name"`
+
+			// NameLocalized Center name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			NameLocalized *string `json:"nameLocalized,omitempty"`
 
 			// UndefinedMeaning What this center means when undefined and open: a place of conditioning and learning.
 			UndefinedMeaning string `json:"undefinedMeaning"`
@@ -102940,11 +104077,14 @@ func ParseCalculateChannelsResponse(rsp *http.Response) (*CalculateChannelsRespo
 				// Centers The two centers this channel connects and defines.
 				Centers []string `json:"centers"`
 
-				// Circuit Circuit family of the channel. One of Individual, Collective, Tribal.
+				// Circuit Circuit family of the channel. One of Individual, Collective, Tribal. Always English, whatever the lang parameter says. Use circuitLocalized for anything a reader sees.
 				Circuit string `json:"circuit"`
 
 				// CircuitDescription What the circuit family of this channel governs.
 				CircuitDescription string `json:"circuitDescription"`
+
+				// CircuitLocalized Circuit family name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				CircuitLocalized *string `json:"circuitLocalized,omitempty"`
 
 				// Description What this channel wires between its two centers and the nature of the energy it carries.
 				Description string `json:"description"`
@@ -102955,8 +104095,11 @@ func ParseCalculateChannelsResponse(rsp *http.Response) (*CalculateChannelsRespo
 				// GateB Second gate of the channel.
 				GateB float32 `json:"gateB"`
 
-				// Name Name of the defined channel.
+				// Name Name of the defined channel. Always English, whatever the lang parameter says. Use nameLocalized for anything a reader sees.
 				Name string `json:"name"`
+
+				// NameLocalized Channel name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				NameLocalized *string `json:"nameLocalized,omitempty"`
 			} `json:"channels"`
 
 			// DefinedCenters The centers defined by these channels.
@@ -103050,8 +104193,11 @@ func ParseCalculateConnectionResponse(rsp *http.Response) (*CalculateConnectionR
 				// ID Center identifier. One of head, ajna, throat, g, heart, sacral, solar-plexus, spleen, root.
 				ID string `json:"id"`
 
-				// Name Display name of the center.
+				// Name Display name of the center. Always English, whatever the lang parameter says. Use nameLocalized for anything a reader sees.
 				Name string `json:"name"`
+
+				// NameLocalized Center name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				NameLocalized *string `json:"nameLocalized,omitempty"`
 			} `json:"centers"`
 
 			// Channels Every connected channel between the two people with its dynamic. A channel is connected when the two people together hold both of its gates.
@@ -103059,11 +104205,17 @@ func ParseCalculateConnectionResponse(rsp *http.Response) (*CalculateConnectionR
 				// Centers The two centers this channel connects in the bodygraph.
 				Centers []string `json:"centers"`
 
-				// Circuit Circuit family of the channel. One of Individual, Collective, Tribal.
+				// Circuit Circuit family of the channel. One of Individual, Collective, Tribal. Always English, whatever the lang parameter says. Use circuitLocalized for anything a reader sees.
 				Circuit string `json:"circuit"`
 
-				// Dynamic Connection dynamic for this channel. Electromagnetic means each person holds one of the two gates and the channel completes only together, the classic point of attraction. Dominance means one person holds both gates and the other holds neither, a one-way conditioning. Compromise means one person holds both gates and the other holds a single hanging gate. Companionship means both people independently hold both gates, a shared and familiar frequency.
+				// CircuitLocalized Circuit family name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				CircuitLocalized *string `json:"circuitLocalized,omitempty"`
+
+				// Dynamic Connection dynamic for this channel. Electromagnetic means each person holds one of the two gates and the channel completes only together, the classic point of attraction. Dominance means one person holds both gates and the other holds neither, a one-way conditioning. Compromise means one person holds both gates and the other holds a single hanging gate. Companionship means both people independently hold both gates, a shared and familiar frequency. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use dynamicLocalized for anything a reader sees.
 				Dynamic string `json:"dynamic"`
+
+				// DynamicLocalized Connection dynamic name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				DynamicLocalized *string `json:"dynamicLocalized,omitempty"`
 
 				// GateA First gate of the channel.
 				GateA float32 `json:"gateA"`
@@ -103071,8 +104223,11 @@ func ParseCalculateConnectionResponse(rsp *http.Response) (*CalculateConnectionR
 				// GateB Second gate of the channel.
 				GateB float32 `json:"gateB"`
 
-				// Name Name of the channel whose connection dynamic is reported.
+				// Name Name of the channel whose connection dynamic is reported. Always English, whatever the lang parameter says. Use nameLocalized for anything a reader sees.
 				Name string `json:"name"`
+
+				// NameLocalized Channel name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				NameLocalized *string `json:"nameLocalized,omitempty"`
 
 				// PersonAGates Which of the channel two gates person A holds, from one to both.
 				PersonAGates []float32 `json:"personAGates"`
@@ -103081,8 +104236,11 @@ func ParseCalculateConnectionResponse(rsp *http.Response) (*CalculateConnectionR
 				PersonBGates []float32 `json:"personBGates"`
 			} `json:"channels"`
 
-			// CombinedDefinition Definition of the combined connection bodygraph from connected components among its defined centers. One of None, Single, Split, Triple Split, Quadruple Split.
+			// CombinedDefinition Definition of the combined connection bodygraph from connected components among its defined centers. One of None, Single, Split, Triple Split, Quadruple Split. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use combinedDefinitionLocalized for anything a reader sees.
 			CombinedDefinition string `json:"combinedDefinition"`
+
+			// CombinedDefinitionLocalized Combined definition name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			CombinedDefinitionLocalized *string `json:"combinedDefinitionLocalized,omitempty"`
 
 			// Summary Count of each connection dynamic across all connected channels.
 			Summary struct {
@@ -103184,8 +104342,11 @@ func ParseCalculateGatesResponse(rsp *http.Response) (*CalculateGatesResponse, e
 				// GateDescription Bodygraph function of the gate: what it does in the center it sits in and the channel it forms. This is NOT the meaning of the I-Ching hexagram that shares its number. They share a number, not a definition.
 				GateDescription string `json:"gateDescription"`
 
-				// GateName Human Design keynote name of the gate, describing its bodygraph function.
+				// GateName Human Design keynote name of the gate, describing its bodygraph function. Always English, whatever the lang parameter says. Use gateNameLocalized for anything a reader sees.
 				GateName string `json:"gateName"`
+
+				// GateNameLocalized Gate keynote name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				GateNameLocalized *string `json:"gateNameLocalized,omitempty"`
 
 				// IchingHexagram Cross-reference to the I-Ching hexagram that shares this gate number.
 				IchingHexagram struct {
@@ -103202,11 +104363,14 @@ func ParseCalculateGatesResponse(rsp *http.Response) (*CalculateGatesResponse, e
 				// LineMeaning Meaning of this gate at this specific line, one of 384. The finest interpretive layer in the chart and the one that makes a reading specific rather than generic. This is not the six abstract line archetypes: gate 41 line 3 carries its own meaning that neither the gate keynote nor the line-3 archetype holds alone.
 				LineMeaning string `json:"lineMeaning"`
 
-				// Planet Activating body. One of Sun, Earth, Moon, North Node, South Node, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto.
+				// Planet Activating body. One of Sun, Earth, Moon, North Node, South Node, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto. Always English, whatever the lang parameter says, so it stays safe to compare against in code and to key a glyph table on. Use planetLocalized for anything a reader sees.
 				Planet string `json:"planet"`
 
 				// PlanetDescription What this planetary activation contributes in Human Design specifically, which is not its meaning in western astrology.
 				PlanetDescription string `json:"planetDescription"`
+
+				// PlanetLocalized Activating body name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				PlanetLocalized *string `json:"planetLocalized,omitempty"`
 
 				// Side Chart side. personality is the conscious birth-moment activation, design is the unconscious activation 88 degrees of solar arc before birth.
 				Side string `json:"side"`
@@ -103220,8 +104384,11 @@ func ParseCalculateGatesResponse(rsp *http.Response) (*CalculateGatesResponse, e
 				// GateDescription Bodygraph function of the gate: what it does in the center it sits in and the channel it forms. This is NOT the meaning of the I-Ching hexagram that shares its number. They share a number, not a definition.
 				GateDescription string `json:"gateDescription"`
 
-				// GateName Human Design keynote name of the gate, describing its bodygraph function.
+				// GateName Human Design keynote name of the gate, describing its bodygraph function. Always English, whatever the lang parameter says. Use gateNameLocalized for anything a reader sees.
 				GateName string `json:"gateName"`
+
+				// GateNameLocalized Gate keynote name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				GateNameLocalized *string `json:"gateNameLocalized,omitempty"`
 
 				// IchingHexagram Cross-reference to the I-Ching hexagram that shares this gate number.
 				IchingHexagram struct {
@@ -103238,11 +104405,14 @@ func ParseCalculateGatesResponse(rsp *http.Response) (*CalculateGatesResponse, e
 				// LineMeaning Meaning of this gate at this specific line, one of 384. The finest interpretive layer in the chart and the one that makes a reading specific rather than generic. This is not the six abstract line archetypes: gate 41 line 3 carries its own meaning that neither the gate keynote nor the line-3 archetype holds alone.
 				LineMeaning string `json:"lineMeaning"`
 
-				// Planet Activating body. One of Sun, Earth, Moon, North Node, South Node, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto.
+				// Planet Activating body. One of Sun, Earth, Moon, North Node, South Node, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto. Always English, whatever the lang parameter says, so it stays safe to compare against in code and to key a glyph table on. Use planetLocalized for anything a reader sees.
 				Planet string `json:"planet"`
 
 				// PlanetDescription What this planetary activation contributes in Human Design specifically, which is not its meaning in western astrology.
 				PlanetDescription string `json:"planetDescription"`
+
+				// PlanetLocalized Activating body name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				PlanetLocalized *string `json:"planetLocalized,omitempty"`
 
 				// Side Chart side. personality is the conscious birth-moment activation, design is the unconscious activation 88 degrees of solar arc before birth.
 				Side string `json:"side"`
@@ -103325,13 +104495,19 @@ func ParseGetGateResponse(rsp *http.Response) (*GetGateResponse, error) {
 			// Center Center the gate sits in.
 			Center string `json:"center"`
 
-			// CenterName Display name of the center.
+			// CenterName Display name of the center. Always English, whatever the lang parameter says. Use centerNameLocalized for anything a reader sees.
 			CenterName string `json:"centerName"`
+
+			// CenterNameLocalized Center name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			CenterNameLocalized *string `json:"centerNameLocalized,omitempty"`
 
 			// ChannelPartners Gates that form a channel with this gate, with the channel name for each.
 			ChannelPartners []struct {
-				// Channel Name of the shared channel.
+				// Channel Name of the shared channel. Always English, whatever the lang parameter says. Use channelLocalized for anything a reader sees.
 				Channel string `json:"channel"`
+
+				// ChannelLocalized Channel name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				ChannelLocalized *string `json:"channelLocalized,omitempty"`
 
 				// Gate Partner gate number.
 				Gate float32 `json:"gate"`
@@ -103346,8 +104522,11 @@ func ParseGetGateResponse(rsp *http.Response) (*GetGateResponse, error) {
 				Number float32 `json:"number"`
 			} `json:"ichingHexagram"`
 
-			// Name Human Design keynote name of the gate.
+			// Name Human Design keynote name of the gate. Always English, whatever the lang parameter says. Use nameLocalized for anything a reader sees.
 			Name string `json:"name"`
+
+			// NameLocalized Gate keynote name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			NameLocalized *string `json:"nameLocalized,omitempty"`
 
 			// Number Gate number from 1 to 64.
 			Number float32 `json:"number"`
@@ -103435,8 +104614,11 @@ func ParseCalculatePentaResponse(rsp *http.Response) (*CalculatePentaResponse, e
 		var dest struct {
 			// Channels The six channels of the Penta with their defined Strength state and which members supply each gate. Three upper channels run G to Throat (The Alpha, Inspiration, The Prodigal); three lower channels run G to Sacral (Rhythm, The Beat, Discovery).
 			Channels []struct {
-				// Circuit Circuit family of the channel. One of Individual, Collective, Tribal.
+				// Circuit Circuit family of the channel. One of Individual, Collective, Tribal. Always English, whatever the lang parameter says. Use circuitLocalized for anything a reader sees.
 				Circuit string `json:"circuit"`
+
+				// CircuitLocalized Circuit family name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				CircuitLocalized *string `json:"circuitLocalized,omitempty"`
 
 				// Defined Whether the channel is a defined Strength: both of its gates are present somewhere in the group, so the function it governs has no gap.
 				Defined bool `json:"defined"`
@@ -103456,8 +104638,11 @@ func ParseCalculatePentaResponse(rsp *http.Response) (*CalculatePentaResponse, e
 				// IsCore Whether this is the 2/14 Channel of the Beat, the material core of the Penta vortex: gate 2 the direction for resources, gate 14 the resources themselves.
 				IsCore bool `json:"isCore"`
 
-				// Name Name of the Penta channel. One of The Alpha, Inspiration, The Prodigal, Rhythm, The Beat, Discovery.
+				// Name Name of the Penta channel. One of The Alpha, Inspiration, The Prodigal, Rhythm, The Beat, Discovery. Always English, whatever the lang parameter says. Use nameLocalized for anything a reader sees.
 				Name string `json:"name"`
+
+				// NameLocalized Penta channel name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				NameLocalized *string `json:"nameLocalized,omitempty"`
 
 				// Position Position of the channel in the Penta. upper channels run from the G Center to the Throat and carry the leadership and how-the-group-presents roles. lower channels run from the G Center to the Sacral and carry the managed, generative, resource roles.
 				Position string `json:"position"`
@@ -103471,8 +104656,11 @@ func ParseCalculatePentaResponse(rsp *http.Response) (*CalculatePentaResponse, e
 				// Gate Penta gate number. One of 1, 2, 5, 7, 8, 13, 14, 15, 29, 31, 33, 46.
 				Gate float32 `json:"gate"`
 
-				// GateName Human Design keynote name of the gate, describing the role it brings to the group.
+				// GateName Human Design keynote name of the gate, describing the role it brings to the group. Always English, whatever the lang parameter says. Use gateNameLocalized for anything a reader sees.
 				GateName string `json:"gateName"`
+
+				// GateNameLocalized Gate keynote name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				GateNameLocalized *string `json:"gateNameLocalized,omitempty"`
 
 				// HeldBy Zero-based indices of the members whose chart holds this gate. Empty when the gate is a gap.
 				HeldBy []float32 `json:"heldBy"`
@@ -103661,14 +104849,20 @@ func ParseGenerateTransitResponse(rsp *http.Response) (*GenerateTransitResponse,
 		var dest struct {
 			// Activations The 13 transiting bodies at this moment with the gate and line each currently activates. A transit is a single instant, so there is no Design side, only current positions.
 			Activations []struct {
-				// Body Transiting body whose current position lands on this gate. One of Sun, Earth, Moon, North Node, South Node, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto.
+				// Body Transiting body whose current position lands on this gate. One of Sun, Earth, Moon, North Node, South Node, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto. Always English, whatever the lang parameter says, so it stays safe to compare against in code and to key a glyph table on. Use bodyLocalized for anything a reader sees.
 				Body string `json:"body"`
+
+				// BodyLocalized Transiting body name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				BodyLocalized *string `json:"bodyLocalized,omitempty"`
 
 				// Gate Human Design gate number from 1 to 64 this transiting body currently sits in.
 				Gate float32 `json:"gate"`
 
-				// GateName Human Design keynote name of the gate the transiting body activates.
+				// GateName Human Design keynote name of the gate the transiting body activates. Always English, whatever the lang parameter says. Use gateNameLocalized for anything a reader sees.
 				GateName string `json:"gateName"`
+
+				// GateNameLocalized Gate keynote name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				GateNameLocalized *string `json:"gateNameLocalized,omitempty"`
 
 				// IchingHexagram Cross-reference to the I-Ching hexagram that shares this gate number.
 				IchingHexagram struct {
@@ -103688,8 +104882,11 @@ func ParseGenerateTransitResponse(rsp *http.Response) (*GenerateTransitResponse,
 				// Centers The two centers this channel connects and temporarily defines.
 				Centers []string `json:"centers"`
 
-				// Circuit Circuit family of the channel. One of Individual, Collective, Tribal.
+				// Circuit Circuit family of the channel. One of Individual, Collective, Tribal. Always English, whatever the lang parameter says. Use circuitLocalized for anything a reader sees.
 				Circuit string `json:"circuit"`
+
+				// CircuitLocalized Circuit family name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				CircuitLocalized *string `json:"circuitLocalized,omitempty"`
 
 				// GateA First gate of the completed channel.
 				GateA float32 `json:"gateA"`
@@ -103697,11 +104894,17 @@ func ParseGenerateTransitResponse(rsp *http.Response) (*GenerateTransitResponse,
 				// GateB Second gate of the completed channel.
 				GateB float32 `json:"gateB"`
 
-				// Kind How the transit completes the channel. personal means the natal chart already holds one gate and the transit supplies the other, the classic electromagnetic completion. educational means both gates are open in the natal chart and the transit supplies both at once.
+				// Kind How the transit completes the channel. personal means the natal chart already holds one gate and the transit supplies the other, the classic electromagnetic completion. educational means both gates are open in the natal chart and the transit supplies both at once. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use kindLocalized for anything a reader sees.
 				Kind string `json:"kind"`
 
-				// Name Name of the channel the transit temporarily completes.
+				// KindLocalized Completion kind name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				KindLocalized *string `json:"kindLocalized,omitempty"`
+
+				// Name Name of the channel the transit temporarily completes. Always English, whatever the lang parameter says. Use nameLocalized for anything a reader sees.
 				Name string `json:"name"`
+
+				// NameLocalized Channel name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				NameLocalized *string `json:"nameLocalized,omitempty"`
 
 				// NatalGates Gate or gates of this channel the natal chart already holds. Empty for an educational channel.
 				NatalGates []float32 `json:"natalGates"`
@@ -103721,8 +104924,11 @@ func ParseGenerateTransitResponse(rsp *http.Response) (*GenerateTransitResponse,
 				// ID Center identifier. One of head, ajna, throat, g, heart, sacral, solar-plexus, spleen, root.
 				ID string `json:"id"`
 
-				// Name Display name of the center.
+				// Name Display name of the center. Always English, whatever the lang parameter says. Use nameLocalized for anything a reader sees.
 				Name string `json:"name"`
+
+				// NameLocalized Center name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				NameLocalized *string `json:"nameLocalized,omitempty"`
 
 				// TemporarilyDefined Always true. The center is open in the natal chart and temporarily defined by a transit-completed channel for the duration of the transit.
 				TemporarilyDefined bool `json:"temporarilyDefined"`
@@ -103811,32 +105017,47 @@ func ParseCalculateTypeResponse(rsp *http.Response) (*CalculateTypeResponse, err
 			// Aura The aura mechanic of the type: how the energy field itself operates, for example open and enveloping, or closed and repelling.
 			Aura string `json:"aura"`
 
-			// Authority Inner authority for decision making. One of Emotional, Sacral, Splenic, Ego, Self-Projected, Mental, Lunar.
+			// Authority Inner authority for decision making. One of Emotional, Sacral, Splenic, Ego, Self-Projected, Mental, Lunar. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use authorityLocalized for anything a reader sees.
 			Authority string `json:"authority"`
 
 			// AuthorityDescription How the decision is made, the timing it requires, and the characteristic trap. Inner authority is the most actionable output of a Human Design chart.
 			AuthorityDescription string `json:"authorityDescription"`
 
-			// NotSelf The not-self theme that signals being out of alignment.
+			// AuthorityLocalized Inner authority name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			AuthorityLocalized *string `json:"authorityLocalized,omitempty"`
+
+			// NotSelf The not-self theme that signals being out of alignment. Always English, whatever the lang parameter says. Use notSelfLocalized for anything a reader sees.
 			NotSelf string `json:"notSelf"`
+
+			// NotSelfLocalized Not-self theme name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			NotSelfLocalized *string `json:"notSelfLocalized,omitempty"`
 
 			// Profile Profile from the Personality Sun line over the Design Sun line.
 			Profile string `json:"profile"`
 
-			// Signature The signature feeling of living in alignment.
+			// Signature The signature feeling of living in alignment. Always English, whatever the lang parameter says. Use signatureLocalized for anything a reader sees.
 			Signature string `json:"signature"`
 
-			// Strategy The aura strategy for engaging life correctly for this type.
+			// SignatureLocalized Signature theme name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			SignatureLocalized *string `json:"signatureLocalized,omitempty"`
+
+			// Strategy The aura strategy for engaging life correctly for this type. Always English, whatever the lang parameter says. Use strategyLocalized for anything a reader sees.
 			Strategy string `json:"strategy"`
 
 			// StrategyDescription How to actually apply the strategy. The strategy field alone is a bare label such as Respond or Inform; this is the operating instruction behind it.
 			StrategyDescription string `json:"strategyDescription"`
 
-			// Type Human Design energy type. One of Manifestor, Generator, Manifesting Generator, Projector, Reflector.
+			// StrategyLocalized Strategy name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			StrategyLocalized *string `json:"strategyLocalized,omitempty"`
+
+			// Type Human Design energy type. One of Manifestor, Generator, Manifesting Generator, Projector, Reflector. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use typeLocalized for anything a reader sees.
 			Type string `json:"type"`
 
 			// TypeDescription What the aura of this type does and how it is designed to engage life. The grounding text for the type label, so a consuming agent does not have to supply the meaning itself.
 			TypeDescription string `json:"typeDescription"`
+
+			// TypeLocalized Energy type name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			TypeLocalized *string `json:"typeLocalized,omitempty"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -103926,23 +105147,32 @@ func ParseCalculateVariablesResponse(rsp *http.Response) (*CalculateVariablesRes
 				// Base Base number from 1 to 5, the finest published subdivision of the wheel. Returned for completeness but treated as informational, since it is finer than most birth times can resolve.
 				Base float32 `json:"base"`
 
-				// BaseName Name of the Base. Informational only: the Base is finer than any civil birth time can resolve.
+				// BaseName Name of the Base. Informational only: the Base is finer than any civil birth time can resolve. Always English, whatever the lang parameter says. Use baseNameLocalized for anything a reader sees.
 				BaseName string `json:"baseName"`
+
+				// BaseNameLocalized Base name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				BaseNameLocalized *string `json:"baseNameLocalized,omitempty"`
 
 				// Cognition Cognition, the strongest sense, read off the Determination Tone. Present on the determination arrow ONLY: no authority supports reading Cognition from the other three arrows, so it is omitted rather than invented.
 				Cognition *struct {
 					// Description How this Cognition discriminates what is correct for the body, and the conditions that sharpen it. Renderable as the Cognition paragraph of a Variables or Primary Health System report.
 					Description string `json:"description"`
 
-					// Label Name of the Cognition, the strongest sense. One of six read off the Determination Tone: Smell, Taste, Outer Vision, Inner Vision, Feeling, Touch.
+					// Label Name of the Cognition, the strongest sense. One of six read off the Determination Tone: Smell, Taste, Outer Vision, Inner Vision, Feeling, Touch. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use labelLocalized for anything a reader sees.
 					Label string `json:"label"`
+
+					// LabelLocalized Cognition name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+					LabelLocalized *string `json:"labelLocalized,omitempty"`
 				} `json:"cognition,omitempty"`
 
 				// Color Color number from 1 to 6, the substructure level one octave finer than the line. Color selects the arrow theme, for example the determination family or the motivation.
 				Color float32 `json:"color"`
 
-				// ColorLabel Name of the Color theme for this arrow, for example a determination family such as Touch, an environment such as Mountains, a perspective such as Personal, or a motivation such as Hope.
+				// ColorLabel Name of the Color theme for this arrow, for example a determination family such as Touch, an environment such as Mountains, a perspective such as Personal, or a motivation such as Hope. Always English, whatever the lang parameter says. Use colorLabelLocalized for anything a reader sees.
 				ColorLabel string `json:"colorLabel"`
+
+				// ColorLabelLocalized Color theme name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				ColorLabelLocalized *string `json:"colorLabelLocalized,omitempty"`
 
 				// ColorMeaning Meaning of the Color for THIS arrow. The same Color number means something different under Determination than under Motivation, so this is the reading of colorLabel in context, not a generic gloss.
 				ColorMeaning string `json:"colorMeaning"`
@@ -103956,8 +105186,11 @@ func ParseCalculateVariablesResponse(rsp *http.Response) (*CalculateVariablesRes
 				// Direction Arrow direction derived from the Tone. left for tones 1 to 3, right for tones 4 to 6.
 				Direction string `json:"direction"`
 
-				// DirectionLabel Keynote of the arrow direction for this arrow, for example Active or Passive for Determination, Focused or Peripheral for Perspective.
+				// DirectionLabel Keynote of the arrow direction for this arrow, for example Active or Passive for Determination, Focused or Peripheral for Perspective. Always English, whatever the lang parameter says. Use directionLabelLocalized for anything a reader sees.
 				DirectionLabel string `json:"directionLabel"`
+
+				// DirectionLabelLocalized Arrow direction keynote in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				DirectionLabelLocalized *string `json:"directionLabelLocalized,omitempty"`
 
 				// DirectionMeaning Meaning of the left or right direction for THIS arrow, the reading of directionLabel.
 				DirectionMeaning string `json:"directionMeaning"`
@@ -103965,17 +105198,26 @@ func ParseCalculateVariablesResponse(rsp *http.Response) (*CalculateVariablesRes
 				// Key Stable arrow identifier. One of determination, environment, perspective, motivation.
 				Key string `json:"key"`
 
-				// Layer Which half of the advanced layer the arrow belongs to. Primary Health System covers the body-side Determination and Environment arrows, Rave Psychology covers the mind-side Perspective and Motivation arrows.
+				// Layer Which half of the advanced layer the arrow belongs to. Primary Health System covers the body-side Determination and Environment arrows, Rave Psychology covers the mind-side Perspective and Motivation arrows. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use layerLocalized for anything a reader sees.
 				Layer string `json:"layer"`
 
 				// LayerDescription What the layer this arrow belongs to governs, the body side or the mind side.
 				LayerDescription string `json:"layerDescription"`
 
-				// Name Arrow name. Determination is the top-left arrow governing the Primary Health System and digestion, Environment the bottom-left arrow, Perspective the bottom-right arrow also called View, and Motivation the top-right arrow.
+				// LayerLocalized Layer name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				LayerLocalized *string `json:"layerLocalized,omitempty"`
+
+				// Name Arrow name. Determination is the top-left arrow governing the Primary Health System and digestion, Environment the bottom-left arrow, Perspective the bottom-right arrow also called View, and Motivation the top-right arrow. Always English, whatever the lang parameter says. Use nameLocalized for anything a reader sees.
 				Name string `json:"name"`
 
-				// Position Position of the arrow at the head of the bodygraph. One of Top left, Bottom left, Top right, Bottom right.
+				// NameLocalized Arrow name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				NameLocalized *string `json:"nameLocalized,omitempty"`
+
+				// Position Position of the arrow at the head of the bodygraph. One of Top left, Bottom left, Top right, Bottom right. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use positionLocalized for anything a reader sees.
 				Position string `json:"position"`
+
+				// PositionLocalized Arrow position name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				PositionLocalized *string `json:"positionLocalized,omitempty"`
 
 				// Tone Tone number from 1 to 6, the substructure level beneath Color. Tone sets the arrow direction: tones 1 to 3 face left, tones 4 to 6 face right.
 				Tone float32 `json:"tone"`
@@ -105110,7 +106352,7 @@ func ParseListCountriesResponse(rsp *http.Response) (*ListCountriesResponse, err
 		var dest struct {
 			// Countries Countries for the current page, sorted alphabetically by name.
 			Countries []struct {
-				// CityCount Number of searchable cities available for this country. Useful for showing coverage in UI or deciding whether to offer city search for a given country.
+				// CityCount Number of searchable places in this country, including small towns and administrative seats. Useful for showing coverage in a UI or sizing a dependent city dropdown.
 				CityCount float32 `json:"cityCount"`
 
 				// Iso2 ISO 3166-1 alpha-2 country code. Use as the identifier when fetching cities for a specific country via the /countries/{iso2} endpoint.
@@ -105129,7 +106371,7 @@ func ParseListCountriesResponse(rsp *http.Response) (*ListCountriesResponse, err
 			// Offset Number of countries skipped. Use with limit for pagination.
 			Offset float32 `json:"offset"`
 
-			// Total Total number of countries available.
+			// Total Total number of countries with at least one place in the dataset.
 			Total float32 `json:"total"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
@@ -105223,16 +106465,16 @@ func ParseGetCitiesByCountryResponse(rsp *http.Response) (*GetCitiesByCountryRes
 				// Longitude Geographic longitude in decimal degrees (-180 to 180). Pass directly to astrology, horoscope, and panchang API endpoints alongside latitude.
 				Longitude float32 `json:"longitude"`
 
-				// Population City population estimate from geographic databases. Larger cities rank higher in search results, ensuring major metropolitan areas appear first in autocomplete suggestions.
+				// Population Population estimate for the place. Breaks ties between results of equal match quality, so among several places matching equally well the largest leads. It never outranks a better match, which is why a small town still wins when its name is typed exactly. May be 0 for a hamlet or administrative seat that carries no published figure.
 				Population float32 `json:"population"`
 
-				// Province State, province, canton, or administrative region. Helps disambiguate cities with the same name across regions (e.g. Springfield IL vs Springfield MO).
+				// Province State, province, canton, or administrative region. Show it whenever more than one result comes back: it is what separates Richfield, Utah from Richfield, Minnesota, and the six US Springfields from each other. Empty for the small number of places with no administrative division recorded.
 				Province string `json:"province"`
 
-				// Timezone IANA timezone identifier following the tz database standard (e.g. Europe/Berlin, America/New_York, Asia/Tokyo). Use with JavaScript Date, Luxon, day.js, or any date library for accurate local time conversion.
+				// Timezone IANA timezone identifier following the tz database standard (e.g. Europe/Berlin, America/New_York, Asia/Tokyo). Always present. Pass THIS, not the numeric offset, into any chart or panchang request for a past date: the calculation endpoints resolve it to the offset that was actually in force on that date, including historical daylight saving. Also works directly with JavaScript Date, Luxon, day.js, or any date library.
 				Timezone string `json:"timezone"`
 
-				// UtcOffset Current UTC offset in decimal hours, automatically adjusted for daylight saving time. Pass directly as the timezone parameter in astrology API endpoints. Examples: 1 for CET, 2 for CEST, -5 for EST, 5.5 for IST, 5.75 for Nepal.
+				// UtcOffset UTC offset in decimal hours for TODAY at this place, already adjusted for daylight saving. Convenient for displaying local time now. For a birth date or any past date use the `timezone` field instead, since the offset in force then may differ. Examples: 1 for CET, 2 for CEST, -5 for EST, 5.5 for IST, 5.75 for Nepal.
 				UtcOffset float32 `json:"utcOffset"`
 			} `json:"cities"`
 
@@ -105242,7 +106484,7 @@ func ParseGetCitiesByCountryResponse(rsp *http.Response) (*GetCitiesByCountryRes
 			// Offset Number of cities skipped. Use with limit for pagination.
 			Offset float32 `json:"offset"`
 
-			// Total Total number of cities available for this country.
+			// Total Total number of places available for this country across all pages.
 			Total float32 `json:"total"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
@@ -105319,7 +106561,7 @@ func ParseSearchCitiesResponse(rsp *http.Response) (*SearchCitiesResponse, error
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
-			// Cities City results for the current page, sorted by relevance (prefix match first) then population.
+			// Cities Matching places for the current page, best match first. Ordered by match quality, then population within equal quality: an exact name beats a qualified name such as richfield, utah, which beats a name merely starting with the query, which beats an incidental match on state or country. Take the first entry when total is 1, otherwise disambiguate on province and country.
 			Cities []struct {
 				// City City name as commonly used. Matches the local or internationally recognized name for the location.
 				City string `json:"city"`
@@ -105336,26 +106578,26 @@ func ParseSearchCitiesResponse(rsp *http.Response) (*SearchCitiesResponse, error
 				// Longitude Geographic longitude in decimal degrees (-180 to 180). Pass directly to astrology, horoscope, and panchang API endpoints alongside latitude.
 				Longitude float32 `json:"longitude"`
 
-				// Population City population estimate from geographic databases. Larger cities rank higher in search results, ensuring major metropolitan areas appear first in autocomplete suggestions.
+				// Population Population estimate for the place. Breaks ties between results of equal match quality, so among several places matching equally well the largest leads. It never outranks a better match, which is why a small town still wins when its name is typed exactly. May be 0 for a hamlet or administrative seat that carries no published figure.
 				Population float32 `json:"population"`
 
-				// Province State, province, canton, or administrative region. Helps disambiguate cities with the same name across regions (e.g. Springfield IL vs Springfield MO).
+				// Province State, province, canton, or administrative region. Show it whenever more than one result comes back: it is what separates Richfield, Utah from Richfield, Minnesota, and the six US Springfields from each other. Empty for the small number of places with no administrative division recorded.
 				Province string `json:"province"`
 
-				// Timezone IANA timezone identifier following the tz database standard (e.g. Europe/Berlin, America/New_York, Asia/Tokyo). Use with JavaScript Date, Luxon, day.js, or any date library for accurate local time conversion.
+				// Timezone IANA timezone identifier following the tz database standard (e.g. Europe/Berlin, America/New_York, Asia/Tokyo). Always present. Pass THIS, not the numeric offset, into any chart or panchang request for a past date: the calculation endpoints resolve it to the offset that was actually in force on that date, including historical daylight saving. Also works directly with JavaScript Date, Luxon, day.js, or any date library.
 				Timezone string `json:"timezone"`
 
-				// UtcOffset Current UTC offset in decimal hours, automatically adjusted for daylight saving time. Pass directly as the timezone parameter in astrology API endpoints. Examples: 1 for CET, 2 for CEST, -5 for EST, 5.5 for IST, 5.75 for Nepal.
+				// UtcOffset UTC offset in decimal hours for TODAY at this place, already adjusted for daylight saving. Convenient for displaying local time now. For a birth date or any past date use the `timezone` field instead, since the offset in force then may differ. Examples: 1 for CET, 2 for CEST, -5 for EST, 5.5 for IST, 5.75 for Nepal.
 				UtcOffset float32 `json:"utcOffset"`
 			} `json:"cities"`
 
 			// Limit Page size used for this response.
 			Limit float32 `json:"limit"`
 
-			// Offset Number of cities skipped. Use with limit for pagination.
+			// Offset Number of places skipped. Use with limit to page through results.
 			Offset float32 `json:"offset"`
 
-			// Total Total number of cities matching the search query.
+			// Total Number of places matching the query across all pages, not the number returned in this response. Greater than 1 means the name is ambiguous, so show province and country and let the user confirm before using the result for a chart.
 			Total float32 `json:"total"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
@@ -115074,15 +116316,30 @@ func ParseCalculateTransitResponse(rsp *http.Response) (*CalculateTransitRespons
 			// BirthDatetime Birth datetime used for the natal chart, echoed as the local civil date and time supplied in the request (YYYY-MM-DDTHH:MM:SS). Combine it with the timezone field to recover the UTC instant.
 			BirthDatetime string `json:"birthDatetime"`
 
+			// Frame The zodiac frame every longitude in this response was computed in, so a cached or forwarded payload is self describing. Sidereal requests report the Lahiri ayanamsa, read at the birth instant; the transit positions use the same named frame resolved at their own instant, which moves by about 50 arcseconds a year. A tropical request reports "tropical" with 0 degrees subtracted, which is the one case a Vedic table can otherwise be rendered in the wrong zodiac with nothing on screen saying so.
+			Frame struct {
+				// Ayanamsa Sidereal frame this chart was cast in, echoing the ayanamsa request field. "lahiri" when the field was omitted.
+				Ayanamsa string `json:"ayanamsa"`
+
+				// AyanamsaDegrees Degrees actually subtracted from every tropical longitude to produce this chart, read at the birth instant. Subtract it back to recover the tropical positions, or compare it against your reference software to confirm you are in the same frame before chasing a placement difference.
+				AyanamsaDegrees float32 `json:"ayanamsaDegrees"`
+			} `json:"frame"`
+
 			// KeyTransits Highlighted transits from slow-moving planets (Jupiter, Saturn, Rahu, Ketu), most impactful for Gochar analysis.
 			KeyTransits []struct {
-				// Aspects Notable aspects to natal planets from this slow-moving transiting planet.
+				// Aspects Notable degree-based angular aspects to natal planets from this slow-moving transiting planet, in Western vocabulary.
 				Aspects []string `json:"aspects"`
 
-				// Description Human-readable transit summary.
+				// Description Human-readable transit summary, naming the rashi being transited and both house readings: from the Lagna, then from the natal Moon.
 				Description string `json:"description"`
 
-				// NatalHouse Natal house being transited by this slow planet.
+				// Drishti Graha drishti this slow-moving transiting graha casts on the natal grahas, the Vedic reading. Empty for Rahu and Ketu, which cast none.
+				Drishti []string `json:"drishti"`
+
+				// HouseFromMoon House being transited by this slow graha counted from the natal Moon sign (Janma Rashi), the classical Gochara reference. Mirrors houseFromMoon on the matching transitingPlanets entry.
+				HouseFromMoon float32 `json:"houseFromMoon"`
+
+				// NatalHouse Natal house being transited by this slow graha, counted whole-sign from the Lagna. Mirrors natalHouse on the matching transitingPlanets entry.
 				NatalHouse float32 `json:"natalHouse"`
 
 				// Planet Slow-moving planet (Jupiter, Saturn, Rahu, Ketu) forming a significant transit.
@@ -115109,9 +116366,9 @@ func ParseCalculateTransitResponse(rsp *http.Response) (*CalculateTransitRespons
 
 			// TransitingPlanets Current planetary positions overlaid on the natal chart with house placements, aspects, and the Gochara Kaksha verdict for each graha.
 			TransitingPlanets []struct {
-				// AspectsToNatal Aspects formed between this transiting planet and natal planets.
+				// AspectsToNatal Degree-based angular aspects between this transiting graha and the natal grahas. Western vocabulary, kept for callers who read a chart that way; drishtiToNatal is the Vedic answer to the same question.
 				AspectsToNatal []struct {
-					// AspectType Aspect type: conjunction, opposition, trine, square, or sextile.
+					// AspectType Degree-based angular aspect between the two longitudes: conjunction, opposition, trine, square, or sextile. This is the Western aspect vocabulary and it is offered for charts read that way. Parashari jyotish has no sextile, square or trine, so for the Vedic reading use drishtiToNatal, which reports graha drishti by house count.
 					AspectType string `json:"aspectType"`
 
 					// NatalPlanet Natal planet being aspected by this transiting planet.
@@ -115120,6 +116377,24 @@ func ParseCalculateTransitResponse(rsp *http.Response) (*CalculateTransitRespons
 					// Orb Angular distance from exact aspect in degrees. Smaller orb = stronger influence.
 					Orb float32 `json:"orb"`
 				} `json:"aspectsToNatal"`
+
+				// DrishtiToNatal Graha drishti cast by this transiting graha onto the natal grahas, the Vedic reading of transit-to-natal aspects. Rahu and Ketu cast none. Empty when this graha reaches no occupied natal sign.
+				DrishtiToNatal []struct {
+					// AspectType Which house the drishti falls on, counted whole-sign and inclusively from the transiting graha. Every graha aspects the 7th; Mars adds the 4th and 8th, Jupiter the 5th and 9th, Saturn the 3rd and 10th. Same vocabulary the /aspects endpoint returns, so the two can be compared directly.
+					AspectType CalculateTransit200JSONResponseBodyTransitingPlanetsDrishtiToNatalAspectType `json:"aspectType"`
+
+					// NatalPlanet Natal graha receiving the drishti from this transiting graha.
+					NatalPlanet string `json:"natalPlanet"`
+
+					// Orb Gap between the two degrees-in-sign, in degrees. Graha drishti is whole-sign and does not depend on this, so read it as how exact the sight is inside the pair of rashis rather than as a condition for the aspect.
+					Orb float32 `json:"orb"`
+
+					// Strength Drishti strength as a percentage. Full and special aspects are 100; the partial quarter, half and three-quarter sights are not reported.
+					Strength float32 `json:"strength"`
+				} `json:"drishtiToNatal"`
+
+				// HouseFromMoon Which house this graha is transiting counted from the natal Moon sign (Janma Rashi), 1-12 whole-sign and counted inclusively, so the Moon sign itself is 1. This is the number classical Gochara is reckoned in: Phaladeepika chapter 26 opens by saying that of all the Lagnas only the Moon Lagna matters for transit results, and the Vedha and Ashtakavarga transit rules are counted from the Moon throughout. The reference sign is the sign of the Moon entry in natalPlanets, so a client can label the column without a second request.
+				HouseFromMoon float32 `json:"houseFromMoon"`
 
 				// Kaksha Gochara Kaksha: the ashtakavarga-qualified reading of this transit. The sign says where a graha is, this says whether the exact stretch it currently occupies is one its own Bhinnashtakavarga supports, which is the classical way of refining a transit verdict from sign-level to under four degrees.
 				Kaksha struct {
@@ -115148,7 +116423,7 @@ func ParseCalculateTransitResponse(rsp *http.Response) (*CalculateTransitRespons
 				// Name Transiting planet name.
 				Name string `json:"name"`
 
-				// NatalHouse Which natal house (whole-sign bhava from the Lagna) this planet is currently transiting through. Key for Gochar predictions.
+				// NatalHouse Which natal house (whole-sign bhava counted from the Lagna) this graha is currently transiting through. This is the Lagna reading of the transit, which is what a transit chart drawn over the birth chart shows. For the house classical Gochara is judged from, read houseFromMoon instead.
 				NatalHouse float32 `json:"natalHouse"`
 
 				// Sign Current zodiac sign of the transiting planet.
