@@ -3456,6 +3456,33 @@ func (e NatalChartResponsePatternsModality) Valid() bool {
 	}
 }
 
+// Defines values for NatalChartResponsePlanetsDignity.
+const (
+	Detriment  NatalChartResponsePlanetsDignity = "detriment"
+	Domicile   NatalChartResponsePlanetsDignity = "domicile"
+	Exaltation NatalChartResponsePlanetsDignity = "exaltation"
+	Fall       NatalChartResponsePlanetsDignity = "fall"
+	Peregrine  NatalChartResponsePlanetsDignity = "peregrine"
+)
+
+// Valid indicates whether the value is a known member of the NatalChartResponsePlanetsDignity enum.
+func (e NatalChartResponsePlanetsDignity) Valid() bool {
+	switch e {
+	case Detriment:
+		return true
+	case Domicile:
+		return true
+	case Exaltation:
+		return true
+	case Fall:
+		return true
+	case Peregrine:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for NavamsaRequestAyanamsa.
 const (
 	NavamsaRequestAyanamsaCustom    NavamsaRequestAyanamsa = "custom"
@@ -19550,7 +19577,7 @@ type AspectsResponse struct {
 		// Angle Exact angle defining this aspect type in degrees.
 		Angle float32 `json:"angle"`
 
-		// Interpretation Aspect nature: harmonious, challenging, or neutral.
+		// Interpretation Aspect nature for this pair: harmonious, challenging, or neutral. Always English, whatever the lang parameter says, because it is an identifier to compare and style on. This is the field to branch on; meaning.nature is the reference card characterisation of the aspect type and is translated for display.
 		Interpretation string `json:"interpretation"`
 
 		// IsApplying Whether the aspect is applying (growing stronger) or separating (fading).
@@ -19573,7 +19600,7 @@ type AspectsResponse struct {
 			// Name Aspect display name.
 			Name string `json:"name"`
 
-			// Nature Aspect nature classification.
+			// Nature How this aspect type is characterised in its reference card, in the requested language, exactly like the name, description and keywords beside it. This is a property of the aspect TYPE, so branch on the aspect-level interpretation field instead, which is always English and is the classification applied to this particular pair.
 			Nature string `json:"nature"`
 		} `json:"meaning,omitempty"`
 
@@ -23674,7 +23701,16 @@ type NatalChartResponse struct {
 		// Angle Exact angle of this aspect type in degrees.
 		Angle float32 `json:"angle"`
 
-		// Interpretation Aspect nature: harmonious, challenging, or neutral.
+		// AspectInterpretation Narrative interpretation of this aspect for this chart. The reference description of the aspect TYPE is not repeated per row, use GET or POST /astrology/aspects for that card.
+		AspectInterpretation struct {
+			// Keywords Themes this aspect activates between the two bodies. Translated in place, so they arrive in the requested language.
+			Keywords []string `json:"keywords"`
+
+			// Summary One-sentence read of THIS pair: which two bodies, how tight the aspect is, whether it is applying or separating, and how it is classified. Translated in place, so it arrives in the requested language.
+			Summary string `json:"summary"`
+		} `json:"aspectInterpretation"`
+
+		// Interpretation Aspect nature: harmonious, challenging, or neutral. Always English, whatever the lang parameter says, because it is an identifier to compare and style on. Read aspectInterpretation for the sentence a reader sees.
 		Interpretation string `json:"interpretation"`
 
 		// IsApplying Whether the aspect is applying (growing stronger) or separating (fading).
@@ -23836,6 +23872,9 @@ type NatalChartResponse struct {
 		// Degree Degree within the zodiac sign (0-29.999).
 		Degree float32 `json:"degree"`
 
+		// Dignity Essential dignity of this body in the sign it occupies: domicile (the sign it rules, its strongest placement), exaltation (honoured and amplified), detriment (opposite its rulership, where it struggles), fall (opposite its exaltation, where it is weakened), or peregrine (in none of its own dignity signs). Absent for the lunar nodes, Chiron and Black Moon Lilith, which rule no sign and therefore hold no dignity at all, so an absent field and peregrine are different answers. Derived by sign only, so triplicity, bounds and face are not considered. Always English, whatever the lang parameter says, so it stays safe to compare against in code. The four dignity signs behind it are published per body by GET /planet-meanings/{id}.
+		Dignity *NatalChartResponsePlanetsDignity `json:"dignity,omitempty"`
+
 		// House House placement (1-12) based on the selected house system.
 		House float32 `json:"house"`
 
@@ -23930,6 +23969,9 @@ type NatalChartResponsePatternsKind string
 
 // NatalChartResponsePatternsModality Dominant modality for tension-based patterns (T-Square, Grand Cross). Cardinal initiates, Fixed sustains, Mutable adapts.
 type NatalChartResponsePatternsModality string
+
+// NatalChartResponsePlanetsDignity Essential dignity of this body in the sign it occupies: domicile (the sign it rules, its strongest placement), exaltation (honoured and amplified), detriment (opposite its rulership, where it struggles), fall (opposite its exaltation, where it is weakened), or peregrine (in none of its own dignity signs). Absent for the lunar nodes, Chiron and Black Moon Lilith, which rule no sign and therefore hold no dignity at all, so an absent field and peregrine are different answers. Derived by sign only, so triplicity, bounds and face are not considered. Always English, whatever the lang parameter says, so it stays safe to compare against in code. The four dignity signs behind it are published per body by GET /planet-meanings/{id}.
+type NatalChartResponsePlanetsDignity string
 
 // NavamsaRequest defines model for NavamsaRequest.
 type NavamsaRequest struct {
@@ -60655,7 +60697,7 @@ type GenerateCompositeChartResponse struct {
 			// Angle Exact angular separation that defines this aspect type in degrees.
 			Angle float32 `json:"angle"`
 
-			// Interpretation Aspect nature. Harmonious (trine, sextile) flows easily. Challenging (square, opposition) creates tension and growth. Neutral (conjunction) blends energies.
+			// Interpretation Aspect nature. Harmonious (trine, sextile) flows easily. Challenging (square, opposition) creates tension and growth. Neutral (conjunction) blends energies. Always English, whatever the lang parameter says: it is an identifier consumers switch and style on. Use interpretationLocalized for anything a reader sees.
 			Interpretation GenerateCompositeChart200JSONResponseBodyAspectsInterpretation `json:"interpretation"`
 
 			// IsApplying Whether the aspect is applying (planets moving toward exact) or separating (moving apart). Applying aspects grow stronger.
@@ -60824,7 +60866,7 @@ func (r GenerateCompositeChartResponse) GetJSON200() *struct {
 		// Angle Exact angular separation that defines this aspect type in degrees.
 		Angle float32 `json:"angle"`
 
-		// Interpretation Aspect nature. Harmonious (trine, sextile) flows easily. Challenging (square, opposition) creates tension and growth. Neutral (conjunction) blends energies.
+		// Interpretation Aspect nature. Harmonious (trine, sextile) flows easily. Challenging (square, opposition) creates tension and growth. Neutral (conjunction) blends energies. Always English, whatever the lang parameter says: it is an identifier consumers switch and style on. Use interpretationLocalized for anything a reader sees.
 		Interpretation GenerateCompositeChart200JSONResponseBodyAspectsInterpretation `json:"interpretation"`
 
 		// IsApplying Whether the aspect is applying (planets moving toward exact) or separating (moving apart). Applying aspects grow stronger.
@@ -61934,7 +61976,7 @@ type GenerateLunarReturnResponse struct {
 				// Angle Exact angular separation that defines this aspect type in degrees.
 				Angle float32 `json:"angle"`
 
-				// Interpretation Aspect nature. Harmonious (trine, sextile) flows easily. Challenging (square, opposition) creates tension and growth. Neutral (conjunction) blends energies.
+				// Interpretation Aspect nature. Harmonious (trine, sextile) flows easily. Challenging (square, opposition) creates tension and growth. Neutral (conjunction) blends energies. Always English, whatever the lang parameter says: it is an identifier consumers switch and style on. Use interpretationLocalized for anything a reader sees.
 				Interpretation GenerateLunarReturn200JSONResponseBodyChartAspectsInterpretation `json:"interpretation"`
 
 				// IsApplying Whether the aspect is applying (planets moving toward exact) or separating (moving apart). Applying aspects grow stronger.
@@ -62112,7 +62154,7 @@ func (r GenerateLunarReturnResponse) GetJSON200() *struct {
 			// Angle Exact angular separation that defines this aspect type in degrees.
 			Angle float32 `json:"angle"`
 
-			// Interpretation Aspect nature. Harmonious (trine, sextile) flows easily. Challenging (square, opposition) creates tension and growth. Neutral (conjunction) blends energies.
+			// Interpretation Aspect nature. Harmonious (trine, sextile) flows easily. Challenging (square, opposition) creates tension and growth. Neutral (conjunction) blends energies. Always English, whatever the lang parameter says: it is an identifier consumers switch and style on. Use interpretationLocalized for anything a reader sees.
 			Interpretation GenerateLunarReturn200JSONResponseBodyChartAspectsInterpretation `json:"interpretation"`
 
 			// IsApplying Whether the aspect is applying (planets moving toward exact) or separating (moving apart). Applying aspects grow stronger.
@@ -63184,7 +63226,7 @@ type GeneratePlanetaryReturnResponse struct {
 				// Angle Exact angular separation that defines this aspect type in degrees.
 				Angle float32 `json:"angle"`
 
-				// Interpretation Aspect nature. Harmonious (trine, sextile) flows easily. Challenging (square, opposition) creates tension and growth. Neutral (conjunction) blends energies.
+				// Interpretation Aspect nature. Harmonious (trine, sextile) flows easily. Challenging (square, opposition) creates tension and growth. Neutral (conjunction) blends energies. Always English, whatever the lang parameter says: it is an identifier consumers switch and style on. Use interpretationLocalized for anything a reader sees.
 				Interpretation GeneratePlanetaryReturn200JSONResponseBodyChartAspectsInterpretation `json:"interpretation"`
 
 				// IsApplying Whether the aspect is applying (planets moving toward exact) or separating (moving apart). Applying aspects grow stronger.
@@ -63365,7 +63407,7 @@ func (r GeneratePlanetaryReturnResponse) GetJSON200() *struct {
 			// Angle Exact angular separation that defines this aspect type in degrees.
 			Angle float32 `json:"angle"`
 
-			// Interpretation Aspect nature. Harmonious (trine, sextile) flows easily. Challenging (square, opposition) creates tension and growth. Neutral (conjunction) blends energies.
+			// Interpretation Aspect nature. Harmonious (trine, sextile) flows easily. Challenging (square, opposition) creates tension and growth. Neutral (conjunction) blends energies. Always English, whatever the lang parameter says: it is an identifier consumers switch and style on. Use interpretationLocalized for anything a reader sees.
 			Interpretation GeneratePlanetaryReturn200JSONResponseBodyChartAspectsInterpretation `json:"interpretation"`
 
 			// IsApplying Whether the aspect is applying (planets moving toward exact) or separating (moving apart). Applying aspects grow stronger.
@@ -64682,7 +64724,7 @@ type GenerateSolarReturnResponse struct {
 				// Angle Exact angular separation that defines this aspect type in degrees.
 				Angle float32 `json:"angle"`
 
-				// Interpretation Aspect nature. Harmonious (trine, sextile) flows easily. Challenging (square, opposition) creates tension and growth. Neutral (conjunction) blends energies.
+				// Interpretation Aspect nature. Harmonious (trine, sextile) flows easily. Challenging (square, opposition) creates tension and growth. Neutral (conjunction) blends energies. Always English, whatever the lang parameter says: it is an identifier consumers switch and style on. Use interpretationLocalized for anything a reader sees.
 				Interpretation GenerateSolarReturn200JSONResponseBodyChartAspectsInterpretation `json:"interpretation"`
 
 				// IsApplying Whether the aspect is applying (planets moving toward exact) or separating (moving apart). Applying aspects grow stronger.
@@ -64863,7 +64905,7 @@ func (r GenerateSolarReturnResponse) GetJSON200() *struct {
 			// Angle Exact angular separation that defines this aspect type in degrees.
 			Angle float32 `json:"angle"`
 
-			// Interpretation Aspect nature. Harmonious (trine, sextile) flows easily. Challenging (square, opposition) creates tension and growth. Neutral (conjunction) blends energies.
+			// Interpretation Aspect nature. Harmonious (trine, sextile) flows easily. Challenging (square, opposition) creates tension and growth. Neutral (conjunction) blends energies. Always English, whatever the lang parameter says: it is an identifier consumers switch and style on. Use interpretationLocalized for anything a reader sees.
 			Interpretation GenerateSolarReturn200JSONResponseBodyChartAspectsInterpretation `json:"interpretation"`
 
 			// IsApplying Whether the aspect is applying (planets moving toward exact) or separating (moving apart). Applying aspects grow stronger.
@@ -65130,7 +65172,7 @@ type CalculateSynastryResponse struct {
 				// Name Aspect display name.
 				Name string `json:"name"`
 
-				// Nature Aspect nature classification.
+				// Nature How this aspect type is characterised in its reference card, in the requested language, exactly like the name, description and keywords beside it. Branch on the aspect-level interpretation field instead, which is always English.
 				Nature string `json:"nature"`
 
 				// RelationshipContext How this specific planetary pair aspect manifests in relationships.
@@ -65350,7 +65392,7 @@ func (r CalculateSynastryResponse) GetJSON200() *struct {
 			// Name Aspect display name.
 			Name string `json:"name"`
 
-			// Nature Aspect nature classification.
+			// Nature How this aspect type is characterised in its reference card, in the requested language, exactly like the name, description and keywords beside it. Branch on the aspect-level interpretation field instead, which is always English.
 			Nature string `json:"nature"`
 
 			// RelationshipContext How this specific planetary pair aspect manifests in relationships.
@@ -65606,7 +65648,7 @@ type CalculateTransitAspectsResponse struct {
 			// Angle Exact angular separation that defines this aspect type in degrees.
 			Angle float32 `json:"angle"`
 
-			// Interpretation Aspect nature. Harmonious (trine, sextile) flows easily. Challenging (square, opposition) creates tension and growth. Neutral (conjunction) blends energies.
+			// Interpretation Aspect nature. Harmonious (trine, sextile) flows easily. Challenging (square, opposition) creates tension and growth. Neutral (conjunction) blends energies. Always English, whatever the lang parameter says: it is an identifier consumers switch and style on. Use interpretationLocalized for anything a reader sees.
 			Interpretation CalculateTransitAspects200JSONResponseBodyAspectsInterpretation `json:"interpretation"`
 
 			// IsApplying Whether the aspect is applying (planets moving toward exact) or separating (moving apart). Applying aspects grow stronger.
@@ -65728,7 +65770,7 @@ type CalculateTransitAspectsResponse struct {
 				// Angle Exact angular separation that defines this aspect type in degrees.
 				Angle float32 `json:"angle"`
 
-				// Interpretation Aspect nature. Harmonious (trine, sextile) flows easily. Challenging (square, opposition) creates tension and growth. Neutral (conjunction) blends energies.
+				// Interpretation Aspect nature. Harmonious (trine, sextile) flows easily. Challenging (square, opposition) creates tension and growth. Neutral (conjunction) blends energies. Always English, whatever the lang parameter says: it is an identifier consumers switch and style on. Use interpretationLocalized for anything a reader sees.
 				Interpretation CalculateTransitAspects200JSONResponseBodySummaryStrongestInterpretation `json:"interpretation"`
 
 				// IsApplying Whether the aspect is applying (planets moving toward exact) or separating (moving apart). Applying aspects grow stronger.
@@ -65853,7 +65895,7 @@ func (r CalculateTransitAspectsResponse) GetJSON200() *struct {
 		// Angle Exact angular separation that defines this aspect type in degrees.
 		Angle float32 `json:"angle"`
 
-		// Interpretation Aspect nature. Harmonious (trine, sextile) flows easily. Challenging (square, opposition) creates tension and growth. Neutral (conjunction) blends energies.
+		// Interpretation Aspect nature. Harmonious (trine, sextile) flows easily. Challenging (square, opposition) creates tension and growth. Neutral (conjunction) blends energies. Always English, whatever the lang parameter says: it is an identifier consumers switch and style on. Use interpretationLocalized for anything a reader sees.
 		Interpretation CalculateTransitAspects200JSONResponseBodyAspectsInterpretation `json:"interpretation"`
 
 		// IsApplying Whether the aspect is applying (planets moving toward exact) or separating (moving apart). Applying aspects grow stronger.
@@ -65975,7 +66017,7 @@ func (r CalculateTransitAspectsResponse) GetJSON200() *struct {
 			// Angle Exact angular separation that defines this aspect type in degrees.
 			Angle float32 `json:"angle"`
 
-			// Interpretation Aspect nature. Harmonious (trine, sextile) flows easily. Challenging (square, opposition) creates tension and growth. Neutral (conjunction) blends energies.
+			// Interpretation Aspect nature. Harmonious (trine, sextile) flows easily. Challenging (square, opposition) creates tension and growth. Neutral (conjunction) blends energies. Always English, whatever the lang parameter says: it is an identifier consumers switch and style on. Use interpretationLocalized for anything a reader sees.
 			Interpretation CalculateTransitAspects200JSONResponseBodySummaryStrongestInterpretation `json:"interpretation"`
 
 			// IsApplying Whether the aspect is applying (planets moving toward exact) or separating (moving apart). Applying aspects grow stronger.
@@ -70135,7 +70177,7 @@ type ForecastSolarReturnResponse struct {
 				// Angle Exact angular separation that defines this aspect type in degrees.
 				Angle float32 `json:"angle"`
 
-				// Interpretation Aspect nature. Harmonious (trine, sextile) flows easily. Challenging (square, opposition) creates tension and growth. Neutral (conjunction) blends energies.
+				// Interpretation Aspect nature. Harmonious (trine, sextile) flows easily. Challenging (square, opposition) creates tension and growth. Neutral (conjunction) blends energies. Always English, whatever the lang parameter says: it is an identifier consumers switch and style on. Use interpretationLocalized for anything a reader sees.
 				Interpretation ForecastSolarReturn200JSONResponseBodyChartAspectsInterpretation `json:"interpretation"`
 
 				// IsApplying Whether the aspect is applying (planets moving toward exact) or separating (moving apart). Applying aspects grow stronger.
@@ -70304,7 +70346,7 @@ func (r ForecastSolarReturnResponse) GetJSON200() *struct {
 			// Angle Exact angular separation that defines this aspect type in degrees.
 			Angle float32 `json:"angle"`
 
-			// Interpretation Aspect nature. Harmonious (trine, sextile) flows easily. Challenging (square, opposition) creates tension and growth. Neutral (conjunction) blends energies.
+			// Interpretation Aspect nature. Harmonious (trine, sextile) flows easily. Challenging (square, opposition) creates tension and growth. Neutral (conjunction) blends energies. Always English, whatever the lang parameter says: it is an identifier consumers switch and style on. Use interpretationLocalized for anything a reader sees.
 			Interpretation ForecastSolarReturn200JSONResponseBodyChartAspectsInterpretation `json:"interpretation"`
 
 			// IsApplying Whether the aspect is applying (planets moving toward exact) or separating (moving apart). Applying aspects grow stronger.
@@ -96733,7 +96775,7 @@ func ParseGenerateCompositeChartResponse(rsp *http.Response) (*GenerateComposite
 				// Angle Exact angular separation that defines this aspect type in degrees.
 				Angle float32 `json:"angle"`
 
-				// Interpretation Aspect nature. Harmonious (trine, sextile) flows easily. Challenging (square, opposition) creates tension and growth. Neutral (conjunction) blends energies.
+				// Interpretation Aspect nature. Harmonious (trine, sextile) flows easily. Challenging (square, opposition) creates tension and growth. Neutral (conjunction) blends energies. Always English, whatever the lang parameter says: it is an identifier consumers switch and style on. Use interpretationLocalized for anything a reader sees.
 				Interpretation GenerateCompositeChart200JSONResponseBodyAspectsInterpretation `json:"interpretation"`
 
 				// IsApplying Whether the aspect is applying (planets moving toward exact) or separating (moving apart). Applying aspects grow stronger.
@@ -97615,7 +97657,7 @@ func ParseGenerateLunarReturnResponse(rsp *http.Response) (*GenerateLunarReturnR
 					// Angle Exact angular separation that defines this aspect type in degrees.
 					Angle float32 `json:"angle"`
 
-					// Interpretation Aspect nature. Harmonious (trine, sextile) flows easily. Challenging (square, opposition) creates tension and growth. Neutral (conjunction) blends energies.
+					// Interpretation Aspect nature. Harmonious (trine, sextile) flows easily. Challenging (square, opposition) creates tension and growth. Neutral (conjunction) blends energies. Always English, whatever the lang parameter says: it is an identifier consumers switch and style on. Use interpretationLocalized for anything a reader sees.
 					Interpretation GenerateLunarReturn200JSONResponseBodyChartAspectsInterpretation `json:"interpretation"`
 
 					// IsApplying Whether the aspect is applying (planets moving toward exact) or separating (moving apart). Applying aspects grow stronger.
@@ -98455,7 +98497,7 @@ func ParseGeneratePlanetaryReturnResponse(rsp *http.Response) (*GeneratePlanetar
 					// Angle Exact angular separation that defines this aspect type in degrees.
 					Angle float32 `json:"angle"`
 
-					// Interpretation Aspect nature. Harmonious (trine, sextile) flows easily. Challenging (square, opposition) creates tension and growth. Neutral (conjunction) blends energies.
+					// Interpretation Aspect nature. Harmonious (trine, sextile) flows easily. Challenging (square, opposition) creates tension and growth. Neutral (conjunction) blends energies. Always English, whatever the lang parameter says: it is an identifier consumers switch and style on. Use interpretationLocalized for anything a reader sees.
 					Interpretation GeneratePlanetaryReturn200JSONResponseBodyChartAspectsInterpretation `json:"interpretation"`
 
 					// IsApplying Whether the aspect is applying (planets moving toward exact) or separating (moving apart). Applying aspects grow stronger.
@@ -99476,7 +99518,7 @@ func ParseGenerateSolarReturnResponse(rsp *http.Response) (*GenerateSolarReturnR
 					// Angle Exact angular separation that defines this aspect type in degrees.
 					Angle float32 `json:"angle"`
 
-					// Interpretation Aspect nature. Harmonious (trine, sextile) flows easily. Challenging (square, opposition) creates tension and growth. Neutral (conjunction) blends energies.
+					// Interpretation Aspect nature. Harmonious (trine, sextile) flows easily. Challenging (square, opposition) creates tension and growth. Neutral (conjunction) blends energies. Always English, whatever the lang parameter says: it is an identifier consumers switch and style on. Use interpretationLocalized for anything a reader sees.
 					Interpretation GenerateSolarReturn200JSONResponseBodyChartAspectsInterpretation `json:"interpretation"`
 
 					// IsApplying Whether the aspect is applying (planets moving toward exact) or separating (moving apart). Applying aspects grow stronger.
@@ -99745,7 +99787,7 @@ func ParseCalculateSynastryResponse(rsp *http.Response) (*CalculateSynastryRespo
 					// Name Aspect display name.
 					Name string `json:"name"`
 
-					// Nature Aspect nature classification.
+					// Nature How this aspect type is characterised in its reference card, in the requested language, exactly like the name, description and keywords beside it. Branch on the aspect-level interpretation field instead, which is always English.
 					Nature string `json:"nature"`
 
 					// RelationshipContext How this specific planetary pair aspect manifests in relationships.
@@ -100003,7 +100045,7 @@ func ParseCalculateTransitAspectsResponse(rsp *http.Response) (*CalculateTransit
 				// Angle Exact angular separation that defines this aspect type in degrees.
 				Angle float32 `json:"angle"`
 
-				// Interpretation Aspect nature. Harmonious (trine, sextile) flows easily. Challenging (square, opposition) creates tension and growth. Neutral (conjunction) blends energies.
+				// Interpretation Aspect nature. Harmonious (trine, sextile) flows easily. Challenging (square, opposition) creates tension and growth. Neutral (conjunction) blends energies. Always English, whatever the lang parameter says: it is an identifier consumers switch and style on. Use interpretationLocalized for anything a reader sees.
 				Interpretation CalculateTransitAspects200JSONResponseBodyAspectsInterpretation `json:"interpretation"`
 
 				// IsApplying Whether the aspect is applying (planets moving toward exact) or separating (moving apart). Applying aspects grow stronger.
@@ -100125,7 +100167,7 @@ func ParseCalculateTransitAspectsResponse(rsp *http.Response) (*CalculateTransit
 					// Angle Exact angular separation that defines this aspect type in degrees.
 					Angle float32 `json:"angle"`
 
-					// Interpretation Aspect nature. Harmonious (trine, sextile) flows easily. Challenging (square, opposition) creates tension and growth. Neutral (conjunction) blends energies.
+					// Interpretation Aspect nature. Harmonious (trine, sextile) flows easily. Challenging (square, opposition) creates tension and growth. Neutral (conjunction) blends energies. Always English, whatever the lang parameter says: it is an identifier consumers switch and style on. Use interpretationLocalized for anything a reader sees.
 					Interpretation CalculateTransitAspects200JSONResponseBodySummaryStrongestInterpretation `json:"interpretation"`
 
 					// IsApplying Whether the aspect is applying (planets moving toward exact) or separating (moving apart). Applying aspects grow stronger.
@@ -103083,7 +103125,7 @@ func ParseForecastSolarReturnResponse(rsp *http.Response) (*ForecastSolarReturnR
 					// Angle Exact angular separation that defines this aspect type in degrees.
 					Angle float32 `json:"angle"`
 
-					// Interpretation Aspect nature. Harmonious (trine, sextile) flows easily. Challenging (square, opposition) creates tension and growth. Neutral (conjunction) blends energies.
+					// Interpretation Aspect nature. Harmonious (trine, sextile) flows easily. Challenging (square, opposition) creates tension and growth. Neutral (conjunction) blends energies. Always English, whatever the lang parameter says: it is an identifier consumers switch and style on. Use interpretationLocalized for anything a reader sees.
 					Interpretation ForecastSolarReturn200JSONResponseBodyChartAspectsInterpretation `json:"interpretation"`
 
 					// IsApplying Whether the aspect is applying (planets moving toward exact) or separating (moving apart). Applying aspects grow stronger.
