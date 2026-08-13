@@ -10527,6 +10527,78 @@ func (e ListLanguages200JSONResponseBodyLanguagesCode) Valid() bool {
 	}
 }
 
+// Defines values for GetFieldLabelsParamsLang.
+const (
+	GetFieldLabelsParamsLangDe GetFieldLabelsParamsLang = "de"
+	GetFieldLabelsParamsLangEn GetFieldLabelsParamsLang = "en"
+	GetFieldLabelsParamsLangEs GetFieldLabelsParamsLang = "es"
+	GetFieldLabelsParamsLangFr GetFieldLabelsParamsLang = "fr"
+	GetFieldLabelsParamsLangHi GetFieldLabelsParamsLang = "hi"
+	GetFieldLabelsParamsLangPt GetFieldLabelsParamsLang = "pt"
+	GetFieldLabelsParamsLangRu GetFieldLabelsParamsLang = "ru"
+	GetFieldLabelsParamsLangTr GetFieldLabelsParamsLang = "tr"
+)
+
+// Valid indicates whether the value is a known member of the GetFieldLabelsParamsLang enum.
+func (e GetFieldLabelsParamsLang) Valid() bool {
+	switch e {
+	case GetFieldLabelsParamsLangDe:
+		return true
+	case GetFieldLabelsParamsLangEn:
+		return true
+	case GetFieldLabelsParamsLangEs:
+		return true
+	case GetFieldLabelsParamsLangFr:
+		return true
+	case GetFieldLabelsParamsLangHi:
+		return true
+	case GetFieldLabelsParamsLangPt:
+		return true
+	case GetFieldLabelsParamsLangRu:
+		return true
+	case GetFieldLabelsParamsLangTr:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetFieldLabels200JSONResponseBodyLang.
+const (
+	GetFieldLabels200JSONResponseBodyLangDe GetFieldLabels200JSONResponseBodyLang = "de"
+	GetFieldLabels200JSONResponseBodyLangEn GetFieldLabels200JSONResponseBodyLang = "en"
+	GetFieldLabels200JSONResponseBodyLangEs GetFieldLabels200JSONResponseBodyLang = "es"
+	GetFieldLabels200JSONResponseBodyLangFr GetFieldLabels200JSONResponseBodyLang = "fr"
+	GetFieldLabels200JSONResponseBodyLangHi GetFieldLabels200JSONResponseBodyLang = "hi"
+	GetFieldLabels200JSONResponseBodyLangPt GetFieldLabels200JSONResponseBodyLang = "pt"
+	GetFieldLabels200JSONResponseBodyLangRu GetFieldLabels200JSONResponseBodyLang = "ru"
+	GetFieldLabels200JSONResponseBodyLangTr GetFieldLabels200JSONResponseBodyLang = "tr"
+)
+
+// Valid indicates whether the value is a known member of the GetFieldLabels200JSONResponseBodyLang enum.
+func (e GetFieldLabels200JSONResponseBodyLang) Valid() bool {
+	switch e {
+	case GetFieldLabels200JSONResponseBodyLangDe:
+		return true
+	case GetFieldLabels200JSONResponseBodyLangEn:
+		return true
+	case GetFieldLabels200JSONResponseBodyLangEs:
+		return true
+	case GetFieldLabels200JSONResponseBodyLangFr:
+		return true
+	case GetFieldLabels200JSONResponseBodyLangHi:
+		return true
+	case GetFieldLabels200JSONResponseBodyLangPt:
+		return true
+	case GetFieldLabels200JSONResponseBodyLangRu:
+		return true
+	case GetFieldLabels200JSONResponseBodyLangTr:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for CalculateBirthDayParamsLang.
 const (
 	CalculateBirthDayParamsLangDe CalculateBirthDayParamsLang = "de"
@@ -25452,10 +25524,10 @@ type YogaDetectResponse struct {
 		AyanamsaDegrees float32 `json:"ayanamsaDegrees"`
 	} `json:"frame"`
 
-	// Total Count of yogas where present === true in this chart. Range 0-44, though real charts sit in the low single digits: the Nabhasa families are mutually constrained by the precedence norms, and most shape yogas are rare.
+	// Total Count of yogas where present === true in this chart. Range 0-48, though real charts sit in the low single digits: the Nabhasa families are mutually constrained by the precedence norms, and most shape yogas are rare.
 	Total float32 `json:"total"`
 
-	// Yogas Array of 44 detected yogas, always the full set so a caller can render absent verdicts too. Every entry carries a `present` boolean and a `quality` (Positive, Negative, or Both = auspicious, inauspicious, or context-dependent); filter on present === true for active yogas. Evidence text names the rule that triggered or failed, or the precedence norm that outranked it.
+	// Yogas Array of 48 detected yogas, always the full set so a caller can render absent verdicts too. Every entry carries a `present` boolean and a `quality` (Positive, Negative, or Both = auspicious, inauspicious, or context-dependent); filter on present === true for active yogas. Evidence text names the rule that triggered or failed, or the precedence norm that outranked it.
 	Yogas []struct {
 		// Description Brief classical formation rule. Identifies the planetary placement, lordship, dignity, aspect pattern, sign modality, or whole-chart bhava distribution required for the yoga to form.
 		Description string `json:"description"`
@@ -27975,6 +28047,18 @@ type GetTrigramParamsLang string
 
 // ListLanguages200JSONResponseBodyLanguagesCode defines parameters for ListLanguages.
 type ListLanguages200JSONResponseBodyLanguagesCode string
+
+// GetFieldLabelsParams defines parameters for GetFieldLabels.
+type GetFieldLabelsParams struct {
+	// Lang Response language (ISO 639-1). Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en. Languages without translations yet return English.
+	Lang *GetFieldLabelsParamsLang `form:"lang,omitempty" json:"lang,omitempty"`
+}
+
+// GetFieldLabelsParamsLang defines parameters for GetFieldLabels.
+type GetFieldLabelsParamsLang string
+
+// GetFieldLabels200JSONResponseBodyLang defines parameters for GetFieldLabels.
+type GetFieldLabels200JSONResponseBodyLang string
 
 // ListCountriesParams defines parameters for ListCountries.
 type ListCountriesParams struct {
@@ -37528,6 +37612,13 @@ type ClientInterface interface {
 	// Corresponds with GET /languages (the `ListLanguages` operationId).
 	ListLanguages(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// GetFieldLabels Get field labels for a language
+	//
+	// Returns the display label for every request field name and every selectable option across the API, in the requested language. Use this to build a birth-data form, a chart widget, or an admin picker that reads in your customer language without hardcoding a word: look a field name up in `fields`, and an option up in `enums` under `{fieldName}.{value}`. Values a caller sends stay the canonical English identifier, so a translated form still submits a valid request. Labels a language has not been translated into yet return English, and the whole payload is stable enough to cache for a day.
+	//
+	// Corresponds with GET /languages/field-labels (the `GetFieldLabels` operationId).
+	GetFieldLabels(ctx context.Context, params *GetFieldLabelsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// ListCountries List all countries - ISO codes and city coverage
 	//
 	// Returns every country with ISO 3166-1 alpha-2 and alpha-3 codes, plus the number of searchable cities per country. Use this endpoint to build country dropdown menus, regional filters, or to check city coverage before querying. Sorted alphabetically by country name. Covers Europe, Americas, Asia, Middle East, Africa, and Oceania.
@@ -38895,14 +38986,14 @@ type ClientInterface interface {
 
 	// ListYogas List all planetary yogas - 301 entry Vedic Yoga Glossary
 	//
-	// Browse the 301-entry Vedic planetary-yoga glossary. Returns id and name for every cataloged yoga (Raja, Dhana, Pancha Mahapurusha, Nabhasa, Chandra-Mangala, and more). This is a dictionary lookup, not chart-driven detection: it does not inspect a birth chart. Use GET /yoga/{id} for the full glossary entry, or POST /yoga/detect to run all 44 detection rules against a specific kundli. Ideal for yoga-browser UIs, search, and progressive data loading.
+	// Browse the 301-entry Vedic planetary-yoga glossary. Returns id and name for every cataloged yoga (Raja, Dhana, Pancha Mahapurusha, Nabhasa, Chandra-Mangala, and more). This is a dictionary lookup, not chart-driven detection: it does not inspect a birth chart. Use GET /yoga/{id} for the full glossary entry, or POST /yoga/detect to run all 48 detection rules against a specific kundli. Ideal for yoga-browser UIs, search, and progressive data loading.
 	//
 	// Corresponds with GET /vedic-astrology/yoga (the `ListYogas` operationId).
 	ListYogas(ctx context.Context, params *ListYogasParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// DetectYogasWithBody Detect classical Vedic yogas in a birth chart
 	//
-	// Chart-driven detection of 44 classical Vedic yogas. Twelve conjunction and dignity yogas: Gajakesari (parashara three-rule definition), Sunapha, Anapha, Dhurdhura, Kemadruma, Chandra Mangala, Budha-Aditya, and the five Pancha Mahapurusha yogas (Ruchaka, Bhadra, Hamsa, Malavya, Sasa). Plus all 32 Nabhasa distribution yogas, which describe how the seven visible grahas are spread across the whole chart rather than any single conjunction, across four families: Asraya (Rajju, Musala, Nala), Dala (Mala, Sarpa), Akriti (Gada, Shakata, Vihaga, Shringataka, Hala, Vajra, Yava, Kamala, Vapi, Yupa, Shara, Shakti, Danda, Nauka, Kuta, Chhatra, Dhanusha, Ardhachandra, Chakra, Samudra) and Sankhya (Gola, Yuga, Shoola, Kedara, Pasa, Damini, Veena). Each yoga is returned with an `id`, `name`, a `present` boolean, a `quality` (Positive, Negative, or Both, i.e. auspicious, inauspicious, or context-dependent), and a classical-text `evidence` string naming the rule that triggered or failed (kendra position, dignity, malefic drishti, lordship, retrograde state, sign modality, bhava distribution). Nabhasa results also apply the four classical precedence norms, so a yoga that matched its own rule but was outranked by a stronger family is returned as absent with evidence naming the norm that silenced it, letting you explain a verdict rather than only report it. There is no separate major/minor flag; `quality` is the auspiciousness axis. Unlike GET /yoga and GET /yoga/{id} which are dictionary lookups, this endpoint computes the kundli from birth data and runs the detection rules. Sources: BPHS ch. 35 and ch. 75, Mantreswara Phaladeepika ch. 6, B.V. Raman Three Hundred Important Combinations.
+	// Chart-driven detection of 48 classical Vedic yogas. Twelve conjunction and dignity yogas: Gajakesari (parashara three-rule definition), Sunapha, Anapha, Dhurdhura, Kemadruma, Chandra Mangala, Budha-Aditya, and the five Pancha Mahapurusha yogas (Ruchaka, Bhadra, Hamsa, Malavya, Sasa). Plus all 32 Nabhasa distribution yogas, which describe how the seven visible grahas are spread across the whole chart rather than any single conjunction, across four families: Asraya (Rajju, Musala, Nala), Dala (Mala, Sarpa), Akriti (Gada, Shakata, Vihaga, Shringataka, Hala, Vajra, Yava, Kamala, Vapi, Yupa, Shara, Shakti, Danda, Nauka, Kuta, Chhatra, Dhanusha, Ardhachandra, Chakra, Samudra) and Sankhya (Gola, Yuga, Shoola, Kedara, Pasa, Damini, Veena). Plus four wealth and poverty verdicts, each ONE answer over a whole family of classical rules: Dhana Yoga over the eleven catalogued wealth combinations of BPHS ch. 41, Daridra Yoga over the poverty combinations of BPHS ch. 42 and Phaladeepika ch. 6, Lakshmi Yoga (BPHS ch. 36), and Dhana Malika (Jataka Parijata ch. 7). Their evidence names every rule that matched and the exact condition it matched on, so a wealth reading cites the combination rather than a label, and a rule resting on a single authority is excluded from the verdict and says so rather than quietly counting. Each yoga is returned with an `id`, `name`, a `present` boolean, a `quality` (Positive, Negative, or Both, i.e. auspicious, inauspicious, or context-dependent), and a classical-text `evidence` string naming the rule that triggered or failed (kendra position, dignity, malefic drishti, lordship, retrograde state, sign modality, bhava distribution). Nabhasa results also apply the four classical precedence norms, so a yoga that matched its own rule but was outranked by a stronger family is returned as absent with evidence naming the norm that silenced it, letting you explain a verdict rather than only report it. There is no separate major/minor flag; `quality` is the auspiciousness axis. Unlike GET /yoga and GET /yoga/{id} which are dictionary lookups, this endpoint computes the kundli from birth data and runs the detection rules. Sources: BPHS ch. 35 and ch. 75, Mantreswara Phaladeepika ch. 6, B.V. Raman Three Hundred Important Combinations.
 	//
 	// Takes any type of body and a specified content type.
 	//
@@ -38911,7 +39002,7 @@ type ClientInterface interface {
 
 	// DetectYogas Detect classical Vedic yogas in a birth chart
 	//
-	// Chart-driven detection of 44 classical Vedic yogas. Twelve conjunction and dignity yogas: Gajakesari (parashara three-rule definition), Sunapha, Anapha, Dhurdhura, Kemadruma, Chandra Mangala, Budha-Aditya, and the five Pancha Mahapurusha yogas (Ruchaka, Bhadra, Hamsa, Malavya, Sasa). Plus all 32 Nabhasa distribution yogas, which describe how the seven visible grahas are spread across the whole chart rather than any single conjunction, across four families: Asraya (Rajju, Musala, Nala), Dala (Mala, Sarpa), Akriti (Gada, Shakata, Vihaga, Shringataka, Hala, Vajra, Yava, Kamala, Vapi, Yupa, Shara, Shakti, Danda, Nauka, Kuta, Chhatra, Dhanusha, Ardhachandra, Chakra, Samudra) and Sankhya (Gola, Yuga, Shoola, Kedara, Pasa, Damini, Veena). Each yoga is returned with an `id`, `name`, a `present` boolean, a `quality` (Positive, Negative, or Both, i.e. auspicious, inauspicious, or context-dependent), and a classical-text `evidence` string naming the rule that triggered or failed (kendra position, dignity, malefic drishti, lordship, retrograde state, sign modality, bhava distribution). Nabhasa results also apply the four classical precedence norms, so a yoga that matched its own rule but was outranked by a stronger family is returned as absent with evidence naming the norm that silenced it, letting you explain a verdict rather than only report it. There is no separate major/minor flag; `quality` is the auspiciousness axis. Unlike GET /yoga and GET /yoga/{id} which are dictionary lookups, this endpoint computes the kundli from birth data and runs the detection rules. Sources: BPHS ch. 35 and ch. 75, Mantreswara Phaladeepika ch. 6, B.V. Raman Three Hundred Important Combinations.
+	// Chart-driven detection of 48 classical Vedic yogas. Twelve conjunction and dignity yogas: Gajakesari (parashara three-rule definition), Sunapha, Anapha, Dhurdhura, Kemadruma, Chandra Mangala, Budha-Aditya, and the five Pancha Mahapurusha yogas (Ruchaka, Bhadra, Hamsa, Malavya, Sasa). Plus all 32 Nabhasa distribution yogas, which describe how the seven visible grahas are spread across the whole chart rather than any single conjunction, across four families: Asraya (Rajju, Musala, Nala), Dala (Mala, Sarpa), Akriti (Gada, Shakata, Vihaga, Shringataka, Hala, Vajra, Yava, Kamala, Vapi, Yupa, Shara, Shakti, Danda, Nauka, Kuta, Chhatra, Dhanusha, Ardhachandra, Chakra, Samudra) and Sankhya (Gola, Yuga, Shoola, Kedara, Pasa, Damini, Veena). Plus four wealth and poverty verdicts, each ONE answer over a whole family of classical rules: Dhana Yoga over the eleven catalogued wealth combinations of BPHS ch. 41, Daridra Yoga over the poverty combinations of BPHS ch. 42 and Phaladeepika ch. 6, Lakshmi Yoga (BPHS ch. 36), and Dhana Malika (Jataka Parijata ch. 7). Their evidence names every rule that matched and the exact condition it matched on, so a wealth reading cites the combination rather than a label, and a rule resting on a single authority is excluded from the verdict and says so rather than quietly counting. Each yoga is returned with an `id`, `name`, a `present` boolean, a `quality` (Positive, Negative, or Both, i.e. auspicious, inauspicious, or context-dependent), and a classical-text `evidence` string naming the rule that triggered or failed (kendra position, dignity, malefic drishti, lordship, retrograde state, sign modality, bhava distribution). Nabhasa results also apply the four classical precedence norms, so a yoga that matched its own rule but was outranked by a stronger family is returned as absent with evidence naming the norm that silenced it, letting you explain a verdict rather than only report it. There is no separate major/minor flag; `quality` is the auspiciousness axis. Unlike GET /yoga and GET /yoga/{id} which are dictionary lookups, this endpoint computes the kundli from birth data and runs the detection rules. Sources: BPHS ch. 35 and ch. 75, Mantreswara Phaladeepika ch. 6, B.V. Raman Three Hundred Important Combinations.
 	//
 	// Takes a body of the `application/json` content type.
 	//
@@ -38920,7 +39011,7 @@ type ClientInterface interface {
 
 	// GetYoga Get yoga details by ID - Vedic Yoga Glossary Entry
 	//
-	// Look up the dictionary entry for a specific named yoga from the 301-entry Vedic planetary-yoga glossary. Returns formation conditions, life results, and quality classification (Positive/Negative/Both). This is a glossary lookup against the static catalog; it does NOT analyze a birth chart. For chart-driven present/absent verdicts on the 44 detection-grade yogas (Gajakesari, the Pancha Mahapurusha set, and all 32 Nabhasa distribution yogas) call POST /yoga/detect with birth data.
+	// Look up the dictionary entry for a specific named yoga from the 301-entry Vedic planetary-yoga glossary. Returns formation conditions, life results, and quality classification (Positive/Negative/Both). This is a glossary lookup against the static catalog; it does NOT analyze a birth chart. For chart-driven present/absent verdicts on the 48 detection-grade yogas (Gajakesari, the Pancha Mahapurusha set, all 32 Nabhasa distribution yogas, and the wealth and poverty verdicts) call POST /yoga/detect with birth data.
 	//
 	// Corresponds with GET /vedic-astrology/yoga/{id} (the `GetYoga` operationId).
 	GetYoga(ctx context.Context, id GetYogaParamsID, params *GetYogaParams, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -41462,6 +41553,23 @@ func (c *Client) GetTrigram(ctx context.Context, id string, params *GetTrigramPa
 // Corresponds with GET /languages (the `ListLanguages` operationId).
 func (c *Client) ListLanguages(ctx context.Context, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewListLanguagesRequest(c.Server)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetFieldLabels Get field labels for a language
+//
+// Returns the display label for every request field name and every selectable option across the API, in the requested language. Use this to build a birth-data form, a chart widget, or an admin picker that reads in your customer language without hardcoding a word: look a field name up in `fields`, and an option up in `enums` under `{fieldName}.{value}`. Values a caller sends stay the canonical English identifier, so a translated form still submits a valid request. Labels a language has not been translated into yet return English, and the whole payload is stable enough to cache for a day.
+//
+// Corresponds with GET /languages/field-labels (the `GetFieldLabels` operationId).
+func (c *Client) GetFieldLabels(ctx context.Context, params *GetFieldLabelsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetFieldLabelsRequest(c.Server, params)
 	if err != nil {
 		return nil, err
 	}
@@ -44389,7 +44497,7 @@ func (c *Client) GetUpagrahaPositions(ctx context.Context, body GetUpagrahaPosit
 
 // ListYogas List all planetary yogas - 301 entry Vedic Yoga Glossary
 //
-// Browse the 301-entry Vedic planetary-yoga glossary. Returns id and name for every cataloged yoga (Raja, Dhana, Pancha Mahapurusha, Nabhasa, Chandra-Mangala, and more). This is a dictionary lookup, not chart-driven detection: it does not inspect a birth chart. Use GET /yoga/{id} for the full glossary entry, or POST /yoga/detect to run all 44 detection rules against a specific kundli. Ideal for yoga-browser UIs, search, and progressive data loading.
+// Browse the 301-entry Vedic planetary-yoga glossary. Returns id and name for every cataloged yoga (Raja, Dhana, Pancha Mahapurusha, Nabhasa, Chandra-Mangala, and more). This is a dictionary lookup, not chart-driven detection: it does not inspect a birth chart. Use GET /yoga/{id} for the full glossary entry, or POST /yoga/detect to run all 48 detection rules against a specific kundli. Ideal for yoga-browser UIs, search, and progressive data loading.
 //
 // Corresponds with GET /vedic-astrology/yoga (the `ListYogas` operationId).
 func (c *Client) ListYogas(ctx context.Context, params *ListYogasParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
@@ -44406,7 +44514,7 @@ func (c *Client) ListYogas(ctx context.Context, params *ListYogasParams, reqEdit
 
 // DetectYogasWithBody Detect classical Vedic yogas in a birth chart
 //
-// Chart-driven detection of 44 classical Vedic yogas. Twelve conjunction and dignity yogas: Gajakesari (parashara three-rule definition), Sunapha, Anapha, Dhurdhura, Kemadruma, Chandra Mangala, Budha-Aditya, and the five Pancha Mahapurusha yogas (Ruchaka, Bhadra, Hamsa, Malavya, Sasa). Plus all 32 Nabhasa distribution yogas, which describe how the seven visible grahas are spread across the whole chart rather than any single conjunction, across four families: Asraya (Rajju, Musala, Nala), Dala (Mala, Sarpa), Akriti (Gada, Shakata, Vihaga, Shringataka, Hala, Vajra, Yava, Kamala, Vapi, Yupa, Shara, Shakti, Danda, Nauka, Kuta, Chhatra, Dhanusha, Ardhachandra, Chakra, Samudra) and Sankhya (Gola, Yuga, Shoola, Kedara, Pasa, Damini, Veena). Each yoga is returned with an `id`, `name`, a `present` boolean, a `quality` (Positive, Negative, or Both, i.e. auspicious, inauspicious, or context-dependent), and a classical-text `evidence` string naming the rule that triggered or failed (kendra position, dignity, malefic drishti, lordship, retrograde state, sign modality, bhava distribution). Nabhasa results also apply the four classical precedence norms, so a yoga that matched its own rule but was outranked by a stronger family is returned as absent with evidence naming the norm that silenced it, letting you explain a verdict rather than only report it. There is no separate major/minor flag; `quality` is the auspiciousness axis. Unlike GET /yoga and GET /yoga/{id} which are dictionary lookups, this endpoint computes the kundli from birth data and runs the detection rules. Sources: BPHS ch. 35 and ch. 75, Mantreswara Phaladeepika ch. 6, B.V. Raman Three Hundred Important Combinations.
+// Chart-driven detection of 48 classical Vedic yogas. Twelve conjunction and dignity yogas: Gajakesari (parashara three-rule definition), Sunapha, Anapha, Dhurdhura, Kemadruma, Chandra Mangala, Budha-Aditya, and the five Pancha Mahapurusha yogas (Ruchaka, Bhadra, Hamsa, Malavya, Sasa). Plus all 32 Nabhasa distribution yogas, which describe how the seven visible grahas are spread across the whole chart rather than any single conjunction, across four families: Asraya (Rajju, Musala, Nala), Dala (Mala, Sarpa), Akriti (Gada, Shakata, Vihaga, Shringataka, Hala, Vajra, Yava, Kamala, Vapi, Yupa, Shara, Shakti, Danda, Nauka, Kuta, Chhatra, Dhanusha, Ardhachandra, Chakra, Samudra) and Sankhya (Gola, Yuga, Shoola, Kedara, Pasa, Damini, Veena). Plus four wealth and poverty verdicts, each ONE answer over a whole family of classical rules: Dhana Yoga over the eleven catalogued wealth combinations of BPHS ch. 41, Daridra Yoga over the poverty combinations of BPHS ch. 42 and Phaladeepika ch. 6, Lakshmi Yoga (BPHS ch. 36), and Dhana Malika (Jataka Parijata ch. 7). Their evidence names every rule that matched and the exact condition it matched on, so a wealth reading cites the combination rather than a label, and a rule resting on a single authority is excluded from the verdict and says so rather than quietly counting. Each yoga is returned with an `id`, `name`, a `present` boolean, a `quality` (Positive, Negative, or Both, i.e. auspicious, inauspicious, or context-dependent), and a classical-text `evidence` string naming the rule that triggered or failed (kendra position, dignity, malefic drishti, lordship, retrograde state, sign modality, bhava distribution). Nabhasa results also apply the four classical precedence norms, so a yoga that matched its own rule but was outranked by a stronger family is returned as absent with evidence naming the norm that silenced it, letting you explain a verdict rather than only report it. There is no separate major/minor flag; `quality` is the auspiciousness axis. Unlike GET /yoga and GET /yoga/{id} which are dictionary lookups, this endpoint computes the kundli from birth data and runs the detection rules. Sources: BPHS ch. 35 and ch. 75, Mantreswara Phaladeepika ch. 6, B.V. Raman Three Hundred Important Combinations.
 //
 // Takes any type of body and a specified content type.
 //
@@ -44425,7 +44533,7 @@ func (c *Client) DetectYogasWithBody(ctx context.Context, params *DetectYogasPar
 
 // DetectYogas Detect classical Vedic yogas in a birth chart
 //
-// Chart-driven detection of 44 classical Vedic yogas. Twelve conjunction and dignity yogas: Gajakesari (parashara three-rule definition), Sunapha, Anapha, Dhurdhura, Kemadruma, Chandra Mangala, Budha-Aditya, and the five Pancha Mahapurusha yogas (Ruchaka, Bhadra, Hamsa, Malavya, Sasa). Plus all 32 Nabhasa distribution yogas, which describe how the seven visible grahas are spread across the whole chart rather than any single conjunction, across four families: Asraya (Rajju, Musala, Nala), Dala (Mala, Sarpa), Akriti (Gada, Shakata, Vihaga, Shringataka, Hala, Vajra, Yava, Kamala, Vapi, Yupa, Shara, Shakti, Danda, Nauka, Kuta, Chhatra, Dhanusha, Ardhachandra, Chakra, Samudra) and Sankhya (Gola, Yuga, Shoola, Kedara, Pasa, Damini, Veena). Each yoga is returned with an `id`, `name`, a `present` boolean, a `quality` (Positive, Negative, or Both, i.e. auspicious, inauspicious, or context-dependent), and a classical-text `evidence` string naming the rule that triggered or failed (kendra position, dignity, malefic drishti, lordship, retrograde state, sign modality, bhava distribution). Nabhasa results also apply the four classical precedence norms, so a yoga that matched its own rule but was outranked by a stronger family is returned as absent with evidence naming the norm that silenced it, letting you explain a verdict rather than only report it. There is no separate major/minor flag; `quality` is the auspiciousness axis. Unlike GET /yoga and GET /yoga/{id} which are dictionary lookups, this endpoint computes the kundli from birth data and runs the detection rules. Sources: BPHS ch. 35 and ch. 75, Mantreswara Phaladeepika ch. 6, B.V. Raman Three Hundred Important Combinations.
+// Chart-driven detection of 48 classical Vedic yogas. Twelve conjunction and dignity yogas: Gajakesari (parashara three-rule definition), Sunapha, Anapha, Dhurdhura, Kemadruma, Chandra Mangala, Budha-Aditya, and the five Pancha Mahapurusha yogas (Ruchaka, Bhadra, Hamsa, Malavya, Sasa). Plus all 32 Nabhasa distribution yogas, which describe how the seven visible grahas are spread across the whole chart rather than any single conjunction, across four families: Asraya (Rajju, Musala, Nala), Dala (Mala, Sarpa), Akriti (Gada, Shakata, Vihaga, Shringataka, Hala, Vajra, Yava, Kamala, Vapi, Yupa, Shara, Shakti, Danda, Nauka, Kuta, Chhatra, Dhanusha, Ardhachandra, Chakra, Samudra) and Sankhya (Gola, Yuga, Shoola, Kedara, Pasa, Damini, Veena). Plus four wealth and poverty verdicts, each ONE answer over a whole family of classical rules: Dhana Yoga over the eleven catalogued wealth combinations of BPHS ch. 41, Daridra Yoga over the poverty combinations of BPHS ch. 42 and Phaladeepika ch. 6, Lakshmi Yoga (BPHS ch. 36), and Dhana Malika (Jataka Parijata ch. 7). Their evidence names every rule that matched and the exact condition it matched on, so a wealth reading cites the combination rather than a label, and a rule resting on a single authority is excluded from the verdict and says so rather than quietly counting. Each yoga is returned with an `id`, `name`, a `present` boolean, a `quality` (Positive, Negative, or Both, i.e. auspicious, inauspicious, or context-dependent), and a classical-text `evidence` string naming the rule that triggered or failed (kendra position, dignity, malefic drishti, lordship, retrograde state, sign modality, bhava distribution). Nabhasa results also apply the four classical precedence norms, so a yoga that matched its own rule but was outranked by a stronger family is returned as absent with evidence naming the norm that silenced it, letting you explain a verdict rather than only report it. There is no separate major/minor flag; `quality` is the auspiciousness axis. Unlike GET /yoga and GET /yoga/{id} which are dictionary lookups, this endpoint computes the kundli from birth data and runs the detection rules. Sources: BPHS ch. 35 and ch. 75, Mantreswara Phaladeepika ch. 6, B.V. Raman Three Hundred Important Combinations.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -44444,7 +44552,7 @@ func (c *Client) DetectYogas(ctx context.Context, params *DetectYogasParams, bod
 
 // GetYoga Get yoga details by ID - Vedic Yoga Glossary Entry
 //
-// Look up the dictionary entry for a specific named yoga from the 301-entry Vedic planetary-yoga glossary. Returns formation conditions, life results, and quality classification (Positive/Negative/Both). This is a glossary lookup against the static catalog; it does NOT analyze a birth chart. For chart-driven present/absent verdicts on the 44 detection-grade yogas (Gajakesari, the Pancha Mahapurusha set, and all 32 Nabhasa distribution yogas) call POST /yoga/detect with birth data.
+// Look up the dictionary entry for a specific named yoga from the 301-entry Vedic planetary-yoga glossary. Returns formation conditions, life results, and quality classification (Positive/Negative/Both). This is a glossary lookup against the static catalog; it does NOT analyze a birth chart. For chart-driven present/absent verdicts on the 48 detection-grade yogas (Gajakesari, the Pancha Mahapurusha set, all 32 Nabhasa distribution yogas, and the wealth and poverty verdicts) call POST /yoga/detect with birth data.
 //
 // Corresponds with GET /vedic-astrology/yoga/{id} (the `GetYoga` operationId).
 func (c *Client) GetYoga(ctx context.Context, id GetYogaParamsID, params *GetYogaParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
@@ -50338,6 +50446,60 @@ func NewListLanguagesRequest(server string) (*http.Request, error) {
 	queryURL, err := serverURL.Parse(operationPath)
 	if err != nil {
 		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetFieldLabelsRequest constructs an http.Request for the GetFieldLabels method
+func NewGetFieldLabelsRequest(server string, params *GetFieldLabelsParams) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/languages/field-labels")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Lang != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "lang", *params.Lang, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
 	}
 
 	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
@@ -57377,6 +57539,15 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with GET /languages (the `ListLanguages` operationId).
 	ListLanguagesWithResponse(ctx context.Context, reqEditors ...RequestEditorFn) (*ListLanguagesResponse, error)
 
+	// GetFieldLabelsWithResponse Get field labels for a language
+	//
+	// Returns the display label for every request field name and every selectable option across the API, in the requested language. Use this to build a birth-data form, a chart widget, or an admin picker that reads in your customer language without hardcoding a word: look a field name up in `fields`, and an option up in `enums` under `{fieldName}.{value}`. Values a caller sends stay the canonical English identifier, so a translated form still submits a valid request. Labels a language has not been translated into yet return English, and the whole payload is stable enough to cache for a day.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /languages/field-labels (the `GetFieldLabels` operationId).
+	GetFieldLabelsWithResponse(ctx context.Context, params *GetFieldLabelsParams, reqEditors ...RequestEditorFn) (*GetFieldLabelsResponse, error)
+
 	// ListCountriesWithResponse List all countries - ISO codes and city coverage
 	//
 	// Returns every country with ISO 3166-1 alpha-2 and alpha-3 codes, plus the number of searchable cities per country. Use this endpoint to build country dropdown menus, regional filters, or to check city coverage before querying. Sorted alphabetically by country name. Covers Europe, Americas, Asia, Middle East, Africa, and Oceania.
@@ -58774,7 +58945,7 @@ type ClientWithResponsesInterface interface {
 
 	// ListYogasWithResponse List all planetary yogas - 301 entry Vedic Yoga Glossary
 	//
-	// Browse the 301-entry Vedic planetary-yoga glossary. Returns id and name for every cataloged yoga (Raja, Dhana, Pancha Mahapurusha, Nabhasa, Chandra-Mangala, and more). This is a dictionary lookup, not chart-driven detection: it does not inspect a birth chart. Use GET /yoga/{id} for the full glossary entry, or POST /yoga/detect to run all 44 detection rules against a specific kundli. Ideal for yoga-browser UIs, search, and progressive data loading.
+	// Browse the 301-entry Vedic planetary-yoga glossary. Returns id and name for every cataloged yoga (Raja, Dhana, Pancha Mahapurusha, Nabhasa, Chandra-Mangala, and more). This is a dictionary lookup, not chart-driven detection: it does not inspect a birth chart. Use GET /yoga/{id} for the full glossary entry, or POST /yoga/detect to run all 48 detection rules against a specific kundli. Ideal for yoga-browser UIs, search, and progressive data loading.
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
@@ -58783,7 +58954,7 @@ type ClientWithResponsesInterface interface {
 
 	// DetectYogasWithBodyWithResponse Detect classical Vedic yogas in a birth chart
 	//
-	// Chart-driven detection of 44 classical Vedic yogas. Twelve conjunction and dignity yogas: Gajakesari (parashara three-rule definition), Sunapha, Anapha, Dhurdhura, Kemadruma, Chandra Mangala, Budha-Aditya, and the five Pancha Mahapurusha yogas (Ruchaka, Bhadra, Hamsa, Malavya, Sasa). Plus all 32 Nabhasa distribution yogas, which describe how the seven visible grahas are spread across the whole chart rather than any single conjunction, across four families: Asraya (Rajju, Musala, Nala), Dala (Mala, Sarpa), Akriti (Gada, Shakata, Vihaga, Shringataka, Hala, Vajra, Yava, Kamala, Vapi, Yupa, Shara, Shakti, Danda, Nauka, Kuta, Chhatra, Dhanusha, Ardhachandra, Chakra, Samudra) and Sankhya (Gola, Yuga, Shoola, Kedara, Pasa, Damini, Veena). Each yoga is returned with an `id`, `name`, a `present` boolean, a `quality` (Positive, Negative, or Both, i.e. auspicious, inauspicious, or context-dependent), and a classical-text `evidence` string naming the rule that triggered or failed (kendra position, dignity, malefic drishti, lordship, retrograde state, sign modality, bhava distribution). Nabhasa results also apply the four classical precedence norms, so a yoga that matched its own rule but was outranked by a stronger family is returned as absent with evidence naming the norm that silenced it, letting you explain a verdict rather than only report it. There is no separate major/minor flag; `quality` is the auspiciousness axis. Unlike GET /yoga and GET /yoga/{id} which are dictionary lookups, this endpoint computes the kundli from birth data and runs the detection rules. Sources: BPHS ch. 35 and ch. 75, Mantreswara Phaladeepika ch. 6, B.V. Raman Three Hundred Important Combinations.
+	// Chart-driven detection of 48 classical Vedic yogas. Twelve conjunction and dignity yogas: Gajakesari (parashara three-rule definition), Sunapha, Anapha, Dhurdhura, Kemadruma, Chandra Mangala, Budha-Aditya, and the five Pancha Mahapurusha yogas (Ruchaka, Bhadra, Hamsa, Malavya, Sasa). Plus all 32 Nabhasa distribution yogas, which describe how the seven visible grahas are spread across the whole chart rather than any single conjunction, across four families: Asraya (Rajju, Musala, Nala), Dala (Mala, Sarpa), Akriti (Gada, Shakata, Vihaga, Shringataka, Hala, Vajra, Yava, Kamala, Vapi, Yupa, Shara, Shakti, Danda, Nauka, Kuta, Chhatra, Dhanusha, Ardhachandra, Chakra, Samudra) and Sankhya (Gola, Yuga, Shoola, Kedara, Pasa, Damini, Veena). Plus four wealth and poverty verdicts, each ONE answer over a whole family of classical rules: Dhana Yoga over the eleven catalogued wealth combinations of BPHS ch. 41, Daridra Yoga over the poverty combinations of BPHS ch. 42 and Phaladeepika ch. 6, Lakshmi Yoga (BPHS ch. 36), and Dhana Malika (Jataka Parijata ch. 7). Their evidence names every rule that matched and the exact condition it matched on, so a wealth reading cites the combination rather than a label, and a rule resting on a single authority is excluded from the verdict and says so rather than quietly counting. Each yoga is returned with an `id`, `name`, a `present` boolean, a `quality` (Positive, Negative, or Both, i.e. auspicious, inauspicious, or context-dependent), and a classical-text `evidence` string naming the rule that triggered or failed (kendra position, dignity, malefic drishti, lordship, retrograde state, sign modality, bhava distribution). Nabhasa results also apply the four classical precedence norms, so a yoga that matched its own rule but was outranked by a stronger family is returned as absent with evidence naming the norm that silenced it, letting you explain a verdict rather than only report it. There is no separate major/minor flag; `quality` is the auspiciousness axis. Unlike GET /yoga and GET /yoga/{id} which are dictionary lookups, this endpoint computes the kundli from birth data and runs the detection rules. Sources: BPHS ch. 35 and ch. 75, Mantreswara Phaladeepika ch. 6, B.V. Raman Three Hundred Important Combinations.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -58792,7 +58963,7 @@ type ClientWithResponsesInterface interface {
 
 	// DetectYogasWithResponse Detect classical Vedic yogas in a birth chart
 	//
-	// Chart-driven detection of 44 classical Vedic yogas. Twelve conjunction and dignity yogas: Gajakesari (parashara three-rule definition), Sunapha, Anapha, Dhurdhura, Kemadruma, Chandra Mangala, Budha-Aditya, and the five Pancha Mahapurusha yogas (Ruchaka, Bhadra, Hamsa, Malavya, Sasa). Plus all 32 Nabhasa distribution yogas, which describe how the seven visible grahas are spread across the whole chart rather than any single conjunction, across four families: Asraya (Rajju, Musala, Nala), Dala (Mala, Sarpa), Akriti (Gada, Shakata, Vihaga, Shringataka, Hala, Vajra, Yava, Kamala, Vapi, Yupa, Shara, Shakti, Danda, Nauka, Kuta, Chhatra, Dhanusha, Ardhachandra, Chakra, Samudra) and Sankhya (Gola, Yuga, Shoola, Kedara, Pasa, Damini, Veena). Each yoga is returned with an `id`, `name`, a `present` boolean, a `quality` (Positive, Negative, or Both, i.e. auspicious, inauspicious, or context-dependent), and a classical-text `evidence` string naming the rule that triggered or failed (kendra position, dignity, malefic drishti, lordship, retrograde state, sign modality, bhava distribution). Nabhasa results also apply the four classical precedence norms, so a yoga that matched its own rule but was outranked by a stronger family is returned as absent with evidence naming the norm that silenced it, letting you explain a verdict rather than only report it. There is no separate major/minor flag; `quality` is the auspiciousness axis. Unlike GET /yoga and GET /yoga/{id} which are dictionary lookups, this endpoint computes the kundli from birth data and runs the detection rules. Sources: BPHS ch. 35 and ch. 75, Mantreswara Phaladeepika ch. 6, B.V. Raman Three Hundred Important Combinations.
+	// Chart-driven detection of 48 classical Vedic yogas. Twelve conjunction and dignity yogas: Gajakesari (parashara three-rule definition), Sunapha, Anapha, Dhurdhura, Kemadruma, Chandra Mangala, Budha-Aditya, and the five Pancha Mahapurusha yogas (Ruchaka, Bhadra, Hamsa, Malavya, Sasa). Plus all 32 Nabhasa distribution yogas, which describe how the seven visible grahas are spread across the whole chart rather than any single conjunction, across four families: Asraya (Rajju, Musala, Nala), Dala (Mala, Sarpa), Akriti (Gada, Shakata, Vihaga, Shringataka, Hala, Vajra, Yava, Kamala, Vapi, Yupa, Shara, Shakti, Danda, Nauka, Kuta, Chhatra, Dhanusha, Ardhachandra, Chakra, Samudra) and Sankhya (Gola, Yuga, Shoola, Kedara, Pasa, Damini, Veena). Plus four wealth and poverty verdicts, each ONE answer over a whole family of classical rules: Dhana Yoga over the eleven catalogued wealth combinations of BPHS ch. 41, Daridra Yoga over the poverty combinations of BPHS ch. 42 and Phaladeepika ch. 6, Lakshmi Yoga (BPHS ch. 36), and Dhana Malika (Jataka Parijata ch. 7). Their evidence names every rule that matched and the exact condition it matched on, so a wealth reading cites the combination rather than a label, and a rule resting on a single authority is excluded from the verdict and says so rather than quietly counting. Each yoga is returned with an `id`, `name`, a `present` boolean, a `quality` (Positive, Negative, or Both, i.e. auspicious, inauspicious, or context-dependent), and a classical-text `evidence` string naming the rule that triggered or failed (kendra position, dignity, malefic drishti, lordship, retrograde state, sign modality, bhava distribution). Nabhasa results also apply the four classical precedence norms, so a yoga that matched its own rule but was outranked by a stronger family is returned as absent with evidence naming the norm that silenced it, letting you explain a verdict rather than only report it. There is no separate major/minor flag; `quality` is the auspiciousness axis. Unlike GET /yoga and GET /yoga/{id} which are dictionary lookups, this endpoint computes the kundli from birth data and runs the detection rules. Sources: BPHS ch. 35 and ch. 75, Mantreswara Phaladeepika ch. 6, B.V. Raman Three Hundred Important Combinations.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -58801,7 +58972,7 @@ type ClientWithResponsesInterface interface {
 
 	// GetYogaWithResponse Get yoga details by ID - Vedic Yoga Glossary Entry
 	//
-	// Look up the dictionary entry for a specific named yoga from the 301-entry Vedic planetary-yoga glossary. Returns formation conditions, life results, and quality classification (Positive/Negative/Both). This is a glossary lookup against the static catalog; it does NOT analyze a birth chart. For chart-driven present/absent verdicts on the 44 detection-grade yogas (Gajakesari, the Pancha Mahapurusha set, and all 32 Nabhasa distribution yogas) call POST /yoga/detect with birth data.
+	// Look up the dictionary entry for a specific named yoga from the 301-entry Vedic planetary-yoga glossary. Returns formation conditions, life results, and quality classification (Positive/Negative/Both). This is a glossary lookup against the static catalog; it does NOT analyze a birth chart. For chart-driven present/absent verdicts on the 48 detection-grade yogas (Gajakesari, the Pancha Mahapurusha set, all 32 Nabhasa distribution yogas, and the wealth and poverty verdicts) call POST /yoga/detect with birth data.
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
@@ -75170,6 +75341,112 @@ func (r ListLanguagesResponse) Bytes() []byte {
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r ListLanguagesResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+// GetFieldLabelsResponse405Headers the declared response headers of an HTTP 405 response for GetFieldLabels
+type GetFieldLabelsResponse405Headers struct {
+	Allow *string
+}
+
+type GetFieldLabelsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// Enums Label per selectable option, keyed `{fieldName}.{value}` so the same value can read differently under different fields. For example `nodeType.mean` and `houseSystem.whole-sign`. Split on the first dot: the field name is before it, and everything after it is the value you send back unchanged.
+		Enums map[string]string `json:"enums"`
+
+		// Fields Label per request field or parameter name. Keys are the wire names used in request bodies and query parameters, such as `birthDate`, `timezone` or `houseSystem`.
+		Fields map[string]string `json:"fields"`
+
+		// Lang Language these labels resolved to. Echoes the `lang` query parameter, or `en` when it is omitted.
+		Lang GetFieldLabels200JSONResponseBodyLang `json:"lang"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON405 the response for an HTTP 405 `application/json` response
+	JSON405 *ErrorResponse
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+	// Headers405 the parsed response headers for an HTTP 405 response
+	Headers405 *GetFieldLabelsResponse405Headers
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetFieldLabelsResponse) GetJSON200() *struct {
+	// Enums Label per selectable option, keyed `{fieldName}.{value}` so the same value can read differently under different fields. For example `nodeType.mean` and `houseSystem.whole-sign`. Split on the first dot: the field name is before it, and everything after it is the value you send back unchanged.
+	Enums map[string]string `json:"enums"`
+
+	// Fields Label per request field or parameter name. Keys are the wire names used in request bodies and query parameters, such as `birthDate`, `timezone` or `houseSystem`.
+	Fields map[string]string `json:"fields"`
+
+	// Lang Language these labels resolved to. Echoes the `lang` query parameter, or `en` when it is omitted.
+	Lang GetFieldLabels200JSONResponseBodyLang `json:"lang"`
+} {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r GetFieldLabelsResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r GetFieldLabelsResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON405 returns the response for an HTTP 405 `application/json` response
+func (r GetFieldLabelsResponse) GetJSON405() *ErrorResponse {
+	return r.JSON405
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r GetFieldLabelsResponse) GetJSON429() *ErrorResponse {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GetFieldLabelsResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r GetFieldLabelsResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetFieldLabelsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetFieldLabelsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// Bytes is a convenience method to retrieve the raw bytes from the HTTP response
+func (r GetFieldLabelsResponse) Bytes() []byte {
+	return r.Body
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetFieldLabelsResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -93129,6 +93406,21 @@ func (c *ClientWithResponses) ListLanguagesWithResponse(ctx context.Context, req
 	return ParseListLanguagesResponse(rsp)
 }
 
+// GetFieldLabelsWithResponse Get field labels for a language
+//
+// Returns the display label for every request field name and every selectable option across the API, in the requested language. Use this to build a birth-data form, a chart widget, or an admin picker that reads in your customer language without hardcoding a word: look a field name up in `fields`, and an option up in `enums` under `{fieldName}.{value}`. Values a caller sends stay the canonical English identifier, so a translated form still submits a valid request. Labels a language has not been translated into yet return English, and the whole payload is stable enough to cache for a day.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /languages/field-labels (the `GetFieldLabels` operationId).
+func (c *ClientWithResponses) GetFieldLabelsWithResponse(ctx context.Context, params *GetFieldLabelsParams, reqEditors ...RequestEditorFn) (*GetFieldLabelsResponse, error) {
+	rsp, err := c.GetFieldLabels(ctx, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetFieldLabelsResponse(rsp)
+}
+
 // ListCountriesWithResponse List all countries - ISO codes and city coverage
 //
 // Returns every country with ISO 3166-1 alpha-2 and alpha-3 codes, plus the number of searchable cities per country. Use this endpoint to build country dropdown menus, regional filters, or to check city coverage before querying. Sorted alphabetically by country name. Covers Europe, Americas, Asia, Middle East, Africa, and Oceania.
@@ -95456,7 +95748,7 @@ func (c *ClientWithResponses) GetUpagrahaPositionsWithResponse(ctx context.Conte
 
 // ListYogasWithResponse List all planetary yogas - 301 entry Vedic Yoga Glossary
 //
-// Browse the 301-entry Vedic planetary-yoga glossary. Returns id and name for every cataloged yoga (Raja, Dhana, Pancha Mahapurusha, Nabhasa, Chandra-Mangala, and more). This is a dictionary lookup, not chart-driven detection: it does not inspect a birth chart. Use GET /yoga/{id} for the full glossary entry, or POST /yoga/detect to run all 44 detection rules against a specific kundli. Ideal for yoga-browser UIs, search, and progressive data loading.
+// Browse the 301-entry Vedic planetary-yoga glossary. Returns id and name for every cataloged yoga (Raja, Dhana, Pancha Mahapurusha, Nabhasa, Chandra-Mangala, and more). This is a dictionary lookup, not chart-driven detection: it does not inspect a birth chart. Use GET /yoga/{id} for the full glossary entry, or POST /yoga/detect to run all 48 detection rules against a specific kundli. Ideal for yoga-browser UIs, search, and progressive data loading.
 //
 // Returns a wrapper object for the known response body format(s).
 //
@@ -95471,7 +95763,7 @@ func (c *ClientWithResponses) ListYogasWithResponse(ctx context.Context, params 
 
 // DetectYogasWithBodyWithResponse Detect classical Vedic yogas in a birth chart
 //
-// Chart-driven detection of 44 classical Vedic yogas. Twelve conjunction and dignity yogas: Gajakesari (parashara three-rule definition), Sunapha, Anapha, Dhurdhura, Kemadruma, Chandra Mangala, Budha-Aditya, and the five Pancha Mahapurusha yogas (Ruchaka, Bhadra, Hamsa, Malavya, Sasa). Plus all 32 Nabhasa distribution yogas, which describe how the seven visible grahas are spread across the whole chart rather than any single conjunction, across four families: Asraya (Rajju, Musala, Nala), Dala (Mala, Sarpa), Akriti (Gada, Shakata, Vihaga, Shringataka, Hala, Vajra, Yava, Kamala, Vapi, Yupa, Shara, Shakti, Danda, Nauka, Kuta, Chhatra, Dhanusha, Ardhachandra, Chakra, Samudra) and Sankhya (Gola, Yuga, Shoola, Kedara, Pasa, Damini, Veena). Each yoga is returned with an `id`, `name`, a `present` boolean, a `quality` (Positive, Negative, or Both, i.e. auspicious, inauspicious, or context-dependent), and a classical-text `evidence` string naming the rule that triggered or failed (kendra position, dignity, malefic drishti, lordship, retrograde state, sign modality, bhava distribution). Nabhasa results also apply the four classical precedence norms, so a yoga that matched its own rule but was outranked by a stronger family is returned as absent with evidence naming the norm that silenced it, letting you explain a verdict rather than only report it. There is no separate major/minor flag; `quality` is the auspiciousness axis. Unlike GET /yoga and GET /yoga/{id} which are dictionary lookups, this endpoint computes the kundli from birth data and runs the detection rules. Sources: BPHS ch. 35 and ch. 75, Mantreswara Phaladeepika ch. 6, B.V. Raman Three Hundred Important Combinations.
+// Chart-driven detection of 48 classical Vedic yogas. Twelve conjunction and dignity yogas: Gajakesari (parashara three-rule definition), Sunapha, Anapha, Dhurdhura, Kemadruma, Chandra Mangala, Budha-Aditya, and the five Pancha Mahapurusha yogas (Ruchaka, Bhadra, Hamsa, Malavya, Sasa). Plus all 32 Nabhasa distribution yogas, which describe how the seven visible grahas are spread across the whole chart rather than any single conjunction, across four families: Asraya (Rajju, Musala, Nala), Dala (Mala, Sarpa), Akriti (Gada, Shakata, Vihaga, Shringataka, Hala, Vajra, Yava, Kamala, Vapi, Yupa, Shara, Shakti, Danda, Nauka, Kuta, Chhatra, Dhanusha, Ardhachandra, Chakra, Samudra) and Sankhya (Gola, Yuga, Shoola, Kedara, Pasa, Damini, Veena). Plus four wealth and poverty verdicts, each ONE answer over a whole family of classical rules: Dhana Yoga over the eleven catalogued wealth combinations of BPHS ch. 41, Daridra Yoga over the poverty combinations of BPHS ch. 42 and Phaladeepika ch. 6, Lakshmi Yoga (BPHS ch. 36), and Dhana Malika (Jataka Parijata ch. 7). Their evidence names every rule that matched and the exact condition it matched on, so a wealth reading cites the combination rather than a label, and a rule resting on a single authority is excluded from the verdict and says so rather than quietly counting. Each yoga is returned with an `id`, `name`, a `present` boolean, a `quality` (Positive, Negative, or Both, i.e. auspicious, inauspicious, or context-dependent), and a classical-text `evidence` string naming the rule that triggered or failed (kendra position, dignity, malefic drishti, lordship, retrograde state, sign modality, bhava distribution). Nabhasa results also apply the four classical precedence norms, so a yoga that matched its own rule but was outranked by a stronger family is returned as absent with evidence naming the norm that silenced it, letting you explain a verdict rather than only report it. There is no separate major/minor flag; `quality` is the auspiciousness axis. Unlike GET /yoga and GET /yoga/{id} which are dictionary lookups, this endpoint computes the kundli from birth data and runs the detection rules. Sources: BPHS ch. 35 and ch. 75, Mantreswara Phaladeepika ch. 6, B.V. Raman Three Hundred Important Combinations.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -95486,7 +95778,7 @@ func (c *ClientWithResponses) DetectYogasWithBodyWithResponse(ctx context.Contex
 
 // DetectYogasWithResponse Detect classical Vedic yogas in a birth chart
 //
-// Chart-driven detection of 44 classical Vedic yogas. Twelve conjunction and dignity yogas: Gajakesari (parashara three-rule definition), Sunapha, Anapha, Dhurdhura, Kemadruma, Chandra Mangala, Budha-Aditya, and the five Pancha Mahapurusha yogas (Ruchaka, Bhadra, Hamsa, Malavya, Sasa). Plus all 32 Nabhasa distribution yogas, which describe how the seven visible grahas are spread across the whole chart rather than any single conjunction, across four families: Asraya (Rajju, Musala, Nala), Dala (Mala, Sarpa), Akriti (Gada, Shakata, Vihaga, Shringataka, Hala, Vajra, Yava, Kamala, Vapi, Yupa, Shara, Shakti, Danda, Nauka, Kuta, Chhatra, Dhanusha, Ardhachandra, Chakra, Samudra) and Sankhya (Gola, Yuga, Shoola, Kedara, Pasa, Damini, Veena). Each yoga is returned with an `id`, `name`, a `present` boolean, a `quality` (Positive, Negative, or Both, i.e. auspicious, inauspicious, or context-dependent), and a classical-text `evidence` string naming the rule that triggered or failed (kendra position, dignity, malefic drishti, lordship, retrograde state, sign modality, bhava distribution). Nabhasa results also apply the four classical precedence norms, so a yoga that matched its own rule but was outranked by a stronger family is returned as absent with evidence naming the norm that silenced it, letting you explain a verdict rather than only report it. There is no separate major/minor flag; `quality` is the auspiciousness axis. Unlike GET /yoga and GET /yoga/{id} which are dictionary lookups, this endpoint computes the kundli from birth data and runs the detection rules. Sources: BPHS ch. 35 and ch. 75, Mantreswara Phaladeepika ch. 6, B.V. Raman Three Hundred Important Combinations.
+// Chart-driven detection of 48 classical Vedic yogas. Twelve conjunction and dignity yogas: Gajakesari (parashara three-rule definition), Sunapha, Anapha, Dhurdhura, Kemadruma, Chandra Mangala, Budha-Aditya, and the five Pancha Mahapurusha yogas (Ruchaka, Bhadra, Hamsa, Malavya, Sasa). Plus all 32 Nabhasa distribution yogas, which describe how the seven visible grahas are spread across the whole chart rather than any single conjunction, across four families: Asraya (Rajju, Musala, Nala), Dala (Mala, Sarpa), Akriti (Gada, Shakata, Vihaga, Shringataka, Hala, Vajra, Yava, Kamala, Vapi, Yupa, Shara, Shakti, Danda, Nauka, Kuta, Chhatra, Dhanusha, Ardhachandra, Chakra, Samudra) and Sankhya (Gola, Yuga, Shoola, Kedara, Pasa, Damini, Veena). Plus four wealth and poverty verdicts, each ONE answer over a whole family of classical rules: Dhana Yoga over the eleven catalogued wealth combinations of BPHS ch. 41, Daridra Yoga over the poverty combinations of BPHS ch. 42 and Phaladeepika ch. 6, Lakshmi Yoga (BPHS ch. 36), and Dhana Malika (Jataka Parijata ch. 7). Their evidence names every rule that matched and the exact condition it matched on, so a wealth reading cites the combination rather than a label, and a rule resting on a single authority is excluded from the verdict and says so rather than quietly counting. Each yoga is returned with an `id`, `name`, a `present` boolean, a `quality` (Positive, Negative, or Both, i.e. auspicious, inauspicious, or context-dependent), and a classical-text `evidence` string naming the rule that triggered or failed (kendra position, dignity, malefic drishti, lordship, retrograde state, sign modality, bhava distribution). Nabhasa results also apply the four classical precedence norms, so a yoga that matched its own rule but was outranked by a stronger family is returned as absent with evidence naming the norm that silenced it, letting you explain a verdict rather than only report it. There is no separate major/minor flag; `quality` is the auspiciousness axis. Unlike GET /yoga and GET /yoga/{id} which are dictionary lookups, this endpoint computes the kundli from birth data and runs the detection rules. Sources: BPHS ch. 35 and ch. 75, Mantreswara Phaladeepika ch. 6, B.V. Raman Three Hundred Important Combinations.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -95501,7 +95793,7 @@ func (c *ClientWithResponses) DetectYogasWithResponse(ctx context.Context, param
 
 // GetYogaWithResponse Get yoga details by ID - Vedic Yoga Glossary Entry
 //
-// Look up the dictionary entry for a specific named yoga from the 301-entry Vedic planetary-yoga glossary. Returns formation conditions, life results, and quality classification (Positive/Negative/Both). This is a glossary lookup against the static catalog; it does NOT analyze a birth chart. For chart-driven present/absent verdicts on the 44 detection-grade yogas (Gajakesari, the Pancha Mahapurusha set, and all 32 Nabhasa distribution yogas) call POST /yoga/detect with birth data.
+// Look up the dictionary entry for a specific named yoga from the 301-entry Vedic planetary-yoga glossary. Returns formation conditions, life results, and quality classification (Positive/Negative/Both). This is a glossary lookup against the static catalog; it does NOT analyze a birth chart. For chart-driven present/absent verdicts on the 48 detection-grade yogas (Gajakesari, the Pancha Mahapurusha set, all 32 Nabhasa distribution yogas, and the wealth and poverty verdicts) call POST /yoga/detect with birth data.
 //
 // Returns a wrapper object for the known response body format(s).
 //
@@ -106363,6 +106655,89 @@ func ParseListLanguagesResponse(rsp *http.Response) (*ListLanguagesResponse, err
 	switch {
 	case rsp.StatusCode == 405:
 		var headers ListLanguagesResponse405Headers
+		if values := rsp.Header.Values("Allow"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "Allow", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.Allow = &value
+		}
+		response.Headers405 = &headers
+	}
+
+	return response, nil
+}
+
+// ParseGetFieldLabelsResponse parses an HTTP response from a GetFieldLabelsWithResponse call
+func ParseGetFieldLabelsResponse(rsp *http.Response) (*GetFieldLabelsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetFieldLabelsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Enums Label per selectable option, keyed `{fieldName}.{value}` so the same value can read differently under different fields. For example `nodeType.mean` and `houseSystem.whole-sign`. Split on the first dot: the field name is before it, and everything after it is the value you send back unchanged.
+			Enums map[string]string `json:"enums"`
+
+			// Fields Label per request field or parameter name. Keys are the wire names used in request bodies and query parameters, such as `birthDate`, `timezone` or `houseSystem`.
+			Fields map[string]string `json:"fields"`
+
+			// Lang Language these labels resolved to. Echoes the `lang` query parameter, or `en` when it is omitted.
+			Lang GetFieldLabels200JSONResponseBodyLang `json:"lang"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 405:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON405 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	switch {
+	case rsp.StatusCode == 405:
+		var headers GetFieldLabelsResponse405Headers
 		if values := rsp.Header.Values("Allow"); len(values) > 0 {
 			var value string
 			if err := runtime.BindStyledParameterWithOptions("simple", "Allow", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {

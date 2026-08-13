@@ -262,4 +262,5 @@ Monitor your API usage, check rate limits, and track request consumption
 List the response languages accepted by the `lang` query parameter on every i18n-aware endpoint
 
 - `listLanguages` - GET `/languages` - List supported response languages
+- `getFieldLabels` - GET `/languages/field-labels` - Get field labels for a language
 <!-- END:METHODS -->

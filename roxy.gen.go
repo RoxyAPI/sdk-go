@@ -1490,6 +1490,14 @@ func (s *UsageService) GetUsageStats(ctx context.Context, reqEditors ...RequestE
 // LanguagesService groups the languages endpoints.
 type LanguagesService struct{ client *ClientWithResponses }
 
+func (s *LanguagesService) GetFieldLabels(ctx context.Context, params *GetFieldLabelsParams, reqEditors ...RequestEditorFn) (*GetFieldLabelsResponse, error) {
+	resp, err := s.client.GetFieldLabelsWithResponse(ctx, params, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
 func (s *LanguagesService) ListLanguages(ctx context.Context, reqEditors ...RequestEditorFn) (*ListLanguagesResponse, error) {
 	resp, err := s.client.ListLanguagesWithResponse(ctx, reqEditors...)
 	if err != nil {
