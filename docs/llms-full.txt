@@ -72,6 +72,7 @@ Vedic astrology (Jyotish) and KP API for kundli generation with 15 divisional ch
 - `generateBirthChart` - POST `/vedic-astrology/birth-chart` - Get birth chart (D1 Rashi chart) - Kundli Calculator API
 - `calculateCharaKarakas` - POST `/vedic-astrology/chara-karakas` - Get Chara Karakas including Atmakaraka - Jaimini Karaka Calculator API
 - `calculateGunMilan` - POST `/vedic-astrology/compatibility` - Calculate compatibility score - Gun Milan API (Ashtakoot Matching)
+- `getVedicDailyReading` - POST `/vedic-astrology/daily` - Daily Reading - Composed Gochara, Panchanga and Dasha for one native on one day
 - `getCurrentDasha` - POST `/vedic-astrology/dasha/current` - Get current Mahadasha, Antardasha, Pratyantardasha, Sookshma, Prana - Dasha Calculator API
 - `getMajorDashas` - POST `/vedic-astrology/dasha/major` - Get all 9 Mahadasha periods (120-year cycle)
 - `getSubDashas` - POST `/vedic-astrology/dasha/sub/{mahadasha}` - Get all Antardashas (sub-periods) for a specific Mahadasha

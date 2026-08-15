@@ -12828,6 +12828,759 @@ func (e CalculateGunMilanParamsLang) Valid() bool {
 	}
 }
 
+// Defines values for GetVedicDailyReadingParamsLang.
+const (
+	GetVedicDailyReadingParamsLangDe GetVedicDailyReadingParamsLang = "de"
+	GetVedicDailyReadingParamsLangEn GetVedicDailyReadingParamsLang = "en"
+	GetVedicDailyReadingParamsLangEs GetVedicDailyReadingParamsLang = "es"
+	GetVedicDailyReadingParamsLangFr GetVedicDailyReadingParamsLang = "fr"
+	GetVedicDailyReadingParamsLangHi GetVedicDailyReadingParamsLang = "hi"
+	GetVedicDailyReadingParamsLangPt GetVedicDailyReadingParamsLang = "pt"
+	GetVedicDailyReadingParamsLangRu GetVedicDailyReadingParamsLang = "ru"
+	GetVedicDailyReadingParamsLangTr GetVedicDailyReadingParamsLang = "tr"
+)
+
+// Valid indicates whether the value is a known member of the GetVedicDailyReadingParamsLang enum.
+func (e GetVedicDailyReadingParamsLang) Valid() bool {
+	switch e {
+	case GetVedicDailyReadingParamsLangDe:
+		return true
+	case GetVedicDailyReadingParamsLangEn:
+		return true
+	case GetVedicDailyReadingParamsLangEs:
+		return true
+	case GetVedicDailyReadingParamsLangFr:
+		return true
+	case GetVedicDailyReadingParamsLangHi:
+		return true
+	case GetVedicDailyReadingParamsLangPt:
+		return true
+	case GetVedicDailyReadingParamsLangRu:
+		return true
+	case GetVedicDailyReadingParamsLangTr:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetVedicDailyReadingParamsFocus.
+const (
+	GetVedicDailyReadingParamsFocusFinance GetVedicDailyReadingParamsFocus = "finance"
+	GetVedicDailyReadingParamsFocusGeneral GetVedicDailyReadingParamsFocus = "general"
+)
+
+// Valid indicates whether the value is a known member of the GetVedicDailyReadingParamsFocus enum.
+func (e GetVedicDailyReadingParamsFocus) Valid() bool {
+	switch e {
+	case GetVedicDailyReadingParamsFocusFinance:
+		return true
+	case GetVedicDailyReadingParamsFocusGeneral:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetVedicDailyReadingJSONBodyNodeType.
+const (
+	GetVedicDailyReadingJSONBodyNodeTypeMean GetVedicDailyReadingJSONBodyNodeType = "mean"
+	GetVedicDailyReadingJSONBodyNodeTypeTrue GetVedicDailyReadingJSONBodyNodeType = "true"
+)
+
+// Valid indicates whether the value is a known member of the GetVedicDailyReadingJSONBodyNodeType enum.
+func (e GetVedicDailyReadingJSONBodyNodeType) Valid() bool {
+	switch e {
+	case GetVedicDailyReadingJSONBodyNodeTypeMean:
+		return true
+	case GetVedicDailyReadingJSONBodyNodeTypeTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetVedicDailyReading200JSONResponseBodyAreasFinanceBand.
+const (
+	GetVedicDailyReading200JSONResponseBodyAreasFinanceBandLessThanNil GetVedicDailyReading200JSONResponseBodyAreasFinanceBand = "<nil>"
+	GetVedicDailyReading200JSONResponseBodyAreasFinanceBandModerate    GetVedicDailyReading200JSONResponseBodyAreasFinanceBand = "moderate"
+	GetVedicDailyReading200JSONResponseBodyAreasFinanceBandStrong      GetVedicDailyReading200JSONResponseBodyAreasFinanceBand = "strong"
+	GetVedicDailyReading200JSONResponseBodyAreasFinanceBandVeryStrong  GetVedicDailyReading200JSONResponseBodyAreasFinanceBand = "very-strong"
+	GetVedicDailyReading200JSONResponseBodyAreasFinanceBandWeak        GetVedicDailyReading200JSONResponseBodyAreasFinanceBand = "weak"
+)
+
+// Valid indicates whether the value is a known member of the GetVedicDailyReading200JSONResponseBodyAreasFinanceBand enum.
+func (e GetVedicDailyReading200JSONResponseBodyAreasFinanceBand) Valid() bool {
+	switch e {
+	case GetVedicDailyReading200JSONResponseBodyAreasFinanceBandLessThanNil:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyAreasFinanceBandModerate:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyAreasFinanceBandStrong:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyAreasFinanceBandVeryStrong:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyAreasFinanceBandWeak:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetVedicDailyReading200JSONResponseBodyAreasFinanceCautionsDashaLevels.
+const (
+	GetVedicDailyReading200JSONResponseBodyAreasFinanceCautionsDashaLevelsAntardasha      GetVedicDailyReading200JSONResponseBodyAreasFinanceCautionsDashaLevels = "antardasha"
+	GetVedicDailyReading200JSONResponseBodyAreasFinanceCautionsDashaLevelsMahadasha       GetVedicDailyReading200JSONResponseBodyAreasFinanceCautionsDashaLevels = "mahadasha"
+	GetVedicDailyReading200JSONResponseBodyAreasFinanceCautionsDashaLevelsPratyantardasha GetVedicDailyReading200JSONResponseBodyAreasFinanceCautionsDashaLevels = "pratyantardasha"
+)
+
+// Valid indicates whether the value is a known member of the GetVedicDailyReading200JSONResponseBodyAreasFinanceCautionsDashaLevels enum.
+func (e GetVedicDailyReading200JSONResponseBodyAreasFinanceCautionsDashaLevels) Valid() bool {
+	switch e {
+	case GetVedicDailyReading200JSONResponseBodyAreasFinanceCautionsDashaLevelsAntardasha:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyAreasFinanceCautionsDashaLevelsMahadasha:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyAreasFinanceCautionsDashaLevelsPratyantardasha:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetVedicDailyReading200JSONResponseBodyAreasFinanceCautionsGrade.
+const (
+	GetVedicDailyReading200JSONResponseBodyAreasFinanceCautionsGradeA GetVedicDailyReading200JSONResponseBodyAreasFinanceCautionsGrade = "A"
+	GetVedicDailyReading200JSONResponseBodyAreasFinanceCautionsGradeB GetVedicDailyReading200JSONResponseBodyAreasFinanceCautionsGrade = "B"
+	GetVedicDailyReading200JSONResponseBodyAreasFinanceCautionsGradeC GetVedicDailyReading200JSONResponseBodyAreasFinanceCautionsGrade = "C"
+	GetVedicDailyReading200JSONResponseBodyAreasFinanceCautionsGradeD GetVedicDailyReading200JSONResponseBodyAreasFinanceCautionsGrade = "D"
+)
+
+// Valid indicates whether the value is a known member of the GetVedicDailyReading200JSONResponseBodyAreasFinanceCautionsGrade enum.
+func (e GetVedicDailyReading200JSONResponseBodyAreasFinanceCautionsGrade) Valid() bool {
+	switch e {
+	case GetVedicDailyReading200JSONResponseBodyAreasFinanceCautionsGradeA:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyAreasFinanceCautionsGradeB:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyAreasFinanceCautionsGradeC:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyAreasFinanceCautionsGradeD:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetVedicDailyReading200JSONResponseBodyAreasFinanceDriversDashaLevels.
+const (
+	GetVedicDailyReading200JSONResponseBodyAreasFinanceDriversDashaLevelsAntardasha      GetVedicDailyReading200JSONResponseBodyAreasFinanceDriversDashaLevels = "antardasha"
+	GetVedicDailyReading200JSONResponseBodyAreasFinanceDriversDashaLevelsMahadasha       GetVedicDailyReading200JSONResponseBodyAreasFinanceDriversDashaLevels = "mahadasha"
+	GetVedicDailyReading200JSONResponseBodyAreasFinanceDriversDashaLevelsPratyantardasha GetVedicDailyReading200JSONResponseBodyAreasFinanceDriversDashaLevels = "pratyantardasha"
+)
+
+// Valid indicates whether the value is a known member of the GetVedicDailyReading200JSONResponseBodyAreasFinanceDriversDashaLevels enum.
+func (e GetVedicDailyReading200JSONResponseBodyAreasFinanceDriversDashaLevels) Valid() bool {
+	switch e {
+	case GetVedicDailyReading200JSONResponseBodyAreasFinanceDriversDashaLevelsAntardasha:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyAreasFinanceDriversDashaLevelsMahadasha:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyAreasFinanceDriversDashaLevelsPratyantardasha:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetVedicDailyReading200JSONResponseBodyAreasFinanceDriversGrade.
+const (
+	GetVedicDailyReading200JSONResponseBodyAreasFinanceDriversGradeA GetVedicDailyReading200JSONResponseBodyAreasFinanceDriversGrade = "A"
+	GetVedicDailyReading200JSONResponseBodyAreasFinanceDriversGradeB GetVedicDailyReading200JSONResponseBodyAreasFinanceDriversGrade = "B"
+	GetVedicDailyReading200JSONResponseBodyAreasFinanceDriversGradeC GetVedicDailyReading200JSONResponseBodyAreasFinanceDriversGrade = "C"
+	GetVedicDailyReading200JSONResponseBodyAreasFinanceDriversGradeD GetVedicDailyReading200JSONResponseBodyAreasFinanceDriversGrade = "D"
+)
+
+// Valid indicates whether the value is a known member of the GetVedicDailyReading200JSONResponseBodyAreasFinanceDriversGrade enum.
+func (e GetVedicDailyReading200JSONResponseBodyAreasFinanceDriversGrade) Valid() bool {
+	switch e {
+	case GetVedicDailyReading200JSONResponseBodyAreasFinanceDriversGradeA:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyAreasFinanceDriversGradeB:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyAreasFinanceDriversGradeC:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyAreasFinanceDriversGradeD:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetVedicDailyReading200JSONResponseBodyAreasFinanceNatalQuality.
+const (
+	GetVedicDailyReading200JSONResponseBodyAreasFinanceNatalQualityBoth     GetVedicDailyReading200JSONResponseBodyAreasFinanceNatalQuality = "Both"
+	GetVedicDailyReading200JSONResponseBodyAreasFinanceNatalQualityNegative GetVedicDailyReading200JSONResponseBodyAreasFinanceNatalQuality = "Negative"
+	GetVedicDailyReading200JSONResponseBodyAreasFinanceNatalQualityPositive GetVedicDailyReading200JSONResponseBodyAreasFinanceNatalQuality = "Positive"
+)
+
+// Valid indicates whether the value is a known member of the GetVedicDailyReading200JSONResponseBodyAreasFinanceNatalQuality enum.
+func (e GetVedicDailyReading200JSONResponseBodyAreasFinanceNatalQuality) Valid() bool {
+	switch e {
+	case GetVedicDailyReading200JSONResponseBodyAreasFinanceNatalQualityBoth:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyAreasFinanceNatalQualityNegative:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyAreasFinanceNatalQualityPositive:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetVedicDailyReading200JSONResponseBodyChandrabalaTimescale.
+const (
+	GetVedicDailyReading200JSONResponseBodyChandrabalaTimescaleDays   GetVedicDailyReading200JSONResponseBodyChandrabalaTimescale = "days"
+	GetVedicDailyReading200JSONResponseBodyChandrabalaTimescaleHours  GetVedicDailyReading200JSONResponseBodyChandrabalaTimescale = "hours"
+	GetVedicDailyReading200JSONResponseBodyChandrabalaTimescaleMonths GetVedicDailyReading200JSONResponseBodyChandrabalaTimescale = "months"
+	GetVedicDailyReading200JSONResponseBodyChandrabalaTimescaleYears  GetVedicDailyReading200JSONResponseBodyChandrabalaTimescale = "years"
+)
+
+// Valid indicates whether the value is a known member of the GetVedicDailyReading200JSONResponseBodyChandrabalaTimescale enum.
+func (e GetVedicDailyReading200JSONResponseBodyChandrabalaTimescale) Valid() bool {
+	switch e {
+	case GetVedicDailyReading200JSONResponseBodyChandrabalaTimescaleDays:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyChandrabalaTimescaleHours:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyChandrabalaTimescaleMonths:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyChandrabalaTimescaleYears:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetVedicDailyReading200JSONResponseBodyDashaLevel.
+const (
+	GetVedicDailyReading200JSONResponseBodyDashaLevelAntardasha      GetVedicDailyReading200JSONResponseBodyDashaLevel = "antardasha"
+	GetVedicDailyReading200JSONResponseBodyDashaLevelMahadasha       GetVedicDailyReading200JSONResponseBodyDashaLevel = "mahadasha"
+	GetVedicDailyReading200JSONResponseBodyDashaLevelPratyantardasha GetVedicDailyReading200JSONResponseBodyDashaLevel = "pratyantardasha"
+)
+
+// Valid indicates whether the value is a known member of the GetVedicDailyReading200JSONResponseBodyDashaLevel enum.
+func (e GetVedicDailyReading200JSONResponseBodyDashaLevel) Valid() bool {
+	switch e {
+	case GetVedicDailyReading200JSONResponseBodyDashaLevelAntardasha:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyDashaLevelMahadasha:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyDashaLevelPratyantardasha:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetVedicDailyReading200JSONResponseBodyDashaTimescale.
+const (
+	GetVedicDailyReading200JSONResponseBodyDashaTimescaleDays   GetVedicDailyReading200JSONResponseBodyDashaTimescale = "days"
+	GetVedicDailyReading200JSONResponseBodyDashaTimescaleHours  GetVedicDailyReading200JSONResponseBodyDashaTimescale = "hours"
+	GetVedicDailyReading200JSONResponseBodyDashaTimescaleMonths GetVedicDailyReading200JSONResponseBodyDashaTimescale = "months"
+	GetVedicDailyReading200JSONResponseBodyDashaTimescaleYears  GetVedicDailyReading200JSONResponseBodyDashaTimescale = "years"
+)
+
+// Valid indicates whether the value is a known member of the GetVedicDailyReading200JSONResponseBodyDashaTimescale enum.
+func (e GetVedicDailyReading200JSONResponseBodyDashaTimescale) Valid() bool {
+	switch e {
+	case GetVedicDailyReading200JSONResponseBodyDashaTimescaleDays:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyDashaTimescaleHours:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyDashaTimescaleMonths:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyDashaTimescaleYears:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetVedicDailyReading200JSONResponseBodyDegradedComponent.
+const (
+	AreasFinanceScore GetVedicDailyReading200JSONResponseBodyDegradedComponent = "areas.finance.score"
+	DayEnd            GetVedicDailyReading200JSONResponseBodyDegradedComponent = "dayEnd"
+	DayStart          GetVedicDailyReading200JSONResponseBodyDegradedComponent = "dayStart"
+)
+
+// Valid indicates whether the value is a known member of the GetVedicDailyReading200JSONResponseBodyDegradedComponent enum.
+func (e GetVedicDailyReading200JSONResponseBodyDegradedComponent) Valid() bool {
+	switch e {
+	case AreasFinanceScore:
+		return true
+	case DayEnd:
+		return true
+	case DayStart:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetVedicDailyReading200JSONResponseBodyDegradedReason.
+const (
+	PolarLatitude  GetVedicDailyReading200JSONResponseBodyDegradedReason = "polar-latitude"
+	SunDoesNotRise GetVedicDailyReading200JSONResponseBodyDegradedReason = "sun-does-not-rise"
+)
+
+// Valid indicates whether the value is a known member of the GetVedicDailyReading200JSONResponseBodyDegradedReason enum.
+func (e GetVedicDailyReading200JSONResponseBodyDegradedReason) Valid() bool {
+	switch e {
+	case PolarLatitude:
+		return true
+	case SunDoesNotRise:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetVedicDailyReading200JSONResponseBodyFocus.
+const (
+	GetVedicDailyReading200JSONResponseBodyFocusFinance GetVedicDailyReading200JSONResponseBodyFocus = "finance"
+	GetVedicDailyReading200JSONResponseBodyFocusGeneral GetVedicDailyReading200JSONResponseBodyFocus = "general"
+)
+
+// Valid indicates whether the value is a known member of the GetVedicDailyReading200JSONResponseBodyFocus enum.
+func (e GetVedicDailyReading200JSONResponseBodyFocus) Valid() bool {
+	switch e {
+	case GetVedicDailyReading200JSONResponseBodyFocusFinance:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyFocusGeneral:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetVedicDailyReading200JSONResponseBodyFramesKpGoverns.
+const (
+	GetVedicDailyReading200JSONResponseBodyFramesKpGovernsAreasFinance GetVedicDailyReading200JSONResponseBodyFramesKpGoverns = "areas.finance"
+	GetVedicDailyReading200JSONResponseBodyFramesKpGovernsChandrabala  GetVedicDailyReading200JSONResponseBodyFramesKpGoverns = "chandrabala"
+	GetVedicDailyReading200JSONResponseBodyFramesKpGovernsDasha        GetVedicDailyReading200JSONResponseBodyFramesKpGoverns = "dasha"
+	GetVedicDailyReading200JSONResponseBodyFramesKpGovernsGrahas       GetVedicDailyReading200JSONResponseBodyFramesKpGoverns = "grahas"
+	GetVedicDailyReading200JSONResponseBodyFramesKpGovernsPanchanga    GetVedicDailyReading200JSONResponseBodyFramesKpGoverns = "panchanga"
+	GetVedicDailyReading200JSONResponseBodyFramesKpGovernsSubject      GetVedicDailyReading200JSONResponseBodyFramesKpGoverns = "subject"
+	GetVedicDailyReading200JSONResponseBodyFramesKpGovernsTara         GetVedicDailyReading200JSONResponseBodyFramesKpGoverns = "tara"
+)
+
+// Valid indicates whether the value is a known member of the GetVedicDailyReading200JSONResponseBodyFramesKpGoverns enum.
+func (e GetVedicDailyReading200JSONResponseBodyFramesKpGoverns) Valid() bool {
+	switch e {
+	case GetVedicDailyReading200JSONResponseBodyFramesKpGovernsAreasFinance:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyFramesKpGovernsChandrabala:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyFramesKpGovernsDasha:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyFramesKpGovernsGrahas:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyFramesKpGovernsPanchanga:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyFramesKpGovernsSubject:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyFramesKpGovernsTara:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetVedicDailyReading200JSONResponseBodyFramesNatalGoverns.
+const (
+	GetVedicDailyReading200JSONResponseBodyFramesNatalGovernsAreasFinance GetVedicDailyReading200JSONResponseBodyFramesNatalGoverns = "areas.finance"
+	GetVedicDailyReading200JSONResponseBodyFramesNatalGovernsChandrabala  GetVedicDailyReading200JSONResponseBodyFramesNatalGoverns = "chandrabala"
+	GetVedicDailyReading200JSONResponseBodyFramesNatalGovernsDasha        GetVedicDailyReading200JSONResponseBodyFramesNatalGoverns = "dasha"
+	GetVedicDailyReading200JSONResponseBodyFramesNatalGovernsGrahas       GetVedicDailyReading200JSONResponseBodyFramesNatalGoverns = "grahas"
+	GetVedicDailyReading200JSONResponseBodyFramesNatalGovernsPanchanga    GetVedicDailyReading200JSONResponseBodyFramesNatalGoverns = "panchanga"
+	GetVedicDailyReading200JSONResponseBodyFramesNatalGovernsSubject      GetVedicDailyReading200JSONResponseBodyFramesNatalGoverns = "subject"
+	GetVedicDailyReading200JSONResponseBodyFramesNatalGovernsTara         GetVedicDailyReading200JSONResponseBodyFramesNatalGoverns = "tara"
+)
+
+// Valid indicates whether the value is a known member of the GetVedicDailyReading200JSONResponseBodyFramesNatalGoverns enum.
+func (e GetVedicDailyReading200JSONResponseBodyFramesNatalGoverns) Valid() bool {
+	switch e {
+	case GetVedicDailyReading200JSONResponseBodyFramesNatalGovernsAreasFinance:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyFramesNatalGovernsChandrabala:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyFramesNatalGovernsDasha:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyFramesNatalGovernsGrahas:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyFramesNatalGovernsPanchanga:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyFramesNatalGovernsSubject:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyFramesNatalGovernsTara:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetVedicDailyReading200JSONResponseBodyFramesTransitGoverns.
+const (
+	GetVedicDailyReading200JSONResponseBodyFramesTransitGovernsAreasFinance GetVedicDailyReading200JSONResponseBodyFramesTransitGoverns = "areas.finance"
+	GetVedicDailyReading200JSONResponseBodyFramesTransitGovernsChandrabala  GetVedicDailyReading200JSONResponseBodyFramesTransitGoverns = "chandrabala"
+	GetVedicDailyReading200JSONResponseBodyFramesTransitGovernsDasha        GetVedicDailyReading200JSONResponseBodyFramesTransitGoverns = "dasha"
+	GetVedicDailyReading200JSONResponseBodyFramesTransitGovernsGrahas       GetVedicDailyReading200JSONResponseBodyFramesTransitGoverns = "grahas"
+	GetVedicDailyReading200JSONResponseBodyFramesTransitGovernsPanchanga    GetVedicDailyReading200JSONResponseBodyFramesTransitGoverns = "panchanga"
+	GetVedicDailyReading200JSONResponseBodyFramesTransitGovernsSubject      GetVedicDailyReading200JSONResponseBodyFramesTransitGoverns = "subject"
+	GetVedicDailyReading200JSONResponseBodyFramesTransitGovernsTara         GetVedicDailyReading200JSONResponseBodyFramesTransitGoverns = "tara"
+)
+
+// Valid indicates whether the value is a known member of the GetVedicDailyReading200JSONResponseBodyFramesTransitGoverns enum.
+func (e GetVedicDailyReading200JSONResponseBodyFramesTransitGoverns) Valid() bool {
+	switch e {
+	case GetVedicDailyReading200JSONResponseBodyFramesTransitGovernsAreasFinance:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyFramesTransitGovernsChandrabala:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyFramesTransitGovernsDasha:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyFramesTransitGovernsGrahas:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyFramesTransitGovernsPanchanga:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyFramesTransitGovernsSubject:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyFramesTransitGovernsTara:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetVedicDailyReading200JSONResponseBodyGrahasDignity.
+const (
+	GetVedicDailyReading200JSONResponseBodyGrahasDignityDebilitated GetVedicDailyReading200JSONResponseBodyGrahasDignity = "debilitated"
+	GetVedicDailyReading200JSONResponseBodyGrahasDignityEnemy       GetVedicDailyReading200JSONResponseBodyGrahasDignity = "enemy"
+	GetVedicDailyReading200JSONResponseBodyGrahasDignityExalted     GetVedicDailyReading200JSONResponseBodyGrahasDignity = "exalted"
+	GetVedicDailyReading200JSONResponseBodyGrahasDignityLessThanNil GetVedicDailyReading200JSONResponseBodyGrahasDignity = "<nil>"
+	GetVedicDailyReading200JSONResponseBodyGrahasDignityNeutral     GetVedicDailyReading200JSONResponseBodyGrahasDignity = "neutral"
+	GetVedicDailyReading200JSONResponseBodyGrahasDignityOwn         GetVedicDailyReading200JSONResponseBodyGrahasDignity = "own"
+)
+
+// Valid indicates whether the value is a known member of the GetVedicDailyReading200JSONResponseBodyGrahasDignity enum.
+func (e GetVedicDailyReading200JSONResponseBodyGrahasDignity) Valid() bool {
+	switch e {
+	case GetVedicDailyReading200JSONResponseBodyGrahasDignityDebilitated:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyGrahasDignityEnemy:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyGrahasDignityExalted:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyGrahasDignityLessThanNil:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyGrahasDignityNeutral:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyGrahasDignityOwn:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetVedicDailyReading200JSONResponseBodyGrahasState.
+const (
+	GetVedicDailyReading200JSONResponseBodyGrahasStateAggravated     GetVedicDailyReading200JSONResponseBodyGrahasState = "aggravated"
+	GetVedicDailyReading200JSONResponseBodyGrahasStateFavourable     GetVedicDailyReading200JSONResponseBodyGrahasState = "favourable"
+	GetVedicDailyReading200JSONResponseBodyGrahasStateObstructed     GetVedicDailyReading200JSONResponseBodyGrahasState = "obstructed"
+	GetVedicDailyReading200JSONResponseBodyGrahasStateUnderdelivered GetVedicDailyReading200JSONResponseBodyGrahasState = "underdelivered"
+	GetVedicDailyReading200JSONResponseBodyGrahasStateUnfavourable   GetVedicDailyReading200JSONResponseBodyGrahasState = "unfavourable"
+	GetVedicDailyReading200JSONResponseBodyGrahasStateVoid           GetVedicDailyReading200JSONResponseBodyGrahasState = "void"
+)
+
+// Valid indicates whether the value is a known member of the GetVedicDailyReading200JSONResponseBodyGrahasState enum.
+func (e GetVedicDailyReading200JSONResponseBodyGrahasState) Valid() bool {
+	switch e {
+	case GetVedicDailyReading200JSONResponseBodyGrahasStateAggravated:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyGrahasStateFavourable:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyGrahasStateObstructed:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyGrahasStateUnderdelivered:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyGrahasStateUnfavourable:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyGrahasStateVoid:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetVedicDailyReading200JSONResponseBodyGrahasTimescale.
+const (
+	GetVedicDailyReading200JSONResponseBodyGrahasTimescaleDays   GetVedicDailyReading200JSONResponseBodyGrahasTimescale = "days"
+	GetVedicDailyReading200JSONResponseBodyGrahasTimescaleHours  GetVedicDailyReading200JSONResponseBodyGrahasTimescale = "hours"
+	GetVedicDailyReading200JSONResponseBodyGrahasTimescaleMonths GetVedicDailyReading200JSONResponseBodyGrahasTimescale = "months"
+	GetVedicDailyReading200JSONResponseBodyGrahasTimescaleYears  GetVedicDailyReading200JSONResponseBodyGrahasTimescale = "years"
+)
+
+// Valid indicates whether the value is a known member of the GetVedicDailyReading200JSONResponseBodyGrahasTimescale enum.
+func (e GetVedicDailyReading200JSONResponseBodyGrahasTimescale) Valid() bool {
+	switch e {
+	case GetVedicDailyReading200JSONResponseBodyGrahasTimescaleDays:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyGrahasTimescaleHours:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyGrahasTimescaleMonths:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyGrahasTimescaleYears:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetVedicDailyReading200JSONResponseBodyPanchangaKaranaTimescale.
+const (
+	GetVedicDailyReading200JSONResponseBodyPanchangaKaranaTimescaleDays   GetVedicDailyReading200JSONResponseBodyPanchangaKaranaTimescale = "days"
+	GetVedicDailyReading200JSONResponseBodyPanchangaKaranaTimescaleHours  GetVedicDailyReading200JSONResponseBodyPanchangaKaranaTimescale = "hours"
+	GetVedicDailyReading200JSONResponseBodyPanchangaKaranaTimescaleMonths GetVedicDailyReading200JSONResponseBodyPanchangaKaranaTimescale = "months"
+	GetVedicDailyReading200JSONResponseBodyPanchangaKaranaTimescaleYears  GetVedicDailyReading200JSONResponseBodyPanchangaKaranaTimescale = "years"
+)
+
+// Valid indicates whether the value is a known member of the GetVedicDailyReading200JSONResponseBodyPanchangaKaranaTimescale enum.
+func (e GetVedicDailyReading200JSONResponseBodyPanchangaKaranaTimescale) Valid() bool {
+	switch e {
+	case GetVedicDailyReading200JSONResponseBodyPanchangaKaranaTimescaleDays:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyPanchangaKaranaTimescaleHours:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyPanchangaKaranaTimescaleMonths:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyPanchangaKaranaTimescaleYears:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetVedicDailyReading200JSONResponseBodyPanchangaNakshatraTimescale.
+const (
+	GetVedicDailyReading200JSONResponseBodyPanchangaNakshatraTimescaleDays   GetVedicDailyReading200JSONResponseBodyPanchangaNakshatraTimescale = "days"
+	GetVedicDailyReading200JSONResponseBodyPanchangaNakshatraTimescaleHours  GetVedicDailyReading200JSONResponseBodyPanchangaNakshatraTimescale = "hours"
+	GetVedicDailyReading200JSONResponseBodyPanchangaNakshatraTimescaleMonths GetVedicDailyReading200JSONResponseBodyPanchangaNakshatraTimescale = "months"
+	GetVedicDailyReading200JSONResponseBodyPanchangaNakshatraTimescaleYears  GetVedicDailyReading200JSONResponseBodyPanchangaNakshatraTimescale = "years"
+)
+
+// Valid indicates whether the value is a known member of the GetVedicDailyReading200JSONResponseBodyPanchangaNakshatraTimescale enum.
+func (e GetVedicDailyReading200JSONResponseBodyPanchangaNakshatraTimescale) Valid() bool {
+	switch e {
+	case GetVedicDailyReading200JSONResponseBodyPanchangaNakshatraTimescaleDays:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyPanchangaNakshatraTimescaleHours:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyPanchangaNakshatraTimescaleMonths:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyPanchangaNakshatraTimescaleYears:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetVedicDailyReading200JSONResponseBodyPanchangaTithiTimescale.
+const (
+	GetVedicDailyReading200JSONResponseBodyPanchangaTithiTimescaleDays   GetVedicDailyReading200JSONResponseBodyPanchangaTithiTimescale = "days"
+	GetVedicDailyReading200JSONResponseBodyPanchangaTithiTimescaleHours  GetVedicDailyReading200JSONResponseBodyPanchangaTithiTimescale = "hours"
+	GetVedicDailyReading200JSONResponseBodyPanchangaTithiTimescaleMonths GetVedicDailyReading200JSONResponseBodyPanchangaTithiTimescale = "months"
+	GetVedicDailyReading200JSONResponseBodyPanchangaTithiTimescaleYears  GetVedicDailyReading200JSONResponseBodyPanchangaTithiTimescale = "years"
+)
+
+// Valid indicates whether the value is a known member of the GetVedicDailyReading200JSONResponseBodyPanchangaTithiTimescale enum.
+func (e GetVedicDailyReading200JSONResponseBodyPanchangaTithiTimescale) Valid() bool {
+	switch e {
+	case GetVedicDailyReading200JSONResponseBodyPanchangaTithiTimescaleDays:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyPanchangaTithiTimescaleHours:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyPanchangaTithiTimescaleMonths:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyPanchangaTithiTimescaleYears:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetVedicDailyReading200JSONResponseBodyPanchangaYogaTimescale.
+const (
+	GetVedicDailyReading200JSONResponseBodyPanchangaYogaTimescaleDays   GetVedicDailyReading200JSONResponseBodyPanchangaYogaTimescale = "days"
+	GetVedicDailyReading200JSONResponseBodyPanchangaYogaTimescaleHours  GetVedicDailyReading200JSONResponseBodyPanchangaYogaTimescale = "hours"
+	GetVedicDailyReading200JSONResponseBodyPanchangaYogaTimescaleMonths GetVedicDailyReading200JSONResponseBodyPanchangaYogaTimescale = "months"
+	GetVedicDailyReading200JSONResponseBodyPanchangaYogaTimescaleYears  GetVedicDailyReading200JSONResponseBodyPanchangaYogaTimescale = "years"
+)
+
+// Valid indicates whether the value is a known member of the GetVedicDailyReading200JSONResponseBodyPanchangaYogaTimescale enum.
+func (e GetVedicDailyReading200JSONResponseBodyPanchangaYogaTimescale) Valid() bool {
+	switch e {
+	case GetVedicDailyReading200JSONResponseBodyPanchangaYogaTimescaleDays:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyPanchangaYogaTimescaleHours:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyPanchangaYogaTimescaleMonths:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyPanchangaYogaTimescaleYears:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetVedicDailyReading200JSONResponseBodyTallyState.
+const (
+	GetVedicDailyReading200JSONResponseBodyTallyStateAggravated     GetVedicDailyReading200JSONResponseBodyTallyState = "aggravated"
+	GetVedicDailyReading200JSONResponseBodyTallyStateFavourable     GetVedicDailyReading200JSONResponseBodyTallyState = "favourable"
+	GetVedicDailyReading200JSONResponseBodyTallyStateObstructed     GetVedicDailyReading200JSONResponseBodyTallyState = "obstructed"
+	GetVedicDailyReading200JSONResponseBodyTallyStateUnderdelivered GetVedicDailyReading200JSONResponseBodyTallyState = "underdelivered"
+	GetVedicDailyReading200JSONResponseBodyTallyStateUnfavourable   GetVedicDailyReading200JSONResponseBodyTallyState = "unfavourable"
+	GetVedicDailyReading200JSONResponseBodyTallyStateVoid           GetVedicDailyReading200JSONResponseBodyTallyState = "void"
+)
+
+// Valid indicates whether the value is a known member of the GetVedicDailyReading200JSONResponseBodyTallyState enum.
+func (e GetVedicDailyReading200JSONResponseBodyTallyState) Valid() bool {
+	switch e {
+	case GetVedicDailyReading200JSONResponseBodyTallyStateAggravated:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyTallyStateFavourable:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyTallyStateObstructed:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyTallyStateUnderdelivered:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyTallyStateUnfavourable:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyTallyStateVoid:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetVedicDailyReading200JSONResponseBodyTaraName.
+const (
+	Janma       GetVedicDailyReading200JSONResponseBodyTaraName = "Janma"
+	Kshema      GetVedicDailyReading200JSONResponseBodyTaraName = "Kshema"
+	Mitra       GetVedicDailyReading200JSONResponseBodyTaraName = "Mitra"
+	ParamaMitra GetVedicDailyReading200JSONResponseBodyTaraName = "Parama Mitra"
+	Pratyari    GetVedicDailyReading200JSONResponseBodyTaraName = "Pratyari"
+	Sadhaka     GetVedicDailyReading200JSONResponseBodyTaraName = "Sadhaka"
+	Sampat      GetVedicDailyReading200JSONResponseBodyTaraName = "Sampat"
+	Vadha       GetVedicDailyReading200JSONResponseBodyTaraName = "Vadha"
+	Vipat       GetVedicDailyReading200JSONResponseBodyTaraName = "Vipat"
+)
+
+// Valid indicates whether the value is a known member of the GetVedicDailyReading200JSONResponseBodyTaraName enum.
+func (e GetVedicDailyReading200JSONResponseBodyTaraName) Valid() bool {
+	switch e {
+	case Janma:
+		return true
+	case Kshema:
+		return true
+	case Mitra:
+		return true
+	case ParamaMitra:
+		return true
+	case Pratyari:
+		return true
+	case Sadhaka:
+		return true
+	case Sampat:
+		return true
+	case Vadha:
+		return true
+	case Vipat:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetVedicDailyReading200JSONResponseBodyTaraQuality.
+const (
+	GetVedicDailyReading200JSONResponseBodyTaraQualityFavourable   GetVedicDailyReading200JSONResponseBodyTaraQuality = "favourable"
+	GetVedicDailyReading200JSONResponseBodyTaraQualityNeutral      GetVedicDailyReading200JSONResponseBodyTaraQuality = "neutral"
+	GetVedicDailyReading200JSONResponseBodyTaraQualityUnfavourable GetVedicDailyReading200JSONResponseBodyTaraQuality = "unfavourable"
+)
+
+// Valid indicates whether the value is a known member of the GetVedicDailyReading200JSONResponseBodyTaraQuality enum.
+func (e GetVedicDailyReading200JSONResponseBodyTaraQuality) Valid() bool {
+	switch e {
+	case GetVedicDailyReading200JSONResponseBodyTaraQualityFavourable:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyTaraQualityNeutral:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyTaraQualityUnfavourable:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetVedicDailyReading200JSONResponseBodyTaraTimescale.
+const (
+	GetVedicDailyReading200JSONResponseBodyTaraTimescaleDays   GetVedicDailyReading200JSONResponseBodyTaraTimescale = "days"
+	GetVedicDailyReading200JSONResponseBodyTaraTimescaleHours  GetVedicDailyReading200JSONResponseBodyTaraTimescale = "hours"
+	GetVedicDailyReading200JSONResponseBodyTaraTimescaleMonths GetVedicDailyReading200JSONResponseBodyTaraTimescale = "months"
+	GetVedicDailyReading200JSONResponseBodyTaraTimescaleYears  GetVedicDailyReading200JSONResponseBodyTaraTimescale = "years"
+)
+
+// Valid indicates whether the value is a known member of the GetVedicDailyReading200JSONResponseBodyTaraTimescale enum.
+func (e GetVedicDailyReading200JSONResponseBodyTaraTimescale) Valid() bool {
+	switch e {
+	case GetVedicDailyReading200JSONResponseBodyTaraTimescaleDays:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyTaraTimescaleHours:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyTaraTimescaleMonths:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyTaraTimescaleYears:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetVedicDailyReading200JSONResponseBodyVerdict.
+const (
+	GetVedicDailyReading200JSONResponseBodyVerdictModerate   GetVedicDailyReading200JSONResponseBodyVerdict = "moderate"
+	GetVedicDailyReading200JSONResponseBodyVerdictStrong     GetVedicDailyReading200JSONResponseBodyVerdict = "strong"
+	GetVedicDailyReading200JSONResponseBodyVerdictVeryStrong GetVedicDailyReading200JSONResponseBodyVerdict = "very-strong"
+	GetVedicDailyReading200JSONResponseBodyVerdictWeak       GetVedicDailyReading200JSONResponseBodyVerdict = "weak"
+)
+
+// Valid indicates whether the value is a known member of the GetVedicDailyReading200JSONResponseBodyVerdict enum.
+func (e GetVedicDailyReading200JSONResponseBodyVerdict) Valid() bool {
+	switch e {
+	case GetVedicDailyReading200JSONResponseBodyVerdictModerate:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyVerdictStrong:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyVerdictVeryStrong:
+		return true
+	case GetVedicDailyReading200JSONResponseBodyVerdictWeak:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for GetCurrentDashaParamsLang.
 const (
 	GetCurrentDashaParamsLangDe GetCurrentDashaParamsLang = "de"
@@ -19908,15 +20661,15 @@ type AstrocartographyResponse struct {
 			// CircumpolarBeyond Absolute latitude in degrees beyond which the body never crosses the horizon, so the line has no points past it. Null when the line spans the full sampled range.
 			CircumpolarBeyond *float32 `json:"circumpolarBeyond"`
 
-			// Interpretation Plain language meaning of this rising or setting planetary line for relocation, suitable for chart reports and AI agents.
+			// Interpretation Plain language meaning of this rising (Ascendant) planetary line for relocation, suitable for chart reports and AI agents.
 			Interpretation string `json:"interpretation"`
 
-			// Points Sampled geographic points tracing this rising or setting line from 70 South to 70 North. Join them in latitude order to draw the curved planetary line on a world map.
+			// Points Sampled geographic points tracing this rising line from 70 South to 70 North. Join them in latitude order to draw the curved planetary line on a world map.
 			Points []struct {
 				// Latitude Geographic latitude of this sampled point in decimal degrees.
 				Latitude float32 `json:"latitude"`
 
-				// Longitude Geographic longitude in decimal degrees where the body sits exactly on the horizon at this latitude.
+				// Longitude Geographic longitude in decimal degrees where the body sits exactly on the eastern (rising) horizon at this latitude.
 				Longitude float32 `json:"longitude"`
 			} `json:"points"`
 		} `json:"ascendant"`
@@ -19929,34 +20682,34 @@ type AstrocartographyResponse struct {
 			// CircumpolarBeyond Absolute latitude in degrees beyond which the body never crosses the horizon, so the line has no points past it. Null when the line spans the full sampled range.
 			CircumpolarBeyond *float32 `json:"circumpolarBeyond"`
 
-			// Interpretation Plain language meaning of this rising or setting planetary line for relocation, suitable for chart reports and AI agents.
+			// Interpretation Plain language meaning of this setting (Descendant) planetary line for relocation, suitable for chart reports and AI agents.
 			Interpretation string `json:"interpretation"`
 
-			// Points Sampled geographic points tracing this rising or setting line from 70 South to 70 North. Join them in latitude order to draw the curved planetary line on a world map.
+			// Points Sampled geographic points tracing this setting line from 70 South to 70 North. Join them in latitude order to draw the curved planetary line on a world map.
 			Points []struct {
 				// Latitude Geographic latitude of this sampled point in decimal degrees.
 				Latitude float32 `json:"latitude"`
 
-				// Longitude Geographic longitude in decimal degrees where the body sits exactly on the horizon at this latitude.
+				// Longitude Geographic longitude in decimal degrees where the body sits exactly on the western (setting) horizon at this latitude.
 				Longitude float32 `json:"longitude"`
 			} `json:"points"`
 		} `json:"descendant"`
 
 		// Ic Imum Coeli (IC) line, opposite the MC. Places where the body was anti-culminating, tied to home, family, and inner foundations.
 		Ic struct {
-			// Interpretation Plain language meaning of this meridian planetary line for relocation, suitable for chart reports and AI agents.
+			// Interpretation Plain language meaning of this Imum Coeli planetary line for relocation, suitable for chart reports and AI agents.
 			Interpretation string `json:"interpretation"`
 
-			// Longitude Constant geographic longitude of this vertical meridian line in decimal degrees. The body culminates (MC) or anti-culminates (IC) along it, so plot it as a straight north to south line.
+			// Longitude Constant geographic longitude of this vertical meridian line in decimal degrees. The body anti-culminates (IC) along it, so plot it as a straight north to south line.
 			Longitude float32 `json:"longitude"`
 		} `json:"ic"`
 
 		// Mc Midheaven (MC) line. Places along this meridian where the body was culminating overhead, tied to public life, career, and reputation.
 		Mc struct {
-			// Interpretation Plain language meaning of this meridian planetary line for relocation, suitable for chart reports and AI agents.
+			// Interpretation Plain language meaning of this Midheaven planetary line for relocation, suitable for chart reports and AI agents.
 			Interpretation string `json:"interpretation"`
 
-			// Longitude Constant geographic longitude of this vertical meridian line in decimal degrees. The body culminates (MC) or anti-culminates (IC) along it, so plot it as a straight north to south line.
+			// Longitude Constant geographic longitude of this vertical meridian line in decimal degrees. The body culminates (MC) along it, so plot it as a straight north to south line.
 			Longitude float32 `json:"longitude"`
 		} `json:"mc"`
 
@@ -23890,6 +24643,9 @@ type NatalChartResponse struct {
 		// Degree Degree within the Part of Fortune sign (0-29.999).
 		Degree float32 `json:"degree"`
 
+		// House House containing this point, resolved against the same cusps as `planets[].house` and using the requested house system. Read this field rather than inferring a house from the sign: the two disagree whenever a house spans more than one sign, which is most of the time outside Whole Sign.
+		House int `json:"house"`
+
 		// Longitude Absolute ecliptic longitude of the Part of Fortune (0-360).
 		Longitude float32 `json:"longitude"`
 
@@ -24018,6 +24774,9 @@ type NatalChartResponse struct {
 	Vertex struct {
 		// Degree Degree within the Vertex sign (0-29.999).
 		Degree float32 `json:"degree"`
+
+		// House House containing this point, resolved against the same cusps as `planets[].house` and using the requested house system. Read this field rather than inferring a house from the sign: the two disagree whenever a house spans more than one sign, which is most of the time outside Whole Sign.
+		House int `json:"house"`
 
 		// Longitude Absolute ecliptic longitude of the Vertex (0-360).
 		Longitude float32 `json:"longitude"`
@@ -24734,6 +25493,9 @@ type RelocationChartResponse struct {
 	Vertex struct {
 		// Degree Degree within the Vertex sign (0-29.999).
 		Degree float32 `json:"degree"`
+
+		// House House containing this point, resolved against the same cusps as `planets[].house` and using the requested house system. Read this field rather than inferring a house from the sign: the two disagree whenever a house spans more than one sign, which is most of the time outside Whole Sign.
+		House int `json:"house"`
 
 		// Longitude Absolute ecliptic longitude of the Vertex (0-360).
 		Longitude float32 `json:"longitude"`
@@ -28990,6 +29752,140 @@ type CalculateGunMilanParams struct {
 // CalculateGunMilanParamsLang defines parameters for CalculateGunMilan.
 type CalculateGunMilanParamsLang string
 
+// GetVedicDailyReadingJSONBody defines parameters for GetVedicDailyReading.
+type GetVedicDailyReadingJSONBody struct {
+	// BirthDate Birth date in YYYY-MM-DD format. Fixes the Janma Rashi and Janma Nakshatra every part of this reading is counted from, and the natal Ashtakavarga the bindu gate reads.
+	BirthDate openapi_types.Date `json:"birthDate"`
+
+	// BirthTime Birth time in HH:MM:SS format (24-hour). The Moon moves about half a degree an hour, so an error here moves the Janma Rashi and Janma Nakshatra and therefore every gochara house count, the tarabala and the chandrabala in this response.
+	BirthTime string `json:"birthTime"`
+
+	// Date Civil date to read, in YYYY-MM-DD format. Defaults to today (UTC). The panchanga day it names runs from sunrise at the birth coordinates to the next sunrise, not from midnight, so a reading for this date covers the night that follows it.
+	Date *openapi_types.Date `json:"date,omitempty"`
+
+	// Latitude Birth location latitude in decimal degrees. Sets the natal house cusps behind the Ashtakavarga scorecard and the KP significators, and the sunrise that opens the panchanga day.
+	Latitude float32 `json:"latitude"`
+
+	// Longitude Birth location longitude in decimal degrees. Affects local sidereal time for the natal cusps and the sunrise the reading is composed at.
+	Longitude float32 `json:"longitude"`
+
+	// NodeType Lunar node type for Rahu and Ketu. "mean" uses the smooth mean node, which is the traditional Vedic default and what printed panchangs use. "true" uses the osculating node, which swings up to 1.5 degrees either side of mean and can therefore move a node into a different rashi and change its gochara house. Defaults to "mean".
+	NodeType *GetVedicDailyReadingJSONBodyNodeType `json:"nodeType,omitempty"`
+
+	// Timezone Timezone: IANA name (e.g. "Asia/Kolkata", "America/New_York") OR decimal hours from UTC (e.g. -5 for EST, 5.5 for IST). IANA strings are resolved to the DST-correct offset for the date being read. Interprets the birth time and the civil date below. Defaults to 5.5.
+	Timezone *GetVedicDailyReadingJSONBody_Timezone `json:"timezone,omitempty"`
+}
+
+// GetVedicDailyReadingParams defines parameters for GetVedicDailyReading.
+type GetVedicDailyReadingParams struct {
+	// Lang Response language (ISO 639-1). Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en. Languages without translations yet return English.
+	Lang *GetVedicDailyReadingParamsLang `form:"lang,omitempty" json:"lang,omitempty"`
+
+	// Focus Which signification vocabulary the houseThemes map returns. "general" gives the classical bhava significations (self, wealth, siblings, home, and so on). "finance" gives the money reading of the same twelve bhavas, so house 2 returns income and savings, 5 speculation and risk appetite, 8 sudden money and leverage, 11 gains and profits, and 12 expenses and capital outflow. Use "finance" for wealth, income, business and market timing questions in Krishnamurti Paddhati, where the significator house groups 2, 6, 10, 11 for earned income and 5, 8, 11 for speculation are read against a running dasha. Defaults to "general".
+	Focus *GetVedicDailyReadingParamsFocus `form:"focus,omitempty" json:"focus,omitempty"`
+}
+
+// GetVedicDailyReadingParamsLang defines parameters for GetVedicDailyReading.
+type GetVedicDailyReadingParamsLang string
+
+// GetVedicDailyReadingParamsFocus defines parameters for GetVedicDailyReading.
+type GetVedicDailyReadingParamsFocus string
+
+// GetVedicDailyReadingJSONBodyNodeType defines parameters for GetVedicDailyReading.
+type GetVedicDailyReadingJSONBodyNodeType string
+
+// GetVedicDailyReadingJSONBodyTimezone0 defines parameters for GetVedicDailyReading.
+type GetVedicDailyReadingJSONBodyTimezone0 = float32
+
+// GetVedicDailyReadingJSONBodyTimezone1 defines parameters for GetVedicDailyReading.
+type GetVedicDailyReadingJSONBodyTimezone1 = string
+
+// GetVedicDailyReadingJSONBody_Timezone defines parameters for GetVedicDailyReading.
+type GetVedicDailyReadingJSONBody_Timezone struct {
+	union json.RawMessage
+}
+
+// GetVedicDailyReading200JSONResponseBodyAreasFinanceBand defines parameters for GetVedicDailyReading.
+type GetVedicDailyReading200JSONResponseBodyAreasFinanceBand string
+
+// GetVedicDailyReading200JSONResponseBodyAreasFinanceCautionsDashaLevels defines parameters for GetVedicDailyReading.
+type GetVedicDailyReading200JSONResponseBodyAreasFinanceCautionsDashaLevels string
+
+// GetVedicDailyReading200JSONResponseBodyAreasFinanceCautionsGrade defines parameters for GetVedicDailyReading.
+type GetVedicDailyReading200JSONResponseBodyAreasFinanceCautionsGrade string
+
+// GetVedicDailyReading200JSONResponseBodyAreasFinanceDriversDashaLevels defines parameters for GetVedicDailyReading.
+type GetVedicDailyReading200JSONResponseBodyAreasFinanceDriversDashaLevels string
+
+// GetVedicDailyReading200JSONResponseBodyAreasFinanceDriversGrade defines parameters for GetVedicDailyReading.
+type GetVedicDailyReading200JSONResponseBodyAreasFinanceDriversGrade string
+
+// GetVedicDailyReading200JSONResponseBodyAreasFinanceNatalQuality defines parameters for GetVedicDailyReading.
+type GetVedicDailyReading200JSONResponseBodyAreasFinanceNatalQuality string
+
+// GetVedicDailyReading200JSONResponseBodyChandrabalaTimescale defines parameters for GetVedicDailyReading.
+type GetVedicDailyReading200JSONResponseBodyChandrabalaTimescale string
+
+// GetVedicDailyReading200JSONResponseBodyDashaLevel defines parameters for GetVedicDailyReading.
+type GetVedicDailyReading200JSONResponseBodyDashaLevel string
+
+// GetVedicDailyReading200JSONResponseBodyDashaTimescale defines parameters for GetVedicDailyReading.
+type GetVedicDailyReading200JSONResponseBodyDashaTimescale string
+
+// GetVedicDailyReading200JSONResponseBodyDegradedComponent defines parameters for GetVedicDailyReading.
+type GetVedicDailyReading200JSONResponseBodyDegradedComponent string
+
+// GetVedicDailyReading200JSONResponseBodyDegradedReason defines parameters for GetVedicDailyReading.
+type GetVedicDailyReading200JSONResponseBodyDegradedReason string
+
+// GetVedicDailyReading200JSONResponseBodyFocus defines parameters for GetVedicDailyReading.
+type GetVedicDailyReading200JSONResponseBodyFocus string
+
+// GetVedicDailyReading200JSONResponseBodyFramesKpGoverns defines parameters for GetVedicDailyReading.
+type GetVedicDailyReading200JSONResponseBodyFramesKpGoverns string
+
+// GetVedicDailyReading200JSONResponseBodyFramesNatalGoverns defines parameters for GetVedicDailyReading.
+type GetVedicDailyReading200JSONResponseBodyFramesNatalGoverns string
+
+// GetVedicDailyReading200JSONResponseBodyFramesTransitGoverns defines parameters for GetVedicDailyReading.
+type GetVedicDailyReading200JSONResponseBodyFramesTransitGoverns string
+
+// GetVedicDailyReading200JSONResponseBodyGrahasDignity defines parameters for GetVedicDailyReading.
+type GetVedicDailyReading200JSONResponseBodyGrahasDignity string
+
+// GetVedicDailyReading200JSONResponseBodyGrahasState defines parameters for GetVedicDailyReading.
+type GetVedicDailyReading200JSONResponseBodyGrahasState string
+
+// GetVedicDailyReading200JSONResponseBodyGrahasTimescale defines parameters for GetVedicDailyReading.
+type GetVedicDailyReading200JSONResponseBodyGrahasTimescale string
+
+// GetVedicDailyReading200JSONResponseBodyPanchangaKaranaTimescale defines parameters for GetVedicDailyReading.
+type GetVedicDailyReading200JSONResponseBodyPanchangaKaranaTimescale string
+
+// GetVedicDailyReading200JSONResponseBodyPanchangaNakshatraTimescale defines parameters for GetVedicDailyReading.
+type GetVedicDailyReading200JSONResponseBodyPanchangaNakshatraTimescale string
+
+// GetVedicDailyReading200JSONResponseBodyPanchangaTithiTimescale defines parameters for GetVedicDailyReading.
+type GetVedicDailyReading200JSONResponseBodyPanchangaTithiTimescale string
+
+// GetVedicDailyReading200JSONResponseBodyPanchangaYogaTimescale defines parameters for GetVedicDailyReading.
+type GetVedicDailyReading200JSONResponseBodyPanchangaYogaTimescale string
+
+// GetVedicDailyReading200JSONResponseBodyTallyState defines parameters for GetVedicDailyReading.
+type GetVedicDailyReading200JSONResponseBodyTallyState string
+
+// GetVedicDailyReading200JSONResponseBodyTaraName defines parameters for GetVedicDailyReading.
+type GetVedicDailyReading200JSONResponseBodyTaraName string
+
+// GetVedicDailyReading200JSONResponseBodyTaraQuality defines parameters for GetVedicDailyReading.
+type GetVedicDailyReading200JSONResponseBodyTaraQuality string
+
+// GetVedicDailyReading200JSONResponseBodyTaraTimescale defines parameters for GetVedicDailyReading.
+type GetVedicDailyReading200JSONResponseBodyTaraTimescale string
+
+// GetVedicDailyReading200JSONResponseBodyVerdict defines parameters for GetVedicDailyReading.
+type GetVedicDailyReading200JSONResponseBodyVerdict string
+
 // GetCurrentDashaJSONBody defines parameters for GetCurrentDasha.
 type GetCurrentDashaJSONBody struct {
 	// Ayanamsa Ayanamsa system used to place the birth Moon in its nakshatra, which sets every dasha start and end date. "lahiri" uses Lahiri/Chitrapaksha, the traditional Vedic standard, and is the default. "kp-newcomb" uses the KP-Newcomb dynamic formula, matching Krishnamurti Paddhati software. "kp-old" uses the Krishnamurti original table from KP Reader-1. "raman" uses the B.V. Raman ayanamsa, the second frame traditional Indian software commonly offers beside Lahiri. "custom" takes your own value in degrees via ayanamsaValue, for reconciling exactly against a specific reference program. Switching frames shifts every dasha boundary by weeks, so pick the one your reference software uses.
@@ -30586,6 +31482,9 @@ type CalculateCharaKarakasJSONRequestBody = CharaKarakaRequest
 
 // CalculateGunMilanJSONRequestBody defines body for CalculateGunMilan for application/json ContentType.
 type CalculateGunMilanJSONRequestBody = CompatibilityRequest
+
+// GetVedicDailyReadingJSONRequestBody defines body for GetVedicDailyReading for application/json ContentType.
+type GetVedicDailyReadingJSONRequestBody GetVedicDailyReadingJSONBody
 
 // GetCurrentDashaJSONRequestBody defines body for GetCurrentDasha for application/json ContentType.
 type GetCurrentDashaJSONRequestBody GetCurrentDashaJSONBody
@@ -35318,6 +36217,68 @@ func (t *GetMonthlyAspectsJSONBody_Timezone) UnmarshalJSON(b []byte) error {
 	return err
 }
 
+// AsGetVedicDailyReadingJSONBodyTimezone0 returns the union data inside the GetVedicDailyReadingJSONBody_Timezone as a GetVedicDailyReadingJSONBodyTimezone0
+func (t GetVedicDailyReadingJSONBody_Timezone) AsGetVedicDailyReadingJSONBodyTimezone0() (GetVedicDailyReadingJSONBodyTimezone0, error) {
+	var body GetVedicDailyReadingJSONBodyTimezone0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetVedicDailyReadingJSONBodyTimezone0 overwrites any union data inside the GetVedicDailyReadingJSONBody_Timezone as the provided GetVedicDailyReadingJSONBodyTimezone0
+func (t *GetVedicDailyReadingJSONBody_Timezone) FromGetVedicDailyReadingJSONBodyTimezone0(v GetVedicDailyReadingJSONBodyTimezone0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetVedicDailyReadingJSONBodyTimezone0 performs a merge with any union data inside the GetVedicDailyReadingJSONBody_Timezone, using the provided GetVedicDailyReadingJSONBodyTimezone0
+func (t *GetVedicDailyReadingJSONBody_Timezone) MergeGetVedicDailyReadingJSONBodyTimezone0(v GetVedicDailyReadingJSONBodyTimezone0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetVedicDailyReadingJSONBodyTimezone1 returns the union data inside the GetVedicDailyReadingJSONBody_Timezone as a GetVedicDailyReadingJSONBodyTimezone1
+func (t GetVedicDailyReadingJSONBody_Timezone) AsGetVedicDailyReadingJSONBodyTimezone1() (GetVedicDailyReadingJSONBodyTimezone1, error) {
+	var body GetVedicDailyReadingJSONBodyTimezone1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetVedicDailyReadingJSONBodyTimezone1 overwrites any union data inside the GetVedicDailyReadingJSONBody_Timezone as the provided GetVedicDailyReadingJSONBodyTimezone1
+func (t *GetVedicDailyReadingJSONBody_Timezone) FromGetVedicDailyReadingJSONBodyTimezone1(v GetVedicDailyReadingJSONBodyTimezone1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetVedicDailyReadingJSONBodyTimezone1 performs a merge with any union data inside the GetVedicDailyReadingJSONBody_Timezone, using the provided GetVedicDailyReadingJSONBodyTimezone1
+func (t *GetVedicDailyReadingJSONBody_Timezone) MergeGetVedicDailyReadingJSONBodyTimezone1(v GetVedicDailyReadingJSONBodyTimezone1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetVedicDailyReadingJSONBody_Timezone) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetVedicDailyReadingJSONBody_Timezone) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
 // AsGetCurrentDashaJSONBodyTimezone0 returns the union data inside the GetCurrentDashaJSONBody_Timezone as a GetCurrentDashaJSONBodyTimezone0
 func (t GetCurrentDashaJSONBody_Timezone) AsGetCurrentDashaJSONBodyTimezone0() (GetCurrentDashaJSONBodyTimezone0, error) {
 	var body GetCurrentDashaJSONBodyTimezone0
@@ -38336,6 +39297,24 @@ type ClientInterface interface {
 	//
 	// Corresponds with POST /vedic-astrology/compatibility (the `CalculateGunMilan` operationId).
 	CalculateGunMilan(ctx context.Context, params *CalculateGunMilanParams, body CalculateGunMilanJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetVedicDailyReadingWithBody Daily Reading - Composed Gochara, Panchanga and Dasha for one native on one day
+	//
+	// The composed Vedic daily reading for one native on one date, in one call. Runs classical Gochara as the gate pipeline the texts describe: the house each transiting graha makes from the natal Moon (Janma Rashi), the vedha pair that can cancel it, the Ashtakavarga bindu gate that decides whether it is delivered, and the Phaladeepika XXVI.30 to XXVI.32 nullifiers, so every graha lands in ONE cited state rather than a bar of a chart. Joined to the panchanga day, which runs sunrise to sunrise with a validity window on every limb, plus tarabala and chandrabala resolved for THIS native as windows rather than as one value, the running Vimshottari chain three levels deep, and a KP finance net over the wealth and loss houses. Ships a hand-reproducible strength score with its arithmetic published in the field itself, and states plainly which part is classical and which part is our convention. Positions are computed in the Lahiri sidereal frame; the KP significators behind the finance area use the KP-Newcomb frame, as they do on every KP route. Vedic daily horoscope API, gochara API, daily panchang prediction, tarabala and chandrabala API, ashtakavarga transit strength.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /vedic-astrology/daily (the `GetVedicDailyReading` operationId).
+	GetVedicDailyReadingWithBody(ctx context.Context, params *GetVedicDailyReadingParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetVedicDailyReading Daily Reading - Composed Gochara, Panchanga and Dasha for one native on one day
+	//
+	// The composed Vedic daily reading for one native on one date, in one call. Runs classical Gochara as the gate pipeline the texts describe: the house each transiting graha makes from the natal Moon (Janma Rashi), the vedha pair that can cancel it, the Ashtakavarga bindu gate that decides whether it is delivered, and the Phaladeepika XXVI.30 to XXVI.32 nullifiers, so every graha lands in ONE cited state rather than a bar of a chart. Joined to the panchanga day, which runs sunrise to sunrise with a validity window on every limb, plus tarabala and chandrabala resolved for THIS native as windows rather than as one value, the running Vimshottari chain three levels deep, and a KP finance net over the wealth and loss houses. Ships a hand-reproducible strength score with its arithmetic published in the field itself, and states plainly which part is classical and which part is our convention. Positions are computed in the Lahiri sidereal frame; the KP significators behind the finance area use the KP-Newcomb frame, as they do on every KP route. Vedic daily horoscope API, gochara API, daily panchang prediction, tarabala and chandrabala API, ashtakavarga transit strength.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /vedic-astrology/daily (the `GetVedicDailyReading` operationId).
+	GetVedicDailyReading(ctx context.Context, params *GetVedicDailyReadingParams, body GetVedicDailyReadingJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetCurrentDashaWithBody Get current Mahadasha, Antardasha, Pratyantardasha, Sookshma, Prana - Dasha Calculator API
 	//
@@ -43108,6 +44087,44 @@ func (c *Client) CalculateGunMilanWithBody(ctx context.Context, params *Calculat
 // Corresponds with POST /vedic-astrology/compatibility (the `CalculateGunMilan` operationId).
 func (c *Client) CalculateGunMilan(ctx context.Context, params *CalculateGunMilanParams, body CalculateGunMilanJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewCalculateGunMilanRequest(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetVedicDailyReadingWithBody Daily Reading - Composed Gochara, Panchanga and Dasha for one native on one day
+//
+// The composed Vedic daily reading for one native on one date, in one call. Runs classical Gochara as the gate pipeline the texts describe: the house each transiting graha makes from the natal Moon (Janma Rashi), the vedha pair that can cancel it, the Ashtakavarga bindu gate that decides whether it is delivered, and the Phaladeepika XXVI.30 to XXVI.32 nullifiers, so every graha lands in ONE cited state rather than a bar of a chart. Joined to the panchanga day, which runs sunrise to sunrise with a validity window on every limb, plus tarabala and chandrabala resolved for THIS native as windows rather than as one value, the running Vimshottari chain three levels deep, and a KP finance net over the wealth and loss houses. Ships a hand-reproducible strength score with its arithmetic published in the field itself, and states plainly which part is classical and which part is our convention. Positions are computed in the Lahiri sidereal frame; the KP significators behind the finance area use the KP-Newcomb frame, as they do on every KP route. Vedic daily horoscope API, gochara API, daily panchang prediction, tarabala and chandrabala API, ashtakavarga transit strength.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /vedic-astrology/daily (the `GetVedicDailyReading` operationId).
+func (c *Client) GetVedicDailyReadingWithBody(ctx context.Context, params *GetVedicDailyReadingParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetVedicDailyReadingRequestWithBody(c.Server, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetVedicDailyReading Daily Reading - Composed Gochara, Panchanga and Dasha for one native on one day
+//
+// The composed Vedic daily reading for one native on one date, in one call. Runs classical Gochara as the gate pipeline the texts describe: the house each transiting graha makes from the natal Moon (Janma Rashi), the vedha pair that can cancel it, the Ashtakavarga bindu gate that decides whether it is delivered, and the Phaladeepika XXVI.30 to XXVI.32 nullifiers, so every graha lands in ONE cited state rather than a bar of a chart. Joined to the panchanga day, which runs sunrise to sunrise with a validity window on every limb, plus tarabala and chandrabala resolved for THIS native as windows rather than as one value, the running Vimshottari chain three levels deep, and a KP finance net over the wealth and loss houses. Ships a hand-reproducible strength score with its arithmetic published in the field itself, and states plainly which part is classical and which part is our convention. Positions are computed in the Lahiri sidereal frame; the KP significators behind the finance area use the KP-Newcomb frame, as they do on every KP route. Vedic daily horoscope API, gochara API, daily panchang prediction, tarabala and chandrabala API, ashtakavarga transit strength.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /vedic-astrology/daily (the `GetVedicDailyReading` operationId).
+func (c *Client) GetVedicDailyReading(ctx context.Context, params *GetVedicDailyReadingParams, body GetVedicDailyReadingJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetVedicDailyReadingRequest(c.Server, params, body)
 	if err != nil {
 		return nil, err
 	}
@@ -53568,6 +54585,85 @@ func NewCalculateGunMilanRequestWithBody(server string, params *CalculateGunMila
 	return req, nil
 }
 
+// NewGetVedicDailyReadingRequest calls the generic GetVedicDailyReading builder with application/json body
+func NewGetVedicDailyReadingRequest(server string, params *GetVedicDailyReadingParams, body GetVedicDailyReadingJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewGetVedicDailyReadingRequestWithBody(server, params, "application/json", bodyReader)
+}
+
+// NewGetVedicDailyReadingRequestWithBody constructs an http.Request for the GetVedicDailyReading method, with any body, and a specified content type
+func NewGetVedicDailyReadingRequestWithBody(server string, params *GetVedicDailyReadingParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/vedic-astrology/daily")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Lang != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "lang", *params.Lang, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Focus != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "focus", *params.Focus, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
 // NewGetCurrentDashaRequest calls the generic GetCurrentDasha builder with application/json body
 func NewGetCurrentDashaRequest(server string, params *GetCurrentDashaParams, body GetCurrentDashaJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
@@ -58286,6 +59382,24 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with POST /vedic-astrology/compatibility (the `CalculateGunMilan` operationId).
 	CalculateGunMilanWithResponse(ctx context.Context, params *CalculateGunMilanParams, body CalculateGunMilanJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateGunMilanResponse, error)
 
+	// GetVedicDailyReadingWithBodyWithResponse Daily Reading - Composed Gochara, Panchanga and Dasha for one native on one day
+	//
+	// The composed Vedic daily reading for one native on one date, in one call. Runs classical Gochara as the gate pipeline the texts describe: the house each transiting graha makes from the natal Moon (Janma Rashi), the vedha pair that can cancel it, the Ashtakavarga bindu gate that decides whether it is delivered, and the Phaladeepika XXVI.30 to XXVI.32 nullifiers, so every graha lands in ONE cited state rather than a bar of a chart. Joined to the panchanga day, which runs sunrise to sunrise with a validity window on every limb, plus tarabala and chandrabala resolved for THIS native as windows rather than as one value, the running Vimshottari chain three levels deep, and a KP finance net over the wealth and loss houses. Ships a hand-reproducible strength score with its arithmetic published in the field itself, and states plainly which part is classical and which part is our convention. Positions are computed in the Lahiri sidereal frame; the KP significators behind the finance area use the KP-Newcomb frame, as they do on every KP route. Vedic daily horoscope API, gochara API, daily panchang prediction, tarabala and chandrabala API, ashtakavarga transit strength.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /vedic-astrology/daily (the `GetVedicDailyReading` operationId).
+	GetVedicDailyReadingWithBodyWithResponse(ctx context.Context, params *GetVedicDailyReadingParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetVedicDailyReadingResponse, error)
+
+	// GetVedicDailyReadingWithResponse Daily Reading - Composed Gochara, Panchanga and Dasha for one native on one day
+	//
+	// The composed Vedic daily reading for one native on one date, in one call. Runs classical Gochara as the gate pipeline the texts describe: the house each transiting graha makes from the natal Moon (Janma Rashi), the vedha pair that can cancel it, the Ashtakavarga bindu gate that decides whether it is delivered, and the Phaladeepika XXVI.30 to XXVI.32 nullifiers, so every graha lands in ONE cited state rather than a bar of a chart. Joined to the panchanga day, which runs sunrise to sunrise with a validity window on every limb, plus tarabala and chandrabala resolved for THIS native as windows rather than as one value, the running Vimshottari chain three levels deep, and a KP finance net over the wealth and loss houses. Ships a hand-reproducible strength score with its arithmetic published in the field itself, and states plainly which part is classical and which part is our convention. Positions are computed in the Lahiri sidereal frame; the KP significators behind the finance area use the KP-Newcomb frame, as they do on every KP route. Vedic daily horoscope API, gochara API, daily panchang prediction, tarabala and chandrabala API, ashtakavarga transit strength.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /vedic-astrology/daily (the `GetVedicDailyReading` operationId).
+	GetVedicDailyReadingWithResponse(ctx context.Context, params *GetVedicDailyReadingParams, body GetVedicDailyReadingJSONRequestBody, reqEditors ...RequestEditorFn) (*GetVedicDailyReadingResponse, error)
+
 	// GetCurrentDashaWithBodyWithResponse Get current Mahadasha, Antardasha, Pratyantardasha, Sookshma, Prana - Dasha Calculator API
 	//
 	// Calculate all five running Vimshottari Dasha levels (Mahadasha, Antardasha, Pratyantardasha, Sookshma, Prana) with remaining time in each. Accurate dasha calculator API for life phase prediction and planetary period analysis. Returns the dasha timeline with start/end dates for every level, ready for a current DBA readout down to hour-level timing. Set significators true to add the KP star lord, sub lord, signified houses and strength grade of each running lord, plus the houses they have in common. Essential for understanding current planetary influences, dasha transitions, and timing events in Vedic astrology. 120-year dasha system based on moon nakshatra at birth, with selectable Lahiri or KP ayanamsa.
@@ -62210,6 +63324,9 @@ type GenerateLunarReturnResponse struct {
 				// Degree Degree within the Part of Fortune sign (0-29.999).
 				Degree float32 `json:"degree"`
 
+				// House House containing this point, resolved against the same cusps as `planets[].house` and using the requested house system. Read this field rather than inferring a house from the sign: the two disagree whenever a house spans more than one sign, which is most of the time outside Whole Sign.
+				House int `json:"house"`
+
 				// Longitude Absolute ecliptic longitude of the Part of Fortune (0-360).
 				Longitude float32 `json:"longitude"`
 
@@ -62251,6 +63368,9 @@ type GenerateLunarReturnResponse struct {
 			Vertex struct {
 				// Degree Degree within the Vertex sign (0-29.999).
 				Degree float32 `json:"degree"`
+
+				// House House containing this point, resolved against the same cusps as `planets[].house` and using the requested house system. Read this field rather than inferring a house from the sign: the two disagree whenever a house spans more than one sign, which is most of the time outside Whole Sign.
+				House int `json:"house"`
 
 				// Longitude Absolute ecliptic longitude of the Vertex (0-360).
 				Longitude float32 `json:"longitude"`
@@ -62388,6 +63508,9 @@ func (r GenerateLunarReturnResponse) GetJSON200() *struct {
 			// Degree Degree within the Part of Fortune sign (0-29.999).
 			Degree float32 `json:"degree"`
 
+			// House House containing this point, resolved against the same cusps as `planets[].house` and using the requested house system. Read this field rather than inferring a house from the sign: the two disagree whenever a house spans more than one sign, which is most of the time outside Whole Sign.
+			House int `json:"house"`
+
 			// Longitude Absolute ecliptic longitude of the Part of Fortune (0-360).
 			Longitude float32 `json:"longitude"`
 
@@ -62429,6 +63552,9 @@ func (r GenerateLunarReturnResponse) GetJSON200() *struct {
 		Vertex struct {
 			// Degree Degree within the Vertex sign (0-29.999).
 			Degree float32 `json:"degree"`
+
+			// House House containing this point, resolved against the same cusps as `planets[].house` and using the requested house system. Read this field rather than inferring a house from the sign: the two disagree whenever a house spans more than one sign, which is most of the time outside Whole Sign.
+			House int `json:"house"`
 
 			// Longitude Absolute ecliptic longitude of the Vertex (0-360).
 			Longitude float32 `json:"longitude"`
@@ -63460,6 +64586,9 @@ type GeneratePlanetaryReturnResponse struct {
 				// Degree Degree within the Part of Fortune sign (0-29.999).
 				Degree float32 `json:"degree"`
 
+				// House House containing this point, resolved against the same cusps as `planets[].house` and using the requested house system. Read this field rather than inferring a house from the sign: the two disagree whenever a house spans more than one sign, which is most of the time outside Whole Sign.
+				House int `json:"house"`
+
 				// Longitude Absolute ecliptic longitude of the Part of Fortune (0-360).
 				Longitude float32 `json:"longitude"`
 
@@ -63501,6 +64630,9 @@ type GeneratePlanetaryReturnResponse struct {
 			Vertex struct {
 				// Degree Degree within the Vertex sign (0-29.999).
 				Degree float32 `json:"degree"`
+
+				// House House containing this point, resolved against the same cusps as `planets[].house` and using the requested house system. Read this field rather than inferring a house from the sign: the two disagree whenever a house spans more than one sign, which is most of the time outside Whole Sign.
+				House int `json:"house"`
 
 				// Longitude Absolute ecliptic longitude of the Vertex (0-360).
 				Longitude float32 `json:"longitude"`
@@ -63641,6 +64773,9 @@ func (r GeneratePlanetaryReturnResponse) GetJSON200() *struct {
 			// Degree Degree within the Part of Fortune sign (0-29.999).
 			Degree float32 `json:"degree"`
 
+			// House House containing this point, resolved against the same cusps as `planets[].house` and using the requested house system. Read this field rather than inferring a house from the sign: the two disagree whenever a house spans more than one sign, which is most of the time outside Whole Sign.
+			House int `json:"house"`
+
 			// Longitude Absolute ecliptic longitude of the Part of Fortune (0-360).
 			Longitude float32 `json:"longitude"`
 
@@ -63682,6 +64817,9 @@ func (r GeneratePlanetaryReturnResponse) GetJSON200() *struct {
 		Vertex struct {
 			// Degree Degree within the Vertex sign (0-29.999).
 			Degree float32 `json:"degree"`
+
+			// House House containing this point, resolved against the same cusps as `planets[].house` and using the requested house system. Read this field rather than inferring a house from the sign: the two disagree whenever a house spans more than one sign, which is most of the time outside Whole Sign.
+			House int `json:"house"`
 
 			// Longitude Absolute ecliptic longitude of the Vertex (0-360).
 			Longitude float32 `json:"longitude"`
@@ -64958,6 +66096,9 @@ type GenerateSolarReturnResponse struct {
 				// Degree Degree within the Part of Fortune sign (0-29.999).
 				Degree float32 `json:"degree"`
 
+				// House House containing this point, resolved against the same cusps as `planets[].house` and using the requested house system. Read this field rather than inferring a house from the sign: the two disagree whenever a house spans more than one sign, which is most of the time outside Whole Sign.
+				House int `json:"house"`
+
 				// Longitude Absolute ecliptic longitude of the Part of Fortune (0-360).
 				Longitude float32 `json:"longitude"`
 
@@ -64999,6 +66140,9 @@ type GenerateSolarReturnResponse struct {
 			Vertex struct {
 				// Degree Degree within the Vertex sign (0-29.999).
 				Degree float32 `json:"degree"`
+
+				// House House containing this point, resolved against the same cusps as `planets[].house` and using the requested house system. Read this field rather than inferring a house from the sign: the two disagree whenever a house spans more than one sign, which is most of the time outside Whole Sign.
+				House int `json:"house"`
 
 				// Longitude Absolute ecliptic longitude of the Vertex (0-360).
 				Longitude float32 `json:"longitude"`
@@ -65139,6 +66283,9 @@ func (r GenerateSolarReturnResponse) GetJSON200() *struct {
 			// Degree Degree within the Part of Fortune sign (0-29.999).
 			Degree float32 `json:"degree"`
 
+			// House House containing this point, resolved against the same cusps as `planets[].house` and using the requested house system. Read this field rather than inferring a house from the sign: the two disagree whenever a house spans more than one sign, which is most of the time outside Whole Sign.
+			House int `json:"house"`
+
 			// Longitude Absolute ecliptic longitude of the Part of Fortune (0-360).
 			Longitude float32 `json:"longitude"`
 
@@ -65180,6 +66327,9 @@ func (r GenerateSolarReturnResponse) GetJSON200() *struct {
 		Vertex struct {
 			// Degree Degree within the Vertex sign (0-29.999).
 			Degree float32 `json:"degree"`
+
+			// House House containing this point, resolved against the same cusps as `planets[].house` and using the requested house system. Read this field rather than inferring a house from the sign: the two disagree whenever a house spans more than one sign, which is most of the time outside Whole Sign.
+			House int `json:"house"`
 
 			// Longitude Absolute ecliptic longitude of the Vertex (0-360).
 			Longitude float32 `json:"longitude"`
@@ -70411,6 +71561,9 @@ type ForecastSolarReturnResponse struct {
 				// Degree Degree within the Part of Fortune sign (0-29.999).
 				Degree float32 `json:"degree"`
 
+				// House House containing this point, resolved against the same cusps as `planets[].house` and using the requested house system. Read this field rather than inferring a house from the sign: the two disagree whenever a house spans more than one sign, which is most of the time outside Whole Sign.
+				House int `json:"house"`
+
 				// Longitude Absolute ecliptic longitude of the Part of Fortune (0-360).
 				Longitude float32 `json:"longitude"`
 
@@ -70452,6 +71605,9 @@ type ForecastSolarReturnResponse struct {
 			Vertex struct {
 				// Degree Degree within the Vertex sign (0-29.999).
 				Degree float32 `json:"degree"`
+
+				// House House containing this point, resolved against the same cusps as `planets[].house` and using the requested house system. Read this field rather than inferring a house from the sign: the two disagree whenever a house spans more than one sign, which is most of the time outside Whole Sign.
+				House int `json:"house"`
 
 				// Longitude Absolute ecliptic longitude of the Vertex (0-360).
 				Longitude float32 `json:"longitude"`
@@ -70580,6 +71736,9 @@ func (r ForecastSolarReturnResponse) GetJSON200() *struct {
 			// Degree Degree within the Part of Fortune sign (0-29.999).
 			Degree float32 `json:"degree"`
 
+			// House House containing this point, resolved against the same cusps as `planets[].house` and using the requested house system. Read this field rather than inferring a house from the sign: the two disagree whenever a house spans more than one sign, which is most of the time outside Whole Sign.
+			House int `json:"house"`
+
 			// Longitude Absolute ecliptic longitude of the Part of Fortune (0-360).
 			Longitude float32 `json:"longitude"`
 
@@ -70621,6 +71780,9 @@ func (r ForecastSolarReturnResponse) GetJSON200() *struct {
 		Vertex struct {
 			// Degree Degree within the Vertex sign (0-29.999).
 			Degree float32 `json:"degree"`
+
+			// House House containing this point, resolved against the same cusps as `planets[].house` and using the requested house system. Read this field rather than inferring a house from the sign: the two disagree whenever a house spans more than one sign, which is most of the time outside Whole Sign.
+			House int `json:"house"`
 
 			// Longitude Absolute ecliptic longitude of the Vertex (0-360).
 			Longitude float32 `json:"longitude"`
@@ -73615,10 +74777,13 @@ type CalculateVariablesResponse struct {
 		Arrows []struct {
 			// Activation The single activation, body and chart side, that this arrow is derived from.
 			Activation struct {
-				// Planet Activating body whose substructure feeds this arrow. Determination and Motivation come from the Sun, Environment and Perspective from the North Node.
+				// Planet Activating body whose substructure feeds this arrow. Determination and Motivation come from the Sun, Environment and Perspective from the North Node. Always English, whatever the lang parameter says, so it stays safe to compare against in code and to key a glyph table on. Use planetLocalized for anything a reader sees.
 				Planet string `json:"planet"`
 
-				// Side Chart side of the activation. Determination and Environment come from the design side, Perspective and Motivation from the personality side.
+				// PlanetLocalized Activating body name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				PlanetLocalized *string `json:"planetLocalized,omitempty"`
+
+				// Side Chart side of the activation. Determination and Environment come from the design side, Perspective and Motivation from the personality side. Always English, whatever the lang parameter says, so it stays safe to compare against in code.
 				Side string `json:"side"`
 			} `json:"activation"`
 
@@ -73733,10 +74898,13 @@ func (r CalculateVariablesResponse) GetJSON200() *struct {
 	Arrows []struct {
 		// Activation The single activation, body and chart side, that this arrow is derived from.
 		Activation struct {
-			// Planet Activating body whose substructure feeds this arrow. Determination and Motivation come from the Sun, Environment and Perspective from the North Node.
+			// Planet Activating body whose substructure feeds this arrow. Determination and Motivation come from the Sun, Environment and Perspective from the North Node. Always English, whatever the lang parameter says, so it stays safe to compare against in code and to key a glyph table on. Use planetLocalized for anything a reader sees.
 			Planet string `json:"planet"`
 
-			// Side Chart side of the activation. Determination and Environment come from the design side, Perspective and Motivation from the personality side.
+			// PlanetLocalized Activating body name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			PlanetLocalized *string `json:"planetLocalized,omitempty"`
+
+			// Side Chart side of the activation. Determination and Environment come from the design side, Perspective and Motivation from the personality side. Always English, whatever the lang parameter says, so it stays safe to compare against in code.
 			Side string `json:"side"`
 		} `json:"activation"`
 
@@ -83395,6 +84563,904 @@ func (r CalculateGunMilanResponse) Bytes() []byte {
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r CalculateGunMilanResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+// GetVedicDailyReadingResponse405Headers the declared response headers of an HTTP 405 response for GetVedicDailyReading
+type GetVedicDailyReadingResponse405Headers struct {
+	Allow *string
+}
+
+type GetVedicDailyReadingResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// Areas Life areas carried as a TYPED closed set rather than an open map, so every generated SDK knows which keys exist. Finance ships alone in this version, because an area is a named classical house group with a citation and not a life category invented for a dropdown. Widening it later adds a key and breaks nothing.
+		Areas struct {
+			// Finance The finance area: the positive house group 2, 5, 11 netted against the negative group 6, 8, 12, read off the lords of the running dasha, bhukti and antara, because that is the KP rule for when a matter fructifies, plus the natal basis the day is read against. ALWAYS AN OBJECT. Above latitude 66.56 the six netted members are null, because the Placidus cusps behind the significators have no solution there, while natal is still populated because it is a property of the birth chart and needs no cusps; the reading also still carries its gochara, panchanga and dasha and names the omission in degraded. The two house groups are Krishnamurti Paddhati practice, but the NET is a KP practitioner convention rather than a classical operation: the KP sources that carry these groups use them as a promise test and an avoidance test, never as arithmetic. The groups also vary by author, and the 6th house is the live disagreement, since some KP authors place it on the POSITIVE side as service income and salary, the exact opposite of the assignment used here. This is a six house net and it is NOT the focus=finance lens, which re-reads all twelve bhavas in money vocabulary and moves no number. The two are orthogonal and both ship.
+			Finance struct {
+				// Band The band the finance score falls in, on the same ladder as the top-level verdict so the two can never disagree about what a word means: "very-strong" at 75 and above, "strong" at 50 and above, "moderate" at 25 and above, "weak" below 25. Null above latitude 66.56, where the Placidus cusps the KP significators are read from have no solution: the question does not apply there rather than the answer being no, so never render it as zero or as a weak verdict. The natal block beside it is unaffected and still ships, and degraded names areas.finance.score.
+				Band *GetVedicDailyReading200JSONResponseBodyAreasFinanceBand `json:"band"`
+
+				// Cautions Every negative-group connection, strongest KP level first. Null above latitude 66.56, where the Placidus cusps the KP significators are read from have no solution: the question does not apply there rather than the answer being no, so never render it as zero or as a weak verdict. The natal block beside it is unaffected and still ships, and degraded names areas.finance.score.
+				Cautions *[]struct {
+					// DashaLevels Which of the running levels this graha rules. Carries the fact that one lord holds more than one level without letting it count twice.
+					DashaLevels []GetVedicDailyReading200JSONResponseBodyAreasFinanceCautionsDashaLevels `json:"dashaLevels"`
+
+					// Grade The KP letter for that level, on the standard A to D significator grading. A is the strongest connection.
+					Grade GetVedicDailyReading200JSONResponseBodyAreasFinanceCautionsGrade `json:"grade"`
+
+					// Graha The running dasha lord making this connection. A lord holding two of the three levels is listed once per house rather than twice, so nothing here is a hidden weight.
+					Graha string `json:"graha"`
+
+					// House The finance house this lord reaches. One of the positive group 2, 5, 11 or the negative group 6, 8, 12.
+					House float32 `json:"house"`
+
+					// Level Strongest KP significator level at which this lord reaches this house, 1 to 4. Level 1 is a planet in the constellation of the occupant, 2 the occupant, 3 a planet in the constellation of the house owner, 4 the house owner. Strongest level per house wins, which is step 1 of the published grading rule the dasha routes already use.
+					Level int `json:"level"`
+				} `json:"cautions"`
+
+				// Drivers Every positive-group connection, strongest KP level first. These are the specific lord-to-house links the score is made of, so the number can be audited rather than trusted. Null above latitude 66.56, where the Placidus cusps the KP significators are read from have no solution: the question does not apply there rather than the answer being no, so never render it as zero or as a weak verdict. The natal block beside it is unaffected and still ships, and degraded names areas.finance.score.
+				Drivers *[]struct {
+					// DashaLevels Which of the running levels this graha rules. Carries the fact that one lord holds more than one level without letting it count twice.
+					DashaLevels []GetVedicDailyReading200JSONResponseBodyAreasFinanceDriversDashaLevels `json:"dashaLevels"`
+
+					// Grade The KP letter for that level, on the standard A to D significator grading. A is the strongest connection.
+					Grade GetVedicDailyReading200JSONResponseBodyAreasFinanceDriversGrade `json:"grade"`
+
+					// Graha The running dasha lord making this connection. A lord holding two of the three levels is listed once per house rather than twice, so nothing here is a hidden weight.
+					Graha string `json:"graha"`
+
+					// House The finance house this lord reaches. One of the positive group 2, 5, 11 or the negative group 6, 8, 12.
+					House float32 `json:"house"`
+
+					// Level Strongest KP significator level at which this lord reaches this house, 1 to 4. Level 1 is a planet in the constellation of the occupant, 2 the occupant, 3 a planet in the constellation of the house owner, 4 the house owner. Strongest level per house wins, which is step 1 of the published grading rule the dasha routes already use.
+					Level int `json:"level"`
+				} `json:"drivers"`
+
+				// Natal The natal basis of this area: whether the chart is wealthy AT ALL, as the four classical wealth and poverty verdicts dhana, daridra, lakshmi, dhanamalika, each with the evidence that decided it. A PROPERTY OF THE BIRTH CHART AND NOT OF THE DAY, so it is the same block on every date this native is ever read for, which is exactly why it is CONTEXT rather than a term: it deliberately does not enter score, verdict, tally or evaluated, above or here. Folding a constant into a per-day number would shift every day by the identical amount, carrying no information into the only comparison those numbers support, and it would break the published closed form that makes the top-level score reproducible by hand from grahas alone. Read it as the standing question the day is being read against. The verdicts are the same ones POST /yoga/detect and POST /birth-chart return for this chart, computed in the Lahiri natal frame rather than in the KP-Newcomb frame the significators above use. PRESENT AT EVERY LATITUDE, including above the polar circle: these verdicts need only whole-sign houses from the Lagna, so nothing about them depends on the cusps the KP members above lose there.
+				Natal []struct {
+					// Evidence Why the verdict reads the way it does: every rule that matched, named by its own glossary id and its verse, with the exact condition it matched on, then the scope of the family. This is what makes the verdict checkable against a text rather than a label to be trusted, and it is also where the two excluded rules are declared: daridra-8 and daridra-9 rest on a single authority and are barred from deciding a verdict, though both still ship through GET /yoga/{id}. English in every language, like the per-graha stateSource, because it is provenance rather than display copy.
+					Evidence string `json:"evidence"`
+
+					// ID Glossary id of the verdict, one of dhana, daridra, lakshmi, dhanamalika. Use it with GET /yoga/{id} for the full glossary entry, which carries the description and the classical result in every supported language. Canonical English, so it stays safe to switch on in code.
+					ID string `json:"id"`
+
+					// Name Classical Sanskrit name of the combination. Canonical whatever the lang parameter says, exactly as the yoga endpoints return it.
+					Name string `json:"name"`
+
+					// Present Whether the combination is on this chart. False means every rule in the family was evaluated and none held, which is a real answer rather than a missing one, and the evidence beside it names the full denominator.
+					Present bool `json:"present"`
+
+					// Quality Which way a present verdict points, carried because three of the four are wealth combinations and Daridra is a poverty one, so present alone does not tell a client whether to read it as support or as pressure. Canonical English machine value.
+					Quality GetVedicDailyReading200JSONResponseBodyAreasFinanceNatalQuality `json:"quality"`
+				} `json:"natal"`
+
+				// Negative How many connections land on the negative house group 6, 8, 12, which KP reads as debt, sudden loss and expenditure. Null above latitude 66.56, where the Placidus cusps the KP significators are read from have no solution: the question does not apply there rather than the answer being no, so never render it as zero or as a weak verdict. The natal block beside it is unaffected and still ships, and degraded names areas.finance.score.
+				Negative *float32 `json:"negative"`
+
+				// Positive How many connections land on the positive house group 2, 5, 11, which KP reads as accumulated wealth, speculation and gains. Null above latitude 66.56, where the Placidus cusps the KP significators are read from have no solution: the question does not apply there rather than the answer being no, so never render it as zero or as a weak verdict. The natal block beside it is unaffected and still ships, and degraded names areas.finance.score.
+				Positive *float32 `json:"positive"`
+
+				// Score Share of the running lords six-house connections that land on the positive group, 0 to 100, rounded. A COUNT, so positive and negative below reproduce it in one division: round(positive / (positive + negative) * 100). Zero when the running lords reach none of the six houses, which is an ABSENCE of connection rather than a negative verdict. Null above latitude 66.56, where the Placidus cusps the KP significators are read from have no solution: the question does not apply there rather than the answer being no, so never render it as zero or as a weak verdict. The natal block beside it is unaffected and still ships, and degraded names areas.finance.score. The two house groups are Krishnamurti Paddhati practice, but the NET is a KP practitioner convention rather than a classical operation: the KP sources that carry these groups use them as a promise test and an avoidance test, never as arithmetic. The groups also vary by author, and the 6th house is the live disagreement, since some KP authors place it on the POSITIVE side as service income and salary, the exact opposite of the assignment used here. This is a six house net and it is NOT the focus=finance lens, which re-reads all twelve bhavas in money vocabulary and moves no number. The two are orthogonal and both ship.
+				Score *float32 `json:"score"`
+			} `json:"finance"`
+		} `json:"areas"`
+
+		// Chandrabala Chandrabala for THIS native, windowed for the same reason as the tarabala: the Moon can change rashi inside the panchanga day. Ashtama Chandra is a separate flag on each window.
+		Chandrabala []struct {
+			// AshtamaChandra The Moon in the 8th from the Janma Rashi. Its OWN flag, printed beside chandrabala rather than folded into it, exactly as the reference panchangs print it. Folding it in would let a caller read one boolean and miss the warning the source deliberately separates.
+			AshtamaChandra bool `json:"ashtamaChandra"`
+
+			// Favourable Whether the Moon stands in one of the rashis that give this native chandrabala during this window.
+			Favourable bool `json:"favourable"`
+
+			// HouseFromMoon House the Moon rashi makes from the Janma Rashi, counted whole-sign and inclusively, so the Janma Rashi itself is 1. This is the number chandrabala is read off.
+			HouseFromMoon float32 `json:"houseFromMoon"`
+
+			// MoonSign Rashi the Moon occupies during this window. Always English.
+			MoonSign string `json:"moonSign"`
+
+			// Timescale How long this component holds one verdict. Present on every component because this reading joins two genres classical literature keeps in separate books: a gochara verdict lasts as long as the graha stays in a rashi, which is years for Saturn, while a tarabala changes overnight. Without it a Saturn verdict that reads identically for nine hundred days would sit under one date field beside a limb that turns over at dawn.
+			Timescale GetVedicDailyReading200JSONResponseBodyChandrabalaTimescale `json:"timescale"`
+
+			// ValidFrom ISO instant this chandrabala window opens.
+			ValidFrom string `json:"validFrom"`
+
+			// ValidTo ISO instant this chandrabala window closes, which is when the Moon changes rashi.
+			ValidTo string `json:"validTo"`
+		} `json:"chandrabala"`
+
+		// Dasha The running Vimshottari chain at sunrise, outermost first, three levels deep. This is the frame the day is read inside, and it is also what the finance area reads the significators off. Empty for a chart whose cycle cannot be resolved.
+		Dasha []struct {
+			// EndDate ISO instant this period ends.
+			EndDate string `json:"endDate"`
+
+			// Level Which Vimshottari level this period is. Only mahadasha, antardasha, pratyantardasha are carried: the sookshma and prana lords turn over in hours and minutes, so embedding them would advertise a day-long cache lifetime over a value that is already stale. Use POST /dasha/current for those two.
+			Level GetVedicDailyReading200JSONResponseBodyDashaLevel `json:"level"`
+
+			// Lord Graha ruling this period. Always English.
+			Lord string `json:"lord"`
+
+			// StartDate ISO instant this period begins.
+			StartDate string `json:"startDate"`
+
+			// Timescale How long this component holds one verdict. Present on every component because this reading joins two genres classical literature keeps in separate books: a gochara verdict lasts as long as the graha stays in a rashi, which is years for Saturn, while a tarabala changes overnight. Without it a Saturn verdict that reads identically for nine hundred days would sit under one date field beside a limb that turns over at dawn.
+			Timescale GetVedicDailyReading200JSONResponseBodyDashaTimescale `json:"timescale"`
+		} `json:"dasha"`
+
+		// Date Civil date this reading covers, echoing the request field or the UTC date it defaulted to.
+		Date string `json:"date"`
+
+		// DayEnd ISO instant the panchanga day ends, which is the next sunrise.
+		DayEnd string `json:"dayEnd"`
+
+		// DayStart ISO instant the panchanga day begins, which is SUNRISE at the birth coordinates and not midnight. Every limb below is resolved at this instant. Where the Sun does not rise, local noon is used instead and the substitution is named in degraded rather than applied silently.
+		DayStart string `json:"dayStart"`
+
+		// Degraded Components this request could not supply, named rather than silently defaulted. Empty on an ordinary reading. A polar chart degrades through here instead of failing, so the caller still gets the gochara, the panchanga, the dasha and the natal basis of the finance area, and is told exactly what is missing.
+		Degraded []struct {
+			// Component Which part of the reading this location or date could not supply. "areas.finance.score" names the KP net by the member it is read through: the finance area itself always ships and its natal block is always populated, and it is the six netted members that are null.
+			Component GetVedicDailyReading200JSONResponseBodyDegradedComponent `json:"component"`
+
+			// Reason Why it could not: "sun-does-not-rise" for a day with no sunrise at these coordinates, "polar-latitude" above 66.56 degrees where the Placidus cusps have no solution.
+			Reason GetVedicDailyReading200JSONResponseBodyDegradedReason `json:"reason"`
+		} `json:"degraded"`
+
+		// Evaluated How many grahas were put through the gates, which is the denominator of the score. Rahu and Ketu are included: they skip the bindu gate because they have no Bhinnashtakavarga, and a skipped gate is not a failed one, so they still reach a state through the other three.
+		Evaluated float32 `json:"evaluated"`
+
+		// Focus Which signification vocabulary produced the houseThemes keywords in this response, echoing the focus query parameter. Always present, and "general" when the parameter was omitted. Read it to label a rendered house legend, or to tell two cached responses apart when only one asked for the finance lens.
+		Focus GetVedicDailyReading200JSONResponseBodyFocus `json:"focus"`
+
+		// Frames Every sidereal frame behind this reading, so a cached or forwarded payload is self describing and no number sits under a label it did not come from. TWO ayanamsas are in play by design: positions are Lahiri, and the Placidus cusps plus the KP significators are KP-Newcomb, which is the frame KP owns and the split a practitioner actually works in. The two differ by about 0.09 degrees, which is under a third of a KP sub-lord span and enough to move a placement near a boundary, so the reading declares which produced what rather than leaving a caller to guess. THREE entries for two ayanamsas, because Lahiri is read at two instants: the birth moment and the sunrise of the day being read, roughly half a degree apart on a chart forty years old, six times the gap between the two ayanamsas themselves. There is no ayanamsa request field on this route and there will not be one, since a single selector cannot honour two frames and accepting it would promise something the composition cannot deliver.
+		Frames struct {
+			// Kp KP-Newcomb, read at UTC midnight of the birth date. Produces the Placidus cusps behind the Ashtakavarga Lagna row and the KP significators behind the finance area, exactly as every KP route on this API computes them.
+			Kp struct {
+				// At ISO instant the ayanamsa was read at. Part of the value, not metadata: an ayanamsa moves about 50.3 arcseconds a year, so the same frame read at a birth in 1984 and at a transit in 2026 differs by more than half a degree.
+				At string `json:"at"`
+
+				// Ayanamsa Sidereal frame this part of the reading was cast in. Always "kp-newcomb" here: it is not a caller choice, because the composition runs two frames at once and a single request field could only ever name one of them.
+				Ayanamsa string `json:"ayanamsa"`
+
+				// AyanamsaDegrees Degrees actually subtracted from every tropical longitude this frame produced. Subtract it back to recover the tropical positions, or compare it against your reference software to confirm you are in the same frame before chasing a placement difference.
+				AyanamsaDegrees float32 `json:"ayanamsaDegrees"`
+
+				// Governs Response sections this frame is a determinant of, as paths into this payload. One of subject, grahas, panchanga, tara, chandrabala, dasha, areas.finance. A section appears under EVERY frame that feeds it, which is why grahas is listed three times: the transiting longitudes and the natal Moon they are counted from are both Lahiri read at different instants, while the Ashtakavarga Lagna row behind binduCount and kaksha is KP-Newcomb. Exactly two sections belong to one frame alone, subject to the natal frame and panchanga to the transit frame.
+				Governs []GetVedicDailyReading200JSONResponseBodyFramesKpGoverns `json:"governs"`
+			} `json:"kp"`
+
+			// Natal Lahiri at the birth instant. Produces the natal Moon this whole reading is counted from, the Vimshottari balance, and the natal graha rows of the Ashtakavarga scorecard the bindu gate reads.
+			Natal struct {
+				// At ISO instant the ayanamsa was read at. Part of the value, not metadata: an ayanamsa moves about 50.3 arcseconds a year, so the same frame read at a birth in 1984 and at a transit in 2026 differs by more than half a degree.
+				At string `json:"at"`
+
+				// Ayanamsa Sidereal frame this part of the reading was cast in. Always "lahiri" here: it is not a caller choice, because the composition runs two frames at once and a single request field could only ever name one of them.
+				Ayanamsa string `json:"ayanamsa"`
+
+				// AyanamsaDegrees Degrees actually subtracted from every tropical longitude this frame produced. Subtract it back to recover the tropical positions, or compare it against your reference software to confirm you are in the same frame before chasing a placement difference.
+				AyanamsaDegrees float32 `json:"ayanamsaDegrees"`
+
+				// Governs Response sections this frame is a determinant of, as paths into this payload. One of subject, grahas, panchanga, tara, chandrabala, dasha, areas.finance. A section appears under EVERY frame that feeds it, which is why grahas is listed three times: the transiting longitudes and the natal Moon they are counted from are both Lahiri read at different instants, while the Ashtakavarga Lagna row behind binduCount and kaksha is KP-Newcomb. Exactly two sections belong to one frame alone, subject to the natal frame and panchanga to the transit frame.
+				Governs []GetVedicDailyReading200JSONResponseBodyFramesNatalGoverns `json:"governs"`
+			} `json:"natal"`
+
+			// Transit Lahiri at sunrise on the day being read. Produces every transiting longitude and every panchanga limb. Inside one day precession moves it 0.14 arcseconds, so this one value speaks for every limb resolved between the two sunrises.
+			Transit struct {
+				// At ISO instant the ayanamsa was read at. Part of the value, not metadata: an ayanamsa moves about 50.3 arcseconds a year, so the same frame read at a birth in 1984 and at a transit in 2026 differs by more than half a degree.
+				At string `json:"at"`
+
+				// Ayanamsa Sidereal frame this part of the reading was cast in. Always "lahiri" here: it is not a caller choice, because the composition runs two frames at once and a single request field could only ever name one of them.
+				Ayanamsa string `json:"ayanamsa"`
+
+				// AyanamsaDegrees Degrees actually subtracted from every tropical longitude this frame produced. Subtract it back to recover the tropical positions, or compare it against your reference software to confirm you are in the same frame before chasing a placement difference.
+				AyanamsaDegrees float32 `json:"ayanamsaDegrees"`
+
+				// Governs Response sections this frame is a determinant of, as paths into this payload. One of subject, grahas, panchanga, tara, chandrabala, dasha, areas.finance. A section appears under EVERY frame that feeds it, which is why grahas is listed three times: the transiting longitudes and the natal Moon they are counted from are both Lahiri read at different instants, while the Ashtakavarga Lagna row behind binduCount and kaksha is KP-Newcomb. Exactly two sections belong to one frame alone, subject to the natal frame and panchanga to the transit frame.
+				Governs []GetVedicDailyReading200JSONResponseBodyFramesTransitGoverns `json:"governs"`
+			} `json:"transit"`
+		} `json:"frames"`
+
+		// Grahas All nine transiting grahas, each with its four gate results and the ONE state they produced. The gates run in the order the sources give them: house from the natal Moon, then vedha, then the bindu gate, then the nullifiers of Phaladeepika XXVI.30 to XXVI.32. Obstruction is terminal, so a blocked transit is never rescued by the gates that follow it.
+		Grahas []struct {
+			// AspectedByBenefic Gate 4. Transiting natural benefics casting graha drishti on this graha. Under Phaladeepika XXVI.30 a benefic sight on a BAD result is what voids it. Read as drishti from the other TRANSITING grahas, which is a school choice this endpoint makes and states: the sloka sits between the vedha rules and the rules about the transiting graha own condition.
+			AspectedByBenefic []string `json:"aspectedByBenefic"`
+
+			// AspectedByEnemy Gate 4. Transiting natural enemies of this graha casting graha drishti on it. Phaladeepika XXVI.30 voids the result either way for an enemy sight, whichever direction the baseline verdict pointed.
+			AspectedByEnemy []string `json:"aspectedByEnemy"`
+
+			// AspectedByMalefic Gate 4. Transiting natural malefics casting graha drishti on this graha. A malefic sight on a GOOD result voids it under Phaladeepika XXVI.30. Rahu and Ketu never appear here: they cast no drishti in this package, which is its own documented school choice, although they can be aspected.
+			AspectedByMalefic []string `json:"aspectedByMalefic"`
+
+			// BinduCount Gate 3. Bindus this graha holds in the whole sign it is transiting, 0 to 8, or null for Rahu and Ketu, which have no Bhinnashtakavarga and therefore SKIP this gate entirely rather than scoring zero. The gate reads the number two ways: a favourable house carrying fewer than 4 bindus under delivers, and an unfavourable house carrying a strict majority of the eight contributors, 5 or more, is turned good by Phaladeepika XXVI.41. Exactly 4 fires neither rule, which is the literal reading of both phrasings rather than a rounding choice. WHOSE READING THE NUMBER IS, stated because generalising it is ours: B.V. Raman prints 4 once and prints it about the MOON, then generalises the PRINCIPLE to every graha in the next sentence without repeating any number, and Phaladeepika XXVI.41 is general across grahas and also states no number. Applying 4 to all nine bodies is RoxyAPI reading the general rule through the one worked example the author gave it, and it is not a universally stated classical threshold.
+			BinduCount *float32 `json:"binduCount"`
+
+			// Combust Gate 4. Whether the graha is combust at the transit moment, or null for the Sun and the two nodes where the question does not arise at all. Combustion voids a good transit under Phaladeepika XXVI.32 and aggravates a bad one.
+			Combust *bool `json:"combust"`
+
+			// Dignity Gate 4. Dignity of the graha in the sign it is transiting, or null for Rahu and Ketu which have none. Feeds the Phaladeepika XXVI.31 shield ("exalted" or "own" does no harm in an untoward bhava) and the XXVI.32 weakness ("debilitated" or "enemy" voids a good transit). One of exalted, own, debilitated, enemy, neutral.
+			Dignity *GetVedicDailyReading200JSONResponseBodyGrahasDignity `json:"dignity"`
+
+			// Favourable Gate 1. Whether houseFromMoon is on this graha classical favourable list (Phaladeepika XXVI.2). The baseline verdict, before vedha, bindus or the nullifiers have had their say.
+			Favourable bool `json:"favourable"`
+
+			// FavourableHouses Gate 1 evidence: the whole favourable list for this graha, so the baseline verdict can be checked in place without a second request or a table lookup.
+			FavourableHouses []float32 `json:"favourableHouses"`
+
+			// Graha Graha name, Sun through Ketu. Always English, whatever the lang parameter says, so it stays safe to compare against in code.
+			Graha string `json:"graha"`
+
+			// HouseFromMoon House this graha transits counted whole-sign and inclusively from the natal Moon rashi (Janma Rashi), so the Moon rashi itself is 1. This is the reference classical Gochara is reckoned in: Phaladeepika XXVI.1 opens the transit chapter by saying that of all the Lagnas only the Moon Lagna matters for transit results. A reading counted from the Lagna instead answers a different question and every verdict below would be wrong.
+			HouseFromMoon float32 `json:"houseFromMoon"`
+
+			// Kaksha Gochara Kaksha: the ashtakavarga-qualified reading of this transit. The sign says where a graha is, this says whether the exact stretch it currently occupies is one its own Bhinnashtakavarga supports, which is the classical way of refining a transit verdict from sign-level to under four degrees.
+			Kaksha struct {
+				// Bindu Whether this kaksha lord gave the transiting graha a bindu in the sign being transited, which is the Gochara Kaksha verdict: true reads as a favourable stretch of the transit, false as an unfavourable one. Null means the question does not apply rather than that the answer is no, because Rahu and Ketu have no Bhinnashtakavarga to read. Never render null as unfavourable.
+				Bindu *bool `json:"bindu"`
+
+				// BinduCount Bindus the transiting graha holds in this whole sign, 0-8, or null for Rahu and Ketu. Context for the verdict, since the same kaksha reads differently in a sign worth 7 than in one worth 1.
+				BinduCount *float32 `json:"binduCount"`
+
+				// EndDegree Degree within the sign where this kaksha ends.
+				EndDegree float32 `json:"endDegree"`
+
+				// Lord Graha ruling this kaksha. The eight lords run Saturn, Jupiter, Mars, Sun, Venus, Mercury, Moon, Lagna from the start of every sign, ordered by how long each takes to cross a sign.
+				Lord string `json:"lord"`
+
+				// Number Kaksha number 1-8 within the current sign. Each sign divides into eight kakshas of 3 degrees 45 minutes, crossed in order, so this is how far through the sign the graha has travelled.
+				Number float32 `json:"number"`
+
+				// StartDegree Degree within the sign where this kaksha begins (0, 3.75, 7.5 and so on).
+				StartDegree float32 `json:"startDegree"`
+			} `json:"kaksha"`
+
+			// Longitude Sidereal longitude of the transiting graha in degrees, 0 to 360, Lahiri frame.
+			Longitude float32 `json:"longitude"`
+
+			// ObstructedBy Gate 2. Grahas actually standing in vedhaHouse, with the mutual exemptions already applied. Empty when nothing obstructs. A non-empty list makes the state "obstructed", which is a THIRD outcome rather than a smaller number: the texts cancel the promised good outright rather than discounting it.
+			ObstructedBy []string `json:"obstructedBy"`
+
+			// Sign Rashi this graha is transiting on the day being read. Always English.
+			Sign string `json:"sign"`
+
+			// State The single outcome the four gates produced for this graha, and the only field the score counts. "favourable" is the house list holding with nothing cancelling it, "underdelivered" is a favourable house below the bindu delivery floor, "obstructed" is vedha, "void" is an aspect, a dignity shield or a weakness emptying the result of effect, "aggravated" is the one compounding rule in the chapter, and "unfavourable" is a house that was never on the list. Canonical English machine values: every one is a classical outcome word rather than an invented label, which is why none carries a translated sibling.
+			State GetVedicDailyReading200JSONResponseBodyGrahasState `json:"state"`
+
+			// StateSource The rule that decided the state, named so a verdict can be checked against its sloka without leaving the payload.
+			StateSource string `json:"stateSource"`
+
+			// Timescale How long this component holds one verdict. Present on every component because this reading joins two genres classical literature keeps in separate books: a gochara verdict lasts as long as the graha stays in a rashi, which is years for Saturn, while a tarabala changes overnight. Without it a Saturn verdict that reads identically for nine hundred days would sit under one date field beside a limb that turns over at dawn.
+			Timescale GetVedicDailyReading200JSONResponseBodyGrahasTimescale `json:"timescale"`
+
+			// VedhaExempt Gate 2. Grahas that cannot obstruct this one however they transit, from the two mutual exemptions the texts name: the Sun and Saturn do not obstruct each other, and neither do the Moon and Mercury.
+			VedhaExempt []string `json:"vedhaExempt"`
+
+			// VedhaHouse Gate 2. The house whose occupation by another graha cancels this transit (Phaladeepika XXVI.3-8). Null when the transit is not favourable to begin with, since there is nothing for an obstruction to cancel.
+			VedhaHouse *float32 `json:"vedhaHouse"`
+		} `json:"grahas"`
+
+		// HouseThemes Significations of each of the twelve bhavas (houses), keyed by house number 1 to 12, as short keywords. Bhava 1 is the Lagna (self, body, vitality), 2 wealth and speech, 4 home and mother, 7 marriage and partnership, 10 career and status, 11 gains. Use it to label the house numbers returned elsewhere in the response: a Vimshottari dasha period signifying houses 2, 7 and 8, or a KP significator carrying houses 11 and 6, becomes readable text without a separate lookup call. Returned once per response rather than repeated per period, and localized by the lang query parameter alongside every other interpretation field.
+		HouseThemes map[string][]string `json:"houseThemes"`
+
+		// Panchanga The four panchanga limbs, each resolved at sunrise and each carrying the instant it gives way, so a client can label the whole day rather than asserting one value for it.
+		Panchanga struct {
+			// Karana Karana running at sunrise, with the instant it ends. A karana is half a tithi, which is why it is the fastest of the four limbs.
+			Karana struct {
+				// Name Name of the karana running at sunrise. Canonical Sanskrit, so it stays safe to compare against in code.
+				Name string `json:"name"`
+
+				// Next The karana that follows, so the rest of the day can be labelled without a second request.
+				Next string `json:"next"`
+
+				// Number karana number in its own cycle, resolved at sunrise.
+				Number float32 `json:"number"`
+
+				// Timescale How long this component holds one verdict. Present on every component because this reading joins two genres classical literature keeps in separate books: a gochara verdict lasts as long as the graha stays in a rashi, which is years for Saturn, while a tarabala changes overnight. Without it a Saturn verdict that reads identically for nine hundred days would sit under one date field beside a limb that turns over at dawn.
+				Timescale GetVedicDailyReading200JSONResponseBodyPanchangaKaranaTimescale `json:"timescale"`
+
+				// ValidTo ISO instant this karana ends. Read from the same transition search POST /panchang/detailed publishes, never recomputed here, so the two endpoints cannot disagree about when the event happens.
+				ValidTo string `json:"validTo"`
+			} `json:"karana"`
+
+			// Nakshatra Nakshatra the Moon occupies at sunrise, with the instant it ends. This is the sky-wide limb; for what it means to THIS native, read the tara array.
+			Nakshatra struct {
+				// Name Name of the nakshatra running at sunrise. Canonical Sanskrit, so it stays safe to compare against in code.
+				Name string `json:"name"`
+
+				// Next The nakshatra that follows, so the rest of the day can be labelled without a second request.
+				Next string `json:"next"`
+
+				// Number nakshatra number in its own cycle, resolved at sunrise.
+				Number float32 `json:"number"`
+
+				// Timescale How long this component holds one verdict. Present on every component because this reading joins two genres classical literature keeps in separate books: a gochara verdict lasts as long as the graha stays in a rashi, which is years for Saturn, while a tarabala changes overnight. Without it a Saturn verdict that reads identically for nine hundred days would sit under one date field beside a limb that turns over at dawn.
+				Timescale GetVedicDailyReading200JSONResponseBodyPanchangaNakshatraTimescale `json:"timescale"`
+
+				// ValidTo ISO instant this nakshatra ends. Read from the same transition search POST /panchang/detailed publishes, never recomputed here, so the two endpoints cannot disagree about when the event happens.
+				ValidTo string `json:"validTo"`
+			} `json:"nakshatra"`
+
+			// Paksha Lunar fortnight at sunrise: Shukla for the waxing half, Krishna for the waning half.
+			Paksha string `json:"paksha"`
+
+			// Tithi Tithi (lunar day) running at sunrise, with the instant it ends. The tithi is the 12-degree step of the Moon away from the Sun, so its length varies through the month.
+			Tithi struct {
+				// Name Name of the tithi running at sunrise. Canonical Sanskrit, so it stays safe to compare against in code.
+				Name string `json:"name"`
+
+				// Next The tithi that follows, so the rest of the day can be labelled without a second request.
+				Next string `json:"next"`
+
+				// Number tithi number in its own cycle, resolved at sunrise.
+				Number float32 `json:"number"`
+
+				// Timescale How long this component holds one verdict. Present on every component because this reading joins two genres classical literature keeps in separate books: a gochara verdict lasts as long as the graha stays in a rashi, which is years for Saturn, while a tarabala changes overnight. Without it a Saturn verdict that reads identically for nine hundred days would sit under one date field beside a limb that turns over at dawn.
+				Timescale GetVedicDailyReading200JSONResponseBodyPanchangaTithiTimescale `json:"timescale"`
+
+				// ValidTo ISO instant this tithi ends. Read from the same transition search POST /panchang/detailed publishes, never recomputed here, so the two endpoints cannot disagree about when the event happens.
+				ValidTo string `json:"validTo"`
+			} `json:"tithi"`
+
+			// Vara Weekday of the panchanga day. The Hindu vara runs sunrise to sunrise, so it can differ from the civil weekday of the same date before dawn. Always English.
+			Vara string `json:"vara"`
+
+			// VaraSanskrit The same weekday under its Sanskrit name.
+			VaraSanskrit string `json:"varaSanskrit"`
+
+			// Yoga Nitya yoga running at sunrise, with the instant it ends. The 27 yogas step through the combined longitude of the Sun and the Moon.
+			Yoga struct {
+				// Name Name of the yoga running at sunrise. Canonical Sanskrit, so it stays safe to compare against in code.
+				Name string `json:"name"`
+
+				// Next The yoga that follows, so the rest of the day can be labelled without a second request.
+				Next string `json:"next"`
+
+				// Number yoga number in its own cycle, resolved at sunrise.
+				Number float32 `json:"number"`
+
+				// Timescale How long this component holds one verdict. Present on every component because this reading joins two genres classical literature keeps in separate books: a gochara verdict lasts as long as the graha stays in a rashi, which is years for Saturn, while a tarabala changes overnight. Without it a Saturn verdict that reads identically for nine hundred days would sit under one date field beside a limb that turns over at dawn.
+				Timescale GetVedicDailyReading200JSONResponseBodyPanchangaYogaTimescale `json:"timescale"`
+
+				// ValidTo ISO instant this yoga ends. Read from the same transition search POST /panchang/detailed publishes, never recomputed here, so the two endpoints cannot disagree about when the event happens.
+				ValidTo string `json:"validTo"`
+			} `json:"yoga"`
+		} `json:"panchanga"`
+
+		// Score How much of the transiting sky supports this native today: supportive grahas divided by grahas evaluated, as a percentage, rounded. HAND REPRODUCIBLE FROM THIS RESPONSE ALONE, with no weights to publish and none to defend. STEP 1, count the grahas whose state is one of favourable; the tally array has that count already. STEP 2, divide by evaluated and round. Worked example: 2 supportive out of 9 evaluated scores round(2 / 9 * 100) = 22. The other states (underdelivered, obstructed, void, aggravated, unfavourable) count for nothing, because each of them is the tradition saying the promised good was reduced, cancelled or emptied. WHY IT IS A COUNT AND NOT A SUM: the tradition does not add these limbs up. Phaladeepika XXVI.41 makes a high bindu count an OVERRIDE that turns even the 6th, 8th and 12th good, and XXVI.30 to XXVI.32 make aspect, dignity and combustion NULLIFIERS, so a weighted sum would be a different mathematical object and could not carry those citations. The GATES are classical, the COUNTING is the RoxyAPI convention, and this sentence is where we say which is which. HOW TO READ THE NUMBER: it runs low by construction and that is the correct answer rather than a defect. Nine bodies casting drishti means almost every transiting graha is aspected by something, and the sloka voids the result when it is, so most days land in the bottom half and a high score is rare and therefore meaningful. Read it as a rare-high scale, not as a mark out of 100: 22 is an ordinary day, not a failing one. And it measures SUPPORT, never OUTCOME. It says how much of the sky backs this native today, never whether the day is good for a particular matter, which depends on the matter being judged.
+		Score float32 `json:"score"`
+
+		// Subject The two natal reference points this whole reading is counted from, plus the longitude they come from.
+		Subject struct {
+			// JanmaNakshatra Natal Moon nakshatra, the reference point the tarabala is counted from. Canonical Sanskrit.
+			JanmaNakshatra string `json:"janmaNakshatra"`
+
+			// JanmaNakshatraNumber Janma Nakshatra number 1 to 27, counted from Ashwini.
+			JanmaNakshatraNumber float32 `json:"janmaNakshatraNumber"`
+
+			// JanmaRashi Natal Moon rashi, the reference point every gochara house count in this response is taken from. Always English.
+			JanmaRashi string `json:"janmaRashi"`
+
+			// MoonLongitude Sidereal longitude of the natal Moon in degrees. The single value both reference points are derived from, so any disagreement with a reference chart can be traced to its source rather than to a verdict.
+			MoonLongitude float32 `json:"moonLongitude"`
+		} `json:"subject"`
+
+		// Tally The full per-state count, always all six states including the zeros. This is the WHOLE input to the score, which is what makes the number reproducible by hand, and it is also what lets a caller who reads the states differently compute their own figure from this response instead of asking for a second one.
+		Tally []struct {
+			// Count How many of the evaluated grahas reached that state.
+			Count float32 `json:"count"`
+
+			// State One of the six outcomes a transiting graha can reach.
+			State GetVedicDailyReading200JSONResponseBodyTallyState `json:"state"`
+		} `json:"tally"`
+
+		// Tara Tarabala for THIS native, as an array of windows rather than one value, because the Moon can change nakshatra inside a panchanga day and the reference panchangs print two windows when it does. Three windows happen and are returned when they do. One entry means the tara held all day.
+		Tara []struct {
+			// MoonNakshatra Nakshatra the Moon occupies during this window. Canonical Sanskrit.
+			MoonNakshatra string `json:"moonNakshatra"`
+
+			// Name Name of the tara this native gets during this window, from the 9-tara cycle Janma through Parama Mitra. A Sanskrit proper noun and a canonical machine value, which is why the favourability is a separate field rather than something a caller has to infer from the word.
+			Name GetVedicDailyReading200JSONResponseBodyTaraName `json:"name"`
+
+			// Number Tara number 1 to 9, counted inclusively from the Janma Nakshatra to the Moon nakshatra and folded by 9.
+			Number float32 `json:"number"`
+
+			// Quality Where this tara falls in the three-way classical reading. Taras 2, 4, 6, 8 and 9 are favourable, 3, 5 and 7 are not, and the 1st (Janma) is neither.
+			Quality GetVedicDailyReading200JSONResponseBodyTaraQuality `json:"quality"`
+
+			// Timescale How long this component holds one verdict. Present on every component because this reading joins two genres classical literature keeps in separate books: a gochara verdict lasts as long as the graha stays in a rashi, which is years for Saturn, while a tarabala changes overnight. Without it a Saturn verdict that reads identically for nine hundred days would sit under one date field beside a limb that turns over at dawn.
+			Timescale GetVedicDailyReading200JSONResponseBodyTaraTimescale `json:"timescale"`
+
+			// ValidFrom ISO instant this tarabala window opens.
+			ValidFrom string `json:"validFrom"`
+
+			// ValidTo ISO instant this tarabala window closes, which is when the Moon changes nakshatra.
+			ValidTo string `json:"validTo"`
+		} `json:"tara"`
+
+		// Verdict The band the score falls in: "very-strong" at 75 and above, "strong" at 50 and above, "moderate" at 25 and above, "weak" below 25. The four WORDS are the shipped KP significator band words, reused so nothing new has to be translated. The EDGES are the RoxyAPI convention and are quartiles, because no authority bands a day and quartiles are the least arbitrary division of a percentage into four named steps. Read it with the same expectation the score carries: the gates cancel far more often than they deliver, so the lower bands are the common case.
+		Verdict GetVedicDailyReading200JSONResponseBodyVerdict `json:"verdict"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON405 the response for an HTTP 405 `application/json` response
+	JSON405 *ErrorResponse
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+	// Headers405 the parsed response headers for an HTTP 405 response
+	Headers405 *GetVedicDailyReadingResponse405Headers
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetVedicDailyReadingResponse) GetJSON200() *struct {
+	// Areas Life areas carried as a TYPED closed set rather than an open map, so every generated SDK knows which keys exist. Finance ships alone in this version, because an area is a named classical house group with a citation and not a life category invented for a dropdown. Widening it later adds a key and breaks nothing.
+	Areas struct {
+		// Finance The finance area: the positive house group 2, 5, 11 netted against the negative group 6, 8, 12, read off the lords of the running dasha, bhukti and antara, because that is the KP rule for when a matter fructifies, plus the natal basis the day is read against. ALWAYS AN OBJECT. Above latitude 66.56 the six netted members are null, because the Placidus cusps behind the significators have no solution there, while natal is still populated because it is a property of the birth chart and needs no cusps; the reading also still carries its gochara, panchanga and dasha and names the omission in degraded. The two house groups are Krishnamurti Paddhati practice, but the NET is a KP practitioner convention rather than a classical operation: the KP sources that carry these groups use them as a promise test and an avoidance test, never as arithmetic. The groups also vary by author, and the 6th house is the live disagreement, since some KP authors place it on the POSITIVE side as service income and salary, the exact opposite of the assignment used here. This is a six house net and it is NOT the focus=finance lens, which re-reads all twelve bhavas in money vocabulary and moves no number. The two are orthogonal and both ship.
+		Finance struct {
+			// Band The band the finance score falls in, on the same ladder as the top-level verdict so the two can never disagree about what a word means: "very-strong" at 75 and above, "strong" at 50 and above, "moderate" at 25 and above, "weak" below 25. Null above latitude 66.56, where the Placidus cusps the KP significators are read from have no solution: the question does not apply there rather than the answer being no, so never render it as zero or as a weak verdict. The natal block beside it is unaffected and still ships, and degraded names areas.finance.score.
+			Band *GetVedicDailyReading200JSONResponseBodyAreasFinanceBand `json:"band"`
+
+			// Cautions Every negative-group connection, strongest KP level first. Null above latitude 66.56, where the Placidus cusps the KP significators are read from have no solution: the question does not apply there rather than the answer being no, so never render it as zero or as a weak verdict. The natal block beside it is unaffected and still ships, and degraded names areas.finance.score.
+			Cautions *[]struct {
+				// DashaLevels Which of the running levels this graha rules. Carries the fact that one lord holds more than one level without letting it count twice.
+				DashaLevels []GetVedicDailyReading200JSONResponseBodyAreasFinanceCautionsDashaLevels `json:"dashaLevels"`
+
+				// Grade The KP letter for that level, on the standard A to D significator grading. A is the strongest connection.
+				Grade GetVedicDailyReading200JSONResponseBodyAreasFinanceCautionsGrade `json:"grade"`
+
+				// Graha The running dasha lord making this connection. A lord holding two of the three levels is listed once per house rather than twice, so nothing here is a hidden weight.
+				Graha string `json:"graha"`
+
+				// House The finance house this lord reaches. One of the positive group 2, 5, 11 or the negative group 6, 8, 12.
+				House float32 `json:"house"`
+
+				// Level Strongest KP significator level at which this lord reaches this house, 1 to 4. Level 1 is a planet in the constellation of the occupant, 2 the occupant, 3 a planet in the constellation of the house owner, 4 the house owner. Strongest level per house wins, which is step 1 of the published grading rule the dasha routes already use.
+				Level int `json:"level"`
+			} `json:"cautions"`
+
+			// Drivers Every positive-group connection, strongest KP level first. These are the specific lord-to-house links the score is made of, so the number can be audited rather than trusted. Null above latitude 66.56, where the Placidus cusps the KP significators are read from have no solution: the question does not apply there rather than the answer being no, so never render it as zero or as a weak verdict. The natal block beside it is unaffected and still ships, and degraded names areas.finance.score.
+			Drivers *[]struct {
+				// DashaLevels Which of the running levels this graha rules. Carries the fact that one lord holds more than one level without letting it count twice.
+				DashaLevels []GetVedicDailyReading200JSONResponseBodyAreasFinanceDriversDashaLevels `json:"dashaLevels"`
+
+				// Grade The KP letter for that level, on the standard A to D significator grading. A is the strongest connection.
+				Grade GetVedicDailyReading200JSONResponseBodyAreasFinanceDriversGrade `json:"grade"`
+
+				// Graha The running dasha lord making this connection. A lord holding two of the three levels is listed once per house rather than twice, so nothing here is a hidden weight.
+				Graha string `json:"graha"`
+
+				// House The finance house this lord reaches. One of the positive group 2, 5, 11 or the negative group 6, 8, 12.
+				House float32 `json:"house"`
+
+				// Level Strongest KP significator level at which this lord reaches this house, 1 to 4. Level 1 is a planet in the constellation of the occupant, 2 the occupant, 3 a planet in the constellation of the house owner, 4 the house owner. Strongest level per house wins, which is step 1 of the published grading rule the dasha routes already use.
+				Level int `json:"level"`
+			} `json:"drivers"`
+
+			// Natal The natal basis of this area: whether the chart is wealthy AT ALL, as the four classical wealth and poverty verdicts dhana, daridra, lakshmi, dhanamalika, each with the evidence that decided it. A PROPERTY OF THE BIRTH CHART AND NOT OF THE DAY, so it is the same block on every date this native is ever read for, which is exactly why it is CONTEXT rather than a term: it deliberately does not enter score, verdict, tally or evaluated, above or here. Folding a constant into a per-day number would shift every day by the identical amount, carrying no information into the only comparison those numbers support, and it would break the published closed form that makes the top-level score reproducible by hand from grahas alone. Read it as the standing question the day is being read against. The verdicts are the same ones POST /yoga/detect and POST /birth-chart return for this chart, computed in the Lahiri natal frame rather than in the KP-Newcomb frame the significators above use. PRESENT AT EVERY LATITUDE, including above the polar circle: these verdicts need only whole-sign houses from the Lagna, so nothing about them depends on the cusps the KP members above lose there.
+			Natal []struct {
+				// Evidence Why the verdict reads the way it does: every rule that matched, named by its own glossary id and its verse, with the exact condition it matched on, then the scope of the family. This is what makes the verdict checkable against a text rather than a label to be trusted, and it is also where the two excluded rules are declared: daridra-8 and daridra-9 rest on a single authority and are barred from deciding a verdict, though both still ship through GET /yoga/{id}. English in every language, like the per-graha stateSource, because it is provenance rather than display copy.
+				Evidence string `json:"evidence"`
+
+				// ID Glossary id of the verdict, one of dhana, daridra, lakshmi, dhanamalika. Use it with GET /yoga/{id} for the full glossary entry, which carries the description and the classical result in every supported language. Canonical English, so it stays safe to switch on in code.
+				ID string `json:"id"`
+
+				// Name Classical Sanskrit name of the combination. Canonical whatever the lang parameter says, exactly as the yoga endpoints return it.
+				Name string `json:"name"`
+
+				// Present Whether the combination is on this chart. False means every rule in the family was evaluated and none held, which is a real answer rather than a missing one, and the evidence beside it names the full denominator.
+				Present bool `json:"present"`
+
+				// Quality Which way a present verdict points, carried because three of the four are wealth combinations and Daridra is a poverty one, so present alone does not tell a client whether to read it as support or as pressure. Canonical English machine value.
+				Quality GetVedicDailyReading200JSONResponseBodyAreasFinanceNatalQuality `json:"quality"`
+			} `json:"natal"`
+
+			// Negative How many connections land on the negative house group 6, 8, 12, which KP reads as debt, sudden loss and expenditure. Null above latitude 66.56, where the Placidus cusps the KP significators are read from have no solution: the question does not apply there rather than the answer being no, so never render it as zero or as a weak verdict. The natal block beside it is unaffected and still ships, and degraded names areas.finance.score.
+			Negative *float32 `json:"negative"`
+
+			// Positive How many connections land on the positive house group 2, 5, 11, which KP reads as accumulated wealth, speculation and gains. Null above latitude 66.56, where the Placidus cusps the KP significators are read from have no solution: the question does not apply there rather than the answer being no, so never render it as zero or as a weak verdict. The natal block beside it is unaffected and still ships, and degraded names areas.finance.score.
+			Positive *float32 `json:"positive"`
+
+			// Score Share of the running lords six-house connections that land on the positive group, 0 to 100, rounded. A COUNT, so positive and negative below reproduce it in one division: round(positive / (positive + negative) * 100). Zero when the running lords reach none of the six houses, which is an ABSENCE of connection rather than a negative verdict. Null above latitude 66.56, where the Placidus cusps the KP significators are read from have no solution: the question does not apply there rather than the answer being no, so never render it as zero or as a weak verdict. The natal block beside it is unaffected and still ships, and degraded names areas.finance.score. The two house groups are Krishnamurti Paddhati practice, but the NET is a KP practitioner convention rather than a classical operation: the KP sources that carry these groups use them as a promise test and an avoidance test, never as arithmetic. The groups also vary by author, and the 6th house is the live disagreement, since some KP authors place it on the POSITIVE side as service income and salary, the exact opposite of the assignment used here. This is a six house net and it is NOT the focus=finance lens, which re-reads all twelve bhavas in money vocabulary and moves no number. The two are orthogonal and both ship.
+			Score *float32 `json:"score"`
+		} `json:"finance"`
+	} `json:"areas"`
+
+	// Chandrabala Chandrabala for THIS native, windowed for the same reason as the tarabala: the Moon can change rashi inside the panchanga day. Ashtama Chandra is a separate flag on each window.
+	Chandrabala []struct {
+		// AshtamaChandra The Moon in the 8th from the Janma Rashi. Its OWN flag, printed beside chandrabala rather than folded into it, exactly as the reference panchangs print it. Folding it in would let a caller read one boolean and miss the warning the source deliberately separates.
+		AshtamaChandra bool `json:"ashtamaChandra"`
+
+		// Favourable Whether the Moon stands in one of the rashis that give this native chandrabala during this window.
+		Favourable bool `json:"favourable"`
+
+		// HouseFromMoon House the Moon rashi makes from the Janma Rashi, counted whole-sign and inclusively, so the Janma Rashi itself is 1. This is the number chandrabala is read off.
+		HouseFromMoon float32 `json:"houseFromMoon"`
+
+		// MoonSign Rashi the Moon occupies during this window. Always English.
+		MoonSign string `json:"moonSign"`
+
+		// Timescale How long this component holds one verdict. Present on every component because this reading joins two genres classical literature keeps in separate books: a gochara verdict lasts as long as the graha stays in a rashi, which is years for Saturn, while a tarabala changes overnight. Without it a Saturn verdict that reads identically for nine hundred days would sit under one date field beside a limb that turns over at dawn.
+		Timescale GetVedicDailyReading200JSONResponseBodyChandrabalaTimescale `json:"timescale"`
+
+		// ValidFrom ISO instant this chandrabala window opens.
+		ValidFrom string `json:"validFrom"`
+
+		// ValidTo ISO instant this chandrabala window closes, which is when the Moon changes rashi.
+		ValidTo string `json:"validTo"`
+	} `json:"chandrabala"`
+
+	// Dasha The running Vimshottari chain at sunrise, outermost first, three levels deep. This is the frame the day is read inside, and it is also what the finance area reads the significators off. Empty for a chart whose cycle cannot be resolved.
+	Dasha []struct {
+		// EndDate ISO instant this period ends.
+		EndDate string `json:"endDate"`
+
+		// Level Which Vimshottari level this period is. Only mahadasha, antardasha, pratyantardasha are carried: the sookshma and prana lords turn over in hours and minutes, so embedding them would advertise a day-long cache lifetime over a value that is already stale. Use POST /dasha/current for those two.
+		Level GetVedicDailyReading200JSONResponseBodyDashaLevel `json:"level"`
+
+		// Lord Graha ruling this period. Always English.
+		Lord string `json:"lord"`
+
+		// StartDate ISO instant this period begins.
+		StartDate string `json:"startDate"`
+
+		// Timescale How long this component holds one verdict. Present on every component because this reading joins two genres classical literature keeps in separate books: a gochara verdict lasts as long as the graha stays in a rashi, which is years for Saturn, while a tarabala changes overnight. Without it a Saturn verdict that reads identically for nine hundred days would sit under one date field beside a limb that turns over at dawn.
+		Timescale GetVedicDailyReading200JSONResponseBodyDashaTimescale `json:"timescale"`
+	} `json:"dasha"`
+
+	// Date Civil date this reading covers, echoing the request field or the UTC date it defaulted to.
+	Date string `json:"date"`
+
+	// DayEnd ISO instant the panchanga day ends, which is the next sunrise.
+	DayEnd string `json:"dayEnd"`
+
+	// DayStart ISO instant the panchanga day begins, which is SUNRISE at the birth coordinates and not midnight. Every limb below is resolved at this instant. Where the Sun does not rise, local noon is used instead and the substitution is named in degraded rather than applied silently.
+	DayStart string `json:"dayStart"`
+
+	// Degraded Components this request could not supply, named rather than silently defaulted. Empty on an ordinary reading. A polar chart degrades through here instead of failing, so the caller still gets the gochara, the panchanga, the dasha and the natal basis of the finance area, and is told exactly what is missing.
+	Degraded []struct {
+		// Component Which part of the reading this location or date could not supply. "areas.finance.score" names the KP net by the member it is read through: the finance area itself always ships and its natal block is always populated, and it is the six netted members that are null.
+		Component GetVedicDailyReading200JSONResponseBodyDegradedComponent `json:"component"`
+
+		// Reason Why it could not: "sun-does-not-rise" for a day with no sunrise at these coordinates, "polar-latitude" above 66.56 degrees where the Placidus cusps have no solution.
+		Reason GetVedicDailyReading200JSONResponseBodyDegradedReason `json:"reason"`
+	} `json:"degraded"`
+
+	// Evaluated How many grahas were put through the gates, which is the denominator of the score. Rahu and Ketu are included: they skip the bindu gate because they have no Bhinnashtakavarga, and a skipped gate is not a failed one, so they still reach a state through the other three.
+	Evaluated float32 `json:"evaluated"`
+
+	// Focus Which signification vocabulary produced the houseThemes keywords in this response, echoing the focus query parameter. Always present, and "general" when the parameter was omitted. Read it to label a rendered house legend, or to tell two cached responses apart when only one asked for the finance lens.
+	Focus GetVedicDailyReading200JSONResponseBodyFocus `json:"focus"`
+
+	// Frames Every sidereal frame behind this reading, so a cached or forwarded payload is self describing and no number sits under a label it did not come from. TWO ayanamsas are in play by design: positions are Lahiri, and the Placidus cusps plus the KP significators are KP-Newcomb, which is the frame KP owns and the split a practitioner actually works in. The two differ by about 0.09 degrees, which is under a third of a KP sub-lord span and enough to move a placement near a boundary, so the reading declares which produced what rather than leaving a caller to guess. THREE entries for two ayanamsas, because Lahiri is read at two instants: the birth moment and the sunrise of the day being read, roughly half a degree apart on a chart forty years old, six times the gap between the two ayanamsas themselves. There is no ayanamsa request field on this route and there will not be one, since a single selector cannot honour two frames and accepting it would promise something the composition cannot deliver.
+	Frames struct {
+		// Kp KP-Newcomb, read at UTC midnight of the birth date. Produces the Placidus cusps behind the Ashtakavarga Lagna row and the KP significators behind the finance area, exactly as every KP route on this API computes them.
+		Kp struct {
+			// At ISO instant the ayanamsa was read at. Part of the value, not metadata: an ayanamsa moves about 50.3 arcseconds a year, so the same frame read at a birth in 1984 and at a transit in 2026 differs by more than half a degree.
+			At string `json:"at"`
+
+			// Ayanamsa Sidereal frame this part of the reading was cast in. Always "kp-newcomb" here: it is not a caller choice, because the composition runs two frames at once and a single request field could only ever name one of them.
+			Ayanamsa string `json:"ayanamsa"`
+
+			// AyanamsaDegrees Degrees actually subtracted from every tropical longitude this frame produced. Subtract it back to recover the tropical positions, or compare it against your reference software to confirm you are in the same frame before chasing a placement difference.
+			AyanamsaDegrees float32 `json:"ayanamsaDegrees"`
+
+			// Governs Response sections this frame is a determinant of, as paths into this payload. One of subject, grahas, panchanga, tara, chandrabala, dasha, areas.finance. A section appears under EVERY frame that feeds it, which is why grahas is listed three times: the transiting longitudes and the natal Moon they are counted from are both Lahiri read at different instants, while the Ashtakavarga Lagna row behind binduCount and kaksha is KP-Newcomb. Exactly two sections belong to one frame alone, subject to the natal frame and panchanga to the transit frame.
+			Governs []GetVedicDailyReading200JSONResponseBodyFramesKpGoverns `json:"governs"`
+		} `json:"kp"`
+
+		// Natal Lahiri at the birth instant. Produces the natal Moon this whole reading is counted from, the Vimshottari balance, and the natal graha rows of the Ashtakavarga scorecard the bindu gate reads.
+		Natal struct {
+			// At ISO instant the ayanamsa was read at. Part of the value, not metadata: an ayanamsa moves about 50.3 arcseconds a year, so the same frame read at a birth in 1984 and at a transit in 2026 differs by more than half a degree.
+			At string `json:"at"`
+
+			// Ayanamsa Sidereal frame this part of the reading was cast in. Always "lahiri" here: it is not a caller choice, because the composition runs two frames at once and a single request field could only ever name one of them.
+			Ayanamsa string `json:"ayanamsa"`
+
+			// AyanamsaDegrees Degrees actually subtracted from every tropical longitude this frame produced. Subtract it back to recover the tropical positions, or compare it against your reference software to confirm you are in the same frame before chasing a placement difference.
+			AyanamsaDegrees float32 `json:"ayanamsaDegrees"`
+
+			// Governs Response sections this frame is a determinant of, as paths into this payload. One of subject, grahas, panchanga, tara, chandrabala, dasha, areas.finance. A section appears under EVERY frame that feeds it, which is why grahas is listed three times: the transiting longitudes and the natal Moon they are counted from are both Lahiri read at different instants, while the Ashtakavarga Lagna row behind binduCount and kaksha is KP-Newcomb. Exactly two sections belong to one frame alone, subject to the natal frame and panchanga to the transit frame.
+			Governs []GetVedicDailyReading200JSONResponseBodyFramesNatalGoverns `json:"governs"`
+		} `json:"natal"`
+
+		// Transit Lahiri at sunrise on the day being read. Produces every transiting longitude and every panchanga limb. Inside one day precession moves it 0.14 arcseconds, so this one value speaks for every limb resolved between the two sunrises.
+		Transit struct {
+			// At ISO instant the ayanamsa was read at. Part of the value, not metadata: an ayanamsa moves about 50.3 arcseconds a year, so the same frame read at a birth in 1984 and at a transit in 2026 differs by more than half a degree.
+			At string `json:"at"`
+
+			// Ayanamsa Sidereal frame this part of the reading was cast in. Always "lahiri" here: it is not a caller choice, because the composition runs two frames at once and a single request field could only ever name one of them.
+			Ayanamsa string `json:"ayanamsa"`
+
+			// AyanamsaDegrees Degrees actually subtracted from every tropical longitude this frame produced. Subtract it back to recover the tropical positions, or compare it against your reference software to confirm you are in the same frame before chasing a placement difference.
+			AyanamsaDegrees float32 `json:"ayanamsaDegrees"`
+
+			// Governs Response sections this frame is a determinant of, as paths into this payload. One of subject, grahas, panchanga, tara, chandrabala, dasha, areas.finance. A section appears under EVERY frame that feeds it, which is why grahas is listed three times: the transiting longitudes and the natal Moon they are counted from are both Lahiri read at different instants, while the Ashtakavarga Lagna row behind binduCount and kaksha is KP-Newcomb. Exactly two sections belong to one frame alone, subject to the natal frame and panchanga to the transit frame.
+			Governs []GetVedicDailyReading200JSONResponseBodyFramesTransitGoverns `json:"governs"`
+		} `json:"transit"`
+	} `json:"frames"`
+
+	// Grahas All nine transiting grahas, each with its four gate results and the ONE state they produced. The gates run in the order the sources give them: house from the natal Moon, then vedha, then the bindu gate, then the nullifiers of Phaladeepika XXVI.30 to XXVI.32. Obstruction is terminal, so a blocked transit is never rescued by the gates that follow it.
+	Grahas []struct {
+		// AspectedByBenefic Gate 4. Transiting natural benefics casting graha drishti on this graha. Under Phaladeepika XXVI.30 a benefic sight on a BAD result is what voids it. Read as drishti from the other TRANSITING grahas, which is a school choice this endpoint makes and states: the sloka sits between the vedha rules and the rules about the transiting graha own condition.
+		AspectedByBenefic []string `json:"aspectedByBenefic"`
+
+		// AspectedByEnemy Gate 4. Transiting natural enemies of this graha casting graha drishti on it. Phaladeepika XXVI.30 voids the result either way for an enemy sight, whichever direction the baseline verdict pointed.
+		AspectedByEnemy []string `json:"aspectedByEnemy"`
+
+		// AspectedByMalefic Gate 4. Transiting natural malefics casting graha drishti on this graha. A malefic sight on a GOOD result voids it under Phaladeepika XXVI.30. Rahu and Ketu never appear here: they cast no drishti in this package, which is its own documented school choice, although they can be aspected.
+		AspectedByMalefic []string `json:"aspectedByMalefic"`
+
+		// BinduCount Gate 3. Bindus this graha holds in the whole sign it is transiting, 0 to 8, or null for Rahu and Ketu, which have no Bhinnashtakavarga and therefore SKIP this gate entirely rather than scoring zero. The gate reads the number two ways: a favourable house carrying fewer than 4 bindus under delivers, and an unfavourable house carrying a strict majority of the eight contributors, 5 or more, is turned good by Phaladeepika XXVI.41. Exactly 4 fires neither rule, which is the literal reading of both phrasings rather than a rounding choice. WHOSE READING THE NUMBER IS, stated because generalising it is ours: B.V. Raman prints 4 once and prints it about the MOON, then generalises the PRINCIPLE to every graha in the next sentence without repeating any number, and Phaladeepika XXVI.41 is general across grahas and also states no number. Applying 4 to all nine bodies is RoxyAPI reading the general rule through the one worked example the author gave it, and it is not a universally stated classical threshold.
+		BinduCount *float32 `json:"binduCount"`
+
+		// Combust Gate 4. Whether the graha is combust at the transit moment, or null for the Sun and the two nodes where the question does not arise at all. Combustion voids a good transit under Phaladeepika XXVI.32 and aggravates a bad one.
+		Combust *bool `json:"combust"`
+
+		// Dignity Gate 4. Dignity of the graha in the sign it is transiting, or null for Rahu and Ketu which have none. Feeds the Phaladeepika XXVI.31 shield ("exalted" or "own" does no harm in an untoward bhava) and the XXVI.32 weakness ("debilitated" or "enemy" voids a good transit). One of exalted, own, debilitated, enemy, neutral.
+		Dignity *GetVedicDailyReading200JSONResponseBodyGrahasDignity `json:"dignity"`
+
+		// Favourable Gate 1. Whether houseFromMoon is on this graha classical favourable list (Phaladeepika XXVI.2). The baseline verdict, before vedha, bindus or the nullifiers have had their say.
+		Favourable bool `json:"favourable"`
+
+		// FavourableHouses Gate 1 evidence: the whole favourable list for this graha, so the baseline verdict can be checked in place without a second request or a table lookup.
+		FavourableHouses []float32 `json:"favourableHouses"`
+
+		// Graha Graha name, Sun through Ketu. Always English, whatever the lang parameter says, so it stays safe to compare against in code.
+		Graha string `json:"graha"`
+
+		// HouseFromMoon House this graha transits counted whole-sign and inclusively from the natal Moon rashi (Janma Rashi), so the Moon rashi itself is 1. This is the reference classical Gochara is reckoned in: Phaladeepika XXVI.1 opens the transit chapter by saying that of all the Lagnas only the Moon Lagna matters for transit results. A reading counted from the Lagna instead answers a different question and every verdict below would be wrong.
+		HouseFromMoon float32 `json:"houseFromMoon"`
+
+		// Kaksha Gochara Kaksha: the ashtakavarga-qualified reading of this transit. The sign says where a graha is, this says whether the exact stretch it currently occupies is one its own Bhinnashtakavarga supports, which is the classical way of refining a transit verdict from sign-level to under four degrees.
+		Kaksha struct {
+			// Bindu Whether this kaksha lord gave the transiting graha a bindu in the sign being transited, which is the Gochara Kaksha verdict: true reads as a favourable stretch of the transit, false as an unfavourable one. Null means the question does not apply rather than that the answer is no, because Rahu and Ketu have no Bhinnashtakavarga to read. Never render null as unfavourable.
+			Bindu *bool `json:"bindu"`
+
+			// BinduCount Bindus the transiting graha holds in this whole sign, 0-8, or null for Rahu and Ketu. Context for the verdict, since the same kaksha reads differently in a sign worth 7 than in one worth 1.
+			BinduCount *float32 `json:"binduCount"`
+
+			// EndDegree Degree within the sign where this kaksha ends.
+			EndDegree float32 `json:"endDegree"`
+
+			// Lord Graha ruling this kaksha. The eight lords run Saturn, Jupiter, Mars, Sun, Venus, Mercury, Moon, Lagna from the start of every sign, ordered by how long each takes to cross a sign.
+			Lord string `json:"lord"`
+
+			// Number Kaksha number 1-8 within the current sign. Each sign divides into eight kakshas of 3 degrees 45 minutes, crossed in order, so this is how far through the sign the graha has travelled.
+			Number float32 `json:"number"`
+
+			// StartDegree Degree within the sign where this kaksha begins (0, 3.75, 7.5 and so on).
+			StartDegree float32 `json:"startDegree"`
+		} `json:"kaksha"`
+
+		// Longitude Sidereal longitude of the transiting graha in degrees, 0 to 360, Lahiri frame.
+		Longitude float32 `json:"longitude"`
+
+		// ObstructedBy Gate 2. Grahas actually standing in vedhaHouse, with the mutual exemptions already applied. Empty when nothing obstructs. A non-empty list makes the state "obstructed", which is a THIRD outcome rather than a smaller number: the texts cancel the promised good outright rather than discounting it.
+		ObstructedBy []string `json:"obstructedBy"`
+
+		// Sign Rashi this graha is transiting on the day being read. Always English.
+		Sign string `json:"sign"`
+
+		// State The single outcome the four gates produced for this graha, and the only field the score counts. "favourable" is the house list holding with nothing cancelling it, "underdelivered" is a favourable house below the bindu delivery floor, "obstructed" is vedha, "void" is an aspect, a dignity shield or a weakness emptying the result of effect, "aggravated" is the one compounding rule in the chapter, and "unfavourable" is a house that was never on the list. Canonical English machine values: every one is a classical outcome word rather than an invented label, which is why none carries a translated sibling.
+		State GetVedicDailyReading200JSONResponseBodyGrahasState `json:"state"`
+
+		// StateSource The rule that decided the state, named so a verdict can be checked against its sloka without leaving the payload.
+		StateSource string `json:"stateSource"`
+
+		// Timescale How long this component holds one verdict. Present on every component because this reading joins two genres classical literature keeps in separate books: a gochara verdict lasts as long as the graha stays in a rashi, which is years for Saturn, while a tarabala changes overnight. Without it a Saturn verdict that reads identically for nine hundred days would sit under one date field beside a limb that turns over at dawn.
+		Timescale GetVedicDailyReading200JSONResponseBodyGrahasTimescale `json:"timescale"`
+
+		// VedhaExempt Gate 2. Grahas that cannot obstruct this one however they transit, from the two mutual exemptions the texts name: the Sun and Saturn do not obstruct each other, and neither do the Moon and Mercury.
+		VedhaExempt []string `json:"vedhaExempt"`
+
+		// VedhaHouse Gate 2. The house whose occupation by another graha cancels this transit (Phaladeepika XXVI.3-8). Null when the transit is not favourable to begin with, since there is nothing for an obstruction to cancel.
+		VedhaHouse *float32 `json:"vedhaHouse"`
+	} `json:"grahas"`
+
+	// HouseThemes Significations of each of the twelve bhavas (houses), keyed by house number 1 to 12, as short keywords. Bhava 1 is the Lagna (self, body, vitality), 2 wealth and speech, 4 home and mother, 7 marriage and partnership, 10 career and status, 11 gains. Use it to label the house numbers returned elsewhere in the response: a Vimshottari dasha period signifying houses 2, 7 and 8, or a KP significator carrying houses 11 and 6, becomes readable text without a separate lookup call. Returned once per response rather than repeated per period, and localized by the lang query parameter alongside every other interpretation field.
+	HouseThemes map[string][]string `json:"houseThemes"`
+
+	// Panchanga The four panchanga limbs, each resolved at sunrise and each carrying the instant it gives way, so a client can label the whole day rather than asserting one value for it.
+	Panchanga struct {
+		// Karana Karana running at sunrise, with the instant it ends. A karana is half a tithi, which is why it is the fastest of the four limbs.
+		Karana struct {
+			// Name Name of the karana running at sunrise. Canonical Sanskrit, so it stays safe to compare against in code.
+			Name string `json:"name"`
+
+			// Next The karana that follows, so the rest of the day can be labelled without a second request.
+			Next string `json:"next"`
+
+			// Number karana number in its own cycle, resolved at sunrise.
+			Number float32 `json:"number"`
+
+			// Timescale How long this component holds one verdict. Present on every component because this reading joins two genres classical literature keeps in separate books: a gochara verdict lasts as long as the graha stays in a rashi, which is years for Saturn, while a tarabala changes overnight. Without it a Saturn verdict that reads identically for nine hundred days would sit under one date field beside a limb that turns over at dawn.
+			Timescale GetVedicDailyReading200JSONResponseBodyPanchangaKaranaTimescale `json:"timescale"`
+
+			// ValidTo ISO instant this karana ends. Read from the same transition search POST /panchang/detailed publishes, never recomputed here, so the two endpoints cannot disagree about when the event happens.
+			ValidTo string `json:"validTo"`
+		} `json:"karana"`
+
+		// Nakshatra Nakshatra the Moon occupies at sunrise, with the instant it ends. This is the sky-wide limb; for what it means to THIS native, read the tara array.
+		Nakshatra struct {
+			// Name Name of the nakshatra running at sunrise. Canonical Sanskrit, so it stays safe to compare against in code.
+			Name string `json:"name"`
+
+			// Next The nakshatra that follows, so the rest of the day can be labelled without a second request.
+			Next string `json:"next"`
+
+			// Number nakshatra number in its own cycle, resolved at sunrise.
+			Number float32 `json:"number"`
+
+			// Timescale How long this component holds one verdict. Present on every component because this reading joins two genres classical literature keeps in separate books: a gochara verdict lasts as long as the graha stays in a rashi, which is years for Saturn, while a tarabala changes overnight. Without it a Saturn verdict that reads identically for nine hundred days would sit under one date field beside a limb that turns over at dawn.
+			Timescale GetVedicDailyReading200JSONResponseBodyPanchangaNakshatraTimescale `json:"timescale"`
+
+			// ValidTo ISO instant this nakshatra ends. Read from the same transition search POST /panchang/detailed publishes, never recomputed here, so the two endpoints cannot disagree about when the event happens.
+			ValidTo string `json:"validTo"`
+		} `json:"nakshatra"`
+
+		// Paksha Lunar fortnight at sunrise: Shukla for the waxing half, Krishna for the waning half.
+		Paksha string `json:"paksha"`
+
+		// Tithi Tithi (lunar day) running at sunrise, with the instant it ends. The tithi is the 12-degree step of the Moon away from the Sun, so its length varies through the month.
+		Tithi struct {
+			// Name Name of the tithi running at sunrise. Canonical Sanskrit, so it stays safe to compare against in code.
+			Name string `json:"name"`
+
+			// Next The tithi that follows, so the rest of the day can be labelled without a second request.
+			Next string `json:"next"`
+
+			// Number tithi number in its own cycle, resolved at sunrise.
+			Number float32 `json:"number"`
+
+			// Timescale How long this component holds one verdict. Present on every component because this reading joins two genres classical literature keeps in separate books: a gochara verdict lasts as long as the graha stays in a rashi, which is years for Saturn, while a tarabala changes overnight. Without it a Saturn verdict that reads identically for nine hundred days would sit under one date field beside a limb that turns over at dawn.
+			Timescale GetVedicDailyReading200JSONResponseBodyPanchangaTithiTimescale `json:"timescale"`
+
+			// ValidTo ISO instant this tithi ends. Read from the same transition search POST /panchang/detailed publishes, never recomputed here, so the two endpoints cannot disagree about when the event happens.
+			ValidTo string `json:"validTo"`
+		} `json:"tithi"`
+
+		// Vara Weekday of the panchanga day. The Hindu vara runs sunrise to sunrise, so it can differ from the civil weekday of the same date before dawn. Always English.
+		Vara string `json:"vara"`
+
+		// VaraSanskrit The same weekday under its Sanskrit name.
+		VaraSanskrit string `json:"varaSanskrit"`
+
+		// Yoga Nitya yoga running at sunrise, with the instant it ends. The 27 yogas step through the combined longitude of the Sun and the Moon.
+		Yoga struct {
+			// Name Name of the yoga running at sunrise. Canonical Sanskrit, so it stays safe to compare against in code.
+			Name string `json:"name"`
+
+			// Next The yoga that follows, so the rest of the day can be labelled without a second request.
+			Next string `json:"next"`
+
+			// Number yoga number in its own cycle, resolved at sunrise.
+			Number float32 `json:"number"`
+
+			// Timescale How long this component holds one verdict. Present on every component because this reading joins two genres classical literature keeps in separate books: a gochara verdict lasts as long as the graha stays in a rashi, which is years for Saturn, while a tarabala changes overnight. Without it a Saturn verdict that reads identically for nine hundred days would sit under one date field beside a limb that turns over at dawn.
+			Timescale GetVedicDailyReading200JSONResponseBodyPanchangaYogaTimescale `json:"timescale"`
+
+			// ValidTo ISO instant this yoga ends. Read from the same transition search POST /panchang/detailed publishes, never recomputed here, so the two endpoints cannot disagree about when the event happens.
+			ValidTo string `json:"validTo"`
+		} `json:"yoga"`
+	} `json:"panchanga"`
+
+	// Score How much of the transiting sky supports this native today: supportive grahas divided by grahas evaluated, as a percentage, rounded. HAND REPRODUCIBLE FROM THIS RESPONSE ALONE, with no weights to publish and none to defend. STEP 1, count the grahas whose state is one of favourable; the tally array has that count already. STEP 2, divide by evaluated and round. Worked example: 2 supportive out of 9 evaluated scores round(2 / 9 * 100) = 22. The other states (underdelivered, obstructed, void, aggravated, unfavourable) count for nothing, because each of them is the tradition saying the promised good was reduced, cancelled or emptied. WHY IT IS A COUNT AND NOT A SUM: the tradition does not add these limbs up. Phaladeepika XXVI.41 makes a high bindu count an OVERRIDE that turns even the 6th, 8th and 12th good, and XXVI.30 to XXVI.32 make aspect, dignity and combustion NULLIFIERS, so a weighted sum would be a different mathematical object and could not carry those citations. The GATES are classical, the COUNTING is the RoxyAPI convention, and this sentence is where we say which is which. HOW TO READ THE NUMBER: it runs low by construction and that is the correct answer rather than a defect. Nine bodies casting drishti means almost every transiting graha is aspected by something, and the sloka voids the result when it is, so most days land in the bottom half and a high score is rare and therefore meaningful. Read it as a rare-high scale, not as a mark out of 100: 22 is an ordinary day, not a failing one. And it measures SUPPORT, never OUTCOME. It says how much of the sky backs this native today, never whether the day is good for a particular matter, which depends on the matter being judged.
+	Score float32 `json:"score"`
+
+	// Subject The two natal reference points this whole reading is counted from, plus the longitude they come from.
+	Subject struct {
+		// JanmaNakshatra Natal Moon nakshatra, the reference point the tarabala is counted from. Canonical Sanskrit.
+		JanmaNakshatra string `json:"janmaNakshatra"`
+
+		// JanmaNakshatraNumber Janma Nakshatra number 1 to 27, counted from Ashwini.
+		JanmaNakshatraNumber float32 `json:"janmaNakshatraNumber"`
+
+		// JanmaRashi Natal Moon rashi, the reference point every gochara house count in this response is taken from. Always English.
+		JanmaRashi string `json:"janmaRashi"`
+
+		// MoonLongitude Sidereal longitude of the natal Moon in degrees. The single value both reference points are derived from, so any disagreement with a reference chart can be traced to its source rather than to a verdict.
+		MoonLongitude float32 `json:"moonLongitude"`
+	} `json:"subject"`
+
+	// Tally The full per-state count, always all six states including the zeros. This is the WHOLE input to the score, which is what makes the number reproducible by hand, and it is also what lets a caller who reads the states differently compute their own figure from this response instead of asking for a second one.
+	Tally []struct {
+		// Count How many of the evaluated grahas reached that state.
+		Count float32 `json:"count"`
+
+		// State One of the six outcomes a transiting graha can reach.
+		State GetVedicDailyReading200JSONResponseBodyTallyState `json:"state"`
+	} `json:"tally"`
+
+	// Tara Tarabala for THIS native, as an array of windows rather than one value, because the Moon can change nakshatra inside a panchanga day and the reference panchangs print two windows when it does. Three windows happen and are returned when they do. One entry means the tara held all day.
+	Tara []struct {
+		// MoonNakshatra Nakshatra the Moon occupies during this window. Canonical Sanskrit.
+		MoonNakshatra string `json:"moonNakshatra"`
+
+		// Name Name of the tara this native gets during this window, from the 9-tara cycle Janma through Parama Mitra. A Sanskrit proper noun and a canonical machine value, which is why the favourability is a separate field rather than something a caller has to infer from the word.
+		Name GetVedicDailyReading200JSONResponseBodyTaraName `json:"name"`
+
+		// Number Tara number 1 to 9, counted inclusively from the Janma Nakshatra to the Moon nakshatra and folded by 9.
+		Number float32 `json:"number"`
+
+		// Quality Where this tara falls in the three-way classical reading. Taras 2, 4, 6, 8 and 9 are favourable, 3, 5 and 7 are not, and the 1st (Janma) is neither.
+		Quality GetVedicDailyReading200JSONResponseBodyTaraQuality `json:"quality"`
+
+		// Timescale How long this component holds one verdict. Present on every component because this reading joins two genres classical literature keeps in separate books: a gochara verdict lasts as long as the graha stays in a rashi, which is years for Saturn, while a tarabala changes overnight. Without it a Saturn verdict that reads identically for nine hundred days would sit under one date field beside a limb that turns over at dawn.
+		Timescale GetVedicDailyReading200JSONResponseBodyTaraTimescale `json:"timescale"`
+
+		// ValidFrom ISO instant this tarabala window opens.
+		ValidFrom string `json:"validFrom"`
+
+		// ValidTo ISO instant this tarabala window closes, which is when the Moon changes nakshatra.
+		ValidTo string `json:"validTo"`
+	} `json:"tara"`
+
+	// Verdict The band the score falls in: "very-strong" at 75 and above, "strong" at 50 and above, "moderate" at 25 and above, "weak" below 25. The four WORDS are the shipped KP significator band words, reused so nothing new has to be translated. The EDGES are the RoxyAPI convention and are quartiles, because no authority bands a day and quartiles are the least arbitrary division of a percentage into four named steps. Read it with the same expectation the score carries: the gates cancel far more often than they deliver, so the lower bands are the common case.
+	Verdict GetVedicDailyReading200JSONResponseBodyVerdict `json:"verdict"`
+} {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r GetVedicDailyReadingResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r GetVedicDailyReadingResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON405 returns the response for an HTTP 405 `application/json` response
+func (r GetVedicDailyReadingResponse) GetJSON405() *ErrorResponse {
+	return r.JSON405
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r GetVedicDailyReadingResponse) GetJSON429() *ErrorResponse {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GetVedicDailyReadingResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r GetVedicDailyReadingResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetVedicDailyReadingResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetVedicDailyReadingResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// Bytes is a convenience method to retrieve the raw bytes from the HTTP response
+func (r GetVedicDailyReadingResponse) Bytes() []byte {
+	return r.Body
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetVedicDailyReadingResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -94651,6 +96717,36 @@ func (c *ClientWithResponses) CalculateGunMilanWithResponse(ctx context.Context,
 	return ParseCalculateGunMilanResponse(rsp)
 }
 
+// GetVedicDailyReadingWithBodyWithResponse Daily Reading - Composed Gochara, Panchanga and Dasha for one native on one day
+//
+// The composed Vedic daily reading for one native on one date, in one call. Runs classical Gochara as the gate pipeline the texts describe: the house each transiting graha makes from the natal Moon (Janma Rashi), the vedha pair that can cancel it, the Ashtakavarga bindu gate that decides whether it is delivered, and the Phaladeepika XXVI.30 to XXVI.32 nullifiers, so every graha lands in ONE cited state rather than a bar of a chart. Joined to the panchanga day, which runs sunrise to sunrise with a validity window on every limb, plus tarabala and chandrabala resolved for THIS native as windows rather than as one value, the running Vimshottari chain three levels deep, and a KP finance net over the wealth and loss houses. Ships a hand-reproducible strength score with its arithmetic published in the field itself, and states plainly which part is classical and which part is our convention. Positions are computed in the Lahiri sidereal frame; the KP significators behind the finance area use the KP-Newcomb frame, as they do on every KP route. Vedic daily horoscope API, gochara API, daily panchang prediction, tarabala and chandrabala API, ashtakavarga transit strength.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /vedic-astrology/daily (the `GetVedicDailyReading` operationId).
+func (c *ClientWithResponses) GetVedicDailyReadingWithBodyWithResponse(ctx context.Context, params *GetVedicDailyReadingParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetVedicDailyReadingResponse, error) {
+	rsp, err := c.GetVedicDailyReadingWithBody(ctx, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetVedicDailyReadingResponse(rsp)
+}
+
+// GetVedicDailyReadingWithResponse Daily Reading - Composed Gochara, Panchanga and Dasha for one native on one day
+//
+// The composed Vedic daily reading for one native on one date, in one call. Runs classical Gochara as the gate pipeline the texts describe: the house each transiting graha makes from the natal Moon (Janma Rashi), the vedha pair that can cancel it, the Ashtakavarga bindu gate that decides whether it is delivered, and the Phaladeepika XXVI.30 to XXVI.32 nullifiers, so every graha lands in ONE cited state rather than a bar of a chart. Joined to the panchanga day, which runs sunrise to sunrise with a validity window on every limb, plus tarabala and chandrabala resolved for THIS native as windows rather than as one value, the running Vimshottari chain three levels deep, and a KP finance net over the wealth and loss houses. Ships a hand-reproducible strength score with its arithmetic published in the field itself, and states plainly which part is classical and which part is our convention. Positions are computed in the Lahiri sidereal frame; the KP significators behind the finance area use the KP-Newcomb frame, as they do on every KP route. Vedic daily horoscope API, gochara API, daily panchang prediction, tarabala and chandrabala API, ashtakavarga transit strength.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /vedic-astrology/daily (the `GetVedicDailyReading` operationId).
+func (c *ClientWithResponses) GetVedicDailyReadingWithResponse(ctx context.Context, params *GetVedicDailyReadingParams, body GetVedicDailyReadingJSONRequestBody, reqEditors ...RequestEditorFn) (*GetVedicDailyReadingResponse, error) {
+	rsp, err := c.GetVedicDailyReading(ctx, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetVedicDailyReadingResponse(rsp)
+}
+
 // GetCurrentDashaWithBodyWithResponse Get current Mahadasha, Antardasha, Pratyantardasha, Sookshma, Prana - Dasha Calculator API
 //
 // Calculate all five running Vimshottari Dasha levels (Mahadasha, Antardasha, Pratyantardasha, Sookshma, Prana) with remaining time in each. Accurate dasha calculator API for life phase prediction and planetary period analysis. Returns the dasha timeline with start/end dates for every level, ready for a current DBA readout down to hour-level timing. Set significators true to add the KP star lord, sub lord, signified houses and strength grade of each running lord, plus the houses they have in common. Essential for understanding current planetary influences, dasha transitions, and timing events in Vedic astrology. 120-year dasha system based on moon nakshatra at birth, with selectable Lahiri or KP ayanamsa.
@@ -98012,6 +100108,9 @@ func ParseGenerateLunarReturnResponse(rsp *http.Response) (*GenerateLunarReturnR
 					// Degree Degree within the Part of Fortune sign (0-29.999).
 					Degree float32 `json:"degree"`
 
+					// House House containing this point, resolved against the same cusps as `planets[].house` and using the requested house system. Read this field rather than inferring a house from the sign: the two disagree whenever a house spans more than one sign, which is most of the time outside Whole Sign.
+					House int `json:"house"`
+
 					// Longitude Absolute ecliptic longitude of the Part of Fortune (0-360).
 					Longitude float32 `json:"longitude"`
 
@@ -98053,6 +100152,9 @@ func ParseGenerateLunarReturnResponse(rsp *http.Response) (*GenerateLunarReturnR
 				Vertex struct {
 					// Degree Degree within the Vertex sign (0-29.999).
 					Degree float32 `json:"degree"`
+
+					// House House containing this point, resolved against the same cusps as `planets[].house` and using the requested house system. Read this field rather than inferring a house from the sign: the two disagree whenever a house spans more than one sign, which is most of the time outside Whole Sign.
+					House int `json:"house"`
 
 					// Longitude Absolute ecliptic longitude of the Vertex (0-360).
 					Longitude float32 `json:"longitude"`
@@ -98852,6 +100954,9 @@ func ParseGeneratePlanetaryReturnResponse(rsp *http.Response) (*GeneratePlanetar
 					// Degree Degree within the Part of Fortune sign (0-29.999).
 					Degree float32 `json:"degree"`
 
+					// House House containing this point, resolved against the same cusps as `planets[].house` and using the requested house system. Read this field rather than inferring a house from the sign: the two disagree whenever a house spans more than one sign, which is most of the time outside Whole Sign.
+					House int `json:"house"`
+
 					// Longitude Absolute ecliptic longitude of the Part of Fortune (0-360).
 					Longitude float32 `json:"longitude"`
 
@@ -98893,6 +100998,9 @@ func ParseGeneratePlanetaryReturnResponse(rsp *http.Response) (*GeneratePlanetar
 				Vertex struct {
 					// Degree Degree within the Vertex sign (0-29.999).
 					Degree float32 `json:"degree"`
+
+					// House House containing this point, resolved against the same cusps as `planets[].house` and using the requested house system. Read this field rather than inferring a house from the sign: the two disagree whenever a house spans more than one sign, which is most of the time outside Whole Sign.
+					House int `json:"house"`
 
 					// Longitude Absolute ecliptic longitude of the Vertex (0-360).
 					Longitude float32 `json:"longitude"`
@@ -99873,6 +101981,9 @@ func ParseGenerateSolarReturnResponse(rsp *http.Response) (*GenerateSolarReturnR
 					// Degree Degree within the Part of Fortune sign (0-29.999).
 					Degree float32 `json:"degree"`
 
+					// House House containing this point, resolved against the same cusps as `planets[].house` and using the requested house system. Read this field rather than inferring a house from the sign: the two disagree whenever a house spans more than one sign, which is most of the time outside Whole Sign.
+					House int `json:"house"`
+
 					// Longitude Absolute ecliptic longitude of the Part of Fortune (0-360).
 					Longitude float32 `json:"longitude"`
 
@@ -99914,6 +102025,9 @@ func ParseGenerateSolarReturnResponse(rsp *http.Response) (*GenerateSolarReturnR
 				Vertex struct {
 					// Degree Degree within the Vertex sign (0-29.999).
 					Degree float32 `json:"degree"`
+
+					// House House containing this point, resolved against the same cusps as `planets[].house` and using the requested house system. Read this field rather than inferring a house from the sign: the two disagree whenever a house spans more than one sign, which is most of the time outside Whole Sign.
+					House int `json:"house"`
 
 					// Longitude Absolute ecliptic longitude of the Vertex (0-360).
 					Longitude float32 `json:"longitude"`
@@ -103480,6 +105594,9 @@ func ParseForecastSolarReturnResponse(rsp *http.Response) (*ForecastSolarReturnR
 					// Degree Degree within the Part of Fortune sign (0-29.999).
 					Degree float32 `json:"degree"`
 
+					// House House containing this point, resolved against the same cusps as `planets[].house` and using the requested house system. Read this field rather than inferring a house from the sign: the two disagree whenever a house spans more than one sign, which is most of the time outside Whole Sign.
+					House int `json:"house"`
+
 					// Longitude Absolute ecliptic longitude of the Part of Fortune (0-360).
 					Longitude float32 `json:"longitude"`
 
@@ -103521,6 +105638,9 @@ func ParseForecastSolarReturnResponse(rsp *http.Response) (*ForecastSolarReturnR
 				Vertex struct {
 					// Degree Degree within the Vertex sign (0-29.999).
 					Degree float32 `json:"degree"`
+
+					// House House containing this point, resolved against the same cusps as `planets[].house` and using the requested house system. Read this field rather than inferring a house from the sign: the two disagree whenever a house spans more than one sign, which is most of the time outside Whole Sign.
+					House int `json:"house"`
 
 					// Longitude Absolute ecliptic longitude of the Vertex (0-360).
 					Longitude float32 `json:"longitude"`
@@ -105471,10 +107591,13 @@ func ParseCalculateVariablesResponse(rsp *http.Response) (*CalculateVariablesRes
 			Arrows []struct {
 				// Activation The single activation, body and chart side, that this arrow is derived from.
 				Activation struct {
-					// Planet Activating body whose substructure feeds this arrow. Determination and Motivation come from the Sun, Environment and Perspective from the North Node.
+					// Planet Activating body whose substructure feeds this arrow. Determination and Motivation come from the Sun, Environment and Perspective from the North Node. Always English, whatever the lang parameter says, so it stays safe to compare against in code and to key a glyph table on. Use planetLocalized for anything a reader sees.
 					Planet string `json:"planet"`
 
-					// Side Chart side of the activation. Determination and Environment come from the design side, Perspective and Motivation from the personality side.
+					// PlanetLocalized Activating body name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+					PlanetLocalized *string `json:"planetLocalized,omitempty"`
+
+					// Side Chart side of the activation. Determination and Environment come from the design side, Perspective and Motivation from the personality side. Always English, whatever the lang parameter says, so it stays safe to compare against in code.
 					Side string `json:"side"`
 				} `json:"activation"`
 
@@ -112106,6 +114229,485 @@ func ParseCalculateGunMilanResponse(rsp *http.Response) (*CalculateGunMilanRespo
 	switch {
 	case rsp.StatusCode == 405:
 		var headers CalculateGunMilanResponse405Headers
+		if values := rsp.Header.Values("Allow"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "Allow", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.Allow = &value
+		}
+		response.Headers405 = &headers
+	}
+
+	return response, nil
+}
+
+// ParseGetVedicDailyReadingResponse parses an HTTP response from a GetVedicDailyReadingWithResponse call
+func ParseGetVedicDailyReadingResponse(rsp *http.Response) (*GetVedicDailyReadingResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetVedicDailyReadingResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Areas Life areas carried as a TYPED closed set rather than an open map, so every generated SDK knows which keys exist. Finance ships alone in this version, because an area is a named classical house group with a citation and not a life category invented for a dropdown. Widening it later adds a key and breaks nothing.
+			Areas struct {
+				// Finance The finance area: the positive house group 2, 5, 11 netted against the negative group 6, 8, 12, read off the lords of the running dasha, bhukti and antara, because that is the KP rule for when a matter fructifies, plus the natal basis the day is read against. ALWAYS AN OBJECT. Above latitude 66.56 the six netted members are null, because the Placidus cusps behind the significators have no solution there, while natal is still populated because it is a property of the birth chart and needs no cusps; the reading also still carries its gochara, panchanga and dasha and names the omission in degraded. The two house groups are Krishnamurti Paddhati practice, but the NET is a KP practitioner convention rather than a classical operation: the KP sources that carry these groups use them as a promise test and an avoidance test, never as arithmetic. The groups also vary by author, and the 6th house is the live disagreement, since some KP authors place it on the POSITIVE side as service income and salary, the exact opposite of the assignment used here. This is a six house net and it is NOT the focus=finance lens, which re-reads all twelve bhavas in money vocabulary and moves no number. The two are orthogonal and both ship.
+				Finance struct {
+					// Band The band the finance score falls in, on the same ladder as the top-level verdict so the two can never disagree about what a word means: "very-strong" at 75 and above, "strong" at 50 and above, "moderate" at 25 and above, "weak" below 25. Null above latitude 66.56, where the Placidus cusps the KP significators are read from have no solution: the question does not apply there rather than the answer being no, so never render it as zero or as a weak verdict. The natal block beside it is unaffected and still ships, and degraded names areas.finance.score.
+					Band *GetVedicDailyReading200JSONResponseBodyAreasFinanceBand `json:"band"`
+
+					// Cautions Every negative-group connection, strongest KP level first. Null above latitude 66.56, where the Placidus cusps the KP significators are read from have no solution: the question does not apply there rather than the answer being no, so never render it as zero or as a weak verdict. The natal block beside it is unaffected and still ships, and degraded names areas.finance.score.
+					Cautions *[]struct {
+						// DashaLevels Which of the running levels this graha rules. Carries the fact that one lord holds more than one level without letting it count twice.
+						DashaLevels []GetVedicDailyReading200JSONResponseBodyAreasFinanceCautionsDashaLevels `json:"dashaLevels"`
+
+						// Grade The KP letter for that level, on the standard A to D significator grading. A is the strongest connection.
+						Grade GetVedicDailyReading200JSONResponseBodyAreasFinanceCautionsGrade `json:"grade"`
+
+						// Graha The running dasha lord making this connection. A lord holding two of the three levels is listed once per house rather than twice, so nothing here is a hidden weight.
+						Graha string `json:"graha"`
+
+						// House The finance house this lord reaches. One of the positive group 2, 5, 11 or the negative group 6, 8, 12.
+						House float32 `json:"house"`
+
+						// Level Strongest KP significator level at which this lord reaches this house, 1 to 4. Level 1 is a planet in the constellation of the occupant, 2 the occupant, 3 a planet in the constellation of the house owner, 4 the house owner. Strongest level per house wins, which is step 1 of the published grading rule the dasha routes already use.
+						Level int `json:"level"`
+					} `json:"cautions"`
+
+					// Drivers Every positive-group connection, strongest KP level first. These are the specific lord-to-house links the score is made of, so the number can be audited rather than trusted. Null above latitude 66.56, where the Placidus cusps the KP significators are read from have no solution: the question does not apply there rather than the answer being no, so never render it as zero or as a weak verdict. The natal block beside it is unaffected and still ships, and degraded names areas.finance.score.
+					Drivers *[]struct {
+						// DashaLevels Which of the running levels this graha rules. Carries the fact that one lord holds more than one level without letting it count twice.
+						DashaLevels []GetVedicDailyReading200JSONResponseBodyAreasFinanceDriversDashaLevels `json:"dashaLevels"`
+
+						// Grade The KP letter for that level, on the standard A to D significator grading. A is the strongest connection.
+						Grade GetVedicDailyReading200JSONResponseBodyAreasFinanceDriversGrade `json:"grade"`
+
+						// Graha The running dasha lord making this connection. A lord holding two of the three levels is listed once per house rather than twice, so nothing here is a hidden weight.
+						Graha string `json:"graha"`
+
+						// House The finance house this lord reaches. One of the positive group 2, 5, 11 or the negative group 6, 8, 12.
+						House float32 `json:"house"`
+
+						// Level Strongest KP significator level at which this lord reaches this house, 1 to 4. Level 1 is a planet in the constellation of the occupant, 2 the occupant, 3 a planet in the constellation of the house owner, 4 the house owner. Strongest level per house wins, which is step 1 of the published grading rule the dasha routes already use.
+						Level int `json:"level"`
+					} `json:"drivers"`
+
+					// Natal The natal basis of this area: whether the chart is wealthy AT ALL, as the four classical wealth and poverty verdicts dhana, daridra, lakshmi, dhanamalika, each with the evidence that decided it. A PROPERTY OF THE BIRTH CHART AND NOT OF THE DAY, so it is the same block on every date this native is ever read for, which is exactly why it is CONTEXT rather than a term: it deliberately does not enter score, verdict, tally or evaluated, above or here. Folding a constant into a per-day number would shift every day by the identical amount, carrying no information into the only comparison those numbers support, and it would break the published closed form that makes the top-level score reproducible by hand from grahas alone. Read it as the standing question the day is being read against. The verdicts are the same ones POST /yoga/detect and POST /birth-chart return for this chart, computed in the Lahiri natal frame rather than in the KP-Newcomb frame the significators above use. PRESENT AT EVERY LATITUDE, including above the polar circle: these verdicts need only whole-sign houses from the Lagna, so nothing about them depends on the cusps the KP members above lose there.
+					Natal []struct {
+						// Evidence Why the verdict reads the way it does: every rule that matched, named by its own glossary id and its verse, with the exact condition it matched on, then the scope of the family. This is what makes the verdict checkable against a text rather than a label to be trusted, and it is also where the two excluded rules are declared: daridra-8 and daridra-9 rest on a single authority and are barred from deciding a verdict, though both still ship through GET /yoga/{id}. English in every language, like the per-graha stateSource, because it is provenance rather than display copy.
+						Evidence string `json:"evidence"`
+
+						// ID Glossary id of the verdict, one of dhana, daridra, lakshmi, dhanamalika. Use it with GET /yoga/{id} for the full glossary entry, which carries the description and the classical result in every supported language. Canonical English, so it stays safe to switch on in code.
+						ID string `json:"id"`
+
+						// Name Classical Sanskrit name of the combination. Canonical whatever the lang parameter says, exactly as the yoga endpoints return it.
+						Name string `json:"name"`
+
+						// Present Whether the combination is on this chart. False means every rule in the family was evaluated and none held, which is a real answer rather than a missing one, and the evidence beside it names the full denominator.
+						Present bool `json:"present"`
+
+						// Quality Which way a present verdict points, carried because three of the four are wealth combinations and Daridra is a poverty one, so present alone does not tell a client whether to read it as support or as pressure. Canonical English machine value.
+						Quality GetVedicDailyReading200JSONResponseBodyAreasFinanceNatalQuality `json:"quality"`
+					} `json:"natal"`
+
+					// Negative How many connections land on the negative house group 6, 8, 12, which KP reads as debt, sudden loss and expenditure. Null above latitude 66.56, where the Placidus cusps the KP significators are read from have no solution: the question does not apply there rather than the answer being no, so never render it as zero or as a weak verdict. The natal block beside it is unaffected and still ships, and degraded names areas.finance.score.
+					Negative *float32 `json:"negative"`
+
+					// Positive How many connections land on the positive house group 2, 5, 11, which KP reads as accumulated wealth, speculation and gains. Null above latitude 66.56, where the Placidus cusps the KP significators are read from have no solution: the question does not apply there rather than the answer being no, so never render it as zero or as a weak verdict. The natal block beside it is unaffected and still ships, and degraded names areas.finance.score.
+					Positive *float32 `json:"positive"`
+
+					// Score Share of the running lords six-house connections that land on the positive group, 0 to 100, rounded. A COUNT, so positive and negative below reproduce it in one division: round(positive / (positive + negative) * 100). Zero when the running lords reach none of the six houses, which is an ABSENCE of connection rather than a negative verdict. Null above latitude 66.56, where the Placidus cusps the KP significators are read from have no solution: the question does not apply there rather than the answer being no, so never render it as zero or as a weak verdict. The natal block beside it is unaffected and still ships, and degraded names areas.finance.score. The two house groups are Krishnamurti Paddhati practice, but the NET is a KP practitioner convention rather than a classical operation: the KP sources that carry these groups use them as a promise test and an avoidance test, never as arithmetic. The groups also vary by author, and the 6th house is the live disagreement, since some KP authors place it on the POSITIVE side as service income and salary, the exact opposite of the assignment used here. This is a six house net and it is NOT the focus=finance lens, which re-reads all twelve bhavas in money vocabulary and moves no number. The two are orthogonal and both ship.
+					Score *float32 `json:"score"`
+				} `json:"finance"`
+			} `json:"areas"`
+
+			// Chandrabala Chandrabala for THIS native, windowed for the same reason as the tarabala: the Moon can change rashi inside the panchanga day. Ashtama Chandra is a separate flag on each window.
+			Chandrabala []struct {
+				// AshtamaChandra The Moon in the 8th from the Janma Rashi. Its OWN flag, printed beside chandrabala rather than folded into it, exactly as the reference panchangs print it. Folding it in would let a caller read one boolean and miss the warning the source deliberately separates.
+				AshtamaChandra bool `json:"ashtamaChandra"`
+
+				// Favourable Whether the Moon stands in one of the rashis that give this native chandrabala during this window.
+				Favourable bool `json:"favourable"`
+
+				// HouseFromMoon House the Moon rashi makes from the Janma Rashi, counted whole-sign and inclusively, so the Janma Rashi itself is 1. This is the number chandrabala is read off.
+				HouseFromMoon float32 `json:"houseFromMoon"`
+
+				// MoonSign Rashi the Moon occupies during this window. Always English.
+				MoonSign string `json:"moonSign"`
+
+				// Timescale How long this component holds one verdict. Present on every component because this reading joins two genres classical literature keeps in separate books: a gochara verdict lasts as long as the graha stays in a rashi, which is years for Saturn, while a tarabala changes overnight. Without it a Saturn verdict that reads identically for nine hundred days would sit under one date field beside a limb that turns over at dawn.
+				Timescale GetVedicDailyReading200JSONResponseBodyChandrabalaTimescale `json:"timescale"`
+
+				// ValidFrom ISO instant this chandrabala window opens.
+				ValidFrom string `json:"validFrom"`
+
+				// ValidTo ISO instant this chandrabala window closes, which is when the Moon changes rashi.
+				ValidTo string `json:"validTo"`
+			} `json:"chandrabala"`
+
+			// Dasha The running Vimshottari chain at sunrise, outermost first, three levels deep. This is the frame the day is read inside, and it is also what the finance area reads the significators off. Empty for a chart whose cycle cannot be resolved.
+			Dasha []struct {
+				// EndDate ISO instant this period ends.
+				EndDate string `json:"endDate"`
+
+				// Level Which Vimshottari level this period is. Only mahadasha, antardasha, pratyantardasha are carried: the sookshma and prana lords turn over in hours and minutes, so embedding them would advertise a day-long cache lifetime over a value that is already stale. Use POST /dasha/current for those two.
+				Level GetVedicDailyReading200JSONResponseBodyDashaLevel `json:"level"`
+
+				// Lord Graha ruling this period. Always English.
+				Lord string `json:"lord"`
+
+				// StartDate ISO instant this period begins.
+				StartDate string `json:"startDate"`
+
+				// Timescale How long this component holds one verdict. Present on every component because this reading joins two genres classical literature keeps in separate books: a gochara verdict lasts as long as the graha stays in a rashi, which is years for Saturn, while a tarabala changes overnight. Without it a Saturn verdict that reads identically for nine hundred days would sit under one date field beside a limb that turns over at dawn.
+				Timescale GetVedicDailyReading200JSONResponseBodyDashaTimescale `json:"timescale"`
+			} `json:"dasha"`
+
+			// Date Civil date this reading covers, echoing the request field or the UTC date it defaulted to.
+			Date string `json:"date"`
+
+			// DayEnd ISO instant the panchanga day ends, which is the next sunrise.
+			DayEnd string `json:"dayEnd"`
+
+			// DayStart ISO instant the panchanga day begins, which is SUNRISE at the birth coordinates and not midnight. Every limb below is resolved at this instant. Where the Sun does not rise, local noon is used instead and the substitution is named in degraded rather than applied silently.
+			DayStart string `json:"dayStart"`
+
+			// Degraded Components this request could not supply, named rather than silently defaulted. Empty on an ordinary reading. A polar chart degrades through here instead of failing, so the caller still gets the gochara, the panchanga, the dasha and the natal basis of the finance area, and is told exactly what is missing.
+			Degraded []struct {
+				// Component Which part of the reading this location or date could not supply. "areas.finance.score" names the KP net by the member it is read through: the finance area itself always ships and its natal block is always populated, and it is the six netted members that are null.
+				Component GetVedicDailyReading200JSONResponseBodyDegradedComponent `json:"component"`
+
+				// Reason Why it could not: "sun-does-not-rise" for a day with no sunrise at these coordinates, "polar-latitude" above 66.56 degrees where the Placidus cusps have no solution.
+				Reason GetVedicDailyReading200JSONResponseBodyDegradedReason `json:"reason"`
+			} `json:"degraded"`
+
+			// Evaluated How many grahas were put through the gates, which is the denominator of the score. Rahu and Ketu are included: they skip the bindu gate because they have no Bhinnashtakavarga, and a skipped gate is not a failed one, so they still reach a state through the other three.
+			Evaluated float32 `json:"evaluated"`
+
+			// Focus Which signification vocabulary produced the houseThemes keywords in this response, echoing the focus query parameter. Always present, and "general" when the parameter was omitted. Read it to label a rendered house legend, or to tell two cached responses apart when only one asked for the finance lens.
+			Focus GetVedicDailyReading200JSONResponseBodyFocus `json:"focus"`
+
+			// Frames Every sidereal frame behind this reading, so a cached or forwarded payload is self describing and no number sits under a label it did not come from. TWO ayanamsas are in play by design: positions are Lahiri, and the Placidus cusps plus the KP significators are KP-Newcomb, which is the frame KP owns and the split a practitioner actually works in. The two differ by about 0.09 degrees, which is under a third of a KP sub-lord span and enough to move a placement near a boundary, so the reading declares which produced what rather than leaving a caller to guess. THREE entries for two ayanamsas, because Lahiri is read at two instants: the birth moment and the sunrise of the day being read, roughly half a degree apart on a chart forty years old, six times the gap between the two ayanamsas themselves. There is no ayanamsa request field on this route and there will not be one, since a single selector cannot honour two frames and accepting it would promise something the composition cannot deliver.
+			Frames struct {
+				// Kp KP-Newcomb, read at UTC midnight of the birth date. Produces the Placidus cusps behind the Ashtakavarga Lagna row and the KP significators behind the finance area, exactly as every KP route on this API computes them.
+				Kp struct {
+					// At ISO instant the ayanamsa was read at. Part of the value, not metadata: an ayanamsa moves about 50.3 arcseconds a year, so the same frame read at a birth in 1984 and at a transit in 2026 differs by more than half a degree.
+					At string `json:"at"`
+
+					// Ayanamsa Sidereal frame this part of the reading was cast in. Always "kp-newcomb" here: it is not a caller choice, because the composition runs two frames at once and a single request field could only ever name one of them.
+					Ayanamsa string `json:"ayanamsa"`
+
+					// AyanamsaDegrees Degrees actually subtracted from every tropical longitude this frame produced. Subtract it back to recover the tropical positions, or compare it against your reference software to confirm you are in the same frame before chasing a placement difference.
+					AyanamsaDegrees float32 `json:"ayanamsaDegrees"`
+
+					// Governs Response sections this frame is a determinant of, as paths into this payload. One of subject, grahas, panchanga, tara, chandrabala, dasha, areas.finance. A section appears under EVERY frame that feeds it, which is why grahas is listed three times: the transiting longitudes and the natal Moon they are counted from are both Lahiri read at different instants, while the Ashtakavarga Lagna row behind binduCount and kaksha is KP-Newcomb. Exactly two sections belong to one frame alone, subject to the natal frame and panchanga to the transit frame.
+					Governs []GetVedicDailyReading200JSONResponseBodyFramesKpGoverns `json:"governs"`
+				} `json:"kp"`
+
+				// Natal Lahiri at the birth instant. Produces the natal Moon this whole reading is counted from, the Vimshottari balance, and the natal graha rows of the Ashtakavarga scorecard the bindu gate reads.
+				Natal struct {
+					// At ISO instant the ayanamsa was read at. Part of the value, not metadata: an ayanamsa moves about 50.3 arcseconds a year, so the same frame read at a birth in 1984 and at a transit in 2026 differs by more than half a degree.
+					At string `json:"at"`
+
+					// Ayanamsa Sidereal frame this part of the reading was cast in. Always "lahiri" here: it is not a caller choice, because the composition runs two frames at once and a single request field could only ever name one of them.
+					Ayanamsa string `json:"ayanamsa"`
+
+					// AyanamsaDegrees Degrees actually subtracted from every tropical longitude this frame produced. Subtract it back to recover the tropical positions, or compare it against your reference software to confirm you are in the same frame before chasing a placement difference.
+					AyanamsaDegrees float32 `json:"ayanamsaDegrees"`
+
+					// Governs Response sections this frame is a determinant of, as paths into this payload. One of subject, grahas, panchanga, tara, chandrabala, dasha, areas.finance. A section appears under EVERY frame that feeds it, which is why grahas is listed three times: the transiting longitudes and the natal Moon they are counted from are both Lahiri read at different instants, while the Ashtakavarga Lagna row behind binduCount and kaksha is KP-Newcomb. Exactly two sections belong to one frame alone, subject to the natal frame and panchanga to the transit frame.
+					Governs []GetVedicDailyReading200JSONResponseBodyFramesNatalGoverns `json:"governs"`
+				} `json:"natal"`
+
+				// Transit Lahiri at sunrise on the day being read. Produces every transiting longitude and every panchanga limb. Inside one day precession moves it 0.14 arcseconds, so this one value speaks for every limb resolved between the two sunrises.
+				Transit struct {
+					// At ISO instant the ayanamsa was read at. Part of the value, not metadata: an ayanamsa moves about 50.3 arcseconds a year, so the same frame read at a birth in 1984 and at a transit in 2026 differs by more than half a degree.
+					At string `json:"at"`
+
+					// Ayanamsa Sidereal frame this part of the reading was cast in. Always "lahiri" here: it is not a caller choice, because the composition runs two frames at once and a single request field could only ever name one of them.
+					Ayanamsa string `json:"ayanamsa"`
+
+					// AyanamsaDegrees Degrees actually subtracted from every tropical longitude this frame produced. Subtract it back to recover the tropical positions, or compare it against your reference software to confirm you are in the same frame before chasing a placement difference.
+					AyanamsaDegrees float32 `json:"ayanamsaDegrees"`
+
+					// Governs Response sections this frame is a determinant of, as paths into this payload. One of subject, grahas, panchanga, tara, chandrabala, dasha, areas.finance. A section appears under EVERY frame that feeds it, which is why grahas is listed three times: the transiting longitudes and the natal Moon they are counted from are both Lahiri read at different instants, while the Ashtakavarga Lagna row behind binduCount and kaksha is KP-Newcomb. Exactly two sections belong to one frame alone, subject to the natal frame and panchanga to the transit frame.
+					Governs []GetVedicDailyReading200JSONResponseBodyFramesTransitGoverns `json:"governs"`
+				} `json:"transit"`
+			} `json:"frames"`
+
+			// Grahas All nine transiting grahas, each with its four gate results and the ONE state they produced. The gates run in the order the sources give them: house from the natal Moon, then vedha, then the bindu gate, then the nullifiers of Phaladeepika XXVI.30 to XXVI.32. Obstruction is terminal, so a blocked transit is never rescued by the gates that follow it.
+			Grahas []struct {
+				// AspectedByBenefic Gate 4. Transiting natural benefics casting graha drishti on this graha. Under Phaladeepika XXVI.30 a benefic sight on a BAD result is what voids it. Read as drishti from the other TRANSITING grahas, which is a school choice this endpoint makes and states: the sloka sits between the vedha rules and the rules about the transiting graha own condition.
+				AspectedByBenefic []string `json:"aspectedByBenefic"`
+
+				// AspectedByEnemy Gate 4. Transiting natural enemies of this graha casting graha drishti on it. Phaladeepika XXVI.30 voids the result either way for an enemy sight, whichever direction the baseline verdict pointed.
+				AspectedByEnemy []string `json:"aspectedByEnemy"`
+
+				// AspectedByMalefic Gate 4. Transiting natural malefics casting graha drishti on this graha. A malefic sight on a GOOD result voids it under Phaladeepika XXVI.30. Rahu and Ketu never appear here: they cast no drishti in this package, which is its own documented school choice, although they can be aspected.
+				AspectedByMalefic []string `json:"aspectedByMalefic"`
+
+				// BinduCount Gate 3. Bindus this graha holds in the whole sign it is transiting, 0 to 8, or null for Rahu and Ketu, which have no Bhinnashtakavarga and therefore SKIP this gate entirely rather than scoring zero. The gate reads the number two ways: a favourable house carrying fewer than 4 bindus under delivers, and an unfavourable house carrying a strict majority of the eight contributors, 5 or more, is turned good by Phaladeepika XXVI.41. Exactly 4 fires neither rule, which is the literal reading of both phrasings rather than a rounding choice. WHOSE READING THE NUMBER IS, stated because generalising it is ours: B.V. Raman prints 4 once and prints it about the MOON, then generalises the PRINCIPLE to every graha in the next sentence without repeating any number, and Phaladeepika XXVI.41 is general across grahas and also states no number. Applying 4 to all nine bodies is RoxyAPI reading the general rule through the one worked example the author gave it, and it is not a universally stated classical threshold.
+				BinduCount *float32 `json:"binduCount"`
+
+				// Combust Gate 4. Whether the graha is combust at the transit moment, or null for the Sun and the two nodes where the question does not arise at all. Combustion voids a good transit under Phaladeepika XXVI.32 and aggravates a bad one.
+				Combust *bool `json:"combust"`
+
+				// Dignity Gate 4. Dignity of the graha in the sign it is transiting, or null for Rahu and Ketu which have none. Feeds the Phaladeepika XXVI.31 shield ("exalted" or "own" does no harm in an untoward bhava) and the XXVI.32 weakness ("debilitated" or "enemy" voids a good transit). One of exalted, own, debilitated, enemy, neutral.
+				Dignity *GetVedicDailyReading200JSONResponseBodyGrahasDignity `json:"dignity"`
+
+				// Favourable Gate 1. Whether houseFromMoon is on this graha classical favourable list (Phaladeepika XXVI.2). The baseline verdict, before vedha, bindus or the nullifiers have had their say.
+				Favourable bool `json:"favourable"`
+
+				// FavourableHouses Gate 1 evidence: the whole favourable list for this graha, so the baseline verdict can be checked in place without a second request or a table lookup.
+				FavourableHouses []float32 `json:"favourableHouses"`
+
+				// Graha Graha name, Sun through Ketu. Always English, whatever the lang parameter says, so it stays safe to compare against in code.
+				Graha string `json:"graha"`
+
+				// HouseFromMoon House this graha transits counted whole-sign and inclusively from the natal Moon rashi (Janma Rashi), so the Moon rashi itself is 1. This is the reference classical Gochara is reckoned in: Phaladeepika XXVI.1 opens the transit chapter by saying that of all the Lagnas only the Moon Lagna matters for transit results. A reading counted from the Lagna instead answers a different question and every verdict below would be wrong.
+				HouseFromMoon float32 `json:"houseFromMoon"`
+
+				// Kaksha Gochara Kaksha: the ashtakavarga-qualified reading of this transit. The sign says where a graha is, this says whether the exact stretch it currently occupies is one its own Bhinnashtakavarga supports, which is the classical way of refining a transit verdict from sign-level to under four degrees.
+				Kaksha struct {
+					// Bindu Whether this kaksha lord gave the transiting graha a bindu in the sign being transited, which is the Gochara Kaksha verdict: true reads as a favourable stretch of the transit, false as an unfavourable one. Null means the question does not apply rather than that the answer is no, because Rahu and Ketu have no Bhinnashtakavarga to read. Never render null as unfavourable.
+					Bindu *bool `json:"bindu"`
+
+					// BinduCount Bindus the transiting graha holds in this whole sign, 0-8, or null for Rahu and Ketu. Context for the verdict, since the same kaksha reads differently in a sign worth 7 than in one worth 1.
+					BinduCount *float32 `json:"binduCount"`
+
+					// EndDegree Degree within the sign where this kaksha ends.
+					EndDegree float32 `json:"endDegree"`
+
+					// Lord Graha ruling this kaksha. The eight lords run Saturn, Jupiter, Mars, Sun, Venus, Mercury, Moon, Lagna from the start of every sign, ordered by how long each takes to cross a sign.
+					Lord string `json:"lord"`
+
+					// Number Kaksha number 1-8 within the current sign. Each sign divides into eight kakshas of 3 degrees 45 minutes, crossed in order, so this is how far through the sign the graha has travelled.
+					Number float32 `json:"number"`
+
+					// StartDegree Degree within the sign where this kaksha begins (0, 3.75, 7.5 and so on).
+					StartDegree float32 `json:"startDegree"`
+				} `json:"kaksha"`
+
+				// Longitude Sidereal longitude of the transiting graha in degrees, 0 to 360, Lahiri frame.
+				Longitude float32 `json:"longitude"`
+
+				// ObstructedBy Gate 2. Grahas actually standing in vedhaHouse, with the mutual exemptions already applied. Empty when nothing obstructs. A non-empty list makes the state "obstructed", which is a THIRD outcome rather than a smaller number: the texts cancel the promised good outright rather than discounting it.
+				ObstructedBy []string `json:"obstructedBy"`
+
+				// Sign Rashi this graha is transiting on the day being read. Always English.
+				Sign string `json:"sign"`
+
+				// State The single outcome the four gates produced for this graha, and the only field the score counts. "favourable" is the house list holding with nothing cancelling it, "underdelivered" is a favourable house below the bindu delivery floor, "obstructed" is vedha, "void" is an aspect, a dignity shield or a weakness emptying the result of effect, "aggravated" is the one compounding rule in the chapter, and "unfavourable" is a house that was never on the list. Canonical English machine values: every one is a classical outcome word rather than an invented label, which is why none carries a translated sibling.
+				State GetVedicDailyReading200JSONResponseBodyGrahasState `json:"state"`
+
+				// StateSource The rule that decided the state, named so a verdict can be checked against its sloka without leaving the payload.
+				StateSource string `json:"stateSource"`
+
+				// Timescale How long this component holds one verdict. Present on every component because this reading joins two genres classical literature keeps in separate books: a gochara verdict lasts as long as the graha stays in a rashi, which is years for Saturn, while a tarabala changes overnight. Without it a Saturn verdict that reads identically for nine hundred days would sit under one date field beside a limb that turns over at dawn.
+				Timescale GetVedicDailyReading200JSONResponseBodyGrahasTimescale `json:"timescale"`
+
+				// VedhaExempt Gate 2. Grahas that cannot obstruct this one however they transit, from the two mutual exemptions the texts name: the Sun and Saturn do not obstruct each other, and neither do the Moon and Mercury.
+				VedhaExempt []string `json:"vedhaExempt"`
+
+				// VedhaHouse Gate 2. The house whose occupation by another graha cancels this transit (Phaladeepika XXVI.3-8). Null when the transit is not favourable to begin with, since there is nothing for an obstruction to cancel.
+				VedhaHouse *float32 `json:"vedhaHouse"`
+			} `json:"grahas"`
+
+			// HouseThemes Significations of each of the twelve bhavas (houses), keyed by house number 1 to 12, as short keywords. Bhava 1 is the Lagna (self, body, vitality), 2 wealth and speech, 4 home and mother, 7 marriage and partnership, 10 career and status, 11 gains. Use it to label the house numbers returned elsewhere in the response: a Vimshottari dasha period signifying houses 2, 7 and 8, or a KP significator carrying houses 11 and 6, becomes readable text without a separate lookup call. Returned once per response rather than repeated per period, and localized by the lang query parameter alongside every other interpretation field.
+			HouseThemes map[string][]string `json:"houseThemes"`
+
+			// Panchanga The four panchanga limbs, each resolved at sunrise and each carrying the instant it gives way, so a client can label the whole day rather than asserting one value for it.
+			Panchanga struct {
+				// Karana Karana running at sunrise, with the instant it ends. A karana is half a tithi, which is why it is the fastest of the four limbs.
+				Karana struct {
+					// Name Name of the karana running at sunrise. Canonical Sanskrit, so it stays safe to compare against in code.
+					Name string `json:"name"`
+
+					// Next The karana that follows, so the rest of the day can be labelled without a second request.
+					Next string `json:"next"`
+
+					// Number karana number in its own cycle, resolved at sunrise.
+					Number float32 `json:"number"`
+
+					// Timescale How long this component holds one verdict. Present on every component because this reading joins two genres classical literature keeps in separate books: a gochara verdict lasts as long as the graha stays in a rashi, which is years for Saturn, while a tarabala changes overnight. Without it a Saturn verdict that reads identically for nine hundred days would sit under one date field beside a limb that turns over at dawn.
+					Timescale GetVedicDailyReading200JSONResponseBodyPanchangaKaranaTimescale `json:"timescale"`
+
+					// ValidTo ISO instant this karana ends. Read from the same transition search POST /panchang/detailed publishes, never recomputed here, so the two endpoints cannot disagree about when the event happens.
+					ValidTo string `json:"validTo"`
+				} `json:"karana"`
+
+				// Nakshatra Nakshatra the Moon occupies at sunrise, with the instant it ends. This is the sky-wide limb; for what it means to THIS native, read the tara array.
+				Nakshatra struct {
+					// Name Name of the nakshatra running at sunrise. Canonical Sanskrit, so it stays safe to compare against in code.
+					Name string `json:"name"`
+
+					// Next The nakshatra that follows, so the rest of the day can be labelled without a second request.
+					Next string `json:"next"`
+
+					// Number nakshatra number in its own cycle, resolved at sunrise.
+					Number float32 `json:"number"`
+
+					// Timescale How long this component holds one verdict. Present on every component because this reading joins two genres classical literature keeps in separate books: a gochara verdict lasts as long as the graha stays in a rashi, which is years for Saturn, while a tarabala changes overnight. Without it a Saturn verdict that reads identically for nine hundred days would sit under one date field beside a limb that turns over at dawn.
+					Timescale GetVedicDailyReading200JSONResponseBodyPanchangaNakshatraTimescale `json:"timescale"`
+
+					// ValidTo ISO instant this nakshatra ends. Read from the same transition search POST /panchang/detailed publishes, never recomputed here, so the two endpoints cannot disagree about when the event happens.
+					ValidTo string `json:"validTo"`
+				} `json:"nakshatra"`
+
+				// Paksha Lunar fortnight at sunrise: Shukla for the waxing half, Krishna for the waning half.
+				Paksha string `json:"paksha"`
+
+				// Tithi Tithi (lunar day) running at sunrise, with the instant it ends. The tithi is the 12-degree step of the Moon away from the Sun, so its length varies through the month.
+				Tithi struct {
+					// Name Name of the tithi running at sunrise. Canonical Sanskrit, so it stays safe to compare against in code.
+					Name string `json:"name"`
+
+					// Next The tithi that follows, so the rest of the day can be labelled without a second request.
+					Next string `json:"next"`
+
+					// Number tithi number in its own cycle, resolved at sunrise.
+					Number float32 `json:"number"`
+
+					// Timescale How long this component holds one verdict. Present on every component because this reading joins two genres classical literature keeps in separate books: a gochara verdict lasts as long as the graha stays in a rashi, which is years for Saturn, while a tarabala changes overnight. Without it a Saturn verdict that reads identically for nine hundred days would sit under one date field beside a limb that turns over at dawn.
+					Timescale GetVedicDailyReading200JSONResponseBodyPanchangaTithiTimescale `json:"timescale"`
+
+					// ValidTo ISO instant this tithi ends. Read from the same transition search POST /panchang/detailed publishes, never recomputed here, so the two endpoints cannot disagree about when the event happens.
+					ValidTo string `json:"validTo"`
+				} `json:"tithi"`
+
+				// Vara Weekday of the panchanga day. The Hindu vara runs sunrise to sunrise, so it can differ from the civil weekday of the same date before dawn. Always English.
+				Vara string `json:"vara"`
+
+				// VaraSanskrit The same weekday under its Sanskrit name.
+				VaraSanskrit string `json:"varaSanskrit"`
+
+				// Yoga Nitya yoga running at sunrise, with the instant it ends. The 27 yogas step through the combined longitude of the Sun and the Moon.
+				Yoga struct {
+					// Name Name of the yoga running at sunrise. Canonical Sanskrit, so it stays safe to compare against in code.
+					Name string `json:"name"`
+
+					// Next The yoga that follows, so the rest of the day can be labelled without a second request.
+					Next string `json:"next"`
+
+					// Number yoga number in its own cycle, resolved at sunrise.
+					Number float32 `json:"number"`
+
+					// Timescale How long this component holds one verdict. Present on every component because this reading joins two genres classical literature keeps in separate books: a gochara verdict lasts as long as the graha stays in a rashi, which is years for Saturn, while a tarabala changes overnight. Without it a Saturn verdict that reads identically for nine hundred days would sit under one date field beside a limb that turns over at dawn.
+					Timescale GetVedicDailyReading200JSONResponseBodyPanchangaYogaTimescale `json:"timescale"`
+
+					// ValidTo ISO instant this yoga ends. Read from the same transition search POST /panchang/detailed publishes, never recomputed here, so the two endpoints cannot disagree about when the event happens.
+					ValidTo string `json:"validTo"`
+				} `json:"yoga"`
+			} `json:"panchanga"`
+
+			// Score How much of the transiting sky supports this native today: supportive grahas divided by grahas evaluated, as a percentage, rounded. HAND REPRODUCIBLE FROM THIS RESPONSE ALONE, with no weights to publish and none to defend. STEP 1, count the grahas whose state is one of favourable; the tally array has that count already. STEP 2, divide by evaluated and round. Worked example: 2 supportive out of 9 evaluated scores round(2 / 9 * 100) = 22. The other states (underdelivered, obstructed, void, aggravated, unfavourable) count for nothing, because each of them is the tradition saying the promised good was reduced, cancelled or emptied. WHY IT IS A COUNT AND NOT A SUM: the tradition does not add these limbs up. Phaladeepika XXVI.41 makes a high bindu count an OVERRIDE that turns even the 6th, 8th and 12th good, and XXVI.30 to XXVI.32 make aspect, dignity and combustion NULLIFIERS, so a weighted sum would be a different mathematical object and could not carry those citations. The GATES are classical, the COUNTING is the RoxyAPI convention, and this sentence is where we say which is which. HOW TO READ THE NUMBER: it runs low by construction and that is the correct answer rather than a defect. Nine bodies casting drishti means almost every transiting graha is aspected by something, and the sloka voids the result when it is, so most days land in the bottom half and a high score is rare and therefore meaningful. Read it as a rare-high scale, not as a mark out of 100: 22 is an ordinary day, not a failing one. And it measures SUPPORT, never OUTCOME. It says how much of the sky backs this native today, never whether the day is good for a particular matter, which depends on the matter being judged.
+			Score float32 `json:"score"`
+
+			// Subject The two natal reference points this whole reading is counted from, plus the longitude they come from.
+			Subject struct {
+				// JanmaNakshatra Natal Moon nakshatra, the reference point the tarabala is counted from. Canonical Sanskrit.
+				JanmaNakshatra string `json:"janmaNakshatra"`
+
+				// JanmaNakshatraNumber Janma Nakshatra number 1 to 27, counted from Ashwini.
+				JanmaNakshatraNumber float32 `json:"janmaNakshatraNumber"`
+
+				// JanmaRashi Natal Moon rashi, the reference point every gochara house count in this response is taken from. Always English.
+				JanmaRashi string `json:"janmaRashi"`
+
+				// MoonLongitude Sidereal longitude of the natal Moon in degrees. The single value both reference points are derived from, so any disagreement with a reference chart can be traced to its source rather than to a verdict.
+				MoonLongitude float32 `json:"moonLongitude"`
+			} `json:"subject"`
+
+			// Tally The full per-state count, always all six states including the zeros. This is the WHOLE input to the score, which is what makes the number reproducible by hand, and it is also what lets a caller who reads the states differently compute their own figure from this response instead of asking for a second one.
+			Tally []struct {
+				// Count How many of the evaluated grahas reached that state.
+				Count float32 `json:"count"`
+
+				// State One of the six outcomes a transiting graha can reach.
+				State GetVedicDailyReading200JSONResponseBodyTallyState `json:"state"`
+			} `json:"tally"`
+
+			// Tara Tarabala for THIS native, as an array of windows rather than one value, because the Moon can change nakshatra inside a panchanga day and the reference panchangs print two windows when it does. Three windows happen and are returned when they do. One entry means the tara held all day.
+			Tara []struct {
+				// MoonNakshatra Nakshatra the Moon occupies during this window. Canonical Sanskrit.
+				MoonNakshatra string `json:"moonNakshatra"`
+
+				// Name Name of the tara this native gets during this window, from the 9-tara cycle Janma through Parama Mitra. A Sanskrit proper noun and a canonical machine value, which is why the favourability is a separate field rather than something a caller has to infer from the word.
+				Name GetVedicDailyReading200JSONResponseBodyTaraName `json:"name"`
+
+				// Number Tara number 1 to 9, counted inclusively from the Janma Nakshatra to the Moon nakshatra and folded by 9.
+				Number float32 `json:"number"`
+
+				// Quality Where this tara falls in the three-way classical reading. Taras 2, 4, 6, 8 and 9 are favourable, 3, 5 and 7 are not, and the 1st (Janma) is neither.
+				Quality GetVedicDailyReading200JSONResponseBodyTaraQuality `json:"quality"`
+
+				// Timescale How long this component holds one verdict. Present on every component because this reading joins two genres classical literature keeps in separate books: a gochara verdict lasts as long as the graha stays in a rashi, which is years for Saturn, while a tarabala changes overnight. Without it a Saturn verdict that reads identically for nine hundred days would sit under one date field beside a limb that turns over at dawn.
+				Timescale GetVedicDailyReading200JSONResponseBodyTaraTimescale `json:"timescale"`
+
+				// ValidFrom ISO instant this tarabala window opens.
+				ValidFrom string `json:"validFrom"`
+
+				// ValidTo ISO instant this tarabala window closes, which is when the Moon changes nakshatra.
+				ValidTo string `json:"validTo"`
+			} `json:"tara"`
+
+			// Verdict The band the score falls in: "very-strong" at 75 and above, "strong" at 50 and above, "moderate" at 25 and above, "weak" below 25. The four WORDS are the shipped KP significator band words, reused so nothing new has to be translated. The EDGES are the RoxyAPI convention and are quartiles, because no authority bands a day and quartiles are the least arbitrary division of a percentage into four named steps. Read it with the same expectation the score carries: the gates cancel far more often than they deliver, so the lower bands are the common case.
+			Verdict GetVedicDailyReading200JSONResponseBodyVerdict `json:"verdict"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 405:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON405 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	switch {
+	case rsp.StatusCode == 405:
+		var headers GetVedicDailyReadingResponse405Headers
 		if values := rsp.Header.Values("Allow"); len(values) > 0 {
 			var value string
 			if err := runtime.BindStyledParameterWithOptions("simple", "Allow", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {

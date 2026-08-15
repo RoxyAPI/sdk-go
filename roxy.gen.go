@@ -718,6 +718,14 @@ func (s *VedicAstrologyService) GetUpagrahaPositions(ctx context.Context, body G
 	return resp, asRoxyError(resp)
 }
 
+func (s *VedicAstrologyService) GetVedicDailyReading(ctx context.Context, params *GetVedicDailyReadingParams, body GetVedicDailyReadingJSONRequestBody, reqEditors ...RequestEditorFn) (*GetVedicDailyReadingResponse, error) {
+	resp, err := s.client.GetVedicDailyReadingWithResponse(ctx, params, body, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
 func (s *VedicAstrologyService) GetYoga(ctx context.Context, id GetYogaParamsID, params *GetYogaParams, reqEditors ...RequestEditorFn) (*GetYogaResponse, error) {
 	resp, err := s.client.GetYogaWithResponse(ctx, id, params, reqEditors...)
 	if err != nil {

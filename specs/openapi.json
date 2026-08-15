@@ -1646,19 +1646,19 @@
                   "properties": {
                     "circumpolarBeyond": {
                       "description": "Absolute latitude in degrees beyond which the body never crosses the horizon, so the line has no points past it. Null when the line spans the full sampled range.",
-                      "example": 66.56,
+                      "example": 68.5262,
                       "type": [
                         "number",
                         "null"
                       ]
                     },
                     "interpretation": {
-                      "description": "Plain language meaning of this rising or setting planetary line for relocation, suitable for chart reports and AI agents.",
+                      "description": "Plain language meaning of this rising (Ascendant) planetary line for relocation, suitable for chart reports and AI agents.",
                       "example": "Your Sun Ascendant line runs through places where Self-awareness and ego colors your identity, vitality, and how you first come across to others. This part of you feels switched on here.",
                       "type": "string"
                     },
                     "points": {
-                      "description": "Sampled geographic points tracing this rising or setting line from 70 South to 70 North. Join them in latitude order to draw the curved planetary line on a world map.",
+                      "description": "Sampled geographic points tracing this rising line from 70 South to 70 North. Join them in latitude order to draw the curved planetary line on a world map.",
                       "items": {
                         "properties": {
                           "latitude": {
@@ -1667,8 +1667,8 @@
                             "type": "number"
                           },
                           "longitude": {
-                            "description": "Geographic longitude in decimal degrees where the body sits exactly on the horizon at this latitude.",
-                            "example": -71.42,
+                            "description": "Geographic longitude in decimal degrees where the body sits exactly on the eastern (rising) horizon at this latitude.",
+                            "example": 139.7118,
                             "type": "number"
                           }
                         },
@@ -1698,19 +1698,19 @@
                   "properties": {
                     "circumpolarBeyond": {
                       "description": "Absolute latitude in degrees beyond which the body never crosses the horizon, so the line has no points past it. Null when the line spans the full sampled range.",
-                      "example": 66.56,
+                      "example": 68.5262,
                       "type": [
                         "number",
                         "null"
                       ]
                     },
                     "interpretation": {
-                      "description": "Plain language meaning of this rising or setting planetary line for relocation, suitable for chart reports and AI agents.",
-                      "example": "Your Sun Ascendant line runs through places where Self-awareness and ego colors your identity, vitality, and how you first come across to others. This part of you feels switched on here.",
+                      "description": "Plain language meaning of this setting (Descendant) planetary line for relocation, suitable for chart reports and AI agents.",
+                      "example": "Your Sun Descendant line runs through places where Self-awareness and ego shapes your close relationships, partnerships, and the people you attract. Connection themes stand out along this line.",
                       "type": "string"
                     },
                     "points": {
-                      "description": "Sampled geographic points tracing this rising or setting line from 70 South to 70 North. Join them in latitude order to draw the curved planetary line on a world map.",
+                      "description": "Sampled geographic points tracing this setting line from 70 South to 70 North. Join them in latitude order to draw the curved planetary line on a world map.",
                       "items": {
                         "properties": {
                           "latitude": {
@@ -1719,8 +1719,8 @@
                             "type": "number"
                           },
                           "longitude": {
-                            "description": "Geographic longitude in decimal degrees where the body sits exactly on the horizon at this latitude.",
-                            "example": -71.42,
+                            "description": "Geographic longitude in decimal degrees where the body sits exactly on the western (setting) horizon at this latitude.",
+                            "example": -1.7402,
                             "type": "number"
                           }
                         },
@@ -1744,13 +1744,13 @@
                   "description": "Imum Coeli (IC) line, opposite the MC. Places where the body was anti-culminating, tied to home, family, and inner foundations.",
                   "properties": {
                     "interpretation": {
-                      "description": "Plain language meaning of this meridian planetary line for relocation, suitable for chart reports and AI agents.",
-                      "example": "Your Sun Midheaven line runs through places where Self-awareness and ego comes forward in your public life, career, and reputation. Living or working along this line tends to push this part of you into the spotlight.",
+                      "description": "Plain language meaning of this Imum Coeli planetary line for relocation, suitable for chart reports and AI agents.",
+                      "example": "Your Sun Imum Coeli line runs through places where Self-awareness and ego settles into your home, family, and inner foundations. This line deepens your sense of roots and private life.",
                       "type": "string"
                     },
                     "longitude": {
-                      "description": "Constant geographic longitude of this vertical meridian line in decimal degrees. The body culminates (MC) or anti-culminates (IC) along it, so plot it as a straight north to south line.",
-                      "example": -71.23,
+                      "description": "Constant geographic longitude of this vertical meridian line in decimal degrees. The body anti-culminates (IC) along it, so plot it as a straight north to south line.",
+                      "example": 68.9858,
                       "type": "number"
                     }
                   },
@@ -1764,13 +1764,13 @@
                   "description": "Midheaven (MC) line. Places along this meridian where the body was culminating overhead, tied to public life, career, and reputation.",
                   "properties": {
                     "interpretation": {
-                      "description": "Plain language meaning of this meridian planetary line for relocation, suitable for chart reports and AI agents.",
+                      "description": "Plain language meaning of this Midheaven planetary line for relocation, suitable for chart reports and AI agents.",
                       "example": "Your Sun Midheaven line runs through places where Self-awareness and ego comes forward in your public life, career, and reputation. Living or working along this line tends to push this part of you into the spotlight.",
                       "type": "string"
                     },
                     "longitude": {
-                      "description": "Constant geographic longitude of this vertical meridian line in decimal degrees. The body culminates (MC) or anti-culminates (IC) along it, so plot it as a straight north to south line.",
-                      "example": -71.23,
+                      "description": "Constant geographic longitude of this vertical meridian line in decimal degrees. The body culminates (MC) along it, so plot it as a straight north to south line.",
+                      "example": -111.0142,
                       "type": "number"
                     }
                   },
@@ -4808,49 +4808,34 @@
           },
           "reversed": {
             "description": "Complete reversed (inverted) interpretation including description, keywords, and guidance across love, career, finances, health, and spirituality domains. Reversed cards carry modified or blocked energy.",
-            "example": {
-              "career": "Fear of the unknown may be keeping you fixed in an unfulfilling role, or impulsive moves may be made at work without thinking them through.",
-              "description": "Reversed, The Fool turns its open potential in two opposite directions, and the surrounding cards usually reveal which one applies. In the first, the leap becomes recklessness.",
-              "finances": "Impulsive spending, unrealistic optimism, or schemes that sound too good to be true are the hazards here.",
-              "health": "Carelessness or risky habits may be catching up with the body, or anxiety may be holding back a needed change.",
-              "keywords": [
-                "recklessness",
-                "hesitation",
-                "naivety",
-                "fear of the unknown"
-              ],
-              "love": "Hesitation or carelessness is unsettling matters of the heart. There may be a reluctance to commit and open up for fear of being hurt, or a tendency to rush in without seeing a partner clearly.",
-              "spirituality": "Spiritual momentum has either scattered into undiscerning enthusiasm or stalled into hesitation."
-            },
             "properties": {
               "career": {
                 "description": "Career and professional interpretation for this orientation. Covers workplace dynamics, job transitions, ambition, and vocational purpose.",
-                "example": "This is a threshold moment for work: a new role, a new venture, or a bold pivot into unfamiliar territory. The Fool rewards initiative and original thinking, and it can breathe fresh energy into stale projects.",
+                "example": "Fear of the unknown may be keeping you fixed in an unfulfilling role, or impulsive moves may be made at work without thinking them through.",
                 "type": "string"
               },
               "description": {
                 "description": "Full narrative interpretation of the card in this orientation. Covers symbolism, life lessons, and guidance for the querent.",
-                "example": "Numbered zero, The Fool stands at the threshold of the Major Arcana as pure, unwritten potential. In the Rider-Waite-Smith image, a young traveller pauses at the edge of a high cliff, gazing into the open sky rather than the drop below, a white rose of innocence in one hand and a light bag of belongings slung from a wand over the shoulder.",
+                "example": "Reversed, The Fool turns its open potential in two opposite directions, and the surrounding cards usually reveal which one applies. In the first, the leap becomes recklessness. The traveller ignores the dog at the heels and the cliff at the toe, acting on impulse without regard for consequence and mistaking carelessness for freedom.",
                 "type": "string"
               },
               "finances": {
                 "description": "Financial interpretation for this orientation. Covers money management, investments, material prosperity, and abundance mindset.",
-                "example": "Financial openings appear, sometimes from unexpected directions, and the mood is expansive and exploratory. Spending tends toward experience, learning, and adventure.",
+                "example": "Impulsive spending, unrealistic optimism, or schemes that sound too good to be true are the hazards here.",
                 "type": "string"
               },
               "health": {
                 "description": "Health and wellbeing interpretation for this orientation. Covers physical vitality, mental health, energy levels, and self-care guidance.",
-                "example": "Renewed vitality and a fresh start are indicated, well suited to a new routine, an unfamiliar sport, or simply more time outdoors and in motion.",
+                "example": "Carelessness or risky habits may be catching up with the body, or anxiety may be holding back a needed change.",
                 "type": "string"
               },
               "keywords": {
                 "description": "Key themes and concepts for this card in the given orientation (upright or reversed). Used for quick tarot reference and divination summaries.",
                 "example": [
-                  "new beginnings",
-                  "innocence",
-                  "spontaneity",
-                  "free spirit",
-                  "potential"
+                  "recklessness",
+                  "hesitation",
+                  "naivety",
+                  "fear of the unknown"
                 ],
                 "items": {
                   "type": "string"
@@ -4859,12 +4844,12 @@
               },
               "love": {
                 "description": "Love and relationship interpretation for this orientation. Covers romantic partnerships, dating, emotional connections, and matters of the heart.",
-                "example": "A new romance or a fresh chapter in an existing bond is opening. The card favours openness to unexpected connection and a spirit of play over caution.",
+                "example": "Hesitation or carelessness is unsettling matters of the heart. There may be a reluctance to commit and open up for fear of being hurt, or a tendency to rush in without seeing a partner clearly.",
                 "type": "string"
               },
               "spirituality": {
                 "description": "Spiritual interpretation for this orientation. Covers personal growth, inner wisdom, soul purpose, and metaphysical development.",
-                "example": "A spiritual journey is beginning, marked by openness, wonder, and a beginners willingness to learn.",
+                "example": "Spiritual momentum has either scattered into undiscerning enthusiasm or stalled into hesitation.",
                 "type": "string"
               }
             },
@@ -10834,6 +10819,13 @@
                 "minimum": 0,
                 "type": "number"
               },
+              "house": {
+                "description": "House containing this point, resolved against the same cusps as `planets[].house` and using the requested house system. Read this field rather than inferring a house from the sign: the two disagree whenever a house spans more than one sign, which is most of the time outside Whole Sign.",
+                "example": 8,
+                "maximum": 12,
+                "minimum": 1,
+                "type": "integer"
+              },
               "longitude": {
                 "description": "Absolute ecliptic longitude of the Part of Fortune (0-360).",
                 "example": 27.24,
@@ -10865,6 +10857,7 @@
               "sign",
               "degree",
               "longitude",
+              "house",
               "sect"
             ],
             "type": "object"
@@ -11191,6 +11184,13 @@
                 "minimum": 0,
                 "type": "number"
               },
+              "house": {
+                "description": "House containing this point, resolved against the same cusps as `planets[].house` and using the requested house system. Read this field rather than inferring a house from the sign: the two disagree whenever a house spans more than one sign, which is most of the time outside Whole Sign.",
+                "example": 6,
+                "maximum": 12,
+                "minimum": 1,
+                "type": "integer"
+              },
               "longitude": {
                 "description": "Absolute ecliptic longitude of the Vertex (0-360).",
                 "example": 162.9,
@@ -11212,7 +11212,8 @@
             "required": [
               "sign",
               "degree",
-              "longitude"
+              "longitude",
+              "house"
             ],
             "type": "object"
           }
@@ -12756,6 +12757,13 @@
                 "minimum": 0,
                 "type": "number"
               },
+              "house": {
+                "description": "House containing this point, resolved against the same cusps as `planets[].house` and using the requested house system. Read this field rather than inferring a house from the sign: the two disagree whenever a house spans more than one sign, which is most of the time outside Whole Sign.",
+                "example": 6,
+                "maximum": 12,
+                "minimum": 1,
+                "type": "integer"
+              },
               "longitude": {
                 "description": "Absolute ecliptic longitude of the Vertex (0-360).",
                 "example": 162.9,
@@ -12777,7 +12785,8 @@
             "required": [
               "sign",
               "degree",
-              "longitude"
+              "longitude",
+              "house"
             ],
             "type": "object"
           }
@@ -14555,7 +14564,7 @@
       "name": "RoxyAPI Support",
       "url": "https://roxyapi.com/contact"
     },
-    "description": "# RoxyAPI: AI-Native Insight Infrastructure\n\n\u003e **Base URL:** `https://roxyapi.com/api/v2`\n\u003e All endpoint paths below are relative to this base URL.\n\nThe only multi-domain spiritual intelligence API. 12 domains (astrology, Vedic astrology, forecast, human design, numerology, tarot, biorhythm, I-Ching, crystals, dreams, angel numbers, location), 177+ endpoints, one API key, instant activation. Remote MCP server per domain plus AGENTS.md for AI coding agents.\n\n## Who uses RoxyAPI\n\n- **Developers** building astrology apps, tarot platforms, numerology calculators, or dream journals\n- **AI agent builders** connecting Claude, GPT, or Gemini to real calculation engines via MCP\n- **Vibe coders** shipping insight apps with Cursor, Bolt, or Replit using zero domain knowledge\n- **Founders and brands** launching branded spiritual experiences for their audience\n\n## Quick start (60 seconds)\n\n**1. Get your API key** at [roxyapi.com/pricing](https://roxyapi.com/pricing). Instant delivery, no account required.\n\n**2. Make your first call:**\n```bash\ncurl -H \"X-API-Key: YOUR_KEY\" https://roxyapi.com/api/v2/tarot/draw -X POST -H \"Content-Type: application/json\" -d '{\"count\": 3}'\n```\n\n**3. Monitor usage:**\n```bash\ncurl -H \"X-API-Key: YOUR_KEY\" https://roxyapi.com/api/v2/usage\n```\n\n## AI agent integration (Remote MCP)\n\nRoxyAPI ships a Remote MCP server per product over Streamable HTTP, with no local setup and no Docker. Your AI agent auto-discovers all 177+ endpoints as callable tools with zero configuration:\n- **Claude Desktop, Cursor, Windsurf**: Add MCP server URL in settings\n- **OpenAI Agents, Gemini ADK**: Connect via Streamable HTTP transport\n- **Custom agents**: Use the MCP Python/TypeScript SDK\n\nMCP endpoints: `https://roxyapi.com/mcp/{domain}` (e.g., `/mcp/astrology`, `/mcp/tarot`)\n\nSetup guide: [roxyapi.com/docs/mcp](https://roxyapi.com/docs/mcp)\n\n## Authentication\n\nAll endpoints require an API key via header or query param:\n- **Header (recommended):** `X-API-Key: YOUR_KEY`\n- **Query param (testing):** `?api_key=YOUR_KEY`\n\n## Response format\n\nClean JSON, no wrapper objects. Errors return `{ \"error\": \"message\", \"code\": \"error_code\" }`. The `error` field is human-readable (may change wording). The `code` field is machine-readable (stable — safe to switch on programmatically).\n\nRate limit headers on every response: `X-RateLimit-Limit`, `X-RateLimit-Remaining`, `X-RateLimit-Used`\n\n## Errors\n\nAll errors return `{ \"error\": \"message\", \"code\": \"error_code\" }`:\n\n| Status | Code | When |\n|--------|------|------|\n| 400 | `validation_error` | Missing or invalid parameters. Response includes `issues[]` with per-field `path`, `message`, `code`, `expected`, `minimum`, `maximum`, `format`, `pattern`. |\n| 401 | `api_key_required` | No API key provided |\n| 401 | `invalid_api_key` | Key format invalid or tampered |\n| 401 | `subscription_not_found` | Key references non-existent subscription |\n| 401 | `subscription_inactive` | Subscription cancelled, expired, or suspended |\n| 404 | `not_found` | Resource not found. Response may include a ranked `suggestions[]` array (each with `endpoint`, `hint`, and a `docs` deep link) for typo recovery. |\n| 405 | `method_not_allowed` | Path exists for a different HTTP method. Response includes `allow[]` and the `Allow` header lists valid methods. |\n| 429 | `rate_limit_exceeded` | Monthly quota reached |\n| 500 | `internal_error` | Server error |\n\n## Pricing\n\nFlat per-request pricing. Every call counts the same, whether a planet position or a full birth chart with aspects. No credit systems, no variable costs. Plans from $39 per month for 50K requests, up to 3M requests, with custom volume above that.\n\nSee [roxyapi.com/pricing](https://roxyapi.com/pricing)\n\n## Resources\n\n- [Quickstart guide](https://roxyapi.com/docs/quickstart) - first API call in 60 seconds\n- [Documentation](https://roxyapi.com/docs) - guides, tutorials, domain reference\n- [MCP setup](https://roxyapi.com/docs/mcp) - connect AI agents\n- [Starter apps](https://roxyapi.com/starters) - clone and deploy in 30 minutes\n- [FAQ](https://roxyapi.com/faq) - common questions\n- [Contact](https://roxyapi.com/contact) - support and API key recovery\n",
+    "description": "# RoxyAPI: AI-Native Insight Infrastructure\n\n\u003e **Base URL:** `https://roxyapi.com/api/v2`\n\u003e All endpoint paths below are relative to this base URL.\n\nThe only multi-domain spiritual intelligence API. 12 domains (astrology, Vedic astrology, forecast, human design, numerology, tarot, biorhythm, I-Ching, crystals, dreams, angel numbers, location), 178+ endpoints, one API key, instant activation. Remote MCP server per domain plus AGENTS.md for AI coding agents.\n\n## Who uses RoxyAPI\n\n- **Developers** building astrology apps, tarot platforms, numerology calculators, or dream journals\n- **AI agent builders** connecting Claude, GPT, or Gemini to real calculation engines via MCP\n- **Vibe coders** shipping insight apps with Cursor, Bolt, or Replit using zero domain knowledge\n- **Founders and brands** launching branded spiritual experiences for their audience\n\n## Quick start (60 seconds)\n\n**1. Get your API key** at [roxyapi.com/pricing](https://roxyapi.com/pricing). Instant delivery, no account required.\n\n**2. Make your first call:**\n```bash\ncurl -H \"X-API-Key: YOUR_KEY\" https://roxyapi.com/api/v2/tarot/draw -X POST -H \"Content-Type: application/json\" -d '{\"count\": 3}'\n```\n\n**3. Monitor usage:**\n```bash\ncurl -H \"X-API-Key: YOUR_KEY\" https://roxyapi.com/api/v2/usage\n```\n\n## AI agent integration (Remote MCP)\n\nRoxyAPI ships a Remote MCP server per product over Streamable HTTP, with no local setup and no Docker. Your AI agent auto-discovers all 178+ endpoints as callable tools with zero configuration:\n- **Claude Desktop, Cursor, Windsurf**: Add MCP server URL in settings\n- **OpenAI Agents, Gemini ADK**: Connect via Streamable HTTP transport\n- **Custom agents**: Use the MCP Python/TypeScript SDK\n\nMCP endpoints: `https://roxyapi.com/mcp/{domain}` (e.g., `/mcp/astrology`, `/mcp/tarot`)\n\nSetup guide: [roxyapi.com/docs/mcp](https://roxyapi.com/docs/mcp)\n\n## Authentication\n\nAll endpoints require an API key via header or query param:\n- **Header (recommended):** `X-API-Key: YOUR_KEY`\n- **Query param (testing):** `?api_key=YOUR_KEY`\n\n## Response format\n\nClean JSON, no wrapper objects. Errors return `{ \"error\": \"message\", \"code\": \"error_code\" }`. The `error` field is human-readable (may change wording). The `code` field is machine-readable (stable — safe to switch on programmatically).\n\nRate limit headers on every response: `X-RateLimit-Limit`, `X-RateLimit-Remaining`, `X-RateLimit-Used`\n\n## Errors\n\nAll errors return `{ \"error\": \"message\", \"code\": \"error_code\" }`:\n\n| Status | Code | When |\n|--------|------|------|\n| 400 | `validation_error` | Missing or invalid parameters. Response includes `issues[]` with per-field `path`, `message`, `code`, `expected`, `minimum`, `maximum`, `format`, `pattern`. |\n| 401 | `api_key_required` | No API key provided |\n| 401 | `invalid_api_key` | Key format invalid or tampered |\n| 401 | `subscription_not_found` | Key references non-existent subscription |\n| 401 | `subscription_inactive` | Subscription cancelled, expired, or suspended |\n| 404 | `not_found` | Resource not found. Response may include a ranked `suggestions[]` array (each with `endpoint`, `hint`, and a `docs` deep link) for typo recovery. |\n| 405 | `method_not_allowed` | Path exists for a different HTTP method. Response includes `allow[]` and the `Allow` header lists valid methods. |\n| 429 | `rate_limit_exceeded` | Monthly quota reached |\n| 500 | `internal_error` | Server error |\n\n## Pricing\n\nFlat per-request pricing. Every call counts the same, whether a planet position or a full birth chart with aspects. No credit systems, no variable costs. Plans from $39 per month for 50K requests, up to 3M requests, with custom volume above that.\n\nSee [roxyapi.com/pricing](https://roxyapi.com/pricing)\n\n## Resources\n\n- [Quickstart guide](https://roxyapi.com/docs/quickstart) - first API call in 60 seconds\n- [Documentation](https://roxyapi.com/docs) - guides, tutorials, domain reference\n- [MCP setup](https://roxyapi.com/docs/mcp) - connect AI agents\n- [Starter apps](https://roxyapi.com/starters) - clone and deploy in 30 minutes\n- [FAQ](https://roxyapi.com/faq) - common questions\n- [Contact](https://roxyapi.com/contact) - support and API key recovery\n",
     "license": {
       "name": "Proprietary",
       "url": "https://roxyapi.com/policy/terms"
@@ -17071,17 +17080,17 @@
                           "properties": {
                             "description": {
                               "description": "Narrative analysis of how these two signs interact through this planet.",
-                              "example": "Gemini and Pisces combine air and water core energy. Thought meets feeling. Air brings objectivity and perspective while Water brings emotional depth and intuition. Honoring both rational and emotional ways of knowing strengthens this bond. Your modalities (mutable and mutable) add another layer: Highly adaptable and flexible. Both adjust easily to change. Creating shared structure and follow-through together prevents drift and keeps momentum alive.",
+                              "example": "Mars in Gemini and Mars in Sagittarius combine air and fire approaches to desire and conflict. Highly energizing and dynamic. Air fuels Fire with ideas and enthusiasm, creating an intellectually stimulating and active connection full of momentum.",
                               "type": "string"
                             },
                             "person1Sign": {
                               "description": "Person 1 sign for this planet.",
-                              "example": "gemini",
+                              "example": "Gemini",
                               "type": "string"
                             },
                             "person2Sign": {
                               "description": "Person 2 sign for this planet.",
-                              "example": "pisces",
+                              "example": "Sagittarius",
                               "type": "string"
                             }
                           },
@@ -17097,17 +17106,17 @@
                           "properties": {
                             "description": {
                               "description": "Narrative analysis of how these two signs interact through this planet.",
-                              "example": "Gemini and Pisces combine air and water core energy. Thought meets feeling. Air brings objectivity and perspective while Water brings emotional depth and intuition. Honoring both rational and emotional ways of knowing strengthens this bond. Your modalities (mutable and mutable) add another layer: Highly adaptable and flexible. Both adjust easily to change. Creating shared structure and follow-through together prevents drift and keeps momentum alive.",
+                              "example": "Aquarius Moon and Pisces Moon bring together air and water emotional natures. Thought meets feeling. Air brings objectivity and perspective while Water brings emotional depth and intuition. Honoring both rational and emotional ways of knowing strengthens this bond.",
                               "type": "string"
                             },
                             "person1Sign": {
                               "description": "Person 1 sign for this planet.",
-                              "example": "gemini",
+                              "example": "Aquarius",
                               "type": "string"
                             },
                             "person2Sign": {
                               "description": "Person 2 sign for this planet.",
-                              "example": "pisces",
+                              "example": "Pisces",
                               "type": "string"
                             }
                           },
@@ -17123,17 +17132,17 @@
                           "properties": {
                             "description": {
                               "description": "Narrative analysis of how these two signs interact through this planet.",
-                              "example": "Gemini and Pisces combine air and water core energy. Thought meets feeling. Air brings objectivity and perspective while Water brings emotional depth and intuition. Honoring both rational and emotional ways of knowing strengthens this bond. Your modalities (mutable and mutable) add another layer: Highly adaptable and flexible. Both adjust easily to change. Creating shared structure and follow-through together prevents drift and keeps momentum alive.",
+                              "example": "Taurus and Scorpio combine earth and water core energy. Naturally nurturing and fertile. Water nourishes steady growth while Earth provides a stable container. This combination creates deep security and emotional safety. Your modalities (fixed and fixed) add another layer: Deeply committed and determined. Shared resolve can move mountains, though finding room for compromise keeps the relationship from becoming a standoff.",
                               "type": "string"
                             },
                             "person1Sign": {
                               "description": "Person 1 sign for this planet.",
-                              "example": "gemini",
+                              "example": "Taurus",
                               "type": "string"
                             },
                             "person2Sign": {
                               "description": "Person 2 sign for this planet.",
-                              "example": "pisces",
+                              "example": "Scorpio",
                               "type": "string"
                             }
                           },
@@ -17149,17 +17158,17 @@
                           "properties": {
                             "description": {
                               "description": "Narrative analysis of how these two signs interact through this planet.",
-                              "example": "Gemini and Pisces combine air and water core energy. Thought meets feeling. Air brings objectivity and perspective while Water brings emotional depth and intuition. Honoring both rational and emotional ways of knowing strengthens this bond. Your modalities (mutable and mutable) add another layer: Highly adaptable and flexible. Both adjust easily to change. Creating shared structure and follow-through together prevents drift and keeps momentum alive.",
+                              "example": "Venus in Aries and Venus in Scorpio blend fire and water love styles. Passion meets emotional depth. This powerful chemistry creates transformation when balanced. Directness and sensitivity learn from each other, forging a connection that is both warm and soulful.",
                               "type": "string"
                             },
                             "person1Sign": {
                               "description": "Person 1 sign for this planet.",
-                              "example": "gemini",
+                              "example": "Aries",
                               "type": "string"
                             },
                             "person2Sign": {
                               "description": "Person 2 sign for this planet.",
-                              "example": "pisces",
+                              "example": "Scorpio",
                               "type": "string"
                             }
                           },
@@ -19857,6 +19866,13 @@
                               "minimum": 0,
                               "type": "number"
                             },
+                            "house": {
+                              "description": "House containing this point, resolved against the same cusps as `planets[].house` and using the requested house system. Read this field rather than inferring a house from the sign: the two disagree whenever a house spans more than one sign, which is most of the time outside Whole Sign.",
+                              "example": 8,
+                              "maximum": 12,
+                              "minimum": 1,
+                              "type": "integer"
+                            },
                             "longitude": {
                               "description": "Absolute ecliptic longitude of the Part of Fortune (0-360).",
                               "example": 27.24,
@@ -19883,6 +19899,7 @@
                             "sign",
                             "degree",
                             "longitude",
+                            "house",
                             "sect"
                           ],
                           "type": "object"
@@ -19978,6 +19995,13 @@
                               "minimum": 0,
                               "type": "number"
                             },
+                            "house": {
+                              "description": "House containing this point, resolved against the same cusps as `planets[].house` and using the requested house system. Read this field rather than inferring a house from the sign: the two disagree whenever a house spans more than one sign, which is most of the time outside Whole Sign.",
+                              "example": 6,
+                              "maximum": 12,
+                              "minimum": 1,
+                              "type": "integer"
+                            },
                             "longitude": {
                               "description": "Absolute ecliptic longitude of the Vertex (0-360).",
                               "example": 162.9,
@@ -19994,7 +20018,8 @@
                           "required": [
                             "sign",
                             "degree",
-                            "longitude"
+                            "longitude",
+                            "house"
                           ],
                           "type": "object"
                         }
@@ -21684,6 +21709,13 @@
                               "minimum": 0,
                               "type": "number"
                             },
+                            "house": {
+                              "description": "House containing this point, resolved against the same cusps as `planets[].house` and using the requested house system. Read this field rather than inferring a house from the sign: the two disagree whenever a house spans more than one sign, which is most of the time outside Whole Sign.",
+                              "example": 8,
+                              "maximum": 12,
+                              "minimum": 1,
+                              "type": "integer"
+                            },
                             "longitude": {
                               "description": "Absolute ecliptic longitude of the Part of Fortune (0-360).",
                               "example": 27.24,
@@ -21710,6 +21742,7 @@
                             "sign",
                             "degree",
                             "longitude",
+                            "house",
                             "sect"
                           ],
                           "type": "object"
@@ -21805,6 +21838,13 @@
                               "minimum": 0,
                               "type": "number"
                             },
+                            "house": {
+                              "description": "House containing this point, resolved against the same cusps as `planets[].house` and using the requested house system. Read this field rather than inferring a house from the sign: the two disagree whenever a house spans more than one sign, which is most of the time outside Whole Sign.",
+                              "example": 6,
+                              "maximum": 12,
+                              "minimum": 1,
+                              "type": "integer"
+                            },
                             "longitude": {
                               "description": "Absolute ecliptic longitude of the Vertex (0-360).",
                               "example": 162.9,
@@ -21821,7 +21861,8 @@
                           "required": [
                             "sign",
                             "degree",
-                            "longitude"
+                            "longitude",
+                            "house"
                           ],
                           "type": "object"
                         }
@@ -23846,6 +23887,13 @@
                               "minimum": 0,
                               "type": "number"
                             },
+                            "house": {
+                              "description": "House containing this point, resolved against the same cusps as `planets[].house` and using the requested house system. Read this field rather than inferring a house from the sign: the two disagree whenever a house spans more than one sign, which is most of the time outside Whole Sign.",
+                              "example": 8,
+                              "maximum": 12,
+                              "minimum": 1,
+                              "type": "integer"
+                            },
                             "longitude": {
                               "description": "Absolute ecliptic longitude of the Part of Fortune (0-360).",
                               "example": 27.24,
@@ -23872,6 +23920,7 @@
                             "sign",
                             "degree",
                             "longitude",
+                            "house",
                             "sect"
                           ],
                           "type": "object"
@@ -23967,6 +24016,13 @@
                               "minimum": 0,
                               "type": "number"
                             },
+                            "house": {
+                              "description": "House containing this point, resolved against the same cusps as `planets[].house` and using the requested house system. Read this field rather than inferring a house from the sign: the two disagree whenever a house spans more than one sign, which is most of the time outside Whole Sign.",
+                              "example": 6,
+                              "maximum": 12,
+                              "minimum": 1,
+                              "type": "integer"
+                            },
                             "longitude": {
                               "description": "Absolute ecliptic longitude of the Vertex (0-360).",
                               "example": 162.9,
@@ -23983,7 +24039,8 @@
                           "required": [
                             "sign",
                             "degree",
-                            "longitude"
+                            "longitude",
+                            "house"
                           ],
                           "type": "object"
                         }
@@ -32106,6 +32163,13 @@
                               "minimum": 0,
                               "type": "number"
                             },
+                            "house": {
+                              "description": "House containing this point, resolved against the same cusps as `planets[].house` and using the requested house system. Read this field rather than inferring a house from the sign: the two disagree whenever a house spans more than one sign, which is most of the time outside Whole Sign.",
+                              "example": 8,
+                              "maximum": 12,
+                              "minimum": 1,
+                              "type": "integer"
+                            },
                             "longitude": {
                               "description": "Absolute ecliptic longitude of the Part of Fortune (0-360).",
                               "example": 27.24,
@@ -32132,6 +32196,7 @@
                             "sign",
                             "degree",
                             "longitude",
+                            "house",
                             "sect"
                           ],
                           "type": "object"
@@ -32227,6 +32292,13 @@
                               "minimum": 0,
                               "type": "number"
                             },
+                            "house": {
+                              "description": "House containing this point, resolved against the same cusps as `planets[].house` and using the requested house system. Read this field rather than inferring a house from the sign: the two disagree whenever a house spans more than one sign, which is most of the time outside Whole Sign.",
+                              "example": 6,
+                              "maximum": 12,
+                              "minimum": 1,
+                              "type": "integer"
+                            },
                             "longitude": {
                               "description": "Absolute ecliptic longitude of the Vertex (0-360).",
                               "example": 162.9,
@@ -32243,7 +32315,8 @@
                           "required": [
                             "sign",
                             "degree",
-                            "longitude"
+                            "longitude",
+                            "house"
                           ],
                           "type": "object"
                         }
@@ -36956,12 +37029,17 @@
                             "description": "The single activation, body and chart side, that this arrow is derived from.",
                             "properties": {
                               "planet": {
-                                "description": "Activating body whose substructure feeds this arrow. Determination and Motivation come from the Sun, Environment and Perspective from the North Node.",
+                                "description": "Activating body whose substructure feeds this arrow. Determination and Motivation come from the Sun, Environment and Perspective from the North Node. Always English, whatever the lang parameter says, so it stays safe to compare against in code and to key a glyph table on. Use planetLocalized for anything a reader sees.",
                                 "example": "Sun",
                                 "type": "string"
                               },
+                              "planetLocalized": {
+                                "description": "Activating body name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.",
+                                "example": "Sol",
+                                "type": "string"
+                              },
                               "side": {
-                                "description": "Chart side of the activation. Determination and Environment come from the design side, Perspective and Motivation from the personality side.",
+                                "description": "Chart side of the activation. Determination and Environment come from the design side, Perspective and Motivation from the personality side. Always English, whatever the lang parameter says, so it stays safe to compare against in code.",
                                 "example": "design",
                                 "type": "string"
                               }
@@ -50599,6 +50677,1412 @@
           }
         ],
         "summary": "Calculate compatibility score - Gun Milan API (Ashtakoot Matching)",
+        "tags": [
+          "Vedic Astrology"
+        ]
+      }
+    },
+    "/vedic-astrology/daily": {
+      "post": {
+        "description": "The composed Vedic daily reading for one native on one date, in one call. Runs classical Gochara as the gate pipeline the texts describe: the house each transiting graha makes from the natal Moon (Janma Rashi), the vedha pair that can cancel it, the Ashtakavarga bindu gate that decides whether it is delivered, and the Phaladeepika XXVI.30 to XXVI.32 nullifiers, so every graha lands in ONE cited state rather than a bar of a chart. Joined to the panchanga day, which runs sunrise to sunrise with a validity window on every limb, plus tarabala and chandrabala resolved for THIS native as windows rather than as one value, the running Vimshottari chain three levels deep, and a KP finance net over the wealth and loss houses. Ships a hand-reproducible strength score with its arithmetic published in the field itself, and states plainly which part is classical and which part is our convention. Positions are computed in the Lahiri sidereal frame; the KP significators behind the finance area use the KP-Newcomb frame, as they do on every KP route. Vedic daily horoscope API, gochara API, daily panchang prediction, tarabala and chandrabala API, ashtakavarga transit strength.",
+        "operationId": "getVedicDailyReading",
+        "parameters": [
+          {
+            "description": "Response language (ISO 639-1). Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en. Languages without translations yet return English.",
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "schema": {
+              "default": "en",
+              "description": "Response language (ISO 639-1). Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en. Languages without translations yet return English.",
+              "enum": [
+                "en",
+                "tr",
+                "de",
+                "es",
+                "hi",
+                "pt",
+                "fr",
+                "ru"
+              ],
+              "example": "en",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Which signification vocabulary the houseThemes map returns. \"general\" gives the classical bhava significations (self, wealth, siblings, home, and so on). \"finance\" gives the money reading of the same twelve bhavas, so house 2 returns income and savings, 5 speculation and risk appetite, 8 sudden money and leverage, 11 gains and profits, and 12 expenses and capital outflow. Use \"finance\" for wealth, income, business and market timing questions in Krishnamurti Paddhati, where the significator house groups 2, 6, 10, 11 for earned income and 5, 8, 11 for speculation are read against a running dasha. Defaults to \"general\".",
+            "in": "query",
+            "name": "focus",
+            "required": false,
+            "schema": {
+              "default": "general",
+              "description": "Which signification vocabulary the houseThemes map returns. \"general\" gives the classical bhava significations (self, wealth, siblings, home, and so on). \"finance\" gives the money reading of the same twelve bhavas, so house 2 returns income and savings, 5 speculation and risk appetite, 8 sudden money and leverage, 11 gains and profits, and 12 expenses and capital outflow. Use \"finance\" for wealth, income, business and market timing questions in Krishnamurti Paddhati, where the significator house groups 2, 6, 10, 11 for earned income and 5, 8, 11 for speculation are read against a running dasha. Defaults to \"general\".",
+              "enum": [
+                "general",
+                "finance"
+              ],
+              "example": "general",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "birthDate": {
+                    "description": "Birth date in YYYY-MM-DD format. Fixes the Janma Rashi and Janma Nakshatra every part of this reading is counted from, and the natal Ashtakavarga the bindu gate reads.",
+                    "example": "1984-11-03",
+                    "format": "date",
+                    "type": "string"
+                  },
+                  "birthTime": {
+                    "description": "Birth time in HH:MM:SS format (24-hour). The Moon moves about half a degree an hour, so an error here moves the Janma Rashi and Janma Nakshatra and therefore every gochara house count, the tarabala and the chandrabala in this response.",
+                    "example": "01:35:00",
+                    "format": "time",
+                    "type": "string"
+                  },
+                  "date": {
+                    "description": "Civil date to read, in YYYY-MM-DD format. Defaults to today (UTC). The panchanga day it names runs from sunrise at the birth coordinates to the next sunrise, not from midnight, so a reading for this date covers the night that follows it.",
+                    "example": "2026-06-21",
+                    "format": "date",
+                    "type": "string"
+                  },
+                  "latitude": {
+                    "description": "Birth location latitude in decimal degrees. Sets the natal house cusps behind the Ashtakavarga scorecard and the KP significators, and the sunrise that opens the panchanga day.",
+                    "example": 28.8944,
+                    "maximum": 90,
+                    "minimum": -90,
+                    "type": "number"
+                  },
+                  "longitude": {
+                    "description": "Birth location longitude in decimal degrees. Affects local sidereal time for the natal cusps and the sunrise the reading is composed at.",
+                    "example": 76.5894,
+                    "maximum": 180,
+                    "minimum": -180,
+                    "type": "number"
+                  },
+                  "nodeType": {
+                    "default": "mean",
+                    "description": "Lunar node type for Rahu and Ketu. \"mean\" uses the smooth mean node, which is the traditional Vedic default and what printed panchangs use. \"true\" uses the osculating node, which swings up to 1.5 degrees either side of mean and can therefore move a node into a different rashi and change its gochara house. Defaults to \"mean\".",
+                    "enum": [
+                      "mean",
+                      "true"
+                    ],
+                    "example": "mean",
+                    "type": "string"
+                  },
+                  "timezone": {
+                    "anyOf": [
+                      {
+                        "maximum": 14,
+                        "minimum": -14,
+                        "type": "number"
+                      },
+                      {
+                        "type": "string"
+                      }
+                    ],
+                    "default": 5.5,
+                    "description": "Timezone: IANA name (e.g. \"Asia/Kolkata\", \"America/New_York\") OR decimal hours from UTC (e.g. -5 for EST, 5.5 for IST). IANA strings are resolved to the DST-correct offset for the date being read. Interprets the birth time and the civil date below. Defaults to 5.5.",
+                    "example": 5.5
+                  }
+                },
+                "required": [
+                  "birthDate",
+                  "birthTime",
+                  "latitude",
+                  "longitude"
+                ],
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "areas": {
+                      "description": "Life areas carried as a TYPED closed set rather than an open map, so every generated SDK knows which keys exist. Finance ships alone in this version, because an area is a named classical house group with a citation and not a life category invented for a dropdown. Widening it later adds a key and breaks nothing.",
+                      "properties": {
+                        "finance": {
+                          "description": "The finance area: the positive house group 2, 5, 11 netted against the negative group 6, 8, 12, read off the lords of the running dasha, bhukti and antara, because that is the KP rule for when a matter fructifies, plus the natal basis the day is read against. ALWAYS AN OBJECT. Above latitude 66.56 the six netted members are null, because the Placidus cusps behind the significators have no solution there, while natal is still populated because it is a property of the birth chart and needs no cusps; the reading also still carries its gochara, panchanga and dasha and names the omission in degraded. The two house groups are Krishnamurti Paddhati practice, but the NET is a KP practitioner convention rather than a classical operation: the KP sources that carry these groups use them as a promise test and an avoidance test, never as arithmetic. The groups also vary by author, and the 6th house is the live disagreement, since some KP authors place it on the POSITIVE side as service income and salary, the exact opposite of the assignment used here. This is a six house net and it is NOT the focus=finance lens, which re-reads all twelve bhavas in money vocabulary and moves no number. The two are orthogonal and both ship.",
+                          "properties": {
+                            "band": {
+                              "description": "The band the finance score falls in, on the same ladder as the top-level verdict so the two can never disagree about what a word means: \"very-strong\" at 75 and above, \"strong\" at 50 and above, \"moderate\" at 25 and above, \"weak\" below 25. Null above latitude 66.56, where the Placidus cusps the KP significators are read from have no solution: the question does not apply there rather than the answer being no, so never render it as zero or as a weak verdict. The natal block beside it is unaffected and still ships, and degraded names areas.finance.score.",
+                              "enum": [
+                                "very-strong",
+                                "strong",
+                                "moderate",
+                                "weak",
+                                null
+                              ],
+                              "example": "strong",
+                              "type": [
+                                "string",
+                                "null"
+                              ]
+                            },
+                            "cautions": {
+                              "description": "Every negative-group connection, strongest KP level first. Null above latitude 66.56, where the Placidus cusps the KP significators are read from have no solution: the question does not apply there rather than the answer being no, so never render it as zero or as a weak verdict. The natal block beside it is unaffected and still ships, and degraded names areas.finance.score.",
+                              "items": {
+                                "properties": {
+                                  "dashaLevels": {
+                                    "description": "Which of the running levels this graha rules. Carries the fact that one lord holds more than one level without letting it count twice.",
+                                    "example": [
+                                      "antardasha"
+                                    ],
+                                    "items": {
+                                      "enum": [
+                                        "mahadasha",
+                                        "antardasha",
+                                        "pratyantardasha"
+                                      ],
+                                      "type": "string"
+                                    },
+                                    "type": "array"
+                                  },
+                                  "grade": {
+                                    "description": "The KP letter for that level, on the standard A to D significator grading. A is the strongest connection.",
+                                    "enum": [
+                                      "A",
+                                      "B",
+                                      "C",
+                                      "D"
+                                    ],
+                                    "example": "C",
+                                    "type": "string"
+                                  },
+                                  "graha": {
+                                    "description": "The running dasha lord making this connection. A lord holding two of the three levels is listed once per house rather than twice, so nothing here is a hidden weight.",
+                                    "example": "Rahu",
+                                    "type": "string"
+                                  },
+                                  "house": {
+                                    "description": "The finance house this lord reaches. One of the positive group 2, 5, 11 or the negative group 6, 8, 12.",
+                                    "example": 2,
+                                    "type": "number"
+                                  },
+                                  "level": {
+                                    "description": "Strongest KP significator level at which this lord reaches this house, 1 to 4. Level 1 is a planet in the constellation of the occupant, 2 the occupant, 3 a planet in the constellation of the house owner, 4 the house owner. Strongest level per house wins, which is step 1 of the published grading rule the dasha routes already use.",
+                                    "example": 3,
+                                    "maximum": 4,
+                                    "minimum": 1,
+                                    "type": "integer"
+                                  }
+                                },
+                                "required": [
+                                  "graha",
+                                  "house",
+                                  "level",
+                                  "grade",
+                                  "dashaLevels"
+                                ],
+                                "type": "object"
+                              },
+                              "type": [
+                                "array",
+                                "null"
+                              ]
+                            },
+                            "drivers": {
+                              "description": "Every positive-group connection, strongest KP level first. These are the specific lord-to-house links the score is made of, so the number can be audited rather than trusted. Null above latitude 66.56, where the Placidus cusps the KP significators are read from have no solution: the question does not apply there rather than the answer being no, so never render it as zero or as a weak verdict. The natal block beside it is unaffected and still ships, and degraded names areas.finance.score.",
+                              "items": {
+                                "properties": {
+                                  "dashaLevels": {
+                                    "description": "Which of the running levels this graha rules. Carries the fact that one lord holds more than one level without letting it count twice.",
+                                    "example": [
+                                      "antardasha"
+                                    ],
+                                    "items": {
+                                      "enum": [
+                                        "mahadasha",
+                                        "antardasha",
+                                        "pratyantardasha"
+                                      ],
+                                      "type": "string"
+                                    },
+                                    "type": "array"
+                                  },
+                                  "grade": {
+                                    "description": "The KP letter for that level, on the standard A to D significator grading. A is the strongest connection.",
+                                    "enum": [
+                                      "A",
+                                      "B",
+                                      "C",
+                                      "D"
+                                    ],
+                                    "example": "C",
+                                    "type": "string"
+                                  },
+                                  "graha": {
+                                    "description": "The running dasha lord making this connection. A lord holding two of the three levels is listed once per house rather than twice, so nothing here is a hidden weight.",
+                                    "example": "Rahu",
+                                    "type": "string"
+                                  },
+                                  "house": {
+                                    "description": "The finance house this lord reaches. One of the positive group 2, 5, 11 or the negative group 6, 8, 12.",
+                                    "example": 2,
+                                    "type": "number"
+                                  },
+                                  "level": {
+                                    "description": "Strongest KP significator level at which this lord reaches this house, 1 to 4. Level 1 is a planet in the constellation of the occupant, 2 the occupant, 3 a planet in the constellation of the house owner, 4 the house owner. Strongest level per house wins, which is step 1 of the published grading rule the dasha routes already use.",
+                                    "example": 3,
+                                    "maximum": 4,
+                                    "minimum": 1,
+                                    "type": "integer"
+                                  }
+                                },
+                                "required": [
+                                  "graha",
+                                  "house",
+                                  "level",
+                                  "grade",
+                                  "dashaLevels"
+                                ],
+                                "type": "object"
+                              },
+                              "type": [
+                                "array",
+                                "null"
+                              ]
+                            },
+                            "natal": {
+                              "description": "The natal basis of this area: whether the chart is wealthy AT ALL, as the four classical wealth and poverty verdicts dhana, daridra, lakshmi, dhanamalika, each with the evidence that decided it. A PROPERTY OF THE BIRTH CHART AND NOT OF THE DAY, so it is the same block on every date this native is ever read for, which is exactly why it is CONTEXT rather than a term: it deliberately does not enter score, verdict, tally or evaluated, above or here. Folding a constant into a per-day number would shift every day by the identical amount, carrying no information into the only comparison those numbers support, and it would break the published closed form that makes the top-level score reproducible by hand from grahas alone. Read it as the standing question the day is being read against. The verdicts are the same ones POST /yoga/detect and POST /birth-chart return for this chart, computed in the Lahiri natal frame rather than in the KP-Newcomb frame the significators above use. PRESENT AT EVERY LATITUDE, including above the polar circle: these verdicts need only whole-sign houses from the Lagna, so nothing about them depends on the cusps the KP members above lose there.",
+                              "items": {
+                                "properties": {
+                                  "evidence": {
+                                    "description": "Why the verdict reads the way it does: every rule that matched, named by its own glossary id and its verse, with the exact condition it matched on, then the scope of the family. This is what makes the verdict checkable against a text rather than a label to be trusted, and it is also where the two excluded rules are declared: daridra-8 and daridra-9 rest on a single authority and are barred from deciding a verdict, though both still ship through GET /yoga/{id}. English in every language, like the per-graha stateSource, because it is provenance rather than display copy.",
+                                    "example": "Daridra Yoga holds on 1 of the 8 rules evaluated. daridra-7 (BPHS 42.6): the Lagna lord Sun is joined by Saturn (the 6th lord) and receives drishti from no natural benefic. Nine of the eleven catalogued Daridra rows are evaluated, as eight rules: daridra-4 and daridra-5 are the two halves of BPHS 42.4. daridra-8 and daridra-9 are excluded because B.V. Raman is their only authority, and an unverified rule may not decide a verdict.",
+                                    "type": "string"
+                                  },
+                                  "id": {
+                                    "description": "Glossary id of the verdict, one of dhana, daridra, lakshmi, dhanamalika. Use it with GET /yoga/{id} for the full glossary entry, which carries the description and the classical result in every supported language. Canonical English, so it stays safe to switch on in code.",
+                                    "example": "daridra",
+                                    "type": "string"
+                                  },
+                                  "name": {
+                                    "description": "Classical Sanskrit name of the combination. Canonical whatever the lang parameter says, exactly as the yoga endpoints return it.",
+                                    "example": "Daridra Yoga",
+                                    "type": "string"
+                                  },
+                                  "present": {
+                                    "description": "Whether the combination is on this chart. False means every rule in the family was evaluated and none held, which is a real answer rather than a missing one, and the evidence beside it names the full denominator.",
+                                    "example": true,
+                                    "type": "boolean"
+                                  },
+                                  "quality": {
+                                    "description": "Which way a present verdict points, carried because three of the four are wealth combinations and Daridra is a poverty one, so present alone does not tell a client whether to read it as support or as pressure. Canonical English machine value.",
+                                    "enum": [
+                                      "Positive",
+                                      "Negative",
+                                      "Both"
+                                    ],
+                                    "example": "Negative",
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "id",
+                                  "name",
+                                  "quality",
+                                  "present",
+                                  "evidence"
+                                ],
+                                "type": "object"
+                              },
+                              "type": "array"
+                            },
+                            "negative": {
+                              "description": "How many connections land on the negative house group 6, 8, 12, which KP reads as debt, sudden loss and expenditure. Null above latitude 66.56, where the Placidus cusps the KP significators are read from have no solution: the question does not apply there rather than the answer being no, so never render it as zero or as a weak verdict. The natal block beside it is unaffected and still ships, and degraded names areas.finance.score.",
+                              "example": 3,
+                              "type": [
+                                "number",
+                                "null"
+                              ]
+                            },
+                            "positive": {
+                              "description": "How many connections land on the positive house group 2, 5, 11, which KP reads as accumulated wealth, speculation and gains. Null above latitude 66.56, where the Placidus cusps the KP significators are read from have no solution: the question does not apply there rather than the answer being no, so never render it as zero or as a weak verdict. The natal block beside it is unaffected and still ships, and degraded names areas.finance.score.",
+                              "example": 6,
+                              "type": [
+                                "number",
+                                "null"
+                              ]
+                            },
+                            "score": {
+                              "description": "Share of the running lords six-house connections that land on the positive group, 0 to 100, rounded. A COUNT, so positive and negative below reproduce it in one division: round(positive / (positive + negative) * 100). Zero when the running lords reach none of the six houses, which is an ABSENCE of connection rather than a negative verdict. Null above latitude 66.56, where the Placidus cusps the KP significators are read from have no solution: the question does not apply there rather than the answer being no, so never render it as zero or as a weak verdict. The natal block beside it is unaffected and still ships, and degraded names areas.finance.score. The two house groups are Krishnamurti Paddhati practice, but the NET is a KP practitioner convention rather than a classical operation: the KP sources that carry these groups use them as a promise test and an avoidance test, never as arithmetic. The groups also vary by author, and the 6th house is the live disagreement, since some KP authors place it on the POSITIVE side as service income and salary, the exact opposite of the assignment used here. This is a six house net and it is NOT the focus=finance lens, which re-reads all twelve bhavas in money vocabulary and moves no number. The two are orthogonal and both ship.",
+                              "example": 67,
+                              "type": [
+                                "number",
+                                "null"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "score",
+                            "band",
+                            "positive",
+                            "negative",
+                            "drivers",
+                            "cautions",
+                            "natal"
+                          ],
+                          "type": "object"
+                        }
+                      },
+                      "required": [
+                        "finance"
+                      ],
+                      "type": "object"
+                    },
+                    "chandrabala": {
+                      "description": "Chandrabala for THIS native, windowed for the same reason as the tarabala: the Moon can change rashi inside the panchanga day. Ashtama Chandra is a separate flag on each window.",
+                      "items": {
+                        "properties": {
+                          "ashtamaChandra": {
+                            "description": "The Moon in the 8th from the Janma Rashi. Its OWN flag, printed beside chandrabala rather than folded into it, exactly as the reference panchangs print it. Folding it in would let a caller read one boolean and miss the warning the source deliberately separates.",
+                            "example": false,
+                            "type": "boolean"
+                          },
+                          "favourable": {
+                            "description": "Whether the Moon stands in one of the rashis that give this native chandrabala during this window.",
+                            "example": true,
+                            "type": "boolean"
+                          },
+                          "houseFromMoon": {
+                            "description": "House the Moon rashi makes from the Janma Rashi, counted whole-sign and inclusively, so the Janma Rashi itself is 1. This is the number chandrabala is read off.",
+                            "example": 7,
+                            "type": "number"
+                          },
+                          "moonSign": {
+                            "description": "Rashi the Moon occupies during this window. Always English.",
+                            "example": "Leo",
+                            "type": "string"
+                          },
+                          "timescale": {
+                            "description": "How long this component holds one verdict. Present on every component because this reading joins two genres classical literature keeps in separate books: a gochara verdict lasts as long as the graha stays in a rashi, which is years for Saturn, while a tarabala changes overnight. Without it a Saturn verdict that reads identically for nine hundred days would sit under one date field beside a limb that turns over at dawn.",
+                            "enum": [
+                              "hours",
+                              "days",
+                              "months",
+                              "years"
+                            ],
+                            "example": "days",
+                            "type": "string"
+                          },
+                          "validFrom": {
+                            "description": "ISO instant this chandrabala window opens.",
+                            "example": "2026-06-20T23:55:43.685Z",
+                            "type": "string"
+                          },
+                          "validTo": {
+                            "description": "ISO instant this chandrabala window closes, which is when the Moon changes rashi.",
+                            "example": "2026-06-21T10:10:08.968Z",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "validFrom",
+                          "validTo",
+                          "timescale",
+                          "moonSign",
+                          "houseFromMoon",
+                          "favourable",
+                          "ashtamaChandra"
+                        ],
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "dasha": {
+                      "description": "The running Vimshottari chain at sunrise, outermost first, three levels deep. This is the frame the day is read inside, and it is also what the finance area reads the significators off. Empty for a chart whose cycle cannot be resolved.",
+                      "items": {
+                        "properties": {
+                          "endDate": {
+                            "description": "ISO instant this period ends.",
+                            "example": "2027-06-17T12:05:00.000Z",
+                            "type": "string"
+                          },
+                          "level": {
+                            "description": "Which Vimshottari level this period is. Only mahadasha, antardasha, pratyantardasha are carried: the sookshma and prana lords turn over in hours and minutes, so embedding them would advertise a day-long cache lifetime over a value that is already stale. Use POST /dasha/current for those two.",
+                            "enum": [
+                              "mahadasha",
+                              "antardasha",
+                              "pratyantardasha"
+                            ],
+                            "example": "antardasha",
+                            "type": "string"
+                          },
+                          "lord": {
+                            "description": "Graha ruling this period. Always English.",
+                            "example": "Rahu",
+                            "type": "string"
+                          },
+                          "startDate": {
+                            "description": "ISO instant this period begins.",
+                            "example": "2024-08-10T12:05:00.000Z",
+                            "type": "string"
+                          },
+                          "timescale": {
+                            "description": "How long this component holds one verdict. Present on every component because this reading joins two genres classical literature keeps in separate books: a gochara verdict lasts as long as the graha stays in a rashi, which is years for Saturn, while a tarabala changes overnight. Without it a Saturn verdict that reads identically for nine hundred days would sit under one date field beside a limb that turns over at dawn.",
+                            "enum": [
+                              "hours",
+                              "days",
+                              "months",
+                              "years"
+                            ],
+                            "example": "years",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "level",
+                          "lord",
+                          "startDate",
+                          "endDate",
+                          "timescale"
+                        ],
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "date": {
+                      "description": "Civil date this reading covers, echoing the request field or the UTC date it defaulted to.",
+                      "example": "2026-06-21",
+                      "type": "string"
+                    },
+                    "dayEnd": {
+                      "description": "ISO instant the panchanga day ends, which is the next sunrise.",
+                      "example": "2026-06-21T23:55:56.962Z",
+                      "type": "string"
+                    },
+                    "dayStart": {
+                      "description": "ISO instant the panchanga day begins, which is SUNRISE at the birth coordinates and not midnight. Every limb below is resolved at this instant. Where the Sun does not rise, local noon is used instead and the substitution is named in degraded rather than applied silently.",
+                      "example": "2026-06-20T23:55:43.685Z",
+                      "type": "string"
+                    },
+                    "degraded": {
+                      "description": "Components this request could not supply, named rather than silently defaulted. Empty on an ordinary reading. A polar chart degrades through here instead of failing, so the caller still gets the gochara, the panchanga, the dasha and the natal basis of the finance area, and is told exactly what is missing.",
+                      "items": {
+                        "properties": {
+                          "component": {
+                            "description": "Which part of the reading this location or date could not supply. \"areas.finance.score\" names the KP net by the member it is read through: the finance area itself always ships and its natal block is always populated, and it is the six netted members that are null.",
+                            "enum": [
+                              "dayStart",
+                              "dayEnd",
+                              "areas.finance.score"
+                            ],
+                            "example": "areas.finance.score",
+                            "type": "string"
+                          },
+                          "reason": {
+                            "description": "Why it could not: \"sun-does-not-rise\" for a day with no sunrise at these coordinates, \"polar-latitude\" above 66.56 degrees where the Placidus cusps have no solution.",
+                            "enum": [
+                              "sun-does-not-rise",
+                              "polar-latitude"
+                            ],
+                            "example": "polar-latitude",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "component",
+                          "reason"
+                        ],
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "evaluated": {
+                      "description": "How many grahas were put through the gates, which is the denominator of the score. Rahu and Ketu are included: they skip the bindu gate because they have no Bhinnashtakavarga, and a skipped gate is not a failed one, so they still reach a state through the other three.",
+                      "example": 9,
+                      "type": "number"
+                    },
+                    "focus": {
+                      "description": "Which signification vocabulary produced the houseThemes keywords in this response, echoing the focus query parameter. Always present, and \"general\" when the parameter was omitted. Read it to label a rendered house legend, or to tell two cached responses apart when only one asked for the finance lens.",
+                      "enum": [
+                        "general",
+                        "finance"
+                      ],
+                      "example": "general",
+                      "type": "string"
+                    },
+                    "frames": {
+                      "description": "Every sidereal frame behind this reading, so a cached or forwarded payload is self describing and no number sits under a label it did not come from. TWO ayanamsas are in play by design: positions are Lahiri, and the Placidus cusps plus the KP significators are KP-Newcomb, which is the frame KP owns and the split a practitioner actually works in. The two differ by about 0.09 degrees, which is under a third of a KP sub-lord span and enough to move a placement near a boundary, so the reading declares which produced what rather than leaving a caller to guess. THREE entries for two ayanamsas, because Lahiri is read at two instants: the birth moment and the sunrise of the day being read, roughly half a degree apart on a chart forty years old, six times the gap between the two ayanamsas themselves. There is no ayanamsa request field on this route and there will not be one, since a single selector cannot honour two frames and accepting it would promise something the composition cannot deliver.",
+                      "properties": {
+                        "kp": {
+                          "description": "KP-Newcomb, read at UTC midnight of the birth date. Produces the Placidus cusps behind the Ashtakavarga Lagna row and the KP significators behind the finance area, exactly as every KP route on this API computes them.",
+                          "properties": {
+                            "at": {
+                              "description": "ISO instant the ayanamsa was read at. Part of the value, not metadata: an ayanamsa moves about 50.3 arcseconds a year, so the same frame read at a birth in 1984 and at a transit in 2026 differs by more than half a degree.",
+                              "example": "1984-11-03T00:00:00.000Z",
+                              "type": "string"
+                            },
+                            "ayanamsa": {
+                              "description": "Sidereal frame this part of the reading was cast in. Always \"kp-newcomb\" here: it is not a caller choice, because the composition runs two frames at once and a single request field could only ever name one of them.",
+                              "example": "kp-newcomb",
+                              "type": "string"
+                            },
+                            "ayanamsaDegrees": {
+                              "description": "Degrees actually subtracted from every tropical longitude this frame produced. Subtract it back to recover the tropical positions, or compare it against your reference software to confirm you are in the same frame before chasing a placement difference.",
+                              "example": 23.5444031708357,
+                              "type": "number"
+                            },
+                            "governs": {
+                              "description": "Response sections this frame is a determinant of, as paths into this payload. One of subject, grahas, panchanga, tara, chandrabala, dasha, areas.finance. A section appears under EVERY frame that feeds it, which is why grahas is listed three times: the transiting longitudes and the natal Moon they are counted from are both Lahiri read at different instants, while the Ashtakavarga Lagna row behind binduCount and kaksha is KP-Newcomb. Exactly two sections belong to one frame alone, subject to the natal frame and panchanga to the transit frame.",
+                              "example": [
+                                "grahas",
+                                "areas.finance"
+                              ],
+                              "items": {
+                                "enum": [
+                                  "subject",
+                                  "grahas",
+                                  "panchanga",
+                                  "tara",
+                                  "chandrabala",
+                                  "dasha",
+                                  "areas.finance"
+                                ],
+                                "type": "string"
+                              },
+                              "type": "array"
+                            }
+                          },
+                          "required": [
+                            "ayanamsa",
+                            "ayanamsaDegrees",
+                            "at",
+                            "governs"
+                          ],
+                          "type": "object"
+                        },
+                        "natal": {
+                          "description": "Lahiri at the birth instant. Produces the natal Moon this whole reading is counted from, the Vimshottari balance, and the natal graha rows of the Ashtakavarga scorecard the bindu gate reads.",
+                          "properties": {
+                            "at": {
+                              "description": "ISO instant the ayanamsa was read at. Part of the value, not metadata: an ayanamsa moves about 50.3 arcseconds a year, so the same frame read at a birth in 1984 and at a transit in 2026 differs by more than half a degree.",
+                              "example": "1984-11-02T20:05:00.000Z",
+                              "type": "string"
+                            },
+                            "ayanamsa": {
+                              "description": "Sidereal frame this part of the reading was cast in. Always \"lahiri\" here: it is not a caller choice, because the composition runs two frames at once and a single request field could only ever name one of them.",
+                              "example": "lahiri",
+                              "type": "string"
+                            },
+                            "ayanamsaDegrees": {
+                              "description": "Degrees actually subtracted from every tropical longitude this frame produced. Subtract it back to recover the tropical positions, or compare it against your reference software to confirm you are in the same frame before chasing a placement difference.",
+                              "example": 23.64094017088563,
+                              "type": "number"
+                            },
+                            "governs": {
+                              "description": "Response sections this frame is a determinant of, as paths into this payload. One of subject, grahas, panchanga, tara, chandrabala, dasha, areas.finance. A section appears under EVERY frame that feeds it, which is why grahas is listed three times: the transiting longitudes and the natal Moon they are counted from are both Lahiri read at different instants, while the Ashtakavarga Lagna row behind binduCount and kaksha is KP-Newcomb. Exactly two sections belong to one frame alone, subject to the natal frame and panchanga to the transit frame.",
+                              "example": [
+                                "subject",
+                                "grahas",
+                                "tara",
+                                "chandrabala",
+                                "dasha",
+                                "areas.finance"
+                              ],
+                              "items": {
+                                "enum": [
+                                  "subject",
+                                  "grahas",
+                                  "panchanga",
+                                  "tara",
+                                  "chandrabala",
+                                  "dasha",
+                                  "areas.finance"
+                                ],
+                                "type": "string"
+                              },
+                              "type": "array"
+                            }
+                          },
+                          "required": [
+                            "ayanamsa",
+                            "ayanamsaDegrees",
+                            "at",
+                            "governs"
+                          ],
+                          "type": "object"
+                        },
+                        "transit": {
+                          "description": "Lahiri at sunrise on the day being read. Produces every transiting longitude and every panchanga limb. Inside one day precession moves it 0.14 arcseconds, so this one value speaks for every limb resolved between the two sunrises.",
+                          "properties": {
+                            "at": {
+                              "description": "ISO instant the ayanamsa was read at. Part of the value, not metadata: an ayanamsa moves about 50.3 arcseconds a year, so the same frame read at a birth in 1984 and at a transit in 2026 differs by more than half a degree.",
+                              "example": "2026-06-20T23:55:43.685Z",
+                              "type": "string"
+                            },
+                            "ayanamsa": {
+                              "description": "Sidereal frame this part of the reading was cast in. Always \"lahiri\" here: it is not a caller choice, because the composition runs two frames at once and a single request field could only ever name one of them.",
+                              "example": "lahiri",
+                              "type": "string"
+                            },
+                            "ayanamsaDegrees": {
+                              "description": "Degrees actually subtracted from every tropical longitude this frame produced. Subtract it back to recover the tropical positions, or compare it against your reference software to confirm you are in the same frame before chasing a placement difference.",
+                              "example": 24.22902171512637,
+                              "type": "number"
+                            },
+                            "governs": {
+                              "description": "Response sections this frame is a determinant of, as paths into this payload. One of subject, grahas, panchanga, tara, chandrabala, dasha, areas.finance. A section appears under EVERY frame that feeds it, which is why grahas is listed three times: the transiting longitudes and the natal Moon they are counted from are both Lahiri read at different instants, while the Ashtakavarga Lagna row behind binduCount and kaksha is KP-Newcomb. Exactly two sections belong to one frame alone, subject to the natal frame and panchanga to the transit frame.",
+                              "example": [
+                                "grahas",
+                                "panchanga",
+                                "tara",
+                                "chandrabala"
+                              ],
+                              "items": {
+                                "enum": [
+                                  "subject",
+                                  "grahas",
+                                  "panchanga",
+                                  "tara",
+                                  "chandrabala",
+                                  "dasha",
+                                  "areas.finance"
+                                ],
+                                "type": "string"
+                              },
+                              "type": "array"
+                            }
+                          },
+                          "required": [
+                            "ayanamsa",
+                            "ayanamsaDegrees",
+                            "at",
+                            "governs"
+                          ],
+                          "type": "object"
+                        }
+                      },
+                      "required": [
+                        "natal",
+                        "transit",
+                        "kp"
+                      ],
+                      "type": "object"
+                    },
+                    "grahas": {
+                      "description": "All nine transiting grahas, each with its four gate results and the ONE state they produced. The gates run in the order the sources give them: house from the natal Moon, then vedha, then the bindu gate, then the nullifiers of Phaladeepika XXVI.30 to XXVI.32. Obstruction is terminal, so a blocked transit is never rescued by the gates that follow it.",
+                      "items": {
+                        "properties": {
+                          "aspectedByBenefic": {
+                            "description": "Gate 4. Transiting natural benefics casting graha drishti on this graha. Under Phaladeepika XXVI.30 a benefic sight on a BAD result is what voids it. Read as drishti from the other TRANSITING grahas, which is a school choice this endpoint makes and states: the sloka sits between the vedha rules and the rules about the transiting graha own condition.",
+                            "example": [],
+                            "items": {
+                              "type": "string"
+                            },
+                            "type": "array"
+                          },
+                          "aspectedByEnemy": {
+                            "description": "Gate 4. Transiting natural enemies of this graha casting graha drishti on it. Phaladeepika XXVI.30 voids the result either way for an enemy sight, whichever direction the baseline verdict pointed.",
+                            "example": [],
+                            "items": {
+                              "type": "string"
+                            },
+                            "type": "array"
+                          },
+                          "aspectedByMalefic": {
+                            "description": "Gate 4. Transiting natural malefics casting graha drishti on this graha. A malefic sight on a GOOD result voids it under Phaladeepika XXVI.30. Rahu and Ketu never appear here: they cast no drishti in this package, which is its own documented school choice, although they can be aspected.",
+                            "example": [
+                              "Mars"
+                            ],
+                            "items": {
+                              "type": "string"
+                            },
+                            "type": "array"
+                          },
+                          "binduCount": {
+                            "description": "Gate 3. Bindus this graha holds in the whole sign it is transiting, 0 to 8, or null for Rahu and Ketu, which have no Bhinnashtakavarga and therefore SKIP this gate entirely rather than scoring zero. The gate reads the number two ways: a favourable house carrying fewer than 4 bindus under delivers, and an unfavourable house carrying a strict majority of the eight contributors, 5 or more, is turned good by Phaladeepika XXVI.41. Exactly 4 fires neither rule, which is the literal reading of both phrasings rather than a rounding choice. WHOSE READING THE NUMBER IS, stated because generalising it is ours: B.V. Raman prints 4 once and prints it about the MOON, then generalises the PRINCIPLE to every graha in the next sentence without repeating any number, and Phaladeepika XXVI.41 is general across grahas and also states no number. Applying 4 to all nine bodies is RoxyAPI reading the general rule through the one worked example the author gave it, and it is not a universally stated classical threshold.",
+                            "example": 6,
+                            "type": [
+                              "number",
+                              "null"
+                            ]
+                          },
+                          "combust": {
+                            "description": "Gate 4. Whether the graha is combust at the transit moment, or null for the Sun and the two nodes where the question does not arise at all. Combustion voids a good transit under Phaladeepika XXVI.32 and aggravates a bad one.",
+                            "example": false,
+                            "type": [
+                              "boolean",
+                              "null"
+                            ]
+                          },
+                          "dignity": {
+                            "description": "Gate 4. Dignity of the graha in the sign it is transiting, or null for Rahu and Ketu which have none. Feeds the Phaladeepika XXVI.31 shield (\"exalted\" or \"own\" does no harm in an untoward bhava) and the XXVI.32 weakness (\"debilitated\" or \"enemy\" voids a good transit). One of exalted, own, debilitated, enemy, neutral.",
+                            "enum": [
+                              "exalted",
+                              "own",
+                              "debilitated",
+                              "enemy",
+                              "neutral",
+                              null
+                            ],
+                            "example": "neutral",
+                            "type": [
+                              "string",
+                              "null"
+                            ]
+                          },
+                          "favourable": {
+                            "description": "Gate 1. Whether houseFromMoon is on this graha classical favourable list (Phaladeepika XXVI.2). The baseline verdict, before vedha, bindus or the nullifiers have had their say.",
+                            "example": true,
+                            "type": "boolean"
+                          },
+                          "favourableHouses": {
+                            "description": "Gate 1 evidence: the whole favourable list for this graha, so the baseline verdict can be checked in place without a second request or a table lookup.",
+                            "example": [
+                              1,
+                              3,
+                              6,
+                              7,
+                              10,
+                              11
+                            ],
+                            "items": {
+                              "type": "number"
+                            },
+                            "type": "array"
+                          },
+                          "graha": {
+                            "description": "Graha name, Sun through Ketu. Always English, whatever the lang parameter says, so it stays safe to compare against in code.",
+                            "example": "Moon",
+                            "type": "string"
+                          },
+                          "houseFromMoon": {
+                            "description": "House this graha transits counted whole-sign and inclusively from the natal Moon rashi (Janma Rashi), so the Moon rashi itself is 1. This is the reference classical Gochara is reckoned in: Phaladeepika XXVI.1 opens the transit chapter by saying that of all the Lagnas only the Moon Lagna matters for transit results. A reading counted from the Lagna instead answers a different question and every verdict below would be wrong.",
+                            "example": 7,
+                            "type": "number"
+                          },
+                          "kaksha": {
+                            "description": "Gochara Kaksha: the ashtakavarga-qualified reading of this transit. The sign says where a graha is, this says whether the exact stretch it currently occupies is one its own Bhinnashtakavarga supports, which is the classical way of refining a transit verdict from sign-level to under four degrees.",
+                            "properties": {
+                              "bindu": {
+                                "description": "Whether this kaksha lord gave the transiting graha a bindu in the sign being transited, which is the Gochara Kaksha verdict: true reads as a favourable stretch of the transit, false as an unfavourable one. Null means the question does not apply rather than that the answer is no, because Rahu and Ketu have no Bhinnashtakavarga to read. Never render null as unfavourable.",
+                                "example": true,
+                                "type": [
+                                  "boolean",
+                                  "null"
+                                ]
+                              },
+                              "binduCount": {
+                                "description": "Bindus the transiting graha holds in this whole sign, 0-8, or null for Rahu and Ketu. Context for the verdict, since the same kaksha reads differently in a sign worth 7 than in one worth 1.",
+                                "example": 5,
+                                "type": [
+                                  "number",
+                                  "null"
+                                ]
+                              },
+                              "endDegree": {
+                                "description": "Degree within the sign where this kaksha ends.",
+                                "example": 11.25,
+                                "type": "number"
+                              },
+                              "lord": {
+                                "description": "Graha ruling this kaksha. The eight lords run Saturn, Jupiter, Mars, Sun, Venus, Mercury, Moon, Lagna from the start of every sign, ordered by how long each takes to cross a sign.",
+                                "example": "Mars",
+                                "type": "string"
+                              },
+                              "number": {
+                                "description": "Kaksha number 1-8 within the current sign. Each sign divides into eight kakshas of 3 degrees 45 minutes, crossed in order, so this is how far through the sign the graha has travelled.",
+                                "example": 3,
+                                "type": "number"
+                              },
+                              "startDegree": {
+                                "description": "Degree within the sign where this kaksha begins (0, 3.75, 7.5 and so on).",
+                                "example": 7.5,
+                                "type": "number"
+                              }
+                            },
+                            "required": [
+                              "number",
+                              "lord",
+                              "startDegree",
+                              "endDegree",
+                              "bindu",
+                              "binduCount"
+                            ],
+                            "type": "object"
+                          },
+                          "longitude": {
+                            "description": "Sidereal longitude of the transiting graha in degrees, 0 to 360, Lahiri frame.",
+                            "example": 144.4294,
+                            "type": "number"
+                          },
+                          "obstructedBy": {
+                            "description": "Gate 2. Grahas actually standing in vedhaHouse, with the mutual exemptions already applied. Empty when nothing obstructs. A non-empty list makes the state \"obstructed\", which is a THIRD outcome rather than a smaller number: the texts cancel the promised good outright rather than discounting it.",
+                            "example": [
+                              "Saturn"
+                            ],
+                            "items": {
+                              "type": "string"
+                            },
+                            "type": "array"
+                          },
+                          "sign": {
+                            "description": "Rashi this graha is transiting on the day being read. Always English.",
+                            "example": "Leo",
+                            "type": "string"
+                          },
+                          "state": {
+                            "description": "The single outcome the four gates produced for this graha, and the only field the score counts. \"favourable\" is the house list holding with nothing cancelling it, \"underdelivered\" is a favourable house below the bindu delivery floor, \"obstructed\" is vedha, \"void\" is an aspect, a dignity shield or a weakness emptying the result of effect, \"aggravated\" is the one compounding rule in the chapter, and \"unfavourable\" is a house that was never on the list. Canonical English machine values: every one is a classical outcome word rather than an invented label, which is why none carries a translated sibling.",
+                            "enum": [
+                              "favourable",
+                              "underdelivered",
+                              "obstructed",
+                              "void",
+                              "aggravated",
+                              "unfavourable"
+                            ],
+                            "example": "obstructed",
+                            "type": "string"
+                          },
+                          "stateSource": {
+                            "description": "The rule that decided the state, named so a verdict can be checked against its sloka without leaving the payload.",
+                            "example": "Phaladeepika XXVI.3-8, the paired vedha house is occupied",
+                            "type": "string"
+                          },
+                          "timescale": {
+                            "description": "How long this component holds one verdict. Present on every component because this reading joins two genres classical literature keeps in separate books: a gochara verdict lasts as long as the graha stays in a rashi, which is years for Saturn, while a tarabala changes overnight. Without it a Saturn verdict that reads identically for nine hundred days would sit under one date field beside a limb that turns over at dawn.",
+                            "enum": [
+                              "hours",
+                              "days",
+                              "months",
+                              "years"
+                            ],
+                            "example": "days",
+                            "type": "string"
+                          },
+                          "vedhaExempt": {
+                            "description": "Gate 2. Grahas that cannot obstruct this one however they transit, from the two mutual exemptions the texts name: the Sun and Saturn do not obstruct each other, and neither do the Moon and Mercury.",
+                            "example": [
+                              "Mercury"
+                            ],
+                            "items": {
+                              "type": "string"
+                            },
+                            "type": "array"
+                          },
+                          "vedhaHouse": {
+                            "description": "Gate 2. The house whose occupation by another graha cancels this transit (Phaladeepika XXVI.3-8). Null when the transit is not favourable to begin with, since there is nothing for an obstruction to cancel.",
+                            "example": 2,
+                            "type": [
+                              "number",
+                              "null"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "graha",
+                          "sign",
+                          "longitude",
+                          "houseFromMoon",
+                          "timescale",
+                          "favourable",
+                          "favourableHouses",
+                          "vedhaHouse",
+                          "obstructedBy",
+                          "vedhaExempt",
+                          "binduCount",
+                          "kaksha",
+                          "dignity",
+                          "combust",
+                          "aspectedByBenefic",
+                          "aspectedByMalefic",
+                          "aspectedByEnemy",
+                          "state",
+                          "stateSource"
+                        ],
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "houseThemes": {
+                      "additionalProperties": {
+                        "description": "Short keyword significations of the bhava this key numbers, localized by the lang query parameter and drawn from the vocabulary the focus parameter selected. Join it against any house number elsewhere in the response to render readable text.",
+                        "example": [
+                          "wealth",
+                          "family",
+                          "speech",
+                          "possessions",
+                          "food"
+                        ],
+                        "items": {
+                          "type": "string"
+                        },
+                        "type": "array"
+                      },
+                      "description": "Significations of each of the twelve bhavas (houses), keyed by house number 1 to 12, as short keywords. Bhava 1 is the Lagna (self, body, vitality), 2 wealth and speech, 4 home and mother, 7 marriage and partnership, 10 career and status, 11 gains. Use it to label the house numbers returned elsewhere in the response: a Vimshottari dasha period signifying houses 2, 7 and 8, or a KP significator carrying houses 11 and 6, becomes readable text without a separate lookup call. Returned once per response rather than repeated per period, and localized by the lang query parameter alongside every other interpretation field.",
+                      "example": {
+                        "2": [
+                          "wealth",
+                          "family",
+                          "speech",
+                          "possessions",
+                          "food"
+                        ]
+                      },
+                      "type": "object"
+                    },
+                    "panchanga": {
+                      "description": "The four panchanga limbs, each resolved at sunrise and each carrying the instant it gives way, so a client can label the whole day rather than asserting one value for it.",
+                      "properties": {
+                        "karana": {
+                          "description": "Karana running at sunrise, with the instant it ends. A karana is half a tithi, which is why it is the fastest of the four limbs.",
+                          "properties": {
+                            "name": {
+                              "description": "Name of the karana running at sunrise. Canonical Sanskrit, so it stays safe to compare against in code.",
+                              "example": "Vanij",
+                              "type": "string"
+                            },
+                            "next": {
+                              "description": "The karana that follows, so the rest of the day can be labelled without a second request.",
+                              "example": "Vishti",
+                              "type": "string"
+                            },
+                            "number": {
+                              "description": "karana number in its own cycle, resolved at sunrise.",
+                              "example": 6,
+                              "type": "number"
+                            },
+                            "timescale": {
+                              "description": "How long this component holds one verdict. Present on every component because this reading joins two genres classical literature keeps in separate books: a gochara verdict lasts as long as the graha stays in a rashi, which is years for Saturn, while a tarabala changes overnight. Without it a Saturn verdict that reads identically for nine hundred days would sit under one date field beside a limb that turns over at dawn.",
+                              "enum": [
+                                "hours",
+                                "days",
+                                "months",
+                                "years"
+                              ],
+                              "example": "hours",
+                              "type": "string"
+                            },
+                            "validTo": {
+                              "description": "ISO instant this karana ends. Read from the same transition search POST /panchang/detailed publishes, never recomputed here, so the two endpoints cannot disagree about when the event happens.",
+                              "example": "2026-06-21T09:51:02.874Z",
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "number",
+                            "name",
+                            "validTo",
+                            "next",
+                            "timescale"
+                          ],
+                          "type": "object"
+                        },
+                        "nakshatra": {
+                          "description": "Nakshatra the Moon occupies at sunrise, with the instant it ends. This is the sky-wide limb; for what it means to THIS native, read the tara array.",
+                          "properties": {
+                            "name": {
+                              "description": "Name of the nakshatra running at sunrise. Canonical Sanskrit, so it stays safe to compare against in code.",
+                              "example": "Purva Phalguni",
+                              "type": "string"
+                            },
+                            "next": {
+                              "description": "The nakshatra that follows, so the rest of the day can be labelled without a second request.",
+                              "example": "Uttara Phalguni",
+                              "type": "string"
+                            },
+                            "number": {
+                              "description": "nakshatra number in its own cycle, resolved at sunrise.",
+                              "example": 11,
+                              "type": "number"
+                            },
+                            "timescale": {
+                              "description": "How long this component holds one verdict. Present on every component because this reading joins two genres classical literature keeps in separate books: a gochara verdict lasts as long as the graha stays in a rashi, which is years for Saturn, while a tarabala changes overnight. Without it a Saturn verdict that reads identically for nine hundred days would sit under one date field beside a limb that turns over at dawn.",
+                              "enum": [
+                                "hours",
+                                "days",
+                                "months",
+                                "years"
+                              ],
+                              "example": "days",
+                              "type": "string"
+                            },
+                            "validTo": {
+                              "description": "ISO instant this nakshatra ends. Read from the same transition search POST /panchang/detailed publishes, never recomputed here, so the two endpoints cannot disagree about when the event happens.",
+                              "example": "2026-06-21T04:01:32.171Z",
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "number",
+                            "name",
+                            "validTo",
+                            "next",
+                            "timescale"
+                          ],
+                          "type": "object"
+                        },
+                        "paksha": {
+                          "description": "Lunar fortnight at sunrise: Shukla for the waxing half, Krishna for the waning half.",
+                          "example": "Shukla",
+                          "type": "string"
+                        },
+                        "tithi": {
+                          "description": "Tithi (lunar day) running at sunrise, with the instant it ends. The tithi is the 12-degree step of the Moon away from the Sun, so its length varies through the month.",
+                          "properties": {
+                            "name": {
+                              "description": "Name of the tithi running at sunrise. Canonical Sanskrit, so it stays safe to compare against in code.",
+                              "example": "Saptamī",
+                              "type": "string"
+                            },
+                            "next": {
+                              "description": "The tithi that follows, so the rest of the day can be labelled without a second request.",
+                              "example": "Aṣṭamī",
+                              "type": "string"
+                            },
+                            "number": {
+                              "description": "tithi number in its own cycle, resolved at sunrise.",
+                              "example": 7,
+                              "type": "number"
+                            },
+                            "timescale": {
+                              "description": "How long this component holds one verdict. Present on every component because this reading joins two genres classical literature keeps in separate books: a gochara verdict lasts as long as the graha stays in a rashi, which is years for Saturn, while a tarabala changes overnight. Without it a Saturn verdict that reads identically for nine hundred days would sit under one date field beside a limb that turns over at dawn.",
+                              "enum": [
+                                "hours",
+                                "days",
+                                "months",
+                                "years"
+                              ],
+                              "example": "days",
+                              "type": "string"
+                            },
+                            "validTo": {
+                              "description": "ISO instant this tithi ends. Read from the same transition search POST /panchang/detailed publishes, never recomputed here, so the two endpoints cannot disagree about when the event happens.",
+                              "example": "2026-06-21T09:51:02.874Z",
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "number",
+                            "name",
+                            "validTo",
+                            "next",
+                            "timescale"
+                          ],
+                          "type": "object"
+                        },
+                        "vara": {
+                          "description": "Weekday of the panchanga day. The Hindu vara runs sunrise to sunrise, so it can differ from the civil weekday of the same date before dawn. Always English.",
+                          "example": "Sunday",
+                          "type": "string"
+                        },
+                        "varaSanskrit": {
+                          "description": "The same weekday under its Sanskrit name.",
+                          "example": "Ravivara",
+                          "type": "string"
+                        },
+                        "yoga": {
+                          "description": "Nitya yoga running at sunrise, with the instant it ends. The 27 yogas step through the combined longitude of the Sun and the Moon.",
+                          "properties": {
+                            "name": {
+                              "description": "Name of the yoga running at sunrise. Canonical Sanskrit, so it stays safe to compare against in code.",
+                              "example": "Siddhi",
+                              "type": "string"
+                            },
+                            "next": {
+                              "description": "The yoga that follows, so the rest of the day can be labelled without a second request.",
+                              "example": "Vyatipaata",
+                              "type": "string"
+                            },
+                            "number": {
+                              "description": "yoga number in its own cycle, resolved at sunrise.",
+                              "example": 16,
+                              "type": "number"
+                            },
+                            "timescale": {
+                              "description": "How long this component holds one verdict. Present on every component because this reading joins two genres classical literature keeps in separate books: a gochara verdict lasts as long as the graha stays in a rashi, which is years for Saturn, while a tarabala changes overnight. Without it a Saturn verdict that reads identically for nine hundred days would sit under one date field beside a limb that turns over at dawn.",
+                              "enum": [
+                                "hours",
+                                "days",
+                                "months",
+                                "years"
+                              ],
+                              "example": "days",
+                              "type": "string"
+                            },
+                            "validTo": {
+                              "description": "ISO instant this yoga ends. Read from the same transition search POST /panchang/detailed publishes, never recomputed here, so the two endpoints cannot disagree about when the event happens.",
+                              "example": "2026-06-21T05:51:32.757Z",
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "number",
+                            "name",
+                            "validTo",
+                            "next",
+                            "timescale"
+                          ],
+                          "type": "object"
+                        }
+                      },
+                      "required": [
+                        "vara",
+                        "varaSanskrit",
+                        "paksha",
+                        "tithi",
+                        "nakshatra",
+                        "yoga",
+                        "karana"
+                      ],
+                      "type": "object"
+                    },
+                    "score": {
+                      "description": "How much of the transiting sky supports this native today: supportive grahas divided by grahas evaluated, as a percentage, rounded. HAND REPRODUCIBLE FROM THIS RESPONSE ALONE, with no weights to publish and none to defend. STEP 1, count the grahas whose state is one of favourable; the tally array has that count already. STEP 2, divide by evaluated and round. Worked example: 2 supportive out of 9 evaluated scores round(2 / 9 * 100) = 22. The other states (underdelivered, obstructed, void, aggravated, unfavourable) count for nothing, because each of them is the tradition saying the promised good was reduced, cancelled or emptied. WHY IT IS A COUNT AND NOT A SUM: the tradition does not add these limbs up. Phaladeepika XXVI.41 makes a high bindu count an OVERRIDE that turns even the 6th, 8th and 12th good, and XXVI.30 to XXVI.32 make aspect, dignity and combustion NULLIFIERS, so a weighted sum would be a different mathematical object and could not carry those citations. The GATES are classical, the COUNTING is the RoxyAPI convention, and this sentence is where we say which is which. HOW TO READ THE NUMBER: it runs low by construction and that is the correct answer rather than a defect. Nine bodies casting drishti means almost every transiting graha is aspected by something, and the sloka voids the result when it is, so most days land in the bottom half and a high score is rare and therefore meaningful. Read it as a rare-high scale, not as a mark out of 100: 22 is an ordinary day, not a failing one. And it measures SUPPORT, never OUTCOME. It says how much of the sky backs this native today, never whether the day is good for a particular matter, which depends on the matter being judged.",
+                      "example": 22,
+                      "type": "number"
+                    },
+                    "subject": {
+                      "description": "The two natal reference points this whole reading is counted from, plus the longitude they come from.",
+                      "properties": {
+                        "janmaNakshatra": {
+                          "description": "Natal Moon nakshatra, the reference point the tarabala is counted from. Canonical Sanskrit.",
+                          "example": "Shatabhisha",
+                          "type": "string"
+                        },
+                        "janmaNakshatraNumber": {
+                          "description": "Janma Nakshatra number 1 to 27, counted from Ashwini.",
+                          "example": 24,
+                          "type": "number"
+                        },
+                        "janmaRashi": {
+                          "description": "Natal Moon rashi, the reference point every gochara house count in this response is taken from. Always English.",
+                          "example": "Aquarius",
+                          "type": "string"
+                        },
+                        "moonLongitude": {
+                          "description": "Sidereal longitude of the natal Moon in degrees. The single value both reference points are derived from, so any disagreement with a reference chart can be traced to its source rather than to a verdict.",
+                          "example": 312.4808,
+                          "type": "number"
+                        }
+                      },
+                      "required": [
+                        "janmaRashi",
+                        "janmaNakshatra",
+                        "janmaNakshatraNumber",
+                        "moonLongitude"
+                      ],
+                      "type": "object"
+                    },
+                    "tally": {
+                      "description": "The full per-state count, always all six states including the zeros. This is the WHOLE input to the score, which is what makes the number reproducible by hand, and it is also what lets a caller who reads the states differently compute their own figure from this response instead of asking for a second one.",
+                      "items": {
+                        "properties": {
+                          "count": {
+                            "description": "How many of the evaluated grahas reached that state.",
+                            "example": 2,
+                            "type": "number"
+                          },
+                          "state": {
+                            "description": "One of the six outcomes a transiting graha can reach.",
+                            "enum": [
+                              "favourable",
+                              "underdelivered",
+                              "obstructed",
+                              "void",
+                              "aggravated",
+                              "unfavourable"
+                            ],
+                            "example": "void",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "state",
+                          "count"
+                        ],
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "tara": {
+                      "description": "Tarabala for THIS native, as an array of windows rather than one value, because the Moon can change nakshatra inside a panchanga day and the reference panchangs print two windows when it does. Three windows happen and are returned when they do. One entry means the tara held all day.",
+                      "items": {
+                        "properties": {
+                          "moonNakshatra": {
+                            "description": "Nakshatra the Moon occupies during this window. Canonical Sanskrit.",
+                            "example": "Purva Phalguni",
+                            "type": "string"
+                          },
+                          "name": {
+                            "description": "Name of the tara this native gets during this window, from the 9-tara cycle Janma through Parama Mitra. A Sanskrit proper noun and a canonical machine value, which is why the favourability is a separate field rather than something a caller has to infer from the word.",
+                            "enum": [
+                              "Janma",
+                              "Sampat",
+                              "Vipat",
+                              "Kshema",
+                              "Pratyari",
+                              "Sadhaka",
+                              "Vadha",
+                              "Mitra",
+                              "Parama Mitra"
+                            ],
+                            "example": "Sadhaka",
+                            "type": "string"
+                          },
+                          "number": {
+                            "description": "Tara number 1 to 9, counted inclusively from the Janma Nakshatra to the Moon nakshatra and folded by 9.",
+                            "example": 6,
+                            "type": "number"
+                          },
+                          "quality": {
+                            "description": "Where this tara falls in the three-way classical reading. Taras 2, 4, 6, 8 and 9 are favourable, 3, 5 and 7 are not, and the 1st (Janma) is neither.",
+                            "enum": [
+                              "favourable",
+                              "unfavourable",
+                              "neutral"
+                            ],
+                            "example": "favourable",
+                            "type": "string"
+                          },
+                          "timescale": {
+                            "description": "How long this component holds one verdict. Present on every component because this reading joins two genres classical literature keeps in separate books: a gochara verdict lasts as long as the graha stays in a rashi, which is years for Saturn, while a tarabala changes overnight. Without it a Saturn verdict that reads identically for nine hundred days would sit under one date field beside a limb that turns over at dawn.",
+                            "enum": [
+                              "hours",
+                              "days",
+                              "months",
+                              "years"
+                            ],
+                            "example": "days",
+                            "type": "string"
+                          },
+                          "validFrom": {
+                            "description": "ISO instant this tarabala window opens.",
+                            "example": "2026-06-20T23:55:43.685Z",
+                            "type": "string"
+                          },
+                          "validTo": {
+                            "description": "ISO instant this tarabala window closes, which is when the Moon changes nakshatra.",
+                            "example": "2026-06-21T04:01:32.171Z",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "validFrom",
+                          "validTo",
+                          "timescale",
+                          "moonNakshatra",
+                          "number",
+                          "name",
+                          "quality"
+                        ],
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "verdict": {
+                      "description": "The band the score falls in: \"very-strong\" at 75 and above, \"strong\" at 50 and above, \"moderate\" at 25 and above, \"weak\" below 25. The four WORDS are the shipped KP significator band words, reused so nothing new has to be translated. The EDGES are the RoxyAPI convention and are quartiles, because no authority bands a day and quartiles are the least arbitrary division of a percentage into four named steps. Read it with the same expectation the score carries: the gates cancel far more often than they deliver, so the lower bands are the common case.",
+                      "enum": [
+                        "very-strong",
+                        "strong",
+                        "moderate",
+                        "weak"
+                      ],
+                      "example": "weak",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "frames",
+                    "date",
+                    "dayStart",
+                    "dayEnd",
+                    "subject",
+                    "panchanga",
+                    "grahas",
+                    "tara",
+                    "chandrabala",
+                    "dasha",
+                    "areas",
+                    "score",
+                    "verdict",
+                    "tally",
+                    "evaluated",
+                    "degraded",
+                    "houseThemes",
+                    "focus"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Daily reading composed successfully"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Validation error. `issues[]` lists every failed field."
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Invalid or missing API key"
+          },
+          "405": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Method not allowed. The path exists but only responds to the methods listed in `allow[]` and the `Allow` response header.",
+            "headers": {
+              "Allow": {
+                "description": "Comma-separated list of allowed methods (RFC 9110).",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Monthly rate limit exceeded"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Internal server error"
+          }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ],
+        "summary": "Daily Reading - Composed Gochara, Panchanga and Dasha for one native on one day",
         "tags": [
           "Vedic Astrology"
         ]
