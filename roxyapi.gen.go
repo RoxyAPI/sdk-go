@@ -37556,7 +37556,7 @@ type ClientInterface interface {
 
 	// GenerateCompositeChartWithBody Composite Chart - Midpoint relationship chart with interpretations
 	//
-	// Generate a composite chart by calculating midpoints between two natal charts. The composite chart represents the relationship as a single entity, showing its core identity, emotional bond, communication style, and growth direction. Returns composite planetary positions, house cusps, Ascendant, Midheaven, aspects, and relationship interpretation. Composite chart API, midpoint chart calculator, relationship astrology, couple chart analysis.
+	// Generate a composite chart by calculating midpoints between two natal charts. The composite chart represents the relationship as a single entity, showing its core identity, emotional bond, communication style, and growth direction. Uses the midpoint method: planets, angles and house cusps are each the midpoint of the two natal values, so the Ascendant always sits on the first cusp. Returns composite planetary positions, house cusps, Ascendant, Midheaven, aspects, and relationship interpretation. Composite chart API, midpoint chart calculator, relationship astrology, couple chart analysis.
 	//
 	// Takes any type of body and a specified content type.
 	//
@@ -37565,7 +37565,7 @@ type ClientInterface interface {
 
 	// GenerateCompositeChart Composite Chart - Midpoint relationship chart with interpretations
 	//
-	// Generate a composite chart by calculating midpoints between two natal charts. The composite chart represents the relationship as a single entity, showing its core identity, emotional bond, communication style, and growth direction. Returns composite planetary positions, house cusps, Ascendant, Midheaven, aspects, and relationship interpretation. Composite chart API, midpoint chart calculator, relationship astrology, couple chart analysis.
+	// Generate a composite chart by calculating midpoints between two natal charts. The composite chart represents the relationship as a single entity, showing its core identity, emotional bond, communication style, and growth direction. Uses the midpoint method: planets, angles and house cusps are each the midpoint of the two natal values, so the Ascendant always sits on the first cusp. Returns composite planetary positions, house cusps, Ascendant, Midheaven, aspects, and relationship interpretation. Composite chart API, midpoint chart calculator, relationship astrology, couple chart analysis.
 	//
 	// Takes a body of the `application/json` content type.
 	//
@@ -40315,7 +40315,7 @@ func (c *Client) CalculateCompatibility(ctx context.Context, params *CalculateCo
 
 // GenerateCompositeChartWithBody Composite Chart - Midpoint relationship chart with interpretations
 //
-// Generate a composite chart by calculating midpoints between two natal charts. The composite chart represents the relationship as a single entity, showing its core identity, emotional bond, communication style, and growth direction. Returns composite planetary positions, house cusps, Ascendant, Midheaven, aspects, and relationship interpretation. Composite chart API, midpoint chart calculator, relationship astrology, couple chart analysis.
+// Generate a composite chart by calculating midpoints between two natal charts. The composite chart represents the relationship as a single entity, showing its core identity, emotional bond, communication style, and growth direction. Uses the midpoint method: planets, angles and house cusps are each the midpoint of the two natal values, so the Ascendant always sits on the first cusp. Returns composite planetary positions, house cusps, Ascendant, Midheaven, aspects, and relationship interpretation. Composite chart API, midpoint chart calculator, relationship astrology, couple chart analysis.
 //
 // Takes any type of body and a specified content type.
 //
@@ -40334,7 +40334,7 @@ func (c *Client) GenerateCompositeChartWithBody(ctx context.Context, params *Gen
 
 // GenerateCompositeChart Composite Chart - Midpoint relationship chart with interpretations
 //
-// Generate a composite chart by calculating midpoints between two natal charts. The composite chart represents the relationship as a single entity, showing its core identity, emotional bond, communication style, and growth direction. Returns composite planetary positions, house cusps, Ascendant, Midheaven, aspects, and relationship interpretation. Composite chart API, midpoint chart calculator, relationship astrology, couple chart analysis.
+// Generate a composite chart by calculating midpoints between two natal charts. The composite chart represents the relationship as a single entity, showing its core identity, emotional bond, communication style, and growth direction. Uses the midpoint method: planets, angles and house cusps are each the midpoint of the two natal values, so the Ascendant always sits on the first cusp. Returns composite planetary positions, house cusps, Ascendant, Midheaven, aspects, and relationship interpretation. Composite chart API, midpoint chart calculator, relationship astrology, couple chart analysis.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -57548,7 +57548,7 @@ type ClientWithResponsesInterface interface {
 
 	// GenerateCompositeChartWithBodyWithResponse Composite Chart - Midpoint relationship chart with interpretations
 	//
-	// Generate a composite chart by calculating midpoints between two natal charts. The composite chart represents the relationship as a single entity, showing its core identity, emotional bond, communication style, and growth direction. Returns composite planetary positions, house cusps, Ascendant, Midheaven, aspects, and relationship interpretation. Composite chart API, midpoint chart calculator, relationship astrology, couple chart analysis.
+	// Generate a composite chart by calculating midpoints between two natal charts. The composite chart represents the relationship as a single entity, showing its core identity, emotional bond, communication style, and growth direction. Uses the midpoint method: planets, angles and house cusps are each the midpoint of the two natal values, so the Ascendant always sits on the first cusp. Returns composite planetary positions, house cusps, Ascendant, Midheaven, aspects, and relationship interpretation. Composite chart API, midpoint chart calculator, relationship astrology, couple chart analysis.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -57557,7 +57557,7 @@ type ClientWithResponsesInterface interface {
 
 	// GenerateCompositeChartWithResponse Composite Chart - Midpoint relationship chart with interpretations
 	//
-	// Generate a composite chart by calculating midpoints between two natal charts. The composite chart represents the relationship as a single entity, showing its core identity, emotional bond, communication style, and growth direction. Returns composite planetary positions, house cusps, Ascendant, Midheaven, aspects, and relationship interpretation. Composite chart API, midpoint chart calculator, relationship astrology, couple chart analysis.
+	// Generate a composite chart by calculating midpoints between two natal charts. The composite chart represents the relationship as a single entity, showing its core identity, emotional bond, communication style, and growth direction. Uses the midpoint method: planets, angles and house cusps are each the midpoint of the two natal values, so the Ascendant always sits on the first cusp. Returns composite planetary positions, house cusps, Ascendant, Midheaven, aspects, and relationship interpretation. Composite chart API, midpoint chart calculator, relationship astrology, couple chart analysis.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -62016,7 +62016,7 @@ type GenerateCompositeChartResponse struct {
 			Sign string `json:"sign"`
 		} `json:"compositeAscendant"`
 
-		// CompositeHouses Composite house cusps. Each house represents shared life areas in the relationship.
+		// CompositeHouses Composite house cusps, each the midpoint of the two natal cusps. Each house represents shared life areas in the relationship.
 		CompositeHouses []struct {
 			// Degree Degree within the zodiac sign (0-29.999).
 			Degree float32 `json:"degree"`
@@ -62185,7 +62185,7 @@ func (r GenerateCompositeChartResponse) GetJSON200() *struct {
 		Sign string `json:"sign"`
 	} `json:"compositeAscendant"`
 
-	// CompositeHouses Composite house cusps. Each house represents shared life areas in the relationship.
+	// CompositeHouses Composite house cusps, each the midpoint of the two natal cusps. Each house represents shared life areas in the relationship.
 	CompositeHouses []struct {
 		// Degree Degree within the zodiac sign (0-29.999).
 		Degree float32 `json:"degree"`
@@ -93659,7 +93659,7 @@ func (c *ClientWithResponses) CalculateCompatibilityWithResponse(ctx context.Con
 
 // GenerateCompositeChartWithBodyWithResponse Composite Chart - Midpoint relationship chart with interpretations
 //
-// Generate a composite chart by calculating midpoints between two natal charts. The composite chart represents the relationship as a single entity, showing its core identity, emotional bond, communication style, and growth direction. Returns composite planetary positions, house cusps, Ascendant, Midheaven, aspects, and relationship interpretation. Composite chart API, midpoint chart calculator, relationship astrology, couple chart analysis.
+// Generate a composite chart by calculating midpoints between two natal charts. The composite chart represents the relationship as a single entity, showing its core identity, emotional bond, communication style, and growth direction. Uses the midpoint method: planets, angles and house cusps are each the midpoint of the two natal values, so the Ascendant always sits on the first cusp. Returns composite planetary positions, house cusps, Ascendant, Midheaven, aspects, and relationship interpretation. Composite chart API, midpoint chart calculator, relationship astrology, couple chart analysis.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -93674,7 +93674,7 @@ func (c *ClientWithResponses) GenerateCompositeChartWithBodyWithResponse(ctx con
 
 // GenerateCompositeChartWithResponse Composite Chart - Midpoint relationship chart with interpretations
 //
-// Generate a composite chart by calculating midpoints between two natal charts. The composite chart represents the relationship as a single entity, showing its core identity, emotional bond, communication style, and growth direction. Returns composite planetary positions, house cusps, Ascendant, Midheaven, aspects, and relationship interpretation. Composite chart API, midpoint chart calculator, relationship astrology, couple chart analysis.
+// Generate a composite chart by calculating midpoints between two natal charts. The composite chart represents the relationship as a single entity, showing its core identity, emotional bond, communication style, and growth direction. Uses the midpoint method: planets, angles and house cusps are each the midpoint of the two natal values, so the Ascendant always sits on the first cusp. Returns composite planetary positions, house cusps, Ascendant, Midheaven, aspects, and relationship interpretation. Composite chart API, midpoint chart calculator, relationship astrology, couple chart analysis.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -99197,7 +99197,7 @@ func ParseGenerateCompositeChartResponse(rsp *http.Response) (*GenerateComposite
 				Sign string `json:"sign"`
 			} `json:"compositeAscendant"`
 
-			// CompositeHouses Composite house cusps. Each house represents shared life areas in the relationship.
+			// CompositeHouses Composite house cusps, each the midpoint of the two natal cusps. Each house represents shared life areas in the relationship.
 			CompositeHouses []struct {
 				// Degree Degree within the zodiac sign (0-29.999).
 				Degree float32 `json:"degree"`
