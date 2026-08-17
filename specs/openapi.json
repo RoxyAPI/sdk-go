@@ -38,7 +38,7 @@
           },
           "nodeType": {
             "default": "true",
-            "description": "Lunar node convention. \"mean\" is the smoothed average node, which always moves retrograde; \"true\" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass \"mean\" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to \"true\".",
+            "description": "Lunar node convention. \"mean\" is the smoothed average node, which always moves retrograde; \"true\" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is the osculating node and the default, because it is what most Western chart software reports; mean is the smoothed node preferred by several evolutionary schools, so pass \"mean\" to match one. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to \"true\".",
             "enum": [
               "mean",
               "true"
@@ -786,7 +786,7 @@
           },
           "nodeType": {
             "default": "true",
-            "description": "Lunar node convention. \"mean\" is the smoothed average node, which always moves retrograde; \"true\" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass \"mean\" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to \"true\".",
+            "description": "Lunar node convention. \"mean\" is the smoothed average node, which always moves retrograde; \"true\" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is the osculating node and the default, because it is what most Western chart software reports; mean is the smoothed node preferred by several evolutionary schools, so pass \"mean\" to match one. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to \"true\".",
             "enum": [
               "mean",
               "true"
@@ -1402,7 +1402,7 @@
           },
           "nodeType": {
             "default": "true",
-            "description": "Lunar node convention. \"mean\" is the smoothed average node, which always moves retrograde; \"true\" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass \"mean\" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to \"true\".",
+            "description": "Lunar node convention. \"mean\" is the smoothed average node, which always moves retrograde; \"true\" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is the osculating node and the default, because it is what most Western chart software reports; mean is the smoothed node preferred by several evolutionary schools, so pass \"mean\" to match one. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to \"true\".",
             "enum": [
               "mean",
               "true"
@@ -9767,7 +9767,7 @@
           },
           "nodeType": {
             "default": "true",
-            "description": "Lunar node convention. \"mean\" is the smoothed average node, which always moves retrograde; \"true\" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass \"mean\" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to \"true\".",
+            "description": "Lunar node convention. \"mean\" is the smoothed average node, which always moves retrograde; \"true\" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is the osculating node and the default, because it is what most Western chart software reports; mean is the smoothed node preferred by several evolutionary schools, so pass \"mean\" to match one. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to \"true\".",
             "enum": [
               "mean",
               "true"
@@ -10483,7 +10483,7 @@
           },
           "nodeType": {
             "default": "true",
-            "description": "Lunar node convention. \"mean\" is the smoothed average node, which always moves retrograde; \"true\" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass \"mean\" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to \"true\".",
+            "description": "Lunar node convention. \"mean\" is the smoothed average node, which always moves retrograde; \"true\" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is the osculating node and the default, because it is what most Western chart software reports; mean is the smoothed node preferred by several evolutionary schools, so pass \"mean\" to match one. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to \"true\".",
             "enum": [
               "mean",
               "true"
@@ -11827,7 +11827,7 @@
           },
           "nodeType": {
             "default": "true",
-            "description": "Lunar node convention. \"mean\" is the smoothed average node, which always moves retrograde; \"true\" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass \"mean\" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to \"true\".",
+            "description": "Lunar node convention. \"mean\" is the smoothed average node, which always moves retrograde; \"true\" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is the osculating node and the default, because it is what most Western chart software reports; mean is the smoothed node preferred by several evolutionary schools, so pass \"mean\" to match one. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to \"true\".",
             "enum": [
               "mean",
               "true"
@@ -12019,7 +12019,7 @@
           },
           "nodeType": {
             "default": "true",
-            "description": "Lunar node convention. \"mean\" is the smoothed average node, which always moves retrograde; \"true\" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass \"mean\" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to \"true\".",
+            "description": "Lunar node convention. \"mean\" is the smoothed average node, which always moves retrograde; \"true\" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is the osculating node and the default, because it is what most Western chart software reports; mean is the smoothed node preferred by several evolutionary schools, so pass \"mean\" to match one. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to \"true\".",
             "enum": [
               "mean",
               "true"
@@ -13443,7 +13443,7 @@
           },
           "nodeType": {
             "default": "true",
-            "description": "Lunar node convention. \"mean\" is the smoothed average node, which always moves retrograde; \"true\" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass \"mean\" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to \"true\".",
+            "description": "Lunar node convention. \"mean\" is the smoothed average node, which always moves retrograde; \"true\" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is the osculating node and the default, because it is what most Western chart software reports; mean is the smoothed node preferred by several evolutionary schools, so pass \"mean\" to match one. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to \"true\".",
             "enum": [
               "mean",
               "true"
@@ -13685,7 +13685,7 @@
           },
           "nodeType": {
             "default": "true",
-            "description": "Lunar node convention. \"mean\" is the smoothed average node, which always moves retrograde; \"true\" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass \"mean\" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to \"true\".",
+            "description": "Lunar node convention. \"mean\" is the smoothed average node, which always moves retrograde; \"true\" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is the osculating node and the default, because it is what most Western chart software reports; mean is the smoothed node preferred by several evolutionary schools, so pass \"mean\" to match one. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to \"true\".",
             "enum": [
               "mean",
               "true"
@@ -14564,7 +14564,7 @@
       "name": "RoxyAPI Support",
       "url": "https://roxyapi.com/contact"
     },
-    "description": "# RoxyAPI: AI-Native Insight Infrastructure\n\n\u003e **Base URL:** `https://roxyapi.com/api/v2`\n\u003e All endpoint paths below are relative to this base URL.\n\nThe only multi-domain spiritual intelligence API. 12 domains (astrology, Vedic astrology, forecast, human design, numerology, tarot, biorhythm, I-Ching, crystals, dreams, angel numbers, location), 178+ endpoints, one API key, instant activation. Remote MCP server per domain plus AGENTS.md for AI coding agents.\n\n## Who uses RoxyAPI\n\n- **Developers** building astrology apps, tarot platforms, numerology calculators, or dream journals\n- **AI agent builders** connecting Claude, GPT, or Gemini to real calculation engines via MCP\n- **Vibe coders** shipping insight apps with Cursor, Bolt, or Replit using zero domain knowledge\n- **Founders and brands** launching branded spiritual experiences for their audience\n\n## Quick start (60 seconds)\n\n**1. Get your API key** at [roxyapi.com/pricing](https://roxyapi.com/pricing). Instant delivery, no account required.\n\n**2. Make your first call:**\n```bash\ncurl -H \"X-API-Key: YOUR_KEY\" https://roxyapi.com/api/v2/tarot/draw -X POST -H \"Content-Type: application/json\" -d '{\"count\": 3}'\n```\n\n**3. Monitor usage:**\n```bash\ncurl -H \"X-API-Key: YOUR_KEY\" https://roxyapi.com/api/v2/usage\n```\n\n## AI agent integration (Remote MCP)\n\nRoxyAPI ships a Remote MCP server per product over Streamable HTTP, with no local setup and no Docker. Your AI agent auto-discovers all 178+ endpoints as callable tools with zero configuration:\n- **Claude Desktop, Cursor, Windsurf**: Add MCP server URL in settings\n- **OpenAI Agents, Gemini ADK**: Connect via Streamable HTTP transport\n- **Custom agents**: Use the MCP Python/TypeScript SDK\n\nMCP endpoints: `https://roxyapi.com/mcp/{domain}` (e.g., `/mcp/astrology`, `/mcp/tarot`)\n\nSetup guide: [roxyapi.com/docs/mcp](https://roxyapi.com/docs/mcp)\n\n## Authentication\n\nAll endpoints require an API key via header or query param:\n- **Header (recommended):** `X-API-Key: YOUR_KEY`\n- **Query param (testing):** `?api_key=YOUR_KEY`\n\n## Response format\n\nClean JSON, no wrapper objects. Errors return `{ \"error\": \"message\", \"code\": \"error_code\" }`. The `error` field is human-readable (may change wording). The `code` field is machine-readable (stable — safe to switch on programmatically).\n\nRate limit headers on every response: `X-RateLimit-Limit`, `X-RateLimit-Remaining`, `X-RateLimit-Used`\n\n## Errors\n\nAll errors return `{ \"error\": \"message\", \"code\": \"error_code\" }`:\n\n| Status | Code | When |\n|--------|------|------|\n| 400 | `validation_error` | Missing or invalid parameters. Response includes `issues[]` with per-field `path`, `message`, `code`, `expected`, `minimum`, `maximum`, `format`, `pattern`. |\n| 401 | `api_key_required` | No API key provided |\n| 401 | `invalid_api_key` | Key format invalid or tampered |\n| 401 | `subscription_not_found` | Key references non-existent subscription |\n| 401 | `subscription_inactive` | Subscription cancelled, expired, or suspended |\n| 404 | `not_found` | Resource not found. Response may include a ranked `suggestions[]` array (each with `endpoint`, `hint`, and a `docs` deep link) for typo recovery. |\n| 405 | `method_not_allowed` | Path exists for a different HTTP method. Response includes `allow[]` and the `Allow` header lists valid methods. |\n| 429 | `rate_limit_exceeded` | Monthly quota reached |\n| 500 | `internal_error` | Server error |\n\n## Pricing\n\nFlat per-request pricing. Every call counts the same, whether a planet position or a full birth chart with aspects. No credit systems, no variable costs. Plans from $39 per month for 50K requests, up to 3M requests, with custom volume above that.\n\nSee [roxyapi.com/pricing](https://roxyapi.com/pricing)\n\n## Resources\n\n- [Quickstart guide](https://roxyapi.com/docs/quickstart) - first API call in 60 seconds\n- [Documentation](https://roxyapi.com/docs) - guides, tutorials, domain reference\n- [MCP setup](https://roxyapi.com/docs/mcp) - connect AI agents\n- [Starter apps](https://roxyapi.com/starters) - clone and deploy in 30 minutes\n- [FAQ](https://roxyapi.com/faq) - common questions\n- [Contact](https://roxyapi.com/contact) - support and API key recovery\n",
+    "description": "# RoxyAPI: AI-Native Insight Infrastructure\n\n\u003e **Base URL:** `https://roxyapi.com/api/v2`\n\u003e All endpoint paths below are relative to this base URL.\n\nThe only multi-domain spiritual intelligence API. 12 domains (astrology, Vedic astrology, forecast, human design, numerology, tarot, biorhythm, I-Ching, crystals, dreams, angel numbers, location), 180+ endpoints, one API key, instant activation. Remote MCP server per domain plus AGENTS.md for AI coding agents.\n\n## Who uses RoxyAPI\n\n- **Developers** building astrology apps, tarot platforms, numerology calculators, or dream journals\n- **AI agent builders** connecting Claude, GPT, or Gemini to real calculation engines via MCP\n- **Vibe coders** shipping insight apps with Cursor, Bolt, or Replit using zero domain knowledge\n- **Founders and brands** launching branded spiritual experiences for their audience\n\n## Quick start (60 seconds)\n\n**1. Get your API key** at [roxyapi.com/pricing](https://roxyapi.com/pricing). Instant delivery, no account required.\n\n**2. Make your first call:**\n```bash\ncurl -H \"X-API-Key: YOUR_KEY\" https://roxyapi.com/api/v2/tarot/draw -X POST -H \"Content-Type: application/json\" -d '{\"count\": 3}'\n```\n\n**3. Monitor usage:**\n```bash\ncurl -H \"X-API-Key: YOUR_KEY\" https://roxyapi.com/api/v2/usage\n```\n\n## AI agent integration (Remote MCP)\n\nRoxyAPI ships a Remote MCP server per product over Streamable HTTP, with no local setup and no Docker. Your AI agent auto-discovers all 180+ endpoints as callable tools with zero configuration:\n- **Claude Desktop, Cursor, Windsurf**: Add MCP server URL in settings\n- **OpenAI Agents, Gemini ADK**: Connect via Streamable HTTP transport\n- **Custom agents**: Use the MCP Python/TypeScript SDK\n\nMCP endpoints: `https://roxyapi.com/mcp/{domain}` (e.g., `/mcp/astrology`, `/mcp/tarot`)\n\nSetup guide: [roxyapi.com/docs/mcp](https://roxyapi.com/docs/mcp)\n\n## Authentication\n\nAll endpoints require an API key via header or query param:\n- **Header (recommended):** `X-API-Key: YOUR_KEY`\n- **Query param (testing):** `?api_key=YOUR_KEY`\n\n## Response format\n\nClean JSON, no wrapper objects. Errors return `{ \"error\": \"message\", \"code\": \"error_code\" }`. The `error` field is human-readable (may change wording). The `code` field is machine-readable (stable — safe to switch on programmatically).\n\nRate limit headers on every response: `X-RateLimit-Limit`, `X-RateLimit-Remaining`, `X-RateLimit-Used`\n\n## Errors\n\nAll errors return `{ \"error\": \"message\", \"code\": \"error_code\" }`:\n\n| Status | Code | When |\n|--------|------|------|\n| 400 | `validation_error` | Missing or invalid parameters. Response includes `issues[]` with per-field `path`, `message`, `code`, `expected`, `minimum`, `maximum`, `format`, `pattern`. |\n| 401 | `api_key_required` | No API key provided |\n| 401 | `invalid_api_key` | Key format invalid or tampered |\n| 401 | `subscription_not_found` | Key references non-existent subscription |\n| 401 | `subscription_inactive` | Subscription cancelled, expired, or suspended |\n| 404 | `not_found` | Resource not found. Response may include a ranked `suggestions[]` array (each with `endpoint`, `hint`, and a `docs` deep link) for typo recovery. |\n| 405 | `method_not_allowed` | Path exists for a different HTTP method. Response includes `allow[]` and the `Allow` header lists valid methods. |\n| 429 | `rate_limit_exceeded` | Monthly quota reached |\n| 500 | `internal_error` | Server error |\n\n## Pricing\n\nFlat per-request pricing. Every call counts the same, whether a planet position or a full birth chart with aspects. No credit systems, no variable costs. Plans from $39 per month for 50K requests, up to 3M requests, with custom volume above that.\n\nSee [roxyapi.com/pricing](https://roxyapi.com/pricing)\n\n## Resources\n\n- [Quickstart guide](https://roxyapi.com/docs/quickstart) - first API call in 60 seconds\n- [Documentation](https://roxyapi.com/docs) - guides, tutorials, domain reference\n- [MCP setup](https://roxyapi.com/docs/mcp) - connect AI agents\n- [Starter apps](https://roxyapi.com/starters) - clone and deploy in 30 minutes\n- [FAQ](https://roxyapi.com/faq) - common questions\n- [Contact](https://roxyapi.com/contact) - support and API key recovery\n",
     "license": {
       "name": "Proprietary",
       "url": "https://roxyapi.com/policy/terms"
@@ -16117,6 +16117,285 @@
         ]
       }
     },
+    "/astrology/aspects/monthly": {
+      "post": {
+        "description": "Get every planetary aspect that perfects during a given month, across the 13 non-lunar Western bodies: the Sun and Mercury through Pluto, both lunar nodes, Chiron and Black Moon Lilith. Detects nine aspects, five major (conjunction, sextile, square, trine, opposition) and four minor (semi-sextile, semi-square, sesquiquadrate, quincunx), each with its own traditional orb, and returns the exact date and time of closest approach in your timezone along with the nature of the aspect. Calculated on tropical longitudes. The Moon is excluded because it forms hundreds of aspects a month and belongs in a daily view rather than a monthly one. Omit year and month to get the month in progress, so a published calendar stays current without a redeploy. Essential for monthly forecast copy, transit calendars, electional timing, and newsletter automation. Monthly aspect calendar API, exact aspect times, planetary aspect ephemeris, transit timing. Verified against NASA JPL Horizons.",
+        "operationId": "getMonthlyTropicalAspects",
+        "parameters": [
+          {
+            "description": "Response language (ISO 639-1). Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en. Languages without translations yet return English.",
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "schema": {
+              "default": "en",
+              "description": "Response language (ISO 639-1). Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en. Languages without translations yet return English.",
+              "enum": [
+                "en",
+                "tr",
+                "de",
+                "es",
+                "hi",
+                "pt",
+                "fr",
+                "ru"
+              ],
+              "example": "en",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "month": {
+                    "description": "Month number (1-12). Defaults to the current month (UTC).",
+                    "example": 3,
+                    "maximum": 12,
+                    "minimum": 1,
+                    "type": "integer"
+                  },
+                  "nodeType": {
+                    "default": "true",
+                    "description": "Lunar node convention. \"mean\" is the smoothed average node, which always moves retrograde; \"true\" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is the osculating node and the default, because it is what most Western chart software reports; mean is the smoothed node preferred by several evolutionary schools, so pass \"mean\" to match one. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to \"true\".",
+                    "enum": [
+                      "mean",
+                      "true"
+                    ],
+                    "example": "true",
+                    "type": "string"
+                  },
+                  "timezone": {
+                    "anyOf": [
+                      {
+                        "maximum": 14,
+                        "minimum": -14,
+                        "type": "number"
+                      },
+                      {
+                        "type": "string"
+                      }
+                    ],
+                    "default": 0,
+                    "description": "Timezone offset from UTC in hours. Event dates and times are reported in this zone, which is what makes a published calendar read correctly for its audience. Defaults to 0 (UTC).",
+                    "example": -5
+                  },
+                  "year": {
+                    "description": "Year for the aspect calendar (1900-2100). Defaults to the current year (UTC).",
+                    "example": 2026,
+                    "maximum": 2100,
+                    "minimum": 1900,
+                    "type": "integer"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "events": {
+                      "description": "Every aspect event in the month, in chronological order across all body pairs.",
+                      "items": {
+                        "properties": {
+                          "aspect": {
+                            "description": "Aspect type, canonical English. One of conjunction (0 deg), semi-sextile (30 deg), semi-square (45 deg), sextile (60 deg), square (90 deg), trine (120 deg), sesquiquadrate (135 deg), quincunx (150 deg), opposition (180 deg).",
+                            "example": "square",
+                            "type": "string"
+                          },
+                          "aspectLocalized": {
+                            "description": "Aspect name in the requested language. Present only when lang is supplied.",
+                            "example": "Cuadratura",
+                            "type": "string"
+                          },
+                          "date": {
+                            "description": "Date the aspect is closest to exact, in the requested timezone (YYYY-MM-DD).",
+                            "example": "2026-03-15",
+                            "type": "string"
+                          },
+                          "datetime": {
+                            "description": "Combined timestamp of closest approach, in the requested timezone.",
+                            "example": "2026-03-15T14:32",
+                            "type": "string"
+                          },
+                          "nature": {
+                            "description": "Whether the aspect is harmonious, challenging or neutral. Canonical English, so a calendar can colour or filter on it directly. natureLocalized carries the reader-facing form.",
+                            "example": "challenging",
+                            "type": "string"
+                          },
+                          "natureLocalized": {
+                            "description": "Nature in the requested language. Present only when lang is supplied.",
+                            "example": "desafiante",
+                            "type": "string"
+                          },
+                          "orb": {
+                            "description": "Distance from exact in degrees at the reported instant. Effectively zero for an aspect that perfects inside the month, and larger only where the pair turns before reaching exact.",
+                            "example": 0.02,
+                            "type": "number"
+                          },
+                          "planet1": {
+                            "description": "First body forming the aspect. Always canonical English whatever the lang parameter says, so it stays safe to compare against in code. Use planet1Localized for anything a reader sees.",
+                            "example": "Mars",
+                            "type": "string"
+                          },
+                          "planet1Localized": {
+                            "description": "First body in the requested language. Present only when lang is supplied.",
+                            "example": "Marte",
+                            "type": "string"
+                          },
+                          "planet1Longitude": {
+                            "description": "Tropical ecliptic longitude of the first body at the reported instant.",
+                            "example": 15.4821,
+                            "type": "number"
+                          },
+                          "planet2": {
+                            "description": "Second body forming the aspect. Always canonical English.",
+                            "example": "Saturn",
+                            "type": "string"
+                          },
+                          "planet2Localized": {
+                            "description": "Second body in the requested language. Present only when lang is supplied.",
+                            "example": "Saturno",
+                            "type": "string"
+                          },
+                          "planet2Longitude": {
+                            "description": "Tropical ecliptic longitude of the second body at the reported instant.",
+                            "example": 105.4632,
+                            "type": "number"
+                          },
+                          "separation": {
+                            "description": "Actual angular separation between the two bodies in degrees at the reported instant, measured the short way round the circle.",
+                            "example": 89.98,
+                            "type": "number"
+                          },
+                          "time": {
+                            "description": "Time the aspect is closest to exact, in the requested timezone (HH:MM).",
+                            "example": "14:32",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "planet1",
+                          "planet2",
+                          "aspect",
+                          "nature",
+                          "date",
+                          "time",
+                          "datetime",
+                          "orb",
+                          "separation",
+                          "planet1Longitude",
+                          "planet2Longitude"
+                        ],
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "month": {
+                      "description": "Month of the calendar. Echoes the month requested, or the current UTC month when it was omitted.",
+                      "example": 3,
+                      "type": "number"
+                    },
+                    "timezone": {
+                      "description": "Timezone the event dates and times are reported in. Echoes the request.",
+                      "example": -5,
+                      "type": "number"
+                    },
+                    "year": {
+                      "description": "Year of the calendar. Echoes the year requested, or the current UTC year when it was omitted.",
+                      "example": 2026,
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "year",
+                    "month",
+                    "timezone",
+                    "events"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Monthly aspect calendar calculated successfully"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Validation error. `issues[]` lists every failed field."
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Invalid or missing API key"
+          },
+          "405": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Method not allowed. The path exists but only responds to the methods listed in `allow[]` and the `Allow` response header.",
+            "headers": {
+              "Allow": {
+                "description": "Comma-separated list of allowed methods (RFC 9110).",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Monthly rate limit exceeded"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Internal server error"
+          }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ],
+        "summary": "Monthly Aspects - Tropical aspect calendar for an entire month",
+        "tags": [
+          "Western Astrology"
+        ]
+      }
+    },
     "/astrology/asteroids": {
       "post": {
         "description": "Calculate the natal positions of the four classical asteroid goddesses, Ceres, Pallas, Juno, and Vesta, for any birth moment. Each asteroid returns its tropical zodiac sign, degree, house placement, daily speed, retrograde status, and a plain language interpretation of its meaning in the chart. Chiron is available through the natal chart endpoint, so this endpoint stays focused on the four asteroid goddesses for natal reports and relationship astrology.",
@@ -16301,7 +16580,7 @@
                   },
                   "nodeType": {
                     "default": "true",
-                    "description": "Lunar node convention. \"mean\" is the smoothed average node, which always moves retrograde; \"true\" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass \"mean\" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to \"true\".",
+                    "description": "Lunar node convention. \"mean\" is the smoothed average node, which always moves retrograde; \"true\" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is the osculating node and the default, because it is what most Western chart software reports; mean is the smoothed node preferred by several evolutionary schools, so pass \"mean\" to match one. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to \"true\".",
                     "enum": [
                       "mean",
                       "true"
@@ -16497,7 +16776,7 @@
                       },
                       "nodeType": {
                         "default": "true",
-                        "description": "Lunar node convention. \"mean\" is the smoothed average node, which always moves retrograde; \"true\" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass \"mean\" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to \"true\".",
+                        "description": "Lunar node convention. \"mean\" is the smoothed average node, which always moves retrograde; \"true\" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is the osculating node and the default, because it is what most Western chart software reports; mean is the smoothed node preferred by several evolutionary schools, so pass \"mean\" to match one. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to \"true\".",
                         "enum": [
                           "mean",
                           "true"
@@ -16560,7 +16839,7 @@
                       },
                       "nodeType": {
                         "default": "true",
-                        "description": "Lunar node convention. \"mean\" is the smoothed average node, which always moves retrograde; \"true\" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass \"mean\" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to \"true\".",
+                        "description": "Lunar node convention. \"mean\" is the smoothed average node, which always moves retrograde; \"true\" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is the osculating node and the default, because it is what most Western chart software reports; mean is the smoothed node preferred by several evolutionary schools, so pass \"mean\" to match one. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to \"true\".",
                         "enum": [
                           "mean",
                           "true"
@@ -17383,7 +17662,7 @@
                       },
                       "nodeType": {
                         "default": "true",
-                        "description": "Lunar node convention. \"mean\" is the smoothed average node, which always moves retrograde; \"true\" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass \"mean\" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to \"true\".",
+                        "description": "Lunar node convention. \"mean\" is the smoothed average node, which always moves retrograde; \"true\" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is the osculating node and the default, because it is what most Western chart software reports; mean is the smoothed node preferred by several evolutionary schools, so pass \"mean\" to match one. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to \"true\".",
                         "enum": [
                           "mean",
                           "true"
@@ -17446,7 +17725,7 @@
                       },
                       "nodeType": {
                         "default": "true",
-                        "description": "Lunar node convention. \"mean\" is the smoothed average node, which always moves retrograde; \"true\" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass \"mean\" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to \"true\".",
+                        "description": "Lunar node convention. \"mean\" is the smoothed average node, which always moves retrograde; \"true\" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is the osculating node and the default, because it is what most Western chart software reports; mean is the smoothed node preferred by several evolutionary schools, so pass \"mean\" to match one. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to \"true\".",
                         "enum": [
                           "mean",
                           "true"
@@ -18104,7 +18383,7 @@
                   },
                   "nodeType": {
                     "default": "true",
-                    "description": "Lunar node convention. \"mean\" is the smoothed average node, which always moves retrograde; \"true\" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass \"mean\" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to \"true\".",
+                    "description": "Lunar node convention. \"mean\" is the smoothed average node, which always moves retrograde; \"true\" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is the osculating node and the default, because it is what most Western chart software reports; mean is the smoothed node preferred by several evolutionary schools, so pass \"mean\" to match one. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to \"true\".",
                     "enum": [
                       "mean",
                       "true"
@@ -21090,12 +21369,12 @@
         "operationId": "getPlanetMeaning",
         "parameters": [
           {
-            "description": "Planet ID (lowercase, e.g., sun, moon, mercury) or display name (case-insensitive, e.g., Sun, MOON).",
+            "description": "Planet ID (lowercase, e.g., sun, moon, mercury) or display name (case-insensitive, e.g., Sun, MOON). Spaces, hyphens and underscores are interchangeable, so the two lunar nodes answer to north-node and south-node as well as to their ids north node and south node, and Black Moon Lilith answers to black-moon-lilith as well as to lilith.",
             "in": "path",
             "name": "id",
             "required": true,
             "schema": {
-              "description": "Planet ID (lowercase, e.g., sun, moon, mercury) or display name (case-insensitive, e.g., Sun, MOON).",
+              "description": "Planet ID (lowercase, e.g., sun, moon, mercury) or display name (case-insensitive, e.g., Sun, MOON). Spaces, hyphens and underscores are interchangeable, so the two lunar nodes answer to north-node and south-node as well as to their ids north node and south node, and Black Moon Lilith answers to black-moon-lilith as well as to lilith.",
               "example": "sun",
               "type": "string"
             }
@@ -22110,7 +22389,7 @@
                   },
                   "nodeType": {
                     "default": "true",
-                    "description": "Lunar node convention. \"mean\" is the smoothed average node, which always moves retrograde; \"true\" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass \"mean\" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to \"true\".",
+                    "description": "Lunar node convention. \"mean\" is the smoothed average node, which always moves retrograde; \"true\" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is the osculating node and the default, because it is what most Western chart software reports; mean is the smoothed node preferred by several evolutionary schools, so pass \"mean\" to match one. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to \"true\".",
                     "enum": [
                       "mean",
                       "true"
@@ -24313,7 +24592,7 @@
                       },
                       "nodeType": {
                         "default": "true",
-                        "description": "Lunar node convention. \"mean\" is the smoothed average node, which always moves retrograde; \"true\" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass \"mean\" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to \"true\".",
+                        "description": "Lunar node convention. \"mean\" is the smoothed average node, which always moves retrograde; \"true\" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is the osculating node and the default, because it is what most Western chart software reports; mean is the smoothed node preferred by several evolutionary schools, so pass \"mean\" to match one. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to \"true\".",
                         "enum": [
                           "mean",
                           "true"
@@ -24380,7 +24659,7 @@
                       },
                       "nodeType": {
                         "default": "true",
-                        "description": "Lunar node convention. \"mean\" is the smoothed average node, which always moves retrograde; \"true\" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass \"mean\" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to \"true\".",
+                        "description": "Lunar node convention. \"mean\" is the smoothed average node, which always moves retrograde; \"true\" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is the osculating node and the default, because it is what most Western chart software reports; mean is the smoothed node preferred by several evolutionary schools, so pass \"mean\" to match one. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to \"true\".",
                         "enum": [
                           "mean",
                           "true"
@@ -25081,7 +25360,7 @@
                       },
                       "nodeType": {
                         "default": "true",
-                        "description": "Lunar node convention. \"mean\" is the smoothed average node, which always moves retrograde; \"true\" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass \"mean\" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to \"true\".",
+                        "description": "Lunar node convention. \"mean\" is the smoothed average node, which always moves retrograde; \"true\" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is the osculating node and the default, because it is what most Western chart software reports; mean is the smoothed node preferred by several evolutionary schools, so pass \"mean\" to match one. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to \"true\".",
                         "enum": [
                           "mean",
                           "true"
@@ -26048,6 +26327,296 @@
           }
         ],
         "summary": "Calculate planetary transits - Current transits with natal chart comparison",
+        "tags": [
+          "Western Astrology"
+        ]
+      }
+    },
+    "/astrology/transits/monthly": {
+      "post": {
+        "description": "Get every tropical sign change for a given month, for all 14 Western bodies: the Sun through Pluto, both lunar nodes, Chiron and Black Moon Lilith. Returns the starting sign of each body on the first of the month and then each ingress with its exact date and time in your timezone. Omit year and month to get the month in progress, so a published transit calendar stays current without a redeploy. Essential for transit calendars, monthly forecast copy, retrograde and ingress tracking, and newsletter automation. Monthly transit API, planetary ingress calendar, sign change dates, tropical transit table. Verified against NASA JPL Horizons, with the four cardinal ingresses cross-checked against published equinox and solstice times.",
+        "operationId": "getMonthlyTropicalTransits",
+        "parameters": [
+          {
+            "description": "Response language (ISO 639-1). Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en. Languages without translations yet return English.",
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "schema": {
+              "default": "en",
+              "description": "Response language (ISO 639-1). Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en. Languages without translations yet return English.",
+              "enum": [
+                "en",
+                "tr",
+                "de",
+                "es",
+                "hi",
+                "pt",
+                "fr",
+                "ru"
+              ],
+              "example": "en",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "month": {
+                    "description": "Month number (1-12). Defaults to the current month (UTC).",
+                    "example": 3,
+                    "maximum": 12,
+                    "minimum": 1,
+                    "type": "integer"
+                  },
+                  "nodeType": {
+                    "default": "true",
+                    "description": "Lunar node convention. \"mean\" is the smoothed average node, which always moves retrograde; \"true\" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is the osculating node and the default, because it is what most Western chart software reports; mean is the smoothed node preferred by several evolutionary schools, so pass \"mean\" to match one. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to \"true\".",
+                    "enum": [
+                      "mean",
+                      "true"
+                    ],
+                    "example": "true",
+                    "type": "string"
+                  },
+                  "timezone": {
+                    "anyOf": [
+                      {
+                        "maximum": 14,
+                        "minimum": -14,
+                        "type": "number"
+                      },
+                      {
+                        "type": "string"
+                      }
+                    ],
+                    "default": 0,
+                    "description": "Timezone offset from UTC in hours. Ingress dates and times are reported in this zone, which is what makes a published calendar read correctly for its audience. Defaults to 0 (UTC).",
+                    "example": -5
+                  },
+                  "year": {
+                    "description": "Year for the monthly transit table (1900-2100). Defaults to the current year (UTC).",
+                    "example": 2026,
+                    "maximum": 2100,
+                    "minimum": 1900,
+                    "type": "integer"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "month": {
+                      "description": "Month of the table. Echoes the month requested, or the current UTC month when it was omitted.",
+                      "example": 3,
+                      "type": "number"
+                    },
+                    "startingPositions": {
+                      "description": "Where every body stands as the month opens, so a calendar can show the run-in as well as the changes.",
+                      "items": {
+                        "properties": {
+                          "longitude": {
+                            "description": "Tropical ecliptic longitude in degrees at 00:00 UTC on the first of the month.",
+                            "example": 311.4823,
+                            "type": "number"
+                          },
+                          "planet": {
+                            "description": "Body name, canonical English.",
+                            "example": "Sun",
+                            "type": "string"
+                          },
+                          "planetLocalized": {
+                            "description": "Body name in the requested language.",
+                            "example": "Sol",
+                            "type": "string"
+                          },
+                          "sign": {
+                            "description": "Tropical sign the body occupies at the start of the month.",
+                            "example": "Aquarius",
+                            "type": "string"
+                          },
+                          "signLocalized": {
+                            "description": "Sign in the requested language.",
+                            "example": "Acuario",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "planet",
+                          "sign",
+                          "longitude"
+                        ],
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "timezone": {
+                      "description": "Timezone the ingress dates and times are reported in. Echoes the request.",
+                      "example": -5,
+                      "type": "number"
+                    },
+                    "transitEvents": {
+                      "description": "Every sign change in the month, in chronological order across all bodies. Empty only for a month in which nothing changes sign, which cannot happen while the Moon is included.",
+                      "items": {
+                        "properties": {
+                          "date": {
+                            "description": "Date of the ingress in the requested timezone (YYYY-MM-DD).",
+                            "example": "2026-03-02",
+                            "type": "string"
+                          },
+                          "datetime": {
+                            "description": "Combined ingress timestamp in the requested timezone.",
+                            "example": "2026-03-02T00:56",
+                            "type": "string"
+                          },
+                          "fromSign": {
+                            "description": "Tropical sign the body leaves. Canonical English.",
+                            "example": "Aquarius",
+                            "type": "string"
+                          },
+                          "fromSignLocalized": {
+                            "description": "Sign left, in the requested language. Present only when lang is supplied.",
+                            "example": "Acuario",
+                            "type": "string"
+                          },
+                          "isRetrograde": {
+                            "description": "Whether the body was retrograde at the moment it crossed. A retrograde ingress is the body re-entering a sign it already left, which is why the same body can appear more than once in a month.",
+                            "example": false,
+                            "type": "boolean"
+                          },
+                          "planet": {
+                            "description": "Body that changes sign during the month. One of the 14 Western bodies. Always canonical English whatever the lang parameter says, so it stays safe to compare against in code. Use planetLocalized for anything a reader sees.",
+                            "example": "Venus",
+                            "type": "string"
+                          },
+                          "planetLocalized": {
+                            "description": "Body name in the requested language. Present only when lang is supplied.",
+                            "example": "Venus",
+                            "type": "string"
+                          },
+                          "time": {
+                            "description": "Time of the ingress in the requested timezone (HH:MM).",
+                            "example": "00:56",
+                            "type": "string"
+                          },
+                          "toSign": {
+                            "description": "Tropical sign the body enters. Canonical English.",
+                            "example": "Pisces",
+                            "type": "string"
+                          },
+                          "toSignLocalized": {
+                            "description": "Sign entered, in the requested language. Present only when lang is supplied.",
+                            "example": "Piscis",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "planet",
+                          "fromSign",
+                          "toSign",
+                          "date",
+                          "time",
+                          "datetime",
+                          "isRetrograde"
+                        ],
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "year": {
+                      "description": "Year of the table. Echoes the year requested, or the current UTC year when it was omitted.",
+                      "example": 2026,
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "year",
+                    "month",
+                    "timezone",
+                    "startingPositions",
+                    "transitEvents"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Monthly transit table calculated successfully"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Validation error. `issues[]` lists every failed field."
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Invalid or missing API key"
+          },
+          "405": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Method not allowed. The path exists but only responds to the methods listed in `allow[]` and the `Allow` response header.",
+            "headers": {
+              "Allow": {
+                "description": "Comma-separated list of allowed methods (RFC 9110).",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Monthly rate limit exceeded"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Internal server error"
+          }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ],
+        "summary": "Monthly Transits - Tropical sign ingresses for an entire month",
         "tags": [
           "Western Astrology"
         ]

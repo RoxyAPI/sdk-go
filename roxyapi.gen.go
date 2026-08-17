@@ -4380,6 +4380,60 @@ func (e CalculateAspectsParamsLang) Valid() bool {
 	}
 }
 
+// Defines values for GetMonthlyTropicalAspectsParamsLang.
+const (
+	GetMonthlyTropicalAspectsParamsLangDe GetMonthlyTropicalAspectsParamsLang = "de"
+	GetMonthlyTropicalAspectsParamsLangEn GetMonthlyTropicalAspectsParamsLang = "en"
+	GetMonthlyTropicalAspectsParamsLangEs GetMonthlyTropicalAspectsParamsLang = "es"
+	GetMonthlyTropicalAspectsParamsLangFr GetMonthlyTropicalAspectsParamsLang = "fr"
+	GetMonthlyTropicalAspectsParamsLangHi GetMonthlyTropicalAspectsParamsLang = "hi"
+	GetMonthlyTropicalAspectsParamsLangPt GetMonthlyTropicalAspectsParamsLang = "pt"
+	GetMonthlyTropicalAspectsParamsLangRu GetMonthlyTropicalAspectsParamsLang = "ru"
+	GetMonthlyTropicalAspectsParamsLangTr GetMonthlyTropicalAspectsParamsLang = "tr"
+)
+
+// Valid indicates whether the value is a known member of the GetMonthlyTropicalAspectsParamsLang enum.
+func (e GetMonthlyTropicalAspectsParamsLang) Valid() bool {
+	switch e {
+	case GetMonthlyTropicalAspectsParamsLangDe:
+		return true
+	case GetMonthlyTropicalAspectsParamsLangEn:
+		return true
+	case GetMonthlyTropicalAspectsParamsLangEs:
+		return true
+	case GetMonthlyTropicalAspectsParamsLangFr:
+		return true
+	case GetMonthlyTropicalAspectsParamsLangHi:
+		return true
+	case GetMonthlyTropicalAspectsParamsLangPt:
+		return true
+	case GetMonthlyTropicalAspectsParamsLangRu:
+		return true
+	case GetMonthlyTropicalAspectsParamsLangTr:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetMonthlyTropicalAspectsJSONBodyNodeType.
+const (
+	GetMonthlyTropicalAspectsJSONBodyNodeTypeMean GetMonthlyTropicalAspectsJSONBodyNodeType = "mean"
+	GetMonthlyTropicalAspectsJSONBodyNodeTypeTrue GetMonthlyTropicalAspectsJSONBodyNodeType = "true"
+)
+
+// Valid indicates whether the value is a known member of the GetMonthlyTropicalAspectsJSONBodyNodeType enum.
+func (e GetMonthlyTropicalAspectsJSONBodyNodeType) Valid() bool {
+	switch e {
+	case GetMonthlyTropicalAspectsJSONBodyNodeTypeMean:
+		return true
+	case GetMonthlyTropicalAspectsJSONBodyNodeTypeTrue:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for GenerateAsteroidsParamsLang.
 const (
 	GenerateAsteroidsParamsLangDe GenerateAsteroidsParamsLang = "de"
@@ -7713,6 +7767,60 @@ func (e CalculateTransitsParamsLang) Valid() bool {
 	case CalculateTransitsParamsLangRu:
 		return true
 	case CalculateTransitsParamsLangTr:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetMonthlyTropicalTransitsParamsLang.
+const (
+	GetMonthlyTropicalTransitsParamsLangDe GetMonthlyTropicalTransitsParamsLang = "de"
+	GetMonthlyTropicalTransitsParamsLangEn GetMonthlyTropicalTransitsParamsLang = "en"
+	GetMonthlyTropicalTransitsParamsLangEs GetMonthlyTropicalTransitsParamsLang = "es"
+	GetMonthlyTropicalTransitsParamsLangFr GetMonthlyTropicalTransitsParamsLang = "fr"
+	GetMonthlyTropicalTransitsParamsLangHi GetMonthlyTropicalTransitsParamsLang = "hi"
+	GetMonthlyTropicalTransitsParamsLangPt GetMonthlyTropicalTransitsParamsLang = "pt"
+	GetMonthlyTropicalTransitsParamsLangRu GetMonthlyTropicalTransitsParamsLang = "ru"
+	GetMonthlyTropicalTransitsParamsLangTr GetMonthlyTropicalTransitsParamsLang = "tr"
+)
+
+// Valid indicates whether the value is a known member of the GetMonthlyTropicalTransitsParamsLang enum.
+func (e GetMonthlyTropicalTransitsParamsLang) Valid() bool {
+	switch e {
+	case GetMonthlyTropicalTransitsParamsLangDe:
+		return true
+	case GetMonthlyTropicalTransitsParamsLangEn:
+		return true
+	case GetMonthlyTropicalTransitsParamsLangEs:
+		return true
+	case GetMonthlyTropicalTransitsParamsLangFr:
+		return true
+	case GetMonthlyTropicalTransitsParamsLangHi:
+		return true
+	case GetMonthlyTropicalTransitsParamsLangPt:
+		return true
+	case GetMonthlyTropicalTransitsParamsLangRu:
+		return true
+	case GetMonthlyTropicalTransitsParamsLangTr:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetMonthlyTropicalTransitsJSONBodyNodeType.
+const (
+	GetMonthlyTropicalTransitsJSONBodyNodeTypeMean GetMonthlyTropicalTransitsJSONBodyNodeType = "mean"
+	GetMonthlyTropicalTransitsJSONBodyNodeTypeTrue GetMonthlyTropicalTransitsJSONBodyNodeType = "true"
+)
+
+// Valid indicates whether the value is a known member of the GetMonthlyTropicalTransitsJSONBodyNodeType enum.
+func (e GetMonthlyTropicalTransitsJSONBodyNodeType) Valid() bool {
+	switch e {
+	case GetMonthlyTropicalTransitsJSONBodyNodeTypeMean:
+		return true
+	case GetMonthlyTropicalTransitsJSONBodyNodeTypeTrue:
 		return true
 	default:
 		return false
@@ -19973,7 +20081,7 @@ type ArabicLotsRequest struct {
 	// Longitude Birth location longitude in decimal degrees (-180 to 180). Positive = East, negative = West.
 	Longitude float32 `json:"longitude"`
 
-	// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass "mean" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
+	// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is the osculating node and the default, because it is what most Western chart software reports; mean is the smoothed node preferred by several evolutionary schools, so pass "mean" to match one. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
 	NodeType *ArabicLotsRequestNodeType `json:"nodeType,omitempty"`
 
 	// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
@@ -19986,7 +20094,7 @@ type ArabicLotsRequest struct {
 // ArabicLotsRequestHouseSystem House system used to place the Sun, which determines the chart sect (day when the Sun is above the horizon, night when below) and therefore which lot formula applies. Placidus (default), Whole Sign, Equal, or Koch.
 type ArabicLotsRequestHouseSystem string
 
-// ArabicLotsRequestNodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass "mean" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
+// ArabicLotsRequestNodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is the osculating node and the default, because it is what most Western chart software reports; mean is the smoothed node preferred by several evolutionary schools, so pass "mean" to match one. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
 type ArabicLotsRequestNodeType string
 
 // ArabicLotsRequestTimezone0 defines model for ArabicLotsRequest.Timezone.0.
@@ -20279,7 +20387,7 @@ type AspectPatternsRequest struct {
 	// Longitude Birth location longitude in decimal degrees (-180 to 180). Positive = East, negative = West.
 	Longitude float32 `json:"longitude"`
 
-	// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass "mean" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
+	// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is the osculating node and the default, because it is what most Western chart software reports; mean is the smoothed node preferred by several evolutionary schools, so pass "mean" to match one. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
 	NodeType *AspectPatternsRequestNodeType `json:"nodeType,omitempty"`
 
 	// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
@@ -20289,7 +20397,7 @@ type AspectPatternsRequest struct {
 	Timezone AspectPatternsRequest_Timezone `json:"timezone"`
 }
 
-// AspectPatternsRequestNodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass "mean" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
+// AspectPatternsRequestNodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is the osculating node and the default, because it is what most Western chart software reports; mean is the smoothed node preferred by several evolutionary schools, so pass "mean" to match one. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
 type AspectPatternsRequestNodeType string
 
 // AspectPatternsRequestTimezone0 defines model for AspectPatternsRequest.Timezone.0.
@@ -20544,7 +20652,7 @@ type AsteroidsRequest struct {
 	// Longitude Birth location longitude in decimal degrees (-180 to 180). Positive = East, negative = West.
 	Longitude float32 `json:"longitude"`
 
-	// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass "mean" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
+	// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is the osculating node and the default, because it is what most Western chart software reports; mean is the smoothed node preferred by several evolutionary schools, so pass "mean" to match one. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
 	NodeType *AsteroidsRequestNodeType `json:"nodeType,omitempty"`
 
 	// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
@@ -20557,7 +20665,7 @@ type AsteroidsRequest struct {
 // AsteroidsRequestHouseSystem House system used to assign each asteroid to a natal house. Placidus (default), Whole Sign, Equal, or Koch. Above the polar circle, quadrant systems fall back to Whole Sign and the echoed houseSystem reports the system actually used.
 type AsteroidsRequestHouseSystem string
 
-// AsteroidsRequestNodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass "mean" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
+// AsteroidsRequestNodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is the osculating node and the default, because it is what most Western chart software reports; mean is the smoothed node preferred by several evolutionary schools, so pass "mean" to match one. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
 type AsteroidsRequestNodeType string
 
 // AsteroidsRequestTimezone0 defines model for AsteroidsRequest.Timezone.0.
@@ -24143,7 +24251,7 @@ type LilithRequest struct {
 	// Longitude Birth location longitude in decimal degrees (-180 to 180). Positive = East, negative = West.
 	Longitude float32 `json:"longitude"`
 
-	// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass "mean" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
+	// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is the osculating node and the default, because it is what most Western chart software reports; mean is the smoothed node preferred by several evolutionary schools, so pass "mean" to match one. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
 	NodeType *LilithRequestNodeType `json:"nodeType,omitempty"`
 
 	// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
@@ -24156,7 +24264,7 @@ type LilithRequest struct {
 // LilithRequestHouseSystem House system used to place each Lilith variant in a house. Placidus (default), Whole Sign, Equal, or Koch.
 type LilithRequestHouseSystem string
 
-// LilithRequestNodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass "mean" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
+// LilithRequestNodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is the osculating node and the default, because it is what most Western chart software reports; mean is the smoothed node preferred by several evolutionary schools, so pass "mean" to match one. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
 type LilithRequestNodeType string
 
 // LilithRequestTimezone0 defines model for LilithRequest.Timezone.0.
@@ -24477,7 +24585,7 @@ type NatalChartRequest struct {
 	// Longitude Birth location longitude in decimal degrees (-180 to 180). Positive = East, negative = West.
 	Longitude float32 `json:"longitude"`
 
-	// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass "mean" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
+	// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is the osculating node and the default, because it is what most Western chart software reports; mean is the smoothed node preferred by several evolutionary schools, so pass "mean" to match one. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
 	NodeType *NatalChartRequestNodeType `json:"nodeType,omitempty"`
 
 	// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
@@ -24490,7 +24598,7 @@ type NatalChartRequest struct {
 // NatalChartRequestHouseSystem House system for dividing the chart into 12 houses. Placidus (default) is most popular in Western astrology and time-sensitive. Whole Sign assigns one sign per house (simpler, ancient). Equal houses divide chart into 30° segments from Ascendant. Koch emphasizes houses in high latitudes.
 type NatalChartRequestHouseSystem string
 
-// NatalChartRequestNodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass "mean" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
+// NatalChartRequestNodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is the osculating node and the default, because it is what most Western chart software reports; mean is the smoothed node preferred by several evolutionary schools, so pass "mean" to match one. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
 type NatalChartRequestNodeType string
 
 // NatalChartRequestTimezone0 defines model for NatalChartRequest.Timezone.0.
@@ -25063,7 +25171,7 @@ type ProfectionsRequest struct {
 	// Longitude Birth location longitude in decimal degrees (-180 to 180). Positive = East, negative = West.
 	Longitude float32 `json:"longitude"`
 
-	// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass "mean" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
+	// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is the osculating node and the default, because it is what most Western chart software reports; mean is the smoothed node preferred by several evolutionary schools, so pass "mean" to match one. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
 	NodeType *ProfectionsRequestNodeType `json:"nodeType,omitempty"`
 
 	// TargetDate Date whose profection year you want, in YYYY-MM-DD format. The completed whole years from the birth date to this date select the profected house and sign. Must fall on or after the birth date.
@@ -25079,7 +25187,7 @@ type ProfectionsRequest struct {
 // ProfectionsRequestHouseSystem House system used only to report where the lord of the year sits in the natal chart. The profected house and sign always use whole sign profection from the rising sign. Placidus (default), Whole Sign, Equal, or Koch.
 type ProfectionsRequestHouseSystem string
 
-// ProfectionsRequestNodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass "mean" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
+// ProfectionsRequestNodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is the osculating node and the default, because it is what most Western chart software reports; mean is the smoothed node preferred by several evolutionary schools, so pass "mean" to match one. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
 type ProfectionsRequestNodeType string
 
 // ProfectionsRequestTimezone0 defines model for ProfectionsRequest.Timezone.0.
@@ -25155,7 +25263,7 @@ type ProgressionsRequest struct {
 	// Longitude Birth location longitude in decimal degrees (-180 to 180). Positive = East, negative = West.
 	Longitude float32 `json:"longitude"`
 
-	// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass "mean" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
+	// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is the osculating node and the default, because it is what most Western chart software reports; mean is the smoothed node preferred by several evolutionary schools, so pass "mean" to match one. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
 	NodeType *ProgressionsRequestNodeType `json:"nodeType,omitempty"`
 
 	// TargetDate Date to progress the chart to, in YYYY-MM-DD format. Usually today or a forecast date. The day-for-a-year key turns the elapsed years since birth into the same number of ephemeris days after the birth moment.
@@ -25168,7 +25276,7 @@ type ProgressionsRequest struct {
 	Timezone ProgressionsRequest_Timezone `json:"timezone"`
 }
 
-// ProgressionsRequestNodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass "mean" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
+// ProgressionsRequestNodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is the osculating node and the default, because it is what most Western chart software reports; mean is the smoothed node preferred by several evolutionary schools, so pass "mean" to match one. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
 type ProgressionsRequestNodeType string
 
 // ProgressionsRequestTimezone0 defines model for ProgressionsRequest.Timezone.0.
@@ -25796,7 +25904,7 @@ type SolarArcRequest struct {
 	// Longitude Birth location longitude in decimal degrees (-180 to 180). Positive = East, negative = West.
 	Longitude float32 `json:"longitude"`
 
-	// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass "mean" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
+	// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is the osculating node and the default, because it is what most Western chart software reports; mean is the smoothed node preferred by several evolutionary schools, so pass "mean" to match one. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
 	NodeType *SolarArcRequestNodeType `json:"nodeType,omitempty"`
 
 	// TargetDate Date to direct the chart to, in YYYY-MM-DD format. Every natal point is advanced by the solar arc accumulated from birth to this date, about one degree for each year of life.
@@ -25809,7 +25917,7 @@ type SolarArcRequest struct {
 	Timezone SolarArcRequest_Timezone `json:"timezone"`
 }
 
-// SolarArcRequestNodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass "mean" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
+// SolarArcRequestNodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is the osculating node and the default, because it is what most Western chart software reports; mean is the smoothed node preferred by several evolutionary schools, so pass "mean" to match one. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
 type SolarArcRequestNodeType string
 
 // SolarArcRequestTimezone0 defines model for SolarArcRequest.Timezone.0.
@@ -25900,7 +26008,7 @@ type TransitsRequest struct {
 		Timezone TransitsRequest_NatalChart_Timezone `json:"timezone"`
 	} `json:"natalChart,omitempty"`
 
-	// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass "mean" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
+	// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is the osculating node and the default, because it is what most Western chart software reports; mean is the smoothed node preferred by several evolutionary schools, so pass "mean" to match one. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
 	NodeType *TransitsRequestNodeType `json:"nodeType,omitempty"`
 
 	// Time Transit time in HH:MM:SS format (defaults to current time)
@@ -25921,7 +26029,7 @@ type TransitsRequest_NatalChart_Timezone struct {
 	union json.RawMessage
 }
 
-// TransitsRequestNodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass "mean" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
+// TransitsRequestNodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is the osculating node and the default, because it is what most Western chart software reports; mean is the smoothed node preferred by several evolutionary schools, so pass "mean" to match one. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
 type TransitsRequestNodeType string
 
 // TransitsRequestTimezone0 defines model for TransitsRequest.Timezone.0.
@@ -26428,6 +26536,44 @@ type CalculateAspectsParams struct {
 // CalculateAspectsParamsLang defines parameters for CalculateAspects.
 type CalculateAspectsParamsLang string
 
+// GetMonthlyTropicalAspectsJSONBody defines parameters for GetMonthlyTropicalAspects.
+type GetMonthlyTropicalAspectsJSONBody struct {
+	// Month Month number (1-12). Defaults to the current month (UTC).
+	Month *int `json:"month,omitempty"`
+
+	// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is the osculating node and the default, because it is what most Western chart software reports; mean is the smoothed node preferred by several evolutionary schools, so pass "mean" to match one. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
+	NodeType *GetMonthlyTropicalAspectsJSONBodyNodeType `json:"nodeType,omitempty"`
+
+	// Timezone Timezone offset from UTC in hours. Event dates and times are reported in this zone, which is what makes a published calendar read correctly for its audience. Defaults to 0 (UTC).
+	Timezone *GetMonthlyTropicalAspectsJSONBody_Timezone `json:"timezone,omitempty"`
+
+	// Year Year for the aspect calendar (1900-2100). Defaults to the current year (UTC).
+	Year *int `json:"year,omitempty"`
+}
+
+// GetMonthlyTropicalAspectsParams defines parameters for GetMonthlyTropicalAspects.
+type GetMonthlyTropicalAspectsParams struct {
+	// Lang Response language (ISO 639-1). Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en. Languages without translations yet return English.
+	Lang *GetMonthlyTropicalAspectsParamsLang `form:"lang,omitempty" json:"lang,omitempty"`
+}
+
+// GetMonthlyTropicalAspectsParamsLang defines parameters for GetMonthlyTropicalAspects.
+type GetMonthlyTropicalAspectsParamsLang string
+
+// GetMonthlyTropicalAspectsJSONBodyNodeType defines parameters for GetMonthlyTropicalAspects.
+type GetMonthlyTropicalAspectsJSONBodyNodeType string
+
+// GetMonthlyTropicalAspectsJSONBodyTimezone0 defines parameters for GetMonthlyTropicalAspects.
+type GetMonthlyTropicalAspectsJSONBodyTimezone0 = float32
+
+// GetMonthlyTropicalAspectsJSONBodyTimezone1 defines parameters for GetMonthlyTropicalAspects.
+type GetMonthlyTropicalAspectsJSONBodyTimezone1 = string
+
+// GetMonthlyTropicalAspectsJSONBody_Timezone defines parameters for GetMonthlyTropicalAspects.
+type GetMonthlyTropicalAspectsJSONBody_Timezone struct {
+	union json.RawMessage
+}
+
 // GenerateAsteroidsParams defines parameters for GenerateAsteroids.
 type GenerateAsteroidsParams struct {
 	// Lang Response language (ISO 639-1). Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en. Languages without translations yet return English.
@@ -26448,7 +26594,7 @@ type GenerateAstrocartographyJSONBody struct {
 	// Longitude Birth location longitude in decimal degrees (-180 to 180). Positive = East, negative = West.
 	Longitude float32 `json:"longitude"`
 
-	// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass "mean" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
+	// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is the osculating node and the default, because it is what most Western chart software reports; mean is the smoothed node preferred by several evolutionary schools, so pass "mean" to match one. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
 	NodeType *GenerateAstrocartographyJSONBodyNodeType `json:"nodeType,omitempty"`
 
 	// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
@@ -26497,7 +26643,7 @@ type CalculateCompatibilityJSONBody struct {
 		// Longitude Birth location longitude in decimal degrees (-180 to 180). Positive = East, negative = West.
 		Longitude float32 `json:"longitude"`
 
-		// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass "mean" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
+		// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is the osculating node and the default, because it is what most Western chart software reports; mean is the smoothed node preferred by several evolutionary schools, so pass "mean" to match one. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
 		NodeType *CalculateCompatibilityJSONBodyPerson1NodeType `json:"nodeType,omitempty"`
 
 		// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
@@ -26518,7 +26664,7 @@ type CalculateCompatibilityJSONBody struct {
 		// Longitude Birth location longitude in decimal degrees (-180 to 180). Positive = East, negative = West.
 		Longitude float32 `json:"longitude"`
 
-		// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass "mean" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
+		// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is the osculating node and the default, because it is what most Western chart software reports; mean is the smoothed node preferred by several evolutionary schools, so pass "mean" to match one. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
 		NodeType *CalculateCompatibilityJSONBodyPerson2NodeType `json:"nodeType,omitempty"`
 
 		// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
@@ -26585,7 +26731,7 @@ type GenerateCompositeChartJSONBody struct {
 		// Longitude Birth location longitude in decimal degrees (-180 to 180). Positive = East, negative = West.
 		Longitude float32 `json:"longitude"`
 
-		// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass "mean" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
+		// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is the osculating node and the default, because it is what most Western chart software reports; mean is the smoothed node preferred by several evolutionary schools, so pass "mean" to match one. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
 		NodeType *GenerateCompositeChartJSONBodyPerson1NodeType `json:"nodeType,omitempty"`
 
 		// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
@@ -26606,7 +26752,7 @@ type GenerateCompositeChartJSONBody struct {
 		// Longitude Birth location longitude in decimal degrees (-180 to 180). Positive = East, negative = West.
 		Longitude float32 `json:"longitude"`
 
-		// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass "mean" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
+		// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is the osculating node and the default, because it is what most Western chart software reports; mean is the smoothed node preferred by several evolutionary schools, so pass "mean" to match one. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
 		NodeType *GenerateCompositeChartJSONBodyPerson2NodeType `json:"nodeType,omitempty"`
 
 		// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
@@ -26683,7 +26829,7 @@ type GenerateFixedStarsJSONBody struct {
 	// Longitude Birth location longitude in decimal degrees (-180 to 180). Positive = East, negative = West.
 	Longitude float32 `json:"longitude"`
 
-	// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass "mean" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
+	// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is the osculating node and the default, because it is what most Western chart software reports; mean is the smoothed node preferred by several evolutionary schools, so pass "mean" to match one. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
 	NodeType *GenerateFixedStarsJSONBodyNodeType `json:"nodeType,omitempty"`
 
 	// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
@@ -27100,7 +27246,7 @@ type GetPlanetaryPositionsJSONBody struct {
 	// Longitude Observer longitude in decimal degrees (-180 to 180). Used for precise local time conversion. For basic planetary positions, this has minimal impact but ensures accuracy.
 	Longitude float32 `json:"longitude"`
 
-	// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass "mean" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
+	// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is the osculating node and the default, because it is what most Western chart software reports; mean is the smoothed node preferred by several evolutionary schools, so pass "mean" to match one. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
 	NodeType *GetPlanetaryPositionsJSONBodyNodeType `json:"nodeType,omitempty"`
 
 	// Time Time in 24-hour HH:MM:SS format for precise calculations. Moon moves ~13° per day, so time matters for accurate lunar position. Use 12:00:00 (noon) as default if exact time not needed.
@@ -27299,7 +27445,7 @@ type CalculateSynastryJSONBody struct {
 		// Name Optional display name for this person. Included in the response for easy identification.
 		Name *string `json:"name,omitempty"`
 
-		// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass "mean" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
+		// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is the osculating node and the default, because it is what most Western chart software reports; mean is the smoothed node preferred by several evolutionary schools, so pass "mean" to match one. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
 		NodeType *CalculateSynastryJSONBodyPerson1NodeType `json:"nodeType,omitempty"`
 
 		// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
@@ -27321,7 +27467,7 @@ type CalculateSynastryJSONBody struct {
 		// Name Optional display name for this person. Included in the response for easy identification.
 		Name *string `json:"name,omitempty"`
 
-		// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass "mean" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
+		// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is the osculating node and the default, because it is what most Western chart software reports; mean is the smoothed node preferred by several evolutionary schools, so pass "mean" to match one. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
 		NodeType *CalculateSynastryJSONBodyPerson2NodeType `json:"nodeType,omitempty"`
 
 		// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
@@ -27394,7 +27540,7 @@ type CalculateTransitAspectsJSONBody struct {
 		// Longitude Birth location longitude in decimal degrees (-180 to 180). Positive = East, negative = West.
 		Longitude float32 `json:"longitude"`
 
-		// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is what most Western software reports (Astrolabe, Cafe Astrology, TimePassages), which is why it is the default here; astro-seek and the Steven Forrest evolutionary school use mean, so pass "mean" to match those. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
+		// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is the osculating node and the default, because it is what most Western chart software reports; mean is the smoothed node preferred by several evolutionary schools, so pass "mean" to match one. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
 		NodeType *CalculateTransitAspectsJSONBodyNatalChartNodeType `json:"nodeType,omitempty"`
 
 		// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
@@ -27487,6 +27633,44 @@ type CalculateTransitsParams struct {
 
 // CalculateTransitsParamsLang defines parameters for CalculateTransits.
 type CalculateTransitsParamsLang string
+
+// GetMonthlyTropicalTransitsJSONBody defines parameters for GetMonthlyTropicalTransits.
+type GetMonthlyTropicalTransitsJSONBody struct {
+	// Month Month number (1-12). Defaults to the current month (UTC).
+	Month *int `json:"month,omitempty"`
+
+	// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is the osculating node and the default, because it is what most Western chart software reports; mean is the smoothed node preferred by several evolutionary schools, so pass "mean" to match one. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
+	NodeType *GetMonthlyTropicalTransitsJSONBodyNodeType `json:"nodeType,omitempty"`
+
+	// Timezone Timezone offset from UTC in hours. Ingress dates and times are reported in this zone, which is what makes a published calendar read correctly for its audience. Defaults to 0 (UTC).
+	Timezone *GetMonthlyTropicalTransitsJSONBody_Timezone `json:"timezone,omitempty"`
+
+	// Year Year for the monthly transit table (1900-2100). Defaults to the current year (UTC).
+	Year *int `json:"year,omitempty"`
+}
+
+// GetMonthlyTropicalTransitsParams defines parameters for GetMonthlyTropicalTransits.
+type GetMonthlyTropicalTransitsParams struct {
+	// Lang Response language (ISO 639-1). Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en. Languages without translations yet return English.
+	Lang *GetMonthlyTropicalTransitsParamsLang `form:"lang,omitempty" json:"lang,omitempty"`
+}
+
+// GetMonthlyTropicalTransitsParamsLang defines parameters for GetMonthlyTropicalTransits.
+type GetMonthlyTropicalTransitsParamsLang string
+
+// GetMonthlyTropicalTransitsJSONBodyNodeType defines parameters for GetMonthlyTropicalTransits.
+type GetMonthlyTropicalTransitsJSONBodyNodeType string
+
+// GetMonthlyTropicalTransitsJSONBodyTimezone0 defines parameters for GetMonthlyTropicalTransits.
+type GetMonthlyTropicalTransitsJSONBodyTimezone0 = float32
+
+// GetMonthlyTropicalTransitsJSONBodyTimezone1 defines parameters for GetMonthlyTropicalTransits.
+type GetMonthlyTropicalTransitsJSONBodyTimezone1 = string
+
+// GetMonthlyTropicalTransitsJSONBody_Timezone defines parameters for GetMonthlyTropicalTransits.
+type GetMonthlyTropicalTransitsJSONBody_Timezone struct {
+	union json.RawMessage
+}
 
 // CalculateBioCompatibilityJSONBody defines parameters for CalculateBioCompatibility.
 type CalculateBioCompatibilityJSONBody struct {
@@ -31237,6 +31421,9 @@ type DetectAspectPatternsJSONRequestBody = AspectPatternsRequest
 // CalculateAspectsJSONRequestBody defines body for CalculateAspects for application/json ContentType.
 type CalculateAspectsJSONRequestBody = AspectsRequest
 
+// GetMonthlyTropicalAspectsJSONRequestBody defines body for GetMonthlyTropicalAspects for application/json ContentType.
+type GetMonthlyTropicalAspectsJSONRequestBody GetMonthlyTropicalAspectsJSONBody
+
 // GenerateAsteroidsJSONRequestBody defines body for GenerateAsteroids for application/json ContentType.
 type GenerateAsteroidsJSONRequestBody = AsteroidsRequest
 
@@ -31299,6 +31486,9 @@ type CalculateTransitAspectsJSONRequestBody CalculateTransitAspectsJSONBody
 
 // CalculateTransitsJSONRequestBody defines body for CalculateTransits for application/json ContentType.
 type CalculateTransitsJSONRequestBody = TransitsRequest
+
+// GetMonthlyTropicalTransitsJSONRequestBody defines body for GetMonthlyTropicalTransits for application/json ContentType.
+type GetMonthlyTropicalTransitsJSONRequestBody GetMonthlyTropicalTransitsJSONBody
 
 // CalculateBioCompatibilityJSONRequestBody defines body for CalculateBioCompatibility for application/json ContentType.
 type CalculateBioCompatibilityJSONRequestBody CalculateBioCompatibilityJSONBody
@@ -34047,6 +34237,68 @@ func (t *YogaDetectRequest_Timezone) UnmarshalJSON(b []byte) error {
 	return err
 }
 
+// AsGetMonthlyTropicalAspectsJSONBodyTimezone0 returns the union data inside the GetMonthlyTropicalAspectsJSONBody_Timezone as a GetMonthlyTropicalAspectsJSONBodyTimezone0
+func (t GetMonthlyTropicalAspectsJSONBody_Timezone) AsGetMonthlyTropicalAspectsJSONBodyTimezone0() (GetMonthlyTropicalAspectsJSONBodyTimezone0, error) {
+	var body GetMonthlyTropicalAspectsJSONBodyTimezone0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetMonthlyTropicalAspectsJSONBodyTimezone0 overwrites any union data inside the GetMonthlyTropicalAspectsJSONBody_Timezone as the provided GetMonthlyTropicalAspectsJSONBodyTimezone0
+func (t *GetMonthlyTropicalAspectsJSONBody_Timezone) FromGetMonthlyTropicalAspectsJSONBodyTimezone0(v GetMonthlyTropicalAspectsJSONBodyTimezone0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetMonthlyTropicalAspectsJSONBodyTimezone0 performs a merge with any union data inside the GetMonthlyTropicalAspectsJSONBody_Timezone, using the provided GetMonthlyTropicalAspectsJSONBodyTimezone0
+func (t *GetMonthlyTropicalAspectsJSONBody_Timezone) MergeGetMonthlyTropicalAspectsJSONBodyTimezone0(v GetMonthlyTropicalAspectsJSONBodyTimezone0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetMonthlyTropicalAspectsJSONBodyTimezone1 returns the union data inside the GetMonthlyTropicalAspectsJSONBody_Timezone as a GetMonthlyTropicalAspectsJSONBodyTimezone1
+func (t GetMonthlyTropicalAspectsJSONBody_Timezone) AsGetMonthlyTropicalAspectsJSONBodyTimezone1() (GetMonthlyTropicalAspectsJSONBodyTimezone1, error) {
+	var body GetMonthlyTropicalAspectsJSONBodyTimezone1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetMonthlyTropicalAspectsJSONBodyTimezone1 overwrites any union data inside the GetMonthlyTropicalAspectsJSONBody_Timezone as the provided GetMonthlyTropicalAspectsJSONBodyTimezone1
+func (t *GetMonthlyTropicalAspectsJSONBody_Timezone) FromGetMonthlyTropicalAspectsJSONBodyTimezone1(v GetMonthlyTropicalAspectsJSONBodyTimezone1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetMonthlyTropicalAspectsJSONBodyTimezone1 performs a merge with any union data inside the GetMonthlyTropicalAspectsJSONBody_Timezone, using the provided GetMonthlyTropicalAspectsJSONBodyTimezone1
+func (t *GetMonthlyTropicalAspectsJSONBody_Timezone) MergeGetMonthlyTropicalAspectsJSONBodyTimezone1(v GetMonthlyTropicalAspectsJSONBodyTimezone1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetMonthlyTropicalAspectsJSONBody_Timezone) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetMonthlyTropicalAspectsJSONBody_Timezone) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
 // AsGenerateAstrocartographyJSONBodyTimezone0 returns the union data inside the GenerateAstrocartographyJSONBody_Timezone as a GenerateAstrocartographyJSONBodyTimezone0
 func (t GenerateAstrocartographyJSONBody_Timezone) AsGenerateAstrocartographyJSONBodyTimezone0() (GenerateAstrocartographyJSONBodyTimezone0, error) {
 	var body GenerateAstrocartographyJSONBodyTimezone0
@@ -35035,6 +35287,68 @@ func (t CalculateTransitAspectsJSONBody_NatalChart_Timezone) MarshalJSON() ([]by
 }
 
 func (t *CalculateTransitAspectsJSONBody_NatalChart_Timezone) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetMonthlyTropicalTransitsJSONBodyTimezone0 returns the union data inside the GetMonthlyTropicalTransitsJSONBody_Timezone as a GetMonthlyTropicalTransitsJSONBodyTimezone0
+func (t GetMonthlyTropicalTransitsJSONBody_Timezone) AsGetMonthlyTropicalTransitsJSONBodyTimezone0() (GetMonthlyTropicalTransitsJSONBodyTimezone0, error) {
+	var body GetMonthlyTropicalTransitsJSONBodyTimezone0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetMonthlyTropicalTransitsJSONBodyTimezone0 overwrites any union data inside the GetMonthlyTropicalTransitsJSONBody_Timezone as the provided GetMonthlyTropicalTransitsJSONBodyTimezone0
+func (t *GetMonthlyTropicalTransitsJSONBody_Timezone) FromGetMonthlyTropicalTransitsJSONBodyTimezone0(v GetMonthlyTropicalTransitsJSONBodyTimezone0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetMonthlyTropicalTransitsJSONBodyTimezone0 performs a merge with any union data inside the GetMonthlyTropicalTransitsJSONBody_Timezone, using the provided GetMonthlyTropicalTransitsJSONBodyTimezone0
+func (t *GetMonthlyTropicalTransitsJSONBody_Timezone) MergeGetMonthlyTropicalTransitsJSONBodyTimezone0(v GetMonthlyTropicalTransitsJSONBodyTimezone0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetMonthlyTropicalTransitsJSONBodyTimezone1 returns the union data inside the GetMonthlyTropicalTransitsJSONBody_Timezone as a GetMonthlyTropicalTransitsJSONBodyTimezone1
+func (t GetMonthlyTropicalTransitsJSONBody_Timezone) AsGetMonthlyTropicalTransitsJSONBodyTimezone1() (GetMonthlyTropicalTransitsJSONBodyTimezone1, error) {
+	var body GetMonthlyTropicalTransitsJSONBodyTimezone1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetMonthlyTropicalTransitsJSONBodyTimezone1 overwrites any union data inside the GetMonthlyTropicalTransitsJSONBody_Timezone as the provided GetMonthlyTropicalTransitsJSONBodyTimezone1
+func (t *GetMonthlyTropicalTransitsJSONBody_Timezone) FromGetMonthlyTropicalTransitsJSONBodyTimezone1(v GetMonthlyTropicalTransitsJSONBodyTimezone1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetMonthlyTropicalTransitsJSONBodyTimezone1 performs a merge with any union data inside the GetMonthlyTropicalTransitsJSONBody_Timezone, using the provided GetMonthlyTropicalTransitsJSONBodyTimezone1
+func (t *GetMonthlyTropicalTransitsJSONBody_Timezone) MergeGetMonthlyTropicalTransitsJSONBodyTimezone1(v GetMonthlyTropicalTransitsJSONBodyTimezone1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetMonthlyTropicalTransitsJSONBody_Timezone) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetMonthlyTropicalTransitsJSONBody_Timezone) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }
@@ -37500,6 +37814,24 @@ type ClientInterface interface {
 	// Corresponds with POST /astrology/aspects (the `CalculateAspects` operationId).
 	CalculateAspects(ctx context.Context, params *CalculateAspectsParams, body CalculateAspectsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// GetMonthlyTropicalAspectsWithBody Monthly Aspects - Tropical aspect calendar for an entire month
+	//
+	// Get every planetary aspect that perfects during a given month, across the 13 non-lunar Western bodies: the Sun and Mercury through Pluto, both lunar nodes, Chiron and Black Moon Lilith. Detects nine aspects, five major (conjunction, sextile, square, trine, opposition) and four minor (semi-sextile, semi-square, sesquiquadrate, quincunx), each with its own traditional orb, and returns the exact date and time of closest approach in your timezone along with the nature of the aspect. Calculated on tropical longitudes. The Moon is excluded because it forms hundreds of aspects a month and belongs in a daily view rather than a monthly one. Omit year and month to get the month in progress, so a published calendar stays current without a redeploy. Essential for monthly forecast copy, transit calendars, electional timing, and newsletter automation. Monthly aspect calendar API, exact aspect times, planetary aspect ephemeris, transit timing. Verified against NASA JPL Horizons.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /astrology/aspects/monthly (the `GetMonthlyTropicalAspects` operationId).
+	GetMonthlyTropicalAspectsWithBody(ctx context.Context, params *GetMonthlyTropicalAspectsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetMonthlyTropicalAspects Monthly Aspects - Tropical aspect calendar for an entire month
+	//
+	// Get every planetary aspect that perfects during a given month, across the 13 non-lunar Western bodies: the Sun and Mercury through Pluto, both lunar nodes, Chiron and Black Moon Lilith. Detects nine aspects, five major (conjunction, sextile, square, trine, opposition) and four minor (semi-sextile, semi-square, sesquiquadrate, quincunx), each with its own traditional orb, and returns the exact date and time of closest approach in your timezone along with the nature of the aspect. Calculated on tropical longitudes. The Moon is excluded because it forms hundreds of aspects a month and belongs in a daily view rather than a monthly one. Omit year and month to get the month in progress, so a published calendar stays current without a redeploy. Essential for monthly forecast copy, transit calendars, electional timing, and newsletter automation. Monthly aspect calendar API, exact aspect times, planetary aspect ephemeris, transit timing. Verified against NASA JPL Horizons.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /astrology/aspects/monthly (the `GetMonthlyTropicalAspects` operationId).
+	GetMonthlyTropicalAspects(ctx context.Context, params *GetMonthlyTropicalAspectsParams, body GetMonthlyTropicalAspectsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// GenerateAsteroidsWithBody Asteroid goddesses calculator - Ceres, Pallas, Juno, and Vesta natal positions
 	//
 	// Calculate the natal positions of the four classical asteroid goddesses, Ceres, Pallas, Juno, and Vesta, for any birth moment. Each asteroid returns its tropical zodiac sign, degree, house placement, daily speed, retrograde status, and a plain language interpretation of its meaning in the chart. Chiron is available through the natal chart endpoint, so this endpoint stays focused on the four asteroid goddesses for natal reports and relationship astrology.
@@ -37947,6 +38279,24 @@ type ClientInterface interface {
 	//
 	// Corresponds with POST /astrology/transits (the `CalculateTransits` operationId).
 	CalculateTransits(ctx context.Context, params *CalculateTransitsParams, body CalculateTransitsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetMonthlyTropicalTransitsWithBody Monthly Transits - Tropical sign ingresses for an entire month
+	//
+	// Get every tropical sign change for a given month, for all 14 Western bodies: the Sun through Pluto, both lunar nodes, Chiron and Black Moon Lilith. Returns the starting sign of each body on the first of the month and then each ingress with its exact date and time in your timezone. Omit year and month to get the month in progress, so a published transit calendar stays current without a redeploy. Essential for transit calendars, monthly forecast copy, retrograde and ingress tracking, and newsletter automation. Monthly transit API, planetary ingress calendar, sign change dates, tropical transit table. Verified against NASA JPL Horizons, with the four cardinal ingresses cross-checked against published equinox and solstice times.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /astrology/transits/monthly (the `GetMonthlyTropicalTransits` operationId).
+	GetMonthlyTropicalTransitsWithBody(ctx context.Context, params *GetMonthlyTropicalTransitsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetMonthlyTropicalTransits Monthly Transits - Tropical sign ingresses for an entire month
+	//
+	// Get every tropical sign change for a given month, for all 14 Western bodies: the Sun through Pluto, both lunar nodes, Chiron and Black Moon Lilith. Returns the starting sign of each body on the first of the month and then each ingress with its exact date and time in your timezone. Omit year and month to get the month in progress, so a published transit calendar stays current without a redeploy. Essential for transit calendars, monthly forecast copy, retrograde and ingress tracking, and newsletter automation. Monthly transit API, planetary ingress calendar, sign change dates, tropical transit table. Verified against NASA JPL Horizons, with the four cardinal ingresses cross-checked against published equinox and solstice times.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /astrology/transits/monthly (the `GetMonthlyTropicalTransits` operationId).
+	GetMonthlyTropicalTransits(ctx context.Context, params *GetMonthlyTropicalTransitsParams, body GetMonthlyTropicalTransitsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// CalculateBioCompatibilityWithBody Calculate compatibility - Biorhythm alignment between two people
 	//
@@ -40199,6 +40549,44 @@ func (c *Client) CalculateAspects(ctx context.Context, params *CalculateAspectsP
 	return c.Client.Do(req)
 }
 
+// GetMonthlyTropicalAspectsWithBody Monthly Aspects - Tropical aspect calendar for an entire month
+//
+// Get every planetary aspect that perfects during a given month, across the 13 non-lunar Western bodies: the Sun and Mercury through Pluto, both lunar nodes, Chiron and Black Moon Lilith. Detects nine aspects, five major (conjunction, sextile, square, trine, opposition) and four minor (semi-sextile, semi-square, sesquiquadrate, quincunx), each with its own traditional orb, and returns the exact date and time of closest approach in your timezone along with the nature of the aspect. Calculated on tropical longitudes. The Moon is excluded because it forms hundreds of aspects a month and belongs in a daily view rather than a monthly one. Omit year and month to get the month in progress, so a published calendar stays current without a redeploy. Essential for monthly forecast copy, transit calendars, electional timing, and newsletter automation. Monthly aspect calendar API, exact aspect times, planetary aspect ephemeris, transit timing. Verified against NASA JPL Horizons.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /astrology/aspects/monthly (the `GetMonthlyTropicalAspects` operationId).
+func (c *Client) GetMonthlyTropicalAspectsWithBody(ctx context.Context, params *GetMonthlyTropicalAspectsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetMonthlyTropicalAspectsRequestWithBody(c.Server, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetMonthlyTropicalAspects Monthly Aspects - Tropical aspect calendar for an entire month
+//
+// Get every planetary aspect that perfects during a given month, across the 13 non-lunar Western bodies: the Sun and Mercury through Pluto, both lunar nodes, Chiron and Black Moon Lilith. Detects nine aspects, five major (conjunction, sextile, square, trine, opposition) and four minor (semi-sextile, semi-square, sesquiquadrate, quincunx), each with its own traditional orb, and returns the exact date and time of closest approach in your timezone along with the nature of the aspect. Calculated on tropical longitudes. The Moon is excluded because it forms hundreds of aspects a month and belongs in a daily view rather than a monthly one. Omit year and month to get the month in progress, so a published calendar stays current without a redeploy. Essential for monthly forecast copy, transit calendars, electional timing, and newsletter automation. Monthly aspect calendar API, exact aspect times, planetary aspect ephemeris, transit timing. Verified against NASA JPL Horizons.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /astrology/aspects/monthly (the `GetMonthlyTropicalAspects` operationId).
+func (c *Client) GetMonthlyTropicalAspects(ctx context.Context, params *GetMonthlyTropicalAspectsParams, body GetMonthlyTropicalAspectsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetMonthlyTropicalAspectsRequest(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 // GenerateAsteroidsWithBody Asteroid goddesses calculator - Ceres, Pallas, Juno, and Vesta natal positions
 //
 // Calculate the natal positions of the four classical asteroid goddesses, Ceres, Pallas, Juno, and Vesta, for any birth moment. Each asteroid returns its tropical zodiac sign, degree, house placement, daily speed, retrograde status, and a plain language interpretation of its meaning in the chart. Chiron is available through the natal chart endpoint, so this endpoint stays focused on the four asteroid goddesses for natal reports and relationship astrology.
@@ -41157,6 +41545,44 @@ func (c *Client) CalculateTransitsWithBody(ctx context.Context, params *Calculat
 // Corresponds with POST /astrology/transits (the `CalculateTransits` operationId).
 func (c *Client) CalculateTransits(ctx context.Context, params *CalculateTransitsParams, body CalculateTransitsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewCalculateTransitsRequest(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetMonthlyTropicalTransitsWithBody Monthly Transits - Tropical sign ingresses for an entire month
+//
+// Get every tropical sign change for a given month, for all 14 Western bodies: the Sun through Pluto, both lunar nodes, Chiron and Black Moon Lilith. Returns the starting sign of each body on the first of the month and then each ingress with its exact date and time in your timezone. Omit year and month to get the month in progress, so a published transit calendar stays current without a redeploy. Essential for transit calendars, monthly forecast copy, retrograde and ingress tracking, and newsletter automation. Monthly transit API, planetary ingress calendar, sign change dates, tropical transit table. Verified against NASA JPL Horizons, with the four cardinal ingresses cross-checked against published equinox and solstice times.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /astrology/transits/monthly (the `GetMonthlyTropicalTransits` operationId).
+func (c *Client) GetMonthlyTropicalTransitsWithBody(ctx context.Context, params *GetMonthlyTropicalTransitsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetMonthlyTropicalTransitsRequestWithBody(c.Server, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetMonthlyTropicalTransits Monthly Transits - Tropical sign ingresses for an entire month
+//
+// Get every tropical sign change for a given month, for all 14 Western bodies: the Sun through Pluto, both lunar nodes, Chiron and Black Moon Lilith. Returns the starting sign of each body on the first of the month and then each ingress with its exact date and time in your timezone. Omit year and month to get the month in progress, so a published transit calendar stays current without a redeploy. Essential for transit calendars, monthly forecast copy, retrograde and ingress tracking, and newsletter automation. Monthly transit API, planetary ingress calendar, sign change dates, tropical transit table. Verified against NASA JPL Horizons, with the four cardinal ingresses cross-checked against published equinox and solstice times.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /astrology/transits/monthly (the `GetMonthlyTropicalTransits` operationId).
+func (c *Client) GetMonthlyTropicalTransits(ctx context.Context, params *GetMonthlyTropicalTransitsParams, body GetMonthlyTropicalTransitsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetMonthlyTropicalTransitsRequest(c.Server, params, body)
 	if err != nil {
 		return nil, err
 	}
@@ -46101,6 +46527,73 @@ func NewCalculateAspectsRequestWithBody(server string, params *CalculateAspectsP
 	return req, nil
 }
 
+// NewGetMonthlyTropicalAspectsRequest calls the generic GetMonthlyTropicalAspects builder with application/json body
+func NewGetMonthlyTropicalAspectsRequest(server string, params *GetMonthlyTropicalAspectsParams, body GetMonthlyTropicalAspectsJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewGetMonthlyTropicalAspectsRequestWithBody(server, params, "application/json", bodyReader)
+}
+
+// NewGetMonthlyTropicalAspectsRequestWithBody constructs an http.Request for the GetMonthlyTropicalAspects method, with any body, and a specified content type
+func NewGetMonthlyTropicalAspectsRequestWithBody(server string, params *GetMonthlyTropicalAspectsParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/astrology/aspects/monthly")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Lang != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "lang", *params.Lang, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
 // NewGenerateAsteroidsRequest calls the generic GenerateAsteroids builder with application/json body
 func NewGenerateAsteroidsRequest(server string, params *GenerateAsteroidsParams, body GenerateAsteroidsJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
@@ -48219,6 +48712,73 @@ func NewCalculateTransitsRequestWithBody(server string, params *CalculateTransit
 	}
 
 	operationPath := fmt.Sprintf("/astrology/transits")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Lang != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "lang", *params.Lang, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewGetMonthlyTropicalTransitsRequest calls the generic GetMonthlyTropicalTransits builder with application/json body
+func NewGetMonthlyTropicalTransitsRequest(server string, params *GetMonthlyTropicalTransitsParams, body GetMonthlyTropicalTransitsJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewGetMonthlyTropicalTransitsRequestWithBody(server, params, "application/json", bodyReader)
+}
+
+// NewGetMonthlyTropicalTransitsRequestWithBody constructs an http.Request for the GetMonthlyTropicalTransits method, with any body, and a specified content type
+func NewGetMonthlyTropicalTransitsRequestWithBody(server string, params *GetMonthlyTropicalTransitsParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/astrology/transits/monthly")
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -57492,6 +58052,24 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with POST /astrology/aspects (the `CalculateAspects` operationId).
 	CalculateAspectsWithResponse(ctx context.Context, params *CalculateAspectsParams, body CalculateAspectsJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateAspectsResponse, error)
 
+	// GetMonthlyTropicalAspectsWithBodyWithResponse Monthly Aspects - Tropical aspect calendar for an entire month
+	//
+	// Get every planetary aspect that perfects during a given month, across the 13 non-lunar Western bodies: the Sun and Mercury through Pluto, both lunar nodes, Chiron and Black Moon Lilith. Detects nine aspects, five major (conjunction, sextile, square, trine, opposition) and four minor (semi-sextile, semi-square, sesquiquadrate, quincunx), each with its own traditional orb, and returns the exact date and time of closest approach in your timezone along with the nature of the aspect. Calculated on tropical longitudes. The Moon is excluded because it forms hundreds of aspects a month and belongs in a daily view rather than a monthly one. Omit year and month to get the month in progress, so a published calendar stays current without a redeploy. Essential for monthly forecast copy, transit calendars, electional timing, and newsletter automation. Monthly aspect calendar API, exact aspect times, planetary aspect ephemeris, transit timing. Verified against NASA JPL Horizons.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /astrology/aspects/monthly (the `GetMonthlyTropicalAspects` operationId).
+	GetMonthlyTropicalAspectsWithBodyWithResponse(ctx context.Context, params *GetMonthlyTropicalAspectsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetMonthlyTropicalAspectsResponse, error)
+
+	// GetMonthlyTropicalAspectsWithResponse Monthly Aspects - Tropical aspect calendar for an entire month
+	//
+	// Get every planetary aspect that perfects during a given month, across the 13 non-lunar Western bodies: the Sun and Mercury through Pluto, both lunar nodes, Chiron and Black Moon Lilith. Detects nine aspects, five major (conjunction, sextile, square, trine, opposition) and four minor (semi-sextile, semi-square, sesquiquadrate, quincunx), each with its own traditional orb, and returns the exact date and time of closest approach in your timezone along with the nature of the aspect. Calculated on tropical longitudes. The Moon is excluded because it forms hundreds of aspects a month and belongs in a daily view rather than a monthly one. Omit year and month to get the month in progress, so a published calendar stays current without a redeploy. Essential for monthly forecast copy, transit calendars, electional timing, and newsletter automation. Monthly aspect calendar API, exact aspect times, planetary aspect ephemeris, transit timing. Verified against NASA JPL Horizons.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /astrology/aspects/monthly (the `GetMonthlyTropicalAspects` operationId).
+	GetMonthlyTropicalAspectsWithResponse(ctx context.Context, params *GetMonthlyTropicalAspectsParams, body GetMonthlyTropicalAspectsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetMonthlyTropicalAspectsResponse, error)
+
 	// GenerateAsteroidsWithBodyWithResponse Asteroid goddesses calculator - Ceres, Pallas, Juno, and Vesta natal positions
 	//
 	// Calculate the natal positions of the four classical asteroid goddesses, Ceres, Pallas, Juno, and Vesta, for any birth moment. Each asteroid returns its tropical zodiac sign, degree, house placement, daily speed, retrograde status, and a plain language interpretation of its meaning in the chart. Chiron is available through the natal chart endpoint, so this endpoint stays focused on the four asteroid goddesses for natal reports and relationship astrology.
@@ -57959,6 +58537,24 @@ type ClientWithResponsesInterface interface {
 	//
 	// Corresponds with POST /astrology/transits (the `CalculateTransits` operationId).
 	CalculateTransitsWithResponse(ctx context.Context, params *CalculateTransitsParams, body CalculateTransitsJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateTransitsResponse, error)
+
+	// GetMonthlyTropicalTransitsWithBodyWithResponse Monthly Transits - Tropical sign ingresses for an entire month
+	//
+	// Get every tropical sign change for a given month, for all 14 Western bodies: the Sun through Pluto, both lunar nodes, Chiron and Black Moon Lilith. Returns the starting sign of each body on the first of the month and then each ingress with its exact date and time in your timezone. Omit year and month to get the month in progress, so a published transit calendar stays current without a redeploy. Essential for transit calendars, monthly forecast copy, retrograde and ingress tracking, and newsletter automation. Monthly transit API, planetary ingress calendar, sign change dates, tropical transit table. Verified against NASA JPL Horizons, with the four cardinal ingresses cross-checked against published equinox and solstice times.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /astrology/transits/monthly (the `GetMonthlyTropicalTransits` operationId).
+	GetMonthlyTropicalTransitsWithBodyWithResponse(ctx context.Context, params *GetMonthlyTropicalTransitsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetMonthlyTropicalTransitsResponse, error)
+
+	// GetMonthlyTropicalTransitsWithResponse Monthly Transits - Tropical sign ingresses for an entire month
+	//
+	// Get every tropical sign change for a given month, for all 14 Western bodies: the Sun through Pluto, both lunar nodes, Chiron and Black Moon Lilith. Returns the starting sign of each body on the first of the month and then each ingress with its exact date and time in your timezone. Omit year and month to get the month in progress, so a published transit calendar stays current without a redeploy. Essential for transit calendars, monthly forecast copy, retrograde and ingress tracking, and newsletter automation. Monthly transit API, planetary ingress calendar, sign change dates, tropical transit table. Verified against NASA JPL Horizons, with the four cardinal ingresses cross-checked against published equinox and solstice times.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /astrology/transits/monthly (the `GetMonthlyTropicalTransits` operationId).
+	GetMonthlyTropicalTransitsWithResponse(ctx context.Context, params *GetMonthlyTropicalTransitsParams, body GetMonthlyTropicalTransitsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetMonthlyTropicalTransitsResponse, error)
 
 	// CalculateBioCompatibilityWithBodyWithResponse Calculate compatibility - Biorhythm alignment between two people
 	//
@@ -61199,6 +61795,208 @@ func (r CalculateAspectsResponse) Bytes() []byte {
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r CalculateAspectsResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+// GetMonthlyTropicalAspectsResponse405Headers the declared response headers of an HTTP 405 response for GetMonthlyTropicalAspects
+type GetMonthlyTropicalAspectsResponse405Headers struct {
+	Allow *string
+}
+
+type GetMonthlyTropicalAspectsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// Events Every aspect event in the month, in chronological order across all body pairs.
+		Events []struct {
+			// Aspect Aspect type, canonical English. One of conjunction (0 deg), semi-sextile (30 deg), semi-square (45 deg), sextile (60 deg), square (90 deg), trine (120 deg), sesquiquadrate (135 deg), quincunx (150 deg), opposition (180 deg).
+			Aspect string `json:"aspect"`
+
+			// AspectLocalized Aspect name in the requested language. Present only when lang is supplied.
+			AspectLocalized *string `json:"aspectLocalized,omitempty"`
+
+			// Date Date the aspect is closest to exact, in the requested timezone (YYYY-MM-DD).
+			Date string `json:"date"`
+
+			// Datetime Combined timestamp of closest approach, in the requested timezone.
+			Datetime string `json:"datetime"`
+
+			// Nature Whether the aspect is harmonious, challenging or neutral. Canonical English, so a calendar can colour or filter on it directly. natureLocalized carries the reader-facing form.
+			Nature string `json:"nature"`
+
+			// NatureLocalized Nature in the requested language. Present only when lang is supplied.
+			NatureLocalized *string `json:"natureLocalized,omitempty"`
+
+			// Orb Distance from exact in degrees at the reported instant. Effectively zero for an aspect that perfects inside the month, and larger only where the pair turns before reaching exact.
+			Orb float32 `json:"orb"`
+
+			// Planet1 First body forming the aspect. Always canonical English whatever the lang parameter says, so it stays safe to compare against in code. Use planet1Localized for anything a reader sees.
+			Planet1 string `json:"planet1"`
+
+			// Planet1Localized First body in the requested language. Present only when lang is supplied.
+			Planet1Localized *string `json:"planet1Localized,omitempty"`
+
+			// Planet1Longitude Tropical ecliptic longitude of the first body at the reported instant.
+			Planet1Longitude float32 `json:"planet1Longitude"`
+
+			// Planet2 Second body forming the aspect. Always canonical English.
+			Planet2 string `json:"planet2"`
+
+			// Planet2Localized Second body in the requested language. Present only when lang is supplied.
+			Planet2Localized *string `json:"planet2Localized,omitempty"`
+
+			// Planet2Longitude Tropical ecliptic longitude of the second body at the reported instant.
+			Planet2Longitude float32 `json:"planet2Longitude"`
+
+			// Separation Actual angular separation between the two bodies in degrees at the reported instant, measured the short way round the circle.
+			Separation float32 `json:"separation"`
+
+			// Time Time the aspect is closest to exact, in the requested timezone (HH:MM).
+			Time string `json:"time"`
+		} `json:"events"`
+
+		// Month Month of the calendar. Echoes the month requested, or the current UTC month when it was omitted.
+		Month float32 `json:"month"`
+
+		// Timezone Timezone the event dates and times are reported in. Echoes the request.
+		Timezone float32 `json:"timezone"`
+
+		// Year Year of the calendar. Echoes the year requested, or the current UTC year when it was omitted.
+		Year float32 `json:"year"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON405 the response for an HTTP 405 `application/json` response
+	JSON405 *ErrorResponse
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+	// Headers405 the parsed response headers for an HTTP 405 response
+	Headers405 *GetMonthlyTropicalAspectsResponse405Headers
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetMonthlyTropicalAspectsResponse) GetJSON200() *struct {
+	// Events Every aspect event in the month, in chronological order across all body pairs.
+	Events []struct {
+		// Aspect Aspect type, canonical English. One of conjunction (0 deg), semi-sextile (30 deg), semi-square (45 deg), sextile (60 deg), square (90 deg), trine (120 deg), sesquiquadrate (135 deg), quincunx (150 deg), opposition (180 deg).
+		Aspect string `json:"aspect"`
+
+		// AspectLocalized Aspect name in the requested language. Present only when lang is supplied.
+		AspectLocalized *string `json:"aspectLocalized,omitempty"`
+
+		// Date Date the aspect is closest to exact, in the requested timezone (YYYY-MM-DD).
+		Date string `json:"date"`
+
+		// Datetime Combined timestamp of closest approach, in the requested timezone.
+		Datetime string `json:"datetime"`
+
+		// Nature Whether the aspect is harmonious, challenging or neutral. Canonical English, so a calendar can colour or filter on it directly. natureLocalized carries the reader-facing form.
+		Nature string `json:"nature"`
+
+		// NatureLocalized Nature in the requested language. Present only when lang is supplied.
+		NatureLocalized *string `json:"natureLocalized,omitempty"`
+
+		// Orb Distance from exact in degrees at the reported instant. Effectively zero for an aspect that perfects inside the month, and larger only where the pair turns before reaching exact.
+		Orb float32 `json:"orb"`
+
+		// Planet1 First body forming the aspect. Always canonical English whatever the lang parameter says, so it stays safe to compare against in code. Use planet1Localized for anything a reader sees.
+		Planet1 string `json:"planet1"`
+
+		// Planet1Localized First body in the requested language. Present only when lang is supplied.
+		Planet1Localized *string `json:"planet1Localized,omitempty"`
+
+		// Planet1Longitude Tropical ecliptic longitude of the first body at the reported instant.
+		Planet1Longitude float32 `json:"planet1Longitude"`
+
+		// Planet2 Second body forming the aspect. Always canonical English.
+		Planet2 string `json:"planet2"`
+
+		// Planet2Localized Second body in the requested language. Present only when lang is supplied.
+		Planet2Localized *string `json:"planet2Localized,omitempty"`
+
+		// Planet2Longitude Tropical ecliptic longitude of the second body at the reported instant.
+		Planet2Longitude float32 `json:"planet2Longitude"`
+
+		// Separation Actual angular separation between the two bodies in degrees at the reported instant, measured the short way round the circle.
+		Separation float32 `json:"separation"`
+
+		// Time Time the aspect is closest to exact, in the requested timezone (HH:MM).
+		Time string `json:"time"`
+	} `json:"events"`
+
+	// Month Month of the calendar. Echoes the month requested, or the current UTC month when it was omitted.
+	Month float32 `json:"month"`
+
+	// Timezone Timezone the event dates and times are reported in. Echoes the request.
+	Timezone float32 `json:"timezone"`
+
+	// Year Year of the calendar. Echoes the year requested, or the current UTC year when it was omitted.
+	Year float32 `json:"year"`
+} {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r GetMonthlyTropicalAspectsResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r GetMonthlyTropicalAspectsResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON405 returns the response for an HTTP 405 `application/json` response
+func (r GetMonthlyTropicalAspectsResponse) GetJSON405() *ErrorResponse {
+	return r.JSON405
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r GetMonthlyTropicalAspectsResponse) GetJSON429() *ErrorResponse {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GetMonthlyTropicalAspectsResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r GetMonthlyTropicalAspectsResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetMonthlyTropicalAspectsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetMonthlyTropicalAspectsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// Bytes is a convenience method to retrieve the raw bytes from the HTTP response
+func (r GetMonthlyTropicalAspectsResponse) Bytes() []byte {
+	return r.Body
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetMonthlyTropicalAspectsResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -67571,6 +68369,214 @@ func (r CalculateTransitsResponse) Bytes() []byte {
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r CalculateTransitsResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+// GetMonthlyTropicalTransitsResponse405Headers the declared response headers of an HTTP 405 response for GetMonthlyTropicalTransits
+type GetMonthlyTropicalTransitsResponse405Headers struct {
+	Allow *string
+}
+
+type GetMonthlyTropicalTransitsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// Month Month of the table. Echoes the month requested, or the current UTC month when it was omitted.
+		Month float32 `json:"month"`
+
+		// StartingPositions Where every body stands as the month opens, so a calendar can show the run-in as well as the changes.
+		StartingPositions []struct {
+			// Longitude Tropical ecliptic longitude in degrees at 00:00 UTC on the first of the month.
+			Longitude float32 `json:"longitude"`
+
+			// Planet Body name, canonical English.
+			Planet string `json:"planet"`
+
+			// PlanetLocalized Body name in the requested language.
+			PlanetLocalized *string `json:"planetLocalized,omitempty"`
+
+			// Sign Tropical sign the body occupies at the start of the month.
+			Sign string `json:"sign"`
+
+			// SignLocalized Sign in the requested language.
+			SignLocalized *string `json:"signLocalized,omitempty"`
+		} `json:"startingPositions"`
+
+		// Timezone Timezone the ingress dates and times are reported in. Echoes the request.
+		Timezone float32 `json:"timezone"`
+
+		// TransitEvents Every sign change in the month, in chronological order across all bodies. Empty only for a month in which nothing changes sign, which cannot happen while the Moon is included.
+		TransitEvents []struct {
+			// Date Date of the ingress in the requested timezone (YYYY-MM-DD).
+			Date string `json:"date"`
+
+			// Datetime Combined ingress timestamp in the requested timezone.
+			Datetime string `json:"datetime"`
+
+			// FromSign Tropical sign the body leaves. Canonical English.
+			FromSign string `json:"fromSign"`
+
+			// FromSignLocalized Sign left, in the requested language. Present only when lang is supplied.
+			FromSignLocalized *string `json:"fromSignLocalized,omitempty"`
+
+			// IsRetrograde Whether the body was retrograde at the moment it crossed. A retrograde ingress is the body re-entering a sign it already left, which is why the same body can appear more than once in a month.
+			IsRetrograde bool `json:"isRetrograde"`
+
+			// Planet Body that changes sign during the month. One of the 14 Western bodies. Always canonical English whatever the lang parameter says, so it stays safe to compare against in code. Use planetLocalized for anything a reader sees.
+			Planet string `json:"planet"`
+
+			// PlanetLocalized Body name in the requested language. Present only when lang is supplied.
+			PlanetLocalized *string `json:"planetLocalized,omitempty"`
+
+			// Time Time of the ingress in the requested timezone (HH:MM).
+			Time string `json:"time"`
+
+			// ToSign Tropical sign the body enters. Canonical English.
+			ToSign string `json:"toSign"`
+
+			// ToSignLocalized Sign entered, in the requested language. Present only when lang is supplied.
+			ToSignLocalized *string `json:"toSignLocalized,omitempty"`
+		} `json:"transitEvents"`
+
+		// Year Year of the table. Echoes the year requested, or the current UTC year when it was omitted.
+		Year float32 `json:"year"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON405 the response for an HTTP 405 `application/json` response
+	JSON405 *ErrorResponse
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+	// Headers405 the parsed response headers for an HTTP 405 response
+	Headers405 *GetMonthlyTropicalTransitsResponse405Headers
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetMonthlyTropicalTransitsResponse) GetJSON200() *struct {
+	// Month Month of the table. Echoes the month requested, or the current UTC month when it was omitted.
+	Month float32 `json:"month"`
+
+	// StartingPositions Where every body stands as the month opens, so a calendar can show the run-in as well as the changes.
+	StartingPositions []struct {
+		// Longitude Tropical ecliptic longitude in degrees at 00:00 UTC on the first of the month.
+		Longitude float32 `json:"longitude"`
+
+		// Planet Body name, canonical English.
+		Planet string `json:"planet"`
+
+		// PlanetLocalized Body name in the requested language.
+		PlanetLocalized *string `json:"planetLocalized,omitempty"`
+
+		// Sign Tropical sign the body occupies at the start of the month.
+		Sign string `json:"sign"`
+
+		// SignLocalized Sign in the requested language.
+		SignLocalized *string `json:"signLocalized,omitempty"`
+	} `json:"startingPositions"`
+
+	// Timezone Timezone the ingress dates and times are reported in. Echoes the request.
+	Timezone float32 `json:"timezone"`
+
+	// TransitEvents Every sign change in the month, in chronological order across all bodies. Empty only for a month in which nothing changes sign, which cannot happen while the Moon is included.
+	TransitEvents []struct {
+		// Date Date of the ingress in the requested timezone (YYYY-MM-DD).
+		Date string `json:"date"`
+
+		// Datetime Combined ingress timestamp in the requested timezone.
+		Datetime string `json:"datetime"`
+
+		// FromSign Tropical sign the body leaves. Canonical English.
+		FromSign string `json:"fromSign"`
+
+		// FromSignLocalized Sign left, in the requested language. Present only when lang is supplied.
+		FromSignLocalized *string `json:"fromSignLocalized,omitempty"`
+
+		// IsRetrograde Whether the body was retrograde at the moment it crossed. A retrograde ingress is the body re-entering a sign it already left, which is why the same body can appear more than once in a month.
+		IsRetrograde bool `json:"isRetrograde"`
+
+		// Planet Body that changes sign during the month. One of the 14 Western bodies. Always canonical English whatever the lang parameter says, so it stays safe to compare against in code. Use planetLocalized for anything a reader sees.
+		Planet string `json:"planet"`
+
+		// PlanetLocalized Body name in the requested language. Present only when lang is supplied.
+		PlanetLocalized *string `json:"planetLocalized,omitempty"`
+
+		// Time Time of the ingress in the requested timezone (HH:MM).
+		Time string `json:"time"`
+
+		// ToSign Tropical sign the body enters. Canonical English.
+		ToSign string `json:"toSign"`
+
+		// ToSignLocalized Sign entered, in the requested language. Present only when lang is supplied.
+		ToSignLocalized *string `json:"toSignLocalized,omitempty"`
+	} `json:"transitEvents"`
+
+	// Year Year of the table. Echoes the year requested, or the current UTC year when it was omitted.
+	Year float32 `json:"year"`
+} {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r GetMonthlyTropicalTransitsResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r GetMonthlyTropicalTransitsResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON405 returns the response for an HTTP 405 `application/json` response
+func (r GetMonthlyTropicalTransitsResponse) GetJSON405() *ErrorResponse {
+	return r.JSON405
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r GetMonthlyTropicalTransitsResponse) GetJSON429() *ErrorResponse {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GetMonthlyTropicalTransitsResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r GetMonthlyTropicalTransitsResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetMonthlyTropicalTransitsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetMonthlyTropicalTransitsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// Bytes is a convenience method to retrieve the raw bytes from the HTTP response
+func (r GetMonthlyTropicalTransitsResponse) Bytes() []byte {
+	return r.Body
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetMonthlyTropicalTransitsResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -93567,6 +94573,36 @@ func (c *ClientWithResponses) CalculateAspectsWithResponse(ctx context.Context, 
 	return ParseCalculateAspectsResponse(rsp)
 }
 
+// GetMonthlyTropicalAspectsWithBodyWithResponse Monthly Aspects - Tropical aspect calendar for an entire month
+//
+// Get every planetary aspect that perfects during a given month, across the 13 non-lunar Western bodies: the Sun and Mercury through Pluto, both lunar nodes, Chiron and Black Moon Lilith. Detects nine aspects, five major (conjunction, sextile, square, trine, opposition) and four minor (semi-sextile, semi-square, sesquiquadrate, quincunx), each with its own traditional orb, and returns the exact date and time of closest approach in your timezone along with the nature of the aspect. Calculated on tropical longitudes. The Moon is excluded because it forms hundreds of aspects a month and belongs in a daily view rather than a monthly one. Omit year and month to get the month in progress, so a published calendar stays current without a redeploy. Essential for monthly forecast copy, transit calendars, electional timing, and newsletter automation. Monthly aspect calendar API, exact aspect times, planetary aspect ephemeris, transit timing. Verified against NASA JPL Horizons.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /astrology/aspects/monthly (the `GetMonthlyTropicalAspects` operationId).
+func (c *ClientWithResponses) GetMonthlyTropicalAspectsWithBodyWithResponse(ctx context.Context, params *GetMonthlyTropicalAspectsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetMonthlyTropicalAspectsResponse, error) {
+	rsp, err := c.GetMonthlyTropicalAspectsWithBody(ctx, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetMonthlyTropicalAspectsResponse(rsp)
+}
+
+// GetMonthlyTropicalAspectsWithResponse Monthly Aspects - Tropical aspect calendar for an entire month
+//
+// Get every planetary aspect that perfects during a given month, across the 13 non-lunar Western bodies: the Sun and Mercury through Pluto, both lunar nodes, Chiron and Black Moon Lilith. Detects nine aspects, five major (conjunction, sextile, square, trine, opposition) and four minor (semi-sextile, semi-square, sesquiquadrate, quincunx), each with its own traditional orb, and returns the exact date and time of closest approach in your timezone along with the nature of the aspect. Calculated on tropical longitudes. The Moon is excluded because it forms hundreds of aspects a month and belongs in a daily view rather than a monthly one. Omit year and month to get the month in progress, so a published calendar stays current without a redeploy. Essential for monthly forecast copy, transit calendars, electional timing, and newsletter automation. Monthly aspect calendar API, exact aspect times, planetary aspect ephemeris, transit timing. Verified against NASA JPL Horizons.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /astrology/aspects/monthly (the `GetMonthlyTropicalAspects` operationId).
+func (c *ClientWithResponses) GetMonthlyTropicalAspectsWithResponse(ctx context.Context, params *GetMonthlyTropicalAspectsParams, body GetMonthlyTropicalAspectsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetMonthlyTropicalAspectsResponse, error) {
+	rsp, err := c.GetMonthlyTropicalAspects(ctx, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetMonthlyTropicalAspectsResponse(rsp)
+}
+
 // GenerateAsteroidsWithBodyWithResponse Asteroid goddesses calculator - Ceres, Pallas, Juno, and Vesta natal positions
 //
 // Calculate the natal positions of the four classical asteroid goddesses, Ceres, Pallas, Juno, and Vesta, for any birth moment. Each asteroid returns its tropical zodiac sign, degree, house placement, daily speed, retrograde status, and a plain language interpretation of its meaning in the chart. Chiron is available through the natal chart endpoint, so this endpoint stays focused on the four asteroid goddesses for natal reports and relationship astrology.
@@ -94345,6 +95381,36 @@ func (c *ClientWithResponses) CalculateTransitsWithResponse(ctx context.Context,
 		return nil, err
 	}
 	return ParseCalculateTransitsResponse(rsp)
+}
+
+// GetMonthlyTropicalTransitsWithBodyWithResponse Monthly Transits - Tropical sign ingresses for an entire month
+//
+// Get every tropical sign change for a given month, for all 14 Western bodies: the Sun through Pluto, both lunar nodes, Chiron and Black Moon Lilith. Returns the starting sign of each body on the first of the month and then each ingress with its exact date and time in your timezone. Omit year and month to get the month in progress, so a published transit calendar stays current without a redeploy. Essential for transit calendars, monthly forecast copy, retrograde and ingress tracking, and newsletter automation. Monthly transit API, planetary ingress calendar, sign change dates, tropical transit table. Verified against NASA JPL Horizons, with the four cardinal ingresses cross-checked against published equinox and solstice times.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /astrology/transits/monthly (the `GetMonthlyTropicalTransits` operationId).
+func (c *ClientWithResponses) GetMonthlyTropicalTransitsWithBodyWithResponse(ctx context.Context, params *GetMonthlyTropicalTransitsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetMonthlyTropicalTransitsResponse, error) {
+	rsp, err := c.GetMonthlyTropicalTransitsWithBody(ctx, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetMonthlyTropicalTransitsResponse(rsp)
+}
+
+// GetMonthlyTropicalTransitsWithResponse Monthly Transits - Tropical sign ingresses for an entire month
+//
+// Get every tropical sign change for a given month, for all 14 Western bodies: the Sun through Pluto, both lunar nodes, Chiron and Black Moon Lilith. Returns the starting sign of each body on the first of the month and then each ingress with its exact date and time in your timezone. Omit year and month to get the month in progress, so a published transit calendar stays current without a redeploy. Essential for transit calendars, monthly forecast copy, retrograde and ingress tracking, and newsletter automation. Monthly transit API, planetary ingress calendar, sign change dates, tropical transit table. Verified against NASA JPL Horizons, with the four cardinal ingresses cross-checked against published equinox and solstice times.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /astrology/transits/monthly (the `GetMonthlyTropicalTransits` operationId).
+func (c *ClientWithResponses) GetMonthlyTropicalTransitsWithResponse(ctx context.Context, params *GetMonthlyTropicalTransitsParams, body GetMonthlyTropicalTransitsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetMonthlyTropicalTransitsResponse, error) {
+	rsp, err := c.GetMonthlyTropicalTransits(ctx, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetMonthlyTropicalTransitsResponse(rsp)
 }
 
 // CalculateBioCompatibilityWithBodyWithResponse Calculate compatibility - Biorhythm alignment between two people
@@ -98671,6 +99737,137 @@ func ParseCalculateAspectsResponse(rsp *http.Response) (*CalculateAspectsRespons
 	return response, nil
 }
 
+// ParseGetMonthlyTropicalAspectsResponse parses an HTTP response from a GetMonthlyTropicalAspectsWithResponse call
+func ParseGetMonthlyTropicalAspectsResponse(rsp *http.Response) (*GetMonthlyTropicalAspectsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetMonthlyTropicalAspectsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Events Every aspect event in the month, in chronological order across all body pairs.
+			Events []struct {
+				// Aspect Aspect type, canonical English. One of conjunction (0 deg), semi-sextile (30 deg), semi-square (45 deg), sextile (60 deg), square (90 deg), trine (120 deg), sesquiquadrate (135 deg), quincunx (150 deg), opposition (180 deg).
+				Aspect string `json:"aspect"`
+
+				// AspectLocalized Aspect name in the requested language. Present only when lang is supplied.
+				AspectLocalized *string `json:"aspectLocalized,omitempty"`
+
+				// Date Date the aspect is closest to exact, in the requested timezone (YYYY-MM-DD).
+				Date string `json:"date"`
+
+				// Datetime Combined timestamp of closest approach, in the requested timezone.
+				Datetime string `json:"datetime"`
+
+				// Nature Whether the aspect is harmonious, challenging or neutral. Canonical English, so a calendar can colour or filter on it directly. natureLocalized carries the reader-facing form.
+				Nature string `json:"nature"`
+
+				// NatureLocalized Nature in the requested language. Present only when lang is supplied.
+				NatureLocalized *string `json:"natureLocalized,omitempty"`
+
+				// Orb Distance from exact in degrees at the reported instant. Effectively zero for an aspect that perfects inside the month, and larger only where the pair turns before reaching exact.
+				Orb float32 `json:"orb"`
+
+				// Planet1 First body forming the aspect. Always canonical English whatever the lang parameter says, so it stays safe to compare against in code. Use planet1Localized for anything a reader sees.
+				Planet1 string `json:"planet1"`
+
+				// Planet1Localized First body in the requested language. Present only when lang is supplied.
+				Planet1Localized *string `json:"planet1Localized,omitempty"`
+
+				// Planet1Longitude Tropical ecliptic longitude of the first body at the reported instant.
+				Planet1Longitude float32 `json:"planet1Longitude"`
+
+				// Planet2 Second body forming the aspect. Always canonical English.
+				Planet2 string `json:"planet2"`
+
+				// Planet2Localized Second body in the requested language. Present only when lang is supplied.
+				Planet2Localized *string `json:"planet2Localized,omitempty"`
+
+				// Planet2Longitude Tropical ecliptic longitude of the second body at the reported instant.
+				Planet2Longitude float32 `json:"planet2Longitude"`
+
+				// Separation Actual angular separation between the two bodies in degrees at the reported instant, measured the short way round the circle.
+				Separation float32 `json:"separation"`
+
+				// Time Time the aspect is closest to exact, in the requested timezone (HH:MM).
+				Time string `json:"time"`
+			} `json:"events"`
+
+			// Month Month of the calendar. Echoes the month requested, or the current UTC month when it was omitted.
+			Month float32 `json:"month"`
+
+			// Timezone Timezone the event dates and times are reported in. Echoes the request.
+			Timezone float32 `json:"timezone"`
+
+			// Year Year of the calendar. Echoes the year requested, or the current UTC year when it was omitted.
+			Year float32 `json:"year"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 405:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON405 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	switch {
+	case rsp.StatusCode == 405:
+		var headers GetMonthlyTropicalAspectsResponse405Headers
+		if values := rsp.Header.Values("Allow"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "Allow", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.Allow = &value
+		}
+		response.Headers405 = &headers
+	}
+
+	return response, nil
+}
+
 // ParseGenerateAsteroidsResponse parses an HTTP response from a GenerateAsteroidsWithResponse call
 func ParseGenerateAsteroidsResponse(rsp *http.Response) (*GenerateAsteroidsResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -102781,6 +103978,140 @@ func ParseCalculateTransitsResponse(rsp *http.Response) (*CalculateTransitsRespo
 	switch {
 	case rsp.StatusCode == 405:
 		var headers CalculateTransitsResponse405Headers
+		if values := rsp.Header.Values("Allow"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "Allow", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.Allow = &value
+		}
+		response.Headers405 = &headers
+	}
+
+	return response, nil
+}
+
+// ParseGetMonthlyTropicalTransitsResponse parses an HTTP response from a GetMonthlyTropicalTransitsWithResponse call
+func ParseGetMonthlyTropicalTransitsResponse(rsp *http.Response) (*GetMonthlyTropicalTransitsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetMonthlyTropicalTransitsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Month Month of the table. Echoes the month requested, or the current UTC month when it was omitted.
+			Month float32 `json:"month"`
+
+			// StartingPositions Where every body stands as the month opens, so a calendar can show the run-in as well as the changes.
+			StartingPositions []struct {
+				// Longitude Tropical ecliptic longitude in degrees at 00:00 UTC on the first of the month.
+				Longitude float32 `json:"longitude"`
+
+				// Planet Body name, canonical English.
+				Planet string `json:"planet"`
+
+				// PlanetLocalized Body name in the requested language.
+				PlanetLocalized *string `json:"planetLocalized,omitempty"`
+
+				// Sign Tropical sign the body occupies at the start of the month.
+				Sign string `json:"sign"`
+
+				// SignLocalized Sign in the requested language.
+				SignLocalized *string `json:"signLocalized,omitempty"`
+			} `json:"startingPositions"`
+
+			// Timezone Timezone the ingress dates and times are reported in. Echoes the request.
+			Timezone float32 `json:"timezone"`
+
+			// TransitEvents Every sign change in the month, in chronological order across all bodies. Empty only for a month in which nothing changes sign, which cannot happen while the Moon is included.
+			TransitEvents []struct {
+				// Date Date of the ingress in the requested timezone (YYYY-MM-DD).
+				Date string `json:"date"`
+
+				// Datetime Combined ingress timestamp in the requested timezone.
+				Datetime string `json:"datetime"`
+
+				// FromSign Tropical sign the body leaves. Canonical English.
+				FromSign string `json:"fromSign"`
+
+				// FromSignLocalized Sign left, in the requested language. Present only when lang is supplied.
+				FromSignLocalized *string `json:"fromSignLocalized,omitempty"`
+
+				// IsRetrograde Whether the body was retrograde at the moment it crossed. A retrograde ingress is the body re-entering a sign it already left, which is why the same body can appear more than once in a month.
+				IsRetrograde bool `json:"isRetrograde"`
+
+				// Planet Body that changes sign during the month. One of the 14 Western bodies. Always canonical English whatever the lang parameter says, so it stays safe to compare against in code. Use planetLocalized for anything a reader sees.
+				Planet string `json:"planet"`
+
+				// PlanetLocalized Body name in the requested language. Present only when lang is supplied.
+				PlanetLocalized *string `json:"planetLocalized,omitempty"`
+
+				// Time Time of the ingress in the requested timezone (HH:MM).
+				Time string `json:"time"`
+
+				// ToSign Tropical sign the body enters. Canonical English.
+				ToSign string `json:"toSign"`
+
+				// ToSignLocalized Sign entered, in the requested language. Present only when lang is supplied.
+				ToSignLocalized *string `json:"toSignLocalized,omitempty"`
+			} `json:"transitEvents"`
+
+			// Year Year of the table. Echoes the year requested, or the current UTC year when it was omitted.
+			Year float32 `json:"year"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 405:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON405 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	switch {
+	case rsp.StatusCode == 405:
+		var headers GetMonthlyTropicalTransitsResponse405Headers
 		if values := rsp.Header.Values("Allow"); len(values) > 0 {
 			var value string
 			if err := runtime.BindStyledParameterWithOptions("simple", "Allow", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {

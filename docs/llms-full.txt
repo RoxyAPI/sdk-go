@@ -24,6 +24,7 @@ Western astrology API for natal birth charts, daily, weekly, and monthly horosco
 - `calculateArabicLots` - POST `/astrology/arabic-lots` - Arabic lots calculator - seven Hermetic parts including Part of Fortune and Spirit
 - `detectAspectPatterns` - POST `/astrology/aspect-patterns` - Detect aspect patterns - Grand Trine, Kite, T-Square, Grand Cross, Yod, Mystic Rectangle, Stellium
 - `calculateAspects` - POST `/astrology/aspects` - Calculate planetary aspects - Aspect finder for any date and time
+- `getMonthlyTropicalAspects` - POST `/astrology/aspects/monthly` - Monthly Aspects - Tropical aspect calendar for an entire month
 - `generateAsteroids` - POST `/astrology/asteroids` - Asteroid goddesses calculator - Ceres, Pallas, Juno, and Vesta natal positions
 - `generateAstrocartography` - POST `/astrology/astrocartography` - Astrocartography map - planetary lines and relocation calculator
 - `calculateCompatibility` - POST `/astrology/compatibility-score` - Compatibility Score. Relationship compatibility analysis with category breakdown
@@ -55,6 +56,7 @@ Western astrology API for natal birth charts, daily, weekly, and monthly horosco
 - `calculateSynastry` - POST `/astrology/synastry` - Calculate synastry - Relationship compatibility analysis API
 - `calculateTransitAspects` - POST `/astrology/transit-aspects` - Transit Aspects - Detailed transit-to-natal aspect analysis with interpretations
 - `calculateTransits` - POST `/astrology/transits` - Calculate planetary transits - Current transits with natal chart comparison
+- `getMonthlyTropicalTransits` - POST `/astrology/transits/monthly` - Monthly Transits - Tropical sign ingresses for an entire month
 
 ## Vedic Astrology - `roxy.VedicAstrology`
 

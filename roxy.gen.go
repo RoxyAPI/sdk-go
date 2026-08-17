@@ -251,8 +251,24 @@ func (s *AstrologyService) GetMonthlyHoroscope(ctx context.Context, sign GetMont
 	return resp, asRoxyError(resp)
 }
 
+func (s *AstrologyService) GetMonthlyTropicalAspects(ctx context.Context, params *GetMonthlyTropicalAspectsParams, body GetMonthlyTropicalAspectsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetMonthlyTropicalAspectsResponse, error) {
+	resp, err := s.client.GetMonthlyTropicalAspectsWithResponse(ctx, params, body, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
 func (s *AstrologyService) GetMonthlyTropicalEphemeris(ctx context.Context, params *GetMonthlyTropicalEphemerisParams, body GetMonthlyTropicalEphemerisJSONRequestBody, reqEditors ...RequestEditorFn) (*GetMonthlyTropicalEphemerisResponse, error) {
 	resp, err := s.client.GetMonthlyTropicalEphemerisWithResponse(ctx, params, body, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *AstrologyService) GetMonthlyTropicalTransits(ctx context.Context, params *GetMonthlyTropicalTransitsParams, body GetMonthlyTropicalTransitsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetMonthlyTropicalTransitsResponse, error) {
+	resp, err := s.client.GetMonthlyTropicalTransitsWithResponse(ctx, params, body, reqEditors...)
 	if err != nil {
 		return resp, err
 	}
