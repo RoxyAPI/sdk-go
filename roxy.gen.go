@@ -243,6 +243,14 @@ func (s *AstrologyService) GetDailyHoroscope(ctx context.Context, sign GetDailyH
 	return resp, asRoxyError(resp)
 }
 
+func (s *AstrologyService) GetMonthlyDeclinationParallels(ctx context.Context, params *GetMonthlyDeclinationParallelsParams, body GetMonthlyDeclinationParallelsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetMonthlyDeclinationParallelsResponse, error) {
+	resp, err := s.client.GetMonthlyDeclinationParallelsWithResponse(ctx, params, body, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
 func (s *AstrologyService) GetMonthlyHoroscope(ctx context.Context, sign GetMonthlyHoroscopeParamsSign, params *GetMonthlyHoroscopeParams, reqEditors ...RequestEditorFn) (*GetMonthlyHoroscopeResponse, error) {
 	resp, err := s.client.GetMonthlyHoroscopeWithResponse(ctx, sign, params, reqEditors...)
 	if err != nil {
@@ -285,6 +293,14 @@ func (s *AstrologyService) GetMoonCalendar(ctx context.Context, year float32, mo
 
 func (s *AstrologyService) GetPlanetMeaning(ctx context.Context, id string, params *GetPlanetMeaningParams, reqEditors ...RequestEditorFn) (*GetPlanetMeaningResponse, error) {
 	resp, err := s.client.GetPlanetMeaningWithResponse(ctx, id, params, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *AstrologyService) GetPlanetaryNodePassages(ctx context.Context, params *GetPlanetaryNodePassagesParams, body GetPlanetaryNodePassagesJSONRequestBody, reqEditors ...RequestEditorFn) (*GetPlanetaryNodePassagesResponse, error) {
+	resp, err := s.client.GetPlanetaryNodePassagesWithResponse(ctx, params, body, reqEditors...)
 	if err != nil {
 		return resp, err
 	}

@@ -1839,7 +1839,7 @@
             "type": "string"
           },
           "id": {
-            "description": "Unique card identifier in kebab-case (e.g. fool, ace-of-cups, queen-of-swords).",
+            "description": "Unique card identifier in kebab-case, with no leading article on Major Arcana (e.g. fool, star, ace-of-cups, queen-of-swords). This is the canonical form, whatever spelling was requested.",
             "example": "fool",
             "type": "string"
           },
@@ -4735,7 +4735,7 @@
             "type": "string"
           },
           "id": {
-            "description": "Unique card identifier in kebab-case (e.g. fool, ace-of-cups, queen-of-swords).",
+            "description": "Unique card identifier in kebab-case, with no leading article on Major Arcana (e.g. fool, star, ace-of-cups, queen-of-swords). This is the canonical form, whatever spelling was requested.",
             "example": "fool",
             "type": "string"
           },
@@ -14564,7 +14564,7 @@
       "name": "RoxyAPI Support",
       "url": "https://roxyapi.com/contact"
     },
-    "description": "# RoxyAPI: AI-Native Insight Infrastructure\n\n\u003e **Base URL:** `https://roxyapi.com/api/v2`\n\u003e All endpoint paths below are relative to this base URL.\n\nThe only multi-domain spiritual intelligence API. 12 domains (astrology, Vedic astrology, forecast, human design, numerology, tarot, biorhythm, I-Ching, crystals, dreams, angel numbers, location), 180+ endpoints, one API key, instant activation. Remote MCP server per domain plus AGENTS.md for AI coding agents.\n\n## Who uses RoxyAPI\n\n- **Developers** building astrology apps, tarot platforms, numerology calculators, or dream journals\n- **AI agent builders** connecting Claude, GPT, or Gemini to real calculation engines via MCP\n- **Vibe coders** shipping insight apps with Cursor, Bolt, or Replit using zero domain knowledge\n- **Founders and brands** launching branded spiritual experiences for their audience\n\n## Quick start (60 seconds)\n\n**1. Get your API key** at [roxyapi.com/pricing](https://roxyapi.com/pricing). Instant delivery, no account required.\n\n**2. Make your first call:**\n```bash\ncurl -H \"X-API-Key: YOUR_KEY\" https://roxyapi.com/api/v2/tarot/draw -X POST -H \"Content-Type: application/json\" -d '{\"count\": 3}'\n```\n\n**3. Monitor usage:**\n```bash\ncurl -H \"X-API-Key: YOUR_KEY\" https://roxyapi.com/api/v2/usage\n```\n\n## AI agent integration (Remote MCP)\n\nRoxyAPI ships a Remote MCP server per product over Streamable HTTP, with no local setup and no Docker. Your AI agent auto-discovers all 180+ endpoints as callable tools with zero configuration:\n- **Claude Desktop, Cursor, Windsurf**: Add MCP server URL in settings\n- **OpenAI Agents, Gemini ADK**: Connect via Streamable HTTP transport\n- **Custom agents**: Use the MCP Python/TypeScript SDK\n\nMCP endpoints: `https://roxyapi.com/mcp/{domain}` (e.g., `/mcp/astrology`, `/mcp/tarot`)\n\nSetup guide: [roxyapi.com/docs/mcp](https://roxyapi.com/docs/mcp)\n\n## Authentication\n\nAll endpoints require an API key via header or query param:\n- **Header (recommended):** `X-API-Key: YOUR_KEY`\n- **Query param (testing):** `?api_key=YOUR_KEY`\n\n## Response format\n\nClean JSON, no wrapper objects. Errors return `{ \"error\": \"message\", \"code\": \"error_code\" }`. The `error` field is human-readable (may change wording). The `code` field is machine-readable (stable — safe to switch on programmatically).\n\nRate limit headers on every response: `X-RateLimit-Limit`, `X-RateLimit-Remaining`, `X-RateLimit-Used`\n\n## Errors\n\nAll errors return `{ \"error\": \"message\", \"code\": \"error_code\" }`:\n\n| Status | Code | When |\n|--------|------|------|\n| 400 | `validation_error` | Missing or invalid parameters. Response includes `issues[]` with per-field `path`, `message`, `code`, `expected`, `minimum`, `maximum`, `format`, `pattern`. |\n| 401 | `api_key_required` | No API key provided |\n| 401 | `invalid_api_key` | Key format invalid or tampered |\n| 401 | `subscription_not_found` | Key references non-existent subscription |\n| 401 | `subscription_inactive` | Subscription cancelled, expired, or suspended |\n| 404 | `not_found` | Resource not found. Response may include a ranked `suggestions[]` array (each with `endpoint`, `hint`, and a `docs` deep link) for typo recovery. |\n| 405 | `method_not_allowed` | Path exists for a different HTTP method. Response includes `allow[]` and the `Allow` header lists valid methods. |\n| 429 | `rate_limit_exceeded` | Monthly quota reached |\n| 500 | `internal_error` | Server error |\n\n## Pricing\n\nFlat per-request pricing. Every call counts the same, whether a planet position or a full birth chart with aspects. No credit systems, no variable costs. Plans from $39 per month for 50K requests, up to 3M requests, with custom volume above that.\n\nSee [roxyapi.com/pricing](https://roxyapi.com/pricing)\n\n## Resources\n\n- [Quickstart guide](https://roxyapi.com/docs/quickstart) - first API call in 60 seconds\n- [Documentation](https://roxyapi.com/docs) - guides, tutorials, domain reference\n- [MCP setup](https://roxyapi.com/docs/mcp) - connect AI agents\n- [Starter apps](https://roxyapi.com/starters) - clone and deploy in 30 minutes\n- [FAQ](https://roxyapi.com/faq) - common questions\n- [Contact](https://roxyapi.com/contact) - support and API key recovery\n",
+    "description": "# RoxyAPI: AI-Native Insight Infrastructure\n\n\u003e **Base URL:** `https://roxyapi.com/api/v2`\n\u003e All endpoint paths below are relative to this base URL.\n\nThe only multi-domain spiritual intelligence API. 12 domains (astrology, Vedic astrology, forecast, human design, numerology, tarot, biorhythm, I-Ching, crystals, dreams, angel numbers, location), 182+ endpoints, one API key, instant activation. Remote MCP server per domain plus AGENTS.md for AI coding agents.\n\n## Who uses RoxyAPI\n\n- **Developers** building astrology apps, tarot platforms, numerology calculators, or dream journals\n- **AI agent builders** connecting Claude, GPT, or Gemini to real calculation engines via MCP\n- **Vibe coders** shipping insight apps with Cursor, Bolt, or Replit using zero domain knowledge\n- **Founders and brands** launching branded spiritual experiences for their audience\n\n## Quick start (60 seconds)\n\n**1. Get your API key** at [roxyapi.com/pricing](https://roxyapi.com/pricing). Instant delivery, no account required.\n\n**2. Make your first call:**\n```bash\ncurl -H \"X-API-Key: YOUR_KEY\" https://roxyapi.com/api/v2/tarot/draw -X POST -H \"Content-Type: application/json\" -d '{\"count\": 3}'\n```\n\n**3. Monitor usage:**\n```bash\ncurl -H \"X-API-Key: YOUR_KEY\" https://roxyapi.com/api/v2/usage\n```\n\n## AI agent integration (Remote MCP)\n\nRoxyAPI ships a Remote MCP server per product over Streamable HTTP, with no local setup and no Docker. Your AI agent auto-discovers all 182+ endpoints as callable tools with zero configuration:\n- **Claude Desktop, Cursor, Windsurf**: Add MCP server URL in settings\n- **OpenAI Agents, Gemini ADK**: Connect via Streamable HTTP transport\n- **Custom agents**: Use the MCP Python/TypeScript SDK\n\nMCP endpoints: `https://roxyapi.com/mcp/{domain}` (e.g., `/mcp/astrology`, `/mcp/tarot`)\n\nSetup guide: [roxyapi.com/docs/mcp](https://roxyapi.com/docs/mcp)\n\n## Authentication\n\nAll endpoints require an API key via header or query param:\n- **Header (recommended):** `X-API-Key: YOUR_KEY`\n- **Query param (testing):** `?api_key=YOUR_KEY`\n\n## Response format\n\nClean JSON, no wrapper objects. Errors return `{ \"error\": \"message\", \"code\": \"error_code\" }`. The `error` field is human-readable (may change wording). The `code` field is machine-readable (stable — safe to switch on programmatically).\n\nRate limit headers on every response: `X-RateLimit-Limit`, `X-RateLimit-Remaining`, `X-RateLimit-Used`\n\n## Errors\n\nAll errors return `{ \"error\": \"message\", \"code\": \"error_code\" }`:\n\n| Status | Code | When |\n|--------|------|------|\n| 400 | `validation_error` | Missing or invalid parameters. Response includes `issues[]` with per-field `path`, `message`, `code`, `expected`, `minimum`, `maximum`, `format`, `pattern`. |\n| 401 | `api_key_required` | No API key provided |\n| 401 | `invalid_api_key` | Key format invalid or tampered |\n| 401 | `subscription_not_found` | Key references non-existent subscription |\n| 401 | `subscription_inactive` | Subscription cancelled, expired, or suspended |\n| 404 | `not_found` | Resource not found. Response may include a ranked `suggestions[]` array (each with `endpoint`, `hint`, and a `docs` deep link) for typo recovery. |\n| 405 | `method_not_allowed` | Path exists for a different HTTP method. Response includes `allow[]` and the `Allow` header lists valid methods. |\n| 429 | `rate_limit_exceeded` | Monthly quota reached |\n| 500 | `internal_error` | Server error |\n\n## Pricing\n\nFlat per-request pricing. Every call counts the same, whether a planet position or a full birth chart with aspects. No credit systems, no variable costs. Plans from $39 per month for 50K requests, up to 3M requests, with custom volume above that.\n\nSee [roxyapi.com/pricing](https://roxyapi.com/pricing)\n\n## Resources\n\n- [Quickstart guide](https://roxyapi.com/docs/quickstart) - first API call in 60 seconds\n- [Documentation](https://roxyapi.com/docs) - guides, tutorials, domain reference\n- [MCP setup](https://roxyapi.com/docs/mcp) - connect AI agents\n- [Starter apps](https://roxyapi.com/starters) - clone and deploy in 30 minutes\n- [FAQ](https://roxyapi.com/faq) - common questions\n- [Contact](https://roxyapi.com/contact) - support and API key recovery\n",
     "license": {
       "name": "Proprietary",
       "url": "https://roxyapi.com/policy/terms"
@@ -18311,6 +18311,235 @@
         ]
       }
     },
+    "/astrology/ecliptic-crossings": {
+      "post": {
+        "description": "Get every moment a body crosses the plane of the ecliptic during a given year, for the 11 Western bodies that leave it: the Moon and Mercury through Pluto, plus Chiron and Black Moon Lilith. A crossing from south to north is an ascending node passage, north to south a descending one. These are the instants a body sits exactly on the ecliptic rather than merely near it, which is what makes an eclipse possible when a lunar crossing coincides with a New or Full Moon, and what practitioners use for node-based timing. Returns the exact date and time in your timezone with the tropical longitude and sign. The Sun and the lunar nodes are excluded because they lie on the plane by definition and so have no nodes of their own. Essential for eclipse-season work, node timing, and astronomical calendars. Ecliptic crossing API, planetary node passage, ascending and descending nodes. Verified against NASA JPL Horizons.",
+        "operationId": "getPlanetaryNodePassages",
+        "parameters": [
+          {
+            "description": "Response language (ISO 639-1). Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en. Languages without translations yet return English.",
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "schema": {
+              "default": "en",
+              "description": "Response language (ISO 639-1). Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en. Languages without translations yet return English.",
+              "enum": [
+                "en",
+                "tr",
+                "de",
+                "es",
+                "hi",
+                "pt",
+                "fr",
+                "ru"
+              ],
+              "example": "en",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "timezone": {
+                    "anyOf": [
+                      {
+                        "maximum": 14,
+                        "minimum": -14,
+                        "type": "number"
+                      },
+                      {
+                        "type": "string"
+                      }
+                    ],
+                    "default": 0,
+                    "description": "Timezone offset from UTC in hours. Crossing dates and times are reported in this zone. Defaults to 0 (UTC).",
+                    "example": -5
+                  },
+                  "year": {
+                    "description": "Year to scan for node passages (1900-2100).",
+                    "example": 2026,
+                    "maximum": 2100,
+                    "minimum": 1900,
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "year"
+                ],
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "events": {
+                      "description": "Every node passage in the year, in chronological order across all bodies. The fast bodies dominate: a slow body can go years or decades between node passages, so an absent planet means it did not cross that year rather than that it was not checked.",
+                      "items": {
+                        "properties": {
+                          "date": {
+                            "description": "Date of the crossing in the requested timezone (YYYY-MM-DD).",
+                            "example": "2026-03-14",
+                            "type": "string"
+                          },
+                          "datetime": {
+                            "description": "Combined crossing timestamp in the requested timezone.",
+                            "example": "2026-03-14T09:42",
+                            "type": "string"
+                          },
+                          "direction": {
+                            "description": "ascending is the crossing from south of the ecliptic to north, at the body north node. descending is the reverse, at its south node.",
+                            "enum": [
+                              "ascending",
+                              "descending"
+                            ],
+                            "example": "ascending",
+                            "type": "string"
+                          },
+                          "longitude": {
+                            "description": "Tropical ecliptic longitude of the body at the crossing, in degrees. This is the only value in the response that depends on the zodiac frame.",
+                            "example": 24.7831,
+                            "type": "number"
+                          },
+                          "planet": {
+                            "description": "Body making the crossing. Always canonical English whatever the lang parameter says, so it stays safe to compare against in code. Use planetLocalized for anything a reader sees.",
+                            "example": "Venus",
+                            "type": "string"
+                          },
+                          "planetLocalized": {
+                            "description": "Body name in the requested language. Present only when lang is supplied.",
+                            "example": "Venus",
+                            "type": "string"
+                          },
+                          "sign": {
+                            "description": "Tropical sign the body occupies at the crossing. Canonical English.",
+                            "example": "Aries",
+                            "type": "string"
+                          },
+                          "signLocalized": {
+                            "description": "Sign in the requested language. Present only when lang is supplied.",
+                            "example": "Aries",
+                            "type": "string"
+                          },
+                          "time": {
+                            "description": "Time of the crossing in the requested timezone (HH:MM).",
+                            "example": "09:42",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "planet",
+                          "direction",
+                          "date",
+                          "time",
+                          "datetime",
+                          "longitude",
+                          "sign"
+                        ],
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "timezone": {
+                      "description": "Timezone the dates and times are reported in. Echoes the request.",
+                      "example": -5,
+                      "type": "number"
+                    },
+                    "year": {
+                      "description": "Year that was scanned. Echoes the request.",
+                      "example": 2026,
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "year",
+                    "timezone",
+                    "events"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Node passages calculated successfully"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Validation error. `issues[]` lists every failed field."
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Invalid or missing API key"
+          },
+          "405": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Method not allowed. The path exists but only responds to the methods listed in `allow[]` and the `Allow` response header.",
+            "headers": {
+              "Allow": {
+                "description": "Comma-separated list of allowed methods (RFC 9110).",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Monthly rate limit exceeded"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Internal server error"
+          }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ],
+        "summary": "Ecliptic Crossings - Node passages for a whole year",
+        "tags": [
+          "Western Astrology"
+        ]
+      }
+    },
     "/astrology/fixed-stars": {
       "post": {
         "description": "Calculate the tropical zodiac positions of the major named fixed stars for any birth moment, including the four Royal stars and the fifteen Behenian stars, then detect conjunctions to the natal planets, Ascendant, and Midheaven. Each star returns its precessed ecliptic longitude, zodiac sign, visual magnitude, and traditional planetary nature, with a plain language interpretation for every conjunction inside the chosen orb. A focused tool for natal reports that weigh Regulus, Spica, Aldebaran, Antares, and Algol against the chart.",
@@ -21201,6 +21430,281 @@
           }
         ],
         "summary": "Generate natal chart - Birth chart calculator API with houses and aspects",
+        "tags": [
+          "Western Astrology"
+        ]
+      }
+    },
+    "/astrology/parallels/monthly": {
+      "post": {
+        "description": "Get every parallel and contraparallel of declination that perfects during a given month, across the 13 non-lunar Western bodies: the Sun and Mercury through Pluto, both lunar nodes, Chiron and Black Moon Lilith. A parallel is two bodies at the same declination and reads much like a conjunction; a contraparallel is equal and opposite declinations and reads much like an opposition. Neither depends on zodiacal distance, so they surface connections an aspect table cannot show, which is why traditional and modern practitioners read them alongside aspects. Declinations are geocentric, matching what an ephemeris publishes. Returns the exact date and time of closest approach in your timezone with both declinations. The Moon is excluded because its declination swings the full range every month and would bury the slow pairs. Omit year and month to get the month in progress, so a published calendar stays current without a redeploy. Essential for declination work, out-of-bounds tracking, monthly forecast copy, and electional timing. Monthly parallel calendar API, declination aspects, contraparallel ephemeris. Verified against NASA JPL Horizons.",
+        "operationId": "getMonthlyDeclinationParallels",
+        "parameters": [
+          {
+            "description": "Response language (ISO 639-1). Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en. Languages without translations yet return English.",
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "schema": {
+              "default": "en",
+              "description": "Response language (ISO 639-1). Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en. Languages without translations yet return English.",
+              "enum": [
+                "en",
+                "tr",
+                "de",
+                "es",
+                "hi",
+                "pt",
+                "fr",
+                "ru"
+              ],
+              "example": "en",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "month": {
+                    "description": "Month number (1-12). Defaults to the current month (UTC).",
+                    "example": 3,
+                    "maximum": 12,
+                    "minimum": 1,
+                    "type": "integer"
+                  },
+                  "nodeType": {
+                    "default": "true",
+                    "description": "Lunar node convention. \"mean\" is the smoothed average node, which always moves retrograde; \"true\" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is the osculating node and the default, because it is what most Western chart software reports; mean is the smoothed node preferred by several evolutionary schools, so pass \"mean\" to match one. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to \"true\".",
+                    "enum": [
+                      "mean",
+                      "true"
+                    ],
+                    "example": "true",
+                    "type": "string"
+                  },
+                  "orb": {
+                    "default": 1.5,
+                    "description": "How far from exact still counts, in degrees. The traditional orb for a declination contact is tighter than for a zodiacal aspect because declination changes slowly. Defaults to 1.5.",
+                    "example": 1.5,
+                    "maximum": 3,
+                    "minimum": 0.1,
+                    "type": "number"
+                  },
+                  "timezone": {
+                    "anyOf": [
+                      {
+                        "maximum": 14,
+                        "minimum": -14,
+                        "type": "number"
+                      },
+                      {
+                        "type": "string"
+                      }
+                    ],
+                    "default": 0,
+                    "description": "Timezone offset from UTC in hours. Event dates and times are reported in this zone, which is what makes a published calendar read correctly for its audience. Defaults to 0 (UTC).",
+                    "example": -5
+                  },
+                  "year": {
+                    "description": "Year for the declination calendar (1900-2100). Defaults to the current year (UTC).",
+                    "example": 2026,
+                    "maximum": 2100,
+                    "minimum": 1900,
+                    "type": "integer"
+                  }
+                },
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "events": {
+                      "description": "Every declination contact in the month, in chronological order across all body pairs.",
+                      "items": {
+                        "properties": {
+                          "date": {
+                            "description": "Date the contact is closest to exact, in the requested timezone (YYYY-MM-DD).",
+                            "example": "2026-03-14",
+                            "type": "string"
+                          },
+                          "datetime": {
+                            "description": "Combined timestamp of closest approach, in the requested timezone.",
+                            "example": "2026-03-14T09:42",
+                            "type": "string"
+                          },
+                          "declination1": {
+                            "description": "Geocentric declination of the first body at the reported instant, in degrees. Positive is north of the celestial equator, negative south.",
+                            "example": -12.4183,
+                            "type": "number"
+                          },
+                          "declination2": {
+                            "description": "Geocentric declination of the second body at the reported instant, in degrees.",
+                            "example": -12.4102,
+                            "type": "number"
+                          },
+                          "orb": {
+                            "description": "Distance from exact in degrees at the reported instant. Effectively zero for a contact that perfects inside the month, and larger only where the pair turns before reaching exact.",
+                            "example": 0.01,
+                            "type": "number"
+                          },
+                          "planet1": {
+                            "description": "First body in the contact. Always canonical English whatever the lang parameter says, so it stays safe to compare against in code. Use planet1Localized for anything a reader sees.",
+                            "example": "Venus",
+                            "type": "string"
+                          },
+                          "planet1Localized": {
+                            "description": "First body in the requested language. Present only when lang is supplied.",
+                            "example": "Venus",
+                            "type": "string"
+                          },
+                          "planet2": {
+                            "description": "Second body in the contact. Always canonical English.",
+                            "example": "Saturn",
+                            "type": "string"
+                          },
+                          "planet2Localized": {
+                            "description": "Second body in the requested language. Present only when lang is supplied.",
+                            "example": "Saturno",
+                            "type": "string"
+                          },
+                          "time": {
+                            "description": "Time the contact is closest to exact, in the requested timezone (HH:MM).",
+                            "example": "09:42",
+                            "type": "string"
+                          },
+                          "type": {
+                            "description": "parallel means both bodies stand at the same declination, the same distance north or south of the celestial equator, and reads much like a conjunction. contraparallel means equal and opposite declinations, one as far north as the other is south, and reads much like an opposition. Neither depends on how far apart the two bodies are along the zodiac, which is what makes them worth tracking alongside ordinary aspects.",
+                            "enum": [
+                              "parallel",
+                              "contraparallel"
+                            ],
+                            "example": "parallel",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "planet1",
+                          "planet2",
+                          "type",
+                          "date",
+                          "time",
+                          "datetime",
+                          "orb",
+                          "declination1",
+                          "declination2"
+                        ],
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "month": {
+                      "description": "Month of the calendar. Echoes the month requested, or the current UTC month when it was omitted.",
+                      "example": 3,
+                      "type": "number"
+                    },
+                    "orb": {
+                      "description": "Orb in degrees that was applied. Echoes the request.",
+                      "example": 1.5,
+                      "type": "number"
+                    },
+                    "timezone": {
+                      "description": "Timezone the event dates and times are reported in. Echoes the request.",
+                      "example": -5,
+                      "type": "number"
+                    },
+                    "year": {
+                      "description": "Year of the calendar. Echoes the year requested, or the current UTC year when it was omitted.",
+                      "example": 2026,
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "year",
+                    "month",
+                    "timezone",
+                    "orb",
+                    "events"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Monthly declination calendar calculated successfully"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Validation error. `issues[]` lists every failed field."
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Invalid or missing API key"
+          },
+          "405": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Method not allowed. The path exists but only responds to the methods listed in `allow[]` and the `Allow` response header.",
+            "headers": {
+              "Allow": {
+                "description": "Comma-separated list of allowed methods (RFC 9110).",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Monthly rate limit exceeded"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Internal server error"
+          }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ],
+        "summary": "Monthly Parallels - Declination contacts for an entire month",
         "tags": [
           "Western Astrology"
         ]
@@ -47396,16 +47900,16 @@
     },
     "/tarot/cards/{id}": {
       "get": {
-        "description": "Retrieve comprehensive details for a specific tarot card from the traditional Rider-Waite-Smith deck including complete upright meanings (card drawn normally) and reversed meanings (inverted/upside down interpretations for nuanced guidance). Each card provides keywords for quick reference, full interpretations (400+ words each for upright and reversed orientations), and guidance across life domains: love and relationships, career and professional growth, finances and material success, health and wellbeing, spirituality and personal development. Major Arcana cards (0-21) reveal deep spiritual lessons and life-changing themes. Minor Arcana cards (Ace through King in Cups, Wands, Swords, Pentacles) address practical daily situations and specific challenges. Use card ID in kebab-case format: Major Arcana like \"fool\", \"magician\", \"death\", \"tower\", or Minor Arcana like \"ace-of-cups\", \"seven-of-wands\", \"queen-of-swords\", \"king-of-pentacles\". Essential for detailed tarot study, reading interpretations, divination apps, fortune-telling platforms, spiritual guidance tools, and professional tarot learning applications.",
+        "description": "Retrieve comprehensive details for a specific tarot card from the traditional Rider-Waite-Smith deck including complete upright meanings (card drawn normally) and reversed meanings (inverted/upside down interpretations for nuanced guidance). Each card provides keywords for quick reference, full interpretations (400+ words each for upright and reversed orientations), and guidance across life domains: love and relationships, career and professional growth, finances and material success, health and wellbeing, spirituality and personal development. Major Arcana cards (0-21) reveal deep spiritual lessons and life-changing themes. Minor Arcana cards (Ace through King in Cups, Wands, Swords, Pentacles) address practical daily situations and specific challenges. Use card ID in kebab-case format: Major Arcana like \"fool\", \"magician\", \"death\", \"tower\", or Minor Arcana like \"ace-of-cups\", \"seven-of-wands\", \"queen-of-swords\", \"king-of-pentacles\". Major Arcana IDs carry no leading article, though one is accepted, so \"the-star\" and \"star\" both return The Star. Essential for detailed tarot study, reading interpretations, divination apps, fortune-telling platforms, spiritual guidance tools, and professional tarot learning applications.",
         "operationId": "getCard",
         "parameters": [
           {
-            "description": "Unique card identifier in kebab-case. Major arcana: \"fool\", \"magician\", \"death\", etc. Minor arcana: \"ace-of-cups\", \"seven-of-wands\", \"queen-of-swords\", \"king-of-pentacles\", etc.",
+            "description": "Card identifier. Major arcana: \"fool\", \"magician\", \"death\". Minor arcana: \"ace-of-cups\", \"seven-of-wands\", \"queen-of-swords\", \"king-of-pentacles\". Casing and separators are flexible, so \"Fool\" and \"ACE_OF_CUPS\" both resolve, and a leading definite article is optional, so \"the-star\" resolves to \"star\". The canonical form, and the one every response echoes, is kebab-case with no article.",
             "in": "path",
             "name": "id",
             "required": true,
             "schema": {
-              "description": "Unique card identifier in kebab-case. Major arcana: \"fool\", \"magician\", \"death\", etc. Minor arcana: \"ace-of-cups\", \"seven-of-wands\", \"queen-of-swords\", \"king-of-pentacles\", etc.",
+              "description": "Card identifier. Major arcana: \"fool\", \"magician\", \"death\". Minor arcana: \"ace-of-cups\", \"seven-of-wands\", \"queen-of-swords\", \"king-of-pentacles\". Casing and separators are flexible, so \"Fool\" and \"ACE_OF_CUPS\" both resolve, and a leading definite article is optional, so \"the-star\" resolves to \"star\". The canonical form, and the one every response echoes, is kebab-case with no article.",
               "example": "fool",
               "type": "string"
             }
@@ -51379,7 +51883,7 @@
                       "description": "Life areas carried as a TYPED closed set rather than an open map, so every generated SDK knows which keys exist. Finance ships alone in this version, because an area is a named classical house group with a citation and not a life category invented for a dropdown. Widening it later adds a key and breaks nothing.",
                       "properties": {
                         "finance": {
-                          "description": "The finance area: the positive house group 2, 5, 11 netted against the negative group 6, 8, 12, read off the lords of the running dasha, bhukti and antara, because that is the KP rule for when a matter fructifies, plus the natal basis the day is read against. ALWAYS AN OBJECT. Above latitude 66.56 the six netted members are null, because the Placidus cusps behind the significators have no solution there, while natal is still populated because it is a property of the birth chart and needs no cusps; the reading also still carries its gochara, panchanga and dasha and names the omission in degraded. The two house groups are Krishnamurti Paddhati practice, but the NET is a KP practitioner convention rather than a classical operation: the KP sources that carry these groups use them as a promise test and an avoidance test, never as arithmetic. The groups also vary by author, and the 6th house is the live disagreement, since some KP authors place it on the POSITIVE side as service income and salary, the exact opposite of the assignment used here. This is a six house net and it is NOT the focus=finance lens, which re-reads all twelve bhavas in money vocabulary and moves no number. The two are orthogonal and both ship.",
+                          "description": "The finance area: the positive house group 2, 5, 11 netted against the negative group 6, 8, 12, read off the lords of the running dasha, bhukti and antara, because that is the KP rule for when a matter fructifies, plus the natal basis the day is read against. ALWAYS AN OBJECT. Above latitude 66.56 the six netted members are null, because the Placidus cusps behind the significators have no solution there, while natal is still populated because it is a property of the birth chart and needs no cusps; the reading also still carries its gochara, panchanga and dasha and names the omission in degraded. The two house groups are Krishnamurti Paddhati practice, but the NET is a KP practitioner convention rather than a classical operation: the KP sources that carry these groups use them as a promise test and an avoidance test, never as arithmetic. The groups also vary by author, and TWO houses are live disagreements rather than one. The 6th: some KP authors place it on the POSITIVE side as service income and salary, the exact opposite of the assignment used here. The 5th: it is named as a speculative GAIN house in the same KP sources that elsewhere call it a negation house, reading it as the 12th from the 6th and therefore loss of earning capacity, and both readings appear in one publication. The 1st is treated as a negation house by some authors on the same logic, as the 12th from the 2nd, and is not on either side here. This is a six house net and it is NOT the focus=finance lens, which re-reads all twelve bhavas in money vocabulary and moves no number. The two are orthogonal and both ship.",
                           "properties": {
                             "band": {
                               "description": "The band the finance score falls in, on the same ladder as the top-level verdict so the two can never disagree about what a word means: \"very-strong\" at 75 and above, \"strong\" at 50 and above, \"moderate\" at 25 and above, \"weak\" below 25. Null above latitude 66.56, where the Placidus cusps the KP significators are read from have no solution: the question does not apply there rather than the answer being no, so never render it as zero or as a weak verdict. The natal block beside it is unaffected and still ships, and degraded names areas.finance.score.",
@@ -51583,7 +52087,7 @@
                               ]
                             },
                             "score": {
-                              "description": "Share of the running lords six-house connections that land on the positive group, 0 to 100, rounded. A COUNT, so positive and negative below reproduce it in one division: round(positive / (positive + negative) * 100). Zero when the running lords reach none of the six houses, which is an ABSENCE of connection rather than a negative verdict. Null above latitude 66.56, where the Placidus cusps the KP significators are read from have no solution: the question does not apply there rather than the answer being no, so never render it as zero or as a weak verdict. The natal block beside it is unaffected and still ships, and degraded names areas.finance.score. The two house groups are Krishnamurti Paddhati practice, but the NET is a KP practitioner convention rather than a classical operation: the KP sources that carry these groups use them as a promise test and an avoidance test, never as arithmetic. The groups also vary by author, and the 6th house is the live disagreement, since some KP authors place it on the POSITIVE side as service income and salary, the exact opposite of the assignment used here. This is a six house net and it is NOT the focus=finance lens, which re-reads all twelve bhavas in money vocabulary and moves no number. The two are orthogonal and both ship.",
+                              "description": "Share of the running lords six-house connections that land on the positive group, 0 to 100, rounded. A COUNT, so positive and negative below reproduce it in one division: round(positive / (positive + negative) * 100). Zero when the running lords reach none of the six houses, which is an ABSENCE of connection rather than a negative verdict. Null above latitude 66.56, where the Placidus cusps the KP significators are read from have no solution: the question does not apply there rather than the answer being no, so never render it as zero or as a weak verdict. The natal block beside it is unaffected and still ships, and degraded names areas.finance.score. The two house groups are Krishnamurti Paddhati practice, but the NET is a KP practitioner convention rather than a classical operation: the KP sources that carry these groups use them as a promise test and an avoidance test, never as arithmetic. The groups also vary by author, and TWO houses are live disagreements rather than one. The 6th: some KP authors place it on the POSITIVE side as service income and salary, the exact opposite of the assignment used here. The 5th: it is named as a speculative GAIN house in the same KP sources that elsewhere call it a negation house, reading it as the 12th from the 6th and therefore loss of earning capacity, and both readings appear in one publication. The 1st is treated as a negation house by some authors on the same logic, as the 12th from the 2nd, and is not on either side here. This is a six house net and it is NOT the focus=finance lens, which re-reads all twelve bhavas in money vocabulary and moves no number. The two are orthogonal and both ship.",
                               "example": 67,
                               "type": [
                                 "number",

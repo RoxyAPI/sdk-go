@@ -4935,6 +4935,60 @@ func (e GenerateCompositeChart200JSONResponseBodyCompositePlanetsName) Valid() b
 	}
 }
 
+// Defines values for GetPlanetaryNodePassagesParamsLang.
+const (
+	GetPlanetaryNodePassagesParamsLangDe GetPlanetaryNodePassagesParamsLang = "de"
+	GetPlanetaryNodePassagesParamsLangEn GetPlanetaryNodePassagesParamsLang = "en"
+	GetPlanetaryNodePassagesParamsLangEs GetPlanetaryNodePassagesParamsLang = "es"
+	GetPlanetaryNodePassagesParamsLangFr GetPlanetaryNodePassagesParamsLang = "fr"
+	GetPlanetaryNodePassagesParamsLangHi GetPlanetaryNodePassagesParamsLang = "hi"
+	GetPlanetaryNodePassagesParamsLangPt GetPlanetaryNodePassagesParamsLang = "pt"
+	GetPlanetaryNodePassagesParamsLangRu GetPlanetaryNodePassagesParamsLang = "ru"
+	GetPlanetaryNodePassagesParamsLangTr GetPlanetaryNodePassagesParamsLang = "tr"
+)
+
+// Valid indicates whether the value is a known member of the GetPlanetaryNodePassagesParamsLang enum.
+func (e GetPlanetaryNodePassagesParamsLang) Valid() bool {
+	switch e {
+	case GetPlanetaryNodePassagesParamsLangDe:
+		return true
+	case GetPlanetaryNodePassagesParamsLangEn:
+		return true
+	case GetPlanetaryNodePassagesParamsLangEs:
+		return true
+	case GetPlanetaryNodePassagesParamsLangFr:
+		return true
+	case GetPlanetaryNodePassagesParamsLangHi:
+		return true
+	case GetPlanetaryNodePassagesParamsLangPt:
+		return true
+	case GetPlanetaryNodePassagesParamsLangRu:
+		return true
+	case GetPlanetaryNodePassagesParamsLangTr:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetPlanetaryNodePassages200JSONResponseBodyEventsDirection.
+const (
+	GetPlanetaryNodePassages200JSONResponseBodyEventsDirectionAscending  GetPlanetaryNodePassages200JSONResponseBodyEventsDirection = "ascending"
+	GetPlanetaryNodePassages200JSONResponseBodyEventsDirectionDescending GetPlanetaryNodePassages200JSONResponseBodyEventsDirection = "descending"
+)
+
+// Valid indicates whether the value is a known member of the GetPlanetaryNodePassages200JSONResponseBodyEventsDirection enum.
+func (e GetPlanetaryNodePassages200JSONResponseBodyEventsDirection) Valid() bool {
+	switch e {
+	case GetPlanetaryNodePassages200JSONResponseBodyEventsDirectionAscending:
+		return true
+	case GetPlanetaryNodePassages200JSONResponseBodyEventsDirectionDescending:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for GenerateFixedStarsParamsLang.
 const (
 	GenerateFixedStarsParamsLangDe GenerateFixedStarsParamsLang = "de"
@@ -5874,6 +5928,78 @@ func (e GenerateNatalChartParamsLang) Valid() bool {
 	case GenerateNatalChartParamsLangRu:
 		return true
 	case GenerateNatalChartParamsLangTr:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetMonthlyDeclinationParallelsParamsLang.
+const (
+	GetMonthlyDeclinationParallelsParamsLangDe GetMonthlyDeclinationParallelsParamsLang = "de"
+	GetMonthlyDeclinationParallelsParamsLangEn GetMonthlyDeclinationParallelsParamsLang = "en"
+	GetMonthlyDeclinationParallelsParamsLangEs GetMonthlyDeclinationParallelsParamsLang = "es"
+	GetMonthlyDeclinationParallelsParamsLangFr GetMonthlyDeclinationParallelsParamsLang = "fr"
+	GetMonthlyDeclinationParallelsParamsLangHi GetMonthlyDeclinationParallelsParamsLang = "hi"
+	GetMonthlyDeclinationParallelsParamsLangPt GetMonthlyDeclinationParallelsParamsLang = "pt"
+	GetMonthlyDeclinationParallelsParamsLangRu GetMonthlyDeclinationParallelsParamsLang = "ru"
+	GetMonthlyDeclinationParallelsParamsLangTr GetMonthlyDeclinationParallelsParamsLang = "tr"
+)
+
+// Valid indicates whether the value is a known member of the GetMonthlyDeclinationParallelsParamsLang enum.
+func (e GetMonthlyDeclinationParallelsParamsLang) Valid() bool {
+	switch e {
+	case GetMonthlyDeclinationParallelsParamsLangDe:
+		return true
+	case GetMonthlyDeclinationParallelsParamsLangEn:
+		return true
+	case GetMonthlyDeclinationParallelsParamsLangEs:
+		return true
+	case GetMonthlyDeclinationParallelsParamsLangFr:
+		return true
+	case GetMonthlyDeclinationParallelsParamsLangHi:
+		return true
+	case GetMonthlyDeclinationParallelsParamsLangPt:
+		return true
+	case GetMonthlyDeclinationParallelsParamsLangRu:
+		return true
+	case GetMonthlyDeclinationParallelsParamsLangTr:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetMonthlyDeclinationParallelsJSONBodyNodeType.
+const (
+	GetMonthlyDeclinationParallelsJSONBodyNodeTypeMean GetMonthlyDeclinationParallelsJSONBodyNodeType = "mean"
+	GetMonthlyDeclinationParallelsJSONBodyNodeTypeTrue GetMonthlyDeclinationParallelsJSONBodyNodeType = "true"
+)
+
+// Valid indicates whether the value is a known member of the GetMonthlyDeclinationParallelsJSONBodyNodeType enum.
+func (e GetMonthlyDeclinationParallelsJSONBodyNodeType) Valid() bool {
+	switch e {
+	case GetMonthlyDeclinationParallelsJSONBodyNodeTypeMean:
+		return true
+	case GetMonthlyDeclinationParallelsJSONBodyNodeTypeTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetMonthlyDeclinationParallels200JSONResponseBodyEventsType.
+const (
+	GetMonthlyDeclinationParallels200JSONResponseBodyEventsTypeContraparallel GetMonthlyDeclinationParallels200JSONResponseBodyEventsType = "contraparallel"
+	GetMonthlyDeclinationParallels200JSONResponseBodyEventsTypeParallel       GetMonthlyDeclinationParallels200JSONResponseBodyEventsType = "parallel"
+)
+
+// Valid indicates whether the value is a known member of the GetMonthlyDeclinationParallels200JSONResponseBodyEventsType enum.
+func (e GetMonthlyDeclinationParallels200JSONResponseBodyEventsType) Valid() bool {
+	switch e {
+	case GetMonthlyDeclinationParallels200JSONResponseBodyEventsTypeContraparallel:
+		return true
+	case GetMonthlyDeclinationParallels200JSONResponseBodyEventsTypeParallel:
 		return true
 	default:
 		return false
@@ -17807,16 +17933,16 @@ func (e GetEclipticCrossingsJSONBodyCoordinateSystem) Valid() bool {
 
 // Defines values for GetEclipticCrossings200JSONResponseBodyEventsDirection.
 const (
-	Ascending  GetEclipticCrossings200JSONResponseBodyEventsDirection = "ascending"
-	Descending GetEclipticCrossings200JSONResponseBodyEventsDirection = "descending"
+	GetEclipticCrossings200JSONResponseBodyEventsDirectionAscending  GetEclipticCrossings200JSONResponseBodyEventsDirection = "ascending"
+	GetEclipticCrossings200JSONResponseBodyEventsDirectionDescending GetEclipticCrossings200JSONResponseBodyEventsDirection = "descending"
 )
 
 // Valid indicates whether the value is a known member of the GetEclipticCrossings200JSONResponseBodyEventsDirection enum.
 func (e GetEclipticCrossings200JSONResponseBodyEventsDirection) Valid() bool {
 	switch e {
-	case Ascending:
+	case GetEclipticCrossings200JSONResponseBodyEventsDirectionAscending:
 		return true
-	case Descending:
+	case GetEclipticCrossings200JSONResponseBodyEventsDirectionDescending:
 		return true
 	default:
 		return false
@@ -20843,7 +20969,7 @@ type BasicCard struct {
 	// Arcana Whether this card belongs to the Major Arcana (22 trump cards representing major life themes) or Minor Arcana (56 suit cards for daily situations).
 	Arcana BasicCardArcana `json:"arcana"`
 
-	// ID Unique card identifier in kebab-case (e.g. fool, ace-of-cups, queen-of-swords).
+	// ID Unique card identifier in kebab-case, with no leading article on Major Arcana (e.g. fool, star, ace-of-cups, queen-of-swords). This is the canonical form, whatever spelling was requested.
 	ID string `json:"id"`
 
 	// ImageURL URL to the tarot card artwork image in the Rider-Waite-Smith style.
@@ -22048,7 +22174,7 @@ type Card struct {
 	// Arcana Whether this card belongs to the Major Arcana (22 trump cards representing major life themes) or Minor Arcana (56 suit cards for daily situations).
 	Arcana CardArcana `json:"arcana"`
 
-	// ID Unique card identifier in kebab-case (e.g. fool, ace-of-cups, queen-of-swords).
+	// ID Unique card identifier in kebab-case, with no leading article on Major Arcana (e.g. fool, star, ace-of-cups, queen-of-swords). This is the canonical form, whatever spelling was requested.
 	ID string `json:"id"`
 
 	// ImageURL URL to the tarot card artwork image in the Rider-Waite-Smith style.
@@ -26818,6 +26944,38 @@ type GenerateCompositeChart200JSONResponseBodyAspectsType string
 // GenerateCompositeChart200JSONResponseBodyCompositePlanetsName defines parameters for GenerateCompositeChart.
 type GenerateCompositeChart200JSONResponseBodyCompositePlanetsName string
 
+// GetPlanetaryNodePassagesJSONBody defines parameters for GetPlanetaryNodePassages.
+type GetPlanetaryNodePassagesJSONBody struct {
+	// Timezone Timezone offset from UTC in hours. Crossing dates and times are reported in this zone. Defaults to 0 (UTC).
+	Timezone *GetPlanetaryNodePassagesJSONBody_Timezone `json:"timezone,omitempty"`
+
+	// Year Year to scan for node passages (1900-2100).
+	Year int `json:"year"`
+}
+
+// GetPlanetaryNodePassagesParams defines parameters for GetPlanetaryNodePassages.
+type GetPlanetaryNodePassagesParams struct {
+	// Lang Response language (ISO 639-1). Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en. Languages without translations yet return English.
+	Lang *GetPlanetaryNodePassagesParamsLang `form:"lang,omitempty" json:"lang,omitempty"`
+}
+
+// GetPlanetaryNodePassagesParamsLang defines parameters for GetPlanetaryNodePassages.
+type GetPlanetaryNodePassagesParamsLang string
+
+// GetPlanetaryNodePassagesJSONBodyTimezone0 defines parameters for GetPlanetaryNodePassages.
+type GetPlanetaryNodePassagesJSONBodyTimezone0 = float32
+
+// GetPlanetaryNodePassagesJSONBodyTimezone1 defines parameters for GetPlanetaryNodePassages.
+type GetPlanetaryNodePassagesJSONBodyTimezone1 = string
+
+// GetPlanetaryNodePassagesJSONBody_Timezone defines parameters for GetPlanetaryNodePassages.
+type GetPlanetaryNodePassagesJSONBody_Timezone struct {
+	union json.RawMessage
+}
+
+// GetPlanetaryNodePassages200JSONResponseBodyEventsDirection defines parameters for GetPlanetaryNodePassages.
+type GetPlanetaryNodePassages200JSONResponseBodyEventsDirection string
+
 // GenerateFixedStarsJSONBody defines parameters for GenerateFixedStars.
 type GenerateFixedStarsJSONBody struct {
 	// Date Birth date in YYYY-MM-DD format. Determines planetary positions for the specific calendar day.
@@ -27142,6 +27300,50 @@ type GenerateNatalChartParams struct {
 
 // GenerateNatalChartParamsLang defines parameters for GenerateNatalChart.
 type GenerateNatalChartParamsLang string
+
+// GetMonthlyDeclinationParallelsJSONBody defines parameters for GetMonthlyDeclinationParallels.
+type GetMonthlyDeclinationParallelsJSONBody struct {
+	// Month Month number (1-12). Defaults to the current month (UTC).
+	Month *int `json:"month,omitempty"`
+
+	// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is the osculating node and the default, because it is what most Western chart software reports; mean is the smoothed node preferred by several evolutionary schools, so pass "mean" to match one. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
+	NodeType *GetMonthlyDeclinationParallelsJSONBodyNodeType `json:"nodeType,omitempty"`
+
+	// Orb How far from exact still counts, in degrees. The traditional orb for a declination contact is tighter than for a zodiacal aspect because declination changes slowly. Defaults to 1.5.
+	Orb *float32 `json:"orb,omitempty"`
+
+	// Timezone Timezone offset from UTC in hours. Event dates and times are reported in this zone, which is what makes a published calendar read correctly for its audience. Defaults to 0 (UTC).
+	Timezone *GetMonthlyDeclinationParallelsJSONBody_Timezone `json:"timezone,omitempty"`
+
+	// Year Year for the declination calendar (1900-2100). Defaults to the current year (UTC).
+	Year *int `json:"year,omitempty"`
+}
+
+// GetMonthlyDeclinationParallelsParams defines parameters for GetMonthlyDeclinationParallels.
+type GetMonthlyDeclinationParallelsParams struct {
+	// Lang Response language (ISO 639-1). Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en. Languages without translations yet return English.
+	Lang *GetMonthlyDeclinationParallelsParamsLang `form:"lang,omitempty" json:"lang,omitempty"`
+}
+
+// GetMonthlyDeclinationParallelsParamsLang defines parameters for GetMonthlyDeclinationParallels.
+type GetMonthlyDeclinationParallelsParamsLang string
+
+// GetMonthlyDeclinationParallelsJSONBodyNodeType defines parameters for GetMonthlyDeclinationParallels.
+type GetMonthlyDeclinationParallelsJSONBodyNodeType string
+
+// GetMonthlyDeclinationParallelsJSONBodyTimezone0 defines parameters for GetMonthlyDeclinationParallels.
+type GetMonthlyDeclinationParallelsJSONBodyTimezone0 = float32
+
+// GetMonthlyDeclinationParallelsJSONBodyTimezone1 defines parameters for GetMonthlyDeclinationParallels.
+type GetMonthlyDeclinationParallelsJSONBodyTimezone1 = string
+
+// GetMonthlyDeclinationParallelsJSONBody_Timezone defines parameters for GetMonthlyDeclinationParallels.
+type GetMonthlyDeclinationParallelsJSONBody_Timezone struct {
+	union json.RawMessage
+}
+
+// GetMonthlyDeclinationParallels200JSONResponseBodyEventsType defines parameters for GetMonthlyDeclinationParallels.
+type GetMonthlyDeclinationParallels200JSONResponseBodyEventsType string
 
 // ListPlanetMeaningsParams defines parameters for ListPlanetMeanings.
 type ListPlanetMeaningsParams struct {
@@ -31436,6 +31638,9 @@ type CalculateCompatibilityJSONRequestBody CalculateCompatibilityJSONBody
 // GenerateCompositeChartJSONRequestBody defines body for GenerateCompositeChart for application/json ContentType.
 type GenerateCompositeChartJSONRequestBody GenerateCompositeChartJSONBody
 
+// GetPlanetaryNodePassagesJSONRequestBody defines body for GetPlanetaryNodePassages for application/json ContentType.
+type GetPlanetaryNodePassagesJSONRequestBody GetPlanetaryNodePassagesJSONBody
+
 // GenerateFixedStarsJSONRequestBody defines body for GenerateFixedStars for application/json ContentType.
 type GenerateFixedStarsJSONRequestBody GenerateFixedStarsJSONBody
 
@@ -31453,6 +31658,9 @@ type GenerateLunarReturnJSONRequestBody GenerateLunarReturnJSONBody
 
 // GenerateNatalChartJSONRequestBody defines body for GenerateNatalChart for application/json ContentType.
 type GenerateNatalChartJSONRequestBody = NatalChartRequest
+
+// GetMonthlyDeclinationParallelsJSONRequestBody defines body for GetMonthlyDeclinationParallels for application/json ContentType.
+type GetMonthlyDeclinationParallelsJSONRequestBody GetMonthlyDeclinationParallelsJSONBody
 
 // GeneratePlanetaryReturnJSONRequestBody defines body for GeneratePlanetaryReturn for application/json ContentType.
 type GeneratePlanetaryReturnJSONRequestBody GeneratePlanetaryReturnJSONBody
@@ -34609,6 +34817,68 @@ func (t *GenerateCompositeChartJSONBody_Person2_Timezone) UnmarshalJSON(b []byte
 	return err
 }
 
+// AsGetPlanetaryNodePassagesJSONBodyTimezone0 returns the union data inside the GetPlanetaryNodePassagesJSONBody_Timezone as a GetPlanetaryNodePassagesJSONBodyTimezone0
+func (t GetPlanetaryNodePassagesJSONBody_Timezone) AsGetPlanetaryNodePassagesJSONBodyTimezone0() (GetPlanetaryNodePassagesJSONBodyTimezone0, error) {
+	var body GetPlanetaryNodePassagesJSONBodyTimezone0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetPlanetaryNodePassagesJSONBodyTimezone0 overwrites any union data inside the GetPlanetaryNodePassagesJSONBody_Timezone as the provided GetPlanetaryNodePassagesJSONBodyTimezone0
+func (t *GetPlanetaryNodePassagesJSONBody_Timezone) FromGetPlanetaryNodePassagesJSONBodyTimezone0(v GetPlanetaryNodePassagesJSONBodyTimezone0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetPlanetaryNodePassagesJSONBodyTimezone0 performs a merge with any union data inside the GetPlanetaryNodePassagesJSONBody_Timezone, using the provided GetPlanetaryNodePassagesJSONBodyTimezone0
+func (t *GetPlanetaryNodePassagesJSONBody_Timezone) MergeGetPlanetaryNodePassagesJSONBodyTimezone0(v GetPlanetaryNodePassagesJSONBodyTimezone0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetPlanetaryNodePassagesJSONBodyTimezone1 returns the union data inside the GetPlanetaryNodePassagesJSONBody_Timezone as a GetPlanetaryNodePassagesJSONBodyTimezone1
+func (t GetPlanetaryNodePassagesJSONBody_Timezone) AsGetPlanetaryNodePassagesJSONBodyTimezone1() (GetPlanetaryNodePassagesJSONBodyTimezone1, error) {
+	var body GetPlanetaryNodePassagesJSONBodyTimezone1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetPlanetaryNodePassagesJSONBodyTimezone1 overwrites any union data inside the GetPlanetaryNodePassagesJSONBody_Timezone as the provided GetPlanetaryNodePassagesJSONBodyTimezone1
+func (t *GetPlanetaryNodePassagesJSONBody_Timezone) FromGetPlanetaryNodePassagesJSONBodyTimezone1(v GetPlanetaryNodePassagesJSONBodyTimezone1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetPlanetaryNodePassagesJSONBodyTimezone1 performs a merge with any union data inside the GetPlanetaryNodePassagesJSONBody_Timezone, using the provided GetPlanetaryNodePassagesJSONBodyTimezone1
+func (t *GetPlanetaryNodePassagesJSONBody_Timezone) MergeGetPlanetaryNodePassagesJSONBodyTimezone1(v GetPlanetaryNodePassagesJSONBodyTimezone1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetPlanetaryNodePassagesJSONBody_Timezone) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetPlanetaryNodePassagesJSONBody_Timezone) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
 // AsGenerateFixedStarsJSONBodyTimezone0 returns the union data inside the GenerateFixedStarsJSONBody_Timezone as a GenerateFixedStarsJSONBodyTimezone0
 func (t GenerateFixedStarsJSONBody_Timezone) AsGenerateFixedStarsJSONBodyTimezone0() (GenerateFixedStarsJSONBodyTimezone0, error) {
 	var body GenerateFixedStarsJSONBodyTimezone0
@@ -34915,6 +35185,68 @@ func (t GenerateLunarReturnJSONBody_Timezone) MarshalJSON() ([]byte, error) {
 }
 
 func (t *GenerateLunarReturnJSONBody_Timezone) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsGetMonthlyDeclinationParallelsJSONBodyTimezone0 returns the union data inside the GetMonthlyDeclinationParallelsJSONBody_Timezone as a GetMonthlyDeclinationParallelsJSONBodyTimezone0
+func (t GetMonthlyDeclinationParallelsJSONBody_Timezone) AsGetMonthlyDeclinationParallelsJSONBodyTimezone0() (GetMonthlyDeclinationParallelsJSONBodyTimezone0, error) {
+	var body GetMonthlyDeclinationParallelsJSONBodyTimezone0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetMonthlyDeclinationParallelsJSONBodyTimezone0 overwrites any union data inside the GetMonthlyDeclinationParallelsJSONBody_Timezone as the provided GetMonthlyDeclinationParallelsJSONBodyTimezone0
+func (t *GetMonthlyDeclinationParallelsJSONBody_Timezone) FromGetMonthlyDeclinationParallelsJSONBodyTimezone0(v GetMonthlyDeclinationParallelsJSONBodyTimezone0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetMonthlyDeclinationParallelsJSONBodyTimezone0 performs a merge with any union data inside the GetMonthlyDeclinationParallelsJSONBody_Timezone, using the provided GetMonthlyDeclinationParallelsJSONBodyTimezone0
+func (t *GetMonthlyDeclinationParallelsJSONBody_Timezone) MergeGetMonthlyDeclinationParallelsJSONBodyTimezone0(v GetMonthlyDeclinationParallelsJSONBodyTimezone0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsGetMonthlyDeclinationParallelsJSONBodyTimezone1 returns the union data inside the GetMonthlyDeclinationParallelsJSONBody_Timezone as a GetMonthlyDeclinationParallelsJSONBodyTimezone1
+func (t GetMonthlyDeclinationParallelsJSONBody_Timezone) AsGetMonthlyDeclinationParallelsJSONBodyTimezone1() (GetMonthlyDeclinationParallelsJSONBodyTimezone1, error) {
+	var body GetMonthlyDeclinationParallelsJSONBodyTimezone1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromGetMonthlyDeclinationParallelsJSONBodyTimezone1 overwrites any union data inside the GetMonthlyDeclinationParallelsJSONBody_Timezone as the provided GetMonthlyDeclinationParallelsJSONBodyTimezone1
+func (t *GetMonthlyDeclinationParallelsJSONBody_Timezone) FromGetMonthlyDeclinationParallelsJSONBodyTimezone1(v GetMonthlyDeclinationParallelsJSONBodyTimezone1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeGetMonthlyDeclinationParallelsJSONBodyTimezone1 performs a merge with any union data inside the GetMonthlyDeclinationParallelsJSONBody_Timezone, using the provided GetMonthlyDeclinationParallelsJSONBodyTimezone1
+func (t *GetMonthlyDeclinationParallelsJSONBody_Timezone) MergeGetMonthlyDeclinationParallelsJSONBodyTimezone1(v GetMonthlyDeclinationParallelsJSONBodyTimezone1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t GetMonthlyDeclinationParallelsJSONBody_Timezone) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *GetMonthlyDeclinationParallelsJSONBody_Timezone) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }
@@ -37904,6 +38236,24 @@ type ClientInterface interface {
 	// Corresponds with POST /astrology/composite-chart (the `GenerateCompositeChart` operationId).
 	GenerateCompositeChart(ctx context.Context, params *GenerateCompositeChartParams, body GenerateCompositeChartJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// GetPlanetaryNodePassagesWithBody Ecliptic Crossings - Node passages for a whole year
+	//
+	// Get every moment a body crosses the plane of the ecliptic during a given year, for the 11 Western bodies that leave it: the Moon and Mercury through Pluto, plus Chiron and Black Moon Lilith. A crossing from south to north is an ascending node passage, north to south a descending one. These are the instants a body sits exactly on the ecliptic rather than merely near it, which is what makes an eclipse possible when a lunar crossing coincides with a New or Full Moon, and what practitioners use for node-based timing. Returns the exact date and time in your timezone with the tropical longitude and sign. The Sun and the lunar nodes are excluded because they lie on the plane by definition and so have no nodes of their own. Essential for eclipse-season work, node timing, and astronomical calendars. Ecliptic crossing API, planetary node passage, ascending and descending nodes. Verified against NASA JPL Horizons.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /astrology/ecliptic-crossings (the `GetPlanetaryNodePassages` operationId).
+	GetPlanetaryNodePassagesWithBody(ctx context.Context, params *GetPlanetaryNodePassagesParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetPlanetaryNodePassages Ecliptic Crossings - Node passages for a whole year
+	//
+	// Get every moment a body crosses the plane of the ecliptic during a given year, for the 11 Western bodies that leave it: the Moon and Mercury through Pluto, plus Chiron and Black Moon Lilith. A crossing from south to north is an ascending node passage, north to south a descending one. These are the instants a body sits exactly on the ecliptic rather than merely near it, which is what makes an eclipse possible when a lunar crossing coincides with a New or Full Moon, and what practitioners use for node-based timing. Returns the exact date and time in your timezone with the tropical longitude and sign. The Sun and the lunar nodes are excluded because they lie on the plane by definition and so have no nodes of their own. Essential for eclipse-season work, node timing, and astronomical calendars. Ecliptic crossing API, planetary node passage, ascending and descending nodes. Verified against NASA JPL Horizons.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /astrology/ecliptic-crossings (the `GetPlanetaryNodePassages` operationId).
+	GetPlanetaryNodePassages(ctx context.Context, params *GetPlanetaryNodePassagesParams, body GetPlanetaryNodePassagesJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// GenerateFixedStarsWithBody Fixed stars and star conjunctions calculator - Regulus, Spica, Algol natal report
 	//
 	// Calculate the tropical zodiac positions of the major named fixed stars for any birth moment, including the four Royal stars and the fifteen Behenian stars, then detect conjunctions to the natal planets, Ascendant, and Midheaven. Each star returns its precessed ecliptic longitude, zodiac sign, visual magnitude, and traditional planetary nature, with a plain language interpretation for every conjunction inside the chosen orb. A focused tool for natal reports that weigh Regulus, Spica, Aldebaran, Antares, and Algol against the chart.
@@ -38053,6 +38403,24 @@ type ClientInterface interface {
 	//
 	// Corresponds with POST /astrology/natal-chart (the `GenerateNatalChart` operationId).
 	GenerateNatalChart(ctx context.Context, params *GenerateNatalChartParams, body GenerateNatalChartJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetMonthlyDeclinationParallelsWithBody Monthly Parallels - Declination contacts for an entire month
+	//
+	// Get every parallel and contraparallel of declination that perfects during a given month, across the 13 non-lunar Western bodies: the Sun and Mercury through Pluto, both lunar nodes, Chiron and Black Moon Lilith. A parallel is two bodies at the same declination and reads much like a conjunction; a contraparallel is equal and opposite declinations and reads much like an opposition. Neither depends on zodiacal distance, so they surface connections an aspect table cannot show, which is why traditional and modern practitioners read them alongside aspects. Declinations are geocentric, matching what an ephemeris publishes. Returns the exact date and time of closest approach in your timezone with both declinations. The Moon is excluded because its declination swings the full range every month and would bury the slow pairs. Omit year and month to get the month in progress, so a published calendar stays current without a redeploy. Essential for declination work, out-of-bounds tracking, monthly forecast copy, and electional timing. Monthly parallel calendar API, declination aspects, contraparallel ephemeris. Verified against NASA JPL Horizons.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /astrology/parallels/monthly (the `GetMonthlyDeclinationParallels` operationId).
+	GetMonthlyDeclinationParallelsWithBody(ctx context.Context, params *GetMonthlyDeclinationParallelsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetMonthlyDeclinationParallels Monthly Parallels - Declination contacts for an entire month
+	//
+	// Get every parallel and contraparallel of declination that perfects during a given month, across the 13 non-lunar Western bodies: the Sun and Mercury through Pluto, both lunar nodes, Chiron and Black Moon Lilith. A parallel is two bodies at the same declination and reads much like a conjunction; a contraparallel is equal and opposite declinations and reads much like an opposition. Neither depends on zodiacal distance, so they surface connections an aspect table cannot show, which is why traditional and modern practitioners read them alongside aspects. Declinations are geocentric, matching what an ephemeris publishes. Returns the exact date and time of closest approach in your timezone with both declinations. The Moon is excluded because its declination swings the full range every month and would bury the slow pairs. Omit year and month to get the month in progress, so a published calendar stays current without a redeploy. Essential for declination work, out-of-bounds tracking, monthly forecast copy, and electional timing. Monthly parallel calendar API, declination aspects, contraparallel ephemeris. Verified against NASA JPL Horizons.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /astrology/parallels/monthly (the `GetMonthlyDeclinationParallels` operationId).
+	GetMonthlyDeclinationParallels(ctx context.Context, params *GetMonthlyDeclinationParallelsParams, body GetMonthlyDeclinationParallelsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// ListPlanetMeanings Get all planet meanings - Complete astrology planet interpretations list
 	//
@@ -39298,7 +39666,7 @@ type ClientInterface interface {
 
 	// GetCard Get detailed tarot card information
 	//
-	// Retrieve comprehensive details for a specific tarot card from the traditional Rider-Waite-Smith deck including complete upright meanings (card drawn normally) and reversed meanings (inverted/upside down interpretations for nuanced guidance). Each card provides keywords for quick reference, full interpretations (400+ words each for upright and reversed orientations), and guidance across life domains: love and relationships, career and professional growth, finances and material success, health and wellbeing, spirituality and personal development. Major Arcana cards (0-21) reveal deep spiritual lessons and life-changing themes. Minor Arcana cards (Ace through King in Cups, Wands, Swords, Pentacles) address practical daily situations and specific challenges. Use card ID in kebab-case format: Major Arcana like "fool", "magician", "death", "tower", or Minor Arcana like "ace-of-cups", "seven-of-wands", "queen-of-swords", "king-of-pentacles". Essential for detailed tarot study, reading interpretations, divination apps, fortune-telling platforms, spiritual guidance tools, and professional tarot learning applications.
+	// Retrieve comprehensive details for a specific tarot card from the traditional Rider-Waite-Smith deck including complete upright meanings (card drawn normally) and reversed meanings (inverted/upside down interpretations for nuanced guidance). Each card provides keywords for quick reference, full interpretations (400+ words each for upright and reversed orientations), and guidance across life domains: love and relationships, career and professional growth, finances and material success, health and wellbeing, spirituality and personal development. Major Arcana cards (0-21) reveal deep spiritual lessons and life-changing themes. Minor Arcana cards (Ace through King in Cups, Wands, Swords, Pentacles) address practical daily situations and specific challenges. Use card ID in kebab-case format: Major Arcana like "fool", "magician", "death", "tower", or Minor Arcana like "ace-of-cups", "seven-of-wands", "queen-of-swords", "king-of-pentacles". Major Arcana IDs carry no leading article, though one is accepted, so "the-star" and "star" both return The Star. Essential for detailed tarot study, reading interpretations, divination apps, fortune-telling platforms, spiritual guidance tools, and professional tarot learning applications.
 	//
 	// Corresponds with GET /tarot/cards/{id} (the `GetCard` operationId).
 	GetCard(ctx context.Context, id string, params *GetCardParams, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -40739,6 +41107,44 @@ func (c *Client) GenerateCompositeChart(ctx context.Context, params *GenerateCom
 	return c.Client.Do(req)
 }
 
+// GetPlanetaryNodePassagesWithBody Ecliptic Crossings - Node passages for a whole year
+//
+// Get every moment a body crosses the plane of the ecliptic during a given year, for the 11 Western bodies that leave it: the Moon and Mercury through Pluto, plus Chiron and Black Moon Lilith. A crossing from south to north is an ascending node passage, north to south a descending one. These are the instants a body sits exactly on the ecliptic rather than merely near it, which is what makes an eclipse possible when a lunar crossing coincides with a New or Full Moon, and what practitioners use for node-based timing. Returns the exact date and time in your timezone with the tropical longitude and sign. The Sun and the lunar nodes are excluded because they lie on the plane by definition and so have no nodes of their own. Essential for eclipse-season work, node timing, and astronomical calendars. Ecliptic crossing API, planetary node passage, ascending and descending nodes. Verified against NASA JPL Horizons.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /astrology/ecliptic-crossings (the `GetPlanetaryNodePassages` operationId).
+func (c *Client) GetPlanetaryNodePassagesWithBody(ctx context.Context, params *GetPlanetaryNodePassagesParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetPlanetaryNodePassagesRequestWithBody(c.Server, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetPlanetaryNodePassages Ecliptic Crossings - Node passages for a whole year
+//
+// Get every moment a body crosses the plane of the ecliptic during a given year, for the 11 Western bodies that leave it: the Moon and Mercury through Pluto, plus Chiron and Black Moon Lilith. A crossing from south to north is an ascending node passage, north to south a descending one. These are the instants a body sits exactly on the ecliptic rather than merely near it, which is what makes an eclipse possible when a lunar crossing coincides with a New or Full Moon, and what practitioners use for node-based timing. Returns the exact date and time in your timezone with the tropical longitude and sign. The Sun and the lunar nodes are excluded because they lie on the plane by definition and so have no nodes of their own. Essential for eclipse-season work, node timing, and astronomical calendars. Ecliptic crossing API, planetary node passage, ascending and descending nodes. Verified against NASA JPL Horizons.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /astrology/ecliptic-crossings (the `GetPlanetaryNodePassages` operationId).
+func (c *Client) GetPlanetaryNodePassages(ctx context.Context, params *GetPlanetaryNodePassagesParams, body GetPlanetaryNodePassagesJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetPlanetaryNodePassagesRequest(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
 // GenerateFixedStarsWithBody Fixed stars and star conjunctions calculator - Regulus, Spica, Algol natal report
 //
 // Calculate the tropical zodiac positions of the major named fixed stars for any birth moment, including the four Royal stars and the fifteen Behenian stars, then detect conjunctions to the natal planets, Ascendant, and Midheaven. Each star returns its precessed ecliptic longitude, zodiac sign, visual magnitude, and traditional planetary nature, with a plain language interpretation for every conjunction inside the chosen orb. A focused tool for natal reports that weigh Regulus, Spica, Aldebaran, Antares, and Algol against the chart.
@@ -41059,6 +41465,44 @@ func (c *Client) GenerateNatalChartWithBody(ctx context.Context, params *Generat
 // Corresponds with POST /astrology/natal-chart (the `GenerateNatalChart` operationId).
 func (c *Client) GenerateNatalChart(ctx context.Context, params *GenerateNatalChartParams, body GenerateNatalChartJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewGenerateNatalChartRequest(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetMonthlyDeclinationParallelsWithBody Monthly Parallels - Declination contacts for an entire month
+//
+// Get every parallel and contraparallel of declination that perfects during a given month, across the 13 non-lunar Western bodies: the Sun and Mercury through Pluto, both lunar nodes, Chiron and Black Moon Lilith. A parallel is two bodies at the same declination and reads much like a conjunction; a contraparallel is equal and opposite declinations and reads much like an opposition. Neither depends on zodiacal distance, so they surface connections an aspect table cannot show, which is why traditional and modern practitioners read them alongside aspects. Declinations are geocentric, matching what an ephemeris publishes. Returns the exact date and time of closest approach in your timezone with both declinations. The Moon is excluded because its declination swings the full range every month and would bury the slow pairs. Omit year and month to get the month in progress, so a published calendar stays current without a redeploy. Essential for declination work, out-of-bounds tracking, monthly forecast copy, and electional timing. Monthly parallel calendar API, declination aspects, contraparallel ephemeris. Verified against NASA JPL Horizons.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /astrology/parallels/monthly (the `GetMonthlyDeclinationParallels` operationId).
+func (c *Client) GetMonthlyDeclinationParallelsWithBody(ctx context.Context, params *GetMonthlyDeclinationParallelsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetMonthlyDeclinationParallelsRequestWithBody(c.Server, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetMonthlyDeclinationParallels Monthly Parallels - Declination contacts for an entire month
+//
+// Get every parallel and contraparallel of declination that perfects during a given month, across the 13 non-lunar Western bodies: the Sun and Mercury through Pluto, both lunar nodes, Chiron and Black Moon Lilith. A parallel is two bodies at the same declination and reads much like a conjunction; a contraparallel is equal and opposite declinations and reads much like an opposition. Neither depends on zodiacal distance, so they surface connections an aspect table cannot show, which is why traditional and modern practitioners read them alongside aspects. Declinations are geocentric, matching what an ephemeris publishes. Returns the exact date and time of closest approach in your timezone with both declinations. The Moon is excluded because its declination swings the full range every month and would bury the slow pairs. Omit year and month to get the month in progress, so a published calendar stays current without a redeploy. Essential for declination work, out-of-bounds tracking, monthly forecast copy, and electional timing. Monthly parallel calendar API, declination aspects, contraparallel ephemeris. Verified against NASA JPL Horizons.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /astrology/parallels/monthly (the `GetMonthlyDeclinationParallels` operationId).
+func (c *Client) GetMonthlyDeclinationParallels(ctx context.Context, params *GetMonthlyDeclinationParallelsParams, body GetMonthlyDeclinationParallelsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetMonthlyDeclinationParallelsRequest(c.Server, params, body)
 	if err != nil {
 		return nil, err
 	}
@@ -43773,7 +44217,7 @@ func (c *Client) ListCards(ctx context.Context, params *ListCardsParams, reqEdit
 
 // GetCard Get detailed tarot card information
 //
-// Retrieve comprehensive details for a specific tarot card from the traditional Rider-Waite-Smith deck including complete upright meanings (card drawn normally) and reversed meanings (inverted/upside down interpretations for nuanced guidance). Each card provides keywords for quick reference, full interpretations (400+ words each for upright and reversed orientations), and guidance across life domains: love and relationships, career and professional growth, finances and material success, health and wellbeing, spirituality and personal development. Major Arcana cards (0-21) reveal deep spiritual lessons and life-changing themes. Minor Arcana cards (Ace through King in Cups, Wands, Swords, Pentacles) address practical daily situations and specific challenges. Use card ID in kebab-case format: Major Arcana like "fool", "magician", "death", "tower", or Minor Arcana like "ace-of-cups", "seven-of-wands", "queen-of-swords", "king-of-pentacles". Essential for detailed tarot study, reading interpretations, divination apps, fortune-telling platforms, spiritual guidance tools, and professional tarot learning applications.
+// Retrieve comprehensive details for a specific tarot card from the traditional Rider-Waite-Smith deck including complete upright meanings (card drawn normally) and reversed meanings (inverted/upside down interpretations for nuanced guidance). Each card provides keywords for quick reference, full interpretations (400+ words each for upright and reversed orientations), and guidance across life domains: love and relationships, career and professional growth, finances and material success, health and wellbeing, spirituality and personal development. Major Arcana cards (0-21) reveal deep spiritual lessons and life-changing themes. Minor Arcana cards (Ace through King in Cups, Wands, Swords, Pentacles) address practical daily situations and specific challenges. Use card ID in kebab-case format: Major Arcana like "fool", "magician", "death", "tower", or Minor Arcana like "ace-of-cups", "seven-of-wands", "queen-of-swords", "king-of-pentacles". Major Arcana IDs carry no leading article, though one is accepted, so "the-star" and "star" both return The Star. Essential for detailed tarot study, reading interpretations, divination apps, fortune-telling platforms, spiritual guidance tools, and professional tarot learning applications.
 //
 // Corresponds with GET /tarot/cards/{id} (the `GetCard` operationId).
 func (c *Client) GetCard(ctx context.Context, id string, params *GetCardParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
@@ -46874,6 +47318,73 @@ func NewGenerateCompositeChartRequestWithBody(server string, params *GenerateCom
 	return req, nil
 }
 
+// NewGetPlanetaryNodePassagesRequest calls the generic GetPlanetaryNodePassages builder with application/json body
+func NewGetPlanetaryNodePassagesRequest(server string, params *GetPlanetaryNodePassagesParams, body GetPlanetaryNodePassagesJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewGetPlanetaryNodePassagesRequestWithBody(server, params, "application/json", bodyReader)
+}
+
+// NewGetPlanetaryNodePassagesRequestWithBody constructs an http.Request for the GetPlanetaryNodePassages method, with any body, and a specified content type
+func NewGetPlanetaryNodePassagesRequestWithBody(server string, params *GetPlanetaryNodePassagesParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/astrology/ecliptic-crossings")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Lang != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "lang", *params.Lang, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
 // NewGenerateFixedStarsRequest calls the generic GenerateFixedStars builder with application/json body
 func NewGenerateFixedStarsRequest(server string, params *GenerateFixedStarsParams, body GenerateFixedStarsJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
@@ -47745,6 +48256,73 @@ func NewGenerateNatalChartRequestWithBody(server string, params *GenerateNatalCh
 	}
 
 	operationPath := fmt.Sprintf("/astrology/natal-chart")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Lang != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "lang", *params.Lang, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewGetMonthlyDeclinationParallelsRequest calls the generic GetMonthlyDeclinationParallels builder with application/json body
+func NewGetMonthlyDeclinationParallelsRequest(server string, params *GetMonthlyDeclinationParallelsParams, body GetMonthlyDeclinationParallelsJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewGetMonthlyDeclinationParallelsRequestWithBody(server, params, "application/json", bodyReader)
+}
+
+// NewGetMonthlyDeclinationParallelsRequestWithBody constructs an http.Request for the GetMonthlyDeclinationParallels method, with any body, and a specified content type
+func NewGetMonthlyDeclinationParallelsRequestWithBody(server string, params *GetMonthlyDeclinationParallelsParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/astrology/parallels/monthly")
 	if operationPath[0] == '/' {
 		operationPath = "." + operationPath
 	}
@@ -58142,6 +58720,24 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with POST /astrology/composite-chart (the `GenerateCompositeChart` operationId).
 	GenerateCompositeChartWithResponse(ctx context.Context, params *GenerateCompositeChartParams, body GenerateCompositeChartJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateCompositeChartResponse, error)
 
+	// GetPlanetaryNodePassagesWithBodyWithResponse Ecliptic Crossings - Node passages for a whole year
+	//
+	// Get every moment a body crosses the plane of the ecliptic during a given year, for the 11 Western bodies that leave it: the Moon and Mercury through Pluto, plus Chiron and Black Moon Lilith. A crossing from south to north is an ascending node passage, north to south a descending one. These are the instants a body sits exactly on the ecliptic rather than merely near it, which is what makes an eclipse possible when a lunar crossing coincides with a New or Full Moon, and what practitioners use for node-based timing. Returns the exact date and time in your timezone with the tropical longitude and sign. The Sun and the lunar nodes are excluded because they lie on the plane by definition and so have no nodes of their own. Essential for eclipse-season work, node timing, and astronomical calendars. Ecliptic crossing API, planetary node passage, ascending and descending nodes. Verified against NASA JPL Horizons.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /astrology/ecliptic-crossings (the `GetPlanetaryNodePassages` operationId).
+	GetPlanetaryNodePassagesWithBodyWithResponse(ctx context.Context, params *GetPlanetaryNodePassagesParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetPlanetaryNodePassagesResponse, error)
+
+	// GetPlanetaryNodePassagesWithResponse Ecliptic Crossings - Node passages for a whole year
+	//
+	// Get every moment a body crosses the plane of the ecliptic during a given year, for the 11 Western bodies that leave it: the Moon and Mercury through Pluto, plus Chiron and Black Moon Lilith. A crossing from south to north is an ascending node passage, north to south a descending one. These are the instants a body sits exactly on the ecliptic rather than merely near it, which is what makes an eclipse possible when a lunar crossing coincides with a New or Full Moon, and what practitioners use for node-based timing. Returns the exact date and time in your timezone with the tropical longitude and sign. The Sun and the lunar nodes are excluded because they lie on the plane by definition and so have no nodes of their own. Essential for eclipse-season work, node timing, and astronomical calendars. Ecliptic crossing API, planetary node passage, ascending and descending nodes. Verified against NASA JPL Horizons.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /astrology/ecliptic-crossings (the `GetPlanetaryNodePassages` operationId).
+	GetPlanetaryNodePassagesWithResponse(ctx context.Context, params *GetPlanetaryNodePassagesParams, body GetPlanetaryNodePassagesJSONRequestBody, reqEditors ...RequestEditorFn) (*GetPlanetaryNodePassagesResponse, error)
+
 	// GenerateFixedStarsWithBodyWithResponse Fixed stars and star conjunctions calculator - Regulus, Spica, Algol natal report
 	//
 	// Calculate the tropical zodiac positions of the major named fixed stars for any birth moment, including the four Royal stars and the fifteen Behenian stars, then detect conjunctions to the natal planets, Ascendant, and Midheaven. Each star returns its precessed ecliptic longitude, zodiac sign, visual magnitude, and traditional planetary nature, with a plain language interpretation for every conjunction inside the chosen orb. A focused tool for natal reports that weigh Regulus, Spica, Aldebaran, Antares, and Algol against the chart.
@@ -58303,6 +58899,24 @@ type ClientWithResponsesInterface interface {
 	//
 	// Corresponds with POST /astrology/natal-chart (the `GenerateNatalChart` operationId).
 	GenerateNatalChartWithResponse(ctx context.Context, params *GenerateNatalChartParams, body GenerateNatalChartJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateNatalChartResponse, error)
+
+	// GetMonthlyDeclinationParallelsWithBodyWithResponse Monthly Parallels - Declination contacts for an entire month
+	//
+	// Get every parallel and contraparallel of declination that perfects during a given month, across the 13 non-lunar Western bodies: the Sun and Mercury through Pluto, both lunar nodes, Chiron and Black Moon Lilith. A parallel is two bodies at the same declination and reads much like a conjunction; a contraparallel is equal and opposite declinations and reads much like an opposition. Neither depends on zodiacal distance, so they surface connections an aspect table cannot show, which is why traditional and modern practitioners read them alongside aspects. Declinations are geocentric, matching what an ephemeris publishes. Returns the exact date and time of closest approach in your timezone with both declinations. The Moon is excluded because its declination swings the full range every month and would bury the slow pairs. Omit year and month to get the month in progress, so a published calendar stays current without a redeploy. Essential for declination work, out-of-bounds tracking, monthly forecast copy, and electional timing. Monthly parallel calendar API, declination aspects, contraparallel ephemeris. Verified against NASA JPL Horizons.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /astrology/parallels/monthly (the `GetMonthlyDeclinationParallels` operationId).
+	GetMonthlyDeclinationParallelsWithBodyWithResponse(ctx context.Context, params *GetMonthlyDeclinationParallelsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetMonthlyDeclinationParallelsResponse, error)
+
+	// GetMonthlyDeclinationParallelsWithResponse Monthly Parallels - Declination contacts for an entire month
+	//
+	// Get every parallel and contraparallel of declination that perfects during a given month, across the 13 non-lunar Western bodies: the Sun and Mercury through Pluto, both lunar nodes, Chiron and Black Moon Lilith. A parallel is two bodies at the same declination and reads much like a conjunction; a contraparallel is equal and opposite declinations and reads much like an opposition. Neither depends on zodiacal distance, so they surface connections an aspect table cannot show, which is why traditional and modern practitioners read them alongside aspects. Declinations are geocentric, matching what an ephemeris publishes. Returns the exact date and time of closest approach in your timezone with both declinations. The Moon is excluded because its declination swings the full range every month and would bury the slow pairs. Omit year and month to get the month in progress, so a published calendar stays current without a redeploy. Essential for declination work, out-of-bounds tracking, monthly forecast copy, and electional timing. Monthly parallel calendar API, declination aspects, contraparallel ephemeris. Verified against NASA JPL Horizons.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /astrology/parallels/monthly (the `GetMonthlyDeclinationParallels` operationId).
+	GetMonthlyDeclinationParallelsWithResponse(ctx context.Context, params *GetMonthlyDeclinationParallelsParams, body GetMonthlyDeclinationParallelsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetMonthlyDeclinationParallelsResponse, error)
 
 	// ListPlanetMeaningsWithResponse Get all planet meanings - Complete astrology planet interpretations list
 	//
@@ -59620,7 +60234,7 @@ type ClientWithResponsesInterface interface {
 
 	// GetCardWithResponse Get detailed tarot card information
 	//
-	// Retrieve comprehensive details for a specific tarot card from the traditional Rider-Waite-Smith deck including complete upright meanings (card drawn normally) and reversed meanings (inverted/upside down interpretations for nuanced guidance). Each card provides keywords for quick reference, full interpretations (400+ words each for upright and reversed orientations), and guidance across life domains: love and relationships, career and professional growth, finances and material success, health and wellbeing, spirituality and personal development. Major Arcana cards (0-21) reveal deep spiritual lessons and life-changing themes. Minor Arcana cards (Ace through King in Cups, Wands, Swords, Pentacles) address practical daily situations and specific challenges. Use card ID in kebab-case format: Major Arcana like "fool", "magician", "death", "tower", or Minor Arcana like "ace-of-cups", "seven-of-wands", "queen-of-swords", "king-of-pentacles". Essential for detailed tarot study, reading interpretations, divination apps, fortune-telling platforms, spiritual guidance tools, and professional tarot learning applications.
+	// Retrieve comprehensive details for a specific tarot card from the traditional Rider-Waite-Smith deck including complete upright meanings (card drawn normally) and reversed meanings (inverted/upside down interpretations for nuanced guidance). Each card provides keywords for quick reference, full interpretations (400+ words each for upright and reversed orientations), and guidance across life domains: love and relationships, career and professional growth, finances and material success, health and wellbeing, spirituality and personal development. Major Arcana cards (0-21) reveal deep spiritual lessons and life-changing themes. Minor Arcana cards (Ace through King in Cups, Wands, Swords, Pentacles) address practical daily situations and specific challenges. Use card ID in kebab-case format: Major Arcana like "fool", "magician", "death", "tower", or Minor Arcana like "ace-of-cups", "seven-of-wands", "queen-of-swords", "king-of-pentacles". Major Arcana IDs carry no leading article, though one is accepted, so "the-star" and "star" both return The Star. Essential for detailed tarot study, reading interpretations, divination apps, fortune-telling platforms, spiritual guidance tools, and professional tarot learning applications.
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
@@ -63159,6 +63773,166 @@ func (r GenerateCompositeChartResponse) ContentType() string {
 	return ""
 }
 
+// GetPlanetaryNodePassagesResponse405Headers the declared response headers of an HTTP 405 response for GetPlanetaryNodePassages
+type GetPlanetaryNodePassagesResponse405Headers struct {
+	Allow *string
+}
+
+type GetPlanetaryNodePassagesResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// Events Every node passage in the year, in chronological order across all bodies. The fast bodies dominate: a slow body can go years or decades between node passages, so an absent planet means it did not cross that year rather than that it was not checked.
+		Events []struct {
+			// Date Date of the crossing in the requested timezone (YYYY-MM-DD).
+			Date string `json:"date"`
+
+			// Datetime Combined crossing timestamp in the requested timezone.
+			Datetime string `json:"datetime"`
+
+			// Direction ascending is the crossing from south of the ecliptic to north, at the body north node. descending is the reverse, at its south node.
+			Direction GetPlanetaryNodePassages200JSONResponseBodyEventsDirection `json:"direction"`
+
+			// Longitude Tropical ecliptic longitude of the body at the crossing, in degrees. This is the only value in the response that depends on the zodiac frame.
+			Longitude float32 `json:"longitude"`
+
+			// Planet Body making the crossing. Always canonical English whatever the lang parameter says, so it stays safe to compare against in code. Use planetLocalized for anything a reader sees.
+			Planet string `json:"planet"`
+
+			// PlanetLocalized Body name in the requested language. Present only when lang is supplied.
+			PlanetLocalized *string `json:"planetLocalized,omitempty"`
+
+			// Sign Tropical sign the body occupies at the crossing. Canonical English.
+			Sign string `json:"sign"`
+
+			// SignLocalized Sign in the requested language. Present only when lang is supplied.
+			SignLocalized *string `json:"signLocalized,omitempty"`
+
+			// Time Time of the crossing in the requested timezone (HH:MM).
+			Time string `json:"time"`
+		} `json:"events"`
+
+		// Timezone Timezone the dates and times are reported in. Echoes the request.
+		Timezone float32 `json:"timezone"`
+
+		// Year Year that was scanned. Echoes the request.
+		Year float32 `json:"year"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON405 the response for an HTTP 405 `application/json` response
+	JSON405 *ErrorResponse
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+	// Headers405 the parsed response headers for an HTTP 405 response
+	Headers405 *GetPlanetaryNodePassagesResponse405Headers
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetPlanetaryNodePassagesResponse) GetJSON200() *struct {
+	// Events Every node passage in the year, in chronological order across all bodies. The fast bodies dominate: a slow body can go years or decades between node passages, so an absent planet means it did not cross that year rather than that it was not checked.
+	Events []struct {
+		// Date Date of the crossing in the requested timezone (YYYY-MM-DD).
+		Date string `json:"date"`
+
+		// Datetime Combined crossing timestamp in the requested timezone.
+		Datetime string `json:"datetime"`
+
+		// Direction ascending is the crossing from south of the ecliptic to north, at the body north node. descending is the reverse, at its south node.
+		Direction GetPlanetaryNodePassages200JSONResponseBodyEventsDirection `json:"direction"`
+
+		// Longitude Tropical ecliptic longitude of the body at the crossing, in degrees. This is the only value in the response that depends on the zodiac frame.
+		Longitude float32 `json:"longitude"`
+
+		// Planet Body making the crossing. Always canonical English whatever the lang parameter says, so it stays safe to compare against in code. Use planetLocalized for anything a reader sees.
+		Planet string `json:"planet"`
+
+		// PlanetLocalized Body name in the requested language. Present only when lang is supplied.
+		PlanetLocalized *string `json:"planetLocalized,omitempty"`
+
+		// Sign Tropical sign the body occupies at the crossing. Canonical English.
+		Sign string `json:"sign"`
+
+		// SignLocalized Sign in the requested language. Present only when lang is supplied.
+		SignLocalized *string `json:"signLocalized,omitempty"`
+
+		// Time Time of the crossing in the requested timezone (HH:MM).
+		Time string `json:"time"`
+	} `json:"events"`
+
+	// Timezone Timezone the dates and times are reported in. Echoes the request.
+	Timezone float32 `json:"timezone"`
+
+	// Year Year that was scanned. Echoes the request.
+	Year float32 `json:"year"`
+} {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r GetPlanetaryNodePassagesResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r GetPlanetaryNodePassagesResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON405 returns the response for an HTTP 405 `application/json` response
+func (r GetPlanetaryNodePassagesResponse) GetJSON405() *ErrorResponse {
+	return r.JSON405
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r GetPlanetaryNodePassagesResponse) GetJSON429() *ErrorResponse {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GetPlanetaryNodePassagesResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r GetPlanetaryNodePassagesResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetPlanetaryNodePassagesResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetPlanetaryNodePassagesResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// Bytes is a convenience method to retrieve the raw bytes from the HTTP response
+func (r GetPlanetaryNodePassagesResponse) Bytes() []byte {
+	return r.Body
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetPlanetaryNodePassagesResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
 // GenerateFixedStarsResponse405Headers the declared response headers of an HTTP 405 response for GenerateFixedStars
 type GenerateFixedStarsResponse405Headers struct {
 	Allow *string
@@ -64953,6 +65727,190 @@ func (r GenerateNatalChartResponse) Bytes() []byte {
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r GenerateNatalChartResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+// GetMonthlyDeclinationParallelsResponse405Headers the declared response headers of an HTTP 405 response for GetMonthlyDeclinationParallels
+type GetMonthlyDeclinationParallelsResponse405Headers struct {
+	Allow *string
+}
+
+type GetMonthlyDeclinationParallelsResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// Events Every declination contact in the month, in chronological order across all body pairs.
+		Events []struct {
+			// Date Date the contact is closest to exact, in the requested timezone (YYYY-MM-DD).
+			Date string `json:"date"`
+
+			// Datetime Combined timestamp of closest approach, in the requested timezone.
+			Datetime string `json:"datetime"`
+
+			// Declination1 Geocentric declination of the first body at the reported instant, in degrees. Positive is north of the celestial equator, negative south.
+			Declination1 float32 `json:"declination1"`
+
+			// Declination2 Geocentric declination of the second body at the reported instant, in degrees.
+			Declination2 float32 `json:"declination2"`
+
+			// Orb Distance from exact in degrees at the reported instant. Effectively zero for a contact that perfects inside the month, and larger only where the pair turns before reaching exact.
+			Orb float32 `json:"orb"`
+
+			// Planet1 First body in the contact. Always canonical English whatever the lang parameter says, so it stays safe to compare against in code. Use planet1Localized for anything a reader sees.
+			Planet1 string `json:"planet1"`
+
+			// Planet1Localized First body in the requested language. Present only when lang is supplied.
+			Planet1Localized *string `json:"planet1Localized,omitempty"`
+
+			// Planet2 Second body in the contact. Always canonical English.
+			Planet2 string `json:"planet2"`
+
+			// Planet2Localized Second body in the requested language. Present only when lang is supplied.
+			Planet2Localized *string `json:"planet2Localized,omitempty"`
+
+			// Time Time the contact is closest to exact, in the requested timezone (HH:MM).
+			Time string `json:"time"`
+
+			// Type parallel means both bodies stand at the same declination, the same distance north or south of the celestial equator, and reads much like a conjunction. contraparallel means equal and opposite declinations, one as far north as the other is south, and reads much like an opposition. Neither depends on how far apart the two bodies are along the zodiac, which is what makes them worth tracking alongside ordinary aspects.
+			Type GetMonthlyDeclinationParallels200JSONResponseBodyEventsType `json:"type"`
+		} `json:"events"`
+
+		// Month Month of the calendar. Echoes the month requested, or the current UTC month when it was omitted.
+		Month float32 `json:"month"`
+
+		// Orb Orb in degrees that was applied. Echoes the request.
+		Orb float32 `json:"orb"`
+
+		// Timezone Timezone the event dates and times are reported in. Echoes the request.
+		Timezone float32 `json:"timezone"`
+
+		// Year Year of the calendar. Echoes the year requested, or the current UTC year when it was omitted.
+		Year float32 `json:"year"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON405 the response for an HTTP 405 `application/json` response
+	JSON405 *ErrorResponse
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+	// Headers405 the parsed response headers for an HTTP 405 response
+	Headers405 *GetMonthlyDeclinationParallelsResponse405Headers
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetMonthlyDeclinationParallelsResponse) GetJSON200() *struct {
+	// Events Every declination contact in the month, in chronological order across all body pairs.
+	Events []struct {
+		// Date Date the contact is closest to exact, in the requested timezone (YYYY-MM-DD).
+		Date string `json:"date"`
+
+		// Datetime Combined timestamp of closest approach, in the requested timezone.
+		Datetime string `json:"datetime"`
+
+		// Declination1 Geocentric declination of the first body at the reported instant, in degrees. Positive is north of the celestial equator, negative south.
+		Declination1 float32 `json:"declination1"`
+
+		// Declination2 Geocentric declination of the second body at the reported instant, in degrees.
+		Declination2 float32 `json:"declination2"`
+
+		// Orb Distance from exact in degrees at the reported instant. Effectively zero for a contact that perfects inside the month, and larger only where the pair turns before reaching exact.
+		Orb float32 `json:"orb"`
+
+		// Planet1 First body in the contact. Always canonical English whatever the lang parameter says, so it stays safe to compare against in code. Use planet1Localized for anything a reader sees.
+		Planet1 string `json:"planet1"`
+
+		// Planet1Localized First body in the requested language. Present only when lang is supplied.
+		Planet1Localized *string `json:"planet1Localized,omitempty"`
+
+		// Planet2 Second body in the contact. Always canonical English.
+		Planet2 string `json:"planet2"`
+
+		// Planet2Localized Second body in the requested language. Present only when lang is supplied.
+		Planet2Localized *string `json:"planet2Localized,omitempty"`
+
+		// Time Time the contact is closest to exact, in the requested timezone (HH:MM).
+		Time string `json:"time"`
+
+		// Type parallel means both bodies stand at the same declination, the same distance north or south of the celestial equator, and reads much like a conjunction. contraparallel means equal and opposite declinations, one as far north as the other is south, and reads much like an opposition. Neither depends on how far apart the two bodies are along the zodiac, which is what makes them worth tracking alongside ordinary aspects.
+		Type GetMonthlyDeclinationParallels200JSONResponseBodyEventsType `json:"type"`
+	} `json:"events"`
+
+	// Month Month of the calendar. Echoes the month requested, or the current UTC month when it was omitted.
+	Month float32 `json:"month"`
+
+	// Orb Orb in degrees that was applied. Echoes the request.
+	Orb float32 `json:"orb"`
+
+	// Timezone Timezone the event dates and times are reported in. Echoes the request.
+	Timezone float32 `json:"timezone"`
+
+	// Year Year of the calendar. Echoes the year requested, or the current UTC year when it was omitted.
+	Year float32 `json:"year"`
+} {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r GetMonthlyDeclinationParallelsResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r GetMonthlyDeclinationParallelsResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON405 returns the response for an HTTP 405 `application/json` response
+func (r GetMonthlyDeclinationParallelsResponse) GetJSON405() *ErrorResponse {
+	return r.JSON405
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r GetMonthlyDeclinationParallelsResponse) GetJSON429() *ErrorResponse {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GetMonthlyDeclinationParallelsResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r GetMonthlyDeclinationParallelsResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetMonthlyDeclinationParallelsResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetMonthlyDeclinationParallelsResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// Bytes is a convenience method to retrieve the raw bytes from the HTTP response
+func (r GetMonthlyDeclinationParallelsResponse) Bytes() []byte {
+	return r.Body
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetMonthlyDeclinationParallelsResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -85587,7 +86545,7 @@ type GetVedicDailyReadingResponse struct {
 	JSON200 *struct {
 		// Areas Life areas carried as a TYPED closed set rather than an open map, so every generated SDK knows which keys exist. Finance ships alone in this version, because an area is a named classical house group with a citation and not a life category invented for a dropdown. Widening it later adds a key and breaks nothing.
 		Areas struct {
-			// Finance The finance area: the positive house group 2, 5, 11 netted against the negative group 6, 8, 12, read off the lords of the running dasha, bhukti and antara, because that is the KP rule for when a matter fructifies, plus the natal basis the day is read against. ALWAYS AN OBJECT. Above latitude 66.56 the six netted members are null, because the Placidus cusps behind the significators have no solution there, while natal is still populated because it is a property of the birth chart and needs no cusps; the reading also still carries its gochara, panchanga and dasha and names the omission in degraded. The two house groups are Krishnamurti Paddhati practice, but the NET is a KP practitioner convention rather than a classical operation: the KP sources that carry these groups use them as a promise test and an avoidance test, never as arithmetic. The groups also vary by author, and the 6th house is the live disagreement, since some KP authors place it on the POSITIVE side as service income and salary, the exact opposite of the assignment used here. This is a six house net and it is NOT the focus=finance lens, which re-reads all twelve bhavas in money vocabulary and moves no number. The two are orthogonal and both ship.
+			// Finance The finance area: the positive house group 2, 5, 11 netted against the negative group 6, 8, 12, read off the lords of the running dasha, bhukti and antara, because that is the KP rule for when a matter fructifies, plus the natal basis the day is read against. ALWAYS AN OBJECT. Above latitude 66.56 the six netted members are null, because the Placidus cusps behind the significators have no solution there, while natal is still populated because it is a property of the birth chart and needs no cusps; the reading also still carries its gochara, panchanga and dasha and names the omission in degraded. The two house groups are Krishnamurti Paddhati practice, but the NET is a KP practitioner convention rather than a classical operation: the KP sources that carry these groups use them as a promise test and an avoidance test, never as arithmetic. The groups also vary by author, and TWO houses are live disagreements rather than one. The 6th: some KP authors place it on the POSITIVE side as service income and salary, the exact opposite of the assignment used here. The 5th: it is named as a speculative GAIN house in the same KP sources that elsewhere call it a negation house, reading it as the 12th from the 6th and therefore loss of earning capacity, and both readings appear in one publication. The 1st is treated as a negation house by some authors on the same logic, as the 12th from the 2nd, and is not on either side here. This is a six house net and it is NOT the focus=finance lens, which re-reads all twelve bhavas in money vocabulary and moves no number. The two are orthogonal and both ship.
 			Finance struct {
 				// Band The band the finance score falls in, on the same ladder as the top-level verdict so the two can never disagree about what a word means: "very-strong" at 75 and above, "strong" at 50 and above, "moderate" at 25 and above, "weak" below 25. Null above latitude 66.56, where the Placidus cusps the KP significators are read from have no solution: the question does not apply there rather than the answer being no, so never render it as zero or as a weak verdict. The natal block beside it is unaffected and still ships, and degraded names areas.finance.score.
 				Band *GetVedicDailyReading200JSONResponseBodyAreasFinanceBand `json:"band"`
@@ -85652,7 +86610,7 @@ type GetVedicDailyReadingResponse struct {
 				// Positive How many connections land on the positive house group 2, 5, 11, which KP reads as accumulated wealth, speculation and gains. Null above latitude 66.56, where the Placidus cusps the KP significators are read from have no solution: the question does not apply there rather than the answer being no, so never render it as zero or as a weak verdict. The natal block beside it is unaffected and still ships, and degraded names areas.finance.score.
 				Positive *float32 `json:"positive"`
 
-				// Score Share of the running lords six-house connections that land on the positive group, 0 to 100, rounded. A COUNT, so positive and negative below reproduce it in one division: round(positive / (positive + negative) * 100). Zero when the running lords reach none of the six houses, which is an ABSENCE of connection rather than a negative verdict. Null above latitude 66.56, where the Placidus cusps the KP significators are read from have no solution: the question does not apply there rather than the answer being no, so never render it as zero or as a weak verdict. The natal block beside it is unaffected and still ships, and degraded names areas.finance.score. The two house groups are Krishnamurti Paddhati practice, but the NET is a KP practitioner convention rather than a classical operation: the KP sources that carry these groups use them as a promise test and an avoidance test, never as arithmetic. The groups also vary by author, and the 6th house is the live disagreement, since some KP authors place it on the POSITIVE side as service income and salary, the exact opposite of the assignment used here. This is a six house net and it is NOT the focus=finance lens, which re-reads all twelve bhavas in money vocabulary and moves no number. The two are orthogonal and both ship.
+				// Score Share of the running lords six-house connections that land on the positive group, 0 to 100, rounded. A COUNT, so positive and negative below reproduce it in one division: round(positive / (positive + negative) * 100). Zero when the running lords reach none of the six houses, which is an ABSENCE of connection rather than a negative verdict. Null above latitude 66.56, where the Placidus cusps the KP significators are read from have no solution: the question does not apply there rather than the answer being no, so never render it as zero or as a weak verdict. The natal block beside it is unaffected and still ships, and degraded names areas.finance.score. The two house groups are Krishnamurti Paddhati practice, but the NET is a KP practitioner convention rather than a classical operation: the KP sources that carry these groups use them as a promise test and an avoidance test, never as arithmetic. The groups also vary by author, and TWO houses are live disagreements rather than one. The 6th: some KP authors place it on the POSITIVE side as service income and salary, the exact opposite of the assignment used here. The 5th: it is named as a speculative GAIN house in the same KP sources that elsewhere call it a negation house, reading it as the 12th from the 6th and therefore loss of earning capacity, and both readings appear in one publication. The 1st is treated as a negation house by some authors on the same logic, as the 12th from the 2nd, and is not on either side here. This is a six house net and it is NOT the focus=finance lens, which re-reads all twelve bhavas in money vocabulary and moves no number. The two are orthogonal and both ship.
 				Score *float32 `json:"score"`
 			} `json:"finance"`
 		} `json:"areas"`
@@ -86008,7 +86966,7 @@ type GetVedicDailyReadingResponse struct {
 func (r GetVedicDailyReadingResponse) GetJSON200() *struct {
 	// Areas Life areas carried as a TYPED closed set rather than an open map, so every generated SDK knows which keys exist. Finance ships alone in this version, because an area is a named classical house group with a citation and not a life category invented for a dropdown. Widening it later adds a key and breaks nothing.
 	Areas struct {
-		// Finance The finance area: the positive house group 2, 5, 11 netted against the negative group 6, 8, 12, read off the lords of the running dasha, bhukti and antara, because that is the KP rule for when a matter fructifies, plus the natal basis the day is read against. ALWAYS AN OBJECT. Above latitude 66.56 the six netted members are null, because the Placidus cusps behind the significators have no solution there, while natal is still populated because it is a property of the birth chart and needs no cusps; the reading also still carries its gochara, panchanga and dasha and names the omission in degraded. The two house groups are Krishnamurti Paddhati practice, but the NET is a KP practitioner convention rather than a classical operation: the KP sources that carry these groups use them as a promise test and an avoidance test, never as arithmetic. The groups also vary by author, and the 6th house is the live disagreement, since some KP authors place it on the POSITIVE side as service income and salary, the exact opposite of the assignment used here. This is a six house net and it is NOT the focus=finance lens, which re-reads all twelve bhavas in money vocabulary and moves no number. The two are orthogonal and both ship.
+		// Finance The finance area: the positive house group 2, 5, 11 netted against the negative group 6, 8, 12, read off the lords of the running dasha, bhukti and antara, because that is the KP rule for when a matter fructifies, plus the natal basis the day is read against. ALWAYS AN OBJECT. Above latitude 66.56 the six netted members are null, because the Placidus cusps behind the significators have no solution there, while natal is still populated because it is a property of the birth chart and needs no cusps; the reading also still carries its gochara, panchanga and dasha and names the omission in degraded. The two house groups are Krishnamurti Paddhati practice, but the NET is a KP practitioner convention rather than a classical operation: the KP sources that carry these groups use them as a promise test and an avoidance test, never as arithmetic. The groups also vary by author, and TWO houses are live disagreements rather than one. The 6th: some KP authors place it on the POSITIVE side as service income and salary, the exact opposite of the assignment used here. The 5th: it is named as a speculative GAIN house in the same KP sources that elsewhere call it a negation house, reading it as the 12th from the 6th and therefore loss of earning capacity, and both readings appear in one publication. The 1st is treated as a negation house by some authors on the same logic, as the 12th from the 2nd, and is not on either side here. This is a six house net and it is NOT the focus=finance lens, which re-reads all twelve bhavas in money vocabulary and moves no number. The two are orthogonal and both ship.
 		Finance struct {
 			// Band The band the finance score falls in, on the same ladder as the top-level verdict so the two can never disagree about what a word means: "very-strong" at 75 and above, "strong" at 50 and above, "moderate" at 25 and above, "weak" below 25. Null above latitude 66.56, where the Placidus cusps the KP significators are read from have no solution: the question does not apply there rather than the answer being no, so never render it as zero or as a weak verdict. The natal block beside it is unaffected and still ships, and degraded names areas.finance.score.
 			Band *GetVedicDailyReading200JSONResponseBodyAreasFinanceBand `json:"band"`
@@ -86073,7 +87031,7 @@ func (r GetVedicDailyReadingResponse) GetJSON200() *struct {
 			// Positive How many connections land on the positive house group 2, 5, 11, which KP reads as accumulated wealth, speculation and gains. Null above latitude 66.56, where the Placidus cusps the KP significators are read from have no solution: the question does not apply there rather than the answer being no, so never render it as zero or as a weak verdict. The natal block beside it is unaffected and still ships, and degraded names areas.finance.score.
 			Positive *float32 `json:"positive"`
 
-			// Score Share of the running lords six-house connections that land on the positive group, 0 to 100, rounded. A COUNT, so positive and negative below reproduce it in one division: round(positive / (positive + negative) * 100). Zero when the running lords reach none of the six houses, which is an ABSENCE of connection rather than a negative verdict. Null above latitude 66.56, where the Placidus cusps the KP significators are read from have no solution: the question does not apply there rather than the answer being no, so never render it as zero or as a weak verdict. The natal block beside it is unaffected and still ships, and degraded names areas.finance.score. The two house groups are Krishnamurti Paddhati practice, but the NET is a KP practitioner convention rather than a classical operation: the KP sources that carry these groups use them as a promise test and an avoidance test, never as arithmetic. The groups also vary by author, and the 6th house is the live disagreement, since some KP authors place it on the POSITIVE side as service income and salary, the exact opposite of the assignment used here. This is a six house net and it is NOT the focus=finance lens, which re-reads all twelve bhavas in money vocabulary and moves no number. The two are orthogonal and both ship.
+			// Score Share of the running lords six-house connections that land on the positive group, 0 to 100, rounded. A COUNT, so positive and negative below reproduce it in one division: round(positive / (positive + negative) * 100). Zero when the running lords reach none of the six houses, which is an ABSENCE of connection rather than a negative verdict. Null above latitude 66.56, where the Placidus cusps the KP significators are read from have no solution: the question does not apply there rather than the answer being no, so never render it as zero or as a weak verdict. The natal block beside it is unaffected and still ships, and degraded names areas.finance.score. The two house groups are Krishnamurti Paddhati practice, but the NET is a KP practitioner convention rather than a classical operation: the KP sources that carry these groups use them as a promise test and an avoidance test, never as arithmetic. The groups also vary by author, and TWO houses are live disagreements rather than one. The 6th: some KP authors place it on the POSITIVE side as service income and salary, the exact opposite of the assignment used here. The 5th: it is named as a speculative GAIN house in the same KP sources that elsewhere call it a negation house, reading it as the 12th from the 6th and therefore loss of earning capacity, and both readings appear in one publication. The 1st is treated as a negation house by some authors on the same logic, as the 12th from the 2nd, and is not on either side here. This is a six house net and it is NOT the focus=finance lens, which re-reads all twelve bhavas in money vocabulary and moves no number. The two are orthogonal and both ship.
 			Score *float32 `json:"score"`
 		} `json:"finance"`
 	} `json:"areas"`
@@ -94723,6 +95681,36 @@ func (c *ClientWithResponses) GenerateCompositeChartWithResponse(ctx context.Con
 	return ParseGenerateCompositeChartResponse(rsp)
 }
 
+// GetPlanetaryNodePassagesWithBodyWithResponse Ecliptic Crossings - Node passages for a whole year
+//
+// Get every moment a body crosses the plane of the ecliptic during a given year, for the 11 Western bodies that leave it: the Moon and Mercury through Pluto, plus Chiron and Black Moon Lilith. A crossing from south to north is an ascending node passage, north to south a descending one. These are the instants a body sits exactly on the ecliptic rather than merely near it, which is what makes an eclipse possible when a lunar crossing coincides with a New or Full Moon, and what practitioners use for node-based timing. Returns the exact date and time in your timezone with the tropical longitude and sign. The Sun and the lunar nodes are excluded because they lie on the plane by definition and so have no nodes of their own. Essential for eclipse-season work, node timing, and astronomical calendars. Ecliptic crossing API, planetary node passage, ascending and descending nodes. Verified against NASA JPL Horizons.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /astrology/ecliptic-crossings (the `GetPlanetaryNodePassages` operationId).
+func (c *ClientWithResponses) GetPlanetaryNodePassagesWithBodyWithResponse(ctx context.Context, params *GetPlanetaryNodePassagesParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetPlanetaryNodePassagesResponse, error) {
+	rsp, err := c.GetPlanetaryNodePassagesWithBody(ctx, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetPlanetaryNodePassagesResponse(rsp)
+}
+
+// GetPlanetaryNodePassagesWithResponse Ecliptic Crossings - Node passages for a whole year
+//
+// Get every moment a body crosses the plane of the ecliptic during a given year, for the 11 Western bodies that leave it: the Moon and Mercury through Pluto, plus Chiron and Black Moon Lilith. A crossing from south to north is an ascending node passage, north to south a descending one. These are the instants a body sits exactly on the ecliptic rather than merely near it, which is what makes an eclipse possible when a lunar crossing coincides with a New or Full Moon, and what practitioners use for node-based timing. Returns the exact date and time in your timezone with the tropical longitude and sign. The Sun and the lunar nodes are excluded because they lie on the plane by definition and so have no nodes of their own. Essential for eclipse-season work, node timing, and astronomical calendars. Ecliptic crossing API, planetary node passage, ascending and descending nodes. Verified against NASA JPL Horizons.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /astrology/ecliptic-crossings (the `GetPlanetaryNodePassages` operationId).
+func (c *ClientWithResponses) GetPlanetaryNodePassagesWithResponse(ctx context.Context, params *GetPlanetaryNodePassagesParams, body GetPlanetaryNodePassagesJSONRequestBody, reqEditors ...RequestEditorFn) (*GetPlanetaryNodePassagesResponse, error) {
+	rsp, err := c.GetPlanetaryNodePassages(ctx, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetPlanetaryNodePassagesResponse(rsp)
+}
+
 // GenerateFixedStarsWithBodyWithResponse Fixed stars and star conjunctions calculator - Regulus, Spica, Algol natal report
 //
 // Calculate the tropical zodiac positions of the major named fixed stars for any birth moment, including the four Royal stars and the fifteen Behenian stars, then detect conjunctions to the natal planets, Ascendant, and Midheaven. Each star returns its precessed ecliptic longitude, zodiac sign, visual magnitude, and traditional planetary nature, with a plain language interpretation for every conjunction inside the chosen orb. A focused tool for natal reports that weigh Regulus, Spica, Aldebaran, Antares, and Algol against the chart.
@@ -94991,6 +95979,36 @@ func (c *ClientWithResponses) GenerateNatalChartWithResponse(ctx context.Context
 		return nil, err
 	}
 	return ParseGenerateNatalChartResponse(rsp)
+}
+
+// GetMonthlyDeclinationParallelsWithBodyWithResponse Monthly Parallels - Declination contacts for an entire month
+//
+// Get every parallel and contraparallel of declination that perfects during a given month, across the 13 non-lunar Western bodies: the Sun and Mercury through Pluto, both lunar nodes, Chiron and Black Moon Lilith. A parallel is two bodies at the same declination and reads much like a conjunction; a contraparallel is equal and opposite declinations and reads much like an opposition. Neither depends on zodiacal distance, so they surface connections an aspect table cannot show, which is why traditional and modern practitioners read them alongside aspects. Declinations are geocentric, matching what an ephemeris publishes. Returns the exact date and time of closest approach in your timezone with both declinations. The Moon is excluded because its declination swings the full range every month and would bury the slow pairs. Omit year and month to get the month in progress, so a published calendar stays current without a redeploy. Essential for declination work, out-of-bounds tracking, monthly forecast copy, and electional timing. Monthly parallel calendar API, declination aspects, contraparallel ephemeris. Verified against NASA JPL Horizons.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /astrology/parallels/monthly (the `GetMonthlyDeclinationParallels` operationId).
+func (c *ClientWithResponses) GetMonthlyDeclinationParallelsWithBodyWithResponse(ctx context.Context, params *GetMonthlyDeclinationParallelsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetMonthlyDeclinationParallelsResponse, error) {
+	rsp, err := c.GetMonthlyDeclinationParallelsWithBody(ctx, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetMonthlyDeclinationParallelsResponse(rsp)
+}
+
+// GetMonthlyDeclinationParallelsWithResponse Monthly Parallels - Declination contacts for an entire month
+//
+// Get every parallel and contraparallel of declination that perfects during a given month, across the 13 non-lunar Western bodies: the Sun and Mercury through Pluto, both lunar nodes, Chiron and Black Moon Lilith. A parallel is two bodies at the same declination and reads much like a conjunction; a contraparallel is equal and opposite declinations and reads much like an opposition. Neither depends on zodiacal distance, so they surface connections an aspect table cannot show, which is why traditional and modern practitioners read them alongside aspects. Declinations are geocentric, matching what an ephemeris publishes. Returns the exact date and time of closest approach in your timezone with both declinations. The Moon is excluded because its declination swings the full range every month and would bury the slow pairs. Omit year and month to get the month in progress, so a published calendar stays current without a redeploy. Essential for declination work, out-of-bounds tracking, monthly forecast copy, and electional timing. Monthly parallel calendar API, declination aspects, contraparallel ephemeris. Verified against NASA JPL Horizons.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /astrology/parallels/monthly (the `GetMonthlyDeclinationParallels` operationId).
+func (c *ClientWithResponses) GetMonthlyDeclinationParallelsWithResponse(ctx context.Context, params *GetMonthlyDeclinationParallelsParams, body GetMonthlyDeclinationParallelsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetMonthlyDeclinationParallelsResponse, error) {
+	rsp, err := c.GetMonthlyDeclinationParallels(ctx, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetMonthlyDeclinationParallelsResponse(rsp)
 }
 
 // ListPlanetMeaningsWithResponse Get all planet meanings - Complete astrology planet interpretations list
@@ -97185,7 +98203,7 @@ func (c *ClientWithResponses) ListCardsWithResponse(ctx context.Context, params 
 
 // GetCardWithResponse Get detailed tarot card information
 //
-// Retrieve comprehensive details for a specific tarot card from the traditional Rider-Waite-Smith deck including complete upright meanings (card drawn normally) and reversed meanings (inverted/upside down interpretations for nuanced guidance). Each card provides keywords for quick reference, full interpretations (400+ words each for upright and reversed orientations), and guidance across life domains: love and relationships, career and professional growth, finances and material success, health and wellbeing, spirituality and personal development. Major Arcana cards (0-21) reveal deep spiritual lessons and life-changing themes. Minor Arcana cards (Ace through King in Cups, Wands, Swords, Pentacles) address practical daily situations and specific challenges. Use card ID in kebab-case format: Major Arcana like "fool", "magician", "death", "tower", or Minor Arcana like "ace-of-cups", "seven-of-wands", "queen-of-swords", "king-of-pentacles". Essential for detailed tarot study, reading interpretations, divination apps, fortune-telling platforms, spiritual guidance tools, and professional tarot learning applications.
+// Retrieve comprehensive details for a specific tarot card from the traditional Rider-Waite-Smith deck including complete upright meanings (card drawn normally) and reversed meanings (inverted/upside down interpretations for nuanced guidance). Each card provides keywords for quick reference, full interpretations (400+ words each for upright and reversed orientations), and guidance across life domains: love and relationships, career and professional growth, finances and material success, health and wellbeing, spirituality and personal development. Major Arcana cards (0-21) reveal deep spiritual lessons and life-changing themes. Minor Arcana cards (Ace through King in Cups, Wands, Swords, Pentacles) address practical daily situations and specific challenges. Use card ID in kebab-case format: Major Arcana like "fool", "magician", "death", "tower", or Minor Arcana like "ace-of-cups", "seven-of-wands", "queen-of-swords", "king-of-pentacles". Major Arcana IDs carry no leading article, though one is accepted, so "the-star" and "star" both return The Star. Essential for detailed tarot study, reading interpretations, divination apps, fortune-telling platforms, spiritual guidance tools, and professional tarot learning applications.
 //
 // Returns a wrapper object for the known response body format(s).
 //
@@ -100566,6 +101584,116 @@ func ParseGenerateCompositeChartResponse(rsp *http.Response) (*GenerateComposite
 	return response, nil
 }
 
+// ParseGetPlanetaryNodePassagesResponse parses an HTTP response from a GetPlanetaryNodePassagesWithResponse call
+func ParseGetPlanetaryNodePassagesResponse(rsp *http.Response) (*GetPlanetaryNodePassagesResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetPlanetaryNodePassagesResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Events Every node passage in the year, in chronological order across all bodies. The fast bodies dominate: a slow body can go years or decades between node passages, so an absent planet means it did not cross that year rather than that it was not checked.
+			Events []struct {
+				// Date Date of the crossing in the requested timezone (YYYY-MM-DD).
+				Date string `json:"date"`
+
+				// Datetime Combined crossing timestamp in the requested timezone.
+				Datetime string `json:"datetime"`
+
+				// Direction ascending is the crossing from south of the ecliptic to north, at the body north node. descending is the reverse, at its south node.
+				Direction GetPlanetaryNodePassages200JSONResponseBodyEventsDirection `json:"direction"`
+
+				// Longitude Tropical ecliptic longitude of the body at the crossing, in degrees. This is the only value in the response that depends on the zodiac frame.
+				Longitude float32 `json:"longitude"`
+
+				// Planet Body making the crossing. Always canonical English whatever the lang parameter says, so it stays safe to compare against in code. Use planetLocalized for anything a reader sees.
+				Planet string `json:"planet"`
+
+				// PlanetLocalized Body name in the requested language. Present only when lang is supplied.
+				PlanetLocalized *string `json:"planetLocalized,omitempty"`
+
+				// Sign Tropical sign the body occupies at the crossing. Canonical English.
+				Sign string `json:"sign"`
+
+				// SignLocalized Sign in the requested language. Present only when lang is supplied.
+				SignLocalized *string `json:"signLocalized,omitempty"`
+
+				// Time Time of the crossing in the requested timezone (HH:MM).
+				Time string `json:"time"`
+			} `json:"events"`
+
+			// Timezone Timezone the dates and times are reported in. Echoes the request.
+			Timezone float32 `json:"timezone"`
+
+			// Year Year that was scanned. Echoes the request.
+			Year float32 `json:"year"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 405:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON405 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	switch {
+	case rsp.StatusCode == 405:
+		var headers GetPlanetaryNodePassagesResponse405Headers
+		if values := rsp.Header.Values("Allow"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "Allow", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.Allow = &value
+		}
+		response.Headers405 = &headers
+	}
+
+	return response, nil
+}
+
 // ParseGenerateFixedStarsResponse parses an HTTP response from a GenerateFixedStarsWithResponse call
 func ParseGenerateFixedStarsResponse(rsp *http.Response) (*GenerateFixedStarsResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -101813,6 +102941,128 @@ func ParseGenerateNatalChartResponse(rsp *http.Response) (*GenerateNatalChartRes
 	switch {
 	case rsp.StatusCode == 405:
 		var headers GenerateNatalChartResponse405Headers
+		if values := rsp.Header.Values("Allow"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "Allow", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.Allow = &value
+		}
+		response.Headers405 = &headers
+	}
+
+	return response, nil
+}
+
+// ParseGetMonthlyDeclinationParallelsResponse parses an HTTP response from a GetMonthlyDeclinationParallelsWithResponse call
+func ParseGetMonthlyDeclinationParallelsResponse(rsp *http.Response) (*GetMonthlyDeclinationParallelsResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetMonthlyDeclinationParallelsResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Events Every declination contact in the month, in chronological order across all body pairs.
+			Events []struct {
+				// Date Date the contact is closest to exact, in the requested timezone (YYYY-MM-DD).
+				Date string `json:"date"`
+
+				// Datetime Combined timestamp of closest approach, in the requested timezone.
+				Datetime string `json:"datetime"`
+
+				// Declination1 Geocentric declination of the first body at the reported instant, in degrees. Positive is north of the celestial equator, negative south.
+				Declination1 float32 `json:"declination1"`
+
+				// Declination2 Geocentric declination of the second body at the reported instant, in degrees.
+				Declination2 float32 `json:"declination2"`
+
+				// Orb Distance from exact in degrees at the reported instant. Effectively zero for a contact that perfects inside the month, and larger only where the pair turns before reaching exact.
+				Orb float32 `json:"orb"`
+
+				// Planet1 First body in the contact. Always canonical English whatever the lang parameter says, so it stays safe to compare against in code. Use planet1Localized for anything a reader sees.
+				Planet1 string `json:"planet1"`
+
+				// Planet1Localized First body in the requested language. Present only when lang is supplied.
+				Planet1Localized *string `json:"planet1Localized,omitempty"`
+
+				// Planet2 Second body in the contact. Always canonical English.
+				Planet2 string `json:"planet2"`
+
+				// Planet2Localized Second body in the requested language. Present only when lang is supplied.
+				Planet2Localized *string `json:"planet2Localized,omitempty"`
+
+				// Time Time the contact is closest to exact, in the requested timezone (HH:MM).
+				Time string `json:"time"`
+
+				// Type parallel means both bodies stand at the same declination, the same distance north or south of the celestial equator, and reads much like a conjunction. contraparallel means equal and opposite declinations, one as far north as the other is south, and reads much like an opposition. Neither depends on how far apart the two bodies are along the zodiac, which is what makes them worth tracking alongside ordinary aspects.
+				Type GetMonthlyDeclinationParallels200JSONResponseBodyEventsType `json:"type"`
+			} `json:"events"`
+
+			// Month Month of the calendar. Echoes the month requested, or the current UTC month when it was omitted.
+			Month float32 `json:"month"`
+
+			// Orb Orb in degrees that was applied. Echoes the request.
+			Orb float32 `json:"orb"`
+
+			// Timezone Timezone the event dates and times are reported in. Echoes the request.
+			Timezone float32 `json:"timezone"`
+
+			// Year Year of the calendar. Echoes the year requested, or the current UTC year when it was omitted.
+			Year float32 `json:"year"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 405:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON405 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	switch {
+	case rsp.StatusCode == 405:
+		var headers GetMonthlyDeclinationParallelsResponse405Headers
 		if values := rsp.Header.Values("Allow"); len(values) > 0 {
 			var value string
 			if err := runtime.BindStyledParameterWithOptions("simple", "Allow", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
@@ -115591,7 +116841,7 @@ func ParseGetVedicDailyReadingResponse(rsp *http.Response) (*GetVedicDailyReadin
 		var dest struct {
 			// Areas Life areas carried as a TYPED closed set rather than an open map, so every generated SDK knows which keys exist. Finance ships alone in this version, because an area is a named classical house group with a citation and not a life category invented for a dropdown. Widening it later adds a key and breaks nothing.
 			Areas struct {
-				// Finance The finance area: the positive house group 2, 5, 11 netted against the negative group 6, 8, 12, read off the lords of the running dasha, bhukti and antara, because that is the KP rule for when a matter fructifies, plus the natal basis the day is read against. ALWAYS AN OBJECT. Above latitude 66.56 the six netted members are null, because the Placidus cusps behind the significators have no solution there, while natal is still populated because it is a property of the birth chart and needs no cusps; the reading also still carries its gochara, panchanga and dasha and names the omission in degraded. The two house groups are Krishnamurti Paddhati practice, but the NET is a KP practitioner convention rather than a classical operation: the KP sources that carry these groups use them as a promise test and an avoidance test, never as arithmetic. The groups also vary by author, and the 6th house is the live disagreement, since some KP authors place it on the POSITIVE side as service income and salary, the exact opposite of the assignment used here. This is a six house net and it is NOT the focus=finance lens, which re-reads all twelve bhavas in money vocabulary and moves no number. The two are orthogonal and both ship.
+				// Finance The finance area: the positive house group 2, 5, 11 netted against the negative group 6, 8, 12, read off the lords of the running dasha, bhukti and antara, because that is the KP rule for when a matter fructifies, plus the natal basis the day is read against. ALWAYS AN OBJECT. Above latitude 66.56 the six netted members are null, because the Placidus cusps behind the significators have no solution there, while natal is still populated because it is a property of the birth chart and needs no cusps; the reading also still carries its gochara, panchanga and dasha and names the omission in degraded. The two house groups are Krishnamurti Paddhati practice, but the NET is a KP practitioner convention rather than a classical operation: the KP sources that carry these groups use them as a promise test and an avoidance test, never as arithmetic. The groups also vary by author, and TWO houses are live disagreements rather than one. The 6th: some KP authors place it on the POSITIVE side as service income and salary, the exact opposite of the assignment used here. The 5th: it is named as a speculative GAIN house in the same KP sources that elsewhere call it a negation house, reading it as the 12th from the 6th and therefore loss of earning capacity, and both readings appear in one publication. The 1st is treated as a negation house by some authors on the same logic, as the 12th from the 2nd, and is not on either side here. This is a six house net and it is NOT the focus=finance lens, which re-reads all twelve bhavas in money vocabulary and moves no number. The two are orthogonal and both ship.
 				Finance struct {
 					// Band The band the finance score falls in, on the same ladder as the top-level verdict so the two can never disagree about what a word means: "very-strong" at 75 and above, "strong" at 50 and above, "moderate" at 25 and above, "weak" below 25. Null above latitude 66.56, where the Placidus cusps the KP significators are read from have no solution: the question does not apply there rather than the answer being no, so never render it as zero or as a weak verdict. The natal block beside it is unaffected and still ships, and degraded names areas.finance.score.
 					Band *GetVedicDailyReading200JSONResponseBodyAreasFinanceBand `json:"band"`
@@ -115656,7 +116906,7 @@ func ParseGetVedicDailyReadingResponse(rsp *http.Response) (*GetVedicDailyReadin
 					// Positive How many connections land on the positive house group 2, 5, 11, which KP reads as accumulated wealth, speculation and gains. Null above latitude 66.56, where the Placidus cusps the KP significators are read from have no solution: the question does not apply there rather than the answer being no, so never render it as zero or as a weak verdict. The natal block beside it is unaffected and still ships, and degraded names areas.finance.score.
 					Positive *float32 `json:"positive"`
 
-					// Score Share of the running lords six-house connections that land on the positive group, 0 to 100, rounded. A COUNT, so positive and negative below reproduce it in one division: round(positive / (positive + negative) * 100). Zero when the running lords reach none of the six houses, which is an ABSENCE of connection rather than a negative verdict. Null above latitude 66.56, where the Placidus cusps the KP significators are read from have no solution: the question does not apply there rather than the answer being no, so never render it as zero or as a weak verdict. The natal block beside it is unaffected and still ships, and degraded names areas.finance.score. The two house groups are Krishnamurti Paddhati practice, but the NET is a KP practitioner convention rather than a classical operation: the KP sources that carry these groups use them as a promise test and an avoidance test, never as arithmetic. The groups also vary by author, and the 6th house is the live disagreement, since some KP authors place it on the POSITIVE side as service income and salary, the exact opposite of the assignment used here. This is a six house net and it is NOT the focus=finance lens, which re-reads all twelve bhavas in money vocabulary and moves no number. The two are orthogonal and both ship.
+					// Score Share of the running lords six-house connections that land on the positive group, 0 to 100, rounded. A COUNT, so positive and negative below reproduce it in one division: round(positive / (positive + negative) * 100). Zero when the running lords reach none of the six houses, which is an ABSENCE of connection rather than a negative verdict. Null above latitude 66.56, where the Placidus cusps the KP significators are read from have no solution: the question does not apply there rather than the answer being no, so never render it as zero or as a weak verdict. The natal block beside it is unaffected and still ships, and degraded names areas.finance.score. The two house groups are Krishnamurti Paddhati practice, but the NET is a KP practitioner convention rather than a classical operation: the KP sources that carry these groups use them as a promise test and an avoidance test, never as arithmetic. The groups also vary by author, and TWO houses are live disagreements rather than one. The 6th: some KP authors place it on the POSITIVE side as service income and salary, the exact opposite of the assignment used here. The 5th: it is named as a speculative GAIN house in the same KP sources that elsewhere call it a negation house, reading it as the 12th from the 6th and therefore loss of earning capacity, and both readings appear in one publication. The 1st is treated as a negation house by some authors on the same logic, as the 12th from the 2nd, and is not on either side here. This is a six house net and it is NOT the focus=finance lens, which re-reads all twelve bhavas in money vocabulary and moves no number. The two are orthogonal and both ship.
 					Score *float32 `json:"score"`
 				} `json:"finance"`
 			} `json:"areas"`

@@ -29,6 +29,7 @@ Western astrology API for natal birth charts, daily, weekly, and monthly horosco
 - `generateAstrocartography` - POST `/astrology/astrocartography` - Astrocartography map - planetary lines and relocation calculator
 - `calculateCompatibility` - POST `/astrology/compatibility-score` - Compatibility Score. Relationship compatibility analysis with category breakdown
 - `generateCompositeChart` - POST `/astrology/composite-chart` - Composite Chart - Midpoint relationship chart with interpretations
+- `getPlanetaryNodePassages` - POST `/astrology/ecliptic-crossings` - Ecliptic Crossings - Node passages for a whole year
 - `generateFixedStars` - POST `/astrology/fixed-stars` - Fixed stars and star conjunctions calculator - Regulus, Spica, Algol natal report
 - `getDailyHoroscope` - GET `/astrology/horoscope/{sign}/daily` - Daily horoscope by zodiac sign - Transit-based forecast with house activations
 - `getMonthlyHoroscope` - GET `/astrology/horoscope/{sign}/monthly` - Monthly horoscope by zodiac sign - 30-day transit forecast with key dates
@@ -41,6 +42,7 @@ Western astrology API for natal birth charts, daily, weekly, and monthly horosco
 - `getCurrentMoonPhase` - GET `/astrology/moon-phase/current` - Get current moon phase - Lunar phase calculator with zodiac sign
 - `getUpcomingMoonPhases` - GET `/astrology/moon-phase/upcoming` - Get upcoming moon phases - Next new moon, full moon, quarters
 - `generateNatalChart` - POST `/astrology/natal-chart` - Generate natal chart - Birth chart calculator API with houses and aspects
+- `getMonthlyDeclinationParallels` - POST `/astrology/parallels/monthly` - Monthly Parallels - Declination contacts for an entire month
 - `listPlanetMeanings` - GET `/astrology/planet-meanings` - Get all planet meanings - Complete astrology planet interpretations list
 - `getPlanetMeaning` - GET `/astrology/planet-meanings/{id}` - Get planet meaning details - Complete astrology planet interpretation
 - `generatePlanetaryReturn` - POST `/astrology/planetary-returns` - Planetary Return Chart - Saturn return, Jupiter return, and inner planet cycles
