@@ -7989,6 +7989,30 @@ func (e CalculateBioCompatibilityParamsLang) Valid() bool {
 	}
 }
 
+// Defines values for CalculateBioCompatibility200JSONResponseBodyCyclesPhase.
+const (
+	CalculateBioCompatibility200JSONResponseBodyCyclesPhaseComplementary CalculateBioCompatibility200JSONResponseBodyCyclesPhase = "complementary"
+	CalculateBioCompatibility200JSONResponseBodyCyclesPhaseInSync        CalculateBioCompatibility200JSONResponseBodyCyclesPhase = "in_sync"
+	CalculateBioCompatibility200JSONResponseBodyCyclesPhaseNeutral       CalculateBioCompatibility200JSONResponseBodyCyclesPhase = "neutral"
+	CalculateBioCompatibility200JSONResponseBodyCyclesPhaseOpposing      CalculateBioCompatibility200JSONResponseBodyCyclesPhase = "opposing"
+)
+
+// Valid indicates whether the value is a known member of the CalculateBioCompatibility200JSONResponseBodyCyclesPhase enum.
+func (e CalculateBioCompatibility200JSONResponseBodyCyclesPhase) Valid() bool {
+	switch e {
+	case CalculateBioCompatibility200JSONResponseBodyCyclesPhaseComplementary:
+		return true
+	case CalculateBioCompatibility200JSONResponseBodyCyclesPhaseInSync:
+		return true
+	case CalculateBioCompatibility200JSONResponseBodyCyclesPhaseNeutral:
+		return true
+	case CalculateBioCompatibility200JSONResponseBodyCyclesPhaseOpposing:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for GetCriticalDaysParamsLang.
 const (
 	GetCriticalDaysParamsLangDe GetCriticalDaysParamsLang = "de"
@@ -8025,6 +8049,66 @@ func (e GetCriticalDaysParamsLang) Valid() bool {
 	}
 }
 
+// Defines values for GetCriticalDays200JSONResponseBodyCriticalDaysCycle.
+const (
+	GetCriticalDays200JSONResponseBodyCriticalDaysCycleEmotional    GetCriticalDays200JSONResponseBodyCriticalDaysCycle = "emotional"
+	GetCriticalDays200JSONResponseBodyCriticalDaysCycleIntellectual GetCriticalDays200JSONResponseBodyCriticalDaysCycle = "intellectual"
+	GetCriticalDays200JSONResponseBodyCriticalDaysCyclePhysical     GetCriticalDays200JSONResponseBodyCriticalDaysCycle = "physical"
+)
+
+// Valid indicates whether the value is a known member of the GetCriticalDays200JSONResponseBodyCriticalDaysCycle enum.
+func (e GetCriticalDays200JSONResponseBodyCriticalDaysCycle) Valid() bool {
+	switch e {
+	case GetCriticalDays200JSONResponseBodyCriticalDaysCycleEmotional:
+		return true
+	case GetCriticalDays200JSONResponseBodyCriticalDaysCycleIntellectual:
+		return true
+	case GetCriticalDays200JSONResponseBodyCriticalDaysCyclePhysical:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetCriticalDays200JSONResponseBodyCriticalDaysDirection.
+const (
+	GetCriticalDays200JSONResponseBodyCriticalDaysDirectionAscending  GetCriticalDays200JSONResponseBodyCriticalDaysDirection = "ascending"
+	GetCriticalDays200JSONResponseBodyCriticalDaysDirectionDescending GetCriticalDays200JSONResponseBodyCriticalDaysDirection = "descending"
+)
+
+// Valid indicates whether the value is a known member of the GetCriticalDays200JSONResponseBodyCriticalDaysDirection enum.
+func (e GetCriticalDays200JSONResponseBodyCriticalDaysDirection) Valid() bool {
+	switch e {
+	case GetCriticalDays200JSONResponseBodyCriticalDaysDirectionAscending:
+		return true
+	case GetCriticalDays200JSONResponseBodyCriticalDaysDirectionDescending:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetCriticalDays200JSONResponseBodyCriticalDaysSeverity.
+const (
+	GetCriticalDays200JSONResponseBodyCriticalDaysSeverityDouble GetCriticalDays200JSONResponseBodyCriticalDaysSeverity = "double"
+	GetCriticalDays200JSONResponseBodyCriticalDaysSeveritySingle GetCriticalDays200JSONResponseBodyCriticalDaysSeverity = "single"
+	GetCriticalDays200JSONResponseBodyCriticalDaysSeverityTriple GetCriticalDays200JSONResponseBodyCriticalDaysSeverity = "triple"
+)
+
+// Valid indicates whether the value is a known member of the GetCriticalDays200JSONResponseBodyCriticalDaysSeverity enum.
+func (e GetCriticalDays200JSONResponseBodyCriticalDaysSeverity) Valid() bool {
+	switch e {
+	case GetCriticalDays200JSONResponseBodyCriticalDaysSeverityDouble:
+		return true
+	case GetCriticalDays200JSONResponseBodyCriticalDaysSeveritySingle:
+		return true
+	case GetCriticalDays200JSONResponseBodyCriticalDaysSeverityTriple:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for GetDailyBiorhythmParamsLang.
 const (
 	GetDailyBiorhythmParamsLangDe GetDailyBiorhythmParamsLang = "de"
@@ -8055,6 +8139,87 @@ func (e GetDailyBiorhythmParamsLang) Valid() bool {
 	case GetDailyBiorhythmParamsLangRu:
 		return true
 	case GetDailyBiorhythmParamsLangTr:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetDailyBiorhythm200JSONResponseBodyOverallPhase.
+const (
+	GetDailyBiorhythm200JSONResponseBodyOverallPhaseCritical   GetDailyBiorhythm200JSONResponseBodyOverallPhase = "critical"
+	GetDailyBiorhythm200JSONResponseBodyOverallPhaseHighEnergy GetDailyBiorhythm200JSONResponseBodyOverallPhase = "high_energy"
+	GetDailyBiorhythm200JSONResponseBodyOverallPhaseMixed      GetDailyBiorhythm200JSONResponseBodyOverallPhase = "mixed"
+	GetDailyBiorhythm200JSONResponseBodyOverallPhaseRecovery   GetDailyBiorhythm200JSONResponseBodyOverallPhase = "recovery"
+)
+
+// Valid indicates whether the value is a known member of the GetDailyBiorhythm200JSONResponseBodyOverallPhase enum.
+func (e GetDailyBiorhythm200JSONResponseBodyOverallPhase) Valid() bool {
+	switch e {
+	case GetDailyBiorhythm200JSONResponseBodyOverallPhaseCritical:
+		return true
+	case GetDailyBiorhythm200JSONResponseBodyOverallPhaseHighEnergy:
+		return true
+	case GetDailyBiorhythm200JSONResponseBodyOverallPhaseMixed:
+		return true
+	case GetDailyBiorhythm200JSONResponseBodyOverallPhaseRecovery:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetDailyBiorhythm200JSONResponseBodySpotlightCycle.
+const (
+	GetDailyBiorhythm200JSONResponseBodySpotlightCycleEmotional    GetDailyBiorhythm200JSONResponseBodySpotlightCycle = "emotional"
+	GetDailyBiorhythm200JSONResponseBodySpotlightCycleIntellectual GetDailyBiorhythm200JSONResponseBodySpotlightCycle = "intellectual"
+	GetDailyBiorhythm200JSONResponseBodySpotlightCyclePhysical     GetDailyBiorhythm200JSONResponseBodySpotlightCycle = "physical"
+)
+
+// Valid indicates whether the value is a known member of the GetDailyBiorhythm200JSONResponseBodySpotlightCycle enum.
+func (e GetDailyBiorhythm200JSONResponseBodySpotlightCycle) Valid() bool {
+	switch e {
+	case GetDailyBiorhythm200JSONResponseBodySpotlightCycleEmotional:
+		return true
+	case GetDailyBiorhythm200JSONResponseBodySpotlightCycleIntellectual:
+		return true
+	case GetDailyBiorhythm200JSONResponseBodySpotlightCyclePhysical:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetDailyBiorhythm200JSONResponseBodySpotlightPhase.
+const (
+	GetDailyBiorhythm200JSONResponseBodySpotlightPhaseCriticalAscending  GetDailyBiorhythm200JSONResponseBodySpotlightPhase = "critical_ascending"
+	GetDailyBiorhythm200JSONResponseBodySpotlightPhaseCriticalDescending GetDailyBiorhythm200JSONResponseBodySpotlightPhase = "critical_descending"
+	GetDailyBiorhythm200JSONResponseBodySpotlightPhaseFalling            GetDailyBiorhythm200JSONResponseBodySpotlightPhase = "falling"
+	GetDailyBiorhythm200JSONResponseBodySpotlightPhaseHigh               GetDailyBiorhythm200JSONResponseBodySpotlightPhase = "high"
+	GetDailyBiorhythm200JSONResponseBodySpotlightPhaseLow                GetDailyBiorhythm200JSONResponseBodySpotlightPhase = "low"
+	GetDailyBiorhythm200JSONResponseBodySpotlightPhasePeak               GetDailyBiorhythm200JSONResponseBodySpotlightPhase = "peak"
+	GetDailyBiorhythm200JSONResponseBodySpotlightPhaseRising             GetDailyBiorhythm200JSONResponseBodySpotlightPhase = "rising"
+	GetDailyBiorhythm200JSONResponseBodySpotlightPhaseTrough             GetDailyBiorhythm200JSONResponseBodySpotlightPhase = "trough"
+)
+
+// Valid indicates whether the value is a known member of the GetDailyBiorhythm200JSONResponseBodySpotlightPhase enum.
+func (e GetDailyBiorhythm200JSONResponseBodySpotlightPhase) Valid() bool {
+	switch e {
+	case GetDailyBiorhythm200JSONResponseBodySpotlightPhaseCriticalAscending:
+		return true
+	case GetDailyBiorhythm200JSONResponseBodySpotlightPhaseCriticalDescending:
+		return true
+	case GetDailyBiorhythm200JSONResponseBodySpotlightPhaseFalling:
+		return true
+	case GetDailyBiorhythm200JSONResponseBodySpotlightPhaseHigh:
+		return true
+	case GetDailyBiorhythm200JSONResponseBodySpotlightPhaseLow:
+		return true
+	case GetDailyBiorhythm200JSONResponseBodySpotlightPhasePeak:
+		return true
+	case GetDailyBiorhythm200JSONResponseBodySpotlightPhaseRising:
+		return true
+	case GetDailyBiorhythm200JSONResponseBodySpotlightPhaseTrough:
 		return true
 	default:
 		return false
@@ -8133,6 +8298,66 @@ func (e GetPhasesParamsLang) Valid() bool {
 	}
 }
 
+// Defines values for GetPhases200JSONResponseBodyPhasesPhase.
+const (
+	GetPhases200JSONResponseBodyPhasesPhaseCriticalAscending  GetPhases200JSONResponseBodyPhasesPhase = "critical_ascending"
+	GetPhases200JSONResponseBodyPhasesPhaseCriticalDescending GetPhases200JSONResponseBodyPhasesPhase = "critical_descending"
+	GetPhases200JSONResponseBodyPhasesPhaseFalling            GetPhases200JSONResponseBodyPhasesPhase = "falling"
+	GetPhases200JSONResponseBodyPhasesPhaseHigh               GetPhases200JSONResponseBodyPhasesPhase = "high"
+	GetPhases200JSONResponseBodyPhasesPhaseLow                GetPhases200JSONResponseBodyPhasesPhase = "low"
+	GetPhases200JSONResponseBodyPhasesPhasePeak               GetPhases200JSONResponseBodyPhasesPhase = "peak"
+	GetPhases200JSONResponseBodyPhasesPhaseRising             GetPhases200JSONResponseBodyPhasesPhase = "rising"
+	GetPhases200JSONResponseBodyPhasesPhaseTrough             GetPhases200JSONResponseBodyPhasesPhase = "trough"
+)
+
+// Valid indicates whether the value is a known member of the GetPhases200JSONResponseBodyPhasesPhase enum.
+func (e GetPhases200JSONResponseBodyPhasesPhase) Valid() bool {
+	switch e {
+	case GetPhases200JSONResponseBodyPhasesPhaseCriticalAscending:
+		return true
+	case GetPhases200JSONResponseBodyPhasesPhaseCriticalDescending:
+		return true
+	case GetPhases200JSONResponseBodyPhasesPhaseFalling:
+		return true
+	case GetPhases200JSONResponseBodyPhasesPhaseHigh:
+		return true
+	case GetPhases200JSONResponseBodyPhasesPhaseLow:
+		return true
+	case GetPhases200JSONResponseBodyPhasesPhasePeak:
+		return true
+	case GetPhases200JSONResponseBodyPhasesPhaseRising:
+		return true
+	case GetPhases200JSONResponseBodyPhasesPhaseTrough:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetPhases200JSONResponseBodyPhasesTrend.
+const (
+	GetPhases200JSONResponseBodyPhasesTrendBottoming GetPhases200JSONResponseBodyPhasesTrend = "bottoming"
+	GetPhases200JSONResponseBodyPhasesTrendFalling   GetPhases200JSONResponseBodyPhasesTrend = "falling"
+	GetPhases200JSONResponseBodyPhasesTrendPeaking   GetPhases200JSONResponseBodyPhasesTrend = "peaking"
+	GetPhases200JSONResponseBodyPhasesTrendRising    GetPhases200JSONResponseBodyPhasesTrend = "rising"
+)
+
+// Valid indicates whether the value is a known member of the GetPhases200JSONResponseBodyPhasesTrend enum.
+func (e GetPhases200JSONResponseBodyPhasesTrend) Valid() bool {
+	switch e {
+	case GetPhases200JSONResponseBodyPhasesTrendBottoming:
+		return true
+	case GetPhases200JSONResponseBodyPhasesTrendFalling:
+		return true
+	case GetPhases200JSONResponseBodyPhasesTrendPeaking:
+		return true
+	case GetPhases200JSONResponseBodyPhasesTrendRising:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for GetReadingParamsLang.
 const (
 	GetReadingParamsLangDe GetReadingParamsLang = "de"
@@ -8163,6 +8388,165 @@ func (e GetReadingParamsLang) Valid() bool {
 	case GetReadingParamsLangRu:
 		return true
 	case GetReadingParamsLangTr:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetReading200JSONResponseBodyCriticalAlertsCycle.
+const (
+	GetReading200JSONResponseBodyCriticalAlertsCycleAesthetic    GetReading200JSONResponseBodyCriticalAlertsCycle = "aesthetic"
+	GetReading200JSONResponseBodyCriticalAlertsCycleAwareness    GetReading200JSONResponseBodyCriticalAlertsCycle = "awareness"
+	GetReading200JSONResponseBodyCriticalAlertsCycleEmotional    GetReading200JSONResponseBodyCriticalAlertsCycle = "emotional"
+	GetReading200JSONResponseBodyCriticalAlertsCycleIntellectual GetReading200JSONResponseBodyCriticalAlertsCycle = "intellectual"
+	GetReading200JSONResponseBodyCriticalAlertsCycleIntuitive    GetReading200JSONResponseBodyCriticalAlertsCycle = "intuitive"
+	GetReading200JSONResponseBodyCriticalAlertsCycleMastery      GetReading200JSONResponseBodyCriticalAlertsCycle = "mastery"
+	GetReading200JSONResponseBodyCriticalAlertsCyclePassion      GetReading200JSONResponseBodyCriticalAlertsCycle = "passion"
+	GetReading200JSONResponseBodyCriticalAlertsCyclePhysical     GetReading200JSONResponseBodyCriticalAlertsCycle = "physical"
+	GetReading200JSONResponseBodyCriticalAlertsCycleSpiritual    GetReading200JSONResponseBodyCriticalAlertsCycle = "spiritual"
+	GetReading200JSONResponseBodyCriticalAlertsCycleWisdom       GetReading200JSONResponseBodyCriticalAlertsCycle = "wisdom"
+)
+
+// Valid indicates whether the value is a known member of the GetReading200JSONResponseBodyCriticalAlertsCycle enum.
+func (e GetReading200JSONResponseBodyCriticalAlertsCycle) Valid() bool {
+	switch e {
+	case GetReading200JSONResponseBodyCriticalAlertsCycleAesthetic:
+		return true
+	case GetReading200JSONResponseBodyCriticalAlertsCycleAwareness:
+		return true
+	case GetReading200JSONResponseBodyCriticalAlertsCycleEmotional:
+		return true
+	case GetReading200JSONResponseBodyCriticalAlertsCycleIntellectual:
+		return true
+	case GetReading200JSONResponseBodyCriticalAlertsCycleIntuitive:
+		return true
+	case GetReading200JSONResponseBodyCriticalAlertsCycleMastery:
+		return true
+	case GetReading200JSONResponseBodyCriticalAlertsCyclePassion:
+		return true
+	case GetReading200JSONResponseBodyCriticalAlertsCyclePhysical:
+		return true
+	case GetReading200JSONResponseBodyCriticalAlertsCycleSpiritual:
+		return true
+	case GetReading200JSONResponseBodyCriticalAlertsCycleWisdom:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetReading200JSONResponseBodyCriticalAlertsDirection.
+const (
+	GetReading200JSONResponseBodyCriticalAlertsDirectionAscending  GetReading200JSONResponseBodyCriticalAlertsDirection = "ascending"
+	GetReading200JSONResponseBodyCriticalAlertsDirectionDescending GetReading200JSONResponseBodyCriticalAlertsDirection = "descending"
+)
+
+// Valid indicates whether the value is a known member of the GetReading200JSONResponseBodyCriticalAlertsDirection enum.
+func (e GetReading200JSONResponseBodyCriticalAlertsDirection) Valid() bool {
+	switch e {
+	case GetReading200JSONResponseBodyCriticalAlertsDirectionAscending:
+		return true
+	case GetReading200JSONResponseBodyCriticalAlertsDirectionDescending:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetReading200JSONResponseBodyCriticalAlertsType.
+const (
+	ZeroCrossing GetReading200JSONResponseBodyCriticalAlertsType = "zero_crossing"
+)
+
+// Valid indicates whether the value is a known member of the GetReading200JSONResponseBodyCriticalAlertsType enum.
+func (e GetReading200JSONResponseBodyCriticalAlertsType) Valid() bool {
+	switch e {
+	case ZeroCrossing:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetReading200JSONResponseBodyCyclesPhase.
+const (
+	GetReading200JSONResponseBodyCyclesPhaseCriticalAscending  GetReading200JSONResponseBodyCyclesPhase = "critical_ascending"
+	GetReading200JSONResponseBodyCyclesPhaseCriticalDescending GetReading200JSONResponseBodyCyclesPhase = "critical_descending"
+	GetReading200JSONResponseBodyCyclesPhaseFalling            GetReading200JSONResponseBodyCyclesPhase = "falling"
+	GetReading200JSONResponseBodyCyclesPhaseHigh               GetReading200JSONResponseBodyCyclesPhase = "high"
+	GetReading200JSONResponseBodyCyclesPhaseLow                GetReading200JSONResponseBodyCyclesPhase = "low"
+	GetReading200JSONResponseBodyCyclesPhasePeak               GetReading200JSONResponseBodyCyclesPhase = "peak"
+	GetReading200JSONResponseBodyCyclesPhaseRising             GetReading200JSONResponseBodyCyclesPhase = "rising"
+	GetReading200JSONResponseBodyCyclesPhaseTrough             GetReading200JSONResponseBodyCyclesPhase = "trough"
+)
+
+// Valid indicates whether the value is a known member of the GetReading200JSONResponseBodyCyclesPhase enum.
+func (e GetReading200JSONResponseBodyCyclesPhase) Valid() bool {
+	switch e {
+	case GetReading200JSONResponseBodyCyclesPhaseCriticalAscending:
+		return true
+	case GetReading200JSONResponseBodyCyclesPhaseCriticalDescending:
+		return true
+	case GetReading200JSONResponseBodyCyclesPhaseFalling:
+		return true
+	case GetReading200JSONResponseBodyCyclesPhaseHigh:
+		return true
+	case GetReading200JSONResponseBodyCyclesPhaseLow:
+		return true
+	case GetReading200JSONResponseBodyCyclesPhasePeak:
+		return true
+	case GetReading200JSONResponseBodyCyclesPhaseRising:
+		return true
+	case GetReading200JSONResponseBodyCyclesPhaseTrough:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetReading200JSONResponseBodyCyclesTrend.
+const (
+	GetReading200JSONResponseBodyCyclesTrendBottoming GetReading200JSONResponseBodyCyclesTrend = "bottoming"
+	GetReading200JSONResponseBodyCyclesTrendFalling   GetReading200JSONResponseBodyCyclesTrend = "falling"
+	GetReading200JSONResponseBodyCyclesTrendPeaking   GetReading200JSONResponseBodyCyclesTrend = "peaking"
+	GetReading200JSONResponseBodyCyclesTrendRising    GetReading200JSONResponseBodyCyclesTrend = "rising"
+)
+
+// Valid indicates whether the value is a known member of the GetReading200JSONResponseBodyCyclesTrend enum.
+func (e GetReading200JSONResponseBodyCyclesTrend) Valid() bool {
+	switch e {
+	case GetReading200JSONResponseBodyCyclesTrendBottoming:
+		return true
+	case GetReading200JSONResponseBodyCyclesTrendFalling:
+		return true
+	case GetReading200JSONResponseBodyCyclesTrendPeaking:
+		return true
+	case GetReading200JSONResponseBodyCyclesTrendRising:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetReading200JSONResponseBodyOverallPhase.
+const (
+	GetReading200JSONResponseBodyOverallPhaseCritical   GetReading200JSONResponseBodyOverallPhase = "critical"
+	GetReading200JSONResponseBodyOverallPhaseHighEnergy GetReading200JSONResponseBodyOverallPhase = "high_energy"
+	GetReading200JSONResponseBodyOverallPhaseMixed      GetReading200JSONResponseBodyOverallPhase = "mixed"
+	GetReading200JSONResponseBodyOverallPhaseRecovery   GetReading200JSONResponseBodyOverallPhase = "recovery"
+)
+
+// Valid indicates whether the value is a known member of the GetReading200JSONResponseBodyOverallPhase enum.
+func (e GetReading200JSONResponseBodyOverallPhase) Valid() bool {
+	switch e {
+	case GetReading200JSONResponseBodyOverallPhaseCritical:
+		return true
+	case GetReading200JSONResponseBodyOverallPhaseHighEnergy:
+		return true
+	case GetReading200JSONResponseBodyOverallPhaseMixed:
+		return true
+	case GetReading200JSONResponseBodyOverallPhaseRecovery:
 		return true
 	default:
 		return false
@@ -27898,6 +28282,9 @@ type CalculateBioCompatibilityParams struct {
 // CalculateBioCompatibilityParamsLang defines parameters for CalculateBioCompatibility.
 type CalculateBioCompatibilityParamsLang string
 
+// CalculateBioCompatibility200JSONResponseBodyCyclesPhase defines parameters for CalculateBioCompatibility.
+type CalculateBioCompatibility200JSONResponseBodyCyclesPhase string
+
 // GetCriticalDaysJSONBody defines parameters for GetCriticalDays.
 type GetCriticalDaysJSONBody struct {
 	// BirthDate Birth date of the person in YYYY-MM-DD format.
@@ -27919,6 +28306,15 @@ type GetCriticalDaysParams struct {
 // GetCriticalDaysParamsLang defines parameters for GetCriticalDays.
 type GetCriticalDaysParamsLang string
 
+// GetCriticalDays200JSONResponseBodyCriticalDaysCycle defines parameters for GetCriticalDays.
+type GetCriticalDays200JSONResponseBodyCriticalDaysCycle string
+
+// GetCriticalDays200JSONResponseBodyCriticalDaysDirection defines parameters for GetCriticalDays.
+type GetCriticalDays200JSONResponseBodyCriticalDaysDirection string
+
+// GetCriticalDays200JSONResponseBodyCriticalDaysSeverity defines parameters for GetCriticalDays.
+type GetCriticalDays200JSONResponseBodyCriticalDaysSeverity string
+
 // GetDailyBiorhythmJSONBody defines parameters for GetDailyBiorhythm.
 type GetDailyBiorhythmJSONBody struct {
 	// Date Date for the reading in YYYY-MM-DD format. Defaults to today (UTC). Useful for viewing past daily readings or pre-generating future ones.
@@ -27936,6 +28332,15 @@ type GetDailyBiorhythmParams struct {
 
 // GetDailyBiorhythmParamsLang defines parameters for GetDailyBiorhythm.
 type GetDailyBiorhythmParamsLang string
+
+// GetDailyBiorhythm200JSONResponseBodyOverallPhase defines parameters for GetDailyBiorhythm.
+type GetDailyBiorhythm200JSONResponseBodyOverallPhase string
+
+// GetDailyBiorhythm200JSONResponseBodySpotlightCycle defines parameters for GetDailyBiorhythm.
+type GetDailyBiorhythm200JSONResponseBodySpotlightCycle string
+
+// GetDailyBiorhythm200JSONResponseBodySpotlightPhase defines parameters for GetDailyBiorhythm.
+type GetDailyBiorhythm200JSONResponseBodySpotlightPhase string
 
 // GetForecastJSONBody defines parameters for GetForecast.
 type GetForecastJSONBody struct {
@@ -27976,6 +28381,12 @@ type GetPhasesParams struct {
 // GetPhasesParamsLang defines parameters for GetPhases.
 type GetPhasesParamsLang string
 
+// GetPhases200JSONResponseBodyPhasesPhase defines parameters for GetPhases.
+type GetPhases200JSONResponseBodyPhasesPhase string
+
+// GetPhases200JSONResponseBodyPhasesTrend defines parameters for GetPhases.
+type GetPhases200JSONResponseBodyPhasesTrend string
+
 // GetReadingJSONBody defines parameters for GetReading.
 type GetReadingJSONBody struct {
 	// BirthDate Birth date of the person in YYYY-MM-DD format. This is the anchor for all biorhythm cycle calculations.
@@ -27993,6 +28404,24 @@ type GetReadingParams struct {
 
 // GetReadingParamsLang defines parameters for GetReading.
 type GetReadingParamsLang string
+
+// GetReading200JSONResponseBodyCriticalAlertsCycle defines parameters for GetReading.
+type GetReading200JSONResponseBodyCriticalAlertsCycle string
+
+// GetReading200JSONResponseBodyCriticalAlertsDirection defines parameters for GetReading.
+type GetReading200JSONResponseBodyCriticalAlertsDirection string
+
+// GetReading200JSONResponseBodyCriticalAlertsType defines parameters for GetReading.
+type GetReading200JSONResponseBodyCriticalAlertsType string
+
+// GetReading200JSONResponseBodyCyclesPhase defines parameters for GetReading.
+type GetReading200JSONResponseBodyCyclesPhase string
+
+// GetReading200JSONResponseBodyCyclesTrend defines parameters for GetReading.
+type GetReading200JSONResponseBodyCyclesTrend string
+
+// GetReading200JSONResponseBodyOverallPhase defines parameters for GetReading.
+type GetReading200JSONResponseBodyOverallPhase string
 
 // ListCrystalsParams defines parameters for ListCrystals.
 type ListCrystalsParams struct {
@@ -68309,8 +68738,11 @@ type CalculateSynastryResponse struct {
 				// Degree Degree within the sign (0-29.999).
 				Degree float32 `json:"degree"`
 
-				// House House this planet occupies in the person 1 chart (1-12).
+				// House House this planet occupies in the person 1 chart (1-12). This is the placement in this person OWN chart. For the house overlay a synastry reading is built on, read houseInOtherChart.
 				House float32 `json:"house"`
+
+				// HouseInOtherChart Which of person 2 houses this planet of person 1 falls into (1-12), counted on that person cusps in the same house system. This is the house OVERLAY, the half of synastry the inter-aspects do not cover: an aspect says two bodies are in relationship, an overlay says which area of the other person life this body lands in. Both people get their own overlay, so person 2 planets carry the reverse reading.
+				HouseInOtherChart float32 `json:"houseInOtherChart"`
 
 				// IsRetrograde True when the planet is retrograde at this moment.
 				IsRetrograde bool `json:"isRetrograde"`
@@ -68366,8 +68798,11 @@ type CalculateSynastryResponse struct {
 				// Degree Degree within the sign (0-29.999).
 				Degree float32 `json:"degree"`
 
-				// House House this planet occupies in the person 2 chart (1-12).
+				// House House this planet occupies in the person 2 chart (1-12). This is the placement in this person OWN chart. For the house overlay a synastry reading is built on, read houseInOtherChart.
 				House float32 `json:"house"`
+
+				// HouseInOtherChart Which of person 1 houses this planet of person 2 falls into (1-12), counted on that person cusps in the same house system. This is the house OVERLAY, the half of synastry the inter-aspects do not cover: an aspect says two bodies are in relationship, an overlay says which area of the other person life this body lands in. Both people get their own overlay, so person 1 planets carry the reverse reading.
+				HouseInOtherChart float32 `json:"houseInOtherChart"`
 
 				// IsRetrograde True when the planet is retrograde at this moment.
 				IsRetrograde bool `json:"isRetrograde"`
@@ -68529,8 +68964,11 @@ func (r CalculateSynastryResponse) GetJSON200() *struct {
 			// Degree Degree within the sign (0-29.999).
 			Degree float32 `json:"degree"`
 
-			// House House this planet occupies in the person 1 chart (1-12).
+			// House House this planet occupies in the person 1 chart (1-12). This is the placement in this person OWN chart. For the house overlay a synastry reading is built on, read houseInOtherChart.
 			House float32 `json:"house"`
+
+			// HouseInOtherChart Which of person 2 houses this planet of person 1 falls into (1-12), counted on that person cusps in the same house system. This is the house OVERLAY, the half of synastry the inter-aspects do not cover: an aspect says two bodies are in relationship, an overlay says which area of the other person life this body lands in. Both people get their own overlay, so person 2 planets carry the reverse reading.
+			HouseInOtherChart float32 `json:"houseInOtherChart"`
 
 			// IsRetrograde True when the planet is retrograde at this moment.
 			IsRetrograde bool `json:"isRetrograde"`
@@ -68586,8 +69024,11 @@ func (r CalculateSynastryResponse) GetJSON200() *struct {
 			// Degree Degree within the sign (0-29.999).
 			Degree float32 `json:"degree"`
 
-			// House House this planet occupies in the person 2 chart (1-12).
+			// House House this planet occupies in the person 2 chart (1-12). This is the placement in this person OWN chart. For the house overlay a synastry reading is built on, read houseInOtherChart.
 			House float32 `json:"house"`
+
+			// HouseInOtherChart Which of person 1 houses this planet of person 2 falls into (1-12), counted on that person cusps in the same house system. This is the house OVERLAY, the half of synastry the inter-aspects do not cover: an aspect says two bodies are in relationship, an overlay says which area of the other person life this body lands in. Both people get their own overlay, so person 1 planets carry the reverse reading.
+			HouseInOtherChart float32 `json:"houseInOtherChart"`
 
 			// IsRetrograde True when the planet is retrograde at this moment.
 			IsRetrograde bool `json:"isRetrograde"`
@@ -69574,8 +70015,8 @@ type CalculateBioCompatibilityResponse struct {
 			// Person2Value Person 2 cycle value on the target date (-100 to 100).
 			Person2Value float32 `json:"person2Value"`
 
-			// Phase Alignment phase. One of: in_sync, complementary, neutral, opposing.
-			Phase string `json:"phase"`
+			// Phase How the two people's cycles sit against each other. One of: in_sync, complementary, neutral, opposing. This is a PAIR alignment and shares no values with the single-person cycle phase.
+			Phase CalculateBioCompatibility200JSONResponseBodyCyclesPhase `json:"phase"`
 		} `json:"cycles"`
 		DailySync struct {
 			// EmotionalDiff Absolute difference in emotional cycle values (0-200). Lower = more aligned.
@@ -69647,8 +70088,8 @@ func (r CalculateBioCompatibilityResponse) GetJSON200() *struct {
 		// Person2Value Person 2 cycle value on the target date (-100 to 100).
 		Person2Value float32 `json:"person2Value"`
 
-		// Phase Alignment phase. One of: in_sync, complementary, neutral, opposing.
-		Phase string `json:"phase"`
+		// Phase How the two people's cycles sit against each other. One of: in_sync, complementary, neutral, opposing. This is a PAIR alignment and shares no values with the single-person cycle phase.
+		Phase CalculateBioCompatibility200JSONResponseBodyCyclesPhase `json:"phase"`
 	} `json:"cycles"`
 	DailySync struct {
 		// EmotionalDiff Absolute difference in emotional cycle values (0-200). Lower = more aligned.
@@ -69761,20 +70202,20 @@ type GetCriticalDaysResponse struct {
 			// Advisory Advisory text explaining the significance of this critical day and recommended precautions.
 			Advisory string `json:"advisory"`
 
-			// Cycle Which primary cycle crosses zero on this date.
-			Cycle string `json:"cycle"`
+			// Cycle Which primary cycle crosses zero on this date. One of: physical, emotional, intellectual. Only the three primary cycles are scanned; the secondary and composite cycles are not.
+			Cycle GetCriticalDays200JSONResponseBodyCriticalDaysCycle `json:"cycle"`
 
 			// Date Date of the zero crossing (YYYY-MM-DD).
 			Date string `json:"date"`
 
 			// Direction Whether the cycle is rising through zero (ascending) or falling through zero (descending).
-			Direction string `json:"direction"`
+			Direction GetCriticalDays200JSONResponseBodyCriticalDaysDirection `json:"direction"`
 
 			// Period Cycle period in days.
 			Period float32 `json:"period"`
 
-			// Severity How many primary cycles are critical on this date. single, double, or triple.
-			Severity string `json:"severity"`
+			// Severity How many primary cycles are critical on this date. One of: single, double, triple.
+			Severity GetCriticalDays200JSONResponseBodyCriticalDaysSeverity `json:"severity"`
 		} `json:"criticalDays"`
 
 		// DoubleCriticalDays Dates where 2 or more primary cycles cross zero simultaneously. These are particularly significant days requiring extra caution.
@@ -69816,20 +70257,20 @@ func (r GetCriticalDaysResponse) GetJSON200() *struct {
 		// Advisory Advisory text explaining the significance of this critical day and recommended precautions.
 		Advisory string `json:"advisory"`
 
-		// Cycle Which primary cycle crosses zero on this date.
-		Cycle string `json:"cycle"`
+		// Cycle Which primary cycle crosses zero on this date. One of: physical, emotional, intellectual. Only the three primary cycles are scanned; the secondary and composite cycles are not.
+		Cycle GetCriticalDays200JSONResponseBodyCriticalDaysCycle `json:"cycle"`
 
 		// Date Date of the zero crossing (YYYY-MM-DD).
 		Date string `json:"date"`
 
 		// Direction Whether the cycle is rising through zero (ascending) or falling through zero (descending).
-		Direction string `json:"direction"`
+		Direction GetCriticalDays200JSONResponseBodyCriticalDaysDirection `json:"direction"`
 
 		// Period Cycle period in days.
 		Period float32 `json:"period"`
 
-		// Severity How many primary cycles are critical on this date. single, double, or triple.
-		Severity string `json:"severity"`
+		// Severity How many primary cycles are critical on this date. One of: single, double, triple.
+		Severity GetCriticalDays200JSONResponseBodyCriticalDaysSeverity `json:"severity"`
 	} `json:"criticalDays"`
 
 	// DoubleCriticalDays Dates where 2 or more primary cycles cross zero simultaneously. These are particularly significant days requiring extra caution.
@@ -69931,8 +70372,8 @@ type GetDailyBiorhythmResponse struct {
 		// EnergyRating Overall energy score from 1 to 10.
 		EnergyRating float32 `json:"energyRating"`
 
-		// OverallPhase Summary phase. One of: high_energy, mixed, recovery, critical.
-		OverallPhase string `json:"overallPhase"`
+		// OverallPhase Summary phase across every cycle for the day. One of: high_energy, mixed, recovery, critical.
+		OverallPhase GetDailyBiorhythm200JSONResponseBodyOverallPhase `json:"overallPhase"`
 		QuickRead    struct {
 			// Emotional Emotional cycle value (-100 to 100).
 			Emotional float32 `json:"emotional"`
@@ -69947,14 +70388,14 @@ type GetDailyBiorhythmResponse struct {
 		// Seed Computed seed used for this reading. Same seed always produces the same reading.
 		Seed      string `json:"seed"`
 		Spotlight struct {
-			// Cycle Which primary cycle is featured as the daily spotlight.
-			Cycle string `json:"cycle"`
+			// Cycle Which primary cycle is featured as the daily spotlight. One of: physical, emotional, intellectual.
+			Cycle GetDailyBiorhythm200JSONResponseBodySpotlightCycle `json:"cycle"`
 
 			// Message Personalized message about the spotlight cycle and what it means for today.
 			Message string `json:"message"`
 
 			// Phase Current phase of the spotlight cycle.
-			Phase string `json:"phase"`
+			Phase GetDailyBiorhythm200JSONResponseBodySpotlightPhase `json:"phase"`
 
 			// Value Current value of the spotlight cycle (-100 to 100).
 			Value float32 `json:"value"`
@@ -69988,8 +70429,8 @@ func (r GetDailyBiorhythmResponse) GetJSON200() *struct {
 	// EnergyRating Overall energy score from 1 to 10.
 	EnergyRating float32 `json:"energyRating"`
 
-	// OverallPhase Summary phase. One of: high_energy, mixed, recovery, critical.
-	OverallPhase string `json:"overallPhase"`
+	// OverallPhase Summary phase across every cycle for the day. One of: high_energy, mixed, recovery, critical.
+	OverallPhase GetDailyBiorhythm200JSONResponseBodyOverallPhase `json:"overallPhase"`
 	QuickRead    struct {
 		// Emotional Emotional cycle value (-100 to 100).
 		Emotional float32 `json:"emotional"`
@@ -70004,14 +70445,14 @@ func (r GetDailyBiorhythmResponse) GetJSON200() *struct {
 	// Seed Computed seed used for this reading. Same seed always produces the same reading.
 	Seed      string `json:"seed"`
 	Spotlight struct {
-		// Cycle Which primary cycle is featured as the daily spotlight.
-		Cycle string `json:"cycle"`
+		// Cycle Which primary cycle is featured as the daily spotlight. One of: physical, emotional, intellectual.
+		Cycle GetDailyBiorhythm200JSONResponseBodySpotlightCycle `json:"cycle"`
 
 		// Message Personalized message about the spotlight cycle and what it means for today.
 		Message string `json:"message"`
 
 		// Phase Current phase of the spotlight cycle.
-		Phase string `json:"phase"`
+		Phase GetDailyBiorhythm200JSONResponseBodySpotlightPhase `json:"phase"`
 
 		// Value Current value of the spotlight cycle (-100 to 100).
 		Value float32 `json:"value"`
@@ -70308,7 +70749,7 @@ type GetPhasesResponse struct {
 			DaysUntilCritical float32 `json:"daysUntilCritical"`
 
 			// Phase Current phase identifier.
-			Phase string `json:"phase"`
+			Phase GetPhases200JSONResponseBodyPhasesPhase `json:"phase"`
 
 			// PhaseLabel Human-readable phase label.
 			PhaseLabel string `json:"phaseLabel"`
@@ -70317,7 +70758,7 @@ type GetPhasesResponse struct {
 			TotalDays float32 `json:"totalDays"`
 
 			// Trend Short-term direction: rising, falling, peaking, or bottoming.
-			Trend string `json:"trend"`
+			Trend GetPhases200JSONResponseBodyPhasesTrend `json:"trend"`
 
 			// Value Cycle value from -100 to 100.
 			Value float32 `json:"value"`
@@ -70360,7 +70801,7 @@ func (r GetPhasesResponse) GetJSON200() *struct {
 		DaysUntilCritical float32 `json:"daysUntilCritical"`
 
 		// Phase Current phase identifier.
-		Phase string `json:"phase"`
+		Phase GetPhases200JSONResponseBodyPhasesPhase `json:"phase"`
 
 		// PhaseLabel Human-readable phase label.
 		PhaseLabel string `json:"phaseLabel"`
@@ -70369,7 +70810,7 @@ func (r GetPhasesResponse) GetJSON200() *struct {
 		TotalDays float32 `json:"totalDays"`
 
 		// Trend Short-term direction: rising, falling, peaking, or bottoming.
-		Trend string `json:"trend"`
+		Trend GetPhases200JSONResponseBodyPhasesTrend `json:"trend"`
 
 		// Value Cycle value from -100 to 100.
 		Value float32 `json:"value"`
@@ -70465,13 +70906,13 @@ type GetReadingResponse struct {
 			Advisory string `json:"advisory"`
 
 			// Cycle Which cycle is at or near zero crossing.
-			Cycle string `json:"cycle"`
+			Cycle GetReading200JSONResponseBodyCriticalAlertsCycle `json:"cycle"`
 
 			// Direction Whether the cycle is rising through zero (ascending) or falling through zero (descending).
-			Direction string `json:"direction"`
+			Direction GetReading200JSONResponseBodyCriticalAlertsDirection `json:"direction"`
 
-			// Type Alert type. zero_crossing when a cycle crosses zero, approaching_critical when within 1 day of zero.
-			Type string `json:"type"`
+			// Type Alert type. One of: zero_crossing. Raised once for the whole critical band, when the cycle sits within 9 points of zero in either direction.
+			Type GetReading200JSONResponseBodyCriticalAlertsType `json:"type"`
 		} `json:"criticalAlerts"`
 
 		// Cycles All 10 biorhythm cycle readings. Keys: physical, emotional, intellectual, intuitive, aesthetic, awareness, spiritual, passion, mastery, wisdom.
@@ -70491,8 +70932,8 @@ type GetReadingResponse struct {
 			// Interpretation Editorial 2-3 sentence reading specific to this cycle at its current phase position.
 			Interpretation string `json:"interpretation"`
 
-			// Phase Current phase of the cycle. One of: peak, high, rising, critical_ascending, critical_descending, falling, low, trough.
-			Phase string `json:"phase"`
+			// Phase Current phase of the cycle. One of: peak, high, rising, critical_ascending, critical_descending, falling, low, trough. Canonical English whatever the lang parameter says, so it stays safe to compare against in code; phaseLabel carries the reader-facing form and IS translated.
+			Phase GetReading200JSONResponseBodyCyclesPhase `json:"phase"`
 
 			// PhaseLabel Human-readable phase name for display in UIs, dashboards, and reports.
 			PhaseLabel string `json:"phaseLabel"`
@@ -70500,8 +70941,8 @@ type GetReadingResponse struct {
 			// RawValue Raw sine wave value before percentage conversion, ranging from -1.0 to 1.0.
 			RawValue float32 `json:"rawValue"`
 
-			// Trend Short-term direction of the cycle. One of: rising, falling, peaking, bottoming.
-			Trend string `json:"trend"`
+			// Trend Short-term direction of the cycle, which is its SLOPE rather than its band, so it moves independently of phase. One of: rising, falling, peaking, bottoming. Canonical English, like phase.
+			Trend GetReading200JSONResponseBodyCyclesTrend `json:"trend"`
 
 			// Value Percentage position in the cycle from -100 (trough) to 100 (peak). 0 represents a critical zero crossing.
 			Value float32 `json:"value"`
@@ -70516,8 +70957,8 @@ type GetReadingResponse struct {
 		// Interpretation Editorial 3-5 sentence reading combining all cycle states into a coherent daily assessment.
 		Interpretation string `json:"interpretation"`
 
-		// OverallPhase Summary phase label. One of: high_energy, mixed, recovery, critical.
-		OverallPhase string `json:"overallPhase"`
+		// OverallPhase Summary phase across every cycle for the day. One of: high_energy, mixed, recovery, critical.
+		OverallPhase GetReading200JSONResponseBodyOverallPhase `json:"overallPhase"`
 
 		// TargetDate Date this reading is for (YYYY-MM-DD).
 		TargetDate string `json:"targetDate"`
@@ -70550,13 +70991,13 @@ func (r GetReadingResponse) GetJSON200() *struct {
 		Advisory string `json:"advisory"`
 
 		// Cycle Which cycle is at or near zero crossing.
-		Cycle string `json:"cycle"`
+		Cycle GetReading200JSONResponseBodyCriticalAlertsCycle `json:"cycle"`
 
 		// Direction Whether the cycle is rising through zero (ascending) or falling through zero (descending).
-		Direction string `json:"direction"`
+		Direction GetReading200JSONResponseBodyCriticalAlertsDirection `json:"direction"`
 
-		// Type Alert type. zero_crossing when a cycle crosses zero, approaching_critical when within 1 day of zero.
-		Type string `json:"type"`
+		// Type Alert type. One of: zero_crossing. Raised once for the whole critical band, when the cycle sits within 9 points of zero in either direction.
+		Type GetReading200JSONResponseBodyCriticalAlertsType `json:"type"`
 	} `json:"criticalAlerts"`
 
 	// Cycles All 10 biorhythm cycle readings. Keys: physical, emotional, intellectual, intuitive, aesthetic, awareness, spiritual, passion, mastery, wisdom.
@@ -70576,8 +71017,8 @@ func (r GetReadingResponse) GetJSON200() *struct {
 		// Interpretation Editorial 2-3 sentence reading specific to this cycle at its current phase position.
 		Interpretation string `json:"interpretation"`
 
-		// Phase Current phase of the cycle. One of: peak, high, rising, critical_ascending, critical_descending, falling, low, trough.
-		Phase string `json:"phase"`
+		// Phase Current phase of the cycle. One of: peak, high, rising, critical_ascending, critical_descending, falling, low, trough. Canonical English whatever the lang parameter says, so it stays safe to compare against in code; phaseLabel carries the reader-facing form and IS translated.
+		Phase GetReading200JSONResponseBodyCyclesPhase `json:"phase"`
 
 		// PhaseLabel Human-readable phase name for display in UIs, dashboards, and reports.
 		PhaseLabel string `json:"phaseLabel"`
@@ -70585,8 +71026,8 @@ func (r GetReadingResponse) GetJSON200() *struct {
 		// RawValue Raw sine wave value before percentage conversion, ranging from -1.0 to 1.0.
 		RawValue float32 `json:"rawValue"`
 
-		// Trend Short-term direction of the cycle. One of: rising, falling, peaking, bottoming.
-		Trend string `json:"trend"`
+		// Trend Short-term direction of the cycle, which is its SLOPE rather than its band, so it moves independently of phase. One of: rising, falling, peaking, bottoming. Canonical English, like phase.
+		Trend GetReading200JSONResponseBodyCyclesTrend `json:"trend"`
 
 		// Value Percentage position in the cycle from -100 (trough) to 100 (peak). 0 represents a critical zero crossing.
 		Value float32 `json:"value"`
@@ -70601,8 +71042,8 @@ func (r GetReadingResponse) GetJSON200() *struct {
 	// Interpretation Editorial 3-5 sentence reading combining all cycle states into a coherent daily assessment.
 	Interpretation string `json:"interpretation"`
 
-	// OverallPhase Summary phase label. One of: high_energy, mixed, recovery, critical.
-	OverallPhase string `json:"overallPhase"`
+	// OverallPhase Summary phase across every cycle for the day. One of: high_energy, mixed, recovery, critical.
+	OverallPhase GetReading200JSONResponseBodyOverallPhase `json:"overallPhase"`
 
 	// TargetDate Date this reading is for (YYYY-MM-DD).
 	TargetDate string `json:"targetDate"`
@@ -84980,13 +85421,13 @@ type GetUsageStatsResponse struct {
 		// Email Billing email the subscription is registered under.
 		Email openapi_types.Email `json:"email"`
 
-		// EndDate ISO 8601 timestamp when the current billing period ends. A renewal extends this date in place. API access survives a cancelled or suspended status until this moment passes.
+		// EndDate ISO 8601 timestamp when the current billing period ends. A renewal extends this date in place. API access survives a cancelled or suspended status until this moment passes. This is a BILLING date, not a quota date: the monthly allowance resets on the 1st of each month independently of it.
 		EndDate time.Time `json:"endDate"`
 
 		// Plan Name of the subscription plan the API key belongs to. One flat plan covers every domain and the Remote MCP servers, so this is a quota tier, never a per product entitlement.
 		Plan string `json:"plan"`
 
-		// RemainingThisMonth Requests left before the monthly allowance is exhausted, floored at zero. Equal to requestsPerMonth minus usedThisMonth.
+		// RemainingThisMonth Requests left before the monthly allowance is exhausted, floored at zero. Equal to requestsPerMonth minus usedThisMonth. Refills at the calendar month rollover, whose exact instant every API response carries as a Unix timestamp in the X-RateLimit-Reset header.
 		RemainingThisMonth float32 `json:"remainingThisMonth"`
 
 		// RequestsPerMonth Monthly request allowance for the plan. One request, API or MCP, equals one unit: there is no credit weighting and no per domain fee.
@@ -84995,7 +85436,7 @@ type GetUsageStatsResponse struct {
 		// Status Subscription lifecycle state. Values: active, cancelled (no longer renewing but usable until endDate), suspended (payment failed, usable until endDate), expired (past endDate), pending (checkout started, payment not captured).
 		Status string `json:"status"`
 
-		// UsedThisMonth Billable requests counted against the current calendar month. Read from the same counter the rate limiter enforces on, so it never reports a rosier number than the limit that will 429 you. Cached responses still count.
+		// UsedThisMonth Billable requests counted against the current calendar month. The quota window is the UTC calendar month and resets on the 1st at 12:00 AM UTC, never on your renewal date, so an annual plan refills every month and a plan bought mid month still refills on the 1st. Read from the same counter the rate limiter enforces on, so it never reports a rosier number than the limit that will 429 you. Cached responses still count.
 		UsedThisMonth float32 `json:"usedThisMonth"`
 	}
 	// JSON400 the response for an HTTP 400 `application/json` response
@@ -85019,13 +85460,13 @@ func (r GetUsageStatsResponse) GetJSON200() *struct {
 	// Email Billing email the subscription is registered under.
 	Email openapi_types.Email `json:"email"`
 
-	// EndDate ISO 8601 timestamp when the current billing period ends. A renewal extends this date in place. API access survives a cancelled or suspended status until this moment passes.
+	// EndDate ISO 8601 timestamp when the current billing period ends. A renewal extends this date in place. API access survives a cancelled or suspended status until this moment passes. This is a BILLING date, not a quota date: the monthly allowance resets on the 1st of each month independently of it.
 	EndDate time.Time `json:"endDate"`
 
 	// Plan Name of the subscription plan the API key belongs to. One flat plan covers every domain and the Remote MCP servers, so this is a quota tier, never a per product entitlement.
 	Plan string `json:"plan"`
 
-	// RemainingThisMonth Requests left before the monthly allowance is exhausted, floored at zero. Equal to requestsPerMonth minus usedThisMonth.
+	// RemainingThisMonth Requests left before the monthly allowance is exhausted, floored at zero. Equal to requestsPerMonth minus usedThisMonth. Refills at the calendar month rollover, whose exact instant every API response carries as a Unix timestamp in the X-RateLimit-Reset header.
 	RemainingThisMonth float32 `json:"remainingThisMonth"`
 
 	// RequestsPerMonth Monthly request allowance for the plan. One request, API or MCP, equals one unit: there is no credit weighting and no per domain fee.
@@ -85034,7 +85475,7 @@ func (r GetUsageStatsResponse) GetJSON200() *struct {
 	// Status Subscription lifecycle state. Values: active, cancelled (no longer renewing but usable until endDate), suspended (payment failed, usable until endDate), expired (past endDate), pending (checkout started, payment not captured).
 	Status string `json:"status"`
 
-	// UsedThisMonth Billable requests counted against the current calendar month. Read from the same counter the rate limiter enforces on, so it never reports a rosier number than the limit that will 429 you. Cached responses still count.
+	// UsedThisMonth Billable requests counted against the current calendar month. The quota window is the UTC calendar month and resets on the 1st at 12:00 AM UTC, never on your renewal date, so an annual plan refills every month and a plan bought mid month still refills on the 1st. Read from the same counter the rate limiter enforces on, so it never reports a rosier number than the limit that will 429 you. Cached responses still count.
 	UsedThisMonth float32 `json:"usedThisMonth"`
 } {
 	return r.JSON200
@@ -104700,8 +105141,11 @@ func ParseCalculateSynastryResponse(rsp *http.Response) (*CalculateSynastryRespo
 					// Degree Degree within the sign (0-29.999).
 					Degree float32 `json:"degree"`
 
-					// House House this planet occupies in the person 1 chart (1-12).
+					// House House this planet occupies in the person 1 chart (1-12). This is the placement in this person OWN chart. For the house overlay a synastry reading is built on, read houseInOtherChart.
 					House float32 `json:"house"`
+
+					// HouseInOtherChart Which of person 2 houses this planet of person 1 falls into (1-12), counted on that person cusps in the same house system. This is the house OVERLAY, the half of synastry the inter-aspects do not cover: an aspect says two bodies are in relationship, an overlay says which area of the other person life this body lands in. Both people get their own overlay, so person 2 planets carry the reverse reading.
+					HouseInOtherChart float32 `json:"houseInOtherChart"`
 
 					// IsRetrograde True when the planet is retrograde at this moment.
 					IsRetrograde bool `json:"isRetrograde"`
@@ -104757,8 +105201,11 @@ func ParseCalculateSynastryResponse(rsp *http.Response) (*CalculateSynastryRespo
 					// Degree Degree within the sign (0-29.999).
 					Degree float32 `json:"degree"`
 
-					// House House this planet occupies in the person 2 chart (1-12).
+					// House House this planet occupies in the person 2 chart (1-12). This is the placement in this person OWN chart. For the house overlay a synastry reading is built on, read houseInOtherChart.
 					House float32 `json:"house"`
+
+					// HouseInOtherChart Which of person 1 houses this planet of person 2 falls into (1-12), counted on that person cusps in the same house system. This is the house OVERLAY, the half of synastry the inter-aspects do not cover: an aspect says two bodies are in relationship, an overlay says which area of the other person life this body lands in. Both people get their own overlay, so person 1 planets carry the reverse reading.
+					HouseInOtherChart float32 `json:"houseInOtherChart"`
 
 					// IsRetrograde True when the planet is retrograde at this moment.
 					IsRetrograde bool `json:"isRetrograde"`
@@ -105414,8 +105861,8 @@ func ParseCalculateBioCompatibilityResponse(rsp *http.Response) (*CalculateBioCo
 				// Person2Value Person 2 cycle value on the target date (-100 to 100).
 				Person2Value float32 `json:"person2Value"`
 
-				// Phase Alignment phase. One of: in_sync, complementary, neutral, opposing.
-				Phase string `json:"phase"`
+				// Phase How the two people's cycles sit against each other. One of: in_sync, complementary, neutral, opposing. This is a PAIR alignment and shares no values with the single-person cycle phase.
+				Phase CalculateBioCompatibility200JSONResponseBodyCyclesPhase `json:"phase"`
 			} `json:"cycles"`
 			DailySync struct {
 				// EmotionalDiff Absolute difference in emotional cycle values (0-200). Lower = more aligned.
@@ -105530,20 +105977,20 @@ func ParseGetCriticalDaysResponse(rsp *http.Response) (*GetCriticalDaysResponse,
 				// Advisory Advisory text explaining the significance of this critical day and recommended precautions.
 				Advisory string `json:"advisory"`
 
-				// Cycle Which primary cycle crosses zero on this date.
-				Cycle string `json:"cycle"`
+				// Cycle Which primary cycle crosses zero on this date. One of: physical, emotional, intellectual. Only the three primary cycles are scanned; the secondary and composite cycles are not.
+				Cycle GetCriticalDays200JSONResponseBodyCriticalDaysCycle `json:"cycle"`
 
 				// Date Date of the zero crossing (YYYY-MM-DD).
 				Date string `json:"date"`
 
 				// Direction Whether the cycle is rising through zero (ascending) or falling through zero (descending).
-				Direction string `json:"direction"`
+				Direction GetCriticalDays200JSONResponseBodyCriticalDaysDirection `json:"direction"`
 
 				// Period Cycle period in days.
 				Period float32 `json:"period"`
 
-				// Severity How many primary cycles are critical on this date. single, double, or triple.
-				Severity string `json:"severity"`
+				// Severity How many primary cycles are critical on this date. One of: single, double, triple.
+				Severity GetCriticalDays200JSONResponseBodyCriticalDaysSeverity `json:"severity"`
 			} `json:"criticalDays"`
 
 			// DoubleCriticalDays Dates where 2 or more primary cycles cross zero simultaneously. These are particularly significant days requiring extra caution.
@@ -105647,8 +106094,8 @@ func ParseGetDailyBiorhythmResponse(rsp *http.Response) (*GetDailyBiorhythmRespo
 			// EnergyRating Overall energy score from 1 to 10.
 			EnergyRating float32 `json:"energyRating"`
 
-			// OverallPhase Summary phase. One of: high_energy, mixed, recovery, critical.
-			OverallPhase string `json:"overallPhase"`
+			// OverallPhase Summary phase across every cycle for the day. One of: high_energy, mixed, recovery, critical.
+			OverallPhase GetDailyBiorhythm200JSONResponseBodyOverallPhase `json:"overallPhase"`
 			QuickRead    struct {
 				// Emotional Emotional cycle value (-100 to 100).
 				Emotional float32 `json:"emotional"`
@@ -105663,14 +106110,14 @@ func ParseGetDailyBiorhythmResponse(rsp *http.Response) (*GetDailyBiorhythmRespo
 			// Seed Computed seed used for this reading. Same seed always produces the same reading.
 			Seed      string `json:"seed"`
 			Spotlight struct {
-				// Cycle Which primary cycle is featured as the daily spotlight.
-				Cycle string `json:"cycle"`
+				// Cycle Which primary cycle is featured as the daily spotlight. One of: physical, emotional, intellectual.
+				Cycle GetDailyBiorhythm200JSONResponseBodySpotlightCycle `json:"cycle"`
 
 				// Message Personalized message about the spotlight cycle and what it means for today.
 				Message string `json:"message"`
 
 				// Phase Current phase of the spotlight cycle.
-				Phase string `json:"phase"`
+				Phase GetDailyBiorhythm200JSONResponseBodySpotlightPhase `json:"phase"`
 
 				// Value Current value of the spotlight cycle (-100 to 100).
 				Value float32 `json:"value"`
@@ -105897,7 +106344,7 @@ func ParseGetPhasesResponse(rsp *http.Response) (*GetPhasesResponse, error) {
 				DaysUntilCritical float32 `json:"daysUntilCritical"`
 
 				// Phase Current phase identifier.
-				Phase string `json:"phase"`
+				Phase GetPhases200JSONResponseBodyPhasesPhase `json:"phase"`
 
 				// PhaseLabel Human-readable phase label.
 				PhaseLabel string `json:"phaseLabel"`
@@ -105906,7 +106353,7 @@ func ParseGetPhasesResponse(rsp *http.Response) (*GetPhasesResponse, error) {
 				TotalDays float32 `json:"totalDays"`
 
 				// Trend Short-term direction: rising, falling, peaking, or bottoming.
-				Trend string `json:"trend"`
+				Trend GetPhases200JSONResponseBodyPhasesTrend `json:"trend"`
 
 				// Value Cycle value from -100 to 100.
 				Value float32 `json:"value"`
@@ -106004,13 +106451,13 @@ func ParseGetReadingResponse(rsp *http.Response) (*GetReadingResponse, error) {
 				Advisory string `json:"advisory"`
 
 				// Cycle Which cycle is at or near zero crossing.
-				Cycle string `json:"cycle"`
+				Cycle GetReading200JSONResponseBodyCriticalAlertsCycle `json:"cycle"`
 
 				// Direction Whether the cycle is rising through zero (ascending) or falling through zero (descending).
-				Direction string `json:"direction"`
+				Direction GetReading200JSONResponseBodyCriticalAlertsDirection `json:"direction"`
 
-				// Type Alert type. zero_crossing when a cycle crosses zero, approaching_critical when within 1 day of zero.
-				Type string `json:"type"`
+				// Type Alert type. One of: zero_crossing. Raised once for the whole critical band, when the cycle sits within 9 points of zero in either direction.
+				Type GetReading200JSONResponseBodyCriticalAlertsType `json:"type"`
 			} `json:"criticalAlerts"`
 
 			// Cycles All 10 biorhythm cycle readings. Keys: physical, emotional, intellectual, intuitive, aesthetic, awareness, spiritual, passion, mastery, wisdom.
@@ -106030,8 +106477,8 @@ func ParseGetReadingResponse(rsp *http.Response) (*GetReadingResponse, error) {
 				// Interpretation Editorial 2-3 sentence reading specific to this cycle at its current phase position.
 				Interpretation string `json:"interpretation"`
 
-				// Phase Current phase of the cycle. One of: peak, high, rising, critical_ascending, critical_descending, falling, low, trough.
-				Phase string `json:"phase"`
+				// Phase Current phase of the cycle. One of: peak, high, rising, critical_ascending, critical_descending, falling, low, trough. Canonical English whatever the lang parameter says, so it stays safe to compare against in code; phaseLabel carries the reader-facing form and IS translated.
+				Phase GetReading200JSONResponseBodyCyclesPhase `json:"phase"`
 
 				// PhaseLabel Human-readable phase name for display in UIs, dashboards, and reports.
 				PhaseLabel string `json:"phaseLabel"`
@@ -106039,8 +106486,8 @@ func ParseGetReadingResponse(rsp *http.Response) (*GetReadingResponse, error) {
 				// RawValue Raw sine wave value before percentage conversion, ranging from -1.0 to 1.0.
 				RawValue float32 `json:"rawValue"`
 
-				// Trend Short-term direction of the cycle. One of: rising, falling, peaking, bottoming.
-				Trend string `json:"trend"`
+				// Trend Short-term direction of the cycle, which is its SLOPE rather than its band, so it moves independently of phase. One of: rising, falling, peaking, bottoming. Canonical English, like phase.
+				Trend GetReading200JSONResponseBodyCyclesTrend `json:"trend"`
 
 				// Value Percentage position in the cycle from -100 (trough) to 100 (peak). 0 represents a critical zero crossing.
 				Value float32 `json:"value"`
@@ -106055,8 +106502,8 @@ func ParseGetReadingResponse(rsp *http.Response) (*GetReadingResponse, error) {
 			// Interpretation Editorial 3-5 sentence reading combining all cycle states into a coherent daily assessment.
 			Interpretation string `json:"interpretation"`
 
-			// OverallPhase Summary phase label. One of: high_energy, mixed, recovery, critical.
-			OverallPhase string `json:"overallPhase"`
+			// OverallPhase Summary phase across every cycle for the day. One of: high_energy, mixed, recovery, critical.
+			OverallPhase GetReading200JSONResponseBodyOverallPhase `json:"overallPhase"`
 
 			// TargetDate Date this reading is for (YYYY-MM-DD).
 			TargetDate string `json:"targetDate"`
@@ -115662,13 +116109,13 @@ func ParseGetUsageStatsResponse(rsp *http.Response) (*GetUsageStatsResponse, err
 			// Email Billing email the subscription is registered under.
 			Email openapi_types.Email `json:"email"`
 
-			// EndDate ISO 8601 timestamp when the current billing period ends. A renewal extends this date in place. API access survives a cancelled or suspended status until this moment passes.
+			// EndDate ISO 8601 timestamp when the current billing period ends. A renewal extends this date in place. API access survives a cancelled or suspended status until this moment passes. This is a BILLING date, not a quota date: the monthly allowance resets on the 1st of each month independently of it.
 			EndDate time.Time `json:"endDate"`
 
 			// Plan Name of the subscription plan the API key belongs to. One flat plan covers every domain and the Remote MCP servers, so this is a quota tier, never a per product entitlement.
 			Plan string `json:"plan"`
 
-			// RemainingThisMonth Requests left before the monthly allowance is exhausted, floored at zero. Equal to requestsPerMonth minus usedThisMonth.
+			// RemainingThisMonth Requests left before the monthly allowance is exhausted, floored at zero. Equal to requestsPerMonth minus usedThisMonth. Refills at the calendar month rollover, whose exact instant every API response carries as a Unix timestamp in the X-RateLimit-Reset header.
 			RemainingThisMonth float32 `json:"remainingThisMonth"`
 
 			// RequestsPerMonth Monthly request allowance for the plan. One request, API or MCP, equals one unit: there is no credit weighting and no per domain fee.
@@ -115677,7 +116124,7 @@ func ParseGetUsageStatsResponse(rsp *http.Response) (*GetUsageStatsResponse, err
 			// Status Subscription lifecycle state. Values: active, cancelled (no longer renewing but usable until endDate), suspended (payment failed, usable until endDate), expired (past endDate), pending (checkout started, payment not captured).
 			Status string `json:"status"`
 
-			// UsedThisMonth Billable requests counted against the current calendar month. Read from the same counter the rate limiter enforces on, so it never reports a rosier number than the limit that will 429 you. Cached responses still count.
+			// UsedThisMonth Billable requests counted against the current calendar month. The quota window is the UTC calendar month and resets on the 1st at 12:00 AM UTC, never on your renewal date, so an annual plan refills every month and a plan bought mid month still refills on the 1st. Read from the same counter the rate limiter enforces on, so it never reports a rosier number than the limit that will 429 you. Cached responses still count.
 			UsedThisMonth float32 `json:"usedThisMonth"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
