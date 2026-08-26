@@ -16,3 +16,6 @@ coverage.txt
 # Maintainer-only, never published or pushed
 CLAUDE.md
 docs/todo.md
+
+# Workspace resolution artifact: depends on which modules are checked out locally
+go.work.sum
