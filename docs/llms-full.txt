@@ -1,6 +1,6 @@
 # RoxyAPI Go SDK - Full Method Reference
 
-The official Go SDK for RoxyAPI. Astrology, Vedic astrology, numerology, tarot, human design, forecasting and more, one API key, fully typed, generated from the OpenAPI spec.
+The official Go SDK for RoxyAPI. Astrology, Vedic astrology, forecast, human design, Chinese astrology, feng shui, numerology, tarot and more, one API key, fully typed, generated from the OpenAPI spec.
 
 ## How to call
 

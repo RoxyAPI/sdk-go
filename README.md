@@ -5,7 +5,7 @@
 [![CI](https://github.com/RoxyAPI/sdk-go/actions/workflows/ci.yml/badge.svg)](https://github.com/RoxyAPI/sdk-go/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-The official **Go SDK for [RoxyAPI](https://roxyapi.com)**, the typed astrology API for Go: 12+ insight domains and 160+ endpoints behind one API key, with ephemeris output [verified against NASA JPL Horizons](https://roxyapi.com/methodology) across 210 reference points. Western and Vedic astrology, numerology, tarot, human design, biorhythm, I Ching, crystals, dreams, and angel numbers, all from one `go get`. **Build anything, fast.**
+The official **Go SDK for [RoxyAPI](https://roxyapi.com)**, the typed astrology API for Go: 14+ insight domains and 209+ endpoints behind one API key, with ephemeris output [verified against NASA JPL Horizons](https://roxyapi.com/methodology) across 210 reference points. Western and Vedic astrology, forecast, human design, Chinese astrology, feng shui, numerology, tarot, biorhythm, I Ching, crystals, dreams, and angel numbers, all from one `go get`. **Build anything, fast.**
 
 A fully typed, idiomatic golang client generated from the live OpenAPI spec: one direct runtime dependency, the standard library `net/http` underneath, autocomplete on every endpoint and field, and bundled docs for AI coding agents.
 
@@ -197,7 +197,45 @@ hd, err := roxy.HumanDesign.GenerateBodygraph(ctx, nil, roxyapi.GenerateBodygrap
 })
 ```
 
-### 6. Biorhythm (daily check-in)
+### 6. Chinese astrology (BaZi four pillars, zodiac sign)
+
+The school splits that make two calculators disagree are typed parameters with named defaults, echoed back in `conventions` on every response.
+
+```go
+// BaZi Four Pillars: the anchor call, the rest of the domain reads off these four pillars.
+// Timezone union: inline-body endpoints name the type JSONBody, not JSONRequestBody (see Gotchas).
+var btz roxyapi.GenerateBaziChartJSONBody_Timezone
+_ = btz.FromGenerateBaziChartJSONBodyTimezone1("America/New_York")
+bazi, err := roxy.ChineseAstrology.GenerateBaziChart(ctx, nil, roxyapi.GenerateBaziChartJSONRequestBody{
+	Date: roxyapi.Date(1990, time.July, 4), Time: "10:12:00", Timezone: btz,
+})
+
+// Chinese zodiac sign. Defaults yearBoundary to "lunar-new-year", the folk rule people mean
+// when they say which animal they are. Pass "li-chun" for the classical BaZi boundary.
+sign, err := roxy.ChineseAstrology.CalculateZodiacAnimal(ctx, nil, roxyapi.CalculateZodiacAnimalJSONRequestBody{
+	Date: roxyapi.Date(1990, time.July, 4),
+})
+```
+
+### 7. Feng shui (Kua number, flying star chart)
+
+Chinese years resolve at Li Chun, computed astronomically, so the annual charts change over on the real boundary.
+
+```go
+// Kua number: one birth date and a gender gives the personal directions everything else reads off.
+kua, err := roxy.FengShui.CalculateKuaNumber(ctx, nil, roxyapi.CalculateKuaNumberJSONRequestBody{
+	Date: roxyapi.Date(1990, time.July, 4), Gender: roxyapi.CalculateKuaNumberJSONBodyGenderFemale,
+})
+
+// Flying star natal chart: period plus facing gives the nine palaces with base, mountain
+// and water stars. Send Facing (mountain id like roxyapi.Bing, or compass label roxyapi.S2)
+// or FacingDegrees, not neither.
+chart, err := roxy.FengShui.GenerateFlyingStarChart(ctx, nil, roxyapi.GenerateFlyingStarChartJSONRequestBody{
+	Period: roxyapi.Ptr(9), Facing: roxyapi.Ptr(roxyapi.S2),
+})
+```
+
+### 8. Biorhythm (daily check-in)
 
 ```go
 // Physical, emotional, intellectual, intuitive, plus extended cycles.
@@ -205,7 +243,7 @@ bio, err := roxy.Biorhythm.GetDailyBiorhythm(ctx, nil,
 	roxyapi.GetDailyBiorhythmJSONRequestBody{Seed: roxyapi.Ptr("user-1"), Date: roxyapi.Ptr(roxyapi.Date(2026, time.April, 23))})
 ```
 
-### 7. I Ching (cast a reading, hexagram catalog)
+### 9. I Ching (cast a reading, hexagram catalog)
 
 ```go
 // Cast a reading: primary hexagram, changing lines, transformed hexagram.
@@ -215,21 +253,21 @@ reading, err := roxy.Iching.CastReading(ctx, nil)
 hexes, err := roxy.Iching.ListHexagrams(ctx, nil)
 ```
 
-### 8. Crystals (by zodiac, birthstone)
+### 10. Crystals (by zodiac, birthstone)
 
 ```go
 byZodiac, err := roxy.Crystals.GetCrystalsByZodiac(ctx, "scorpio", nil)
 birthstone, err := roxy.Crystals.GetBirthstones(ctx, 4, nil) // month number
 ```
 
-### 9. Dreams (symbol lookup, search)
+### 11. Dreams (symbol lookup, search)
 
 ```go
 symbol, err := roxy.Dreams.GetDreamSymbol(ctx, "flying") // no params argument
 results, err := roxy.Dreams.SearchDreamSymbols(ctx, &roxyapi.SearchDreamSymbolsParams{Q: roxyapi.Ptr("water")})
 ```
 
-### 10. Angel numbers (meaning, universal lookup)
+### 12. Angel numbers (meaning, universal lookup)
 
 ```go
 angel, err := roxy.AngelNumbers.GetAngelNumber(ctx, "1111", nil)
@@ -302,7 +340,7 @@ roxy, err := roxyapi.NewRoxy(key, roxyapi.WithHTTPClient(&http.Client{Timeout: 1
 
 ## Keywords
 
-go sdk, golang api client, astrology api, vedic astrology api, kundli api, horoscope api, numerology api, tarot api, human design api, biorhythm api, i ching api, dream interpretation api, angel numbers api, geocoding api, rest api client, ai agent sdk, mcp server.
+go sdk, golang api client, astrology api, vedic astrology api, kundli api, horoscope api, numerology api, tarot api, human design api, chinese astrology api, bazi api, feng shui api, biorhythm api, i ching api, dream interpretation api, angel numbers api, geocoding api, rest api client, ai agent sdk, mcp server.
 
 ## License
 

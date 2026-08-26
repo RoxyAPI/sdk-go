@@ -1,6 +1,6 @@
 # RoxyAPI Go SDK - Agent Guide
 
-Go SDK for RoxyAPI. 12+ domains (Western astrology, Vedic astrology, numerology, tarot, human design, forecast, biorhythm, I Ching, crystals, dreams, angel numbers, location) plus utility namespaces (usage, languages). One API key, fully typed, generated from the OpenAPI spec.
+Go SDK for RoxyAPI. 14+ domains (Western astrology, Vedic astrology, forecast, human design, Chinese astrology, feng shui, numerology, tarot, biorhythm, I Ching, crystals, dreams, angel numbers, location) plus utility namespaces (usage, languages). One API key, fully typed, generated from the OpenAPI spec.
 
 > `docs/llms-full.txt` in this module is the method index (operation id, HTTP method, path, summary for every endpoint). Response and request field names come from the typed Go structs: use editor autocomplete, https://pkg.go.dev/github.com/RoxyAPI/sdk-go, or the JSON shapes at https://roxyapi.com/api-reference.
 
@@ -130,7 +130,7 @@ Western charts require `Timezone`; Vedic charts make it an optional pointer (`Ti
 
 ### Multi-language via the params pointer
 
-Eight languages: `en`, `tr`, `de`, `es`, `fr`, `hi`, `pt`, `ru`. Defaults to `en`. Each endpoint has its own `Lang` type; set it with `roxyapi.Ptr(...)`. Call `roxy.Languages.ListLanguages(ctx)` for the live list. Supported domains: astrology, vedicAstrology, numerology, tarot, biorhythm, iching, crystals, angelNumbers. English only: dreams, location, usage, languages.
+Ten languages: `en`, `tr`, `de`, `es`, `fr`, `hi`, `pt`, `ru`, `zh-Hans`, `zh-Hant`. The two Chinese scripts currently ship on Chinese astrology and feng shui; every other domain answers those codes in English per field. Defaults to `en`. Each endpoint has its own `Lang` type; set it with `roxyapi.Ptr(...)`. Call `roxy.Languages.ListLanguages(ctx)` for the live list. Supported domains: astrology, vedicAstrology, numerology, tarot, biorhythm, iching, crystals, angelNumbers. English only: dreams, location, usage, languages.
 
 ### Error handling
 
