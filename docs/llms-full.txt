@@ -147,6 +147,43 @@ Generate the full Human Design bodygraph from a birth moment: type, strategy, in
 - `calculateType` - POST `/human-design/type` - Calculate Human Design type, authority and profile
 - `calculateVariables` - POST `/human-design/variables` - Calculate Human Design Variables - The four arrows and Color, Tone, Base substructure
 
+## Chinese Astrology - `roxy.ChineseAstrology`
+
+Calculate BaZi Four Pillars charts, Chinese zodiac signs, and the Chinese lunisolar calendar from any birth moment: y...
+
+- `calculateAnnualForecast` - POST `/chinese-astrology/bazi/annual-forecast` - Calculate BaZi annual forecast - Liu Nian yearly pillar API
+- `generateBaziChart` - POST `/chinese-astrology/bazi/chart` - Generate BaZi chart - Four Pillars of Destiny calculator API
+- `calculateBaziCompatibility` - POST `/chinese-astrology/bazi/compatibility` - Calculate BaZi compatibility - Four Pillars matchmaking API
+- `calculateDayMasterStrength` - POST `/chinese-astrology/bazi/day-master` - Calculate Day Master strength - BaZi favorable element API
+- `calculateLuckPillars` - POST `/chinese-astrology/bazi/luck-pillars` - Calculate luck pillars - BaZi Da Yun ten-year cycle API
+- `lookupAuspiciousDays` - POST `/chinese-astrology/calendar/auspicious-days` - Find auspicious days - Chinese date selection API for weddings and openings
+- `getAlmanacDay` - GET `/chinese-astrology/calendar/day/{date}` - Get the almanac for a day - Tong Shu API with day officers and mansions
+- `calculateLunarDate` - POST `/chinese-astrology/calendar/lunar-date` - Convert lunar and Gregorian dates - Chinese lunisolar calendar API
+- `getMonthlyAlmanac` - GET `/chinese-astrology/calendar/monthly` - Get a month of almanac days - Chinese calendar month view API
+- `listSolarTerms` - GET `/chinese-astrology/calendar/solar-terms/{year}` - List the 24 solar terms - Jie Qi calendar API with exact instants
+- `listFiveElements` - GET `/chinese-astrology/elements` - List the five elements - Wu Xing API with generating and controlling cycles
+- `listZodiacAnimals` - GET `/chinese-astrology/zodiac/animals` - List the 12 Chinese zodiac animals - Sheng Xiao sign catalogue
+- `getZodiacAnimal` - GET `/chinese-astrology/zodiac/animals/{id}` - Get one Chinese zodiac animal - Full sign profile with compatibility partners
+- `getZodiacCompatibility` - GET `/chinese-astrology/zodiac/compatibility/{sign1}/{sign2}` - Chinese zodiac compatibility - Trine, six harmony, clash and harm analysis
+- `calculateZodiacAnimal` - POST `/chinese-astrology/zodiac/sign` - Find the Chinese zodiac animal for a birth date - Sheng Xiao calculator
+- `getDailyZodiacReading` - GET `/chinese-astrology/zodiac/{id}/daily` - Daily Chinese zodiac reading - Day pillar forecast by animal sign
+
+## Feng Shui - `roxy.FengShui`
+
+Compute classical feng shui from one API: Xuan Kong flying star natal charts for any of the nine periods and 24 mount...
+
+- `getAnnualAfflictions` - GET `/feng-shui/afflictions/{year}` - Annual afflictions - Tai Sui, San Sha and Five Yellow API
+- `listBaguaSectors` - GET `/feng-shui/bagua` - List Bagua sectors - Feng shui bagua map API
+- `getBaguaSector` - GET `/feng-shui/bagua/{id}` - Look up a Bagua sector - Life area reference API
+- `generateEightMansions` - POST `/feng-shui/eight-mansions` - Generate Eight Mansions map - Ba Zhai lucky direction API
+- `getAnnualFlyingStars` - GET `/feng-shui/flying-stars/annual/{year}` - Annual flying stars - Yearly feng shui star chart API
+- `getMonthlyFlyingStars` - GET `/feng-shui/flying-stars/monthly` - Monthly flying stars - Month by month feng shui overlay API
+- `generateFlyingStarChart` - POST `/feng-shui/flying-stars/natal` - Generate flying star natal chart - Xuan Kong Fei Xing API
+- `listFlyingStars` - GET `/feng-shui/flying-stars/stars` - List the nine flying stars - Xuan Kong star reference API
+- `calculateKuaNumber` - POST `/feng-shui/kua` - Calculate Kua number - Feng shui personal direction calculator API
+- `getKuaNumber` - GET `/feng-shui/kua/{number}` - Look up a Kua number - Eight Mansions reference API
+- `listNinePeriods` - GET `/feng-shui/periods` - List the nine periods - San Yuan period table API
+
 ## Numerology - `roxy.Numerology`
 
 Numerology API to calculate life path, expression, soul urge, personality, and maturity numbers, with Pinnacle and Ch...
