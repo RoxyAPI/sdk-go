@@ -29226,7 +29226,7 @@
                         },
                         "chinese": {
                           "description": "The relation in simplified hanzi. Identical under every lang; the traditional forms arrive through the zh-Hant response.",
-                          "example": "劫财",
+                          "example": "劫財",
                           "type": "string"
                         },
                         "id": {
@@ -29311,7 +29311,7 @@
                         "properties": {
                           "chinese": {
                             "description": "The interaction named in hanzi. Identical under every lang.",
-                            "example": "子午冲",
+                            "example": "子午沖",
                             "type": "string"
                           },
                           "complete": {
@@ -29406,7 +29406,7 @@
                         },
                         "chinese": {
                           "description": "The relation in simplified hanzi. Identical under every lang; the traditional forms arrive through the zh-Hant response.",
-                          "example": "劫财",
+                          "example": "劫財",
                           "type": "string"
                         },
                         "id": {
@@ -29854,7 +29854,7 @@
                         "properties": {
                           "chinese": {
                             "description": "The interaction named in hanzi. Identical under every lang.",
-                            "example": "子午冲",
+                            "example": "子午沖",
                             "type": "string"
                           },
                           "complete": {
@@ -30054,7 +30054,7 @@
                                     },
                                     "chinese": {
                                       "description": "The relation in simplified hanzi. Identical under every lang; the traditional forms arrive through the zh-Hant response.",
-                                      "example": "劫财",
+                                      "example": "劫財",
                                       "type": "string"
                                     },
                                     "id": {
@@ -30186,7 +30186,7 @@
                               },
                               "chinese": {
                                 "description": "The relation in simplified hanzi. Identical under every lang; the traditional forms arrive through the zh-Hant response.",
-                                "example": "劫财",
+                                "example": "劫財",
                                 "type": "string"
                               },
                               "id": {
@@ -30584,7 +30584,7 @@
                         "properties": {
                           "chinese": {
                             "description": "The interaction named in hanzi. Identical under every lang.",
-                            "example": "子午冲",
+                            "example": "子午沖",
                             "type": "string"
                           },
                           "complete": {
@@ -30876,7 +30876,7 @@
                                         },
                                         "chinese": {
                                           "description": "The relation in simplified hanzi. Identical under every lang; the traditional forms arrive through the zh-Hant response.",
-                                          "example": "劫财",
+                                          "example": "劫財",
                                           "type": "string"
                                         },
                                         "id": {
@@ -31008,7 +31008,7 @@
                                   },
                                   "chinese": {
                                     "description": "The relation in simplified hanzi. Identical under every lang; the traditional forms arrive through the zh-Hant response.",
-                                    "example": "劫财",
+                                    "example": "劫財",
                                     "type": "string"
                                   },
                                   "id": {
@@ -31290,7 +31290,7 @@
                                         },
                                         "chinese": {
                                           "description": "The relation in simplified hanzi. Identical under every lang; the traditional forms arrive through the zh-Hant response.",
-                                          "example": "劫财",
+                                          "example": "劫財",
                                           "type": "string"
                                         },
                                         "id": {
@@ -31422,7 +31422,7 @@
                                   },
                                   "chinese": {
                                     "description": "The relation in simplified hanzi. Identical under every lang; the traditional forms arrive through the zh-Hant response.",
-                                    "example": "劫财",
+                                    "example": "劫財",
                                     "type": "string"
                                   },
                                   "id": {
@@ -32271,7 +32271,7 @@
                               },
                               "chinese": {
                                 "description": "The relation in simplified hanzi. Identical under every lang; the traditional forms arrive through the zh-Hant response.",
-                                "example": "劫财",
+                                "example": "劫財",
                                 "type": "string"
                               },
                               "id": {
@@ -32576,7 +32576,7 @@
                               },
                               "chinese": {
                                 "description": "The relation in simplified hanzi. Identical under every lang; the traditional forms arrive through the zh-Hant response.",
-                                "example": "劫财",
+                                "example": "劫財",
                                 "type": "string"
                               },
                               "id": {
@@ -32900,7 +32900,7 @@
                                 "type": "string"
                               },
                               "name": {
-                                "description": "English display name of the officer.",
+                                "description": "English display name of the officer. Canonical, identical in every language, so it stays safe to compare against in code. The translation is in nameLocalized.",
                                 "example": "Hold",
                                 "type": "string"
                               },
@@ -33036,8 +33036,13 @@
                           "mansion": {
                             "properties": {
                               "animal": {
-                                "description": "Animal emblem of the mansion, the third character of its full Chinese name.",
+                                "description": "Animal emblem of the mansion, the third character of its full Chinese name. English and canonical, identical in every language, matching how clashAnimal behaves on the same response. The translation is in animalLocalized.",
                                 "example": "Dragon",
+                                "type": "string"
+                              },
+                              "animalLocalized": {
+                                "description": "Animal emblem in the requested language. Absent when lang is en, and absent when a language has no entry, so a caller falls back to animal.",
+                                "example": "龍",
                                 "type": "string"
                               },
                               "chinese": {
@@ -33046,8 +33051,13 @@
                                 "type": "string"
                               },
                               "name": {
-                                "description": "English display name of the mansion.",
+                                "description": "English display name of the mansion. Canonical, identical in every language. The translation is in nameLocalized. Note the mansion has no string id: number is the stable 1 to 28 key, because five of the 28 share a pinyin spelling.",
                                 "example": "Neck",
+                                "type": "string"
+                              },
+                              "nameLocalized": {
+                                "description": "Display name of the mansion in the requested language. Absent when lang is en, and absent when a language has no entry for this mansion, so a caller falls back to name rather than rendering a blank.",
+                                "example": "星宿",
                                 "type": "string"
                               },
                               "number": {
@@ -33396,7 +33406,7 @@
                           "type": "string"
                         },
                         "name": {
-                          "description": "English display name of the officer.",
+                          "description": "English display name of the officer. Canonical, identical in every language, so it stays safe to compare against in code. The translation is in nameLocalized.",
                           "example": "Hold",
                           "type": "string"
                         },
@@ -33532,8 +33542,13 @@
                     "mansion": {
                       "properties": {
                         "animal": {
-                          "description": "Animal emblem of the mansion, the third character of its full Chinese name.",
+                          "description": "Animal emblem of the mansion, the third character of its full Chinese name. English and canonical, identical in every language, matching how clashAnimal behaves on the same response. The translation is in animalLocalized.",
                           "example": "Dragon",
+                          "type": "string"
+                        },
+                        "animalLocalized": {
+                          "description": "Animal emblem in the requested language. Absent when lang is en, and absent when a language has no entry, so a caller falls back to animal.",
+                          "example": "龍",
                           "type": "string"
                         },
                         "chinese": {
@@ -33542,8 +33557,13 @@
                           "type": "string"
                         },
                         "name": {
-                          "description": "English display name of the mansion.",
+                          "description": "English display name of the mansion. Canonical, identical in every language. The translation is in nameLocalized. Note the mansion has no string id: number is the stable 1 to 28 key, because five of the 28 share a pinyin spelling.",
                           "example": "Neck",
+                          "type": "string"
+                        },
+                        "nameLocalized": {
+                          "description": "Display name of the mansion in the requested language. Absent when lang is en, and absent when a language has no entry for this mansion, so a caller falls back to name rather than rendering a blank.",
+                          "example": "星宿",
                           "type": "string"
                         },
                         "number": {
@@ -34105,7 +34125,7 @@
                                 "type": "string"
                               },
                               "name": {
-                                "description": "English display name of the officer.",
+                                "description": "English display name of the officer. Canonical, identical in every language, so it stays safe to compare against in code. The translation is in nameLocalized.",
                                 "example": "Hold",
                                 "type": "string"
                               },
@@ -34241,8 +34261,13 @@
                           "mansion": {
                             "properties": {
                               "animal": {
-                                "description": "Animal emblem of the mansion, the third character of its full Chinese name.",
+                                "description": "Animal emblem of the mansion, the third character of its full Chinese name. English and canonical, identical in every language, matching how clashAnimal behaves on the same response. The translation is in animalLocalized.",
                                 "example": "Dragon",
+                                "type": "string"
+                              },
+                              "animalLocalized": {
+                                "description": "Animal emblem in the requested language. Absent when lang is en, and absent when a language has no entry, so a caller falls back to animal.",
+                                "example": "龍",
                                 "type": "string"
                               },
                               "chinese": {
@@ -34251,8 +34276,13 @@
                                 "type": "string"
                               },
                               "name": {
-                                "description": "English display name of the mansion.",
+                                "description": "English display name of the mansion. Canonical, identical in every language. The translation is in nameLocalized. Note the mansion has no string id: number is the stable 1 to 28 key, because five of the 28 share a pinyin spelling.",
                                 "example": "Neck",
+                                "type": "string"
+                              },
+                              "nameLocalized": {
+                                "description": "Display name of the mansion in the requested language. Absent when lang is en, and absent when a language has no entry for this mansion, so a caller falls back to name rather than rendering a blank.",
+                                "example": "星宿",
                                 "type": "string"
                               },
                               "number": {
@@ -35365,7 +35395,7 @@
                       "properties": {
                         "chinese": {
                           "description": "Simplified Chinese character for the related animal.",
-                          "example": "马",
+                          "example": "馬",
                           "type": "string"
                         },
                         "id": {
@@ -35469,7 +35499,7 @@
                       "properties": {
                         "chinese": {
                           "description": "Simplified Chinese character for the related animal.",
-                          "example": "马",
+                          "example": "馬",
                           "type": "string"
                         },
                         "id": {
@@ -35551,7 +35581,7 @@
                       "properties": {
                         "chinese": {
                           "description": "Simplified Chinese character for the related animal.",
-                          "example": "马",
+                          "example": "馬",
                           "type": "string"
                         },
                         "element": {
@@ -40143,13 +40173,18 @@
                           "example": "五黃",
                           "type": "string"
                         },
+                        "id": {
+                          "description": "Stable machine key for the affliction: taiSui, suiPo, sanSha or fiveYellow. Always English, identical in every language, and the field to branch on. Use this rather than name, which is display copy and does translate.",
+                          "example": "fiveYellow",
+                          "type": "string"
+                        },
                         "meaning": {
                           "description": "What the affliction does and the standing rule for handling it.",
                           "example": "The annual position of the 5, the one affliction that moves with the flying stars rather than with the year branch.",
                           "type": "string"
                         },
                         "name": {
-                          "description": "Display name of the affliction. Always English, whatever the lang parameter says, so it stays safe to compare against in code.",
+                          "description": "Display name of the affliction, translated in place when lang is set (Tai Sui in English, 太岁 under zh-Hans). Display copy, never a comparison key: branch on id instead.",
                           "example": "Five Yellow",
                           "type": "string"
                         },
@@ -40175,6 +40210,7 @@
                         }
                       },
                       "required": [
+                        "id",
                         "name",
                         "chinese",
                         "pinyin",
@@ -40213,13 +40249,18 @@
                           "example": "Fire",
                           "type": "string"
                         },
+                        "id": {
+                          "description": "Stable machine key for the affliction: taiSui, suiPo, sanSha or fiveYellow. Always English, identical in every language, and the field to branch on. Use this rather than name, which is display copy and does translate.",
+                          "example": "sanSha",
+                          "type": "string"
+                        },
                         "meaning": {
                           "description": "What the affliction does and the standing rule for handling it.",
                           "example": "The Three Killings, a 75 degree span opposite the elemental frame of the year. Never sit with your back to it, and facing it is safe.",
                           "type": "string"
                         },
                         "name": {
-                          "description": "Display name of the affliction. Always English, whatever the lang parameter says, so it stays safe to compare against in code.",
+                          "description": "Display name of the affliction, translated in place when lang is set (Tai Sui in English, 太岁 under zh-Hans). Display copy, never a comparison key: branch on id instead.",
                           "example": "San Sha",
                           "type": "string"
                         },
@@ -40304,7 +40345,7 @@
                                 "type": "object"
                               },
                               "name": {
-                                "description": "Display name of the part. Always English, whatever the lang parameter says.",
+                                "description": "Display name of the part, translated in place when lang is set. Display copy, never a comparison key: branch on id instead.",
                                 "example": "Disaster Sha",
                                 "type": "string"
                               },
@@ -40338,6 +40379,7 @@
                         }
                       },
                       "required": [
+                        "id",
                         "name",
                         "chinese",
                         "pinyin",
@@ -40362,6 +40404,11 @@
                         "direction": {
                           "description": "Compass sector, one of North, Northeast, East, Southeast, South, Southwest, West, Northwest. Always English, safe to compare against and to key styling on.",
                           "example": "South",
+                          "type": "string"
+                        },
+                        "id": {
+                          "description": "Stable machine key for the affliction: taiSui, suiPo, sanSha or fiveYellow. Always English, identical in every language, and the field to branch on. Use this rather than name, which is display copy and does translate.",
+                          "example": "suiPo",
                           "type": "string"
                         },
                         "meaning": {
@@ -40431,7 +40478,7 @@
                           "type": "object"
                         },
                         "name": {
-                          "description": "Display name of the affliction. Always English, whatever the lang parameter says, so it stays safe to compare against in code.",
+                          "description": "Display name of the affliction, translated in place when lang is set (Tai Sui in English, 太岁 under zh-Hans). Display copy, never a comparison key: branch on id instead.",
                           "example": "Sui Po",
                           "type": "string"
                         },
@@ -40442,6 +40489,7 @@
                         }
                       },
                       "required": [
+                        "id",
                         "name",
                         "chinese",
                         "pinyin",
@@ -40472,6 +40520,11 @@
                         "direction": {
                           "description": "Compass sector, one of North, Northeast, East, Southeast, South, Southwest, West, Northwest. Always English, safe to compare against and to key styling on.",
                           "example": "South",
+                          "type": "string"
+                        },
+                        "id": {
+                          "description": "Stable machine key for the affliction: taiSui, suiPo, sanSha or fiveYellow. Always English, identical in every language, and the field to branch on. Use this rather than name, which is display copy and does translate.",
+                          "example": "taiSui",
                           "type": "string"
                         },
                         "meaning": {
@@ -40541,7 +40594,7 @@
                           "type": "object"
                         },
                         "name": {
-                          "description": "Display name of the affliction. Always English, whatever the lang parameter says, so it stays safe to compare against in code.",
+                          "description": "Display name of the affliction, translated in place when lang is set (Tai Sui in English, 太岁 under zh-Hans). Display copy, never a comparison key: branch on id instead.",
                           "example": "Tai Sui",
                           "type": "string"
                         },
@@ -40552,6 +40605,7 @@
                         }
                       },
                       "required": [
+                        "id",
                         "name",
                         "chinese",
                         "pinyin",
@@ -42604,7 +42658,7 @@
                           "type": "string"
                         },
                         "name": {
-                          "description": "Display name of the structure. Always English, whatever the lang parameter says.",
+                          "description": "Display name of the structure, TRANSLATED IN PLACE under the lang parameter. Switch on structure.id, which is the stable machine value in every language. Unlike the star and formation names beside it, this field has no nameLocalized sibling.",
                           "example": "Double Star at Sitting",
                           "type": "string"
                         }

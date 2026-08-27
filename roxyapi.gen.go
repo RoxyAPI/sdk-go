@@ -81760,7 +81760,7 @@ type LookupAuspiciousDaysResponse struct {
 				// Meaning What the officer means, in the terms a date choice uses it in.
 				Meaning string `json:"meaning"`
 
-				// Name English display name of the officer.
+				// Name English display name of the officer. Canonical, identical in every language, so it stays safe to compare against in code. The translation is in nameLocalized.
 				Name string `json:"name"`
 
 				// NameLocalized Display name of the officer in the requested language. Absent when lang is en, so an English response is unchanged.
@@ -81817,14 +81817,20 @@ type LookupAuspiciousDaysResponse struct {
 				Year float32 `json:"year"`
 			} `json:"lunar"`
 			Mansion struct {
-				// Animal Animal emblem of the mansion, the third character of its full Chinese name.
+				// Animal Animal emblem of the mansion, the third character of its full Chinese name. English and canonical, identical in every language, matching how clashAnimal behaves on the same response. The translation is in animalLocalized.
 				Animal string `json:"animal"`
+
+				// AnimalLocalized Animal emblem in the requested language. Absent when lang is en, and absent when a language has no entry, so a caller falls back to animal.
+				AnimalLocalized *string `json:"animalLocalized,omitempty"`
 
 				// Chinese The mansion in Chinese. A data field, identical in every language.
 				Chinese string `json:"chinese"`
 
-				// Name English display name of the mansion.
+				// Name English display name of the mansion. Canonical, identical in every language. The translation is in nameLocalized. Note the mansion has no string id: number is the stable 1 to 28 key, because five of the 28 share a pinyin spelling.
 				Name string `json:"name"`
+
+				// NameLocalized Display name of the mansion in the requested language. Absent when lang is en, and absent when a language has no entry for this mansion, so a caller falls back to name rather than rendering a blank.
+				NameLocalized *string `json:"nameLocalized,omitempty"`
 
 				// Number Mansion number, 1 to 28, counted from the Horn. This is the identifier: three mansions share the pinyin wei and two share bi, so there is no unique pinyin key.
 				Number float32 `json:"number"`
@@ -81948,7 +81954,7 @@ func (r LookupAuspiciousDaysResponse) GetJSON200() *struct {
 			// Meaning What the officer means, in the terms a date choice uses it in.
 			Meaning string `json:"meaning"`
 
-			// Name English display name of the officer.
+			// Name English display name of the officer. Canonical, identical in every language, so it stays safe to compare against in code. The translation is in nameLocalized.
 			Name string `json:"name"`
 
 			// NameLocalized Display name of the officer in the requested language. Absent when lang is en, so an English response is unchanged.
@@ -82005,14 +82011,20 @@ func (r LookupAuspiciousDaysResponse) GetJSON200() *struct {
 			Year float32 `json:"year"`
 		} `json:"lunar"`
 		Mansion struct {
-			// Animal Animal emblem of the mansion, the third character of its full Chinese name.
+			// Animal Animal emblem of the mansion, the third character of its full Chinese name. English and canonical, identical in every language, matching how clashAnimal behaves on the same response. The translation is in animalLocalized.
 			Animal string `json:"animal"`
+
+			// AnimalLocalized Animal emblem in the requested language. Absent when lang is en, and absent when a language has no entry, so a caller falls back to animal.
+			AnimalLocalized *string `json:"animalLocalized,omitempty"`
 
 			// Chinese The mansion in Chinese. A data field, identical in every language.
 			Chinese string `json:"chinese"`
 
-			// Name English display name of the mansion.
+			// Name English display name of the mansion. Canonical, identical in every language. The translation is in nameLocalized. Note the mansion has no string id: number is the stable 1 to 28 key, because five of the 28 share a pinyin spelling.
 			Name string `json:"name"`
+
+			// NameLocalized Display name of the mansion in the requested language. Absent when lang is en, and absent when a language has no entry for this mansion, so a caller falls back to name rather than rendering a blank.
+			NameLocalized *string `json:"nameLocalized,omitempty"`
 
 			// Number Mansion number, 1 to 28, counted from the Horn. This is the identifier: three mansions share the pinyin wei and two share bi, so there is no unique pinyin key.
 			Number float32 `json:"number"`
@@ -82181,7 +82193,7 @@ type GetAlmanacDayResponse struct {
 			// Meaning What the officer means, in the terms a date choice uses it in.
 			Meaning string `json:"meaning"`
 
-			// Name English display name of the officer.
+			// Name English display name of the officer. Canonical, identical in every language, so it stays safe to compare against in code. The translation is in nameLocalized.
 			Name string `json:"name"`
 
 			// NameLocalized Display name of the officer in the requested language. Absent when lang is en, so an English response is unchanged.
@@ -82238,14 +82250,20 @@ type GetAlmanacDayResponse struct {
 			Year float32 `json:"year"`
 		} `json:"lunar"`
 		Mansion struct {
-			// Animal Animal emblem of the mansion, the third character of its full Chinese name.
+			// Animal Animal emblem of the mansion, the third character of its full Chinese name. English and canonical, identical in every language, matching how clashAnimal behaves on the same response. The translation is in animalLocalized.
 			Animal string `json:"animal"`
+
+			// AnimalLocalized Animal emblem in the requested language. Absent when lang is en, and absent when a language has no entry, so a caller falls back to animal.
+			AnimalLocalized *string `json:"animalLocalized,omitempty"`
 
 			// Chinese The mansion in Chinese. A data field, identical in every language.
 			Chinese string `json:"chinese"`
 
-			// Name English display name of the mansion.
+			// Name English display name of the mansion. Canonical, identical in every language. The translation is in nameLocalized. Note the mansion has no string id: number is the stable 1 to 28 key, because five of the 28 share a pinyin spelling.
 			Name string `json:"name"`
+
+			// NameLocalized Display name of the mansion in the requested language. Absent when lang is en, and absent when a language has no entry for this mansion, so a caller falls back to name rather than rendering a blank.
+			NameLocalized *string `json:"nameLocalized,omitempty"`
 
 			// Number Mansion number, 1 to 28, counted from the Horn. This is the identifier: three mansions share the pinyin wei and two share bi, so there is no unique pinyin key.
 			Number float32 `json:"number"`
@@ -82347,7 +82365,7 @@ func (r GetAlmanacDayResponse) GetJSON200() *struct {
 		// Meaning What the officer means, in the terms a date choice uses it in.
 		Meaning string `json:"meaning"`
 
-		// Name English display name of the officer.
+		// Name English display name of the officer. Canonical, identical in every language, so it stays safe to compare against in code. The translation is in nameLocalized.
 		Name string `json:"name"`
 
 		// NameLocalized Display name of the officer in the requested language. Absent when lang is en, so an English response is unchanged.
@@ -82404,14 +82422,20 @@ func (r GetAlmanacDayResponse) GetJSON200() *struct {
 		Year float32 `json:"year"`
 	} `json:"lunar"`
 	Mansion struct {
-		// Animal Animal emblem of the mansion, the third character of its full Chinese name.
+		// Animal Animal emblem of the mansion, the third character of its full Chinese name. English and canonical, identical in every language, matching how clashAnimal behaves on the same response. The translation is in animalLocalized.
 		Animal string `json:"animal"`
+
+		// AnimalLocalized Animal emblem in the requested language. Absent when lang is en, and absent when a language has no entry, so a caller falls back to animal.
+		AnimalLocalized *string `json:"animalLocalized,omitempty"`
 
 		// Chinese The mansion in Chinese. A data field, identical in every language.
 		Chinese string `json:"chinese"`
 
-		// Name English display name of the mansion.
+		// Name English display name of the mansion. Canonical, identical in every language. The translation is in nameLocalized. Note the mansion has no string id: number is the stable 1 to 28 key, because five of the 28 share a pinyin spelling.
 		Name string `json:"name"`
+
+		// NameLocalized Display name of the mansion in the requested language. Absent when lang is en, and absent when a language has no entry for this mansion, so a caller falls back to name rather than rendering a blank.
+		NameLocalized *string `json:"nameLocalized,omitempty"`
 
 		// Number Mansion number, 1 to 28, counted from the Horn. This is the identifier: three mansions share the pinyin wei and two share bi, so there is no unique pinyin key.
 		Number float32 `json:"number"`
@@ -82718,7 +82742,7 @@ type GetMonthlyAlmanacResponse struct {
 				// Meaning What the officer means, in the terms a date choice uses it in.
 				Meaning string `json:"meaning"`
 
-				// Name English display name of the officer.
+				// Name English display name of the officer. Canonical, identical in every language, so it stays safe to compare against in code. The translation is in nameLocalized.
 				Name string `json:"name"`
 
 				// NameLocalized Display name of the officer in the requested language. Absent when lang is en, so an English response is unchanged.
@@ -82775,14 +82799,20 @@ type GetMonthlyAlmanacResponse struct {
 				Year float32 `json:"year"`
 			} `json:"lunar"`
 			Mansion struct {
-				// Animal Animal emblem of the mansion, the third character of its full Chinese name.
+				// Animal Animal emblem of the mansion, the third character of its full Chinese name. English and canonical, identical in every language, matching how clashAnimal behaves on the same response. The translation is in animalLocalized.
 				Animal string `json:"animal"`
+
+				// AnimalLocalized Animal emblem in the requested language. Absent when lang is en, and absent when a language has no entry, so a caller falls back to animal.
+				AnimalLocalized *string `json:"animalLocalized,omitempty"`
 
 				// Chinese The mansion in Chinese. A data field, identical in every language.
 				Chinese string `json:"chinese"`
 
-				// Name English display name of the mansion.
+				// Name English display name of the mansion. Canonical, identical in every language. The translation is in nameLocalized. Note the mansion has no string id: number is the stable 1 to 28 key, because five of the 28 share a pinyin spelling.
 				Name string `json:"name"`
+
+				// NameLocalized Display name of the mansion in the requested language. Absent when lang is en, and absent when a language has no entry for this mansion, so a caller falls back to name rather than rendering a blank.
+				NameLocalized *string `json:"nameLocalized,omitempty"`
 
 				// Number Mansion number, 1 to 28, counted from the Horn. This is the identifier: three mansions share the pinyin wei and two share bi, so there is no unique pinyin key.
 				Number float32 `json:"number"`
@@ -82910,7 +82940,7 @@ func (r GetMonthlyAlmanacResponse) GetJSON200() *struct {
 			// Meaning What the officer means, in the terms a date choice uses it in.
 			Meaning string `json:"meaning"`
 
-			// Name English display name of the officer.
+			// Name English display name of the officer. Canonical, identical in every language, so it stays safe to compare against in code. The translation is in nameLocalized.
 			Name string `json:"name"`
 
 			// NameLocalized Display name of the officer in the requested language. Absent when lang is en, so an English response is unchanged.
@@ -82967,14 +82997,20 @@ func (r GetMonthlyAlmanacResponse) GetJSON200() *struct {
 			Year float32 `json:"year"`
 		} `json:"lunar"`
 		Mansion struct {
-			// Animal Animal emblem of the mansion, the third character of its full Chinese name.
+			// Animal Animal emblem of the mansion, the third character of its full Chinese name. English and canonical, identical in every language, matching how clashAnimal behaves on the same response. The translation is in animalLocalized.
 			Animal string `json:"animal"`
+
+			// AnimalLocalized Animal emblem in the requested language. Absent when lang is en, and absent when a language has no entry, so a caller falls back to animal.
+			AnimalLocalized *string `json:"animalLocalized,omitempty"`
 
 			// Chinese The mansion in Chinese. A data field, identical in every language.
 			Chinese string `json:"chinese"`
 
-			// Name English display name of the mansion.
+			// Name English display name of the mansion. Canonical, identical in every language. The translation is in nameLocalized. Note the mansion has no string id: number is the stable 1 to 28 key, because five of the 28 share a pinyin spelling.
 			Name string `json:"name"`
+
+			// NameLocalized Display name of the mansion in the requested language. Absent when lang is en, and absent when a language has no entry for this mansion, so a caller falls back to name rather than rendering a blank.
+			NameLocalized *string `json:"nameLocalized,omitempty"`
 
 			// Number Mansion number, 1 to 28, counted from the Horn. This is the identifier: three mansions share the pinyin wei and two share bi, so there is no unique pinyin key.
 			Number float32 `json:"number"`
@@ -87078,10 +87114,13 @@ type GetAnnualAfflictionsResponse struct {
 			// Chinese Chinese characters for the affliction. Data, identical in every language.
 			Chinese string `json:"chinese"`
 
+			// ID Stable machine key for the affliction: taiSui, suiPo, sanSha or fiveYellow. Always English, identical in every language, and the field to branch on. Use this rather than name, which is display copy and does translate.
+			ID string `json:"id"`
+
 			// Meaning What the affliction does and the standing rule for handling it.
 			Meaning string `json:"meaning"`
 
-			// Name Display name of the affliction. Always English, whatever the lang parameter says, so it stays safe to compare against in code.
+			// Name Display name of the affliction, translated in place when lang is set (Tai Sui in English, 太岁 under zh-Hans). Display copy, never a comparison key: branch on id instead.
 			Name string `json:"name"`
 
 			// Palace Palace the 5 flew to this year, one of the eight sectors or Center. Always English, safe to compare against.
@@ -87114,10 +87153,13 @@ type GetAnnualAfflictionsResponse struct {
 			// FrameElement The five phase the year branch forms with its trine. The Three Killings always sits in the cardinal direction opposite this frame.
 			FrameElement string `json:"frameElement"`
 
+			// ID Stable machine key for the affliction: taiSui, suiPo, sanSha or fiveYellow. Always English, identical in every language, and the field to branch on. Use this rather than name, which is display copy and does translate.
+			ID string `json:"id"`
+
 			// Meaning What the affliction does and the standing rule for handling it.
 			Meaning string `json:"meaning"`
 
-			// Name Display name of the affliction. Always English, whatever the lang parameter says, so it stays safe to compare against in code.
+			// Name Display name of the affliction, translated in place when lang is set (Tai Sui in English, 太岁 under zh-Hans). Display copy, never a comparison key: branch on id instead.
 			Name string `json:"name"`
 
 			// Parts The three mountains of the span, first to last in compass order. They are one affliction read in three parts, not three separate ones, and disturbing any part is taken to wake the whole.
@@ -87159,7 +87201,7 @@ type GetAnnualAfflictionsResponse struct {
 					Yuan string `json:"yuan"`
 				} `json:"mountain"`
 
-				// Name Display name of the part. Always English, whatever the lang parameter says.
+				// Name Display name of the part, translated in place when lang is set. Display copy, never a comparison key: branch on id instead.
 				Name string `json:"name"`
 
 				// Pinyin Tone-marked pinyin. Data, identical in every language.
@@ -87181,6 +87223,9 @@ type GetAnnualAfflictionsResponse struct {
 			// Direction Compass sector, one of North, Northeast, East, Southeast, South, Southwest, West, Northwest. Always English, safe to compare against and to key styling on.
 			Direction string `json:"direction"`
 
+			// ID Stable machine key for the affliction: taiSui, suiPo, sanSha or fiveYellow. Always English, identical in every language, and the field to branch on. Use this rather than name, which is display copy and does translate.
+			ID string `json:"id"`
+
 			// Meaning What the affliction does and the standing rule for handling it.
 			Meaning  string `json:"meaning"`
 			Mountain struct {
@@ -87212,7 +87257,7 @@ type GetAnnualAfflictionsResponse struct {
 				Yuan string `json:"yuan"`
 			} `json:"mountain"`
 
-			// Name Display name of the affliction. Always English, whatever the lang parameter says, so it stays safe to compare against in code.
+			// Name Display name of the affliction, translated in place when lang is set (Tai Sui in English, 太岁 under zh-Hans). Display copy, never a comparison key: branch on id instead.
 			Name string `json:"name"`
 
 			// Pinyin Tone-marked pinyin. Data, identical in every language.
@@ -87233,6 +87278,9 @@ type GetAnnualAfflictionsResponse struct {
 			// Direction Compass sector, one of North, Northeast, East, Southeast, South, Southwest, West, Northwest. Always English, safe to compare against and to key styling on.
 			Direction string `json:"direction"`
 
+			// ID Stable machine key for the affliction: taiSui, suiPo, sanSha or fiveYellow. Always English, identical in every language, and the field to branch on. Use this rather than name, which is display copy and does translate.
+			ID string `json:"id"`
+
 			// Meaning What the affliction does and the standing rule for handling it.
 			Meaning  string `json:"meaning"`
 			Mountain struct {
@@ -87264,7 +87312,7 @@ type GetAnnualAfflictionsResponse struct {
 				Yuan string `json:"yuan"`
 			} `json:"mountain"`
 
-			// Name Display name of the affliction. Always English, whatever the lang parameter says, so it stays safe to compare against in code.
+			// Name Display name of the affliction, translated in place when lang is set (Tai Sui in English, 太岁 under zh-Hans). Display copy, never a comparison key: branch on id instead.
 			Name string `json:"name"`
 
 			// Pinyin Tone-marked pinyin. Data, identical in every language.
@@ -87301,10 +87349,13 @@ func (r GetAnnualAfflictionsResponse) GetJSON200() *struct {
 		// Chinese Chinese characters for the affliction. Data, identical in every language.
 		Chinese string `json:"chinese"`
 
+		// ID Stable machine key for the affliction: taiSui, suiPo, sanSha or fiveYellow. Always English, identical in every language, and the field to branch on. Use this rather than name, which is display copy and does translate.
+		ID string `json:"id"`
+
 		// Meaning What the affliction does and the standing rule for handling it.
 		Meaning string `json:"meaning"`
 
-		// Name Display name of the affliction. Always English, whatever the lang parameter says, so it stays safe to compare against in code.
+		// Name Display name of the affliction, translated in place when lang is set (Tai Sui in English, 太岁 under zh-Hans). Display copy, never a comparison key: branch on id instead.
 		Name string `json:"name"`
 
 		// Palace Palace the 5 flew to this year, one of the eight sectors or Center. Always English, safe to compare against.
@@ -87337,10 +87388,13 @@ func (r GetAnnualAfflictionsResponse) GetJSON200() *struct {
 		// FrameElement The five phase the year branch forms with its trine. The Three Killings always sits in the cardinal direction opposite this frame.
 		FrameElement string `json:"frameElement"`
 
+		// ID Stable machine key for the affliction: taiSui, suiPo, sanSha or fiveYellow. Always English, identical in every language, and the field to branch on. Use this rather than name, which is display copy and does translate.
+		ID string `json:"id"`
+
 		// Meaning What the affliction does and the standing rule for handling it.
 		Meaning string `json:"meaning"`
 
-		// Name Display name of the affliction. Always English, whatever the lang parameter says, so it stays safe to compare against in code.
+		// Name Display name of the affliction, translated in place when lang is set (Tai Sui in English, 太岁 under zh-Hans). Display copy, never a comparison key: branch on id instead.
 		Name string `json:"name"`
 
 		// Parts The three mountains of the span, first to last in compass order. They are one affliction read in three parts, not three separate ones, and disturbing any part is taken to wake the whole.
@@ -87382,7 +87436,7 @@ func (r GetAnnualAfflictionsResponse) GetJSON200() *struct {
 				Yuan string `json:"yuan"`
 			} `json:"mountain"`
 
-			// Name Display name of the part. Always English, whatever the lang parameter says.
+			// Name Display name of the part, translated in place when lang is set. Display copy, never a comparison key: branch on id instead.
 			Name string `json:"name"`
 
 			// Pinyin Tone-marked pinyin. Data, identical in every language.
@@ -87404,6 +87458,9 @@ func (r GetAnnualAfflictionsResponse) GetJSON200() *struct {
 		// Direction Compass sector, one of North, Northeast, East, Southeast, South, Southwest, West, Northwest. Always English, safe to compare against and to key styling on.
 		Direction string `json:"direction"`
 
+		// ID Stable machine key for the affliction: taiSui, suiPo, sanSha or fiveYellow. Always English, identical in every language, and the field to branch on. Use this rather than name, which is display copy and does translate.
+		ID string `json:"id"`
+
 		// Meaning What the affliction does and the standing rule for handling it.
 		Meaning  string `json:"meaning"`
 		Mountain struct {
@@ -87435,7 +87492,7 @@ func (r GetAnnualAfflictionsResponse) GetJSON200() *struct {
 			Yuan string `json:"yuan"`
 		} `json:"mountain"`
 
-		// Name Display name of the affliction. Always English, whatever the lang parameter says, so it stays safe to compare against in code.
+		// Name Display name of the affliction, translated in place when lang is set (Tai Sui in English, 太岁 under zh-Hans). Display copy, never a comparison key: branch on id instead.
 		Name string `json:"name"`
 
 		// Pinyin Tone-marked pinyin. Data, identical in every language.
@@ -87456,6 +87513,9 @@ func (r GetAnnualAfflictionsResponse) GetJSON200() *struct {
 		// Direction Compass sector, one of North, Northeast, East, Southeast, South, Southwest, West, Northwest. Always English, safe to compare against and to key styling on.
 		Direction string `json:"direction"`
 
+		// ID Stable machine key for the affliction: taiSui, suiPo, sanSha or fiveYellow. Always English, identical in every language, and the field to branch on. Use this rather than name, which is display copy and does translate.
+		ID string `json:"id"`
+
 		// Meaning What the affliction does and the standing rule for handling it.
 		Meaning  string `json:"meaning"`
 		Mountain struct {
@@ -87487,7 +87547,7 @@ func (r GetAnnualAfflictionsResponse) GetJSON200() *struct {
 			Yuan string `json:"yuan"`
 		} `json:"mountain"`
 
-		// Name Display name of the affliction. Always English, whatever the lang parameter says, so it stays safe to compare against in code.
+		// Name Display name of the affliction, translated in place when lang is set (Tai Sui in English, 太岁 under zh-Hans). Display copy, never a comparison key: branch on id instead.
 		Name string `json:"name"`
 
 		// Pinyin Tone-marked pinyin. Data, identical in every language.
@@ -88919,7 +88979,7 @@ type GenerateFlyingStarChartResponse struct {
 			// Meaning What the structure means and what the classical correction for it is.
 			Meaning string `json:"meaning"`
 
-			// Name Display name of the structure. Always English, whatever the lang parameter says.
+			// Name Display name of the structure, TRANSLATED IN PLACE under the lang parameter. Switch on structure.id, which is the stable machine value in every language. Unlike the star and formation names beside it, this field has no nameLocalized sibling.
 			Name string `json:"name"`
 		} `json:"structure"`
 
@@ -89065,7 +89125,7 @@ func (r GenerateFlyingStarChartResponse) GetJSON200() *struct {
 		// Meaning What the structure means and what the classical correction for it is.
 		Meaning string `json:"meaning"`
 
-		// Name Display name of the structure. Always English, whatever the lang parameter says.
+		// Name Display name of the structure, TRANSLATED IN PLACE under the lang parameter. Switch on structure.id, which is the stable machine value in every language. Unlike the star and formation names beside it, this field has no nameLocalized sibling.
 		Name string `json:"name"`
 	} `json:"structure"`
 
@@ -125449,7 +125509,7 @@ func ParseLookupAuspiciousDaysResponse(rsp *http.Response) (*LookupAuspiciousDay
 					// Meaning What the officer means, in the terms a date choice uses it in.
 					Meaning string `json:"meaning"`
 
-					// Name English display name of the officer.
+					// Name English display name of the officer. Canonical, identical in every language, so it stays safe to compare against in code. The translation is in nameLocalized.
 					Name string `json:"name"`
 
 					// NameLocalized Display name of the officer in the requested language. Absent when lang is en, so an English response is unchanged.
@@ -125506,14 +125566,20 @@ func ParseLookupAuspiciousDaysResponse(rsp *http.Response) (*LookupAuspiciousDay
 					Year float32 `json:"year"`
 				} `json:"lunar"`
 				Mansion struct {
-					// Animal Animal emblem of the mansion, the third character of its full Chinese name.
+					// Animal Animal emblem of the mansion, the third character of its full Chinese name. English and canonical, identical in every language, matching how clashAnimal behaves on the same response. The translation is in animalLocalized.
 					Animal string `json:"animal"`
+
+					// AnimalLocalized Animal emblem in the requested language. Absent when lang is en, and absent when a language has no entry, so a caller falls back to animal.
+					AnimalLocalized *string `json:"animalLocalized,omitempty"`
 
 					// Chinese The mansion in Chinese. A data field, identical in every language.
 					Chinese string `json:"chinese"`
 
-					// Name English display name of the mansion.
+					// Name English display name of the mansion. Canonical, identical in every language. The translation is in nameLocalized. Note the mansion has no string id: number is the stable 1 to 28 key, because five of the 28 share a pinyin spelling.
 					Name string `json:"name"`
+
+					// NameLocalized Display name of the mansion in the requested language. Absent when lang is en, and absent when a language has no entry for this mansion, so a caller falls back to name rather than rendering a blank.
+					NameLocalized *string `json:"nameLocalized,omitempty"`
 
 					// Number Mansion number, 1 to 28, counted from the Horn. This is the identifier: three mansions share the pinyin wei and two share bi, so there is no unique pinyin key.
 					Number float32 `json:"number"`
@@ -125684,7 +125750,7 @@ func ParseGetAlmanacDayResponse(rsp *http.Response) (*GetAlmanacDayResponse, err
 				// Meaning What the officer means, in the terms a date choice uses it in.
 				Meaning string `json:"meaning"`
 
-				// Name English display name of the officer.
+				// Name English display name of the officer. Canonical, identical in every language, so it stays safe to compare against in code. The translation is in nameLocalized.
 				Name string `json:"name"`
 
 				// NameLocalized Display name of the officer in the requested language. Absent when lang is en, so an English response is unchanged.
@@ -125741,14 +125807,20 @@ func ParseGetAlmanacDayResponse(rsp *http.Response) (*GetAlmanacDayResponse, err
 				Year float32 `json:"year"`
 			} `json:"lunar"`
 			Mansion struct {
-				// Animal Animal emblem of the mansion, the third character of its full Chinese name.
+				// Animal Animal emblem of the mansion, the third character of its full Chinese name. English and canonical, identical in every language, matching how clashAnimal behaves on the same response. The translation is in animalLocalized.
 				Animal string `json:"animal"`
+
+				// AnimalLocalized Animal emblem in the requested language. Absent when lang is en, and absent when a language has no entry, so a caller falls back to animal.
+				AnimalLocalized *string `json:"animalLocalized,omitempty"`
 
 				// Chinese The mansion in Chinese. A data field, identical in every language.
 				Chinese string `json:"chinese"`
 
-				// Name English display name of the mansion.
+				// Name English display name of the mansion. Canonical, identical in every language. The translation is in nameLocalized. Note the mansion has no string id: number is the stable 1 to 28 key, because five of the 28 share a pinyin spelling.
 				Name string `json:"name"`
+
+				// NameLocalized Display name of the mansion in the requested language. Absent when lang is en, and absent when a language has no entry for this mansion, so a caller falls back to name rather than rendering a blank.
+				NameLocalized *string `json:"nameLocalized,omitempty"`
 
 				// Number Mansion number, 1 to 28, counted from the Horn. This is the identifier: three mansions share the pinyin wei and two share bi, so there is no unique pinyin key.
 				Number float32 `json:"number"`
@@ -126017,7 +126089,7 @@ func ParseGetMonthlyAlmanacResponse(rsp *http.Response) (*GetMonthlyAlmanacRespo
 					// Meaning What the officer means, in the terms a date choice uses it in.
 					Meaning string `json:"meaning"`
 
-					// Name English display name of the officer.
+					// Name English display name of the officer. Canonical, identical in every language, so it stays safe to compare against in code. The translation is in nameLocalized.
 					Name string `json:"name"`
 
 					// NameLocalized Display name of the officer in the requested language. Absent when lang is en, so an English response is unchanged.
@@ -126074,14 +126146,20 @@ func ParseGetMonthlyAlmanacResponse(rsp *http.Response) (*GetMonthlyAlmanacRespo
 					Year float32 `json:"year"`
 				} `json:"lunar"`
 				Mansion struct {
-					// Animal Animal emblem of the mansion, the third character of its full Chinese name.
+					// Animal Animal emblem of the mansion, the third character of its full Chinese name. English and canonical, identical in every language, matching how clashAnimal behaves on the same response. The translation is in animalLocalized.
 					Animal string `json:"animal"`
+
+					// AnimalLocalized Animal emblem in the requested language. Absent when lang is en, and absent when a language has no entry, so a caller falls back to animal.
+					AnimalLocalized *string `json:"animalLocalized,omitempty"`
 
 					// Chinese The mansion in Chinese. A data field, identical in every language.
 					Chinese string `json:"chinese"`
 
-					// Name English display name of the mansion.
+					// Name English display name of the mansion. Canonical, identical in every language. The translation is in nameLocalized. Note the mansion has no string id: number is the stable 1 to 28 key, because five of the 28 share a pinyin spelling.
 					Name string `json:"name"`
+
+					// NameLocalized Display name of the mansion in the requested language. Absent when lang is en, and absent when a language has no entry for this mansion, so a caller falls back to name rather than rendering a blank.
+					NameLocalized *string `json:"nameLocalized,omitempty"`
 
 					// Number Mansion number, 1 to 28, counted from the Horn. This is the identifier: three mansions share the pinyin wei and two share bi, so there is no unique pinyin key.
 					Number float32 `json:"number"`
@@ -128950,10 +129028,13 @@ func ParseGetAnnualAfflictionsResponse(rsp *http.Response) (*GetAnnualAffliction
 				// Chinese Chinese characters for the affliction. Data, identical in every language.
 				Chinese string `json:"chinese"`
 
+				// ID Stable machine key for the affliction: taiSui, suiPo, sanSha or fiveYellow. Always English, identical in every language, and the field to branch on. Use this rather than name, which is display copy and does translate.
+				ID string `json:"id"`
+
 				// Meaning What the affliction does and the standing rule for handling it.
 				Meaning string `json:"meaning"`
 
-				// Name Display name of the affliction. Always English, whatever the lang parameter says, so it stays safe to compare against in code.
+				// Name Display name of the affliction, translated in place when lang is set (Tai Sui in English, 太岁 under zh-Hans). Display copy, never a comparison key: branch on id instead.
 				Name string `json:"name"`
 
 				// Palace Palace the 5 flew to this year, one of the eight sectors or Center. Always English, safe to compare against.
@@ -128986,10 +129067,13 @@ func ParseGetAnnualAfflictionsResponse(rsp *http.Response) (*GetAnnualAffliction
 				// FrameElement The five phase the year branch forms with its trine. The Three Killings always sits in the cardinal direction opposite this frame.
 				FrameElement string `json:"frameElement"`
 
+				// ID Stable machine key for the affliction: taiSui, suiPo, sanSha or fiveYellow. Always English, identical in every language, and the field to branch on. Use this rather than name, which is display copy and does translate.
+				ID string `json:"id"`
+
 				// Meaning What the affliction does and the standing rule for handling it.
 				Meaning string `json:"meaning"`
 
-				// Name Display name of the affliction. Always English, whatever the lang parameter says, so it stays safe to compare against in code.
+				// Name Display name of the affliction, translated in place when lang is set (Tai Sui in English, 太岁 under zh-Hans). Display copy, never a comparison key: branch on id instead.
 				Name string `json:"name"`
 
 				// Parts The three mountains of the span, first to last in compass order. They are one affliction read in three parts, not three separate ones, and disturbing any part is taken to wake the whole.
@@ -129031,7 +129115,7 @@ func ParseGetAnnualAfflictionsResponse(rsp *http.Response) (*GetAnnualAffliction
 						Yuan string `json:"yuan"`
 					} `json:"mountain"`
 
-					// Name Display name of the part. Always English, whatever the lang parameter says.
+					// Name Display name of the part, translated in place when lang is set. Display copy, never a comparison key: branch on id instead.
 					Name string `json:"name"`
 
 					// Pinyin Tone-marked pinyin. Data, identical in every language.
@@ -129053,6 +129137,9 @@ func ParseGetAnnualAfflictionsResponse(rsp *http.Response) (*GetAnnualAffliction
 				// Direction Compass sector, one of North, Northeast, East, Southeast, South, Southwest, West, Northwest. Always English, safe to compare against and to key styling on.
 				Direction string `json:"direction"`
 
+				// ID Stable machine key for the affliction: taiSui, suiPo, sanSha or fiveYellow. Always English, identical in every language, and the field to branch on. Use this rather than name, which is display copy and does translate.
+				ID string `json:"id"`
+
 				// Meaning What the affliction does and the standing rule for handling it.
 				Meaning  string `json:"meaning"`
 				Mountain struct {
@@ -129084,7 +129171,7 @@ func ParseGetAnnualAfflictionsResponse(rsp *http.Response) (*GetAnnualAffliction
 					Yuan string `json:"yuan"`
 				} `json:"mountain"`
 
-				// Name Display name of the affliction. Always English, whatever the lang parameter says, so it stays safe to compare against in code.
+				// Name Display name of the affliction, translated in place when lang is set (Tai Sui in English, 太岁 under zh-Hans). Display copy, never a comparison key: branch on id instead.
 				Name string `json:"name"`
 
 				// Pinyin Tone-marked pinyin. Data, identical in every language.
@@ -129105,6 +129192,9 @@ func ParseGetAnnualAfflictionsResponse(rsp *http.Response) (*GetAnnualAffliction
 				// Direction Compass sector, one of North, Northeast, East, Southeast, South, Southwest, West, Northwest. Always English, safe to compare against and to key styling on.
 				Direction string `json:"direction"`
 
+				// ID Stable machine key for the affliction: taiSui, suiPo, sanSha or fiveYellow. Always English, identical in every language, and the field to branch on. Use this rather than name, which is display copy and does translate.
+				ID string `json:"id"`
+
 				// Meaning What the affliction does and the standing rule for handling it.
 				Meaning  string `json:"meaning"`
 				Mountain struct {
@@ -129136,7 +129226,7 @@ func ParseGetAnnualAfflictionsResponse(rsp *http.Response) (*GetAnnualAffliction
 					Yuan string `json:"yuan"`
 				} `json:"mountain"`
 
-				// Name Display name of the affliction. Always English, whatever the lang parameter says, so it stays safe to compare against in code.
+				// Name Display name of the affliction, translated in place when lang is set (Tai Sui in English, 太岁 under zh-Hans). Display copy, never a comparison key: branch on id instead.
 				Name string `json:"name"`
 
 				// Pinyin Tone-marked pinyin. Data, identical in every language.
@@ -130110,7 +130200,7 @@ func ParseGenerateFlyingStarChartResponse(rsp *http.Response) (*GenerateFlyingSt
 				// Meaning What the structure means and what the classical correction for it is.
 				Meaning string `json:"meaning"`
 
-				// Name Display name of the structure. Always English, whatever the lang parameter says.
+				// Name Display name of the structure, TRANSLATED IN PLACE under the lang parameter. Switch on structure.id, which is the stable machine value in every language. Unlike the star and formation names beside it, this field has no nameLocalized sibling.
 				Name string `json:"name"`
 			} `json:"structure"`
 
