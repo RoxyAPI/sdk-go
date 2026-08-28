@@ -335,6 +335,14 @@ func (s *AstrologyService) GetWeeklyHoroscope(ctx context.Context, sign GetWeekl
 	return resp, asRoxyError(resp)
 }
 
+func (s *AstrologyService) GetYearlyHoroscope(ctx context.Context, sign GetYearlyHoroscopeParamsSign, params *GetYearlyHoroscopeParams, reqEditors ...RequestEditorFn) (*GetYearlyHoroscopeResponse, error) {
+	resp, err := s.client.GetYearlyHoroscopeWithResponse(ctx, sign, params, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
 func (s *AstrologyService) GetZodiacSign(ctx context.Context, id string, params *GetZodiacSignParams, reqEditors ...RequestEditorFn) (*GetZodiacSignResponse, error) {
 	resp, err := s.client.GetZodiacSignWithResponse(ctx, id, params, reqEditors...)
 	if err != nil {

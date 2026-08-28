@@ -19,7 +19,7 @@ This file is the method INDEX (operation id, HTTP method, path, summary). For re
 <!-- BEGIN:METHODS -->
 ## Western Astrology - `roxy.Astrology`
 
-Western astrology API for natal birth charts, daily, weekly, and monthly horoscopes with unique content per sign, syn...
+Western astrology API for natal birth charts, daily, weekly, monthly, and yearly horoscopes with unique content per s...
 
 - `calculateArabicLots` - POST `/astrology/arabic-lots` - Arabic lots calculator - seven Hermetic parts including Part of Fortune and Spirit
 - `detectAspectPatterns` - POST `/astrology/aspect-patterns` - Detect aspect patterns - Grand Trine, Kite, T-Square, Grand Cross, Yod, Mystic Rectangle, Stellium
@@ -31,9 +31,10 @@ Western astrology API for natal birth charts, daily, weekly, and monthly horosco
 - `generateCompositeChart` - POST `/astrology/composite-chart` - Composite Chart - Midpoint relationship chart with interpretations
 - `getPlanetaryNodePassages` - POST `/astrology/ecliptic-crossings` - Ecliptic Crossings - Node passages for a whole year
 - `generateFixedStars` - POST `/astrology/fixed-stars` - Fixed stars and star conjunctions calculator - Regulus, Spica, Algol natal report
-- `getDailyHoroscope` - GET `/astrology/horoscope/{sign}/daily` - Daily horoscope by zodiac sign - Transit-based forecast with house activations
-- `getMonthlyHoroscope` - GET `/astrology/horoscope/{sign}/monthly` - Monthly horoscope by zodiac sign - 30-day transit forecast with key dates
-- `getWeeklyHoroscope` - GET `/astrology/horoscope/{sign}/weekly` - Weekly horoscope by zodiac sign - 7-day transit forecast
+- `getDailyHoroscope` - GET `/astrology/horoscope/{sign}/daily` - Daily horoscope by zodiac sign - Transit-based editorial columns
+- `getMonthlyHoroscope` - GET `/astrology/horoscope/{sign}/monthly` - Monthly horoscope by zodiac sign - Editorial column with key dates
+- `getWeeklyHoroscope` - GET `/astrology/horoscope/{sign}/weekly` - Weekly horoscope by zodiac sign - Seven-day editorial column
+- `getYearlyHoroscope` - GET `/astrology/horoscope/{sign}/yearly` - Yearly horoscope by zodiac sign - Year ahead forecast with themes, key periods, eclipses and retrogrades
 - `calculateHouses` - POST `/astrology/houses` - Calculate house cusps - House system calculator with comparison
 - `generateLilith` - POST `/astrology/lilith` - Black Moon Lilith calculator - mean and true lunar apogee in the natal chart
 - `generateLocalSpace` - POST `/astrology/local-space` - Local space astrology map - Directional planetary compass lines

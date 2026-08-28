@@ -5217,6 +5217,36 @@ func (e GetDailyHoroscopeParamsSign) Valid() bool {
 	}
 }
 
+// Defines values for GetDailyHoroscope200JSONResponseBodyEventsType.
+const (
+	GetDailyHoroscope200JSONResponseBodyEventsTypeAspect            GetDailyHoroscope200JSONResponseBodyEventsType = "aspect"
+	GetDailyHoroscope200JSONResponseBodyEventsTypeEclipse           GetDailyHoroscope200JSONResponseBodyEventsType = "eclipse"
+	GetDailyHoroscope200JSONResponseBodyEventsTypeLunarPhase        GetDailyHoroscope200JSONResponseBodyEventsType = "lunar-phase"
+	GetDailyHoroscope200JSONResponseBodyEventsTypeRetrogradeStation GetDailyHoroscope200JSONResponseBodyEventsType = "retrograde-station"
+	GetDailyHoroscope200JSONResponseBodyEventsTypeSignIngress       GetDailyHoroscope200JSONResponseBodyEventsType = "sign-ingress"
+	GetDailyHoroscope200JSONResponseBodyEventsTypeSolarSeason       GetDailyHoroscope200JSONResponseBodyEventsType = "solar-season"
+)
+
+// Valid indicates whether the value is a known member of the GetDailyHoroscope200JSONResponseBodyEventsType enum.
+func (e GetDailyHoroscope200JSONResponseBodyEventsType) Valid() bool {
+	switch e {
+	case GetDailyHoroscope200JSONResponseBodyEventsTypeAspect:
+		return true
+	case GetDailyHoroscope200JSONResponseBodyEventsTypeEclipse:
+		return true
+	case GetDailyHoroscope200JSONResponseBodyEventsTypeLunarPhase:
+		return true
+	case GetDailyHoroscope200JSONResponseBodyEventsTypeRetrogradeStation:
+		return true
+	case GetDailyHoroscope200JSONResponseBodyEventsTypeSignIngress:
+		return true
+	case GetDailyHoroscope200JSONResponseBodyEventsTypeSolarSeason:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for GetMonthlyHoroscopeParamsLang.
 const (
 	GetMonthlyHoroscopeParamsLangDe     GetMonthlyHoroscopeParamsLang = "de"
@@ -5307,6 +5337,36 @@ func (e GetMonthlyHoroscopeParamsSign) Valid() bool {
 	}
 }
 
+// Defines values for GetMonthlyHoroscope200JSONResponseBodyEventsType.
+const (
+	GetMonthlyHoroscope200JSONResponseBodyEventsTypeAspect            GetMonthlyHoroscope200JSONResponseBodyEventsType = "aspect"
+	GetMonthlyHoroscope200JSONResponseBodyEventsTypeEclipse           GetMonthlyHoroscope200JSONResponseBodyEventsType = "eclipse"
+	GetMonthlyHoroscope200JSONResponseBodyEventsTypeLunarPhase        GetMonthlyHoroscope200JSONResponseBodyEventsType = "lunar-phase"
+	GetMonthlyHoroscope200JSONResponseBodyEventsTypeRetrogradeStation GetMonthlyHoroscope200JSONResponseBodyEventsType = "retrograde-station"
+	GetMonthlyHoroscope200JSONResponseBodyEventsTypeSignIngress       GetMonthlyHoroscope200JSONResponseBodyEventsType = "sign-ingress"
+	GetMonthlyHoroscope200JSONResponseBodyEventsTypeSolarSeason       GetMonthlyHoroscope200JSONResponseBodyEventsType = "solar-season"
+)
+
+// Valid indicates whether the value is a known member of the GetMonthlyHoroscope200JSONResponseBodyEventsType enum.
+func (e GetMonthlyHoroscope200JSONResponseBodyEventsType) Valid() bool {
+	switch e {
+	case GetMonthlyHoroscope200JSONResponseBodyEventsTypeAspect:
+		return true
+	case GetMonthlyHoroscope200JSONResponseBodyEventsTypeEclipse:
+		return true
+	case GetMonthlyHoroscope200JSONResponseBodyEventsTypeLunarPhase:
+		return true
+	case GetMonthlyHoroscope200JSONResponseBodyEventsTypeRetrogradeStation:
+		return true
+	case GetMonthlyHoroscope200JSONResponseBodyEventsTypeSignIngress:
+		return true
+	case GetMonthlyHoroscope200JSONResponseBodyEventsTypeSolarSeason:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for GetWeeklyHoroscopeParamsLang.
 const (
 	GetWeeklyHoroscopeParamsLangDe     GetWeeklyHoroscopeParamsLang = "de"
@@ -5391,6 +5451,156 @@ func (e GetWeeklyHoroscopeParamsSign) Valid() bool {
 	case GetWeeklyHoroscopeParamsSignTaurus:
 		return true
 	case GetWeeklyHoroscopeParamsSignVirgo:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetWeeklyHoroscope200JSONResponseBodyEventsType.
+const (
+	GetWeeklyHoroscope200JSONResponseBodyEventsTypeAspect            GetWeeklyHoroscope200JSONResponseBodyEventsType = "aspect"
+	GetWeeklyHoroscope200JSONResponseBodyEventsTypeEclipse           GetWeeklyHoroscope200JSONResponseBodyEventsType = "eclipse"
+	GetWeeklyHoroscope200JSONResponseBodyEventsTypeLunarPhase        GetWeeklyHoroscope200JSONResponseBodyEventsType = "lunar-phase"
+	GetWeeklyHoroscope200JSONResponseBodyEventsTypeRetrogradeStation GetWeeklyHoroscope200JSONResponseBodyEventsType = "retrograde-station"
+	GetWeeklyHoroscope200JSONResponseBodyEventsTypeSignIngress       GetWeeklyHoroscope200JSONResponseBodyEventsType = "sign-ingress"
+	GetWeeklyHoroscope200JSONResponseBodyEventsTypeSolarSeason       GetWeeklyHoroscope200JSONResponseBodyEventsType = "solar-season"
+)
+
+// Valid indicates whether the value is a known member of the GetWeeklyHoroscope200JSONResponseBodyEventsType enum.
+func (e GetWeeklyHoroscope200JSONResponseBodyEventsType) Valid() bool {
+	switch e {
+	case GetWeeklyHoroscope200JSONResponseBodyEventsTypeAspect:
+		return true
+	case GetWeeklyHoroscope200JSONResponseBodyEventsTypeEclipse:
+		return true
+	case GetWeeklyHoroscope200JSONResponseBodyEventsTypeLunarPhase:
+		return true
+	case GetWeeklyHoroscope200JSONResponseBodyEventsTypeRetrogradeStation:
+		return true
+	case GetWeeklyHoroscope200JSONResponseBodyEventsTypeSignIngress:
+		return true
+	case GetWeeklyHoroscope200JSONResponseBodyEventsTypeSolarSeason:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetYearlyHoroscopeParamsLang.
+const (
+	GetYearlyHoroscopeParamsLangDe     GetYearlyHoroscopeParamsLang = "de"
+	GetYearlyHoroscopeParamsLangEn     GetYearlyHoroscopeParamsLang = "en"
+	GetYearlyHoroscopeParamsLangEs     GetYearlyHoroscopeParamsLang = "es"
+	GetYearlyHoroscopeParamsLangFr     GetYearlyHoroscopeParamsLang = "fr"
+	GetYearlyHoroscopeParamsLangHi     GetYearlyHoroscopeParamsLang = "hi"
+	GetYearlyHoroscopeParamsLangPt     GetYearlyHoroscopeParamsLang = "pt"
+	GetYearlyHoroscopeParamsLangRu     GetYearlyHoroscopeParamsLang = "ru"
+	GetYearlyHoroscopeParamsLangTr     GetYearlyHoroscopeParamsLang = "tr"
+	GetYearlyHoroscopeParamsLangZhHans GetYearlyHoroscopeParamsLang = "zh-Hans"
+	GetYearlyHoroscopeParamsLangZhHant GetYearlyHoroscopeParamsLang = "zh-Hant"
+)
+
+// Valid indicates whether the value is a known member of the GetYearlyHoroscopeParamsLang enum.
+func (e GetYearlyHoroscopeParamsLang) Valid() bool {
+	switch e {
+	case GetYearlyHoroscopeParamsLangDe:
+		return true
+	case GetYearlyHoroscopeParamsLangEn:
+		return true
+	case GetYearlyHoroscopeParamsLangEs:
+		return true
+	case GetYearlyHoroscopeParamsLangFr:
+		return true
+	case GetYearlyHoroscopeParamsLangHi:
+		return true
+	case GetYearlyHoroscopeParamsLangPt:
+		return true
+	case GetYearlyHoroscopeParamsLangRu:
+		return true
+	case GetYearlyHoroscopeParamsLangTr:
+		return true
+	case GetYearlyHoroscopeParamsLangZhHans:
+		return true
+	case GetYearlyHoroscopeParamsLangZhHant:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetYearlyHoroscopeParamsSign.
+const (
+	GetYearlyHoroscopeParamsSignAquarius    GetYearlyHoroscopeParamsSign = "aquarius"
+	GetYearlyHoroscopeParamsSignAries       GetYearlyHoroscopeParamsSign = "aries"
+	GetYearlyHoroscopeParamsSignCancer      GetYearlyHoroscopeParamsSign = "cancer"
+	GetYearlyHoroscopeParamsSignCapricorn   GetYearlyHoroscopeParamsSign = "capricorn"
+	GetYearlyHoroscopeParamsSignGemini      GetYearlyHoroscopeParamsSign = "gemini"
+	GetYearlyHoroscopeParamsSignLeo         GetYearlyHoroscopeParamsSign = "leo"
+	GetYearlyHoroscopeParamsSignLibra       GetYearlyHoroscopeParamsSign = "libra"
+	GetYearlyHoroscopeParamsSignPisces      GetYearlyHoroscopeParamsSign = "pisces"
+	GetYearlyHoroscopeParamsSignSagittarius GetYearlyHoroscopeParamsSign = "sagittarius"
+	GetYearlyHoroscopeParamsSignScorpio     GetYearlyHoroscopeParamsSign = "scorpio"
+	GetYearlyHoroscopeParamsSignTaurus      GetYearlyHoroscopeParamsSign = "taurus"
+	GetYearlyHoroscopeParamsSignVirgo       GetYearlyHoroscopeParamsSign = "virgo"
+)
+
+// Valid indicates whether the value is a known member of the GetYearlyHoroscopeParamsSign enum.
+func (e GetYearlyHoroscopeParamsSign) Valid() bool {
+	switch e {
+	case GetYearlyHoroscopeParamsSignAquarius:
+		return true
+	case GetYearlyHoroscopeParamsSignAries:
+		return true
+	case GetYearlyHoroscopeParamsSignCancer:
+		return true
+	case GetYearlyHoroscopeParamsSignCapricorn:
+		return true
+	case GetYearlyHoroscopeParamsSignGemini:
+		return true
+	case GetYearlyHoroscopeParamsSignLeo:
+		return true
+	case GetYearlyHoroscopeParamsSignLibra:
+		return true
+	case GetYearlyHoroscopeParamsSignPisces:
+		return true
+	case GetYearlyHoroscopeParamsSignSagittarius:
+		return true
+	case GetYearlyHoroscopeParamsSignScorpio:
+		return true
+	case GetYearlyHoroscopeParamsSignTaurus:
+		return true
+	case GetYearlyHoroscopeParamsSignVirgo:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetYearlyHoroscope200JSONResponseBodyEventsType.
+const (
+	GetYearlyHoroscope200JSONResponseBodyEventsTypeAspect            GetYearlyHoroscope200JSONResponseBodyEventsType = "aspect"
+	GetYearlyHoroscope200JSONResponseBodyEventsTypeEclipse           GetYearlyHoroscope200JSONResponseBodyEventsType = "eclipse"
+	GetYearlyHoroscope200JSONResponseBodyEventsTypeLunarPhase        GetYearlyHoroscope200JSONResponseBodyEventsType = "lunar-phase"
+	GetYearlyHoroscope200JSONResponseBodyEventsTypeRetrogradeStation GetYearlyHoroscope200JSONResponseBodyEventsType = "retrograde-station"
+	GetYearlyHoroscope200JSONResponseBodyEventsTypeSignIngress       GetYearlyHoroscope200JSONResponseBodyEventsType = "sign-ingress"
+	GetYearlyHoroscope200JSONResponseBodyEventsTypeSolarSeason       GetYearlyHoroscope200JSONResponseBodyEventsType = "solar-season"
+)
+
+// Valid indicates whether the value is a known member of the GetYearlyHoroscope200JSONResponseBodyEventsType enum.
+func (e GetYearlyHoroscope200JSONResponseBodyEventsType) Valid() bool {
+	switch e {
+	case GetYearlyHoroscope200JSONResponseBodyEventsTypeAspect:
+		return true
+	case GetYearlyHoroscope200JSONResponseBodyEventsTypeEclipse:
+		return true
+	case GetYearlyHoroscope200JSONResponseBodyEventsTypeLunarPhase:
+		return true
+	case GetYearlyHoroscope200JSONResponseBodyEventsTypeRetrogradeStation:
+		return true
+	case GetYearlyHoroscope200JSONResponseBodyEventsTypeSignIngress:
+		return true
+	case GetYearlyHoroscope200JSONResponseBodyEventsTypeSolarSeason:
 		return true
 	default:
 		return false
@@ -30848,6 +31058,9 @@ type GetDailyHoroscopeParamsLang string
 // GetDailyHoroscopeParamsSign defines parameters for GetDailyHoroscope.
 type GetDailyHoroscopeParamsSign string
 
+// GetDailyHoroscope200JSONResponseBodyEventsType defines parameters for GetDailyHoroscope.
+type GetDailyHoroscope200JSONResponseBodyEventsType string
+
 // GetMonthlyHoroscopeParams defines parameters for GetMonthlyHoroscope.
 type GetMonthlyHoroscopeParams struct {
 	// Lang Response language (BCP 47). Supported: en, tr, de, es, hi, pt, fr, ru, zh-Hans, zh-Hant. Defaults to en. Coverage varies by domain, and a field with no translation in the requested language returns English.
@@ -30866,6 +31079,9 @@ type GetMonthlyHoroscopeParamsLang string
 // GetMonthlyHoroscopeParamsSign defines parameters for GetMonthlyHoroscope.
 type GetMonthlyHoroscopeParamsSign string
 
+// GetMonthlyHoroscope200JSONResponseBodyEventsType defines parameters for GetMonthlyHoroscope.
+type GetMonthlyHoroscope200JSONResponseBodyEventsType string
+
 // GetWeeklyHoroscopeParams defines parameters for GetWeeklyHoroscope.
 type GetWeeklyHoroscopeParams struct {
 	// Lang Response language (BCP 47). Supported: en, tr, de, es, hi, pt, fr, ru, zh-Hans, zh-Hant. Defaults to en. Coverage varies by domain, and a field with no translation in the requested language returns English.
@@ -30883,6 +31099,30 @@ type GetWeeklyHoroscopeParamsLang string
 
 // GetWeeklyHoroscopeParamsSign defines parameters for GetWeeklyHoroscope.
 type GetWeeklyHoroscopeParamsSign string
+
+// GetWeeklyHoroscope200JSONResponseBodyEventsType defines parameters for GetWeeklyHoroscope.
+type GetWeeklyHoroscope200JSONResponseBodyEventsType string
+
+// GetYearlyHoroscopeParams defines parameters for GetYearlyHoroscope.
+type GetYearlyHoroscopeParams struct {
+	// Lang Response language (BCP 47). Supported: en, tr, de, es, hi, pt, fr, ru, zh-Hans, zh-Hant. Defaults to en. Coverage varies by domain, and a field with no translation in the requested language returns English.
+	Lang *GetYearlyHoroscopeParamsLang `form:"lang,omitempty" json:"lang,omitempty"`
+
+	// Year Calendar year to forecast, 1900 to 2100. Defaults to the current year in the timezone parameter.
+	Year *float32 `form:"year,omitempty" json:"year,omitempty"`
+
+	// Timezone Selects which year counts as current when year is omitted. Defaults to UTC, so the forecast rolls over at 00:00 UTC on January 1. Pass the timezone of the end user to roll over on their local clock instead. Ignored when year is set. Accepts an IANA name (e.g. "America/New_York"), decimal hours (e.g. 5.5 for IST), or a fixed UTC offset (e.g. "-05:00").
+	Timezone *string `form:"timezone,omitempty" json:"timezone,omitempty"`
+}
+
+// GetYearlyHoroscopeParamsLang defines parameters for GetYearlyHoroscope.
+type GetYearlyHoroscopeParamsLang string
+
+// GetYearlyHoroscopeParamsSign defines parameters for GetYearlyHoroscope.
+type GetYearlyHoroscopeParamsSign string
+
+// GetYearlyHoroscope200JSONResponseBodyEventsType defines parameters for GetYearlyHoroscope.
+type GetYearlyHoroscope200JSONResponseBodyEventsType string
 
 // CalculateHousesJSONBody defines parameters for CalculateHouses.
 type CalculateHousesJSONBody struct {
@@ -43300,26 +43540,33 @@ type ClientInterface interface {
 	// Corresponds with POST /astrology/fixed-stars (the `GenerateFixedStars` operationId).
 	GenerateFixedStars(ctx context.Context, params *GenerateFixedStarsParams, body GenerateFixedStarsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// GetDailyHoroscope Daily horoscope by zodiac sign - Transit-based forecast with house activations
+	// GetDailyHoroscope Daily horoscope by zodiac sign - Transit-based editorial columns
 	//
-	// Get the daily horoscope for any zodiac sign. Forecast is generated from real-time planetary transits using whole-sign house positions, so every sign receives unique content. Returns love, career, health, finance, overview with active transits, Moon sign, Moon phase, energy rating, lucky number, lucky color, and compatible signs. Content is fixed for a given date and rolls over at midnight, by default UTC. Pass date for editorial scheduling, or timezone to roll over on a local clock. Daily horoscope API, zodiac forecast, sun sign horoscope, astrology prediction.
+	// A publish-ready column for any zodiac sign, built from the dated transits over it and returned with those events for fact-checking. The reading names the aspects, sign ingresses, lunations and retrograde stations driving it and reads each into the whole-sign houses of that sign, so every sign gets different content rather than one blurb reused twelve times. Alongside the column come overview, love, career, health, finance and advice, the active transits, Moon sign and phase, an energy rating, lucky number and color, and compatible signs. No language model is involved, so a given sign and date always returns the same text and a piece scheduled months ahead is the piece that runs. Content rolls over at midnight, by default UTC. Pass date for editorial scheduling, or timezone to roll over on a local clock. Available in eight languages. Daily horoscope API, zodiac forecast, sun sign horoscope, astrology prediction.
 	//
 	// Corresponds with GET /astrology/horoscope/{sign}/daily (the `GetDailyHoroscope` operationId).
 	GetDailyHoroscope(ctx context.Context, sign GetDailyHoroscopeParamsSign, params *GetDailyHoroscopeParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// GetMonthlyHoroscope Monthly horoscope by zodiac sign - 30-day transit forecast with key dates
+	// GetMonthlyHoroscope Monthly horoscope by zodiac sign - Editorial column with key dates
 	//
-	// Get monthly horoscope for any zodiac sign with sign-specific week-by-week breakdown and real lunar phase key dates. Based on planetary transits with house activations unique to each sign, covering love, career, health, and finance for the entire month. Key dates include actual New Moon, Full Moon, and retrograde dates from ephemeris calculations. Pass any date inside a month to retrieve that month, or timezone to roll over on a local clock. Monthly horoscope API, zodiac monthly forecast, astrology monthly prediction.
+	// A month-long column for any zodiac sign, plus a week-by-week breakdown and dated key dates a calendar page renders directly. The column names every aspect, ingress, lunation and station of the month and reads each into the whole-sign houses of that sign, and those events come back beside the prose with their exact instants, so a piece can be checked against NASA JPL Horizons or the US Naval Observatory before it runs. Key dates are the real New Moon, Full Moon and retrograde instants, never approximations. Alongside the column come overview, love, career, health, finance and advice. Pass any date inside a month to retrieve that month, or timezone to roll over on a local clock. Available in eight languages. Monthly horoscope API, zodiac monthly forecast, astrology monthly prediction.
 	//
 	// Corresponds with GET /astrology/horoscope/{sign}/monthly (the `GetMonthlyHoroscope` operationId).
 	GetMonthlyHoroscope(ctx context.Context, sign GetMonthlyHoroscopeParamsSign, params *GetMonthlyHoroscopeParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// GetWeeklyHoroscope Weekly horoscope by zodiac sign - 7-day transit forecast
+	// GetWeeklyHoroscope Weekly horoscope by zodiac sign - Seven-day editorial column
 	//
-	// Get weekly horoscope for any zodiac sign. Forecast covers a full Monday to Sunday period based on planetary transits with house-based content unique to each sign, with love, career, health, finance guidance plus lucky days, lucky numbers, and compatible signs. Pass any date inside a week to retrieve that week, or timezone to roll over on a local clock. Weekly horoscope API, zodiac weekly forecast, astrology weekly prediction.
+	// A Monday to Sunday column for any zodiac sign, naming the transits that perfect during the week and the days they fall on. Each event is read into the whole-sign houses of that sign, so content is unique per sign, and the dated events come back beside the prose so an editor can check a piece before it runs. Alongside the column come overview, love, career, health, finance and advice, plus lucky days, lucky numbers and compatible signs. No language model is involved, so the same sign and week always returns the same text. Pass any date inside a week to retrieve that week, or timezone to roll over on a local clock. Available in eight languages. Weekly horoscope API, zodiac weekly forecast, astrology weekly prediction.
 	//
 	// Corresponds with GET /astrology/horoscope/{sign}/weekly (the `GetWeeklyHoroscope` operationId).
 	GetWeeklyHoroscope(ctx context.Context, sign GetWeeklyHoroscopeParamsSign, params *GetWeeklyHoroscopeParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetYearlyHoroscope Yearly horoscope by zodiac sign - Year ahead forecast with themes, key periods, eclipses and retrogrades
+	//
+	// Get the year ahead for any zodiac sign, as a long-form column plus the structured arrays a year-ahead page is built from: the slow-body themes that set the backdrop, a dated key period for each of the twelve houses, the best month for love, career, health and finance, and every eclipse and every retrograde and direct station with the house it falls in for this sign. Love, career, health, finance and advice cover the whole year, and the dated events behind the copy come back beside it so an editor can check the piece before it runs. Omit the year for the one in progress, or pass any year from 1900 to 2100 to build an archive or a forecast ahead of time. Yearly horoscope API, year ahead astrology, annual zodiac forecast, eclipse and retrograde calendar.
+	//
+	// Corresponds with GET /astrology/horoscope/{sign}/yearly (the `GetYearlyHoroscope` operationId).
+	GetYearlyHoroscope(ctx context.Context, sign GetYearlyHoroscopeParamsSign, params *GetYearlyHoroscopeParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// CalculateHousesWithBody Calculate house cusps - House system calculator with comparison
 	//
@@ -46521,9 +46768,9 @@ func (c *Client) GenerateFixedStars(ctx context.Context, params *GenerateFixedSt
 	return c.Client.Do(req)
 }
 
-// GetDailyHoroscope Daily horoscope by zodiac sign - Transit-based forecast with house activations
+// GetDailyHoroscope Daily horoscope by zodiac sign - Transit-based editorial columns
 //
-// Get the daily horoscope for any zodiac sign. Forecast is generated from real-time planetary transits using whole-sign house positions, so every sign receives unique content. Returns love, career, health, finance, overview with active transits, Moon sign, Moon phase, energy rating, lucky number, lucky color, and compatible signs. Content is fixed for a given date and rolls over at midnight, by default UTC. Pass date for editorial scheduling, or timezone to roll over on a local clock. Daily horoscope API, zodiac forecast, sun sign horoscope, astrology prediction.
+// A publish-ready column for any zodiac sign, built from the dated transits over it and returned with those events for fact-checking. The reading names the aspects, sign ingresses, lunations and retrograde stations driving it and reads each into the whole-sign houses of that sign, so every sign gets different content rather than one blurb reused twelve times. Alongside the column come overview, love, career, health, finance and advice, the active transits, Moon sign and phase, an energy rating, lucky number and color, and compatible signs. No language model is involved, so a given sign and date always returns the same text and a piece scheduled months ahead is the piece that runs. Content rolls over at midnight, by default UTC. Pass date for editorial scheduling, or timezone to roll over on a local clock. Available in eight languages. Daily horoscope API, zodiac forecast, sun sign horoscope, astrology prediction.
 //
 // Corresponds with GET /astrology/horoscope/{sign}/daily (the `GetDailyHoroscope` operationId).
 func (c *Client) GetDailyHoroscope(ctx context.Context, sign GetDailyHoroscopeParamsSign, params *GetDailyHoroscopeParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
@@ -46538,9 +46785,9 @@ func (c *Client) GetDailyHoroscope(ctx context.Context, sign GetDailyHoroscopePa
 	return c.Client.Do(req)
 }
 
-// GetMonthlyHoroscope Monthly horoscope by zodiac sign - 30-day transit forecast with key dates
+// GetMonthlyHoroscope Monthly horoscope by zodiac sign - Editorial column with key dates
 //
-// Get monthly horoscope for any zodiac sign with sign-specific week-by-week breakdown and real lunar phase key dates. Based on planetary transits with house activations unique to each sign, covering love, career, health, and finance for the entire month. Key dates include actual New Moon, Full Moon, and retrograde dates from ephemeris calculations. Pass any date inside a month to retrieve that month, or timezone to roll over on a local clock. Monthly horoscope API, zodiac monthly forecast, astrology monthly prediction.
+// A month-long column for any zodiac sign, plus a week-by-week breakdown and dated key dates a calendar page renders directly. The column names every aspect, ingress, lunation and station of the month and reads each into the whole-sign houses of that sign, and those events come back beside the prose with their exact instants, so a piece can be checked against NASA JPL Horizons or the US Naval Observatory before it runs. Key dates are the real New Moon, Full Moon and retrograde instants, never approximations. Alongside the column come overview, love, career, health, finance and advice. Pass any date inside a month to retrieve that month, or timezone to roll over on a local clock. Available in eight languages. Monthly horoscope API, zodiac monthly forecast, astrology monthly prediction.
 //
 // Corresponds with GET /astrology/horoscope/{sign}/monthly (the `GetMonthlyHoroscope` operationId).
 func (c *Client) GetMonthlyHoroscope(ctx context.Context, sign GetMonthlyHoroscopeParamsSign, params *GetMonthlyHoroscopeParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
@@ -46555,13 +46802,30 @@ func (c *Client) GetMonthlyHoroscope(ctx context.Context, sign GetMonthlyHorosco
 	return c.Client.Do(req)
 }
 
-// GetWeeklyHoroscope Weekly horoscope by zodiac sign - 7-day transit forecast
+// GetWeeklyHoroscope Weekly horoscope by zodiac sign - Seven-day editorial column
 //
-// Get weekly horoscope for any zodiac sign. Forecast covers a full Monday to Sunday period based on planetary transits with house-based content unique to each sign, with love, career, health, finance guidance plus lucky days, lucky numbers, and compatible signs. Pass any date inside a week to retrieve that week, or timezone to roll over on a local clock. Weekly horoscope API, zodiac weekly forecast, astrology weekly prediction.
+// A Monday to Sunday column for any zodiac sign, naming the transits that perfect during the week and the days they fall on. Each event is read into the whole-sign houses of that sign, so content is unique per sign, and the dated events come back beside the prose so an editor can check a piece before it runs. Alongside the column come overview, love, career, health, finance and advice, plus lucky days, lucky numbers and compatible signs. No language model is involved, so the same sign and week always returns the same text. Pass any date inside a week to retrieve that week, or timezone to roll over on a local clock. Available in eight languages. Weekly horoscope API, zodiac weekly forecast, astrology weekly prediction.
 //
 // Corresponds with GET /astrology/horoscope/{sign}/weekly (the `GetWeeklyHoroscope` operationId).
 func (c *Client) GetWeeklyHoroscope(ctx context.Context, sign GetWeeklyHoroscopeParamsSign, params *GetWeeklyHoroscopeParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewGetWeeklyHoroscopeRequest(c.Server, sign, params)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetYearlyHoroscope Yearly horoscope by zodiac sign - Year ahead forecast with themes, key periods, eclipses and retrogrades
+//
+// Get the year ahead for any zodiac sign, as a long-form column plus the structured arrays a year-ahead page is built from: the slow-body themes that set the backdrop, a dated key period for each of the twelve houses, the best month for love, career, health and finance, and every eclipse and every retrograde and direct station with the house it falls in for this sign. Love, career, health, finance and advice cover the whole year, and the dated events behind the copy come back beside it so an editor can check the piece before it runs. Omit the year for the one in progress, or pass any year from 1900 to 2100 to build an archive or a forecast ahead of time. Yearly horoscope API, year ahead astrology, annual zodiac forecast, eclipse and retrograde calendar.
+//
+// Corresponds with GET /astrology/horoscope/{sign}/yearly (the `GetYearlyHoroscope` operationId).
+func (c *Client) GetYearlyHoroscope(ctx context.Context, sign GetYearlyHoroscopeParamsSign, params *GetYearlyHoroscopeParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetYearlyHoroscopeRequest(c.Server, sign, params)
 	if err != nil {
 		return nil, err
 	}
@@ -53712,6 +53976,91 @@ func NewGetWeeklyHoroscopeRequest(server string, sign GetWeeklyHoroscopeParamsSi
 		if params.Date != nil {
 
 			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "date", *params.Date, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: "date"}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Timezone != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "timezone", *params.Timezone, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodGet, queryURL.String(), nil)
+	if err != nil {
+		return nil, err
+	}
+
+	return req, nil
+}
+
+// NewGetYearlyHoroscopeRequest constructs an http.Request for the GetYearlyHoroscope method
+func NewGetYearlyHoroscopeRequest(server string, sign GetYearlyHoroscopeParamsSign, params *GetYearlyHoroscopeParams) (*http.Request, error) {
+	var err error
+
+	var pathParam0 string
+
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "sign", sign, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	if err != nil {
+		return nil, err
+	}
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/astrology/horoscope/%s/yearly", pathParam0)
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Lang != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "lang", *params.Lang, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if params.Year != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "year", *params.Year, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "number", Format: ""}); err != nil {
 				return nil, err
 			} else {
 				for _, qp := range strings.Split(queryFrag, "&") {
@@ -66635,32 +66984,41 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with POST /astrology/fixed-stars (the `GenerateFixedStars` operationId).
 	GenerateFixedStarsWithResponse(ctx context.Context, params *GenerateFixedStarsParams, body GenerateFixedStarsJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateFixedStarsResponse, error)
 
-	// GetDailyHoroscopeWithResponse Daily horoscope by zodiac sign - Transit-based forecast with house activations
+	// GetDailyHoroscopeWithResponse Daily horoscope by zodiac sign - Transit-based editorial columns
 	//
-	// Get the daily horoscope for any zodiac sign. Forecast is generated from real-time planetary transits using whole-sign house positions, so every sign receives unique content. Returns love, career, health, finance, overview with active transits, Moon sign, Moon phase, energy rating, lucky number, lucky color, and compatible signs. Content is fixed for a given date and rolls over at midnight, by default UTC. Pass date for editorial scheduling, or timezone to roll over on a local clock. Daily horoscope API, zodiac forecast, sun sign horoscope, astrology prediction.
+	// A publish-ready column for any zodiac sign, built from the dated transits over it and returned with those events for fact-checking. The reading names the aspects, sign ingresses, lunations and retrograde stations driving it and reads each into the whole-sign houses of that sign, so every sign gets different content rather than one blurb reused twelve times. Alongside the column come overview, love, career, health, finance and advice, the active transits, Moon sign and phase, an energy rating, lucky number and color, and compatible signs. No language model is involved, so a given sign and date always returns the same text and a piece scheduled months ahead is the piece that runs. Content rolls over at midnight, by default UTC. Pass date for editorial scheduling, or timezone to roll over on a local clock. Available in eight languages. Daily horoscope API, zodiac forecast, sun sign horoscope, astrology prediction.
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with GET /astrology/horoscope/{sign}/daily (the `GetDailyHoroscope` operationId).
 	GetDailyHoroscopeWithResponse(ctx context.Context, sign GetDailyHoroscopeParamsSign, params *GetDailyHoroscopeParams, reqEditors ...RequestEditorFn) (*GetDailyHoroscopeResponse, error)
 
-	// GetMonthlyHoroscopeWithResponse Monthly horoscope by zodiac sign - 30-day transit forecast with key dates
+	// GetMonthlyHoroscopeWithResponse Monthly horoscope by zodiac sign - Editorial column with key dates
 	//
-	// Get monthly horoscope for any zodiac sign with sign-specific week-by-week breakdown and real lunar phase key dates. Based on planetary transits with house activations unique to each sign, covering love, career, health, and finance for the entire month. Key dates include actual New Moon, Full Moon, and retrograde dates from ephemeris calculations. Pass any date inside a month to retrieve that month, or timezone to roll over on a local clock. Monthly horoscope API, zodiac monthly forecast, astrology monthly prediction.
+	// A month-long column for any zodiac sign, plus a week-by-week breakdown and dated key dates a calendar page renders directly. The column names every aspect, ingress, lunation and station of the month and reads each into the whole-sign houses of that sign, and those events come back beside the prose with their exact instants, so a piece can be checked against NASA JPL Horizons or the US Naval Observatory before it runs. Key dates are the real New Moon, Full Moon and retrograde instants, never approximations. Alongside the column come overview, love, career, health, finance and advice. Pass any date inside a month to retrieve that month, or timezone to roll over on a local clock. Available in eight languages. Monthly horoscope API, zodiac monthly forecast, astrology monthly prediction.
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with GET /astrology/horoscope/{sign}/monthly (the `GetMonthlyHoroscope` operationId).
 	GetMonthlyHoroscopeWithResponse(ctx context.Context, sign GetMonthlyHoroscopeParamsSign, params *GetMonthlyHoroscopeParams, reqEditors ...RequestEditorFn) (*GetMonthlyHoroscopeResponse, error)
 
-	// GetWeeklyHoroscopeWithResponse Weekly horoscope by zodiac sign - 7-day transit forecast
+	// GetWeeklyHoroscopeWithResponse Weekly horoscope by zodiac sign - Seven-day editorial column
 	//
-	// Get weekly horoscope for any zodiac sign. Forecast covers a full Monday to Sunday period based on planetary transits with house-based content unique to each sign, with love, career, health, finance guidance plus lucky days, lucky numbers, and compatible signs. Pass any date inside a week to retrieve that week, or timezone to roll over on a local clock. Weekly horoscope API, zodiac weekly forecast, astrology weekly prediction.
+	// A Monday to Sunday column for any zodiac sign, naming the transits that perfect during the week and the days they fall on. Each event is read into the whole-sign houses of that sign, so content is unique per sign, and the dated events come back beside the prose so an editor can check a piece before it runs. Alongside the column come overview, love, career, health, finance and advice, plus lucky days, lucky numbers and compatible signs. No language model is involved, so the same sign and week always returns the same text. Pass any date inside a week to retrieve that week, or timezone to roll over on a local clock. Available in eight languages. Weekly horoscope API, zodiac weekly forecast, astrology weekly prediction.
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with GET /astrology/horoscope/{sign}/weekly (the `GetWeeklyHoroscope` operationId).
 	GetWeeklyHoroscopeWithResponse(ctx context.Context, sign GetWeeklyHoroscopeParamsSign, params *GetWeeklyHoroscopeParams, reqEditors ...RequestEditorFn) (*GetWeeklyHoroscopeResponse, error)
+
+	// GetYearlyHoroscopeWithResponse Yearly horoscope by zodiac sign - Year ahead forecast with themes, key periods, eclipses and retrogrades
+	//
+	// Get the year ahead for any zodiac sign, as a long-form column plus the structured arrays a year-ahead page is built from: the slow-body themes that set the backdrop, a dated key period for each of the twelve houses, the best month for love, career, health and finance, and every eclipse and every retrograde and direct station with the house it falls in for this sign. Love, career, health, finance and advice cover the whole year, and the dated events behind the copy come back beside it so an editor can check the piece before it runs. Omit the year for the one in progress, or pass any year from 1900 to 2100 to build an archive or a forecast ahead of time. Yearly horoscope API, year ahead astrology, annual zodiac forecast, eclipse and retrograde calendar.
+	//
+	// Returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with GET /astrology/horoscope/{sign}/yearly (the `GetYearlyHoroscope` operationId).
+	GetYearlyHoroscopeWithResponse(ctx context.Context, sign GetYearlyHoroscopeParamsSign, params *GetYearlyHoroscopeParams, reqEditors ...RequestEditorFn) (*GetYearlyHoroscopeResponse, error)
 
 	// CalculateHousesWithBodyWithResponse Calculate house cusps - House system calculator with comparison
 	//
@@ -72261,14 +72619,41 @@ type GetDailyHoroscopeResponse struct {
 		// Career Career and professional outlook. Based on Mars house position relative to this sign, with Saturn and Jupiter influences.
 		Career string `json:"career"`
 
+		// Column The full column for this period, ready to run as one piece, with paragraphs separated by a blank line. Names the events driving it and the dates they fall on, read into the whole-sign houses of this sign. Typically 120 to 180 words. The six section fields are the same reading split by topic, so render either shape and never both. Deterministic: the same sign and period always returns the same column.
+		Column string `json:"column"`
+
 		// CompatibleSigns Most compatible zodiac signs for this sign. Trine partners (same element) followed by a sextile partner (complementary element). Use for compatibility widgets, dating app onboarding, and horoscope cards.
 		CompatibleSigns []string `json:"compatibleSigns"`
 
 		// Date Date of this daily horoscope (YYYY-MM-DD).
 		Date string `json:"date"`
 
-		// EnergyRating Overall energy intensity for this sign today (1-10). Higher when more transits activate this sign directly. Useful for content widgets and visual indicators.
+		// EnergyRating Overall energy for this sign today (1-10). Derived from how many aspects are in force between the planets, how tight they are, whether they are harmonious or challenging, and which houses they fall in for this sign, so a busy day rates higher than a quiet one and a harmonious day higher than a hostile one of the same weight. Useful for content widgets and visual indicators.
 		EnergyRating float32 `json:"energyRating"`
+
+		// Events The dated astronomical events this reading is built on, earliest first. Every field in every row can be checked against an independent authority, so a column can be fact-checked before it is published. Empty on a period in which nothing exact happens, where the reading falls back to the standing positions instead.
+		Events []struct {
+			// Aspect Angle formed, on aspect events only: conjunction, sextile, square, trine, opposition, semi-sextile, quincunx, semi-square, or sesquiquadrate.
+			Aspect *string `json:"aspect,omitempty"`
+
+			// At Exact instant the event perfects, UTC, to the second. Verifiable against NASA JPL Horizons for a position event and against the US Naval Observatory for a lunar phase or eclipse.
+			At string `json:"at"`
+
+			// Bodies Bodies involved, canonical English regardless of the requested language so the value stays safe to switch on. Two entries for an aspect, faster body first. One entry for an ingress, a station, a lunar phase, or an eclipse.
+			Bodies []string `json:"bodies"`
+
+			// House Whole-sign house the event falls in, counted from the queried sign, 1 to 12. This is what turns one global sky event into a statement about this reader.
+			House int `json:"house"`
+
+			// Sign Sign the event falls in, lowercase, where it has exactly one. Absent for an aspect whose two bodies stand in different signs.
+			Sign *string `json:"sign,omitempty"`
+
+			// Through End of the window this event holds open, UTC, given only where a bounded window is a real fact about it: the orb span of an aspect, the sign span of an ingress or a season, the retrograde span of a station. Absent for a lunar phase or an eclipse, which are instants and not spans.
+			Through *string `json:"through,omitempty"`
+
+			// Type Kind of event. aspect is an exact angle between two moving bodies, sign-ingress a body entering a new sign, retrograde-station a body turning retrograde or direct, lunar-phase one of the four quarters, eclipse a solar or lunar eclipse, and solar-season the Sun entering a sign.
+			Type GetDailyHoroscope200JSONResponseBodyEventsType `json:"type"`
+		} `json:"events"`
 
 		// Finance Financial outlook and money-related guidance.
 		Finance string `json:"finance"`
@@ -72279,10 +72664,10 @@ type GetDailyHoroscopeResponse struct {
 		// Love Love and relationship forecast. Based on Venus house position relative to this sign, providing unique guidance per sign.
 		Love string `json:"love"`
 
-		// LuckyColor Lucky color for the day, derived from the sign element.
+		// LuckyColor Lucky color for the day, drawn from the three colors of the sign element and selected by the planet governing the reading.
 		LuckyColor string `json:"luckyColor"`
 
-		// LuckyNumber Lucky number for the day.
+		// LuckyNumber Lucky number for the day, 1 to 9, from the traditional planetary number correspondence applied to the planet that governs this sign today. Not a random draw and not a function of the date.
 		LuckyNumber float32 `json:"luckyNumber"`
 
 		// MoonPhase Current lunar phase (New Moon, Waxing Crescent, First Quarter, Waxing Gibbous, Full Moon, Waning Gibbous, Last Quarter, Waning Crescent).
@@ -72322,14 +72707,41 @@ func (r GetDailyHoroscopeResponse) GetJSON200() *struct {
 	// Career Career and professional outlook. Based on Mars house position relative to this sign, with Saturn and Jupiter influences.
 	Career string `json:"career"`
 
+	// Column The full column for this period, ready to run as one piece, with paragraphs separated by a blank line. Names the events driving it and the dates they fall on, read into the whole-sign houses of this sign. Typically 120 to 180 words. The six section fields are the same reading split by topic, so render either shape and never both. Deterministic: the same sign and period always returns the same column.
+	Column string `json:"column"`
+
 	// CompatibleSigns Most compatible zodiac signs for this sign. Trine partners (same element) followed by a sextile partner (complementary element). Use for compatibility widgets, dating app onboarding, and horoscope cards.
 	CompatibleSigns []string `json:"compatibleSigns"`
 
 	// Date Date of this daily horoscope (YYYY-MM-DD).
 	Date string `json:"date"`
 
-	// EnergyRating Overall energy intensity for this sign today (1-10). Higher when more transits activate this sign directly. Useful for content widgets and visual indicators.
+	// EnergyRating Overall energy for this sign today (1-10). Derived from how many aspects are in force between the planets, how tight they are, whether they are harmonious or challenging, and which houses they fall in for this sign, so a busy day rates higher than a quiet one and a harmonious day higher than a hostile one of the same weight. Useful for content widgets and visual indicators.
 	EnergyRating float32 `json:"energyRating"`
+
+	// Events The dated astronomical events this reading is built on, earliest first. Every field in every row can be checked against an independent authority, so a column can be fact-checked before it is published. Empty on a period in which nothing exact happens, where the reading falls back to the standing positions instead.
+	Events []struct {
+		// Aspect Angle formed, on aspect events only: conjunction, sextile, square, trine, opposition, semi-sextile, quincunx, semi-square, or sesquiquadrate.
+		Aspect *string `json:"aspect,omitempty"`
+
+		// At Exact instant the event perfects, UTC, to the second. Verifiable against NASA JPL Horizons for a position event and against the US Naval Observatory for a lunar phase or eclipse.
+		At string `json:"at"`
+
+		// Bodies Bodies involved, canonical English regardless of the requested language so the value stays safe to switch on. Two entries for an aspect, faster body first. One entry for an ingress, a station, a lunar phase, or an eclipse.
+		Bodies []string `json:"bodies"`
+
+		// House Whole-sign house the event falls in, counted from the queried sign, 1 to 12. This is what turns one global sky event into a statement about this reader.
+		House int `json:"house"`
+
+		// Sign Sign the event falls in, lowercase, where it has exactly one. Absent for an aspect whose two bodies stand in different signs.
+		Sign *string `json:"sign,omitempty"`
+
+		// Through End of the window this event holds open, UTC, given only where a bounded window is a real fact about it: the orb span of an aspect, the sign span of an ingress or a season, the retrograde span of a station. Absent for a lunar phase or an eclipse, which are instants and not spans.
+		Through *string `json:"through,omitempty"`
+
+		// Type Kind of event. aspect is an exact angle between two moving bodies, sign-ingress a body entering a new sign, retrograde-station a body turning retrograde or direct, lunar-phase one of the four quarters, eclipse a solar or lunar eclipse, and solar-season the Sun entering a sign.
+		Type GetDailyHoroscope200JSONResponseBodyEventsType `json:"type"`
+	} `json:"events"`
 
 	// Finance Financial outlook and money-related guidance.
 	Finance string `json:"finance"`
@@ -72340,10 +72752,10 @@ func (r GetDailyHoroscopeResponse) GetJSON200() *struct {
 	// Love Love and relationship forecast. Based on Venus house position relative to this sign, providing unique guidance per sign.
 	Love string `json:"love"`
 
-	// LuckyColor Lucky color for the day, derived from the sign element.
+	// LuckyColor Lucky color for the day, drawn from the three colors of the sign element and selected by the planet governing the reading.
 	LuckyColor string `json:"luckyColor"`
 
-	// LuckyNumber Lucky number for the day.
+	// LuckyNumber Lucky number for the day, 1 to 9, from the traditional planetary number correspondence applied to the planet that governs this sign today. Not a random draw and not a function of the date.
 	LuckyNumber float32 `json:"luckyNumber"`
 
 	// MoonPhase Current lunar phase (New Moon, Waxing Crescent, First Quarter, Waxing Gibbous, Full Moon, Waning Gibbous, Last Quarter, Waning Crescent).
@@ -72436,8 +72848,35 @@ type GetMonthlyHoroscopeResponse struct {
 		// Career Monthly career and professional outlook.
 		Career string `json:"career"`
 
+		// Column The full column for this period, ready to run as one piece, with paragraphs separated by a blank line. Names the events driving it and the dates they fall on, read into the whole-sign houses of this sign. Typically 400 to 700 words. The six section fields are the same reading split by topic, so render either shape and never both. Deterministic: the same sign and period always returns the same column.
+		Column string `json:"column"`
+
 		// CompatibleSigns Most compatible zodiac signs for this sign. Trine partners (same element) followed by a sextile partner (complementary element).
 		CompatibleSigns []string `json:"compatibleSigns"`
+
+		// Events The dated astronomical events this reading is built on, earliest first. Every field in every row can be checked against an independent authority, so a column can be fact-checked before it is published. Empty on a period in which nothing exact happens, where the reading falls back to the standing positions instead.
+		Events []struct {
+			// Aspect Angle formed, on aspect events only: conjunction, sextile, square, trine, opposition, semi-sextile, quincunx, semi-square, or sesquiquadrate.
+			Aspect *string `json:"aspect,omitempty"`
+
+			// At Exact instant the event perfects, UTC, to the second. Verifiable against NASA JPL Horizons for a position event and against the US Naval Observatory for a lunar phase or eclipse.
+			At string `json:"at"`
+
+			// Bodies Bodies involved, canonical English regardless of the requested language so the value stays safe to switch on. Two entries for an aspect, faster body first. One entry for an ingress, a station, a lunar phase, or an eclipse.
+			Bodies []string `json:"bodies"`
+
+			// House Whole-sign house the event falls in, counted from the queried sign, 1 to 12. This is what turns one global sky event into a statement about this reader.
+			House int `json:"house"`
+
+			// Sign Sign the event falls in, lowercase, where it has exactly one. Absent for an aspect whose two bodies stand in different signs.
+			Sign *string `json:"sign,omitempty"`
+
+			// Through End of the window this event holds open, UTC, given only where a bounded window is a real fact about it: the orb span of an aspect, the sign span of an ingress or a season, the retrograde span of a station. Absent for a lunar phase or an eclipse, which are instants and not spans.
+			Through *string `json:"through,omitempty"`
+
+			// Type Kind of event. aspect is an exact angle between two moving bodies, sign-ingress a body entering a new sign, retrograde-station a body turning retrograde or direct, lunar-phase one of the four quarters, eclipse a solar or lunar eclipse, and solar-season the Sun entering a sign.
+			Type GetMonthlyHoroscope200JSONResponseBodyEventsType `json:"type"`
+		} `json:"events"`
 
 		// Finance Monthly financial outlook and guidance.
 		Finance string `json:"finance"`
@@ -72457,10 +72896,10 @@ type GetMonthlyHoroscopeResponse struct {
 		// Love Monthly love and relationship forecast.
 		Love string `json:"love"`
 
-		// LuckyColor Lucky color for the month.
+		// LuckyColor Lucky color for the month, drawn from the three colors of the sign element and selected by the planet governing the reading.
 		LuckyColor string `json:"luckyColor"`
 
-		// LuckyNumbers Lucky numbers for the month.
+		// LuckyNumbers Four lucky numbers for the month, each 1 to 9 and all distinct, from the traditional planetary number correspondence applied to the four planets that govern this sign this month.
 		LuckyNumbers []float32 `json:"luckyNumbers"`
 
 		// Month Month of this forecast (YYYY-MM).
@@ -72506,8 +72945,35 @@ func (r GetMonthlyHoroscopeResponse) GetJSON200() *struct {
 	// Career Monthly career and professional outlook.
 	Career string `json:"career"`
 
+	// Column The full column for this period, ready to run as one piece, with paragraphs separated by a blank line. Names the events driving it and the dates they fall on, read into the whole-sign houses of this sign. Typically 400 to 700 words. The six section fields are the same reading split by topic, so render either shape and never both. Deterministic: the same sign and period always returns the same column.
+	Column string `json:"column"`
+
 	// CompatibleSigns Most compatible zodiac signs for this sign. Trine partners (same element) followed by a sextile partner (complementary element).
 	CompatibleSigns []string `json:"compatibleSigns"`
+
+	// Events The dated astronomical events this reading is built on, earliest first. Every field in every row can be checked against an independent authority, so a column can be fact-checked before it is published. Empty on a period in which nothing exact happens, where the reading falls back to the standing positions instead.
+	Events []struct {
+		// Aspect Angle formed, on aspect events only: conjunction, sextile, square, trine, opposition, semi-sextile, quincunx, semi-square, or sesquiquadrate.
+		Aspect *string `json:"aspect,omitempty"`
+
+		// At Exact instant the event perfects, UTC, to the second. Verifiable against NASA JPL Horizons for a position event and against the US Naval Observatory for a lunar phase or eclipse.
+		At string `json:"at"`
+
+		// Bodies Bodies involved, canonical English regardless of the requested language so the value stays safe to switch on. Two entries for an aspect, faster body first. One entry for an ingress, a station, a lunar phase, or an eclipse.
+		Bodies []string `json:"bodies"`
+
+		// House Whole-sign house the event falls in, counted from the queried sign, 1 to 12. This is what turns one global sky event into a statement about this reader.
+		House int `json:"house"`
+
+		// Sign Sign the event falls in, lowercase, where it has exactly one. Absent for an aspect whose two bodies stand in different signs.
+		Sign *string `json:"sign,omitempty"`
+
+		// Through End of the window this event holds open, UTC, given only where a bounded window is a real fact about it: the orb span of an aspect, the sign span of an ingress or a season, the retrograde span of a station. Absent for a lunar phase or an eclipse, which are instants and not spans.
+		Through *string `json:"through,omitempty"`
+
+		// Type Kind of event. aspect is an exact angle between two moving bodies, sign-ingress a body entering a new sign, retrograde-station a body turning retrograde or direct, lunar-phase one of the four quarters, eclipse a solar or lunar eclipse, and solar-season the Sun entering a sign.
+		Type GetMonthlyHoroscope200JSONResponseBodyEventsType `json:"type"`
+	} `json:"events"`
 
 	// Finance Monthly financial outlook and guidance.
 	Finance string `json:"finance"`
@@ -72527,10 +72993,10 @@ func (r GetMonthlyHoroscopeResponse) GetJSON200() *struct {
 	// Love Monthly love and relationship forecast.
 	Love string `json:"love"`
 
-	// LuckyColor Lucky color for the month.
+	// LuckyColor Lucky color for the month, drawn from the three colors of the sign element and selected by the planet governing the reading.
 	LuckyColor string `json:"luckyColor"`
 
-	// LuckyNumbers Lucky numbers for the month.
+	// LuckyNumbers Four lucky numbers for the month, each 1 to 9 and all distinct, from the traditional planetary number correspondence applied to the four planets that govern this sign this month.
 	LuckyNumbers []float32 `json:"luckyNumbers"`
 
 	// Month Month of this forecast (YYYY-MM).
@@ -72632,8 +73098,35 @@ type GetWeeklyHoroscopeResponse struct {
 		// Career Weekly career and professional outlook.
 		Career string `json:"career"`
 
+		// Column The full column for this period, ready to run as one piece, with paragraphs separated by a blank line. Names the events driving it and the dates they fall on, read into the whole-sign houses of this sign. Typically 250 to 450 words. The six section fields are the same reading split by topic, so render either shape and never both. Deterministic: the same sign and period always returns the same column.
+		Column string `json:"column"`
+
 		// CompatibleSigns Most compatible zodiac signs for this sign. Trine partners (same element) followed by a sextile partner (complementary element).
 		CompatibleSigns []string `json:"compatibleSigns"`
+
+		// Events The dated astronomical events this reading is built on, earliest first. Every field in every row can be checked against an independent authority, so a column can be fact-checked before it is published. Empty on a period in which nothing exact happens, where the reading falls back to the standing positions instead.
+		Events []struct {
+			// Aspect Angle formed, on aspect events only: conjunction, sextile, square, trine, opposition, semi-sextile, quincunx, semi-square, or sesquiquadrate.
+			Aspect *string `json:"aspect,omitempty"`
+
+			// At Exact instant the event perfects, UTC, to the second. Verifiable against NASA JPL Horizons for a position event and against the US Naval Observatory for a lunar phase or eclipse.
+			At string `json:"at"`
+
+			// Bodies Bodies involved, canonical English regardless of the requested language so the value stays safe to switch on. Two entries for an aspect, faster body first. One entry for an ingress, a station, a lunar phase, or an eclipse.
+			Bodies []string `json:"bodies"`
+
+			// House Whole-sign house the event falls in, counted from the queried sign, 1 to 12. This is what turns one global sky event into a statement about this reader.
+			House int `json:"house"`
+
+			// Sign Sign the event falls in, lowercase, where it has exactly one. Absent for an aspect whose two bodies stand in different signs.
+			Sign *string `json:"sign,omitempty"`
+
+			// Through End of the window this event holds open, UTC, given only where a bounded window is a real fact about it: the orb span of an aspect, the sign span of an ingress or a season, the retrograde span of a station. Absent for a lunar phase or an eclipse, which are instants and not spans.
+			Through *string `json:"through,omitempty"`
+
+			// Type Kind of event. aspect is an exact angle between two moving bodies, sign-ingress a body entering a new sign, retrograde-station a body turning retrograde or direct, lunar-phase one of the four quarters, eclipse a solar or lunar eclipse, and solar-season the Sun entering a sign.
+			Type GetWeeklyHoroscope200JSONResponseBodyEventsType `json:"type"`
+		} `json:"events"`
 
 		// Finance Weekly financial outlook.
 		Finance string `json:"finance"`
@@ -72644,10 +73137,10 @@ type GetWeeklyHoroscopeResponse struct {
 		// Love Weekly love and relationship forecast.
 		Love string `json:"love"`
 
-		// LuckyDays Favorable days this week, based on planetary rulership.
+		// LuckyDays The three most favorable days this week, from the planetary rulers of the seven weekdays, ranked by how strongly each of those planets stands for this sign.
 		LuckyDays []string `json:"luckyDays"`
 
-		// LuckyNumbers Lucky numbers for the week.
+		// LuckyNumbers Three lucky numbers for the week, each 1 to 9 and all distinct, from the traditional planetary number correspondence applied to the three planets that govern this sign this week.
 		LuckyNumbers []float32 `json:"luckyNumbers"`
 
 		// Overview Weekly overview highlighting the dominant planetary transits through the sign.
@@ -72681,8 +73174,35 @@ func (r GetWeeklyHoroscopeResponse) GetJSON200() *struct {
 	// Career Weekly career and professional outlook.
 	Career string `json:"career"`
 
+	// Column The full column for this period, ready to run as one piece, with paragraphs separated by a blank line. Names the events driving it and the dates they fall on, read into the whole-sign houses of this sign. Typically 250 to 450 words. The six section fields are the same reading split by topic, so render either shape and never both. Deterministic: the same sign and period always returns the same column.
+	Column string `json:"column"`
+
 	// CompatibleSigns Most compatible zodiac signs for this sign. Trine partners (same element) followed by a sextile partner (complementary element).
 	CompatibleSigns []string `json:"compatibleSigns"`
+
+	// Events The dated astronomical events this reading is built on, earliest first. Every field in every row can be checked against an independent authority, so a column can be fact-checked before it is published. Empty on a period in which nothing exact happens, where the reading falls back to the standing positions instead.
+	Events []struct {
+		// Aspect Angle formed, on aspect events only: conjunction, sextile, square, trine, opposition, semi-sextile, quincunx, semi-square, or sesquiquadrate.
+		Aspect *string `json:"aspect,omitempty"`
+
+		// At Exact instant the event perfects, UTC, to the second. Verifiable against NASA JPL Horizons for a position event and against the US Naval Observatory for a lunar phase or eclipse.
+		At string `json:"at"`
+
+		// Bodies Bodies involved, canonical English regardless of the requested language so the value stays safe to switch on. Two entries for an aspect, faster body first. One entry for an ingress, a station, a lunar phase, or an eclipse.
+		Bodies []string `json:"bodies"`
+
+		// House Whole-sign house the event falls in, counted from the queried sign, 1 to 12. This is what turns one global sky event into a statement about this reader.
+		House int `json:"house"`
+
+		// Sign Sign the event falls in, lowercase, where it has exactly one. Absent for an aspect whose two bodies stand in different signs.
+		Sign *string `json:"sign,omitempty"`
+
+		// Through End of the window this event holds open, UTC, given only where a bounded window is a real fact about it: the orb span of an aspect, the sign span of an ingress or a season, the retrograde span of a station. Absent for a lunar phase or an eclipse, which are instants and not spans.
+		Through *string `json:"through,omitempty"`
+
+		// Type Kind of event. aspect is an exact angle between two moving bodies, sign-ingress a body entering a new sign, retrograde-station a body turning retrograde or direct, lunar-phase one of the four quarters, eclipse a solar or lunar eclipse, and solar-season the Sun entering a sign.
+		Type GetWeeklyHoroscope200JSONResponseBodyEventsType `json:"type"`
+	} `json:"events"`
 
 	// Finance Weekly financial outlook.
 	Finance string `json:"finance"`
@@ -72693,10 +73213,10 @@ func (r GetWeeklyHoroscopeResponse) GetJSON200() *struct {
 	// Love Weekly love and relationship forecast.
 	Love string `json:"love"`
 
-	// LuckyDays Favorable days this week, based on planetary rulership.
+	// LuckyDays The three most favorable days this week, from the planetary rulers of the seven weekdays, ranked by how strongly each of those planets stands for this sign.
 	LuckyDays []string `json:"luckyDays"`
 
-	// LuckyNumbers Lucky numbers for the week.
+	// LuckyNumbers Three lucky numbers for the week, each 1 to 9 and all distinct, from the traditional planetary number correspondence applied to the three planets that govern this sign this week.
 	LuckyNumbers []float32 `json:"luckyNumbers"`
 
 	// Overview Weekly overview highlighting the dominant planetary transits through the sign.
@@ -72764,6 +73284,460 @@ func (r GetWeeklyHoroscopeResponse) Bytes() []byte {
 
 // ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
 func (r GetWeeklyHoroscopeResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+// GetYearlyHoroscopeResponse405Headers the declared response headers of an HTTP 405 response for GetYearlyHoroscope
+type GetYearlyHoroscopeResponse405Headers struct {
+	Allow *string
+}
+
+type GetYearlyHoroscopeResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// Advice The single takeaway for the year, drawn from the event that leads it rather than stated in general terms.
+		Advice string `json:"advice"`
+
+		// BestPeriods The easiest month of the year for each of the four topic sections, by how many exact harmonious aspects (sextiles and trines) fall in that month and land in the houses that govern the area for this sign. An area is omitted only in the rare year that carries no harmonious aspect for it at all, so treat each key as optional. Use it for the best-months-for panel, and read the count as the evidence behind the word best.
+		BestPeriods struct {
+			// Career Best month for career, work and reputation. Absent only if the whole year carries no harmonious aspect reaching this area.
+			Career *struct {
+				// Count How many exact harmonious aspects fell in that month and reached this area. This is the measurement the month was chosen on, and every aspect behind it can be checked against NASA JPL Horizons.
+				Count int `json:"count"`
+
+				// From First day of the month, in UTC (YYYY-MM-DD).
+				From string `json:"from"`
+
+				// To Last day of the month, in UTC (YYYY-MM-DD).
+				To string `json:"to"`
+			} `json:"career,omitempty"`
+
+			// Finance Best month for finance. Absent only if the whole year carries no harmonious aspect reaching this area.
+			Finance *struct {
+				// Count How many exact harmonious aspects fell in that month and reached this area. This is the measurement the month was chosen on, and every aspect behind it can be checked against NASA JPL Horizons.
+				Count int `json:"count"`
+
+				// From First day of the month, in UTC (YYYY-MM-DD).
+				From string `json:"from"`
+
+				// To Last day of the month, in UTC (YYYY-MM-DD).
+				To string `json:"to"`
+			} `json:"finance,omitempty"`
+
+			// Health Best month for health. Absent only if the whole year carries no harmonious aspect reaching this area.
+			Health *struct {
+				// Count How many exact harmonious aspects fell in that month and reached this area. This is the measurement the month was chosen on, and every aspect behind it can be checked against NASA JPL Horizons.
+				Count int `json:"count"`
+
+				// From First day of the month, in UTC (YYYY-MM-DD).
+				From string `json:"from"`
+
+				// To Last day of the month, in UTC (YYYY-MM-DD).
+				To string `json:"to"`
+			} `json:"health,omitempty"`
+
+			// Love Best month for romance and partnership. Absent only if the whole year carries no harmonious aspect reaching this area.
+			Love *struct {
+				// Count How many exact harmonious aspects fell in that month and reached this area. This is the measurement the month was chosen on, and every aspect behind it can be checked against NASA JPL Horizons.
+				Count int `json:"count"`
+
+				// From First day of the month, in UTC (YYYY-MM-DD).
+				From string `json:"from"`
+
+				// To Last day of the month, in UTC (YYYY-MM-DD).
+				To string `json:"to"`
+			} `json:"love,omitempty"`
+		} `json:"bestPeriods"`
+
+		// Career Yearly career and professional outlook.
+		Career string `json:"career"`
+
+		// Column The full column for this period, ready to run as one piece, with paragraphs separated by a blank line. Names the events driving it and the dates they fall on, read into the whole-sign houses of this sign. Typically 600 to 900 words. The six section fields are the same reading split by topic, so render either shape and never both. Deterministic: the same sign and period always returns the same column.
+		Column string `json:"column"`
+
+		// CompatibleSigns Most compatible zodiac signs for this sign. Trine partners (same element) followed by a sextile partner (complementary element).
+		CompatibleSigns []string `json:"compatibleSigns"`
+
+		// Eclipses Every solar and lunar eclipse of the year, with the house each one falls in for this sign. Usually four to six, and the dates match the published eclipse canon.
+		Eclipses []struct {
+			// Date Date of the eclipse peak in UTC (YYYY-MM-DD). The exact instant is in the events array.
+			Date string `json:"date"`
+
+			// House Whole-sign house the eclipse falls in for this sign, 1 to 12.
+			House int `json:"house"`
+
+			// Kind Eclipse kind: total, annular, partial, or penumbral.
+			Kind string `json:"kind"`
+
+			// Theme What that house governs, so the eclipse reads as a life area rather than a coordinate.
+			Theme string `json:"theme"`
+		} `json:"eclipses"`
+
+		// Events The dated astronomical events this reading is built on, earliest first. Every field in every row can be checked against an independent authority, so a column can be fact-checked before it is published. Empty on a period in which nothing exact happens, where the reading falls back to the standing positions instead.
+		Events []struct {
+			// Aspect Angle formed, on aspect events only: conjunction, sextile, square, trine, opposition, semi-sextile, quincunx, semi-square, or sesquiquadrate.
+			Aspect *string `json:"aspect,omitempty"`
+
+			// At Exact instant the event perfects, UTC, to the second. Verifiable against NASA JPL Horizons for a position event and against the US Naval Observatory for a lunar phase or eclipse.
+			At string `json:"at"`
+
+			// Bodies Bodies involved, canonical English regardless of the requested language so the value stays safe to switch on. Two entries for an aspect, faster body first. One entry for an ingress, a station, a lunar phase, or an eclipse.
+			Bodies []string `json:"bodies"`
+
+			// House Whole-sign house the event falls in, counted from the queried sign, 1 to 12. This is what turns one global sky event into a statement about this reader.
+			House int `json:"house"`
+
+			// Sign Sign the event falls in, lowercase, where it has exactly one. Absent for an aspect whose two bodies stand in different signs.
+			Sign *string `json:"sign,omitempty"`
+
+			// Through End of the window this event holds open, UTC, given only where a bounded window is a real fact about it: the orb span of an aspect, the sign span of an ingress or a season, the retrograde span of a station. Absent for a lunar phase or an eclipse, which are instants and not spans.
+			Through *string `json:"through,omitempty"`
+
+			// Type Kind of event. aspect is an exact angle between two moving bodies, sign-ingress a body entering a new sign, retrograde-station a body turning retrograde or direct, lunar-phase one of the four quarters, eclipse a solar or lunar eclipse, and solar-season the Sun entering a sign.
+			Type GetYearlyHoroscope200JSONResponseBodyEventsType `json:"type"`
+		} `json:"events"`
+
+		// Finance Yearly financial outlook.
+		Finance string `json:"finance"`
+
+		// Health Yearly health, energy, and wellness outlook.
+		Health string `json:"health"`
+
+		// KeyPeriods The year as a calendar of life areas: for each whole-sign house, the single dated stretch that most strongly activates it, ordered by start date. Twelve rows in a full year, one per house, so every life area gets a date range and none is named twice. Periods overlap freely, because more than one body is always moving. Use it for the dates-to-circle panel of a year-ahead page.
+		KeyPeriods []struct {
+			// Body Body driving the period, canonical English regardless of the requested language: Mercury, Venus, or Mars. The slower bodies are in the themes array instead, because a stretch measured in years is a backdrop rather than a date to circle.
+			Body string `json:"body"`
+
+			// Focus The life area that period is about, from the house it activates.
+			Focus string `json:"focus"`
+
+			// From Date the period opens, in UTC (YYYY-MM-DD). Always inside the year requested: this is the day the body enters the sign.
+			From string `json:"from"`
+
+			// House Whole-sign house the period activates for this sign, 1 to 12. Unique within the array: each house appears at most once.
+			House int `json:"house"`
+
+			// To Date the period closes, in UTC (YYYY-MM-DD), which is the day the body leaves that sign. A period that opens late in the year closes in the next one, by at most about three months, so a reader knows what they are still in on January 1.
+			To string `json:"to"`
+		} `json:"keyPeriods"`
+
+		// Love Yearly love and relationship outlook.
+		Love string `json:"love"`
+
+		// LuckyColor Lucky color for the year, drawn from the three colors of the sign element and selected by the planet governing the reading.
+		LuckyColor string `json:"luckyColor"`
+
+		// LuckyNumbers Four lucky numbers for the year, each 1 to 9 and all distinct, from the traditional planetary number correspondence applied to the four planets that govern this sign this year.
+		LuckyNumbers []float32 `json:"luckyNumbers"`
+
+		// Overview Yearly overview, led by the single event with the most weight for this sign across the whole year.
+		Overview string `json:"overview"`
+
+		// Retrogrades Every retrograde and direct station of the year, in order, with the house each falls in for this sign. Drives review windows and the not-yet warnings a yearly column is bought for.
+		Retrogrades []struct {
+			// Body Body making the station, canonical English.
+			Body string `json:"body"`
+
+			// Date Date the body turns, in UTC (YYYY-MM-DD). The exact instant is in the events array.
+			Date string `json:"date"`
+
+			// Direction Which way it turns: retrograde when apparent motion reverses, direct when it resumes.
+			Direction string `json:"direction"`
+
+			// House Whole-sign house the station falls in for this sign, 1 to 12.
+			House int `json:"house"`
+
+			// Theme What that house governs, so the station reads as a life area rather than a coordinate.
+			Theme string `json:"theme"`
+		} `json:"retrogrades"`
+
+		// Sign Zodiac sign for this horoscope.
+		Sign string `json:"sign"`
+
+		// Themes The backdrop of the year: which whole-sign house each slow-moving body occupies for this sign, Jupiter first and Pluto last. One row per unbroken stretch, so a body that stays put is a single row spanning the year and a body that changes sign is two rows with the exact date between them. Dates are the part of the stretch that falls inside this year; the full span of a change that happens inside the year is in the events array. Use it for the year-at-a-glance panel a year-ahead page opens with.
+		Themes []struct {
+			// Body The slow-moving body holding this theme, canonical English regardless of the requested language: Jupiter, Saturn, Uranus, Neptune, or Pluto.
+			Body string `json:"body"`
+
+			// From First date of the stretch inside this year, in UTC (YYYY-MM-DD). January 1 when the body was already there when the year opened, otherwise the date it arrived.
+			From string `json:"from"`
+
+			// House Whole-sign house that sign is for this sign, 1 to 12.
+			House int `json:"house"`
+
+			// Sign Sign the body occupies through this stretch, lowercase. Checkable against NASA JPL Horizons for any date inside from and to.
+			Sign string `json:"sign"`
+
+			// Theme What that house governs, so the placement reads as a life area rather than a coordinate.
+			Theme string `json:"theme"`
+
+			// To Last date of the stretch inside this year, in UTC (YYYY-MM-DD). December 31 when the body is still there when the year closes, otherwise the date it leaves.
+			To string `json:"to"`
+		} `json:"themes"`
+
+		// Year Calendar year this forecast covers. Echoes the year requested, or the current year when it was omitted.
+		Year int `json:"year"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON405 the response for an HTTP 405 `application/json` response
+	JSON405 *ErrorResponse
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+	// Headers405 the parsed response headers for an HTTP 405 response
+	Headers405 *GetYearlyHoroscopeResponse405Headers
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetYearlyHoroscopeResponse) GetJSON200() *struct {
+	// Advice The single takeaway for the year, drawn from the event that leads it rather than stated in general terms.
+	Advice string `json:"advice"`
+
+	// BestPeriods The easiest month of the year for each of the four topic sections, by how many exact harmonious aspects (sextiles and trines) fall in that month and land in the houses that govern the area for this sign. An area is omitted only in the rare year that carries no harmonious aspect for it at all, so treat each key as optional. Use it for the best-months-for panel, and read the count as the evidence behind the word best.
+	BestPeriods struct {
+		// Career Best month for career, work and reputation. Absent only if the whole year carries no harmonious aspect reaching this area.
+		Career *struct {
+			// Count How many exact harmonious aspects fell in that month and reached this area. This is the measurement the month was chosen on, and every aspect behind it can be checked against NASA JPL Horizons.
+			Count int `json:"count"`
+
+			// From First day of the month, in UTC (YYYY-MM-DD).
+			From string `json:"from"`
+
+			// To Last day of the month, in UTC (YYYY-MM-DD).
+			To string `json:"to"`
+		} `json:"career,omitempty"`
+
+		// Finance Best month for finance. Absent only if the whole year carries no harmonious aspect reaching this area.
+		Finance *struct {
+			// Count How many exact harmonious aspects fell in that month and reached this area. This is the measurement the month was chosen on, and every aspect behind it can be checked against NASA JPL Horizons.
+			Count int `json:"count"`
+
+			// From First day of the month, in UTC (YYYY-MM-DD).
+			From string `json:"from"`
+
+			// To Last day of the month, in UTC (YYYY-MM-DD).
+			To string `json:"to"`
+		} `json:"finance,omitempty"`
+
+		// Health Best month for health. Absent only if the whole year carries no harmonious aspect reaching this area.
+		Health *struct {
+			// Count How many exact harmonious aspects fell in that month and reached this area. This is the measurement the month was chosen on, and every aspect behind it can be checked against NASA JPL Horizons.
+			Count int `json:"count"`
+
+			// From First day of the month, in UTC (YYYY-MM-DD).
+			From string `json:"from"`
+
+			// To Last day of the month, in UTC (YYYY-MM-DD).
+			To string `json:"to"`
+		} `json:"health,omitempty"`
+
+		// Love Best month for romance and partnership. Absent only if the whole year carries no harmonious aspect reaching this area.
+		Love *struct {
+			// Count How many exact harmonious aspects fell in that month and reached this area. This is the measurement the month was chosen on, and every aspect behind it can be checked against NASA JPL Horizons.
+			Count int `json:"count"`
+
+			// From First day of the month, in UTC (YYYY-MM-DD).
+			From string `json:"from"`
+
+			// To Last day of the month, in UTC (YYYY-MM-DD).
+			To string `json:"to"`
+		} `json:"love,omitempty"`
+	} `json:"bestPeriods"`
+
+	// Career Yearly career and professional outlook.
+	Career string `json:"career"`
+
+	// Column The full column for this period, ready to run as one piece, with paragraphs separated by a blank line. Names the events driving it and the dates they fall on, read into the whole-sign houses of this sign. Typically 600 to 900 words. The six section fields are the same reading split by topic, so render either shape and never both. Deterministic: the same sign and period always returns the same column.
+	Column string `json:"column"`
+
+	// CompatibleSigns Most compatible zodiac signs for this sign. Trine partners (same element) followed by a sextile partner (complementary element).
+	CompatibleSigns []string `json:"compatibleSigns"`
+
+	// Eclipses Every solar and lunar eclipse of the year, with the house each one falls in for this sign. Usually four to six, and the dates match the published eclipse canon.
+	Eclipses []struct {
+		// Date Date of the eclipse peak in UTC (YYYY-MM-DD). The exact instant is in the events array.
+		Date string `json:"date"`
+
+		// House Whole-sign house the eclipse falls in for this sign, 1 to 12.
+		House int `json:"house"`
+
+		// Kind Eclipse kind: total, annular, partial, or penumbral.
+		Kind string `json:"kind"`
+
+		// Theme What that house governs, so the eclipse reads as a life area rather than a coordinate.
+		Theme string `json:"theme"`
+	} `json:"eclipses"`
+
+	// Events The dated astronomical events this reading is built on, earliest first. Every field in every row can be checked against an independent authority, so a column can be fact-checked before it is published. Empty on a period in which nothing exact happens, where the reading falls back to the standing positions instead.
+	Events []struct {
+		// Aspect Angle formed, on aspect events only: conjunction, sextile, square, trine, opposition, semi-sextile, quincunx, semi-square, or sesquiquadrate.
+		Aspect *string `json:"aspect,omitempty"`
+
+		// At Exact instant the event perfects, UTC, to the second. Verifiable against NASA JPL Horizons for a position event and against the US Naval Observatory for a lunar phase or eclipse.
+		At string `json:"at"`
+
+		// Bodies Bodies involved, canonical English regardless of the requested language so the value stays safe to switch on. Two entries for an aspect, faster body first. One entry for an ingress, a station, a lunar phase, or an eclipse.
+		Bodies []string `json:"bodies"`
+
+		// House Whole-sign house the event falls in, counted from the queried sign, 1 to 12. This is what turns one global sky event into a statement about this reader.
+		House int `json:"house"`
+
+		// Sign Sign the event falls in, lowercase, where it has exactly one. Absent for an aspect whose two bodies stand in different signs.
+		Sign *string `json:"sign,omitempty"`
+
+		// Through End of the window this event holds open, UTC, given only where a bounded window is a real fact about it: the orb span of an aspect, the sign span of an ingress or a season, the retrograde span of a station. Absent for a lunar phase or an eclipse, which are instants and not spans.
+		Through *string `json:"through,omitempty"`
+
+		// Type Kind of event. aspect is an exact angle between two moving bodies, sign-ingress a body entering a new sign, retrograde-station a body turning retrograde or direct, lunar-phase one of the four quarters, eclipse a solar or lunar eclipse, and solar-season the Sun entering a sign.
+		Type GetYearlyHoroscope200JSONResponseBodyEventsType `json:"type"`
+	} `json:"events"`
+
+	// Finance Yearly financial outlook.
+	Finance string `json:"finance"`
+
+	// Health Yearly health, energy, and wellness outlook.
+	Health string `json:"health"`
+
+	// KeyPeriods The year as a calendar of life areas: for each whole-sign house, the single dated stretch that most strongly activates it, ordered by start date. Twelve rows in a full year, one per house, so every life area gets a date range and none is named twice. Periods overlap freely, because more than one body is always moving. Use it for the dates-to-circle panel of a year-ahead page.
+	KeyPeriods []struct {
+		// Body Body driving the period, canonical English regardless of the requested language: Mercury, Venus, or Mars. The slower bodies are in the themes array instead, because a stretch measured in years is a backdrop rather than a date to circle.
+		Body string `json:"body"`
+
+		// Focus The life area that period is about, from the house it activates.
+		Focus string `json:"focus"`
+
+		// From Date the period opens, in UTC (YYYY-MM-DD). Always inside the year requested: this is the day the body enters the sign.
+		From string `json:"from"`
+
+		// House Whole-sign house the period activates for this sign, 1 to 12. Unique within the array: each house appears at most once.
+		House int `json:"house"`
+
+		// To Date the period closes, in UTC (YYYY-MM-DD), which is the day the body leaves that sign. A period that opens late in the year closes in the next one, by at most about three months, so a reader knows what they are still in on January 1.
+		To string `json:"to"`
+	} `json:"keyPeriods"`
+
+	// Love Yearly love and relationship outlook.
+	Love string `json:"love"`
+
+	// LuckyColor Lucky color for the year, drawn from the three colors of the sign element and selected by the planet governing the reading.
+	LuckyColor string `json:"luckyColor"`
+
+	// LuckyNumbers Four lucky numbers for the year, each 1 to 9 and all distinct, from the traditional planetary number correspondence applied to the four planets that govern this sign this year.
+	LuckyNumbers []float32 `json:"luckyNumbers"`
+
+	// Overview Yearly overview, led by the single event with the most weight for this sign across the whole year.
+	Overview string `json:"overview"`
+
+	// Retrogrades Every retrograde and direct station of the year, in order, with the house each falls in for this sign. Drives review windows and the not-yet warnings a yearly column is bought for.
+	Retrogrades []struct {
+		// Body Body making the station, canonical English.
+		Body string `json:"body"`
+
+		// Date Date the body turns, in UTC (YYYY-MM-DD). The exact instant is in the events array.
+		Date string `json:"date"`
+
+		// Direction Which way it turns: retrograde when apparent motion reverses, direct when it resumes.
+		Direction string `json:"direction"`
+
+		// House Whole-sign house the station falls in for this sign, 1 to 12.
+		House int `json:"house"`
+
+		// Theme What that house governs, so the station reads as a life area rather than a coordinate.
+		Theme string `json:"theme"`
+	} `json:"retrogrades"`
+
+	// Sign Zodiac sign for this horoscope.
+	Sign string `json:"sign"`
+
+	// Themes The backdrop of the year: which whole-sign house each slow-moving body occupies for this sign, Jupiter first and Pluto last. One row per unbroken stretch, so a body that stays put is a single row spanning the year and a body that changes sign is two rows with the exact date between them. Dates are the part of the stretch that falls inside this year; the full span of a change that happens inside the year is in the events array. Use it for the year-at-a-glance panel a year-ahead page opens with.
+	Themes []struct {
+		// Body The slow-moving body holding this theme, canonical English regardless of the requested language: Jupiter, Saturn, Uranus, Neptune, or Pluto.
+		Body string `json:"body"`
+
+		// From First date of the stretch inside this year, in UTC (YYYY-MM-DD). January 1 when the body was already there when the year opened, otherwise the date it arrived.
+		From string `json:"from"`
+
+		// House Whole-sign house that sign is for this sign, 1 to 12.
+		House int `json:"house"`
+
+		// Sign Sign the body occupies through this stretch, lowercase. Checkable against NASA JPL Horizons for any date inside from and to.
+		Sign string `json:"sign"`
+
+		// Theme What that house governs, so the placement reads as a life area rather than a coordinate.
+		Theme string `json:"theme"`
+
+		// To Last date of the stretch inside this year, in UTC (YYYY-MM-DD). December 31 when the body is still there when the year closes, otherwise the date it leaves.
+		To string `json:"to"`
+	} `json:"themes"`
+
+	// Year Calendar year this forecast covers. Echoes the year requested, or the current year when it was omitted.
+	Year int `json:"year"`
+} {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r GetYearlyHoroscopeResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r GetYearlyHoroscopeResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON405 returns the response for an HTTP 405 `application/json` response
+func (r GetYearlyHoroscopeResponse) GetJSON405() *ErrorResponse {
+	return r.JSON405
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r GetYearlyHoroscopeResponse) GetJSON429() *ErrorResponse {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GetYearlyHoroscopeResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r GetYearlyHoroscopeResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetYearlyHoroscopeResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetYearlyHoroscopeResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// Bytes is a convenience method to retrieve the raw bytes from the HTTP response
+func (r GetYearlyHoroscopeResponse) Bytes() []byte {
+	return r.Body
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetYearlyHoroscopeResponse) ContentType() string {
 	if r.HTTPResponse != nil {
 		return r.HTTPResponse.Header.Get("Content-Type")
 	}
@@ -79007,7 +79981,7 @@ type CalculateAnnualForecastResponse struct {
 			// Category Which of the five cycle relations this belongs to. peer is the same element as the Day Master, output is what the Day Master generates, wealth is what it controls, influence is what controls it, resource is what generates it, and self marks the Day Master itself. Always English, whatever the lang parameter says.
 			Category string `json:"category"`
 
-			// Chinese The relation in simplified hanzi. Identical under every lang; the traditional forms arrive through the zh-Hant response.
+			// Chinese The relation in traditional hanzi. Identical under every lang.
 			Chinese string `json:"chinese"`
 
 			// ID Ten God identifier. One of friend, rob-wealth, eating-god, hurting-officer, indirect-wealth, direct-wealth, seven-killings, direct-officer, indirect-resource, direct-resource, plus day-master in the day-stem position. Always English, whatever the lang parameter says.
@@ -79082,7 +80056,7 @@ type CalculateAnnualForecastResponse struct {
 			// Category Which of the five cycle relations this belongs to. peer is the same element as the Day Master, output is what the Day Master generates, wealth is what it controls, influence is what controls it, resource is what generates it, and self marks the Day Master itself. Always English, whatever the lang parameter says.
 			Category string `json:"category"`
 
-			// Chinese The relation in simplified hanzi. Identical under every lang; the traditional forms arrive through the zh-Hant response.
+			// Chinese The relation in traditional hanzi. Identical under every lang.
 			Chinese string `json:"chinese"`
 
 			// ID Ten God identifier. One of friend, rob-wealth, eating-god, hurting-officer, indirect-wealth, direct-wealth, seven-killings, direct-officer, indirect-resource, direct-resource, plus day-master in the day-stem position. Always English, whatever the lang parameter says.
@@ -79221,7 +80195,7 @@ func (r CalculateAnnualForecastResponse) GetJSON200() *struct {
 		// Category Which of the five cycle relations this belongs to. peer is the same element as the Day Master, output is what the Day Master generates, wealth is what it controls, influence is what controls it, resource is what generates it, and self marks the Day Master itself. Always English, whatever the lang parameter says.
 		Category string `json:"category"`
 
-		// Chinese The relation in simplified hanzi. Identical under every lang; the traditional forms arrive through the zh-Hant response.
+		// Chinese The relation in traditional hanzi. Identical under every lang.
 		Chinese string `json:"chinese"`
 
 		// ID Ten God identifier. One of friend, rob-wealth, eating-god, hurting-officer, indirect-wealth, direct-wealth, seven-killings, direct-officer, indirect-resource, direct-resource, plus day-master in the day-stem position. Always English, whatever the lang parameter says.
@@ -79296,7 +80270,7 @@ func (r CalculateAnnualForecastResponse) GetJSON200() *struct {
 		// Category Which of the five cycle relations this belongs to. peer is the same element as the Day Master, output is what the Day Master generates, wealth is what it controls, influence is what controls it, resource is what generates it, and self marks the Day Master itself. Always English, whatever the lang parameter says.
 		Category string `json:"category"`
 
-		// Chinese The relation in simplified hanzi. Identical under every lang; the traditional forms arrive through the zh-Hant response.
+		// Chinese The relation in traditional hanzi. Identical under every lang.
 		Chinese string `json:"chinese"`
 
 		// ID Ten God identifier. One of friend, rob-wealth, eating-god, hurting-officer, indirect-wealth, direct-wealth, seven-killings, direct-officer, indirect-resource, direct-resource, plus day-master in the day-stem position. Always English, whatever the lang parameter says.
@@ -79564,7 +80538,7 @@ type GenerateBaziChartResponse struct {
 					// Category Which of the five cycle relations this belongs to. peer is the same element as the Day Master, output is what the Day Master generates, wealth is what it controls, influence is what controls it, resource is what generates it, and self marks the Day Master itself. Always English, whatever the lang parameter says.
 					Category string `json:"category"`
 
-					// Chinese The relation in simplified hanzi. Identical under every lang; the traditional forms arrive through the zh-Hant response.
+					// Chinese The relation in traditional hanzi. Identical under every lang.
 					Chinese string `json:"chinese"`
 
 					// ID Ten God identifier. One of friend, rob-wealth, eating-god, hurting-officer, indirect-wealth, direct-wealth, seven-killings, direct-officer, indirect-resource, direct-resource, plus day-master in the day-stem position. Always English, whatever the lang parameter says.
@@ -79628,7 +80602,7 @@ type GenerateBaziChartResponse struct {
 				// Category Which of the five cycle relations this belongs to. peer is the same element as the Day Master, output is what the Day Master generates, wealth is what it controls, influence is what controls it, resource is what generates it, and self marks the Day Master itself. Always English, whatever the lang parameter says.
 				Category string `json:"category"`
 
-				// Chinese The relation in simplified hanzi. Identical under every lang; the traditional forms arrive through the zh-Hant response.
+				// Chinese The relation in traditional hanzi. Identical under every lang.
 				Chinese string `json:"chinese"`
 
 				// ID Ten God identifier. One of friend, rob-wealth, eating-god, hurting-officer, indirect-wealth, direct-wealth, seven-killings, direct-officer, indirect-resource, direct-resource, plus day-master in the day-stem position. Always English, whatever the lang parameter says.
@@ -79841,7 +80815,7 @@ func (r GenerateBaziChartResponse) GetJSON200() *struct {
 				// Category Which of the five cycle relations this belongs to. peer is the same element as the Day Master, output is what the Day Master generates, wealth is what it controls, influence is what controls it, resource is what generates it, and self marks the Day Master itself. Always English, whatever the lang parameter says.
 				Category string `json:"category"`
 
-				// Chinese The relation in simplified hanzi. Identical under every lang; the traditional forms arrive through the zh-Hant response.
+				// Chinese The relation in traditional hanzi. Identical under every lang.
 				Chinese string `json:"chinese"`
 
 				// ID Ten God identifier. One of friend, rob-wealth, eating-god, hurting-officer, indirect-wealth, direct-wealth, seven-killings, direct-officer, indirect-resource, direct-resource, plus day-master in the day-stem position. Always English, whatever the lang parameter says.
@@ -79905,7 +80879,7 @@ func (r GenerateBaziChartResponse) GetJSON200() *struct {
 			// Category Which of the five cycle relations this belongs to. peer is the same element as the Day Master, output is what the Day Master generates, wealth is what it controls, influence is what controls it, resource is what generates it, and self marks the Day Master itself. Always English, whatever the lang parameter says.
 			Category string `json:"category"`
 
-			// Chinese The relation in simplified hanzi. Identical under every lang; the traditional forms arrive through the zh-Hant response.
+			// Chinese The relation in traditional hanzi. Identical under every lang.
 			Chinese string `json:"chinese"`
 
 			// ID Ten God identifier. One of friend, rob-wealth, eating-god, hurting-officer, indirect-wealth, direct-wealth, seven-killings, direct-officer, indirect-resource, direct-resource, plus day-master in the day-stem position. Always English, whatever the lang parameter says.
@@ -80149,7 +81123,7 @@ type CalculateBaziCompatibilityResponse struct {
 						// Category Which of the five cycle relations this belongs to. peer is the same element as the Day Master, output is what the Day Master generates, wealth is what it controls, influence is what controls it, resource is what generates it, and self marks the Day Master itself. Always English, whatever the lang parameter says.
 						Category string `json:"category"`
 
-						// Chinese The relation in simplified hanzi. Identical under every lang; the traditional forms arrive through the zh-Hant response.
+						// Chinese The relation in traditional hanzi. Identical under every lang.
 						Chinese string `json:"chinese"`
 
 						// ID Ten God identifier. One of friend, rob-wealth, eating-god, hurting-officer, indirect-wealth, direct-wealth, seven-killings, direct-officer, indirect-resource, direct-resource, plus day-master in the day-stem position. Always English, whatever the lang parameter says.
@@ -80213,7 +81187,7 @@ type CalculateBaziCompatibilityResponse struct {
 					// Category Which of the five cycle relations this belongs to. peer is the same element as the Day Master, output is what the Day Master generates, wealth is what it controls, influence is what controls it, resource is what generates it, and self marks the Day Master itself. Always English, whatever the lang parameter says.
 					Category string `json:"category"`
 
-					// Chinese The relation in simplified hanzi. Identical under every lang; the traditional forms arrive through the zh-Hant response.
+					// Chinese The relation in traditional hanzi. Identical under every lang.
 					Chinese string `json:"chinese"`
 
 					// ID Ten God identifier. One of friend, rob-wealth, eating-god, hurting-officer, indirect-wealth, direct-wealth, seven-killings, direct-officer, indirect-resource, direct-resource, plus day-master in the day-stem position. Always English, whatever the lang parameter says.
@@ -80335,7 +81309,7 @@ type CalculateBaziCompatibilityResponse struct {
 						// Category Which of the five cycle relations this belongs to. peer is the same element as the Day Master, output is what the Day Master generates, wealth is what it controls, influence is what controls it, resource is what generates it, and self marks the Day Master itself. Always English, whatever the lang parameter says.
 						Category string `json:"category"`
 
-						// Chinese The relation in simplified hanzi. Identical under every lang; the traditional forms arrive through the zh-Hant response.
+						// Chinese The relation in traditional hanzi. Identical under every lang.
 						Chinese string `json:"chinese"`
 
 						// ID Ten God identifier. One of friend, rob-wealth, eating-god, hurting-officer, indirect-wealth, direct-wealth, seven-killings, direct-officer, indirect-resource, direct-resource, plus day-master in the day-stem position. Always English, whatever the lang parameter says.
@@ -80399,7 +81373,7 @@ type CalculateBaziCompatibilityResponse struct {
 					// Category Which of the five cycle relations this belongs to. peer is the same element as the Day Master, output is what the Day Master generates, wealth is what it controls, influence is what controls it, resource is what generates it, and self marks the Day Master itself. Always English, whatever the lang parameter says.
 					Category string `json:"category"`
 
-					// Chinese The relation in simplified hanzi. Identical under every lang; the traditional forms arrive through the zh-Hant response.
+					// Chinese The relation in traditional hanzi. Identical under every lang.
 					Chinese string `json:"chinese"`
 
 					// ID Ten God identifier. One of friend, rob-wealth, eating-god, hurting-officer, indirect-wealth, direct-wealth, seven-killings, direct-officer, indirect-resource, direct-resource, plus day-master in the day-stem position. Always English, whatever the lang parameter says.
@@ -80588,7 +81562,7 @@ func (r CalculateBaziCompatibilityResponse) GetJSON200() *struct {
 					// Category Which of the five cycle relations this belongs to. peer is the same element as the Day Master, output is what the Day Master generates, wealth is what it controls, influence is what controls it, resource is what generates it, and self marks the Day Master itself. Always English, whatever the lang parameter says.
 					Category string `json:"category"`
 
-					// Chinese The relation in simplified hanzi. Identical under every lang; the traditional forms arrive through the zh-Hant response.
+					// Chinese The relation in traditional hanzi. Identical under every lang.
 					Chinese string `json:"chinese"`
 
 					// ID Ten God identifier. One of friend, rob-wealth, eating-god, hurting-officer, indirect-wealth, direct-wealth, seven-killings, direct-officer, indirect-resource, direct-resource, plus day-master in the day-stem position. Always English, whatever the lang parameter says.
@@ -80652,7 +81626,7 @@ func (r CalculateBaziCompatibilityResponse) GetJSON200() *struct {
 				// Category Which of the five cycle relations this belongs to. peer is the same element as the Day Master, output is what the Day Master generates, wealth is what it controls, influence is what controls it, resource is what generates it, and self marks the Day Master itself. Always English, whatever the lang parameter says.
 				Category string `json:"category"`
 
-				// Chinese The relation in simplified hanzi. Identical under every lang; the traditional forms arrive through the zh-Hant response.
+				// Chinese The relation in traditional hanzi. Identical under every lang.
 				Chinese string `json:"chinese"`
 
 				// ID Ten God identifier. One of friend, rob-wealth, eating-god, hurting-officer, indirect-wealth, direct-wealth, seven-killings, direct-officer, indirect-resource, direct-resource, plus day-master in the day-stem position. Always English, whatever the lang parameter says.
@@ -80774,7 +81748,7 @@ func (r CalculateBaziCompatibilityResponse) GetJSON200() *struct {
 					// Category Which of the five cycle relations this belongs to. peer is the same element as the Day Master, output is what the Day Master generates, wealth is what it controls, influence is what controls it, resource is what generates it, and self marks the Day Master itself. Always English, whatever the lang parameter says.
 					Category string `json:"category"`
 
-					// Chinese The relation in simplified hanzi. Identical under every lang; the traditional forms arrive through the zh-Hant response.
+					// Chinese The relation in traditional hanzi. Identical under every lang.
 					Chinese string `json:"chinese"`
 
 					// ID Ten God identifier. One of friend, rob-wealth, eating-god, hurting-officer, indirect-wealth, direct-wealth, seven-killings, direct-officer, indirect-resource, direct-resource, plus day-master in the day-stem position. Always English, whatever the lang parameter says.
@@ -80838,7 +81812,7 @@ func (r CalculateBaziCompatibilityResponse) GetJSON200() *struct {
 				// Category Which of the five cycle relations this belongs to. peer is the same element as the Day Master, output is what the Day Master generates, wealth is what it controls, influence is what controls it, resource is what generates it, and self marks the Day Master itself. Always English, whatever the lang parameter says.
 				Category string `json:"category"`
 
-				// Chinese The relation in simplified hanzi. Identical under every lang; the traditional forms arrive through the zh-Hant response.
+				// Chinese The relation in traditional hanzi. Identical under every lang.
 				Chinese string `json:"chinese"`
 
 				// ID Ten God identifier. One of friend, rob-wealth, eating-god, hurting-officer, indirect-wealth, direct-wealth, seven-killings, direct-officer, indirect-resource, direct-resource, plus day-master in the day-stem position. Always English, whatever the lang parameter says.
@@ -81284,7 +82258,7 @@ type CalculateLuckPillarsResponse struct {
 				// Category Which of the five cycle relations this belongs to. peer is the same element as the Day Master, output is what the Day Master generates, wealth is what it controls, influence is what controls it, resource is what generates it, and self marks the Day Master itself. Always English, whatever the lang parameter says.
 				Category string `json:"category"`
 
-				// Chinese The relation in simplified hanzi. Identical under every lang; the traditional forms arrive through the zh-Hant response.
+				// Chinese The relation in traditional hanzi. Identical under every lang.
 				Chinese string `json:"chinese"`
 
 				// ID Ten God identifier. One of friend, rob-wealth, eating-god, hurting-officer, indirect-wealth, direct-wealth, seven-killings, direct-officer, indirect-resource, direct-resource, plus day-master in the day-stem position. Always English, whatever the lang parameter says.
@@ -81425,7 +82399,7 @@ type CalculateLuckPillarsResponse struct {
 				// Category Which of the five cycle relations this belongs to. peer is the same element as the Day Master, output is what the Day Master generates, wealth is what it controls, influence is what controls it, resource is what generates it, and self marks the Day Master itself. Always English, whatever the lang parameter says.
 				Category string `json:"category"`
 
-				// Chinese The relation in simplified hanzi. Identical under every lang; the traditional forms arrive through the zh-Hant response.
+				// Chinese The relation in traditional hanzi. Identical under every lang.
 				Chinese string `json:"chinese"`
 
 				// ID Ten God identifier. One of friend, rob-wealth, eating-god, hurting-officer, indirect-wealth, direct-wealth, seven-killings, direct-officer, indirect-resource, direct-resource, plus day-master in the day-stem position. Always English, whatever the lang parameter says.
@@ -81486,7 +82460,7 @@ func (r CalculateLuckPillarsResponse) GetJSON200() *struct {
 			// Category Which of the five cycle relations this belongs to. peer is the same element as the Day Master, output is what the Day Master generates, wealth is what it controls, influence is what controls it, resource is what generates it, and self marks the Day Master itself. Always English, whatever the lang parameter says.
 			Category string `json:"category"`
 
-			// Chinese The relation in simplified hanzi. Identical under every lang; the traditional forms arrive through the zh-Hant response.
+			// Chinese The relation in traditional hanzi. Identical under every lang.
 			Chinese string `json:"chinese"`
 
 			// ID Ten God identifier. One of friend, rob-wealth, eating-god, hurting-officer, indirect-wealth, direct-wealth, seven-killings, direct-officer, indirect-resource, direct-resource, plus day-master in the day-stem position. Always English, whatever the lang parameter says.
@@ -81627,7 +82601,7 @@ func (r CalculateLuckPillarsResponse) GetJSON200() *struct {
 			// Category Which of the five cycle relations this belongs to. peer is the same element as the Day Master, output is what the Day Master generates, wealth is what it controls, influence is what controls it, resource is what generates it, and self marks the Day Master itself. Always English, whatever the lang parameter says.
 			Category string `json:"category"`
 
-			// Chinese The relation in simplified hanzi. Identical under every lang; the traditional forms arrive through the zh-Hant response.
+			// Chinese The relation in traditional hanzi. Identical under every lang.
 			Chinese string `json:"chinese"`
 
 			// ID Ten God identifier. One of friend, rob-wealth, eating-god, hurting-officer, indirect-wealth, direct-wealth, seven-killings, direct-officer, indirect-resource, direct-resource, plus day-master in the day-stem position. Always English, whatever the lang parameter says.
@@ -83540,7 +84514,7 @@ type ListZodiacAnimalsResponse struct {
 			// Branch Earthly Branch this animal names, as its pinyin identifier. The twelve branches are zi, chou, yin, mao, chen, si, wu, wei, shen, you, xu, hai, and they run in the same order as the animals. Every animal element, polarity and double-hour is a property of this branch.
 			Branch string `json:"branch"`
 
-			// Chinese Simplified Chinese character for the animal itself, not for its Earthly Branch. Data rather than a translation, so it is identical under every lang.
+			// Chinese Traditional hanzi character for the animal itself, not for its Earthly Branch. Data rather than a translation, so it is identical under every lang.
 			Chinese string `json:"chinese"`
 
 			// Element Fixed Five Element (Wu Xing) phase of the animal own branch: Wood, Fire, Earth, Metal or Water. This never changes for a sign. It is NOT the year phase that makes a Metal Rat differ from a Water Rat, which comes from the year Heavenly Stem. Always English so it stays safe to compare against and to key colours off.
@@ -83598,7 +84572,7 @@ func (r ListZodiacAnimalsResponse) GetJSON200() *struct {
 		// Branch Earthly Branch this animal names, as its pinyin identifier. The twelve branches are zi, chou, yin, mao, chen, si, wu, wei, shen, you, xu, hai, and they run in the same order as the animals. Every animal element, polarity and double-hour is a property of this branch.
 		Branch string `json:"branch"`
 
-		// Chinese Simplified Chinese character for the animal itself, not for its Earthly Branch. Data rather than a translation, so it is identical under every lang.
+		// Chinese Traditional hanzi character for the animal itself, not for its Earthly Branch. Data rather than a translation, so it is identical under every lang.
 		Chinese string `json:"chinese"`
 
 		// Element Fixed Five Element (Wu Xing) phase of the animal own branch: Wood, Fire, Earth, Metal or Water. This never changes for a sign. It is NOT the year phase that makes a Metal Rat differ from a Water Rat, which comes from the year Heavenly Stem. Always English so it stays safe to compare against and to key colours off.
@@ -83710,12 +84684,12 @@ type GetZodiacAnimalResponse struct {
 		// Branch Earthly Branch this animal names, as its pinyin identifier. The twelve branches are zi, chou, yin, mao, chen, si, wu, wei, shen, you, xu, hai, and they run in the same order as the animals. Every animal element, polarity and double-hour is a property of this branch.
 		Branch string `json:"branch"`
 
-		// Chinese Simplified Chinese character for the animal itself, not for its Earthly Branch. Data rather than a translation, so it is identical under every lang.
+		// Chinese Traditional hanzi character for the animal itself, not for its Earthly Branch. Data rather than a translation, so it is identical under every lang.
 		Chinese string `json:"chinese"`
 
 		// ClashPartner The clashing animal (Liu Chong): the branch directly opposite, six positions away. The tradition reads this as the most charged pairing in the cycle and the least restful.
 		ClashPartner struct {
-			// Chinese Simplified Chinese character for the related animal.
+			// Chinese Traditional hanzi character for the related animal.
 			Chinese string `json:"chinese"`
 
 			// ID Stable machine identifier for the animal. Always English and lowercase, whatever the lang parameter says, so it stays safe to compare against in code. Use nameLocalized for anything a reader sees. The twelve ids are rat, ox, tiger, rabbit, dragon, snake, horse, goat, monkey, rooster, dog, pig.
@@ -83763,7 +84737,7 @@ type GetZodiacAnimalResponse struct {
 
 		// HarmPartner The harming animal (Liu Hai). Treated as less violent than a clash and harder to spot, because it works through accumulation rather than confrontation.
 		HarmPartner struct {
-			// Chinese Simplified Chinese character for the related animal.
+			// Chinese Traditional hanzi character for the related animal.
 			Chinese string `json:"chinese"`
 
 			// ID Stable machine identifier for the animal. Always English and lowercase, whatever the lang parameter says, so it stays safe to compare against in code. Use nameLocalized for anything a reader sees. The twelve ids are rat, ox, tiger, rabbit, dragon, snake, horse, goat, monkey, rooster, dog, pig.
@@ -83805,7 +84779,7 @@ type GetZodiacAnimalResponse struct {
 
 		// SecretFriend The six-harmony partner (Liu He), traditionally called the secret friend because the support it gives arrives unasked. The element is the phase the two branches combine into, which is generally neither animal own phase.
 		SecretFriend struct {
-			// Chinese Simplified Chinese character for the related animal.
+			// Chinese Traditional hanzi character for the related animal.
 			Chinese string `json:"chinese"`
 
 			// Element Fixed Five Element (Wu Xing) phase of the animal own branch: Wood, Fire, Earth, Metal or Water. This never changes for a sign. It is NOT the year phase that makes a Metal Rat differ from a Water Rat, which comes from the year Heavenly Stem. Always English so it stays safe to compare against and to key colours off.
@@ -83885,12 +84859,12 @@ func (r GetZodiacAnimalResponse) GetJSON200() *struct {
 	// Branch Earthly Branch this animal names, as its pinyin identifier. The twelve branches are zi, chou, yin, mao, chen, si, wu, wei, shen, you, xu, hai, and they run in the same order as the animals. Every animal element, polarity and double-hour is a property of this branch.
 	Branch string `json:"branch"`
 
-	// Chinese Simplified Chinese character for the animal itself, not for its Earthly Branch. Data rather than a translation, so it is identical under every lang.
+	// Chinese Traditional hanzi character for the animal itself, not for its Earthly Branch. Data rather than a translation, so it is identical under every lang.
 	Chinese string `json:"chinese"`
 
 	// ClashPartner The clashing animal (Liu Chong): the branch directly opposite, six positions away. The tradition reads this as the most charged pairing in the cycle and the least restful.
 	ClashPartner struct {
-		// Chinese Simplified Chinese character for the related animal.
+		// Chinese Traditional hanzi character for the related animal.
 		Chinese string `json:"chinese"`
 
 		// ID Stable machine identifier for the animal. Always English and lowercase, whatever the lang parameter says, so it stays safe to compare against in code. Use nameLocalized for anything a reader sees. The twelve ids are rat, ox, tiger, rabbit, dragon, snake, horse, goat, monkey, rooster, dog, pig.
@@ -83938,7 +84912,7 @@ func (r GetZodiacAnimalResponse) GetJSON200() *struct {
 
 	// HarmPartner The harming animal (Liu Hai). Treated as less violent than a clash and harder to spot, because it works through accumulation rather than confrontation.
 	HarmPartner struct {
-		// Chinese Simplified Chinese character for the related animal.
+		// Chinese Traditional hanzi character for the related animal.
 		Chinese string `json:"chinese"`
 
 		// ID Stable machine identifier for the animal. Always English and lowercase, whatever the lang parameter says, so it stays safe to compare against in code. Use nameLocalized for anything a reader sees. The twelve ids are rat, ox, tiger, rabbit, dragon, snake, horse, goat, monkey, rooster, dog, pig.
@@ -83980,7 +84954,7 @@ func (r GetZodiacAnimalResponse) GetJSON200() *struct {
 
 	// SecretFriend The six-harmony partner (Liu He), traditionally called the secret friend because the support it gives arrives unasked. The element is the phase the two branches combine into, which is generally neither animal own phase.
 	SecretFriend struct {
-		// Chinese Simplified Chinese character for the related animal.
+		// Chinese Traditional hanzi character for the related animal.
 		Chinese string `json:"chinese"`
 
 		// Element Fixed Five Element (Wu Xing) phase of the animal own branch: Wood, Fire, Earth, Metal or Water. This never changes for a sign. It is NOT the year phase that makes a Metal Rat differ from a Water Rat, which comes from the year Heavenly Stem. Always English so it stays safe to compare against and to key colours off.
@@ -84122,7 +85096,7 @@ type GetZodiacCompatibilityResponse struct {
 		// Relationship Which of the six classical branch relations the pair stands in. One of secret-friend (Liu He, the six harmonies), trine (San He, the three harmonies), same (both signs share a branch), neutral (no formal relation), harm (Liu Hai) or clash (Liu Chong, branches six apart). Exactly one applies to any pair, because no two of the conditions can hold at once. Always English so it stays safe to switch on.
 		Relationship string `json:"relationship"`
 
-		// RelationshipChinese Classical name of the relation in simplified Chinese.
+		// RelationshipChinese Classical name of the relation in traditional hanzi. Identical under every lang.
 		RelationshipChinese string `json:"relationshipChinese"`
 
 		// RelationshipName Display name of the relation in English. Always English; use relationshipNameLocalized for anything a reader sees.
@@ -84149,7 +85123,7 @@ type GetZodiacCompatibilityResponse struct {
 				// Branch Earthly Branch this animal names, as its pinyin identifier. The twelve branches are zi, chou, yin, mao, chen, si, wu, wei, shen, you, xu, hai, and they run in the same order as the animals. Every animal element, polarity and double-hour is a property of this branch.
 				Branch string `json:"branch"`
 
-				// Chinese Simplified Chinese character for the animal itself, not for its Earthly Branch. Data rather than a translation, so it is identical under every lang.
+				// Chinese Traditional hanzi character for the animal itself, not for its Earthly Branch. Data rather than a translation, so it is identical under every lang.
 				Chinese string `json:"chinese"`
 
 				// Element Fixed Five Element (Wu Xing) phase of the animal own branch: Wood, Fire, Earth, Metal or Water. This never changes for a sign. It is NOT the year phase that makes a Metal Rat differ from a Water Rat, which comes from the year Heavenly Stem. Always English so it stays safe to compare against and to key colours off.
@@ -84177,7 +85151,7 @@ type GetZodiacCompatibilityResponse struct {
 				// Branch Earthly Branch this animal names, as its pinyin identifier. The twelve branches are zi, chou, yin, mao, chen, si, wu, wei, shen, you, xu, hai, and they run in the same order as the animals. Every animal element, polarity and double-hour is a property of this branch.
 				Branch string `json:"branch"`
 
-				// Chinese Simplified Chinese character for the animal itself, not for its Earthly Branch. Data rather than a translation, so it is identical under every lang.
+				// Chinese Traditional hanzi character for the animal itself, not for its Earthly Branch. Data rather than a translation, so it is identical under every lang.
 				Chinese string `json:"chinese"`
 
 				// Element Fixed Five Element (Wu Xing) phase of the animal own branch: Wood, Fire, Earth, Metal or Water. This never changes for a sign. It is NOT the year phase that makes a Metal Rat differ from a Water Rat, which comes from the year Heavenly Stem. Always English so it stays safe to compare against and to key colours off.
@@ -84237,7 +85211,7 @@ func (r GetZodiacCompatibilityResponse) GetJSON200() *struct {
 	// Relationship Which of the six classical branch relations the pair stands in. One of secret-friend (Liu He, the six harmonies), trine (San He, the three harmonies), same (both signs share a branch), neutral (no formal relation), harm (Liu Hai) or clash (Liu Chong, branches six apart). Exactly one applies to any pair, because no two of the conditions can hold at once. Always English so it stays safe to switch on.
 	Relationship string `json:"relationship"`
 
-	// RelationshipChinese Classical name of the relation in simplified Chinese.
+	// RelationshipChinese Classical name of the relation in traditional hanzi. Identical under every lang.
 	RelationshipChinese string `json:"relationshipChinese"`
 
 	// RelationshipName Display name of the relation in English. Always English; use relationshipNameLocalized for anything a reader sees.
@@ -84264,7 +85238,7 @@ func (r GetZodiacCompatibilityResponse) GetJSON200() *struct {
 			// Branch Earthly Branch this animal names, as its pinyin identifier. The twelve branches are zi, chou, yin, mao, chen, si, wu, wei, shen, you, xu, hai, and they run in the same order as the animals. Every animal element, polarity and double-hour is a property of this branch.
 			Branch string `json:"branch"`
 
-			// Chinese Simplified Chinese character for the animal itself, not for its Earthly Branch. Data rather than a translation, so it is identical under every lang.
+			// Chinese Traditional hanzi character for the animal itself, not for its Earthly Branch. Data rather than a translation, so it is identical under every lang.
 			Chinese string `json:"chinese"`
 
 			// Element Fixed Five Element (Wu Xing) phase of the animal own branch: Wood, Fire, Earth, Metal or Water. This never changes for a sign. It is NOT the year phase that makes a Metal Rat differ from a Water Rat, which comes from the year Heavenly Stem. Always English so it stays safe to compare against and to key colours off.
@@ -84292,7 +85266,7 @@ func (r GetZodiacCompatibilityResponse) GetJSON200() *struct {
 			// Branch Earthly Branch this animal names, as its pinyin identifier. The twelve branches are zi, chou, yin, mao, chen, si, wu, wei, shen, you, xu, hai, and they run in the same order as the animals. Every animal element, polarity and double-hour is a property of this branch.
 			Branch string `json:"branch"`
 
-			// Chinese Simplified Chinese character for the animal itself, not for its Earthly Branch. Data rather than a translation, so it is identical under every lang.
+			// Chinese Traditional hanzi character for the animal itself, not for its Earthly Branch. Data rather than a translation, so it is identical under every lang.
 			Chinese string `json:"chinese"`
 
 			// Element Fixed Five Element (Wu Xing) phase of the animal own branch: Wood, Fire, Earth, Metal or Water. This never changes for a sign. It is NOT the year phase that makes a Metal Rat differ from a Water Rat, which comes from the year Heavenly Stem. Always English so it stays safe to compare against and to key colours off.
@@ -84404,7 +85378,7 @@ type CalculateZodiacAnimalResponse struct {
 			// Branch Earthly Branch this animal names, as its pinyin identifier. The twelve branches are zi, chou, yin, mao, chen, si, wu, wei, shen, you, xu, hai, and they run in the same order as the animals. Every animal element, polarity and double-hour is a property of this branch.
 			Branch string `json:"branch"`
 
-			// Chinese Simplified Chinese character for the animal itself, not for its Earthly Branch. Data rather than a translation, so it is identical under every lang.
+			// Chinese Traditional hanzi character for the animal itself, not for its Earthly Branch. Data rather than a translation, so it is identical under every lang.
 			Chinese string `json:"chinese"`
 
 			// Element Fixed Five Element (Wu Xing) phase of the animal own branch: Wood, Fire, Earth, Metal or Water. This never changes for a sign. It is NOT the year phase that makes a Metal Rat differ from a Water Rat, which comes from the year Heavenly Stem. Always English so it stays safe to compare against and to key colours off.
@@ -84486,7 +85460,7 @@ func (r CalculateZodiacAnimalResponse) GetJSON200() *struct {
 		// Branch Earthly Branch this animal names, as its pinyin identifier. The twelve branches are zi, chou, yin, mao, chen, si, wu, wei, shen, you, xu, hai, and they run in the same order as the animals. Every animal element, polarity and double-hour is a property of this branch.
 		Branch string `json:"branch"`
 
-		// Chinese Simplified Chinese character for the animal itself, not for its Earthly Branch. Data rather than a translation, so it is identical under every lang.
+		// Chinese Traditional hanzi character for the animal itself, not for its Earthly Branch. Data rather than a translation, so it is identical under every lang.
 		Chinese string `json:"chinese"`
 
 		// Element Fixed Five Element (Wu Xing) phase of the animal own branch: Wood, Fire, Earth, Metal or Water. This never changes for a sign. It is NOT the year phase that makes a Metal Rat differ from a Water Rat, which comes from the year Heavenly Stem. Always English so it stays safe to compare against and to key colours off.
@@ -84627,7 +85601,7 @@ type GetDailyZodiacReadingResponse struct {
 			// Branch Earthly Branch this animal names, as its pinyin identifier.
 			Branch string `json:"branch"`
 
-			// Chinese Simplified Chinese character for the animal.
+			// Chinese Traditional hanzi character for the animal. Identical under every lang.
 			Chinese string `json:"chinese"`
 
 			// Element Fixed Five Element phase of the sign own branch. Always English so it stays safe to compare against.
@@ -84736,7 +85710,7 @@ func (r GetDailyZodiacReadingResponse) GetJSON200() *struct {
 		// Branch Earthly Branch this animal names, as its pinyin identifier.
 		Branch string `json:"branch"`
 
-		// Chinese Simplified Chinese character for the animal.
+		// Chinese Traditional hanzi character for the animal. Identical under every lang.
 		Chinese string `json:"chinese"`
 
 		// Element Fixed Five Element phase of the sign own branch. Always English so it stays safe to compare against.
@@ -112949,9 +113923,9 @@ func (c *ClientWithResponses) GenerateFixedStarsWithResponse(ctx context.Context
 	return ParseGenerateFixedStarsResponse(rsp)
 }
 
-// GetDailyHoroscopeWithResponse Daily horoscope by zodiac sign - Transit-based forecast with house activations
+// GetDailyHoroscopeWithResponse Daily horoscope by zodiac sign - Transit-based editorial columns
 //
-// Get the daily horoscope for any zodiac sign. Forecast is generated from real-time planetary transits using whole-sign house positions, so every sign receives unique content. Returns love, career, health, finance, overview with active transits, Moon sign, Moon phase, energy rating, lucky number, lucky color, and compatible signs. Content is fixed for a given date and rolls over at midnight, by default UTC. Pass date for editorial scheduling, or timezone to roll over on a local clock. Daily horoscope API, zodiac forecast, sun sign horoscope, astrology prediction.
+// A publish-ready column for any zodiac sign, built from the dated transits over it and returned with those events for fact-checking. The reading names the aspects, sign ingresses, lunations and retrograde stations driving it and reads each into the whole-sign houses of that sign, so every sign gets different content rather than one blurb reused twelve times. Alongside the column come overview, love, career, health, finance and advice, the active transits, Moon sign and phase, an energy rating, lucky number and color, and compatible signs. No language model is involved, so a given sign and date always returns the same text and a piece scheduled months ahead is the piece that runs. Content rolls over at midnight, by default UTC. Pass date for editorial scheduling, or timezone to roll over on a local clock. Available in eight languages. Daily horoscope API, zodiac forecast, sun sign horoscope, astrology prediction.
 //
 // Returns a wrapper object for the known response body format(s).
 //
@@ -112964,9 +113938,9 @@ func (c *ClientWithResponses) GetDailyHoroscopeWithResponse(ctx context.Context,
 	return ParseGetDailyHoroscopeResponse(rsp)
 }
 
-// GetMonthlyHoroscopeWithResponse Monthly horoscope by zodiac sign - 30-day transit forecast with key dates
+// GetMonthlyHoroscopeWithResponse Monthly horoscope by zodiac sign - Editorial column with key dates
 //
-// Get monthly horoscope for any zodiac sign with sign-specific week-by-week breakdown and real lunar phase key dates. Based on planetary transits with house activations unique to each sign, covering love, career, health, and finance for the entire month. Key dates include actual New Moon, Full Moon, and retrograde dates from ephemeris calculations. Pass any date inside a month to retrieve that month, or timezone to roll over on a local clock. Monthly horoscope API, zodiac monthly forecast, astrology monthly prediction.
+// A month-long column for any zodiac sign, plus a week-by-week breakdown and dated key dates a calendar page renders directly. The column names every aspect, ingress, lunation and station of the month and reads each into the whole-sign houses of that sign, and those events come back beside the prose with their exact instants, so a piece can be checked against NASA JPL Horizons or the US Naval Observatory before it runs. Key dates are the real New Moon, Full Moon and retrograde instants, never approximations. Alongside the column come overview, love, career, health, finance and advice. Pass any date inside a month to retrieve that month, or timezone to roll over on a local clock. Available in eight languages. Monthly horoscope API, zodiac monthly forecast, astrology monthly prediction.
 //
 // Returns a wrapper object for the known response body format(s).
 //
@@ -112979,9 +113953,9 @@ func (c *ClientWithResponses) GetMonthlyHoroscopeWithResponse(ctx context.Contex
 	return ParseGetMonthlyHoroscopeResponse(rsp)
 }
 
-// GetWeeklyHoroscopeWithResponse Weekly horoscope by zodiac sign - 7-day transit forecast
+// GetWeeklyHoroscopeWithResponse Weekly horoscope by zodiac sign - Seven-day editorial column
 //
-// Get weekly horoscope for any zodiac sign. Forecast covers a full Monday to Sunday period based on planetary transits with house-based content unique to each sign, with love, career, health, finance guidance plus lucky days, lucky numbers, and compatible signs. Pass any date inside a week to retrieve that week, or timezone to roll over on a local clock. Weekly horoscope API, zodiac weekly forecast, astrology weekly prediction.
+// A Monday to Sunday column for any zodiac sign, naming the transits that perfect during the week and the days they fall on. Each event is read into the whole-sign houses of that sign, so content is unique per sign, and the dated events come back beside the prose so an editor can check a piece before it runs. Alongside the column come overview, love, career, health, finance and advice, plus lucky days, lucky numbers and compatible signs. No language model is involved, so the same sign and week always returns the same text. Pass any date inside a week to retrieve that week, or timezone to roll over on a local clock. Available in eight languages. Weekly horoscope API, zodiac weekly forecast, astrology weekly prediction.
 //
 // Returns a wrapper object for the known response body format(s).
 //
@@ -112992,6 +113966,21 @@ func (c *ClientWithResponses) GetWeeklyHoroscopeWithResponse(ctx context.Context
 		return nil, err
 	}
 	return ParseGetWeeklyHoroscopeResponse(rsp)
+}
+
+// GetYearlyHoroscopeWithResponse Yearly horoscope by zodiac sign - Year ahead forecast with themes, key periods, eclipses and retrogrades
+//
+// Get the year ahead for any zodiac sign, as a long-form column plus the structured arrays a year-ahead page is built from: the slow-body themes that set the backdrop, a dated key period for each of the twelve houses, the best month for love, career, health and finance, and every eclipse and every retrograde and direct station with the house it falls in for this sign. Love, career, health, finance and advice cover the whole year, and the dated events behind the copy come back beside it so an editor can check the piece before it runs. Omit the year for the one in progress, or pass any year from 1900 to 2100 to build an archive or a forecast ahead of time. Yearly horoscope API, year ahead astrology, annual zodiac forecast, eclipse and retrograde calendar.
+//
+// Returns a wrapper object for the known response body format(s).
+//
+// Corresponds with GET /astrology/horoscope/{sign}/yearly (the `GetYearlyHoroscope` operationId).
+func (c *ClientWithResponses) GetYearlyHoroscopeWithResponse(ctx context.Context, sign GetYearlyHoroscopeParamsSign, params *GetYearlyHoroscopeParams, reqEditors ...RequestEditorFn) (*GetYearlyHoroscopeResponse, error) {
+	rsp, err := c.GetYearlyHoroscope(ctx, sign, params, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetYearlyHoroscopeResponse(rsp)
 }
 
 // CalculateHousesWithBodyWithResponse Calculate house cusps - House system calculator with comparison
@@ -119571,14 +120560,41 @@ func ParseGetDailyHoroscopeResponse(rsp *http.Response) (*GetDailyHoroscopeRespo
 			// Career Career and professional outlook. Based on Mars house position relative to this sign, with Saturn and Jupiter influences.
 			Career string `json:"career"`
 
+			// Column The full column for this period, ready to run as one piece, with paragraphs separated by a blank line. Names the events driving it and the dates they fall on, read into the whole-sign houses of this sign. Typically 120 to 180 words. The six section fields are the same reading split by topic, so render either shape and never both. Deterministic: the same sign and period always returns the same column.
+			Column string `json:"column"`
+
 			// CompatibleSigns Most compatible zodiac signs for this sign. Trine partners (same element) followed by a sextile partner (complementary element). Use for compatibility widgets, dating app onboarding, and horoscope cards.
 			CompatibleSigns []string `json:"compatibleSigns"`
 
 			// Date Date of this daily horoscope (YYYY-MM-DD).
 			Date string `json:"date"`
 
-			// EnergyRating Overall energy intensity for this sign today (1-10). Higher when more transits activate this sign directly. Useful for content widgets and visual indicators.
+			// EnergyRating Overall energy for this sign today (1-10). Derived from how many aspects are in force between the planets, how tight they are, whether they are harmonious or challenging, and which houses they fall in for this sign, so a busy day rates higher than a quiet one and a harmonious day higher than a hostile one of the same weight. Useful for content widgets and visual indicators.
 			EnergyRating float32 `json:"energyRating"`
+
+			// Events The dated astronomical events this reading is built on, earliest first. Every field in every row can be checked against an independent authority, so a column can be fact-checked before it is published. Empty on a period in which nothing exact happens, where the reading falls back to the standing positions instead.
+			Events []struct {
+				// Aspect Angle formed, on aspect events only: conjunction, sextile, square, trine, opposition, semi-sextile, quincunx, semi-square, or sesquiquadrate.
+				Aspect *string `json:"aspect,omitempty"`
+
+				// At Exact instant the event perfects, UTC, to the second. Verifiable against NASA JPL Horizons for a position event and against the US Naval Observatory for a lunar phase or eclipse.
+				At string `json:"at"`
+
+				// Bodies Bodies involved, canonical English regardless of the requested language so the value stays safe to switch on. Two entries for an aspect, faster body first. One entry for an ingress, a station, a lunar phase, or an eclipse.
+				Bodies []string `json:"bodies"`
+
+				// House Whole-sign house the event falls in, counted from the queried sign, 1 to 12. This is what turns one global sky event into a statement about this reader.
+				House int `json:"house"`
+
+				// Sign Sign the event falls in, lowercase, where it has exactly one. Absent for an aspect whose two bodies stand in different signs.
+				Sign *string `json:"sign,omitempty"`
+
+				// Through End of the window this event holds open, UTC, given only where a bounded window is a real fact about it: the orb span of an aspect, the sign span of an ingress or a season, the retrograde span of a station. Absent for a lunar phase or an eclipse, which are instants and not spans.
+				Through *string `json:"through,omitempty"`
+
+				// Type Kind of event. aspect is an exact angle between two moving bodies, sign-ingress a body entering a new sign, retrograde-station a body turning retrograde or direct, lunar-phase one of the four quarters, eclipse a solar or lunar eclipse, and solar-season the Sun entering a sign.
+				Type GetDailyHoroscope200JSONResponseBodyEventsType `json:"type"`
+			} `json:"events"`
 
 			// Finance Financial outlook and money-related guidance.
 			Finance string `json:"finance"`
@@ -119589,10 +120605,10 @@ func ParseGetDailyHoroscopeResponse(rsp *http.Response) (*GetDailyHoroscopeRespo
 			// Love Love and relationship forecast. Based on Venus house position relative to this sign, providing unique guidance per sign.
 			Love string `json:"love"`
 
-			// LuckyColor Lucky color for the day, derived from the sign element.
+			// LuckyColor Lucky color for the day, drawn from the three colors of the sign element and selected by the planet governing the reading.
 			LuckyColor string `json:"luckyColor"`
 
-			// LuckyNumber Lucky number for the day.
+			// LuckyNumber Lucky number for the day, 1 to 9, from the traditional planetary number correspondence applied to the planet that governs this sign today. Not a random draw and not a function of the date.
 			LuckyNumber float32 `json:"luckyNumber"`
 
 			// MoonPhase Current lunar phase (New Moon, Waxing Crescent, First Quarter, Waxing Gibbous, Full Moon, Waning Gibbous, Last Quarter, Waning Crescent).
@@ -119687,8 +120703,35 @@ func ParseGetMonthlyHoroscopeResponse(rsp *http.Response) (*GetMonthlyHoroscopeR
 			// Career Monthly career and professional outlook.
 			Career string `json:"career"`
 
+			// Column The full column for this period, ready to run as one piece, with paragraphs separated by a blank line. Names the events driving it and the dates they fall on, read into the whole-sign houses of this sign. Typically 400 to 700 words. The six section fields are the same reading split by topic, so render either shape and never both. Deterministic: the same sign and period always returns the same column.
+			Column string `json:"column"`
+
 			// CompatibleSigns Most compatible zodiac signs for this sign. Trine partners (same element) followed by a sextile partner (complementary element).
 			CompatibleSigns []string `json:"compatibleSigns"`
+
+			// Events The dated astronomical events this reading is built on, earliest first. Every field in every row can be checked against an independent authority, so a column can be fact-checked before it is published. Empty on a period in which nothing exact happens, where the reading falls back to the standing positions instead.
+			Events []struct {
+				// Aspect Angle formed, on aspect events only: conjunction, sextile, square, trine, opposition, semi-sextile, quincunx, semi-square, or sesquiquadrate.
+				Aspect *string `json:"aspect,omitempty"`
+
+				// At Exact instant the event perfects, UTC, to the second. Verifiable against NASA JPL Horizons for a position event and against the US Naval Observatory for a lunar phase or eclipse.
+				At string `json:"at"`
+
+				// Bodies Bodies involved, canonical English regardless of the requested language so the value stays safe to switch on. Two entries for an aspect, faster body first. One entry for an ingress, a station, a lunar phase, or an eclipse.
+				Bodies []string `json:"bodies"`
+
+				// House Whole-sign house the event falls in, counted from the queried sign, 1 to 12. This is what turns one global sky event into a statement about this reader.
+				House int `json:"house"`
+
+				// Sign Sign the event falls in, lowercase, where it has exactly one. Absent for an aspect whose two bodies stand in different signs.
+				Sign *string `json:"sign,omitempty"`
+
+				// Through End of the window this event holds open, UTC, given only where a bounded window is a real fact about it: the orb span of an aspect, the sign span of an ingress or a season, the retrograde span of a station. Absent for a lunar phase or an eclipse, which are instants and not spans.
+				Through *string `json:"through,omitempty"`
+
+				// Type Kind of event. aspect is an exact angle between two moving bodies, sign-ingress a body entering a new sign, retrograde-station a body turning retrograde or direct, lunar-phase one of the four quarters, eclipse a solar or lunar eclipse, and solar-season the Sun entering a sign.
+				Type GetMonthlyHoroscope200JSONResponseBodyEventsType `json:"type"`
+			} `json:"events"`
 
 			// Finance Monthly financial outlook and guidance.
 			Finance string `json:"finance"`
@@ -119708,10 +120751,10 @@ func ParseGetMonthlyHoroscopeResponse(rsp *http.Response) (*GetMonthlyHoroscopeR
 			// Love Monthly love and relationship forecast.
 			Love string `json:"love"`
 
-			// LuckyColor Lucky color for the month.
+			// LuckyColor Lucky color for the month, drawn from the three colors of the sign element and selected by the planet governing the reading.
 			LuckyColor string `json:"luckyColor"`
 
-			// LuckyNumbers Lucky numbers for the month.
+			// LuckyNumbers Four lucky numbers for the month, each 1 to 9 and all distinct, from the traditional planetary number correspondence applied to the four planets that govern this sign this month.
 			LuckyNumbers []float32 `json:"luckyNumbers"`
 
 			// Month Month of this forecast (YYYY-MM).
@@ -119815,8 +120858,35 @@ func ParseGetWeeklyHoroscopeResponse(rsp *http.Response) (*GetWeeklyHoroscopeRes
 			// Career Weekly career and professional outlook.
 			Career string `json:"career"`
 
+			// Column The full column for this period, ready to run as one piece, with paragraphs separated by a blank line. Names the events driving it and the dates they fall on, read into the whole-sign houses of this sign. Typically 250 to 450 words. The six section fields are the same reading split by topic, so render either shape and never both. Deterministic: the same sign and period always returns the same column.
+			Column string `json:"column"`
+
 			// CompatibleSigns Most compatible zodiac signs for this sign. Trine partners (same element) followed by a sextile partner (complementary element).
 			CompatibleSigns []string `json:"compatibleSigns"`
+
+			// Events The dated astronomical events this reading is built on, earliest first. Every field in every row can be checked against an independent authority, so a column can be fact-checked before it is published. Empty on a period in which nothing exact happens, where the reading falls back to the standing positions instead.
+			Events []struct {
+				// Aspect Angle formed, on aspect events only: conjunction, sextile, square, trine, opposition, semi-sextile, quincunx, semi-square, or sesquiquadrate.
+				Aspect *string `json:"aspect,omitempty"`
+
+				// At Exact instant the event perfects, UTC, to the second. Verifiable against NASA JPL Horizons for a position event and against the US Naval Observatory for a lunar phase or eclipse.
+				At string `json:"at"`
+
+				// Bodies Bodies involved, canonical English regardless of the requested language so the value stays safe to switch on. Two entries for an aspect, faster body first. One entry for an ingress, a station, a lunar phase, or an eclipse.
+				Bodies []string `json:"bodies"`
+
+				// House Whole-sign house the event falls in, counted from the queried sign, 1 to 12. This is what turns one global sky event into a statement about this reader.
+				House int `json:"house"`
+
+				// Sign Sign the event falls in, lowercase, where it has exactly one. Absent for an aspect whose two bodies stand in different signs.
+				Sign *string `json:"sign,omitempty"`
+
+				// Through End of the window this event holds open, UTC, given only where a bounded window is a real fact about it: the orb span of an aspect, the sign span of an ingress or a season, the retrograde span of a station. Absent for a lunar phase or an eclipse, which are instants and not spans.
+				Through *string `json:"through,omitempty"`
+
+				// Type Kind of event. aspect is an exact angle between two moving bodies, sign-ingress a body entering a new sign, retrograde-station a body turning retrograde or direct, lunar-phase one of the four quarters, eclipse a solar or lunar eclipse, and solar-season the Sun entering a sign.
+				Type GetWeeklyHoroscope200JSONResponseBodyEventsType `json:"type"`
+			} `json:"events"`
 
 			// Finance Weekly financial outlook.
 			Finance string `json:"finance"`
@@ -119827,10 +120897,10 @@ func ParseGetWeeklyHoroscopeResponse(rsp *http.Response) (*GetWeeklyHoroscopeRes
 			// Love Weekly love and relationship forecast.
 			Love string `json:"love"`
 
-			// LuckyDays Favorable days this week, based on planetary rulership.
+			// LuckyDays The three most favorable days this week, from the planetary rulers of the seven weekdays, ranked by how strongly each of those planets stands for this sign.
 			LuckyDays []string `json:"luckyDays"`
 
-			// LuckyNumbers Lucky numbers for the week.
+			// LuckyNumbers Three lucky numbers for the week, each 1 to 9 and all distinct, from the traditional planetary number correspondence applied to the three planets that govern this sign this week.
 			LuckyNumbers []float32 `json:"luckyNumbers"`
 
 			// Overview Weekly overview highlighting the dominant planetary transits through the sign.
@@ -119887,6 +120957,263 @@ func ParseGetWeeklyHoroscopeResponse(rsp *http.Response) (*GetWeeklyHoroscopeRes
 	switch {
 	case rsp.StatusCode == 405:
 		var headers GetWeeklyHoroscopeResponse405Headers
+		if values := rsp.Header.Values("Allow"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "Allow", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.Allow = &value
+		}
+		response.Headers405 = &headers
+	}
+
+	return response, nil
+}
+
+// ParseGetYearlyHoroscopeResponse parses an HTTP response from a GetYearlyHoroscopeWithResponse call
+func ParseGetYearlyHoroscopeResponse(rsp *http.Response) (*GetYearlyHoroscopeResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetYearlyHoroscopeResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Advice The single takeaway for the year, drawn from the event that leads it rather than stated in general terms.
+			Advice string `json:"advice"`
+
+			// BestPeriods The easiest month of the year for each of the four topic sections, by how many exact harmonious aspects (sextiles and trines) fall in that month and land in the houses that govern the area for this sign. An area is omitted only in the rare year that carries no harmonious aspect for it at all, so treat each key as optional. Use it for the best-months-for panel, and read the count as the evidence behind the word best.
+			BestPeriods struct {
+				// Career Best month for career, work and reputation. Absent only if the whole year carries no harmonious aspect reaching this area.
+				Career *struct {
+					// Count How many exact harmonious aspects fell in that month and reached this area. This is the measurement the month was chosen on, and every aspect behind it can be checked against NASA JPL Horizons.
+					Count int `json:"count"`
+
+					// From First day of the month, in UTC (YYYY-MM-DD).
+					From string `json:"from"`
+
+					// To Last day of the month, in UTC (YYYY-MM-DD).
+					To string `json:"to"`
+				} `json:"career,omitempty"`
+
+				// Finance Best month for finance. Absent only if the whole year carries no harmonious aspect reaching this area.
+				Finance *struct {
+					// Count How many exact harmonious aspects fell in that month and reached this area. This is the measurement the month was chosen on, and every aspect behind it can be checked against NASA JPL Horizons.
+					Count int `json:"count"`
+
+					// From First day of the month, in UTC (YYYY-MM-DD).
+					From string `json:"from"`
+
+					// To Last day of the month, in UTC (YYYY-MM-DD).
+					To string `json:"to"`
+				} `json:"finance,omitempty"`
+
+				// Health Best month for health. Absent only if the whole year carries no harmonious aspect reaching this area.
+				Health *struct {
+					// Count How many exact harmonious aspects fell in that month and reached this area. This is the measurement the month was chosen on, and every aspect behind it can be checked against NASA JPL Horizons.
+					Count int `json:"count"`
+
+					// From First day of the month, in UTC (YYYY-MM-DD).
+					From string `json:"from"`
+
+					// To Last day of the month, in UTC (YYYY-MM-DD).
+					To string `json:"to"`
+				} `json:"health,omitempty"`
+
+				// Love Best month for romance and partnership. Absent only if the whole year carries no harmonious aspect reaching this area.
+				Love *struct {
+					// Count How many exact harmonious aspects fell in that month and reached this area. This is the measurement the month was chosen on, and every aspect behind it can be checked against NASA JPL Horizons.
+					Count int `json:"count"`
+
+					// From First day of the month, in UTC (YYYY-MM-DD).
+					From string `json:"from"`
+
+					// To Last day of the month, in UTC (YYYY-MM-DD).
+					To string `json:"to"`
+				} `json:"love,omitempty"`
+			} `json:"bestPeriods"`
+
+			// Career Yearly career and professional outlook.
+			Career string `json:"career"`
+
+			// Column The full column for this period, ready to run as one piece, with paragraphs separated by a blank line. Names the events driving it and the dates they fall on, read into the whole-sign houses of this sign. Typically 600 to 900 words. The six section fields are the same reading split by topic, so render either shape and never both. Deterministic: the same sign and period always returns the same column.
+			Column string `json:"column"`
+
+			// CompatibleSigns Most compatible zodiac signs for this sign. Trine partners (same element) followed by a sextile partner (complementary element).
+			CompatibleSigns []string `json:"compatibleSigns"`
+
+			// Eclipses Every solar and lunar eclipse of the year, with the house each one falls in for this sign. Usually four to six, and the dates match the published eclipse canon.
+			Eclipses []struct {
+				// Date Date of the eclipse peak in UTC (YYYY-MM-DD). The exact instant is in the events array.
+				Date string `json:"date"`
+
+				// House Whole-sign house the eclipse falls in for this sign, 1 to 12.
+				House int `json:"house"`
+
+				// Kind Eclipse kind: total, annular, partial, or penumbral.
+				Kind string `json:"kind"`
+
+				// Theme What that house governs, so the eclipse reads as a life area rather than a coordinate.
+				Theme string `json:"theme"`
+			} `json:"eclipses"`
+
+			// Events The dated astronomical events this reading is built on, earliest first. Every field in every row can be checked against an independent authority, so a column can be fact-checked before it is published. Empty on a period in which nothing exact happens, where the reading falls back to the standing positions instead.
+			Events []struct {
+				// Aspect Angle formed, on aspect events only: conjunction, sextile, square, trine, opposition, semi-sextile, quincunx, semi-square, or sesquiquadrate.
+				Aspect *string `json:"aspect,omitempty"`
+
+				// At Exact instant the event perfects, UTC, to the second. Verifiable against NASA JPL Horizons for a position event and against the US Naval Observatory for a lunar phase or eclipse.
+				At string `json:"at"`
+
+				// Bodies Bodies involved, canonical English regardless of the requested language so the value stays safe to switch on. Two entries for an aspect, faster body first. One entry for an ingress, a station, a lunar phase, or an eclipse.
+				Bodies []string `json:"bodies"`
+
+				// House Whole-sign house the event falls in, counted from the queried sign, 1 to 12. This is what turns one global sky event into a statement about this reader.
+				House int `json:"house"`
+
+				// Sign Sign the event falls in, lowercase, where it has exactly one. Absent for an aspect whose two bodies stand in different signs.
+				Sign *string `json:"sign,omitempty"`
+
+				// Through End of the window this event holds open, UTC, given only where a bounded window is a real fact about it: the orb span of an aspect, the sign span of an ingress or a season, the retrograde span of a station. Absent for a lunar phase or an eclipse, which are instants and not spans.
+				Through *string `json:"through,omitempty"`
+
+				// Type Kind of event. aspect is an exact angle between two moving bodies, sign-ingress a body entering a new sign, retrograde-station a body turning retrograde or direct, lunar-phase one of the four quarters, eclipse a solar or lunar eclipse, and solar-season the Sun entering a sign.
+				Type GetYearlyHoroscope200JSONResponseBodyEventsType `json:"type"`
+			} `json:"events"`
+
+			// Finance Yearly financial outlook.
+			Finance string `json:"finance"`
+
+			// Health Yearly health, energy, and wellness outlook.
+			Health string `json:"health"`
+
+			// KeyPeriods The year as a calendar of life areas: for each whole-sign house, the single dated stretch that most strongly activates it, ordered by start date. Twelve rows in a full year, one per house, so every life area gets a date range and none is named twice. Periods overlap freely, because more than one body is always moving. Use it for the dates-to-circle panel of a year-ahead page.
+			KeyPeriods []struct {
+				// Body Body driving the period, canonical English regardless of the requested language: Mercury, Venus, or Mars. The slower bodies are in the themes array instead, because a stretch measured in years is a backdrop rather than a date to circle.
+				Body string `json:"body"`
+
+				// Focus The life area that period is about, from the house it activates.
+				Focus string `json:"focus"`
+
+				// From Date the period opens, in UTC (YYYY-MM-DD). Always inside the year requested: this is the day the body enters the sign.
+				From string `json:"from"`
+
+				// House Whole-sign house the period activates for this sign, 1 to 12. Unique within the array: each house appears at most once.
+				House int `json:"house"`
+
+				// To Date the period closes, in UTC (YYYY-MM-DD), which is the day the body leaves that sign. A period that opens late in the year closes in the next one, by at most about three months, so a reader knows what they are still in on January 1.
+				To string `json:"to"`
+			} `json:"keyPeriods"`
+
+			// Love Yearly love and relationship outlook.
+			Love string `json:"love"`
+
+			// LuckyColor Lucky color for the year, drawn from the three colors of the sign element and selected by the planet governing the reading.
+			LuckyColor string `json:"luckyColor"`
+
+			// LuckyNumbers Four lucky numbers for the year, each 1 to 9 and all distinct, from the traditional planetary number correspondence applied to the four planets that govern this sign this year.
+			LuckyNumbers []float32 `json:"luckyNumbers"`
+
+			// Overview Yearly overview, led by the single event with the most weight for this sign across the whole year.
+			Overview string `json:"overview"`
+
+			// Retrogrades Every retrograde and direct station of the year, in order, with the house each falls in for this sign. Drives review windows and the not-yet warnings a yearly column is bought for.
+			Retrogrades []struct {
+				// Body Body making the station, canonical English.
+				Body string `json:"body"`
+
+				// Date Date the body turns, in UTC (YYYY-MM-DD). The exact instant is in the events array.
+				Date string `json:"date"`
+
+				// Direction Which way it turns: retrograde when apparent motion reverses, direct when it resumes.
+				Direction string `json:"direction"`
+
+				// House Whole-sign house the station falls in for this sign, 1 to 12.
+				House int `json:"house"`
+
+				// Theme What that house governs, so the station reads as a life area rather than a coordinate.
+				Theme string `json:"theme"`
+			} `json:"retrogrades"`
+
+			// Sign Zodiac sign for this horoscope.
+			Sign string `json:"sign"`
+
+			// Themes The backdrop of the year: which whole-sign house each slow-moving body occupies for this sign, Jupiter first and Pluto last. One row per unbroken stretch, so a body that stays put is a single row spanning the year and a body that changes sign is two rows with the exact date between them. Dates are the part of the stretch that falls inside this year; the full span of a change that happens inside the year is in the events array. Use it for the year-at-a-glance panel a year-ahead page opens with.
+			Themes []struct {
+				// Body The slow-moving body holding this theme, canonical English regardless of the requested language: Jupiter, Saturn, Uranus, Neptune, or Pluto.
+				Body string `json:"body"`
+
+				// From First date of the stretch inside this year, in UTC (YYYY-MM-DD). January 1 when the body was already there when the year opened, otherwise the date it arrived.
+				From string `json:"from"`
+
+				// House Whole-sign house that sign is for this sign, 1 to 12.
+				House int `json:"house"`
+
+				// Sign Sign the body occupies through this stretch, lowercase. Checkable against NASA JPL Horizons for any date inside from and to.
+				Sign string `json:"sign"`
+
+				// Theme What that house governs, so the placement reads as a life area rather than a coordinate.
+				Theme string `json:"theme"`
+
+				// To Last date of the stretch inside this year, in UTC (YYYY-MM-DD). December 31 when the body is still there when the year closes, otherwise the date it leaves.
+				To string `json:"to"`
+			} `json:"themes"`
+
+			// Year Calendar year this forecast covers. Echoes the year requested, or the current year when it was omitted.
+			Year int `json:"year"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 405:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON405 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	switch {
+	case rsp.StatusCode == 405:
+		var headers GetYearlyHoroscopeResponse405Headers
 		if values := rsp.Header.Values("Allow"); len(values) > 0 {
 			var value string
 			if err := runtime.BindStyledParameterWithOptions("simple", "Allow", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
@@ -124014,7 +125341,7 @@ func ParseCalculateAnnualForecastResponse(rsp *http.Response) (*CalculateAnnualF
 				// Category Which of the five cycle relations this belongs to. peer is the same element as the Day Master, output is what the Day Master generates, wealth is what it controls, influence is what controls it, resource is what generates it, and self marks the Day Master itself. Always English, whatever the lang parameter says.
 				Category string `json:"category"`
 
-				// Chinese The relation in simplified hanzi. Identical under every lang; the traditional forms arrive through the zh-Hant response.
+				// Chinese The relation in traditional hanzi. Identical under every lang.
 				Chinese string `json:"chinese"`
 
 				// ID Ten God identifier. One of friend, rob-wealth, eating-god, hurting-officer, indirect-wealth, direct-wealth, seven-killings, direct-officer, indirect-resource, direct-resource, plus day-master in the day-stem position. Always English, whatever the lang parameter says.
@@ -124089,7 +125416,7 @@ func ParseCalculateAnnualForecastResponse(rsp *http.Response) (*CalculateAnnualF
 				// Category Which of the five cycle relations this belongs to. peer is the same element as the Day Master, output is what the Day Master generates, wealth is what it controls, influence is what controls it, resource is what generates it, and self marks the Day Master itself. Always English, whatever the lang parameter says.
 				Category string `json:"category"`
 
-				// Chinese The relation in simplified hanzi. Identical under every lang; the traditional forms arrive through the zh-Hant response.
+				// Chinese The relation in traditional hanzi. Identical under every lang.
 				Chinese string `json:"chinese"`
 
 				// ID Ten God identifier. One of friend, rob-wealth, eating-god, hurting-officer, indirect-wealth, direct-wealth, seven-killings, direct-officer, indirect-resource, direct-resource, plus day-master in the day-stem position. Always English, whatever the lang parameter says.
@@ -124359,7 +125686,7 @@ func ParseGenerateBaziChartResponse(rsp *http.Response) (*GenerateBaziChartRespo
 						// Category Which of the five cycle relations this belongs to. peer is the same element as the Day Master, output is what the Day Master generates, wealth is what it controls, influence is what controls it, resource is what generates it, and self marks the Day Master itself. Always English, whatever the lang parameter says.
 						Category string `json:"category"`
 
-						// Chinese The relation in simplified hanzi. Identical under every lang; the traditional forms arrive through the zh-Hant response.
+						// Chinese The relation in traditional hanzi. Identical under every lang.
 						Chinese string `json:"chinese"`
 
 						// ID Ten God identifier. One of friend, rob-wealth, eating-god, hurting-officer, indirect-wealth, direct-wealth, seven-killings, direct-officer, indirect-resource, direct-resource, plus day-master in the day-stem position. Always English, whatever the lang parameter says.
@@ -124423,7 +125750,7 @@ func ParseGenerateBaziChartResponse(rsp *http.Response) (*GenerateBaziChartRespo
 					// Category Which of the five cycle relations this belongs to. peer is the same element as the Day Master, output is what the Day Master generates, wealth is what it controls, influence is what controls it, resource is what generates it, and self marks the Day Master itself. Always English, whatever the lang parameter says.
 					Category string `json:"category"`
 
-					// Chinese The relation in simplified hanzi. Identical under every lang; the traditional forms arrive through the zh-Hant response.
+					// Chinese The relation in traditional hanzi. Identical under every lang.
 					Chinese string `json:"chinese"`
 
 					// ID Ten God identifier. One of friend, rob-wealth, eating-god, hurting-officer, indirect-wealth, direct-wealth, seven-killings, direct-officer, indirect-resource, direct-resource, plus day-master in the day-stem position. Always English, whatever the lang parameter says.
@@ -124669,7 +125996,7 @@ func ParseCalculateBaziCompatibilityResponse(rsp *http.Response) (*CalculateBazi
 							// Category Which of the five cycle relations this belongs to. peer is the same element as the Day Master, output is what the Day Master generates, wealth is what it controls, influence is what controls it, resource is what generates it, and self marks the Day Master itself. Always English, whatever the lang parameter says.
 							Category string `json:"category"`
 
-							// Chinese The relation in simplified hanzi. Identical under every lang; the traditional forms arrive through the zh-Hant response.
+							// Chinese The relation in traditional hanzi. Identical under every lang.
 							Chinese string `json:"chinese"`
 
 							// ID Ten God identifier. One of friend, rob-wealth, eating-god, hurting-officer, indirect-wealth, direct-wealth, seven-killings, direct-officer, indirect-resource, direct-resource, plus day-master in the day-stem position. Always English, whatever the lang parameter says.
@@ -124733,7 +126060,7 @@ func ParseCalculateBaziCompatibilityResponse(rsp *http.Response) (*CalculateBazi
 						// Category Which of the five cycle relations this belongs to. peer is the same element as the Day Master, output is what the Day Master generates, wealth is what it controls, influence is what controls it, resource is what generates it, and self marks the Day Master itself. Always English, whatever the lang parameter says.
 						Category string `json:"category"`
 
-						// Chinese The relation in simplified hanzi. Identical under every lang; the traditional forms arrive through the zh-Hant response.
+						// Chinese The relation in traditional hanzi. Identical under every lang.
 						Chinese string `json:"chinese"`
 
 						// ID Ten God identifier. One of friend, rob-wealth, eating-god, hurting-officer, indirect-wealth, direct-wealth, seven-killings, direct-officer, indirect-resource, direct-resource, plus day-master in the day-stem position. Always English, whatever the lang parameter says.
@@ -124855,7 +126182,7 @@ func ParseCalculateBaziCompatibilityResponse(rsp *http.Response) (*CalculateBazi
 							// Category Which of the five cycle relations this belongs to. peer is the same element as the Day Master, output is what the Day Master generates, wealth is what it controls, influence is what controls it, resource is what generates it, and self marks the Day Master itself. Always English, whatever the lang parameter says.
 							Category string `json:"category"`
 
-							// Chinese The relation in simplified hanzi. Identical under every lang; the traditional forms arrive through the zh-Hant response.
+							// Chinese The relation in traditional hanzi. Identical under every lang.
 							Chinese string `json:"chinese"`
 
 							// ID Ten God identifier. One of friend, rob-wealth, eating-god, hurting-officer, indirect-wealth, direct-wealth, seven-killings, direct-officer, indirect-resource, direct-resource, plus day-master in the day-stem position. Always English, whatever the lang parameter says.
@@ -124919,7 +126246,7 @@ func ParseCalculateBaziCompatibilityResponse(rsp *http.Response) (*CalculateBazi
 						// Category Which of the five cycle relations this belongs to. peer is the same element as the Day Master, output is what the Day Master generates, wealth is what it controls, influence is what controls it, resource is what generates it, and self marks the Day Master itself. Always English, whatever the lang parameter says.
 						Category string `json:"category"`
 
-						// Chinese The relation in simplified hanzi. Identical under every lang; the traditional forms arrive through the zh-Hant response.
+						// Chinese The relation in traditional hanzi. Identical under every lang.
 						Chinese string `json:"chinese"`
 
 						// ID Ten God identifier. One of friend, rob-wealth, eating-god, hurting-officer, indirect-wealth, direct-wealth, seven-killings, direct-officer, indirect-resource, direct-resource, plus day-master in the day-stem position. Always English, whatever the lang parameter says.
@@ -125233,7 +126560,7 @@ func ParseCalculateLuckPillarsResponse(rsp *http.Response) (*CalculateLuckPillar
 					// Category Which of the five cycle relations this belongs to. peer is the same element as the Day Master, output is what the Day Master generates, wealth is what it controls, influence is what controls it, resource is what generates it, and self marks the Day Master itself. Always English, whatever the lang parameter says.
 					Category string `json:"category"`
 
-					// Chinese The relation in simplified hanzi. Identical under every lang; the traditional forms arrive through the zh-Hant response.
+					// Chinese The relation in traditional hanzi. Identical under every lang.
 					Chinese string `json:"chinese"`
 
 					// ID Ten God identifier. One of friend, rob-wealth, eating-god, hurting-officer, indirect-wealth, direct-wealth, seven-killings, direct-officer, indirect-resource, direct-resource, plus day-master in the day-stem position. Always English, whatever the lang parameter says.
@@ -125374,7 +126701,7 @@ func ParseCalculateLuckPillarsResponse(rsp *http.Response) (*CalculateLuckPillar
 					// Category Which of the five cycle relations this belongs to. peer is the same element as the Day Master, output is what the Day Master generates, wealth is what it controls, influence is what controls it, resource is what generates it, and self marks the Day Master itself. Always English, whatever the lang parameter says.
 					Category string `json:"category"`
 
-					// Chinese The relation in simplified hanzi. Identical under every lang; the traditional forms arrive through the zh-Hant response.
+					// Chinese The relation in traditional hanzi. Identical under every lang.
 					Chinese string `json:"chinese"`
 
 					// ID Ten God identifier. One of friend, rob-wealth, eating-god, hurting-officer, indirect-wealth, direct-wealth, seven-killings, direct-officer, indirect-resource, direct-resource, plus day-master in the day-stem position. Always English, whatever the lang parameter says.
@@ -126569,7 +127896,7 @@ func ParseListZodiacAnimalsResponse(rsp *http.Response) (*ListZodiacAnimalsRespo
 				// Branch Earthly Branch this animal names, as its pinyin identifier. The twelve branches are zi, chou, yin, mao, chen, si, wu, wei, shen, you, xu, hai, and they run in the same order as the animals. Every animal element, polarity and double-hour is a property of this branch.
 				Branch string `json:"branch"`
 
-				// Chinese Simplified Chinese character for the animal itself, not for its Earthly Branch. Data rather than a translation, so it is identical under every lang.
+				// Chinese Traditional hanzi character for the animal itself, not for its Earthly Branch. Data rather than a translation, so it is identical under every lang.
 				Chinese string `json:"chinese"`
 
 				// Element Fixed Five Element (Wu Xing) phase of the animal own branch: Wood, Fire, Earth, Metal or Water. This never changes for a sign. It is NOT the year phase that makes a Metal Rat differ from a Water Rat, which comes from the year Heavenly Stem. Always English so it stays safe to compare against and to key colours off.
@@ -126683,12 +128010,12 @@ func ParseGetZodiacAnimalResponse(rsp *http.Response) (*GetZodiacAnimalResponse,
 			// Branch Earthly Branch this animal names, as its pinyin identifier. The twelve branches are zi, chou, yin, mao, chen, si, wu, wei, shen, you, xu, hai, and they run in the same order as the animals. Every animal element, polarity and double-hour is a property of this branch.
 			Branch string `json:"branch"`
 
-			// Chinese Simplified Chinese character for the animal itself, not for its Earthly Branch. Data rather than a translation, so it is identical under every lang.
+			// Chinese Traditional hanzi character for the animal itself, not for its Earthly Branch. Data rather than a translation, so it is identical under every lang.
 			Chinese string `json:"chinese"`
 
 			// ClashPartner The clashing animal (Liu Chong): the branch directly opposite, six positions away. The tradition reads this as the most charged pairing in the cycle and the least restful.
 			ClashPartner struct {
-				// Chinese Simplified Chinese character for the related animal.
+				// Chinese Traditional hanzi character for the related animal.
 				Chinese string `json:"chinese"`
 
 				// ID Stable machine identifier for the animal. Always English and lowercase, whatever the lang parameter says, so it stays safe to compare against in code. Use nameLocalized for anything a reader sees. The twelve ids are rat, ox, tiger, rabbit, dragon, snake, horse, goat, monkey, rooster, dog, pig.
@@ -126736,7 +128063,7 @@ func ParseGetZodiacAnimalResponse(rsp *http.Response) (*GetZodiacAnimalResponse,
 
 			// HarmPartner The harming animal (Liu Hai). Treated as less violent than a clash and harder to spot, because it works through accumulation rather than confrontation.
 			HarmPartner struct {
-				// Chinese Simplified Chinese character for the related animal.
+				// Chinese Traditional hanzi character for the related animal.
 				Chinese string `json:"chinese"`
 
 				// ID Stable machine identifier for the animal. Always English and lowercase, whatever the lang parameter says, so it stays safe to compare against in code. Use nameLocalized for anything a reader sees. The twelve ids are rat, ox, tiger, rabbit, dragon, snake, horse, goat, monkey, rooster, dog, pig.
@@ -126778,7 +128105,7 @@ func ParseGetZodiacAnimalResponse(rsp *http.Response) (*GetZodiacAnimalResponse,
 
 			// SecretFriend The six-harmony partner (Liu He), traditionally called the secret friend because the support it gives arrives unasked. The element is the phase the two branches combine into, which is generally neither animal own phase.
 			SecretFriend struct {
-				// Chinese Simplified Chinese character for the related animal.
+				// Chinese Traditional hanzi character for the related animal.
 				Chinese string `json:"chinese"`
 
 				// Element Fixed Five Element (Wu Xing) phase of the animal own branch: Wood, Fire, Earth, Metal or Water. This never changes for a sign. It is NOT the year phase that makes a Metal Rat differ from a Water Rat, which comes from the year Heavenly Stem. Always English so it stays safe to compare against and to key colours off.
@@ -126922,7 +128249,7 @@ func ParseGetZodiacCompatibilityResponse(rsp *http.Response) (*GetZodiacCompatib
 			// Relationship Which of the six classical branch relations the pair stands in. One of secret-friend (Liu He, the six harmonies), trine (San He, the three harmonies), same (both signs share a branch), neutral (no formal relation), harm (Liu Hai) or clash (Liu Chong, branches six apart). Exactly one applies to any pair, because no two of the conditions can hold at once. Always English so it stays safe to switch on.
 			Relationship string `json:"relationship"`
 
-			// RelationshipChinese Classical name of the relation in simplified Chinese.
+			// RelationshipChinese Classical name of the relation in traditional hanzi. Identical under every lang.
 			RelationshipChinese string `json:"relationshipChinese"`
 
 			// RelationshipName Display name of the relation in English. Always English; use relationshipNameLocalized for anything a reader sees.
@@ -126949,7 +128276,7 @@ func ParseGetZodiacCompatibilityResponse(rsp *http.Response) (*GetZodiacCompatib
 					// Branch Earthly Branch this animal names, as its pinyin identifier. The twelve branches are zi, chou, yin, mao, chen, si, wu, wei, shen, you, xu, hai, and they run in the same order as the animals. Every animal element, polarity and double-hour is a property of this branch.
 					Branch string `json:"branch"`
 
-					// Chinese Simplified Chinese character for the animal itself, not for its Earthly Branch. Data rather than a translation, so it is identical under every lang.
+					// Chinese Traditional hanzi character for the animal itself, not for its Earthly Branch. Data rather than a translation, so it is identical under every lang.
 					Chinese string `json:"chinese"`
 
 					// Element Fixed Five Element (Wu Xing) phase of the animal own branch: Wood, Fire, Earth, Metal or Water. This never changes for a sign. It is NOT the year phase that makes a Metal Rat differ from a Water Rat, which comes from the year Heavenly Stem. Always English so it stays safe to compare against and to key colours off.
@@ -126977,7 +128304,7 @@ func ParseGetZodiacCompatibilityResponse(rsp *http.Response) (*GetZodiacCompatib
 					// Branch Earthly Branch this animal names, as its pinyin identifier. The twelve branches are zi, chou, yin, mao, chen, si, wu, wei, shen, you, xu, hai, and they run in the same order as the animals. Every animal element, polarity and double-hour is a property of this branch.
 					Branch string `json:"branch"`
 
-					// Chinese Simplified Chinese character for the animal itself, not for its Earthly Branch. Data rather than a translation, so it is identical under every lang.
+					// Chinese Traditional hanzi character for the animal itself, not for its Earthly Branch. Data rather than a translation, so it is identical under every lang.
 					Chinese string `json:"chinese"`
 
 					// Element Fixed Five Element (Wu Xing) phase of the animal own branch: Wood, Fire, Earth, Metal or Water. This never changes for a sign. It is NOT the year phase that makes a Metal Rat differ from a Water Rat, which comes from the year Heavenly Stem. Always English so it stays safe to compare against and to key colours off.
@@ -127091,7 +128418,7 @@ func ParseCalculateZodiacAnimalResponse(rsp *http.Response) (*CalculateZodiacAni
 				// Branch Earthly Branch this animal names, as its pinyin identifier. The twelve branches are zi, chou, yin, mao, chen, si, wu, wei, shen, you, xu, hai, and they run in the same order as the animals. Every animal element, polarity and double-hour is a property of this branch.
 				Branch string `json:"branch"`
 
-				// Chinese Simplified Chinese character for the animal itself, not for its Earthly Branch. Data rather than a translation, so it is identical under every lang.
+				// Chinese Traditional hanzi character for the animal itself, not for its Earthly Branch. Data rather than a translation, so it is identical under every lang.
 				Chinese string `json:"chinese"`
 
 				// Element Fixed Five Element (Wu Xing) phase of the animal own branch: Wood, Fire, Earth, Metal or Water. This never changes for a sign. It is NOT the year phase that makes a Metal Rat differ from a Water Rat, which comes from the year Heavenly Stem. Always English so it stays safe to compare against and to key colours off.
@@ -127234,7 +128561,7 @@ func ParseGetDailyZodiacReadingResponse(rsp *http.Response) (*GetDailyZodiacRead
 				// Branch Earthly Branch this animal names, as its pinyin identifier.
 				Branch string `json:"branch"`
 
-				// Chinese Simplified Chinese character for the animal.
+				// Chinese Traditional hanzi character for the animal. Identical under every lang.
 				Chinese string `json:"chinese"`
 
 				// Element Fixed Five Element phase of the sign own branch. Always English so it stays safe to compare against.
