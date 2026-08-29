@@ -72670,7 +72670,7 @@ type GetDailyHoroscopeResponse struct {
 		// LuckyNumber Lucky number for the day, 1 to 9, from the traditional planetary number correspondence applied to the planet that governs this sign today. Not a random draw and not a function of the date.
 		LuckyNumber float32 `json:"luckyNumber"`
 
-		// MoonPhase Current lunar phase (New Moon, Waxing Crescent, First Quarter, Waxing Gibbous, Full Moon, Waning Gibbous, Last Quarter, Waning Crescent).
+		// MoonPhase Display name of the current lunar phase, one of the eight standard phases from New Moon through Waning Crescent. Translates in place with the lang parameter, like the moonSign beside it, so render it directly.
 		MoonPhase string `json:"moonPhase"`
 
 		// MoonSign Current Moon sign. Changes every 2-3 days, sets the emotional tone for all signs.
@@ -72758,7 +72758,7 @@ func (r GetDailyHoroscopeResponse) GetJSON200() *struct {
 	// LuckyNumber Lucky number for the day, 1 to 9, from the traditional planetary number correspondence applied to the planet that governs this sign today. Not a random draw and not a function of the date.
 	LuckyNumber float32 `json:"luckyNumber"`
 
-	// MoonPhase Current lunar phase (New Moon, Waxing Crescent, First Quarter, Waxing Gibbous, Full Moon, Waning Gibbous, Last Quarter, Waning Crescent).
+	// MoonPhase Display name of the current lunar phase, one of the eight standard phases from New Moon through Waning Crescent. Translates in place with the lang parameter, like the moonSign beside it, so render it directly.
 	MoonPhase string `json:"moonPhase"`
 
 	// MoonSign Current Moon sign. Changes every 2-3 days, sets the emotional tone for all signs.
@@ -120611,7 +120611,7 @@ func ParseGetDailyHoroscopeResponse(rsp *http.Response) (*GetDailyHoroscopeRespo
 			// LuckyNumber Lucky number for the day, 1 to 9, from the traditional planetary number correspondence applied to the planet that governs this sign today. Not a random draw and not a function of the date.
 			LuckyNumber float32 `json:"luckyNumber"`
 
-			// MoonPhase Current lunar phase (New Moon, Waxing Crescent, First Quarter, Waxing Gibbous, Full Moon, Waning Gibbous, Last Quarter, Waning Crescent).
+			// MoonPhase Display name of the current lunar phase, one of the eight standard phases from New Moon through Waning Crescent. Translates in place with the lang parameter, like the moonSign beside it, so render it directly.
 			MoonPhase string `json:"moonPhase"`
 
 			// MoonSign Current Moon sign. Changes every 2-3 days, sets the emotional tone for all signs.
