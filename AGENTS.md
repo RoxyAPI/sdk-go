@@ -134,7 +134,7 @@ Western charts require `Timezone`; Vedic charts make it an optional pointer (`Ti
 
 ### Multi-language via the params pointer
 
-Ten languages: `en`, `tr`, `de`, `es`, `fr`, `hi`, `pt`, `ru`, `zh-Hans`, `zh-Hant`. The two Chinese scripts currently ship on Chinese astrology and feng shui; every other domain answers those codes in English per field. Defaults to `en`. Each endpoint has its own `Lang` type; set it with `roxyapi.Ptr(...)`. Call `roxy.Languages.ListLanguages(ctx)` for the live list. Supported domains: astrology, vedicAstrology, numerology, tarot, biorhythm, iching, crystals, angelNumbers. English only: dreams, location, usage, languages.
+Ten languages: `en`, `tr`, `de`, `es`, `fr`, `hi`, `pt`, `ru`, `zh-Hans`, `zh-Hant`. The two Chinese scripts currently ship on Chinese astrology and feng shui; every other domain answers those codes in English per field. Defaults to `en`. Each endpoint has its own `Lang` type; set it with `roxyapi.Ptr(...)`. Call `roxy.Languages.ListLanguages(ctx)` for the live list. Supported domains: astrology, vedicAstrology, forecast, humanDesign, chineseAstrology, fengShui, mesoamericanAstrology, vastu, numerology, kabbalah, tarot, biorhythm, ayurveda, iching, crystals, angelNumbers. English only: dreams, location, usage, languages.
 
 ### Error handling
 

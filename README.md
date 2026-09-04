@@ -5,13 +5,13 @@
 [![CI](https://github.com/RoxyAPI/sdk-go/actions/workflows/ci.yml/badge.svg)](https://github.com/RoxyAPI/sdk-go/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-The official **Go SDK for [RoxyAPI](https://roxyapi.com)**, the typed astrology API for Go: 18+ insight domains and 258+ endpoints behind one API key, with ephemeris output [verified against NASA JPL Horizons](https://roxyapi.com/methodology) across 210 reference points. Western and Vedic astrology, forecast, human design, Chinese astrology, feng shui, Mesoamerican astrology, Vastu, numerology, Kabbalah, tarot, biorhythm, Ayurveda, I Ching, crystals, dreams, and angel numbers, all from one `go get`. **Build anything, fast.**
+The official **Go SDK for [RoxyAPI](https://roxyapi.com)**, the typed astrology API for Go: 18+ insight domains and 258+ endpoints behind one API key, with ephemeris output [verified against NASA JPL Horizons](https://roxyapi.com/methodology) across 210 reference points. Western and Vedic astrology, forecast, human design, Chinese astrology, feng shui, Mesoamerican astrology, Vastu, numerology, Kabbalah, tarot, biorhythm, Ayurveda, I Ching, crystals, dreams, angel numbers, and location geocoding, all from one `go get`. **Build anything, fast.**
 
 A fully typed, idiomatic golang client generated from the live OpenAPI spec: one direct runtime dependency, the standard library `net/http` underneath, autocomplete on every endpoint and field, and bundled docs for AI coding agents.
 
 ## Why developers use Roxy
 
-- **One key, every domain.** Twelve plus insight domains under a single subscription. No per product fees, no per request token weighting. One request is one quota unit.
+- **One key, every domain.** Eighteen plus insight domains under a single subscription. No per product fees, no per request token weighting. One request is one quota unit.
 - **Typed end to end.** Domain grouped methods, typed request bodies, typed responses, and one catchable error type. Your editor walks the whole API.
 - **Lean.** Standard `net/http` and one direct dependency. No vendor cloud, no heavy framework.
 - **Agent ready.** Bundled `AGENTS.md` and `docs/llms-full.txt`, plus a remote MCP server per domain.
@@ -344,7 +344,7 @@ roxy, err := roxyapi.NewRoxy(key, roxyapi.WithHTTPClient(&http.Client{Timeout: 1
 
 ## Keywords
 
-go sdk, golang api client, astrology api, vedic astrology api, kundli api, horoscope api, numerology api, tarot api, human design api, chinese astrology api, bazi api, feng shui api, biorhythm api, i ching api, dream interpretation api, angel numbers api, geocoding api, rest api client, ai agent sdk, mcp server.
+go sdk, golang api client, astrology api, vedic astrology api, kundli api, horoscope api, numerology api, tarot api, human design api, chinese astrology api, bazi api, feng shui api, mayan astrology api, vastu api, gematria api, ayurveda api, biorhythm api, i ching api, dream interpretation api, angel numbers api, geocoding api, rest api client, ai agent sdk, mcp server.
 
 ## License
 
