@@ -16298,10 +16298,10 @@ func (e GetMonthlyTzolkinCalendarParamsLang) Valid() bool {
 
 // Defines values for GetMonthlyTzolkinCalendarParamsCorrelation.
 const (
-	GetMonthlyTzolkinCalendarParamsCorrelationAstronomical584285     GetMonthlyTzolkinCalendarParamsCorrelation = "astronomical-584285"
-	GetMonthlyTzolkinCalendarParamsCorrelationGmt584283              GetMonthlyTzolkinCalendarParamsCorrelation = "gmt-584283"
-	GetMonthlyTzolkinCalendarParamsCorrelationMartinSkidmore584286   GetMonthlyTzolkinCalendarParamsCorrelation = "martin-skidmore-584286"
-	GetMonthlyTzolkinCalendarParamsCorrelationMartinezHernando584281 GetMonthlyTzolkinCalendarParamsCorrelation = "martinez-hernando-584281"
+	GetMonthlyTzolkinCalendarParamsCorrelationAstronomical584285      GetMonthlyTzolkinCalendarParamsCorrelation = "astronomical-584285"
+	GetMonthlyTzolkinCalendarParamsCorrelationGmt584283               GetMonthlyTzolkinCalendarParamsCorrelation = "gmt-584283"
+	GetMonthlyTzolkinCalendarParamsCorrelationMartinSkidmore584286    GetMonthlyTzolkinCalendarParamsCorrelation = "martin-skidmore-584286"
+	GetMonthlyTzolkinCalendarParamsCorrelationMartinezHernandez584281 GetMonthlyTzolkinCalendarParamsCorrelation = "martinez-hernandez-584281"
 )
 
 // Valid indicates whether the value is a known member of the GetMonthlyTzolkinCalendarParamsCorrelation enum.
@@ -16313,7 +16313,7 @@ func (e GetMonthlyTzolkinCalendarParamsCorrelation) Valid() bool {
 		return true
 	case GetMonthlyTzolkinCalendarParamsCorrelationMartinSkidmore584286:
 		return true
-	case GetMonthlyTzolkinCalendarParamsCorrelationMartinezHernando584281:
+	case GetMonthlyTzolkinCalendarParamsCorrelationMartinezHernandez584281:
 		return true
 	default:
 		return false
@@ -16364,10 +16364,10 @@ func (e GenerateMayanChartParamsLang) Valid() bool {
 
 // Defines values for GenerateMayanChartJSONBodyCorrelation.
 const (
-	GenerateMayanChartJSONBodyCorrelationAstronomical584285     GenerateMayanChartJSONBodyCorrelation = "astronomical-584285"
-	GenerateMayanChartJSONBodyCorrelationGmt584283              GenerateMayanChartJSONBodyCorrelation = "gmt-584283"
-	GenerateMayanChartJSONBodyCorrelationMartinSkidmore584286   GenerateMayanChartJSONBodyCorrelation = "martin-skidmore-584286"
-	GenerateMayanChartJSONBodyCorrelationMartinezHernando584281 GenerateMayanChartJSONBodyCorrelation = "martinez-hernando-584281"
+	GenerateMayanChartJSONBodyCorrelationAstronomical584285      GenerateMayanChartJSONBodyCorrelation = "astronomical-584285"
+	GenerateMayanChartJSONBodyCorrelationGmt584283               GenerateMayanChartJSONBodyCorrelation = "gmt-584283"
+	GenerateMayanChartJSONBodyCorrelationMartinSkidmore584286    GenerateMayanChartJSONBodyCorrelation = "martin-skidmore-584286"
+	GenerateMayanChartJSONBodyCorrelationMartinezHernandez584281 GenerateMayanChartJSONBodyCorrelation = "martinez-hernandez-584281"
 )
 
 // Valid indicates whether the value is a known member of the GenerateMayanChartJSONBodyCorrelation enum.
@@ -16379,7 +16379,7 @@ func (e GenerateMayanChartJSONBodyCorrelation) Valid() bool {
 		return true
 	case GenerateMayanChartJSONBodyCorrelationMartinSkidmore584286:
 		return true
-	case GenerateMayanChartJSONBodyCorrelationMartinezHernando584281:
+	case GenerateMayanChartJSONBodyCorrelationMartinezHernandez584281:
 		return true
 	default:
 		return false
@@ -16451,10 +16451,10 @@ func (e CalculateMayanCompatibilityParamsLang) Valid() bool {
 
 // Defines values for CalculateMayanCompatibilityJSONBodyCorrelation.
 const (
-	CalculateMayanCompatibilityJSONBodyCorrelationAstronomical584285     CalculateMayanCompatibilityJSONBodyCorrelation = "astronomical-584285"
-	CalculateMayanCompatibilityJSONBodyCorrelationGmt584283              CalculateMayanCompatibilityJSONBodyCorrelation = "gmt-584283"
-	CalculateMayanCompatibilityJSONBodyCorrelationMartinSkidmore584286   CalculateMayanCompatibilityJSONBodyCorrelation = "martin-skidmore-584286"
-	CalculateMayanCompatibilityJSONBodyCorrelationMartinezHernando584281 CalculateMayanCompatibilityJSONBodyCorrelation = "martinez-hernando-584281"
+	CalculateMayanCompatibilityJSONBodyCorrelationAstronomical584285      CalculateMayanCompatibilityJSONBodyCorrelation = "astronomical-584285"
+	CalculateMayanCompatibilityJSONBodyCorrelationGmt584283               CalculateMayanCompatibilityJSONBodyCorrelation = "gmt-584283"
+	CalculateMayanCompatibilityJSONBodyCorrelationMartinSkidmore584286    CalculateMayanCompatibilityJSONBodyCorrelation = "martin-skidmore-584286"
+	CalculateMayanCompatibilityJSONBodyCorrelationMartinezHernandez584281 CalculateMayanCompatibilityJSONBodyCorrelation = "martinez-hernandez-584281"
 )
 
 // Valid indicates whether the value is a known member of the CalculateMayanCompatibilityJSONBodyCorrelation enum.
@@ -16466,7 +16466,7 @@ func (e CalculateMayanCompatibilityJSONBodyCorrelation) Valid() bool {
 		return true
 	case CalculateMayanCompatibilityJSONBodyCorrelationMartinSkidmore584286:
 		return true
-	case CalculateMayanCompatibilityJSONBodyCorrelationMartinezHernando584281:
+	case CalculateMayanCompatibilityJSONBodyCorrelationMartinezHernandez584281:
 		return true
 	default:
 		return false
@@ -16535,10 +16535,10 @@ func (e GetDailyMayanReadingParamsLang) Valid() bool {
 
 // Defines values for GetDailyMayanReadingParamsCorrelation.
 const (
-	GetDailyMayanReadingParamsCorrelationAstronomical584285     GetDailyMayanReadingParamsCorrelation = "astronomical-584285"
-	GetDailyMayanReadingParamsCorrelationGmt584283              GetDailyMayanReadingParamsCorrelation = "gmt-584283"
-	GetDailyMayanReadingParamsCorrelationMartinSkidmore584286   GetDailyMayanReadingParamsCorrelation = "martin-skidmore-584286"
-	GetDailyMayanReadingParamsCorrelationMartinezHernando584281 GetDailyMayanReadingParamsCorrelation = "martinez-hernando-584281"
+	GetDailyMayanReadingParamsCorrelationAstronomical584285      GetDailyMayanReadingParamsCorrelation = "astronomical-584285"
+	GetDailyMayanReadingParamsCorrelationGmt584283               GetDailyMayanReadingParamsCorrelation = "gmt-584283"
+	GetDailyMayanReadingParamsCorrelationMartinSkidmore584286    GetDailyMayanReadingParamsCorrelation = "martin-skidmore-584286"
+	GetDailyMayanReadingParamsCorrelationMartinezHernandez584281 GetDailyMayanReadingParamsCorrelation = "martinez-hernandez-584281"
 )
 
 // Valid indicates whether the value is a known member of the GetDailyMayanReadingParamsCorrelation enum.
@@ -16550,7 +16550,7 @@ func (e GetDailyMayanReadingParamsCorrelation) Valid() bool {
 		return true
 	case GetDailyMayanReadingParamsCorrelationMartinSkidmore584286:
 		return true
-	case GetDailyMayanReadingParamsCorrelationMartinezHernando584281:
+	case GetDailyMayanReadingParamsCorrelationMartinezHernandez584281:
 		return true
 	default:
 		return false
@@ -16946,10 +16946,10 @@ func (e ConvertLongCountParamsLang) Valid() bool {
 
 // Defines values for ConvertLongCountJSONBodyCorrelation.
 const (
-	ConvertLongCountJSONBodyCorrelationAstronomical584285     ConvertLongCountJSONBodyCorrelation = "astronomical-584285"
-	ConvertLongCountJSONBodyCorrelationGmt584283              ConvertLongCountJSONBodyCorrelation = "gmt-584283"
-	ConvertLongCountJSONBodyCorrelationMartinSkidmore584286   ConvertLongCountJSONBodyCorrelation = "martin-skidmore-584286"
-	ConvertLongCountJSONBodyCorrelationMartinezHernando584281 ConvertLongCountJSONBodyCorrelation = "martinez-hernando-584281"
+	ConvertLongCountJSONBodyCorrelationAstronomical584285      ConvertLongCountJSONBodyCorrelation = "astronomical-584285"
+	ConvertLongCountJSONBodyCorrelationGmt584283               ConvertLongCountJSONBodyCorrelation = "gmt-584283"
+	ConvertLongCountJSONBodyCorrelationMartinSkidmore584286    ConvertLongCountJSONBodyCorrelation = "martin-skidmore-584286"
+	ConvertLongCountJSONBodyCorrelationMartinezHernandez584281 ConvertLongCountJSONBodyCorrelation = "martinez-hernandez-584281"
 )
 
 // Valid indicates whether the value is a known member of the ConvertLongCountJSONBodyCorrelation enum.
@@ -16961,7 +16961,7 @@ func (e ConvertLongCountJSONBodyCorrelation) Valid() bool {
 		return true
 	case ConvertLongCountJSONBodyCorrelationMartinSkidmore584286:
 		return true
-	case ConvertLongCountJSONBodyCorrelationMartinezHernando584281:
+	case ConvertLongCountJSONBodyCorrelationMartinezHernandez584281:
 		return true
 	default:
 		return false
@@ -17096,10 +17096,10 @@ func (e CalculateTzolkinParamsLang) Valid() bool {
 
 // Defines values for CalculateTzolkinJSONBodyCorrelation.
 const (
-	CalculateTzolkinJSONBodyCorrelationAstronomical584285     CalculateTzolkinJSONBodyCorrelation = "astronomical-584285"
-	CalculateTzolkinJSONBodyCorrelationGmt584283              CalculateTzolkinJSONBodyCorrelation = "gmt-584283"
-	CalculateTzolkinJSONBodyCorrelationMartinSkidmore584286   CalculateTzolkinJSONBodyCorrelation = "martin-skidmore-584286"
-	CalculateTzolkinJSONBodyCorrelationMartinezHernando584281 CalculateTzolkinJSONBodyCorrelation = "martinez-hernando-584281"
+	CalculateTzolkinJSONBodyCorrelationAstronomical584285      CalculateTzolkinJSONBodyCorrelation = "astronomical-584285"
+	CalculateTzolkinJSONBodyCorrelationGmt584283               CalculateTzolkinJSONBodyCorrelation = "gmt-584283"
+	CalculateTzolkinJSONBodyCorrelationMartinSkidmore584286    CalculateTzolkinJSONBodyCorrelation = "martin-skidmore-584286"
+	CalculateTzolkinJSONBodyCorrelationMartinezHernandez584281 CalculateTzolkinJSONBodyCorrelation = "martinez-hernandez-584281"
 )
 
 // Valid indicates whether the value is a known member of the CalculateTzolkinJSONBodyCorrelation enum.
@@ -17111,7 +17111,7 @@ func (e CalculateTzolkinJSONBodyCorrelation) Valid() bool {
 		return true
 	case CalculateTzolkinJSONBodyCorrelationMartinSkidmore584286:
 		return true
-	case CalculateTzolkinJSONBodyCorrelationMartinezHernando584281:
+	case CalculateTzolkinJSONBodyCorrelationMartinezHernandez584281:
 		return true
 	default:
 		return false
@@ -38588,7 +38588,7 @@ type GetMonthlyTzolkinCalendarParams struct {
 	// Month Calendar month of the grid, 1 to 12. Defaults to the current month in UTC.
 	Month *int `form:"month,omitempty" json:"month,omitempty"`
 
-	// Correlation Which correlation constant ties the day count to a civil date. This is the single choice that shifts every value in the response, so it is a parameter rather than a hidden default, and the resolved value comes back under conventions. "gmt-584283" is the commonly accepted constant and the default, and it is the one the major institutional converter runs on. "martinez-hernando-584281" sits two days earlier, "astronomical-584285" two days later, and "martin-skidmore-584286" three days later, each shifting the Long Count by exactly its difference in days. Four of the eight published constants are offered: the other four sit tens of thousands of days away and are of historical interest only. The 584281 constant is attributed to Martinez and Hernando, printed in the literature as Martinéz-Hernando.
+	// Correlation Which correlation constant ties the day count to a civil date. This is the single choice that shifts every value in the response, so it is a parameter rather than a hidden default, and the resolved value comes back under conventions. "gmt-584283" is the commonly accepted constant and the default, and it is the one the major institutional converter runs on. "martinez-hernandez-584281" sits two days earlier, "astronomical-584285" two days later, and "martin-skidmore-584286" three days later, each shifting the Long Count by exactly its difference in days. Four of the eight published constants are offered: the other four sit tens of thousands of days away and are of historical interest only. The 584281 constant is the Martínez Hernández correlation, after Juan Martínez Hernández.
 	Correlation *GetMonthlyTzolkinCalendarParamsCorrelation `form:"correlation,omitempty" json:"correlation,omitempty"`
 }
 
@@ -38600,7 +38600,7 @@ type GetMonthlyTzolkinCalendarParamsCorrelation string
 
 // GenerateMayanChartJSONBody defines parameters for GenerateMayanChart.
 type GenerateMayanChartJSONBody struct {
-	// Correlation Which correlation constant ties the day count to a civil date. This is the single choice that shifts every value in the response, so it is a parameter rather than a hidden default, and the resolved value comes back under conventions. "gmt-584283" is the commonly accepted constant and the default, and it is the one the major institutional converter runs on. "martinez-hernando-584281" sits two days earlier, "astronomical-584285" two days later, and "martin-skidmore-584286" three days later, each shifting the Long Count by exactly its difference in days. Four of the eight published constants are offered: the other four sit tens of thousands of days away and are of historical interest only. The 584281 constant is attributed to Martinez and Hernando, printed in the literature as Martinéz-Hernando.
+	// Correlation Which correlation constant ties the day count to a civil date. This is the single choice that shifts every value in the response, so it is a parameter rather than a hidden default, and the resolved value comes back under conventions. "gmt-584283" is the commonly accepted constant and the default, and it is the one the major institutional converter runs on. "martinez-hernandez-584281" sits two days earlier, "astronomical-584285" two days later, and "martin-skidmore-584286" three days later, each shifting the Long Count by exactly its difference in days. Four of the eight published constants are offered: the other four sit tens of thousands of days away and are of historical interest only. The 584281 constant is the Martínez Hernández correlation, after Juan Martínez Hernández.
 	Correlation *GenerateMayanChartJSONBodyCorrelation `json:"correlation,omitempty"`
 
 	// Date Date in YYYY-MM-DD format, in the PROLEPTIC GREGORIAN calendar, extended backwards unchanged through the 1582 reform. Years 1 to 4000 are accepted. A reference converter that switches to the Julian calendar below the reform will disagree with a date before 15 October 1582 by ten or eleven days; that is a difference of input convention rather than of arithmetic, and passing the Julian equivalent to such a tool reproduces these values exactly. A single-digit month or day is accepted and zero padded.
@@ -38627,7 +38627,7 @@ type GenerateMayanChartJSONBodyYearBearerSystem string
 
 // CalculateMayanCompatibilityJSONBody defines parameters for CalculateMayanCompatibility.
 type CalculateMayanCompatibilityJSONBody struct {
-	// Correlation Which correlation constant ties the day count to a civil date. This is the single choice that shifts every value in the response, so it is a parameter rather than a hidden default, and the resolved value comes back under conventions. "gmt-584283" is the commonly accepted constant and the default, and it is the one the major institutional converter runs on. "martinez-hernando-584281" sits two days earlier, "astronomical-584285" two days later, and "martin-skidmore-584286" three days later, each shifting the Long Count by exactly its difference in days. Four of the eight published constants are offered: the other four sit tens of thousands of days away and are of historical interest only. The 584281 constant is attributed to Martinez and Hernando, printed in the literature as Martinéz-Hernando.
+	// Correlation Which correlation constant ties the day count to a civil date. This is the single choice that shifts every value in the response, so it is a parameter rather than a hidden default, and the resolved value comes back under conventions. "gmt-584283" is the commonly accepted constant and the default, and it is the one the major institutional converter runs on. "martinez-hernandez-584281" sits two days earlier, "astronomical-584285" two days later, and "martin-skidmore-584286" three days later, each shifting the Long Count by exactly its difference in days. Four of the eight published constants are offered: the other four sit tens of thousands of days away and are of historical interest only. The 584281 constant is the Martínez Hernández correlation, after Juan Martínez Hernández.
 	Correlation *CalculateMayanCompatibilityJSONBodyCorrelation `json:"correlation,omitempty"`
 
 	// DirectionScheme Which reading of the world direction and colour to serve for a day sign. The two published assignments differ by exactly one quarter turn on all twenty signs, so neither is a rounding of the other and a silent pick would be a school choice. "madrid-codex" is the codex reading and the default; "landa" is the sixteenth century assignment recorded beside it.
@@ -38669,7 +38669,7 @@ type GetDailyMayanReadingParams struct {
 	// Date Date in YYYY-MM-DD format, in the PROLEPTIC GREGORIAN calendar, extended backwards unchanged through the 1582 reform. Years 1 to 4000 are accepted. A reference converter that switches to the Julian calendar below the reform will disagree with a date before 15 October 1582 by ten or eleven days; that is a difference of input convention rather than of arithmetic, and passing the Julian equivalent to such a tool reproduces these values exactly. A single-digit month or day is accepted and zero padded. Defaults to the current day in UTC.
 	Date *openapi_types.Date `form:"date,omitempty" json:"date,omitempty"`
 
-	// Correlation Which correlation constant ties the day count to a civil date. This is the single choice that shifts every value in the response, so it is a parameter rather than a hidden default, and the resolved value comes back under conventions. "gmt-584283" is the commonly accepted constant and the default, and it is the one the major institutional converter runs on. "martinez-hernando-584281" sits two days earlier, "astronomical-584285" two days later, and "martin-skidmore-584286" three days later, each shifting the Long Count by exactly its difference in days. Four of the eight published constants are offered: the other four sit tens of thousands of days away and are of historical interest only. The 584281 constant is attributed to Martinez and Hernando, printed in the literature as Martinéz-Hernando.
+	// Correlation Which correlation constant ties the day count to a civil date. This is the single choice that shifts every value in the response, so it is a parameter rather than a hidden default, and the resolved value comes back under conventions. "gmt-584283" is the commonly accepted constant and the default, and it is the one the major institutional converter runs on. "martinez-hernandez-584281" sits two days earlier, "astronomical-584285" two days later, and "martin-skidmore-584286" three days later, each shifting the Long Count by exactly its difference in days. Four of the eight published constants are offered: the other four sit tens of thousands of days away and are of historical interest only. The 584281 constant is the Martínez Hernández correlation, after Juan Martínez Hernández.
 	Correlation *GetDailyMayanReadingParamsCorrelation `form:"correlation,omitempty" json:"correlation,omitempty"`
 }
 
@@ -38747,7 +38747,7 @@ type GetHaabMonthParamsID string
 
 // ConvertLongCountJSONBody defines parameters for ConvertLongCount.
 type ConvertLongCountJSONBody struct {
-	// Correlation Which correlation constant ties the day count to a civil date. This is the single choice that shifts every value in the response, so it is a parameter rather than a hidden default, and the resolved value comes back under conventions. "gmt-584283" is the commonly accepted constant and the default, and it is the one the major institutional converter runs on. "martinez-hernando-584281" sits two days earlier, "astronomical-584285" two days later, and "martin-skidmore-584286" three days later, each shifting the Long Count by exactly its difference in days. Four of the eight published constants are offered: the other four sit tens of thousands of days away and are of historical interest only. The 584281 constant is attributed to Martinez and Hernando, printed in the literature as Martinéz-Hernando.
+	// Correlation Which correlation constant ties the day count to a civil date. This is the single choice that shifts every value in the response, so it is a parameter rather than a hidden default, and the resolved value comes back under conventions. "gmt-584283" is the commonly accepted constant and the default, and it is the one the major institutional converter runs on. "martinez-hernandez-584281" sits two days earlier, "astronomical-584285" two days later, and "martin-skidmore-584286" three days later, each shifting the Long Count by exactly its difference in days. Four of the eight published constants are offered: the other four sit tens of thousands of days away and are of historical interest only. The 584281 constant is the Martínez Hernández correlation, after Juan Martínez Hernández.
 	Correlation *ConvertLongCountJSONBodyCorrelation `json:"correlation,omitempty"`
 
 	// Date Proleptic Gregorian date to convert INTO a Long Count. Supply this or longCount, never both and never neither.
@@ -38795,7 +38795,7 @@ type GetTrecenaParamsLang string
 
 // CalculateTzolkinJSONBody defines parameters for CalculateTzolkin.
 type CalculateTzolkinJSONBody struct {
-	// Correlation Which correlation constant ties the day count to a civil date. This is the single choice that shifts every value in the response, so it is a parameter rather than a hidden default, and the resolved value comes back under conventions. "gmt-584283" is the commonly accepted constant and the default, and it is the one the major institutional converter runs on. "martinez-hernando-584281" sits two days earlier, "astronomical-584285" two days later, and "martin-skidmore-584286" three days later, each shifting the Long Count by exactly its difference in days. Four of the eight published constants are offered: the other four sit tens of thousands of days away and are of historical interest only. The 584281 constant is attributed to Martinez and Hernando, printed in the literature as Martinéz-Hernando.
+	// Correlation Which correlation constant ties the day count to a civil date. This is the single choice that shifts every value in the response, so it is a parameter rather than a hidden default, and the resolved value comes back under conventions. "gmt-584283" is the commonly accepted constant and the default, and it is the one the major institutional converter runs on. "martinez-hernandez-584281" sits two days earlier, "astronomical-584285" two days later, and "martin-skidmore-584286" three days later, each shifting the Long Count by exactly its difference in days. Four of the eight published constants are offered: the other four sit tens of thousands of days away and are of historical interest only. The 584281 constant is the Martínez Hernández correlation, after Juan Martínez Hernández.
 	Correlation *CalculateTzolkinJSONBodyCorrelation `json:"correlation,omitempty"`
 
 	// Date Date in YYYY-MM-DD format, in the PROLEPTIC GREGORIAN calendar, extended backwards unchanged through the 1582 reform. Years 1 to 4000 are accepted. A reference converter that switches to the Julian calendar below the reform will disagree with a date before 15 October 1582 by ten or eleven days; that is a difference of input convention rather than of arithmetic, and passing the Julian equivalent to such a tool reproduces these values exactly. A single-digit month or day is accepted and zero padded.
