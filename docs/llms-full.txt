@@ -27,7 +27,7 @@ Western astrology API for natal birth charts, daily, weekly, monthly, and yearly
 - `getMonthlyTropicalAspects` - POST `/astrology/aspects/monthly` - Monthly Aspects - Tropical aspect calendar for an entire month
 - `generateAsteroids` - POST `/astrology/asteroids` - Asteroid goddesses calculator - Ceres, Pallas, Juno, and Vesta natal positions
 - `generateAstrocartography` - POST `/astrology/astrocartography` - Astrocartography map - planetary lines and relocation calculator
-- `calculateCompatibility` - POST `/astrology/compatibility-score` - Compatibility Score. Relationship compatibility analysis with category breakdown
+- `calculateCompatibility` - POST `/astrology/compatibility-score` - Compatibility score - Relationship compatibility API
 - `generateCompositeChart` - POST `/astrology/composite-chart` - Composite Chart - Midpoint relationship chart with interpretations
 - `getPlanetaryNodePassages` - POST `/astrology/ecliptic-crossings` - Ecliptic Crossings - Node passages for a whole year
 - `generateFixedStars` - POST `/astrology/fixed-stars` - Fixed stars and star conjunctions calculator - Regulus, Spica, Algol natal report
@@ -185,6 +185,44 @@ Compute classical feng shui from one API: Xuan Kong flying star natal charts for
 - `getKuaNumber` - GET `/feng-shui/kua/{number}` - Look up a Kua number - Eight Mansions reference API
 - `listNinePeriods` - GET `/feng-shui/periods` - List the nine periods - San Yuan period table API
 
+## Mesoamerican Astrology - `roxy.MesoamericanAstrology`
+
+Calculate Mayan astrology day signs, the Tzolkin sacred round, the Haab year, the full Long Count and the Aztec tonal...
+
+- `getDailyAztecReading` - GET `/mesoamerican-astrology/aztec/daily` - Daily Aztec energy reading - Tonalpohualli day sign of the day API
+- `listAztecDaySigns` - GET `/mesoamerican-astrology/aztec/day-signs` - List the 20 Aztec day signs - Tonalpohualli sign catalogue API
+- `getAztecDaySign` - GET `/mesoamerican-astrology/aztec/day-signs/{id}` - Get one Aztec day sign - Tonalpohualli sign profile API
+- `calculateTonalpohualli` - POST `/mesoamerican-astrology/aztec/tonalpohualli` - Aztec day sign for a date - Tonalpohualli calculator API
+- `listAztecTrecenas` - GET `/mesoamerican-astrology/aztec/trecenas` - List the 20 Aztec trecenas - Tonalpohualli thirteen day period API
+- `getAztecTrecena` - GET `/mesoamerican-astrology/aztec/trecenas/{number}` - Get one Aztec trecena - Tonalpohualli period profile API
+- `getMonthlyTzolkinCalendar` - GET `/mesoamerican-astrology/mayan/calendar/monthly` - Monthly Tzolkin calendar grid - Maya calendar month API
+- `generateMayanChart` - POST `/mesoamerican-astrology/mayan/chart` - Generate a Mayan chart - Tzolkin, Haab and Long Count calculator API
+- `calculateMayanCompatibility` - POST `/mesoamerican-astrology/mayan/compatibility` - Mayan nawal compatibility - Tzolkin pair analysis API
+- `getDailyMayanReading` - GET `/mesoamerican-astrology/mayan/daily` - Daily Mayan energy reading - Tzolkin day sign of the day API
+- `listMayanDaySigns` - GET `/mesoamerican-astrology/mayan/day-signs` - List the 20 Mayan day signs - Tzolkin nawal catalogue API
+- `getMayanDaySign` - GET `/mesoamerican-astrology/mayan/day-signs/{id}` - Get one Mayan day sign - Nawal profile API
+- `listHaabMonths` - GET `/mesoamerican-astrology/mayan/haab-months` - List the 19 Haab periods - Maya solar calendar month API
+- `getHaabMonth` - GET `/mesoamerican-astrology/mayan/haab-months/{id}` - Get one Haab period - Maya solar calendar month profile API
+- `convertLongCount` - POST `/mesoamerican-astrology/mayan/long-count/convert` - Convert a Maya Long Count - Long Count calendar converter API
+- `listTrecenas` - GET `/mesoamerican-astrology/mayan/trecenas` - List the 20 Mayan trecenas - Tzolkin thirteen day period API
+- `getTrecena` - GET `/mesoamerican-astrology/mayan/trecenas/{number}` - Get one Mayan trecena - Thirteen day period profile API
+- `calculateTzolkin` - POST `/mesoamerican-astrology/mayan/tzolkin` - Mayan day sign for a date - Tzolkin calculator API
+
+## Vastu - `roxy.Vastu`
+
+Vastu Shastra API for directional home and plot analysis: entrance padas with the classical effect of each of the 32...
+
+- `calculateAyadi` - POST `/vastu/ayadi` - Calculate Ayadi shadvarga - Vastu proportion and yoni calculator API
+- `listDevatas` - GET `/vastu/devatas` - List the 45 devatas - Vastu Purusha Mandala reference API
+- `getDevata` - GET `/vastu/devatas/{id}` - Look up one devata - Vastu mandala devata reference API
+- `listDikpalaDirections` - GET `/vastu/directions` - List the eight directions - Vastu dikpala and direction reference API
+- `getDikpalaDirection` - GET `/vastu/directions/{id}` - Look up one direction - Vastu dikpala reference API
+- `calculateEntrancePada` - POST `/vastu/entrance` - Calculate entrance pada - Vastu main door direction API
+- `generateMandala` - POST `/vastu/mandala` - Generate Vastu Purusha Mandala - 81 pada and 64 pada grid API
+- `calculatePlotAnalysis` - POST `/vastu/plot` - Analyse a plot - Vastu land and site assessment API
+- `calculateRoomCompliance` - POST `/vastu/rooms` - Check room placement - Vastu room direction compliance API
+- `findGrihaPraveshDates` - POST `/vastu/timing/griha-pravesh` - Find griha pravesh dates - Vastu house warming muhurta API
+
 ## Numerology - `roxy.Numerology`
 
 Numerology API to calculate life path, expression, soul urge, personality, and maturity numbers, with Pinnacle and Ch...
@@ -210,20 +248,37 @@ Numerology API to calculate life path, expression, soul urge, personality, and m
 - `calculatePersonality` - POST `/numerology/personality` - Calculate Personality number - How others perceive you
 - `calculateSoulUrge` - POST `/numerology/soul-urge` - Calculate Soul Urge number - Inner motivations and desires
 
+## Kabbalah - `roxy.Kabbalah`
+
+Kabbalah API for gematria, the 72 names, the Tree of Life and the Hebrew birthday, from one key
+
+- `generateBirthProfile` - POST `/kabbalah/birth-profile` - Generate a birth profile - Hebrew birthday and birth angel API
+- `listGematriaCiphers` - GET `/kabbalah/ciphers` - List gematria ciphers - gematria methods API with provenance on every row
+- `calculateNameCompatibility` - POST `/kabbalah/compatibility` - Compare two names - gematria name compatibility API with every component published
+- `getDailySephirah` - GET `/kabbalah/daily` - Get the sephirah of the day - Omer count API with the sephirot pairing
+- `calculateGematria` - POST `/kabbalah/gematria` - Calculate gematria - Hebrew gematria calculator API with every spelling shown
+- `listHebrewLetters` - GET `/kabbalah/letters` - List the Hebrew letters - Hebrew alphabet API with the Sefer Yetzirah attributions
+- `getHebrewLetter` - GET `/kabbalah/letters/{id}` - Get one Hebrew letter - Hebrew letter meaning API
+- `generateNameProfile` - POST `/kabbalah/name-profile` - Generate a name profile - Kabbalah name numerology API with the spelling shown
+- `listShemNames` - GET `/kabbalah/names` - List the 72 names - Shem HaMephorash API derived from the verses
+- `getShemName` - GET `/kabbalah/names/{number}` - Get one of the 72 names - 72 names of God API by index
+- `getSephirah` - GET `/kabbalah/sephirot/{id}` - Get one sephirah - sefirot meaning API with the paths that touch it
+- `getTreeOfLife` - GET `/kabbalah/tree` - Get the Tree of Life - sephirot and 22 paths API with typed school variants
+
 ## Tarot - `roxy.Tarot`
 
 Tarot reading API with the complete 78-card Rider-Waite-Smith deck and card meanings for love, career, health, and sp...
 
-- `listCards` - GET `/tarot/cards` - List all 78 tarot cards
-- `getCard` - GET `/tarot/cards/{id}` - Get detailed tarot card information
-- `getDailyCard` - POST `/tarot/daily` - Get daily tarot card reading
-- `drawCards` - POST `/tarot/draw` - Draw random tarot cards with reproducible results
-- `castCareerSpread` - POST `/tarot/spreads/career` - Career Spread (7 cards)
-- `castCelticCross` - POST `/tarot/spreads/celtic-cross` - Celtic Cross Spread (10 cards)
-- `castCustomSpread` - POST `/tarot/spreads/custom` - Custom Spread Builder
-- `castLoveSpread` - POST `/tarot/spreads/love` - Love Spread (5 cards)
-- `castThreeCard` - POST `/tarot/spreads/three-card` - Three-Card Spread: Past, Present, Future
-- `castYesNo` - POST `/tarot/yes-no` - Get yes/no answer to your question
+- `listCards` - GET `/tarot/cards` - List all 78 tarot cards - Tarot deck catalog API
+- `getCard` - GET `/tarot/cards/{id}` - Get tarot card by id - Tarot card meaning API
+- `getDailyCard` - POST `/tarot/daily` - Daily tarot card - Card of the day API
+- `drawCards` - POST `/tarot/draw` - Draw tarot cards - Seeded tarot draw API
+- `castCareerSpread` - POST `/tarot/spreads/career` - Career spread, 7 cards - Career tarot reading API
+- `castCelticCross` - POST `/tarot/spreads/celtic-cross` - Celtic Cross spread, 10 cards - Tarot spread API
+- `castCustomSpread` - POST `/tarot/spreads/custom` - Custom spread builder - Configurable tarot spread API
+- `castLoveSpread` - POST `/tarot/spreads/love` - Love spread, 5 cards - Relationship tarot reading API
+- `castThreeCard` - POST `/tarot/spreads/three-card` - Three card spread, past present future - Tarot spread API
+- `castYesNo` - POST `/tarot/yes-no` - Yes or no answer - Yes no tarot reading API
 
 ## Biorhythm - `roxy.Biorhythm`
 
@@ -236,55 +291,68 @@ The most complete biorhythm API: 10 cycle types across 3 primary (physical, emot
 - `getPhases` - POST `/biorhythm/phases` - Get phase info - Lightweight cycle status for dashboards and widgets
 - `getReading` - POST `/biorhythm/reading` - Get biorhythm reading - Complete cycle analysis for any date
 
+## Ayurveda - `roxy.Ayurveda`
+
+Ayurveda API for dosha profiles, the dinacharya daily routine and the ritucharya seasonal regimen, with a verse cited...
+
+- `calculateAyurvedicConstitution` - POST `/ayurveda/constitution` - Ayurvedic constitution from a birth chart - Dosha profile API
+- `getDailyAyurvedaReading` - GET `/ayurveda/daily` - Daily Ayurveda reading - Dosha clock and brahma muhurta by location API
+- `getDinacharyaSchedule` - POST `/ayurveda/dinacharya` - Dinacharya daily routine - Brahma muhurta and dosha clock API
+- `listDoshas` - GET `/ayurveda/doshas` - List the three doshas - Dosha catalogue API
+- `getDosha` - GET `/ayurveda/doshas/{id}` - Get one dosha - Vata pitta kapha profile API
+- `listGunas` - GET `/ayurveda/qualities` - List the twenty qualities - Ayurveda guna pairs API
+- `getRitucharya` - POST `/ayurveda/ritucharya` - Ayurveda seasonal regimen - Ritucharya and ritu resolution API
+- `listRasas` - GET `/ayurveda/tastes` - List the six tastes - Ayurveda rasa and dosha matrix API
+
 ## I-Ching - `roxy.Iching`
 
 I-Ching oracle API with all 64 hexagrams, 384 changing lines, 8 trigrams, and modern interpretations for love, career...
 
-- `castReading` - GET `/iching/cast` - Cast an I-Ching reading
-- `getDailyHexagram` - POST `/iching/daily` - Get daily I-Ching hexagram
-- `castDailyReading` - POST `/iching/daily/cast` - Cast daily I-Ching reading with changing lines
-- `listHexagrams` - GET `/iching/hexagrams` - List all 64 hexagrams
-- `lookupHexagram` - GET `/iching/hexagrams/lookup` - Lookup hexagram by line pattern
-- `getRandomHexagram` - GET `/iching/hexagrams/random` - Get a random hexagram
-- `getHexagram` - GET `/iching/hexagrams/{number}` - Get hexagram by number
-- `listTrigrams` - GET `/iching/trigrams` - List all 8 trigrams
-- `getTrigram` - GET `/iching/trigrams/{id}` - Get trigram by number or name
+- `castReading` - GET `/iching/cast` - Cast an I-Ching reading - Hexagram divination API
+- `getDailyHexagram` - POST `/iching/daily` - Daily hexagram - Daily I-Ching oracle API
+- `castDailyReading` - POST `/iching/daily/cast` - Cast daily reading with changing lines - I-Ching divination API
+- `listHexagrams` - GET `/iching/hexagrams` - List all 64 hexagrams - I-Ching hexagram catalog API
+- `lookupHexagram` - GET `/iching/hexagrams/lookup` - Lookup hexagram by line pattern - I-Ching binary lookup API
+- `getRandomHexagram` - GET `/iching/hexagrams/random` - Random hexagram - I-Ching hexagram picker API
+- `getHexagram` - GET `/iching/hexagrams/{number}` - Get hexagram by number - I-Ching hexagram detail API
+- `listTrigrams` - GET `/iching/trigrams` - List all 8 trigrams - Bagua trigram catalog API
+- `getTrigram` - GET `/iching/trigrams/{id}` - Get trigram by number or name - Bagua trigram detail API
 
 ## Crystals and Healing Stones - `roxy.Crystals`
 
 Crystal healing API covering the most popular and widely-searched healing crystals and gemstones, from Amethyst and R...
 
-- `listCrystals` - GET `/crystals` - List All Crystals
-- `getBirthstones` - GET `/crystals/birthstone/{month}` - Birthstone Crystals by Month
-- `getCrystalsByChakra` - GET `/crystals/chakra/{chakra}` - Crystals by Chakra
-- `listCrystalColors` - GET `/crystals/colors` - List Crystal Colors
-- `getDailyCrystal` - POST `/crystals/daily` - Daily Crystal
-- `getCrystalsByElement` - GET `/crystals/element/{element}` - Crystals by Element
-- `getCrystalPairings` - GET `/crystals/pairings/{id}` - Crystal Pairings
-- `listCrystalPlanets` - GET `/crystals/planets` - List Crystal Planets
-- `getRandomCrystal` - GET `/crystals/random` - Random Crystal
-- `searchCrystals` - GET `/crystals/search` - Search Crystals
-- `getCrystalsByZodiac` - GET `/crystals/zodiac/{sign}` - Crystals by Zodiac Sign
-- `getCrystal` - GET `/crystals/{id}` - Get Crystal Healing Properties
+- `listCrystals` - GET `/crystals` - List all crystals - Crystal healing database API
+- `getBirthstones` - GET `/crystals/birthstone/{month}` - Birthstones by month - Birthstone lookup API
+- `getCrystalsByChakra` - GET `/crystals/chakra/{chakra}` - Crystals by chakra - Chakra healing stones API
+- `listCrystalColors` - GET `/crystals/colors` - List crystal colors - Crystal color filter API
+- `getDailyCrystal` - POST `/crystals/daily` - Daily crystal - Crystal of the day API
+- `getCrystalsByElement` - GET `/crystals/element/{element}` - Crystals by element - Elemental crystal lookup API
+- `getCrystalPairings` - GET `/crystals/pairings/{id}` - Crystal pairings - Crystal combination API
+- `listCrystalPlanets` - GET `/crystals/planets` - List crystal planets - Planetary ruler filter API
+- `getRandomCrystal` - GET `/crystals/random` - Random crystal - Crystal discovery API
+- `searchCrystals` - GET `/crystals/search` - Search crystals - Crystal search API
+- `getCrystalsByZodiac` - GET `/crystals/zodiac/{sign}` - Crystals by zodiac sign - Zodiac birthstone API
+- `getCrystal` - GET `/crystals/{id}` - Get crystal by id - Crystal healing properties API
 
 ## Dreams - `roxy.Dreams`
 
 Dream interpretation API with a 2,000+ symbol dream dictionary and psychological meanings covering animals, objects,...
 
-- `getDailyDreamSymbol` - POST `/dreams/daily` - Get daily dream symbol
-- `searchDreamSymbols` - GET `/dreams/symbols` - List and search dream symbols
-- `getSymbolLetterCounts` - GET `/dreams/symbols/letters` - Get symbol counts by letter
-- `getRandomSymbols` - GET `/dreams/symbols/random` - Get random dream symbols
-- `getDreamSymbol` - GET `/dreams/symbols/{id}` - Get dream symbol details
+- `getDailyDreamSymbol` - POST `/dreams/daily` - Daily dream symbol - Dream symbol of the day API
+- `searchDreamSymbols` - GET `/dreams/symbols` - List and search dream symbols - Dream dictionary API
+- `getSymbolLetterCounts` - GET `/dreams/symbols/letters` - Symbol counts by letter - Dream dictionary index API
+- `getRandomSymbols` - GET `/dreams/symbols/random` - Random dream symbols - Dream symbol discovery API
+- `getDreamSymbol` - GET `/dreams/symbols/{id}` - Get dream symbol by id - Dream interpretation API
 
 ## Angel Numbers - `roxy.AngelNumbers`
 
 Angel numbers API with meanings for 111, 222, 333, 444, 555, 666, 777, 888, 999, 1111, and 75+ sequences covering eve...
 
-- `getDailyAngelNumber` - POST `/angel-numbers/daily` - Daily Angel Number
-- `analyzeNumberSequence` - GET `/angel-numbers/lookup` - Analyze Any Number Sequence
-- `listAngelNumbers` - GET `/angel-numbers/numbers` - List All Angel Numbers
-- `getAngelNumber` - GET `/angel-numbers/numbers/{number}` - Get Angel Number Meaning
+- `getDailyAngelNumber` - POST `/angel-numbers/daily` - Daily angel number - Angel number of the day API
+- `analyzeNumberSequence` - GET `/angel-numbers/lookup` - Analyze any number sequence - Angel number analysis API
+- `listAngelNumbers` - GET `/angel-numbers/numbers` - List all angel numbers - Angel number catalog API
+- `getAngelNumber` - GET `/angel-numbers/numbers/{number}` - Get angel number meaning - Angel number lookup API
 
 ## Location and Timezone - `roxy.Location`
 

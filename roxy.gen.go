@@ -12,23 +12,27 @@ import (
 
 // Roxy is the domain-grouped entry point returned by NewRoxy.
 type Roxy struct {
-	client           *ClientWithResponses
-	Astrology        *AstrologyService
-	VedicAstrology   *VedicAstrologyService
-	Forecast         *ForecastService
-	HumanDesign      *HumanDesignService
-	ChineseAstrology *ChineseAstrologyService
-	FengShui         *FengShuiService
-	Numerology       *NumerologyService
-	Tarot            *TarotService
-	Biorhythm        *BiorhythmService
-	Iching           *IchingService
-	Crystals         *CrystalsService
-	Dreams           *DreamsService
-	AngelNumbers     *AngelNumbersService
-	Location         *LocationService
-	Usage            *UsageService
-	Languages        *LanguagesService
+	client                *ClientWithResponses
+	Astrology             *AstrologyService
+	VedicAstrology        *VedicAstrologyService
+	Forecast              *ForecastService
+	HumanDesign           *HumanDesignService
+	ChineseAstrology      *ChineseAstrologyService
+	FengShui              *FengShuiService
+	MesoamericanAstrology *MesoamericanAstrologyService
+	Vastu                 *VastuService
+	Numerology            *NumerologyService
+	Kabbalah              *KabbalahService
+	Tarot                 *TarotService
+	Biorhythm             *BiorhythmService
+	Ayurveda              *AyurvedaService
+	Iching                *IchingService
+	Crystals              *CrystalsService
+	Dreams                *DreamsService
+	AngelNumbers          *AngelNumbersService
+	Location              *LocationService
+	Usage                 *UsageService
+	Languages             *LanguagesService
 }
 
 func newRoxy(c *ClientWithResponses) *Roxy {
@@ -39,9 +43,13 @@ func newRoxy(c *ClientWithResponses) *Roxy {
 	r.HumanDesign = &HumanDesignService{client: c}
 	r.ChineseAstrology = &ChineseAstrologyService{client: c}
 	r.FengShui = &FengShuiService{client: c}
+	r.MesoamericanAstrology = &MesoamericanAstrologyService{client: c}
+	r.Vastu = &VastuService{client: c}
 	r.Numerology = &NumerologyService{client: c}
+	r.Kabbalah = &KabbalahService{client: c}
 	r.Tarot = &TarotService{client: c}
 	r.Biorhythm = &BiorhythmService{client: c}
+	r.Ayurveda = &AyurvedaService{client: c}
 	r.Iching = &IchingService{client: c}
 	r.Crystals = &CrystalsService{client: c}
 	r.Dreams = &DreamsService{client: c}
@@ -1174,6 +1182,236 @@ func (s *FengShuiService) ListNinePeriods(ctx context.Context, params *ListNineP
 	return resp, asRoxyError(resp)
 }
 
+// MesoamericanAstrologyService groups the mesoamerican-astrology endpoints.
+type MesoamericanAstrologyService struct{ client *ClientWithResponses }
+
+func (s *MesoamericanAstrologyService) CalculateMayanCompatibility(ctx context.Context, params *CalculateMayanCompatibilityParams, body CalculateMayanCompatibilityJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateMayanCompatibilityResponse, error) {
+	resp, err := s.client.CalculateMayanCompatibilityWithResponse(ctx, params, body, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *MesoamericanAstrologyService) CalculateTonalpohualli(ctx context.Context, params *CalculateTonalpohualliParams, body CalculateTonalpohualliJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateTonalpohualliResponse, error) {
+	resp, err := s.client.CalculateTonalpohualliWithResponse(ctx, params, body, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *MesoamericanAstrologyService) CalculateTzolkin(ctx context.Context, params *CalculateTzolkinParams, body CalculateTzolkinJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateTzolkinResponse, error) {
+	resp, err := s.client.CalculateTzolkinWithResponse(ctx, params, body, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *MesoamericanAstrologyService) ConvertLongCount(ctx context.Context, params *ConvertLongCountParams, body ConvertLongCountJSONRequestBody, reqEditors ...RequestEditorFn) (*ConvertLongCountResponse, error) {
+	resp, err := s.client.ConvertLongCountWithResponse(ctx, params, body, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *MesoamericanAstrologyService) GenerateMayanChart(ctx context.Context, params *GenerateMayanChartParams, body GenerateMayanChartJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateMayanChartResponse, error) {
+	resp, err := s.client.GenerateMayanChartWithResponse(ctx, params, body, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *MesoamericanAstrologyService) GetAztecDaySign(ctx context.Context, id GetAztecDaySignParamsID, params *GetAztecDaySignParams, reqEditors ...RequestEditorFn) (*GetAztecDaySignResponse, error) {
+	resp, err := s.client.GetAztecDaySignWithResponse(ctx, id, params, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *MesoamericanAstrologyService) GetAztecTrecena(ctx context.Context, number int, params *GetAztecTrecenaParams, reqEditors ...RequestEditorFn) (*GetAztecTrecenaResponse, error) {
+	resp, err := s.client.GetAztecTrecenaWithResponse(ctx, number, params, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *MesoamericanAstrologyService) GetDailyAztecReading(ctx context.Context, params *GetDailyAztecReadingParams, reqEditors ...RequestEditorFn) (*GetDailyAztecReadingResponse, error) {
+	resp, err := s.client.GetDailyAztecReadingWithResponse(ctx, params, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *MesoamericanAstrologyService) GetDailyMayanReading(ctx context.Context, params *GetDailyMayanReadingParams, reqEditors ...RequestEditorFn) (*GetDailyMayanReadingResponse, error) {
+	resp, err := s.client.GetDailyMayanReadingWithResponse(ctx, params, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *MesoamericanAstrologyService) GetHaabMonth(ctx context.Context, id GetHaabMonthParamsID, params *GetHaabMonthParams, reqEditors ...RequestEditorFn) (*GetHaabMonthResponse, error) {
+	resp, err := s.client.GetHaabMonthWithResponse(ctx, id, params, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *MesoamericanAstrologyService) GetMayanDaySign(ctx context.Context, id GetMayanDaySignParamsID, params *GetMayanDaySignParams, reqEditors ...RequestEditorFn) (*GetMayanDaySignResponse, error) {
+	resp, err := s.client.GetMayanDaySignWithResponse(ctx, id, params, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *MesoamericanAstrologyService) GetMonthlyTzolkinCalendar(ctx context.Context, params *GetMonthlyTzolkinCalendarParams, reqEditors ...RequestEditorFn) (*GetMonthlyTzolkinCalendarResponse, error) {
+	resp, err := s.client.GetMonthlyTzolkinCalendarWithResponse(ctx, params, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *MesoamericanAstrologyService) GetTrecena(ctx context.Context, number int, params *GetTrecenaParams, reqEditors ...RequestEditorFn) (*GetTrecenaResponse, error) {
+	resp, err := s.client.GetTrecenaWithResponse(ctx, number, params, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *MesoamericanAstrologyService) ListAztecDaySigns(ctx context.Context, params *ListAztecDaySignsParams, reqEditors ...RequestEditorFn) (*ListAztecDaySignsResponse, error) {
+	resp, err := s.client.ListAztecDaySignsWithResponse(ctx, params, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *MesoamericanAstrologyService) ListAztecTrecenas(ctx context.Context, params *ListAztecTrecenasParams, reqEditors ...RequestEditorFn) (*ListAztecTrecenasResponse, error) {
+	resp, err := s.client.ListAztecTrecenasWithResponse(ctx, params, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *MesoamericanAstrologyService) ListHaabMonths(ctx context.Context, params *ListHaabMonthsParams, reqEditors ...RequestEditorFn) (*ListHaabMonthsResponse, error) {
+	resp, err := s.client.ListHaabMonthsWithResponse(ctx, params, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *MesoamericanAstrologyService) ListMayanDaySigns(ctx context.Context, params *ListMayanDaySignsParams, reqEditors ...RequestEditorFn) (*ListMayanDaySignsResponse, error) {
+	resp, err := s.client.ListMayanDaySignsWithResponse(ctx, params, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *MesoamericanAstrologyService) ListTrecenas(ctx context.Context, params *ListTrecenasParams, reqEditors ...RequestEditorFn) (*ListTrecenasResponse, error) {
+	resp, err := s.client.ListTrecenasWithResponse(ctx, params, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+// VastuService groups the vastu endpoints.
+type VastuService struct{ client *ClientWithResponses }
+
+func (s *VastuService) CalculateAyadi(ctx context.Context, params *CalculateAyadiParams, body CalculateAyadiJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateAyadiResponse, error) {
+	resp, err := s.client.CalculateAyadiWithResponse(ctx, params, body, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *VastuService) CalculateEntrancePada(ctx context.Context, params *CalculateEntrancePadaParams, body CalculateEntrancePadaJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateEntrancePadaResponse, error) {
+	resp, err := s.client.CalculateEntrancePadaWithResponse(ctx, params, body, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *VastuService) CalculatePlotAnalysis(ctx context.Context, params *CalculatePlotAnalysisParams, body CalculatePlotAnalysisJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculatePlotAnalysisResponse, error) {
+	resp, err := s.client.CalculatePlotAnalysisWithResponse(ctx, params, body, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *VastuService) CalculateRoomCompliance(ctx context.Context, params *CalculateRoomComplianceParams, body CalculateRoomComplianceJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateRoomComplianceResponse, error) {
+	resp, err := s.client.CalculateRoomComplianceWithResponse(ctx, params, body, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *VastuService) FindGrihaPraveshDates(ctx context.Context, params *FindGrihaPraveshDatesParams, body FindGrihaPraveshDatesJSONRequestBody, reqEditors ...RequestEditorFn) (*FindGrihaPraveshDatesResponse, error) {
+	resp, err := s.client.FindGrihaPraveshDatesWithResponse(ctx, params, body, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *VastuService) GenerateMandala(ctx context.Context, params *GenerateMandalaParams, body GenerateMandalaJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateMandalaResponse, error) {
+	resp, err := s.client.GenerateMandalaWithResponse(ctx, params, body, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *VastuService) GetDevata(ctx context.Context, id GetDevataParamsID, params *GetDevataParams, reqEditors ...RequestEditorFn) (*GetDevataResponse, error) {
+	resp, err := s.client.GetDevataWithResponse(ctx, id, params, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *VastuService) GetDikpalaDirection(ctx context.Context, id GetDikpalaDirectionParamsID, params *GetDikpalaDirectionParams, reqEditors ...RequestEditorFn) (*GetDikpalaDirectionResponse, error) {
+	resp, err := s.client.GetDikpalaDirectionWithResponse(ctx, id, params, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *VastuService) ListDevatas(ctx context.Context, params *ListDevatasParams, reqEditors ...RequestEditorFn) (*ListDevatasResponse, error) {
+	resp, err := s.client.ListDevatasWithResponse(ctx, params, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *VastuService) ListDikpalaDirections(ctx context.Context, params *ListDikpalaDirectionsParams, reqEditors ...RequestEditorFn) (*ListDikpalaDirectionsResponse, error) {
+	resp, err := s.client.ListDikpalaDirectionsWithResponse(ctx, params, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
 // NumerologyService groups the numerology endpoints.
 type NumerologyService struct{ client *ClientWithResponses }
 
@@ -1337,6 +1575,105 @@ func (s *NumerologyService) GetNumberMeaning(ctx context.Context, number string,
 	return resp, asRoxyError(resp)
 }
 
+// KabbalahService groups the kabbalah endpoints.
+type KabbalahService struct{ client *ClientWithResponses }
+
+func (s *KabbalahService) CalculateGematria(ctx context.Context, params *CalculateGematriaParams, body CalculateGematriaJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateGematriaResponse, error) {
+	resp, err := s.client.CalculateGematriaWithResponse(ctx, params, body, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *KabbalahService) CalculateNameCompatibility(ctx context.Context, params *CalculateNameCompatibilityParams, body CalculateNameCompatibilityJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateNameCompatibilityResponse, error) {
+	resp, err := s.client.CalculateNameCompatibilityWithResponse(ctx, params, body, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *KabbalahService) GenerateBirthProfile(ctx context.Context, params *GenerateBirthProfileParams, body GenerateBirthProfileJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateBirthProfileResponse, error) {
+	resp, err := s.client.GenerateBirthProfileWithResponse(ctx, params, body, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *KabbalahService) GenerateNameProfile(ctx context.Context, params *GenerateNameProfileParams, body GenerateNameProfileJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateNameProfileResponse, error) {
+	resp, err := s.client.GenerateNameProfileWithResponse(ctx, params, body, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *KabbalahService) GetDailySephirah(ctx context.Context, params *GetDailySephirahParams, reqEditors ...RequestEditorFn) (*GetDailySephirahResponse, error) {
+	resp, err := s.client.GetDailySephirahWithResponse(ctx, params, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *KabbalahService) GetHebrewLetter(ctx context.Context, id GetHebrewLetterParamsID, params *GetHebrewLetterParams, reqEditors ...RequestEditorFn) (*GetHebrewLetterResponse, error) {
+	resp, err := s.client.GetHebrewLetterWithResponse(ctx, id, params, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *KabbalahService) GetSephirah(ctx context.Context, id GetSephirahParamsID, params *GetSephirahParams, reqEditors ...RequestEditorFn) (*GetSephirahResponse, error) {
+	resp, err := s.client.GetSephirahWithResponse(ctx, id, params, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *KabbalahService) GetShemName(ctx context.Context, number int, params *GetShemNameParams, reqEditors ...RequestEditorFn) (*GetShemNameResponse, error) {
+	resp, err := s.client.GetShemNameWithResponse(ctx, number, params, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *KabbalahService) GetTreeOfLife(ctx context.Context, params *GetTreeOfLifeParams, reqEditors ...RequestEditorFn) (*GetTreeOfLifeResponse, error) {
+	resp, err := s.client.GetTreeOfLifeWithResponse(ctx, params, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *KabbalahService) ListGematriaCiphers(ctx context.Context, params *ListGematriaCiphersParams, reqEditors ...RequestEditorFn) (*ListGematriaCiphersResponse, error) {
+	resp, err := s.client.ListGematriaCiphersWithResponse(ctx, params, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *KabbalahService) ListHebrewLetters(ctx context.Context, params *ListHebrewLettersParams, reqEditors ...RequestEditorFn) (*ListHebrewLettersResponse, error) {
+	resp, err := s.client.ListHebrewLettersWithResponse(ctx, params, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *KabbalahService) ListShemNames(ctx context.Context, params *ListShemNamesParams, reqEditors ...RequestEditorFn) (*ListShemNamesResponse, error) {
+	resp, err := s.client.ListShemNamesWithResponse(ctx, params, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
 // TarotService groups the tarot endpoints.
 type TarotService struct{ client *ClientWithResponses }
 
@@ -1465,6 +1802,73 @@ func (s *BiorhythmService) GetPhases(ctx context.Context, params *GetPhasesParam
 
 func (s *BiorhythmService) GetReading(ctx context.Context, params *GetReadingParams, body GetReadingJSONRequestBody, reqEditors ...RequestEditorFn) (*GetReadingResponse, error) {
 	resp, err := s.client.GetReadingWithResponse(ctx, params, body, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+// AyurvedaService groups the ayurveda endpoints.
+type AyurvedaService struct{ client *ClientWithResponses }
+
+func (s *AyurvedaService) CalculateAyurvedicConstitution(ctx context.Context, params *CalculateAyurvedicConstitutionParams, body CalculateAyurvedicConstitutionJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateAyurvedicConstitutionResponse, error) {
+	resp, err := s.client.CalculateAyurvedicConstitutionWithResponse(ctx, params, body, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *AyurvedaService) GetDailyAyurvedaReading(ctx context.Context, params *GetDailyAyurvedaReadingParams, reqEditors ...RequestEditorFn) (*GetDailyAyurvedaReadingResponse, error) {
+	resp, err := s.client.GetDailyAyurvedaReadingWithResponse(ctx, params, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *AyurvedaService) GetDinacharyaSchedule(ctx context.Context, params *GetDinacharyaScheduleParams, body GetDinacharyaScheduleJSONRequestBody, reqEditors ...RequestEditorFn) (*GetDinacharyaScheduleResponse, error) {
+	resp, err := s.client.GetDinacharyaScheduleWithResponse(ctx, params, body, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *AyurvedaService) GetDosha(ctx context.Context, id GetDoshaParamsID, params *GetDoshaParams, reqEditors ...RequestEditorFn) (*GetDoshaResponse, error) {
+	resp, err := s.client.GetDoshaWithResponse(ctx, id, params, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *AyurvedaService) GetRitucharya(ctx context.Context, params *GetRitucharyaParams, body GetRitucharyaJSONRequestBody, reqEditors ...RequestEditorFn) (*GetRitucharyaResponse, error) {
+	resp, err := s.client.GetRitucharyaWithResponse(ctx, params, body, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *AyurvedaService) ListDoshas(ctx context.Context, params *ListDoshasParams, reqEditors ...RequestEditorFn) (*ListDoshasResponse, error) {
+	resp, err := s.client.ListDoshasWithResponse(ctx, params, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *AyurvedaService) ListGunas(ctx context.Context, params *ListGunasParams, reqEditors ...RequestEditorFn) (*ListGunasResponse, error) {
+	resp, err := s.client.ListGunasWithResponse(ctx, params, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *AyurvedaService) ListRasas(ctx context.Context, params *ListRasasParams, reqEditors ...RequestEditorFn) (*ListRasasResponse, error) {
+	resp, err := s.client.ListRasasWithResponse(ctx, params, reqEditors...)
 	if err != nil {
 		return resp, err
 	}
@@ -1613,16 +2017,16 @@ func (s *CrystalsService) GetRandomCrystal(ctx context.Context, params *GetRando
 	return resp, asRoxyError(resp)
 }
 
-func (s *CrystalsService) ListCrystalColors(ctx context.Context, reqEditors ...RequestEditorFn) (*ListCrystalColorsResponse, error) {
-	resp, err := s.client.ListCrystalColorsWithResponse(ctx, reqEditors...)
+func (s *CrystalsService) ListCrystalColors(ctx context.Context, params *ListCrystalColorsParams, reqEditors ...RequestEditorFn) (*ListCrystalColorsResponse, error) {
+	resp, err := s.client.ListCrystalColorsWithResponse(ctx, params, reqEditors...)
 	if err != nil {
 		return resp, err
 	}
 	return resp, asRoxyError(resp)
 }
 
-func (s *CrystalsService) ListCrystalPlanets(ctx context.Context, reqEditors ...RequestEditorFn) (*ListCrystalPlanetsResponse, error) {
-	resp, err := s.client.ListCrystalPlanetsWithResponse(ctx, reqEditors...)
+func (s *CrystalsService) ListCrystalPlanets(ctx context.Context, params *ListCrystalPlanetsParams, reqEditors ...RequestEditorFn) (*ListCrystalPlanetsResponse, error) {
+	resp, err := s.client.ListCrystalPlanetsWithResponse(ctx, params, reqEditors...)
 	if err != nil {
 		return resp, err
 	}
