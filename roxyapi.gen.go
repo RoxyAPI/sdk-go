@@ -19041,6 +19041,30 @@ func (e ListDevatasParamsLang) Valid() bool {
 	}
 }
 
+// Defines values for ListDevatas200JSONResponseBodyDevatasClass.
+const (
+	ListDevatas200JSONResponseBodyDevatasClassCenter      ListDevatas200JSONResponseBodyDevatasClass = "center"
+	ListDevatas200JSONResponseBodyDevatasClassInnerCorner ListDevatas200JSONResponseBodyDevatasClass = "innerCorner"
+	ListDevatas200JSONResponseBodyDevatasClassInnerRing   ListDevatas200JSONResponseBodyDevatasClass = "innerRing"
+	ListDevatas200JSONResponseBodyDevatasClassPerimeter   ListDevatas200JSONResponseBodyDevatasClass = "perimeter"
+)
+
+// Valid indicates whether the value is a known member of the ListDevatas200JSONResponseBodyDevatasClass enum.
+func (e ListDevatas200JSONResponseBodyDevatasClass) Valid() bool {
+	switch e {
+	case ListDevatas200JSONResponseBodyDevatasClassCenter:
+		return true
+	case ListDevatas200JSONResponseBodyDevatasClassInnerCorner:
+		return true
+	case ListDevatas200JSONResponseBodyDevatasClassInnerRing:
+		return true
+	case ListDevatas200JSONResponseBodyDevatasClassPerimeter:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for GetDevataParamsLang.
 const (
 	GetDevataParamsLangDe     GetDevataParamsLang = "de"
@@ -19224,6 +19248,30 @@ func (e GetDevataParamsID) Valid() bool {
 	case GetDevataParamsIDVivasvan:
 		return true
 	case GetDevataParamsIDYama:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GetDevata200JSONResponseBodyClass.
+const (
+	GetDevata200JSONResponseBodyClassCenter      GetDevata200JSONResponseBodyClass = "center"
+	GetDevata200JSONResponseBodyClassInnerCorner GetDevata200JSONResponseBodyClass = "innerCorner"
+	GetDevata200JSONResponseBodyClassInnerRing   GetDevata200JSONResponseBodyClass = "innerRing"
+	GetDevata200JSONResponseBodyClassPerimeter   GetDevata200JSONResponseBodyClass = "perimeter"
+)
+
+// Valid indicates whether the value is a known member of the GetDevata200JSONResponseBodyClass enum.
+func (e GetDevata200JSONResponseBodyClass) Valid() bool {
+	switch e {
+	case GetDevata200JSONResponseBodyClassCenter:
+		return true
+	case GetDevata200JSONResponseBodyClassInnerCorner:
+		return true
+	case GetDevata200JSONResponseBodyClassInnerRing:
+		return true
+	case GetDevata200JSONResponseBodyClassPerimeter:
 		return true
 	default:
 		return false
@@ -19464,6 +19512,24 @@ func (e CalculateEntrancePadaJSONBodyPlotUnit) Valid() bool {
 	}
 }
 
+// Defines values for CalculateEntrancePada200JSONResponseBodyConventionsUnit.
+const (
+	CalculateEntrancePada200JSONResponseBodyConventionsUnitFeet   CalculateEntrancePada200JSONResponseBodyConventionsUnit = "feet"
+	CalculateEntrancePada200JSONResponseBodyConventionsUnitMetres CalculateEntrancePada200JSONResponseBodyConventionsUnit = "metres"
+)
+
+// Valid indicates whether the value is a known member of the CalculateEntrancePada200JSONResponseBodyConventionsUnit enum.
+func (e CalculateEntrancePada200JSONResponseBodyConventionsUnit) Valid() bool {
+	switch e {
+	case CalculateEntrancePada200JSONResponseBodyConventionsUnitFeet:
+		return true
+	case CalculateEntrancePada200JSONResponseBodyConventionsUnitMetres:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for GenerateMandalaParamsLang.
 const (
 	GenerateMandalaParamsLangDe     GenerateMandalaParamsLang = "de"
@@ -19536,6 +19602,78 @@ func (e GenerateMandalaJSONBodyPlotUnit) Valid() bool {
 	case GenerateMandalaJSONBodyPlotUnitFeet:
 		return true
 	case GenerateMandalaJSONBodyPlotUnitMetres:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GenerateMandala200JSONResponseBodyCellsClass.
+const (
+	GenerateMandala200JSONResponseBodyCellsClassCenter      GenerateMandala200JSONResponseBodyCellsClass = "center"
+	GenerateMandala200JSONResponseBodyCellsClassInnerCorner GenerateMandala200JSONResponseBodyCellsClass = "innerCorner"
+	GenerateMandala200JSONResponseBodyCellsClassInnerRing   GenerateMandala200JSONResponseBodyCellsClass = "innerRing"
+	GenerateMandala200JSONResponseBodyCellsClassPerimeter   GenerateMandala200JSONResponseBodyCellsClass = "perimeter"
+)
+
+// Valid indicates whether the value is a known member of the GenerateMandala200JSONResponseBodyCellsClass enum.
+func (e GenerateMandala200JSONResponseBodyCellsClass) Valid() bool {
+	switch e {
+	case GenerateMandala200JSONResponseBodyCellsClassCenter:
+		return true
+	case GenerateMandala200JSONResponseBodyCellsClassInnerCorner:
+		return true
+	case GenerateMandala200JSONResponseBodyCellsClassInnerRing:
+		return true
+	case GenerateMandala200JSONResponseBodyCellsClassPerimeter:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GenerateMandala200JSONResponseBodyCellsRole.
+const (
+	GenerateMandala200JSONResponseBodyCellsRoleAroundBrahma      GenerateMandala200JSONResponseBodyCellsRole = "around-brahma"
+	GenerateMandala200JSONResponseBodyCellsRoleBrahma            GenerateMandala200JSONResponseBodyCellsRole = "brahma"
+	GenerateMandala200JSONResponseBodyCellsRoleDvipada           GenerateMandala200JSONResponseBodyCellsRole = "dvipada"
+	GenerateMandala200JSONResponseBodyCellsRoleHalvedInnerCorner GenerateMandala200JSONResponseBodyCellsRole = "halved-inner-corner"
+	GenerateMandala200JSONResponseBodyCellsRoleHalvedOuterCorner GenerateMandala200JSONResponseBodyCellsRole = "halved-outer-corner"
+	GenerateMandala200JSONResponseBodyCellsRoleOuter             GenerateMandala200JSONResponseBodyCellsRole = "outer"
+)
+
+// Valid indicates whether the value is a known member of the GenerateMandala200JSONResponseBodyCellsRole enum.
+func (e GenerateMandala200JSONResponseBodyCellsRole) Valid() bool {
+	switch e {
+	case GenerateMandala200JSONResponseBodyCellsRoleAroundBrahma:
+		return true
+	case GenerateMandala200JSONResponseBodyCellsRoleBrahma:
+		return true
+	case GenerateMandala200JSONResponseBodyCellsRoleDvipada:
+		return true
+	case GenerateMandala200JSONResponseBodyCellsRoleHalvedInnerCorner:
+		return true
+	case GenerateMandala200JSONResponseBodyCellsRoleHalvedOuterCorner:
+		return true
+	case GenerateMandala200JSONResponseBodyCellsRoleOuter:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GenerateMandala200JSONResponseBodyConventionsUnit.
+const (
+	GenerateMandala200JSONResponseBodyConventionsUnitFeet   GenerateMandala200JSONResponseBodyConventionsUnit = "feet"
+	GenerateMandala200JSONResponseBodyConventionsUnitMetres GenerateMandala200JSONResponseBodyConventionsUnit = "metres"
+)
+
+// Valid indicates whether the value is a known member of the GenerateMandala200JSONResponseBodyConventionsUnit enum.
+func (e GenerateMandala200JSONResponseBodyConventionsUnit) Valid() bool {
+	switch e {
+	case GenerateMandala200JSONResponseBodyConventionsUnitFeet:
+		return true
+	case GenerateMandala200JSONResponseBodyConventionsUnitMetres:
 		return true
 	default:
 		return false
@@ -29959,7 +30097,7 @@ type BirthChartResponse struct {
 		// Description Brief classical formation rule. Identifies the planetary placement, lordship, dignity, aspect pattern, sign modality, or whole-chart bhava distribution required for the yoga to form.
 		Description string `json:"description"`
 
-		// Evidence Human-readable rationale naming the specific rule that triggered or failed the detection, including planetary positions, dignity, kendradhipati status, lordship, malefic drishti, sign modality, or whole-chart bhava distribution. For a Nabhasa yoga that matched its own rule but was outranked, this names the precedence norm that silenced it, for example that an Akriti yoga outranks Asraya or that any other Nabhasa family suppresses Sankhya.
+		// Evidence Human-readable rationale naming the specific rule that triggered or failed the detection, including planetary positions, dignity, kendradhipati status, lordship, malefic drishti, sign modality, or whole-chart bhava distribution. For a Nabhasa yoga that matched its own rule but was outranked, this names the precedence norm that silenced it, for example that an Akriti yoga outranks Asraya or that any other Nabhasa family suppresses Sankhya. English in every language, like the per-graha stateSource on POST /daily, because it is provenance to be checked against a text rather than display copy.
 		Evidence *string `json:"evidence,omitempty"`
 
 		// Family Classical grouping, ALWAYS present on a detection verdict: one of the four Nabhasa families (asraya, dala, akriti, sankhya) or classical for the twelve single-combination yogas such as Gajakesari and the Pancha Mahapurusha. Group the verdict list on this key to render a Nabhasa result the way the tradition arranges it. Never translated, so grouping works identically under any lang.
@@ -34518,7 +34656,7 @@ type YogaDetectResponse struct {
 		// Description Brief classical formation rule. Identifies the planetary placement, lordship, dignity, aspect pattern, sign modality, or whole-chart bhava distribution required for the yoga to form.
 		Description string `json:"description"`
 
-		// Evidence Human-readable rationale naming the specific rule that triggered or failed the detection, including planetary positions, dignity, kendradhipati status, lordship, malefic drishti, sign modality, or whole-chart bhava distribution. For a Nabhasa yoga that matched its own rule but was outranked, this names the precedence norm that silenced it, for example that an Akriti yoga outranks Asraya or that any other Nabhasa family suppresses Sankhya.
+		// Evidence Human-readable rationale naming the specific rule that triggered or failed the detection, including planetary positions, dignity, kendradhipati status, lordship, malefic drishti, sign modality, or whole-chart bhava distribution. For a Nabhasa yoga that matched its own rule but was outranked, this names the precedence norm that silenced it, for example that an Akriti yoga outranks Asraya or that any other Nabhasa family suppresses Sankhya. English in every language, like the per-graha stateSource on POST /daily, because it is provenance to be checked against a text rather than display copy.
 		Evidence *string `json:"evidence,omitempty"`
 
 		// Family Classical grouping, ALWAYS present on a detection verdict: one of the four Nabhasa families (asraya, dala, akriti, sankhya) or classical for the twelve single-combination yogas such as Gajakesari and the Pancha Mahapurusha. Group the verdict list on this key to render a Nabhasa result the way the tradition arranges it. Never translated, so grouping works identically under any lang.
@@ -36979,10 +37117,10 @@ type ListBaguaSectorsParams struct {
 	// Lang Response language (BCP 47). Supported: en, tr, de, es, hi, pt, fr, ru, zh-Hans, zh-Hant. Defaults to en. Coverage varies by domain, and a field with no translation in the requested language returns English.
 	Lang *ListBaguaSectorsParamsLang `form:"lang,omitempty" json:"lang,omitempty"`
 
-	// Limit Maximum sectors to return per page. Range 1 to 9, default 20.
+	// Limit Maximum items to return per page. Range: 1-9, default 9.
 	Limit *int `form:"limit,omitempty" json:"limit,omitempty"`
 
-	// Offset Number of sectors to skip for pagination. Default 0.
+	// Offset Number of items to skip for pagination. Default 0.
 	Offset *int `form:"offset,omitempty" json:"offset,omitempty"`
 }
 
@@ -37090,10 +37228,10 @@ type ListFlyingStarsParams struct {
 	// Lang Response language (BCP 47). Supported: en, tr, de, es, hi, pt, fr, ru, zh-Hans, zh-Hant. Defaults to en. Coverage varies by domain, and a field with no translation in the requested language returns English.
 	Lang *ListFlyingStarsParamsLang `form:"lang,omitempty" json:"lang,omitempty"`
 
-	// Limit Maximum stars to return per page. Range 1 to 9, default 20.
+	// Limit Maximum items to return per page. Range: 1-9, default 9.
 	Limit *int `form:"limit,omitempty" json:"limit,omitempty"`
 
-	// Offset Number of stars to skip for pagination. Default 0.
+	// Offset Number of items to skip for pagination. Default 0.
 	Offset *int `form:"offset,omitempty" json:"offset,omitempty"`
 }
 
@@ -39555,6 +39693,9 @@ type ListDevatasParams struct {
 // ListDevatasParamsLang defines parameters for ListDevatas.
 type ListDevatasParamsLang string
 
+// ListDevatas200JSONResponseBodyDevatasClass defines parameters for ListDevatas.
+type ListDevatas200JSONResponseBodyDevatasClass string
+
 // GetDevataParams defines parameters for GetDevata.
 type GetDevataParams struct {
 	// Lang Response language (BCP 47). Supported: en, tr, de, es, hi, pt, fr, ru, zh-Hans, zh-Hant. Defaults to en. Coverage varies by domain, and a field with no translation in the requested language returns English.
@@ -39566,6 +39707,9 @@ type GetDevataParamsLang string
 
 // GetDevataParamsID defines parameters for GetDevata.
 type GetDevataParamsID string
+
+// GetDevata200JSONResponseBodyClass defines parameters for GetDevata.
+type GetDevata200JSONResponseBodyClass string
 
 // ListDikpalaDirectionsParams defines parameters for ListDikpalaDirections.
 type ListDikpalaDirectionsParams struct {
@@ -39605,7 +39749,7 @@ type CalculateEntrancePadaJSONBody struct {
 		Y float32 `json:"y"`
 	} `json:"door,omitempty"`
 
-	// DoorPosition Where the main door sits along the facing side, as a fraction from 0 to 1 measured from the corner the chapter starts that side at: the north-east for an east facing, the south-east for a south facing, the south-west for a west facing and the north-west for a north facing. Requires a cardinal facing, since an intercardinal facing names no single side. Send this or door, never both.
+	// DoorPosition Where the main door sits along the facing side, as a fraction from 0 to 1 measured from the corner the chapter starts that side at: the north-east for an east facing, the south-east for a south facing, the south-west for a west facing and the north-west for a north facing. The side carries 8 padas, so to aim at pada n of 8 send its midpoint, (n - 0.5) / 8: 0.0625 for the first pada, 0.4375 for the fourth, 0.9375 for the eighth. The response names the pada the fraction resolved to in ordinalOnSide. Requires a cardinal facing, since an intercardinal facing names no single side. Send this or door, never both.
 	DoorPosition *float32 `json:"doorPosition,omitempty"`
 
 	// Facing Direction the front of the house looks out toward, one of the eight compass sectors. Case and punctuation are folded, so north-east, northeast and NorthEast all resolve. Send this or facingDegrees, never both.
@@ -39657,6 +39801,9 @@ type CalculateEntrancePadaJSONBodyGrid string
 // CalculateEntrancePadaJSONBodyPlotUnit defines parameters for CalculateEntrancePada.
 type CalculateEntrancePadaJSONBodyPlotUnit string
 
+// CalculateEntrancePada200JSONResponseBodyConventionsUnit defines parameters for CalculateEntrancePada.
+type CalculateEntrancePada200JSONResponseBodyConventionsUnit string
+
 // GenerateMandalaJSONBody defines parameters for GenerateMandala.
 type GenerateMandalaJSONBody struct {
 	// Grid Which division of the ground to read: 81-pada is the Paramasayika of Brihat Samhita 53.42, the grid the chapter numbers and names every devata on, and 64-pada is the Manduka of 53.55, for which the chapter gives structure only and no devata names. Defaults to 81-pada.
@@ -39698,6 +39845,15 @@ type GenerateMandalaJSONBodyGrid string
 
 // GenerateMandalaJSONBodyPlotUnit defines parameters for GenerateMandala.
 type GenerateMandalaJSONBodyPlotUnit string
+
+// GenerateMandala200JSONResponseBodyCellsClass defines parameters for GenerateMandala.
+type GenerateMandala200JSONResponseBodyCellsClass string
+
+// GenerateMandala200JSONResponseBodyCellsRole defines parameters for GenerateMandala.
+type GenerateMandala200JSONResponseBodyCellsRole string
+
+// GenerateMandala200JSONResponseBodyConventionsUnit defines parameters for GenerateMandala.
+type GenerateMandala200JSONResponseBodyConventionsUnit string
 
 // CalculatePlotAnalysisJSONBody defines parameters for CalculatePlotAnalysis.
 type CalculatePlotAnalysisJSONBody struct {
@@ -90069,7 +90225,7 @@ type CalculateAyurvedicConstitutionResponse struct {
 				// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 				Translation *string `json:"translation"`
 
-				// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+				// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 				Verse string `json:"verse"`
 
 				// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -90126,7 +90282,7 @@ type CalculateAyurvedicConstitutionResponse struct {
 				// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 				Translation *string `json:"translation"`
 
-				// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+				// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 				Verse string `json:"verse"`
 
 				// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -90150,7 +90306,7 @@ type CalculateAyurvedicConstitutionResponse struct {
 				// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 				Translation *string `json:"translation"`
 
-				// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+				// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 				Verse string `json:"verse"`
 
 				// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -90280,7 +90436,7 @@ func (r CalculateAyurvedicConstitutionResponse) GetJSON200() *struct {
 			// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 			Translation *string `json:"translation"`
 
-			// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+			// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 			Verse string `json:"verse"`
 
 			// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -90337,7 +90493,7 @@ func (r CalculateAyurvedicConstitutionResponse) GetJSON200() *struct {
 			// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 			Translation *string `json:"translation"`
 
-			// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+			// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 			Verse string `json:"verse"`
 
 			// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -90361,7 +90517,7 @@ func (r CalculateAyurvedicConstitutionResponse) GetJSON200() *struct {
 			// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 			Translation *string `json:"translation"`
 
-			// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+			// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 			Verse string `json:"verse"`
 
 			// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -90572,7 +90728,7 @@ type GetDailyAyurvedaReadingResponse struct {
 			// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 			Translation *string `json:"translation"`
 
-			// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+			// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 			Verse string `json:"verse"`
 
 			// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -90708,7 +90864,7 @@ func (r GetDailyAyurvedaReadingResponse) GetJSON200() *struct {
 		// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 		Translation *string `json:"translation"`
 
-		// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+		// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 		Verse string `json:"verse"`
 
 		// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -90842,7 +90998,7 @@ type GetDinacharyaScheduleResponse struct {
 				// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 				Translation *string `json:"translation"`
 
-				// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+				// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 				Verse string `json:"verse"`
 
 				// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -90920,7 +91076,7 @@ type GetDinacharyaScheduleResponse struct {
 				// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 				Translation *string `json:"translation"`
 
-				// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+				// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 				Verse string `json:"verse"`
 
 				// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -90948,7 +91104,7 @@ type GetDinacharyaScheduleResponse struct {
 			// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 			Translation *string `json:"translation"`
 
-			// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+			// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 			Verse string `json:"verse"`
 
 			// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -91026,7 +91182,7 @@ func (r GetDinacharyaScheduleResponse) GetJSON200() *struct {
 			// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 			Translation *string `json:"translation"`
 
-			// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+			// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 			Verse string `json:"verse"`
 
 			// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -91104,7 +91260,7 @@ func (r GetDinacharyaScheduleResponse) GetJSON200() *struct {
 			// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 			Translation *string `json:"translation"`
 
-			// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+			// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 			Verse string `json:"verse"`
 
 			// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -91132,7 +91288,7 @@ func (r GetDinacharyaScheduleResponse) GetJSON200() *struct {
 		// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 		Translation *string `json:"translation"`
 
-		// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+		// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 		Verse string `json:"verse"`
 
 		// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -91272,7 +91428,7 @@ type ListDoshasResponse struct {
 				// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 				Translation *string `json:"translation"`
 
-				// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+				// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 				Verse string `json:"verse"`
 
 				// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -91313,7 +91469,7 @@ type ListDoshasResponse struct {
 					// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 					Translation *string `json:"translation"`
 
-					// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+					// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 					Verse string `json:"verse"`
 
 					// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -91358,7 +91514,7 @@ type ListDoshasResponse struct {
 					// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 					Translation *string `json:"translation"`
 
-					// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+					// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 					Verse string `json:"verse"`
 
 					// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -91396,7 +91552,7 @@ type ListDoshasResponse struct {
 			// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 			Translation *string `json:"translation"`
 
-			// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+			// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 			Verse string `json:"verse"`
 
 			// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -91474,7 +91630,7 @@ func (r ListDoshasResponse) GetJSON200() *struct {
 			// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 			Translation *string `json:"translation"`
 
-			// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+			// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 			Verse string `json:"verse"`
 
 			// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -91515,7 +91671,7 @@ func (r ListDoshasResponse) GetJSON200() *struct {
 				// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 				Translation *string `json:"translation"`
 
-				// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+				// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 				Verse string `json:"verse"`
 
 				// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -91560,7 +91716,7 @@ func (r ListDoshasResponse) GetJSON200() *struct {
 				// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 				Translation *string `json:"translation"`
 
-				// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+				// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 				Verse string `json:"verse"`
 
 				// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -91598,7 +91754,7 @@ func (r ListDoshasResponse) GetJSON200() *struct {
 		// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 		Translation *string `json:"translation"`
 
-		// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+		// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 		Verse string `json:"verse"`
 
 		// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -91732,7 +91888,7 @@ type GetDoshaResponse struct {
 				// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 				Translation *string `json:"translation"`
 
-				// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+				// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 				Verse string `json:"verse"`
 
 				// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -91773,7 +91929,7 @@ type GetDoshaResponse struct {
 					// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 					Translation *string `json:"translation"`
 
-					// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+					// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 					Verse string `json:"verse"`
 
 					// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -91818,7 +91974,7 @@ type GetDoshaResponse struct {
 					// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 					Translation *string `json:"translation"`
 
-					// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+					// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 					Verse string `json:"verse"`
 
 					// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -91850,7 +92006,7 @@ type GetDoshaResponse struct {
 			// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 			Translation *string `json:"translation"`
 
-			// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+			// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 			Verse string `json:"verse"`
 
 			// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -91925,7 +92081,7 @@ func (r GetDoshaResponse) GetJSON200() *struct {
 			// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 			Translation *string `json:"translation"`
 
-			// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+			// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 			Verse string `json:"verse"`
 
 			// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -91966,7 +92122,7 @@ func (r GetDoshaResponse) GetJSON200() *struct {
 				// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 				Translation *string `json:"translation"`
 
-				// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+				// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 				Verse string `json:"verse"`
 
 				// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -92011,7 +92167,7 @@ func (r GetDoshaResponse) GetJSON200() *struct {
 				// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 				Translation *string `json:"translation"`
 
-				// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+				// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 				Verse string `json:"verse"`
 
 				// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -92043,7 +92199,7 @@ func (r GetDoshaResponse) GetJSON200() *struct {
 		// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 		Translation *string `json:"translation"`
 
-		// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+		// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 		Verse string `json:"verse"`
 
 		// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -92205,7 +92361,7 @@ type ListGunasResponse struct {
 			// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 			Translation *string `json:"translation"`
 
-			// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+			// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 			Verse string `json:"verse"`
 
 			// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -92314,7 +92470,7 @@ func (r ListGunasResponse) GetJSON200() *struct {
 		// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 		Translation *string `json:"translation"`
 
-		// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+		// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 		Verse string `json:"verse"`
 
 		// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -92418,7 +92574,7 @@ type GetRitucharyaResponse struct {
 				// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 				Translation *string `json:"translation"`
 
-				// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+				// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 				Verse string `json:"verse"`
 
 				// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -92484,7 +92640,7 @@ type GetRitucharyaResponse struct {
 				// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 				Translation *string `json:"translation"`
 
-				// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+				// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 				Verse string `json:"verse"`
 
 				// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -92529,7 +92685,7 @@ type GetRitucharyaResponse struct {
 				// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 				Translation *string `json:"translation"`
 
-				// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+				// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 				Verse string `json:"verse"`
 
 				// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -92590,7 +92746,7 @@ type GetRitucharyaResponse struct {
 			// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 			Translation *string `json:"translation"`
 
-			// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+			// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 			Verse string `json:"verse"`
 
 			// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -92619,7 +92775,7 @@ type GetRitucharyaResponse struct {
 				// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 				Translation *string `json:"translation"`
 
-				// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+				// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 				Verse string `json:"verse"`
 
 				// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -92658,7 +92814,7 @@ type GetRitucharyaResponse struct {
 				// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 				Translation *string `json:"translation"`
 
-				// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+				// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 				Verse string `json:"verse"`
 
 				// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -92704,7 +92860,7 @@ func (r GetRitucharyaResponse) GetJSON200() *struct {
 			// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 			Translation *string `json:"translation"`
 
-			// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+			// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 			Verse string `json:"verse"`
 
 			// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -92770,7 +92926,7 @@ func (r GetRitucharyaResponse) GetJSON200() *struct {
 			// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 			Translation *string `json:"translation"`
 
-			// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+			// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 			Verse string `json:"verse"`
 
 			// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -92815,7 +92971,7 @@ func (r GetRitucharyaResponse) GetJSON200() *struct {
 			// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 			Translation *string `json:"translation"`
 
-			// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+			// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 			Verse string `json:"verse"`
 
 			// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -92876,7 +93032,7 @@ func (r GetRitucharyaResponse) GetJSON200() *struct {
 		// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 		Translation *string `json:"translation"`
 
-		// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+		// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 		Verse string `json:"verse"`
 
 		// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -92905,7 +93061,7 @@ func (r GetRitucharyaResponse) GetJSON200() *struct {
 			// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 			Translation *string `json:"translation"`
 
-			// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+			// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 			Verse string `json:"verse"`
 
 			// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -92944,7 +93100,7 @@ func (r GetRitucharyaResponse) GetJSON200() *struct {
 			// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 			Translation *string `json:"translation"`
 
-			// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+			// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 			Verse string `json:"verse"`
 
 			// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -93089,7 +93245,7 @@ type ListRasasResponse struct {
 			// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 			Translation *string `json:"translation"`
 
-			// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+			// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 			Verse string `json:"verse"`
 
 			// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -93183,7 +93339,7 @@ func (r ListRasasResponse) GetJSON200() *struct {
 		// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 		Translation *string `json:"translation"`
 
-		// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+		// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 		Verse string `json:"verse"`
 
 		// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -96812,6 +96968,9 @@ type CalculateLuckPillarsResponse struct {
 		// BoundaryTerm The minor solar term the count ran to. One of the twelve that also move the month pillar. Always the pinyin identifier, whatever the lang parameter says.
 		BoundaryTerm string `json:"boundaryTerm"`
 
+		// BoundaryTermName Display name of that same term, in the requested language. Always present, and English when lang is en. Several English renderings of a term are in circulation, so treat this as the label and boundaryTerm as the value.
+		BoundaryTermName string `json:"boundaryTermName"`
+
 		// Conventions The three school conventions this result was computed under. Returned on every BaZi response so a chart is self-describing: two calculators can produce different pillars for one birth and both be correct, and this object says which reading you are holding.
 		Conventions struct {
 			// DayBoundary Day-boundary school actually applied. Echoes the request, or the default when it was omitted. Always English, whatever the lang parameter says, so it stays safe to compare against in code.
@@ -97013,6 +97172,9 @@ func (r CalculateLuckPillarsResponse) GetJSON200() *struct {
 
 	// BoundaryTerm The minor solar term the count ran to. One of the twelve that also move the month pillar. Always the pinyin identifier, whatever the lang parameter says.
 	BoundaryTerm string `json:"boundaryTerm"`
+
+	// BoundaryTermName Display name of that same term, in the requested language. Always present, and English when lang is en. Several English renderings of a term are in circulation, so treat this as the label and boundaryTerm as the value.
+	BoundaryTermName string `json:"boundaryTermName"`
 
 	// Conventions The three school conventions this result was computed under. Returned on every BaZi response so a chart is self-describing: two calculators can produce different pillars for one birth and both be correct, and this object says which reading you are holding.
 	Conventions struct {
@@ -97221,6 +97383,9 @@ type LookupAuspiciousDaysResponse struct {
 		// AvoidAnimal Echo of the animal protected. Absent when none was sent, rather than null.
 		AvoidAnimal *string `json:"avoidAnimal,omitempty"`
 
+		// AvoidAnimalLocalized Display name of the protected animal in the requested language, beside the avoidAnimal identifier. Absent when no animal was sent and absent when lang is en, so an English response is unchanged.
+		AvoidAnimalLocalized *string `json:"avoidAnimalLocalized,omitempty"`
+
 		// Days The favoured days, in date order.
 		Days []struct {
 			// Avoids Activity identifiers, always English kebab case so they stay safe to compare against in code. Use the /calendar/auspicious-days endpoint to search a date range for one of them.
@@ -97414,6 +97579,9 @@ func (r LookupAuspiciousDaysResponse) GetJSON200() *struct {
 
 	// AvoidAnimal Echo of the animal protected. Absent when none was sent, rather than null.
 	AvoidAnimal *string `json:"avoidAnimal,omitempty"`
+
+	// AvoidAnimalLocalized Display name of the protected animal in the requested language, beside the avoidAnimal identifier. Absent when no animal was sent and absent when lang is en, so an English response is unchanged.
+	AvoidAnimalLocalized *string `json:"avoidAnimalLocalized,omitempty"`
 
 	// Days The favoured days, in date order.
 	Days []struct {
@@ -103141,14 +103309,23 @@ type ListBaguaSectorsResponse struct {
 				// Direction Compass sector, one of North, Northeast, East, Southeast, South, Southwest, West, Northwest. Always English, whatever the lang parameter says, so it stays safe to compare against in code and against the same value on the I-Ching trigram endpoints.
 				Direction string `json:"direction"`
 
+				// DirectionLocalized Compass sector in the requested language, for display only, the same word the composed readings use. Present only when lang is set to a language other than English. Never compare against this value.
+				DirectionLocalized *string `json:"directionLocalized,omitempty"`
+
 				// Element Five phase of this entry: Wood, Fire, Earth, Metal or Water. Always English so it stays safe to compare against and to key styling on. The full cycles live on the Chinese astrology elements endpoint.
 				Element string `json:"element"`
 
-				// English English name of the trigram, byte identical to the value the I-Ching trigram endpoints publish for this number.
+				// ElementLocalized Five phase name in the requested language, for display only. Present only when lang is set to a language other than English. Never compare against this value.
+				ElementLocalized *string `json:"elementLocalized,omitempty"`
+
+				// English English name of the trigram, byte identical to the English value the I-Ching trigram endpoints publish for this number. Always English here, whatever the lang parameter says, so it stays safe to compare against. Use nameLocalized for anything a reader sees.
 				English string `json:"english"`
 
-				// FamilyMember Family role of the trigram. Read alongside an affliction to know which member of the household a sector points at.
+				// FamilyMember Family role of the trigram. Read alongside an affliction to know which member of the household a sector points at. Always English, and it carries no localized sibling: no vocabulary this package ships names the eight family roles.
 				FamilyMember string `json:"familyMember"`
+
+				// NameLocalized Trigram name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat english exactly. Never compare against this value.
+				NameLocalized *string `json:"nameLocalized,omitempty"`
 
 				// Number Trigram number, 1 to 8, the same identifier the I-Ching trigram endpoints use. It is a lookup key, not a ranking.
 				Number float32 `json:"number"`
@@ -103195,14 +103372,23 @@ type ListBaguaSectorsResponse struct {
 				// Direction Compass sector, one of North, Northeast, East, Southeast, South, Southwest, West, Northwest. Always English, whatever the lang parameter says, so it stays safe to compare against in code and against the same value on the I-Ching trigram endpoints.
 				Direction string `json:"direction"`
 
+				// DirectionLocalized Compass sector in the requested language, for display only, the same word the composed readings use. Present only when lang is set to a language other than English. Never compare against this value.
+				DirectionLocalized *string `json:"directionLocalized,omitempty"`
+
 				// Element Five phase of this entry: Wood, Fire, Earth, Metal or Water. Always English so it stays safe to compare against and to key styling on. The full cycles live on the Chinese astrology elements endpoint.
 				Element string `json:"element"`
 
-				// English English name of the trigram, byte identical to the value the I-Ching trigram endpoints publish for this number.
+				// ElementLocalized Five phase name in the requested language, for display only. Present only when lang is set to a language other than English. Never compare against this value.
+				ElementLocalized *string `json:"elementLocalized,omitempty"`
+
+				// English English name of the trigram, byte identical to the English value the I-Ching trigram endpoints publish for this number. Always English here, whatever the lang parameter says, so it stays safe to compare against. Use nameLocalized for anything a reader sees.
 				English string `json:"english"`
 
-				// FamilyMember Family role of the trigram. Read alongside an affliction to know which member of the household a sector points at.
+				// FamilyMember Family role of the trigram. Read alongside an affliction to know which member of the household a sector points at. Always English, and it carries no localized sibling: no vocabulary this package ships names the eight family roles.
 				FamilyMember string `json:"familyMember"`
+
+				// NameLocalized Trigram name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat english exactly. Never compare against this value.
+				NameLocalized *string `json:"nameLocalized,omitempty"`
 
 				// Number Trigram number, 1 to 8, the same identifier the I-Ching trigram endpoints use. It is a lookup key, not a ranking.
 				Number float32 `json:"number"`
@@ -103259,14 +103445,23 @@ func (r ListBaguaSectorsResponse) GetJSON200() *struct {
 			// Direction Compass sector, one of North, Northeast, East, Southeast, South, Southwest, West, Northwest. Always English, whatever the lang parameter says, so it stays safe to compare against in code and against the same value on the I-Ching trigram endpoints.
 			Direction string `json:"direction"`
 
+			// DirectionLocalized Compass sector in the requested language, for display only, the same word the composed readings use. Present only when lang is set to a language other than English. Never compare against this value.
+			DirectionLocalized *string `json:"directionLocalized,omitempty"`
+
 			// Element Five phase of this entry: Wood, Fire, Earth, Metal or Water. Always English so it stays safe to compare against and to key styling on. The full cycles live on the Chinese astrology elements endpoint.
 			Element string `json:"element"`
 
-			// English English name of the trigram, byte identical to the value the I-Ching trigram endpoints publish for this number.
+			// ElementLocalized Five phase name in the requested language, for display only. Present only when lang is set to a language other than English. Never compare against this value.
+			ElementLocalized *string `json:"elementLocalized,omitempty"`
+
+			// English English name of the trigram, byte identical to the English value the I-Ching trigram endpoints publish for this number. Always English here, whatever the lang parameter says, so it stays safe to compare against. Use nameLocalized for anything a reader sees.
 			English string `json:"english"`
 
-			// FamilyMember Family role of the trigram. Read alongside an affliction to know which member of the household a sector points at.
+			// FamilyMember Family role of the trigram. Read alongside an affliction to know which member of the household a sector points at. Always English, and it carries no localized sibling: no vocabulary this package ships names the eight family roles.
 			FamilyMember string `json:"familyMember"`
+
+			// NameLocalized Trigram name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat english exactly. Never compare against this value.
+			NameLocalized *string `json:"nameLocalized,omitempty"`
 
 			// Number Trigram number, 1 to 8, the same identifier the I-Ching trigram endpoints use. It is a lookup key, not a ranking.
 			Number float32 `json:"number"`
@@ -103313,14 +103508,23 @@ func (r ListBaguaSectorsResponse) GetJSON200() *struct {
 			// Direction Compass sector, one of North, Northeast, East, Southeast, South, Southwest, West, Northwest. Always English, whatever the lang parameter says, so it stays safe to compare against in code and against the same value on the I-Ching trigram endpoints.
 			Direction string `json:"direction"`
 
+			// DirectionLocalized Compass sector in the requested language, for display only, the same word the composed readings use. Present only when lang is set to a language other than English. Never compare against this value.
+			DirectionLocalized *string `json:"directionLocalized,omitempty"`
+
 			// Element Five phase of this entry: Wood, Fire, Earth, Metal or Water. Always English so it stays safe to compare against and to key styling on. The full cycles live on the Chinese astrology elements endpoint.
 			Element string `json:"element"`
 
-			// English English name of the trigram, byte identical to the value the I-Ching trigram endpoints publish for this number.
+			// ElementLocalized Five phase name in the requested language, for display only. Present only when lang is set to a language other than English. Never compare against this value.
+			ElementLocalized *string `json:"elementLocalized,omitempty"`
+
+			// English English name of the trigram, byte identical to the English value the I-Ching trigram endpoints publish for this number. Always English here, whatever the lang parameter says, so it stays safe to compare against. Use nameLocalized for anything a reader sees.
 			English string `json:"english"`
 
-			// FamilyMember Family role of the trigram. Read alongside an affliction to know which member of the household a sector points at.
+			// FamilyMember Family role of the trigram. Read alongside an affliction to know which member of the household a sector points at. Always English, and it carries no localized sibling: no vocabulary this package ships names the eight family roles.
 			FamilyMember string `json:"familyMember"`
+
+			// NameLocalized Trigram name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat english exactly. Never compare against this value.
+			NameLocalized *string `json:"nameLocalized,omitempty"`
 
 			// Number Trigram number, 1 to 8, the same identifier the I-Ching trigram endpoints use. It is a lookup key, not a ranking.
 			Number float32 `json:"number"`
@@ -103425,14 +103629,23 @@ type GetBaguaSectorResponse struct {
 			// Direction Compass sector, one of North, Northeast, East, Southeast, South, Southwest, West, Northwest. Always English, whatever the lang parameter says, so it stays safe to compare against in code and against the same value on the I-Ching trigram endpoints.
 			Direction string `json:"direction"`
 
+			// DirectionLocalized Compass sector in the requested language, for display only, the same word the composed readings use. Present only when lang is set to a language other than English. Never compare against this value.
+			DirectionLocalized *string `json:"directionLocalized,omitempty"`
+
 			// Element Five phase of this entry: Wood, Fire, Earth, Metal or Water. Always English so it stays safe to compare against and to key styling on. The full cycles live on the Chinese astrology elements endpoint.
 			Element string `json:"element"`
 
-			// English English name of the trigram, byte identical to the value the I-Ching trigram endpoints publish for this number.
+			// ElementLocalized Five phase name in the requested language, for display only. Present only when lang is set to a language other than English. Never compare against this value.
+			ElementLocalized *string `json:"elementLocalized,omitempty"`
+
+			// English English name of the trigram, byte identical to the English value the I-Ching trigram endpoints publish for this number. Always English here, whatever the lang parameter says, so it stays safe to compare against. Use nameLocalized for anything a reader sees.
 			English string `json:"english"`
 
-			// FamilyMember Family role of the trigram. Read alongside an affliction to know which member of the household a sector points at.
+			// FamilyMember Family role of the trigram. Read alongside an affliction to know which member of the household a sector points at. Always English, and it carries no localized sibling: no vocabulary this package ships names the eight family roles.
 			FamilyMember string `json:"familyMember"`
+
+			// NameLocalized Trigram name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat english exactly. Never compare against this value.
+			NameLocalized *string `json:"nameLocalized,omitempty"`
 
 			// Number Trigram number, 1 to 8, the same identifier the I-Ching trigram endpoints use. It is a lookup key, not a ranking.
 			Number float32 `json:"number"`
@@ -103479,14 +103692,23 @@ type GetBaguaSectorResponse struct {
 			// Direction Compass sector, one of North, Northeast, East, Southeast, South, Southwest, West, Northwest. Always English, whatever the lang parameter says, so it stays safe to compare against in code and against the same value on the I-Ching trigram endpoints.
 			Direction string `json:"direction"`
 
+			// DirectionLocalized Compass sector in the requested language, for display only, the same word the composed readings use. Present only when lang is set to a language other than English. Never compare against this value.
+			DirectionLocalized *string `json:"directionLocalized,omitempty"`
+
 			// Element Five phase of this entry: Wood, Fire, Earth, Metal or Water. Always English so it stays safe to compare against and to key styling on. The full cycles live on the Chinese astrology elements endpoint.
 			Element string `json:"element"`
 
-			// English English name of the trigram, byte identical to the value the I-Ching trigram endpoints publish for this number.
+			// ElementLocalized Five phase name in the requested language, for display only. Present only when lang is set to a language other than English. Never compare against this value.
+			ElementLocalized *string `json:"elementLocalized,omitempty"`
+
+			// English English name of the trigram, byte identical to the English value the I-Ching trigram endpoints publish for this number. Always English here, whatever the lang parameter says, so it stays safe to compare against. Use nameLocalized for anything a reader sees.
 			English string `json:"english"`
 
-			// FamilyMember Family role of the trigram. Read alongside an affliction to know which member of the household a sector points at.
+			// FamilyMember Family role of the trigram. Read alongside an affliction to know which member of the household a sector points at. Always English, and it carries no localized sibling: no vocabulary this package ships names the eight family roles.
 			FamilyMember string `json:"familyMember"`
+
+			// NameLocalized Trigram name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat english exactly. Never compare against this value.
+			NameLocalized *string `json:"nameLocalized,omitempty"`
 
 			// Number Trigram number, 1 to 8, the same identifier the I-Ching trigram endpoints use. It is a lookup key, not a ranking.
 			Number float32 `json:"number"`
@@ -103533,14 +103755,23 @@ func (r GetBaguaSectorResponse) GetJSON200() *struct {
 		// Direction Compass sector, one of North, Northeast, East, Southeast, South, Southwest, West, Northwest. Always English, whatever the lang parameter says, so it stays safe to compare against in code and against the same value on the I-Ching trigram endpoints.
 		Direction string `json:"direction"`
 
+		// DirectionLocalized Compass sector in the requested language, for display only, the same word the composed readings use. Present only when lang is set to a language other than English. Never compare against this value.
+		DirectionLocalized *string `json:"directionLocalized,omitempty"`
+
 		// Element Five phase of this entry: Wood, Fire, Earth, Metal or Water. Always English so it stays safe to compare against and to key styling on. The full cycles live on the Chinese astrology elements endpoint.
 		Element string `json:"element"`
 
-		// English English name of the trigram, byte identical to the value the I-Ching trigram endpoints publish for this number.
+		// ElementLocalized Five phase name in the requested language, for display only. Present only when lang is set to a language other than English. Never compare against this value.
+		ElementLocalized *string `json:"elementLocalized,omitempty"`
+
+		// English English name of the trigram, byte identical to the English value the I-Ching trigram endpoints publish for this number. Always English here, whatever the lang parameter says, so it stays safe to compare against. Use nameLocalized for anything a reader sees.
 		English string `json:"english"`
 
-		// FamilyMember Family role of the trigram. Read alongside an affliction to know which member of the household a sector points at.
+		// FamilyMember Family role of the trigram. Read alongside an affliction to know which member of the household a sector points at. Always English, and it carries no localized sibling: no vocabulary this package ships names the eight family roles.
 		FamilyMember string `json:"familyMember"`
+
+		// NameLocalized Trigram name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat english exactly. Never compare against this value.
+		NameLocalized *string `json:"nameLocalized,omitempty"`
 
 		// Number Trigram number, 1 to 8, the same identifier the I-Ching trigram endpoints use. It is a lookup key, not a ranking.
 		Number float32 `json:"number"`
@@ -103587,14 +103818,23 @@ func (r GetBaguaSectorResponse) GetJSON200() *struct {
 		// Direction Compass sector, one of North, Northeast, East, Southeast, South, Southwest, West, Northwest. Always English, whatever the lang parameter says, so it stays safe to compare against in code and against the same value on the I-Ching trigram endpoints.
 		Direction string `json:"direction"`
 
+		// DirectionLocalized Compass sector in the requested language, for display only, the same word the composed readings use. Present only when lang is set to a language other than English. Never compare against this value.
+		DirectionLocalized *string `json:"directionLocalized,omitempty"`
+
 		// Element Five phase of this entry: Wood, Fire, Earth, Metal or Water. Always English so it stays safe to compare against and to key styling on. The full cycles live on the Chinese astrology elements endpoint.
 		Element string `json:"element"`
 
-		// English English name of the trigram, byte identical to the value the I-Ching trigram endpoints publish for this number.
+		// ElementLocalized Five phase name in the requested language, for display only. Present only when lang is set to a language other than English. Never compare against this value.
+		ElementLocalized *string `json:"elementLocalized,omitempty"`
+
+		// English English name of the trigram, byte identical to the English value the I-Ching trigram endpoints publish for this number. Always English here, whatever the lang parameter says, so it stays safe to compare against. Use nameLocalized for anything a reader sees.
 		English string `json:"english"`
 
-		// FamilyMember Family role of the trigram. Read alongside an affliction to know which member of the household a sector points at.
+		// FamilyMember Family role of the trigram. Read alongside an affliction to know which member of the household a sector points at. Always English, and it carries no localized sibling: no vocabulary this package ships names the eight family roles.
 		FamilyMember string `json:"familyMember"`
+
+		// NameLocalized Trigram name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat english exactly. Never compare against this value.
+		NameLocalized *string `json:"nameLocalized,omitempty"`
 
 		// Number Trigram number, 1 to 8, the same identifier the I-Ching trigram endpoints use. It is a lookup key, not a ranking.
 		Number float32 `json:"number"`
@@ -103716,7 +103956,7 @@ type GenerateEightMansionsResponse struct {
 			// Direction Compass sector, one of North, Northeast, East, Southeast, South, Southwest, West, Northwest. Always English, whatever the lang parameter says, so it stays safe to compare against in code and against the same value on the I-Ching trigram endpoints.
 			Direction string `json:"direction"`
 
-			// Domain The life domain this sector governs, in a few words.
+			// Domain The life domain this sector governs, in a few words, written in the requested language.
 			Domain string `json:"domain"`
 
 			// Nature Whether the sector helps or harms: auspicious or inauspicious.
@@ -103749,14 +103989,23 @@ type GenerateEightMansionsResponse struct {
 				// Direction Compass sector, one of North, Northeast, East, Southeast, South, Southwest, West, Northwest. Always English, whatever the lang parameter says, so it stays safe to compare against in code and against the same value on the I-Ching trigram endpoints.
 				Direction string `json:"direction"`
 
+				// DirectionLocalized Compass sector in the requested language, for display only, the same word the composed readings use. Present only when lang is set to a language other than English. Never compare against this value.
+				DirectionLocalized *string `json:"directionLocalized,omitempty"`
+
 				// Element Five phase of this entry: Wood, Fire, Earth, Metal or Water. Always English so it stays safe to compare against and to key styling on. The full cycles live on the Chinese astrology elements endpoint.
 				Element string `json:"element"`
 
-				// English English name of the trigram, byte identical to the value the I-Ching trigram endpoints publish for this number.
+				// ElementLocalized Five phase name in the requested language, for display only. Present only when lang is set to a language other than English. Never compare against this value.
+				ElementLocalized *string `json:"elementLocalized,omitempty"`
+
+				// English English name of the trigram, byte identical to the English value the I-Ching trigram endpoints publish for this number. Always English here, whatever the lang parameter says, so it stays safe to compare against. Use nameLocalized for anything a reader sees.
 				English string `json:"english"`
 
-				// FamilyMember Family role of the trigram. Read alongside an affliction to know which member of the household a sector points at.
+				// FamilyMember Family role of the trigram. Read alongside an affliction to know which member of the household a sector points at. Always English, and it carries no localized sibling: no vocabulary this package ships names the eight family roles.
 				FamilyMember string `json:"familyMember"`
+
+				// NameLocalized Trigram name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat english exactly. Never compare against this value.
+				NameLocalized *string `json:"nameLocalized,omitempty"`
 
 				// Number Trigram number, 1 to 8, the same identifier the I-Ching trigram endpoints use. It is a lookup key, not a ranking.
 				Number float32 `json:"number"`
@@ -103778,14 +104027,23 @@ type GenerateEightMansionsResponse struct {
 			// Direction Compass sector, one of North, Northeast, East, Southeast, South, Southwest, West, Northwest. Always English, whatever the lang parameter says, so it stays safe to compare against in code and against the same value on the I-Ching trigram endpoints.
 			Direction string `json:"direction"`
 
+			// DirectionLocalized Compass sector in the requested language, for display only, the same word the composed readings use. Present only when lang is set to a language other than English. Never compare against this value.
+			DirectionLocalized *string `json:"directionLocalized,omitempty"`
+
 			// Element Five phase of this entry: Wood, Fire, Earth, Metal or Water. Always English so it stays safe to compare against and to key styling on. The full cycles live on the Chinese astrology elements endpoint.
 			Element string `json:"element"`
 
-			// English English name of the trigram, byte identical to the value the I-Ching trigram endpoints publish for this number.
+			// ElementLocalized Five phase name in the requested language, for display only. Present only when lang is set to a language other than English. Never compare against this value.
+			ElementLocalized *string `json:"elementLocalized,omitempty"`
+
+			// English English name of the trigram, byte identical to the English value the I-Ching trigram endpoints publish for this number. Always English here, whatever the lang parameter says, so it stays safe to compare against. Use nameLocalized for anything a reader sees.
 			English string `json:"english"`
 
-			// FamilyMember Family role of the trigram. Read alongside an affliction to know which member of the household a sector points at.
+			// FamilyMember Family role of the trigram. Read alongside an affliction to know which member of the household a sector points at. Always English, and it carries no localized sibling: no vocabulary this package ships names the eight family roles.
 			FamilyMember string `json:"familyMember"`
+
+			// NameLocalized Trigram name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat english exactly. Never compare against this value.
+			NameLocalized *string `json:"nameLocalized,omitempty"`
 
 			// Number Trigram number, 1 to 8, the same identifier the I-Ching trigram endpoints use. It is a lookup key, not a ranking.
 			Number float32 `json:"number"`
@@ -103849,7 +104107,7 @@ func (r GenerateEightMansionsResponse) GetJSON200() *struct {
 		// Direction Compass sector, one of North, Northeast, East, Southeast, South, Southwest, West, Northwest. Always English, whatever the lang parameter says, so it stays safe to compare against in code and against the same value on the I-Ching trigram endpoints.
 		Direction string `json:"direction"`
 
-		// Domain The life domain this sector governs, in a few words.
+		// Domain The life domain this sector governs, in a few words, written in the requested language.
 		Domain string `json:"domain"`
 
 		// Nature Whether the sector helps or harms: auspicious or inauspicious.
@@ -103882,14 +104140,23 @@ func (r GenerateEightMansionsResponse) GetJSON200() *struct {
 			// Direction Compass sector, one of North, Northeast, East, Southeast, South, Southwest, West, Northwest. Always English, whatever the lang parameter says, so it stays safe to compare against in code and against the same value on the I-Ching trigram endpoints.
 			Direction string `json:"direction"`
 
+			// DirectionLocalized Compass sector in the requested language, for display only, the same word the composed readings use. Present only when lang is set to a language other than English. Never compare against this value.
+			DirectionLocalized *string `json:"directionLocalized,omitempty"`
+
 			// Element Five phase of this entry: Wood, Fire, Earth, Metal or Water. Always English so it stays safe to compare against and to key styling on. The full cycles live on the Chinese astrology elements endpoint.
 			Element string `json:"element"`
 
-			// English English name of the trigram, byte identical to the value the I-Ching trigram endpoints publish for this number.
+			// ElementLocalized Five phase name in the requested language, for display only. Present only when lang is set to a language other than English. Never compare against this value.
+			ElementLocalized *string `json:"elementLocalized,omitempty"`
+
+			// English English name of the trigram, byte identical to the English value the I-Ching trigram endpoints publish for this number. Always English here, whatever the lang parameter says, so it stays safe to compare against. Use nameLocalized for anything a reader sees.
 			English string `json:"english"`
 
-			// FamilyMember Family role of the trigram. Read alongside an affliction to know which member of the household a sector points at.
+			// FamilyMember Family role of the trigram. Read alongside an affliction to know which member of the household a sector points at. Always English, and it carries no localized sibling: no vocabulary this package ships names the eight family roles.
 			FamilyMember string `json:"familyMember"`
+
+			// NameLocalized Trigram name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat english exactly. Never compare against this value.
+			NameLocalized *string `json:"nameLocalized,omitempty"`
 
 			// Number Trigram number, 1 to 8, the same identifier the I-Ching trigram endpoints use. It is a lookup key, not a ranking.
 			Number float32 `json:"number"`
@@ -103911,14 +104178,23 @@ func (r GenerateEightMansionsResponse) GetJSON200() *struct {
 		// Direction Compass sector, one of North, Northeast, East, Southeast, South, Southwest, West, Northwest. Always English, whatever the lang parameter says, so it stays safe to compare against in code and against the same value on the I-Ching trigram endpoints.
 		Direction string `json:"direction"`
 
+		// DirectionLocalized Compass sector in the requested language, for display only, the same word the composed readings use. Present only when lang is set to a language other than English. Never compare against this value.
+		DirectionLocalized *string `json:"directionLocalized,omitempty"`
+
 		// Element Five phase of this entry: Wood, Fire, Earth, Metal or Water. Always English so it stays safe to compare against and to key styling on. The full cycles live on the Chinese astrology elements endpoint.
 		Element string `json:"element"`
 
-		// English English name of the trigram, byte identical to the value the I-Ching trigram endpoints publish for this number.
+		// ElementLocalized Five phase name in the requested language, for display only. Present only when lang is set to a language other than English. Never compare against this value.
+		ElementLocalized *string `json:"elementLocalized,omitempty"`
+
+		// English English name of the trigram, byte identical to the English value the I-Ching trigram endpoints publish for this number. Always English here, whatever the lang parameter says, so it stays safe to compare against. Use nameLocalized for anything a reader sees.
 		English string `json:"english"`
 
-		// FamilyMember Family role of the trigram. Read alongside an affliction to know which member of the household a sector points at.
+		// FamilyMember Family role of the trigram. Read alongside an affliction to know which member of the household a sector points at. Always English, and it carries no localized sibling: no vocabulary this package ships names the eight family roles.
 		FamilyMember string `json:"familyMember"`
+
+		// NameLocalized Trigram name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat english exactly. Never compare against this value.
+		NameLocalized *string `json:"nameLocalized,omitempty"`
 
 		// Number Trigram number, 1 to 8, the same identifier the I-Ching trigram endpoints use. It is a lookup key, not a ranking.
 		Number float32 `json:"number"`
@@ -104938,7 +105214,7 @@ type CalculateKuaNumberResponse struct {
 			// Direction Compass sector, one of North, Northeast, East, Southeast, South, Southwest, West, Northwest. Always English, whatever the lang parameter says, so it stays safe to compare against in code and against the same value on the I-Ching trigram endpoints.
 			Direction string `json:"direction"`
 
-			// Domain The life domain this sector governs, in a few words.
+			// Domain The life domain this sector governs, in a few words, written in the requested language.
 			Domain string `json:"domain"`
 
 			// Nature Whether the sector helps or harms: auspicious or inauspicious.
@@ -104969,14 +105245,23 @@ type CalculateKuaNumberResponse struct {
 			// Direction Compass sector, one of North, Northeast, East, Southeast, South, Southwest, West, Northwest. Always English, whatever the lang parameter says, so it stays safe to compare against in code and against the same value on the I-Ching trigram endpoints.
 			Direction string `json:"direction"`
 
+			// DirectionLocalized Compass sector in the requested language, for display only, the same word the composed readings use. Present only when lang is set to a language other than English. Never compare against this value.
+			DirectionLocalized *string `json:"directionLocalized,omitempty"`
+
 			// Element Five phase of this entry: Wood, Fire, Earth, Metal or Water. Always English so it stays safe to compare against and to key styling on. The full cycles live on the Chinese astrology elements endpoint.
 			Element string `json:"element"`
 
-			// English English name of the trigram, byte identical to the value the I-Ching trigram endpoints publish for this number.
+			// ElementLocalized Five phase name in the requested language, for display only. Present only when lang is set to a language other than English. Never compare against this value.
+			ElementLocalized *string `json:"elementLocalized,omitempty"`
+
+			// English English name of the trigram, byte identical to the English value the I-Ching trigram endpoints publish for this number. Always English here, whatever the lang parameter says, so it stays safe to compare against. Use nameLocalized for anything a reader sees.
 			English string `json:"english"`
 
-			// FamilyMember Family role of the trigram. Read alongside an affliction to know which member of the household a sector points at.
+			// FamilyMember Family role of the trigram. Read alongside an affliction to know which member of the household a sector points at. Always English, and it carries no localized sibling: no vocabulary this package ships names the eight family roles.
 			FamilyMember string `json:"familyMember"`
+
+			// NameLocalized Trigram name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat english exactly. Never compare against this value.
+			NameLocalized *string `json:"nameLocalized,omitempty"`
 
 			// Number Trigram number, 1 to 8, the same identifier the I-Ching trigram endpoints use. It is a lookup key, not a ranking.
 			Number float32 `json:"number"`
@@ -105031,7 +105316,7 @@ func (r CalculateKuaNumberResponse) GetJSON200() *struct {
 		// Direction Compass sector, one of North, Northeast, East, Southeast, South, Southwest, West, Northwest. Always English, whatever the lang parameter says, so it stays safe to compare against in code and against the same value on the I-Ching trigram endpoints.
 		Direction string `json:"direction"`
 
-		// Domain The life domain this sector governs, in a few words.
+		// Domain The life domain this sector governs, in a few words, written in the requested language.
 		Domain string `json:"domain"`
 
 		// Nature Whether the sector helps or harms: auspicious or inauspicious.
@@ -105062,14 +105347,23 @@ func (r CalculateKuaNumberResponse) GetJSON200() *struct {
 		// Direction Compass sector, one of North, Northeast, East, Southeast, South, Southwest, West, Northwest. Always English, whatever the lang parameter says, so it stays safe to compare against in code and against the same value on the I-Ching trigram endpoints.
 		Direction string `json:"direction"`
 
+		// DirectionLocalized Compass sector in the requested language, for display only, the same word the composed readings use. Present only when lang is set to a language other than English. Never compare against this value.
+		DirectionLocalized *string `json:"directionLocalized,omitempty"`
+
 		// Element Five phase of this entry: Wood, Fire, Earth, Metal or Water. Always English so it stays safe to compare against and to key styling on. The full cycles live on the Chinese astrology elements endpoint.
 		Element string `json:"element"`
 
-		// English English name of the trigram, byte identical to the value the I-Ching trigram endpoints publish for this number.
+		// ElementLocalized Five phase name in the requested language, for display only. Present only when lang is set to a language other than English. Never compare against this value.
+		ElementLocalized *string `json:"elementLocalized,omitempty"`
+
+		// English English name of the trigram, byte identical to the English value the I-Ching trigram endpoints publish for this number. Always English here, whatever the lang parameter says, so it stays safe to compare against. Use nameLocalized for anything a reader sees.
 		English string `json:"english"`
 
-		// FamilyMember Family role of the trigram. Read alongside an affliction to know which member of the household a sector points at.
+		// FamilyMember Family role of the trigram. Read alongside an affliction to know which member of the household a sector points at. Always English, and it carries no localized sibling: no vocabulary this package ships names the eight family roles.
 		FamilyMember string `json:"familyMember"`
+
+		// NameLocalized Trigram name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat english exactly. Never compare against this value.
+		NameLocalized *string `json:"nameLocalized,omitempty"`
 
 		// Number Trigram number, 1 to 8, the same identifier the I-Ching trigram endpoints use. It is a lookup key, not a ranking.
 		Number float32 `json:"number"`
@@ -105164,7 +105458,7 @@ type GetKuaNumberResponse struct {
 			// Direction Compass sector, one of North, Northeast, East, Southeast, South, Southwest, West, Northwest. Always English, whatever the lang parameter says, so it stays safe to compare against in code and against the same value on the I-Ching trigram endpoints.
 			Direction string `json:"direction"`
 
-			// Domain The life domain this sector governs, in a few words.
+			// Domain The life domain this sector governs, in a few words, written in the requested language.
 			Domain string `json:"domain"`
 
 			// Nature Whether the sector helps or harms: auspicious or inauspicious.
@@ -105192,14 +105486,23 @@ type GetKuaNumberResponse struct {
 			// Direction Compass sector, one of North, Northeast, East, Southeast, South, Southwest, West, Northwest. Always English, whatever the lang parameter says, so it stays safe to compare against in code and against the same value on the I-Ching trigram endpoints.
 			Direction string `json:"direction"`
 
+			// DirectionLocalized Compass sector in the requested language, for display only, the same word the composed readings use. Present only when lang is set to a language other than English. Never compare against this value.
+			DirectionLocalized *string `json:"directionLocalized,omitempty"`
+
 			// Element Five phase of this entry: Wood, Fire, Earth, Metal or Water. Always English so it stays safe to compare against and to key styling on. The full cycles live on the Chinese astrology elements endpoint.
 			Element string `json:"element"`
 
-			// English English name of the trigram, byte identical to the value the I-Ching trigram endpoints publish for this number.
+			// ElementLocalized Five phase name in the requested language, for display only. Present only when lang is set to a language other than English. Never compare against this value.
+			ElementLocalized *string `json:"elementLocalized,omitempty"`
+
+			// English English name of the trigram, byte identical to the English value the I-Ching trigram endpoints publish for this number. Always English here, whatever the lang parameter says, so it stays safe to compare against. Use nameLocalized for anything a reader sees.
 			English string `json:"english"`
 
-			// FamilyMember Family role of the trigram. Read alongside an affliction to know which member of the household a sector points at.
+			// FamilyMember Family role of the trigram. Read alongside an affliction to know which member of the household a sector points at. Always English, and it carries no localized sibling: no vocabulary this package ships names the eight family roles.
 			FamilyMember string `json:"familyMember"`
+
+			// NameLocalized Trigram name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat english exactly. Never compare against this value.
+			NameLocalized *string `json:"nameLocalized,omitempty"`
 
 			// Number Trigram number, 1 to 8, the same identifier the I-Ching trigram endpoints use. It is a lookup key, not a ranking.
 			Number float32 `json:"number"`
@@ -105240,7 +105543,7 @@ func (r GetKuaNumberResponse) GetJSON200() *struct {
 		// Direction Compass sector, one of North, Northeast, East, Southeast, South, Southwest, West, Northwest. Always English, whatever the lang parameter says, so it stays safe to compare against in code and against the same value on the I-Ching trigram endpoints.
 		Direction string `json:"direction"`
 
-		// Domain The life domain this sector governs, in a few words.
+		// Domain The life domain this sector governs, in a few words, written in the requested language.
 		Domain string `json:"domain"`
 
 		// Nature Whether the sector helps or harms: auspicious or inauspicious.
@@ -105268,14 +105571,23 @@ func (r GetKuaNumberResponse) GetJSON200() *struct {
 		// Direction Compass sector, one of North, Northeast, East, Southeast, South, Southwest, West, Northwest. Always English, whatever the lang parameter says, so it stays safe to compare against in code and against the same value on the I-Ching trigram endpoints.
 		Direction string `json:"direction"`
 
+		// DirectionLocalized Compass sector in the requested language, for display only, the same word the composed readings use. Present only when lang is set to a language other than English. Never compare against this value.
+		DirectionLocalized *string `json:"directionLocalized,omitempty"`
+
 		// Element Five phase of this entry: Wood, Fire, Earth, Metal or Water. Always English so it stays safe to compare against and to key styling on. The full cycles live on the Chinese astrology elements endpoint.
 		Element string `json:"element"`
 
-		// English English name of the trigram, byte identical to the value the I-Ching trigram endpoints publish for this number.
+		// ElementLocalized Five phase name in the requested language, for display only. Present only when lang is set to a language other than English. Never compare against this value.
+		ElementLocalized *string `json:"elementLocalized,omitempty"`
+
+		// English English name of the trigram, byte identical to the English value the I-Ching trigram endpoints publish for this number. Always English here, whatever the lang parameter says, so it stays safe to compare against. Use nameLocalized for anything a reader sees.
 		English string `json:"english"`
 
-		// FamilyMember Family role of the trigram. Read alongside an affliction to know which member of the household a sector points at.
+		// FamilyMember Family role of the trigram. Read alongside an affliction to know which member of the household a sector points at. Always English, and it carries no localized sibling: no vocabulary this package ships names the eight family roles.
 		FamilyMember string `json:"familyMember"`
+
+		// NameLocalized Trigram name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat english exactly. Never compare against this value.
+		NameLocalized *string `json:"nameLocalized,omitempty"`
 
 		// Number Trigram number, 1 to 8, the same identifier the I-Ching trigram endpoints use. It is a lookup key, not a ranking.
 		Number float32 `json:"number"`
@@ -112162,7 +112474,7 @@ type CalculateGematriaResponse struct {
 			// Rule Why this spelling came out of the map, so a caller can tell the parses apart.
 			Rule string `json:"rule"`
 
-			// Values Every cipher applied to this spelling.
+			// Values Every computed cipher applied to this spelling, in catalogue order. The rows carry no display name, because they are the same ciphers in the same order for every spelling: read the names off the top level values array once.
 			Values []struct {
 				// AlternateValues Other published totals for the same string, ascending. Present only where the cipher is not single valued: letter names have several accepted spellings, so several totals are equally published. Absent otherwise, so a caller can branch on presence.
 				AlternateValues *[]float32 `json:"alternateValues,omitempty"`
@@ -112176,8 +112488,8 @@ type CalculateGematriaResponse struct {
 				// Tradition Provenance class of the cipher, one of rabbinic, renaissance-latin, golden-dawn-transliterated or modern. Always English, so it stays safe to compare against in code.
 				Tradition string `json:"tradition"`
 
-				// Value The number this cipher gives for the string. Null on the one catalogued cipher this API does not compute, which is stated on its catalogue entry rather than left to guess.
-				Value *float32 `json:"value"`
+				// Value The number this cipher gives for the string. Always a number: the one catalogued cipher this API does not compute is absent from this array rather than present without a value, so no row here has to be guarded. Its catalogue entry carries computed false and says why.
+				Value float32 `json:"value"`
 			} `json:"values"`
 		} `json:"hebrewForms"`
 		Input struct {
@@ -112232,6 +112544,9 @@ type CalculateGematriaResponse struct {
 			// ID Machine identifier of the transformation.
 			ID string `json:"id"`
 
+			// Name Display name of the transformation as the catalogue names it, in the requested language.
+			Name string `json:"name"`
+
 			// Output The substituted Hebrew string. Absent when atbashOutput asked for the value alone.
 			Output *string `json:"output,omitempty"`
 
@@ -112248,7 +112563,7 @@ type CalculateGematriaResponse struct {
 			Value *float32 `json:"value,omitempty"`
 		} `json:"transformations"`
 
-		// Values Every requested cipher applied to the chosen spelling.
+		// Values Every requested cipher applied to the chosen spelling, in catalogue order, each named as the catalogue names it. Only computed ciphers appear, so every row carries a number.
 		Values []struct {
 			// AlternateValues Other published totals for the same string, ascending. Present only where the cipher is not single valued: letter names have several accepted spellings, so several totals are equally published. Absent otherwise, so a caller can branch on presence.
 			AlternateValues *[]float32 `json:"alternateValues,omitempty"`
@@ -112256,14 +112571,17 @@ type CalculateGematriaResponse struct {
 			// ID Machine identifier of the cipher. Call the ciphers endpoint for the definition, the tradition and the sources behind each one.
 			ID string `json:"id"`
 
+			// Name Display name of the cipher in the requested language, the same string the ciphers catalogue serves for this id. Present so a caller holding one response can label a row without humanizing the identifier or fetching the catalogue. Switch on id, never on this.
+			Name string `json:"name"`
+
 			// Source The first published source this cipher was taken from.
 			Source string `json:"source"`
 
 			// Tradition Provenance class of the cipher, one of rabbinic, renaissance-latin, golden-dawn-transliterated or modern. Always English, so it stays safe to compare against in code.
 			Tradition string `json:"tradition"`
 
-			// Value The number this cipher gives for the string. Null on the one catalogued cipher this API does not compute, which is stated on its catalogue entry rather than left to guess.
-			Value *float32 `json:"value"`
+			// Value The number this cipher gives for the string. Always a number: the one catalogued cipher this API does not compute is absent from this array rather than present without a value, so no row here has to be guarded. Its catalogue entry carries computed false and says why.
+			Value float32 `json:"value"`
 		} `json:"values"`
 	}
 	// JSON400 the response for an HTTP 400 `application/json` response
@@ -112329,7 +112647,7 @@ func (r CalculateGematriaResponse) GetJSON200() *struct {
 		// Rule Why this spelling came out of the map, so a caller can tell the parses apart.
 		Rule string `json:"rule"`
 
-		// Values Every cipher applied to this spelling.
+		// Values Every computed cipher applied to this spelling, in catalogue order. The rows carry no display name, because they are the same ciphers in the same order for every spelling: read the names off the top level values array once.
 		Values []struct {
 			// AlternateValues Other published totals for the same string, ascending. Present only where the cipher is not single valued: letter names have several accepted spellings, so several totals are equally published. Absent otherwise, so a caller can branch on presence.
 			AlternateValues *[]float32 `json:"alternateValues,omitempty"`
@@ -112343,8 +112661,8 @@ func (r CalculateGematriaResponse) GetJSON200() *struct {
 			// Tradition Provenance class of the cipher, one of rabbinic, renaissance-latin, golden-dawn-transliterated or modern. Always English, so it stays safe to compare against in code.
 			Tradition string `json:"tradition"`
 
-			// Value The number this cipher gives for the string. Null on the one catalogued cipher this API does not compute, which is stated on its catalogue entry rather than left to guess.
-			Value *float32 `json:"value"`
+			// Value The number this cipher gives for the string. Always a number: the one catalogued cipher this API does not compute is absent from this array rather than present without a value, so no row here has to be guarded. Its catalogue entry carries computed false and says why.
+			Value float32 `json:"value"`
 		} `json:"values"`
 	} `json:"hebrewForms"`
 	Input struct {
@@ -112399,6 +112717,9 @@ func (r CalculateGematriaResponse) GetJSON200() *struct {
 		// ID Machine identifier of the transformation.
 		ID string `json:"id"`
 
+		// Name Display name of the transformation as the catalogue names it, in the requested language.
+		Name string `json:"name"`
+
 		// Output The substituted Hebrew string. Absent when atbashOutput asked for the value alone.
 		Output *string `json:"output,omitempty"`
 
@@ -112415,7 +112736,7 @@ func (r CalculateGematriaResponse) GetJSON200() *struct {
 		Value *float32 `json:"value,omitempty"`
 	} `json:"transformations"`
 
-	// Values Every requested cipher applied to the chosen spelling.
+	// Values Every requested cipher applied to the chosen spelling, in catalogue order, each named as the catalogue names it. Only computed ciphers appear, so every row carries a number.
 	Values []struct {
 		// AlternateValues Other published totals for the same string, ascending. Present only where the cipher is not single valued: letter names have several accepted spellings, so several totals are equally published. Absent otherwise, so a caller can branch on presence.
 		AlternateValues *[]float32 `json:"alternateValues,omitempty"`
@@ -112423,14 +112744,17 @@ func (r CalculateGematriaResponse) GetJSON200() *struct {
 		// ID Machine identifier of the cipher. Call the ciphers endpoint for the definition, the tradition and the sources behind each one.
 		ID string `json:"id"`
 
+		// Name Display name of the cipher in the requested language, the same string the ciphers catalogue serves for this id. Present so a caller holding one response can label a row without humanizing the identifier or fetching the catalogue. Switch on id, never on this.
+		Name string `json:"name"`
+
 		// Source The first published source this cipher was taken from.
 		Source string `json:"source"`
 
 		// Tradition Provenance class of the cipher, one of rabbinic, renaissance-latin, golden-dawn-transliterated or modern. Always English, so it stays safe to compare against in code.
 		Tradition string `json:"tradition"`
 
-		// Value The number this cipher gives for the string. Null on the one catalogued cipher this API does not compute, which is stated on its catalogue entry rather than left to guess.
-		Value *float32 `json:"value"`
+		// Value The number this cipher gives for the string. Always a number: the one catalogued cipher this API does not compute is absent from this array rather than present without a value, so no row here has to be guarded. Its catalogue entry carries computed false and says why.
+		Value float32 `json:"value"`
 	} `json:"values"`
 } {
 	return r.JSON200
@@ -112989,7 +113313,7 @@ type GenerateNameProfileResponse struct {
 			// Rule Why this spelling came out of the map, so a caller can tell the parses apart.
 			Rule string `json:"rule"`
 
-			// Values Every cipher applied to this spelling.
+			// Values Every computed cipher applied to this spelling, in catalogue order. The rows carry no display name, because they are the same ciphers in the same order for every spelling: read the names off the top level values array once.
 			Values []struct {
 				// AlternateValues Other published totals for the same string, ascending. Present only where the cipher is not single valued: letter names have several accepted spellings, so several totals are equally published. Absent otherwise, so a caller can branch on presence.
 				AlternateValues *[]float32 `json:"alternateValues,omitempty"`
@@ -113003,8 +113327,8 @@ type GenerateNameProfileResponse struct {
 				// Tradition Provenance class of the cipher, one of rabbinic, renaissance-latin, golden-dawn-transliterated or modern. Always English, so it stays safe to compare against in code.
 				Tradition string `json:"tradition"`
 
-				// Value The number this cipher gives for the string. Null on the one catalogued cipher this API does not compute, which is stated on its catalogue entry rather than left to guess.
-				Value *float32 `json:"value"`
+				// Value The number this cipher gives for the string. Always a number: the one catalogued cipher this API does not compute is absent from this array rather than present without a value, so no row here has to be guarded. Its catalogue entry carries computed false and says why.
+				Value float32 `json:"value"`
 			} `json:"values"`
 		} `json:"hebrewForms"`
 		Input struct {
@@ -113159,7 +113483,7 @@ func (r GenerateNameProfileResponse) GetJSON200() *struct {
 		// Rule Why this spelling came out of the map, so a caller can tell the parses apart.
 		Rule string `json:"rule"`
 
-		// Values Every cipher applied to this spelling.
+		// Values Every computed cipher applied to this spelling, in catalogue order. The rows carry no display name, because they are the same ciphers in the same order for every spelling: read the names off the top level values array once.
 		Values []struct {
 			// AlternateValues Other published totals for the same string, ascending. Present only where the cipher is not single valued: letter names have several accepted spellings, so several totals are equally published. Absent otherwise, so a caller can branch on presence.
 			AlternateValues *[]float32 `json:"alternateValues,omitempty"`
@@ -113173,8 +113497,8 @@ func (r GenerateNameProfileResponse) GetJSON200() *struct {
 			// Tradition Provenance class of the cipher, one of rabbinic, renaissance-latin, golden-dawn-transliterated or modern. Always English, so it stays safe to compare against in code.
 			Tradition string `json:"tradition"`
 
-			// Value The number this cipher gives for the string. Null on the one catalogued cipher this API does not compute, which is stated on its catalogue entry rather than left to guess.
-			Value *float32 `json:"value"`
+			// Value The number this cipher gives for the string. Always a number: the one catalogued cipher this API does not compute is absent from this array rather than present without a value, so no row here has to be guarded. Its catalogue entry carries computed false and says why.
+			Value float32 `json:"value"`
 		} `json:"values"`
 	} `json:"hebrewForms"`
 	Input struct {
@@ -124707,7 +125031,7 @@ type ListDevatasResponse struct {
 			} `json:"cells"`
 
 			// Class Which ring of the mandala the devata belongs to: perimeter for the outer 32, innerRing for the eight around Brahma, innerCorner for the four on the inner diagonals, center for Brahma alone. 32 plus 8 plus 4 plus 1 is 45. Always English.
-			Class string `json:"class"`
+			Class ListDevatas200JSONResponseBodyDevatasClass `json:"class"`
 
 			// EntrancePada The entrance pada this devata governs, 1 to 32. Present only on the outer 32, since only a perimeter square can hold a main door.
 			EntrancePada *float32 `json:"entrancePada,omitempty"`
@@ -124804,7 +125128,7 @@ func (r ListDevatasResponse) GetJSON200() *struct {
 		} `json:"cells"`
 
 		// Class Which ring of the mandala the devata belongs to: perimeter for the outer 32, innerRing for the eight around Brahma, innerCorner for the four on the inner diagonals, center for Brahma alone. 32 plus 8 plus 4 plus 1 is 45. Always English.
-		Class string `json:"class"`
+		Class ListDevatas200JSONResponseBodyDevatasClass `json:"class"`
 
 		// EntrancePada The entrance pada this devata governs, 1 to 32. Present only on the outer 32, since only a perimeter square can hold a main door.
 		EntrancePada *float32 `json:"entrancePada,omitempty"`
@@ -124955,7 +125279,7 @@ type GetDevataResponse struct {
 		} `json:"cells"`
 
 		// Class Which ring of the mandala the devata belongs to: perimeter for the outer 32, innerRing for the eight around Brahma, innerCorner for the four on the inner diagonals, center for Brahma alone. 32 plus 8 plus 4 plus 1 is 45. Always English.
-		Class string `json:"class"`
+		Class GetDevata200JSONResponseBodyClass `json:"class"`
 
 		// EntrancePada The entrance pada this devata governs, 1 to 32. Present only on the outer 32, since only a perimeter square can hold a main door.
 		EntrancePada *float32 `json:"entrancePada,omitempty"`
@@ -125042,7 +125366,7 @@ func (r GetDevataResponse) GetJSON200() *struct {
 	} `json:"cells"`
 
 	// Class Which ring of the mandala the devata belongs to: perimeter for the outer 32, innerRing for the eight around Brahma, innerCorner for the four on the inner diagonals, center for Brahma alone. 32 plus 8 plus 4 plus 1 is 45. Always English.
-	Class string `json:"class"`
+	Class GetDevata200JSONResponseBodyClass `json:"class"`
 
 	// EntrancePada The entrance pada this devata governs, 1 to 32. Present only on the outer 32, since only a perimeter square can hold a main door.
 	EntrancePada *float32 `json:"entrancePada,omitempty"`
@@ -125653,6 +125977,9 @@ type CalculateEntrancePadaResponse struct {
 		Conventions struct {
 			// Grid Which division of the ground was read. Echoes the resolved value whether it was sent or defaulted.
 			Grid string `json:"grid"`
+
+			// Unit Unit every distance and area in the response is measured in, areas in its square. Echoes the resolved value whether it was sent or defaulted.
+			Unit CalculateEntrancePada200JSONResponseBodyConventionsUnit `json:"unit"`
 		} `json:"conventions"`
 
 		// Devata The devata holding the entrance square. Present only on the 81 pada grid, because 53.55 to 56 gives the 64 pada division its structure and names no devata on it. The effects themselves apply to either division, which is why the pada and the effect are returned in both cases.
@@ -125747,6 +126074,9 @@ func (r CalculateEntrancePadaResponse) GetJSON200() *struct {
 	Conventions struct {
 		// Grid Which division of the ground was read. Echoes the resolved value whether it was sent or defaulted.
 		Grid string `json:"grid"`
+
+		// Unit Unit every distance and area in the response is measured in, areas in its square. Echoes the resolved value whether it was sent or defaulted.
+		Unit CalculateEntrancePada200JSONResponseBodyConventionsUnit `json:"unit"`
 	} `json:"conventions"`
 
 	// Devata The devata holding the entrance square. Present only on the 81 pada grid, because 53.55 to 56 gives the 64 pada division its structure and names no devata on it. The effects themselves apply to either division, which is why the pada and the effect are returned in both cases.
@@ -125914,7 +126244,7 @@ type GenerateMandalaResponse struct {
 			} `json:"center"`
 
 			// Class Which ring of the mandala the devata belongs to: perimeter for the outer 32, innerRing for the eight around Brahma, innerCorner for the four on the inner diagonals, center for Brahma. Present only on the 81 pada grid.
-			Class *string `json:"class,omitempty"`
+			Class *GenerateMandala200JSONResponseBodyCellsClass `json:"class,omitempty"`
 
 			// ColumnFromWest Column of the grid, 1 at the western edge and 9 or 8 at the eastern one.
 			ColumnFromWest float32 `json:"columnFromWest"`
@@ -125929,7 +126259,7 @@ type GenerateMandalaResponse struct {
 			Group *string `json:"group,omitempty"`
 
 			// Role The structural role 53.55 to 56 gives this square of the 64 pada division: brahma, halved-inner-corner, halved-outer-corner, around-brahma, dvipada or outer. Present only on the 64 pada grid, which is the only thing that chapter states about it.
-			Role *string `json:"role,omitempty"`
+			Role *GenerateMandala200JSONResponseBodyCellsRole `json:"role,omitempty"`
 
 			// RowFromNorth Row of the grid, 1 at the northern edge and 9 or 8 at the southern one.
 			RowFromNorth float32 `json:"rowFromNorth"`
@@ -125945,6 +126275,9 @@ type GenerateMandalaResponse struct {
 		Conventions struct {
 			// Grid Which division of the ground was projected. Echoes the resolved value whether it was sent or defaulted.
 			Grid string `json:"grid"`
+
+			// Unit Unit every distance and area in the response is measured in, areas in its square. Echoes the resolved value whether it was sent or defaulted.
+			Unit GenerateMandala200JSONResponseBodyConventionsUnit `json:"unit"`
 		} `json:"conventions"`
 
 		// Grid Which division was projected, echoing the resolved value.
@@ -126077,7 +126410,7 @@ func (r GenerateMandalaResponse) GetJSON200() *struct {
 		} `json:"center"`
 
 		// Class Which ring of the mandala the devata belongs to: perimeter for the outer 32, innerRing for the eight around Brahma, innerCorner for the four on the inner diagonals, center for Brahma. Present only on the 81 pada grid.
-		Class *string `json:"class,omitempty"`
+		Class *GenerateMandala200JSONResponseBodyCellsClass `json:"class,omitempty"`
 
 		// ColumnFromWest Column of the grid, 1 at the western edge and 9 or 8 at the eastern one.
 		ColumnFromWest float32 `json:"columnFromWest"`
@@ -126092,7 +126425,7 @@ func (r GenerateMandalaResponse) GetJSON200() *struct {
 		Group *string `json:"group,omitempty"`
 
 		// Role The structural role 53.55 to 56 gives this square of the 64 pada division: brahma, halved-inner-corner, halved-outer-corner, around-brahma, dvipada or outer. Present only on the 64 pada grid, which is the only thing that chapter states about it.
-		Role *string `json:"role,omitempty"`
+		Role *GenerateMandala200JSONResponseBodyCellsRole `json:"role,omitempty"`
 
 		// RowFromNorth Row of the grid, 1 at the northern edge and 9 or 8 at the southern one.
 		RowFromNorth float32 `json:"rowFromNorth"`
@@ -126108,6 +126441,9 @@ func (r GenerateMandalaResponse) GetJSON200() *struct {
 	Conventions struct {
 		// Grid Which division of the ground was projected. Echoes the resolved value whether it was sent or defaulted.
 		Grid string `json:"grid"`
+
+		// Unit Unit every distance and area in the response is measured in, areas in its square. Echoes the resolved value whether it was sent or defaulted.
+		Unit GenerateMandala200JSONResponseBodyConventionsUnit `json:"unit"`
 	} `json:"conventions"`
 
 	// Grid Which division was projected, echoing the resolved value.
@@ -149894,7 +150230,7 @@ func ParseCalculateAyurvedicConstitutionResponse(rsp *http.Response) (*Calculate
 					// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 					Translation *string `json:"translation"`
 
-					// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+					// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 					Verse string `json:"verse"`
 
 					// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -149951,7 +150287,7 @@ func ParseCalculateAyurvedicConstitutionResponse(rsp *http.Response) (*Calculate
 					// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 					Translation *string `json:"translation"`
 
-					// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+					// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 					Verse string `json:"verse"`
 
 					// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -149975,7 +150311,7 @@ func ParseCalculateAyurvedicConstitutionResponse(rsp *http.Response) (*Calculate
 					// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 					Translation *string `json:"translation"`
 
-					// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+					// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 					Verse string `json:"verse"`
 
 					// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -150188,7 +150524,7 @@ func ParseGetDailyAyurvedaReadingResponse(rsp *http.Response) (*GetDailyAyurveda
 				// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 				Translation *string `json:"translation"`
 
-				// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+				// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 				Verse string `json:"verse"`
 
 				// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -150324,7 +150660,7 @@ func ParseGetDinacharyaScheduleResponse(rsp *http.Response) (*GetDinacharyaSched
 					// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 					Translation *string `json:"translation"`
 
-					// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+					// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 					Verse string `json:"verse"`
 
 					// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -150402,7 +150738,7 @@ func ParseGetDinacharyaScheduleResponse(rsp *http.Response) (*GetDinacharyaSched
 					// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 					Translation *string `json:"translation"`
 
-					// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+					// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 					Verse string `json:"verse"`
 
 					// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -150430,7 +150766,7 @@ func ParseGetDinacharyaScheduleResponse(rsp *http.Response) (*GetDinacharyaSched
 				// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 				Translation *string `json:"translation"`
 
-				// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+				// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 				Verse string `json:"verse"`
 
 				// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -150572,7 +150908,7 @@ func ParseListDoshasResponse(rsp *http.Response) (*ListDoshasResponse, error) {
 					// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 					Translation *string `json:"translation"`
 
-					// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+					// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 					Verse string `json:"verse"`
 
 					// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -150613,7 +150949,7 @@ func ParseListDoshasResponse(rsp *http.Response) (*ListDoshasResponse, error) {
 						// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 						Translation *string `json:"translation"`
 
-						// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+						// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 						Verse string `json:"verse"`
 
 						// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -150658,7 +150994,7 @@ func ParseListDoshasResponse(rsp *http.Response) (*ListDoshasResponse, error) {
 						// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 						Translation *string `json:"translation"`
 
-						// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+						// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 						Verse string `json:"verse"`
 
 						// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -150696,7 +151032,7 @@ func ParseListDoshasResponse(rsp *http.Response) (*ListDoshasResponse, error) {
 				// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 				Translation *string `json:"translation"`
 
-				// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+				// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 				Verse string `json:"verse"`
 
 				// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -150832,7 +151168,7 @@ func ParseGetDoshaResponse(rsp *http.Response) (*GetDoshaResponse, error) {
 					// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 					Translation *string `json:"translation"`
 
-					// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+					// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 					Verse string `json:"verse"`
 
 					// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -150873,7 +151209,7 @@ func ParseGetDoshaResponse(rsp *http.Response) (*GetDoshaResponse, error) {
 						// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 						Translation *string `json:"translation"`
 
-						// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+						// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 						Verse string `json:"verse"`
 
 						// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -150918,7 +151254,7 @@ func ParseGetDoshaResponse(rsp *http.Response) (*GetDoshaResponse, error) {
 						// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 						Translation *string `json:"translation"`
 
-						// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+						// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 						Verse string `json:"verse"`
 
 						// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -150950,7 +151286,7 @@ func ParseGetDoshaResponse(rsp *http.Response) (*GetDoshaResponse, error) {
 				// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 				Translation *string `json:"translation"`
 
-				// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+				// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 				Verse string `json:"verse"`
 
 				// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -151114,7 +151450,7 @@ func ParseListGunasResponse(rsp *http.Response) (*ListGunasResponse, error) {
 				// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 				Translation *string `json:"translation"`
 
-				// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+				// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 				Verse string `json:"verse"`
 
 				// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -151220,7 +151556,7 @@ func ParseGetRitucharyaResponse(rsp *http.Response) (*GetRitucharyaResponse, err
 					// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 					Translation *string `json:"translation"`
 
-					// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+					// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 					Verse string `json:"verse"`
 
 					// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -151286,7 +151622,7 @@ func ParseGetRitucharyaResponse(rsp *http.Response) (*GetRitucharyaResponse, err
 					// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 					Translation *string `json:"translation"`
 
-					// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+					// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 					Verse string `json:"verse"`
 
 					// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -151331,7 +151667,7 @@ func ParseGetRitucharyaResponse(rsp *http.Response) (*GetRitucharyaResponse, err
 					// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 					Translation *string `json:"translation"`
 
-					// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+					// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 					Verse string `json:"verse"`
 
 					// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -151392,7 +151728,7 @@ func ParseGetRitucharyaResponse(rsp *http.Response) (*GetRitucharyaResponse, err
 				// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 				Translation *string `json:"translation"`
 
-				// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+				// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 				Verse string `json:"verse"`
 
 				// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -151421,7 +151757,7 @@ func ParseGetRitucharyaResponse(rsp *http.Response) (*GetRitucharyaResponse, err
 					// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 					Translation *string `json:"translation"`
 
-					// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+					// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 					Verse string `json:"verse"`
 
 					// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -151460,7 +151796,7 @@ func ParseGetRitucharyaResponse(rsp *http.Response) (*GetRitucharyaResponse, err
 					// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 					Translation *string `json:"translation"`
 
-					// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+					// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 					Verse string `json:"verse"`
 
 					// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -151607,7 +151943,7 @@ func ParseListRasasResponse(rsp *http.Response) (*ListRasasResponse, error) {
 				// Translation The named translator, or null where the English shipped here was written from the Sanskrit because no public-domain translation of that work exists.
 				Translation *string `json:"translation"`
 
-				// Verse Verse or verse range, as printed. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this says so.
+				// Verse Verse or verse range, printed as the source prints it, so it is a string and not always numeric. Where the claim sits in an appended note or a commentary rather than in a numbered verse, this value is prose, as in "note to 20". Join it to the chapter with a dot only when it is numeric, and otherwise render it after the chapter with a comma, so the pair reads "18, note to 20" rather than "18.note to 20".
 				Verse string `json:"verse"`
 
 				// Year Publication year of the named translation, or null where no translation is cited. Use it with publicDomain to judge what may be quoted.
@@ -153796,6 +154132,9 @@ func ParseCalculateLuckPillarsResponse(rsp *http.Response) (*CalculateLuckPillar
 			// BoundaryTerm The minor solar term the count ran to. One of the twelve that also move the month pillar. Always the pinyin identifier, whatever the lang parameter says.
 			BoundaryTerm string `json:"boundaryTerm"`
 
+			// BoundaryTermName Display name of that same term, in the requested language. Always present, and English when lang is en. Several English renderings of a term are in circulation, so treat this as the label and boundaryTerm as the value.
+			BoundaryTermName string `json:"boundaryTermName"`
+
 			// Conventions The three school conventions this result was computed under. Returned on every BaZi response so a chart is self-describing: two calculators can produce different pillars for one birth and both be correct, and this object says which reading you are holding.
 			Conventions struct {
 				// DayBoundary Day-boundary school actually applied. Echoes the request, or the default when it was omitted. Always English, whatever the lang parameter says, so it stays safe to compare against in code.
@@ -154004,6 +154343,9 @@ func ParseLookupAuspiciousDaysResponse(rsp *http.Response) (*LookupAuspiciousDay
 
 			// AvoidAnimal Echo of the animal protected. Absent when none was sent, rather than null.
 			AvoidAnimal *string `json:"avoidAnimal,omitempty"`
+
+			// AvoidAnimalLocalized Display name of the protected animal in the requested language, beside the avoidAnimal identifier. Absent when no animal was sent and absent when lang is en, so an English response is unchanged.
+			AvoidAnimalLocalized *string `json:"avoidAnimalLocalized,omitempty"`
 
 			// Days The favoured days, in date order.
 			Days []struct {
@@ -157857,14 +158199,23 @@ func ParseListBaguaSectorsResponse(rsp *http.Response) (*ListBaguaSectorsRespons
 					// Direction Compass sector, one of North, Northeast, East, Southeast, South, Southwest, West, Northwest. Always English, whatever the lang parameter says, so it stays safe to compare against in code and against the same value on the I-Ching trigram endpoints.
 					Direction string `json:"direction"`
 
+					// DirectionLocalized Compass sector in the requested language, for display only, the same word the composed readings use. Present only when lang is set to a language other than English. Never compare against this value.
+					DirectionLocalized *string `json:"directionLocalized,omitempty"`
+
 					// Element Five phase of this entry: Wood, Fire, Earth, Metal or Water. Always English so it stays safe to compare against and to key styling on. The full cycles live on the Chinese astrology elements endpoint.
 					Element string `json:"element"`
 
-					// English English name of the trigram, byte identical to the value the I-Ching trigram endpoints publish for this number.
+					// ElementLocalized Five phase name in the requested language, for display only. Present only when lang is set to a language other than English. Never compare against this value.
+					ElementLocalized *string `json:"elementLocalized,omitempty"`
+
+					// English English name of the trigram, byte identical to the English value the I-Ching trigram endpoints publish for this number. Always English here, whatever the lang parameter says, so it stays safe to compare against. Use nameLocalized for anything a reader sees.
 					English string `json:"english"`
 
-					// FamilyMember Family role of the trigram. Read alongside an affliction to know which member of the household a sector points at.
+					// FamilyMember Family role of the trigram. Read alongside an affliction to know which member of the household a sector points at. Always English, and it carries no localized sibling: no vocabulary this package ships names the eight family roles.
 					FamilyMember string `json:"familyMember"`
+
+					// NameLocalized Trigram name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat english exactly. Never compare against this value.
+					NameLocalized *string `json:"nameLocalized,omitempty"`
 
 					// Number Trigram number, 1 to 8, the same identifier the I-Ching trigram endpoints use. It is a lookup key, not a ranking.
 					Number float32 `json:"number"`
@@ -157911,14 +158262,23 @@ func ParseListBaguaSectorsResponse(rsp *http.Response) (*ListBaguaSectorsRespons
 					// Direction Compass sector, one of North, Northeast, East, Southeast, South, Southwest, West, Northwest. Always English, whatever the lang parameter says, so it stays safe to compare against in code and against the same value on the I-Ching trigram endpoints.
 					Direction string `json:"direction"`
 
+					// DirectionLocalized Compass sector in the requested language, for display only, the same word the composed readings use. Present only when lang is set to a language other than English. Never compare against this value.
+					DirectionLocalized *string `json:"directionLocalized,omitempty"`
+
 					// Element Five phase of this entry: Wood, Fire, Earth, Metal or Water. Always English so it stays safe to compare against and to key styling on. The full cycles live on the Chinese astrology elements endpoint.
 					Element string `json:"element"`
 
-					// English English name of the trigram, byte identical to the value the I-Ching trigram endpoints publish for this number.
+					// ElementLocalized Five phase name in the requested language, for display only. Present only when lang is set to a language other than English. Never compare against this value.
+					ElementLocalized *string `json:"elementLocalized,omitempty"`
+
+					// English English name of the trigram, byte identical to the English value the I-Ching trigram endpoints publish for this number. Always English here, whatever the lang parameter says, so it stays safe to compare against. Use nameLocalized for anything a reader sees.
 					English string `json:"english"`
 
-					// FamilyMember Family role of the trigram. Read alongside an affliction to know which member of the household a sector points at.
+					// FamilyMember Family role of the trigram. Read alongside an affliction to know which member of the household a sector points at. Always English, and it carries no localized sibling: no vocabulary this package ships names the eight family roles.
 					FamilyMember string `json:"familyMember"`
+
+					// NameLocalized Trigram name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat english exactly. Never compare against this value.
+					NameLocalized *string `json:"nameLocalized,omitempty"`
 
 					// Number Trigram number, 1 to 8, the same identifier the I-Ching trigram endpoints use. It is a lookup key, not a ranking.
 					Number float32 `json:"number"`
@@ -158025,14 +158385,23 @@ func ParseGetBaguaSectorResponse(rsp *http.Response) (*GetBaguaSectorResponse, e
 				// Direction Compass sector, one of North, Northeast, East, Southeast, South, Southwest, West, Northwest. Always English, whatever the lang parameter says, so it stays safe to compare against in code and against the same value on the I-Ching trigram endpoints.
 				Direction string `json:"direction"`
 
+				// DirectionLocalized Compass sector in the requested language, for display only, the same word the composed readings use. Present only when lang is set to a language other than English. Never compare against this value.
+				DirectionLocalized *string `json:"directionLocalized,omitempty"`
+
 				// Element Five phase of this entry: Wood, Fire, Earth, Metal or Water. Always English so it stays safe to compare against and to key styling on. The full cycles live on the Chinese astrology elements endpoint.
 				Element string `json:"element"`
 
-				// English English name of the trigram, byte identical to the value the I-Ching trigram endpoints publish for this number.
+				// ElementLocalized Five phase name in the requested language, for display only. Present only when lang is set to a language other than English. Never compare against this value.
+				ElementLocalized *string `json:"elementLocalized,omitempty"`
+
+				// English English name of the trigram, byte identical to the English value the I-Ching trigram endpoints publish for this number. Always English here, whatever the lang parameter says, so it stays safe to compare against. Use nameLocalized for anything a reader sees.
 				English string `json:"english"`
 
-				// FamilyMember Family role of the trigram. Read alongside an affliction to know which member of the household a sector points at.
+				// FamilyMember Family role of the trigram. Read alongside an affliction to know which member of the household a sector points at. Always English, and it carries no localized sibling: no vocabulary this package ships names the eight family roles.
 				FamilyMember string `json:"familyMember"`
+
+				// NameLocalized Trigram name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat english exactly. Never compare against this value.
+				NameLocalized *string `json:"nameLocalized,omitempty"`
 
 				// Number Trigram number, 1 to 8, the same identifier the I-Ching trigram endpoints use. It is a lookup key, not a ranking.
 				Number float32 `json:"number"`
@@ -158079,14 +158448,23 @@ func ParseGetBaguaSectorResponse(rsp *http.Response) (*GetBaguaSectorResponse, e
 				// Direction Compass sector, one of North, Northeast, East, Southeast, South, Southwest, West, Northwest. Always English, whatever the lang parameter says, so it stays safe to compare against in code and against the same value on the I-Ching trigram endpoints.
 				Direction string `json:"direction"`
 
+				// DirectionLocalized Compass sector in the requested language, for display only, the same word the composed readings use. Present only when lang is set to a language other than English. Never compare against this value.
+				DirectionLocalized *string `json:"directionLocalized,omitempty"`
+
 				// Element Five phase of this entry: Wood, Fire, Earth, Metal or Water. Always English so it stays safe to compare against and to key styling on. The full cycles live on the Chinese astrology elements endpoint.
 				Element string `json:"element"`
 
-				// English English name of the trigram, byte identical to the value the I-Ching trigram endpoints publish for this number.
+				// ElementLocalized Five phase name in the requested language, for display only. Present only when lang is set to a language other than English. Never compare against this value.
+				ElementLocalized *string `json:"elementLocalized,omitempty"`
+
+				// English English name of the trigram, byte identical to the English value the I-Ching trigram endpoints publish for this number. Always English here, whatever the lang parameter says, so it stays safe to compare against. Use nameLocalized for anything a reader sees.
 				English string `json:"english"`
 
-				// FamilyMember Family role of the trigram. Read alongside an affliction to know which member of the household a sector points at.
+				// FamilyMember Family role of the trigram. Read alongside an affliction to know which member of the household a sector points at. Always English, and it carries no localized sibling: no vocabulary this package ships names the eight family roles.
 				FamilyMember string `json:"familyMember"`
+
+				// NameLocalized Trigram name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat english exactly. Never compare against this value.
+				NameLocalized *string `json:"nameLocalized,omitempty"`
 
 				// Number Trigram number, 1 to 8, the same identifier the I-Ching trigram endpoints use. It is a lookup key, not a ranking.
 				Number float32 `json:"number"`
@@ -158212,7 +158590,7 @@ func ParseGenerateEightMansionsResponse(rsp *http.Response) (*GenerateEightMansi
 				// Direction Compass sector, one of North, Northeast, East, Southeast, South, Southwest, West, Northwest. Always English, whatever the lang parameter says, so it stays safe to compare against in code and against the same value on the I-Ching trigram endpoints.
 				Direction string `json:"direction"`
 
-				// Domain The life domain this sector governs, in a few words.
+				// Domain The life domain this sector governs, in a few words, written in the requested language.
 				Domain string `json:"domain"`
 
 				// Nature Whether the sector helps or harms: auspicious or inauspicious.
@@ -158245,14 +158623,23 @@ func ParseGenerateEightMansionsResponse(rsp *http.Response) (*GenerateEightMansi
 					// Direction Compass sector, one of North, Northeast, East, Southeast, South, Southwest, West, Northwest. Always English, whatever the lang parameter says, so it stays safe to compare against in code and against the same value on the I-Ching trigram endpoints.
 					Direction string `json:"direction"`
 
+					// DirectionLocalized Compass sector in the requested language, for display only, the same word the composed readings use. Present only when lang is set to a language other than English. Never compare against this value.
+					DirectionLocalized *string `json:"directionLocalized,omitempty"`
+
 					// Element Five phase of this entry: Wood, Fire, Earth, Metal or Water. Always English so it stays safe to compare against and to key styling on. The full cycles live on the Chinese astrology elements endpoint.
 					Element string `json:"element"`
 
-					// English English name of the trigram, byte identical to the value the I-Ching trigram endpoints publish for this number.
+					// ElementLocalized Five phase name in the requested language, for display only. Present only when lang is set to a language other than English. Never compare against this value.
+					ElementLocalized *string `json:"elementLocalized,omitempty"`
+
+					// English English name of the trigram, byte identical to the English value the I-Ching trigram endpoints publish for this number. Always English here, whatever the lang parameter says, so it stays safe to compare against. Use nameLocalized for anything a reader sees.
 					English string `json:"english"`
 
-					// FamilyMember Family role of the trigram. Read alongside an affliction to know which member of the household a sector points at.
+					// FamilyMember Family role of the trigram. Read alongside an affliction to know which member of the household a sector points at. Always English, and it carries no localized sibling: no vocabulary this package ships names the eight family roles.
 					FamilyMember string `json:"familyMember"`
+
+					// NameLocalized Trigram name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat english exactly. Never compare against this value.
+					NameLocalized *string `json:"nameLocalized,omitempty"`
 
 					// Number Trigram number, 1 to 8, the same identifier the I-Ching trigram endpoints use. It is a lookup key, not a ranking.
 					Number float32 `json:"number"`
@@ -158274,14 +158661,23 @@ func ParseGenerateEightMansionsResponse(rsp *http.Response) (*GenerateEightMansi
 				// Direction Compass sector, one of North, Northeast, East, Southeast, South, Southwest, West, Northwest. Always English, whatever the lang parameter says, so it stays safe to compare against in code and against the same value on the I-Ching trigram endpoints.
 				Direction string `json:"direction"`
 
+				// DirectionLocalized Compass sector in the requested language, for display only, the same word the composed readings use. Present only when lang is set to a language other than English. Never compare against this value.
+				DirectionLocalized *string `json:"directionLocalized,omitempty"`
+
 				// Element Five phase of this entry: Wood, Fire, Earth, Metal or Water. Always English so it stays safe to compare against and to key styling on. The full cycles live on the Chinese astrology elements endpoint.
 				Element string `json:"element"`
 
-				// English English name of the trigram, byte identical to the value the I-Ching trigram endpoints publish for this number.
+				// ElementLocalized Five phase name in the requested language, for display only. Present only when lang is set to a language other than English. Never compare against this value.
+				ElementLocalized *string `json:"elementLocalized,omitempty"`
+
+				// English English name of the trigram, byte identical to the English value the I-Ching trigram endpoints publish for this number. Always English here, whatever the lang parameter says, so it stays safe to compare against. Use nameLocalized for anything a reader sees.
 				English string `json:"english"`
 
-				// FamilyMember Family role of the trigram. Read alongside an affliction to know which member of the household a sector points at.
+				// FamilyMember Family role of the trigram. Read alongside an affliction to know which member of the household a sector points at. Always English, and it carries no localized sibling: no vocabulary this package ships names the eight family roles.
 				FamilyMember string `json:"familyMember"`
+
+				// NameLocalized Trigram name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat english exactly. Never compare against this value.
+				NameLocalized *string `json:"nameLocalized,omitempty"`
 
 				// Number Trigram number, 1 to 8, the same identifier the I-Ching trigram endpoints use. It is a lookup key, not a ranking.
 				Number float32 `json:"number"`
@@ -158970,7 +159366,7 @@ func ParseCalculateKuaNumberResponse(rsp *http.Response) (*CalculateKuaNumberRes
 				// Direction Compass sector, one of North, Northeast, East, Southeast, South, Southwest, West, Northwest. Always English, whatever the lang parameter says, so it stays safe to compare against in code and against the same value on the I-Ching trigram endpoints.
 				Direction string `json:"direction"`
 
-				// Domain The life domain this sector governs, in a few words.
+				// Domain The life domain this sector governs, in a few words, written in the requested language.
 				Domain string `json:"domain"`
 
 				// Nature Whether the sector helps or harms: auspicious or inauspicious.
@@ -159001,14 +159397,23 @@ func ParseCalculateKuaNumberResponse(rsp *http.Response) (*CalculateKuaNumberRes
 				// Direction Compass sector, one of North, Northeast, East, Southeast, South, Southwest, West, Northwest. Always English, whatever the lang parameter says, so it stays safe to compare against in code and against the same value on the I-Ching trigram endpoints.
 				Direction string `json:"direction"`
 
+				// DirectionLocalized Compass sector in the requested language, for display only, the same word the composed readings use. Present only when lang is set to a language other than English. Never compare against this value.
+				DirectionLocalized *string `json:"directionLocalized,omitempty"`
+
 				// Element Five phase of this entry: Wood, Fire, Earth, Metal or Water. Always English so it stays safe to compare against and to key styling on. The full cycles live on the Chinese astrology elements endpoint.
 				Element string `json:"element"`
 
-				// English English name of the trigram, byte identical to the value the I-Ching trigram endpoints publish for this number.
+				// ElementLocalized Five phase name in the requested language, for display only. Present only when lang is set to a language other than English. Never compare against this value.
+				ElementLocalized *string `json:"elementLocalized,omitempty"`
+
+				// English English name of the trigram, byte identical to the English value the I-Ching trigram endpoints publish for this number. Always English here, whatever the lang parameter says, so it stays safe to compare against. Use nameLocalized for anything a reader sees.
 				English string `json:"english"`
 
-				// FamilyMember Family role of the trigram. Read alongside an affliction to know which member of the household a sector points at.
+				// FamilyMember Family role of the trigram. Read alongside an affliction to know which member of the household a sector points at. Always English, and it carries no localized sibling: no vocabulary this package ships names the eight family roles.
 				FamilyMember string `json:"familyMember"`
+
+				// NameLocalized Trigram name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat english exactly. Never compare against this value.
+				NameLocalized *string `json:"nameLocalized,omitempty"`
 
 				// Number Trigram number, 1 to 8, the same identifier the I-Ching trigram endpoints use. It is a lookup key, not a ranking.
 				Number float32 `json:"number"`
@@ -159105,7 +159510,7 @@ func ParseGetKuaNumberResponse(rsp *http.Response) (*GetKuaNumberResponse, error
 				// Direction Compass sector, one of North, Northeast, East, Southeast, South, Southwest, West, Northwest. Always English, whatever the lang parameter says, so it stays safe to compare against in code and against the same value on the I-Ching trigram endpoints.
 				Direction string `json:"direction"`
 
-				// Domain The life domain this sector governs, in a few words.
+				// Domain The life domain this sector governs, in a few words, written in the requested language.
 				Domain string `json:"domain"`
 
 				// Nature Whether the sector helps or harms: auspicious or inauspicious.
@@ -159133,14 +159538,23 @@ func ParseGetKuaNumberResponse(rsp *http.Response) (*GetKuaNumberResponse, error
 				// Direction Compass sector, one of North, Northeast, East, Southeast, South, Southwest, West, Northwest. Always English, whatever the lang parameter says, so it stays safe to compare against in code and against the same value on the I-Ching trigram endpoints.
 				Direction string `json:"direction"`
 
+				// DirectionLocalized Compass sector in the requested language, for display only, the same word the composed readings use. Present only when lang is set to a language other than English. Never compare against this value.
+				DirectionLocalized *string `json:"directionLocalized,omitempty"`
+
 				// Element Five phase of this entry: Wood, Fire, Earth, Metal or Water. Always English so it stays safe to compare against and to key styling on. The full cycles live on the Chinese astrology elements endpoint.
 				Element string `json:"element"`
 
-				// English English name of the trigram, byte identical to the value the I-Ching trigram endpoints publish for this number.
+				// ElementLocalized Five phase name in the requested language, for display only. Present only when lang is set to a language other than English. Never compare against this value.
+				ElementLocalized *string `json:"elementLocalized,omitempty"`
+
+				// English English name of the trigram, byte identical to the English value the I-Ching trigram endpoints publish for this number. Always English here, whatever the lang parameter says, so it stays safe to compare against. Use nameLocalized for anything a reader sees.
 				English string `json:"english"`
 
-				// FamilyMember Family role of the trigram. Read alongside an affliction to know which member of the household a sector points at.
+				// FamilyMember Family role of the trigram. Read alongside an affliction to know which member of the household a sector points at. Always English, and it carries no localized sibling: no vocabulary this package ships names the eight family roles.
 				FamilyMember string `json:"familyMember"`
+
+				// NameLocalized Trigram name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat english exactly. Never compare against this value.
+				NameLocalized *string `json:"nameLocalized,omitempty"`
 
 				// Number Trigram number, 1 to 8, the same identifier the I-Ching trigram endpoints use. It is a lookup key, not a ranking.
 				Number float32 `json:"number"`
@@ -163603,7 +164017,7 @@ func ParseCalculateGematriaResponse(rsp *http.Response) (*CalculateGematriaRespo
 				// Rule Why this spelling came out of the map, so a caller can tell the parses apart.
 				Rule string `json:"rule"`
 
-				// Values Every cipher applied to this spelling.
+				// Values Every computed cipher applied to this spelling, in catalogue order. The rows carry no display name, because they are the same ciphers in the same order for every spelling: read the names off the top level values array once.
 				Values []struct {
 					// AlternateValues Other published totals for the same string, ascending. Present only where the cipher is not single valued: letter names have several accepted spellings, so several totals are equally published. Absent otherwise, so a caller can branch on presence.
 					AlternateValues *[]float32 `json:"alternateValues,omitempty"`
@@ -163617,8 +164031,8 @@ func ParseCalculateGematriaResponse(rsp *http.Response) (*CalculateGematriaRespo
 					// Tradition Provenance class of the cipher, one of rabbinic, renaissance-latin, golden-dawn-transliterated or modern. Always English, so it stays safe to compare against in code.
 					Tradition string `json:"tradition"`
 
-					// Value The number this cipher gives for the string. Null on the one catalogued cipher this API does not compute, which is stated on its catalogue entry rather than left to guess.
-					Value *float32 `json:"value"`
+					// Value The number this cipher gives for the string. Always a number: the one catalogued cipher this API does not compute is absent from this array rather than present without a value, so no row here has to be guarded. Its catalogue entry carries computed false and says why.
+					Value float32 `json:"value"`
 				} `json:"values"`
 			} `json:"hebrewForms"`
 			Input struct {
@@ -163673,6 +164087,9 @@ func ParseCalculateGematriaResponse(rsp *http.Response) (*CalculateGematriaRespo
 				// ID Machine identifier of the transformation.
 				ID string `json:"id"`
 
+				// Name Display name of the transformation as the catalogue names it, in the requested language.
+				Name string `json:"name"`
+
 				// Output The substituted Hebrew string. Absent when atbashOutput asked for the value alone.
 				Output *string `json:"output,omitempty"`
 
@@ -163689,7 +164106,7 @@ func ParseCalculateGematriaResponse(rsp *http.Response) (*CalculateGematriaRespo
 				Value *float32 `json:"value,omitempty"`
 			} `json:"transformations"`
 
-			// Values Every requested cipher applied to the chosen spelling.
+			// Values Every requested cipher applied to the chosen spelling, in catalogue order, each named as the catalogue names it. Only computed ciphers appear, so every row carries a number.
 			Values []struct {
 				// AlternateValues Other published totals for the same string, ascending. Present only where the cipher is not single valued: letter names have several accepted spellings, so several totals are equally published. Absent otherwise, so a caller can branch on presence.
 				AlternateValues *[]float32 `json:"alternateValues,omitempty"`
@@ -163697,14 +164114,17 @@ func ParseCalculateGematriaResponse(rsp *http.Response) (*CalculateGematriaRespo
 				// ID Machine identifier of the cipher. Call the ciphers endpoint for the definition, the tradition and the sources behind each one.
 				ID string `json:"id"`
 
+				// Name Display name of the cipher in the requested language, the same string the ciphers catalogue serves for this id. Present so a caller holding one response can label a row without humanizing the identifier or fetching the catalogue. Switch on id, never on this.
+				Name string `json:"name"`
+
 				// Source The first published source this cipher was taken from.
 				Source string `json:"source"`
 
 				// Tradition Provenance class of the cipher, one of rabbinic, renaissance-latin, golden-dawn-transliterated or modern. Always English, so it stays safe to compare against in code.
 				Tradition string `json:"tradition"`
 
-				// Value The number this cipher gives for the string. Null on the one catalogued cipher this API does not compute, which is stated on its catalogue entry rather than left to guess.
-				Value *float32 `json:"value"`
+				// Value The number this cipher gives for the string. Always a number: the one catalogued cipher this API does not compute is absent from this array rather than present without a value, so no row here has to be guarded. Its catalogue entry carries computed false and says why.
+				Value float32 `json:"value"`
 			} `json:"values"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
@@ -164110,7 +164530,7 @@ func ParseGenerateNameProfileResponse(rsp *http.Response) (*GenerateNameProfileR
 				// Rule Why this spelling came out of the map, so a caller can tell the parses apart.
 				Rule string `json:"rule"`
 
-				// Values Every cipher applied to this spelling.
+				// Values Every computed cipher applied to this spelling, in catalogue order. The rows carry no display name, because they are the same ciphers in the same order for every spelling: read the names off the top level values array once.
 				Values []struct {
 					// AlternateValues Other published totals for the same string, ascending. Present only where the cipher is not single valued: letter names have several accepted spellings, so several totals are equally published. Absent otherwise, so a caller can branch on presence.
 					AlternateValues *[]float32 `json:"alternateValues,omitempty"`
@@ -164124,8 +164544,8 @@ func ParseGenerateNameProfileResponse(rsp *http.Response) (*GenerateNameProfileR
 					// Tradition Provenance class of the cipher, one of rabbinic, renaissance-latin, golden-dawn-transliterated or modern. Always English, so it stays safe to compare against in code.
 					Tradition string `json:"tradition"`
 
-					// Value The number this cipher gives for the string. Null on the one catalogued cipher this API does not compute, which is stated on its catalogue entry rather than left to guess.
-					Value *float32 `json:"value"`
+					// Value The number this cipher gives for the string. Always a number: the one catalogued cipher this API does not compute is absent from this array rather than present without a value, so no row here has to be guarded. Its catalogue entry carries computed false and says why.
+					Value float32 `json:"value"`
 				} `json:"values"`
 			} `json:"hebrewForms"`
 			Input struct {
@@ -171769,7 +172189,7 @@ func ParseListDevatasResponse(rsp *http.Response) (*ListDevatasResponse, error) 
 				} `json:"cells"`
 
 				// Class Which ring of the mandala the devata belongs to: perimeter for the outer 32, innerRing for the eight around Brahma, innerCorner for the four on the inner diagonals, center for Brahma alone. 32 plus 8 plus 4 plus 1 is 45. Always English.
-				Class string `json:"class"`
+				Class ListDevatas200JSONResponseBodyDevatasClass `json:"class"`
 
 				// EntrancePada The entrance pada this devata governs, 1 to 32. Present only on the outer 32, since only a perimeter square can hold a main door.
 				EntrancePada *float32 `json:"entrancePada,omitempty"`
@@ -171922,7 +172342,7 @@ func ParseGetDevataResponse(rsp *http.Response) (*GetDevataResponse, error) {
 			} `json:"cells"`
 
 			// Class Which ring of the mandala the devata belongs to: perimeter for the outer 32, innerRing for the eight around Brahma, innerCorner for the four on the inner diagonals, center for Brahma alone. 32 plus 8 plus 4 plus 1 is 45. Always English.
-			Class string `json:"class"`
+			Class GetDevata200JSONResponseBodyClass `json:"class"`
 
 			// EntrancePada The entrance pada this devata governs, 1 to 32. Present only on the outer 32, since only a perimeter square can hold a main door.
 			EntrancePada *float32 `json:"entrancePada,omitempty"`
@@ -172371,6 +172791,9 @@ func ParseCalculateEntrancePadaResponse(rsp *http.Response) (*CalculateEntranceP
 			Conventions struct {
 				// Grid Which division of the ground was read. Echoes the resolved value whether it was sent or defaulted.
 				Grid string `json:"grid"`
+
+				// Unit Unit every distance and area in the response is measured in, areas in its square. Echoes the resolved value whether it was sent or defaulted.
+				Unit CalculateEntrancePada200JSONResponseBodyConventionsUnit `json:"unit"`
 			} `json:"conventions"`
 
 			// Devata The devata holding the entrance square. Present only on the 81 pada grid, because 53.55 to 56 gives the 64 pada division its structure and names no devata on it. The effects themselves apply to either division, which is why the pada and the effect are returned in both cases.
@@ -172540,7 +172963,7 @@ func ParseGenerateMandalaResponse(rsp *http.Response) (*GenerateMandalaResponse,
 				} `json:"center"`
 
 				// Class Which ring of the mandala the devata belongs to: perimeter for the outer 32, innerRing for the eight around Brahma, innerCorner for the four on the inner diagonals, center for Brahma. Present only on the 81 pada grid.
-				Class *string `json:"class,omitempty"`
+				Class *GenerateMandala200JSONResponseBodyCellsClass `json:"class,omitempty"`
 
 				// ColumnFromWest Column of the grid, 1 at the western edge and 9 or 8 at the eastern one.
 				ColumnFromWest float32 `json:"columnFromWest"`
@@ -172555,7 +172978,7 @@ func ParseGenerateMandalaResponse(rsp *http.Response) (*GenerateMandalaResponse,
 				Group *string `json:"group,omitempty"`
 
 				// Role The structural role 53.55 to 56 gives this square of the 64 pada division: brahma, halved-inner-corner, halved-outer-corner, around-brahma, dvipada or outer. Present only on the 64 pada grid, which is the only thing that chapter states about it.
-				Role *string `json:"role,omitempty"`
+				Role *GenerateMandala200JSONResponseBodyCellsRole `json:"role,omitempty"`
 
 				// RowFromNorth Row of the grid, 1 at the northern edge and 9 or 8 at the southern one.
 				RowFromNorth float32 `json:"rowFromNorth"`
@@ -172571,6 +172994,9 @@ func ParseGenerateMandalaResponse(rsp *http.Response) (*GenerateMandalaResponse,
 			Conventions struct {
 				// Grid Which division of the ground was projected. Echoes the resolved value whether it was sent or defaulted.
 				Grid string `json:"grid"`
+
+				// Unit Unit every distance and area in the response is measured in, areas in its square. Echoes the resolved value whether it was sent or defaulted.
+				Unit GenerateMandala200JSONResponseBodyConventionsUnit `json:"unit"`
 			} `json:"conventions"`
 
 			// Grid Which division was projected, echoing the resolved value.
