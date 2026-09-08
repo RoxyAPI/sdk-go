@@ -3177,6 +3177,39 @@ func (e KPRasiChangesRequestNodeType) Valid() bool {
 	}
 }
 
+// Defines values for KPRasiChangesRequestPlanet.
+const (
+	KPRasiChangesRequestPlanetJupiter KPRasiChangesRequestPlanet = "Jupiter"
+	KPRasiChangesRequestPlanetMars    KPRasiChangesRequestPlanet = "Mars"
+	KPRasiChangesRequestPlanetMercury KPRasiChangesRequestPlanet = "Mercury"
+	KPRasiChangesRequestPlanetMoon    KPRasiChangesRequestPlanet = "Moon"
+	KPRasiChangesRequestPlanetSaturn  KPRasiChangesRequestPlanet = "Saturn"
+	KPRasiChangesRequestPlanetSun     KPRasiChangesRequestPlanet = "Sun"
+	KPRasiChangesRequestPlanetVenus   KPRasiChangesRequestPlanet = "Venus"
+)
+
+// Valid indicates whether the value is a known member of the KPRasiChangesRequestPlanet enum.
+func (e KPRasiChangesRequestPlanet) Valid() bool {
+	switch e {
+	case KPRasiChangesRequestPlanetJupiter:
+		return true
+	case KPRasiChangesRequestPlanetMars:
+		return true
+	case KPRasiChangesRequestPlanetMercury:
+		return true
+	case KPRasiChangesRequestPlanetMoon:
+		return true
+	case KPRasiChangesRequestPlanetSaturn:
+		return true
+	case KPRasiChangesRequestPlanetSun:
+		return true
+	case KPRasiChangesRequestPlanetVenus:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for KPRulingPlanetsIntervalResponseFocus.
 const (
 	KPRulingPlanetsIntervalResponseFocusFinance KPRulingPlanetsIntervalResponseFocus = "finance"
@@ -3249,6 +3282,39 @@ func (e KPSublordChangesRequestNodeType) Valid() bool {
 	case KPSublordChangesRequestNodeTypeMean:
 		return true
 	case KPSublordChangesRequestNodeTypeTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for KPSublordChangesRequestPlanet.
+const (
+	KPSublordChangesRequestPlanetJupiter KPSublordChangesRequestPlanet = "Jupiter"
+	KPSublordChangesRequestPlanetMars    KPSublordChangesRequestPlanet = "Mars"
+	KPSublordChangesRequestPlanetMercury KPSublordChangesRequestPlanet = "Mercury"
+	KPSublordChangesRequestPlanetMoon    KPSublordChangesRequestPlanet = "Moon"
+	KPSublordChangesRequestPlanetSaturn  KPSublordChangesRequestPlanet = "Saturn"
+	KPSublordChangesRequestPlanetSun     KPSublordChangesRequestPlanet = "Sun"
+	KPSublordChangesRequestPlanetVenus   KPSublordChangesRequestPlanet = "Venus"
+)
+
+// Valid indicates whether the value is a known member of the KPSublordChangesRequestPlanet enum.
+func (e KPSublordChangesRequestPlanet) Valid() bool {
+	switch e {
+	case KPSublordChangesRequestPlanetJupiter:
+		return true
+	case KPSublordChangesRequestPlanetMars:
+		return true
+	case KPSublordChangesRequestPlanetMercury:
+		return true
+	case KPSublordChangesRequestPlanetMoon:
+		return true
+	case KPSublordChangesRequestPlanetSaturn:
+		return true
+	case KPSublordChangesRequestPlanetSun:
+		return true
+	case KPSublordChangesRequestPlanetVenus:
 		return true
 	default:
 		return false
@@ -31477,7 +31543,7 @@ type KPChartResponse struct {
 	// Significators KP significators for event prediction and timing. Shows which planets signify each house (house-wise) and which houses each planet signifies (planet-wise). Strength order: Level 1 (planets in star of occupant) > Level 2 (occupants) > Level 3 (planets in star of owner) > Level 4 (house owner).
 	Significators struct {
 		HouseWise []struct {
-			// All All significators in order of strength
+			// All The four levels flattened, strongest first, repeats included: a planet that reaches the house at two levels appears once per level, so the length counts level hits. The levels beside it are the per-level view.
 			All []string `json:"all"`
 
 			// House House number 1-12
@@ -31494,7 +31560,7 @@ type KPChartResponse struct {
 			} `json:"significators"`
 		} `json:"houseWise"`
 		PlanetWise []struct {
-			// AllHouses All houses signified in order of strength
+			// AllHouses The four levels flattened, strongest first, repeats included: a house appears once per level the planet reaches it at, so the length counts level hits. The levels beside it are the per-level view.
 			AllHouses []float32 `json:"allHouses"`
 
 			// Planet Vedic graha (planet) being analyzed for its house significations.
@@ -31793,7 +31859,7 @@ type KPHoraryResponse struct {
 	// Significators KP significators for event prediction and timing. Shows which planets signify each house (house-wise) and which houses each planet signifies (planet-wise). Strength order: Level 1 (planets in star of occupant) > Level 2 (occupants) > Level 3 (planets in star of owner) > Level 4 (house owner).
 	Significators struct {
 		HouseWise []struct {
-			// All All significators in order of strength
+			// All The four levels flattened, strongest first, repeats included: a planet that reaches the house at two levels appears once per level, so the length counts level hits. The levels beside it are the per-level view.
 			All []string `json:"all"`
 
 			// House House number 1-12
@@ -31810,7 +31876,7 @@ type KPHoraryResponse struct {
 			} `json:"significators"`
 		} `json:"houseWise"`
 		PlanetWise []struct {
-			// AllHouses All houses signified in order of strength
+			// AllHouses The four levels flattened, strongest first, repeats included: a house appears once per level the planet reaches it at, so the length counts level hits. The levels beside it are the per-level view.
 			AllHouses []float32 `json:"allHouses"`
 
 			// Planet Vedic graha (planet) being analyzed for its house significations.
@@ -32034,19 +32100,19 @@ type KPRasiChangesRequest struct {
 	// Ayanamsa Ayanamsa system for sidereal conversion. "kp-newcomb" uses the KP-Newcomb dynamic formula, the most common choice for KP astrology. "kp-old" uses the Krishnamurti original table from KP Reader-1 with constant precession rate. "lahiri" uses Lahiri/Chitrapaksha ayanamsa, matching most traditional Vedic software. "raman" uses the B.V. Raman ayanamsa from Hindu Predictive Astrology, a recognised traditional school that sits about 1.45 degrees below Lahiri. Defaults to "kp-newcomb".
 	Ayanamsa *KPRasiChangesRequestAyanamsa `json:"ayanamsa,omitempty"`
 
-	// EndDate End date for sign ingress search (YYYY-MM-DD format)
+	// EndDate Last day of the search, inclusive (YYYY-MM-DD), a calendar day in `timezone`. Not before startDate, at most 365 days after it.
 	EndDate openapi_types.Date `json:"endDate"`
 
 	// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the Rahu and Ketu positions. Mean is the traditional Vedic default and what printed panchangs use; the choice can move a KP sub-lord in narrow boundary cases, where a span can be as small as 0.5 degrees. Defaults to "mean".
 	NodeType *KPRasiChangesRequestNodeType `json:"nodeType,omitempty"`
 
 	// Planet Planet to track (case-insensitive). Valid values: Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn
-	Planet string `json:"planet"`
+	Planet KPRasiChangesRequestPlanet `json:"planet"`
 
-	// StartDate Start date for sign ingress search (YYYY-MM-DD format)
+	// StartDate First day of the search (YYYY-MM-DD), a calendar day in `timezone`.
 	StartDate openapi_types.Date `json:"startDate"`
 
-	// Timezone IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC. IANA resolved to the DST-correct offset for startDate. Output times are converted to this timezone. Defaults to 0 (UTC).
+	// Timezone IANA name (e.g. "America/New_York", "Europe/London"), a fixed offset like "+05:30", OR decimal hours from UTC. One offset is taken from startDate (DST-correct for that date) and used for the whole range, so a window crossing a daylight-saving change is read on the earlier offset throughout; send a fixed offset if you need that explicit. The two dates are read as calendar days in this timezone and output times are converted to it, so one date with 5.5 is that whole Indian day. Defaults to 0 (UTC).
 	Timezone *KPRasiChangesRequest_Timezone `json:"timezone,omitempty"`
 }
 
@@ -32056,13 +32122,16 @@ type KPRasiChangesRequestAyanamsa string
 // KPRasiChangesRequestNodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the Rahu and Ketu positions. Mean is the traditional Vedic default and what printed panchangs use; the choice can move a KP sub-lord in narrow boundary cases, where a span can be as small as 0.5 degrees. Defaults to "mean".
 type KPRasiChangesRequestNodeType string
 
+// KPRasiChangesRequestPlanet Planet to track (case-insensitive). Valid values: Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn
+type KPRasiChangesRequestPlanet string
+
 // KPRasiChangesRequestTimezone0 defines model for KPRasiChangesRequest.Timezone.0.
 type KPRasiChangesRequestTimezone0 = float32
 
 // KPRasiChangesRequestTimezone1 defines model for KPRasiChangesRequest.Timezone.1.
 type KPRasiChangesRequestTimezone1 = string
 
-// KPRasiChangesRequest_Timezone IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC. IANA resolved to the DST-correct offset for startDate. Output times are converted to this timezone. Defaults to 0 (UTC).
+// KPRasiChangesRequest_Timezone IANA name (e.g. "America/New_York", "Europe/London"), a fixed offset like "+05:30", OR decimal hours from UTC. One offset is taken from startDate (DST-correct for that date) and used for the whole range, so a window crossing a daylight-saving change is read on the earlier offset throughout; send a fixed offset if you need that explicit. The two dates are read as calendar days in this timezone and output times are converted to it, so one date with 5.5 is that whole Indian day. Defaults to 0 (UTC).
 type KPRasiChangesRequest_Timezone struct {
 	union json.RawMessage
 }
@@ -32083,7 +32152,7 @@ type KPRasiChangesResponse struct {
 		// FromSignLord Rashi lord (planetary ruler) of the departing sign. Determines the Vimshottari dasha connection.
 		FromSignLord string `json:"fromSignLord"`
 
-		// Time Precise ingress time (HH:MM, 24-hour). Calculated via binary search refinement to ~1 minute accuracy. Adjusted to requested timezone.
+		// Time Ingress time (HH:MM, 24-hour): the instant is found to the second and shown to the minute it falls in. Adjusted to requested timezone.
 		Time string `json:"time"`
 
 		// ToSign New zodiac sign entered by the planet. Marks the beginning of a new transit phase in Vedic gochar analysis.
@@ -32324,19 +32393,19 @@ type KPSublordChangesRequest struct {
 	// Ayanamsa Ayanamsa system for sidereal conversion. "kp-newcomb" uses the KP-Newcomb dynamic formula, the most common choice for KP astrology. "kp-old" uses the Krishnamurti original table from KP Reader-1 with constant precession rate. "lahiri" uses Lahiri/Chitrapaksha ayanamsa, matching most traditional Vedic software. "raman" uses the B.V. Raman ayanamsa from Hindu Predictive Astrology, a recognised traditional school that sits about 1.45 degrees below Lahiri. Defaults to "kp-newcomb".
 	Ayanamsa *KPSublordChangesRequestAyanamsa `json:"ayanamsa,omitempty"`
 
-	// EndDate End date for sublord change search (YYYY-MM-DD format)
+	// EndDate Last day of the search, inclusive (YYYY-MM-DD), a calendar day in `timezone`. Not before startDate, at most 365 days after it.
 	EndDate openapi_types.Date `json:"endDate"`
 
 	// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the Rahu and Ketu positions. Mean is the traditional Vedic default and what printed panchangs use; the choice can move a KP sub-lord in narrow boundary cases, where a span can be as small as 0.5 degrees. Defaults to "mean".
 	NodeType *KPSublordChangesRequestNodeType `json:"nodeType,omitempty"`
 
 	// Planet Planet to track (case-insensitive). Valid values: Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn
-	Planet string `json:"planet"`
+	Planet KPSublordChangesRequestPlanet `json:"planet"`
 
-	// StartDate Start date for sublord change search (YYYY-MM-DD format)
+	// StartDate First day of the search (YYYY-MM-DD), a calendar day in `timezone`.
 	StartDate openapi_types.Date `json:"startDate"`
 
-	// Timezone IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC. IANA resolved to the DST-correct offset for startDate. Output times are converted to this timezone. Defaults to 0 (UTC).
+	// Timezone IANA name (e.g. "America/New_York", "Europe/London"), a fixed offset like "+05:30", OR decimal hours from UTC. One offset is taken from startDate (DST-correct for that date) and used for the whole range, so a window crossing a daylight-saving change is read on the earlier offset throughout; send a fixed offset if you need that explicit. The two dates are read as calendar days in this timezone and output times are converted to it, so one date with 5.5 is that whole Indian day. Defaults to 0 (UTC).
 	Timezone *KPSublordChangesRequest_Timezone `json:"timezone,omitempty"`
 }
 
@@ -32346,13 +32415,16 @@ type KPSublordChangesRequestAyanamsa string
 // KPSublordChangesRequestNodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the Rahu and Ketu positions. Mean is the traditional Vedic default and what printed panchangs use; the choice can move a KP sub-lord in narrow boundary cases, where a span can be as small as 0.5 degrees. Defaults to "mean".
 type KPSublordChangesRequestNodeType string
 
+// KPSublordChangesRequestPlanet Planet to track (case-insensitive). Valid values: Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn
+type KPSublordChangesRequestPlanet string
+
 // KPSublordChangesRequestTimezone0 defines model for KPSublordChangesRequest.Timezone.0.
 type KPSublordChangesRequestTimezone0 = float32
 
 // KPSublordChangesRequestTimezone1 defines model for KPSublordChangesRequest.Timezone.1.
 type KPSublordChangesRequestTimezone1 = string
 
-// KPSublordChangesRequest_Timezone IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC. IANA resolved to the DST-correct offset for startDate. Output times are converted to this timezone. Defaults to 0 (UTC).
+// KPSublordChangesRequest_Timezone IANA name (e.g. "America/New_York", "Europe/London"), a fixed offset like "+05:30", OR decimal hours from UTC. One offset is taken from startDate (DST-correct for that date) and used for the whole range, so a window crossing a daylight-saving change is read on the earlier offset throughout; send a fixed offset if you need that explicit. The two dates are read as calendar days in this timezone and output times are converted to it, so one date with 5.5 is that whole Indian day. Defaults to 0 (UTC).
 type KPSublordChangesRequest_Timezone struct {
 	union json.RawMessage
 }
@@ -32376,7 +32448,7 @@ type KPSublordChangesResponse struct {
 		// FromSublord KP sublord planet before transition. The sublord determines whether an event signified by the star lord will manifest.
 		FromSublord string `json:"fromSublord"`
 
-		// Time Precise sublord transition time (HH:MM, 24-hour). Refined via binary search to ~1 minute accuracy. Adjusted to requested timezone.
+		// Time Sublord transition time (HH:MM, 24-hour): the instant is found to the second and shown to the minute it falls in. Adjusted to requested timezone.
 		Time string `json:"time"`
 
 		// ToKp New KP number (1-249) the planet enters. Each number maps to a unique star lord and sublord combination.
@@ -32398,7 +32470,7 @@ type KPSublordChangesResponse struct {
 	// StartDate Beginning of the sublord change search range (YYYY-MM-DD).
 	StartDate string `json:"startDate"`
 
-	// TotalChanges Total Krishnamurti sublord transitions detected. Moon crosses ~14 sublords per day due to its fast motion.
+	// TotalChanges Total Krishnamurti sublord transitions detected. The Moon, the fastest body, crosses about 9 sublords a day.
 	TotalChanges float32 `json:"totalChanges"`
 }
 
@@ -52091,7 +52163,7 @@ type ClientInterface interface {
 
 	// GetKpSublordChangesWithBody Find KP sublord changes
 	//
-	// Track when planets cross KP sublord boundaries (1-249 divisions) for precise Krishnamurti Paddhati event timing. Returns exact timestamps when a planet transitions between sublords, essential for prashna kundali analysis and dasha predictions. Use this to find favorable windows when benefic sublords are active. Supports Sun, Moon, Mars, Mercury, Jupiter, Venus, and Saturn tracking over any date range.
+	// Track when planets cross KP sublord boundaries (1-249 divisions) for precise Krishnamurti Paddhati event timing. Returns exact timestamps when a planet transitions between sublords, essential for prashna kundali analysis and dasha predictions. Use this to find favorable windows when benefic sublords are active. Supports Sun, Moon, Mars, Mercury, Jupiter, Venus, and Saturn tracking over any window up to 365 days.
 	//
 	// Takes any type of body and a specified content type.
 	//
@@ -52100,7 +52172,7 @@ type ClientInterface interface {
 
 	// GetKpSublordChanges Find KP sublord changes
 	//
-	// Track when planets cross KP sublord boundaries (1-249 divisions) for precise Krishnamurti Paddhati event timing. Returns exact timestamps when a planet transitions between sublords, essential for prashna kundali analysis and dasha predictions. Use this to find favorable windows when benefic sublords are active. Supports Sun, Moon, Mars, Mercury, Jupiter, Venus, and Saturn tracking over any date range.
+	// Track when planets cross KP sublord boundaries (1-249 divisions) for precise Krishnamurti Paddhati event timing. Returns exact timestamps when a planet transitions between sublords, essential for prashna kundali analysis and dasha predictions. Use this to find favorable windows when benefic sublords are active. Supports Sun, Moon, Mars, Mercury, Jupiter, Venus, and Saturn tracking over any window up to 365 days.
 	//
 	// Takes a body of the `application/json` content type.
 	//
@@ -59373,7 +59445,7 @@ func (c *Client) GetKpRulingInterval(ctx context.Context, params *GetKpRulingInt
 
 // GetKpSublordChangesWithBody Find KP sublord changes
 //
-// Track when planets cross KP sublord boundaries (1-249 divisions) for precise Krishnamurti Paddhati event timing. Returns exact timestamps when a planet transitions between sublords, essential for prashna kundali analysis and dasha predictions. Use this to find favorable windows when benefic sublords are active. Supports Sun, Moon, Mars, Mercury, Jupiter, Venus, and Saturn tracking over any date range.
+// Track when planets cross KP sublord boundaries (1-249 divisions) for precise Krishnamurti Paddhati event timing. Returns exact timestamps when a planet transitions between sublords, essential for prashna kundali analysis and dasha predictions. Use this to find favorable windows when benefic sublords are active. Supports Sun, Moon, Mars, Mercury, Jupiter, Venus, and Saturn tracking over any window up to 365 days.
 //
 // Takes any type of body and a specified content type.
 //
@@ -59392,7 +59464,7 @@ func (c *Client) GetKpSublordChangesWithBody(ctx context.Context, contentType st
 
 // GetKpSublordChanges Find KP sublord changes
 //
-// Track when planets cross KP sublord boundaries (1-249 divisions) for precise Krishnamurti Paddhati event timing. Returns exact timestamps when a planet transitions between sublords, essential for prashna kundali analysis and dasha predictions. Use this to find favorable windows when benefic sublords are active. Supports Sun, Moon, Mars, Mercury, Jupiter, Venus, and Saturn tracking over any date range.
+// Track when planets cross KP sublord boundaries (1-249 divisions) for precise Krishnamurti Paddhati event timing. Returns exact timestamps when a planet transitions between sublords, essential for prashna kundali analysis and dasha predictions. Use this to find favorable windows when benefic sublords are active. Supports Sun, Moon, Mars, Mercury, Jupiter, Venus, and Saturn tracking over any window up to 365 days.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -80948,7 +81020,7 @@ type ClientWithResponsesInterface interface {
 
 	// GetKpSublordChangesWithBodyWithResponse Find KP sublord changes
 	//
-	// Track when planets cross KP sublord boundaries (1-249 divisions) for precise Krishnamurti Paddhati event timing. Returns exact timestamps when a planet transitions between sublords, essential for prashna kundali analysis and dasha predictions. Use this to find favorable windows when benefic sublords are active. Supports Sun, Moon, Mars, Mercury, Jupiter, Venus, and Saturn tracking over any date range.
+	// Track when planets cross KP sublord boundaries (1-249 divisions) for precise Krishnamurti Paddhati event timing. Returns exact timestamps when a planet transitions between sublords, essential for prashna kundali analysis and dasha predictions. Use this to find favorable windows when benefic sublords are active. Supports Sun, Moon, Mars, Mercury, Jupiter, Venus, and Saturn tracking over any window up to 365 days.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -80957,7 +81029,7 @@ type ClientWithResponsesInterface interface {
 
 	// GetKpSublordChangesWithResponse Find KP sublord changes
 	//
-	// Track when planets cross KP sublord boundaries (1-249 divisions) for precise Krishnamurti Paddhati event timing. Returns exact timestamps when a planet transitions between sublords, essential for prashna kundali analysis and dasha predictions. Use this to find favorable windows when benefic sublords are active. Supports Sun, Moon, Mars, Mercury, Jupiter, Venus, and Saturn tracking over any date range.
+	// Track when planets cross KP sublord boundaries (1-249 divisions) for precise Krishnamurti Paddhati event timing. Returns exact timestamps when a planet transitions between sublords, essential for prashna kundali analysis and dasha predictions. Use this to find favorable windows when benefic sublords are active. Supports Sun, Moon, Mars, Mercury, Jupiter, Venus, and Saturn tracking over any window up to 365 days.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -135722,7 +135794,7 @@ type GetDetailedPanchangResponse struct {
 			RulingPlanet *string `json:"rulingPlanet,omitempty"`
 		} `json:"tithi"`
 
-		// Transitions Panchang element transition times. exact timing of when each element (tithi, yoga, karana, nakshatra, Moon sign) changes. Calculated using binary search for ~1 minute precision. Essential for precise muhurta determination and panchang calendars.
+		// Transitions Panchang element transition times: when each element (tithi, yoga, karana, nakshatra, Moon sign) changes, found to the second. Essential for precise muhurta determination and panchang calendars.
 		Transitions struct {
 			// Karana Karana (half-tithi) transition. karanas change twice per tithi. Important for muhurta timing.
 			Karana struct {
@@ -136116,7 +136188,7 @@ func (r GetDetailedPanchangResponse) GetJSON200() *struct {
 		RulingPlanet *string `json:"rulingPlanet,omitempty"`
 	} `json:"tithi"`
 
-	// Transitions Panchang element transition times. exact timing of when each element (tithi, yoga, karana, nakshatra, Moon sign) changes. Calculated using binary search for ~1 minute precision. Essential for precise muhurta determination and panchang calendars.
+	// Transitions Panchang element transition times: when each element (tithi, yoga, karana, nakshatra, Moon sign) changes, found to the second. Essential for precise muhurta determination and panchang calendars.
 	Transitions struct {
 		// Karana Karana (half-tithi) transition. karanas change twice per tithi. Important for muhurta timing.
 		Karana struct {
@@ -143864,7 +143936,7 @@ func (c *ClientWithResponses) GetKpRulingIntervalWithResponse(ctx context.Contex
 
 // GetKpSublordChangesWithBodyWithResponse Find KP sublord changes
 //
-// Track when planets cross KP sublord boundaries (1-249 divisions) for precise Krishnamurti Paddhati event timing. Returns exact timestamps when a planet transitions between sublords, essential for prashna kundali analysis and dasha predictions. Use this to find favorable windows when benefic sublords are active. Supports Sun, Moon, Mars, Mercury, Jupiter, Venus, and Saturn tracking over any date range.
+// Track when planets cross KP sublord boundaries (1-249 divisions) for precise Krishnamurti Paddhati event timing. Returns exact timestamps when a planet transitions between sublords, essential for prashna kundali analysis and dasha predictions. Use this to find favorable windows when benefic sublords are active. Supports Sun, Moon, Mars, Mercury, Jupiter, Venus, and Saturn tracking over any window up to 365 days.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -143879,7 +143951,7 @@ func (c *ClientWithResponses) GetKpSublordChangesWithBodyWithResponse(ctx contex
 
 // GetKpSublordChangesWithResponse Find KP sublord changes
 //
-// Track when planets cross KP sublord boundaries (1-249 divisions) for precise Krishnamurti Paddhati event timing. Returns exact timestamps when a planet transitions between sublords, essential for prashna kundali analysis and dasha predictions. Use this to find favorable windows when benefic sublords are active. Supports Sun, Moon, Mars, Mercury, Jupiter, Venus, and Saturn tracking over any date range.
+// Track when planets cross KP sublord boundaries (1-249 divisions) for precise Krishnamurti Paddhati event timing. Returns exact timestamps when a planet transitions between sublords, essential for prashna kundali analysis and dasha predictions. Use this to find favorable windows when benefic sublords are active. Supports Sun, Moon, Mars, Mercury, Jupiter, Venus, and Saturn tracking over any window up to 365 days.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -179149,7 +179221,7 @@ func ParseGetDetailedPanchangResponse(rsp *http.Response) (*GetDetailedPanchangR
 				RulingPlanet *string `json:"rulingPlanet,omitempty"`
 			} `json:"tithi"`
 
-			// Transitions Panchang element transition times. exact timing of when each element (tithi, yoga, karana, nakshatra, Moon sign) changes. Calculated using binary search for ~1 minute precision. Essential for precise muhurta determination and panchang calendars.
+			// Transitions Panchang element transition times: when each element (tithi, yoga, karana, nakshatra, Moon sign) changes, found to the second. Essential for precise muhurta determination and panchang calendars.
 			Transitions struct {
 				// Karana Karana (half-tithi) transition. karanas change twice per tithi. Important for muhurta timing.
 				Karana struct {
