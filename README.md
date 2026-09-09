@@ -24,7 +24,7 @@ go get github.com/RoxyAPI/sdk-go
 ```
 
 ```go
-roxy, err := roxyapi.NewRoxy(os.Getenv("ROXYAPI_KEY"))
+roxy, err := roxyapi.NewRoxy(os.Getenv("ROXY_API_KEY"))
 resp, err := roxy.Astrology.GetDailyHoroscope(context.Background(), "aries", nil)
 // resp.JSON200 holds the parsed body; a 4xx or 5xx is returned as *roxyapi.RoxyError.
 ```
@@ -48,7 +48,7 @@ import (
 )
 
 func main() {
-	roxy, err := roxyapi.NewRoxy(os.Getenv("ROXYAPI_KEY"))
+	roxy, err := roxyapi.NewRoxy(os.Getenv("ROXY_API_KEY"))
 	if err != nil {
 		panic(err)
 	}
@@ -309,7 +309,7 @@ A: A successful search can still return an empty `Cities` slice, so check `len(s
 A: You passed `nil` to an endpoint that has no query-parameters argument (`roxy.Usage.GetUsageStats`, `roxy.Languages.ListLanguages`, `roxy.Crystals.ListCrystalColors`, `roxy.Crystals.ListCrystalPlanets`, `roxy.Dreams.GetSymbolLetterCounts`). That `nil` is read as a request editor: the call compiles, then panics at runtime. Call them with `ctx` only, for example `roxy.Usage.GetUsageStats(ctx)`.
 
 **Q: `NewRoxy` returned no error but every call is `401 api_key_required`.**
-A: Make sure `ROXYAPI_KEY` is exported. `NewRoxy` returns an error for an empty key; a non-empty but wrong key only fails on the first request.
+A: Make sure `ROXY_API_KEY` is exported. `NewRoxy` returns an error for an empty key; a non-empty but wrong key only fails on the first request.
 
 **Q: How do I build the `Timezone` when I cannot guess the union type name?**
 A: The union type is `<Request>_Timezone` for a named request body (`NatalChartRequest_Timezone`) and `<Operation>JSONBody_Timezone` for an inline body (`GenerateBodygraphJSONBody_Timezone`). If you cannot guess it, write the `Timezone:` field with any value and read the expected type from the compiler error, or let autocomplete fill it. Build it with `.From<Type>Timezone1("IANA")` or `.From<Type>Timezone0(decimal)`.

@@ -7,7 +7,7 @@ The official Go SDK for RoxyAPI. Astrology, Vedic astrology, forecast, human des
 ```go
 import roxyapi "github.com/RoxyAPI/sdk-go"
 
-roxy, err := roxyapi.NewRoxy(os.Getenv("ROXYAPI_KEY"))
+roxy, err := roxyapi.NewRoxy(os.Getenv("ROXY_API_KEY"))
 resp, err := roxy.Astrology.GetDailyHoroscope(context.Background(), "aries", nil)
 // resp.JSON200 holds the parsed body on a 2xx; a 4xx or 5xx is returned as *roxyapi.RoxyError.
 ```

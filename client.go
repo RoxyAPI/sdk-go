@@ -18,11 +18,11 @@ const DefaultBaseURL = "https://roxyapi.com/api/v2"
 // WithRequestEditorFn to add a header. The API key and SDK identification headers are
 // always applied first.
 //
-// NewRoxy returns an error if apiKey is empty, so a missing ROXYAPI_KEY fails here
+// NewRoxy returns an error if apiKey is empty, so a missing ROXY_API_KEY fails here
 // rather than as a confusing 401 on the first call.
 func NewRoxy(apiKey string, opts ...ClientOption) (*Roxy, error) {
 	if apiKey == "" {
-		return nil, errors.New("roxyapi: an API key is required (set ROXYAPI_KEY)")
+		return nil, errors.New("roxyapi: an API key is required (set ROXY_API_KEY)")
 	}
 	all := append([]ClientOption{
 		WithRequestEditorFn(apiKeyEditor(apiKey)),

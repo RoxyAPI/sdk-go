@@ -13,7 +13,7 @@ go get github.com/RoxyAPI/sdk-go
 ```go
 import roxyapi "github.com/RoxyAPI/sdk-go"
 
-roxy, err := roxyapi.NewRoxy(os.Getenv("ROXYAPI_KEY"))
+roxy, err := roxyapi.NewRoxy(os.Getenv("ROXY_API_KEY"))
 ```
 
 `NewRoxy(apiKey)` sets the base URL (`https://roxyapi.com/api/v2`) and the auth and SDK headers. Every method returns a typed `*XxxResponse` whose `JSON200` holds the parsed success body, plus an `error` that is a `*roxyapi.RoxyError` on a 4xx or 5xx.
@@ -201,7 +201,7 @@ LLMs hallucinate confidently here. The specific traps:
 
 - **Some methods have no `params` argument** (see Rules). Passing `nil` to those compiles but PANICS at runtime (the trailing arg is a variadic request editor). Affected: `Usage.GetUsageStats`, `Languages.ListLanguages`, `Crystals.ListCrystalColors`, `Crystals.ListCrystalPlanets`, `Dreams.GetSymbolLetterCounts`.
 - **`Timezone` union type names vary:** `<Request>_Timezone` for a named body, `<Operation>JSONBody_Timezone` for an inline body (most POST endpoints). Cannot guess it? Write the field with any value and read the expected type from the compiler error, or use autocomplete.
-- **`NewRoxy` returns `*roxyapi.Roxy`** (the type for your own function signatures and struct fields) and returns an error on an empty API key, so a missing `ROXYAPI_KEY` fails at construction, not as a confusing later 401.
+- **`NewRoxy` returns `*roxyapi.Roxy`** (the type for your own function signatures and struct fields) and returns an error on an empty API key, so a missing `ROXY_API_KEY` fails at construction, not as a confusing later 401.
 - **A successful `SearchCities` can return zero cities.** Check `len(search.JSON200.Cities) == 0` before indexing `[0]`.
 - **Person-pair and forecast bodies use anonymous nested structs** (`CalculateSynastry`, `CalculateGunMilan`, `GenerateTimeline` carry inline `Person1`/`Person2`/`BirthData` structs). They are awkward to build as a Go literal; for those, see https://roxyapi.com/api-reference for the JSON shape.
 - **`SearchCities` paginates** with `Limit` and `Offset` (`roxyapi.Ptr(20)`); the default page is 10.

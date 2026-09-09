@@ -13,7 +13,7 @@ import (
 
 // The simplest call: a daily horoscope by sign. Pass nil for the optional params.
 func ExampleNewRoxy() {
-	roxy, err := roxyapi.NewRoxy(os.Getenv("ROXYAPI_KEY"))
+	roxy, err := roxyapi.NewRoxy(os.Getenv("ROXY_API_KEY"))
 	if err != nil {
 		panic(err)
 	}
@@ -26,7 +26,7 @@ func ExampleNewRoxy() {
 
 // Geocode the birth city, then feed its coordinates and IANA timezone into a chart.
 func Example_geocodeThenChart() {
-	roxy, _ := roxyapi.NewRoxy(os.Getenv("ROXYAPI_KEY"))
+	roxy, _ := roxyapi.NewRoxy(os.Getenv("ROXY_API_KEY"))
 	ctx := context.Background()
 
 	search, err := roxy.Location.SearchCities(ctx, &roxyapi.SearchCitiesParams{Q: "London, UK"})
@@ -66,7 +66,7 @@ func Example_errorHandling() {
 // Configure a timeout (or proxy) with the generated WithHTTPClient option.
 func ExampleNewRoxy_customClient() {
 	roxy, err := roxyapi.NewRoxy(
-		os.Getenv("ROXYAPI_KEY"),
+		os.Getenv("ROXY_API_KEY"),
 		roxyapi.WithHTTPClient(&http.Client{Timeout: 10 * time.Second}),
 	)
 	if err != nil {

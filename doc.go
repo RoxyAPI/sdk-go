@@ -19,7 +19,7 @@
 //	)
 //
 //	func main() {
-//		roxy, err := roxyapi.NewRoxy(os.Getenv("ROXYAPI_KEY"))
+//		roxy, err := roxyapi.NewRoxy(os.Getenv("ROXY_API_KEY"))
 //		if err != nil {
 //			panic(err)
 //		}

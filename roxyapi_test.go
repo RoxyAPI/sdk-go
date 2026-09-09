@@ -69,9 +69,6 @@ func TestErrorMapping(t *testing.T) {
 func TestLive(t *testing.T) {
 	key := os.Getenv("ROXY_API_KEY")
 	if key == "" {
-		key = os.Getenv("ROXYAPI_KEY")
-	}
-	if key == "" {
 		t.Skip("set ROXY_API_KEY to run the live test")
 	}
 	roxy, err := roxyapi.NewRoxy(key)
