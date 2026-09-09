@@ -113193,8 +113193,6 @@ type GetHebrewLetterResponse struct {
 	JSON400 *ErrorResponse
 	// JSON401 the response for an HTTP 401 `application/json` response
 	JSON401 *ErrorResponse
-	// JSON404 the response for an HTTP 404 `application/json` response
-	JSON404 *ErrorResponse
 	// JSON405 the response for an HTTP 405 `application/json` response
 	JSON405 *ErrorResponse
 	// JSON429 the response for an HTTP 429 `application/json` response
@@ -113272,11 +113270,6 @@ func (r GetHebrewLetterResponse) GetJSON400() *ErrorResponse {
 // GetJSON401 returns the response for an HTTP 401 `application/json` response
 func (r GetHebrewLetterResponse) GetJSON401() *ErrorResponse {
 	return r.JSON401
-}
-
-// GetJSON404 returns the response for an HTTP 404 `application/json` response
-func (r GetHebrewLetterResponse) GetJSON404() *ErrorResponse {
-	return r.JSON404
 }
 
 // GetJSON405 returns the response for an HTTP 405 `application/json` response
@@ -114202,8 +114195,6 @@ type GetSephirahResponse struct {
 	JSON400 *ErrorResponse
 	// JSON401 the response for an HTTP 401 `application/json` response
 	JSON401 *ErrorResponse
-	// JSON404 the response for an HTTP 404 `application/json` response
-	JSON404 *ErrorResponse
 	// JSON405 the response for an HTTP 405 `application/json` response
 	JSON405 *ErrorResponse
 	// JSON429 the response for an HTTP 429 `application/json` response
@@ -114302,11 +114293,6 @@ func (r GetSephirahResponse) GetJSON400() *ErrorResponse {
 // GetJSON401 returns the response for an HTTP 401 `application/json` response
 func (r GetSephirahResponse) GetJSON401() *ErrorResponse {
 	return r.JSON401
-}
-
-// GetJSON404 returns the response for an HTTP 404 `application/json` response
-func (r GetSephirahResponse) GetJSON404() *ErrorResponse {
-	return r.JSON404
 }
 
 // GetJSON405 returns the response for an HTTP 405 `application/json` response
@@ -125114,7 +125100,7 @@ type ListDevatasResponse struct {
 			// ID Identifier of the devata, lower case transliteration. Always English, safe to compare against. Indra appears twice in the chapter, on the east perimeter and on the inner ring, so those two carry the ids indra-outer and indra-inner, which are ours: no source read for this package prints a distinguishing name for either.
 			ID string `json:"id"`
 
-			// Name Display name of the devata, with the diacritics the transliteration carries. A Sanskrit proper noun, so it stays as it is in every language.
+			// Name Display name of the devata. A Sanskrit proper noun: romanised with the diacritics the transliteration carries in every language, and written in Devanagari as the Sanskrit text prints it when lang is hi. Compare on id, never on this.
 			Name string `json:"name"`
 
 			// Note Where the sources disagree or contradict themselves about this row, and where Brahma sits outside the pada-count scheme. Present on the six rows that carry a recorded divergence: the two Indras, the north-east and south-east corner devatas where the Manasara differs from the Brihat Samhita, Prthvidhara, whom the chapter places on two different squares in two different verses, and Brahma. Original prose, translated in place when lang is set.
@@ -125211,7 +125197,7 @@ func (r ListDevatasResponse) GetJSON200() *struct {
 		// ID Identifier of the devata, lower case transliteration. Always English, safe to compare against. Indra appears twice in the chapter, on the east perimeter and on the inner ring, so those two carry the ids indra-outer and indra-inner, which are ours: no source read for this package prints a distinguishing name for either.
 		ID string `json:"id"`
 
-		// Name Display name of the devata, with the diacritics the transliteration carries. A Sanskrit proper noun, so it stays as it is in every language.
+		// Name Display name of the devata. A Sanskrit proper noun: romanised with the diacritics the transliteration carries in every language, and written in Devanagari as the Sanskrit text prints it when lang is hi. Compare on id, never on this.
 		Name string `json:"name"`
 
 		// Note Where the sources disagree or contradict themselves about this row, and where Brahma sits outside the pada-count scheme. Present on the six rows that carry a recorded divergence: the two Indras, the north-east and south-east corner devatas where the Manasara differs from the Brihat Samhita, Prthvidhara, whom the chapter places on two different squares in two different verses, and Brahma. Original prose, translated in place when lang is set.
@@ -125362,7 +125348,7 @@ type GetDevataResponse struct {
 		// ID Identifier of the devata, lower case transliteration. Always English, safe to compare against. Indra appears twice in the chapter, on the east perimeter and on the inner ring, so those two carry the ids indra-outer and indra-inner, which are ours: no source read for this package prints a distinguishing name for either.
 		ID string `json:"id"`
 
-		// Name Display name of the devata, with the diacritics the transliteration carries. A Sanskrit proper noun, so it stays as it is in every language.
+		// Name Display name of the devata. A Sanskrit proper noun: romanised with the diacritics the transliteration carries in every language, and written in Devanagari as the Sanskrit text prints it when lang is hi. Compare on id, never on this.
 		Name string `json:"name"`
 
 		// Note Where the sources disagree or contradict themselves about this row, and where Brahma sits outside the pada-count scheme. Present on the six rows that carry a recorded divergence: the two Indras, the north-east and south-east corner devatas where the Manasara differs from the Brihat Samhita, Prthvidhara, whom the chapter places on two different squares in two different verses, and Brahma. Original prose, translated in place when lang is set.
@@ -125414,8 +125400,6 @@ type GetDevataResponse struct {
 	JSON400 *ErrorResponse
 	// JSON401 the response for an HTTP 401 `application/json` response
 	JSON401 *ErrorResponse
-	// JSON404 the response for an HTTP 404 `application/json` response
-	JSON404 *ErrorResponse
 	// JSON405 the response for an HTTP 405 `application/json` response
 	JSON405 *ErrorResponse
 	// JSON429 the response for an HTTP 429 `application/json` response
@@ -125449,7 +125433,7 @@ func (r GetDevataResponse) GetJSON200() *struct {
 	// ID Identifier of the devata, lower case transliteration. Always English, safe to compare against. Indra appears twice in the chapter, on the east perimeter and on the inner ring, so those two carry the ids indra-outer and indra-inner, which are ours: no source read for this package prints a distinguishing name for either.
 	ID string `json:"id"`
 
-	// Name Display name of the devata, with the diacritics the transliteration carries. A Sanskrit proper noun, so it stays as it is in every language.
+	// Name Display name of the devata. A Sanskrit proper noun: romanised with the diacritics the transliteration carries in every language, and written in Devanagari as the Sanskrit text prints it when lang is hi. Compare on id, never on this.
 	Name string `json:"name"`
 
 	// Note Where the sources disagree or contradict themselves about this row, and where Brahma sits outside the pada-count scheme. Present on the six rows that carry a recorded divergence: the two Indras, the north-east and south-east corner devatas where the Manasara differs from the Brihat Samhita, Prthvidhara, whom the chapter places on two different squares in two different verses, and Brahma. Original prose, translated in place when lang is set.
@@ -125508,11 +125492,6 @@ func (r GetDevataResponse) GetJSON400() *ErrorResponse {
 // GetJSON401 returns the response for an HTTP 401 `application/json` response
 func (r GetDevataResponse) GetJSON401() *ErrorResponse {
 	return r.JSON401
-}
-
-// GetJSON404 returns the response for an HTTP 404 `application/json` response
-func (r GetDevataResponse) GetJSON404() *ErrorResponse {
-	return r.JSON404
 }
 
 // GetJSON405 returns the response for an HTTP 405 `application/json` response
@@ -125581,14 +125560,14 @@ type ListDikpalaDirectionsResponse struct {
 				// ID Identifier of the devata holding it. Always English transliteration, safe to compare against and to look up on the devatas endpoint.
 				ID string `json:"id"`
 
-				// Name Display name of the devata, with the diacritics the transliteration carries.
+				// Name Display name of the devata. A Sanskrit proper noun: romanised with the diacritics the transliteration carries in every language, and written in Devanagari as the Sanskrit text prints it when lang is hi.
 				Name string `json:"name"`
 
 				// Square Square number in the 81 pada grid.
 				Square float32 `json:"square"`
 			} `json:"devatas"`
 
-			// Dikpala The lord of this quarter of the horizon, per Brihat Samhita 54.3. Always English transliteration, safe to compare against. These are NOT the 45 mandala devatas and the two sets must not be merged: Agni is the north-east mandala square and the south-east dikpala.
+			// Dikpala The lord of this quarter of the horizon, per Brihat Samhita 54.3. A Sanskrit proper noun: romanised with the diacritics the transliteration carries in every language, and written in Devanagari as the Sanskrit text prints it when lang is hi. Compare on id, never on this. These are NOT the 45 mandala devatas and the two sets must not be merged: Agni is the north-east mandala square and the south-east dikpala.
 			Dikpala string `json:"dikpala"`
 
 			// Element The element conventionally assigned to this quarter: fire, earth, air or water. Present only on the four intercardinal quarters, because the cardinal ones carry none in this scheme, and it is labelled convention because the Brihat Samhita assigns no element to any direction at all.
@@ -125672,14 +125651,14 @@ func (r ListDikpalaDirectionsResponse) GetJSON200() *struct {
 			// ID Identifier of the devata holding it. Always English transliteration, safe to compare against and to look up on the devatas endpoint.
 			ID string `json:"id"`
 
-			// Name Display name of the devata, with the diacritics the transliteration carries.
+			// Name Display name of the devata. A Sanskrit proper noun: romanised with the diacritics the transliteration carries in every language, and written in Devanagari as the Sanskrit text prints it when lang is hi.
 			Name string `json:"name"`
 
 			// Square Square number in the 81 pada grid.
 			Square float32 `json:"square"`
 		} `json:"devatas"`
 
-		// Dikpala The lord of this quarter of the horizon, per Brihat Samhita 54.3. Always English transliteration, safe to compare against. These are NOT the 45 mandala devatas and the two sets must not be merged: Agni is the north-east mandala square and the south-east dikpala.
+		// Dikpala The lord of this quarter of the horizon, per Brihat Samhita 54.3. A Sanskrit proper noun: romanised with the diacritics the transliteration carries in every language, and written in Devanagari as the Sanskrit text prints it when lang is hi. Compare on id, never on this. These are NOT the 45 mandala devatas and the two sets must not be merged: Agni is the north-east mandala square and the south-east dikpala.
 		Dikpala string `json:"dikpala"`
 
 		// Element The element conventionally assigned to this quarter: fire, earth, air or water. Present only on the four intercardinal quarters, because the cardinal ones carry none in this scheme, and it is labelled convention because the Brihat Samhita assigns no element to any direction at all.
@@ -125817,14 +125796,14 @@ type GetDikpalaDirectionResponse struct {
 			// ID Identifier of the devata holding it. Always English transliteration, safe to compare against and to look up on the devatas endpoint.
 			ID string `json:"id"`
 
-			// Name Display name of the devata, with the diacritics the transliteration carries.
+			// Name Display name of the devata. A Sanskrit proper noun: romanised with the diacritics the transliteration carries in every language, and written in Devanagari as the Sanskrit text prints it when lang is hi.
 			Name string `json:"name"`
 
 			// Square Square number in the 81 pada grid.
 			Square float32 `json:"square"`
 		} `json:"devatas"`
 
-		// Dikpala The lord of this quarter of the horizon, per Brihat Samhita 54.3. Always English transliteration, safe to compare against. These are NOT the 45 mandala devatas and the two sets must not be merged: Agni is the north-east mandala square and the south-east dikpala.
+		// Dikpala The lord of this quarter of the horizon, per Brihat Samhita 54.3. A Sanskrit proper noun: romanised with the diacritics the transliteration carries in every language, and written in Devanagari as the Sanskrit text prints it when lang is hi. Compare on id, never on this. These are NOT the 45 mandala devatas and the two sets must not be merged: Agni is the north-east mandala square and the south-east dikpala.
 		Dikpala string `json:"dikpala"`
 
 		// Element The element conventionally assigned to this quarter: fire, earth, air or water. Present only on the four intercardinal quarters, because the cardinal ones carry none in this scheme, and it is labelled convention because the Brihat Samhita assigns no element to any direction at all.
@@ -125879,8 +125858,6 @@ type GetDikpalaDirectionResponse struct {
 	JSON400 *ErrorResponse
 	// JSON401 the response for an HTTP 401 `application/json` response
 	JSON401 *ErrorResponse
-	// JSON404 the response for an HTTP 404 `application/json` response
-	JSON404 *ErrorResponse
 	// JSON405 the response for an HTTP 405 `application/json` response
 	JSON405 *ErrorResponse
 	// JSON429 the response for an HTTP 429 `application/json` response
@@ -125898,14 +125875,14 @@ func (r GetDikpalaDirectionResponse) GetJSON200() *struct {
 		// ID Identifier of the devata holding it. Always English transliteration, safe to compare against and to look up on the devatas endpoint.
 		ID string `json:"id"`
 
-		// Name Display name of the devata, with the diacritics the transliteration carries.
+		// Name Display name of the devata. A Sanskrit proper noun: romanised with the diacritics the transliteration carries in every language, and written in Devanagari as the Sanskrit text prints it when lang is hi.
 		Name string `json:"name"`
 
 		// Square Square number in the 81 pada grid.
 		Square float32 `json:"square"`
 	} `json:"devatas"`
 
-	// Dikpala The lord of this quarter of the horizon, per Brihat Samhita 54.3. Always English transliteration, safe to compare against. These are NOT the 45 mandala devatas and the two sets must not be merged: Agni is the north-east mandala square and the south-east dikpala.
+	// Dikpala The lord of this quarter of the horizon, per Brihat Samhita 54.3. A Sanskrit proper noun: romanised with the diacritics the transliteration carries in every language, and written in Devanagari as the Sanskrit text prints it when lang is hi. Compare on id, never on this. These are NOT the 45 mandala devatas and the two sets must not be merged: Agni is the north-east mandala square and the south-east dikpala.
 	Dikpala string `json:"dikpala"`
 
 	// Element The element conventionally assigned to this quarter: fire, earth, air or water. Present only on the four intercardinal quarters, because the cardinal ones carry none in this scheme, and it is labelled convention because the Brihat Samhita assigns no element to any direction at all.
@@ -125967,11 +125944,6 @@ func (r GetDikpalaDirectionResponse) GetJSON400() *ErrorResponse {
 // GetJSON401 returns the response for an HTTP 401 `application/json` response
 func (r GetDikpalaDirectionResponse) GetJSON401() *ErrorResponse {
 	return r.JSON401
-}
-
-// GetJSON404 returns the response for an HTTP 404 `application/json` response
-func (r GetDikpalaDirectionResponse) GetJSON404() *ErrorResponse {
-	return r.JSON404
 }
 
 // GetJSON405 returns the response for an HTTP 405 `application/json` response
@@ -126059,7 +126031,7 @@ type CalculateEntrancePadaResponse struct {
 			// ID Identifier of the devata holding that square. Always English transliteration, safe to compare against and to look up on the devatas endpoint.
 			ID string `json:"id"`
 
-			// Name Display name of the devata, with the diacritics the transliteration carries.
+			// Name Display name of the devata. A Sanskrit proper noun: romanised with the diacritics the transliteration carries in every language, and written in Devanagari as the Sanskrit text prints it when lang is hi. Compare on id, never on this.
 			Name string `json:"name"`
 
 			// PadaCount How many of the 81 squares this devata holds: one for a padika, two for a dvipada, three for a tripada and nine for Brahma.
@@ -126156,7 +126128,7 @@ func (r CalculateEntrancePadaResponse) GetJSON200() *struct {
 		// ID Identifier of the devata holding that square. Always English transliteration, safe to compare against and to look up on the devatas endpoint.
 		ID string `json:"id"`
 
-		// Name Display name of the devata, with the diacritics the transliteration carries.
+		// Name Display name of the devata. A Sanskrit proper noun: romanised with the diacritics the transliteration carries in every language, and written in Devanagari as the Sanskrit text prints it when lang is hi. Compare on id, never on this.
 		Name string `json:"name"`
 
 		// PadaCount How many of the 81 squares this devata holds: one for a padika, two for a dvipada, three for a tripada and nine for Brahma.
@@ -126324,7 +126296,7 @@ type GenerateMandalaResponse struct {
 			// Devata Identifier of the devata holding this square. Always English transliteration, safe to compare against. Present only on the 81 pada grid, since the chapter names no devata on the 64 pada division.
 			Devata *string `json:"devata,omitempty"`
 
-			// DevataName Display name of that devata, with the diacritics the transliteration carries. Present only on the 81 pada grid.
+			// DevataName Display name of that devata. A Sanskrit proper noun: romanised with the diacritics the transliteration carries in every language, and written in Devanagari as the Sanskrit text prints it when lang is hi. Present only on the 81 pada grid.
 			DevataName *string `json:"devataName,omitempty"`
 
 			// Group How many squares the devata holds under the classification of 53.49 to 50: padika for one, dvipada for two, tripada for three. Absent for Brahma, which those verses leave outside the scheme, and on the 64 pada grid.
@@ -126490,7 +126462,7 @@ func (r GenerateMandalaResponse) GetJSON200() *struct {
 		// Devata Identifier of the devata holding this square. Always English transliteration, safe to compare against. Present only on the 81 pada grid, since the chapter names no devata on the 64 pada division.
 		Devata *string `json:"devata,omitempty"`
 
-		// DevataName Display name of that devata, with the diacritics the transliteration carries. Present only on the 81 pada grid.
+		// DevataName Display name of that devata. A Sanskrit proper noun: romanised with the diacritics the transliteration carries in every language, and written in Devanagari as the Sanskrit text prints it when lang is hi. Present only on the 81 pada grid.
 		DevataName *string `json:"devataName,omitempty"`
 
 		// Group How many squares the devata holds under the classification of 53.49 to 50: padika for one, dvipada for two, tripada for three. Absent for Brahma, which those verses leave outside the scheme, and on the 64 pada grid.
@@ -127373,8 +127345,8 @@ type CalculateRoomComplianceResponse struct {
 			// Reading The placement as a sentence, for a report. Translated in place when lang is set to a language other than English.
 			Reading string `json:"reading"`
 
-			// Remedy What to do when the room is not where it belongs. Original prose, translated in place when lang is set.
-			Remedy string `json:"remedy"`
+			// Remedy What to do when the room is not where it belongs. Present when the verdict is acceptable or avoid, and absent on an ideal placement, which has nothing to fix. Original prose, translated in place when lang is set.
+			Remedy *string `json:"remedy,omitempty"`
 
 			// Source Where a verdict comes from: a chapter and verse of a named public-domain edition, or the literal convention with the practice it rests on. Every verdict in this domain carries one.
 			Source struct {
@@ -127485,8 +127457,8 @@ func (r CalculateRoomComplianceResponse) GetJSON200() *struct {
 		// Reading The placement as a sentence, for a report. Translated in place when lang is set to a language other than English.
 		Reading string `json:"reading"`
 
-		// Remedy What to do when the room is not where it belongs. Original prose, translated in place when lang is set.
-		Remedy string `json:"remedy"`
+		// Remedy What to do when the room is not where it belongs. Present when the verdict is acceptable or avoid, and absent on an ideal placement, which has nothing to fix. Original prose, translated in place when lang is set.
+		Remedy *string `json:"remedy,omitempty"`
 
 		// Source Where a verdict comes from: a chapter and verse of a named public-domain edition, or the literal convention with the practice it rests on. Every verdict in this domain carries one.
 		Source struct {
@@ -128910,8 +128882,6 @@ type GetAvasthaResponse struct {
 	JSON400 *ErrorResponse
 	// JSON401 the response for an HTTP 401 `application/json` response
 	JSON401 *ErrorResponse
-	// JSON404 the response for an HTTP 404 `application/json` response
-	JSON404 *ErrorResponse
 	// JSON405 the response for an HTTP 405 `application/json` response
 	JSON405 *ErrorResponse
 	// JSON429 the response for an HTTP 429 `application/json` response
@@ -128950,11 +128920,6 @@ func (r GetAvasthaResponse) GetJSON400() *ErrorResponse {
 // GetJSON401 returns the response for an HTTP 401 `application/json` response
 func (r GetAvasthaResponse) GetJSON401() *ErrorResponse {
 	return r.JSON401
-}
-
-// GetJSON404 returns the response for an HTTP 404 `application/json` response
-func (r GetAvasthaResponse) GetJSON404() *ErrorResponse {
-	return r.JSON404
 }
 
 // GetJSON405 returns the response for an HTTP 405 `application/json` response
@@ -134926,8 +134891,6 @@ type GetNakshatraResponse struct {
 	JSON400 *ErrorResponse
 	// JSON401 the response for an HTTP 401 `application/json` response
 	JSON401 *ErrorResponse
-	// JSON404 the response for an HTTP 404 `application/json` response
-	JSON404 *ErrorResponse
 	// JSON405 the response for an HTTP 405 `application/json` response
 	JSON405 *ErrorResponse
 	// JSON429 the response for an HTTP 429 `application/json` response
@@ -134951,11 +134914,6 @@ func (r GetNakshatraResponse) GetJSON400() *ErrorResponse {
 // GetJSON401 returns the response for an HTTP 401 `application/json` response
 func (r GetNakshatraResponse) GetJSON401() *ErrorResponse {
 	return r.JSON401
-}
-
-// GetJSON404 returns the response for an HTTP 404 `application/json` response
-func (r GetNakshatraResponse) GetJSON404() *ErrorResponse {
-	return r.JSON404
 }
 
 // GetJSON405 returns the response for an HTTP 405 `application/json` response
@@ -137191,8 +137149,6 @@ type GetRashiResponse struct {
 	JSON400 *ErrorResponse
 	// JSON401 the response for an HTTP 401 `application/json` response
 	JSON401 *ErrorResponse
-	// JSON404 the response for an HTTP 404 `application/json` response
-	JSON404 *ErrorResponse
 	// JSON405 the response for an HTTP 405 `application/json` response
 	JSON405 *ErrorResponse
 	// JSON429 the response for an HTTP 429 `application/json` response
@@ -137216,11 +137172,6 @@ func (r GetRashiResponse) GetJSON400() *ErrorResponse {
 // GetJSON401 returns the response for an HTTP 401 `application/json` response
 func (r GetRashiResponse) GetJSON401() *ErrorResponse {
 	return r.JSON401
-}
-
-// GetJSON404 returns the response for an HTTP 404 `application/json` response
-func (r GetRashiResponse) GetJSON404() *ErrorResponse {
-	return r.JSON404
 }
 
 // GetJSON405 returns the response for an HTTP 405 `application/json` response
@@ -138198,8 +138149,6 @@ type GetYogaResponse struct {
 	JSON400 *ErrorResponse
 	// JSON401 the response for an HTTP 401 `application/json` response
 	JSON401 *ErrorResponse
-	// JSON404 the response for an HTTP 404 `application/json` response
-	JSON404 *ErrorResponse
 	// JSON405 the response for an HTTP 405 `application/json` response
 	JSON405 *ErrorResponse
 	// JSON429 the response for an HTTP 429 `application/json` response
@@ -138223,11 +138172,6 @@ func (r GetYogaResponse) GetJSON400() *ErrorResponse {
 // GetJSON401 returns the response for an HTTP 401 `application/json` response
 func (r GetYogaResponse) GetJSON401() *ErrorResponse {
 	return r.JSON401
-}
-
-// GetJSON404 returns the response for an HTTP 404 `application/json` response
-func (r GetYogaResponse) GetJSON404() *ErrorResponse {
-	return r.JSON404
 }
 
 // GetJSON405 returns the response for an HTTP 405 `application/json` response
@@ -164493,13 +164437,6 @@ func ParseGetHebrewLetterResponse(rsp *http.Response) (*GetHebrewLetterResponse,
 		}
 		response.JSON401 = &dest
 
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON404 = &dest
-
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 405:
 		var dest ErrorResponse
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
@@ -165134,13 +165071,6 @@ func ParseGetSephirahResponse(rsp *http.Response) (*GetSephirahResponse, error) 
 			return nil, err
 		}
 		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON404 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 405:
 		var dest ErrorResponse
@@ -172272,7 +172202,7 @@ func ParseListDevatasResponse(rsp *http.Response) (*ListDevatasResponse, error) 
 				// ID Identifier of the devata, lower case transliteration. Always English, safe to compare against. Indra appears twice in the chapter, on the east perimeter and on the inner ring, so those two carry the ids indra-outer and indra-inner, which are ours: no source read for this package prints a distinguishing name for either.
 				ID string `json:"id"`
 
-				// Name Display name of the devata, with the diacritics the transliteration carries. A Sanskrit proper noun, so it stays as it is in every language.
+				// Name Display name of the devata. A Sanskrit proper noun: romanised with the diacritics the transliteration carries in every language, and written in Devanagari as the Sanskrit text prints it when lang is hi. Compare on id, never on this.
 				Name string `json:"name"`
 
 				// Note Where the sources disagree or contradict themselves about this row, and where Brahma sits outside the pada-count scheme. Present on the six rows that carry a recorded divergence: the two Indras, the north-east and south-east corner devatas where the Manasara differs from the Brihat Samhita, Prthvidhara, whom the chapter places on two different squares in two different verses, and Brahma. Original prose, translated in place when lang is set.
@@ -172425,7 +172355,7 @@ func ParseGetDevataResponse(rsp *http.Response) (*GetDevataResponse, error) {
 			// ID Identifier of the devata, lower case transliteration. Always English, safe to compare against. Indra appears twice in the chapter, on the east perimeter and on the inner ring, so those two carry the ids indra-outer and indra-inner, which are ours: no source read for this package prints a distinguishing name for either.
 			ID string `json:"id"`
 
-			// Name Display name of the devata, with the diacritics the transliteration carries. A Sanskrit proper noun, so it stays as it is in every language.
+			// Name Display name of the devata. A Sanskrit proper noun: romanised with the diacritics the transliteration carries in every language, and written in Devanagari as the Sanskrit text prints it when lang is hi. Compare on id, never on this.
 			Name string `json:"name"`
 
 			// Note Where the sources disagree or contradict themselves about this row, and where Brahma sits outside the pada-count scheme. Present on the six rows that carry a recorded divergence: the two Indras, the north-east and south-east corner devatas where the Manasara differs from the Brihat Samhita, Prthvidhara, whom the chapter places on two different squares in two different verses, and Brahma. Original prose, translated in place when lang is set.
@@ -172492,13 +172422,6 @@ func ParseGetDevataResponse(rsp *http.Response) (*GetDevataResponse, error) {
 		}
 		response.JSON401 = &dest
 
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON404 = &dest
-
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 405:
 		var dest ErrorResponse
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
@@ -172561,14 +172484,14 @@ func ParseListDikpalaDirectionsResponse(rsp *http.Response) (*ListDikpalaDirecti
 					// ID Identifier of the devata holding it. Always English transliteration, safe to compare against and to look up on the devatas endpoint.
 					ID string `json:"id"`
 
-					// Name Display name of the devata, with the diacritics the transliteration carries.
+					// Name Display name of the devata. A Sanskrit proper noun: romanised with the diacritics the transliteration carries in every language, and written in Devanagari as the Sanskrit text prints it when lang is hi.
 					Name string `json:"name"`
 
 					// Square Square number in the 81 pada grid.
 					Square float32 `json:"square"`
 				} `json:"devatas"`
 
-				// Dikpala The lord of this quarter of the horizon, per Brihat Samhita 54.3. Always English transliteration, safe to compare against. These are NOT the 45 mandala devatas and the two sets must not be merged: Agni is the north-east mandala square and the south-east dikpala.
+				// Dikpala The lord of this quarter of the horizon, per Brihat Samhita 54.3. A Sanskrit proper noun: romanised with the diacritics the transliteration carries in every language, and written in Devanagari as the Sanskrit text prints it when lang is hi. Compare on id, never on this. These are NOT the 45 mandala devatas and the two sets must not be merged: Agni is the north-east mandala square and the south-east dikpala.
 				Dikpala string `json:"dikpala"`
 
 				// Element The element conventionally assigned to this quarter: fire, earth, air or water. Present only on the four intercardinal quarters, because the cardinal ones carry none in this scheme, and it is labelled convention because the Brihat Samhita assigns no element to any direction at all.
@@ -172708,14 +172631,14 @@ func ParseGetDikpalaDirectionResponse(rsp *http.Response) (*GetDikpalaDirectionR
 				// ID Identifier of the devata holding it. Always English transliteration, safe to compare against and to look up on the devatas endpoint.
 				ID string `json:"id"`
 
-				// Name Display name of the devata, with the diacritics the transliteration carries.
+				// Name Display name of the devata. A Sanskrit proper noun: romanised with the diacritics the transliteration carries in every language, and written in Devanagari as the Sanskrit text prints it when lang is hi.
 				Name string `json:"name"`
 
 				// Square Square number in the 81 pada grid.
 				Square float32 `json:"square"`
 			} `json:"devatas"`
 
-			// Dikpala The lord of this quarter of the horizon, per Brihat Samhita 54.3. Always English transliteration, safe to compare against. These are NOT the 45 mandala devatas and the two sets must not be merged: Agni is the north-east mandala square and the south-east dikpala.
+			// Dikpala The lord of this quarter of the horizon, per Brihat Samhita 54.3. A Sanskrit proper noun: romanised with the diacritics the transliteration carries in every language, and written in Devanagari as the Sanskrit text prints it when lang is hi. Compare on id, never on this. These are NOT the 45 mandala devatas and the two sets must not be merged: Agni is the north-east mandala square and the south-east dikpala.
 			Dikpala string `json:"dikpala"`
 
 			// Element The element conventionally assigned to this quarter: fire, earth, air or water. Present only on the four intercardinal quarters, because the cardinal ones carry none in this scheme, and it is labelled convention because the Brihat Samhita assigns no element to any direction at all.
@@ -172784,13 +172707,6 @@ func ParseGetDikpalaDirectionResponse(rsp *http.Response) (*GetDikpalaDirectionR
 			return nil, err
 		}
 		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON404 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 405:
 		var dest ErrorResponse
@@ -172873,7 +172789,7 @@ func ParseCalculateEntrancePadaResponse(rsp *http.Response) (*CalculateEntranceP
 				// ID Identifier of the devata holding that square. Always English transliteration, safe to compare against and to look up on the devatas endpoint.
 				ID string `json:"id"`
 
-				// Name Display name of the devata, with the diacritics the transliteration carries.
+				// Name Display name of the devata. A Sanskrit proper noun: romanised with the diacritics the transliteration carries in every language, and written in Devanagari as the Sanskrit text prints it when lang is hi. Compare on id, never on this.
 				Name string `json:"name"`
 
 				// PadaCount How many of the 81 squares this devata holds: one for a padika, two for a dvipada, three for a tripada and nine for Brahma.
@@ -173043,7 +172959,7 @@ func ParseGenerateMandalaResponse(rsp *http.Response) (*GenerateMandalaResponse,
 				// Devata Identifier of the devata holding this square. Always English transliteration, safe to compare against. Present only on the 81 pada grid, since the chapter names no devata on the 64 pada division.
 				Devata *string `json:"devata,omitempty"`
 
-				// DevataName Display name of that devata, with the diacritics the transliteration carries. Present only on the 81 pada grid.
+				// DevataName Display name of that devata. A Sanskrit proper noun: romanised with the diacritics the transliteration carries in every language, and written in Devanagari as the Sanskrit text prints it when lang is hi. Present only on the 81 pada grid.
 				DevataName *string `json:"devataName,omitempty"`
 
 				// Group How many squares the devata holds under the classification of 53.49 to 50: padika for one, dvipada for two, tripada for three. Absent for Brahma, which those verses leave outside the scheme, and on the 64 pada grid.
@@ -173614,8 +173530,8 @@ func ParseCalculateRoomComplianceResponse(rsp *http.Response) (*CalculateRoomCom
 				// Reading The placement as a sentence, for a report. Translated in place when lang is set to a language other than English.
 				Reading string `json:"reading"`
 
-				// Remedy What to do when the room is not where it belongs. Original prose, translated in place when lang is set.
-				Remedy string `json:"remedy"`
+				// Remedy What to do when the room is not where it belongs. Present when the verdict is acceptable or avoid, and absent on an ideal placement, which has nothing to fix. Original prose, translated in place when lang is set.
+				Remedy *string `json:"remedy,omitempty"`
 
 				// Source Where a verdict comes from: a chapter and verse of a named public-domain edition, or the literal convention with the practice it rests on. Every verdict in this domain carries one.
 				Source struct {
@@ -174639,13 +174555,6 @@ func ParseGetAvasthaResponse(rsp *http.Response) (*GetAvasthaResponse, error) {
 			return nil, err
 		}
 		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON404 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 405:
 		var dest ErrorResponse
@@ -178544,13 +178453,6 @@ func ParseGetNakshatraResponse(rsp *http.Response) (*GetNakshatraResponse, error
 		}
 		response.JSON401 = &dest
 
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON404 = &dest
-
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 405:
 		var dest ErrorResponse
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
@@ -180010,13 +179912,6 @@ func ParseGetRashiResponse(rsp *http.Response) (*GetRashiResponse, error) {
 		}
 		response.JSON401 = &dest
 
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON404 = &dest
-
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 405:
 		var dest ErrorResponse
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
@@ -180726,13 +180621,6 @@ func ParseGetYogaResponse(rsp *http.Response) (*GetYogaResponse, error) {
 			return nil, err
 		}
 		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON404 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 405:
 		var dest ErrorResponse

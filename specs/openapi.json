@@ -60595,16 +60595,6 @@
             },
             "description": "Invalid or missing API key"
           },
-          "404": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
-            },
-            "description": "No letter carries that identifier."
-          },
           "405": {
             "content": {
               "application/json": {
@@ -61998,16 +61988,6 @@
               }
             },
             "description": "Invalid or missing API key"
-          },
-          "404": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
-            },
-            "description": "No sephirah carries that identifier."
           },
           "405": {
             "content": {
@@ -77430,7 +77410,7 @@
                             "type": "string"
                           },
                           "name": {
-                            "description": "Display name of the devata, with the diacritics the transliteration carries. A Sanskrit proper noun, so it stays as it is in every language.",
+                            "description": "Display name of the devata. A Sanskrit proper noun: romanised with the diacritics the transliteration carries in every language, and written in Devanagari as the Sanskrit text prints it when lang is hi. Compare on id, never on this.",
                             "example": "Jayanta",
                             "type": "string"
                           },
@@ -77786,7 +77766,7 @@
                       "type": "string"
                     },
                     "name": {
-                      "description": "Display name of the devata, with the diacritics the transliteration carries. A Sanskrit proper noun, so it stays as it is in every language.",
+                      "description": "Display name of the devata. A Sanskrit proper noun: romanised with the diacritics the transliteration carries in every language, and written in Devanagari as the Sanskrit text prints it when lang is hi. Compare on id, never on this.",
                       "example": "Jayanta",
                       "type": "string"
                     },
@@ -77922,16 +77902,6 @@
             },
             "description": "Invalid or missing API key"
           },
-          "404": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
-            },
-            "description": "No devata with that id"
-          },
           "405": {
             "content": {
               "application/json": {
@@ -78062,7 +78032,7 @@
                                   "type": "string"
                                 },
                                 "name": {
-                                  "description": "Display name of the devata, with the diacritics the transliteration carries.",
+                                  "description": "Display name of the devata. A Sanskrit proper noun: romanised with the diacritics the transliteration carries in every language, and written in Devanagari as the Sanskrit text prints it when lang is hi.",
                                   "example": "Agni",
                                   "type": "string"
                                 },
@@ -78082,8 +78052,8 @@
                             "type": "array"
                           },
                           "dikpala": {
-                            "description": "The lord of this quarter of the horizon, per Brihat Samhita 54.3. Always English transliteration, safe to compare against. These are NOT the 45 mandala devatas and the two sets must not be merged: Agni is the north-east mandala square and the south-east dikpala.",
-                            "example": "Isana",
+                            "description": "The lord of this quarter of the horizon, per Brihat Samhita 54.3. A Sanskrit proper noun: romanised with the diacritics the transliteration carries in every language, and written in Devanagari as the Sanskrit text prints it when lang is hi. Compare on id, never on this. These are NOT the 45 mandala devatas and the two sets must not be merged: Agni is the north-east mandala square and the south-east dikpala.",
+                            "example": "Īśāna",
                             "type": "string"
                           },
                           "element": {
@@ -78367,7 +78337,7 @@
                             "type": "string"
                           },
                           "name": {
-                            "description": "Display name of the devata, with the diacritics the transliteration carries.",
+                            "description": "Display name of the devata. A Sanskrit proper noun: romanised with the diacritics the transliteration carries in every language, and written in Devanagari as the Sanskrit text prints it when lang is hi.",
                             "example": "Agni",
                             "type": "string"
                           },
@@ -78387,8 +78357,8 @@
                       "type": "array"
                     },
                     "dikpala": {
-                      "description": "The lord of this quarter of the horizon, per Brihat Samhita 54.3. Always English transliteration, safe to compare against. These are NOT the 45 mandala devatas and the two sets must not be merged: Agni is the north-east mandala square and the south-east dikpala.",
-                      "example": "Isana",
+                      "description": "The lord of this quarter of the horizon, per Brihat Samhita 54.3. A Sanskrit proper noun: romanised with the diacritics the transliteration carries in every language, and written in Devanagari as the Sanskrit text prints it when lang is hi. Compare on id, never on this. These are NOT the 45 mandala devatas and the two sets must not be merged: Agni is the north-east mandala square and the south-east dikpala.",
+                      "example": "Īśāna",
                       "type": "string"
                     },
                     "element": {
@@ -78528,16 +78498,6 @@
               }
             },
             "description": "Invalid or missing API key"
-          },
-          "404": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
-            },
-            "description": "No direction with that id"
           },
           "405": {
             "content": {
@@ -78827,7 +78787,7 @@
                           "type": "string"
                         },
                         "name": {
-                          "description": "Display name of the devata, with the diacritics the transliteration carries.",
+                          "description": "Display name of the devata. A Sanskrit proper noun: romanised with the diacritics the transliteration carries in every language, and written in Devanagari as the Sanskrit text prints it when lang is hi. Compare on id, never on this.",
                           "example": "Jayanta",
                           "type": "string"
                         },
@@ -78861,7 +78821,7 @@
                     },
                     "reading": {
                       "description": "The verdict as a sentence, for a report or a chat answer. Composed from the pada, its side and its effect, and translated in place when lang is set.",
-                      "example": "The main entrance falls on pada 3 of the East side, counted from the Northeast corner. That pada is the square of Jayanta. Great wealth.",
+                      "example": "The main entrance falls on pada 3 of the East side, counted from the Northeast corner. That pada is the square of Jayanta. The effect the verse gives for this pada: Great wealth.",
                       "type": "string"
                     },
                     "recommendedPadas": {
@@ -79277,7 +79237,7 @@
                             "type": "string"
                           },
                           "devataName": {
-                            "description": "Display name of that devata, with the diacritics the transliteration carries. Present only on the 81 pada grid.",
+                            "description": "Display name of that devata. A Sanskrit proper noun: romanised with the diacritics the transliteration carries in every language, and written in Devanagari as the Sanskrit text prints it when lang is hi. Present only on the 81 pada grid.",
                             "example": "Brahmā",
                             "type": "string"
                           },
@@ -80827,7 +80787,7 @@
                             "type": "string"
                           },
                           "remedy": {
-                            "description": "What to do when the room is not where it belongs. Original prose, translated in place when lang is set.",
+                            "description": "What to do when the room is not where it belongs. Present when the verdict is acceptable or avoid, and absent on an ideal placement, which has nothing to fix. Original prose, translated in place when lang is set.",
                             "example": "Move the cooking hearth to the south-east quarter, which is where the chapter puts the kitchen. Where the room cannot move, shift the hob itself to the south-east corner of the room and cook facing east.",
                             "type": "string"
                           },
@@ -80898,7 +80858,6 @@
                           "idealDirections",
                           "avoidDirections",
                           "reading",
-                          "remedy",
                           "source"
                         ],
                         "type": "object"
@@ -82960,16 +82919,6 @@
               }
             },
             "description": "Invalid or missing API key"
-          },
-          "404": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
-            },
-            "description": "No avastha state matches that slug."
           },
           "405": {
             "content": {
@@ -93179,16 +93128,6 @@
             },
             "description": "Invalid or missing API key"
           },
-          "404": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
-            },
-            "description": "Nakshatra not found"
-          },
           "405": {
             "content": {
               "application/json": {
@@ -96322,16 +96261,6 @@
             },
             "description": "Invalid or missing API key"
           },
-          "404": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
-            },
-            "description": "Rashi not found"
-          },
           "405": {
             "content": {
               "application/json": {
@@ -98023,16 +97952,6 @@
               }
             },
             "description": "Invalid or missing API key"
-          },
-          "404": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
-            },
-            "description": "Yoga not found"
           },
           "405": {
             "content": {
