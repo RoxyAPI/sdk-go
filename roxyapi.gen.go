@@ -49190,7 +49190,7 @@ type ClientInterface interface {
 
 	// GetMonthlyHoroscope Monthly horoscope by zodiac sign - Editorial column with key dates
 	//
-	// A month-long column for any zodiac sign, plus a week-by-week breakdown and dated key dates a calendar page renders directly. The column names every aspect, ingress, lunation and station of the month and reads each into the whole-sign houses of that sign, and those events come back beside the prose with their exact instants, so a piece can be checked against NASA JPL Horizons or the US Naval Observatory before it runs. Key dates are the real New Moon, Full Moon and retrograde instants, never approximations. Alongside the column come overview, love, career, health, finance and advice. Pass any date inside a month to retrieve that month, or timezone to roll over on a local clock. Available in eight languages. Monthly horoscope API, zodiac monthly forecast, astrology monthly prediction.
+	// A month-long column for any zodiac sign, plus a week-by-week breakdown and dated key dates a calendar page renders directly. The column names the major aspects, slow-planet sign changes, lunations and stations of the month, and reads each into the whole-sign houses of that sign, and those events come back beside the prose with their exact instants, so a piece can be checked against NASA JPL Horizons or the US Naval Observatory before it runs. Key dates are the real New Moon, Full Moon and retrograde instants, never approximations. Alongside the column come overview, love, career, health, finance and advice. Pass any date inside a month to retrieve that month, or timezone to roll over on a local clock. Available in eight languages. Monthly horoscope API, zodiac monthly forecast, astrology monthly prediction.
 	//
 	// Corresponds with GET /astrology/horoscope/{sign}/monthly (the `GetMonthlyHoroscope` operationId).
 	GetMonthlyHoroscope(ctx context.Context, sign GetMonthlyHoroscopeParamsSign, params *GetMonthlyHoroscopeParams, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -52962,7 +52962,7 @@ func (c *Client) GetDailyHoroscope(ctx context.Context, sign GetDailyHoroscopePa
 
 // GetMonthlyHoroscope Monthly horoscope by zodiac sign - Editorial column with key dates
 //
-// A month-long column for any zodiac sign, plus a week-by-week breakdown and dated key dates a calendar page renders directly. The column names every aspect, ingress, lunation and station of the month and reads each into the whole-sign houses of that sign, and those events come back beside the prose with their exact instants, so a piece can be checked against NASA JPL Horizons or the US Naval Observatory before it runs. Key dates are the real New Moon, Full Moon and retrograde instants, never approximations. Alongside the column come overview, love, career, health, finance and advice. Pass any date inside a month to retrieve that month, or timezone to roll over on a local clock. Available in eight languages. Monthly horoscope API, zodiac monthly forecast, astrology monthly prediction.
+// A month-long column for any zodiac sign, plus a week-by-week breakdown and dated key dates a calendar page renders directly. The column names the major aspects, slow-planet sign changes, lunations and stations of the month, and reads each into the whole-sign houses of that sign, and those events come back beside the prose with their exact instants, so a piece can be checked against NASA JPL Horizons or the US Naval Observatory before it runs. Key dates are the real New Moon, Full Moon and retrograde instants, never approximations. Alongside the column come overview, love, career, health, finance and advice. Pass any date inside a month to retrieve that month, or timezone to roll over on a local clock. Available in eight languages. Monthly horoscope API, zodiac monthly forecast, astrology monthly prediction.
 //
 // Corresponds with GET /astrology/horoscope/{sign}/monthly (the `GetMonthlyHoroscope` operationId).
 func (c *Client) GetMonthlyHoroscope(ctx context.Context, sign GetMonthlyHoroscopeParamsSign, params *GetMonthlyHoroscopeParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
@@ -77861,7 +77861,7 @@ type ClientWithResponsesInterface interface {
 
 	// GetMonthlyHoroscopeWithResponse Monthly horoscope by zodiac sign - Editorial column with key dates
 	//
-	// A month-long column for any zodiac sign, plus a week-by-week breakdown and dated key dates a calendar page renders directly. The column names every aspect, ingress, lunation and station of the month and reads each into the whole-sign houses of that sign, and those events come back beside the prose with their exact instants, so a piece can be checked against NASA JPL Horizons or the US Naval Observatory before it runs. Key dates are the real New Moon, Full Moon and retrograde instants, never approximations. Alongside the column come overview, love, career, health, finance and advice. Pass any date inside a month to retrieve that month, or timezone to roll over on a local clock. Available in eight languages. Monthly horoscope API, zodiac monthly forecast, astrology monthly prediction.
+	// A month-long column for any zodiac sign, plus a week-by-week breakdown and dated key dates a calendar page renders directly. The column names the major aspects, slow-planet sign changes, lunations and stations of the month, and reads each into the whole-sign houses of that sign, and those events come back beside the prose with their exact instants, so a piece can be checked against NASA JPL Horizons or the US Naval Observatory before it runs. Key dates are the real New Moon, Full Moon and retrograde instants, never approximations. Alongside the column come overview, love, career, health, finance and advice. Pass any date inside a month to retrieve that month, or timezone to roll over on a local clock. Available in eight languages. Monthly horoscope API, zodiac monthly forecast, astrology monthly prediction.
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
@@ -82478,7 +82478,7 @@ type GetMonthlyTropicalAspectsResponse struct {
 			// Datetime Combined timestamp of closest approach, in the requested timezone.
 			Datetime string `json:"datetime"`
 
-			// Nature Whether the aspect is harmonious, challenging or neutral. Canonical English, so a calendar can colour or filter on it directly. natureLocalized carries the reader-facing form.
+			// Nature Whether the aspect is harmonious, challenging or neutral. Canonical English, so a calendar can color or filter on it directly. natureLocalized carries the reader-facing form.
 			Nature string `json:"nature"`
 
 			// NatureLocalized Nature in the requested language. Present only when lang is supplied.
@@ -82551,7 +82551,7 @@ func (r GetMonthlyTropicalAspectsResponse) GetJSON200() *struct {
 		// Datetime Combined timestamp of closest approach, in the requested timezone.
 		Datetime string `json:"datetime"`
 
-		// Nature Whether the aspect is harmonious, challenging or neutral. Canonical English, so a calendar can colour or filter on it directly. natureLocalized carries the reader-facing form.
+		// Nature Whether the aspect is harmonious, challenging or neutral. Canonical English, so a calendar can color or filter on it directly. natureLocalized carries the reader-facing form.
 		Nature string `json:"nature"`
 
 		// NatureLocalized Nature in the requested language. Present only when lang is supplied.
@@ -84070,16 +84070,16 @@ type GetDailyHoroscopeResponse struct {
 	HTTPResponse *http.Response
 	// JSON200 the response for an HTTP 200 `application/json` response
 	JSON200 *struct {
-		// ActiveTransits Active planetary transits affecting this sign today, with house activations. Each transit shows the planet, its current sign, and which house it activates for the queried sign.
+		// ActiveTransits Active planetary transits affecting this sign today, with house activations. Each transit shows the planet, its current sign, and which house it activates for the queried sign. The sign and the house phrase translate with the lang parameter; the planet name stays canonical English so a caller can match on it whatever the language.
 		ActiveTransits []string `json:"activeTransits"`
 
-		// Advice Actionable daily advice based on the dominant transit energy.
+		// Advice The single actionable takeaway from the leading event of the period, read into the whole-sign houses of this sign and checkable against the events array. Drawn from the same event as overview, kept to a short, actionable pair of sentences rather than grown to match the other sections. Deterministic: the same sign and period always returns the same text.
 		Advice string `json:"advice"`
 
-		// Career Career and professional outlook. Based on Mars house position relative to this sign, with Saturn and Jupiter influences.
+		// Career Career and professional outlook, read into the whole-sign houses of this sign. The same ranked events that drive column, filtered to career, work and reputation, plus the standing placements that reach it. Every event named here is in the events array, so a piece can be fact-checked before it runs; this section reads an event through whichever of its houses carries career, work and reputation, which for an aspect between two houses can be the other one from the house the events array leads with, and both are whole-sign houses of the bodies involved counted from this sign. Typically 50 to 90 words. Render it alone for a single-topic page, or alongside the other five sections for a general reading; column is the same material woven into one piece instead of split by topic. Deterministic: the same sign and period always returns the same text.
 		Career string `json:"career"`
 
-		// Column The full column for this period, ready to run as one piece, with paragraphs separated by a blank line. Names the events driving it and the dates they fall on, read into the whole-sign houses of this sign. Typically 120 to 180 words. The six section fields are the same reading split by topic, so render either shape and never both. Deterministic: the same sign and period always returns the same column.
+		// Column The full column for this period, ready to run as one piece, with paragraphs separated by a blank line. Names the events driving it and the dates they fall on, read into the whole-sign houses of this sign. Typically 120 to 180 words. The six section fields read the same ranked events filtered to their own life area, each composed as a column of its own rather than an excerpt of this one, so render either shape and never both. Deterministic: the same sign and period always returns the same column.
 		Column string `json:"column"`
 
 		// CompatibleSigns Most compatible zodiac signs for this sign. Trine partners (same element) followed by a sextile partner (complementary element). Use for compatibility widgets, dating app onboarding, and horoscope cards.
@@ -84115,13 +84115,13 @@ type GetDailyHoroscopeResponse struct {
 			Type GetDailyHoroscope200JSONResponseBodyEventsType `json:"type"`
 		} `json:"events"`
 
-		// Finance Financial outlook and money-related guidance.
+		// Finance Financial outlook and money-related guidance, read into the whole-sign houses of this sign. The same ranked events that drive column, filtered to finance, plus the standing placements that reach it. Every event named here is in the events array, so a piece can be fact-checked before it runs; this section reads an event through whichever of its houses carries finance, which for an aspect between two houses can be the other one from the house the events array leads with, and both are whole-sign houses of the bodies involved counted from this sign. Typically 50 to 90 words. Render it alone for a single-topic page, or alongside the other five sections for a general reading; column is the same material woven into one piece instead of split by topic. Deterministic: the same sign and period always returns the same text.
 		Finance string `json:"finance"`
 
-		// Health Health, energy, and wellness guidance for the day.
+		// Health Health, energy, and wellness guidance, read into the whole-sign houses of this sign. The same ranked events that drive column, filtered to health, plus the standing placements that reach it. Every event named here is in the events array, so a piece can be fact-checked before it runs; this section reads an event through whichever of its houses carries health, which for an aspect between two houses can be the other one from the house the events array leads with, and both are whole-sign houses of the bodies involved counted from this sign. Typically 50 to 90 words. Render it alone for a single-topic page, or alongside the other five sections for a general reading; column is the same material woven into one piece instead of split by topic. Deterministic: the same sign and period always returns the same text.
 		Health string `json:"health"`
 
-		// Love Love and relationship forecast. Based on Venus house position relative to this sign, providing unique guidance per sign.
+		// Love Love and relationship forecast, read into the whole-sign houses of this sign. The same ranked events that drive column, filtered to romance and partnership, plus the standing placements that reach it. Every event named here is in the events array, so a piece can be fact-checked before it runs; this section reads an event through whichever of its houses carries romance and partnership, which for an aspect between two houses can be the other one from the house the events array leads with, and both are whole-sign houses of the bodies involved counted from this sign. Typically 50 to 90 words. Render it alone for a single-topic page, or alongside the other five sections for a general reading; column is the same material woven into one piece instead of split by topic. Deterministic: the same sign and period always returns the same text.
 		Love string `json:"love"`
 
 		// LuckyColor Lucky color for the day, drawn from the three colors of the sign element and selected by the planet governing the reading.
@@ -84136,7 +84136,7 @@ type GetDailyHoroscopeResponse struct {
 		// MoonSign Current Moon sign. Changes every 2-3 days, sets the emotional tone for all signs.
 		MoonSign string `json:"moonSign"`
 
-		// Overview General daily overview based on Moon house activation and planetary transits. Unique per sign based on whole-sign house positions.
+		// Overview The single most relevant event of the period, whichever life area it touches, read into the whole-sign houses of this sign. The same event that leads column, at lede length rather than developed into a full movement, and checkable against the events array. Typically 30 to 60 words. Join it with love, career, health and finance for a general reading built from the six sections. Deterministic: the same sign and period always returns the same text.
 		Overview string `json:"overview"`
 
 		// Sign Zodiac sign for this horoscope.
@@ -84158,16 +84158,16 @@ type GetDailyHoroscopeResponse struct {
 
 // GetJSON200 returns the response for an HTTP 200 `application/json` response
 func (r GetDailyHoroscopeResponse) GetJSON200() *struct {
-	// ActiveTransits Active planetary transits affecting this sign today, with house activations. Each transit shows the planet, its current sign, and which house it activates for the queried sign.
+	// ActiveTransits Active planetary transits affecting this sign today, with house activations. Each transit shows the planet, its current sign, and which house it activates for the queried sign. The sign and the house phrase translate with the lang parameter; the planet name stays canonical English so a caller can match on it whatever the language.
 	ActiveTransits []string `json:"activeTransits"`
 
-	// Advice Actionable daily advice based on the dominant transit energy.
+	// Advice The single actionable takeaway from the leading event of the period, read into the whole-sign houses of this sign and checkable against the events array. Drawn from the same event as overview, kept to a short, actionable pair of sentences rather than grown to match the other sections. Deterministic: the same sign and period always returns the same text.
 	Advice string `json:"advice"`
 
-	// Career Career and professional outlook. Based on Mars house position relative to this sign, with Saturn and Jupiter influences.
+	// Career Career and professional outlook, read into the whole-sign houses of this sign. The same ranked events that drive column, filtered to career, work and reputation, plus the standing placements that reach it. Every event named here is in the events array, so a piece can be fact-checked before it runs; this section reads an event through whichever of its houses carries career, work and reputation, which for an aspect between two houses can be the other one from the house the events array leads with, and both are whole-sign houses of the bodies involved counted from this sign. Typically 50 to 90 words. Render it alone for a single-topic page, or alongside the other five sections for a general reading; column is the same material woven into one piece instead of split by topic. Deterministic: the same sign and period always returns the same text.
 	Career string `json:"career"`
 
-	// Column The full column for this period, ready to run as one piece, with paragraphs separated by a blank line. Names the events driving it and the dates they fall on, read into the whole-sign houses of this sign. Typically 120 to 180 words. The six section fields are the same reading split by topic, so render either shape and never both. Deterministic: the same sign and period always returns the same column.
+	// Column The full column for this period, ready to run as one piece, with paragraphs separated by a blank line. Names the events driving it and the dates they fall on, read into the whole-sign houses of this sign. Typically 120 to 180 words. The six section fields read the same ranked events filtered to their own life area, each composed as a column of its own rather than an excerpt of this one, so render either shape and never both. Deterministic: the same sign and period always returns the same column.
 	Column string `json:"column"`
 
 	// CompatibleSigns Most compatible zodiac signs for this sign. Trine partners (same element) followed by a sextile partner (complementary element). Use for compatibility widgets, dating app onboarding, and horoscope cards.
@@ -84203,13 +84203,13 @@ func (r GetDailyHoroscopeResponse) GetJSON200() *struct {
 		Type GetDailyHoroscope200JSONResponseBodyEventsType `json:"type"`
 	} `json:"events"`
 
-	// Finance Financial outlook and money-related guidance.
+	// Finance Financial outlook and money-related guidance, read into the whole-sign houses of this sign. The same ranked events that drive column, filtered to finance, plus the standing placements that reach it. Every event named here is in the events array, so a piece can be fact-checked before it runs; this section reads an event through whichever of its houses carries finance, which for an aspect between two houses can be the other one from the house the events array leads with, and both are whole-sign houses of the bodies involved counted from this sign. Typically 50 to 90 words. Render it alone for a single-topic page, or alongside the other five sections for a general reading; column is the same material woven into one piece instead of split by topic. Deterministic: the same sign and period always returns the same text.
 	Finance string `json:"finance"`
 
-	// Health Health, energy, and wellness guidance for the day.
+	// Health Health, energy, and wellness guidance, read into the whole-sign houses of this sign. The same ranked events that drive column, filtered to health, plus the standing placements that reach it. Every event named here is in the events array, so a piece can be fact-checked before it runs; this section reads an event through whichever of its houses carries health, which for an aspect between two houses can be the other one from the house the events array leads with, and both are whole-sign houses of the bodies involved counted from this sign. Typically 50 to 90 words. Render it alone for a single-topic page, or alongside the other five sections for a general reading; column is the same material woven into one piece instead of split by topic. Deterministic: the same sign and period always returns the same text.
 	Health string `json:"health"`
 
-	// Love Love and relationship forecast. Based on Venus house position relative to this sign, providing unique guidance per sign.
+	// Love Love and relationship forecast, read into the whole-sign houses of this sign. The same ranked events that drive column, filtered to romance and partnership, plus the standing placements that reach it. Every event named here is in the events array, so a piece can be fact-checked before it runs; this section reads an event through whichever of its houses carries romance and partnership, which for an aspect between two houses can be the other one from the house the events array leads with, and both are whole-sign houses of the bodies involved counted from this sign. Typically 50 to 90 words. Render it alone for a single-topic page, or alongside the other five sections for a general reading; column is the same material woven into one piece instead of split by topic. Deterministic: the same sign and period always returns the same text.
 	Love string `json:"love"`
 
 	// LuckyColor Lucky color for the day, drawn from the three colors of the sign element and selected by the planet governing the reading.
@@ -84224,7 +84224,7 @@ func (r GetDailyHoroscopeResponse) GetJSON200() *struct {
 	// MoonSign Current Moon sign. Changes every 2-3 days, sets the emotional tone for all signs.
 	MoonSign string `json:"moonSign"`
 
-	// Overview General daily overview based on Moon house activation and planetary transits. Unique per sign based on whole-sign house positions.
+	// Overview The single most relevant event of the period, whichever life area it touches, read into the whole-sign houses of this sign. The same event that leads column, at lede length rather than developed into a full movement, and checkable against the events array. Typically 30 to 60 words. Join it with love, career, health and finance for a general reading built from the six sections. Deterministic: the same sign and period always returns the same text.
 	Overview string `json:"overview"`
 
 	// Sign Zodiac sign for this horoscope.
@@ -84302,13 +84302,13 @@ type GetMonthlyHoroscopeResponse struct {
 	HTTPResponse *http.Response
 	// JSON200 the response for an HTTP 200 `application/json` response
 	JSON200 *struct {
-		// Advice Actionable guidance for the month as a whole, derived from the Mercury house activation for this sign. Distinct from the per-week advice inside weekByWeek: this is the single takeaway for the month.
+		// Advice The single actionable takeaway from the leading event of the period, read into the whole-sign houses of this sign and checkable against the events array. Drawn from the same event as overview, kept to a short, actionable pair of sentences rather than grown to match the other sections. Deterministic: the same sign and period always returns the same text.
 		Advice string `json:"advice"`
 
-		// Career Monthly career and professional outlook.
+		// Career Monthly career and professional outlook, read into the whole-sign houses of this sign. The same ranked events that drive column, filtered to career, work and reputation, plus the standing placements that reach it. Every event named here is in the events array, so a piece can be fact-checked before it runs; this section reads an event through whichever of its houses carries career, work and reputation, which for an aspect between two houses can be the other one from the house the events array leads with, and both are whole-sign houses of the bodies involved counted from this sign. Typically 120 to 200 words. Render it alone for a single-topic page, or alongside the other five sections for a general reading; column is the same material woven into one piece instead of split by topic. Deterministic: the same sign and period always returns the same text.
 		Career string `json:"career"`
 
-		// Column The full column for this period, ready to run as one piece, with paragraphs separated by a blank line. Names the events driving it and the dates they fall on, read into the whole-sign houses of this sign. Typically 400 to 700 words. The six section fields are the same reading split by topic, so render either shape and never both. Deterministic: the same sign and period always returns the same column.
+		// Column The full column for this period, ready to run as one piece, with paragraphs separated by a blank line. Names the events driving it and the dates they fall on, read into the whole-sign houses of this sign. Typically 400 to 700 words. The six section fields read the same ranked events filtered to their own life area, each composed as a column of its own rather than an excerpt of this one, so render either shape and never both. Deterministic: the same sign and period always returns the same column.
 		Column string `json:"column"`
 
 		// CompatibleSigns Most compatible zodiac signs for this sign. Trine partners (same element) followed by a sextile partner (complementary element).
@@ -84338,22 +84338,22 @@ type GetMonthlyHoroscopeResponse struct {
 			Type GetMonthlyHoroscope200JSONResponseBodyEventsType `json:"type"`
 		} `json:"events"`
 
-		// Finance Monthly financial outlook and guidance.
+		// Finance Monthly financial outlook and guidance, read into the whole-sign houses of this sign. The same ranked events that drive column, filtered to finance, plus the standing placements that reach it. Every event named here is in the events array, so a piece can be fact-checked before it runs; this section reads an event through whichever of its houses carries finance, which for an aspect between two houses can be the other one from the house the events array leads with, and both are whole-sign houses of the bodies involved counted from this sign. Typically 120 to 200 words. Render it alone for a single-topic page, or alongside the other five sections for a general reading; column is the same material woven into one piece instead of split by topic. Deterministic: the same sign and period always returns the same text.
 		Finance string `json:"finance"`
 
-		// Health Monthly health and wellness guidance.
+		// Health Monthly health and wellness guidance, read into the whole-sign houses of this sign. The same ranked events that drive column, filtered to health, plus the standing placements that reach it. Every event named here is in the events array, so a piece can be fact-checked before it runs; this section reads an event through whichever of its houses carries health, which for an aspect between two houses can be the other one from the house the events array leads with, and both are whole-sign houses of the bodies involved counted from this sign. Typically 120 to 200 words. Render it alone for a single-topic page, or alongside the other five sections for a general reading; column is the same material woven into one piece instead of split by topic. Deterministic: the same sign and period always returns the same text.
 		Health string `json:"health"`
 
-		// KeyDates Key astrological dates this month with actual New Moon, Full Moon, and retrograde dates calculated from ephemeris data.
+		// KeyDates The dates to circle this month, earliest first: every lunation and eclipse of the month, plus the headline movements the reading is built on, which are the sign changes of the slower planets and every station with the direction it turns. Each is placed in the whole-sign house it reaches for this sign. Every row is an instant the ephemeris gives, checkable against NASA JPL Horizons or the US Naval Observatory, and every row that is not a lunation or an eclipse is also a row of events[], so the list cannot contradict the reading beside it.
 		KeyDates []struct {
-			// Date Date of the astrological event (YYYY-MM-DD).
+			// Date UTC date of the event (YYYY-MM-DD). The exact instant, to the second, is on the matching row of events[].
 			Date string `json:"date"`
 
-			// Event Astrological event active on this date (lunar phases, retrogrades, sign ingresses).
+			// Event The event as one sentence in the requested language, placed in the whole-sign house it reaches for this sign.
 			Event string `json:"event"`
 		} `json:"keyDates"`
 
-		// Love Monthly love and relationship forecast.
+		// Love Monthly love and relationship forecast, read into the whole-sign houses of this sign. The same ranked events that drive column, filtered to romance and partnership, plus the standing placements that reach it. Every event named here is in the events array, so a piece can be fact-checked before it runs; this section reads an event through whichever of its houses carries romance and partnership, which for an aspect between two houses can be the other one from the house the events array leads with, and both are whole-sign houses of the bodies involved counted from this sign. Typically 120 to 200 words. Render it alone for a single-topic page, or alongside the other five sections for a general reading; column is the same material woven into one piece instead of split by topic. Deterministic: the same sign and period always returns the same text.
 		Love string `json:"love"`
 
 		// LuckyColor Lucky color for the month, drawn from the three colors of the sign element and selected by the planet governing the reading.
@@ -84365,21 +84365,21 @@ type GetMonthlyHoroscopeResponse struct {
 		// Month Month of this forecast (YYYY-MM).
 		Month string `json:"month"`
 
-		// Overview Monthly overview covering the major planetary transits and their impact on the sign.
+		// Overview The single most relevant event of the period, whichever life area it touches, read into the whole-sign houses of this sign. The same event that leads column, at lede length rather than developed into a full movement, and checkable against the events array. Typically 55 to 100 words. Join it with love, career, health and finance for a general reading built from the six sections. Deterministic: the same sign and period always returns the same text.
 		Overview string `json:"overview"`
 
 		// Sign Zodiac sign for this horoscope.
 		Sign string `json:"sign"`
 
-		// WeekByWeek Week-by-week breakdown with sign-specific focus areas based on transit house positions.
+		// WeekByWeek The month read one calendar week at a time, off the same ranked events as column and events[]: the life area each week turns on, and the one thing that area asks for. Two weeks may land in the same area, because two events of a month often do; the sentence beside it is always different. Use it for the week strip of a monthly page.
 		WeekByWeek []struct {
-			// Advice Specific guidance for this week.
+			// Advice What that house asks for, as one sentence in the requested language. No two weeks of one month repeat a sentence.
 			Advice string `json:"advice"`
 
-			// Focus Primary focus area for this week, derived from planetary house activations for this sign.
+			// Focus The life area the week turns on, in the requested language: the theme of the whole-sign house holding the strongest event the reading names inside that week, or of the strongest standing placement where the week holds no dated event. Same values as the life areas of the yearly key periods.
 			Focus string `json:"focus"`
 
-			// Week Week number within the month (1-4).
+			// Week Position of the week inside the month, 1 first. The rows are calendar weeks, Monday to Sunday, clipped to the month at each end, so a month carries four, five or six of them. Row N is therefore the same week the weekly forecast covers, which is what lets a monthly page link straight into it.
 			Week float32 `json:"week"`
 		} `json:"weekByWeek"`
 	}
@@ -84399,13 +84399,13 @@ type GetMonthlyHoroscopeResponse struct {
 
 // GetJSON200 returns the response for an HTTP 200 `application/json` response
 func (r GetMonthlyHoroscopeResponse) GetJSON200() *struct {
-	// Advice Actionable guidance for the month as a whole, derived from the Mercury house activation for this sign. Distinct from the per-week advice inside weekByWeek: this is the single takeaway for the month.
+	// Advice The single actionable takeaway from the leading event of the period, read into the whole-sign houses of this sign and checkable against the events array. Drawn from the same event as overview, kept to a short, actionable pair of sentences rather than grown to match the other sections. Deterministic: the same sign and period always returns the same text.
 	Advice string `json:"advice"`
 
-	// Career Monthly career and professional outlook.
+	// Career Monthly career and professional outlook, read into the whole-sign houses of this sign. The same ranked events that drive column, filtered to career, work and reputation, plus the standing placements that reach it. Every event named here is in the events array, so a piece can be fact-checked before it runs; this section reads an event through whichever of its houses carries career, work and reputation, which for an aspect between two houses can be the other one from the house the events array leads with, and both are whole-sign houses of the bodies involved counted from this sign. Typically 120 to 200 words. Render it alone for a single-topic page, or alongside the other five sections for a general reading; column is the same material woven into one piece instead of split by topic. Deterministic: the same sign and period always returns the same text.
 	Career string `json:"career"`
 
-	// Column The full column for this period, ready to run as one piece, with paragraphs separated by a blank line. Names the events driving it and the dates they fall on, read into the whole-sign houses of this sign. Typically 400 to 700 words. The six section fields are the same reading split by topic, so render either shape and never both. Deterministic: the same sign and period always returns the same column.
+	// Column The full column for this period, ready to run as one piece, with paragraphs separated by a blank line. Names the events driving it and the dates they fall on, read into the whole-sign houses of this sign. Typically 400 to 700 words. The six section fields read the same ranked events filtered to their own life area, each composed as a column of its own rather than an excerpt of this one, so render either shape and never both. Deterministic: the same sign and period always returns the same column.
 	Column string `json:"column"`
 
 	// CompatibleSigns Most compatible zodiac signs for this sign. Trine partners (same element) followed by a sextile partner (complementary element).
@@ -84435,22 +84435,22 @@ func (r GetMonthlyHoroscopeResponse) GetJSON200() *struct {
 		Type GetMonthlyHoroscope200JSONResponseBodyEventsType `json:"type"`
 	} `json:"events"`
 
-	// Finance Monthly financial outlook and guidance.
+	// Finance Monthly financial outlook and guidance, read into the whole-sign houses of this sign. The same ranked events that drive column, filtered to finance, plus the standing placements that reach it. Every event named here is in the events array, so a piece can be fact-checked before it runs; this section reads an event through whichever of its houses carries finance, which for an aspect between two houses can be the other one from the house the events array leads with, and both are whole-sign houses of the bodies involved counted from this sign. Typically 120 to 200 words. Render it alone for a single-topic page, or alongside the other five sections for a general reading; column is the same material woven into one piece instead of split by topic. Deterministic: the same sign and period always returns the same text.
 	Finance string `json:"finance"`
 
-	// Health Monthly health and wellness guidance.
+	// Health Monthly health and wellness guidance, read into the whole-sign houses of this sign. The same ranked events that drive column, filtered to health, plus the standing placements that reach it. Every event named here is in the events array, so a piece can be fact-checked before it runs; this section reads an event through whichever of its houses carries health, which for an aspect between two houses can be the other one from the house the events array leads with, and both are whole-sign houses of the bodies involved counted from this sign. Typically 120 to 200 words. Render it alone for a single-topic page, or alongside the other five sections for a general reading; column is the same material woven into one piece instead of split by topic. Deterministic: the same sign and period always returns the same text.
 	Health string `json:"health"`
 
-	// KeyDates Key astrological dates this month with actual New Moon, Full Moon, and retrograde dates calculated from ephemeris data.
+	// KeyDates The dates to circle this month, earliest first: every lunation and eclipse of the month, plus the headline movements the reading is built on, which are the sign changes of the slower planets and every station with the direction it turns. Each is placed in the whole-sign house it reaches for this sign. Every row is an instant the ephemeris gives, checkable against NASA JPL Horizons or the US Naval Observatory, and every row that is not a lunation or an eclipse is also a row of events[], so the list cannot contradict the reading beside it.
 	KeyDates []struct {
-		// Date Date of the astrological event (YYYY-MM-DD).
+		// Date UTC date of the event (YYYY-MM-DD). The exact instant, to the second, is on the matching row of events[].
 		Date string `json:"date"`
 
-		// Event Astrological event active on this date (lunar phases, retrogrades, sign ingresses).
+		// Event The event as one sentence in the requested language, placed in the whole-sign house it reaches for this sign.
 		Event string `json:"event"`
 	} `json:"keyDates"`
 
-	// Love Monthly love and relationship forecast.
+	// Love Monthly love and relationship forecast, read into the whole-sign houses of this sign. The same ranked events that drive column, filtered to romance and partnership, plus the standing placements that reach it. Every event named here is in the events array, so a piece can be fact-checked before it runs; this section reads an event through whichever of its houses carries romance and partnership, which for an aspect between two houses can be the other one from the house the events array leads with, and both are whole-sign houses of the bodies involved counted from this sign. Typically 120 to 200 words. Render it alone for a single-topic page, or alongside the other five sections for a general reading; column is the same material woven into one piece instead of split by topic. Deterministic: the same sign and period always returns the same text.
 	Love string `json:"love"`
 
 	// LuckyColor Lucky color for the month, drawn from the three colors of the sign element and selected by the planet governing the reading.
@@ -84462,21 +84462,21 @@ func (r GetMonthlyHoroscopeResponse) GetJSON200() *struct {
 	// Month Month of this forecast (YYYY-MM).
 	Month string `json:"month"`
 
-	// Overview Monthly overview covering the major planetary transits and their impact on the sign.
+	// Overview The single most relevant event of the period, whichever life area it touches, read into the whole-sign houses of this sign. The same event that leads column, at lede length rather than developed into a full movement, and checkable against the events array. Typically 55 to 100 words. Join it with love, career, health and finance for a general reading built from the six sections. Deterministic: the same sign and period always returns the same text.
 	Overview string `json:"overview"`
 
 	// Sign Zodiac sign for this horoscope.
 	Sign string `json:"sign"`
 
-	// WeekByWeek Week-by-week breakdown with sign-specific focus areas based on transit house positions.
+	// WeekByWeek The month read one calendar week at a time, off the same ranked events as column and events[]: the life area each week turns on, and the one thing that area asks for. Two weeks may land in the same area, because two events of a month often do; the sentence beside it is always different. Use it for the week strip of a monthly page.
 	WeekByWeek []struct {
-		// Advice Specific guidance for this week.
+		// Advice What that house asks for, as one sentence in the requested language. No two weeks of one month repeat a sentence.
 		Advice string `json:"advice"`
 
-		// Focus Primary focus area for this week, derived from planetary house activations for this sign.
+		// Focus The life area the week turns on, in the requested language: the theme of the whole-sign house holding the strongest event the reading names inside that week, or of the strongest standing placement where the week holds no dated event. Same values as the life areas of the yearly key periods.
 		Focus string `json:"focus"`
 
-		// Week Week number within the month (1-4).
+		// Week Position of the week inside the month, 1 first. The rows are calendar weeks, Monday to Sunday, clipped to the month at each end, so a month carries four, five or six of them. Row N is therefore the same week the weekly forecast covers, which is what lets a monthly page link straight into it.
 		Week float32 `json:"week"`
 	} `json:"weekByWeek"`
 } {
@@ -84552,13 +84552,13 @@ type GetWeeklyHoroscopeResponse struct {
 	HTTPResponse *http.Response
 	// JSON200 the response for an HTTP 200 `application/json` response
 	JSON200 *struct {
-		// Advice Actionable weekly guidance based on transit patterns.
+		// Advice The single actionable takeaway from the leading event of the period, read into the whole-sign houses of this sign and checkable against the events array. Drawn from the same event as overview, kept to a short, actionable pair of sentences rather than grown to match the other sections. Deterministic: the same sign and period always returns the same text.
 		Advice string `json:"advice"`
 
-		// Career Weekly career and professional outlook.
+		// Career Weekly career and professional outlook, read into the whole-sign houses of this sign. The same ranked events that drive column, filtered to career, work and reputation, plus the standing placements that reach it. Every event named here is in the events array, so a piece can be fact-checked before it runs; this section reads an event through whichever of its houses carries career, work and reputation, which for an aspect between two houses can be the other one from the house the events array leads with, and both are whole-sign houses of the bodies involved counted from this sign. Typically 80 to 120 words. Render it alone for a single-topic page, or alongside the other five sections for a general reading; column is the same material woven into one piece instead of split by topic. Deterministic: the same sign and period always returns the same text.
 		Career string `json:"career"`
 
-		// Column The full column for this period, ready to run as one piece, with paragraphs separated by a blank line. Names the events driving it and the dates they fall on, read into the whole-sign houses of this sign. Typically 250 to 450 words. The six section fields are the same reading split by topic, so render either shape and never both. Deterministic: the same sign and period always returns the same column.
+		// Column The full column for this period, ready to run as one piece, with paragraphs separated by a blank line. Names the events driving it and the dates they fall on, read into the whole-sign houses of this sign. Typically 250 to 450 words. The six section fields read the same ranked events filtered to their own life area, each composed as a column of its own rather than an excerpt of this one, so render either shape and never both. Deterministic: the same sign and period always returns the same column.
 		Column string `json:"column"`
 
 		// CompatibleSigns Most compatible zodiac signs for this sign. Trine partners (same element) followed by a sextile partner (complementary element).
@@ -84588,13 +84588,13 @@ type GetWeeklyHoroscopeResponse struct {
 			Type GetWeeklyHoroscope200JSONResponseBodyEventsType `json:"type"`
 		} `json:"events"`
 
-		// Finance Weekly financial outlook.
+		// Finance Weekly financial outlook, read into the whole-sign houses of this sign. The same ranked events that drive column, filtered to finance, plus the standing placements that reach it. Every event named here is in the events array, so a piece can be fact-checked before it runs; this section reads an event through whichever of its houses carries finance, which for an aspect between two houses can be the other one from the house the events array leads with, and both are whole-sign houses of the bodies involved counted from this sign. Typically 80 to 120 words. Render it alone for a single-topic page, or alongside the other five sections for a general reading; column is the same material woven into one piece instead of split by topic. Deterministic: the same sign and period always returns the same text.
 		Finance string `json:"finance"`
 
-		// Health Weekly health, energy, and wellness guidance.
+		// Health Weekly health, energy, and wellness guidance, read into the whole-sign houses of this sign. The same ranked events that drive column, filtered to health, plus the standing placements that reach it. Every event named here is in the events array, so a piece can be fact-checked before it runs; this section reads an event through whichever of its houses carries health, which for an aspect between two houses can be the other one from the house the events array leads with, and both are whole-sign houses of the bodies involved counted from this sign. Typically 80 to 120 words. Render it alone for a single-topic page, or alongside the other five sections for a general reading; column is the same material woven into one piece instead of split by topic. Deterministic: the same sign and period always returns the same text.
 		Health string `json:"health"`
 
-		// Love Weekly love and relationship forecast.
+		// Love Weekly love and relationship forecast, read into the whole-sign houses of this sign. The same ranked events that drive column, filtered to romance and partnership, plus the standing placements that reach it. Every event named here is in the events array, so a piece can be fact-checked before it runs; this section reads an event through whichever of its houses carries romance and partnership, which for an aspect between two houses can be the other one from the house the events array leads with, and both are whole-sign houses of the bodies involved counted from this sign. Typically 80 to 120 words. Render it alone for a single-topic page, or alongside the other five sections for a general reading; column is the same material woven into one piece instead of split by topic. Deterministic: the same sign and period always returns the same text.
 		Love string `json:"love"`
 
 		// LuckyDays The three most favorable days this week, from the planetary rulers of the seven weekdays, ranked by how strongly each of those planets stands for this sign.
@@ -84603,7 +84603,7 @@ type GetWeeklyHoroscopeResponse struct {
 		// LuckyNumbers Three lucky numbers for the week, each 1 to 9 and all distinct, from the traditional planetary number correspondence applied to the three planets that govern this sign this week.
 		LuckyNumbers []float32 `json:"luckyNumbers"`
 
-		// Overview Weekly overview highlighting the dominant planetary transits through the sign.
+		// Overview The single most relevant event of the period, whichever life area it touches, read into the whole-sign houses of this sign. The same event that leads column, at lede length rather than developed into a full movement, and checkable against the events array. Typically 40 to 80 words. Join it with love, career, health and finance for a general reading built from the six sections. Deterministic: the same sign and period always returns the same text.
 		Overview string `json:"overview"`
 
 		// Sign Zodiac sign for this horoscope.
@@ -84628,13 +84628,13 @@ type GetWeeklyHoroscopeResponse struct {
 
 // GetJSON200 returns the response for an HTTP 200 `application/json` response
 func (r GetWeeklyHoroscopeResponse) GetJSON200() *struct {
-	// Advice Actionable weekly guidance based on transit patterns.
+	// Advice The single actionable takeaway from the leading event of the period, read into the whole-sign houses of this sign and checkable against the events array. Drawn from the same event as overview, kept to a short, actionable pair of sentences rather than grown to match the other sections. Deterministic: the same sign and period always returns the same text.
 	Advice string `json:"advice"`
 
-	// Career Weekly career and professional outlook.
+	// Career Weekly career and professional outlook, read into the whole-sign houses of this sign. The same ranked events that drive column, filtered to career, work and reputation, plus the standing placements that reach it. Every event named here is in the events array, so a piece can be fact-checked before it runs; this section reads an event through whichever of its houses carries career, work and reputation, which for an aspect between two houses can be the other one from the house the events array leads with, and both are whole-sign houses of the bodies involved counted from this sign. Typically 80 to 120 words. Render it alone for a single-topic page, or alongside the other five sections for a general reading; column is the same material woven into one piece instead of split by topic. Deterministic: the same sign and period always returns the same text.
 	Career string `json:"career"`
 
-	// Column The full column for this period, ready to run as one piece, with paragraphs separated by a blank line. Names the events driving it and the dates they fall on, read into the whole-sign houses of this sign. Typically 250 to 450 words. The six section fields are the same reading split by topic, so render either shape and never both. Deterministic: the same sign and period always returns the same column.
+	// Column The full column for this period, ready to run as one piece, with paragraphs separated by a blank line. Names the events driving it and the dates they fall on, read into the whole-sign houses of this sign. Typically 250 to 450 words. The six section fields read the same ranked events filtered to their own life area, each composed as a column of its own rather than an excerpt of this one, so render either shape and never both. Deterministic: the same sign and period always returns the same column.
 	Column string `json:"column"`
 
 	// CompatibleSigns Most compatible zodiac signs for this sign. Trine partners (same element) followed by a sextile partner (complementary element).
@@ -84664,13 +84664,13 @@ func (r GetWeeklyHoroscopeResponse) GetJSON200() *struct {
 		Type GetWeeklyHoroscope200JSONResponseBodyEventsType `json:"type"`
 	} `json:"events"`
 
-	// Finance Weekly financial outlook.
+	// Finance Weekly financial outlook, read into the whole-sign houses of this sign. The same ranked events that drive column, filtered to finance, plus the standing placements that reach it. Every event named here is in the events array, so a piece can be fact-checked before it runs; this section reads an event through whichever of its houses carries finance, which for an aspect between two houses can be the other one from the house the events array leads with, and both are whole-sign houses of the bodies involved counted from this sign. Typically 80 to 120 words. Render it alone for a single-topic page, or alongside the other five sections for a general reading; column is the same material woven into one piece instead of split by topic. Deterministic: the same sign and period always returns the same text.
 	Finance string `json:"finance"`
 
-	// Health Weekly health, energy, and wellness guidance.
+	// Health Weekly health, energy, and wellness guidance, read into the whole-sign houses of this sign. The same ranked events that drive column, filtered to health, plus the standing placements that reach it. Every event named here is in the events array, so a piece can be fact-checked before it runs; this section reads an event through whichever of its houses carries health, which for an aspect between two houses can be the other one from the house the events array leads with, and both are whole-sign houses of the bodies involved counted from this sign. Typically 80 to 120 words. Render it alone for a single-topic page, or alongside the other five sections for a general reading; column is the same material woven into one piece instead of split by topic. Deterministic: the same sign and period always returns the same text.
 	Health string `json:"health"`
 
-	// Love Weekly love and relationship forecast.
+	// Love Weekly love and relationship forecast, read into the whole-sign houses of this sign. The same ranked events that drive column, filtered to romance and partnership, plus the standing placements that reach it. Every event named here is in the events array, so a piece can be fact-checked before it runs; this section reads an event through whichever of its houses carries romance and partnership, which for an aspect between two houses can be the other one from the house the events array leads with, and both are whole-sign houses of the bodies involved counted from this sign. Typically 80 to 120 words. Render it alone for a single-topic page, or alongside the other five sections for a general reading; column is the same material woven into one piece instead of split by topic. Deterministic: the same sign and period always returns the same text.
 	Love string `json:"love"`
 
 	// LuckyDays The three most favorable days this week, from the planetary rulers of the seven weekdays, ranked by how strongly each of those planets stands for this sign.
@@ -84679,7 +84679,7 @@ func (r GetWeeklyHoroscopeResponse) GetJSON200() *struct {
 	// LuckyNumbers Three lucky numbers for the week, each 1 to 9 and all distinct, from the traditional planetary number correspondence applied to the three planets that govern this sign this week.
 	LuckyNumbers []float32 `json:"luckyNumbers"`
 
-	// Overview Weekly overview highlighting the dominant planetary transits through the sign.
+	// Overview The single most relevant event of the period, whichever life area it touches, read into the whole-sign houses of this sign. The same event that leads column, at lede length rather than developed into a full movement, and checkable against the events array. Typically 40 to 80 words. Join it with love, career, health and finance for a general reading built from the six sections. Deterministic: the same sign and period always returns the same text.
 	Overview string `json:"overview"`
 
 	// Sign Zodiac sign for this horoscope.
@@ -84760,7 +84760,7 @@ type GetYearlyHoroscopeResponse struct {
 	HTTPResponse *http.Response
 	// JSON200 the response for an HTTP 200 `application/json` response
 	JSON200 *struct {
-		// Advice The single takeaway for the year, drawn from the event that leads it rather than stated in general terms.
+		// Advice The single actionable takeaway from the leading event of the period, read into the whole-sign houses of this sign and checkable against the events array. Drawn from the same event as overview, kept to a short, actionable pair of sentences rather than grown to match the other sections. Deterministic: the same sign and period always returns the same text.
 		Advice string `json:"advice"`
 
 		// BestPeriods The easiest month of the year for each of the four topic sections, by how many exact harmonious aspects (sextiles and trines) fall in that month and land in the houses that govern the area for this sign. An area is omitted only in the rare year that carries no harmonious aspect for it at all, so treat each key as optional. Use it for the best-months-for panel, and read the count as the evidence behind the word best.
@@ -84814,10 +84814,10 @@ type GetYearlyHoroscopeResponse struct {
 			} `json:"love,omitempty"`
 		} `json:"bestPeriods"`
 
-		// Career Yearly career and professional outlook.
+		// Career Yearly career and professional outlook, read into the whole-sign houses of this sign. The same ranked events that drive column, filtered to career, work and reputation, plus the standing placements that reach it. Every event named here is in the events array, so a piece can be fact-checked before it runs; this section reads an event through whichever of its houses carries career, work and reputation, which for an aspect between two houses can be the other one from the house the events array leads with, and both are whole-sign houses of the bodies involved counted from this sign. Typically 150 to 260 words. Render it alone for a single-topic page, or alongside the other five sections for a general reading; column is the same material woven into one piece instead of split by topic. Deterministic: the same sign and period always returns the same text.
 		Career string `json:"career"`
 
-		// Column The full column for this period, ready to run as one piece, with paragraphs separated by a blank line. Names the events driving it and the dates they fall on, read into the whole-sign houses of this sign. Typically 600 to 900 words. The six section fields are the same reading split by topic, so render either shape and never both. Deterministic: the same sign and period always returns the same column.
+		// Column The full column for this period, ready to run as one piece, with paragraphs separated by a blank line. Names the events driving it and the dates they fall on, read into the whole-sign houses of this sign. Typically 600 to 900 words. The six section fields read the same ranked events filtered to their own life area, each composed as a column of its own rather than an excerpt of this one, so render either shape and never both. Deterministic: the same sign and period always returns the same column.
 		Column string `json:"column"`
 
 		// CompatibleSigns Most compatible zodiac signs for this sign. Trine partners (same element) followed by a sextile partner (complementary element).
@@ -84862,10 +84862,10 @@ type GetYearlyHoroscopeResponse struct {
 			Type GetYearlyHoroscope200JSONResponseBodyEventsType `json:"type"`
 		} `json:"events"`
 
-		// Finance Yearly financial outlook.
+		// Finance Yearly financial outlook, read into the whole-sign houses of this sign. The same ranked events that drive column, filtered to finance, plus the standing placements that reach it. Every event named here is in the events array, so a piece can be fact-checked before it runs; this section reads an event through whichever of its houses carries finance, which for an aspect between two houses can be the other one from the house the events array leads with, and both are whole-sign houses of the bodies involved counted from this sign. Typically 150 to 260 words. Render it alone for a single-topic page, or alongside the other five sections for a general reading; column is the same material woven into one piece instead of split by topic. Deterministic: the same sign and period always returns the same text.
 		Finance string `json:"finance"`
 
-		// Health Yearly health, energy, and wellness outlook.
+		// Health Yearly health, energy, and wellness outlook, read into the whole-sign houses of this sign. The same ranked events that drive column, filtered to health, plus the standing placements that reach it. Every event named here is in the events array, so a piece can be fact-checked before it runs; this section reads an event through whichever of its houses carries health, which for an aspect between two houses can be the other one from the house the events array leads with, and both are whole-sign houses of the bodies involved counted from this sign. Typically 150 to 260 words. Render it alone for a single-topic page, or alongside the other five sections for a general reading; column is the same material woven into one piece instead of split by topic. Deterministic: the same sign and period always returns the same text.
 		Health string `json:"health"`
 
 		// KeyPeriods The year as a calendar of life areas: for each whole-sign house, the single dated stretch that most strongly activates it, ordered by start date. Twelve rows in a full year, one per house, so every life area gets a date range and none is named twice. Periods overlap freely, because more than one body is always moving. Use it for the dates-to-circle panel of a year-ahead page.
@@ -84886,7 +84886,7 @@ type GetYearlyHoroscopeResponse struct {
 			To string `json:"to"`
 		} `json:"keyPeriods"`
 
-		// Love Yearly love and relationship outlook.
+		// Love Yearly love and relationship outlook, read into the whole-sign houses of this sign. The same ranked events that drive column, filtered to romance and partnership, plus the standing placements that reach it. Every event named here is in the events array, so a piece can be fact-checked before it runs; this section reads an event through whichever of its houses carries romance and partnership, which for an aspect between two houses can be the other one from the house the events array leads with, and both are whole-sign houses of the bodies involved counted from this sign. Typically 150 to 260 words. Render it alone for a single-topic page, or alongside the other five sections for a general reading; column is the same material woven into one piece instead of split by topic. Deterministic: the same sign and period always returns the same text.
 		Love string `json:"love"`
 
 		// LuckyColor Lucky color for the year, drawn from the three colors of the sign element and selected by the planet governing the reading.
@@ -84895,7 +84895,7 @@ type GetYearlyHoroscopeResponse struct {
 		// LuckyNumbers Four lucky numbers for the year, each 1 to 9 and all distinct, from the traditional planetary number correspondence applied to the four planets that govern this sign this year.
 		LuckyNumbers []float32 `json:"luckyNumbers"`
 
-		// Overview Yearly overview, led by the single event with the most weight for this sign across the whole year.
+		// Overview The single most relevant event of the period, whichever life area it touches, read into the whole-sign houses of this sign. The same event that leads column, at lede length rather than developed into a full movement, and checkable against the events array. Typically 70 to 120 words. Join it with love, career, health and finance for a general reading built from the six sections. Deterministic: the same sign and period always returns the same text.
 		Overview string `json:"overview"`
 
 		// Retrogrades Every retrograde and direct station of the year, in order, with the house each falls in for this sign. Drives review windows and the not-yet warnings a yearly column is bought for.
@@ -84959,7 +84959,7 @@ type GetYearlyHoroscopeResponse struct {
 
 // GetJSON200 returns the response for an HTTP 200 `application/json` response
 func (r GetYearlyHoroscopeResponse) GetJSON200() *struct {
-	// Advice The single takeaway for the year, drawn from the event that leads it rather than stated in general terms.
+	// Advice The single actionable takeaway from the leading event of the period, read into the whole-sign houses of this sign and checkable against the events array. Drawn from the same event as overview, kept to a short, actionable pair of sentences rather than grown to match the other sections. Deterministic: the same sign and period always returns the same text.
 	Advice string `json:"advice"`
 
 	// BestPeriods The easiest month of the year for each of the four topic sections, by how many exact harmonious aspects (sextiles and trines) fall in that month and land in the houses that govern the area for this sign. An area is omitted only in the rare year that carries no harmonious aspect for it at all, so treat each key as optional. Use it for the best-months-for panel, and read the count as the evidence behind the word best.
@@ -85013,10 +85013,10 @@ func (r GetYearlyHoroscopeResponse) GetJSON200() *struct {
 		} `json:"love,omitempty"`
 	} `json:"bestPeriods"`
 
-	// Career Yearly career and professional outlook.
+	// Career Yearly career and professional outlook, read into the whole-sign houses of this sign. The same ranked events that drive column, filtered to career, work and reputation, plus the standing placements that reach it. Every event named here is in the events array, so a piece can be fact-checked before it runs; this section reads an event through whichever of its houses carries career, work and reputation, which for an aspect between two houses can be the other one from the house the events array leads with, and both are whole-sign houses of the bodies involved counted from this sign. Typically 150 to 260 words. Render it alone for a single-topic page, or alongside the other five sections for a general reading; column is the same material woven into one piece instead of split by topic. Deterministic: the same sign and period always returns the same text.
 	Career string `json:"career"`
 
-	// Column The full column for this period, ready to run as one piece, with paragraphs separated by a blank line. Names the events driving it and the dates they fall on, read into the whole-sign houses of this sign. Typically 600 to 900 words. The six section fields are the same reading split by topic, so render either shape and never both. Deterministic: the same sign and period always returns the same column.
+	// Column The full column for this period, ready to run as one piece, with paragraphs separated by a blank line. Names the events driving it and the dates they fall on, read into the whole-sign houses of this sign. Typically 600 to 900 words. The six section fields read the same ranked events filtered to their own life area, each composed as a column of its own rather than an excerpt of this one, so render either shape and never both. Deterministic: the same sign and period always returns the same column.
 	Column string `json:"column"`
 
 	// CompatibleSigns Most compatible zodiac signs for this sign. Trine partners (same element) followed by a sextile partner (complementary element).
@@ -85061,10 +85061,10 @@ func (r GetYearlyHoroscopeResponse) GetJSON200() *struct {
 		Type GetYearlyHoroscope200JSONResponseBodyEventsType `json:"type"`
 	} `json:"events"`
 
-	// Finance Yearly financial outlook.
+	// Finance Yearly financial outlook, read into the whole-sign houses of this sign. The same ranked events that drive column, filtered to finance, plus the standing placements that reach it. Every event named here is in the events array, so a piece can be fact-checked before it runs; this section reads an event through whichever of its houses carries finance, which for an aspect between two houses can be the other one from the house the events array leads with, and both are whole-sign houses of the bodies involved counted from this sign. Typically 150 to 260 words. Render it alone for a single-topic page, or alongside the other five sections for a general reading; column is the same material woven into one piece instead of split by topic. Deterministic: the same sign and period always returns the same text.
 	Finance string `json:"finance"`
 
-	// Health Yearly health, energy, and wellness outlook.
+	// Health Yearly health, energy, and wellness outlook, read into the whole-sign houses of this sign. The same ranked events that drive column, filtered to health, plus the standing placements that reach it. Every event named here is in the events array, so a piece can be fact-checked before it runs; this section reads an event through whichever of its houses carries health, which for an aspect between two houses can be the other one from the house the events array leads with, and both are whole-sign houses of the bodies involved counted from this sign. Typically 150 to 260 words. Render it alone for a single-topic page, or alongside the other five sections for a general reading; column is the same material woven into one piece instead of split by topic. Deterministic: the same sign and period always returns the same text.
 	Health string `json:"health"`
 
 	// KeyPeriods The year as a calendar of life areas: for each whole-sign house, the single dated stretch that most strongly activates it, ordered by start date. Twelve rows in a full year, one per house, so every life area gets a date range and none is named twice. Periods overlap freely, because more than one body is always moving. Use it for the dates-to-circle panel of a year-ahead page.
@@ -85085,7 +85085,7 @@ func (r GetYearlyHoroscopeResponse) GetJSON200() *struct {
 		To string `json:"to"`
 	} `json:"keyPeriods"`
 
-	// Love Yearly love and relationship outlook.
+	// Love Yearly love and relationship outlook, read into the whole-sign houses of this sign. The same ranked events that drive column, filtered to romance and partnership, plus the standing placements that reach it. Every event named here is in the events array, so a piece can be fact-checked before it runs; this section reads an event through whichever of its houses carries romance and partnership, which for an aspect between two houses can be the other one from the house the events array leads with, and both are whole-sign houses of the bodies involved counted from this sign. Typically 150 to 260 words. Render it alone for a single-topic page, or alongside the other five sections for a general reading; column is the same material woven into one piece instead of split by topic. Deterministic: the same sign and period always returns the same text.
 	Love string `json:"love"`
 
 	// LuckyColor Lucky color for the year, drawn from the three colors of the sign element and selected by the planet governing the reading.
@@ -85094,7 +85094,7 @@ func (r GetYearlyHoroscopeResponse) GetJSON200() *struct {
 	// LuckyNumbers Four lucky numbers for the year, each 1 to 9 and all distinct, from the traditional planetary number correspondence applied to the four planets that govern this sign this year.
 	LuckyNumbers []float32 `json:"luckyNumbers"`
 
-	// Overview Yearly overview, led by the single event with the most weight for this sign across the whole year.
+	// Overview The single most relevant event of the period, whichever life area it touches, read into the whole-sign houses of this sign. The same event that leads column, at lede length rather than developed into a full movement, and checkable against the events array. Typically 70 to 120 words. Join it with love, career, health and finance for a general reading built from the six sections. Deterministic: the same sign and period always returns the same text.
 	Overview string `json:"overview"`
 
 	// Retrogrades Every retrograde and direct station of the year, in order, with the house each falls in for this sign. Drives review windows and the not-yet warnings a yearly column is bought for.
@@ -138615,7 +138615,7 @@ func (c *ClientWithResponses) GetDailyHoroscopeWithResponse(ctx context.Context,
 
 // GetMonthlyHoroscopeWithResponse Monthly horoscope by zodiac sign - Editorial column with key dates
 //
-// A month-long column for any zodiac sign, plus a week-by-week breakdown and dated key dates a calendar page renders directly. The column names every aspect, ingress, lunation and station of the month and reads each into the whole-sign houses of that sign, and those events come back beside the prose with their exact instants, so a piece can be checked against NASA JPL Horizons or the US Naval Observatory before it runs. Key dates are the real New Moon, Full Moon and retrograde instants, never approximations. Alongside the column come overview, love, career, health, finance and advice. Pass any date inside a month to retrieve that month, or timezone to roll over on a local clock. Available in eight languages. Monthly horoscope API, zodiac monthly forecast, astrology monthly prediction.
+// A month-long column for any zodiac sign, plus a week-by-week breakdown and dated key dates a calendar page renders directly. The column names the major aspects, slow-planet sign changes, lunations and stations of the month, and reads each into the whole-sign houses of that sign, and those events come back beside the prose with their exact instants, so a piece can be checked against NASA JPL Horizons or the US Naval Observatory before it runs. Key dates are the real New Moon, Full Moon and retrograde instants, never approximations. Alongside the column come overview, love, career, health, finance and advice. Pass any date inside a month to retrieve that month, or timezone to roll over on a local clock. Available in eight languages. Monthly horoscope API, zodiac monthly forecast, astrology monthly prediction.
 //
 // Returns a wrapper object for the known response body format(s).
 //
@@ -145217,7 +145217,7 @@ func ParseGetMonthlyTropicalAspectsResponse(rsp *http.Response) (*GetMonthlyTrop
 				// Datetime Combined timestamp of closest approach, in the requested timezone.
 				Datetime string `json:"datetime"`
 
-				// Nature Whether the aspect is harmonious, challenging or neutral. Canonical English, so a calendar can colour or filter on it directly. natureLocalized carries the reader-facing form.
+				// Nature Whether the aspect is harmonious, challenging or neutral. Canonical English, so a calendar can color or filter on it directly. natureLocalized carries the reader-facing form.
 				Nature string `json:"nature"`
 
 				// NatureLocalized Nature in the requested language. Present only when lang is supplied.
@@ -146216,16 +146216,16 @@ func ParseGetDailyHoroscopeResponse(rsp *http.Response) (*GetDailyHoroscopeRespo
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
-			// ActiveTransits Active planetary transits affecting this sign today, with house activations. Each transit shows the planet, its current sign, and which house it activates for the queried sign.
+			// ActiveTransits Active planetary transits affecting this sign today, with house activations. Each transit shows the planet, its current sign, and which house it activates for the queried sign. The sign and the house phrase translate with the lang parameter; the planet name stays canonical English so a caller can match on it whatever the language.
 			ActiveTransits []string `json:"activeTransits"`
 
-			// Advice Actionable daily advice based on the dominant transit energy.
+			// Advice The single actionable takeaway from the leading event of the period, read into the whole-sign houses of this sign and checkable against the events array. Drawn from the same event as overview, kept to a short, actionable pair of sentences rather than grown to match the other sections. Deterministic: the same sign and period always returns the same text.
 			Advice string `json:"advice"`
 
-			// Career Career and professional outlook. Based on Mars house position relative to this sign, with Saturn and Jupiter influences.
+			// Career Career and professional outlook, read into the whole-sign houses of this sign. The same ranked events that drive column, filtered to career, work and reputation, plus the standing placements that reach it. Every event named here is in the events array, so a piece can be fact-checked before it runs; this section reads an event through whichever of its houses carries career, work and reputation, which for an aspect between two houses can be the other one from the house the events array leads with, and both are whole-sign houses of the bodies involved counted from this sign. Typically 50 to 90 words. Render it alone for a single-topic page, or alongside the other five sections for a general reading; column is the same material woven into one piece instead of split by topic. Deterministic: the same sign and period always returns the same text.
 			Career string `json:"career"`
 
-			// Column The full column for this period, ready to run as one piece, with paragraphs separated by a blank line. Names the events driving it and the dates they fall on, read into the whole-sign houses of this sign. Typically 120 to 180 words. The six section fields are the same reading split by topic, so render either shape and never both. Deterministic: the same sign and period always returns the same column.
+			// Column The full column for this period, ready to run as one piece, with paragraphs separated by a blank line. Names the events driving it and the dates they fall on, read into the whole-sign houses of this sign. Typically 120 to 180 words. The six section fields read the same ranked events filtered to their own life area, each composed as a column of its own rather than an excerpt of this one, so render either shape and never both. Deterministic: the same sign and period always returns the same column.
 			Column string `json:"column"`
 
 			// CompatibleSigns Most compatible zodiac signs for this sign. Trine partners (same element) followed by a sextile partner (complementary element). Use for compatibility widgets, dating app onboarding, and horoscope cards.
@@ -146261,13 +146261,13 @@ func ParseGetDailyHoroscopeResponse(rsp *http.Response) (*GetDailyHoroscopeRespo
 				Type GetDailyHoroscope200JSONResponseBodyEventsType `json:"type"`
 			} `json:"events"`
 
-			// Finance Financial outlook and money-related guidance.
+			// Finance Financial outlook and money-related guidance, read into the whole-sign houses of this sign. The same ranked events that drive column, filtered to finance, plus the standing placements that reach it. Every event named here is in the events array, so a piece can be fact-checked before it runs; this section reads an event through whichever of its houses carries finance, which for an aspect between two houses can be the other one from the house the events array leads with, and both are whole-sign houses of the bodies involved counted from this sign. Typically 50 to 90 words. Render it alone for a single-topic page, or alongside the other five sections for a general reading; column is the same material woven into one piece instead of split by topic. Deterministic: the same sign and period always returns the same text.
 			Finance string `json:"finance"`
 
-			// Health Health, energy, and wellness guidance for the day.
+			// Health Health, energy, and wellness guidance, read into the whole-sign houses of this sign. The same ranked events that drive column, filtered to health, plus the standing placements that reach it. Every event named here is in the events array, so a piece can be fact-checked before it runs; this section reads an event through whichever of its houses carries health, which for an aspect between two houses can be the other one from the house the events array leads with, and both are whole-sign houses of the bodies involved counted from this sign. Typically 50 to 90 words. Render it alone for a single-topic page, or alongside the other five sections for a general reading; column is the same material woven into one piece instead of split by topic. Deterministic: the same sign and period always returns the same text.
 			Health string `json:"health"`
 
-			// Love Love and relationship forecast. Based on Venus house position relative to this sign, providing unique guidance per sign.
+			// Love Love and relationship forecast, read into the whole-sign houses of this sign. The same ranked events that drive column, filtered to romance and partnership, plus the standing placements that reach it. Every event named here is in the events array, so a piece can be fact-checked before it runs; this section reads an event through whichever of its houses carries romance and partnership, which for an aspect between two houses can be the other one from the house the events array leads with, and both are whole-sign houses of the bodies involved counted from this sign. Typically 50 to 90 words. Render it alone for a single-topic page, or alongside the other five sections for a general reading; column is the same material woven into one piece instead of split by topic. Deterministic: the same sign and period always returns the same text.
 			Love string `json:"love"`
 
 			// LuckyColor Lucky color for the day, drawn from the three colors of the sign element and selected by the planet governing the reading.
@@ -146282,7 +146282,7 @@ func ParseGetDailyHoroscopeResponse(rsp *http.Response) (*GetDailyHoroscopeRespo
 			// MoonSign Current Moon sign. Changes every 2-3 days, sets the emotional tone for all signs.
 			MoonSign string `json:"moonSign"`
 
-			// Overview General daily overview based on Moon house activation and planetary transits. Unique per sign based on whole-sign house positions.
+			// Overview The single most relevant event of the period, whichever life area it touches, read into the whole-sign houses of this sign. The same event that leads column, at lede length rather than developed into a full movement, and checkable against the events array. Typically 30 to 60 words. Join it with love, career, health and finance for a general reading built from the six sections. Deterministic: the same sign and period always returns the same text.
 			Overview string `json:"overview"`
 
 			// Sign Zodiac sign for this horoscope.
@@ -146362,13 +146362,13 @@ func ParseGetMonthlyHoroscopeResponse(rsp *http.Response) (*GetMonthlyHoroscopeR
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
-			// Advice Actionable guidance for the month as a whole, derived from the Mercury house activation for this sign. Distinct from the per-week advice inside weekByWeek: this is the single takeaway for the month.
+			// Advice The single actionable takeaway from the leading event of the period, read into the whole-sign houses of this sign and checkable against the events array. Drawn from the same event as overview, kept to a short, actionable pair of sentences rather than grown to match the other sections. Deterministic: the same sign and period always returns the same text.
 			Advice string `json:"advice"`
 
-			// Career Monthly career and professional outlook.
+			// Career Monthly career and professional outlook, read into the whole-sign houses of this sign. The same ranked events that drive column, filtered to career, work and reputation, plus the standing placements that reach it. Every event named here is in the events array, so a piece can be fact-checked before it runs; this section reads an event through whichever of its houses carries career, work and reputation, which for an aspect between two houses can be the other one from the house the events array leads with, and both are whole-sign houses of the bodies involved counted from this sign. Typically 120 to 200 words. Render it alone for a single-topic page, or alongside the other five sections for a general reading; column is the same material woven into one piece instead of split by topic. Deterministic: the same sign and period always returns the same text.
 			Career string `json:"career"`
 
-			// Column The full column for this period, ready to run as one piece, with paragraphs separated by a blank line. Names the events driving it and the dates they fall on, read into the whole-sign houses of this sign. Typically 400 to 700 words. The six section fields are the same reading split by topic, so render either shape and never both. Deterministic: the same sign and period always returns the same column.
+			// Column The full column for this period, ready to run as one piece, with paragraphs separated by a blank line. Names the events driving it and the dates they fall on, read into the whole-sign houses of this sign. Typically 400 to 700 words. The six section fields read the same ranked events filtered to their own life area, each composed as a column of its own rather than an excerpt of this one, so render either shape and never both. Deterministic: the same sign and period always returns the same column.
 			Column string `json:"column"`
 
 			// CompatibleSigns Most compatible zodiac signs for this sign. Trine partners (same element) followed by a sextile partner (complementary element).
@@ -146398,22 +146398,22 @@ func ParseGetMonthlyHoroscopeResponse(rsp *http.Response) (*GetMonthlyHoroscopeR
 				Type GetMonthlyHoroscope200JSONResponseBodyEventsType `json:"type"`
 			} `json:"events"`
 
-			// Finance Monthly financial outlook and guidance.
+			// Finance Monthly financial outlook and guidance, read into the whole-sign houses of this sign. The same ranked events that drive column, filtered to finance, plus the standing placements that reach it. Every event named here is in the events array, so a piece can be fact-checked before it runs; this section reads an event through whichever of its houses carries finance, which for an aspect between two houses can be the other one from the house the events array leads with, and both are whole-sign houses of the bodies involved counted from this sign. Typically 120 to 200 words. Render it alone for a single-topic page, or alongside the other five sections for a general reading; column is the same material woven into one piece instead of split by topic. Deterministic: the same sign and period always returns the same text.
 			Finance string `json:"finance"`
 
-			// Health Monthly health and wellness guidance.
+			// Health Monthly health and wellness guidance, read into the whole-sign houses of this sign. The same ranked events that drive column, filtered to health, plus the standing placements that reach it. Every event named here is in the events array, so a piece can be fact-checked before it runs; this section reads an event through whichever of its houses carries health, which for an aspect between two houses can be the other one from the house the events array leads with, and both are whole-sign houses of the bodies involved counted from this sign. Typically 120 to 200 words. Render it alone for a single-topic page, or alongside the other five sections for a general reading; column is the same material woven into one piece instead of split by topic. Deterministic: the same sign and period always returns the same text.
 			Health string `json:"health"`
 
-			// KeyDates Key astrological dates this month with actual New Moon, Full Moon, and retrograde dates calculated from ephemeris data.
+			// KeyDates The dates to circle this month, earliest first: every lunation and eclipse of the month, plus the headline movements the reading is built on, which are the sign changes of the slower planets and every station with the direction it turns. Each is placed in the whole-sign house it reaches for this sign. Every row is an instant the ephemeris gives, checkable against NASA JPL Horizons or the US Naval Observatory, and every row that is not a lunation or an eclipse is also a row of events[], so the list cannot contradict the reading beside it.
 			KeyDates []struct {
-				// Date Date of the astrological event (YYYY-MM-DD).
+				// Date UTC date of the event (YYYY-MM-DD). The exact instant, to the second, is on the matching row of events[].
 				Date string `json:"date"`
 
-				// Event Astrological event active on this date (lunar phases, retrogrades, sign ingresses).
+				// Event The event as one sentence in the requested language, placed in the whole-sign house it reaches for this sign.
 				Event string `json:"event"`
 			} `json:"keyDates"`
 
-			// Love Monthly love and relationship forecast.
+			// Love Monthly love and relationship forecast, read into the whole-sign houses of this sign. The same ranked events that drive column, filtered to romance and partnership, plus the standing placements that reach it. Every event named here is in the events array, so a piece can be fact-checked before it runs; this section reads an event through whichever of its houses carries romance and partnership, which for an aspect between two houses can be the other one from the house the events array leads with, and both are whole-sign houses of the bodies involved counted from this sign. Typically 120 to 200 words. Render it alone for a single-topic page, or alongside the other five sections for a general reading; column is the same material woven into one piece instead of split by topic. Deterministic: the same sign and period always returns the same text.
 			Love string `json:"love"`
 
 			// LuckyColor Lucky color for the month, drawn from the three colors of the sign element and selected by the planet governing the reading.
@@ -146425,21 +146425,21 @@ func ParseGetMonthlyHoroscopeResponse(rsp *http.Response) (*GetMonthlyHoroscopeR
 			// Month Month of this forecast (YYYY-MM).
 			Month string `json:"month"`
 
-			// Overview Monthly overview covering the major planetary transits and their impact on the sign.
+			// Overview The single most relevant event of the period, whichever life area it touches, read into the whole-sign houses of this sign. The same event that leads column, at lede length rather than developed into a full movement, and checkable against the events array. Typically 55 to 100 words. Join it with love, career, health and finance for a general reading built from the six sections. Deterministic: the same sign and period always returns the same text.
 			Overview string `json:"overview"`
 
 			// Sign Zodiac sign for this horoscope.
 			Sign string `json:"sign"`
 
-			// WeekByWeek Week-by-week breakdown with sign-specific focus areas based on transit house positions.
+			// WeekByWeek The month read one calendar week at a time, off the same ranked events as column and events[]: the life area each week turns on, and the one thing that area asks for. Two weeks may land in the same area, because two events of a month often do; the sentence beside it is always different. Use it for the week strip of a monthly page.
 			WeekByWeek []struct {
-				// Advice Specific guidance for this week.
+				// Advice What that house asks for, as one sentence in the requested language. No two weeks of one month repeat a sentence.
 				Advice string `json:"advice"`
 
-				// Focus Primary focus area for this week, derived from planetary house activations for this sign.
+				// Focus The life area the week turns on, in the requested language: the theme of the whole-sign house holding the strongest event the reading names inside that week, or of the strongest standing placement where the week holds no dated event. Same values as the life areas of the yearly key periods.
 				Focus string `json:"focus"`
 
-				// Week Week number within the month (1-4).
+				// Week Position of the week inside the month, 1 first. The rows are calendar weeks, Monday to Sunday, clipped to the month at each end, so a month carries four, five or six of them. Row N is therefore the same week the weekly forecast covers, which is what lets a monthly page link straight into it.
 				Week float32 `json:"week"`
 			} `json:"weekByWeek"`
 		}
@@ -146517,13 +146517,13 @@ func ParseGetWeeklyHoroscopeResponse(rsp *http.Response) (*GetWeeklyHoroscopeRes
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
-			// Advice Actionable weekly guidance based on transit patterns.
+			// Advice The single actionable takeaway from the leading event of the period, read into the whole-sign houses of this sign and checkable against the events array. Drawn from the same event as overview, kept to a short, actionable pair of sentences rather than grown to match the other sections. Deterministic: the same sign and period always returns the same text.
 			Advice string `json:"advice"`
 
-			// Career Weekly career and professional outlook.
+			// Career Weekly career and professional outlook, read into the whole-sign houses of this sign. The same ranked events that drive column, filtered to career, work and reputation, plus the standing placements that reach it. Every event named here is in the events array, so a piece can be fact-checked before it runs; this section reads an event through whichever of its houses carries career, work and reputation, which for an aspect between two houses can be the other one from the house the events array leads with, and both are whole-sign houses of the bodies involved counted from this sign. Typically 80 to 120 words. Render it alone for a single-topic page, or alongside the other five sections for a general reading; column is the same material woven into one piece instead of split by topic. Deterministic: the same sign and period always returns the same text.
 			Career string `json:"career"`
 
-			// Column The full column for this period, ready to run as one piece, with paragraphs separated by a blank line. Names the events driving it and the dates they fall on, read into the whole-sign houses of this sign. Typically 250 to 450 words. The six section fields are the same reading split by topic, so render either shape and never both. Deterministic: the same sign and period always returns the same column.
+			// Column The full column for this period, ready to run as one piece, with paragraphs separated by a blank line. Names the events driving it and the dates they fall on, read into the whole-sign houses of this sign. Typically 250 to 450 words. The six section fields read the same ranked events filtered to their own life area, each composed as a column of its own rather than an excerpt of this one, so render either shape and never both. Deterministic: the same sign and period always returns the same column.
 			Column string `json:"column"`
 
 			// CompatibleSigns Most compatible zodiac signs for this sign. Trine partners (same element) followed by a sextile partner (complementary element).
@@ -146553,13 +146553,13 @@ func ParseGetWeeklyHoroscopeResponse(rsp *http.Response) (*GetWeeklyHoroscopeRes
 				Type GetWeeklyHoroscope200JSONResponseBodyEventsType `json:"type"`
 			} `json:"events"`
 
-			// Finance Weekly financial outlook.
+			// Finance Weekly financial outlook, read into the whole-sign houses of this sign. The same ranked events that drive column, filtered to finance, plus the standing placements that reach it. Every event named here is in the events array, so a piece can be fact-checked before it runs; this section reads an event through whichever of its houses carries finance, which for an aspect between two houses can be the other one from the house the events array leads with, and both are whole-sign houses of the bodies involved counted from this sign. Typically 80 to 120 words. Render it alone for a single-topic page, or alongside the other five sections for a general reading; column is the same material woven into one piece instead of split by topic. Deterministic: the same sign and period always returns the same text.
 			Finance string `json:"finance"`
 
-			// Health Weekly health, energy, and wellness guidance.
+			// Health Weekly health, energy, and wellness guidance, read into the whole-sign houses of this sign. The same ranked events that drive column, filtered to health, plus the standing placements that reach it. Every event named here is in the events array, so a piece can be fact-checked before it runs; this section reads an event through whichever of its houses carries health, which for an aspect between two houses can be the other one from the house the events array leads with, and both are whole-sign houses of the bodies involved counted from this sign. Typically 80 to 120 words. Render it alone for a single-topic page, or alongside the other five sections for a general reading; column is the same material woven into one piece instead of split by topic. Deterministic: the same sign and period always returns the same text.
 			Health string `json:"health"`
 
-			// Love Weekly love and relationship forecast.
+			// Love Weekly love and relationship forecast, read into the whole-sign houses of this sign. The same ranked events that drive column, filtered to romance and partnership, plus the standing placements that reach it. Every event named here is in the events array, so a piece can be fact-checked before it runs; this section reads an event through whichever of its houses carries romance and partnership, which for an aspect between two houses can be the other one from the house the events array leads with, and both are whole-sign houses of the bodies involved counted from this sign. Typically 80 to 120 words. Render it alone for a single-topic page, or alongside the other five sections for a general reading; column is the same material woven into one piece instead of split by topic. Deterministic: the same sign and period always returns the same text.
 			Love string `json:"love"`
 
 			// LuckyDays The three most favorable days this week, from the planetary rulers of the seven weekdays, ranked by how strongly each of those planets stands for this sign.
@@ -146568,7 +146568,7 @@ func ParseGetWeeklyHoroscopeResponse(rsp *http.Response) (*GetWeeklyHoroscopeRes
 			// LuckyNumbers Three lucky numbers for the week, each 1 to 9 and all distinct, from the traditional planetary number correspondence applied to the three planets that govern this sign this week.
 			LuckyNumbers []float32 `json:"luckyNumbers"`
 
-			// Overview Weekly overview highlighting the dominant planetary transits through the sign.
+			// Overview The single most relevant event of the period, whichever life area it touches, read into the whole-sign houses of this sign. The same event that leads column, at lede length rather than developed into a full movement, and checkable against the events array. Typically 40 to 80 words. Join it with love, career, health and finance for a general reading built from the six sections. Deterministic: the same sign and period always returns the same text.
 			Overview string `json:"overview"`
 
 			// Sign Zodiac sign for this horoscope.
@@ -146651,7 +146651,7 @@ func ParseGetYearlyHoroscopeResponse(rsp *http.Response) (*GetYearlyHoroscopeRes
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
-			// Advice The single takeaway for the year, drawn from the event that leads it rather than stated in general terms.
+			// Advice The single actionable takeaway from the leading event of the period, read into the whole-sign houses of this sign and checkable against the events array. Drawn from the same event as overview, kept to a short, actionable pair of sentences rather than grown to match the other sections. Deterministic: the same sign and period always returns the same text.
 			Advice string `json:"advice"`
 
 			// BestPeriods The easiest month of the year for each of the four topic sections, by how many exact harmonious aspects (sextiles and trines) fall in that month and land in the houses that govern the area for this sign. An area is omitted only in the rare year that carries no harmonious aspect for it at all, so treat each key as optional. Use it for the best-months-for panel, and read the count as the evidence behind the word best.
@@ -146705,10 +146705,10 @@ func ParseGetYearlyHoroscopeResponse(rsp *http.Response) (*GetYearlyHoroscopeRes
 				} `json:"love,omitempty"`
 			} `json:"bestPeriods"`
 
-			// Career Yearly career and professional outlook.
+			// Career Yearly career and professional outlook, read into the whole-sign houses of this sign. The same ranked events that drive column, filtered to career, work and reputation, plus the standing placements that reach it. Every event named here is in the events array, so a piece can be fact-checked before it runs; this section reads an event through whichever of its houses carries career, work and reputation, which for an aspect between two houses can be the other one from the house the events array leads with, and both are whole-sign houses of the bodies involved counted from this sign. Typically 150 to 260 words. Render it alone for a single-topic page, or alongside the other five sections for a general reading; column is the same material woven into one piece instead of split by topic. Deterministic: the same sign and period always returns the same text.
 			Career string `json:"career"`
 
-			// Column The full column for this period, ready to run as one piece, with paragraphs separated by a blank line. Names the events driving it and the dates they fall on, read into the whole-sign houses of this sign. Typically 600 to 900 words. The six section fields are the same reading split by topic, so render either shape and never both. Deterministic: the same sign and period always returns the same column.
+			// Column The full column for this period, ready to run as one piece, with paragraphs separated by a blank line. Names the events driving it and the dates they fall on, read into the whole-sign houses of this sign. Typically 600 to 900 words. The six section fields read the same ranked events filtered to their own life area, each composed as a column of its own rather than an excerpt of this one, so render either shape and never both. Deterministic: the same sign and period always returns the same column.
 			Column string `json:"column"`
 
 			// CompatibleSigns Most compatible zodiac signs for this sign. Trine partners (same element) followed by a sextile partner (complementary element).
@@ -146753,10 +146753,10 @@ func ParseGetYearlyHoroscopeResponse(rsp *http.Response) (*GetYearlyHoroscopeRes
 				Type GetYearlyHoroscope200JSONResponseBodyEventsType `json:"type"`
 			} `json:"events"`
 
-			// Finance Yearly financial outlook.
+			// Finance Yearly financial outlook, read into the whole-sign houses of this sign. The same ranked events that drive column, filtered to finance, plus the standing placements that reach it. Every event named here is in the events array, so a piece can be fact-checked before it runs; this section reads an event through whichever of its houses carries finance, which for an aspect between two houses can be the other one from the house the events array leads with, and both are whole-sign houses of the bodies involved counted from this sign. Typically 150 to 260 words. Render it alone for a single-topic page, or alongside the other five sections for a general reading; column is the same material woven into one piece instead of split by topic. Deterministic: the same sign and period always returns the same text.
 			Finance string `json:"finance"`
 
-			// Health Yearly health, energy, and wellness outlook.
+			// Health Yearly health, energy, and wellness outlook, read into the whole-sign houses of this sign. The same ranked events that drive column, filtered to health, plus the standing placements that reach it. Every event named here is in the events array, so a piece can be fact-checked before it runs; this section reads an event through whichever of its houses carries health, which for an aspect between two houses can be the other one from the house the events array leads with, and both are whole-sign houses of the bodies involved counted from this sign. Typically 150 to 260 words. Render it alone for a single-topic page, or alongside the other five sections for a general reading; column is the same material woven into one piece instead of split by topic. Deterministic: the same sign and period always returns the same text.
 			Health string `json:"health"`
 
 			// KeyPeriods The year as a calendar of life areas: for each whole-sign house, the single dated stretch that most strongly activates it, ordered by start date. Twelve rows in a full year, one per house, so every life area gets a date range and none is named twice. Periods overlap freely, because more than one body is always moving. Use it for the dates-to-circle panel of a year-ahead page.
@@ -146777,7 +146777,7 @@ func ParseGetYearlyHoroscopeResponse(rsp *http.Response) (*GetYearlyHoroscopeRes
 				To string `json:"to"`
 			} `json:"keyPeriods"`
 
-			// Love Yearly love and relationship outlook.
+			// Love Yearly love and relationship outlook, read into the whole-sign houses of this sign. The same ranked events that drive column, filtered to romance and partnership, plus the standing placements that reach it. Every event named here is in the events array, so a piece can be fact-checked before it runs; this section reads an event through whichever of its houses carries romance and partnership, which for an aspect between two houses can be the other one from the house the events array leads with, and both are whole-sign houses of the bodies involved counted from this sign. Typically 150 to 260 words. Render it alone for a single-topic page, or alongside the other five sections for a general reading; column is the same material woven into one piece instead of split by topic. Deterministic: the same sign and period always returns the same text.
 			Love string `json:"love"`
 
 			// LuckyColor Lucky color for the year, drawn from the three colors of the sign element and selected by the planet governing the reading.
@@ -146786,7 +146786,7 @@ func ParseGetYearlyHoroscopeResponse(rsp *http.Response) (*GetYearlyHoroscopeRes
 			// LuckyNumbers Four lucky numbers for the year, each 1 to 9 and all distinct, from the traditional planetary number correspondence applied to the four planets that govern this sign this year.
 			LuckyNumbers []float32 `json:"luckyNumbers"`
 
-			// Overview Yearly overview, led by the single event with the most weight for this sign across the whole year.
+			// Overview The single most relevant event of the period, whichever life area it touches, read into the whole-sign houses of this sign. The same event that leads column, at lede length rather than developed into a full movement, and checkable against the events array. Typically 70 to 120 words. Join it with love, career, health and finance for a general reading built from the six sections. Deterministic: the same sign and period always returns the same text.
 			Overview string `json:"overview"`
 
 			// Retrogrades Every retrograde and direct station of the year, in order, with the house each falls in for this sign. Drives review windows and the not-yet warnings a yearly column is bought for.
