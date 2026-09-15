@@ -2985,6 +2985,345 @@ func (e KPCuspsResponseFocus) Valid() bool {
 	}
 }
 
+// Defines values for KPDailyFinanceRequestAyanamsa.
+const (
+	KPDailyFinanceRequestAyanamsaKpNewcomb KPDailyFinanceRequestAyanamsa = "kp-newcomb"
+	KPDailyFinanceRequestAyanamsaKpOld     KPDailyFinanceRequestAyanamsa = "kp-old"
+	KPDailyFinanceRequestAyanamsaLahiri    KPDailyFinanceRequestAyanamsa = "lahiri"
+	KPDailyFinanceRequestAyanamsaRaman     KPDailyFinanceRequestAyanamsa = "raman"
+)
+
+// Valid indicates whether the value is a known member of the KPDailyFinanceRequestAyanamsa enum.
+func (e KPDailyFinanceRequestAyanamsa) Valid() bool {
+	switch e {
+	case KPDailyFinanceRequestAyanamsaKpNewcomb:
+		return true
+	case KPDailyFinanceRequestAyanamsaKpOld:
+		return true
+	case KPDailyFinanceRequestAyanamsaLahiri:
+		return true
+	case KPDailyFinanceRequestAyanamsaRaman:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for KPDailyFinanceRequestNodeType.
+const (
+	KPDailyFinanceRequestNodeTypeMean KPDailyFinanceRequestNodeType = "mean"
+	KPDailyFinanceRequestNodeTypeTrue KPDailyFinanceRequestNodeType = "true"
+)
+
+// Valid indicates whether the value is a known member of the KPDailyFinanceRequestNodeType enum.
+func (e KPDailyFinanceRequestNodeType) Valid() bool {
+	switch e {
+	case KPDailyFinanceRequestNodeTypeMean:
+		return true
+	case KPDailyFinanceRequestNodeTypeTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for KPDailyFinanceResponseAyanamsa.
+const (
+	KPDailyFinanceResponseAyanamsaKpNewcomb KPDailyFinanceResponseAyanamsa = "kp-newcomb"
+	KPDailyFinanceResponseAyanamsaKpOld     KPDailyFinanceResponseAyanamsa = "kp-old"
+	KPDailyFinanceResponseAyanamsaLahiri    KPDailyFinanceResponseAyanamsa = "lahiri"
+	KPDailyFinanceResponseAyanamsaRaman     KPDailyFinanceResponseAyanamsa = "raman"
+)
+
+// Valid indicates whether the value is a known member of the KPDailyFinanceResponseAyanamsa enum.
+func (e KPDailyFinanceResponseAyanamsa) Valid() bool {
+	switch e {
+	case KPDailyFinanceResponseAyanamsaKpNewcomb:
+		return true
+	case KPDailyFinanceResponseAyanamsaKpOld:
+		return true
+	case KPDailyFinanceResponseAyanamsaLahiri:
+		return true
+	case KPDailyFinanceResponseAyanamsaRaman:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for KPDailyFinanceResponseBand.
+const (
+	KPDailyFinanceResponseBandCaution      KPDailyFinanceResponseBand = "caution"
+	KPDailyFinanceResponseBandFavourable   KPDailyFinanceResponseBand = "favourable"
+	KPDailyFinanceResponseBandMixed        KPDailyFinanceResponseBand = "mixed"
+	KPDailyFinanceResponseBandStrong       KPDailyFinanceResponseBand = "strong"
+	KPDailyFinanceResponseBandUnfavourable KPDailyFinanceResponseBand = "unfavourable"
+)
+
+// Valid indicates whether the value is a known member of the KPDailyFinanceResponseBand enum.
+func (e KPDailyFinanceResponseBand) Valid() bool {
+	switch e {
+	case KPDailyFinanceResponseBandCaution:
+		return true
+	case KPDailyFinanceResponseBandFavourable:
+		return true
+	case KPDailyFinanceResponseBandMixed:
+		return true
+	case KPDailyFinanceResponseBandStrong:
+		return true
+	case KPDailyFinanceResponseBandUnfavourable:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for KPDailyFinanceResponseBestWindowVerdict.
+const (
+	KPDailyFinanceResponseBestWindowVerdictFavourable   KPDailyFinanceResponseBestWindowVerdict = "favourable"
+	KPDailyFinanceResponseBestWindowVerdictMixed        KPDailyFinanceResponseBestWindowVerdict = "mixed"
+	KPDailyFinanceResponseBestWindowVerdictNeutral      KPDailyFinanceResponseBestWindowVerdict = "neutral"
+	KPDailyFinanceResponseBestWindowVerdictUnfavourable KPDailyFinanceResponseBestWindowVerdict = "unfavourable"
+)
+
+// Valid indicates whether the value is a known member of the KPDailyFinanceResponseBestWindowVerdict enum.
+func (e KPDailyFinanceResponseBestWindowVerdict) Valid() bool {
+	switch e {
+	case KPDailyFinanceResponseBestWindowVerdictFavourable:
+		return true
+	case KPDailyFinanceResponseBestWindowVerdictMixed:
+		return true
+	case KPDailyFinanceResponseBestWindowVerdictNeutral:
+		return true
+	case KPDailyFinanceResponseBestWindowVerdictUnfavourable:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for KPDailyFinanceResponseLayersCuspsLayer.
+const (
+	Cusps KPDailyFinanceResponseLayersCuspsLayer = "cusps"
+)
+
+// Valid indicates whether the value is a known member of the KPDailyFinanceResponseLayersCuspsLayer enum.
+func (e KPDailyFinanceResponseLayersCuspsLayer) Valid() bool {
+	switch e {
+	case Cusps:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for KPDailyFinanceResponseLayersCuspsRowsVerdict.
+const (
+	KPDailyFinanceResponseLayersCuspsRowsVerdictFavourable   KPDailyFinanceResponseLayersCuspsRowsVerdict = "favourable"
+	KPDailyFinanceResponseLayersCuspsRowsVerdictMixed        KPDailyFinanceResponseLayersCuspsRowsVerdict = "mixed"
+	KPDailyFinanceResponseLayersCuspsRowsVerdictNeutral      KPDailyFinanceResponseLayersCuspsRowsVerdict = "neutral"
+	KPDailyFinanceResponseLayersCuspsRowsVerdictUnfavourable KPDailyFinanceResponseLayersCuspsRowsVerdict = "unfavourable"
+)
+
+// Valid indicates whether the value is a known member of the KPDailyFinanceResponseLayersCuspsRowsVerdict enum.
+func (e KPDailyFinanceResponseLayersCuspsRowsVerdict) Valid() bool {
+	switch e {
+	case KPDailyFinanceResponseLayersCuspsRowsVerdictFavourable:
+		return true
+	case KPDailyFinanceResponseLayersCuspsRowsVerdictMixed:
+		return true
+	case KPDailyFinanceResponseLayersCuspsRowsVerdictNeutral:
+		return true
+	case KPDailyFinanceResponseLayersCuspsRowsVerdictUnfavourable:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for KPDailyFinanceResponseLayersDashaLayer.
+const (
+	KPDailyFinanceResponseLayersDashaLayerDasha KPDailyFinanceResponseLayersDashaLayer = "dasha"
+)
+
+// Valid indicates whether the value is a known member of the KPDailyFinanceResponseLayersDashaLayer enum.
+func (e KPDailyFinanceResponseLayersDashaLayer) Valid() bool {
+	switch e {
+	case KPDailyFinanceResponseLayersDashaLayerDasha:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for KPDailyFinanceResponseLayersDashaRowsLevel.
+const (
+	KPDailyFinanceResponseLayersDashaRowsLevelAntardasha      KPDailyFinanceResponseLayersDashaRowsLevel = "antardasha"
+	KPDailyFinanceResponseLayersDashaRowsLevelMahadasha       KPDailyFinanceResponseLayersDashaRowsLevel = "mahadasha"
+	KPDailyFinanceResponseLayersDashaRowsLevelPratyantardasha KPDailyFinanceResponseLayersDashaRowsLevel = "pratyantardasha"
+	KPDailyFinanceResponseLayersDashaRowsLevelSookshmaDasha   KPDailyFinanceResponseLayersDashaRowsLevel = "sookshmaDasha"
+)
+
+// Valid indicates whether the value is a known member of the KPDailyFinanceResponseLayersDashaRowsLevel enum.
+func (e KPDailyFinanceResponseLayersDashaRowsLevel) Valid() bool {
+	switch e {
+	case KPDailyFinanceResponseLayersDashaRowsLevelAntardasha:
+		return true
+	case KPDailyFinanceResponseLayersDashaRowsLevelMahadasha:
+		return true
+	case KPDailyFinanceResponseLayersDashaRowsLevelPratyantardasha:
+		return true
+	case KPDailyFinanceResponseLayersDashaRowsLevelSookshmaDasha:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for KPDailyFinanceResponseLayersDashaRowsVerdict.
+const (
+	KPDailyFinanceResponseLayersDashaRowsVerdictFavourable   KPDailyFinanceResponseLayersDashaRowsVerdict = "favourable"
+	KPDailyFinanceResponseLayersDashaRowsVerdictMixed        KPDailyFinanceResponseLayersDashaRowsVerdict = "mixed"
+	KPDailyFinanceResponseLayersDashaRowsVerdictNeutral      KPDailyFinanceResponseLayersDashaRowsVerdict = "neutral"
+	KPDailyFinanceResponseLayersDashaRowsVerdictUnfavourable KPDailyFinanceResponseLayersDashaRowsVerdict = "unfavourable"
+)
+
+// Valid indicates whether the value is a known member of the KPDailyFinanceResponseLayersDashaRowsVerdict enum.
+func (e KPDailyFinanceResponseLayersDashaRowsVerdict) Valid() bool {
+	switch e {
+	case KPDailyFinanceResponseLayersDashaRowsVerdictFavourable:
+		return true
+	case KPDailyFinanceResponseLayersDashaRowsVerdictMixed:
+		return true
+	case KPDailyFinanceResponseLayersDashaRowsVerdictNeutral:
+		return true
+	case KPDailyFinanceResponseLayersDashaRowsVerdictUnfavourable:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for KPDailyFinanceResponseLayersMoonWindowsLayer.
+const (
+	MoonWindows KPDailyFinanceResponseLayersMoonWindowsLayer = "moonWindows"
+)
+
+// Valid indicates whether the value is a known member of the KPDailyFinanceResponseLayersMoonWindowsLayer enum.
+func (e KPDailyFinanceResponseLayersMoonWindowsLayer) Valid() bool {
+	switch e {
+	case MoonWindows:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for KPDailyFinanceResponseLayersMoonWindowsRowsVerdict.
+const (
+	KPDailyFinanceResponseLayersMoonWindowsRowsVerdictFavourable   KPDailyFinanceResponseLayersMoonWindowsRowsVerdict = "favourable"
+	KPDailyFinanceResponseLayersMoonWindowsRowsVerdictMixed        KPDailyFinanceResponseLayersMoonWindowsRowsVerdict = "mixed"
+	KPDailyFinanceResponseLayersMoonWindowsRowsVerdictNeutral      KPDailyFinanceResponseLayersMoonWindowsRowsVerdict = "neutral"
+	KPDailyFinanceResponseLayersMoonWindowsRowsVerdictUnfavourable KPDailyFinanceResponseLayersMoonWindowsRowsVerdict = "unfavourable"
+)
+
+// Valid indicates whether the value is a known member of the KPDailyFinanceResponseLayersMoonWindowsRowsVerdict enum.
+func (e KPDailyFinanceResponseLayersMoonWindowsRowsVerdict) Valid() bool {
+	switch e {
+	case KPDailyFinanceResponseLayersMoonWindowsRowsVerdictFavourable:
+		return true
+	case KPDailyFinanceResponseLayersMoonWindowsRowsVerdictMixed:
+		return true
+	case KPDailyFinanceResponseLayersMoonWindowsRowsVerdictNeutral:
+		return true
+	case KPDailyFinanceResponseLayersMoonWindowsRowsVerdictUnfavourable:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for KPDailyFinanceResponseLayersRulingPlanetsLayer.
+const (
+	RulingPlanets KPDailyFinanceResponseLayersRulingPlanetsLayer = "rulingPlanets"
+)
+
+// Valid indicates whether the value is a known member of the KPDailyFinanceResponseLayersRulingPlanetsLayer enum.
+func (e KPDailyFinanceResponseLayersRulingPlanetsLayer) Valid() bool {
+	switch e {
+	case RulingPlanets:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for KPDailyFinanceResponseLayersRulingPlanetsRowsVerdict.
+const (
+	KPDailyFinanceResponseLayersRulingPlanetsRowsVerdictFavourable   KPDailyFinanceResponseLayersRulingPlanetsRowsVerdict = "favourable"
+	KPDailyFinanceResponseLayersRulingPlanetsRowsVerdictMixed        KPDailyFinanceResponseLayersRulingPlanetsRowsVerdict = "mixed"
+	KPDailyFinanceResponseLayersRulingPlanetsRowsVerdictNeutral      KPDailyFinanceResponseLayersRulingPlanetsRowsVerdict = "neutral"
+	KPDailyFinanceResponseLayersRulingPlanetsRowsVerdictUnfavourable KPDailyFinanceResponseLayersRulingPlanetsRowsVerdict = "unfavourable"
+)
+
+// Valid indicates whether the value is a known member of the KPDailyFinanceResponseLayersRulingPlanetsRowsVerdict enum.
+func (e KPDailyFinanceResponseLayersRulingPlanetsRowsVerdict) Valid() bool {
+	switch e {
+	case KPDailyFinanceResponseLayersRulingPlanetsRowsVerdictFavourable:
+		return true
+	case KPDailyFinanceResponseLayersRulingPlanetsRowsVerdictMixed:
+		return true
+	case KPDailyFinanceResponseLayersRulingPlanetsRowsVerdictNeutral:
+		return true
+	case KPDailyFinanceResponseLayersRulingPlanetsRowsVerdictUnfavourable:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for KPDailyFinanceResponseSignificatorsByHouseGroup.
+const (
+	Gain KPDailyFinanceResponseSignificatorsByHouseGroup = "gain"
+	Loss KPDailyFinanceResponseSignificatorsByHouseGroup = "loss"
+)
+
+// Valid indicates whether the value is a known member of the KPDailyFinanceResponseSignificatorsByHouseGroup enum.
+func (e KPDailyFinanceResponseSignificatorsByHouseGroup) Valid() bool {
+	switch e {
+	case Gain:
+		return true
+	case Loss:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for KPDailyFinanceResponseWorstWindowsVerdict.
+const (
+	KPDailyFinanceResponseWorstWindowsVerdictFavourable   KPDailyFinanceResponseWorstWindowsVerdict = "favourable"
+	KPDailyFinanceResponseWorstWindowsVerdictMixed        KPDailyFinanceResponseWorstWindowsVerdict = "mixed"
+	KPDailyFinanceResponseWorstWindowsVerdictNeutral      KPDailyFinanceResponseWorstWindowsVerdict = "neutral"
+	KPDailyFinanceResponseWorstWindowsVerdictUnfavourable KPDailyFinanceResponseWorstWindowsVerdict = "unfavourable"
+)
+
+// Valid indicates whether the value is a known member of the KPDailyFinanceResponseWorstWindowsVerdict enum.
+func (e KPDailyFinanceResponseWorstWindowsVerdict) Valid() bool {
+	switch e {
+	case KPDailyFinanceResponseWorstWindowsVerdictFavourable:
+		return true
+	case KPDailyFinanceResponseWorstWindowsVerdictMixed:
+		return true
+	case KPDailyFinanceResponseWorstWindowsVerdictNeutral:
+		return true
+	case KPDailyFinanceResponseWorstWindowsVerdictUnfavourable:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for KPHoraryRequestAyanamsa.
 const (
 	KPHoraryRequestAyanamsaCustom    KPHoraryRequestAyanamsa = "custom"
@@ -31532,6 +31871,9 @@ type KPChartResponse struct {
 			// Sign Zodiac sign Ketu occupies.
 			Sign string `json:"sign"`
 
+			// SignLord Rashi lord of the sign Ketu occupies. Ketu has no sign of its own and acts as agent of this lord.
+			SignLord string `json:"signLord"`
+
 			// StarLord KP star lord of Ketu.
 			StarLord string `json:"starLord"`
 
@@ -31558,6 +31900,9 @@ type KPChartResponse struct {
 
 			// Sign Zodiac sign Rahu occupies.
 			Sign string `json:"sign"`
+
+			// SignLord Rashi lord of the sign Rahu occupies. Rahu has no sign of its own and acts as agent of this lord.
+			SignLord string `json:"signLord"`
 
 			// StarLord KP star lord of Rahu.
 			StarLord string `json:"starLord"`
@@ -31598,6 +31943,9 @@ type KPChartResponse struct {
 
 		// Sign Zodiac sign the planet occupies.
 		Sign string `json:"sign"`
+
+		// SignLord Rashi lord (sign ruler). First level of the KP significator hierarchy. Its house ownership determines L4 significations.
+		SignLord string `json:"signLord"`
 
 		// StarLord KP star lord, determines primary house signification.
 		StarLord string `json:"starLord"`
@@ -31737,6 +32085,363 @@ type KPCuspsResponse struct {
 
 // KPCuspsResponseFocus Which signification vocabulary produced the houseThemes keywords in this response, echoing the focus query parameter. Always present, and "general" when the parameter was omitted. Read it to label a rendered house legend, or to tell two cached responses apart when only one asked for the finance lens.
 type KPCuspsResponseFocus string
+
+// KPDailyFinanceRequest defines model for KPDailyFinanceRequest.
+type KPDailyFinanceRequest struct {
+	// Ayanamsa Ayanamsa system for sidereal conversion. "kp-newcomb" uses the KP-Newcomb dynamic formula, the most common choice for KP astrology. "kp-old" uses the Krishnamurti original table from KP Reader-1 with constant precession rate. "lahiri" uses Lahiri/Chitrapaksha ayanamsa, matching most traditional Vedic software. "raman" uses the B.V. Raman ayanamsa from Hindu Predictive Astrology, a recognised traditional school that sits about 1.45 degrees below Lahiri. Defaults to "kp-newcomb".
+	Ayanamsa *KPDailyFinanceRequestAyanamsa `json:"ayanamsa,omitempty"`
+
+	// BirthDate Birth date, YYYY-MM-DD. Fixes the Placidus cusps, the four tier significators and the Vimshottari balance every layer reads.
+	BirthDate openapi_types.Date `json:"birthDate"`
+
+	// BirthTime Birth time, HH:MM:SS, 24 hour, local to the birth place. The cusp sub lords move about one sub every four minutes of clock time, so this is the input the whole reading is most sensitive to.
+	BirthTime string `json:"birthTime"`
+
+	// Date Civil date to read, YYYY-MM-DD in the request timezone. Defaults to today (UTC). The Moon windows cover this date from midnight to midnight.
+	Date *openapi_types.Date `json:"date,omitempty"`
+
+	// GainHouses Houses whose significators count as gain, 1 to 12. Defaults to the convention, 2 and 11. Override it to run your own school: the two lists may not share a house.
+	GainHouses *[]int `json:"gainHouses,omitempty"`
+
+	// Latitude Birth latitude in decimal degrees. Sets the Placidus cusps; also the place the ruling planets and the Moon windows are read at.
+	Latitude float32 `json:"latitude"`
+
+	// Longitude Birth longitude in decimal degrees, east positive.
+	Longitude float32 `json:"longitude"`
+
+	// LossHouses Houses whose significators count as loss, 1 to 12. Defaults to the convention, 6 and 8 and 12. Override it to run your own school: the two lists may not share a house.
+	LossHouses *[]int `json:"lossHouses,omitempty"`
+
+	// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the Rahu and Ketu positions. Mean is the traditional Vedic default and what printed panchangs use; the choice can move a KP sub-lord in narrow boundary cases, where a span can be as small as 0.5 degrees. Defaults to "mean".
+	NodeType *KPDailyFinanceRequestNodeType `json:"nodeType,omitempty"`
+
+	// Time Reading moment on that date, HH:MM:SS local. The ruling planets and the running sookshma lord are read at this instant. Defaults to 12:00:00; pass a market open or any hour for an intraday read.
+	Time *string `json:"time,omitempty"`
+
+	// Timezone Timezone as an IANA name (Asia/Kolkata) or decimal hours from UTC. Applies to the birth time, to the reading date and time, and to every local timestamp in the response. IANA names resolve to the offset in force on the date being read.
+	Timezone *KPDailyFinanceRequest_Timezone `json:"timezone,omitempty"`
+
+	// Weights Layer weights in percent, all four required, summing to 100. Defaults to the convention, cusps 30, dasha 40, rulingPlanets 15, moonWindows 15. Seventy percent of the default sits on the cusps and the outer dasha levels, which hold for months, so a chart reads inside a narrow band all month and the bands separate charts more than days. Move weight onto rulingPlanets and moonWindows for a reading that turns with the day.
+	Weights *struct {
+		// Cusps Percent of the final score the cusps layer carries.
+		Cusps float32 `json:"cusps"`
+
+		// Dasha Percent of the final score the dasha layer carries.
+		Dasha float32 `json:"dasha"`
+
+		// MoonWindows Percent of the final score the moonWindows layer carries.
+		MoonWindows float32 `json:"moonWindows"`
+
+		// RulingPlanets Percent of the final score the rulingPlanets layer carries.
+		RulingPlanets float32 `json:"rulingPlanets"`
+	} `json:"weights,omitempty"`
+}
+
+// KPDailyFinanceRequestAyanamsa Ayanamsa system for sidereal conversion. "kp-newcomb" uses the KP-Newcomb dynamic formula, the most common choice for KP astrology. "kp-old" uses the Krishnamurti original table from KP Reader-1 with constant precession rate. "lahiri" uses Lahiri/Chitrapaksha ayanamsa, matching most traditional Vedic software. "raman" uses the B.V. Raman ayanamsa from Hindu Predictive Astrology, a recognised traditional school that sits about 1.45 degrees below Lahiri. Defaults to "kp-newcomb".
+type KPDailyFinanceRequestAyanamsa string
+
+// KPDailyFinanceRequestNodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the Rahu and Ketu positions. Mean is the traditional Vedic default and what printed panchangs use; the choice can move a KP sub-lord in narrow boundary cases, where a span can be as small as 0.5 degrees. Defaults to "mean".
+type KPDailyFinanceRequestNodeType string
+
+// KPDailyFinanceRequestTimezone0 defines model for KPDailyFinanceRequest.Timezone.0.
+type KPDailyFinanceRequestTimezone0 = float32
+
+// KPDailyFinanceRequestTimezone1 defines model for KPDailyFinanceRequest.Timezone.1.
+type KPDailyFinanceRequestTimezone1 = string
+
+// KPDailyFinanceRequest_Timezone Timezone as an IANA name (Asia/Kolkata) or decimal hours from UTC. Applies to the birth time, to the reading date and time, and to every local timestamp in the response. IANA names resolve to the offset in force on the date being read.
+type KPDailyFinanceRequest_Timezone struct {
+	union json.RawMessage
+}
+
+// KPDailyFinanceResponse defines model for KPDailyFinanceResponse.
+type KPDailyFinanceResponse struct {
+	// Ayanamsa Ayanamsa system for sidereal conversion. "kp-newcomb" uses the KP-Newcomb dynamic formula, the most common choice for KP astrology. "kp-old" uses the Krishnamurti original table from KP Reader-1 with constant precession rate. "lahiri" uses Lahiri/Chitrapaksha ayanamsa, matching most traditional Vedic software. "raman" uses the B.V. Raman ayanamsa from Hindu Predictive Astrology, a recognised traditional school that sits about 1.45 degrees below Lahiri. Defaults to "kp-newcomb".
+	Ayanamsa *KPDailyFinanceResponseAyanamsa `json:"ayanamsa,omitempty"`
+
+	// AyanamsaDegrees Degrees subtracted from the tropical longitudes, resolved at the birth date. One frame for the whole reading: cusps, significators, Vimshottari balance, ruling planets and Moon windows alike.
+	AyanamsaDegrees float32 `json:"ayanamsaDegrees"`
+
+	// Band The score as one of five bands, each entered at its edge: "strong" from 70, "favourable" from 55, "mixed" from 45, "caution" from 30, "unfavourable" below 30. "mixed" is the ordinary day. Canonical English machine values.
+	Band KPDailyFinanceResponseBand `json:"band"`
+
+	// BestWindow The favourable Moon window of the day, the longest when several qualify, or null when the day has none. The one stretch the method backs outright.
+	BestWindow *struct {
+		// From Local datetime the window opens, in the request timezone.
+		From string `json:"from"`
+
+		// InGain Whether the planet signifies at least one gain house at any of the four tiers.
+		InGain bool `json:"inGain"`
+
+		// InLoss Whether the planet signifies at least one loss house at any of the four tiers.
+		InLoss bool `json:"inLoss"`
+
+		// Score The verdict score of the window.
+		Score float32 `json:"score"`
+
+		// SubLord The KP sub lord the Moon holds through this window, the planet the row classifies.
+		SubLord string `json:"subLord"`
+
+		// To Local datetime the window closes. The last window of the day closes at the next midnight.
+		To string `json:"to"`
+
+		// Verdict The one classification every layer uses: "favourable" when the planet signifies a gain house and no loss house (100), "mixed" when it signifies both (50), "unfavourable" when it signifies a loss house and no gain house (0), "neutral" when it signifies neither (50). Canonical English machine value.
+		Verdict KPDailyFinanceResponseBestWindowVerdict `json:"verdict"`
+	} `json:"bestWindow"`
+
+	// Date The civil date read.
+	Date   string `json:"date"`
+	Houses struct {
+		// Gain The gain houses this reading used, the request override or the convention.
+		Gain []float32 `json:"gain"`
+
+		// Loss The loss houses this reading used, the request override or the convention.
+		Loss []float32 `json:"loss"`
+	} `json:"houses"`
+	Layers struct {
+		// Cusps Structural promise: each cusp of the two groups judged by its sub lord, the loss cusps inverted, the mean over the rows.
+		Cusps struct {
+			// Layer Which layer this is. Canonical English machine value, the same as its key.
+			Layer KPDailyFinanceResponseLayersCuspsLayer `json:"layer"`
+			Rows  []struct {
+				// House The cusp judged, 1 to 12.
+				House float32 `json:"house"`
+
+				// InGain Whether the planet signifies at least one gain house at any of the four tiers.
+				InGain bool `json:"inGain"`
+
+				// InLoss Whether the planet signifies at least one loss house at any of the four tiers.
+				InLoss bool `json:"inLoss"`
+
+				// Inverted True on a loss house, where the verdict score is inverted: a loss cusp whose sub lord signifies only loss scores 100, because a denied loss is good news for the native.
+				Inverted bool `json:"inverted"`
+
+				// Longitude Sidereal longitude of the cusp in the requested ayanamsa, degrees.
+				Longitude float32 `json:"longitude"`
+
+				// Score The verdict score, 100 / 50 / 0 / 50, after the inversion on a loss house.
+				Score float32 `json:"score"`
+
+				// SignLord Lord of the sign the cusp falls in.
+				SignLord string `json:"signLord"`
+
+				// StarLord Lord of the nakshatra the cusp falls in.
+				StarLord string `json:"starLord"`
+
+				// SubLord The KP sub lord of the cusp, the one lord that decides whether the house delivers. It is the planet the row classifies.
+				SubLord string `json:"subLord"`
+
+				// Verdict The one classification every layer uses: "favourable" when the planet signifies a gain house and no loss house (100), "mixed" when it signifies both (50), "unfavourable" when it signifies a loss house and no gain house (0), "neutral" when it signifies neither (50). Canonical English machine value.
+				Verdict KPDailyFinanceResponseLayersCuspsRowsVerdict `json:"verdict"`
+			} `json:"rows"`
+
+			// Score The layer on its own, 0 to 100, one decimal: the mean of its rows, or for the dasha layer the level-weighted sum. The final score is the weight-sum of the four layer scores.
+			Score float32 `json:"score"`
+
+			// Weight Percent of the final score this layer carries. The four weights are cusps 30, dasha 40, rulingPlanets 15, moonWindows 15.
+			Weight float32 `json:"weight"`
+		} `json:"cusps"`
+
+		// Dasha Timing: the four running Vimshottari lords at the reading moment, in the same sidereal frame as the chart, each judged and penalised if retrograde, then weighed by level.
+		Dasha struct {
+			// Layer Which layer this is. Canonical English machine value, the same as its key.
+			Layer KPDailyFinanceResponseLayersDashaLayer `json:"layer"`
+			Rows  []struct {
+				// EndDate ISO instant the period ends.
+				EndDate string `json:"endDate"`
+
+				// InGain Whether the planet signifies at least one gain house at any of the four tiers.
+				InGain bool `json:"inGain"`
+
+				// InLoss Whether the planet signifies at least one loss house at any of the four tiers.
+				InLoss bool `json:"inLoss"`
+
+				// Level Which Vimshottari level this lord runs, outermost first.
+				Level KPDailyFinanceResponseLayersDashaRowsLevel `json:"level"`
+
+				// Lord The running lord at this level.
+				Lord string `json:"lord"`
+
+				// Retrograde Whether the lord is retrograde in transit at the reading moment. Rahu and Ketu always are. Costs 10 points, floored at 0.
+				Retrograde bool `json:"retrograde"`
+
+				// Score The verdict score after the retrograde penalty.
+				Score float32 `json:"score"`
+
+				// StartDate ISO instant the period began.
+				StartDate string `json:"startDate"`
+
+				// Verdict The one classification every layer uses: "favourable" when the planet signifies a gain house and no loss house (100), "mixed" when it signifies both (50), "unfavourable" when it signifies a loss house and no gain house (0), "neutral" when it signifies neither (50). Canonical English machine value.
+				Verdict KPDailyFinanceResponseLayersDashaRowsVerdict `json:"verdict"`
+
+				// Weight Percent of the dasha layer this level carries, the finer levels weighed more: mahadasha 10, antardasha 20, pratyantardasha 30, sookshmaDasha 40.
+				Weight float32 `json:"weight"`
+			} `json:"rows"`
+
+			// Score The layer on its own, 0 to 100, one decimal: the mean of its rows, or for the dasha layer the level-weighted sum. The final score is the weight-sum of the four layer scores.
+			Score float32 `json:"score"`
+
+			// Weight Percent of the final score this layer carries. The four weights are cusps 30, dasha 40, rulingPlanets 15, moonWindows 15.
+			Weight float32 `json:"weight"`
+		} `json:"dasha"`
+
+		// MoonWindows The hour hand: every stretch of the civil day over which the Moon holds one sub lord, each judged, the mean over the windows. Window boundaries are found by bisection and printed to the second.
+		MoonWindows struct {
+			// Layer Which layer this is. Canonical English machine value, the same as its key.
+			Layer KPDailyFinanceResponseLayersMoonWindowsLayer `json:"layer"`
+			Rows  []struct {
+				// From Local datetime the window opens, in the request timezone.
+				From string `json:"from"`
+
+				// InGain Whether the planet signifies at least one gain house at any of the four tiers.
+				InGain bool `json:"inGain"`
+
+				// InLoss Whether the planet signifies at least one loss house at any of the four tiers.
+				InLoss bool `json:"inLoss"`
+
+				// Score The verdict score of the window.
+				Score float32 `json:"score"`
+
+				// SubLord The KP sub lord the Moon holds through this window, the planet the row classifies.
+				SubLord string `json:"subLord"`
+
+				// To Local datetime the window closes. The last window of the day closes at the next midnight.
+				To string `json:"to"`
+
+				// Verdict The one classification every layer uses: "favourable" when the planet signifies a gain house and no loss house (100), "mixed" when it signifies both (50), "unfavourable" when it signifies a loss house and no gain house (0), "neutral" when it signifies neither (50). Canonical English machine value.
+				Verdict KPDailyFinanceResponseLayersMoonWindowsRowsVerdict `json:"verdict"`
+			} `json:"rows"`
+
+			// Score The layer on its own, 0 to 100, one decimal: the mean of its rows, or for the dasha layer the level-weighted sum. The final score is the weight-sum of the four layer scores.
+			Score float32 `json:"score"`
+
+			// Weight Percent of the final score this layer carries. The four weights are cusps 30, dasha 40, rulingPlanets 15, moonWindows 15.
+			Weight float32 `json:"weight"`
+		} `json:"moonWindows"`
+
+		// RulingPlanets The pulse of the moment: the KP ruling planets at the reading moment, each once, judged and penalised if retrograde, the mean over the rows.
+		RulingPlanets struct {
+			// Layer Which layer this is. Canonical English machine value, the same as its key.
+			Layer KPDailyFinanceResponseLayersRulingPlanetsLayer `json:"layer"`
+			Rows  []struct {
+				// InGain Whether the planet signifies at least one gain house at any of the four tiers.
+				InGain bool `json:"inGain"`
+
+				// InLoss Whether the planet signifies at least one loss house at any of the four tiers.
+				InLoss bool `json:"inLoss"`
+
+				// Planet One ruling planet of the reading moment, listed once: the day lord, the sign and star lords of the Moon, and the sign and star lords of the ascendant.
+				Planet string `json:"planet"`
+
+				// Retrograde Whether the planet is retrograde in transit at the reading moment. Costs 10 points, floored at 0.
+				Retrograde bool `json:"retrograde"`
+
+				// Score The verdict score after the penalty.
+				Score float32 `json:"score"`
+
+				// Verdict The one classification every layer uses: "favourable" when the planet signifies a gain house and no loss house (100), "mixed" when it signifies both (50), "unfavourable" when it signifies a loss house and no gain house (0), "neutral" when it signifies neither (50). Canonical English machine value.
+				Verdict KPDailyFinanceResponseLayersRulingPlanetsRowsVerdict `json:"verdict"`
+			} `json:"rows"`
+
+			// Score The layer on its own, 0 to 100, one decimal: the mean of its rows, or for the dasha layer the level-weighted sum. The final score is the weight-sum of the four layer scores.
+			Score float32 `json:"score"`
+
+			// Weight Percent of the final score this layer carries. The four weights are cusps 30, dasha 40, rulingPlanets 15, moonWindows 15.
+			Weight float32 `json:"weight"`
+		} `json:"rulingPlanets"`
+	} `json:"layers"`
+
+	// ReadingAt The reading moment, local datetime in the request timezone. The ruling planets and the dasha lords are read here.
+	ReadingAt string `json:"readingAt"`
+
+	// Score The weight-sum of the four layer scores, 0 to 100, one decimal: cusps 30, dasha 40, rulingPlanets 15, moonWindows 15, each divided by 100. Recomputable from the layers printed above. The house groups, the classification, the inversion on the loss cusps, the retrograde penalty, the level weights and the layer weights are a KP practitioner convention adopted as the published convention of this route: no classical KP text weighs these four layers against each other, and every table behind the number is printed so the result can be checked line by line rather than trusted. The score measures what the method outputs for the day, never the probability of a gain or a loss.
+	Score         float32 `json:"score"`
+	Significators struct {
+		// ByHouse The per-house evidence the two sets are built from, so any row can be traced to the tier that put its planet in a set.
+		ByHouse []struct {
+			// Group Which set this house feeds. Canonical English machine value.
+			Group KPDailyFinanceResponseSignificatorsByHouseGroup `json:"group"`
+
+			// House The house, 1 to 12.
+			House float32 `json:"house"`
+
+			// Significators The four tier significators of the house, strongest tier first: planets in the star of an occupant, occupants, planets in the star of the sign lord, the sign lord. A planet appears once per tier it reaches the house at, exactly as the KP chart route lists them.
+			Significators []string `json:"significators"`
+		} `json:"byHouse"`
+
+		// Gain Every planet that signifies at least one gain house at any tier. The set every row is judged against.
+		Gain []string `json:"gain"`
+
+		// Loss Every planet that signifies at least one loss house at any tier. A planet in both sets reads "mixed" everywhere.
+		Loss []string `json:"loss"`
+	} `json:"significators"`
+
+	// WorstWindows Every unfavourable Moon window of the day, in clock order.
+	WorstWindows []struct {
+		// From Local datetime the window opens, in the request timezone.
+		From string `json:"from"`
+
+		// InGain Whether the planet signifies at least one gain house at any of the four tiers.
+		InGain bool `json:"inGain"`
+
+		// InLoss Whether the planet signifies at least one loss house at any of the four tiers.
+		InLoss bool `json:"inLoss"`
+
+		// Score The verdict score of the window.
+		Score float32 `json:"score"`
+
+		// SubLord The KP sub lord the Moon holds through this window, the planet the row classifies.
+		SubLord string `json:"subLord"`
+
+		// To Local datetime the window closes. The last window of the day closes at the next midnight.
+		To string `json:"to"`
+
+		// Verdict The one classification every layer uses: "favourable" when the planet signifies a gain house and no loss house (100), "mixed" when it signifies both (50), "unfavourable" when it signifies a loss house and no gain house (0), "neutral" when it signifies neither (50). Canonical English machine value.
+		Verdict KPDailyFinanceResponseWorstWindowsVerdict `json:"verdict"`
+	} `json:"worstWindows"`
+}
+
+// KPDailyFinanceResponseAyanamsa Ayanamsa system for sidereal conversion. "kp-newcomb" uses the KP-Newcomb dynamic formula, the most common choice for KP astrology. "kp-old" uses the Krishnamurti original table from KP Reader-1 with constant precession rate. "lahiri" uses Lahiri/Chitrapaksha ayanamsa, matching most traditional Vedic software. "raman" uses the B.V. Raman ayanamsa from Hindu Predictive Astrology, a recognised traditional school that sits about 1.45 degrees below Lahiri. Defaults to "kp-newcomb".
+type KPDailyFinanceResponseAyanamsa string
+
+// KPDailyFinanceResponseBand The score as one of five bands, each entered at its edge: "strong" from 70, "favourable" from 55, "mixed" from 45, "caution" from 30, "unfavourable" below 30. "mixed" is the ordinary day. Canonical English machine values.
+type KPDailyFinanceResponseBand string
+
+// KPDailyFinanceResponseBestWindowVerdict The one classification every layer uses: "favourable" when the planet signifies a gain house and no loss house (100), "mixed" when it signifies both (50), "unfavourable" when it signifies a loss house and no gain house (0), "neutral" when it signifies neither (50). Canonical English machine value.
+type KPDailyFinanceResponseBestWindowVerdict string
+
+// KPDailyFinanceResponseLayersCuspsLayer Which layer this is. Canonical English machine value, the same as its key.
+type KPDailyFinanceResponseLayersCuspsLayer string
+
+// KPDailyFinanceResponseLayersCuspsRowsVerdict The one classification every layer uses: "favourable" when the planet signifies a gain house and no loss house (100), "mixed" when it signifies both (50), "unfavourable" when it signifies a loss house and no gain house (0), "neutral" when it signifies neither (50). Canonical English machine value.
+type KPDailyFinanceResponseLayersCuspsRowsVerdict string
+
+// KPDailyFinanceResponseLayersDashaLayer Which layer this is. Canonical English machine value, the same as its key.
+type KPDailyFinanceResponseLayersDashaLayer string
+
+// KPDailyFinanceResponseLayersDashaRowsLevel Which Vimshottari level this lord runs, outermost first.
+type KPDailyFinanceResponseLayersDashaRowsLevel string
+
+// KPDailyFinanceResponseLayersDashaRowsVerdict The one classification every layer uses: "favourable" when the planet signifies a gain house and no loss house (100), "mixed" when it signifies both (50), "unfavourable" when it signifies a loss house and no gain house (0), "neutral" when it signifies neither (50). Canonical English machine value.
+type KPDailyFinanceResponseLayersDashaRowsVerdict string
+
+// KPDailyFinanceResponseLayersMoonWindowsLayer Which layer this is. Canonical English machine value, the same as its key.
+type KPDailyFinanceResponseLayersMoonWindowsLayer string
+
+// KPDailyFinanceResponseLayersMoonWindowsRowsVerdict The one classification every layer uses: "favourable" when the planet signifies a gain house and no loss house (100), "mixed" when it signifies both (50), "unfavourable" when it signifies a loss house and no gain house (0), "neutral" when it signifies neither (50). Canonical English machine value.
+type KPDailyFinanceResponseLayersMoonWindowsRowsVerdict string
+
+// KPDailyFinanceResponseLayersRulingPlanetsLayer Which layer this is. Canonical English machine value, the same as its key.
+type KPDailyFinanceResponseLayersRulingPlanetsLayer string
+
+// KPDailyFinanceResponseLayersRulingPlanetsRowsVerdict The one classification every layer uses: "favourable" when the planet signifies a gain house and no loss house (100), "mixed" when it signifies both (50), "unfavourable" when it signifies a loss house and no gain house (0), "neutral" when it signifies neither (50). Canonical English machine value.
+type KPDailyFinanceResponseLayersRulingPlanetsRowsVerdict string
+
+// KPDailyFinanceResponseSignificatorsByHouseGroup Which set this house feeds. Canonical English machine value.
+type KPDailyFinanceResponseSignificatorsByHouseGroup string
+
+// KPDailyFinanceResponseWorstWindowsVerdict The one classification every layer uses: "favourable" when the planet signifies a gain house and no loss house (100), "mixed" when it signifies both (50), "unfavourable" when it signifies a loss house and no gain house (0), "neutral" when it signifies neither (50). Canonical English machine value.
+type KPDailyFinanceResponseWorstWindowsVerdict string
 
 // KPHoraryRequest defines model for KPHoraryRequest.
 type KPHoraryRequest struct {
@@ -42296,6 +43001,9 @@ type GenerateKpChartJSONRequestBody = KPChartRequest
 // GetKpCuspsJSONRequestBody defines body for GetKpCusps for application/json ContentType.
 type GetKpCuspsJSONRequestBody = KPCuspsRequest
 
+// GetKpDailyFinanceJSONRequestBody defines body for GetKpDailyFinance for application/json ContentType.
+type GetKpDailyFinanceJSONRequestBody = KPDailyFinanceRequest
+
 // CastKpHoraryChartJSONRequestBody defines body for CastKpHoraryChart for application/json ContentType.
 type CastKpHoraryChartJSONRequestBody = KPHoraryRequest
 
@@ -43633,6 +44341,68 @@ func (t KPCuspsRequest_Timezone) MarshalJSON() ([]byte, error) {
 }
 
 func (t *KPCuspsRequest_Timezone) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsKPDailyFinanceRequestTimezone0 returns the union data inside the KPDailyFinanceRequest_Timezone as a KPDailyFinanceRequestTimezone0
+func (t KPDailyFinanceRequest_Timezone) AsKPDailyFinanceRequestTimezone0() (KPDailyFinanceRequestTimezone0, error) {
+	var body KPDailyFinanceRequestTimezone0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromKPDailyFinanceRequestTimezone0 overwrites any union data inside the KPDailyFinanceRequest_Timezone as the provided KPDailyFinanceRequestTimezone0
+func (t *KPDailyFinanceRequest_Timezone) FromKPDailyFinanceRequestTimezone0(v KPDailyFinanceRequestTimezone0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeKPDailyFinanceRequestTimezone0 performs a merge with any union data inside the KPDailyFinanceRequest_Timezone, using the provided KPDailyFinanceRequestTimezone0
+func (t *KPDailyFinanceRequest_Timezone) MergeKPDailyFinanceRequestTimezone0(v KPDailyFinanceRequestTimezone0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsKPDailyFinanceRequestTimezone1 returns the union data inside the KPDailyFinanceRequest_Timezone as a KPDailyFinanceRequestTimezone1
+func (t KPDailyFinanceRequest_Timezone) AsKPDailyFinanceRequestTimezone1() (KPDailyFinanceRequestTimezone1, error) {
+	var body KPDailyFinanceRequestTimezone1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromKPDailyFinanceRequestTimezone1 overwrites any union data inside the KPDailyFinanceRequest_Timezone as the provided KPDailyFinanceRequestTimezone1
+func (t *KPDailyFinanceRequest_Timezone) FromKPDailyFinanceRequestTimezone1(v KPDailyFinanceRequestTimezone1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeKPDailyFinanceRequestTimezone1 performs a merge with any union data inside the KPDailyFinanceRequest_Timezone, using the provided KPDailyFinanceRequestTimezone1
+func (t *KPDailyFinanceRequest_Timezone) MergeKPDailyFinanceRequestTimezone1(v KPDailyFinanceRequestTimezone1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t KPDailyFinanceRequest_Timezone) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *KPDailyFinanceRequest_Timezone) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }
@@ -52134,6 +52904,24 @@ type ClientInterface interface {
 	// Corresponds with POST /vedic-astrology/kp/cusps (the `GetKpCusps` operationId).
 	GetKpCusps(ctx context.Context, params *GetKpCuspsParams, body GetKpCuspsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// GetKpDailyFinanceWithBody Score the day for money with four sub lord layers - KP Daily Finance API
+	//
+	// A Krishnamurti Paddhati daily finance reading for one native on one date. Four KP layers are each scored against the money houses and weighed into one number: the cusp sub lords of the gain and loss houses (structural promise), the four running Vimshottari lords at the reading moment (timing), the ruling planets of that moment (the pulse), and the sub lord windows the Moon passes through across the civil day (the hour hand), with the best and worst windows named. Weights cusps 30, dasha 40, rulingPlanets 15, moonWindows 15. Every input is the shipped KP arithmetic: Placidus cusps, the 249 sub lord table, the four tier significator rule, the Vimshottari chain to the sookshma level, all in the one ayanamsa you choose. Every row prints its planet, its standing against the two sets and its score, so the number can be audited rather than trusted. The house groups, the classification, the inversion on the loss cusps, the retrograde penalty, the level weights and the layer weights are a KP practitioner convention adopted as the published convention of this route: no classical KP text weighs these four layers against each other, and every table behind the number is printed so the result can be checked line by line rather than trusted. The score measures what the method outputs for the day, never the probability of a gain or a loss. Override the two house groups to run your own school.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /vedic-astrology/kp/daily-finance (the `GetKpDailyFinance` operationId).
+	GetKpDailyFinanceWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GetKpDailyFinance Score the day for money with four sub lord layers - KP Daily Finance API
+	//
+	// A Krishnamurti Paddhati daily finance reading for one native on one date. Four KP layers are each scored against the money houses and weighed into one number: the cusp sub lords of the gain and loss houses (structural promise), the four running Vimshottari lords at the reading moment (timing), the ruling planets of that moment (the pulse), and the sub lord windows the Moon passes through across the civil day (the hour hand), with the best and worst windows named. Weights cusps 30, dasha 40, rulingPlanets 15, moonWindows 15. Every input is the shipped KP arithmetic: Placidus cusps, the 249 sub lord table, the four tier significator rule, the Vimshottari chain to the sookshma level, all in the one ayanamsa you choose. Every row prints its planet, its standing against the two sets and its score, so the number can be audited rather than trusted. The house groups, the classification, the inversion on the loss cusps, the retrograde penalty, the level weights and the layer weights are a KP practitioner convention adopted as the published convention of this route: no classical KP text weighs these four layers against each other, and every table behind the number is printed so the result can be checked line by line rather than trusted. The score measures what the method outputs for the day, never the probability of a gain or a loss. Override the two house groups to run your own school.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /vedic-astrology/kp/daily-finance (the `GetKpDailyFinance` operationId).
+	GetKpDailyFinance(ctx context.Context, body GetKpDailyFinanceJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// CastKpHoraryChartWithBody Cast a KP horary (Prashna) chart from a number 1-249 - KP Horary API
 	//
 	// Cast a Krishnamurti Paddhati horary chart, also called Prashna, from a number between 1 and 249 given by the querent plus the moment and place the question is judged. NO BIRTH DETAILS ARE NEEDED, which is what makes horary the KP answer when birth time is unknown or unreliable. The number maps to one of the 249 KP sub divisions and sets the Ascendant; the twelve Placidus cusps follow from that Ascendant at the given latitude, and every planetary position comes from the real sky at the moment of the question. Returns the Ascendant with its sub lord, all twelve cusps with star lord and sub lord, the nine grahas placed against those cusps, the five ruling planets for validating the chart, and four-level significators for judging which houses each graha supports. KP horary API, Prashna kundali calculator, 249 horary number chart, Krishnamurti Paddhati horary, cusp sub lord question answering.
@@ -59286,6 +60074,44 @@ func (c *Client) GetKpCuspsWithBody(ctx context.Context, params *GetKpCuspsParam
 // Corresponds with POST /vedic-astrology/kp/cusps (the `GetKpCusps` operationId).
 func (c *Client) GetKpCusps(ctx context.Context, params *GetKpCuspsParams, body GetKpCuspsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewGetKpCuspsRequest(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetKpDailyFinanceWithBody Score the day for money with four sub lord layers - KP Daily Finance API
+//
+// A Krishnamurti Paddhati daily finance reading for one native on one date. Four KP layers are each scored against the money houses and weighed into one number: the cusp sub lords of the gain and loss houses (structural promise), the four running Vimshottari lords at the reading moment (timing), the ruling planets of that moment (the pulse), and the sub lord windows the Moon passes through across the civil day (the hour hand), with the best and worst windows named. Weights cusps 30, dasha 40, rulingPlanets 15, moonWindows 15. Every input is the shipped KP arithmetic: Placidus cusps, the 249 sub lord table, the four tier significator rule, the Vimshottari chain to the sookshma level, all in the one ayanamsa you choose. Every row prints its planet, its standing against the two sets and its score, so the number can be audited rather than trusted. The house groups, the classification, the inversion on the loss cusps, the retrograde penalty, the level weights and the layer weights are a KP practitioner convention adopted as the published convention of this route: no classical KP text weighs these four layers against each other, and every table behind the number is printed so the result can be checked line by line rather than trusted. The score measures what the method outputs for the day, never the probability of a gain or a loss. Override the two house groups to run your own school.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /vedic-astrology/kp/daily-finance (the `GetKpDailyFinance` operationId).
+func (c *Client) GetKpDailyFinanceWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetKpDailyFinanceRequestWithBody(c.Server, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GetKpDailyFinance Score the day for money with four sub lord layers - KP Daily Finance API
+//
+// A Krishnamurti Paddhati daily finance reading for one native on one date. Four KP layers are each scored against the money houses and weighed into one number: the cusp sub lords of the gain and loss houses (structural promise), the four running Vimshottari lords at the reading moment (timing), the ruling planets of that moment (the pulse), and the sub lord windows the Moon passes through across the civil day (the hour hand), with the best and worst windows named. Weights cusps 30, dasha 40, rulingPlanets 15, moonWindows 15. Every input is the shipped KP arithmetic: Placidus cusps, the 249 sub lord table, the four tier significator rule, the Vimshottari chain to the sookshma level, all in the one ayanamsa you choose. Every row prints its planet, its standing against the two sets and its score, so the number can be audited rather than trusted. The house groups, the classification, the inversion on the loss cusps, the retrograde penalty, the level weights and the layer weights are a KP practitioner convention adopted as the published convention of this route: no classical KP text weighs these four layers against each other, and every table behind the number is printed so the result can be checked line by line rather than trusted. The score measures what the method outputs for the day, never the probability of a gain or a loss. Override the two house groups to run your own school.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /vedic-astrology/kp/daily-finance (the `GetKpDailyFinance` operationId).
+func (c *Client) GetKpDailyFinance(ctx context.Context, body GetKpDailyFinanceJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetKpDailyFinanceRequest(c.Server, body)
 	if err != nil {
 		return nil, err
 	}
@@ -76105,6 +76931,46 @@ func NewGetKpCuspsRequestWithBody(server string, params *GetKpCuspsParams, conte
 	return req, nil
 }
 
+// NewGetKpDailyFinanceRequest calls the generic GetKpDailyFinance builder with application/json body
+func NewGetKpDailyFinanceRequest(server string, body GetKpDailyFinanceJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewGetKpDailyFinanceRequestWithBody(server, "application/json", bodyReader)
+}
+
+// NewGetKpDailyFinanceRequestWithBody constructs an http.Request for the GetKpDailyFinance method, with any body, and a specified content type
+func NewGetKpDailyFinanceRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/vedic-astrology/kp/daily-finance")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
 // NewCastKpHoraryChartRequest calls the generic CastKpHoraryChart builder with application/json body
 func NewCastKpHoraryChartRequest(server string, params *CastKpHoraryChartParams, body CastKpHoraryChartJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
@@ -80990,6 +81856,24 @@ type ClientWithResponsesInterface interface {
 	//
 	// Corresponds with POST /vedic-astrology/kp/cusps (the `GetKpCusps` operationId).
 	GetKpCuspsWithResponse(ctx context.Context, params *GetKpCuspsParams, body GetKpCuspsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetKpCuspsResponse, error)
+
+	// GetKpDailyFinanceWithBodyWithResponse Score the day for money with four sub lord layers - KP Daily Finance API
+	//
+	// A Krishnamurti Paddhati daily finance reading for one native on one date. Four KP layers are each scored against the money houses and weighed into one number: the cusp sub lords of the gain and loss houses (structural promise), the four running Vimshottari lords at the reading moment (timing), the ruling planets of that moment (the pulse), and the sub lord windows the Moon passes through across the civil day (the hour hand), with the best and worst windows named. Weights cusps 30, dasha 40, rulingPlanets 15, moonWindows 15. Every input is the shipped KP arithmetic: Placidus cusps, the 249 sub lord table, the four tier significator rule, the Vimshottari chain to the sookshma level, all in the one ayanamsa you choose. Every row prints its planet, its standing against the two sets and its score, so the number can be audited rather than trusted. The house groups, the classification, the inversion on the loss cusps, the retrograde penalty, the level weights and the layer weights are a KP practitioner convention adopted as the published convention of this route: no classical KP text weighs these four layers against each other, and every table behind the number is printed so the result can be checked line by line rather than trusted. The score measures what the method outputs for the day, never the probability of a gain or a loss. Override the two house groups to run your own school.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /vedic-astrology/kp/daily-finance (the `GetKpDailyFinance` operationId).
+	GetKpDailyFinanceWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetKpDailyFinanceResponse, error)
+
+	// GetKpDailyFinanceWithResponse Score the day for money with four sub lord layers - KP Daily Finance API
+	//
+	// A Krishnamurti Paddhati daily finance reading for one native on one date. Four KP layers are each scored against the money houses and weighed into one number: the cusp sub lords of the gain and loss houses (structural promise), the four running Vimshottari lords at the reading moment (timing), the ruling planets of that moment (the pulse), and the sub lord windows the Moon passes through across the civil day (the hour hand), with the best and worst windows named. Weights cusps 30, dasha 40, rulingPlanets 15, moonWindows 15. Every input is the shipped KP arithmetic: Placidus cusps, the 249 sub lord table, the four tier significator rule, the Vimshottari chain to the sookshma level, all in the one ayanamsa you choose. Every row prints its planet, its standing against the two sets and its score, so the number can be audited rather than trusted. The house groups, the classification, the inversion on the loss cusps, the retrograde penalty, the level weights and the layer weights are a KP practitioner convention adopted as the published convention of this route: no classical KP text weighs these four layers against each other, and every table behind the number is printed so the result can be checked line by line rather than trusted. The score measures what the method outputs for the day, never the probability of a gain or a loss. Override the two house groups to run your own school.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /vedic-astrology/kp/daily-finance (the `GetKpDailyFinance` operationId).
+	GetKpDailyFinanceWithResponse(ctx context.Context, body GetKpDailyFinanceJSONRequestBody, reqEditors ...RequestEditorFn) (*GetKpDailyFinanceResponse, error)
 
 	// CastKpHoraryChartWithBodyWithResponse Cast a KP horary (Prashna) chart from a number 1-249 - KP Horary API
 	//
@@ -134296,6 +135180,94 @@ func (r GetKpCuspsResponse) ContentType() string {
 	return ""
 }
 
+// GetKpDailyFinanceResponse405Headers the declared response headers of an HTTP 405 response for GetKpDailyFinance
+type GetKpDailyFinanceResponse405Headers struct {
+	Allow *string
+}
+
+type GetKpDailyFinanceResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *KPDailyFinanceResponse
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON405 the response for an HTTP 405 `application/json` response
+	JSON405 *ErrorResponse
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+	// Headers405 the parsed response headers for an HTTP 405 response
+	Headers405 *GetKpDailyFinanceResponse405Headers
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GetKpDailyFinanceResponse) GetJSON200() *KPDailyFinanceResponse {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r GetKpDailyFinanceResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r GetKpDailyFinanceResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON405 returns the response for an HTTP 405 `application/json` response
+func (r GetKpDailyFinanceResponse) GetJSON405() *ErrorResponse {
+	return r.JSON405
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r GetKpDailyFinanceResponse) GetJSON429() *ErrorResponse {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GetKpDailyFinanceResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r GetKpDailyFinanceResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GetKpDailyFinanceResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GetKpDailyFinanceResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// Bytes is a convenience method to retrieve the raw bytes from the HTTP response
+func (r GetKpDailyFinanceResponse) Bytes() []byte {
+	return r.Body
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GetKpDailyFinanceResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
 // CastKpHoraryChartResponse405Headers the declared response headers of an HTTP 405 response for CastKpHoraryChart
 type CastKpHoraryChartResponse405Headers struct {
 	Allow *string
@@ -143819,6 +144791,36 @@ func (c *ClientWithResponses) GetKpCuspsWithResponse(ctx context.Context, params
 		return nil, err
 	}
 	return ParseGetKpCuspsResponse(rsp)
+}
+
+// GetKpDailyFinanceWithBodyWithResponse Score the day for money with four sub lord layers - KP Daily Finance API
+//
+// A Krishnamurti Paddhati daily finance reading for one native on one date. Four KP layers are each scored against the money houses and weighed into one number: the cusp sub lords of the gain and loss houses (structural promise), the four running Vimshottari lords at the reading moment (timing), the ruling planets of that moment (the pulse), and the sub lord windows the Moon passes through across the civil day (the hour hand), with the best and worst windows named. Weights cusps 30, dasha 40, rulingPlanets 15, moonWindows 15. Every input is the shipped KP arithmetic: Placidus cusps, the 249 sub lord table, the four tier significator rule, the Vimshottari chain to the sookshma level, all in the one ayanamsa you choose. Every row prints its planet, its standing against the two sets and its score, so the number can be audited rather than trusted. The house groups, the classification, the inversion on the loss cusps, the retrograde penalty, the level weights and the layer weights are a KP practitioner convention adopted as the published convention of this route: no classical KP text weighs these four layers against each other, and every table behind the number is printed so the result can be checked line by line rather than trusted. The score measures what the method outputs for the day, never the probability of a gain or a loss. Override the two house groups to run your own school.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /vedic-astrology/kp/daily-finance (the `GetKpDailyFinance` operationId).
+func (c *ClientWithResponses) GetKpDailyFinanceWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetKpDailyFinanceResponse, error) {
+	rsp, err := c.GetKpDailyFinanceWithBody(ctx, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetKpDailyFinanceResponse(rsp)
+}
+
+// GetKpDailyFinanceWithResponse Score the day for money with four sub lord layers - KP Daily Finance API
+//
+// A Krishnamurti Paddhati daily finance reading for one native on one date. Four KP layers are each scored against the money houses and weighed into one number: the cusp sub lords of the gain and loss houses (structural promise), the four running Vimshottari lords at the reading moment (timing), the ruling planets of that moment (the pulse), and the sub lord windows the Moon passes through across the civil day (the hour hand), with the best and worst windows named. Weights cusps 30, dasha 40, rulingPlanets 15, moonWindows 15. Every input is the shipped KP arithmetic: Placidus cusps, the 249 sub lord table, the four tier significator rule, the Vimshottari chain to the sookshma level, all in the one ayanamsa you choose. Every row prints its planet, its standing against the two sets and its score, so the number can be audited rather than trusted. The house groups, the classification, the inversion on the loss cusps, the retrograde penalty, the level weights and the layer weights are a KP practitioner convention adopted as the published convention of this route: no classical KP text weighs these four layers against each other, and every table behind the number is printed so the result can be checked line by line rather than trusted. The score measures what the method outputs for the day, never the probability of a gain or a loss. Override the two house groups to run your own school.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /vedic-astrology/kp/daily-finance (the `GetKpDailyFinance` operationId).
+func (c *ClientWithResponses) GetKpDailyFinanceWithResponse(ctx context.Context, body GetKpDailyFinanceJSONRequestBody, reqEditors ...RequestEditorFn) (*GetKpDailyFinanceResponse, error) {
+	rsp, err := c.GetKpDailyFinance(ctx, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGetKpDailyFinanceResponse(rsp)
 }
 
 // CastKpHoraryChartWithBodyWithResponse Cast a KP horary (Prashna) chart from a number 1-249 - KP Horary API
@@ -177957,6 +178959,80 @@ func ParseGetKpCuspsResponse(rsp *http.Response) (*GetKpCuspsResponse, error) {
 	switch {
 	case rsp.StatusCode == 405:
 		var headers GetKpCuspsResponse405Headers
+		if values := rsp.Header.Values("Allow"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "Allow", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.Allow = &value
+		}
+		response.Headers405 = &headers
+	}
+
+	return response, nil
+}
+
+// ParseGetKpDailyFinanceResponse parses an HTTP response from a GetKpDailyFinanceWithResponse call
+func ParseGetKpDailyFinanceResponse(rsp *http.Response) (*GetKpDailyFinanceResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GetKpDailyFinanceResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest KPDailyFinanceResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 405:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON405 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	switch {
+	case rsp.StatusCode == 405:
+		var headers GetKpDailyFinanceResponse405Headers
 		if values := rsp.Header.Values("Allow"); len(values) > 0 {
 			var value string
 			if err := runtime.BindStyledParameterWithOptions("simple", "Allow", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {

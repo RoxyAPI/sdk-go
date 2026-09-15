@@ -610,6 +610,14 @@ func (s *VedicAstrologyService) GetKpCusps(ctx context.Context, params *GetKpCus
 	return resp, asRoxyError(resp)
 }
 
+func (s *VedicAstrologyService) GetKpDailyFinance(ctx context.Context, body GetKpDailyFinanceJSONRequestBody, reqEditors ...RequestEditorFn) (*GetKpDailyFinanceResponse, error) {
+	resp, err := s.client.GetKpDailyFinanceWithResponse(ctx, body, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
 func (s *VedicAstrologyService) GetKpPlanetsInterval(ctx context.Context, body GetKpPlanetsIntervalJSONRequestBody, reqEditors ...RequestEditorFn) (*GetKpPlanetsIntervalResponse, error) {
 	resp, err := s.client.GetKpPlanetsIntervalWithResponse(ctx, body, reqEditors...)
 	if err != nil {
