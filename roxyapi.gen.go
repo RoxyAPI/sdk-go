@@ -15462,12 +15462,15 @@ func (e CalculateNameCompatibilityJSONBodyMisparGadol) Valid() bool {
 // Defines values for CalculateNameCompatibilityJSONBodyTransliteration.
 const (
 	CalculateNameCompatibilityJSONBodyTransliterationLetterMapMathers CalculateNameCompatibilityJSONBodyTransliteration = "letter-map-mathers"
+	CalculateNameCompatibilityJSONBodyTransliterationLetterMapModern  CalculateNameCompatibilityJSONBodyTransliteration = "letter-map-modern"
 )
 
 // Valid indicates whether the value is a known member of the CalculateNameCompatibilityJSONBodyTransliteration enum.
 func (e CalculateNameCompatibilityJSONBodyTransliteration) Valid() bool {
 	switch e {
 	case CalculateNameCompatibilityJSONBodyTransliterationLetterMapMathers:
+		return true
+	case CalculateNameCompatibilityJSONBodyTransliterationLetterMapModern:
 		return true
 	default:
 		return false
@@ -15600,12 +15603,15 @@ func (e CalculateGematriaJSONBodyMisparGadol) Valid() bool {
 // Defines values for CalculateGematriaJSONBodyTransliteration.
 const (
 	CalculateGematriaJSONBodyTransliterationLetterMapMathers CalculateGematriaJSONBodyTransliteration = "letter-map-mathers"
+	CalculateGematriaJSONBodyTransliterationLetterMapModern  CalculateGematriaJSONBodyTransliteration = "letter-map-modern"
 )
 
 // Valid indicates whether the value is a known member of the CalculateGematriaJSONBodyTransliteration enum.
 func (e CalculateGematriaJSONBodyTransliteration) Valid() bool {
 	switch e {
 	case CalculateGematriaJSONBodyTransliterationLetterMapMathers:
+		return true
+	case CalculateGematriaJSONBodyTransliterationLetterMapModern:
 		return true
 	default:
 		return false
@@ -15885,12 +15891,15 @@ func (e GenerateNameProfileJSONBodyMisparGadol) Valid() bool {
 // Defines values for GenerateNameProfileJSONBodyTransliteration.
 const (
 	GenerateNameProfileJSONBodyTransliterationLetterMapMathers GenerateNameProfileJSONBodyTransliteration = "letter-map-mathers"
+	GenerateNameProfileJSONBodyTransliterationLetterMapModern  GenerateNameProfileJSONBodyTransliteration = "letter-map-modern"
 )
 
 // Valid indicates whether the value is a known member of the GenerateNameProfileJSONBodyTransliteration enum.
 func (e GenerateNameProfileJSONBodyTransliteration) Valid() bool {
 	switch e {
 	case GenerateNameProfileJSONBodyTransliterationLetterMapMathers:
+		return true
+	case GenerateNameProfileJSONBodyTransliterationLetterMapModern:
 		return true
 	default:
 		return false
@@ -39215,7 +39224,7 @@ type CalculateNameCompatibilityJSONBody struct {
 	// SecondNameHebrew Second name already in Hebrew, which skips the transliteration step.
 	SecondNameHebrew *string `json:"secondNameHebrew,omitempty"`
 
-	// Transliteration How a Latin name is written in Hebrew before it is scored. One member, a deterministic published letter map. Phonetic Ashkenazi and Sephardi schemes are not offered because no two references agree on a rule for that direction, and every published Hebrew standard romanizes the other way. Send textHebrew to control the spelling yourself.
+	// Transliteration How a Latin name is written in Hebrew before it is scored. Two members. letter-map-mathers is the 1887 Hermetic letter map, with e read as its author practised it: a point inside a word and alef at the start of one. It writes no c, f, w or x, so a name carrying one of them outside a two letter group returns 400 naming the letter. letter-map-modern follows the modern Israeli transcription rules for the sound each Latin letter carries in English and French spelling, covers every Latin letter, drops the geresh and does not double vav or yod, so send textHebrew for the ktiv male form. Every form states the readings it used in rule. Phonetic Ashkenazi and Sephardi schemes are not offered because no two references agree on a rule for that direction.
 	Transliteration *CalculateNameCompatibilityJSONBodyTransliteration `json:"transliteration,omitempty"`
 }
 
@@ -39275,7 +39284,7 @@ type CalculateGematriaJSONBody struct {
 	// TextHebrew Hebrew text to score, up to 200 characters. Anything outside the Hebrew script is rejected. Vowel points, cantillation marks, maqaf and paseq are removed before scoring, so a pointed and an unpointed spelling of one word give the same number.
 	TextHebrew *string `json:"textHebrew,omitempty"`
 
-	// Transliteration How a Latin name is written in Hebrew before it is scored. One member, a deterministic published letter map. Phonetic Ashkenazi and Sephardi schemes are not offered because no two references agree on a rule for that direction, and every published Hebrew standard romanizes the other way. Send textHebrew to control the spelling yourself.
+	// Transliteration How a Latin name is written in Hebrew before it is scored. Two members. letter-map-mathers is the 1887 Hermetic letter map, with e read as its author practised it: a point inside a word and alef at the start of one. It writes no c, f, w or x, so a name carrying one of them outside a two letter group returns 400 naming the letter. letter-map-modern follows the modern Israeli transcription rules for the sound each Latin letter carries in English and French spelling, covers every Latin letter, drops the geresh and does not double vav or yod, so send textHebrew for the ktiv male form. Every form states the readings it used in rule. Phonetic Ashkenazi and Sephardi schemes are not offered because no two references agree on a rule for that direction.
 	Transliteration *CalculateGematriaJSONBodyTransliteration `json:"transliteration,omitempty"`
 }
 
@@ -39341,7 +39350,7 @@ type GenerateNameProfileJSONBody struct {
 	// NameHebrew The name already in Hebrew, which skips the transliteration step entirely and scores exactly the spelling you sent.
 	NameHebrew *string `json:"nameHebrew,omitempty"`
 
-	// Transliteration How a Latin name is written in Hebrew before it is scored. One member, a deterministic published letter map. Phonetic Ashkenazi and Sephardi schemes are not offered because no two references agree on a rule for that direction, and every published Hebrew standard romanizes the other way. Send textHebrew to control the spelling yourself.
+	// Transliteration How a Latin name is written in Hebrew before it is scored. Two members. letter-map-mathers is the 1887 Hermetic letter map, with e read as its author practised it: a point inside a word and alef at the start of one. It writes no c, f, w or x, so a name carrying one of them outside a two letter group returns 400 naming the letter. letter-map-modern follows the modern Israeli transcription rules for the sound each Latin letter carries in English and French spelling, covers every Latin letter, drops the geresh and does not double vav or yod, so send textHebrew for the ktiv male form. Every form states the readings it used in rule. Phonetic Ashkenazi and Sephardi schemes are not offered because no two references agree on a rule for that direction.
 	Transliteration *GenerateNameProfileJSONBodyTransliteration `json:"transliteration,omitempty"`
 }
 
@@ -52904,7 +52913,7 @@ type ClientInterface interface {
 	// Corresponds with POST /vedic-astrology/kp/cusps (the `GetKpCusps` operationId).
 	GetKpCusps(ctx context.Context, params *GetKpCuspsParams, body GetKpCuspsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// GetKpDailyFinanceWithBody Score the day for money with four sub lord layers - KP Daily Finance API
+	// GetKpDailyFinanceWithBody Daily finance score from four KP sub lord layers - KP Daily Finance API
 	//
 	// A Krishnamurti Paddhati daily finance reading for one native on one date. Four KP layers are each scored against the money houses and weighed into one number: the cusp sub lords of the gain and loss houses (structural promise), the four running Vimshottari lords at the reading moment (timing), the ruling planets of that moment (the pulse), and the sub lord windows the Moon passes through across the civil day (the hour hand), with the best and worst windows named. Weights cusps 30, dasha 40, rulingPlanets 15, moonWindows 15. Every input is the shipped KP arithmetic: Placidus cusps, the 249 sub lord table, the four tier significator rule, the Vimshottari chain to the sookshma level, all in the one ayanamsa you choose. Every row prints its planet, its standing against the two sets and its score, so the number can be audited rather than trusted. The house groups, the classification, the inversion on the loss cusps, the retrograde penalty, the level weights and the layer weights are a KP practitioner convention adopted as the published convention of this route: no classical KP text weighs these four layers against each other, and every table behind the number is printed so the result can be checked line by line rather than trusted. The score measures what the method outputs for the day, never the probability of a gain or a loss. Override the two house groups to run your own school.
 	//
@@ -52913,7 +52922,7 @@ type ClientInterface interface {
 	// Corresponds with POST /vedic-astrology/kp/daily-finance (the `GetKpDailyFinance` operationId).
 	GetKpDailyFinanceWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// GetKpDailyFinance Score the day for money with four sub lord layers - KP Daily Finance API
+	// GetKpDailyFinance Daily finance score from four KP sub lord layers - KP Daily Finance API
 	//
 	// A Krishnamurti Paddhati daily finance reading for one native on one date. Four KP layers are each scored against the money houses and weighed into one number: the cusp sub lords of the gain and loss houses (structural promise), the four running Vimshottari lords at the reading moment (timing), the ruling planets of that moment (the pulse), and the sub lord windows the Moon passes through across the civil day (the hour hand), with the best and worst windows named. Weights cusps 30, dasha 40, rulingPlanets 15, moonWindows 15. Every input is the shipped KP arithmetic: Placidus cusps, the 249 sub lord table, the four tier significator rule, the Vimshottari chain to the sookshma level, all in the one ayanamsa you choose. Every row prints its planet, its standing against the two sets and its score, so the number can be audited rather than trusted. The house groups, the classification, the inversion on the loss cusps, the retrograde penalty, the level weights and the layer weights are a KP practitioner convention adopted as the published convention of this route: no classical KP text weighs these four layers against each other, and every table behind the number is printed so the result can be checked line by line rather than trusted. The score measures what the method outputs for the day, never the probability of a gain or a loss. Override the two house groups to run your own school.
 	//
@@ -60084,7 +60093,7 @@ func (c *Client) GetKpCusps(ctx context.Context, params *GetKpCuspsParams, body 
 	return c.Client.Do(req)
 }
 
-// GetKpDailyFinanceWithBody Score the day for money with four sub lord layers - KP Daily Finance API
+// GetKpDailyFinanceWithBody Daily finance score from four KP sub lord layers - KP Daily Finance API
 //
 // A Krishnamurti Paddhati daily finance reading for one native on one date. Four KP layers are each scored against the money houses and weighed into one number: the cusp sub lords of the gain and loss houses (structural promise), the four running Vimshottari lords at the reading moment (timing), the ruling planets of that moment (the pulse), and the sub lord windows the Moon passes through across the civil day (the hour hand), with the best and worst windows named. Weights cusps 30, dasha 40, rulingPlanets 15, moonWindows 15. Every input is the shipped KP arithmetic: Placidus cusps, the 249 sub lord table, the four tier significator rule, the Vimshottari chain to the sookshma level, all in the one ayanamsa you choose. Every row prints its planet, its standing against the two sets and its score, so the number can be audited rather than trusted. The house groups, the classification, the inversion on the loss cusps, the retrograde penalty, the level weights and the layer weights are a KP practitioner convention adopted as the published convention of this route: no classical KP text weighs these four layers against each other, and every table behind the number is printed so the result can be checked line by line rather than trusted. The score measures what the method outputs for the day, never the probability of a gain or a loss. Override the two house groups to run your own school.
 //
@@ -60103,7 +60112,7 @@ func (c *Client) GetKpDailyFinanceWithBody(ctx context.Context, contentType stri
 	return c.Client.Do(req)
 }
 
-// GetKpDailyFinance Score the day for money with four sub lord layers - KP Daily Finance API
+// GetKpDailyFinance Daily finance score from four KP sub lord layers - KP Daily Finance API
 //
 // A Krishnamurti Paddhati daily finance reading for one native on one date. Four KP layers are each scored against the money houses and weighed into one number: the cusp sub lords of the gain and loss houses (structural promise), the four running Vimshottari lords at the reading moment (timing), the ruling planets of that moment (the pulse), and the sub lord windows the Moon passes through across the civil day (the hour hand), with the best and worst windows named. Weights cusps 30, dasha 40, rulingPlanets 15, moonWindows 15. Every input is the shipped KP arithmetic: Placidus cusps, the 249 sub lord table, the four tier significator rule, the Vimshottari chain to the sookshma level, all in the one ayanamsa you choose. Every row prints its planet, its standing against the two sets and its score, so the number can be audited rather than trusted. The house groups, the classification, the inversion on the loss cusps, the retrograde penalty, the level weights and the layer weights are a KP practitioner convention adopted as the published convention of this route: no classical KP text weighs these four layers against each other, and every table behind the number is printed so the result can be checked line by line rather than trusted. The score measures what the method outputs for the day, never the probability of a gain or a loss. Override the two house groups to run your own school.
 //
@@ -81857,7 +81866,7 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with POST /vedic-astrology/kp/cusps (the `GetKpCusps` operationId).
 	GetKpCuspsWithResponse(ctx context.Context, params *GetKpCuspsParams, body GetKpCuspsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetKpCuspsResponse, error)
 
-	// GetKpDailyFinanceWithBodyWithResponse Score the day for money with four sub lord layers - KP Daily Finance API
+	// GetKpDailyFinanceWithBodyWithResponse Daily finance score from four KP sub lord layers - KP Daily Finance API
 	//
 	// A Krishnamurti Paddhati daily finance reading for one native on one date. Four KP layers are each scored against the money houses and weighed into one number: the cusp sub lords of the gain and loss houses (structural promise), the four running Vimshottari lords at the reading moment (timing), the ruling planets of that moment (the pulse), and the sub lord windows the Moon passes through across the civil day (the hour hand), with the best and worst windows named. Weights cusps 30, dasha 40, rulingPlanets 15, moonWindows 15. Every input is the shipped KP arithmetic: Placidus cusps, the 249 sub lord table, the four tier significator rule, the Vimshottari chain to the sookshma level, all in the one ayanamsa you choose. Every row prints its planet, its standing against the two sets and its score, so the number can be audited rather than trusted. The house groups, the classification, the inversion on the loss cusps, the retrograde penalty, the level weights and the layer weights are a KP practitioner convention adopted as the published convention of this route: no classical KP text weighs these four layers against each other, and every table behind the number is printed so the result can be checked line by line rather than trusted. The score measures what the method outputs for the day, never the probability of a gain or a loss. Override the two house groups to run your own school.
 	//
@@ -81866,7 +81875,7 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with POST /vedic-astrology/kp/daily-finance (the `GetKpDailyFinance` operationId).
 	GetKpDailyFinanceWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetKpDailyFinanceResponse, error)
 
-	// GetKpDailyFinanceWithResponse Score the day for money with four sub lord layers - KP Daily Finance API
+	// GetKpDailyFinanceWithResponse Daily finance score from four KP sub lord layers - KP Daily Finance API
 	//
 	// A Krishnamurti Paddhati daily finance reading for one native on one date. Four KP layers are each scored against the money houses and weighed into one number: the cusp sub lords of the gain and loss houses (structural promise), the four running Vimshottari lords at the reading moment (timing), the ruling planets of that moment (the pulse), and the sub lord windows the Moon passes through across the civil day (the hour hand), with the best and worst windows named. Weights cusps 30, dasha 40, rulingPlanets 15, moonWindows 15. Every input is the shipped KP arithmetic: Placidus cusps, the 249 sub lord table, the four tier significator rule, the Vimshottari chain to the sookshma level, all in the one ayanamsa you choose. Every row prints its planet, its standing against the two sets and its score, so the number can be audited rather than trusted. The house groups, the classification, the inversion on the loss cusps, the retrograde penalty, the level weights and the layer weights are a KP practitioner convention adopted as the published convention of this route: no classical KP text weighs these four layers against each other, and every table behind the number is printed so the result can be checked line by line rather than trusted. The score measures what the method outputs for the day, never the probability of a gain or a loss. Override the two house groups to run your own school.
 	//
@@ -113001,13 +113010,11 @@ type CalculateNameCompatibilityResponse struct {
 			// Points What this component contributed.
 			Points float32 `json:"points"`
 		} `json:"components"`
-
-		// Conventions The conventions this answer was computed under.
 		Conventions struct {
 			// MisparGadol Which of the two published methods the name mispar gadol was read as.
 			MisparGadol string `json:"misparGadol"`
 
-			// Transliteration The Latin to Hebrew scheme applied. Absent when both names arrived in Hebrew.
+			// Transliteration The Latin to Hebrew scheme applied. Absent when the caller sent Hebrew directly.
 			Transliteration *string `json:"transliteration,omitempty"`
 		} `json:"conventions"`
 		First struct {
@@ -113112,13 +113119,11 @@ func (r CalculateNameCompatibilityResponse) GetJSON200() *struct {
 		// Points What this component contributed.
 		Points float32 `json:"points"`
 	} `json:"components"`
-
-	// Conventions The conventions this answer was computed under.
 	Conventions struct {
 		// MisparGadol Which of the two published methods the name mispar gadol was read as.
 		MisparGadol string `json:"misparGadol"`
 
-		// Transliteration The Latin to Hebrew scheme applied. Absent when both names arrived in Hebrew.
+		// Transliteration The Latin to Hebrew scheme applied. Absent when the caller sent Hebrew directly.
 		Transliteration *string `json:"transliteration,omitempty"`
 	} `json:"conventions"`
 	First struct {
@@ -113498,7 +113503,7 @@ type CalculateGematriaResponse struct {
 				// LetterID Machine identifier of the letter, always English romanization so it stays safe to compare against in code.
 				LetterID string `json:"letterId"`
 
-				// Name Display name of the letter.
+				// Name Display name of the letter, in the requested language. Branch on letterId, never on this.
 				Name string `json:"name"`
 
 				// Value What this letter contributed under the standard reading, or under the finals reading when one applies.
@@ -113508,7 +113513,7 @@ type CalculateGematriaResponse struct {
 			// Romanization Latin transcription of the Hebrew beside it, produced by one mechanical letter map. It is a label for reading the string back, never a pronunciation claim.
 			Romanization string `json:"romanization"`
 
-			// Rule Why this spelling came out of the map, so a caller can tell the parses apart.
+			// Rule Why this spelling came out of the map: the parse rule first, then one sentence for every reading the scheme applied that the letters alone would not show, so a caller can tell the parses apart.
 			Rule string `json:"rule"`
 
 			// Values Every computed cipher applied to this spelling, in catalogue order. The rows carry no display name, because they are the same ciphers in the same order for every spelling: read the names off the top level values array once.
@@ -113671,7 +113676,7 @@ func (r CalculateGematriaResponse) GetJSON200() *struct {
 			// LetterID Machine identifier of the letter, always English romanization so it stays safe to compare against in code.
 			LetterID string `json:"letterId"`
 
-			// Name Display name of the letter.
+			// Name Display name of the letter, in the requested language. Branch on letterId, never on this.
 			Name string `json:"name"`
 
 			// Value What this letter contributed under the standard reading, or under the finals reading when one applies.
@@ -113681,7 +113686,7 @@ func (r CalculateGematriaResponse) GetJSON200() *struct {
 		// Romanization Latin transcription of the Hebrew beside it, produced by one mechanical letter map. It is a label for reading the string back, never a pronunciation claim.
 		Romanization string `json:"romanization"`
 
-		// Rule Why this spelling came out of the map, so a caller can tell the parses apart.
+		// Rule Why this spelling came out of the map: the parse rule first, then one sentence for every reading the scheme applied that the letters alone would not show, so a caller can tell the parses apart.
 		Rule string `json:"rule"`
 
 		// Values Every computed cipher applied to this spelling, in catalogue order. The rows carry no display name, because they are the same ciphers in the same order for every spelling: read the names off the top level values array once.
@@ -114330,7 +114335,7 @@ type GenerateNameProfileResponse struct {
 				// LetterID Machine identifier of the letter, always English romanization so it stays safe to compare against in code.
 				LetterID string `json:"letterId"`
 
-				// Name Display name of the letter.
+				// Name Display name of the letter, in the requested language. Branch on letterId, never on this.
 				Name string `json:"name"`
 
 				// Value What this letter contributed under the standard reading, or under the finals reading when one applies.
@@ -114340,7 +114345,7 @@ type GenerateNameProfileResponse struct {
 			// Romanization Latin transcription of the Hebrew beside it, produced by one mechanical letter map. It is a label for reading the string back, never a pronunciation claim.
 			Romanization string `json:"romanization"`
 
-			// Rule Why this spelling came out of the map, so a caller can tell the parses apart.
+			// Rule Why this spelling came out of the map: the parse rule first, then one sentence for every reading the scheme applied that the letters alone would not show, so a caller can tell the parses apart.
 			Rule string `json:"rule"`
 
 			// Values Every computed cipher applied to this spelling, in catalogue order. The rows carry no display name, because they are the same ciphers in the same order for every spelling: read the names off the top level values array once.
@@ -114500,7 +114505,7 @@ func (r GenerateNameProfileResponse) GetJSON200() *struct {
 			// LetterID Machine identifier of the letter, always English romanization so it stays safe to compare against in code.
 			LetterID string `json:"letterId"`
 
-			// Name Display name of the letter.
+			// Name Display name of the letter, in the requested language. Branch on letterId, never on this.
 			Name string `json:"name"`
 
 			// Value What this letter contributed under the standard reading, or under the finals reading when one applies.
@@ -114510,7 +114515,7 @@ func (r GenerateNameProfileResponse) GetJSON200() *struct {
 		// Romanization Latin transcription of the Hebrew beside it, produced by one mechanical letter map. It is a label for reading the string back, never a pronunciation claim.
 		Romanization string `json:"romanization"`
 
-		// Rule Why this spelling came out of the map, so a caller can tell the parses apart.
+		// Rule Why this spelling came out of the map: the parse rule first, then one sentence for every reading the scheme applied that the letters alone would not show, so a caller can tell the parses apart.
 		Rule string `json:"rule"`
 
 		// Values Every computed cipher applied to this spelling, in catalogue order. The rows carry no display name, because they are the same ciphers in the same order for every spelling: read the names off the top level values array once.
@@ -144793,7 +144798,7 @@ func (c *ClientWithResponses) GetKpCuspsWithResponse(ctx context.Context, params
 	return ParseGetKpCuspsResponse(rsp)
 }
 
-// GetKpDailyFinanceWithBodyWithResponse Score the day for money with four sub lord layers - KP Daily Finance API
+// GetKpDailyFinanceWithBodyWithResponse Daily finance score from four KP sub lord layers - KP Daily Finance API
 //
 // A Krishnamurti Paddhati daily finance reading for one native on one date. Four KP layers are each scored against the money houses and weighed into one number: the cusp sub lords of the gain and loss houses (structural promise), the four running Vimshottari lords at the reading moment (timing), the ruling planets of that moment (the pulse), and the sub lord windows the Moon passes through across the civil day (the hour hand), with the best and worst windows named. Weights cusps 30, dasha 40, rulingPlanets 15, moonWindows 15. Every input is the shipped KP arithmetic: Placidus cusps, the 249 sub lord table, the four tier significator rule, the Vimshottari chain to the sookshma level, all in the one ayanamsa you choose. Every row prints its planet, its standing against the two sets and its score, so the number can be audited rather than trusted. The house groups, the classification, the inversion on the loss cusps, the retrograde penalty, the level weights and the layer weights are a KP practitioner convention adopted as the published convention of this route: no classical KP text weighs these four layers against each other, and every table behind the number is printed so the result can be checked line by line rather than trusted. The score measures what the method outputs for the day, never the probability of a gain or a loss. Override the two house groups to run your own school.
 //
@@ -144808,7 +144813,7 @@ func (c *ClientWithResponses) GetKpDailyFinanceWithBodyWithResponse(ctx context.
 	return ParseGetKpDailyFinanceResponse(rsp)
 }
 
-// GetKpDailyFinanceWithResponse Score the day for money with four sub lord layers - KP Daily Finance API
+// GetKpDailyFinanceWithResponse Daily finance score from four KP sub lord layers - KP Daily Finance API
 //
 // A Krishnamurti Paddhati daily finance reading for one native on one date. Four KP layers are each scored against the money houses and weighed into one number: the cusp sub lords of the gain and loss houses (structural promise), the four running Vimshottari lords at the reading moment (timing), the ruling planets of that moment (the pulse), and the sub lord windows the Moon passes through across the civil day (the hour hand), with the best and worst windows named. Weights cusps 30, dasha 40, rulingPlanets 15, moonWindows 15. Every input is the shipped KP arithmetic: Placidus cusps, the 249 sub lord table, the four tier significator rule, the Vimshottari chain to the sookshma level, all in the one ayanamsa you choose. Every row prints its planet, its standing against the two sets and its score, so the number can be audited rather than trusted. The house groups, the classification, the inversion on the loss cusps, the retrograde penalty, the level weights and the layer weights are a KP practitioner convention adopted as the published convention of this route: no classical KP text weighs these four layers against each other, and every table behind the number is printed so the result can be checked line by line rather than trusted. The score measures what the method outputs for the day, never the probability of a gain or a loss. Override the two house groups to run your own school.
 //
@@ -164828,13 +164833,11 @@ func ParseCalculateNameCompatibilityResponse(rsp *http.Response) (*CalculateName
 				// Points What this component contributed.
 				Points float32 `json:"points"`
 			} `json:"components"`
-
-			// Conventions The conventions this answer was computed under.
 			Conventions struct {
 				// MisparGadol Which of the two published methods the name mispar gadol was read as.
 				MisparGadol string `json:"misparGadol"`
 
-				// Transliteration The Latin to Hebrew scheme applied. Absent when both names arrived in Hebrew.
+				// Transliteration The Latin to Hebrew scheme applied. Absent when the caller sent Hebrew directly.
 				Transliteration *string `json:"transliteration,omitempty"`
 			} `json:"conventions"`
 			First struct {
@@ -165145,7 +165148,7 @@ func ParseCalculateGematriaResponse(rsp *http.Response) (*CalculateGematriaRespo
 					// LetterID Machine identifier of the letter, always English romanization so it stays safe to compare against in code.
 					LetterID string `json:"letterId"`
 
-					// Name Display name of the letter.
+					// Name Display name of the letter, in the requested language. Branch on letterId, never on this.
 					Name string `json:"name"`
 
 					// Value What this letter contributed under the standard reading, or under the finals reading when one applies.
@@ -165155,7 +165158,7 @@ func ParseCalculateGematriaResponse(rsp *http.Response) (*CalculateGematriaRespo
 				// Romanization Latin transcription of the Hebrew beside it, produced by one mechanical letter map. It is a label for reading the string back, never a pronunciation claim.
 				Romanization string `json:"romanization"`
 
-				// Rule Why this spelling came out of the map, so a caller can tell the parses apart.
+				// Rule Why this spelling came out of the map: the parse rule first, then one sentence for every reading the scheme applied that the letters alone would not show, so a caller can tell the parses apart.
 				Rule string `json:"rule"`
 
 				// Values Every computed cipher applied to this spelling, in catalogue order. The rows carry no display name, because they are the same ciphers in the same order for every spelling: read the names off the top level values array once.
@@ -165651,7 +165654,7 @@ func ParseGenerateNameProfileResponse(rsp *http.Response) (*GenerateNameProfileR
 					// LetterID Machine identifier of the letter, always English romanization so it stays safe to compare against in code.
 					LetterID string `json:"letterId"`
 
-					// Name Display name of the letter.
+					// Name Display name of the letter, in the requested language. Branch on letterId, never on this.
 					Name string `json:"name"`
 
 					// Value What this letter contributed under the standard reading, or under the finals reading when one applies.
@@ -165661,7 +165664,7 @@ func ParseGenerateNameProfileResponse(rsp *http.Response) (*GenerateNameProfileR
 				// Romanization Latin transcription of the Hebrew beside it, produced by one mechanical letter map. It is a label for reading the string back, never a pronunciation claim.
 				Romanization string `json:"romanization"`
 
-				// Rule Why this spelling came out of the map, so a caller can tell the parses apart.
+				// Rule Why this spelling came out of the map: the parse rule first, then one sentence for every reading the scheme applied that the letters alone would not show, so a caller can tell the parses apart.
 				Rule string `json:"rule"`
 
 				// Values Every computed cipher applied to this spelling, in catalogue order. The rows carry no display name, because they are the same ciphers in the same order for every spelling: read the names off the top level values array once.

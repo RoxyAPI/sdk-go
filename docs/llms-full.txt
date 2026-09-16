@@ -93,7 +93,7 @@ Vedic astrology (Jyotish) and KP API for kundli generation with 15 divisional ch
 - `getKpAyanamsa` - GET `/vedic-astrology/kp/ayanamsa` - Get KP-Newcomb ayanamsa - Dynamic daily calculation
 - `generateKpChart` - POST `/vedic-astrology/kp/chart` - Generate complete KP birth chart
 - `getKpCusps` - POST `/vedic-astrology/kp/cusps` - Get KP Placidus house cusps with sub-lords
-- `getKpDailyFinance` - POST `/vedic-astrology/kp/daily-finance` - Score the day for money with four sub lord layers - KP Daily Finance API
+- `getKpDailyFinance` - POST `/vedic-astrology/kp/daily-finance` - Daily finance score from four KP sub lord layers - KP Daily Finance API
 - `castKpHoraryChart` - POST `/vedic-astrology/kp/horary` - Cast a KP horary (Prashna) chart from a number 1-249 - KP Horary API
 - `getKpPlanets` - POST `/vedic-astrology/kp/planets` - Get KP planetary positions with sub-lords
 - `getKpPlanetsInterval` - POST `/vedic-astrology/kp/planets-interval` - Get KP planets at time intervals
