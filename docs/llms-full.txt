@@ -63,7 +63,7 @@ Western astrology API for natal birth charts, daily, weekly, monthly, and yearly
 
 ## Vedic Astrology - `roxy.VedicAstrology`
 
-Vedic astrology (Jyotish) and KP API for kundli generation with 15 divisional charts (D1-D60), Ashtakoot Gun Milan ku...
+Vedic astrology (Jyotish) and KP API for kundli generation with 15 divisional charts (D1-D60), panchang with choghadi...
 
 - `calculateArudhaPadas` - POST `/vedic-astrology/arudha` - Get the twelve Arudha padas - Arudha Lagna Calculator API
 - `calculateAshtakavarga` - POST `/vedic-astrology/ashtakavarga` - Get Ashtakavarga (planetary strength) analysis - Ashtakavarga Calculator API
@@ -124,7 +124,7 @@ Vedic astrology (Jyotish) and KP API for kundli generation with 15 divisional ch
 
 ## Forecast - `roxy.Forecast`
 
-Forecast API that merges upcoming transit aspects, sign ingresses, retrograde stations, new and full moons, biorhythm...
+Astrology forecast API that merges upcoming transit aspects, sign ingresses, retrograde stations, new and full moons,...
 
 - `generateDigest` - POST `/forecast/digest` - Forecast digest - Pre-summarized next 24h, 7d, 30d, and 90d rollups
 - `findSignificantDates` - POST `/forecast/significant-dates` - Significant dates - High-significance cross-domain forecast highlights
@@ -134,7 +134,7 @@ Forecast API that merges upcoming transit aspects, sign ingresses, retrograde st
 
 ## Human Design - `roxy.HumanDesign`
 
-Generate the full Human Design bodygraph from a birth moment: type, strategy, inner authority, profile, definition, i...
+Human Design API that generates the full bodygraph from a birth moment: type, strategy, inner authority, profile, def...
 
 - `generateBodygraph` - POST `/human-design/bodygraph` - Generate full Human Design bodygraph - Type, authority, profile, centers, channels, gates
 - `calculateCenters` - POST `/human-design/centers` - Calculate the nine Human Design centers
@@ -151,7 +151,7 @@ Generate the full Human Design bodygraph from a birth moment: type, strategy, in
 
 ## Chinese Astrology - `roxy.ChineseAstrology`
 
-Calculate BaZi Four Pillars charts, Chinese zodiac signs, and the Chinese lunisolar calendar from any birth moment: y...
+Chinese zodiac and BaZi astrology API: Four Pillars charts, Chinese zodiac signs and the Chinese lunisolar calendar f...
 
 - `calculateAnnualForecast` - POST `/chinese-astrology/bazi/annual-forecast` - Calculate BaZi annual forecast - Liu Nian yearly pillar API
 - `generateBaziChart` - POST `/chinese-astrology/bazi/chart` - Generate BaZi chart - Four Pillars of Destiny calculator API
@@ -357,7 +357,7 @@ Angel numbers API with meanings for 111, 222, 333, 444, 555, 666, 777, 888, 999,
 
 ## Location and Timezone - `roxy.Location`
 
-Location and timezone API with city search and geocoding across 235,000+ cities in 240+ countries, returning latitude...
+Timezone and location API with city search and geocoding across 235,000+ cities in 240+ countries, returning latitude...
 
 - `listCountries` - GET `/location/countries` - List all countries - ISO codes and city coverage
 - `getCitiesByCountry` - GET `/location/countries/{iso2}` - Get cities in a country - Geocoding directory sorted by population

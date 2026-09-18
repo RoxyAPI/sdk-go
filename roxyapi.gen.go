@@ -49863,7 +49863,7 @@ type ClientInterface interface {
 
 	// CalculateArabicLotsWithBody Arabic lots calculator - seven Hermetic parts including Part of Fortune and Spirit
 	//
-	// Calculate the seven Hermetic lots (Arabic parts) for any birth moment: Part of Fortune, Part of Spirit, Eros, Necessity, Courage, Victory, and Nemesis. Each lot is a sensitive point projected by arc from the Ascendant, with the day or night formula applied automatically from the chart sect. Returns the zodiac sign, degree, exact longitude, the arc used, and a plain language interpretation per lot, for Hellenistic and traditional astrology apps. Built on accurate tropical chart positions, no astronomy expertise needed.
+	// Calculate the seven Hermetic lots (Arabic parts) for any birth moment. The lots are the Part of Fortune, Part of Spirit, Eros, Necessity, Courage, Victory, and Nemesis. Each lot is a sensitive point projected by arc from the Ascendant, with the day or night formula applied automatically from the chart sect. Returns the zodiac sign, degree, exact longitude, the arc used, and a plain language interpretation per lot, for Hellenistic and traditional astrology apps. Built on accurate tropical chart positions, no astronomy expertise needed.
 	//
 	// Takes any type of body and a specified content type.
 	//
@@ -49872,7 +49872,7 @@ type ClientInterface interface {
 
 	// CalculateArabicLots Arabic lots calculator - seven Hermetic parts including Part of Fortune and Spirit
 	//
-	// Calculate the seven Hermetic lots (Arabic parts) for any birth moment: Part of Fortune, Part of Spirit, Eros, Necessity, Courage, Victory, and Nemesis. Each lot is a sensitive point projected by arc from the Ascendant, with the day or night formula applied automatically from the chart sect. Returns the zodiac sign, degree, exact longitude, the arc used, and a plain language interpretation per lot, for Hellenistic and traditional astrology apps. Built on accurate tropical chart positions, no astronomy expertise needed.
+	// Calculate the seven Hermetic lots (Arabic parts) for any birth moment. The lots are the Part of Fortune, Part of Spirit, Eros, Necessity, Courage, Victory, and Nemesis. Each lot is a sensitive point projected by arc from the Ascendant, with the day or night formula applied automatically from the chart sect. Returns the zodiac sign, degree, exact longitude, the arc used, and a plain language interpretation per lot, for Hellenistic and traditional astrology apps. Built on accurate tropical chart positions, no astronomy expertise needed.
 	//
 	// Takes a body of the `application/json` content type.
 	//
@@ -50025,7 +50025,7 @@ type ClientInterface interface {
 
 	// GenerateFixedStarsWithBody Fixed stars and star conjunctions calculator - Regulus, Spica, Algol natal report
 	//
-	// Calculate the tropical zodiac positions of the major named fixed stars for any birth moment, including the four Royal stars and the fifteen Behenian stars, then detect conjunctions to the natal planets, Ascendant, and Midheaven. Each star returns its precessed ecliptic longitude, zodiac sign, visual magnitude, and traditional planetary nature, with a plain language interpretation for every conjunction inside the chosen orb. A focused tool for natal reports that weigh Regulus, Spica, Aldebaran, Antares, and Algol against the chart.
+	// Calculate the tropical zodiac positions of the major named fixed stars for any birth moment. Covers the four Royal stars and the fifteen Behenian stars, then detects conjunctions to the natal planets, Ascendant, and Midheaven. Each star returns its precessed ecliptic longitude, zodiac sign, visual magnitude, and traditional planetary nature, with a plain language interpretation for every conjunction inside the chosen orb. A focused tool for natal reports that weigh Regulus, Spica, Aldebaran, Antares, and Algol against the chart.
 	//
 	// Takes any type of body and a specified content type.
 	//
@@ -50034,7 +50034,7 @@ type ClientInterface interface {
 
 	// GenerateFixedStars Fixed stars and star conjunctions calculator - Regulus, Spica, Algol natal report
 	//
-	// Calculate the tropical zodiac positions of the major named fixed stars for any birth moment, including the four Royal stars and the fifteen Behenian stars, then detect conjunctions to the natal planets, Ascendant, and Midheaven. Each star returns its precessed ecliptic longitude, zodiac sign, visual magnitude, and traditional planetary nature, with a plain language interpretation for every conjunction inside the chosen orb. A focused tool for natal reports that weigh Regulus, Spica, Aldebaran, Antares, and Algol against the chart.
+	// Calculate the tropical zodiac positions of the major named fixed stars for any birth moment. Covers the four Royal stars and the fifteen Behenian stars, then detects conjunctions to the natal planets, Ascendant, and Midheaven. Each star returns its precessed ecliptic longitude, zodiac sign, visual magnitude, and traditional planetary nature, with a plain language interpretation for every conjunction inside the chosen orb. A focused tool for natal reports that weigh Regulus, Spica, Aldebaran, Antares, and Algol against the chart.
 	//
 	// Takes a body of the `application/json` content type.
 	//
@@ -50232,7 +50232,7 @@ type ClientInterface interface {
 
 	// GetPlanetaryPositionsWithBody Get planetary positions - Ephemeris calculator for all planets
 	//
-	// Calculate accurate tropical zodiac positions for all 14 celestial bodies (the 10 classical planets Sun through Pluto, the lunar nodes, Chiron, and Black Moon Lilith) for any date, time, and location. Returns longitude, latitude, zodiac sign, degree within sign, daily motion speed, and retrograde status. Perfect for transit tracking, ephemeris tables, astrology apps, and planetary position widgets. Verified against NASA JPL Horizons.
+	// Calculate accurate tropical zodiac positions for all 14 celestial bodies for any date, time, and location. The bodies are the 10 classical planets Sun through Pluto, the lunar nodes, Chiron, and Black Moon Lilith. Returns longitude, latitude, zodiac sign, degree within sign, daily motion speed, and retrograde status. Perfect for transit tracking, ephemeris tables, astrology apps, and planetary position widgets. Verified against NASA JPL Horizons.
 	//
 	// Takes any type of body and a specified content type.
 	//
@@ -50241,7 +50241,7 @@ type ClientInterface interface {
 
 	// GetPlanetaryPositions Get planetary positions - Ephemeris calculator for all planets
 	//
-	// Calculate accurate tropical zodiac positions for all 14 celestial bodies (the 10 classical planets Sun through Pluto, the lunar nodes, Chiron, and Black Moon Lilith) for any date, time, and location. Returns longitude, latitude, zodiac sign, degree within sign, daily motion speed, and retrograde status. Perfect for transit tracking, ephemeris tables, astrology apps, and planetary position widgets. Verified against NASA JPL Horizons.
+	// Calculate accurate tropical zodiac positions for all 14 celestial bodies for any date, time, and location. The bodies are the 10 classical planets Sun through Pluto, the lunar nodes, Chiron, and Black Moon Lilith. Returns longitude, latitude, zodiac sign, degree within sign, daily motion speed, and retrograde status. Perfect for transit tracking, ephemeris tables, astrology apps, and planetary position widgets. Verified against NASA JPL Horizons.
 	//
 	// Takes a body of the `application/json` content type.
 	//
@@ -50286,7 +50286,7 @@ type ClientInterface interface {
 
 	// GenerateProgressionsWithBody Secondary progressions calculator - progressed chart, progressed Sun and Moon
 	//
-	// Generate the secondary progressed chart for any date using the day-for-a-year key, where each day of ephemeris motion after birth stands in for one year of life. Returns every progressed body with its sign, degree, whole-sign house, motion, and retrograde state, plus the progressed Ascendant and Midheaven via the Naibod arc. The progressed Sun and progressed Moon are the headline timing markers for inner growth and emotional chapters. Secondary progressions API, progressed chart calculator, progressed Sun and Moon, progressed Ascendant and Midheaven.
+	// Generate the secondary progressed chart for any date using the day-for-a-year key. Each day of ephemeris motion after birth stands in for one year of life. Returns every progressed body with its sign, degree, whole-sign house, motion, and retrograde state, plus the progressed Ascendant and Midheaven via the Naibod arc. The progressed Sun and progressed Moon are the headline timing markers for inner growth and emotional chapters. Secondary progressions API, progressed chart calculator, progressed Sun and Moon, progressed Ascendant and Midheaven.
 	//
 	// Takes any type of body and a specified content type.
 	//
@@ -50295,7 +50295,7 @@ type ClientInterface interface {
 
 	// GenerateProgressions Secondary progressions calculator - progressed chart, progressed Sun and Moon
 	//
-	// Generate the secondary progressed chart for any date using the day-for-a-year key, where each day of ephemeris motion after birth stands in for one year of life. Returns every progressed body with its sign, degree, whole-sign house, motion, and retrograde state, plus the progressed Ascendant and Midheaven via the Naibod arc. The progressed Sun and progressed Moon are the headline timing markers for inner growth and emotional chapters. Secondary progressions API, progressed chart calculator, progressed Sun and Moon, progressed Ascendant and Midheaven.
+	// Generate the secondary progressed chart for any date using the day-for-a-year key. Each day of ephemeris motion after birth stands in for one year of life. Returns every progressed body with its sign, degree, whole-sign house, motion, and retrograde state, plus the progressed Ascendant and Midheaven via the Naibod arc. The progressed Sun and progressed Moon are the headline timing markers for inner growth and emotional chapters. Secondary progressions API, progressed chart calculator, progressed Sun and Moon, progressed Ascendant and Midheaven.
 	//
 	// Takes a body of the `application/json` content type.
 	//
@@ -52143,7 +52143,7 @@ type ClientInterface interface {
 
 	// ListCards List all 78 tarot cards - Tarot deck catalog API
 	//
-	// Retrieve the complete Rider-Waite-Smith tarot deck of 78 cards: 22 Major Arcana (numbered 0-21, representing life lessons, spiritual themes, and karmic influences like The Fool, Death, The Tower) plus 56 Minor Arcana (4 suits × 14 cards each for daily situations and practical matters). Filter by arcana type (major for spiritual guidance, minor for everyday concerns), suit (cups for emotions and relationships, wands for creativity and passion, swords for intellect and conflict, pentacles for material wealth and finances), or card number (Ace=1 for new beginnings, 2-10 for progression, Page=11 for messages, Knight=12 for action, Queen=13 for mastery, King=14 for authority). Returns lightweight basic card data. Use GET /cards/{id} for full upright and reversed interpretations with keywords. Perfect for building tarot reference libraries, card databases, learning applications, or browsing the complete traditional deck used by professional tarot readers worldwide.
+	// Retrieve the complete Rider-Waite-Smith tarot deck of 78 cards. The 22 Major Arcana (numbered 0-21) carry life lessons, spiritual themes, and karmic influences like The Fool, Death, The Tower; the 56 Minor Arcana (4 suits × 14 cards each) cover daily situations and practical matters. Filter by arcana type (major for spiritual guidance, minor for everyday concerns), suit (cups for emotions and relationships, wands for creativity and passion, swords for intellect and conflict, pentacles for material wealth and finances), or card number (Ace=1 for new beginnings, 2-10 for progression, Page=11 for messages, Knight=12 for action, Queen=13 for mastery, King=14 for authority). Returns lightweight basic card data. Use GET /cards/{id} for full upright and reversed interpretations with keywords. Perfect for building tarot reference libraries, card databases, learning applications, or browsing the complete traditional deck used by professional tarot readers worldwide.
 	//
 	// Corresponds with GET /tarot/cards (the `ListCards` operationId).
 	ListCards(ctx context.Context, params *ListCardsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -52265,7 +52265,7 @@ type ClientInterface interface {
 
 	// CastThreeCardWithBody Three card spread, past present future - Tarot spread API
 	//
-	// Perform the classic three-card tarot spread revealing Past (what led to this situation), Present (current energy and circumstances), and Future (likely outcome if current path continues). The most popular beginner-friendly spread, perfect for quick insights, daily guidance, or exploring specific questions. Each position includes a drawn card with reversal state, keywords, full meaning, and position-specific interpretation. Returns a summary connecting all three cards. Ideal for tarot reading apps, decision-making tools, and personal growth platforms. Optionally provide a seed for reproducible readings.
+	// Perform the classic three-card tarot spread revealing Past, Present, and Future. Past is what led to this situation, Present the current energy and circumstances, and Future the likely outcome if the current path continues. The most popular beginner-friendly spread, perfect for quick insights, daily guidance, or exploring specific questions. Each position includes a drawn card with reversal state, keywords, full meaning, and position-specific interpretation. Returns a summary connecting all three cards. Ideal for tarot reading apps, decision-making tools, and personal growth platforms. Optionally provide a seed for reproducible readings.
 	//
 	// Takes any type of body and a specified content type.
 	//
@@ -52274,7 +52274,7 @@ type ClientInterface interface {
 
 	// CastThreeCard Three card spread, past present future - Tarot spread API
 	//
-	// Perform the classic three-card tarot spread revealing Past (what led to this situation), Present (current energy and circumstances), and Future (likely outcome if current path continues). The most popular beginner-friendly spread, perfect for quick insights, daily guidance, or exploring specific questions. Each position includes a drawn card with reversal state, keywords, full meaning, and position-specific interpretation. Returns a summary connecting all three cards. Ideal for tarot reading apps, decision-making tools, and personal growth platforms. Optionally provide a seed for reproducible readings.
+	// Perform the classic three-card tarot spread revealing Past, Present, and Future. Past is what led to this situation, Present the current energy and circumstances, and Future the likely outcome if the current path continues. The most popular beginner-friendly spread, perfect for quick insights, daily guidance, or exploring specific questions. Each position includes a drawn card with reversal state, keywords, full meaning, and position-specific interpretation. Returns a summary connecting all three cards. Ideal for tarot reading apps, decision-making tools, and personal growth platforms. Optionally provide a seed for reproducible readings.
 	//
 	// Takes a body of the `application/json` content type.
 	//
@@ -52656,7 +52656,7 @@ type ClientInterface interface {
 
 	// GetCurrentDashaWithBody Get current Mahadasha, Antardasha, Pratyantardasha, Sookshma, Prana - Dasha Calculator API
 	//
-	// Calculate all five running Vimshottari Dasha levels (Mahadasha, Antardasha, Pratyantardasha, Sookshma, Prana) with remaining time in each. Accurate dasha calculator API for life phase prediction and planetary period analysis. Returns the dasha timeline with start/end dates for every level, ready for a current DBA readout down to hour-level timing. Pass datetime to read the five lords at any moment instead of now, which is what a reading prepared for tomorrow or a backtest over a past day needs. Set significators true to add the KP star lord, sub lord, signified houses and strength grade of each running lord, plus the houses they have in common. Essential for understanding current planetary influences, dasha transitions, and timing events in Vedic astrology. 120-year dasha system based on moon nakshatra at birth, with selectable Lahiri or KP ayanamsa.
+	// Calculate all five running Vimshottari Dasha levels with remaining time in each. The levels are Mahadasha, Antardasha, Pratyantardasha, Sookshma, and Prana. Accurate dasha calculator API for life phase prediction and planetary period analysis. Returns the dasha timeline with start/end dates for every level, ready for a current DBA readout down to hour-level timing. Pass datetime to read the five lords at any moment instead of now, which is what a reading prepared for tomorrow or a backtest over a past day needs. Set significators true to add the KP star lord, sub lord, signified houses and strength grade of each running lord, plus the houses they have in common. Essential for understanding current planetary influences, dasha transitions, and timing events in Vedic astrology. 120-year dasha system based on moon nakshatra at birth, with selectable Lahiri or KP ayanamsa.
 	//
 	// Takes any type of body and a specified content type.
 	//
@@ -52665,7 +52665,7 @@ type ClientInterface interface {
 
 	// GetCurrentDasha Get current Mahadasha, Antardasha, Pratyantardasha, Sookshma, Prana - Dasha Calculator API
 	//
-	// Calculate all five running Vimshottari Dasha levels (Mahadasha, Antardasha, Pratyantardasha, Sookshma, Prana) with remaining time in each. Accurate dasha calculator API for life phase prediction and planetary period analysis. Returns the dasha timeline with start/end dates for every level, ready for a current DBA readout down to hour-level timing. Pass datetime to read the five lords at any moment instead of now, which is what a reading prepared for tomorrow or a backtest over a past day needs. Set significators true to add the KP star lord, sub lord, signified houses and strength grade of each running lord, plus the houses they have in common. Essential for understanding current planetary influences, dasha transitions, and timing events in Vedic astrology. 120-year dasha system based on moon nakshatra at birth, with selectable Lahiri or KP ayanamsa.
+	// Calculate all five running Vimshottari Dasha levels with remaining time in each. The levels are Mahadasha, Antardasha, Pratyantardasha, Sookshma, and Prana. Accurate dasha calculator API for life phase prediction and planetary period analysis. Returns the dasha timeline with start/end dates for every level, ready for a current DBA readout down to hour-level timing. Pass datetime to read the five lords at any moment instead of now, which is what a reading prepared for tomorrow or a backtest over a past day needs. Set significators true to add the KP star lord, sub lord, signified houses and strength grade of each running lord, plus the houses they have in common. Essential for understanding current planetary influences, dasha transitions, and timing events in Vedic astrology. 120-year dasha system based on moon nakshatra at birth, with selectable Lahiri or KP ayanamsa.
 	//
 	// Takes a body of the `application/json` content type.
 	//
@@ -53443,7 +53443,7 @@ func (c *Client) GetAngelNumber(ctx context.Context, number string, params *GetA
 
 // CalculateArabicLotsWithBody Arabic lots calculator - seven Hermetic parts including Part of Fortune and Spirit
 //
-// Calculate the seven Hermetic lots (Arabic parts) for any birth moment: Part of Fortune, Part of Spirit, Eros, Necessity, Courage, Victory, and Nemesis. Each lot is a sensitive point projected by arc from the Ascendant, with the day or night formula applied automatically from the chart sect. Returns the zodiac sign, degree, exact longitude, the arc used, and a plain language interpretation per lot, for Hellenistic and traditional astrology apps. Built on accurate tropical chart positions, no astronomy expertise needed.
+// Calculate the seven Hermetic lots (Arabic parts) for any birth moment. The lots are the Part of Fortune, Part of Spirit, Eros, Necessity, Courage, Victory, and Nemesis. Each lot is a sensitive point projected by arc from the Ascendant, with the day or night formula applied automatically from the chart sect. Returns the zodiac sign, degree, exact longitude, the arc used, and a plain language interpretation per lot, for Hellenistic and traditional astrology apps. Built on accurate tropical chart positions, no astronomy expertise needed.
 //
 // Takes any type of body and a specified content type.
 //
@@ -53462,7 +53462,7 @@ func (c *Client) CalculateArabicLotsWithBody(ctx context.Context, params *Calcul
 
 // CalculateArabicLots Arabic lots calculator - seven Hermetic parts including Part of Fortune and Spirit
 //
-// Calculate the seven Hermetic lots (Arabic parts) for any birth moment: Part of Fortune, Part of Spirit, Eros, Necessity, Courage, Victory, and Nemesis. Each lot is a sensitive point projected by arc from the Ascendant, with the day or night formula applied automatically from the chart sect. Returns the zodiac sign, degree, exact longitude, the arc used, and a plain language interpretation per lot, for Hellenistic and traditional astrology apps. Built on accurate tropical chart positions, no astronomy expertise needed.
+// Calculate the seven Hermetic lots (Arabic parts) for any birth moment. The lots are the Part of Fortune, Part of Spirit, Eros, Necessity, Courage, Victory, and Nemesis. Each lot is a sensitive point projected by arc from the Ascendant, with the day or night formula applied automatically from the chart sect. Returns the zodiac sign, degree, exact longitude, the arc used, and a plain language interpretation per lot, for Hellenistic and traditional astrology apps. Built on accurate tropical chart positions, no astronomy expertise needed.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -53785,7 +53785,7 @@ func (c *Client) GetPlanetaryNodePassages(ctx context.Context, params *GetPlanet
 
 // GenerateFixedStarsWithBody Fixed stars and star conjunctions calculator - Regulus, Spica, Algol natal report
 //
-// Calculate the tropical zodiac positions of the major named fixed stars for any birth moment, including the four Royal stars and the fifteen Behenian stars, then detect conjunctions to the natal planets, Ascendant, and Midheaven. Each star returns its precessed ecliptic longitude, zodiac sign, visual magnitude, and traditional planetary nature, with a plain language interpretation for every conjunction inside the chosen orb. A focused tool for natal reports that weigh Regulus, Spica, Aldebaran, Antares, and Algol against the chart.
+// Calculate the tropical zodiac positions of the major named fixed stars for any birth moment. Covers the four Royal stars and the fifteen Behenian stars, then detects conjunctions to the natal planets, Ascendant, and Midheaven. Each star returns its precessed ecliptic longitude, zodiac sign, visual magnitude, and traditional planetary nature, with a plain language interpretation for every conjunction inside the chosen orb. A focused tool for natal reports that weigh Regulus, Spica, Aldebaran, Antares, and Algol against the chart.
 //
 // Takes any type of body and a specified content type.
 //
@@ -53804,7 +53804,7 @@ func (c *Client) GenerateFixedStarsWithBody(ctx context.Context, params *Generat
 
 // GenerateFixedStars Fixed stars and star conjunctions calculator - Regulus, Spica, Algol natal report
 //
-// Calculate the tropical zodiac positions of the major named fixed stars for any birth moment, including the four Royal stars and the fifteen Behenian stars, then detect conjunctions to the natal planets, Ascendant, and Midheaven. Each star returns its precessed ecliptic longitude, zodiac sign, visual magnitude, and traditional planetary nature, with a plain language interpretation for every conjunction inside the chosen orb. A focused tool for natal reports that weigh Regulus, Spica, Aldebaran, Antares, and Algol against the chart.
+// Calculate the tropical zodiac positions of the major named fixed stars for any birth moment. Covers the four Royal stars and the fifteen Behenian stars, then detects conjunctions to the natal planets, Ascendant, and Midheaven. Each star returns its precessed ecliptic longitude, zodiac sign, visual magnitude, and traditional planetary nature, with a plain language interpretation for every conjunction inside the chosen orb. A focused tool for natal reports that weigh Regulus, Spica, Aldebaran, Antares, and Algol against the chart.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -54242,7 +54242,7 @@ func (c *Client) GeneratePlanetaryReturn(ctx context.Context, params *GeneratePl
 
 // GetPlanetaryPositionsWithBody Get planetary positions - Ephemeris calculator for all planets
 //
-// Calculate accurate tropical zodiac positions for all 14 celestial bodies (the 10 classical planets Sun through Pluto, the lunar nodes, Chiron, and Black Moon Lilith) for any date, time, and location. Returns longitude, latitude, zodiac sign, degree within sign, daily motion speed, and retrograde status. Perfect for transit tracking, ephemeris tables, astrology apps, and planetary position widgets. Verified against NASA JPL Horizons.
+// Calculate accurate tropical zodiac positions for all 14 celestial bodies for any date, time, and location. The bodies are the 10 classical planets Sun through Pluto, the lunar nodes, Chiron, and Black Moon Lilith. Returns longitude, latitude, zodiac sign, degree within sign, daily motion speed, and retrograde status. Perfect for transit tracking, ephemeris tables, astrology apps, and planetary position widgets. Verified against NASA JPL Horizons.
 //
 // Takes any type of body and a specified content type.
 //
@@ -54261,7 +54261,7 @@ func (c *Client) GetPlanetaryPositionsWithBody(ctx context.Context, params *GetP
 
 // GetPlanetaryPositions Get planetary positions - Ephemeris calculator for all planets
 //
-// Calculate accurate tropical zodiac positions for all 14 celestial bodies (the 10 classical planets Sun through Pluto, the lunar nodes, Chiron, and Black Moon Lilith) for any date, time, and location. Returns longitude, latitude, zodiac sign, degree within sign, daily motion speed, and retrograde status. Perfect for transit tracking, ephemeris tables, astrology apps, and planetary position widgets. Verified against NASA JPL Horizons.
+// Calculate accurate tropical zodiac positions for all 14 celestial bodies for any date, time, and location. The bodies are the 10 classical planets Sun through Pluto, the lunar nodes, Chiron, and Black Moon Lilith. Returns longitude, latitude, zodiac sign, degree within sign, daily motion speed, and retrograde status. Perfect for transit tracking, ephemeris tables, astrology apps, and planetary position widgets. Verified against NASA JPL Horizons.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -54356,7 +54356,7 @@ func (c *Client) GenerateProfections(ctx context.Context, params *GenerateProfec
 
 // GenerateProgressionsWithBody Secondary progressions calculator - progressed chart, progressed Sun and Moon
 //
-// Generate the secondary progressed chart for any date using the day-for-a-year key, where each day of ephemeris motion after birth stands in for one year of life. Returns every progressed body with its sign, degree, whole-sign house, motion, and retrograde state, plus the progressed Ascendant and Midheaven via the Naibod arc. The progressed Sun and progressed Moon are the headline timing markers for inner growth and emotional chapters. Secondary progressions API, progressed chart calculator, progressed Sun and Moon, progressed Ascendant and Midheaven.
+// Generate the secondary progressed chart for any date using the day-for-a-year key. Each day of ephemeris motion after birth stands in for one year of life. Returns every progressed body with its sign, degree, whole-sign house, motion, and retrograde state, plus the progressed Ascendant and Midheaven via the Naibod arc. The progressed Sun and progressed Moon are the headline timing markers for inner growth and emotional chapters. Secondary progressions API, progressed chart calculator, progressed Sun and Moon, progressed Ascendant and Midheaven.
 //
 // Takes any type of body and a specified content type.
 //
@@ -54375,7 +54375,7 @@ func (c *Client) GenerateProgressionsWithBody(ctx context.Context, params *Gener
 
 // GenerateProgressions Secondary progressions calculator - progressed chart, progressed Sun and Moon
 //
-// Generate the secondary progressed chart for any date using the day-for-a-year key, where each day of ephemeris motion after birth stands in for one year of life. Returns every progressed body with its sign, degree, whole-sign house, motion, and retrograde state, plus the progressed Ascendant and Midheaven via the Naibod arc. The progressed Sun and progressed Moon are the headline timing markers for inner growth and emotional chapters. Secondary progressions API, progressed chart calculator, progressed Sun and Moon, progressed Ascendant and Midheaven.
+// Generate the secondary progressed chart for any date using the day-for-a-year key. Each day of ephemeris motion after birth stands in for one year of life. Returns every progressed body with its sign, degree, whole-sign house, motion, and retrograde state, plus the progressed Ascendant and Midheaven via the Naibod arc. The progressed Sun and progressed Moon are the headline timing markers for inner growth and emotional chapters. Secondary progressions API, progressed chart calculator, progressed Sun and Moon, progressed Ascendant and Midheaven.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -58443,7 +58443,7 @@ func (c *Client) CalculateSoulUrge(ctx context.Context, params *CalculateSoulUrg
 
 // ListCards List all 78 tarot cards - Tarot deck catalog API
 //
-// Retrieve the complete Rider-Waite-Smith tarot deck of 78 cards: 22 Major Arcana (numbered 0-21, representing life lessons, spiritual themes, and karmic influences like The Fool, Death, The Tower) plus 56 Minor Arcana (4 suits × 14 cards each for daily situations and practical matters). Filter by arcana type (major for spiritual guidance, minor for everyday concerns), suit (cups for emotions and relationships, wands for creativity and passion, swords for intellect and conflict, pentacles for material wealth and finances), or card number (Ace=1 for new beginnings, 2-10 for progression, Page=11 for messages, Knight=12 for action, Queen=13 for mastery, King=14 for authority). Returns lightweight basic card data. Use GET /cards/{id} for full upright and reversed interpretations with keywords. Perfect for building tarot reference libraries, card databases, learning applications, or browsing the complete traditional deck used by professional tarot readers worldwide.
+// Retrieve the complete Rider-Waite-Smith tarot deck of 78 cards. The 22 Major Arcana (numbered 0-21) carry life lessons, spiritual themes, and karmic influences like The Fool, Death, The Tower; the 56 Minor Arcana (4 suits × 14 cards each) cover daily situations and practical matters. Filter by arcana type (major for spiritual guidance, minor for everyday concerns), suit (cups for emotions and relationships, wands for creativity and passion, swords for intellect and conflict, pentacles for material wealth and finances), or card number (Ace=1 for new beginnings, 2-10 for progression, Page=11 for messages, Knight=12 for action, Queen=13 for mastery, King=14 for authority). Returns lightweight basic card data. Use GET /cards/{id} for full upright and reversed interpretations with keywords. Perfect for building tarot reference libraries, card databases, learning applications, or browsing the complete traditional deck used by professional tarot readers worldwide.
 //
 // Corresponds with GET /tarot/cards (the `ListCards` operationId).
 func (c *Client) ListCards(ctx context.Context, params *ListCardsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
@@ -58705,7 +58705,7 @@ func (c *Client) CastLoveSpread(ctx context.Context, params *CastLoveSpreadParam
 
 // CastThreeCardWithBody Three card spread, past present future - Tarot spread API
 //
-// Perform the classic three-card tarot spread revealing Past (what led to this situation), Present (current energy and circumstances), and Future (likely outcome if current path continues). The most popular beginner-friendly spread, perfect for quick insights, daily guidance, or exploring specific questions. Each position includes a drawn card with reversal state, keywords, full meaning, and position-specific interpretation. Returns a summary connecting all three cards. Ideal for tarot reading apps, decision-making tools, and personal growth platforms. Optionally provide a seed for reproducible readings.
+// Perform the classic three-card tarot spread revealing Past, Present, and Future. Past is what led to this situation, Present the current energy and circumstances, and Future the likely outcome if the current path continues. The most popular beginner-friendly spread, perfect for quick insights, daily guidance, or exploring specific questions. Each position includes a drawn card with reversal state, keywords, full meaning, and position-specific interpretation. Returns a summary connecting all three cards. Ideal for tarot reading apps, decision-making tools, and personal growth platforms. Optionally provide a seed for reproducible readings.
 //
 // Takes any type of body and a specified content type.
 //
@@ -58724,7 +58724,7 @@ func (c *Client) CastThreeCardWithBody(ctx context.Context, params *CastThreeCar
 
 // CastThreeCard Three card spread, past present future - Tarot spread API
 //
-// Perform the classic three-card tarot spread revealing Past (what led to this situation), Present (current energy and circumstances), and Future (likely outcome if current path continues). The most popular beginner-friendly spread, perfect for quick insights, daily guidance, or exploring specific questions. Each position includes a drawn card with reversal state, keywords, full meaning, and position-specific interpretation. Returns a summary connecting all three cards. Ideal for tarot reading apps, decision-making tools, and personal growth platforms. Optionally provide a seed for reproducible readings.
+// Perform the classic three-card tarot spread revealing Past, Present, and Future. Past is what led to this situation, Present the current energy and circumstances, and Future the likely outcome if the current path continues. The most popular beginner-friendly spread, perfect for quick insights, daily guidance, or exploring specific questions. Each position includes a drawn card with reversal state, keywords, full meaning, and position-specific interpretation. Returns a summary connecting all three cards. Ideal for tarot reading apps, decision-making tools, and personal growth platforms. Optionally provide a seed for reproducible readings.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -59546,7 +59546,7 @@ func (c *Client) GetVedicDailyReading(ctx context.Context, params *GetVedicDaily
 
 // GetCurrentDashaWithBody Get current Mahadasha, Antardasha, Pratyantardasha, Sookshma, Prana - Dasha Calculator API
 //
-// Calculate all five running Vimshottari Dasha levels (Mahadasha, Antardasha, Pratyantardasha, Sookshma, Prana) with remaining time in each. Accurate dasha calculator API for life phase prediction and planetary period analysis. Returns the dasha timeline with start/end dates for every level, ready for a current DBA readout down to hour-level timing. Pass datetime to read the five lords at any moment instead of now, which is what a reading prepared for tomorrow or a backtest over a past day needs. Set significators true to add the KP star lord, sub lord, signified houses and strength grade of each running lord, plus the houses they have in common. Essential for understanding current planetary influences, dasha transitions, and timing events in Vedic astrology. 120-year dasha system based on moon nakshatra at birth, with selectable Lahiri or KP ayanamsa.
+// Calculate all five running Vimshottari Dasha levels with remaining time in each. The levels are Mahadasha, Antardasha, Pratyantardasha, Sookshma, and Prana. Accurate dasha calculator API for life phase prediction and planetary period analysis. Returns the dasha timeline with start/end dates for every level, ready for a current DBA readout down to hour-level timing. Pass datetime to read the five lords at any moment instead of now, which is what a reading prepared for tomorrow or a backtest over a past day needs. Set significators true to add the KP star lord, sub lord, signified houses and strength grade of each running lord, plus the houses they have in common. Essential for understanding current planetary influences, dasha transitions, and timing events in Vedic astrology. 120-year dasha system based on moon nakshatra at birth, with selectable Lahiri or KP ayanamsa.
 //
 // Takes any type of body and a specified content type.
 //
@@ -59565,7 +59565,7 @@ func (c *Client) GetCurrentDashaWithBody(ctx context.Context, params *GetCurrent
 
 // GetCurrentDasha Get current Mahadasha, Antardasha, Pratyantardasha, Sookshma, Prana - Dasha Calculator API
 //
-// Calculate all five running Vimshottari Dasha levels (Mahadasha, Antardasha, Pratyantardasha, Sookshma, Prana) with remaining time in each. Accurate dasha calculator API for life phase prediction and planetary period analysis. Returns the dasha timeline with start/end dates for every level, ready for a current DBA readout down to hour-level timing. Pass datetime to read the five lords at any moment instead of now, which is what a reading prepared for tomorrow or a backtest over a past day needs. Set significators true to add the KP star lord, sub lord, signified houses and strength grade of each running lord, plus the houses they have in common. Essential for understanding current planetary influences, dasha transitions, and timing events in Vedic astrology. 120-year dasha system based on moon nakshatra at birth, with selectable Lahiri or KP ayanamsa.
+// Calculate all five running Vimshottari Dasha levels with remaining time in each. The levels are Mahadasha, Antardasha, Pratyantardasha, Sookshma, and Prana. Accurate dasha calculator API for life phase prediction and planetary period analysis. Returns the dasha timeline with start/end dates for every level, ready for a current DBA readout down to hour-level timing. Pass datetime to read the five lords at any moment instead of now, which is what a reading prepared for tomorrow or a backtest over a past day needs. Set significators true to add the KP star lord, sub lord, signified houses and strength grade of each running lord, plus the houses they have in common. Essential for understanding current planetary influences, dasha transitions, and timing events in Vedic astrology. 120-year dasha system based on moon nakshatra at birth, with selectable Lahiri or KP ayanamsa.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -78628,7 +78628,7 @@ type ClientWithResponsesInterface interface {
 
 	// CalculateArabicLotsWithBodyWithResponse Arabic lots calculator - seven Hermetic parts including Part of Fortune and Spirit
 	//
-	// Calculate the seven Hermetic lots (Arabic parts) for any birth moment: Part of Fortune, Part of Spirit, Eros, Necessity, Courage, Victory, and Nemesis. Each lot is a sensitive point projected by arc from the Ascendant, with the day or night formula applied automatically from the chart sect. Returns the zodiac sign, degree, exact longitude, the arc used, and a plain language interpretation per lot, for Hellenistic and traditional astrology apps. Built on accurate tropical chart positions, no astronomy expertise needed.
+	// Calculate the seven Hermetic lots (Arabic parts) for any birth moment. The lots are the Part of Fortune, Part of Spirit, Eros, Necessity, Courage, Victory, and Nemesis. Each lot is a sensitive point projected by arc from the Ascendant, with the day or night formula applied automatically from the chart sect. Returns the zodiac sign, degree, exact longitude, the arc used, and a plain language interpretation per lot, for Hellenistic and traditional astrology apps. Built on accurate tropical chart positions, no astronomy expertise needed.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -78637,7 +78637,7 @@ type ClientWithResponsesInterface interface {
 
 	// CalculateArabicLotsWithResponse Arabic lots calculator - seven Hermetic parts including Part of Fortune and Spirit
 	//
-	// Calculate the seven Hermetic lots (Arabic parts) for any birth moment: Part of Fortune, Part of Spirit, Eros, Necessity, Courage, Victory, and Nemesis. Each lot is a sensitive point projected by arc from the Ascendant, with the day or night formula applied automatically from the chart sect. Returns the zodiac sign, degree, exact longitude, the arc used, and a plain language interpretation per lot, for Hellenistic and traditional astrology apps. Built on accurate tropical chart positions, no astronomy expertise needed.
+	// Calculate the seven Hermetic lots (Arabic parts) for any birth moment. The lots are the Part of Fortune, Part of Spirit, Eros, Necessity, Courage, Victory, and Nemesis. Each lot is a sensitive point projected by arc from the Ascendant, with the day or night formula applied automatically from the chart sect. Returns the zodiac sign, degree, exact longitude, the arc used, and a plain language interpretation per lot, for Hellenistic and traditional astrology apps. Built on accurate tropical chart positions, no astronomy expertise needed.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -78790,7 +78790,7 @@ type ClientWithResponsesInterface interface {
 
 	// GenerateFixedStarsWithBodyWithResponse Fixed stars and star conjunctions calculator - Regulus, Spica, Algol natal report
 	//
-	// Calculate the tropical zodiac positions of the major named fixed stars for any birth moment, including the four Royal stars and the fifteen Behenian stars, then detect conjunctions to the natal planets, Ascendant, and Midheaven. Each star returns its precessed ecliptic longitude, zodiac sign, visual magnitude, and traditional planetary nature, with a plain language interpretation for every conjunction inside the chosen orb. A focused tool for natal reports that weigh Regulus, Spica, Aldebaran, Antares, and Algol against the chart.
+	// Calculate the tropical zodiac positions of the major named fixed stars for any birth moment. Covers the four Royal stars and the fifteen Behenian stars, then detects conjunctions to the natal planets, Ascendant, and Midheaven. Each star returns its precessed ecliptic longitude, zodiac sign, visual magnitude, and traditional planetary nature, with a plain language interpretation for every conjunction inside the chosen orb. A focused tool for natal reports that weigh Regulus, Spica, Aldebaran, Antares, and Algol against the chart.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -78799,7 +78799,7 @@ type ClientWithResponsesInterface interface {
 
 	// GenerateFixedStarsWithResponse Fixed stars and star conjunctions calculator - Regulus, Spica, Algol natal report
 	//
-	// Calculate the tropical zodiac positions of the major named fixed stars for any birth moment, including the four Royal stars and the fifteen Behenian stars, then detect conjunctions to the natal planets, Ascendant, and Midheaven. Each star returns its precessed ecliptic longitude, zodiac sign, visual magnitude, and traditional planetary nature, with a plain language interpretation for every conjunction inside the chosen orb. A focused tool for natal reports that weigh Regulus, Spica, Aldebaran, Antares, and Algol against the chart.
+	// Calculate the tropical zodiac positions of the major named fixed stars for any birth moment. Covers the four Royal stars and the fifteen Behenian stars, then detects conjunctions to the natal planets, Ascendant, and Midheaven. Each star returns its precessed ecliptic longitude, zodiac sign, visual magnitude, and traditional planetary nature, with a plain language interpretation for every conjunction inside the chosen orb. A focused tool for natal reports that weigh Regulus, Spica, Aldebaran, Antares, and Algol against the chart.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -79015,7 +79015,7 @@ type ClientWithResponsesInterface interface {
 
 	// GetPlanetaryPositionsWithBodyWithResponse Get planetary positions - Ephemeris calculator for all planets
 	//
-	// Calculate accurate tropical zodiac positions for all 14 celestial bodies (the 10 classical planets Sun through Pluto, the lunar nodes, Chiron, and Black Moon Lilith) for any date, time, and location. Returns longitude, latitude, zodiac sign, degree within sign, daily motion speed, and retrograde status. Perfect for transit tracking, ephemeris tables, astrology apps, and planetary position widgets. Verified against NASA JPL Horizons.
+	// Calculate accurate tropical zodiac positions for all 14 celestial bodies for any date, time, and location. The bodies are the 10 classical planets Sun through Pluto, the lunar nodes, Chiron, and Black Moon Lilith. Returns longitude, latitude, zodiac sign, degree within sign, daily motion speed, and retrograde status. Perfect for transit tracking, ephemeris tables, astrology apps, and planetary position widgets. Verified against NASA JPL Horizons.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -79024,7 +79024,7 @@ type ClientWithResponsesInterface interface {
 
 	// GetPlanetaryPositionsWithResponse Get planetary positions - Ephemeris calculator for all planets
 	//
-	// Calculate accurate tropical zodiac positions for all 14 celestial bodies (the 10 classical planets Sun through Pluto, the lunar nodes, Chiron, and Black Moon Lilith) for any date, time, and location. Returns longitude, latitude, zodiac sign, degree within sign, daily motion speed, and retrograde status. Perfect for transit tracking, ephemeris tables, astrology apps, and planetary position widgets. Verified against NASA JPL Horizons.
+	// Calculate accurate tropical zodiac positions for all 14 celestial bodies for any date, time, and location. The bodies are the 10 classical planets Sun through Pluto, the lunar nodes, Chiron, and Black Moon Lilith. Returns longitude, latitude, zodiac sign, degree within sign, daily motion speed, and retrograde status. Perfect for transit tracking, ephemeris tables, astrology apps, and planetary position widgets. Verified against NASA JPL Horizons.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -79069,7 +79069,7 @@ type ClientWithResponsesInterface interface {
 
 	// GenerateProgressionsWithBodyWithResponse Secondary progressions calculator - progressed chart, progressed Sun and Moon
 	//
-	// Generate the secondary progressed chart for any date using the day-for-a-year key, where each day of ephemeris motion after birth stands in for one year of life. Returns every progressed body with its sign, degree, whole-sign house, motion, and retrograde state, plus the progressed Ascendant and Midheaven via the Naibod arc. The progressed Sun and progressed Moon are the headline timing markers for inner growth and emotional chapters. Secondary progressions API, progressed chart calculator, progressed Sun and Moon, progressed Ascendant and Midheaven.
+	// Generate the secondary progressed chart for any date using the day-for-a-year key. Each day of ephemeris motion after birth stands in for one year of life. Returns every progressed body with its sign, degree, whole-sign house, motion, and retrograde state, plus the progressed Ascendant and Midheaven via the Naibod arc. The progressed Sun and progressed Moon are the headline timing markers for inner growth and emotional chapters. Secondary progressions API, progressed chart calculator, progressed Sun and Moon, progressed Ascendant and Midheaven.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -79078,7 +79078,7 @@ type ClientWithResponsesInterface interface {
 
 	// GenerateProgressionsWithResponse Secondary progressions calculator - progressed chart, progressed Sun and Moon
 	//
-	// Generate the secondary progressed chart for any date using the day-for-a-year key, where each day of ephemeris motion after birth stands in for one year of life. Returns every progressed body with its sign, degree, whole-sign house, motion, and retrograde state, plus the progressed Ascendant and Midheaven via the Naibod arc. The progressed Sun and progressed Moon are the headline timing markers for inner growth and emotional chapters. Secondary progressions API, progressed chart calculator, progressed Sun and Moon, progressed Ascendant and Midheaven.
+	// Generate the secondary progressed chart for any date using the day-for-a-year key. Each day of ephemeris motion after birth stands in for one year of life. Returns every progressed body with its sign, degree, whole-sign house, motion, and retrograde state, plus the progressed Ascendant and Midheaven via the Naibod arc. The progressed Sun and progressed Moon are the headline timing markers for inner growth and emotional chapters. Secondary progressions API, progressed chart calculator, progressed Sun and Moon, progressed Ascendant and Midheaven.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -81076,7 +81076,7 @@ type ClientWithResponsesInterface interface {
 
 	// ListCardsWithResponse List all 78 tarot cards - Tarot deck catalog API
 	//
-	// Retrieve the complete Rider-Waite-Smith tarot deck of 78 cards: 22 Major Arcana (numbered 0-21, representing life lessons, spiritual themes, and karmic influences like The Fool, Death, The Tower) plus 56 Minor Arcana (4 suits × 14 cards each for daily situations and practical matters). Filter by arcana type (major for spiritual guidance, minor for everyday concerns), suit (cups for emotions and relationships, wands for creativity and passion, swords for intellect and conflict, pentacles for material wealth and finances), or card number (Ace=1 for new beginnings, 2-10 for progression, Page=11 for messages, Knight=12 for action, Queen=13 for mastery, King=14 for authority). Returns lightweight basic card data. Use GET /cards/{id} for full upright and reversed interpretations with keywords. Perfect for building tarot reference libraries, card databases, learning applications, or browsing the complete traditional deck used by professional tarot readers worldwide.
+	// Retrieve the complete Rider-Waite-Smith tarot deck of 78 cards. The 22 Major Arcana (numbered 0-21) carry life lessons, spiritual themes, and karmic influences like The Fool, Death, The Tower; the 56 Minor Arcana (4 suits × 14 cards each) cover daily situations and practical matters. Filter by arcana type (major for spiritual guidance, minor for everyday concerns), suit (cups for emotions and relationships, wands for creativity and passion, swords for intellect and conflict, pentacles for material wealth and finances), or card number (Ace=1 for new beginnings, 2-10 for progression, Page=11 for messages, Knight=12 for action, Queen=13 for mastery, King=14 for authority). Returns lightweight basic card data. Use GET /cards/{id} for full upright and reversed interpretations with keywords. Perfect for building tarot reference libraries, card databases, learning applications, or browsing the complete traditional deck used by professional tarot readers worldwide.
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
@@ -81202,7 +81202,7 @@ type ClientWithResponsesInterface interface {
 
 	// CastThreeCardWithBodyWithResponse Three card spread, past present future - Tarot spread API
 	//
-	// Perform the classic three-card tarot spread revealing Past (what led to this situation), Present (current energy and circumstances), and Future (likely outcome if current path continues). The most popular beginner-friendly spread, perfect for quick insights, daily guidance, or exploring specific questions. Each position includes a drawn card with reversal state, keywords, full meaning, and position-specific interpretation. Returns a summary connecting all three cards. Ideal for tarot reading apps, decision-making tools, and personal growth platforms. Optionally provide a seed for reproducible readings.
+	// Perform the classic three-card tarot spread revealing Past, Present, and Future. Past is what led to this situation, Present the current energy and circumstances, and Future the likely outcome if the current path continues. The most popular beginner-friendly spread, perfect for quick insights, daily guidance, or exploring specific questions. Each position includes a drawn card with reversal state, keywords, full meaning, and position-specific interpretation. Returns a summary connecting all three cards. Ideal for tarot reading apps, decision-making tools, and personal growth platforms. Optionally provide a seed for reproducible readings.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -81211,7 +81211,7 @@ type ClientWithResponsesInterface interface {
 
 	// CastThreeCardWithResponse Three card spread, past present future - Tarot spread API
 	//
-	// Perform the classic three-card tarot spread revealing Past (what led to this situation), Present (current energy and circumstances), and Future (likely outcome if current path continues). The most popular beginner-friendly spread, perfect for quick insights, daily guidance, or exploring specific questions. Each position includes a drawn card with reversal state, keywords, full meaning, and position-specific interpretation. Returns a summary connecting all three cards. Ideal for tarot reading apps, decision-making tools, and personal growth platforms. Optionally provide a seed for reproducible readings.
+	// Perform the classic three-card tarot spread revealing Past, Present, and Future. Past is what led to this situation, Present the current energy and circumstances, and Future the likely outcome if the current path continues. The most popular beginner-friendly spread, perfect for quick insights, daily guidance, or exploring specific questions. Each position includes a drawn card with reversal state, keywords, full meaning, and position-specific interpretation. Returns a summary connecting all three cards. Ideal for tarot reading apps, decision-making tools, and personal growth platforms. Optionally provide a seed for reproducible readings.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -81607,7 +81607,7 @@ type ClientWithResponsesInterface interface {
 
 	// GetCurrentDashaWithBodyWithResponse Get current Mahadasha, Antardasha, Pratyantardasha, Sookshma, Prana - Dasha Calculator API
 	//
-	// Calculate all five running Vimshottari Dasha levels (Mahadasha, Antardasha, Pratyantardasha, Sookshma, Prana) with remaining time in each. Accurate dasha calculator API for life phase prediction and planetary period analysis. Returns the dasha timeline with start/end dates for every level, ready for a current DBA readout down to hour-level timing. Pass datetime to read the five lords at any moment instead of now, which is what a reading prepared for tomorrow or a backtest over a past day needs. Set significators true to add the KP star lord, sub lord, signified houses and strength grade of each running lord, plus the houses they have in common. Essential for understanding current planetary influences, dasha transitions, and timing events in Vedic astrology. 120-year dasha system based on moon nakshatra at birth, with selectable Lahiri or KP ayanamsa.
+	// Calculate all five running Vimshottari Dasha levels with remaining time in each. The levels are Mahadasha, Antardasha, Pratyantardasha, Sookshma, and Prana. Accurate dasha calculator API for life phase prediction and planetary period analysis. Returns the dasha timeline with start/end dates for every level, ready for a current DBA readout down to hour-level timing. Pass datetime to read the five lords at any moment instead of now, which is what a reading prepared for tomorrow or a backtest over a past day needs. Set significators true to add the KP star lord, sub lord, signified houses and strength grade of each running lord, plus the houses they have in common. Essential for understanding current planetary influences, dasha transitions, and timing events in Vedic astrology. 120-year dasha system based on moon nakshatra at birth, with selectable Lahiri or KP ayanamsa.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -81616,7 +81616,7 @@ type ClientWithResponsesInterface interface {
 
 	// GetCurrentDashaWithResponse Get current Mahadasha, Antardasha, Pratyantardasha, Sookshma, Prana - Dasha Calculator API
 	//
-	// Calculate all five running Vimshottari Dasha levels (Mahadasha, Antardasha, Pratyantardasha, Sookshma, Prana) with remaining time in each. Accurate dasha calculator API for life phase prediction and planetary period analysis. Returns the dasha timeline with start/end dates for every level, ready for a current DBA readout down to hour-level timing. Pass datetime to read the five lords at any moment instead of now, which is what a reading prepared for tomorrow or a backtest over a past day needs. Set significators true to add the KP star lord, sub lord, signified houses and strength grade of each running lord, plus the houses they have in common. Essential for understanding current planetary influences, dasha transitions, and timing events in Vedic astrology. 120-year dasha system based on moon nakshatra at birth, with selectable Lahiri or KP ayanamsa.
+	// Calculate all five running Vimshottari Dasha levels with remaining time in each. The levels are Mahadasha, Antardasha, Pratyantardasha, Sookshma, and Prana. Accurate dasha calculator API for life phase prediction and planetary period analysis. Returns the dasha timeline with start/end dates for every level, ready for a current DBA readout down to hour-level timing. Pass datetime to read the five lords at any moment instead of now, which is what a reading prepared for tomorrow or a backtest over a past day needs. Set significators true to add the KP star lord, sub lord, signified houses and strength grade of each running lord, plus the houses they have in common. Essential for understanding current planetary influences, dasha transitions, and timing events in Vedic astrology. 120-year dasha system based on moon nakshatra at birth, with selectable Lahiri or KP ayanamsa.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -108456,6 +108456,9 @@ type GenerateBodygraphResponse struct {
 		// DefinitionLocalized Definition type name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
 		DefinitionLocalized *string `json:"definitionLocalized,omitempty"`
 
+		// DesignInstantUtc The Design moment as an ISO 8601 UTC instant: the exact time the Sun stood 88 degrees of solar arc before its natal longitude, and the instant every Design activation was computed at. Compare it with the Design date a reference tool prints to validate the chart on the moment itself.
+		DesignInstantUtc string `json:"designInstantUtc"`
+
 		// Gates All 26 activations, 13 Personality and 13 Design.
 		Gates []struct {
 			// Gate Human Design gate number from 1 to 64 that this activation falls in.
@@ -108672,6 +108675,9 @@ func (r GenerateBodygraphResponse) GetJSON200() *struct {
 
 	// DefinitionLocalized Definition type name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
 	DefinitionLocalized *string `json:"definitionLocalized,omitempty"`
+
+	// DesignInstantUtc The Design moment as an ISO 8601 UTC instant: the exact time the Sun stood 88 degrees of solar arc before its natal longitude, and the instant every Design activation was computed at. Compare it with the Design date a reference tool prints to validate the chart on the moment itself.
+	DesignInstantUtc string `json:"designInstantUtc"`
 
 	// Gates All 26 activations, 13 Personality and 13 Design.
 	Gates []struct {
@@ -139400,7 +139406,7 @@ func (c *ClientWithResponses) GetAngelNumberWithResponse(ctx context.Context, nu
 
 // CalculateArabicLotsWithBodyWithResponse Arabic lots calculator - seven Hermetic parts including Part of Fortune and Spirit
 //
-// Calculate the seven Hermetic lots (Arabic parts) for any birth moment: Part of Fortune, Part of Spirit, Eros, Necessity, Courage, Victory, and Nemesis. Each lot is a sensitive point projected by arc from the Ascendant, with the day or night formula applied automatically from the chart sect. Returns the zodiac sign, degree, exact longitude, the arc used, and a plain language interpretation per lot, for Hellenistic and traditional astrology apps. Built on accurate tropical chart positions, no astronomy expertise needed.
+// Calculate the seven Hermetic lots (Arabic parts) for any birth moment. The lots are the Part of Fortune, Part of Spirit, Eros, Necessity, Courage, Victory, and Nemesis. Each lot is a sensitive point projected by arc from the Ascendant, with the day or night formula applied automatically from the chart sect. Returns the zodiac sign, degree, exact longitude, the arc used, and a plain language interpretation per lot, for Hellenistic and traditional astrology apps. Built on accurate tropical chart positions, no astronomy expertise needed.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -139415,7 +139421,7 @@ func (c *ClientWithResponses) CalculateArabicLotsWithBodyWithResponse(ctx contex
 
 // CalculateArabicLotsWithResponse Arabic lots calculator - seven Hermetic parts including Part of Fortune and Spirit
 //
-// Calculate the seven Hermetic lots (Arabic parts) for any birth moment: Part of Fortune, Part of Spirit, Eros, Necessity, Courage, Victory, and Nemesis. Each lot is a sensitive point projected by arc from the Ascendant, with the day or night formula applied automatically from the chart sect. Returns the zodiac sign, degree, exact longitude, the arc used, and a plain language interpretation per lot, for Hellenistic and traditional astrology apps. Built on accurate tropical chart positions, no astronomy expertise needed.
+// Calculate the seven Hermetic lots (Arabic parts) for any birth moment. The lots are the Part of Fortune, Part of Spirit, Eros, Necessity, Courage, Victory, and Nemesis. Each lot is a sensitive point projected by arc from the Ascendant, with the day or night formula applied automatically from the chart sect. Returns the zodiac sign, degree, exact longitude, the arc used, and a plain language interpretation per lot, for Hellenistic and traditional astrology apps. Built on accurate tropical chart positions, no astronomy expertise needed.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -139670,7 +139676,7 @@ func (c *ClientWithResponses) GetPlanetaryNodePassagesWithResponse(ctx context.C
 
 // GenerateFixedStarsWithBodyWithResponse Fixed stars and star conjunctions calculator - Regulus, Spica, Algol natal report
 //
-// Calculate the tropical zodiac positions of the major named fixed stars for any birth moment, including the four Royal stars and the fifteen Behenian stars, then detect conjunctions to the natal planets, Ascendant, and Midheaven. Each star returns its precessed ecliptic longitude, zodiac sign, visual magnitude, and traditional planetary nature, with a plain language interpretation for every conjunction inside the chosen orb. A focused tool for natal reports that weigh Regulus, Spica, Aldebaran, Antares, and Algol against the chart.
+// Calculate the tropical zodiac positions of the major named fixed stars for any birth moment. Covers the four Royal stars and the fifteen Behenian stars, then detects conjunctions to the natal planets, Ascendant, and Midheaven. Each star returns its precessed ecliptic longitude, zodiac sign, visual magnitude, and traditional planetary nature, with a plain language interpretation for every conjunction inside the chosen orb. A focused tool for natal reports that weigh Regulus, Spica, Aldebaran, Antares, and Algol against the chart.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -139685,7 +139691,7 @@ func (c *ClientWithResponses) GenerateFixedStarsWithBodyWithResponse(ctx context
 
 // GenerateFixedStarsWithResponse Fixed stars and star conjunctions calculator - Regulus, Spica, Algol natal report
 //
-// Calculate the tropical zodiac positions of the major named fixed stars for any birth moment, including the four Royal stars and the fifteen Behenian stars, then detect conjunctions to the natal planets, Ascendant, and Midheaven. Each star returns its precessed ecliptic longitude, zodiac sign, visual magnitude, and traditional planetary nature, with a plain language interpretation for every conjunction inside the chosen orb. A focused tool for natal reports that weigh Regulus, Spica, Aldebaran, Antares, and Algol against the chart.
+// Calculate the tropical zodiac positions of the major named fixed stars for any birth moment. Covers the four Royal stars and the fifteen Behenian stars, then detects conjunctions to the natal planets, Ascendant, and Midheaven. Each star returns its precessed ecliptic longitude, zodiac sign, visual magnitude, and traditional planetary nature, with a plain language interpretation for every conjunction inside the chosen orb. A focused tool for natal reports that weigh Regulus, Spica, Aldebaran, Antares, and Algol against the chart.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -140045,7 +140051,7 @@ func (c *ClientWithResponses) GeneratePlanetaryReturnWithResponse(ctx context.Co
 
 // GetPlanetaryPositionsWithBodyWithResponse Get planetary positions - Ephemeris calculator for all planets
 //
-// Calculate accurate tropical zodiac positions for all 14 celestial bodies (the 10 classical planets Sun through Pluto, the lunar nodes, Chiron, and Black Moon Lilith) for any date, time, and location. Returns longitude, latitude, zodiac sign, degree within sign, daily motion speed, and retrograde status. Perfect for transit tracking, ephemeris tables, astrology apps, and planetary position widgets. Verified against NASA JPL Horizons.
+// Calculate accurate tropical zodiac positions for all 14 celestial bodies for any date, time, and location. The bodies are the 10 classical planets Sun through Pluto, the lunar nodes, Chiron, and Black Moon Lilith. Returns longitude, latitude, zodiac sign, degree within sign, daily motion speed, and retrograde status. Perfect for transit tracking, ephemeris tables, astrology apps, and planetary position widgets. Verified against NASA JPL Horizons.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -140060,7 +140066,7 @@ func (c *ClientWithResponses) GetPlanetaryPositionsWithBodyWithResponse(ctx cont
 
 // GetPlanetaryPositionsWithResponse Get planetary positions - Ephemeris calculator for all planets
 //
-// Calculate accurate tropical zodiac positions for all 14 celestial bodies (the 10 classical planets Sun through Pluto, the lunar nodes, Chiron, and Black Moon Lilith) for any date, time, and location. Returns longitude, latitude, zodiac sign, degree within sign, daily motion speed, and retrograde status. Perfect for transit tracking, ephemeris tables, astrology apps, and planetary position widgets. Verified against NASA JPL Horizons.
+// Calculate accurate tropical zodiac positions for all 14 celestial bodies for any date, time, and location. The bodies are the 10 classical planets Sun through Pluto, the lunar nodes, Chiron, and Black Moon Lilith. Returns longitude, latitude, zodiac sign, degree within sign, daily motion speed, and retrograde status. Perfect for transit tracking, ephemeris tables, astrology apps, and planetary position widgets. Verified against NASA JPL Horizons.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -140135,7 +140141,7 @@ func (c *ClientWithResponses) GenerateProfectionsWithResponse(ctx context.Contex
 
 // GenerateProgressionsWithBodyWithResponse Secondary progressions calculator - progressed chart, progressed Sun and Moon
 //
-// Generate the secondary progressed chart for any date using the day-for-a-year key, where each day of ephemeris motion after birth stands in for one year of life. Returns every progressed body with its sign, degree, whole-sign house, motion, and retrograde state, plus the progressed Ascendant and Midheaven via the Naibod arc. The progressed Sun and progressed Moon are the headline timing markers for inner growth and emotional chapters. Secondary progressions API, progressed chart calculator, progressed Sun and Moon, progressed Ascendant and Midheaven.
+// Generate the secondary progressed chart for any date using the day-for-a-year key. Each day of ephemeris motion after birth stands in for one year of life. Returns every progressed body with its sign, degree, whole-sign house, motion, and retrograde state, plus the progressed Ascendant and Midheaven via the Naibod arc. The progressed Sun and progressed Moon are the headline timing markers for inner growth and emotional chapters. Secondary progressions API, progressed chart calculator, progressed Sun and Moon, progressed Ascendant and Midheaven.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -140150,7 +140156,7 @@ func (c *ClientWithResponses) GenerateProgressionsWithBodyWithResponse(ctx conte
 
 // GenerateProgressionsWithResponse Secondary progressions calculator - progressed chart, progressed Sun and Moon
 //
-// Generate the secondary progressed chart for any date using the day-for-a-year key, where each day of ephemeris motion after birth stands in for one year of life. Returns every progressed body with its sign, degree, whole-sign house, motion, and retrograde state, plus the progressed Ascendant and Midheaven via the Naibod arc. The progressed Sun and progressed Moon are the headline timing markers for inner growth and emotional chapters. Secondary progressions API, progressed chart calculator, progressed Sun and Moon, progressed Ascendant and Midheaven.
+// Generate the secondary progressed chart for any date using the day-for-a-year key. Each day of ephemeris motion after birth stands in for one year of life. Returns every progressed body with its sign, degree, whole-sign house, motion, and retrograde state, plus the progressed Ascendant and Midheaven via the Naibod arc. The progressed Sun and progressed Moon are the headline timing markers for inner growth and emotional chapters. Secondary progressions API, progressed chart calculator, progressed Sun and Moon, progressed Ascendant and Midheaven.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -143480,7 +143486,7 @@ func (c *ClientWithResponses) CalculateSoulUrgeWithResponse(ctx context.Context,
 
 // ListCardsWithResponse List all 78 tarot cards - Tarot deck catalog API
 //
-// Retrieve the complete Rider-Waite-Smith tarot deck of 78 cards: 22 Major Arcana (numbered 0-21, representing life lessons, spiritual themes, and karmic influences like The Fool, Death, The Tower) plus 56 Minor Arcana (4 suits × 14 cards each for daily situations and practical matters). Filter by arcana type (major for spiritual guidance, minor for everyday concerns), suit (cups for emotions and relationships, wands for creativity and passion, swords for intellect and conflict, pentacles for material wealth and finances), or card number (Ace=1 for new beginnings, 2-10 for progression, Page=11 for messages, Knight=12 for action, Queen=13 for mastery, King=14 for authority). Returns lightweight basic card data. Use GET /cards/{id} for full upright and reversed interpretations with keywords. Perfect for building tarot reference libraries, card databases, learning applications, or browsing the complete traditional deck used by professional tarot readers worldwide.
+// Retrieve the complete Rider-Waite-Smith tarot deck of 78 cards. The 22 Major Arcana (numbered 0-21) carry life lessons, spiritual themes, and karmic influences like The Fool, Death, The Tower; the 56 Minor Arcana (4 suits × 14 cards each) cover daily situations and practical matters. Filter by arcana type (major for spiritual guidance, minor for everyday concerns), suit (cups for emotions and relationships, wands for creativity and passion, swords for intellect and conflict, pentacles for material wealth and finances), or card number (Ace=1 for new beginnings, 2-10 for progression, Page=11 for messages, Knight=12 for action, Queen=13 for mastery, King=14 for authority). Returns lightweight basic card data. Use GET /cards/{id} for full upright and reversed interpretations with keywords. Perfect for building tarot reference libraries, card databases, learning applications, or browsing the complete traditional deck used by professional tarot readers worldwide.
 //
 // Returns a wrapper object for the known response body format(s).
 //
@@ -143690,7 +143696,7 @@ func (c *ClientWithResponses) CastLoveSpreadWithResponse(ctx context.Context, pa
 
 // CastThreeCardWithBodyWithResponse Three card spread, past present future - Tarot spread API
 //
-// Perform the classic three-card tarot spread revealing Past (what led to this situation), Present (current energy and circumstances), and Future (likely outcome if current path continues). The most popular beginner-friendly spread, perfect for quick insights, daily guidance, or exploring specific questions. Each position includes a drawn card with reversal state, keywords, full meaning, and position-specific interpretation. Returns a summary connecting all three cards. Ideal for tarot reading apps, decision-making tools, and personal growth platforms. Optionally provide a seed for reproducible readings.
+// Perform the classic three-card tarot spread revealing Past, Present, and Future. Past is what led to this situation, Present the current energy and circumstances, and Future the likely outcome if the current path continues. The most popular beginner-friendly spread, perfect for quick insights, daily guidance, or exploring specific questions. Each position includes a drawn card with reversal state, keywords, full meaning, and position-specific interpretation. Returns a summary connecting all three cards. Ideal for tarot reading apps, decision-making tools, and personal growth platforms. Optionally provide a seed for reproducible readings.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -143705,7 +143711,7 @@ func (c *ClientWithResponses) CastThreeCardWithBodyWithResponse(ctx context.Cont
 
 // CastThreeCardWithResponse Three card spread, past present future - Tarot spread API
 //
-// Perform the classic three-card tarot spread revealing Past (what led to this situation), Present (current energy and circumstances), and Future (likely outcome if current path continues). The most popular beginner-friendly spread, perfect for quick insights, daily guidance, or exploring specific questions. Each position includes a drawn card with reversal state, keywords, full meaning, and position-specific interpretation. Returns a summary connecting all three cards. Ideal for tarot reading apps, decision-making tools, and personal growth platforms. Optionally provide a seed for reproducible readings.
+// Perform the classic three-card tarot spread revealing Past, Present, and Future. Past is what led to this situation, Present the current energy and circumstances, and Future the likely outcome if the current path continues. The most popular beginner-friendly spread, perfect for quick insights, daily guidance, or exploring specific questions. Each position includes a drawn card with reversal state, keywords, full meaning, and position-specific interpretation. Returns a summary connecting all three cards. Ideal for tarot reading apps, decision-making tools, and personal growth platforms. Optionally provide a seed for reproducible readings.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -144365,7 +144371,7 @@ func (c *ClientWithResponses) GetVedicDailyReadingWithResponse(ctx context.Conte
 
 // GetCurrentDashaWithBodyWithResponse Get current Mahadasha, Antardasha, Pratyantardasha, Sookshma, Prana - Dasha Calculator API
 //
-// Calculate all five running Vimshottari Dasha levels (Mahadasha, Antardasha, Pratyantardasha, Sookshma, Prana) with remaining time in each. Accurate dasha calculator API for life phase prediction and planetary period analysis. Returns the dasha timeline with start/end dates for every level, ready for a current DBA readout down to hour-level timing. Pass datetime to read the five lords at any moment instead of now, which is what a reading prepared for tomorrow or a backtest over a past day needs. Set significators true to add the KP star lord, sub lord, signified houses and strength grade of each running lord, plus the houses they have in common. Essential for understanding current planetary influences, dasha transitions, and timing events in Vedic astrology. 120-year dasha system based on moon nakshatra at birth, with selectable Lahiri or KP ayanamsa.
+// Calculate all five running Vimshottari Dasha levels with remaining time in each. The levels are Mahadasha, Antardasha, Pratyantardasha, Sookshma, and Prana. Accurate dasha calculator API for life phase prediction and planetary period analysis. Returns the dasha timeline with start/end dates for every level, ready for a current DBA readout down to hour-level timing. Pass datetime to read the five lords at any moment instead of now, which is what a reading prepared for tomorrow or a backtest over a past day needs. Set significators true to add the KP star lord, sub lord, signified houses and strength grade of each running lord, plus the houses they have in common. Essential for understanding current planetary influences, dasha transitions, and timing events in Vedic astrology. 120-year dasha system based on moon nakshatra at birth, with selectable Lahiri or KP ayanamsa.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -144380,7 +144386,7 @@ func (c *ClientWithResponses) GetCurrentDashaWithBodyWithResponse(ctx context.Co
 
 // GetCurrentDashaWithResponse Get current Mahadasha, Antardasha, Pratyantardasha, Sookshma, Prana - Dasha Calculator API
 //
-// Calculate all five running Vimshottari Dasha levels (Mahadasha, Antardasha, Pratyantardasha, Sookshma, Prana) with remaining time in each. Accurate dasha calculator API for life phase prediction and planetary period analysis. Returns the dasha timeline with start/end dates for every level, ready for a current DBA readout down to hour-level timing. Pass datetime to read the five lords at any moment instead of now, which is what a reading prepared for tomorrow or a backtest over a past day needs. Set significators true to add the KP star lord, sub lord, signified houses and strength grade of each running lord, plus the houses they have in common. Essential for understanding current planetary influences, dasha transitions, and timing events in Vedic astrology. 120-year dasha system based on moon nakshatra at birth, with selectable Lahiri or KP ayanamsa.
+// Calculate all five running Vimshottari Dasha levels with remaining time in each. The levels are Mahadasha, Antardasha, Pratyantardasha, Sookshma, and Prana. Accurate dasha calculator API for life phase prediction and planetary period analysis. Returns the dasha timeline with start/end dates for every level, ready for a current DBA readout down to hour-level timing. Pass datetime to read the five lords at any moment instead of now, which is what a reading prepared for tomorrow or a backtest over a past day needs. Set significators true to add the KP star lord, sub lord, signified houses and strength grade of each running lord, plus the houses they have in common. Essential for understanding current planetary influences, dasha transitions, and timing events in Vedic astrology. 120-year dasha system based on moon nakshatra at birth, with selectable Lahiri or KP ayanamsa.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -161881,6 +161887,9 @@ func ParseGenerateBodygraphResponse(rsp *http.Response) (*GenerateBodygraphRespo
 
 			// DefinitionLocalized Definition type name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
 			DefinitionLocalized *string `json:"definitionLocalized,omitempty"`
+
+			// DesignInstantUtc The Design moment as an ISO 8601 UTC instant: the exact time the Sun stood 88 degrees of solar arc before its natal longitude, and the instant every Design activation was computed at. Compare it with the Design date a reference tool prints to validate the chart on the moment itself.
+			DesignInstantUtc string `json:"designInstantUtc"`
 
 			// Gates All 26 activations, 13 Personality and 13 Design.
 			Gates []struct {
