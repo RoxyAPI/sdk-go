@@ -24,38 +24,45 @@ For a custom timeout, proxy, or transport, pass the generated option (the API ke
 roxy, err := roxyapi.NewRoxy(key, roxyapi.WithHTTPClient(&http.Client{Timeout: 10 * time.Second}))
 ```
 
-## Rules to get right
+## Quality guidelines for agents
 
-- **Methods are grouped by domain and named for the spec operation id.** `roxy.Astrology.GenerateNatalChart(...)`, `roxy.VedicAstrology.GenerateBirthChart(...)`. Never invent a name; the full list is in `docs/llms-full.txt`.
-- **Argument order is `(ctx, pathParams..., params, body)`, but the arity varies.** `params` is a nilable `*XxxParams` of query parameters (it carries `Lang` on i18n endpoints); pass `nil` for none. POST endpoints add a typed `body` last. **An endpoint with no query parameters has NO `params` argument at all** (for example `roxy.Usage.GetUsageStats(ctx)` and `roxy.Languages.ListLanguages(ctx)`). Do not pass a stray `nil` to those: it COMPILES (the last arg is variadic) then PANICS at runtime in applyEditors. Call them with `ctx` only. When unsure, let autocomplete show the signature.
-- **The request body type is always `roxyapi.<MethodName>JSONRequestBody`** (some are aliases of a named request like `NatalChartRequest`; both names work). Build it as a struct literal.
-- **Read the success body from `JSON200`** (a typed struct, nil unless the call was a 2xx): `resp.JSON200.Cities[0].Latitude`. `resp.StatusCode()` and `resp.Bytes()` give the raw response.
-- **Handle errors with `errors.As` on `*RoxyError`.** Switch on `Code` (stable), not `Message`. On a 400, range over `Issues`.
-- **Use the helpers for the two fiddly field kinds.** `roxyapi.Date(1990, time.January, 15)` builds a date field; `roxyapi.Ptr(v)` sets any optional pointer field or query param (`Seed`, `Question`, `Lang`, `Limit`).
+Six rules to follow when writing any call with this SDK. Get these right and the generated types do the rest.
+
+- **Methods are grouped by domain and named for the spec operation id in PascalCase.** `roxy.Astrology.GenerateNatalChart(...)`, `roxy.VedicAstrology.GenerateBirthChart(...)`. Never invent a name from the URL path or a guess; the full list is in `docs/llms-full.txt`, and every signature of a domain is one command away: `go doc github.com/RoxyAPI/sdk-go.AstrologyService`.
+- **Argument order is `(ctx, pathParams..., params, body)`, but the arity varies.** `params` is a nilable `*XxxParams` of query parameters (it carries `Lang` on i18n endpoints); pass `nil` for none. POST endpoints add a typed `body` last. **An endpoint with no query parameters has NO `params` argument at all** (for example `roxy.Usage.GetUsageStats(ctx)`, `roxy.Languages.ListLanguages(ctx)`, `roxy.Dreams.GetDreamSymbol(ctx, id)` and a dozen Vedic POST endpoints such as `roxy.VedicAstrology.GetChoghadiya(ctx, body)`). Do not pass a stray `nil` to those: it COMPILES (the last arg is variadic) then PANICS at runtime in applyEditors. Drop the argument. When unsure, let autocomplete show the signature.
+- **The request body type is always `roxyapi.<MethodName>JSONRequestBody`** (some are aliases of a named request like `NatalChartRequest`; both names work). Build it as a struct literal. A body whose nested person, birth data or plot struct has no named type (`Person1`, `PersonA`, `BirthData`, `Plot`) is declared with `var` and filled field by field.
+- **Read the success body from `JSON200`** (a typed struct, nil unless the call was a 2xx): `resp.JSON200.Cities[0].Latitude`. Response field names come from the generated structs, in Go casing (`LuckyNumber`, `ImageURL`, `IncarnationCross.Name`); `go build` fails on any invented field, so if it does not compile, the field does not exist. `resp.StatusCode()` and `resp.Bytes()` give the raw response.
+- **Handle errors with `errors.As` on `*RoxyError`.** Every method returns `(resp, err)`; check `err` before touching `JSON200`. Switch on `Code` (stable), not `Message`. On a 400, range over `Issues`.
+- **Do not hand-roll requests.** No raw `net/http` calls against the API. The SDK injects auth, the base URL and typed responses; it does not retry, so wrap calls you want retried. Use `NewRoxy(key)` for the common case, or pass `WithHTTPClient` for a custom transport. `roxyapi.Date(1990, time.January, 15)` builds a date field; `roxyapi.Ptr(v)` sets any optional pointer field or query param (`Seed`, `Question`, `Lang`, `Limit`).
 
 ## Critical rule: geocode before any chart endpoint
 
 Every chart, horoscope, panchang, dasha, dosha, navamsa, KP, synastry, compatibility, and natal endpoint needs latitude, longitude, and (for Western) timezone. **Never ask the user for coordinates.** Call `roxy.Location.SearchCities` first, then feed the result straight into the chart call.
 
 ```go
-search, err := roxy.Location.SearchCities(ctx, &roxyapi.SearchCitiesParams{Q: "Berlin Germany"})
+search, err := roxy.Location.SearchCities(ctx, &roxyapi.SearchCitiesParams{Q: "New York"})
 if err != nil || len(search.JSON200.Cities) == 0 { // a 200 can still return zero cities
 	return err
 }
 city := search.JSON200.Cities[0] // fields: City, Country, Latitude, Longitude, Timezone (IANA), UtcOffset, Population
+latitude, longitude, timezone := city.Latitude, city.Longitude, city.Timezone
+birthDate, birthTime := roxyapi.Date(1990, time.January, 15), "14:30:00"
 
-// Timezone is a union: build it with the IANA string from the geocode result.
+// Timezone is a per-request union. Build it with the IANA string ("America/New_York") from
+// the lookup: the server resolves it to the DST-correct offset using the date of the chart
+// itself, so a January 1990 New York chart picks EST (-5) even when you looked the city up
+// in July. The decimal UtcOffset also works and produces an identical chart.
 var tz roxyapi.NatalChartRequest_Timezone
-_ = tz.FromNatalChartRequestTimezone1(city.Timezone)
+_ = tz.FromNatalChartRequestTimezone1(timezone)
 
 chart, err := roxy.Astrology.GenerateNatalChart(ctx, nil, roxyapi.NatalChartRequest{
-	Date:     roxyapi.Date(1990, time.January, 15),
-	Time:     "14:30:00",
-	Latitude: city.Latitude, Longitude: city.Longitude, Timezone: tz,
+	Date: birthDate, Time: birthTime, Latitude: latitude, Longitude: longitude, Timezone: tz,
 })
 ```
 
-`Q` accepts a bare city (`"Paris"`), city plus country (`"Berlin Germany"`), or comma qualified (`"Springfield, Illinois"`). Use the qualified form to disambiguate, with a full country name, not an abbreviation (`"London, United Kingdom"`, not `"London, UK"`).
+One lookup feeds every domain. The same five values (`birthDate`, `birthTime`, `latitude`, `longitude`, `timezone`) are the body for `Astrology.GenerateNatalChart`, `VedicAstrology.GenerateBirthChart`, `VedicAstrology.GetCurrentDasha`, `Ayurveda.CalculateAyurvedicConstitution` and the `BirthData` of `Forecast.ForecastTransits`; the instant alone (`Date`, `Time`, `Timezone`) is the body for `HumanDesign.GenerateBodygraph`, `ChineseAstrology.GenerateBaziChart` and `Kabbalah.GenerateBirthProfile`. Never look the city up twice for one person. Only the `Timezone` union type differs per body (`BirthChartRequest_Timezone`, `GenerateBodygraphJSONBody_Timezone`, and so on), and the Vedic and Ayurveda bodies take it as a pointer (`Timezone: &tz`).
+
+`Q` accepts a bare city (`"Paris"`), city plus country (`"Berlin Germany"`), or comma qualified (`"Springfield, Illinois"`). Add the state or country whenever the name is common; a `Total` above 1 means the name is ambiguous, so show `Province` and `Country` and let the user confirm.
 
 ## Domains
 
@@ -157,10 +164,75 @@ if errors.As(err, &rerr) {
 | 400 | `validation_error` | Missing or invalid parameters (see `Issues`) |
 | 401 | `api_key_required` | No API key provided |
 | 401 | `invalid_api_key` | Key format invalid or tampered |
+| 401 | `subscription_not_found` | Key references non-existent subscription |
 | 401 | `subscription_inactive` | Subscription cancelled, expired, or suspended |
+| 401 | `api_key_revoked` | Key was deleted from the account |
 | 404 | `not_found` | Resource not found |
+| 4xx | `bad_request` and other status-derived codes | A client error the endpoint itself detected, such as a date window whose `endDate` precedes `startDate` |
 | 429 | `rate_limit_exceeded` | Monthly quota reached |
 | 500 | `internal_error` | Server error |
+
+## Common tasks
+
+In the catalog order (Western astrology, Vedic astrology, forecast, Human Design, Chinese astrology, feng shui, Mesoamerican astrology, Vastu, numerology, Kabbalah, tarot, biorhythm, Ayurveda, I Ching, crystals, dreams, angel numbers, location, usage, languages). `birthDate`, `birthTime`, `latitude`, `longitude` and `timezone` are the five values from the two-step pattern above, and `tz` is the `Timezone` union built from `timezone` for that body. Body literals are abbreviated to their field names: write each as `Field: value`, in the type `roxyapi.<Method>JSONRequestBody` (or its named alias).
+
+| Task | Code |
+|------|------|
+| Find city coordinates (do this first) | `roxy.Location.SearchCities(ctx, &roxyapi.SearchCitiesParams{Q: "Berlin"})` |
+| Daily horoscope | `roxy.Astrology.GetDailyHoroscope(ctx, "aries", nil)` |
+| Natal chart (Western) | `roxy.Astrology.GenerateNatalChart(ctx, nil, roxyapi.NatalChartRequest{Date, Time, Latitude, Longitude, Timezone})` |
+| Synastry | `var b roxyapi.CalculateSynastryJSONRequestBody`, fill `b.Person1` and `b.Person2`, then `roxy.Astrology.CalculateSynastry(ctx, nil, b)` |
+| Compatibility score | `var b roxyapi.CalculateCompatibilityJSONRequestBody`, fill `b.Person1` and `b.Person2`, then `roxy.Astrology.CalculateCompatibility(ctx, nil, b)` |
+| Current moon phase | `roxy.Astrology.GetCurrentMoonPhase(ctx, nil)` |
+| Transits | `var b roxyapi.TransitsRequest`, fill `b.NatalChart` (a pointer, `new(...)` first), then `roxy.Astrology.CalculateTransits(ctx, nil, b)` |
+| Kundli (Vedic birth chart) | `roxy.VedicAstrology.GenerateBirthChart(ctx, nil, roxyapi.BirthChartRequest{Date, Time, Latitude, Longitude, Timezone: &tz})` |
+| Panchang (detailed) | `roxy.VedicAstrology.GetDetailedPanchang(ctx, nil, roxyapi.GetDetailedPanchangJSONRequestBody{Date, Latitude, Longitude, Timezone: &tz})` |
+| Choghadiya | `roxy.VedicAstrology.GetChoghadiya(ctx, roxyapi.GetChoghadiyaJSONRequestBody{Date, Latitude, Longitude, Timezone: &tz})` (no `params` argument) |
+| Current dasha | `roxy.VedicAstrology.GetCurrentDasha(ctx, nil, roxyapi.GetCurrentDashaJSONRequestBody{Date, Time, Latitude, Longitude, Timezone: &tz})` |
+| Mangal Dosha | `roxy.VedicAstrology.CheckManglikDosha(ctx, nil, roxyapi.ManglikRequest{Date, Time, Latitude, Longitude, Timezone: &tz})` |
+| Guna Milan (matching) | `var b roxyapi.CompatibilityRequest`, fill `b.Person1` and `b.Person2`, then `roxy.VedicAstrology.CalculateGunMilan(ctx, nil, b)` |
+| Navamsa (D9) | `roxy.VedicAstrology.GenerateNavamsa(ctx, nil, roxyapi.NavamsaRequest{Date, Time, Latitude, Longitude, Timezone: &tz})` |
+| KP chart | `roxy.VedicAstrology.GenerateKpChart(ctx, nil, roxyapi.KPChartRequest{Date, Time, Latitude, Longitude, Timezone: &tz})` |
+| KP ruling planets | `roxy.VedicAstrology.GetKpRulingPlanets(ctx, nil, roxyapi.GetKpRulingPlanetsJSONRequestBody{Latitude, Longitude, Timezone: &tz})` |
+| Nakshatra detail | `roxy.VedicAstrology.GetNakshatra(ctx, "ashwini", nil)` |
+| Transit forecast | `var b roxyapi.ForecastTransitsJSONRequestBody`, fill `b.BirthData`, `b.StartDate`, `b.EndDate`, then `roxy.Forecast.ForecastTransits(ctx, nil, b)` |
+| Cross-domain timeline | `var b roxyapi.GenerateTimelineJSONRequestBody`, fill `b.BirthData`, `b.StartDate`, `b.EndDate`, then `roxy.Forecast.GenerateTimeline(ctx, nil, b)` |
+| Human Design bodygraph | `roxy.HumanDesign.GenerateBodygraph(ctx, nil, roxyapi.GenerateBodygraphJSONRequestBody{Date, Time, Timezone})` |
+| Human Design connection | `var b roxyapi.CalculateConnectionJSONRequestBody`, fill `b.PersonA` and `b.PersonB`, then `roxy.HumanDesign.CalculateConnection(ctx, nil, b)` |
+| BaZi Four Pillars | `roxy.ChineseAstrology.GenerateBaziChart(ctx, nil, roxyapi.GenerateBaziChartJSONRequestBody{Date, Time, Timezone})` |
+| Chinese zodiac animal | `roxy.ChineseAstrology.CalculateZodiacAnimal(ctx, nil, roxyapi.CalculateZodiacAnimalJSONRequestBody{Date})` |
+| Almanac day (Tong Shu) | `roxy.ChineseAstrology.GetAlmanacDay(ctx, "2026-10-01", nil)` |
+| Kua number | `roxy.FengShui.CalculateKuaNumber(ctx, nil, roxyapi.CalculateKuaNumberJSONRequestBody{Date, Gender})` |
+| Flying star natal chart | `roxy.FengShui.GenerateFlyingStarChart(ctx, nil, roxyapi.GenerateFlyingStarChartJSONRequestBody{Period, Facing})` |
+| Tzolkin day sign | `roxy.MesoamericanAstrology.CalculateTzolkin(ctx, nil, roxyapi.CalculateTzolkinJSONRequestBody{Date})` |
+| Full Maya chart | `roxy.MesoamericanAstrology.GenerateMayanChart(ctx, nil, roxyapi.GenerateMayanChartJSONRequestBody{Date})` |
+| Vastu entrance | `var b roxyapi.CalculateEntrancePadaJSONRequestBody`, fill `b.Plot`, `b.Facing`, `b.DoorPosition`, then `roxy.Vastu.CalculateEntrancePada(ctx, nil, b)` |
+| Vastu room compliance | `var b roxyapi.CalculateRoomComplianceJSONRequestBody`, `json.Unmarshal` the plot, facing and rooms shape into it, then `roxy.Vastu.CalculateRoomCompliance(ctx, nil, b)` |
+| Life path number | `roxy.Numerology.CalculateLifePath(ctx, nil, roxyapi.CalculateLifePathJSONRequestBody{Year, Month, Day})` |
+| Full numerology chart | `roxy.Numerology.GenerateNumerologyChart(ctx, nil, roxyapi.GenerateNumerologyChartJSONRequestBody{FullName, Year, Month, Day})` |
+| Personal year | `roxy.Numerology.CalculatePersonalYear(ctx, nil, roxyapi.CalculatePersonalYearJSONRequestBody{Month, Day})` |
+| Gematria | `roxy.Kabbalah.CalculateGematria(ctx, nil, roxyapi.CalculateGematriaJSONRequestBody{Text: roxyapi.Ptr(text)})` |
+| Kabbalah birth profile | `roxy.Kabbalah.GenerateBirthProfile(ctx, nil, roxyapi.GenerateBirthProfileJSONRequestBody{Date, Time: roxyapi.Ptr(birthTime), Timezone})` |
+| Daily tarot card | `roxy.Tarot.GetDailyCard(ctx, nil, roxyapi.GetDailyCardJSONRequestBody{Seed: roxyapi.Ptr(seed)})` |
+| Three-card spread | `roxy.Tarot.CastThreeCard(ctx, nil, roxyapi.CastThreeCardJSONRequestBody{Question: roxyapi.Ptr(question)})` |
+| Celtic Cross | `roxy.Tarot.CastCelticCross(ctx, nil, roxyapi.CastCelticCrossJSONRequestBody{Question: roxyapi.Ptr(question)})` |
+| Yes / no tarot | `roxy.Tarot.CastYesNo(ctx, nil, roxyapi.CastYesNoJSONRequestBody{Question: roxyapi.Ptr(question)})` |
+| Biorhythm reading | `roxy.Biorhythm.GetReading(ctx, nil, roxyapi.GetReadingJSONRequestBody{BirthDate})` |
+| Daily biorhythm (seeded) | `roxy.Biorhythm.GetDailyBiorhythm(ctx, nil, roxyapi.GetDailyBiorhythmJSONRequestBody{Seed: roxyapi.Ptr(seed)})` |
+| Biorhythm forecast | `roxy.Biorhythm.GetForecast(ctx, nil, roxyapi.GetForecastJSONRequestBody{BirthDate})` |
+| Biorhythm compatibility | `var b roxyapi.CalculateBioCompatibilityJSONRequestBody`, set `b.Person1.BirthDate` and `b.Person2.BirthDate`, then `roxy.Biorhythm.CalculateBioCompatibility(ctx, nil, b)` |
+| Ayurvedic constitution | `roxy.Ayurveda.CalculateAyurvedicConstitution(ctx, nil, roxyapi.AyurvedaConstitutionRequest{Date, Time, Latitude, Longitude, Timezone: &tz})` |
+| Dinacharya | `roxy.Ayurveda.GetDinacharyaSchedule(ctx, nil, roxyapi.AyurvedaDinacharyaRequest{Date, Latitude, Longitude, Timezone: &tz})` |
+| Daily hexagram | `roxy.Iching.GetDailyHexagram(ctx, nil, roxyapi.GetDailyHexagramJSONRequestBody{Seed: roxyapi.Ptr(seed)})` |
+| Cast I Ching reading | `roxy.Iching.CastReading(ctx, nil)` |
+| Hexagram detail | `roxy.Iching.GetHexagram(ctx, 1, nil)` |
+| Crystal by zodiac | `roxy.Crystals.GetCrystalsByZodiac(ctx, "leo", nil)` |
+| Crystal by chakra | `roxy.Crystals.GetCrystalsByChakra(ctx, "Heart", nil)` |
+| Dream symbol lookup | `roxy.Dreams.GetDreamSymbol(ctx, "flying")` (no `params` argument) |
+| Angel number meaning | `roxy.AngelNumbers.GetAngelNumber(ctx, "1111", nil)` |
+| Universal number lookup | `roxy.AngelNumbers.AnalyzeNumberSequence(ctx, &roxyapi.AnalyzeNumberSequenceParams{Number: "1234"})` |
+| Check API usage | `roxy.Usage.GetUsageStats(ctx)` (no `params` argument) |
+| List supported languages | `roxy.Languages.ListLanguages(ctx)` (no `params` argument) |
 
 ## Field formats that trip agents
 
@@ -179,12 +251,12 @@ if errors.As(err, &rerr) {
 
 | Region | Decimal | Region | Decimal |
 |--------|---------|--------|---------|
-| UTC / London (winter) | `0` | Delhi / Kolkata (IST) | `5.5` |
+| UTC / London (winter) | `0` | Delhi (IST) | `5.5` |
 | Berlin / Paris | `1` winter / `2` summer | Bangkok | `7` |
 | New York (EST / EDT) | `-5` / `-4` | Singapore / Beijing | `8` |
 | Los Angeles (PST / PDT) | `-8` / `-7` | Tokyo | `9` |
 
-DST matters for Western charts: use the summer offset for a daylight saving birth date, or pass the IANA name and let the server resolve it. Vedic endpoints default to IST (`5.5`), which is DST free.
+DST matters. If the birth date falls inside a daylight-saving window, use the summer / DST offset, or pass the IANA string from the location lookup and let the server resolve it. India observes no DST, so a fixed `5.5` is always right there; anywhere else, a natal chart must carry the offset in force at the time of birth.
 
 ## Astrology domain gotchas
 
@@ -199,12 +271,12 @@ LLMs hallucinate confidently here. The specific traps:
 
 ## Go-specific gotchas
 
-- **Some methods have no `params` argument** (see Rules). Passing `nil` to those compiles but PANICS at runtime (the trailing arg is a variadic request editor). Affected: `Usage.GetUsageStats`, `Languages.ListLanguages`, `Crystals.ListCrystalColors`, `Crystals.ListCrystalPlanets`, `Dreams.GetSymbolLetterCounts`.
+- **Some methods have no `params` argument** (see Quality guidelines). Passing `nil` to those compiles but PANICS at runtime (the trailing arg is a variadic request editor). Affected: every endpoint with no query parameters, not even `lang`: `Usage.GetUsageStats`, `Languages.ListLanguages`, `Dreams.GetSymbolLetterCounts`, `Dreams.GetDreamSymbol`, `Dreams.GetDailyDreamSymbol` and a dozen Vedic POST endpoints (`GetChoghadiya`, `GetHora`, `GetKpPlanets`, `CalculateAshtakavarga` and their neighbours). The signature is the source of truth.
 - **`Timezone` union type names vary:** `<Request>_Timezone` for a named body, `<Operation>JSONBody_Timezone` for an inline body (most POST endpoints). Cannot guess it? Write the field with any value and read the expected type from the compiler error, or use autocomplete.
 - **`NewRoxy` returns `*roxyapi.Roxy`** (the type for your own function signatures and struct fields) and returns an error on an empty API key, so a missing `ROXY_API_KEY` fails at construction, not as a confusing later 401.
 - **A successful `SearchCities` can return zero cities.** Check `len(search.JSON200.Cities) == 0` before indexing `[0]`.
-- **Person-pair and forecast bodies use anonymous nested structs** (`CalculateSynastry`, `CalculateGunMilan`, `GenerateTimeline` carry inline `Person1`/`Person2`/`BirthData` structs). They are awkward to build as a Go literal; for those, see https://roxyapi.com/api-reference for the JSON shape.
-- **`SearchCities` paginates** with `Limit` and `Offset` (`roxyapi.Ptr(20)`); the default page is 10.
+- **Person-pair, forecast and Vastu bodies use anonymous nested structs** (`CalculateSynastry`, `CalculateCompatibility`, `CalculateGunMilan`, `ForecastTransits`, `GenerateTimeline`, `CalculateConnection`, `CalculateEntrancePada` carry inline `Person1`/`PersonA`/`BirthData`/`Plot` structs). Declare the body with `var b roxyapi.<Method>JSONRequestBody` and assign `b.Person1.Date`, `b.Person1.Latitude` and so on, then build its `Timezone` in place with `b.Person1.Timezone.From<Method>JSONBodyPerson1Timezone1(timezone)` (a pointer field takes `new(...)` first). A slice of inline structs (`CalculateRoomCompliance` `Rooms`) is easiest to `json.Unmarshal` from the JSON shape at https://roxyapi.com/api-reference.
+- **List endpoints return a paginated envelope**, `Total`, `Limit`, `Offset` plus a named slice (`Cities`, `Crystals`, `Hexagrams`, `Symbols`), never a bare slice. Pass `Limit: roxyapi.Ptr(64)` to widen a page; `ListHexagrams` defaults to 20 of 64 and `SearchCities` to 10.
 - **One direct runtime dependency.** `go get` pulls `github.com/oapi-codegen/runtime` (Apache 2.0); it brings two small transitive modules (`google/uuid`, `apapsch/go-jsonmerge`). The HTTP layer is the standard library `net/http`.
 
 ## MCP equivalents

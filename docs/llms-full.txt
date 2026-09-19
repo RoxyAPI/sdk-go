@@ -376,3 +376,57 @@ List the response languages accepted by the `lang` query parameter on every i18n
 - `listLanguages` - GET `/languages` - List supported response languages
 - `getFieldLabels` - GET `/languages/field-labels` - Get field labels for a language
 <!-- END:METHODS -->
+
+---
+
+## Error handling
+
+Every method returns `(resp, err)`. A 4xx or 5xx is returned as `*roxyapi.RoxyError`, with `Code` the machine-readable identifier (stable, safe to switch on), `Message` the human-readable text (may change wording, do not parse), `StatusCode` the HTTP status and `Issues` the field-level failures on a 400. `resp.JSON200` is nil unless the call was a 2xx, so check `err` first.
+
+```go
+resp, err := roxy.Astrology.GetDailyHoroscope(ctx, "aries", nil)
+var rerr *roxyapi.RoxyError
+if errors.As(err, &rerr) {
+	switch rerr.Code {
+	case "rate_limit_exceeded":
+		// wait and retry
+	case "validation_error":
+		for _, iss := range rerr.Issues { // each field that failed
+			fmt.Printf("%s: %s\n", iss.Path, iss.Message)
+		}
+	}
+	return err
+}
+fmt.Println(resp.JSON200.Sign, resp.JSON200.Overview)
+```
+
+Error codes:
+
+| Status | Code | When |
+|--------|------|------|
+| 400 | `validation_error` | Missing or invalid parameters |
+| 401 | `api_key_required` | No API key provided |
+| 401 | `invalid_api_key` | Key format invalid or tampered |
+| 401 | `subscription_not_found` | Key references non-existent subscription |
+| 401 | `subscription_inactive` | Subscription cancelled, expired, or suspended |
+| 401 | `api_key_revoked` | Key was deleted from the account |
+| 404 | `not_found` | Resource not found |
+| 4xx | `bad_request` and other status-derived codes | A client error the endpoint itself detected, such as a date window whose `endDate` precedes `startDate` |
+| 429 | `rate_limit_exceeded` | Monthly quota reached |
+| 500 | `internal_error` | Server error |
+
+## Advanced client configuration
+
+```go
+roxy, err := roxyapi.NewRoxy(os.Getenv("ROXY_API_KEY"), roxyapi.WithHTTPClient(&http.Client{Timeout: 10 * time.Second}))
+```
+
+`roxyapi.WithBaseURL` and `roxyapi.WithRequestEditorFn` are the other generated options; the underlying `ClientWithResponses` stays exported.
+
+## Links
+
+- Go reference (typed structs and fields): https://pkg.go.dev/github.com/RoxyAPI/sdk-go
+- Interactive API docs: https://roxyapi.com/api-reference
+- Pricing and API keys: https://roxyapi.com/pricing
+- MCP for AI agents: https://roxyapi.com/docs/mcp
+- Source: https://github.com/RoxyAPI/sdk-go

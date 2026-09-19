@@ -11,7 +11,7 @@ A fully typed, idiomatic golang client generated from the live OpenAPI spec: one
 
 ## Why developers use Roxy
 
-- **One key, every domain.** Eighteen plus insight domains under a single subscription. No per product fees, no per request token weighting. One request is one quota unit.
+- **One key, every domain.** Eighteen plus insight domains under a single subscription, with flat all-inclusive pricing.
 - **Typed end to end.** Domain grouped methods, typed request bodies, typed responses, and one catchable error type. Your editor walks the whole API.
 - **Lean.** Standard `net/http` and one direct dependency. No vendor cloud, no heavy framework.
 - **Agent ready.** Bundled `AGENTS.md` and `docs/llms-full.txt`, plus a remote MCP server per domain.
@@ -19,19 +19,27 @@ A fully typed, idiomatic golang client generated from the live OpenAPI spec: one
 
 ## Start with one call
 
+Get real product value with a single typed call. No setup beyond your API key.
+
 ```bash
 go get github.com/RoxyAPI/sdk-go
 ```
 
 ```go
 roxy, err := roxyapi.NewRoxy(os.Getenv("ROXY_API_KEY"))
-resp, err := roxy.Astrology.GetDailyHoroscope(context.Background(), "aries", nil)
-// resp.JSON200 holds the parsed body; a 4xx or 5xx is returned as *roxyapi.RoxyError.
+if err != nil {
+	panic(err)
+}
+horoscope, err := roxy.Astrology.GetDailyHoroscope(context.Background(), "aries", nil)
+if err != nil {
+	panic(err) // a 4xx or 5xx is returned as *roxyapi.RoxyError
+}
+fmt.Println(horoscope.JSON200.Overview, horoscope.JSON200.Love, horoscope.JSON200.LuckyNumber)
 ```
 
-`NewRoxy` sets the base URL (`https://roxyapi.com/api/v2`) and injects the auth and SDK headers on every request.
+Then expand into charts, compatibility, numerology, tarot, and more.
 
-## Quickstart
+## Quick start
 
 Two small helpers do the fiddly work: `roxyapi.Date(y, m, d)` builds a date field, and `roxyapi.Ptr(v)` sets any optional pointer field.
 
@@ -54,9 +62,8 @@ func main() {
 	}
 	ctx := context.Background()
 
-	// Step 1: geocode the birth city (required for any chart endpoint). Use a full
-	// country name, not an abbreviation ("London, United Kingdom", not "London, UK").
-	search, err := roxy.Location.SearchCities(ctx, &roxyapi.SearchCitiesParams{Q: "London, United Kingdom"})
+	// Step 1: geocode the birth city once. Every chart endpoint takes these three values.
+	search, err := roxy.Location.SearchCities(ctx, &roxyapi.SearchCitiesParams{Q: "London"})
 	if err != nil {
 		panic(err)
 	}
@@ -65,10 +72,11 @@ func main() {
 	}
 	city := search.JSON200.Cities[0] // City, Country, Latitude, Longitude, Timezone (IANA), UtcOffset
 
-	// Step 2: Western natal chart. Timezone is a union; pass the IANA string from the geocode.
+	// Step 2: a Western natal chart. Timezone is a per-request union; pass the IANA string
+	// from the lookup ("Europe/London") and the server resolves it to the DST-correct
+	// offset for the date of the chart.
 	var tz roxyapi.NatalChartRequest_Timezone
 	_ = tz.FromNatalChartRequestTimezone1(city.Timezone)
-
 	chart, err := roxy.Astrology.GenerateNatalChart(ctx, nil, roxyapi.NatalChartRequest{
 		Date:     roxyapi.Date(1990, time.January, 15),
 		Time:     "14:30:00",
@@ -77,9 +85,24 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	fmt.Println(chart.JSON200)
+
+	// Step 3: the same birth as a Vedic kundli. Same inputs, sidereal zodiac. Vedic bodies
+	// take Timezone as an optional pointer (omit it to default to IST).
+	var vtz roxyapi.BirthChartRequest_Timezone
+	_ = vtz.FromBirthChartRequestTimezone1(city.Timezone)
+	kundli, err := roxy.VedicAstrology.GenerateBirthChart(ctx, nil, roxyapi.BirthChartRequest{
+		Date:     roxyapi.Date(1990, time.January, 15),
+		Time:     "14:30:00",
+		Latitude: city.Latitude, Longitude: city.Longitude, Timezone: &vtz,
+	})
+	if err != nil {
+		panic(err)
+	}
+	fmt.Println(chart.JSON200.Ascendant.Sign, kundli.JSON200.Meta["Moon"].Rashi)
 }
 ```
+
+`NewRoxy` sets the base URL (`https://roxyapi.com/api/v2`) and injects the auth header and SDK identification header on every request. Every method returns `(resp, err)`: check `err` first, then read the typed body off `resp.JSON200` (see Error handling).
 
 ## What you can build
 
@@ -116,169 +139,560 @@ Reach every domain through its accessor on the client returned by `NewRoxy`.
 
 ## Most-used endpoints
 
-The highest-demand endpoints by domain, in the order you are most likely to ship them. Chart endpoints share a birth-data body: build `Date` with `roxyapi.Date(...)` and the `Timezone` union as in the Quickstart. Full catalog in the [API reference](https://roxyapi.com/api-reference); method index in [`docs/llms-full.txt`](https://github.com/RoxyAPI/sdk-go/blob/main/docs/llms-full.txt).
+The highest-demand endpoints by domain, in the order you are most likely to ship them. Every example below reads the same birth through a different domain, and every coordinate comes from one location lookup at the top: one API key, one lookup, and eighteen domains that compose into a single product instead of eighteen separate ones. Full catalog in the [API reference](https://roxyapi.com/api-reference); method index in [`docs/llms-full.txt`](https://github.com/RoxyAPI/sdk-go/blob/main/docs/llms-full.txt).
 
-### 1. Western astrology (natal chart, daily horoscope, moon phase)
+The blocks are written inside a function that returns `error`, so every call is followed by its `if err != nil` check. Each response is read off `JSON200`; the comment under a call names the fields as they sit there, and an optional field is a pointer (nil when absent). Each chart body carries its own `Timezone` union type, built from the IANA string with the generated `From...Timezone1` method as in the Quick start; bodies whose nested person or plot structs have no named type are filled field by field.
+
+### Location first: one lookup feeds every chart
+
+Every chart, horoscope, panchang, dasha, dosha, synastry and compatibility endpoint needs `Latitude`, `Longitude` and `Timezone`. Never ask users to type coordinates. Look the city up once and reuse the result in every domain below.
 
 ```go
-// Natal chart. The #1 Western query, called on every onboarding.
-chart, err := roxy.Astrology.GenerateNatalChart(ctx, nil, roxyapi.NatalChartRequest{
-	Date: roxyapi.Date(1990, time.January, 15), Time: "14:30:00",
-	Latitude: 40.7128, Longitude: -74.006, Timezone: tz, // tz built with FromNatalChartRequestTimezone1("America/New_York")
+// One lookup feeds every chart below. Timezone is the IANA name from the city
+// record; the server resolves it to the DST-correct offset for the date of each chart.
+place, err := roxy.Location.SearchCities(ctx, &roxyapi.SearchCitiesParams{Q: "New York"})
+if err != nil {
+	return err
+}
+city := place.JSON200.Cities[0]
+latitude, longitude, timezone := city.Latitude, city.Longitude, city.Timezone
+birthDate, birthTime := roxyapi.Date(1990, time.January, 15), "14:30:00"
+
+// A second person for the two-chart calls (synastry, Guna Milan, Human Design connection).
+london, err := roxy.Location.SearchCities(ctx, &roxyapi.SearchCitiesParams{Q: "London"})
+if err != nil {
+	return err
+}
+partner := london.JSON200.Cities[0] // Latitude, Longitude and Timezone for the second chart
+partnerDate, partnerTime := roxyapi.Date(1992, time.July, 22), "09:00:00"
+```
+
+### 1. Western astrology API (natal chart, daily horoscope, synastry)
+
+Natal chart products, daily horoscope features, dating and compatibility apps, and lunar-cycle wellness apps start here.
+
+```go
+// Natal chart. The most requested Western call, run once at onboarding.
+// The body carries the latitude, longitude and timezone from the location lookup above.
+var natalTz roxyapi.NatalChartRequest_Timezone
+_ = natalTz.FromNatalChartRequestTimezone1(timezone)
+natal, err := roxy.Astrology.GenerateNatalChart(ctx, nil, roxyapi.NatalChartRequest{
+	Date: birthDate, Time: birthTime, Latitude: latitude, Longitude: longitude, Timezone: natalTz,
 })
+if err != nil {
+	return err
+}
+// natal.JSON200.Planets[n].Name, .Sign, .House, .Interpretation.Summary; natal.JSON200.Ascendant.Sign; natal.JSON200.Aspects
 
-// Daily horoscope. Highest per-user call frequency, drives DAUs and push.
-horo, err := roxy.Astrology.GetDailyHoroscope(ctx, "aries", nil)
+// Daily horoscope. The highest per-user call frequency in the catalog: daily content, streaks, push.
+horoscope, err := roxy.Astrology.GetDailyHoroscope(ctx, "aries", nil)
+if err != nil {
+	return err
+}
+// horoscope.JSON200.Overview, .Love, .Career, .Column, .Events, .LuckyNumber
 
-// Current moon phase. Viral for wellness and cycle-tracking apps.
+// Synastry. Full inter-aspect analysis between two charts, the relationship feature of dating apps.
+// Person1 and Person2 are inline structs, so the body is filled field by field from the two lookups above.
+var synastryBody roxyapi.CalculateSynastryJSONRequestBody
+synastryBody.Person1.Date, synastryBody.Person1.Time = birthDate, birthTime
+synastryBody.Person1.Latitude, synastryBody.Person1.Longitude = latitude, longitude
+_ = synastryBody.Person1.Timezone.FromCalculateSynastryJSONBodyPerson1Timezone1(timezone)
+synastryBody.Person2.Date, synastryBody.Person2.Time = partnerDate, partnerTime
+synastryBody.Person2.Latitude, synastryBody.Person2.Longitude = partner.Latitude, partner.Longitude
+_ = synastryBody.Person2.Timezone.FromCalculateSynastryJSONBodyPerson2Timezone1(partner.Timezone)
+synastry, err := roxy.Astrology.CalculateSynastry(ctx, nil, synastryBody)
+if err != nil {
+	return err
+}
+// synastry.JSON200.CompatibilityScore, .InterAspects, .Analysis.Strengths
+
+// Moon phase. A zero-setup GET for wellness, cycle-tracking and meditation apps.
 moon, err := roxy.Astrology.GetCurrentMoonPhase(ctx, nil)
+if err != nil {
+	return err
+}
+// moon.JSON200.Phase, .Illumination, .Sign, .Meaning.Description
 ```
 
-### 2. Vedic astrology (kundli, dasha, dosha)
+### 2. Vedic astrology API (kundli, panchang, dasha, Guna Milan, KP)
 
-Vedic charts make `Timezone` an optional pointer (`Timezone: &tz`); omit it to default to IST.
+Kundli generators, matrimonial matching, muhurta and panchang apps, and KP practitioners. The same birth values, read sidereally.
 
 ```go
-// Vedic kundli (D1 Rashi chart). Entry point for every Jyotish product.
+// Vedic kundli. The same birth read sidereally: the body reuses the location lookup above.
+// Vedic bodies take Timezone as an optional pointer; omit it to default to IST.
+var kundliTz roxyapi.BirthChartRequest_Timezone
+_ = kundliTz.FromBirthChartRequestTimezone1(timezone)
 kundli, err := roxy.VedicAstrology.GenerateBirthChart(ctx, nil, roxyapi.BirthChartRequest{
-	Date: roxyapi.Date(1990, time.January, 15), Time: "14:30:00",
-	Latitude: 28.6139, Longitude: 77.209, Timezone: &vtz,
+	Date: birthDate, Time: birthTime, Latitude: latitude, Longitude: longitude, Timezone: &kundliTz,
 })
+if err != nil {
+	return err
+}
+// kundli.JSON200.Meta["Moon"].Rashi, kundli.JSON200.Meta["Moon"].Nakshatra.Name, kundli.JSON200.Houses, .Combustion
 
-// Current Vimshottari dasha.
+// Detailed panchang. Tithi, nakshatra, yoga, karana, rahu kaal and the muhurtas for a date and place.
+var panchangTz roxyapi.GetDetailedPanchangJSONBody_Timezone
+_ = panchangTz.FromGetDetailedPanchangJSONBodyTimezone1(timezone)
+panchang, err := roxy.VedicAstrology.GetDetailedPanchang(ctx, nil, roxyapi.GetDetailedPanchangJSONRequestBody{
+	Date: roxyapi.Date(2026, time.October, 1), Latitude: latitude, Longitude: longitude, Timezone: &panchangTz,
+})
+if err != nil {
+	return err
+}
+// panchang.JSON200.Tithi, .Nakshatra, .RahuKaal, .AbhijitMuhurta
+
+// Vimshottari dasha. The mahadasha, antardasha and pratyantardasha running right now.
+var dashaTz roxyapi.GetCurrentDashaJSONBody_Timezone
+_ = dashaTz.FromGetCurrentDashaJSONBodyTimezone1(timezone)
 dasha, err := roxy.VedicAstrology.GetCurrentDasha(ctx, nil, roxyapi.GetCurrentDashaJSONRequestBody{
-	Date: roxyapi.Date(1990, time.January, 15), Time: "14:30:00",
-	Latitude: 28.6139, Longitude: 77.209, Timezone: &dtz,
+	Date: birthDate, Time: birthTime, Latitude: latitude, Longitude: longitude, Timezone: &dashaTz,
 })
+if err != nil {
+	return err
+}
+// dasha.JSON200.Mahadasha, .Antardasha, .RemainingInMahadasha
 
-// Mangal (Manglik) Dosha. Note: this endpoint takes no params argument.
-dosha, err := roxy.VedicAstrology.CheckManglikDosha(ctx, roxyapi.CheckManglikDoshaJSONRequestBody{
-	Date: roxyapi.Date(1990, time.January, 15), Time: "14:30:00", Latitude: 28.6139, Longitude: 77.209,
+// Mangal Dosha. The most asked matrimonial check.
+var doshaTz roxyapi.ManglikRequest_Timezone
+_ = doshaTz.FromManglikRequestTimezone1(timezone)
+dosha, err := roxy.VedicAstrology.CheckManglikDosha(ctx, nil, roxyapi.ManglikRequest{
+	Date: birthDate, Time: birthTime, Latitude: latitude, Longitude: longitude, Timezone: &doshaTz,
 })
+if err != nil {
+	return err
+}
+// dosha.JSON200.Present; Severity and Remedies are pointers, set only when Present is true
+
+// Guna Milan. The 36-point Ashtakoota score behind kundli matching, both people from the lookups above.
+var milanBody roxyapi.CompatibilityRequest
+milanBody.Person1.Date, milanBody.Person1.Time = birthDate, birthTime
+milanBody.Person1.Latitude, milanBody.Person1.Longitude = latitude, longitude
+milanBody.Person1.Timezone = new(roxyapi.CompatibilityRequest_Person1_Timezone)
+_ = milanBody.Person1.Timezone.FromCompatibilityRequestPerson1Timezone1(timezone)
+milanBody.Person2.Date, milanBody.Person2.Time = partnerDate, partnerTime
+milanBody.Person2.Latitude, milanBody.Person2.Longitude = partner.Latitude, partner.Longitude
+milanBody.Person2.Timezone = new(roxyapi.CompatibilityRequest_Person2_Timezone)
+_ = milanBody.Person2.Timezone.FromCompatibilityRequestPerson2Timezone1(partner.Timezone)
+milan, err := roxy.VedicAstrology.CalculateGunMilan(ctx, nil, milanBody)
+if err != nil {
+	return err
+}
+// milan.JSON200.Total, .Percentage, .IsCompatible, .Breakdown
+
+// KP ruling planets. Horary answers at the moment of the question, for the place looked up above.
+var kpTz roxyapi.GetKpRulingPlanetsJSONBody_Timezone
+_ = kpTz.FromGetKpRulingPlanetsJSONBodyTimezone1(timezone)
+kp, err := roxy.VedicAstrology.GetKpRulingPlanets(ctx, nil, roxyapi.GetKpRulingPlanetsJSONRequestBody{
+	Latitude: latitude, Longitude: longitude, Timezone: &kpTz,
+})
+if err != nil {
+	return err
+}
+// kp.JSON200.DayLord, .MoonSublord, .RulingPlanets
 ```
 
-### 3. Numerology (life path, full chart, personal year)
+### 3. Astrology forecast API (transit forecast, cross-domain timeline)
 
-No birth time needed, the easiest domain to integrate.
+Forecast feeds, transit alerts and timing tools. One call returns a dated, significance-scored event list; the timeline variant merges Vedic dasha boundaries and biorhythm critical days into the same list, which no single-domain API can do.
 
 ```go
-// Life Path. The #1 numerology keyword.
-lp, err := roxy.Numerology.CalculateLifePath(ctx, nil, roxyapi.CalculateLifePathJSONRequestBody{Year: 1990, Month: 1, Day: 15})
+// Transit forecast. Transit-to-natal aspects, sign ingresses and retrograde stations over a window.
+// BirthData is an inline struct carrying the same birth: date, time, latitude, longitude, timezone.
+var transitsBody roxyapi.ForecastTransitsJSONRequestBody
+transitsBody.BirthData.Date, transitsBody.BirthData.Time = birthDate, birthTime
+transitsBody.BirthData.Latitude, transitsBody.BirthData.Longitude = roxyapi.Ptr(latitude), roxyapi.Ptr(longitude)
+_ = transitsBody.BirthData.Timezone.FromForecastTransitsJSONBodyBirthDataTimezone1(timezone)
+transitsBody.StartDate, transitsBody.EndDate = roxyapi.Ptr(roxyapi.Date(2026, time.October, 1)), roxyapi.Ptr(roxyapi.Date(2026, time.October, 31))
+transits, err := roxy.Forecast.ForecastTransits(ctx, nil, transitsBody)
+if err != nil {
+	return err
+}
+// transits.JSON200.Count, transits.JSON200.Events[n].Date, .Type, .Body, .Target, .Aspect, .Significance
 
-// Full numerology chart: all core numbers from name plus birth date.
-chart, err := roxy.Numerology.GenerateNumerologyChart(ctx, nil,
-	roxyapi.GenerateNumerologyChartJSONRequestBody{FullName: "Jane Smith", Year: 1990, Month: 1, Day: 15})
-
-// Personal Year. Drives January traffic spikes (Year optional, defaults to current).
-py, err := roxy.Numerology.CalculatePersonalYear(ctx, nil, roxyapi.CalculatePersonalYearJSONRequestBody{Month: 1, Day: 15})
+// Cross-domain timeline. The same window with Vedic dasha boundaries and biorhythm critical days merged in.
+var timelineBody roxyapi.GenerateTimelineJSONRequestBody
+timelineBody.BirthData.Date, timelineBody.BirthData.Time = birthDate, birthTime
+timelineBody.BirthData.Latitude, timelineBody.BirthData.Longitude = roxyapi.Ptr(latitude), roxyapi.Ptr(longitude)
+_ = timelineBody.BirthData.Timezone.FromGenerateTimelineJSONBodyBirthDataTimezone1(timezone)
+timelineBody.StartDate, timelineBody.EndDate = roxyapi.Ptr(roxyapi.Date(2026, time.October, 1)), roxyapi.Ptr(roxyapi.Date(2026, time.October, 31))
+timeline, err := roxy.Forecast.GenerateTimeline(ctx, nil, timelineBody)
+if err != nil {
+	return err
+}
+// timeline.JSON200.Events[n].Domain ("western", "vedic" or "biorhythm"), .Description, .Significance
 ```
 
-### 4. Tarot (daily card, three-card, yes / no)
+### 4. Human Design API (bodygraph, connection)
+
+Self-discovery apps, coaching bots and compatibility products. The full bodygraph is one call, and the Design side is solved on the exact 88-degree solar arc rather than approximated as calendar days.
 
 ```go
-// Daily card. Seed per user for deterministic once-per-day behavior.
-card, err := roxy.Tarot.GetDailyCard(ctx, nil, roxyapi.GetDailyCardJSONRequestBody{Seed: roxyapi.Ptr("user-42")})
-
-// Three-card past-present-future spread.
-three, err := roxy.Tarot.CastThreeCard(ctx, nil,
-	roxyapi.CastThreeCardJSONRequestBody{Question: roxyapi.Ptr("My next quarter"), Seed: roxyapi.Ptr("user-42")})
-
-// Yes / No. Impulse micro-query.
-yn, err := roxy.Tarot.CastYesNo(ctx, nil, roxyapi.CastYesNoJSONRequestBody{Question: roxyapi.Ptr("Should I take the offer?")})
-```
-
-### 5. Human Design (bodygraph in one call)
-
-```go
-// Full bodygraph: type, strategy, authority, profile, centers, channels, gates.
-// Timezone union: for an inline-body endpoint the type name uses JSONBody, not
-// JSONRequestBody (see Gotchas). If unsure of the name, let autocomplete fill it.
-var btz roxyapi.GenerateBodygraphJSONBody_Timezone
-_ = btz.FromGenerateBodygraphJSONBodyTimezone1("America/New_York")
+// Bodygraph. Type, strategy, authority, profile, definition, centers, channels and all 26 gates in one call.
+// Human Design needs only the birth instant, so it takes the date, time and timezone from the lookup above.
+var hdTz roxyapi.GenerateBodygraphJSONBody_Timezone
+_ = hdTz.FromGenerateBodygraphJSONBodyTimezone1(timezone)
 hd, err := roxy.HumanDesign.GenerateBodygraph(ctx, nil, roxyapi.GenerateBodygraphJSONRequestBody{
-	Date: roxyapi.Date(1990, time.July, 4), Time: "10:12:00",
-	Latitude: roxyapi.Ptr[float32](40.7128), Longitude: roxyapi.Ptr[float32](-74.006), Timezone: btz,
+	Date: birthDate, Time: birthTime, Timezone: hdTz,
 })
+if err != nil {
+	return err
+}
+// hd.JSON200.Type, .Strategy, .Authority, .Profile, .Definition, .IncarnationCross.Name, .Centers, .Channels, .Gates
+
+// Connection. Two bodygraphs combined, each of the 36 channels classified by how the pair forms it.
+var connectionBody roxyapi.CalculateConnectionJSONRequestBody
+connectionBody.PersonA.Date, connectionBody.PersonA.Time = birthDate, birthTime
+_ = connectionBody.PersonA.Timezone.FromCalculateConnectionJSONBodyPersonATimezone1(timezone)
+connectionBody.PersonB.Date, connectionBody.PersonB.Time = partnerDate, partnerTime
+_ = connectionBody.PersonB.Timezone.FromCalculateConnectionJSONBodyPersonBTimezone1(partner.Timezone)
+connection, err := roxy.HumanDesign.CalculateConnection(ctx, nil, connectionBody)
+if err != nil {
+	return err
+}
+// connection.JSON200.TotalChannels, .Summary.Electromagnetic, .CombinedDefinition
 ```
 
-### 6. Chinese astrology (BaZi four pillars, zodiac sign)
+### 5. Chinese zodiac API (BaZi four pillars, zodiac animal, almanac)
 
-The school splits that make two calculators disagree are typed parameters with named defaults, echoed back in `conventions` on every response.
+BaZi readings, zodiac content and Tong Shu date pages. The school splits that make two calculators disagree (`DayBoundary`, `YearBoundary`, `HourClock`) are typed request parameters with named defaults.
 
 ```go
-// BaZi Four Pillars: the anchor call, the rest of the domain reads off these four pillars.
-// Timezone union: inline-body endpoints name the type JSONBody, not JSONRequestBody (see Gotchas).
-var btz roxyapi.GenerateBaziChartJSONBody_Timezone
-_ = btz.FromGenerateBaziChartJSONBodyTimezone1("America/New_York")
+// BaZi Four Pillars. The anchor call of the domain, from the same birth instant as every chart above.
+// Each response echoes the Conventions it was computed under, so a chart can be reproduced, not guessed.
+var baziTz roxyapi.GenerateBaziChartJSONBody_Timezone
+_ = baziTz.FromGenerateBaziChartJSONBodyTimezone1(timezone)
 bazi, err := roxy.ChineseAstrology.GenerateBaziChart(ctx, nil, roxyapi.GenerateBaziChartJSONRequestBody{
-	Date: roxyapi.Date(1990, time.July, 4), Time: "10:12:00", Timezone: btz,
+	Date: birthDate, Time: birthTime, Timezone: baziTz,
 })
+if err != nil {
+	return err
+}
+// bazi.JSON200.Pillars[n].Position ("year", "month", "day" or "hour"), .Stem.Element, .Branch.Animal, .TenGod.Name
+// bazi.JSON200.DayMaster.Element, .ZodiacAnimal, .FiveElements, .Conventions
 
-// Chinese zodiac sign. Defaults yearBoundary to "lunar-new-year", the folk rule people mean
-// when they say which animal they are. Pass "li-chun" for the classical BaZi boundary.
-sign, err := roxy.ChineseAstrology.CalculateZodiacAnimal(ctx, nil, roxyapi.CalculateZodiacAnimalJSONRequestBody{
-	Date: roxyapi.Date(1990, time.July, 4),
-})
+// Chinese zodiac animal. Defaults YearBoundary to the Lunar New Year, the folk rule people mean
+// when they ask which animal they are. Pass the li-chun value for the classical BaZi boundary.
+animal, err := roxy.ChineseAstrology.CalculateZodiacAnimal(ctx, nil, roxyapi.CalculateZodiacAnimalJSONRequestBody{Date: birthDate})
+if err != nil {
+	return err
+}
+// animal.JSON200.Animal.Name, .Animal.Element, .Element (the year stem element), .Interpretation
+
+// Almanac day. The Tong Shu view of a date: day officer, mansion, clash animal, favours and avoids.
+almanac, err := roxy.ChineseAstrology.GetAlmanacDay(ctx, "2026-10-01", nil)
+if err != nil {
+	return err
+}
+// almanac.JSON200.DayPillar, .DayOfficer, .ClashAnimal, .Favours, .Avoids
 ```
 
-### 7. Feng shui (Kua number, flying star chart)
+### 6. Feng shui API (Kua number, flying star chart)
 
-Chinese years resolve at Li Chun, computed astronomically, so the annual charts change over on the real boundary.
+Kua numbers with the Eight Mansions map, Xuan Kong flying star charts for any of the nine periods and 24 mountains, annual and monthly star plates, and the annual afflictions.
 
 ```go
-// Kua number: one birth date and a gender gives the personal directions everything else reads off.
+// Kua number. One birth date and a gender give the personal directions everything else reads off.
 kua, err := roxy.FengShui.CalculateKuaNumber(ctx, nil, roxyapi.CalculateKuaNumberJSONRequestBody{
-	Date: roxyapi.Date(1990, time.July, 4), Gender: roxyapi.CalculateKuaNumberJSONBodyGenderFemale,
+	Date: birthDate, Gender: roxyapi.CalculateKuaNumberJSONBodyGenderFemale,
 })
+if err != nil {
+	return err
+}
+// kua.JSON200.Kua, .Group ("east" or "west"), .Trigram.English, kua.JSON200.Sectors[n].Direction, .Nature, .Rank
 
-// Flying star natal chart: period plus facing gives the nine palaces with base, mountain
-// and water stars. Send Facing (mountain id like roxyapi.Bing, or compass label roxyapi.S2)
-// or FacingDegrees, not neither.
-chart, err := roxy.FengShui.GenerateFlyingStarChart(ctx, nil, roxyapi.GenerateFlyingStarChartJSONRequestBody{
-	Period: roxyapi.Ptr(9), Facing: roxyapi.Ptr(roxyapi.S2),
+// Flying star natal chart. Period plus facing gives the nine palaces with base, mountain and water stars.
+// Send Facing (a mountain id like Bing or a compass label like S2, both generated constants) or FacingDegrees, not neither.
+stars, err := roxy.FengShui.GenerateFlyingStarChart(ctx, nil, roxyapi.GenerateFlyingStarChartJSONRequestBody{
+	Period: roxyapi.Ptr(9), Facing: roxyapi.Ptr(roxyapi.GenerateFlyingStarChartJSONBodyFacingS2),
 })
+if err != nil {
+	return err
+}
+// stars.JSON200.Facing.Label, .Sitting.Label, .Structure.Name, stars.JSON200.Palaces[n].Palace, .Base, .Mountain, .Water, .Reading
 ```
 
-### 8. Biorhythm (daily check-in)
+### 7. Mayan astrology API (Tzolkin day sign, full Maya chart)
+
+Maya day signs, the Haab and Long Count, and the Aztec tonalpohualli, every value a function of the date under a typed `Correlation` convention echoed back in `Conventions`.
 
 ```go
-// Physical, emotional, intellectual, intuitive, plus extended cycles.
-bio, err := roxy.Biorhythm.GetDailyBiorhythm(ctx, nil,
-	roxyapi.GetDailyBiorhythmJSONRequestBody{Seed: roxyapi.Ptr("user-1"), Date: roxyapi.Ptr(roxyapi.Date(2026, time.April, 23))})
+// Tzolkin day sign. The most asked Maya question, answered from a date alone.
+tzolkin, err := roxy.MesoamericanAstrology.CalculateTzolkin(ctx, nil, roxyapi.CalculateTzolkinJSONRequestBody{Date: birthDate})
+if err != nil {
+	return err
+}
+// tzolkin.JSON200.DaySign, .DaySignName, .Number, .Trecena, .Reading
+
+// Full Maya chart. Tzolkin, Haab, Long Count, Calendar Round, Lord of the Night, Year Bearer and the Cruz Maya.
+maya, err := roxy.MesoamericanAstrology.GenerateMayanChart(ctx, nil, roxyapi.GenerateMayanChartJSONRequestBody{Date: birthDate})
+if err != nil {
+	return err
+}
+// maya.JSON200.Tzolkin, .Haab, .LongCount, .CalendarRound, .YearBearer, .Cross, .Conventions.Correlation
 ```
 
-### 9. I Ching (cast a reading, hexagram catalog)
+### 8. Vastu Shastra API (entrance analysis, room compliance)
+
+Home and plot analysis from typed geometry. Every verdict carries a `Source` object naming the text, chapter and verse it rests on, or a convention label where the texts are silent.
 
 ```go
-// Cast a reading: primary hexagram, changing lines, transformed hexagram.
-reading, err := roxy.Iching.CastReading(ctx, nil)
+// Entrance analysis. Plot, facing and door in; the pada, its devata, the classical effect and the recommended padas out.
+// Plot is an inline struct, so the body is filled field by field; the enum values are generated constants.
+var entranceBody roxyapi.CalculateEntrancePadaJSONRequestBody
+entranceBody.Plot.Width, entranceBody.Plot.Depth = roxyapi.Ptr[float32](30), roxyapi.Ptr[float32](40)
+entranceBody.Plot.Unit = roxyapi.Ptr(roxyapi.CalculateEntrancePadaJSONBodyPlotUnitFeet)
+entranceBody.Facing = roxyapi.Ptr(roxyapi.CalculateEntrancePadaJSONBodyFacingNorth)
+entranceBody.DoorPosition = roxyapi.Ptr[float32](0.4)
+entrance, err := roxy.Vastu.CalculateEntrancePada(ctx, nil, entranceBody)
+if err != nil {
+	return err
+}
+// entrance.JSON200.Pada, .Devata, .Effect, .Auspiciousness, .RecommendedPadas, .Source
 
-// Catalog of all 64 hexagrams (cache once).
-hexes, err := roxy.Iching.ListHexagrams(ctx, nil)
+// Room compliance. A verdict per room with the verse or the convention it rests on, and a scored composite.
+// Rooms is a slice of inline structs with no named type, so this body is unmarshalled from its JSON shape.
+var roomsBody roxyapi.CalculateRoomComplianceJSONRequestBody
+if err := json.Unmarshal([]byte(`{
+	"plot": {"width": 30, "depth": 40, "unit": "feet"},
+	"facing": "North",
+	"rooms": [
+		{"type": "kitchen", "direction": "Southeast"},
+		{"type": "master-bedroom", "direction": "Southwest"},
+		{"type": "puja", "direction": "Northeast"}
+	]
+}`), &roomsBody); err != nil {
+	return err
+}
+rooms, err := roxy.Vastu.CalculateRoomCompliance(ctx, nil, roomsBody)
+if err != nil {
+	return err
+}
+// rooms.JSON200.Score, rooms.JSON200.Rooms[n].Type, .Verdict, .IdealDirections, .Source
 ```
 
-### 10. Crystals (by zodiac, birthstone)
+### 9. Numerology API (life path, full chart, personal year)
+
+Works from the birth date and name alone, no coordinates, which makes it the easiest domain to integrate.
 
 ```go
-byZodiac, err := roxy.Crystals.GetCrystalsByZodiac(ctx, "scorpio", nil)
-birthstone, err := roxy.Crystals.GetBirthstones(ctx, 4, nil) // month number
+// Life Path. The most searched numerology number, from the birth date alone.
+lifePath, err := roxy.Numerology.CalculateLifePath(ctx, nil, roxyapi.CalculateLifePathJSONRequestBody{Year: 1990, Month: 1, Day: 15})
+if err != nil {
+	return err
+}
+// lifePath.JSON200.Number, .Type ("single" or "master"), .Meaning
+
+// Full numerology chart. All six core numbers plus karmic lessons, pinnacles and the personal year in one call.
+numerology, err := roxy.Numerology.GenerateNumerologyChart(ctx, nil, roxyapi.GenerateNumerologyChartJSONRequestBody{
+	FullName: "Jane Smith", Year: 1990, Month: 1, Day: 15,
+})
+if err != nil {
+	return err
+}
+// numerology.JSON200.CoreNumbers.LifePath, .Expression, .SoulUrge, numerology.JSON200.AdditionalInsights.PersonalYear
+
+// Personal Year. The annual theme, the January feature of every numerology app.
+personalYear, err := roxy.Numerology.CalculatePersonalYear(ctx, nil, roxyapi.CalculatePersonalYearJSONRequestBody{Month: 1, Day: 15, Year: roxyapi.Ptr(2026)})
+if err != nil {
+	return err
+}
+// personalYear.JSON200.PersonalYear, .Theme, .Advice
 ```
 
-### 11. Dreams (symbol lookup, search)
+### 10. Kabbalah API (gematria, birth profile)
+
+Gematria of a Latin name under a declared transliteration convention, the 72 names, the Tree of Life, and a Hebrew birthday computed from the same birth instant as every chart above.
 
 ```go
-symbol, err := roxy.Dreams.GetDreamSymbol(ctx, "flying") // no params argument
-results, err := roxy.Dreams.SearchDreamSymbols(ctx, &roxyapi.SearchDreamSymbolsParams{Q: roxyapi.Ptr("water")})
+// Gematria. A Latin name transliterated under a declared convention, ten ciphers, each with its tradition and source.
+gematria, err := roxy.Kabbalah.CalculateGematria(ctx, nil, roxyapi.CalculateGematriaJSONRequestBody{Text: roxyapi.Ptr("Sarah")})
+if err != nil {
+	return err
+}
+// gematria.JSON200.Chosen.Hebrew, gematria.JSON200.Values[n].ID, .Name, .Value, .Tradition; gematria.JSON200.Matches, .Conventions
+
+// Birth profile. The Hebrew date and birthday, the three birth angels and the birth sephirah from the instant above.
+var kabbalahTz roxyapi.GenerateBirthProfileJSONBody_Timezone
+_ = kabbalahTz.FromGenerateBirthProfileJSONBodyTimezone1(timezone)
+kabbalah, err := roxy.Kabbalah.GenerateBirthProfile(ctx, nil, roxyapi.GenerateBirthProfileJSONRequestBody{
+	Date: birthDate, Time: roxyapi.Ptr(birthTime), Timezone: kabbalahTz,
+})
+if err != nil {
+	return err
+}
+// kabbalah.JSON200.HebrewDate, .HebrewBirthday, .Angels, .Sephirah
 ```
 
-### 12. Angel numbers (meaning, universal lookup)
+### 11. Tarot API (daily card, three-card, Celtic Cross, yes or no)
+
+The complete 78-card deck with meanings for love, career, health and spirit. Pass a `Seed` per user for deterministic once-per-day draws.
 
 ```go
+// Daily card. Deterministic per (seed, date), so one user sees one card per day.
+card, err := roxy.Tarot.GetDailyCard(ctx, nil, roxyapi.GetDailyCardJSONRequestBody{Seed: roxyapi.Ptr("user-42")})
+if err != nil {
+	return err
+}
+// card.JSON200.Card.Name, .Card.Reversed, .Card.ImageURL, .DailyMessage
+
+// Three-card spread. Past, present, future: the most drawn spread on every tarot platform.
+three, err := roxy.Tarot.CastThreeCard(ctx, nil, roxyapi.CastThreeCardJSONRequestBody{Question: roxyapi.Ptr("My next quarter"), Seed: roxyapi.Ptr("user-42")})
+if err != nil {
+	return err
+}
+// three.JSON200.Positions[n].Name, .Card.Name, .Interpretation; three.JSON200.Summary
+
+// Celtic Cross. The ten-position professional reading.
+celtic, err := roxy.Tarot.CastCelticCross(ctx, nil, roxyapi.CastCelticCrossJSONRequestBody{Question: roxyapi.Ptr("What should I focus on?"), Seed: roxyapi.Ptr("user-42")})
+if err != nil {
+	return err
+}
+// celtic.JSON200.Positions[n].Name, .Card.Name, .Interpretation; celtic.JSON200.Summary
+
+// Yes or no. One card, one answer, with its strength.
+answer, err := roxy.Tarot.CastYesNo(ctx, nil, roxyapi.CastYesNoJSONRequestBody{Question: roxyapi.Ptr("Should I take the offer?")})
+if err != nil {
+	return err
+}
+// answer.JSON200.Answer ("Yes", "No" or "Maybe"), .Strength, .Card.Name
+```
+
+### 12. Biorhythm API (reading, forecast)
+
+Ten cycle types across primary, secondary and extended cycles, for wellness, productivity, sports and couples apps.
+
+```go
+// Biorhythm reading. All ten cycles for a date, from the same birth date as every chart above.
+bio, err := roxy.Biorhythm.GetReading(ctx, nil, roxyapi.GetReadingJSONRequestBody{BirthDate: birthDate, TargetDate: roxyapi.Ptr(roxyapi.Date(2026, time.October, 1))})
+if err != nil {
+	return err
+}
+// bio.JSON200.Cycles["physical"].Value, .Phase; bio.JSON200.EnergyRating, .OverallPhase, .CriticalAlerts, .Interpretation
+
+// Forecast. Every cycle for every day of a window, with the best and worst days named.
+bioForecast, err := roxy.Biorhythm.GetForecast(ctx, nil, roxyapi.GetForecastJSONRequestBody{
+	BirthDate: birthDate, StartDate: roxyapi.Ptr(roxyapi.Date(2026, time.October, 1)), EndDate: roxyapi.Ptr(roxyapi.Date(2026, time.October, 31)),
+})
+if err != nil {
+	return err
+}
+// bioForecast.JSON200.Summary.BestDay, .WorstDay, .AverageEnergy; bioForecast.JSON200.Days[n].Date, .Physical, .Emotional, .Intellectual, .IsCritical
+```
+
+### 13. Ayurveda API (dosha constitution, dinacharya)
+
+The dosha profile read from a verified sidereal chart with the verse on each factor, a daily routine anchored on the local sunrise, and the six seasons from real solar ingresses. Every response carries `Meta.Disclaimer`.
+
+```go
+// Constitution. The dosha profile read from the sidereal chart of the same birth, each factor with its verse.
+var constitutionTz roxyapi.AyurvedaConstitutionRequest_Timezone
+_ = constitutionTz.FromAyurvedaConstitutionRequestTimezone1(timezone)
+constitution, err := roxy.Ayurveda.CalculateAyurvedicConstitution(ctx, nil, roxyapi.AyurvedaConstitutionRequest{
+	Date: birthDate, Time: birthTime, Latitude: latitude, Longitude: longitude, Timezone: &constitutionTz,
+})
+if err != nil {
+	return err
+}
+// constitution.JSON200.Composite.Dominant, .Type; constitution.JSON200.Factors[n].ID, .Input, .Doshas, .Source; constitution.JSON200.Meta.Disclaimer
+
+// Dinacharya. Brahma muhurta, the dosha periods and the routine for a date at the place looked up above.
+var dinacharyaTz roxyapi.AyurvedaDinacharyaRequest_Timezone
+_ = dinacharyaTz.FromAyurvedaDinacharyaRequestTimezone1(timezone)
+dinacharya, err := roxy.Ayurveda.GetDinacharyaSchedule(ctx, nil, roxyapi.AyurvedaDinacharyaRequest{
+	Date: roxyapi.Date(2026, time.October, 1), Latitude: latitude, Longitude: longitude, Timezone: &dinacharyaTz,
+})
+if err != nil {
+	return err
+}
+// dinacharya.JSON200.BrahmaMuhurta, .DoshaPeriods, .Routine
+```
+
+### 14. I Ching API (cast a reading, hexagram catalog)
+
+All 64 hexagrams, 384 changing lines and 8 trigrams, for meditation apps, decision tools and wisdom chatbots.
+
+```go
+// Cast a reading. Three coins six times: the primary hexagram, the changing lines and the resulting hexagram.
+reading, err := roxy.Iching.CastReading(ctx, &roxyapi.CastReadingParams{Seed: roxyapi.Ptr("user-42")})
+if err != nil {
+	return err
+}
+// reading.JSON200.Hexagram.Number, .Hexagram.English, .Lines, .ChangingLinePositions, .ResultingHexagram
+
+// Hexagram catalog. Paginated, 20 per page by default; ask for all 64 once and cache them.
+hexagrams, err := roxy.Iching.ListHexagrams(ctx, &roxyapi.ListHexagramsParams{Limit: roxyapi.Ptr(64)})
+if err != nil {
+	return err
+}
+// hexagrams.JSON200.Total, hexagrams.JSON200.Hexagrams[n].Number, .English, .Pinyin; call roxy.Iching.GetHexagram(ctx, number, nil) for the judgment and lines
+```
+
+### 15. Crystal healing API (by zodiac, by chakra, birthstone)
+
+Crystal retail and metaphysical content: "crystals for [sign]" and "[chakra] chakra stones" pages, plus the birthstone for each month.
+
+```go
+// By zodiac. The most searched crystal query pattern.
+bySign, err := roxy.Crystals.GetCrystalsByZodiac(ctx, "scorpio", nil)
+if err != nil {
+	return err
+}
+// bySign.JSON200.Crystals[n].ID, .Name, .ImageURL, .Colors; call roxy.Crystals.GetCrystal(ctx, id, nil) for full properties
+
+// By chakra. Wellness and yoga content pages.
+byChakra, err := roxy.Crystals.GetCrystalsByChakra(ctx, "Heart", nil)
+if err != nil {
+	return err
+}
+// byChakra.JSON200.Crystals[n].Name, .Colors
+
+// Birthstone. Evergreen gift and jewelry pages.
+birthstone, err := roxy.Crystals.GetBirthstones(ctx, 1, nil)
+if err != nil {
+	return err
+}
+```
+
+### 16. Dream interpretation API (symbol dictionary, search)
+
+A 2,000+ symbol dream dictionary for journal apps, AI companions and self-discovery products.
+
+```go
+// Symbol detail. Every "what does it mean to dream about X" page lands here.
+symbol, err := roxy.Dreams.GetDreamSymbol(ctx, "flying") // no params argument on this endpoint
+if err != nil {
+	return err
+}
+// symbol.JSON200.ID, .Name, .Meaning
+
+// Symbol search. Chatbots fetch the dictionary once and keep it locally.
+symbols, err := roxy.Dreams.SearchDreamSymbols(ctx, &roxyapi.SearchDreamSymbolsParams{Q: roxyapi.Ptr("water")})
+if err != nil {
+	return err
+}
+// symbols.JSON200.Symbols[n].ID, .Name
+```
+
+### 17. Angel numbers API (1111, 222, 333 meanings plus universal lookup)
+
+Meanings for every common sequence, and a lookup that answers any positive integer through its digit root.
+
+```go
+// By number. Every "meaning of 1111" page is backed by this. The path param is a string.
 angel, err := roxy.AngelNumbers.GetAngelNumber(ctx, "1111", nil)
-anyNumber, err := roxy.AngelNumbers.AnalyzeNumberSequence(ctx, &roxyapi.AnalyzeNumberSequenceParams{Number: "4242"})
-```
+if err != nil {
+	return err
+}
+// angel.JSON200.Title, .CoreMessage, .Meaning.Spiritual, .Meaning.Love, .Affirmation
 
-> Person-pair and forecast endpoints (`CalculateSynastry`, `CalculateGunMilan`, `GenerateTimeline`) take inline `Person1` / `Person2` / `BirthData` structs that are awkward to build as a Go literal. See the [API reference](https://roxyapi.com/api-reference) for the JSON shape.
+// Universal lookup. Any positive integer, with the digit root carrying the answer when no curated entry exists.
+sequence, err := roxy.AngelNumbers.AnalyzeNumberSequence(ctx, &roxyapi.AnalyzeNumberSequenceParams{Number: "4242"})
+if err != nil {
+	return err
+}
+// sequence.JSON200.DigitRoot, .IsRepeating, .KnownMeaning (nil when not curated), .DigitRootMeaning.Title
+```
 
 ## Built for AI agents
 
@@ -292,21 +706,21 @@ Every endpoint is also a remote MCP tool at `https://roxyapi.com/mcp/{domain}` (
 
 ## Gotchas
 
-- **Argument arity varies.** Calls are `(ctx, pathParams..., params, body)`, but an endpoint with no query parameters has **no `params` argument** (for example `roxy.Usage.GetUsageStats(ctx)`, `roxy.Languages.ListLanguages(ctx)`). Passing a stray `nil` there is read as a request editor and panics. Let autocomplete show the signature.
+- **Argument arity varies.** Calls are `(ctx, pathParams..., params, body)`, but an endpoint with no query parameters has **no `params` argument** (for example `roxy.Usage.GetUsageStats(ctx)`, `roxy.Languages.ListLanguages(ctx)`, `roxy.Dreams.GetDreamSymbol(ctx, "flying")`, `roxy.VedicAstrology.GetChoghadiya(ctx, body)`). Passing a stray `nil` there is read as a request editor and panics. Let autocomplete show the signature.
 - **The body type is `roxyapi.<MethodName>JSONRequestBody`.** Some are aliases of a named request (`NatalChartRequest`); both names compile.
 - **`Date` and `Timezone` are typed.** Build a date with `roxyapi.Date(1990, time.January, 15)`, never a string. `Timezone` is a per-request union: `tz.From<Req>Timezone1("Europe/Berlin")` (IANA) or `From<Req>Timezone0(1)` (decimal offset).
 - **Optional fields are pointers.** Use `roxyapi.Ptr(...)` for `Seed`, `Question`, `Lang`, `Limit`, and similar.
 - **Enum-like strings are validated server-side.** `sign` and `Lang` are open string types; an invalid value compiles and comes back as a `validation_error` (400).
 - **Read responses off `JSON200`** (`resp.JSON200.Cities[0].Latitude`). It is nil unless the call was a 2xx (errors are returned, not in the body).
-- **Person-pair / forecast bodies use anonymous structs** (see note above) and are best built from the JSON shape in the API reference.
+- **Person-pair, forecast and Vastu bodies use anonymous nested structs** (`Person1`, `PersonA`, `BirthData`, `Plot`). Declare the body with `var` and fill those fields one by one, as the synastry, Guna Milan, forecast, connection and Vastu blocks above do; a slice of inline structs (`Rooms`) is easiest to unmarshal from its JSON shape.
 
 ## FAQ
 
 **Q: `SearchCities` returned 200 but `Cities[0]` panics, or my city is not found.**
-A: A successful search can still return an empty `Cities` slice, so check `len(search.JSON200.Cities) == 0` before indexing. Two-letter country abbreviations are not matched: use the full country name (`"London, United Kingdom"`, not `"London, UK"`) or just the bare city (`"London"`).
+A: A successful search can still return an empty `Cities` slice, so check `len(search.JSON200.Cities) == 0` before indexing. Add the state or country whenever the name is common (`"Springfield, Illinois"`, `"London, United Kingdom"`); `Total` above 1 means the name is ambiguous, so show `Province` and `Country` and let the user confirm.
 
 **Q: I got `nil pointer dereference` in `applyEditors`. What did I do?**
-A: You passed `nil` to an endpoint that has no query-parameters argument (`roxy.Usage.GetUsageStats`, `roxy.Languages.ListLanguages`, `roxy.Crystals.ListCrystalColors`, `roxy.Crystals.ListCrystalPlanets`, `roxy.Dreams.GetSymbolLetterCounts`). That `nil` is read as a request editor: the call compiles, then panics at runtime. Call them with `ctx` only, for example `roxy.Usage.GetUsageStats(ctx)`.
+A: You passed `nil` to an endpoint that has no query-parameters argument. That is every method whose endpoint takes no query parameters, not even `lang`: `roxy.Usage.GetUsageStats(ctx)`, `roxy.Languages.ListLanguages(ctx)`, `roxy.Dreams.GetSymbolLetterCounts(ctx)`, `roxy.Dreams.GetDreamSymbol(ctx, id)` and a dozen Vedic POST endpoints such as `roxy.VedicAstrology.GetChoghadiya(ctx, body)`. The `nil` is read as a request editor: the call compiles, then panics at runtime. Drop the argument and let autocomplete show the signature.
 
 **Q: `NewRoxy` returned no error but every call is `401 api_key_required`.**
 A: Make sure `ROXY_API_KEY` is exported. `NewRoxy` returns an error for an empty key; a non-empty but wrong key only fails on the first request.
@@ -335,6 +749,19 @@ if errors.As(err, &rerr) {
 	}
 }
 ```
+
+| Status | Code | When |
+|--------|------|------|
+| 400 | `validation_error` | Missing or invalid parameters (see `Issues`) |
+| 401 | `api_key_required` | No API key provided |
+| 401 | `invalid_api_key` | Key format invalid or tampered |
+| 401 | `subscription_not_found` | Key references non-existent subscription |
+| 401 | `subscription_inactive` | Subscription cancelled, expired, or suspended |
+| 401 | `api_key_revoked` | Key was deleted from the account |
+| 404 | `not_found` | Resource not found |
+| 4xx | `bad_request` and other status-derived codes | A client error the endpoint itself detected, such as a date window whose `endDate` precedes `startDate` |
+| 429 | `rate_limit_exceeded` | Monthly quota reached |
+| 500 | `internal_error` | Server error |
 
 Configure the client with the generated options: `roxyapi.WithBaseURL`, `roxyapi.WithHTTPClient` (any `*http.Client`, for timeouts or proxies), and `roxyapi.WithRequestEditorFn`. The underlying `ClientWithResponses` stays exported for advanced use.
 
