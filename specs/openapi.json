@@ -21588,7 +21588,7 @@
               "example": 2026,
               "maximum": 2100,
               "minimum": 1900,
-              "type": "number"
+              "type": "integer"
             }
           },
           {
@@ -23567,7 +23567,7 @@
               "example": 2026,
               "maximum": 2100,
               "minimum": 1900,
-              "type": "number"
+              "type": "integer"
             }
           },
           {
@@ -23580,7 +23580,7 @@
               "example": 3,
               "maximum": 12,
               "minimum": 1,
-              "type": "number"
+              "type": "integer"
             }
           },
           {
@@ -24042,7 +24042,7 @@
               "example": 8,
               "maximum": 20,
               "minimum": 1,
-              "type": "number"
+              "type": "integer"
             }
           }
         ],
@@ -41185,7 +41185,7 @@
               "example": 1990,
               "maximum": 2100,
               "minimum": 1900,
-              "type": "number"
+              "type": "integer"
             }
           },
           {
@@ -41198,7 +41198,7 @@
               "example": 6,
               "maximum": 12,
               "minimum": 1,
-              "type": "number"
+              "type": "integer"
             }
           }
         ],
@@ -41719,7 +41719,7 @@
               "example": 2026,
               "maximum": 2100,
               "minimum": 1900,
-              "type": "number"
+              "type": "integer"
             }
           },
           {
@@ -47092,7 +47092,7 @@
               "example": 1,
               "maximum": 10,
               "minimum": 1,
-              "type": "number"
+              "type": "integer"
             }
           }
         ],
@@ -50696,7 +50696,7 @@
               "example": 8,
               "maximum": 9,
               "minimum": 1,
-              "type": "number"
+              "type": "integer"
             }
           },
           {
@@ -55833,10 +55833,9 @@
             "schema": {
               "description": "Gate number from 1 to 64.",
               "example": 34,
-              "type": [
-                "integer",
-                "null"
-              ]
+              "maximum": 64,
+              "minimum": 1,
+              "type": "integer"
             }
           },
           {
@@ -55982,16 +55981,6 @@
               }
             },
             "description": "Invalid or missing API key"
-          },
-          "404": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
-            },
-            "description": "Gate number is outside the range 1 to 64"
           },
           "405": {
             "content": {
@@ -58979,7 +58968,7 @@
               "example": 1,
               "maximum": 64,
               "minimum": 1,
-              "type": "number"
+              "type": "integer"
             }
           },
           {
@@ -62771,10 +62760,9 @@
             "schema": {
               "description": "Index of the name, 1 to 72.",
               "example": 27,
-              "type": [
-                "integer",
-                "null"
-              ]
+              "maximum": 72,
+              "minimum": 1,
+              "type": "integer"
             }
           },
           {
@@ -62928,16 +62916,6 @@
               }
             },
             "description": "Invalid or missing API key"
-          },
-          "404": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ErrorResponse"
-                }
-              }
-            },
-            "description": "No name carries that index."
           },
           "405": {
             "content": {
@@ -76175,7 +76153,7 @@
               "maximum": 21,
               "minimum": 0,
               "type": [
-                "number",
+                "integer",
                 "null"
               ]
             }
@@ -76636,7 +76614,7 @@
                     "example": 3,
                     "maximum": 78,
                     "minimum": 1,
-                    "type": "number"
+                    "type": "integer"
                   },
                   "seed": {
                     "description": "Optional seed for reproducible results. Same seed = same cards in same order. Use format like \"userId-date\" for daily consistency, or \"readingId\" for shareable readings. Omit for true randomness.",

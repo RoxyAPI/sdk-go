@@ -36075,7 +36075,7 @@ type GetYearlyHoroscopeParams struct {
 	Lang *GetYearlyHoroscopeParamsLang `form:"lang,omitempty" json:"lang,omitempty"`
 
 	// Year Calendar year to forecast, 1900 to 2100. Defaults to the current year in the timezone parameter.
-	Year *float32 `form:"year,omitempty" json:"year,omitempty"`
+	Year *int `form:"year,omitempty" json:"year,omitempty"`
 
 	// Timezone Selects which year counts as current when year is omitted. Defaults to UTC, so the forecast rolls over at 00:00 UTC on January 1. Pass the timezone of the end user to roll over on their local clock instead. Ignored when year is set. Accepts an IANA name (e.g. "America/New_York"), decimal hours (e.g. 5.5 for IST), or a fixed UTC offset (e.g. "-05:00").
 	Timezone *string `form:"timezone,omitempty" json:"timezone,omitempty"`
@@ -36299,7 +36299,7 @@ type GetUpcomingMoonPhasesParams struct {
 	StartDate *openapi_types.Date `form:"startDate,omitempty" json:"startDate,omitempty"`
 
 	// Count Number of upcoming moon phase transitions to return (1-20). Defaults to 8.
-	Count *float32 `form:"count,omitempty" json:"count,omitempty"`
+	Count *int `form:"count,omitempty" json:"count,omitempty"`
 }
 
 // GetUpcomingMoonPhasesParamsLang defines parameters for GetUpcomingMoonPhases.
@@ -37631,10 +37631,10 @@ type GetMonthlyAlmanacParams struct {
 	Lang *GetMonthlyAlmanacParamsLang `form:"lang,omitempty" json:"lang,omitempty"`
 
 	// Year Gregorian year, 1900 to 2100. Defaults to the current UTC year when omitted, together with month.
-	Year *float32 `form:"year,omitempty" json:"year,omitempty"`
+	Year *int `form:"year,omitempty" json:"year,omitempty"`
 
 	// Month Gregorian month, 1 to 12. Defaults to the current UTC month when omitted, together with year.
-	Month *float32 `form:"month,omitempty" json:"month,omitempty"`
+	Month *int `form:"month,omitempty" json:"month,omitempty"`
 }
 
 // GetMonthlyAlmanacParamsLang defines parameters for GetMonthlyAlmanac.
@@ -37955,7 +37955,7 @@ type SearchDreamSymbolsParams struct {
 // GetRandomSymbolsParams defines parameters for GetRandomSymbols.
 type GetRandomSymbolsParams struct {
 	// Count Number of random symbols to return (1-10). Default: 1.
-	Count *float32 `form:"count,omitempty" json:"count,omitempty"`
+	Count *int `form:"count,omitempty" json:"count,omitempty"`
 }
 
 // GetAnnualAfflictionsParams defines parameters for GetAnnualAfflictions.
@@ -40296,7 +40296,7 @@ type ListCardsParams struct {
 	Suit *ListCardsParamsSuit `form:"suit,omitempty" json:"suit,omitempty"`
 
 	// Number Filter by card number. Major Arcana: 0 (The Fool) through 21 (The World). Minor Arcana: 1 (Ace) through 14 (King). Combine with arcana or suit filters for precise results.
-	Number *float32 `form:"number,omitempty" json:"number,omitempty"`
+	Number *int `form:"number,omitempty" json:"number,omitempty"`
 }
 
 // ListCardsParamsLang defines parameters for ListCards.
@@ -40344,7 +40344,7 @@ type DrawCardsJSONBody struct {
 	AllowReversals *bool `json:"allowReversals,omitempty"`
 
 	// Count Number of cards to draw (1-78). Common values: 1 for daily card, 3 for past-present-future, 5 for relationship spread, 10 for Celtic Cross. Drawing 78 returns the entire shuffled deck.
-	Count float32 `json:"count"`
+	Count int `json:"count"`
 
 	// Seed Optional seed for reproducible results. Same seed = same cards in same order. Use format like "userId-date" for daily consistency, or "readingId" for shareable readings. Omit for true randomness.
 	Seed *string `json:"seed,omitempty"`
@@ -50146,7 +50146,7 @@ type ClientInterface interface {
 	// Get complete lunar calendar showing moon phase and illumination for every day of a specific month. Perfect for creating moon phase calendars, lunar planners, and astrology event schedules.
 	//
 	// Corresponds with GET /astrology/moon-phase/calendar/{year}/{month} (the `GetMoonCalendar` operationId).
-	GetMoonCalendar(ctx context.Context, year float32, month float32, params *GetMoonCalendarParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+	GetMoonCalendar(ctx context.Context, year int, month int, params *GetMoonCalendarParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetCurrentMoonPhase Get current moon phase - Lunar phase calculator with zodiac sign
 	//
@@ -50784,7 +50784,7 @@ type ClientInterface interface {
 	// Return all 24 solar terms of a year as astronomical instants rather than dates, each computed from the moment the sun reaches its exact apparent longitude at 15 degree steps. The year is the SOLAR year, which opens at Li Chun in early February, so Minor Cold and Major Cold, the last two terms, are dated in the January of the following Gregorian year. Every instant is returned twice, once in UTC and once at the UTC+8 reference meridian the Chinese calendar is defined on. Built for calendar apps, festival scheduling, and any BaZi feature that has to place a birth on the correct side of a term boundary.
 	//
 	// Corresponds with GET /chinese-astrology/calendar/solar-terms/{year} (the `ListSolarTerms` operationId).
-	ListSolarTerms(ctx context.Context, year float32, params *ListSolarTermsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+	ListSolarTerms(ctx context.Context, year int, params *ListSolarTermsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// ListFiveElements List the five elements - Wu Xing API with generating and controlling cycles
 	//
@@ -51081,7 +51081,7 @@ type ClientInterface interface {
 	// Look up the reference chart for one Kua number: its trigram, its east or west life group, and how it classifies all eight compass sectors. A pure reference endpoint with no birth data required, for building a lookup table or a picker. Number 5 is served for completeness and is never a computed result, because it belongs to the centre and has no direction of its own: a man whose formula gives 5 reads Kua 2 and a woman reads Kua 8, and the chart returned for 5 is therefore the Kua 2 chart.
 	//
 	// Corresponds with GET /feng-shui/kua/{number} (the `GetKuaNumber` operationId).
-	GetKuaNumber(ctx context.Context, number float32, params *GetKuaNumberParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+	GetKuaNumber(ctx context.Context, number int, params *GetKuaNumberParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// ListNinePeriods List the nine periods - San Yuan period table API
 	//
@@ -51443,7 +51443,7 @@ type ClientInterface interface {
 	// Retrieve complete I-Ching hexagram details by King Wen sequence number (1-64). Returns the full hexagram with Chinese name, English translation, judgment text, image text, modern interpretations for general situations, love, career, and decision-making, plus all six changing line meanings. Use this to display detailed hexagram information after casting or for educational reference.
 	//
 	// Corresponds with GET /iching/hexagrams/{number} (the `GetHexagram` operationId).
-	GetHexagram(ctx context.Context, number float32, params *GetHexagramParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+	GetHexagram(ctx context.Context, number int, params *GetHexagramParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// ListTrigrams List all 8 trigrams - Bagua trigram catalog API
 	//
@@ -54046,7 +54046,7 @@ func (c *Client) GenerateLunarReturn(ctx context.Context, params *GenerateLunarR
 // Get complete lunar calendar showing moon phase and illumination for every day of a specific month. Perfect for creating moon phase calendars, lunar planners, and astrology event schedules.
 //
 // Corresponds with GET /astrology/moon-phase/calendar/{year}/{month} (the `GetMoonCalendar` operationId).
-func (c *Client) GetMoonCalendar(ctx context.Context, year float32, month float32, params *GetMoonCalendarParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) GetMoonCalendar(ctx context.Context, year int, month int, params *GetMoonCalendarParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewGetMoonCalendarRequest(c.Server, year, month, params)
 	if err != nil {
 		return nil, err
@@ -55424,7 +55424,7 @@ func (c *Client) GetMonthlyAlmanac(ctx context.Context, params *GetMonthlyAlmana
 // Return all 24 solar terms of a year as astronomical instants rather than dates, each computed from the moment the sun reaches its exact apparent longitude at 15 degree steps. The year is the SOLAR year, which opens at Li Chun in early February, so Minor Cold and Major Cold, the last two terms, are dated in the January of the following Gregorian year. Every instant is returned twice, once in UTC and once at the UTC+8 reference meridian the Chinese calendar is defined on. Built for calendar apps, festival scheduling, and any BaZi feature that has to place a birth on the correct side of a term boundary.
 //
 // Corresponds with GET /chinese-astrology/calendar/solar-terms/{year} (the `ListSolarTerms` operationId).
-func (c *Client) ListSolarTerms(ctx context.Context, year float32, params *ListSolarTermsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) ListSolarTerms(ctx context.Context, year int, params *ListSolarTermsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewListSolarTermsRequest(c.Server, year, params)
 	if err != nil {
 		return nil, err
@@ -56111,7 +56111,7 @@ func (c *Client) CalculateKuaNumber(ctx context.Context, params *CalculateKuaNum
 // Look up the reference chart for one Kua number: its trigram, its east or west life group, and how it classifies all eight compass sectors. A pure reference endpoint with no birth data required, for building a lookup table or a picker. Number 5 is served for completeness and is never a computed result, because it belongs to the centre and has no direction of its own: a man whose formula gives 5 reads Kua 2 and a woman reads Kua 8, and the chart returned for 5 is therefore the Kua 2 chart.
 //
 // Corresponds with GET /feng-shui/kua/{number} (the `GetKuaNumber` operationId).
-func (c *Client) GetKuaNumber(ctx context.Context, number float32, params *GetKuaNumberParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) GetKuaNumber(ctx context.Context, number int, params *GetKuaNumberParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewGetKuaNumberRequest(c.Server, number, params)
 	if err != nil {
 		return nil, err
@@ -56893,7 +56893,7 @@ func (c *Client) GetRandomHexagram(ctx context.Context, params *GetRandomHexagra
 // Retrieve complete I-Ching hexagram details by King Wen sequence number (1-64). Returns the full hexagram with Chinese name, English translation, judgment text, image text, modern interpretations for general situations, love, career, and decision-making, plus all six changing line meanings. Use this to display detailed hexagram information after casting or for educational reference.
 //
 // Corresponds with GET /iching/hexagrams/{number} (the `GetHexagram` operationId).
-func (c *Client) GetHexagram(ctx context.Context, number float32, params *GetHexagramParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) GetHexagram(ctx context.Context, number int, params *GetHexagramParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewGetHexagramRequest(c.Server, number, params)
 	if err != nil {
 		return nil, err
@@ -62345,7 +62345,7 @@ func NewGetYearlyHoroscopeRequest(server string, sign GetYearlyHoroscopeParamsSi
 
 		if params.Year != nil {
 
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "year", *params.Year, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "number", Format: ""}); err != nil {
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "year", *params.Year, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
 				return nil, err
 			} else {
 				for _, qp := range strings.Split(queryFrag, "&") {
@@ -62662,19 +62662,19 @@ func NewGenerateLunarReturnRequestWithBody(server string, params *GenerateLunarR
 }
 
 // NewGetMoonCalendarRequest constructs an http.Request for the GetMoonCalendar method
-func NewGetMoonCalendarRequest(server string, year float32, month float32, params *GetMoonCalendarParams) (*http.Request, error) {
+func NewGetMoonCalendarRequest(server string, year int, month int, params *GetMoonCalendarParams) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "year", year, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "number", Format: ""})
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "year", year, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "integer", Format: ""})
 	if err != nil {
 		return nil, err
 	}
 
 	var pathParam1 string
 
-	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "month", month, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "number", Format: ""})
+	pathParam1, err = runtime.StyleParamWithOptions("simple", false, "month", month, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "integer", Format: ""})
 	if err != nil {
 		return nil, err
 	}
@@ -62873,7 +62873,7 @@ func NewGetUpcomingMoonPhasesRequest(server string, params *GetUpcomingMoonPhase
 
 		if params.Count != nil {
 
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "count", *params.Count, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "number", Format: ""}); err != nil {
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "count", *params.Count, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
 				return nil, err
 			} else {
 				for _, qp := range strings.Split(queryFrag, "&") {
@@ -65637,7 +65637,7 @@ func NewGetMonthlyAlmanacRequest(server string, params *GetMonthlyAlmanacParams)
 
 		if params.Year != nil {
 
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "year", *params.Year, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "number", Format: ""}); err != nil {
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "year", *params.Year, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
 				return nil, err
 			} else {
 				for _, qp := range strings.Split(queryFrag, "&") {
@@ -65649,7 +65649,7 @@ func NewGetMonthlyAlmanacRequest(server string, params *GetMonthlyAlmanacParams)
 
 		if params.Month != nil {
 
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "month", *params.Month, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "number", Format: ""}); err != nil {
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "month", *params.Month, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
 				return nil, err
 			} else {
 				for _, qp := range strings.Split(queryFrag, "&") {
@@ -65674,12 +65674,12 @@ func NewGetMonthlyAlmanacRequest(server string, params *GetMonthlyAlmanacParams)
 }
 
 // NewListSolarTermsRequest constructs an http.Request for the ListSolarTerms method
-func NewListSolarTermsRequest(server string, year float32, params *ListSolarTermsParams) (*http.Request, error) {
+func NewListSolarTermsRequest(server string, year int, params *ListSolarTermsParams) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "year", year, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "number", Format: ""})
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "year", year, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "integer", Format: ""})
 	if err != nil {
 		return nil, err
 	}
@@ -67249,7 +67249,7 @@ func NewGetRandomSymbolsRequest(server string, params *GetRandomSymbolsParams) (
 
 		if params.Count != nil {
 
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "count", *params.Count, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "number", Format: ""}); err != nil {
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "count", *params.Count, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
 				return nil, err
 			} else {
 				for _, qp := range strings.Split(queryFrag, "&") {
@@ -67926,12 +67926,12 @@ func NewCalculateKuaNumberRequestWithBody(server string, params *CalculateKuaNum
 }
 
 // NewGetKuaNumberRequest constructs an http.Request for the GetKuaNumber method
-func NewGetKuaNumberRequest(server string, number float32, params *GetKuaNumberParams) (*http.Request, error) {
+func NewGetKuaNumberRequest(server string, number int, params *GetKuaNumberParams) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "number", number, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "number", Format: ""})
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "number", number, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "integer", Format: ""})
 	if err != nil {
 		return nil, err
 	}
@@ -69574,12 +69574,12 @@ func NewGetRandomHexagramRequest(server string, params *GetRandomHexagramParams)
 }
 
 // NewGetHexagramRequest constructs an http.Request for the GetHexagram method
-func NewGetHexagramRequest(server string, number float32, params *GetHexagramParams) (*http.Request, error) {
+func NewGetHexagramRequest(server string, number int, params *GetHexagramParams) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "number", number, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "number", Format: ""})
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "number", number, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "integer", Format: ""})
 	if err != nil {
 		return nil, err
 	}
@@ -73626,7 +73626,7 @@ func NewListCardsRequest(server string, params *ListCardsParams) (*http.Request,
 
 		if params.Number != nil {
 
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "number", *params.Number, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "number", Format: ""}); err != nil {
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "number", *params.Number, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "integer", Format: ""}); err != nil {
 				return nil, err
 			} else {
 				for _, qp := range strings.Split(queryFrag, "&") {
@@ -78921,7 +78921,7 @@ type ClientWithResponsesInterface interface {
 	// Returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with GET /astrology/moon-phase/calendar/{year}/{month} (the `GetMoonCalendar` operationId).
-	GetMoonCalendarWithResponse(ctx context.Context, year float32, month float32, params *GetMoonCalendarParams, reqEditors ...RequestEditorFn) (*GetMoonCalendarResponse, error)
+	GetMoonCalendarWithResponse(ctx context.Context, year int, month int, params *GetMoonCalendarParams, reqEditors ...RequestEditorFn) (*GetMoonCalendarResponse, error)
 
 	// GetCurrentMoonPhaseWithResponse Get current moon phase - Lunar phase calculator with zodiac sign
 	//
@@ -79587,7 +79587,7 @@ type ClientWithResponsesInterface interface {
 	// Returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with GET /chinese-astrology/calendar/solar-terms/{year} (the `ListSolarTerms` operationId).
-	ListSolarTermsWithResponse(ctx context.Context, year float32, params *ListSolarTermsParams, reqEditors ...RequestEditorFn) (*ListSolarTermsResponse, error)
+	ListSolarTermsWithResponse(ctx context.Context, year int, params *ListSolarTermsParams, reqEditors ...RequestEditorFn) (*ListSolarTermsResponse, error)
 
 	// ListFiveElementsWithResponse List the five elements - Wu Xing API with generating and controlling cycles
 	//
@@ -79938,7 +79938,7 @@ type ClientWithResponsesInterface interface {
 	// Returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with GET /feng-shui/kua/{number} (the `GetKuaNumber` operationId).
-	GetKuaNumberWithResponse(ctx context.Context, number float32, params *GetKuaNumberParams, reqEditors ...RequestEditorFn) (*GetKuaNumberResponse, error)
+	GetKuaNumberWithResponse(ctx context.Context, number int, params *GetKuaNumberParams, reqEditors ...RequestEditorFn) (*GetKuaNumberResponse, error)
 
 	// ListNinePeriodsWithResponse List the nine periods - San Yuan period table API
 	//
@@ -80316,7 +80316,7 @@ type ClientWithResponsesInterface interface {
 	// Returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with GET /iching/hexagrams/{number} (the `GetHexagram` operationId).
-	GetHexagramWithResponse(ctx context.Context, number float32, params *GetHexagramParams, reqEditors ...RequestEditorFn) (*GetHexagramResponse, error)
+	GetHexagramWithResponse(ctx context.Context, number int, params *GetHexagramParams, reqEditors ...RequestEditorFn) (*GetHexagramResponse, error)
 
 	// ListTrigramsWithResponse List all 8 trigrams - Bagua trigram catalog API
 	//
@@ -109861,8 +109861,6 @@ type GetGateResponse struct {
 	JSON400 *ErrorResponse
 	// JSON401 the response for an HTTP 401 `application/json` response
 	JSON401 *ErrorResponse
-	// JSON404 the response for an HTTP 404 `application/json` response
-	JSON404 *ErrorResponse
 	// JSON405 the response for an HTTP 405 `application/json` response
 	JSON405 *ErrorResponse
 	// JSON429 the response for an HTTP 429 `application/json` response
@@ -109925,11 +109923,6 @@ func (r GetGateResponse) GetJSON400() *ErrorResponse {
 // GetJSON401 returns the response for an HTTP 401 `application/json` response
 func (r GetGateResponse) GetJSON401() *ErrorResponse {
 	return r.JSON401
-}
-
-// GetJSON404 returns the response for an HTTP 404 `application/json` response
-func (r GetGateResponse) GetJSON404() *ErrorResponse {
-	return r.JSON404
 }
 
 // GetJSON405 returns the response for an HTTP 405 `application/json` response
@@ -114956,8 +114949,6 @@ type GetShemNameResponse struct {
 	JSON400 *ErrorResponse
 	// JSON401 the response for an HTTP 401 `application/json` response
 	JSON401 *ErrorResponse
-	// JSON404 the response for an HTTP 404 `application/json` response
-	JSON404 *ErrorResponse
 	// JSON405 the response for an HTTP 405 `application/json` response
 	JSON405 *ErrorResponse
 	// JSON429 the response for an HTTP 429 `application/json` response
@@ -115026,11 +115017,6 @@ func (r GetShemNameResponse) GetJSON400() *ErrorResponse {
 // GetJSON401 returns the response for an HTTP 401 `application/json` response
 func (r GetShemNameResponse) GetJSON401() *ErrorResponse {
 	return r.JSON401
-}
-
-// GetJSON404 returns the response for an HTTP 404 `application/json` response
-func (r GetShemNameResponse) GetJSON404() *ErrorResponse {
-	return r.JSON404
 }
 
 // GetJSON405 returns the response for an HTTP 405 `application/json` response
@@ -139891,7 +139877,7 @@ func (c *ClientWithResponses) GenerateLunarReturnWithResponse(ctx context.Contex
 // Returns a wrapper object for the known response body format(s).
 //
 // Corresponds with GET /astrology/moon-phase/calendar/{year}/{month} (the `GetMoonCalendar` operationId).
-func (c *ClientWithResponses) GetMoonCalendarWithResponse(ctx context.Context, year float32, month float32, params *GetMoonCalendarParams, reqEditors ...RequestEditorFn) (*GetMoonCalendarResponse, error) {
+func (c *ClientWithResponses) GetMoonCalendarWithResponse(ctx context.Context, year int, month int, params *GetMoonCalendarParams, reqEditors ...RequestEditorFn) (*GetMoonCalendarResponse, error) {
 	rsp, err := c.GetMoonCalendar(ctx, year, month, params, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -141001,7 +140987,7 @@ func (c *ClientWithResponses) GetMonthlyAlmanacWithResponse(ctx context.Context,
 // Returns a wrapper object for the known response body format(s).
 //
 // Corresponds with GET /chinese-astrology/calendar/solar-terms/{year} (the `ListSolarTerms` operationId).
-func (c *ClientWithResponses) ListSolarTermsWithResponse(ctx context.Context, year float32, params *ListSolarTermsParams, reqEditors ...RequestEditorFn) (*ListSolarTermsResponse, error) {
+func (c *ClientWithResponses) ListSolarTermsWithResponse(ctx context.Context, year int, params *ListSolarTermsParams, reqEditors ...RequestEditorFn) (*ListSolarTermsResponse, error) {
 	rsp, err := c.ListSolarTerms(ctx, year, params, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -141586,7 +141572,7 @@ func (c *ClientWithResponses) CalculateKuaNumberWithResponse(ctx context.Context
 // Returns a wrapper object for the known response body format(s).
 //
 // Corresponds with GET /feng-shui/kua/{number} (the `GetKuaNumber` operationId).
-func (c *ClientWithResponses) GetKuaNumberWithResponse(ctx context.Context, number float32, params *GetKuaNumberParams, reqEditors ...RequestEditorFn) (*GetKuaNumberResponse, error) {
+func (c *ClientWithResponses) GetKuaNumberWithResponse(ctx context.Context, number int, params *GetKuaNumberParams, reqEditors ...RequestEditorFn) (*GetKuaNumberResponse, error) {
 	rsp, err := c.GetKuaNumber(ctx, number, params, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -142216,7 +142202,7 @@ func (c *ClientWithResponses) GetRandomHexagramWithResponse(ctx context.Context,
 // Returns a wrapper object for the known response body format(s).
 //
 // Corresponds with GET /iching/hexagrams/{number} (the `GetHexagram` operationId).
-func (c *ClientWithResponses) GetHexagramWithResponse(ctx context.Context, number float32, params *GetHexagramParams, reqEditors ...RequestEditorFn) (*GetHexagramResponse, error) {
+func (c *ClientWithResponses) GetHexagramWithResponse(ctx context.Context, number int, params *GetHexagramParams, reqEditors ...RequestEditorFn) (*GetHexagramResponse, error) {
 	rsp, err := c.GetHexagram(ctx, number, params, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -162765,13 +162751,6 @@ func ParseGetGateResponse(rsp *http.Response) (*GetGateResponse, error) {
 		}
 		response.JSON401 = &dest
 
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON404 = &dest
-
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 405:
 		var dest ErrorResponse
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
@@ -166052,13 +166031,6 @@ func ParseGetShemNameResponse(rsp *http.Response) (*GetShemNameResponse, error) 
 			return nil, err
 		}
 		response.JSON401 = &dest
-
-	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 404:
-		var dest ErrorResponse
-		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
-			return nil, err
-		}
-		response.JSON404 = &dest
 
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 405:
 		var dest ErrorResponse

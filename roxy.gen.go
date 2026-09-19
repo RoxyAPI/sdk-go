@@ -296,7 +296,7 @@ func (s *AstrologyService) GetMonthlyTropicalTransits(ctx context.Context, param
 	return resp, asRoxyError(resp)
 }
 
-func (s *AstrologyService) GetMoonCalendar(ctx context.Context, year float32, month float32, params *GetMoonCalendarParams, reqEditors ...RequestEditorFn) (*GetMoonCalendarResponse, error) {
+func (s *AstrologyService) GetMoonCalendar(ctx context.Context, year int, month int, params *GetMoonCalendarParams, reqEditors ...RequestEditorFn) (*GetMoonCalendarResponse, error) {
 	resp, err := s.client.GetMoonCalendarWithResponse(ctx, year, month, params, reqEditors...)
 	if err != nil {
 		return resp, err
@@ -1076,7 +1076,7 @@ func (s *ChineseAstrologyService) ListFiveElements(ctx context.Context, params *
 	return resp, asRoxyError(resp)
 }
 
-func (s *ChineseAstrologyService) ListSolarTerms(ctx context.Context, year float32, params *ListSolarTermsParams, reqEditors ...RequestEditorFn) (*ListSolarTermsResponse, error) {
+func (s *ChineseAstrologyService) ListSolarTerms(ctx context.Context, year int, params *ListSolarTermsParams, reqEditors ...RequestEditorFn) (*ListSolarTermsResponse, error) {
 	resp, err := s.client.ListSolarTermsWithResponse(ctx, year, params, reqEditors...)
 	if err != nil {
 		return resp, err
@@ -1151,7 +1151,7 @@ func (s *FengShuiService) GetBaguaSector(ctx context.Context, id GetBaguaSectorP
 	return resp, asRoxyError(resp)
 }
 
-func (s *FengShuiService) GetKuaNumber(ctx context.Context, number float32, params *GetKuaNumberParams, reqEditors ...RequestEditorFn) (*GetKuaNumberResponse, error) {
+func (s *FengShuiService) GetKuaNumber(ctx context.Context, number int, params *GetKuaNumberParams, reqEditors ...RequestEditorFn) (*GetKuaNumberResponse, error) {
 	resp, err := s.client.GetKuaNumberWithResponse(ctx, number, params, reqEditors...)
 	if err != nil {
 		return resp, err
@@ -1911,7 +1911,7 @@ func (s *IchingService) GetDailyHexagram(ctx context.Context, params *GetDailyHe
 	return resp, asRoxyError(resp)
 }
 
-func (s *IchingService) GetHexagram(ctx context.Context, number float32, params *GetHexagramParams, reqEditors ...RequestEditorFn) (*GetHexagramResponse, error) {
+func (s *IchingService) GetHexagram(ctx context.Context, number int, params *GetHexagramParams, reqEditors ...RequestEditorFn) (*GetHexagramResponse, error) {
 	resp, err := s.client.GetHexagramWithResponse(ctx, number, params, reqEditors...)
 	if err != nil {
 		return resp, err
