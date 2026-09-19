@@ -29,7 +29,7 @@ roxy, err := roxyapi.NewRoxy(key, roxyapi.WithHTTPClient(&http.Client{Timeout: 1
 Six rules to follow when writing any call with this SDK. Get these right and the generated types do the rest.
 
 - **Methods are grouped by domain and named for the spec operation id in PascalCase.** `roxy.Astrology.GenerateNatalChart(...)`, `roxy.VedicAstrology.GenerateBirthChart(...)`. Never invent a name from the URL path or a guess; the full list is in `docs/llms-full.txt`, and every signature of a domain is one command away: `go doc github.com/RoxyAPI/sdk-go.AstrologyService`.
-- **Argument order is `(ctx, pathParams..., params, body)`, but the arity varies.** `params` is a nilable `*XxxParams` of query parameters (it carries `Lang` on i18n endpoints); pass `nil` for none. POST endpoints add a typed `body` last. **An endpoint with no query parameters has NO `params` argument at all** (for example `roxy.Usage.GetUsageStats(ctx)`, `roxy.Languages.ListLanguages(ctx)`, `roxy.Dreams.GetDreamSymbol(ctx, id)` and a dozen Vedic POST endpoints such as `roxy.VedicAstrology.GetChoghadiya(ctx, body)`). Do not pass a stray `nil` to those: it COMPILES (the last arg is variadic) then PANICS at runtime in applyEditors. Drop the argument. When unsure, let autocomplete show the signature.
+- **Argument order is `(ctx, pathParams..., params, body)`, but the arity varies.** `params` is a nilable `*XxxParams` of query parameters (it carries `Lang` on i18n endpoints); pass `nil` for none. POST endpoints add a typed `body` last. **An endpoint with no query parameters has NO `params` argument at all** (the exact list is under Go-specific gotchas). Do not pass a stray `nil` to those: it COMPILES (the last arg is variadic) then PANICS at runtime in applyEditors. Drop the argument. When unsure, let autocomplete show the signature.
 - **The request body type is always `roxyapi.<MethodName>JSONRequestBody`** (some are aliases of a named request like `NatalChartRequest`; both names work). Build it as a struct literal. A body whose nested person, birth data or plot struct has no named type (`Person1`, `PersonA`, `BirthData`, `Plot`) is declared with `var` and filled field by field.
 - **Read the success body from `JSON200`** (a typed struct, nil unless the call was a 2xx): `resp.JSON200.Cities[0].Latitude`. Response field names come from the generated structs, in Go casing (`LuckyNumber`, `ImageURL`, `IncarnationCross.Name`); `go build` fails on any invented field, so if it does not compile, the field does not exist. `resp.StatusCode()` and `resp.Bytes()` give the raw response.
 - **Handle errors with `errors.As` on `*RoxyError`.** Every method returns `(resp, err)`; check `err` before touching `JSON200`. Switch on `Code` (stable), not `Message`. On a 400, range over `Issues`.
@@ -141,7 +141,11 @@ Western charts require `Timezone`; Vedic charts make it an optional pointer (`Ti
 
 ### Multi-language via the params pointer
 
-Ten languages: `en`, `tr`, `de`, `es`, `fr`, `hi`, `pt`, `ru`, `zh-Hans`, `zh-Hant`. The two Chinese scripts currently ship on Chinese astrology and feng shui; every other domain answers those codes in English per field. Defaults to `en`. Each endpoint has its own `Lang` type; set it with `roxyapi.Ptr(...)`. Call `roxy.Languages.ListLanguages(ctx)` for the live list. Supported domains: astrology, vedicAstrology, forecast, humanDesign, chineseAstrology, fengShui, mesoamericanAstrology, vastu, numerology, kabbalah, tarot, biorhythm, ayurveda, iching, crystals, angelNumbers. English only: dreams, location, usage, languages.
+<!-- BEGIN:LANGS -->
+**Multi-language responses.** Interpretations are available in 10 languages: `en`, `tr`, `de`, `es`, `hi`, `pt`, `fr`, `ru`, `zh-Hans`, `zh-Hant`. Set `Lang` on the params struct of any supported endpoint with `roxyapi.Ptr(...)`; it defaults to `en`. Supported: `roxy.Astrology`, `roxy.VedicAstrology`, `roxy.Forecast`, `roxy.HumanDesign`, `roxy.ChineseAstrology`, `roxy.FengShui`, `roxy.MesoamericanAstrology`, `roxy.Vastu`, `roxy.Numerology`, `roxy.Kabbalah`, `roxy.Tarot`, `roxy.Biorhythm`, `roxy.Ayurveda`, `roxy.Iching`, `roxy.Crystals`, `roxy.AngelNumbers`, `roxy.Languages`. English-only: `roxy.Dreams`, `roxy.Location`, `roxy.Usage`.
+<!-- END:LANGS -->
+
+Each endpoint has its own `Lang` type (`roxyapi.GetDailyHoroscopeParamsLang("es")`). The two Chinese scripts currently ship on Chinese astrology and feng shui; every other domain answers those codes in English per field. Call `roxy.Languages.ListLanguages(ctx)` for the live list with display names.
 
 ### Error handling
 
@@ -201,7 +205,7 @@ In the catalog order (Western astrology, Vedic astrology, forecast, Human Design
 | Human Design connection | `var b roxyapi.CalculateConnectionJSONRequestBody`, fill `b.PersonA` and `b.PersonB`, then `roxy.HumanDesign.CalculateConnection(ctx, nil, b)` |
 | BaZi Four Pillars | `roxy.ChineseAstrology.GenerateBaziChart(ctx, nil, roxyapi.GenerateBaziChartJSONRequestBody{Date, Time, Timezone})` |
 | Chinese zodiac animal | `roxy.ChineseAstrology.CalculateZodiacAnimal(ctx, nil, roxyapi.CalculateZodiacAnimalJSONRequestBody{Date})` |
-| Almanac day (Tong Shu) | `roxy.ChineseAstrology.GetAlmanacDay(ctx, "2026-10-01", nil)` |
+| Almanac day (Tong Shu) | `roxy.ChineseAstrology.GetAlmanacDay(ctx, roxyapi.Date(2026, time.October, 1), nil)` |
 | Kua number | `roxy.FengShui.CalculateKuaNumber(ctx, nil, roxyapi.CalculateKuaNumberJSONRequestBody{Date, Gender})` |
 | Flying star natal chart | `roxy.FengShui.GenerateFlyingStarChart(ctx, nil, roxyapi.GenerateFlyingStarChartJSONRequestBody{Period, Facing})` |
 | Tzolkin day sign | `roxy.MesoamericanAstrology.CalculateTzolkin(ctx, nil, roxyapi.CalculateTzolkinJSONRequestBody{Date})` |
@@ -271,7 +275,30 @@ LLMs hallucinate confidently here. The specific traps:
 
 ## Go-specific gotchas
 
-- **Some methods have no `params` argument** (see Quality guidelines). Passing `nil` to those compiles but PANICS at runtime (the trailing arg is a variadic request editor). Affected: every endpoint with no query parameters, not even `lang`: `Usage.GetUsageStats`, `Languages.ListLanguages`, `Dreams.GetSymbolLetterCounts`, `Dreams.GetDreamSymbol`, `Dreams.GetDailyDreamSymbol` and a dozen Vedic POST endpoints (`GetChoghadiya`, `GetHora`, `GetKpPlanets`, `CalculateAshtakavarga` and their neighbours). The signature is the source of truth.
+- **Some methods have no `params` argument** (see Quality guidelines). Passing `nil` to those compiles but PANICS at runtime (the trailing arg is a variadic request editor). Affected: every endpoint with no query parameters, not even `lang`. The list below is read from the generated facade on every release; the signature is the source of truth.
+
+<!-- BEGIN:NOPARAMS -->
+- `roxy.VedicAstrology.CalculateAshtakavarga(ctx, body)`
+- `roxy.VedicAstrology.CalculateDrishti(ctx, body)`
+- `roxy.VedicAstrology.CalculateParallels(ctx, body)`
+- `roxy.VedicAstrology.CalculateTransit(ctx, body)`
+- `roxy.VedicAstrology.GetChoghadiya(ctx, body)`
+- `roxy.VedicAstrology.GetEclipticCrossings(ctx, body)`
+- `roxy.VedicAstrology.GetHeliacalVisibility(ctx, body)`
+- `roxy.VedicAstrology.GetHora(ctx, body)`
+- `roxy.VedicAstrology.GetKpDailyFinance(ctx, body)`
+- `roxy.VedicAstrology.GetKpPlanetsInterval(ctx, body)`
+- `roxy.VedicAstrology.GetKpPlanets(ctx, body)`
+- `roxy.VedicAstrology.GetKpRasiChanges(ctx, body)`
+- `roxy.VedicAstrology.GetKpSublordChanges(ctx, body)`
+- `roxy.VedicAstrology.GetUpagrahaPositions(ctx, body)`
+- `roxy.Dreams.GetDailyDreamSymbol(ctx, body)`
+- `roxy.Dreams.GetDreamSymbol(ctx, id)`
+- `roxy.Dreams.GetSymbolLetterCounts(ctx)`
+- `roxy.Usage.GetUsageStats(ctx)`
+- `roxy.Languages.ListLanguages(ctx)`
+<!-- END:NOPARAMS -->
+
 - **`Timezone` union type names vary:** `<Request>_Timezone` for a named body, `<Operation>JSONBody_Timezone` for an inline body (most POST endpoints). Cannot guess it? Write the field with any value and read the expected type from the compiler error, or use autocomplete.
 - **`NewRoxy` returns `*roxyapi.Roxy`** (the type for your own function signatures and struct fields) and returns an error on an empty API key, so a missing `ROXY_API_KEY` fails at construction, not as a confusing later 401.
 - **A successful `SearchCities` can return zero cities.** Check `len(search.JSON200.Cities) == 0` before indexing `[0]`.

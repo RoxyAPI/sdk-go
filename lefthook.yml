@@ -7,6 +7,8 @@ pre-commit:
   commands:
     gofmt:
       glob: "*.go"
+      exclude:
+        - "*.gen.go"
       run: gofmt -w {staged_files} && git add {staged_files}
       stage_fixed: true
     vet:

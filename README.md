@@ -380,7 +380,8 @@ if err != nil {
 // animal.JSON200.Animal.Name, .Animal.Element, .Element (the year stem element), .Interpretation
 
 // Almanac day. The Tong Shu view of a date: day officer, mansion, clash animal, favours and avoids.
-almanac, err := roxy.ChineseAstrology.GetAlmanacDay(ctx, "2026-10-01", nil)
+// The date is a path parameter and typed, so it takes the same Date helper as a body field.
+almanac, err := roxy.ChineseAstrology.GetAlmanacDay(ctx, roxyapi.Date(2026, time.October, 1), nil)
 if err != nil {
 	return err
 }
@@ -706,7 +707,7 @@ Every endpoint is also a remote MCP tool at `https://roxyapi.com/mcp/{domain}` (
 
 ## Gotchas
 
-- **Argument arity varies.** Calls are `(ctx, pathParams..., params, body)`, but an endpoint with no query parameters has **no `params` argument** (for example `roxy.Usage.GetUsageStats(ctx)`, `roxy.Languages.ListLanguages(ctx)`, `roxy.Dreams.GetDreamSymbol(ctx, "flying")`, `roxy.VedicAstrology.GetChoghadiya(ctx, body)`). Passing a stray `nil` there is read as a request editor and panics. Let autocomplete show the signature.
+- **Argument arity varies.** Calls are `(ctx, pathParams..., params, body)`, but an endpoint with no query parameters has **no `params` argument**. Passing a stray `nil` there is read as a request editor and panics. The exact list is under Methods with no params argument below; let autocomplete show the signature.
 - **The body type is `roxyapi.<MethodName>JSONRequestBody`.** Some are aliases of a named request (`NatalChartRequest`); both names compile.
 - **`Date` and `Timezone` are typed.** Build a date with `roxyapi.Date(1990, time.January, 15)`, never a string. `Timezone` is a per-request union: `tz.From<Req>Timezone1("Europe/Berlin")` (IANA) or `From<Req>Timezone0(1)` (decimal offset).
 - **Optional fields are pointers.** Use `roxyapi.Ptr(...)` for `Seed`, `Question`, `Lang`, `Limit`, and similar.
@@ -714,13 +715,39 @@ Every endpoint is also a remote MCP tool at `https://roxyapi.com/mcp/{domain}` (
 - **Read responses off `JSON200`** (`resp.JSON200.Cities[0].Latitude`). It is nil unless the call was a 2xx (errors are returned, not in the body).
 - **Person-pair, forecast and Vastu bodies use anonymous nested structs** (`Person1`, `PersonA`, `BirthData`, `Plot`). Declare the body with `var` and fill those fields one by one, as the synastry, Guna Milan, forecast, connection and Vastu blocks above do; a slice of inline structs (`Rooms`) is easiest to unmarshal from its JSON shape.
 
+### Methods with no params argument
+
+Read from the generated facade on every release. Every other method takes `params` right after the path parameters.
+
+<!-- BEGIN:NOPARAMS -->
+- `roxy.VedicAstrology.CalculateAshtakavarga(ctx, body)`
+- `roxy.VedicAstrology.CalculateDrishti(ctx, body)`
+- `roxy.VedicAstrology.CalculateParallels(ctx, body)`
+- `roxy.VedicAstrology.CalculateTransit(ctx, body)`
+- `roxy.VedicAstrology.GetChoghadiya(ctx, body)`
+- `roxy.VedicAstrology.GetEclipticCrossings(ctx, body)`
+- `roxy.VedicAstrology.GetHeliacalVisibility(ctx, body)`
+- `roxy.VedicAstrology.GetHora(ctx, body)`
+- `roxy.VedicAstrology.GetKpDailyFinance(ctx, body)`
+- `roxy.VedicAstrology.GetKpPlanetsInterval(ctx, body)`
+- `roxy.VedicAstrology.GetKpPlanets(ctx, body)`
+- `roxy.VedicAstrology.GetKpRasiChanges(ctx, body)`
+- `roxy.VedicAstrology.GetKpSublordChanges(ctx, body)`
+- `roxy.VedicAstrology.GetUpagrahaPositions(ctx, body)`
+- `roxy.Dreams.GetDailyDreamSymbol(ctx, body)`
+- `roxy.Dreams.GetDreamSymbol(ctx, id)`
+- `roxy.Dreams.GetSymbolLetterCounts(ctx)`
+- `roxy.Usage.GetUsageStats(ctx)`
+- `roxy.Languages.ListLanguages(ctx)`
+<!-- END:NOPARAMS -->
+
 ## FAQ
 
 **Q: `SearchCities` returned 200 but `Cities[0]` panics, or my city is not found.**
 A: A successful search can still return an empty `Cities` slice, so check `len(search.JSON200.Cities) == 0` before indexing. Add the state or country whenever the name is common (`"Springfield, Illinois"`, `"London, United Kingdom"`); `Total` above 1 means the name is ambiguous, so show `Province` and `Country` and let the user confirm.
 
 **Q: I got `nil pointer dereference` in `applyEditors`. What did I do?**
-A: You passed `nil` to an endpoint that has no query-parameters argument. That is every method whose endpoint takes no query parameters, not even `lang`: `roxy.Usage.GetUsageStats(ctx)`, `roxy.Languages.ListLanguages(ctx)`, `roxy.Dreams.GetSymbolLetterCounts(ctx)`, `roxy.Dreams.GetDreamSymbol(ctx, id)` and a dozen Vedic POST endpoints such as `roxy.VedicAstrology.GetChoghadiya(ctx, body)`. The `nil` is read as a request editor: the call compiles, then panics at runtime. Drop the argument and let autocomplete show the signature.
+A: You passed `nil` to an endpoint that has no query-parameters argument. That is every method whose endpoint takes no query parameters, not even `lang`; the list is under Methods with no params argument above. The `nil` is read as a request editor: the call compiles, then panics at runtime. Drop the argument and let autocomplete show the signature.
 
 **Q: `NewRoxy` returned no error but every call is `401 api_key_required`.**
 A: Make sure `ROXY_API_KEY` is exported. `NewRoxy` returns an error for an empty key; a non-empty but wrong key only fails on the first request.

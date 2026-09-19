@@ -8,6 +8,7 @@ package roxyapi
 
 import (
 	"context"
+	openapi_types "github.com/oapi-codegen/runtime/types"
 )
 
 // Roxy is the domain-grouped entry point returned by NewRoxy.
@@ -1027,7 +1028,7 @@ func (s *ChineseAstrologyService) GenerateBaziChart(ctx context.Context, params 
 	return resp, asRoxyError(resp)
 }
 
-func (s *ChineseAstrologyService) GetAlmanacDay(ctx context.Context, date string, params *GetAlmanacDayParams, reqEditors ...RequestEditorFn) (*GetAlmanacDayResponse, error) {
+func (s *ChineseAstrologyService) GetAlmanacDay(ctx context.Context, date openapi_types.Date, params *GetAlmanacDayParams, reqEditors ...RequestEditorFn) (*GetAlmanacDayResponse, error) {
 	resp, err := s.client.GetAlmanacDayWithResponse(ctx, date, params, reqEditors...)
 	if err != nil {
 		return resp, err

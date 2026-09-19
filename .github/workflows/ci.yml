@@ -20,7 +20,7 @@ jobs:
 
       # Hermetic: regenerates from the committed spec, so this verifies that the committed
       # generated code still reproduces from it, with no network dependency. Refreshing the
-      # spec itself is the release workflow's job. `generate` also runs sync-docs (see
+      # spec itself is the job of the release workflow. `generate` also runs sync-docs (see
       # tools/roxygen/main.go), so the docs are asserted in the same diff rather than by a
       # second identical run.
       - name: Codegen drift check

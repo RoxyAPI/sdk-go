@@ -12,7 +12,35 @@ resp, err := roxy.Astrology.GetDailyHoroscope(context.Background(), "aries", nil
 // resp.JSON200 holds the parsed body on a 2xx; a 4xx or 5xx is returned as *roxyapi.RoxyError.
 ```
 
-Methods are grouped by domain on the value returned by `NewRoxy` and named for the spec operation id below (PascalCase). The signature order is `(ctx, pathParams..., params, body)`: `params` is a nilable `*XxxParams` carrying query parameters (including `Lang`); endpoints with no query parameters drop it. POST endpoints take a typed `body` (`roxyapi.<Method>JSONRequestBody`) last. Read `AGENTS.md` for request construction (the `Date` and `Ptr` helpers, the timezone union, multi language) and error handling.
+Methods are grouped by domain on the value returned by `NewRoxy` and named for the spec operation id below (PascalCase). The signature order is `(ctx, pathParams..., params, body)`: `params` is a nilable `*XxxParams` carrying query parameters (including `Lang`). POST endpoints take a typed `body` (`roxyapi.<Method>JSONRequestBody`) last. Read `AGENTS.md` for request construction (the `Date` and `Ptr` helpers, the timezone union) and error handling.
+
+Endpoints with no query parameters have no `params` argument; passing `nil` there is read as a request editor and panics. The methods without it, read from the generated facade:
+
+<!-- BEGIN:NOPARAMS -->
+- `roxy.VedicAstrology.CalculateAshtakavarga(ctx, body)`
+- `roxy.VedicAstrology.CalculateDrishti(ctx, body)`
+- `roxy.VedicAstrology.CalculateParallels(ctx, body)`
+- `roxy.VedicAstrology.CalculateTransit(ctx, body)`
+- `roxy.VedicAstrology.GetChoghadiya(ctx, body)`
+- `roxy.VedicAstrology.GetEclipticCrossings(ctx, body)`
+- `roxy.VedicAstrology.GetHeliacalVisibility(ctx, body)`
+- `roxy.VedicAstrology.GetHora(ctx, body)`
+- `roxy.VedicAstrology.GetKpDailyFinance(ctx, body)`
+- `roxy.VedicAstrology.GetKpPlanetsInterval(ctx, body)`
+- `roxy.VedicAstrology.GetKpPlanets(ctx, body)`
+- `roxy.VedicAstrology.GetKpRasiChanges(ctx, body)`
+- `roxy.VedicAstrology.GetKpSublordChanges(ctx, body)`
+- `roxy.VedicAstrology.GetUpagrahaPositions(ctx, body)`
+- `roxy.Dreams.GetDailyDreamSymbol(ctx, body)`
+- `roxy.Dreams.GetDreamSymbol(ctx, id)`
+- `roxy.Dreams.GetSymbolLetterCounts(ctx)`
+- `roxy.Usage.GetUsageStats(ctx)`
+- `roxy.Languages.ListLanguages(ctx)`
+<!-- END:NOPARAMS -->
+
+<!-- BEGIN:LANGS -->
+**Multi-language responses.** Interpretations are available in 10 languages: `en`, `tr`, `de`, `es`, `hi`, `pt`, `fr`, `ru`, `zh-Hans`, `zh-Hant`. Set `Lang` on the params struct of any supported endpoint with `roxyapi.Ptr(...)`; it defaults to `en`. Supported: `roxy.Astrology`, `roxy.VedicAstrology`, `roxy.Forecast`, `roxy.HumanDesign`, `roxy.ChineseAstrology`, `roxy.FengShui`, `roxy.MesoamericanAstrology`, `roxy.Vastu`, `roxy.Numerology`, `roxy.Kabbalah`, `roxy.Tarot`, `roxy.Biorhythm`, `roxy.Ayurveda`, `roxy.Iching`, `roxy.Crystals`, `roxy.AngelNumbers`, `roxy.Languages`. English-only: `roxy.Dreams`, `roxy.Location`, `roxy.Usage`.
+<!-- END:LANGS -->
 
 This file is the method INDEX (operation id, HTTP method, path, summary). For request and response FIELD names, use the typed Go structs: editor autocomplete, https://pkg.go.dev/github.com/RoxyAPI/sdk-go, or the JSON shapes at https://roxyapi.com/api-reference.
 

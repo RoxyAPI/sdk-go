@@ -4,8 +4,9 @@
 //	roxygen generate    Fetch the spec, normalize it for oapi-codegen, generate the
 //	                    typed client (roxyapi.gen.go), generate the domain-grouped
 //	                    facade (roxy.gen.go), then sync the spec-derived docs.
-//	roxygen sync-docs   Regenerate only the spec-derived regions of README.md,
-//	                    AGENTS.md, and docs/llms-full.txt (between BEGIN/END markers).
+//	roxygen sync-docs   Regenerate only the generated regions of README.md, AGENTS.md
+//	                    and docs/llms-full.txt (between BEGIN/END markers): DOMAINS,
+//	                    LANGS and METHODS from the spec, NOPARAMS from the facade.
 //	                    Run by CI and the pre-push hook to fail on drift.
 //
 // Run from the repository root: `go run ./tools/roxygen <generate|sync-docs>`.
@@ -22,7 +23,9 @@ import (
 	"go/token"
 	"net/http"
 	"os"
+	"slices"
 	"sort"
+	"strconv"
 	"strings"
 	"time"
 	"unicode"
@@ -32,17 +35,11 @@ import (
 )
 
 const (
-	specURL           = "https://roxyapi.com/api/v2/openapi.json"
-	absoluteServerURL = "https://roxyapi.com/api/v2"
-	specPath          = "specs/openapi.json"
-	clientPath        = "roxyapi.gen.go"
-	facadePath        = "roxy.gen.go"
+	specURL    = "https://roxyapi.com/api/v2/openapi.json"
+	specPath   = "specs/openapi.json"
+	clientPath = "roxyapi.gen.go"
+	facadePath = "roxy.gen.go"
 )
-
-// errorStatusCodes are the codes the API returns with a `{ error, code }` body.
-// The served spec inlines that shape per operation; we repoint them all at one
-// shared ErrorResponse schema so the generator emits a single error type.
-var errorStatusCodes = []string{"400", "401", "404", "405", "429", "500"}
 
 var httpVerbs = map[string]int{"get": 0, "post": 1, "put": 2, "patch": 3, "delete": 4}
 
@@ -81,9 +78,7 @@ func generate() {
 	var spec map[string]any
 	check(dec.Decode(&spec), "parse spec")
 
-	patchServerURL(spec)
 	patchPathParameters(spec)
-	simplifyFreeFormAdditionalProps(spec)
 	normalizeErrors(spec)
 
 	check(os.MkdirAll("specs", 0o755), "mkdir specs")
@@ -165,52 +160,10 @@ func fetchSpecOnce() ([]byte, error) {
 
 // ─── spec normalization ──────────────────────────────────────────────────────
 
-// simplifyFreeFormAdditionalProps collapses a free-form `additionalProperties`
-// schema (one carrying no structural keyword, e.g. `{ nullable: true }`) to the
-// boolean `true`. The generator otherwise emits a `map[string]*interface{}` field
-// whose own Get/Set/UnmarshalJSON helpers use `map[string]interface{}`, which does
-// not compile. The boolean form means the same thing (any extra properties allowed)
-// and generates a consistent `map[string]interface{}`.
-func simplifyFreeFormAdditionalProps(node any) {
-	switch n := node.(type) {
-	case map[string]any:
-		if ap, ok := n["additionalProperties"].(map[string]any); ok && isFreeForm(ap) {
-			n["additionalProperties"] = true
-		}
-		for _, v := range n {
-			simplifyFreeFormAdditionalProps(v)
-		}
-	case []any:
-		for _, v := range n {
-			simplifyFreeFormAdditionalProps(v)
-		}
-	}
-}
-
-func isFreeForm(schema map[string]any) bool {
-	for _, k := range []string{"type", "$ref", "properties", "items", "allOf", "oneOf", "anyOf", "additionalProperties", "enum", "format"} {
-		if _, ok := schema[k]; ok {
-			return false
-		}
-	}
-	return true
-}
-
-// patchServerURL rewrites the relative production server (`/api/v2`) to an absolute
-// URL so the generated client targets production out of the box.
-func patchServerURL(spec map[string]any) {
-	servers, _ := spec["servers"].([]any)
-	if len(servers) == 0 {
-		return
-	}
-	if s0, ok := servers[0].(map[string]any); ok {
-		s0["url"] = absoluteServerURL
-	}
-}
-
 // patchPathParameters forces required:true on every path parameter. OpenAPI requires
-// it and the generator rejects an optional path parameter; at least one upstream route
-// omits it.
+// it and the generator rejects an optional path parameter; the served spec still emits
+// required:false on one route (/kabbalah/names/{number}, measured 2026-09-19). This
+// step is dead the day a live run stops printing the Forced line; delete it then.
 func patchPathParameters(spec map[string]any) {
 	paths, _ := spec["paths"].(map[string]any)
 	fixed := 0
@@ -256,9 +209,10 @@ func forceRequiredPath(params any) int {
 	return fixed
 }
 
-// normalizeErrors adds one shared ErrorResponse schema and repoints every error
-// response at it, so the generator emits a single typed error body (mapped to
-// *RoxyError in errors.go) instead of a distinct inline struct per operation.
+// normalizeErrors adds one shared ErrorResponse schema and repoints every 4xx and
+// 5xx response at it, so the generator emits a single typed error body (mapped to
+// *RoxyError in errors.go) instead of a distinct inline struct per operation. The
+// served spec inlines the same `{ error, code }` shape on every error status.
 func normalizeErrors(spec map[string]any) {
 	components, _ := spec["components"].(map[string]any)
 	if components == nil {
@@ -305,7 +259,7 @@ func normalizeErrors(spec map[string]any) {
 	errRef := map[string]any{"$ref": "#/components/schemas/ErrorResponse"}
 	paths, _ := spec["paths"].(map[string]any)
 	normalized := 0
-	for _, item := range paths {
+	for path, item := range paths {
 		pathItem, ok := item.(map[string]any)
 		if !ok {
 			continue
@@ -322,13 +276,17 @@ func normalizeErrors(spec map[string]any) {
 			if !ok {
 				continue
 			}
-			for _, code := range errorStatusCodes {
-				resp, ok := responses[code].(map[string]any)
+			for code, r := range responses {
+				status, err := strconv.Atoi(code)
+				if err != nil || status < 400 {
+					continue
+				}
+				resp, ok := r.(map[string]any)
 				if !ok {
 					continue
 				}
 				if _, isRef := resp["$ref"]; isRef {
-					continue
+					fail("normalize errors: %s %s %s is a $ref response, which this generator has never seen; teach normalizeErrors the shape before regenerating", strings.ToUpper(verb), path, code)
 				}
 				resp["content"] = map[string]any{
 					"application/json": map[string]any{"schema": cloneMap(errRef)},
@@ -357,7 +315,7 @@ func cloneMap(m map[string]any) map[string]any {
 // buildFacade emits roxy.gen.go: a domain-grouped facade over the generated
 // ClientWithResponses. It reads the real generated method signatures from the AST
 // (so the facade is signature-faithful by construction; `go build` is the backstop)
-// and groups them by URL first segment, matching the spec's operations.
+// and groups them by URL first segment, matching the operations of the spec.
 func buildFacade(spec map[string]any) {
 	fset := token.NewFileSet()
 	file, err := parser.ParseFile(fset, clientPath, nil, parser.ParseComments)
@@ -376,7 +334,7 @@ func buildFacade(spec map[string]any) {
 
 	for _, decl := range file.Decls {
 		fn, ok := decl.(*ast.FuncDecl)
-		if !ok || fn.Recv == nil || !isClientWithResponsesRecv(fn.Recv) {
+		if !ok || fn.Recv == nil || receiverType(fn.Recv) != "ClientWithResponses" {
 			continue
 		}
 		name := fn.Name.Name
@@ -386,11 +344,13 @@ func buildFacade(spec map[string]any) {
 		opName := strings.TrimSuffix(name, "WithResponse")
 		seg, ok := segByOpKey[normalizeKey(opName)]
 		if !ok {
-			fmt.Printf("warning: no spec segment for generated method %s; skipping\n", name)
-			continue
+			fail("facade: generated method %s matches no operation of the spec, so it would be missing from the facade", name)
 		}
 		methodsBySeg[seg] = append(methodsBySeg[seg], fn)
 		collectSelectorPkgs(fn.Type, used)
+	}
+	if got, want := countMethods(methodsBySeg), len(segByOpKey); got != want {
+		fail("facade: %d generated methods for %d spec operations; a route is missing from the client", got, want)
 	}
 
 	var b strings.Builder
@@ -444,11 +404,15 @@ func buildFacade(spec map[string]any) {
 		fail("format facade: %v", err)
 	}
 	check(os.WriteFile(facadePath, formatted, 0o644), "write facade")
+	fmt.Printf("Facade written to %s (%d methods across %d domains).\n", facadePath, countMethods(methodsBySeg), len(methodsBySeg))
+}
+
+func countMethods(methodsBySeg map[string][]*ast.FuncDecl) int {
 	total := 0
 	for _, m := range methodsBySeg {
 		total += len(m)
 	}
-	fmt.Printf("Facade written to %s (%d methods across %d domains).\n", facadePath, total, len(methodsBySeg))
+	return total
 }
 
 func writeWrapper(b *strings.Builder, fset *token.FileSet, svc string, fn *ast.FuncDecl) {
@@ -487,16 +451,20 @@ func writeWrapper(b *strings.Builder, fset *token.FileSet, svc string, fn *ast.F
 	b.WriteString("\treturn resp, asRoxyError(resp)\n}\n\n")
 }
 
-func isClientWithResponsesRecv(recv *ast.FieldList) bool {
+// receiverType returns the type name of a pointer receiver (`*Foo` -> "Foo"), or "".
+func receiverType(recv *ast.FieldList) string {
 	if len(recv.List) != 1 {
-		return false
+		return ""
 	}
 	star, ok := recv.List[0].Type.(*ast.StarExpr)
 	if !ok {
-		return false
+		return ""
 	}
 	id, ok := star.X.(*ast.Ident)
-	return ok && id.Name == "ClientWithResponses"
+	if !ok {
+		return ""
+	}
+	return id.Name
 }
 
 func exprString(fset *token.FileSet, e ast.Expr) string {
@@ -581,10 +549,17 @@ func syncDocs() {
 
 	domains := domainsInOrder(spec)
 	table := renderDomainsTable(domains)
+	langs := renderLangs(domains)
+	noParams := renderNoParams(facadeMethods())
 	changed := false
-	changed = replaceRegion("README.md", table) || changed
-	changed = replaceRegion("AGENTS.md", table) || changed
-	changed = replaceRegionIn("docs/llms-full.txt", renderMethods(domains)) || changed
+	changed = swap("README.md", "DOMAINS", table) || changed
+	changed = swap("README.md", "NOPARAMS", noParams) || changed
+	changed = swap("AGENTS.md", "DOMAINS", table) || changed
+	changed = swap("AGENTS.md", "LANGS", langs) || changed
+	changed = swap("AGENTS.md", "NOPARAMS", noParams) || changed
+	changed = swap("docs/llms-full.txt", "LANGS", langs) || changed
+	changed = swap("docs/llms-full.txt", "METHODS", renderMethods(domains)) || changed
+	changed = swap("docs/llms-full.txt", "NOPARAMS", noParams) || changed
 
 	total := 0
 	for _, d := range domains {
@@ -597,8 +572,121 @@ func syncDocs() {
 	fmt.Printf("sync-docs: %d domains, %d endpoints. Docs %s.\n", len(domains), total, state)
 }
 
+// facadeMethod is one method of roxy.gen.go as it will be called: the accessor
+// (`Astrology`), the method name and the argument names except the request editors.
+type facadeMethod struct {
+	accessor, name string
+	args           []string
+}
+
+// facadeMethods reads the generated facade back, so every doc line that names a
+// method or its arity comes from the code that ships and not from a second rule.
+func facadeMethods() []facadeMethod {
+	fset := token.NewFileSet()
+	file, err := parser.ParseFile(fset, facadePath, nil, 0)
+	if err != nil {
+		fail("sync-docs: %s not readable, run `generate` first: %v", facadePath, err)
+	}
+	var out []facadeMethod
+	for _, decl := range file.Decls {
+		fn, ok := decl.(*ast.FuncDecl)
+		if !ok || fn.Recv == nil || !strings.HasSuffix(receiverType(fn.Recv), "Service") {
+			continue
+		}
+		m := facadeMethod{accessor: strings.TrimSuffix(receiverType(fn.Recv), "Service"), name: fn.Name.Name}
+		for _, f := range fn.Type.Params.List {
+			if _, variadic := f.Type.(*ast.Ellipsis); variadic {
+				continue
+			}
+			for _, n := range f.Names {
+				m.args = append(m.args, n.Name)
+			}
+		}
+		out = append(out, m)
+	}
+	if len(out) == 0 {
+		fail("sync-docs: %s declares no service methods", facadePath)
+	}
+	return out
+}
+
+// renderNoParams lists every facade method that takes no `params` argument, in
+// facade order (canonical domain order, then method name). Passing nil to one of
+// these compiles and panics at runtime, so the docs carry the exact list.
+func renderNoParams(methods []facadeMethod) string {
+	var b strings.Builder
+	b.WriteString("<!-- BEGIN:NOPARAMS -->\n")
+	for _, m := range methods {
+		if slices.Contains(m.args, "params") {
+			continue
+		}
+		b.WriteString(fmt.Sprintf("- `roxy.%s.%s(%s)`\n", m.accessor, m.name, strings.Join(m.args, ", ")))
+	}
+	b.WriteString("<!-- END:NOPARAMS -->")
+	return b.String()
+}
+
+// renderLangs states the `lang` query parameter as the spec declares it: the codes
+// and default (one shape, asserted identical on every operation that has it) and
+// which accessors carry it at all. Display names and per-domain translation depth
+// are not in the spec and stay in prose outside the markers.
+func renderLangs(domains []domainInfo) string {
+	var codes []string
+	def := ""
+	var supported, englishOnly []string
+	for _, d := range domains {
+		hasLang := false
+		for _, op := range d.ops {
+			p := op.langParam()
+			if p == nil {
+				continue
+			}
+			hasLang = true
+			schema, _ := p["schema"].(map[string]any)
+			enum, _ := schema["enum"].([]any)
+			var these []string
+			for _, e := range enum {
+				these = append(these, fmt.Sprint(e))
+			}
+			thisDef := fmt.Sprint(schema["default"])
+			if codes == nil {
+				codes, def = these, thisDef
+			} else if strings.Join(these, ",") != strings.Join(codes, ",") || thisDef != def {
+				fail("spec: %s %s declares lang as %v (default %s), other operations declare %v (default %s); one note cannot describe both", strings.ToUpper(op.verb), op.path, these, thisDef, codes, def)
+			}
+		}
+		if hasLang {
+			supported = append(supported, "`roxy."+pascal(d.segment)+"`")
+		} else {
+			englishOnly = append(englishOnly, "`roxy."+pascal(d.segment)+"`")
+		}
+	}
+	if len(codes) == 0 {
+		fail("spec: no operation declares a lang query parameter")
+	}
+	quoted := make([]string, len(codes))
+	for i, c := range codes {
+		quoted[i] = "`" + c + "`"
+	}
+	return fmt.Sprintf("<!-- BEGIN:LANGS -->\n**Multi-language responses.** Interpretations are available in %d languages: %s. Set `Lang` on the params struct of any supported endpoint with `roxyapi.Ptr(...)`; it defaults to `%s`. Supported: %s. English-only: %s.\n<!-- END:LANGS -->",
+		len(codes), strings.Join(quoted, ", "), def, strings.Join(supported, ", "), strings.Join(englishOnly, ", "))
+}
+
 type operation struct {
 	path, verb, opID, summary string
+	params                    any // the raw `parameters` array of the operation
+}
+
+// langParam returns the `lang` query parameter of an operation, or nil.
+func (op operation) langParam() map[string]any {
+	list, _ := op.params.([]any)
+	for _, p := range list {
+		param, ok := p.(map[string]any)
+		if ok && param["in"] == "query" && param["name"] == "lang" {
+			return param
+		}
+	}
+	return nil
 }
 
 type domainInfo struct {
@@ -615,6 +703,7 @@ func domainsInOrder(spec map[string]any) []domainInfo {
 	bySeg := map[string][]operation{}
 	tagToSegment := map[string]string{}
 	paths, _ := spec["paths"].(map[string]any)
+	total := 0
 	for path, item := range paths {
 		pathItem, ok := item.(map[string]any)
 		if !ok {
@@ -630,13 +719,20 @@ func domainsInOrder(spec map[string]any) []domainInfo {
 				continue
 			}
 			id, _ := op["operationId"].(string)
-			summary, _ := op["summary"].(string)
-			bySeg[seg] = append(bySeg[seg], operation{path: path, verb: verb, opID: id, summary: summary})
-			if tag := firstTag(op); tag != "" {
-				if _, exists := tagToSegment[tag]; !exists {
-					tagToSegment[tag] = seg
-				}
+			if id == "" {
+				fail("spec: %s %s has no operationId", strings.ToUpper(verb), path)
 			}
+			summary, _ := op["summary"].(string)
+			bySeg[seg] = append(bySeg[seg], operation{path: path, verb: verb, opID: id, summary: summary, params: op["parameters"]})
+			total++
+			tag := firstTag(op)
+			if tag == "" {
+				fail("spec: %s %s has no tag, so it belongs to no domain", strings.ToUpper(verb), path)
+			}
+			if prev, exists := tagToSegment[tag]; exists && prev != seg {
+				fail("spec: tag %q spans path segments %s and %s; a domain accessor needs exactly one", tag, prev, seg)
+			}
+			tagToSegment[tag] = seg
 		}
 	}
 	for seg := range bySeg {
@@ -644,6 +740,7 @@ func domainsInOrder(spec map[string]any) []domainInfo {
 	}
 	var out []domainInfo
 	seen := map[string]bool{}
+	covered := 0
 	for _, t := range tagList(spec) {
 		name := t["name"].(string)
 		seg, ok := tagToSegment[name]
@@ -651,7 +748,11 @@ func domainsInOrder(spec map[string]any) []domainInfo {
 			continue
 		}
 		seen[seg] = true
+		covered += len(bySeg[seg])
 		out = append(out, domainInfo{tag: name, segment: seg, summary: tagSummary(t), ops: bySeg[seg]})
+	}
+	if covered != total {
+		fail("spec: %d of %d operations carry a tag that is missing from the top-level tags list, so they would vanish from the facade and the docs", total-covered, total)
 	}
 	return out
 }
@@ -666,13 +767,17 @@ func sortOps(ops []operation) {
 	})
 }
 
-// segmentByOpKey maps each operation's normalized id to its URL segment, so the
+// segmentByOpKey maps the normalized id of each operation to its URL segment, so the
 // facade matches a generated method to its domain regardless of initialism casing.
 func segmentByOpKey(domains []domainInfo) map[string]string {
 	m := map[string]string{}
 	for _, d := range domains {
 		for _, op := range d.ops {
-			m[normalizeKey(op.opID)] = d.segment
+			key := normalizeKey(op.opID)
+			if _, dup := m[key]; dup {
+				fail("spec: operationId %s collides with another once casing is ignored", op.opID)
+			}
+			m[key] = d.segment
 		}
 	}
 	return m
@@ -787,22 +892,14 @@ func pascal(s string) string {
 	return b.String()
 }
 
-// replaceRegion swaps the text between the DOMAINS markers in a markdown file.
-// A missing file is skipped (markers are added when the doc is authored).
-func replaceRegion(path, block string) bool {
-	return swap(path, "<!-- BEGIN:DOMAINS -->", "<!-- END:DOMAINS -->", block)
-}
-
-func replaceRegionIn(path, block string) bool {
-	return swap(path, "<!-- BEGIN:METHODS -->", "<!-- END:METHODS -->", block)
-}
-
-func swap(path, begin, end, block string) bool {
+// swap replaces the text between `<!-- BEGIN:<region> -->` and its END marker in a
+// doc with block (which carries both markers) and reports whether the file changed.
+// The file and both markers must exist: every doc here is tracked, so a missing
+// one is a broken checkout, never a doc that has not been authored yet.
+func swap(path, region, block string) bool {
+	begin, end := "<!-- BEGIN:"+region+" -->", "<!-- END:"+region+" -->"
 	src, err := os.ReadFile(path)
-	if err != nil {
-		fmt.Printf("sync-docs: %s not present yet, skipping.\n", path)
-		return false
-	}
+	check(err, "sync-docs: read "+path)
 	text := string(src)
 	b := strings.Index(text, begin)
 	e := strings.Index(text, end)

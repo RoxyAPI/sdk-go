@@ -13,11 +13,10 @@ updates:
       dependencies:
         patterns:
           - "*"
-    # The oapi-codegen runtime is pinned to the generator version in
-    # tools/roxygen. Bumping it out of step can desync the generated client, so it
-    # is upgraded deliberately at generation time, never by dependabot.
-    ignore:
-      - dependency-name: "github.com/oapi-codegen/runtime"
+    # github.com/oapi-codegen/runtime is the one consumer dependency and is versioned
+    # apart from the generator (the generator module does not require it), so a bump
+    # PR is safe to take: CI compiles the generated client against it and the hermetic
+    # regenerate proves the output did not move.
 
   - package-ecosystem: gomod
     directory: /tools/roxygen

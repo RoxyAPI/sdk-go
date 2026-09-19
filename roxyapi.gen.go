@@ -33938,13 +33938,13 @@ type NatalChartResponse struct {
 		// IsRetrograde Whether the planet is in retrograde motion.
 		IsRetrograde bool `json:"isRetrograde"`
 
-		// Latitude Ecliptic latitude in degrees.
+		// Latitude Apparent geocentric ecliptic latitude of date, in degrees.
 		Latitude float32 `json:"latitude"`
 
-		// Longitude Tropical ecliptic longitude in degrees (0-360).
+		// Longitude Apparent geocentric tropical longitude on the true ecliptic of date, in degrees (0-360): light time and aberration applied, nutation included, the convention desktop chart software and the NASA JPL Horizons observer tables print, so it compares directly with either.
 		Longitude float32 `json:"longitude"`
 
-		// Name Planet or point name (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto, North Node, South Node, Chiron, Black Moon Lilith). Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use nameLocalized for anything a reader sees. The lunar nodes are the mean node; software using the true node may show node positions up to 1.75 degrees different.
+		// Name Planet or point name (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto, North Node, South Node, Chiron, Black Moon Lilith). Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use nameLocalized for anything a reader sees. The lunar nodes follow the request nodeType, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
 		Name string `json:"name"`
 
 		// NameLocalized Planet or point name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
@@ -34748,13 +34748,13 @@ type RelocationPlanet struct {
 	// IsRetrograde Whether the planet appears to move backward from Earth perspective. Retrograde periods signal review and introspection.
 	IsRetrograde bool `json:"isRetrograde"`
 
-	// Latitude Ecliptic latitude in degrees. Near zero for most planets, varies for the Moon and Pluto, and reaches up to about 5 degrees for Black Moon Lilith (projected from the inclined mean lunar orbit).
+	// Latitude Apparent geocentric ecliptic latitude of date, in degrees. Near zero for most planets, varies for the Moon and Pluto, and reaches up to about 5 degrees for Black Moon Lilith (projected from the inclined mean lunar orbit).
 	Latitude float32 `json:"latitude"`
 
-	// Longitude Tropical ecliptic longitude in degrees (0-360). Primary coordinate for zodiac sign and aspect calculations.
+	// Longitude Apparent geocentric tropical longitude on the true ecliptic of date, in degrees (0-360): light time and aberration applied, nutation included, the convention desktop chart software and the NASA JPL Horizons observer tables print, so it compares directly with either. Primary coordinate for zodiac sign and aspect calculations.
 	Longitude float32 `json:"longitude"`
 
-	// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The nodes follow the request `nodeType`, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
+	// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The lunar nodes follow the request nodeType, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
 	Name RelocationPlanetName `json:"name"`
 
 	// NameLocalized Body name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
@@ -34770,7 +34770,7 @@ type RelocationPlanet struct {
 	Speed float32 `json:"speed"`
 }
 
-// RelocationPlanetName Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The nodes follow the request `nodeType`, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
+// RelocationPlanetName Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The lunar nodes follow the request nodeType, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
 type RelocationPlanetName string
 
 // SadhesatiRequest defines model for SadhesatiRequest.
@@ -35237,13 +35237,13 @@ type TransitsResponse struct {
 		// IsRetrograde Whether the planet is currently in apparent retrograde motion. Retrograde transits are considered more introspective and revisionary.
 		IsRetrograde bool `json:"isRetrograde"`
 
-		// Latitude Ecliptic latitude in degrees. Near zero for most planets except Moon and Pluto.
+		// Latitude Apparent geocentric ecliptic latitude of date, in degrees. Near zero for most planets except Moon and Pluto.
 		Latitude float32 `json:"latitude"`
 
-		// Longitude Tropical ecliptic longitude in degrees (0-360). Primary coordinate for sign and aspect calculation.
+		// Longitude Apparent geocentric tropical longitude on the true ecliptic of date, in degrees (0-360): light time and aberration applied, nutation included, the convention desktop chart software and the NASA JPL Horizons observer tables print, so it compares directly with either. Primary coordinate for sign and aspect calculation.
 		Longitude float32 `json:"longitude"`
 
-		// Name Planet name (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto, North Node, South Node, Chiron, Black Moon Lilith). Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use nameLocalized for anything a reader sees. The lunar nodes are the mean node; software using the true node may show node positions up to 1.75 degrees different.
+		// Name Planet name (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto, North Node, South Node, Chiron, Black Moon Lilith). Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use nameLocalized for anything a reader sees. The lunar nodes follow the request nodeType, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
 		Name string `json:"name"`
 
 		// NameLocalized Planet name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
@@ -50752,7 +50752,7 @@ type ClientInterface interface {
 	// Return the full almanac reading of one day: its lunisolar date, the year, month and day pillars with their Na Yin, the day officer from the twelve jian chu sequence, the lunar mansion on duty, the zodiac animal the day clashes with, and the activities the officer favours or opposes. The day officer is the layer a printed almanac reaches its verdict from first, and the response says exactly what it rules on rather than reducing the day to a single score. The year and month pillars here are attributed by whole days, which is what an almanac prints: the day a solar term falls on belongs to the new period for its whole length, however late in the day the term arrives. Built for date pickers, daily calendar widgets, and wedding or opening date tools.
 	//
 	// Corresponds with GET /chinese-astrology/calendar/day/{date} (the `GetAlmanacDay` operationId).
-	GetAlmanacDay(ctx context.Context, date string, params *GetAlmanacDayParams, reqEditors ...RequestEditorFn) (*http.Response, error)
+	GetAlmanacDay(ctx context.Context, date openapi_types.Date, params *GetAlmanacDayParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// CalculateLunarDateWithBody Convert lunar and Gregorian dates - Chinese lunisolar calendar API
 	//
@@ -55352,7 +55352,7 @@ func (c *Client) LookupAuspiciousDays(ctx context.Context, params *LookupAuspici
 // Return the full almanac reading of one day: its lunisolar date, the year, month and day pillars with their Na Yin, the day officer from the twelve jian chu sequence, the lunar mansion on duty, the zodiac animal the day clashes with, and the activities the officer favours or opposes. The day officer is the layer a printed almanac reaches its verdict from first, and the response says exactly what it rules on rather than reducing the day to a single score. The year and month pillars here are attributed by whole days, which is what an almanac prints: the day a solar term falls on belongs to the new period for its whole length, however late in the day the term arrives. Built for date pickers, daily calendar widgets, and wedding or opening date tools.
 //
 // Corresponds with GET /chinese-astrology/calendar/day/{date} (the `GetAlmanacDay` operationId).
-func (c *Client) GetAlmanacDay(ctx context.Context, date string, params *GetAlmanacDayParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
+func (c *Client) GetAlmanacDay(ctx context.Context, date openapi_types.Date, params *GetAlmanacDayParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewGetAlmanacDayRequest(c.Server, date, params)
 	if err != nil {
 		return nil, err
@@ -65468,12 +65468,12 @@ func NewLookupAuspiciousDaysRequestWithBody(server string, params *LookupAuspici
 }
 
 // NewGetAlmanacDayRequest constructs an http.Request for the GetAlmanacDay method
-func NewGetAlmanacDayRequest(server string, date string, params *GetAlmanacDayParams) (*http.Request, error) {
+func NewGetAlmanacDayRequest(server string, date openapi_types.Date, params *GetAlmanacDayParams) (*http.Request, error) {
 	var err error
 
 	var pathParam0 string
 
-	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "date", date, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: ""})
+	pathParam0, err = runtime.StyleParamWithOptions("simple", false, "date", date, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationPath, Type: "string", Format: "date"})
 	if err != nil {
 		return nil, err
 	}
@@ -79551,7 +79551,7 @@ type ClientWithResponsesInterface interface {
 	// Returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with GET /chinese-astrology/calendar/day/{date} (the `GetAlmanacDay` operationId).
-	GetAlmanacDayWithResponse(ctx context.Context, date string, params *GetAlmanacDayParams, reqEditors ...RequestEditorFn) (*GetAlmanacDayResponse, error)
+	GetAlmanacDayWithResponse(ctx context.Context, date openapi_types.Date, params *GetAlmanacDayParams, reqEditors ...RequestEditorFn) (*GetAlmanacDayResponse, error)
 
 	// CalculateLunarDateWithBodyWithResponse Convert lunar and Gregorian dates - Chinese lunisolar calendar API
 	//
@@ -84491,13 +84491,13 @@ type GenerateCompositeChartResponse struct {
 			// IsRetrograde Whether the planet appears to move backward from Earth perspective. Retrograde periods signal review and introspection.
 			IsRetrograde bool `json:"isRetrograde"`
 
-			// Latitude Ecliptic latitude in degrees. Near zero for most planets, varies for the Moon and Pluto, and reaches up to about 5 degrees for Black Moon Lilith (projected from the inclined mean lunar orbit).
+			// Latitude Apparent geocentric ecliptic latitude of date, in degrees. Near zero for most planets, varies for the Moon and Pluto, and reaches up to about 5 degrees for Black Moon Lilith (projected from the inclined mean lunar orbit).
 			Latitude float32 `json:"latitude"`
 
-			// Longitude Tropical ecliptic longitude in degrees (0-360). Primary coordinate for zodiac sign and aspect calculations.
+			// Longitude Apparent geocentric tropical longitude on the true ecliptic of date, in degrees (0-360): light time and aberration applied, nutation included, the convention desktop chart software and the NASA JPL Horizons observer tables print, so it compares directly with either. Primary coordinate for zodiac sign and aspect calculations.
 			Longitude float32 `json:"longitude"`
 
-			// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The nodes follow the request `nodeType`, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
+			// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The lunar nodes follow the request nodeType, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
 			Name GenerateCompositeChart200JSONResponseBodyCompositePlanetsName `json:"name"`
 
 			// Sign Tropical zodiac sign this planet occupies. Determined by 30-degree divisions of ecliptic longitude.
@@ -84660,13 +84660,13 @@ func (r GenerateCompositeChartResponse) GetJSON200() *struct {
 		// IsRetrograde Whether the planet appears to move backward from Earth perspective. Retrograde periods signal review and introspection.
 		IsRetrograde bool `json:"isRetrograde"`
 
-		// Latitude Ecliptic latitude in degrees. Near zero for most planets, varies for the Moon and Pluto, and reaches up to about 5 degrees for Black Moon Lilith (projected from the inclined mean lunar orbit).
+		// Latitude Apparent geocentric ecliptic latitude of date, in degrees. Near zero for most planets, varies for the Moon and Pluto, and reaches up to about 5 degrees for Black Moon Lilith (projected from the inclined mean lunar orbit).
 		Latitude float32 `json:"latitude"`
 
-		// Longitude Tropical ecliptic longitude in degrees (0-360). Primary coordinate for zodiac sign and aspect calculations.
+		// Longitude Apparent geocentric tropical longitude on the true ecliptic of date, in degrees (0-360): light time and aberration applied, nutation included, the convention desktop chart software and the NASA JPL Horizons observer tables print, so it compares directly with either. Primary coordinate for zodiac sign and aspect calculations.
 		Longitude float32 `json:"longitude"`
 
-		// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The nodes follow the request `nodeType`, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
+		// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The lunar nodes follow the request nodeType, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
 		Name GenerateCompositeChart200JSONResponseBodyCompositePlanetsName `json:"name"`
 
 		// Sign Tropical zodiac sign this planet occupies. Determined by 30-degree divisions of ecliptic longitude.
@@ -86549,13 +86549,13 @@ type GenerateLunarReturnResponse struct {
 				// IsRetrograde Whether the planet appears to move backward from Earth perspective. Retrograde periods signal review and introspection.
 				IsRetrograde bool `json:"isRetrograde"`
 
-				// Latitude Ecliptic latitude in degrees. Near zero for most planets, varies for the Moon and Pluto, and reaches up to about 5 degrees for Black Moon Lilith (projected from the inclined mean lunar orbit).
+				// Latitude Apparent geocentric ecliptic latitude of date, in degrees. Near zero for most planets, varies for the Moon and Pluto, and reaches up to about 5 degrees for Black Moon Lilith (projected from the inclined mean lunar orbit).
 				Latitude float32 `json:"latitude"`
 
-				// Longitude Tropical ecliptic longitude in degrees (0-360). Primary coordinate for zodiac sign and aspect calculations.
+				// Longitude Apparent geocentric tropical longitude on the true ecliptic of date, in degrees (0-360): light time and aberration applied, nutation included, the convention desktop chart software and the NASA JPL Horizons observer tables print, so it compares directly with either. Primary coordinate for zodiac sign and aspect calculations.
 				Longitude float32 `json:"longitude"`
 
-				// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The nodes follow the request `nodeType`, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
+				// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The lunar nodes follow the request nodeType, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
 				Name GenerateLunarReturn200JSONResponseBodyChartPlanetsName `json:"name"`
 
 				// Sign Tropical zodiac sign this planet occupies. Determined by 30-degree divisions of ecliptic longitude.
@@ -86733,13 +86733,13 @@ func (r GenerateLunarReturnResponse) GetJSON200() *struct {
 			// IsRetrograde Whether the planet appears to move backward from Earth perspective. Retrograde periods signal review and introspection.
 			IsRetrograde bool `json:"isRetrograde"`
 
-			// Latitude Ecliptic latitude in degrees. Near zero for most planets, varies for the Moon and Pluto, and reaches up to about 5 degrees for Black Moon Lilith (projected from the inclined mean lunar orbit).
+			// Latitude Apparent geocentric ecliptic latitude of date, in degrees. Near zero for most planets, varies for the Moon and Pluto, and reaches up to about 5 degrees for Black Moon Lilith (projected from the inclined mean lunar orbit).
 			Latitude float32 `json:"latitude"`
 
-			// Longitude Tropical ecliptic longitude in degrees (0-360). Primary coordinate for zodiac sign and aspect calculations.
+			// Longitude Apparent geocentric tropical longitude on the true ecliptic of date, in degrees (0-360): light time and aberration applied, nutation included, the convention desktop chart software and the NASA JPL Horizons observer tables print, so it compares directly with either. Primary coordinate for zodiac sign and aspect calculations.
 			Longitude float32 `json:"longitude"`
 
-			// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The nodes follow the request `nodeType`, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
+			// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The lunar nodes follow the request nodeType, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
 			Name GenerateLunarReturn200JSONResponseBodyChartPlanetsName `json:"name"`
 
 			// Sign Tropical zodiac sign this planet occupies. Determined by 30-degree divisions of ecliptic longitude.
@@ -87995,13 +87995,13 @@ type GeneratePlanetaryReturnResponse struct {
 				// IsRetrograde Whether the planet appears to move backward from Earth perspective. Retrograde periods signal review and introspection.
 				IsRetrograde bool `json:"isRetrograde"`
 
-				// Latitude Ecliptic latitude in degrees. Near zero for most planets, varies for the Moon and Pluto, and reaches up to about 5 degrees for Black Moon Lilith (projected from the inclined mean lunar orbit).
+				// Latitude Apparent geocentric ecliptic latitude of date, in degrees. Near zero for most planets, varies for the Moon and Pluto, and reaches up to about 5 degrees for Black Moon Lilith (projected from the inclined mean lunar orbit).
 				Latitude float32 `json:"latitude"`
 
-				// Longitude Tropical ecliptic longitude in degrees (0-360). Primary coordinate for zodiac sign and aspect calculations.
+				// Longitude Apparent geocentric tropical longitude on the true ecliptic of date, in degrees (0-360): light time and aberration applied, nutation included, the convention desktop chart software and the NASA JPL Horizons observer tables print, so it compares directly with either. Primary coordinate for zodiac sign and aspect calculations.
 				Longitude float32 `json:"longitude"`
 
-				// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The nodes follow the request `nodeType`, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
+				// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The lunar nodes follow the request nodeType, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
 				Name GeneratePlanetaryReturn200JSONResponseBodyChartPlanetsName `json:"name"`
 
 				// Sign Tropical zodiac sign this planet occupies. Determined by 30-degree divisions of ecliptic longitude.
@@ -88182,13 +88182,13 @@ func (r GeneratePlanetaryReturnResponse) GetJSON200() *struct {
 			// IsRetrograde Whether the planet appears to move backward from Earth perspective. Retrograde periods signal review and introspection.
 			IsRetrograde bool `json:"isRetrograde"`
 
-			// Latitude Ecliptic latitude in degrees. Near zero for most planets, varies for the Moon and Pluto, and reaches up to about 5 degrees for Black Moon Lilith (projected from the inclined mean lunar orbit).
+			// Latitude Apparent geocentric ecliptic latitude of date, in degrees. Near zero for most planets, varies for the Moon and Pluto, and reaches up to about 5 degrees for Black Moon Lilith (projected from the inclined mean lunar orbit).
 			Latitude float32 `json:"latitude"`
 
-			// Longitude Tropical ecliptic longitude in degrees (0-360). Primary coordinate for zodiac sign and aspect calculations.
+			// Longitude Apparent geocentric tropical longitude on the true ecliptic of date, in degrees (0-360): light time and aberration applied, nutation included, the convention desktop chart software and the NASA JPL Horizons observer tables print, so it compares directly with either. Primary coordinate for zodiac sign and aspect calculations.
 			Longitude float32 `json:"longitude"`
 
-			// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The nodes follow the request `nodeType`, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
+			// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The lunar nodes follow the request nodeType, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
 			Name GeneratePlanetaryReturn200JSONResponseBodyChartPlanetsName `json:"name"`
 
 			// Sign Tropical zodiac sign this planet occupies. Determined by 30-degree divisions of ecliptic longitude.
@@ -88354,13 +88354,13 @@ type GetPlanetaryPositionsResponse struct {
 			// Keywords Key themes and traits associated with this planet.
 			Keywords *[]string `json:"keywords,omitempty"`
 
-			// Latitude Ecliptic latitude in degrees.
+			// Latitude Apparent geocentric ecliptic latitude of date, in degrees.
 			Latitude float32 `json:"latitude"`
 
-			// Longitude Tropical ecliptic longitude in degrees (0-360).
+			// Longitude Apparent geocentric tropical longitude on the true ecliptic of date, in degrees (0-360): light time and aberration applied, nutation included, the convention desktop chart software and the NASA JPL Horizons observer tables print, so it compares directly with either.
 			Longitude float32 `json:"longitude"`
 
-			// Name Planet name (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto, North Node, South Node, Chiron, Black Moon Lilith). The lunar nodes are the mean node; software using the true node may show node positions up to 1.75 degrees different.
+			// Name Planet name (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto, North Node, South Node, Chiron, Black Moon Lilith). The lunar nodes follow the request nodeType, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
 			Name string `json:"name"`
 
 			// Sign Tropical zodiac sign this planet occupies.
@@ -88421,13 +88421,13 @@ func (r GetPlanetaryPositionsResponse) GetJSON200() *struct {
 		// Keywords Key themes and traits associated with this planet.
 		Keywords *[]string `json:"keywords,omitempty"`
 
-		// Latitude Ecliptic latitude in degrees.
+		// Latitude Apparent geocentric ecliptic latitude of date, in degrees.
 		Latitude float32 `json:"latitude"`
 
-		// Longitude Tropical ecliptic longitude in degrees (0-360).
+		// Longitude Apparent geocentric tropical longitude on the true ecliptic of date, in degrees (0-360): light time and aberration applied, nutation included, the convention desktop chart software and the NASA JPL Horizons observer tables print, so it compares directly with either.
 		Longitude float32 `json:"longitude"`
 
-		// Name Planet name (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto, North Node, South Node, Chiron, Black Moon Lilith). The lunar nodes are the mean node; software using the true node may show node positions up to 1.75 degrees different.
+		// Name Planet name (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto, North Node, South Node, Chiron, Black Moon Lilith). The lunar nodes follow the request nodeType, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
 		Name string `json:"name"`
 
 		// Sign Tropical zodiac sign this planet occupies.
@@ -89505,13 +89505,13 @@ type GenerateSolarReturnResponse struct {
 				// IsRetrograde Whether the planet appears to move backward from Earth perspective. Retrograde periods signal review and introspection.
 				IsRetrograde bool `json:"isRetrograde"`
 
-				// Latitude Ecliptic latitude in degrees. Near zero for most planets, varies for the Moon and Pluto, and reaches up to about 5 degrees for Black Moon Lilith (projected from the inclined mean lunar orbit).
+				// Latitude Apparent geocentric ecliptic latitude of date, in degrees. Near zero for most planets, varies for the Moon and Pluto, and reaches up to about 5 degrees for Black Moon Lilith (projected from the inclined mean lunar orbit).
 				Latitude float32 `json:"latitude"`
 
-				// Longitude Tropical ecliptic longitude in degrees (0-360). Primary coordinate for zodiac sign and aspect calculations.
+				// Longitude Apparent geocentric tropical longitude on the true ecliptic of date, in degrees (0-360): light time and aberration applied, nutation included, the convention desktop chart software and the NASA JPL Horizons observer tables print, so it compares directly with either. Primary coordinate for zodiac sign and aspect calculations.
 				Longitude float32 `json:"longitude"`
 
-				// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The nodes follow the request `nodeType`, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
+				// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The lunar nodes follow the request nodeType, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
 				Name GenerateSolarReturn200JSONResponseBodyChartPlanetsName `json:"name"`
 
 				// Sign Tropical zodiac sign this planet occupies. Determined by 30-degree divisions of ecliptic longitude.
@@ -89692,13 +89692,13 @@ func (r GenerateSolarReturnResponse) GetJSON200() *struct {
 			// IsRetrograde Whether the planet appears to move backward from Earth perspective. Retrograde periods signal review and introspection.
 			IsRetrograde bool `json:"isRetrograde"`
 
-			// Latitude Ecliptic latitude in degrees. Near zero for most planets, varies for the Moon and Pluto, and reaches up to about 5 degrees for Black Moon Lilith (projected from the inclined mean lunar orbit).
+			// Latitude Apparent geocentric ecliptic latitude of date, in degrees. Near zero for most planets, varies for the Moon and Pluto, and reaches up to about 5 degrees for Black Moon Lilith (projected from the inclined mean lunar orbit).
 			Latitude float32 `json:"latitude"`
 
-			// Longitude Tropical ecliptic longitude in degrees (0-360). Primary coordinate for zodiac sign and aspect calculations.
+			// Longitude Apparent geocentric tropical longitude on the true ecliptic of date, in degrees (0-360): light time and aberration applied, nutation included, the convention desktop chart software and the NASA JPL Horizons observer tables print, so it compares directly with either. Primary coordinate for zodiac sign and aspect calculations.
 			Longitude float32 `json:"longitude"`
 
-			// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The nodes follow the request `nodeType`, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
+			// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The lunar nodes follow the request nodeType, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
 			Name GenerateSolarReturn200JSONResponseBodyChartPlanetsName `json:"name"`
 
 			// Sign Tropical zodiac sign this planet occupies. Determined by 30-degree divisions of ecliptic longitude.
@@ -90447,13 +90447,13 @@ type CalculateTransitAspectsResponse struct {
 			// IsRetrograde Whether the planet appears to move backward from Earth perspective. Retrograde periods signal review and introspection.
 			IsRetrograde bool `json:"isRetrograde"`
 
-			// Latitude Ecliptic latitude in degrees. Near zero for most planets, varies for the Moon and Pluto, and reaches up to about 5 degrees for Black Moon Lilith (projected from the inclined mean lunar orbit).
+			// Latitude Apparent geocentric ecliptic latitude of date, in degrees. Near zero for most planets, varies for the Moon and Pluto, and reaches up to about 5 degrees for Black Moon Lilith (projected from the inclined mean lunar orbit).
 			Latitude float32 `json:"latitude"`
 
-			// Longitude Tropical ecliptic longitude in degrees (0-360). Primary coordinate for zodiac sign and aspect calculations.
+			// Longitude Apparent geocentric tropical longitude on the true ecliptic of date, in degrees (0-360): light time and aberration applied, nutation included, the convention desktop chart software and the NASA JPL Horizons observer tables print, so it compares directly with either. Primary coordinate for zodiac sign and aspect calculations.
 			Longitude float32 `json:"longitude"`
 
-			// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The nodes follow the request `nodeType`, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
+			// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The lunar nodes follow the request nodeType, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
 			Name CalculateTransitAspects200JSONResponseBodyNatalPlanetsName `json:"name"`
 
 			// NameLocalized Body name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
@@ -90555,13 +90555,13 @@ type CalculateTransitAspectsResponse struct {
 			// IsRetrograde Whether the planet appears to move backward from Earth perspective. Retrograde periods signal review and introspection.
 			IsRetrograde bool `json:"isRetrograde"`
 
-			// Latitude Ecliptic latitude in degrees. Near zero for most planets, varies for the Moon and Pluto, and reaches up to about 5 degrees for Black Moon Lilith (projected from the inclined mean lunar orbit).
+			// Latitude Apparent geocentric ecliptic latitude of date, in degrees. Near zero for most planets, varies for the Moon and Pluto, and reaches up to about 5 degrees for Black Moon Lilith (projected from the inclined mean lunar orbit).
 			Latitude float32 `json:"latitude"`
 
-			// Longitude Tropical ecliptic longitude in degrees (0-360). Primary coordinate for zodiac sign and aspect calculations.
+			// Longitude Apparent geocentric tropical longitude on the true ecliptic of date, in degrees (0-360): light time and aberration applied, nutation included, the convention desktop chart software and the NASA JPL Horizons observer tables print, so it compares directly with either. Primary coordinate for zodiac sign and aspect calculations.
 			Longitude float32 `json:"longitude"`
 
-			// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The nodes follow the request `nodeType`, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
+			// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The lunar nodes follow the request nodeType, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
 			Name CalculateTransitAspects200JSONResponseBodyTransitPlanetsName `json:"name"`
 
 			// NameLocalized Body name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
@@ -90694,13 +90694,13 @@ func (r CalculateTransitAspectsResponse) GetJSON200() *struct {
 		// IsRetrograde Whether the planet appears to move backward from Earth perspective. Retrograde periods signal review and introspection.
 		IsRetrograde bool `json:"isRetrograde"`
 
-		// Latitude Ecliptic latitude in degrees. Near zero for most planets, varies for the Moon and Pluto, and reaches up to about 5 degrees for Black Moon Lilith (projected from the inclined mean lunar orbit).
+		// Latitude Apparent geocentric ecliptic latitude of date, in degrees. Near zero for most planets, varies for the Moon and Pluto, and reaches up to about 5 degrees for Black Moon Lilith (projected from the inclined mean lunar orbit).
 		Latitude float32 `json:"latitude"`
 
-		// Longitude Tropical ecliptic longitude in degrees (0-360). Primary coordinate for zodiac sign and aspect calculations.
+		// Longitude Apparent geocentric tropical longitude on the true ecliptic of date, in degrees (0-360): light time and aberration applied, nutation included, the convention desktop chart software and the NASA JPL Horizons observer tables print, so it compares directly with either. Primary coordinate for zodiac sign and aspect calculations.
 		Longitude float32 `json:"longitude"`
 
-		// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The nodes follow the request `nodeType`, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
+		// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The lunar nodes follow the request nodeType, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
 		Name CalculateTransitAspects200JSONResponseBodyNatalPlanetsName `json:"name"`
 
 		// NameLocalized Body name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
@@ -90802,13 +90802,13 @@ func (r CalculateTransitAspectsResponse) GetJSON200() *struct {
 		// IsRetrograde Whether the planet appears to move backward from Earth perspective. Retrograde periods signal review and introspection.
 		IsRetrograde bool `json:"isRetrograde"`
 
-		// Latitude Ecliptic latitude in degrees. Near zero for most planets, varies for the Moon and Pluto, and reaches up to about 5 degrees for Black Moon Lilith (projected from the inclined mean lunar orbit).
+		// Latitude Apparent geocentric ecliptic latitude of date, in degrees. Near zero for most planets, varies for the Moon and Pluto, and reaches up to about 5 degrees for Black Moon Lilith (projected from the inclined mean lunar orbit).
 		Latitude float32 `json:"latitude"`
 
-		// Longitude Tropical ecliptic longitude in degrees (0-360). Primary coordinate for zodiac sign and aspect calculations.
+		// Longitude Apparent geocentric tropical longitude on the true ecliptic of date, in degrees (0-360): light time and aberration applied, nutation included, the convention desktop chart software and the NASA JPL Horizons observer tables print, so it compares directly with either. Primary coordinate for zodiac sign and aspect calculations.
 		Longitude float32 `json:"longitude"`
 
-		// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The nodes follow the request `nodeType`, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
+		// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The lunar nodes follow the request nodeType, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
 		Name CalculateTransitAspects200JSONResponseBodyTransitPlanetsName `json:"name"`
 
 		// NameLocalized Body name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
@@ -107599,13 +107599,13 @@ type ForecastSolarReturnResponse struct {
 				// IsRetrograde Whether the planet appears to move backward from Earth perspective. Retrograde periods signal review and introspection.
 				IsRetrograde bool `json:"isRetrograde"`
 
-				// Latitude Ecliptic latitude in degrees. Near zero for most planets, varies for the Moon and Pluto, and reaches up to about 5 degrees for Black Moon Lilith (projected from the inclined mean lunar orbit).
+				// Latitude Apparent geocentric ecliptic latitude of date, in degrees. Near zero for most planets, varies for the Moon and Pluto, and reaches up to about 5 degrees for Black Moon Lilith (projected from the inclined mean lunar orbit).
 				Latitude float32 `json:"latitude"`
 
-				// Longitude Tropical ecliptic longitude in degrees (0-360). Primary coordinate for zodiac sign and aspect calculations.
+				// Longitude Apparent geocentric tropical longitude on the true ecliptic of date, in degrees (0-360): light time and aberration applied, nutation included, the convention desktop chart software and the NASA JPL Horizons observer tables print, so it compares directly with either. Primary coordinate for zodiac sign and aspect calculations.
 				Longitude float32 `json:"longitude"`
 
-				// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The nodes follow the request `nodeType`, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
+				// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The lunar nodes follow the request nodeType, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
 				Name ForecastSolarReturn200JSONResponseBodyChartPlanetsName `json:"name"`
 
 				// Sign Tropical zodiac sign this planet occupies. Determined by 30-degree divisions of ecliptic longitude.
@@ -107774,13 +107774,13 @@ func (r ForecastSolarReturnResponse) GetJSON200() *struct {
 			// IsRetrograde Whether the planet appears to move backward from Earth perspective. Retrograde periods signal review and introspection.
 			IsRetrograde bool `json:"isRetrograde"`
 
-			// Latitude Ecliptic latitude in degrees. Near zero for most planets, varies for the Moon and Pluto, and reaches up to about 5 degrees for Black Moon Lilith (projected from the inclined mean lunar orbit).
+			// Latitude Apparent geocentric ecliptic latitude of date, in degrees. Near zero for most planets, varies for the Moon and Pluto, and reaches up to about 5 degrees for Black Moon Lilith (projected from the inclined mean lunar orbit).
 			Latitude float32 `json:"latitude"`
 
-			// Longitude Tropical ecliptic longitude in degrees (0-360). Primary coordinate for zodiac sign and aspect calculations.
+			// Longitude Apparent geocentric tropical longitude on the true ecliptic of date, in degrees (0-360): light time and aberration applied, nutation included, the convention desktop chart software and the NASA JPL Horizons observer tables print, so it compares directly with either. Primary coordinate for zodiac sign and aspect calculations.
 			Longitude float32 `json:"longitude"`
 
-			// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The nodes follow the request `nodeType`, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
+			// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The lunar nodes follow the request nodeType, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
 			Name ForecastSolarReturn200JSONResponseBodyChartPlanetsName `json:"name"`
 
 			// Sign Tropical zodiac sign this planet occupies. Determined by 30-degree divisions of ecliptic longitude.
@@ -108518,7 +108518,7 @@ type GenerateBodygraphResponse struct {
 			// Gates The four cardinal gates of the cross: Personality Sun, Personality Earth, Design Sun, Design Earth.
 			Gates []float32 `json:"gates"`
 
-			// Name Canonical published name of the incarnation cross, determined by the Personality Sun gate and the angle. Falls back to a name composed from the angle and the four gates if no canonical name exists.
+			// Name Canonical published name of the incarnation cross, determined by the Personality Sun gate and the angle. All 192 crosses (64 Personality Sun gates times three angles) carry their published name, numbered variants included, so this is never a composed placeholder. Always begins with the angle followed by Cross of. Always English, whatever the lang parameter says.
 			Name string `json:"name"`
 		} `json:"incarnationCross"`
 
@@ -108738,7 +108738,7 @@ func (r GenerateBodygraphResponse) GetJSON200() *struct {
 		// Gates The four cardinal gates of the cross: Personality Sun, Personality Earth, Design Sun, Design Earth.
 		Gates []float32 `json:"gates"`
 
-		// Name Canonical published name of the incarnation cross, determined by the Personality Sun gate and the angle. Falls back to a name composed from the angle and the four gates if no canonical name exists.
+		// Name Canonical published name of the incarnation cross, determined by the Personality Sun gate and the angle. All 192 crosses (64 Personality Sun gates times three angles) carry their published name, numbered variants included, so this is never a composed placeholder. Always begins with the angle followed by Cross of. Always English, whatever the lang parameter says.
 		Name string `json:"name"`
 	} `json:"incarnationCross"`
 
@@ -125576,7 +125576,7 @@ type GetUsageStatsResponse struct {
 		// Status Subscription lifecycle state. Values: active, cancelled (no longer renewing but usable until endDate), suspended (payment failed, usable until endDate), expired (past endDate), pending (checkout started, payment not captured).
 		Status string `json:"status"`
 
-		// UsedThisMonth Billable requests counted against the current calendar month. The quota window is the UTC calendar month and resets on the 1st at 12:00 AM UTC, never on your renewal date, so an annual plan refills every month and a plan bought mid month still refills on the 1st. Read from the same counter the rate limiter enforces on, so it never reports a rosier number than the limit that will 429 you. Cached responses still count.
+		// UsedThisMonth Billable requests counted against the current calendar month. The quota window is the UTC calendar month and resets on the 1st at 12:00 AM UTC, never on your renewal date, so an annual plan refills every month and a plan bought mid month still refills on the 1st. Read from the durable request ledger, which can trail the live limiter by up to 5 minutes; for the exact live position read the X-RateLimit-Used header on any response, including this one. Cached responses still count.
 		UsedThisMonth float32 `json:"usedThisMonth"`
 	}
 	// JSON400 the response for an HTTP 400 `application/json` response
@@ -125615,7 +125615,7 @@ func (r GetUsageStatsResponse) GetJSON200() *struct {
 	// Status Subscription lifecycle state. Values: active, cancelled (no longer renewing but usable until endDate), suspended (payment failed, usable until endDate), expired (past endDate), pending (checkout started, payment not captured).
 	Status string `json:"status"`
 
-	// UsedThisMonth Billable requests counted against the current calendar month. The quota window is the UTC calendar month and resets on the 1st at 12:00 AM UTC, never on your renewal date, so an annual plan refills every month and a plan bought mid month still refills on the 1st. Read from the same counter the rate limiter enforces on, so it never reports a rosier number than the limit that will 429 you. Cached responses still count.
+	// UsedThisMonth Billable requests counted against the current calendar month. The quota window is the UTC calendar month and resets on the 1st at 12:00 AM UTC, never on your renewal date, so an annual plan refills every month and a plan bought mid month still refills on the 1st. Read from the durable request ledger, which can trail the live limiter by up to 5 minutes; for the exact live position read the X-RateLimit-Used header on any response, including this one. Cached responses still count.
 	UsedThisMonth float32 `json:"usedThisMonth"`
 } {
 	return r.JSON200
@@ -140941,7 +140941,7 @@ func (c *ClientWithResponses) LookupAuspiciousDaysWithResponse(ctx context.Conte
 // Returns a wrapper object for the known response body format(s).
 //
 // Corresponds with GET /chinese-astrology/calendar/day/{date} (the `GetAlmanacDay` operationId).
-func (c *ClientWithResponses) GetAlmanacDayWithResponse(ctx context.Context, date string, params *GetAlmanacDayParams, reqEditors ...RequestEditorFn) (*GetAlmanacDayResponse, error) {
+func (c *ClientWithResponses) GetAlmanacDayWithResponse(ctx context.Context, date openapi_types.Date, params *GetAlmanacDayParams, reqEditors ...RequestEditorFn) (*GetAlmanacDayResponse, error) {
 	rsp, err := c.GetAlmanacDay(ctx, date, params, reqEditors...)
 	if err != nil {
 		return nil, err
@@ -147030,13 +147030,13 @@ func ParseGenerateCompositeChartResponse(rsp *http.Response) (*GenerateComposite
 				// IsRetrograde Whether the planet appears to move backward from Earth perspective. Retrograde periods signal review and introspection.
 				IsRetrograde bool `json:"isRetrograde"`
 
-				// Latitude Ecliptic latitude in degrees. Near zero for most planets, varies for the Moon and Pluto, and reaches up to about 5 degrees for Black Moon Lilith (projected from the inclined mean lunar orbit).
+				// Latitude Apparent geocentric ecliptic latitude of date, in degrees. Near zero for most planets, varies for the Moon and Pluto, and reaches up to about 5 degrees for Black Moon Lilith (projected from the inclined mean lunar orbit).
 				Latitude float32 `json:"latitude"`
 
-				// Longitude Tropical ecliptic longitude in degrees (0-360). Primary coordinate for zodiac sign and aspect calculations.
+				// Longitude Apparent geocentric tropical longitude on the true ecliptic of date, in degrees (0-360): light time and aberration applied, nutation included, the convention desktop chart software and the NASA JPL Horizons observer tables print, so it compares directly with either. Primary coordinate for zodiac sign and aspect calculations.
 				Longitude float32 `json:"longitude"`
 
-				// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The nodes follow the request `nodeType`, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
+				// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The lunar nodes follow the request nodeType, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
 				Name GenerateCompositeChart200JSONResponseBodyCompositePlanetsName `json:"name"`
 
 				// Sign Tropical zodiac sign this planet occupies. Determined by 30-degree divisions of ecliptic longitude.
@@ -148363,13 +148363,13 @@ func ParseGenerateLunarReturnResponse(rsp *http.Response) (*GenerateLunarReturnR
 					// IsRetrograde Whether the planet appears to move backward from Earth perspective. Retrograde periods signal review and introspection.
 					IsRetrograde bool `json:"isRetrograde"`
 
-					// Latitude Ecliptic latitude in degrees. Near zero for most planets, varies for the Moon and Pluto, and reaches up to about 5 degrees for Black Moon Lilith (projected from the inclined mean lunar orbit).
+					// Latitude Apparent geocentric ecliptic latitude of date, in degrees. Near zero for most planets, varies for the Moon and Pluto, and reaches up to about 5 degrees for Black Moon Lilith (projected from the inclined mean lunar orbit).
 					Latitude float32 `json:"latitude"`
 
-					// Longitude Tropical ecliptic longitude in degrees (0-360). Primary coordinate for zodiac sign and aspect calculations.
+					// Longitude Apparent geocentric tropical longitude on the true ecliptic of date, in degrees (0-360): light time and aberration applied, nutation included, the convention desktop chart software and the NASA JPL Horizons observer tables print, so it compares directly with either. Primary coordinate for zodiac sign and aspect calculations.
 					Longitude float32 `json:"longitude"`
 
-					// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The nodes follow the request `nodeType`, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
+					// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The lunar nodes follow the request nodeType, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
 					Name GenerateLunarReturn200JSONResponseBodyChartPlanetsName `json:"name"`
 
 					// Sign Tropical zodiac sign this planet occupies. Determined by 30-degree divisions of ecliptic longitude.
@@ -149331,13 +149331,13 @@ func ParseGeneratePlanetaryReturnResponse(rsp *http.Response) (*GeneratePlanetar
 					// IsRetrograde Whether the planet appears to move backward from Earth perspective. Retrograde periods signal review and introspection.
 					IsRetrograde bool `json:"isRetrograde"`
 
-					// Latitude Ecliptic latitude in degrees. Near zero for most planets, varies for the Moon and Pluto, and reaches up to about 5 degrees for Black Moon Lilith (projected from the inclined mean lunar orbit).
+					// Latitude Apparent geocentric ecliptic latitude of date, in degrees. Near zero for most planets, varies for the Moon and Pluto, and reaches up to about 5 degrees for Black Moon Lilith (projected from the inclined mean lunar orbit).
 					Latitude float32 `json:"latitude"`
 
-					// Longitude Tropical ecliptic longitude in degrees (0-360). Primary coordinate for zodiac sign and aspect calculations.
+					// Longitude Apparent geocentric tropical longitude on the true ecliptic of date, in degrees (0-360): light time and aberration applied, nutation included, the convention desktop chart software and the NASA JPL Horizons observer tables print, so it compares directly with either. Primary coordinate for zodiac sign and aspect calculations.
 					Longitude float32 `json:"longitude"`
 
-					// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The nodes follow the request `nodeType`, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
+					// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The lunar nodes follow the request nodeType, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
 					Name GeneratePlanetaryReturn200JSONResponseBodyChartPlanetsName `json:"name"`
 
 					// Sign Tropical zodiac sign this planet occupies. Determined by 30-degree divisions of ecliptic longitude.
@@ -149505,13 +149505,13 @@ func ParseGetPlanetaryPositionsResponse(rsp *http.Response) (*GetPlanetaryPositi
 				// Keywords Key themes and traits associated with this planet.
 				Keywords *[]string `json:"keywords,omitempty"`
 
-				// Latitude Ecliptic latitude in degrees.
+				// Latitude Apparent geocentric ecliptic latitude of date, in degrees.
 				Latitude float32 `json:"latitude"`
 
-				// Longitude Tropical ecliptic longitude in degrees (0-360).
+				// Longitude Apparent geocentric tropical longitude on the true ecliptic of date, in degrees (0-360): light time and aberration applied, nutation included, the convention desktop chart software and the NASA JPL Horizons observer tables print, so it compares directly with either.
 				Longitude float32 `json:"longitude"`
 
-				// Name Planet name (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto, North Node, South Node, Chiron, Black Moon Lilith). The lunar nodes are the mean node; software using the true node may show node positions up to 1.75 degrees different.
+				// Name Planet name (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto, North Node, South Node, Chiron, Black Moon Lilith). The lunar nodes follow the request nodeType, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
 				Name string `json:"name"`
 
 				// Sign Tropical zodiac sign this planet occupies.
@@ -150358,13 +150358,13 @@ func ParseGenerateSolarReturnResponse(rsp *http.Response) (*GenerateSolarReturnR
 					// IsRetrograde Whether the planet appears to move backward from Earth perspective. Retrograde periods signal review and introspection.
 					IsRetrograde bool `json:"isRetrograde"`
 
-					// Latitude Ecliptic latitude in degrees. Near zero for most planets, varies for the Moon and Pluto, and reaches up to about 5 degrees for Black Moon Lilith (projected from the inclined mean lunar orbit).
+					// Latitude Apparent geocentric ecliptic latitude of date, in degrees. Near zero for most planets, varies for the Moon and Pluto, and reaches up to about 5 degrees for Black Moon Lilith (projected from the inclined mean lunar orbit).
 					Latitude float32 `json:"latitude"`
 
-					// Longitude Tropical ecliptic longitude in degrees (0-360). Primary coordinate for zodiac sign and aspect calculations.
+					// Longitude Apparent geocentric tropical longitude on the true ecliptic of date, in degrees (0-360): light time and aberration applied, nutation included, the convention desktop chart software and the NASA JPL Horizons observer tables print, so it compares directly with either. Primary coordinate for zodiac sign and aspect calculations.
 					Longitude float32 `json:"longitude"`
 
-					// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The nodes follow the request `nodeType`, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
+					// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The lunar nodes follow the request nodeType, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
 					Name GenerateSolarReturn200JSONResponseBodyChartPlanetsName `json:"name"`
 
 					// Sign Tropical zodiac sign this planet occupies. Determined by 30-degree divisions of ecliptic longitude.
@@ -150891,13 +150891,13 @@ func ParseCalculateTransitAspectsResponse(rsp *http.Response) (*CalculateTransit
 				// IsRetrograde Whether the planet appears to move backward from Earth perspective. Retrograde periods signal review and introspection.
 				IsRetrograde bool `json:"isRetrograde"`
 
-				// Latitude Ecliptic latitude in degrees. Near zero for most planets, varies for the Moon and Pluto, and reaches up to about 5 degrees for Black Moon Lilith (projected from the inclined mean lunar orbit).
+				// Latitude Apparent geocentric ecliptic latitude of date, in degrees. Near zero for most planets, varies for the Moon and Pluto, and reaches up to about 5 degrees for Black Moon Lilith (projected from the inclined mean lunar orbit).
 				Latitude float32 `json:"latitude"`
 
-				// Longitude Tropical ecliptic longitude in degrees (0-360). Primary coordinate for zodiac sign and aspect calculations.
+				// Longitude Apparent geocentric tropical longitude on the true ecliptic of date, in degrees (0-360): light time and aberration applied, nutation included, the convention desktop chart software and the NASA JPL Horizons observer tables print, so it compares directly with either. Primary coordinate for zodiac sign and aspect calculations.
 				Longitude float32 `json:"longitude"`
 
-				// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The nodes follow the request `nodeType`, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
+				// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The lunar nodes follow the request nodeType, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
 				Name CalculateTransitAspects200JSONResponseBodyNatalPlanetsName `json:"name"`
 
 				// NameLocalized Body name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
@@ -150999,13 +150999,13 @@ func ParseCalculateTransitAspectsResponse(rsp *http.Response) (*CalculateTransit
 				// IsRetrograde Whether the planet appears to move backward from Earth perspective. Retrograde periods signal review and introspection.
 				IsRetrograde bool `json:"isRetrograde"`
 
-				// Latitude Ecliptic latitude in degrees. Near zero for most planets, varies for the Moon and Pluto, and reaches up to about 5 degrees for Black Moon Lilith (projected from the inclined mean lunar orbit).
+				// Latitude Apparent geocentric ecliptic latitude of date, in degrees. Near zero for most planets, varies for the Moon and Pluto, and reaches up to about 5 degrees for Black Moon Lilith (projected from the inclined mean lunar orbit).
 				Latitude float32 `json:"latitude"`
 
-				// Longitude Tropical ecliptic longitude in degrees (0-360). Primary coordinate for zodiac sign and aspect calculations.
+				// Longitude Apparent geocentric tropical longitude on the true ecliptic of date, in degrees (0-360): light time and aberration applied, nutation included, the convention desktop chart software and the NASA JPL Horizons observer tables print, so it compares directly with either. Primary coordinate for zodiac sign and aspect calculations.
 				Longitude float32 `json:"longitude"`
 
-				// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The nodes follow the request `nodeType`, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
+				// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The lunar nodes follow the request nodeType, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
 				Name CalculateTransitAspects200JSONResponseBodyTransitPlanetsName `json:"name"`
 
 				// NameLocalized Body name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
@@ -161376,13 +161376,13 @@ func ParseForecastSolarReturnResponse(rsp *http.Response) (*ForecastSolarReturnR
 					// IsRetrograde Whether the planet appears to move backward from Earth perspective. Retrograde periods signal review and introspection.
 					IsRetrograde bool `json:"isRetrograde"`
 
-					// Latitude Ecliptic latitude in degrees. Near zero for most planets, varies for the Moon and Pluto, and reaches up to about 5 degrees for Black Moon Lilith (projected from the inclined mean lunar orbit).
+					// Latitude Apparent geocentric ecliptic latitude of date, in degrees. Near zero for most planets, varies for the Moon and Pluto, and reaches up to about 5 degrees for Black Moon Lilith (projected from the inclined mean lunar orbit).
 					Latitude float32 `json:"latitude"`
 
-					// Longitude Tropical ecliptic longitude in degrees (0-360). Primary coordinate for zodiac sign and aspect calculations.
+					// Longitude Apparent geocentric tropical longitude on the true ecliptic of date, in degrees (0-360): light time and aberration applied, nutation included, the convention desktop chart software and the NASA JPL Horizons observer tables print, so it compares directly with either. Primary coordinate for zodiac sign and aspect calculations.
 					Longitude float32 `json:"longitude"`
 
-					// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The nodes follow the request `nodeType`, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
+					// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The lunar nodes follow the request nodeType, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
 					Name ForecastSolarReturn200JSONResponseBodyChartPlanetsName `json:"name"`
 
 					// Sign Tropical zodiac sign this planet occupies. Determined by 30-degree divisions of ecliptic longitude.
@@ -161950,7 +161950,7 @@ func ParseGenerateBodygraphResponse(rsp *http.Response) (*GenerateBodygraphRespo
 				// Gates The four cardinal gates of the cross: Personality Sun, Personality Earth, Design Sun, Design Earth.
 				Gates []float32 `json:"gates"`
 
-				// Name Canonical published name of the incarnation cross, determined by the Personality Sun gate and the angle. Falls back to a name composed from the angle and the four gates if no canonical name exists.
+				// Name Canonical published name of the incarnation cross, determined by the Personality Sun gate and the angle. All 192 crosses (64 Personality Sun gates times three angles) carry their published name, numbered variants included, so this is never a composed placeholder. Always begins with the angle followed by Cross of. Always English, whatever the lang parameter says.
 				Name string `json:"name"`
 			} `json:"incarnationCross"`
 
@@ -173023,7 +173023,7 @@ func ParseGetUsageStatsResponse(rsp *http.Response) (*GetUsageStatsResponse, err
 			// Status Subscription lifecycle state. Values: active, cancelled (no longer renewing but usable until endDate), suspended (payment failed, usable until endDate), expired (past endDate), pending (checkout started, payment not captured).
 			Status string `json:"status"`
 
-			// UsedThisMonth Billable requests counted against the current calendar month. The quota window is the UTC calendar month and resets on the 1st at 12:00 AM UTC, never on your renewal date, so an annual plan refills every month and a plan bought mid month still refills on the 1st. Read from the same counter the rate limiter enforces on, so it never reports a rosier number than the limit that will 429 you. Cached responses still count.
+			// UsedThisMonth Billable requests counted against the current calendar month. The quota window is the UTC calendar month and resets on the 1st at 12:00 AM UTC, never on your renewal date, so an annual plan refills every month and a plan bought mid month still refills on the 1st. Read from the durable request ledger, which can trail the live limiter by up to 5 minutes; for the exact live position read the X-RateLimit-Used header on any response, including this one. Cached responses still count.
 			UsedThisMonth float32 `json:"usedThisMonth"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
