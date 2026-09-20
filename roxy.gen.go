@@ -419,6 +419,14 @@ func (s *VedicAstrologyService) CalculateCharaKarakas(ctx context.Context, param
 	return resp, asRoxyError(resp)
 }
 
+func (s *VedicAstrologyService) CalculateDashakoot(ctx context.Context, params *CalculateDashakootParams, body CalculateDashakootJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateDashakootResponse, error) {
+	resp, err := s.client.CalculateDashakootWithResponse(ctx, params, body, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
 func (s *VedicAstrologyService) CalculateDrishti(ctx context.Context, body CalculateDrishtiJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateDrishtiResponse, error) {
 	resp, err := s.client.CalculateDrishtiWithResponse(ctx, body, reqEditors...)
 	if err != nil {
@@ -429,6 +437,14 @@ func (s *VedicAstrologyService) CalculateDrishti(ctx context.Context, body Calcu
 
 func (s *VedicAstrologyService) CalculateGunMilan(ctx context.Context, params *CalculateGunMilanParams, body CalculateGunMilanJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateGunMilanResponse, error) {
 	resp, err := s.client.CalculateGunMilanWithResponse(ctx, params, body, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp)
+}
+
+func (s *VedicAstrologyService) CalculatePapasamyam(ctx context.Context, params *CalculatePapasamyamParams, body CalculatePapasamyamJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculatePapasamyamResponse, error) {
+	resp, err := s.client.CalculatePapasamyamWithResponse(ctx, params, body, reqEditors...)
 	if err != nil {
 		return resp, err
 	}

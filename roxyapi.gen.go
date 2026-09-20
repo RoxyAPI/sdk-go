@@ -2640,6 +2640,114 @@ func (e CompatibilityRequestAyanamsa) Valid() bool {
 	}
 }
 
+// Defines values for DashakootRequestAyanamsa.
+const (
+	DashakootRequestAyanamsaCustom    DashakootRequestAyanamsa = "custom"
+	DashakootRequestAyanamsaKpNewcomb DashakootRequestAyanamsa = "kp-newcomb"
+	DashakootRequestAyanamsaKpOld     DashakootRequestAyanamsa = "kp-old"
+	DashakootRequestAyanamsaLahiri    DashakootRequestAyanamsa = "lahiri"
+	DashakootRequestAyanamsaRaman     DashakootRequestAyanamsa = "raman"
+)
+
+// Valid indicates whether the value is a known member of the DashakootRequestAyanamsa enum.
+func (e DashakootRequestAyanamsa) Valid() bool {
+	switch e {
+	case DashakootRequestAyanamsaCustom:
+		return true
+	case DashakootRequestAyanamsaKpNewcomb:
+		return true
+	case DashakootRequestAyanamsaKpOld:
+		return true
+	case DashakootRequestAyanamsaLahiri:
+		return true
+	case DashakootRequestAyanamsaRaman:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashakootResponseBreakdownName.
+const (
+	DashakootResponseBreakdownNameDina         DashakootResponseBreakdownName = "Dina"
+	DashakootResponseBreakdownNameGana         DashakootResponseBreakdownName = "Gana"
+	DashakootResponseBreakdownNameMahendra     DashakootResponseBreakdownName = "Mahendra"
+	DashakootResponseBreakdownNameRajju        DashakootResponseBreakdownName = "Rajju"
+	DashakootResponseBreakdownNameRasi         DashakootResponseBreakdownName = "Rasi"
+	DashakootResponseBreakdownNameRasyadhipati DashakootResponseBreakdownName = "Rasyadhipati"
+	DashakootResponseBreakdownNameStreeDeergha DashakootResponseBreakdownName = "Stree Deergha"
+	DashakootResponseBreakdownNameVasya        DashakootResponseBreakdownName = "Vasya"
+	DashakootResponseBreakdownNameVedha        DashakootResponseBreakdownName = "Vedha"
+	DashakootResponseBreakdownNameYoni         DashakootResponseBreakdownName = "Yoni"
+)
+
+// Valid indicates whether the value is a known member of the DashakootResponseBreakdownName enum.
+func (e DashakootResponseBreakdownName) Valid() bool {
+	switch e {
+	case DashakootResponseBreakdownNameDina:
+		return true
+	case DashakootResponseBreakdownNameGana:
+		return true
+	case DashakootResponseBreakdownNameMahendra:
+		return true
+	case DashakootResponseBreakdownNameRajju:
+		return true
+	case DashakootResponseBreakdownNameRasi:
+		return true
+	case DashakootResponseBreakdownNameRasyadhipati:
+		return true
+	case DashakootResponseBreakdownNameStreeDeergha:
+		return true
+	case DashakootResponseBreakdownNameVasya:
+		return true
+	case DashakootResponseBreakdownNameVedha:
+		return true
+	case DashakootResponseBreakdownNameYoni:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashakootResponseBreakdownVerdict.
+const (
+	Matched   DashakootResponseBreakdownVerdict = "matched"
+	Unmatched DashakootResponseBreakdownVerdict = "unmatched"
+)
+
+// Valid indicates whether the value is a known member of the DashakootResponseBreakdownVerdict enum.
+func (e DashakootResponseBreakdownVerdict) Valid() bool {
+	switch e {
+	case Matched:
+		return true
+	case Unmatched:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for DashakootResponseVerdict.
+const (
+	Marginal    DashakootResponseVerdict = "marginal"
+	Recommended DashakootResponseVerdict = "recommended"
+	Rejected    DashakootResponseVerdict = "rejected"
+)
+
+// Valid indicates whether the value is a known member of the DashakootResponseVerdict enum.
+func (e DashakootResponseVerdict) Valid() bool {
+	switch e {
+	case Marginal:
+		return true
+	case Recommended:
+		return true
+	case Rejected:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for DivisionalChartRequestAyanamsa.
 const (
 	DivisionalChartRequestAyanamsaCustom    DivisionalChartRequestAyanamsa = "custom"
@@ -4104,6 +4212,141 @@ func (e NavamsaResponseChartMetaNakshatraLord) Valid() bool {
 	case NavamsaResponseChartMetaNakshatraLordSun:
 		return true
 	case NavamsaResponseChartMetaNakshatraLordVenus:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PapasamyamRequestAyanamsa.
+const (
+	PapasamyamRequestAyanamsaCustom    PapasamyamRequestAyanamsa = "custom"
+	PapasamyamRequestAyanamsaKpNewcomb PapasamyamRequestAyanamsa = "kp-newcomb"
+	PapasamyamRequestAyanamsaKpOld     PapasamyamRequestAyanamsa = "kp-old"
+	PapasamyamRequestAyanamsaLahiri    PapasamyamRequestAyanamsa = "lahiri"
+	PapasamyamRequestAyanamsaRaman     PapasamyamRequestAyanamsa = "raman"
+)
+
+// Valid indicates whether the value is a known member of the PapasamyamRequestAyanamsa enum.
+func (e PapasamyamRequestAyanamsa) Valid() bool {
+	switch e {
+	case PapasamyamRequestAyanamsaCustom:
+		return true
+	case PapasamyamRequestAyanamsaKpNewcomb:
+		return true
+	case PapasamyamRequestAyanamsaKpOld:
+		return true
+	case PapasamyamRequestAyanamsaLahiri:
+		return true
+	case PapasamyamRequestAyanamsaRaman:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PapasamyamResponsePerson1ByReferenceAfflictionsGraha.
+const (
+	PapasamyamResponsePerson1ByReferenceAfflictionsGrahaMars   PapasamyamResponsePerson1ByReferenceAfflictionsGraha = "Mars"
+	PapasamyamResponsePerson1ByReferenceAfflictionsGrahaRahu   PapasamyamResponsePerson1ByReferenceAfflictionsGraha = "Rahu"
+	PapasamyamResponsePerson1ByReferenceAfflictionsGrahaSaturn PapasamyamResponsePerson1ByReferenceAfflictionsGraha = "Saturn"
+	PapasamyamResponsePerson1ByReferenceAfflictionsGrahaSun    PapasamyamResponsePerson1ByReferenceAfflictionsGraha = "Sun"
+)
+
+// Valid indicates whether the value is a known member of the PapasamyamResponsePerson1ByReferenceAfflictionsGraha enum.
+func (e PapasamyamResponsePerson1ByReferenceAfflictionsGraha) Valid() bool {
+	switch e {
+	case PapasamyamResponsePerson1ByReferenceAfflictionsGrahaMars:
+		return true
+	case PapasamyamResponsePerson1ByReferenceAfflictionsGrahaRahu:
+		return true
+	case PapasamyamResponsePerson1ByReferenceAfflictionsGrahaSaturn:
+		return true
+	case PapasamyamResponsePerson1ByReferenceAfflictionsGrahaSun:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PapasamyamResponsePerson1ByReferenceReference.
+const (
+	PapasamyamResponsePerson1ByReferenceReferenceLagna PapasamyamResponsePerson1ByReferenceReference = "Lagna"
+	PapasamyamResponsePerson1ByReferenceReferenceMoon  PapasamyamResponsePerson1ByReferenceReference = "Moon"
+	PapasamyamResponsePerson1ByReferenceReferenceVenus PapasamyamResponsePerson1ByReferenceReference = "Venus"
+)
+
+// Valid indicates whether the value is a known member of the PapasamyamResponsePerson1ByReferenceReference enum.
+func (e PapasamyamResponsePerson1ByReferenceReference) Valid() bool {
+	switch e {
+	case PapasamyamResponsePerson1ByReferenceReferenceLagna:
+		return true
+	case PapasamyamResponsePerson1ByReferenceReferenceMoon:
+		return true
+	case PapasamyamResponsePerson1ByReferenceReferenceVenus:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PapasamyamResponsePerson2ByReferenceAfflictionsGraha.
+const (
+	PapasamyamResponsePerson2ByReferenceAfflictionsGrahaMars   PapasamyamResponsePerson2ByReferenceAfflictionsGraha = "Mars"
+	PapasamyamResponsePerson2ByReferenceAfflictionsGrahaRahu   PapasamyamResponsePerson2ByReferenceAfflictionsGraha = "Rahu"
+	PapasamyamResponsePerson2ByReferenceAfflictionsGrahaSaturn PapasamyamResponsePerson2ByReferenceAfflictionsGraha = "Saturn"
+	PapasamyamResponsePerson2ByReferenceAfflictionsGrahaSun    PapasamyamResponsePerson2ByReferenceAfflictionsGraha = "Sun"
+)
+
+// Valid indicates whether the value is a known member of the PapasamyamResponsePerson2ByReferenceAfflictionsGraha enum.
+func (e PapasamyamResponsePerson2ByReferenceAfflictionsGraha) Valid() bool {
+	switch e {
+	case PapasamyamResponsePerson2ByReferenceAfflictionsGrahaMars:
+		return true
+	case PapasamyamResponsePerson2ByReferenceAfflictionsGrahaRahu:
+		return true
+	case PapasamyamResponsePerson2ByReferenceAfflictionsGrahaSaturn:
+		return true
+	case PapasamyamResponsePerson2ByReferenceAfflictionsGrahaSun:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PapasamyamResponsePerson2ByReferenceReference.
+const (
+	PapasamyamResponsePerson2ByReferenceReferenceLagna PapasamyamResponsePerson2ByReferenceReference = "Lagna"
+	PapasamyamResponsePerson2ByReferenceReferenceMoon  PapasamyamResponsePerson2ByReferenceReference = "Moon"
+	PapasamyamResponsePerson2ByReferenceReferenceVenus PapasamyamResponsePerson2ByReferenceReference = "Venus"
+)
+
+// Valid indicates whether the value is a known member of the PapasamyamResponsePerson2ByReferenceReference enum.
+func (e PapasamyamResponsePerson2ByReferenceReference) Valid() bool {
+	switch e {
+	case PapasamyamResponsePerson2ByReferenceReferenceLagna:
+		return true
+	case PapasamyamResponsePerson2ByReferenceReferenceMoon:
+		return true
+	case PapasamyamResponsePerson2ByReferenceReferenceVenus:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for PapasamyamResponseVerdict.
+const (
+	Balanced   PapasamyamResponseVerdict = "balanced"
+	Unbalanced PapasamyamResponseVerdict = "unbalanced"
+)
+
+// Valid indicates whether the value is a known member of the PapasamyamResponseVerdict enum.
+func (e PapasamyamResponseVerdict) Valid() bool {
+	switch e {
+	case Balanced:
+		return true
+	case Unbalanced:
 		return true
 	default:
 		return false
@@ -21318,6 +21561,90 @@ func (e CalculateGunMilanParamsLang) Valid() bool {
 	}
 }
 
+// Defines values for CalculateDashakootParamsLang.
+const (
+	CalculateDashakootParamsLangDe     CalculateDashakootParamsLang = "de"
+	CalculateDashakootParamsLangEn     CalculateDashakootParamsLang = "en"
+	CalculateDashakootParamsLangEs     CalculateDashakootParamsLang = "es"
+	CalculateDashakootParamsLangFr     CalculateDashakootParamsLang = "fr"
+	CalculateDashakootParamsLangHi     CalculateDashakootParamsLang = "hi"
+	CalculateDashakootParamsLangPt     CalculateDashakootParamsLang = "pt"
+	CalculateDashakootParamsLangRu     CalculateDashakootParamsLang = "ru"
+	CalculateDashakootParamsLangTr     CalculateDashakootParamsLang = "tr"
+	CalculateDashakootParamsLangZhHans CalculateDashakootParamsLang = "zh-Hans"
+	CalculateDashakootParamsLangZhHant CalculateDashakootParamsLang = "zh-Hant"
+)
+
+// Valid indicates whether the value is a known member of the CalculateDashakootParamsLang enum.
+func (e CalculateDashakootParamsLang) Valid() bool {
+	switch e {
+	case CalculateDashakootParamsLangDe:
+		return true
+	case CalculateDashakootParamsLangEn:
+		return true
+	case CalculateDashakootParamsLangEs:
+		return true
+	case CalculateDashakootParamsLangFr:
+		return true
+	case CalculateDashakootParamsLangHi:
+		return true
+	case CalculateDashakootParamsLangPt:
+		return true
+	case CalculateDashakootParamsLangRu:
+		return true
+	case CalculateDashakootParamsLangTr:
+		return true
+	case CalculateDashakootParamsLangZhHans:
+		return true
+	case CalculateDashakootParamsLangZhHant:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for CalculatePapasamyamParamsLang.
+const (
+	CalculatePapasamyamParamsLangDe     CalculatePapasamyamParamsLang = "de"
+	CalculatePapasamyamParamsLangEn     CalculatePapasamyamParamsLang = "en"
+	CalculatePapasamyamParamsLangEs     CalculatePapasamyamParamsLang = "es"
+	CalculatePapasamyamParamsLangFr     CalculatePapasamyamParamsLang = "fr"
+	CalculatePapasamyamParamsLangHi     CalculatePapasamyamParamsLang = "hi"
+	CalculatePapasamyamParamsLangPt     CalculatePapasamyamParamsLang = "pt"
+	CalculatePapasamyamParamsLangRu     CalculatePapasamyamParamsLang = "ru"
+	CalculatePapasamyamParamsLangTr     CalculatePapasamyamParamsLang = "tr"
+	CalculatePapasamyamParamsLangZhHans CalculatePapasamyamParamsLang = "zh-Hans"
+	CalculatePapasamyamParamsLangZhHant CalculatePapasamyamParamsLang = "zh-Hant"
+)
+
+// Valid indicates whether the value is a known member of the CalculatePapasamyamParamsLang enum.
+func (e CalculatePapasamyamParamsLang) Valid() bool {
+	switch e {
+	case CalculatePapasamyamParamsLangDe:
+		return true
+	case CalculatePapasamyamParamsLangEn:
+		return true
+	case CalculatePapasamyamParamsLangEs:
+		return true
+	case CalculatePapasamyamParamsLangFr:
+		return true
+	case CalculatePapasamyamParamsLangHi:
+		return true
+	case CalculatePapasamyamParamsLangPt:
+		return true
+	case CalculatePapasamyamParamsLangRu:
+		return true
+	case CalculatePapasamyamParamsLangTr:
+		return true
+	case CalculatePapasamyamParamsLangZhHans:
+		return true
+	case CalculatePapasamyamParamsLangZhHant:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for GetVedicDailyReadingParamsLang.
 const (
 	GetVedicDailyReadingParamsLangDe     GetVedicDailyReadingParamsLang = "de"
@@ -31107,6 +31434,151 @@ type CompatibilityResponse struct {
 	Total float32 `json:"total"`
 }
 
+// DashakootRequest defines model for DashakootRequest.
+type DashakootRequest struct {
+	// Ayanamsa Sidereal frame (ayanamsa) the chart is cast in. "lahiri" is Lahiri/Chitrapaksha, the traditional Vedic standard used by most software, and is the default. "raman" is the B.V. Raman ayanamsa from Hindu Predictive Astrology, about 1.45 degrees below Lahiri. "kp-newcomb" and "kp-old" are the two Krishnamurti Paddhati frames. "custom" takes your own value in degrees via ayanamsaValue, for reconciling exactly against a specific reference program. The frame rotates the whole zodiac, so a graha sitting within 1.45 degrees of a boundary can change rashi or nakshatra when you switch: pick the one your reference software uses and keep it.
+	Ayanamsa *DashakootRequestAyanamsa `json:"ayanamsa,omitempty"`
+
+	// AyanamsaValue Custom ayanamsa value in degrees. When provided, overrides the computed ayanamsa from the selected type. Use for testing with specific ayanamsa values or matching a particular reference source.
+	AyanamsaValue *float32 `json:"ayanamsaValue,omitempty"`
+
+	// Person1 Birth data of the GROOM. Direction is load bearing in this system: Dina, Mahendra, Stree Deergha, Rasi and Vasya all count from the bride toward the groom, so sending the two people the wrong way round returns a different and wrong sheet without any error.
+	Person1 struct {
+		// Date Birth date in YYYY-MM-DD format. Date determines planetary positions and nakshatra calculations for Vedic kundli (janam patri). Accurate birth date is essential for dashas, yoga calculations, and divisional charts (vargas).
+		Date openapi_types.Date `json:"date"`
+
+		// Latitude Birth location latitude in decimal degrees. Location determines local sidereal time for Lagna calculation and affects bhava (house) cusps. Example: Delhi 28.6139, Mumbai 19.0760, Kathmandu 27.7172.
+		Latitude float32 `json:"latitude"`
+
+		// Longitude Birth location longitude in decimal degrees. Affects local time calculations and ayanamsha adjustments. Example: Delhi 77.2090, Mumbai 72.8777, Kathmandu 85.3240.
+		Longitude float32 `json:"longitude"`
+
+		// Time Birth time in 24-hour HH:MM:SS format. Time is CRITICAL for Lagna (Ascendant) calculation and house divisions. It changes every two hours roughly. Even minutes matter for accurate nakshatra pada and divisional chart (D9, D10) calculations. Without exact time, Lagna and house-based predictions will be incorrect.
+		Time string `json:"time"`
+
+		// Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the offset in force at the given date and time, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5.
+		Timezone *DashakootRequest_Person1_Timezone `json:"timezone,omitempty"`
+	} `json:"person1"`
+
+	// Person2 Birth data of the BRIDE. Five of the ten poruthams count FROM this birth star, so this field is not interchangeable with person1. Date, time and location determine the Moon nakshatra and Moon rashi every porutham reads.
+	Person2 struct {
+		// Date Birth date in YYYY-MM-DD format. Date determines planetary positions and nakshatra calculations for Vedic kundli (janam patri). Accurate birth date is essential for dashas, yoga calculations, and divisional charts (vargas).
+		Date openapi_types.Date `json:"date"`
+
+		// Latitude Birth location latitude in decimal degrees. Location determines local sidereal time for Lagna calculation and affects bhava (house) cusps. Example: Delhi 28.6139, Mumbai 19.0760, Kathmandu 27.7172.
+		Latitude float32 `json:"latitude"`
+
+		// Longitude Birth location longitude in decimal degrees. Affects local time calculations and ayanamsha adjustments. Example: Delhi 77.2090, Mumbai 72.8777, Kathmandu 85.3240.
+		Longitude float32 `json:"longitude"`
+
+		// Time Birth time in 24-hour HH:MM:SS format. Time is CRITICAL for Lagna (Ascendant) calculation and house divisions. It changes every two hours roughly. Even minutes matter for accurate nakshatra pada and divisional chart (D9, D10) calculations. Without exact time, Lagna and house-based predictions will be incorrect.
+		Time string `json:"time"`
+
+		// Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the offset in force at the given date and time, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5.
+		Timezone *DashakootRequest_Person2_Timezone `json:"timezone,omitempty"`
+	} `json:"person2"`
+}
+
+// DashakootRequestAyanamsa Sidereal frame (ayanamsa) the chart is cast in. "lahiri" is Lahiri/Chitrapaksha, the traditional Vedic standard used by most software, and is the default. "raman" is the B.V. Raman ayanamsa from Hindu Predictive Astrology, about 1.45 degrees below Lahiri. "kp-newcomb" and "kp-old" are the two Krishnamurti Paddhati frames. "custom" takes your own value in degrees via ayanamsaValue, for reconciling exactly against a specific reference program. The frame rotates the whole zodiac, so a graha sitting within 1.45 degrees of a boundary can change rashi or nakshatra when you switch: pick the one your reference software uses and keep it.
+type DashakootRequestAyanamsa string
+
+// DashakootRequestPerson1Timezone0 defines model for DashakootRequest.Person1.Timezone.0.
+type DashakootRequestPerson1Timezone0 = float32
+
+// DashakootRequestPerson1Timezone1 defines model for DashakootRequest.Person1.Timezone.1.
+type DashakootRequestPerson1Timezone1 = string
+
+// DashakootRequest_Person1_Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the offset in force at the given date and time, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5.
+type DashakootRequest_Person1_Timezone struct {
+	union json.RawMessage
+}
+
+// DashakootRequestPerson2Timezone0 defines model for DashakootRequest.Person2.Timezone.0.
+type DashakootRequestPerson2Timezone0 = float32
+
+// DashakootRequestPerson2Timezone1 defines model for DashakootRequest.Person2.Timezone.1.
+type DashakootRequestPerson2Timezone1 = string
+
+// DashakootRequest_Person2_Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the offset in force at the given date and time, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5.
+type DashakootRequest_Person2_Timezone struct {
+	union json.RawMessage
+}
+
+// DashakootResponse defines model for DashakootResponse.
+type DashakootResponse struct {
+	// Breakdown The ten poruthams in the order a Tamil panchangam prints them: Dina, Gana, Mahendra, Stree Deergha, Yoni, Rasi, Rasyadhipati, Vasya, Rajju, Vedha. Dina, Mahendra, Stree Deergha, Rasi and Vasya are directional and read from the bride toward the groom.
+	Breakdown []struct {
+		// MaxPoints Always one, since each porutham is a single pass or fail.
+		MaxPoints float32 `json:"maxPoints"`
+
+		// Name Which of the ten poruthams this row decides. Canonical English, never translated, so it is safe to switch on. Rasyadhipati is the South Indian name for the agreement the North calls Graha Maitri.
+		Name DashakootResponseBreakdownName `json:"name"`
+
+		// Note One sentence explaining what decided this porutham, localized by the lang query parameter. Only counts are written into it; every classification stays on person1 and person2 so a translated sentence never carries an English term.
+		Note string `json:"note"`
+
+		// Person1 How the GROOM classifies for this porutham: a Rajju limb, a Gana class, a Yoni animal, a Moon rashi, a Moon rashi lord, or the Moon nakshatra where the rule counts stars. Canonical English, so the note never has to name it.
+		Person1 string `json:"person1"`
+
+		// Person2 How the BRIDE classifies for this porutham, same vocabulary.
+		Person2 string `json:"person2"`
+
+		// Points One when this porutham matched and zero when it did not. Every porutham carries equal weight in this system, unlike the Ashtakoot kootas.
+		Points float32 `json:"points"`
+
+		// Verdict The outcome as a word rather than a number, for a caller keying a badge or a filter off it. Canonical English, never translated.
+		Verdict DashakootResponseBreakdownVerdict `json:"verdict"`
+	} `json:"breakdown"`
+
+	// Frame The sidereal frame this response was computed in, so a cached or forwarded payload is self describing.
+	Frame struct {
+		// Ayanamsa Sidereal frame this chart was cast in, echoing the ayanamsa request field. "lahiri" when the field was omitted.
+		Ayanamsa string `json:"ayanamsa"`
+
+		// AyanamsaDegrees Degrees actually subtracted from every tropical longitude to produce this chart, read at the birth instant. Subtract it back to recover the tropical positions, or compare it against your reference software to confirm you are in the same frame before chasing a placement difference.
+		AyanamsaDegrees float32 `json:"ayanamsaDegrees"`
+	} `json:"frame"`
+
+	// MaxTotal Poruthams on the sheet, always 10. The South Indian system counts ten equal agreements where the Ashtakoot system weights eight kootas across 36 points.
+	MaxTotal float32 `json:"maxTotal"`
+
+	// Rajju Rajju veto. The 27 nakshatras divide into five limbs of a body, Paada the foot, Kati the waist, Udara the stomach, Kantha the neck and Siro the head, and a couple whose birth stars share a limb is refused. Published at the top level as well as on its breakdown row because it overrides the total, and a caller must not have to scan the sheet to find it.
+	Rajju struct {
+		// Active True when both Moon nakshatras fall on the same Rajju limb, which is the first of the two hard vetoes. A true here sets verdict to rejected regardless of total.
+		Active bool `json:"active"`
+
+		// Reason Why the veto is or is not active, localized by the lang query parameter. The same sentence appears on the Rajju row of breakdown, which also carries the limb each person falls on.
+		Reason string `json:"reason"`
+	} `json:"rajju"`
+
+	// Recommendation One sentence stating the verdict and why, localized by the lang query parameter. Renders directly; the machine value to branch on is verdict.
+	Recommendation string `json:"recommendation"`
+
+	// Total Poruthams matched, 0 to 10. Each porutham is a pass or a fail in the South Indian system rather than a weighted score, so this is a plain count and never a fraction. A total says nothing on its own while a veto is active, which is why verdict exists.
+	Total float32 `json:"total"`
+
+	// Vedha Vedha veto. Thirteen nakshatra pairs are held to obstruct each other and a couple falling on one is refused. Chitra belongs to no pair and can never trigger this veto.
+	Vedha struct {
+		// Active True when the two Moon nakshatras are a mutually obstructing vedha pair, which is the second hard veto. A true here sets verdict to rejected regardless of total.
+		Active bool `json:"active"`
+
+		// Reason Why the veto is or is not active, localized by the lang query parameter. The same sentence appears on the Vedha row of breakdown.
+		Reason string `json:"reason"`
+	} `json:"vedha"`
+
+	// Verdict Overall reading. "rejected" means Rajju or Vedha fired, which the tradition treats as disqualifying however many poruthams matched, so it can appear on a high total. "recommended" means no veto and the total reached the working threshold. "marginal" means no veto and the total fell short of it. The threshold is a RoxyAPI convention because the tradition names a minimum SET of poruthams rather than a number, and that set varies by desk.
+	Verdict DashakootResponseVerdict `json:"verdict"`
+}
+
+// DashakootResponseBreakdownName Which of the ten poruthams this row decides. Canonical English, never translated, so it is safe to switch on. Rasyadhipati is the South Indian name for the agreement the North calls Graha Maitri.
+type DashakootResponseBreakdownName string
+
+// DashakootResponseBreakdownVerdict The outcome as a word rather than a number, for a caller keying a badge or a filter off it. Canonical English, never translated.
+type DashakootResponseBreakdownVerdict string
+
+// DashakootResponseVerdict Overall reading. "rejected" means Rajju or Vedha fired, which the tradition treats as disqualifying however many poruthams matched, so it can appear on a high total. "recommended" means no veto and the total reached the working threshold. "marginal" means no veto and the total fell short of it. The threshold is a RoxyAPI convention because the tradition names a minimum SET of poruthams rather than a number, and that set varies by desk.
+type DashakootResponseVerdict string
+
 // DivisionalChartRequest defines model for DivisionalChartRequest.
 type DivisionalChartRequest struct {
 	// Ayanamsa Sidereal frame (ayanamsa) the chart is cast in. "lahiri" is Lahiri/Chitrapaksha, the traditional Vedic standard used by most software, and is the default. "raman" is the B.V. Raman ayanamsa from Hindu Predictive Astrology, about 1.45 degrees below Lahiri. "kp-newcomb" and "kp-old" are the two Krishnamurti Paddhati frames. "custom" takes your own value in degrees via ayanamsaValue, for reconciling exactly against a specific reference program. The frame rotates the whole zodiac, so a graha sitting within 1.45 degrees of a boundary can change rashi or nakshatra when you switch: pick the one your reference software uses and keep it.
@@ -34158,6 +34630,157 @@ type NavamsaResponse_Chart struct {
 	} `json:"meta"`
 	AdditionalProperties map[string]interface{} `json:"-"`
 }
+
+// PapasamyamRequest defines model for PapasamyamRequest.
+type PapasamyamRequest struct {
+	// Ayanamsa Sidereal frame (ayanamsa) the chart is cast in. "lahiri" is Lahiri/Chitrapaksha, the traditional Vedic standard used by most software, and is the default. "raman" is the B.V. Raman ayanamsa from Hindu Predictive Astrology, about 1.45 degrees below Lahiri. "kp-newcomb" and "kp-old" are the two Krishnamurti Paddhati frames. "custom" takes your own value in degrees via ayanamsaValue, for reconciling exactly against a specific reference program. The frame rotates the whole zodiac, so a graha sitting within 1.45 degrees of a boundary can change rashi or nakshatra when you switch: pick the one your reference software uses and keep it.
+	Ayanamsa *PapasamyamRequestAyanamsa `json:"ayanamsa,omitempty"`
+
+	// AyanamsaValue Custom ayanamsa value in degrees. When provided, overrides the computed ayanamsa from the selected type. Use for testing with specific ayanamsa values or matching a particular reference source.
+	AyanamsaValue *float32 `json:"ayanamsaValue,omitempty"`
+
+	// Person1 Birth data of the GROOM. The comparison is directional, so this field is not interchangeable with person2: the match reads as balanced only when the bride carries no more affliction than the groom, and swapping the two people can flip the verdict.
+	Person1 struct {
+		// Date Birth date in YYYY-MM-DD format. Date determines planetary positions and nakshatra calculations for Vedic kundli (janam patri). Accurate birth date is essential for dashas, yoga calculations, and divisional charts (vargas).
+		Date openapi_types.Date `json:"date"`
+
+		// Latitude Birth location latitude in decimal degrees. Location determines local sidereal time for Lagna calculation and affects bhava (house) cusps. Example: Delhi 28.6139, Mumbai 19.0760, Kathmandu 27.7172.
+		Latitude float32 `json:"latitude"`
+
+		// Longitude Birth location longitude in decimal degrees. Affects local time calculations and ayanamsha adjustments. Example: Delhi 77.2090, Mumbai 72.8777, Kathmandu 85.3240.
+		Longitude float32 `json:"longitude"`
+
+		// Time Birth time in 24-hour HH:MM:SS format. Time is CRITICAL for Lagna (Ascendant) calculation and house divisions. It changes every two hours roughly. Even minutes matter for accurate nakshatra pada and divisional chart (D9, D10) calculations. Without exact time, Lagna and house-based predictions will be incorrect.
+		Time string `json:"time"`
+
+		// Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the offset in force at the given date and time, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5.
+		Timezone *PapasamyamRequest_Person1_Timezone `json:"timezone,omitempty"`
+	} `json:"person1"`
+
+	// Person2 Birth data of the BRIDE. Date, time and location determine the Lagna, the Moon and Venus, which are the three points every papa point is counted from.
+	Person2 struct {
+		// Date Birth date in YYYY-MM-DD format. Date determines planetary positions and nakshatra calculations for Vedic kundli (janam patri). Accurate birth date is essential for dashas, yoga calculations, and divisional charts (vargas).
+		Date openapi_types.Date `json:"date"`
+
+		// Latitude Birth location latitude in decimal degrees. Location determines local sidereal time for Lagna calculation and affects bhava (house) cusps. Example: Delhi 28.6139, Mumbai 19.0760, Kathmandu 27.7172.
+		Latitude float32 `json:"latitude"`
+
+		// Longitude Birth location longitude in decimal degrees. Affects local time calculations and ayanamsha adjustments. Example: Delhi 77.2090, Mumbai 72.8777, Kathmandu 85.3240.
+		Longitude float32 `json:"longitude"`
+
+		// Time Birth time in 24-hour HH:MM:SS format. Time is CRITICAL for Lagna (Ascendant) calculation and house divisions. It changes every two hours roughly. Even minutes matter for accurate nakshatra pada and divisional chart (D9, D10) calculations. Without exact time, Lagna and house-based predictions will be incorrect.
+		Time string `json:"time"`
+
+		// Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the offset in force at the given date and time, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5.
+		Timezone *PapasamyamRequest_Person2_Timezone `json:"timezone,omitempty"`
+	} `json:"person2"`
+}
+
+// PapasamyamRequestAyanamsa Sidereal frame (ayanamsa) the chart is cast in. "lahiri" is Lahiri/Chitrapaksha, the traditional Vedic standard used by most software, and is the default. "raman" is the B.V. Raman ayanamsa from Hindu Predictive Astrology, about 1.45 degrees below Lahiri. "kp-newcomb" and "kp-old" are the two Krishnamurti Paddhati frames. "custom" takes your own value in degrees via ayanamsaValue, for reconciling exactly against a specific reference program. The frame rotates the whole zodiac, so a graha sitting within 1.45 degrees of a boundary can change rashi or nakshatra when you switch: pick the one your reference software uses and keep it.
+type PapasamyamRequestAyanamsa string
+
+// PapasamyamRequestPerson1Timezone0 defines model for PapasamyamRequest.Person1.Timezone.0.
+type PapasamyamRequestPerson1Timezone0 = float32
+
+// PapasamyamRequestPerson1Timezone1 defines model for PapasamyamRequest.Person1.Timezone.1.
+type PapasamyamRequestPerson1Timezone1 = string
+
+// PapasamyamRequest_Person1_Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the offset in force at the given date and time, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5.
+type PapasamyamRequest_Person1_Timezone struct {
+	union json.RawMessage
+}
+
+// PapasamyamRequestPerson2Timezone0 defines model for PapasamyamRequest.Person2.Timezone.0.
+type PapasamyamRequestPerson2Timezone0 = float32
+
+// PapasamyamRequestPerson2Timezone1 defines model for PapasamyamRequest.Person2.Timezone.1.
+type PapasamyamRequestPerson2Timezone1 = string
+
+// PapasamyamRequest_Person2_Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC (e.g. -5 for EST, 1 for CET). IANA strings are resolved to the offset in force at the given date and time, so you can pass `cities[0].timezone` from /location/search directly. Defaults to 5.5.
+type PapasamyamRequest_Person2_Timezone struct {
+	union json.RawMessage
+}
+
+// PapasamyamResponse defines model for PapasamyamResponse.
+type PapasamyamResponse struct {
+	// Frame The sidereal frame this response was computed in, so a cached or forwarded payload is self describing.
+	Frame struct {
+		// Ayanamsa Sidereal frame this chart was cast in, echoing the ayanamsa request field. "lahiri" when the field was omitted.
+		Ayanamsa string `json:"ayanamsa"`
+
+		// AyanamsaDegrees Degrees actually subtracted from every tropical longitude to produce this chart, read at the birth instant. Subtract it back to recover the tropical positions, or compare it against your reference software to confirm you are in the same frame before chasing a placement difference.
+		AyanamsaDegrees float32 `json:"ayanamsaDegrees"`
+	} `json:"frame"`
+
+	// Person1 Papa count of the groom chart, with the working shown per reference.
+	Person1 struct {
+		// ByReference The count broken out by the three reference points, in the order Lagna, Moon, Venus. A Kuja Dosha check reads only the first of these and only Mars, which is why a Manglik verdict and a Papasamyam count answer different questions.
+		ByReference []struct {
+			// Afflictions Every malefic this reference point sees in an afflicting bhava, one entry per point contributed. An empty array means this reference point contributes nothing, which is a clean reading rather than missing data. The length of the array is the points from this reference, so it is not published a second time as a number.
+			Afflictions []struct {
+				// Graha The malefic contributing this point. Canonical English, never translated, so it is safe to switch on or use as a glyph key.
+				Graha PapasamyamResponsePerson1ByReferenceAfflictionsGraha `json:"graha"`
+
+				// House Whole-sign bhava 1 to 12 counted from the reference on this row, which is NOT the bhava from the Lagna unless the reference is the Lagna. Only the six afflicting bhavas 1, 2, 4, 7, 8 and 12 appear here, because a malefic anywhere else contributes nothing.
+				House float32 `json:"house"`
+			} `json:"afflictions"`
+
+			// Reference Which point the houses on this row were counted from. Lagna is the Ascendant, Moon is the Chandra lagna and Venus is the karaka of marriage. Canonical English, never translated.
+			Reference PapasamyamResponsePerson1ByReferenceReference `json:"reference"`
+
+			// Weight What one affliction seen from this reference is worth: 1 from the Lagna, 0.5 from the Moon, 0.25 from Venus. Published rather than assumed because a school that weights the three equally exists, and a caller reconciling against one can see exactly which number to change. The points from this row are the length of afflictions multiplied by this weight.
+			Weight float32 `json:"weight"`
+		} `json:"byReference"`
+
+		// Total Papa points this chart carries, summed across the three reference points with each hit multiplied by that reference weight. The range is 0 to 7, and quarter points are normal because a hit read from Venus is worth 0.25. The number is never a verdict on one person: only the comparison between the two totals means anything.
+		Total float32 `json:"total"`
+	} `json:"person1"`
+
+	// Person2 Papa count of the bride chart, with the working shown per reference.
+	Person2 struct {
+		// ByReference The count broken out by the three reference points, in the order Lagna, Moon, Venus. A Kuja Dosha check reads only the first of these and only Mars, which is why a Manglik verdict and a Papasamyam count answer different questions.
+		ByReference []struct {
+			// Afflictions Every malefic this reference point sees in an afflicting bhava, one entry per point contributed. An empty array means this reference point contributes nothing, which is a clean reading rather than missing data. The length of the array is the points from this reference, so it is not published a second time as a number.
+			Afflictions []struct {
+				// Graha The malefic contributing this point. Canonical English, never translated, so it is safe to switch on or use as a glyph key.
+				Graha PapasamyamResponsePerson2ByReferenceAfflictionsGraha `json:"graha"`
+
+				// House Whole-sign bhava 1 to 12 counted from the reference on this row, which is NOT the bhava from the Lagna unless the reference is the Lagna. Only the six afflicting bhavas 1, 2, 4, 7, 8 and 12 appear here, because a malefic anywhere else contributes nothing.
+				House float32 `json:"house"`
+			} `json:"afflictions"`
+
+			// Reference Which point the houses on this row were counted from. Lagna is the Ascendant, Moon is the Chandra lagna and Venus is the karaka of marriage. Canonical English, never translated.
+			Reference PapasamyamResponsePerson2ByReferenceReference `json:"reference"`
+
+			// Weight What one affliction seen from this reference is worth: 1 from the Lagna, 0.5 from the Moon, 0.25 from Venus. Published rather than assumed because a school that weights the three equally exists, and a caller reconciling against one can see exactly which number to change. The points from this row are the length of afflictions multiplied by this weight.
+			Weight float32 `json:"weight"`
+		} `json:"byReference"`
+
+		// Total Papa points this chart carries, summed across the three reference points with each hit multiplied by that reference weight. The range is 0 to 7, and quarter points are normal because a hit read from Venus is worth 0.25. The number is never a verdict on one person: only the comparison between the two totals means anything.
+		Total float32 `json:"total"`
+	} `json:"person2"`
+
+	// Recommendation One sentence stating the comparison and what it means, localized by the lang query parameter. Renders directly; the machine value to branch on is verdict.
+	Recommendation string `json:"recommendation"`
+
+	// Verdict Whether the two charts carry comparable affliction. "balanced" when the bride total is equal to or below the groom total, "unbalanced" when the bride carries more. Canonical English, never translated, so it is safe to branch on. Both totals are published, so a desk that also caps how far the groom may exceed the bride, or that allows the bride a small tolerance, can apply its own band without a second request.
+	Verdict PapasamyamResponseVerdict `json:"verdict"`
+}
+
+// PapasamyamResponsePerson1ByReferenceAfflictionsGraha The malefic contributing this point. Canonical English, never translated, so it is safe to switch on or use as a glyph key.
+type PapasamyamResponsePerson1ByReferenceAfflictionsGraha string
+
+// PapasamyamResponsePerson1ByReferenceReference Which point the houses on this row were counted from. Lagna is the Ascendant, Moon is the Chandra lagna and Venus is the karaka of marriage. Canonical English, never translated.
+type PapasamyamResponsePerson1ByReferenceReference string
+
+// PapasamyamResponsePerson2ByReferenceAfflictionsGraha The malefic contributing this point. Canonical English, never translated, so it is safe to switch on or use as a glyph key.
+type PapasamyamResponsePerson2ByReferenceAfflictionsGraha string
+
+// PapasamyamResponsePerson2ByReferenceReference Which point the houses on this row were counted from. Lagna is the Ascendant, Moon is the Chandra lagna and Venus is the karaka of marriage. Canonical English, never translated.
+type PapasamyamResponsePerson2ByReferenceReference string
+
+// PapasamyamResponseVerdict Whether the two charts carry comparable affliction. "balanced" when the bride total is equal to or below the groom total, "unbalanced" when the bride carries more. Canonical English, never translated, so it is safe to branch on. Both totals are published, so a desk that also caps how far the groom may exceed the bride, or that allows the bride a small tolerance, can apply its own band without a second request.
+type PapasamyamResponseVerdict string
 
 // PlanetaryPositionsRequest defines model for PlanetaryPositionsRequest.
 type PlanetaryPositionsRequest struct {
@@ -41123,6 +41746,24 @@ type CalculateGunMilanParams struct {
 // CalculateGunMilanParamsLang defines parameters for CalculateGunMilan.
 type CalculateGunMilanParamsLang string
 
+// CalculateDashakootParams defines parameters for CalculateDashakoot.
+type CalculateDashakootParams struct {
+	// Lang Response language (BCP 47). Supported: en, tr, de, es, hi, pt, fr, ru, zh-Hans, zh-Hant. Defaults to en. Coverage varies by domain, and a field with no translation in the requested language returns English.
+	Lang *CalculateDashakootParamsLang `form:"lang,omitempty" json:"lang,omitempty"`
+}
+
+// CalculateDashakootParamsLang defines parameters for CalculateDashakoot.
+type CalculateDashakootParamsLang string
+
+// CalculatePapasamyamParams defines parameters for CalculatePapasamyam.
+type CalculatePapasamyamParams struct {
+	// Lang Response language (BCP 47). Supported: en, tr, de, es, hi, pt, fr, ru, zh-Hans, zh-Hant. Defaults to en. Coverage varies by domain, and a field with no translation in the requested language returns English.
+	Lang *CalculatePapasamyamParamsLang `form:"lang,omitempty" json:"lang,omitempty"`
+}
+
+// CalculatePapasamyamParamsLang defines parameters for CalculatePapasamyam.
+type CalculatePapasamyamParamsLang string
+
 // GetVedicDailyReadingJSONBody defines parameters for GetVedicDailyReading.
 type GetVedicDailyReadingJSONBody struct {
 	// BirthDate Birth date in YYYY-MM-DD format. Fixes the Janma Rashi and Janma Nakshatra every part of this reading is counted from, and the natal Ashtakavarga the bindu gate reads.
@@ -42965,6 +43606,12 @@ type CalculateCharaKarakasJSONRequestBody = CharaKarakaRequest
 // CalculateGunMilanJSONRequestBody defines body for CalculateGunMilan for application/json ContentType.
 type CalculateGunMilanJSONRequestBody = CompatibilityRequest
 
+// CalculateDashakootJSONRequestBody defines body for CalculateDashakoot for application/json ContentType.
+type CalculateDashakootJSONRequestBody = DashakootRequest
+
+// CalculatePapasamyamJSONRequestBody defines body for CalculatePapasamyam for application/json ContentType.
+type CalculatePapasamyamJSONRequestBody = PapasamyamRequest
+
 // GetVedicDailyReadingJSONRequestBody defines body for GetVedicDailyReading for application/json ContentType.
 type GetVedicDailyReadingJSONRequestBody GetVedicDailyReadingJSONBody
 
@@ -44106,6 +44753,130 @@ func (t *CompatibilityRequest_Person2_Timezone) UnmarshalJSON(b []byte) error {
 	return err
 }
 
+// AsDashakootRequestPerson1Timezone0 returns the union data inside the DashakootRequest_Person1_Timezone as a DashakootRequestPerson1Timezone0
+func (t DashakootRequest_Person1_Timezone) AsDashakootRequestPerson1Timezone0() (DashakootRequestPerson1Timezone0, error) {
+	var body DashakootRequestPerson1Timezone0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashakootRequestPerson1Timezone0 overwrites any union data inside the DashakootRequest_Person1_Timezone as the provided DashakootRequestPerson1Timezone0
+func (t *DashakootRequest_Person1_Timezone) FromDashakootRequestPerson1Timezone0(v DashakootRequestPerson1Timezone0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashakootRequestPerson1Timezone0 performs a merge with any union data inside the DashakootRequest_Person1_Timezone, using the provided DashakootRequestPerson1Timezone0
+func (t *DashakootRequest_Person1_Timezone) MergeDashakootRequestPerson1Timezone0(v DashakootRequestPerson1Timezone0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsDashakootRequestPerson1Timezone1 returns the union data inside the DashakootRequest_Person1_Timezone as a DashakootRequestPerson1Timezone1
+func (t DashakootRequest_Person1_Timezone) AsDashakootRequestPerson1Timezone1() (DashakootRequestPerson1Timezone1, error) {
+	var body DashakootRequestPerson1Timezone1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashakootRequestPerson1Timezone1 overwrites any union data inside the DashakootRequest_Person1_Timezone as the provided DashakootRequestPerson1Timezone1
+func (t *DashakootRequest_Person1_Timezone) FromDashakootRequestPerson1Timezone1(v DashakootRequestPerson1Timezone1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashakootRequestPerson1Timezone1 performs a merge with any union data inside the DashakootRequest_Person1_Timezone, using the provided DashakootRequestPerson1Timezone1
+func (t *DashakootRequest_Person1_Timezone) MergeDashakootRequestPerson1Timezone1(v DashakootRequestPerson1Timezone1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t DashakootRequest_Person1_Timezone) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *DashakootRequest_Person1_Timezone) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsDashakootRequestPerson2Timezone0 returns the union data inside the DashakootRequest_Person2_Timezone as a DashakootRequestPerson2Timezone0
+func (t DashakootRequest_Person2_Timezone) AsDashakootRequestPerson2Timezone0() (DashakootRequestPerson2Timezone0, error) {
+	var body DashakootRequestPerson2Timezone0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashakootRequestPerson2Timezone0 overwrites any union data inside the DashakootRequest_Person2_Timezone as the provided DashakootRequestPerson2Timezone0
+func (t *DashakootRequest_Person2_Timezone) FromDashakootRequestPerson2Timezone0(v DashakootRequestPerson2Timezone0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashakootRequestPerson2Timezone0 performs a merge with any union data inside the DashakootRequest_Person2_Timezone, using the provided DashakootRequestPerson2Timezone0
+func (t *DashakootRequest_Person2_Timezone) MergeDashakootRequestPerson2Timezone0(v DashakootRequestPerson2Timezone0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsDashakootRequestPerson2Timezone1 returns the union data inside the DashakootRequest_Person2_Timezone as a DashakootRequestPerson2Timezone1
+func (t DashakootRequest_Person2_Timezone) AsDashakootRequestPerson2Timezone1() (DashakootRequestPerson2Timezone1, error) {
+	var body DashakootRequestPerson2Timezone1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromDashakootRequestPerson2Timezone1 overwrites any union data inside the DashakootRequest_Person2_Timezone as the provided DashakootRequestPerson2Timezone1
+func (t *DashakootRequest_Person2_Timezone) FromDashakootRequestPerson2Timezone1(v DashakootRequestPerson2Timezone1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeDashakootRequestPerson2Timezone1 performs a merge with any union data inside the DashakootRequest_Person2_Timezone, using the provided DashakootRequestPerson2Timezone1
+func (t *DashakootRequest_Person2_Timezone) MergeDashakootRequestPerson2Timezone1(v DashakootRequestPerson2Timezone1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t DashakootRequest_Person2_Timezone) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *DashakootRequest_Person2_Timezone) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
 // AsDivisionalChartRequestTimezone0 returns the union data inside the DivisionalChartRequest_Timezone as a DivisionalChartRequestTimezone0
 func (t DivisionalChartRequest_Timezone) AsDivisionalChartRequestTimezone0() (DivisionalChartRequestTimezone0, error) {
 	var body DivisionalChartRequestTimezone0
@@ -45032,6 +45803,130 @@ func (t NavamsaRequest_Timezone) MarshalJSON() ([]byte, error) {
 }
 
 func (t *NavamsaRequest_Timezone) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsPapasamyamRequestPerson1Timezone0 returns the union data inside the PapasamyamRequest_Person1_Timezone as a PapasamyamRequestPerson1Timezone0
+func (t PapasamyamRequest_Person1_Timezone) AsPapasamyamRequestPerson1Timezone0() (PapasamyamRequestPerson1Timezone0, error) {
+	var body PapasamyamRequestPerson1Timezone0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromPapasamyamRequestPerson1Timezone0 overwrites any union data inside the PapasamyamRequest_Person1_Timezone as the provided PapasamyamRequestPerson1Timezone0
+func (t *PapasamyamRequest_Person1_Timezone) FromPapasamyamRequestPerson1Timezone0(v PapasamyamRequestPerson1Timezone0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergePapasamyamRequestPerson1Timezone0 performs a merge with any union data inside the PapasamyamRequest_Person1_Timezone, using the provided PapasamyamRequestPerson1Timezone0
+func (t *PapasamyamRequest_Person1_Timezone) MergePapasamyamRequestPerson1Timezone0(v PapasamyamRequestPerson1Timezone0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsPapasamyamRequestPerson1Timezone1 returns the union data inside the PapasamyamRequest_Person1_Timezone as a PapasamyamRequestPerson1Timezone1
+func (t PapasamyamRequest_Person1_Timezone) AsPapasamyamRequestPerson1Timezone1() (PapasamyamRequestPerson1Timezone1, error) {
+	var body PapasamyamRequestPerson1Timezone1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromPapasamyamRequestPerson1Timezone1 overwrites any union data inside the PapasamyamRequest_Person1_Timezone as the provided PapasamyamRequestPerson1Timezone1
+func (t *PapasamyamRequest_Person1_Timezone) FromPapasamyamRequestPerson1Timezone1(v PapasamyamRequestPerson1Timezone1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergePapasamyamRequestPerson1Timezone1 performs a merge with any union data inside the PapasamyamRequest_Person1_Timezone, using the provided PapasamyamRequestPerson1Timezone1
+func (t *PapasamyamRequest_Person1_Timezone) MergePapasamyamRequestPerson1Timezone1(v PapasamyamRequestPerson1Timezone1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t PapasamyamRequest_Person1_Timezone) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *PapasamyamRequest_Person1_Timezone) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsPapasamyamRequestPerson2Timezone0 returns the union data inside the PapasamyamRequest_Person2_Timezone as a PapasamyamRequestPerson2Timezone0
+func (t PapasamyamRequest_Person2_Timezone) AsPapasamyamRequestPerson2Timezone0() (PapasamyamRequestPerson2Timezone0, error) {
+	var body PapasamyamRequestPerson2Timezone0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromPapasamyamRequestPerson2Timezone0 overwrites any union data inside the PapasamyamRequest_Person2_Timezone as the provided PapasamyamRequestPerson2Timezone0
+func (t *PapasamyamRequest_Person2_Timezone) FromPapasamyamRequestPerson2Timezone0(v PapasamyamRequestPerson2Timezone0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergePapasamyamRequestPerson2Timezone0 performs a merge with any union data inside the PapasamyamRequest_Person2_Timezone, using the provided PapasamyamRequestPerson2Timezone0
+func (t *PapasamyamRequest_Person2_Timezone) MergePapasamyamRequestPerson2Timezone0(v PapasamyamRequestPerson2Timezone0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsPapasamyamRequestPerson2Timezone1 returns the union data inside the PapasamyamRequest_Person2_Timezone as a PapasamyamRequestPerson2Timezone1
+func (t PapasamyamRequest_Person2_Timezone) AsPapasamyamRequestPerson2Timezone1() (PapasamyamRequestPerson2Timezone1, error) {
+	var body PapasamyamRequestPerson2Timezone1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromPapasamyamRequestPerson2Timezone1 overwrites any union data inside the PapasamyamRequest_Person2_Timezone as the provided PapasamyamRequestPerson2Timezone1
+func (t *PapasamyamRequest_Person2_Timezone) FromPapasamyamRequestPerson2Timezone1(v PapasamyamRequestPerson2Timezone1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergePapasamyamRequestPerson2Timezone1 performs a merge with any union data inside the PapasamyamRequest_Person2_Timezone, using the provided PapasamyamRequestPerson2Timezone1
+func (t *PapasamyamRequest_Person2_Timezone) MergePapasamyamRequestPerson2Timezone1(v PapasamyamRequestPerson2Timezone1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t PapasamyamRequest_Person2_Timezone) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *PapasamyamRequest_Person2_Timezone) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }
@@ -52636,6 +53531,42 @@ type ClientInterface interface {
 	// Corresponds with POST /vedic-astrology/compatibility (the `CalculateGunMilan` operationId).
 	CalculateGunMilan(ctx context.Context, params *CalculateGunMilanParams, body CalculateGunMilanJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// CalculateDashakootWithBody Calculate ten porutham match - Dashakoot South Indian Kundli Matching API
+	//
+	// Calculate the South Indian ten porutham marriage match (Dashakoot, also called Dasa Porutham) for two birth records. Returns a pass or fail on each of Dina, Gana, Mahendra, Stree Deergha, Yoni, Rasi, Rasyadhipati, Vasya, Rajju and Vedha, a total out of ten, and Rajju and Vedha as explicit hard vetoes that disqualify a match whatever the rest of the sheet reads. This is a different system from the 36 point Ashtakoot Gun Milan on POST /vedic-astrology/compatibility and the two are never reconciled, so a Tamil, Malayalam or Telugu matrimonial desk can read the sheet it actually uses. Direction matters: person1 is the groom and person2 is the bride, because five of the ten poruthams count from the bride birth star to the groom birth star.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /vedic-astrology/compatibility/dashakoot (the `CalculateDashakoot` operationId).
+	CalculateDashakootWithBody(ctx context.Context, params *CalculateDashakootParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CalculateDashakoot Calculate ten porutham match - Dashakoot South Indian Kundli Matching API
+	//
+	// Calculate the South Indian ten porutham marriage match (Dashakoot, also called Dasa Porutham) for two birth records. Returns a pass or fail on each of Dina, Gana, Mahendra, Stree Deergha, Yoni, Rasi, Rasyadhipati, Vasya, Rajju and Vedha, a total out of ten, and Rajju and Vedha as explicit hard vetoes that disqualify a match whatever the rest of the sheet reads. This is a different system from the 36 point Ashtakoot Gun Milan on POST /vedic-astrology/compatibility and the two are never reconciled, so a Tamil, Malayalam or Telugu matrimonial desk can read the sheet it actually uses. Direction matters: person1 is the groom and person2 is the bride, because five of the ten poruthams count from the bride birth star to the groom birth star.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /vedic-astrology/compatibility/dashakoot (the `CalculateDashakoot` operationId).
+	CalculateDashakoot(ctx context.Context, params *CalculateDashakootParams, body CalculateDashakootJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CalculatePapasamyamWithBody Compare malefic affliction - Papasamyam Kundli Matching API
+	//
+	// Calculate Papasamyam, the balance of malefic (papa) points between two birth charts, for Vedic marriage matching. Counts Mars, Saturn, Sun and Rahu sitting in the afflicting bhavas 1, 2, 4, 7, 8 and 12 read from three reference points in each chart, the Lagna weighted 1, the Moon weighted 0.5 and Venus weighted 0.25, and returns both totals with the graha, the bhava and the weight behind every point. The verdict is a comparison and never a judgement on one person: the bride total must be equal to or below the groom total, so a heavily afflicted groom matched with a comparably afflicted bride reads as balanced while an unafflicted groom matched with an afflicted bride does not. Use it beside Gun Milan and the ten porutham sheet on a matrimonial platform, since a koota score says nothing about malefic balance.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /vedic-astrology/compatibility/papasamyam (the `CalculatePapasamyam` operationId).
+	CalculatePapasamyamWithBody(ctx context.Context, params *CalculatePapasamyamParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// CalculatePapasamyam Compare malefic affliction - Papasamyam Kundli Matching API
+	//
+	// Calculate Papasamyam, the balance of malefic (papa) points between two birth charts, for Vedic marriage matching. Counts Mars, Saturn, Sun and Rahu sitting in the afflicting bhavas 1, 2, 4, 7, 8 and 12 read from three reference points in each chart, the Lagna weighted 1, the Moon weighted 0.5 and Venus weighted 0.25, and returns both totals with the graha, the bhava and the weight behind every point. The verdict is a comparison and never a judgement on one person: the bride total must be equal to or below the groom total, so a heavily afflicted groom matched with a comparably afflicted bride reads as balanced while an unafflicted groom matched with an afflicted bride does not. Use it beside Gun Milan and the ten porutham sheet on a matrimonial platform, since a koota score says nothing about malefic balance.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /vedic-astrology/compatibility/papasamyam (the `CalculatePapasamyam` operationId).
+	CalculatePapasamyam(ctx context.Context, params *CalculatePapasamyamParams, body CalculatePapasamyamJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// GetVedicDailyReadingWithBody Daily Reading - Composed Gochara, Panchanga and Dasha for one native on one day
 	//
 	// The composed Vedic daily reading for one native on one date, in one call. Runs classical Gochara as the gate pipeline the texts describe: the house each transiting graha makes from the natal Moon (Janma Rashi), the vedha pair that can cancel it, the Ashtakavarga bindu gate that decides whether it is delivered, and the Phaladeepika XXVI.30 to XXVI.32 nullifiers, so every graha lands in ONE cited state rather than a bar of a chart. Joined to the panchanga day, which runs sunrise to sunrise with a validity window on every limb, plus tarabala and chandrabala resolved for THIS native as windows rather than as one value, the running Vimshottari chain three levels deep, and a KP finance net over the wealth and loss houses. Ships a hand-reproducible strength score with its arithmetic published in the field itself, and states plainly which part is classical and which part is a RoxyAPI counting convention. Positions are computed in the Lahiri sidereal frame; the KP significators behind the finance area use the KP-Newcomb frame, as they do on every KP route.
@@ -59496,6 +60427,82 @@ func (c *Client) CalculateGunMilanWithBody(ctx context.Context, params *Calculat
 // Corresponds with POST /vedic-astrology/compatibility (the `CalculateGunMilan` operationId).
 func (c *Client) CalculateGunMilan(ctx context.Context, params *CalculateGunMilanParams, body CalculateGunMilanJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewCalculateGunMilanRequest(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CalculateDashakootWithBody Calculate ten porutham match - Dashakoot South Indian Kundli Matching API
+//
+// Calculate the South Indian ten porutham marriage match (Dashakoot, also called Dasa Porutham) for two birth records. Returns a pass or fail on each of Dina, Gana, Mahendra, Stree Deergha, Yoni, Rasi, Rasyadhipati, Vasya, Rajju and Vedha, a total out of ten, and Rajju and Vedha as explicit hard vetoes that disqualify a match whatever the rest of the sheet reads. This is a different system from the 36 point Ashtakoot Gun Milan on POST /vedic-astrology/compatibility and the two are never reconciled, so a Tamil, Malayalam or Telugu matrimonial desk can read the sheet it actually uses. Direction matters: person1 is the groom and person2 is the bride, because five of the ten poruthams count from the bride birth star to the groom birth star.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /vedic-astrology/compatibility/dashakoot (the `CalculateDashakoot` operationId).
+func (c *Client) CalculateDashakootWithBody(ctx context.Context, params *CalculateDashakootParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCalculateDashakootRequestWithBody(c.Server, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CalculateDashakoot Calculate ten porutham match - Dashakoot South Indian Kundli Matching API
+//
+// Calculate the South Indian ten porutham marriage match (Dashakoot, also called Dasa Porutham) for two birth records. Returns a pass or fail on each of Dina, Gana, Mahendra, Stree Deergha, Yoni, Rasi, Rasyadhipati, Vasya, Rajju and Vedha, a total out of ten, and Rajju and Vedha as explicit hard vetoes that disqualify a match whatever the rest of the sheet reads. This is a different system from the 36 point Ashtakoot Gun Milan on POST /vedic-astrology/compatibility and the two are never reconciled, so a Tamil, Malayalam or Telugu matrimonial desk can read the sheet it actually uses. Direction matters: person1 is the groom and person2 is the bride, because five of the ten poruthams count from the bride birth star to the groom birth star.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /vedic-astrology/compatibility/dashakoot (the `CalculateDashakoot` operationId).
+func (c *Client) CalculateDashakoot(ctx context.Context, params *CalculateDashakootParams, body CalculateDashakootJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCalculateDashakootRequest(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CalculatePapasamyamWithBody Compare malefic affliction - Papasamyam Kundli Matching API
+//
+// Calculate Papasamyam, the balance of malefic (papa) points between two birth charts, for Vedic marriage matching. Counts Mars, Saturn, Sun and Rahu sitting in the afflicting bhavas 1, 2, 4, 7, 8 and 12 read from three reference points in each chart, the Lagna weighted 1, the Moon weighted 0.5 and Venus weighted 0.25, and returns both totals with the graha, the bhava and the weight behind every point. The verdict is a comparison and never a judgement on one person: the bride total must be equal to or below the groom total, so a heavily afflicted groom matched with a comparably afflicted bride reads as balanced while an unafflicted groom matched with an afflicted bride does not. Use it beside Gun Milan and the ten porutham sheet on a matrimonial platform, since a koota score says nothing about malefic balance.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /vedic-astrology/compatibility/papasamyam (the `CalculatePapasamyam` operationId).
+func (c *Client) CalculatePapasamyamWithBody(ctx context.Context, params *CalculatePapasamyamParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCalculatePapasamyamRequestWithBody(c.Server, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// CalculatePapasamyam Compare malefic affliction - Papasamyam Kundli Matching API
+//
+// Calculate Papasamyam, the balance of malefic (papa) points between two birth charts, for Vedic marriage matching. Counts Mars, Saturn, Sun and Rahu sitting in the afflicting bhavas 1, 2, 4, 7, 8 and 12 read from three reference points in each chart, the Lagna weighted 1, the Moon weighted 0.5 and Venus weighted 0.25, and returns both totals with the graha, the bhava and the weight behind every point. The verdict is a comparison and never a judgement on one person: the bride total must be equal to or below the groom total, so a heavily afflicted groom matched with a comparably afflicted bride reads as balanced while an unafflicted groom matched with an afflicted bride does not. Use it beside Gun Milan and the ten porutham sheet on a matrimonial platform, since a koota score says nothing about malefic balance.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /vedic-astrology/compatibility/papasamyam (the `CalculatePapasamyam` operationId).
+func (c *Client) CalculatePapasamyam(ctx context.Context, params *CalculatePapasamyamParams, body CalculatePapasamyamJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewCalculatePapasamyamRequest(c.Server, params, body)
 	if err != nil {
 		return nil, err
 	}
@@ -75733,6 +76740,140 @@ func NewCalculateGunMilanRequestWithBody(server string, params *CalculateGunMila
 	return req, nil
 }
 
+// NewCalculateDashakootRequest calls the generic CalculateDashakoot builder with application/json body
+func NewCalculateDashakootRequest(server string, params *CalculateDashakootParams, body CalculateDashakootJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewCalculateDashakootRequestWithBody(server, params, "application/json", bodyReader)
+}
+
+// NewCalculateDashakootRequestWithBody constructs an http.Request for the CalculateDashakoot method, with any body, and a specified content type
+func NewCalculateDashakootRequestWithBody(server string, params *CalculateDashakootParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/vedic-astrology/compatibility/dashakoot")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Lang != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "lang", *params.Lang, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewCalculatePapasamyamRequest calls the generic CalculatePapasamyam builder with application/json body
+func NewCalculatePapasamyamRequest(server string, params *CalculatePapasamyamParams, body CalculatePapasamyamJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewCalculatePapasamyamRequestWithBody(server, params, "application/json", bodyReader)
+}
+
+// NewCalculatePapasamyamRequestWithBody constructs an http.Request for the CalculatePapasamyam method, with any body, and a specified content type
+func NewCalculatePapasamyamRequestWithBody(server string, params *CalculatePapasamyamParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/vedic-astrology/compatibility/papasamyam")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Lang != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "lang", *params.Lang, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
 // NewGetVedicDailyReadingRequest calls the generic GetVedicDailyReading builder with application/json body
 func NewGetVedicDailyReadingRequest(server string, params *GetVedicDailyReadingParams, body GetVedicDailyReadingJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
@@ -81586,6 +82727,42 @@ type ClientWithResponsesInterface interface {
 	//
 	// Corresponds with POST /vedic-astrology/compatibility (the `CalculateGunMilan` operationId).
 	CalculateGunMilanWithResponse(ctx context.Context, params *CalculateGunMilanParams, body CalculateGunMilanJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateGunMilanResponse, error)
+
+	// CalculateDashakootWithBodyWithResponse Calculate ten porutham match - Dashakoot South Indian Kundli Matching API
+	//
+	// Calculate the South Indian ten porutham marriage match (Dashakoot, also called Dasa Porutham) for two birth records. Returns a pass or fail on each of Dina, Gana, Mahendra, Stree Deergha, Yoni, Rasi, Rasyadhipati, Vasya, Rajju and Vedha, a total out of ten, and Rajju and Vedha as explicit hard vetoes that disqualify a match whatever the rest of the sheet reads. This is a different system from the 36 point Ashtakoot Gun Milan on POST /vedic-astrology/compatibility and the two are never reconciled, so a Tamil, Malayalam or Telugu matrimonial desk can read the sheet it actually uses. Direction matters: person1 is the groom and person2 is the bride, because five of the ten poruthams count from the bride birth star to the groom birth star.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /vedic-astrology/compatibility/dashakoot (the `CalculateDashakoot` operationId).
+	CalculateDashakootWithBodyWithResponse(ctx context.Context, params *CalculateDashakootParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CalculateDashakootResponse, error)
+
+	// CalculateDashakootWithResponse Calculate ten porutham match - Dashakoot South Indian Kundli Matching API
+	//
+	// Calculate the South Indian ten porutham marriage match (Dashakoot, also called Dasa Porutham) for two birth records. Returns a pass or fail on each of Dina, Gana, Mahendra, Stree Deergha, Yoni, Rasi, Rasyadhipati, Vasya, Rajju and Vedha, a total out of ten, and Rajju and Vedha as explicit hard vetoes that disqualify a match whatever the rest of the sheet reads. This is a different system from the 36 point Ashtakoot Gun Milan on POST /vedic-astrology/compatibility and the two are never reconciled, so a Tamil, Malayalam or Telugu matrimonial desk can read the sheet it actually uses. Direction matters: person1 is the groom and person2 is the bride, because five of the ten poruthams count from the bride birth star to the groom birth star.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /vedic-astrology/compatibility/dashakoot (the `CalculateDashakoot` operationId).
+	CalculateDashakootWithResponse(ctx context.Context, params *CalculateDashakootParams, body CalculateDashakootJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateDashakootResponse, error)
+
+	// CalculatePapasamyamWithBodyWithResponse Compare malefic affliction - Papasamyam Kundli Matching API
+	//
+	// Calculate Papasamyam, the balance of malefic (papa) points between two birth charts, for Vedic marriage matching. Counts Mars, Saturn, Sun and Rahu sitting in the afflicting bhavas 1, 2, 4, 7, 8 and 12 read from three reference points in each chart, the Lagna weighted 1, the Moon weighted 0.5 and Venus weighted 0.25, and returns both totals with the graha, the bhava and the weight behind every point. The verdict is a comparison and never a judgement on one person: the bride total must be equal to or below the groom total, so a heavily afflicted groom matched with a comparably afflicted bride reads as balanced while an unafflicted groom matched with an afflicted bride does not. Use it beside Gun Milan and the ten porutham sheet on a matrimonial platform, since a koota score says nothing about malefic balance.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /vedic-astrology/compatibility/papasamyam (the `CalculatePapasamyam` operationId).
+	CalculatePapasamyamWithBodyWithResponse(ctx context.Context, params *CalculatePapasamyamParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CalculatePapasamyamResponse, error)
+
+	// CalculatePapasamyamWithResponse Compare malefic affliction - Papasamyam Kundli Matching API
+	//
+	// Calculate Papasamyam, the balance of malefic (papa) points between two birth charts, for Vedic marriage matching. Counts Mars, Saturn, Sun and Rahu sitting in the afflicting bhavas 1, 2, 4, 7, 8 and 12 read from three reference points in each chart, the Lagna weighted 1, the Moon weighted 0.5 and Venus weighted 0.25, and returns both totals with the graha, the bhava and the weight behind every point. The verdict is a comparison and never a judgement on one person: the bride total must be equal to or below the groom total, so a heavily afflicted groom matched with a comparably afflicted bride reads as balanced while an unafflicted groom matched with an afflicted bride does not. Use it beside Gun Milan and the ten porutham sheet on a matrimonial platform, since a koota score says nothing about malefic balance.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /vedic-astrology/compatibility/papasamyam (the `CalculatePapasamyam` operationId).
+	CalculatePapasamyamWithResponse(ctx context.Context, params *CalculatePapasamyamParams, body CalculatePapasamyamJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculatePapasamyamResponse, error)
 
 	// GetVedicDailyReadingWithBodyWithResponse Daily Reading - Composed Gochara, Panchanga and Dasha for one native on one day
 	//
@@ -130373,6 +131550,182 @@ func (r CalculateGunMilanResponse) ContentType() string {
 	return ""
 }
 
+// CalculateDashakootResponse405Headers the declared response headers of an HTTP 405 response for CalculateDashakoot
+type CalculateDashakootResponse405Headers struct {
+	Allow *string
+}
+
+type CalculateDashakootResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *DashakootResponse
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON405 the response for an HTTP 405 `application/json` response
+	JSON405 *ErrorResponse
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+	// Headers405 the parsed response headers for an HTTP 405 response
+	Headers405 *CalculateDashakootResponse405Headers
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r CalculateDashakootResponse) GetJSON200() *DashakootResponse {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r CalculateDashakootResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r CalculateDashakootResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON405 returns the response for an HTTP 405 `application/json` response
+func (r CalculateDashakootResponse) GetJSON405() *ErrorResponse {
+	return r.JSON405
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r CalculateDashakootResponse) GetJSON429() *ErrorResponse {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r CalculateDashakootResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r CalculateDashakootResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r CalculateDashakootResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CalculateDashakootResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// Bytes is a convenience method to retrieve the raw bytes from the HTTP response
+func (r CalculateDashakootResponse) Bytes() []byte {
+	return r.Body
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r CalculateDashakootResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+// CalculatePapasamyamResponse405Headers the declared response headers of an HTTP 405 response for CalculatePapasamyam
+type CalculatePapasamyamResponse405Headers struct {
+	Allow *string
+}
+
+type CalculatePapasamyamResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *PapasamyamResponse
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON405 the response for an HTTP 405 `application/json` response
+	JSON405 *ErrorResponse
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+	// Headers405 the parsed response headers for an HTTP 405 response
+	Headers405 *CalculatePapasamyamResponse405Headers
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r CalculatePapasamyamResponse) GetJSON200() *PapasamyamResponse {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r CalculatePapasamyamResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r CalculatePapasamyamResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON405 returns the response for an HTTP 405 `application/json` response
+func (r CalculatePapasamyamResponse) GetJSON405() *ErrorResponse {
+	return r.JSON405
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r CalculatePapasamyamResponse) GetJSON429() *ErrorResponse {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r CalculatePapasamyamResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r CalculatePapasamyamResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r CalculatePapasamyamResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r CalculatePapasamyamResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// Bytes is a convenience method to retrieve the raw bytes from the HTTP response
+func (r CalculatePapasamyamResponse) Bytes() []byte {
+	return r.Body
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r CalculatePapasamyamResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
 // GetVedicDailyReadingResponse405Headers the declared response headers of an HTTP 405 response for GetVedicDailyReading
 type GetVedicDailyReadingResponse405Headers struct {
 	Allow *string
@@ -144323,6 +145676,66 @@ func (c *ClientWithResponses) CalculateGunMilanWithResponse(ctx context.Context,
 		return nil, err
 	}
 	return ParseCalculateGunMilanResponse(rsp)
+}
+
+// CalculateDashakootWithBodyWithResponse Calculate ten porutham match - Dashakoot South Indian Kundli Matching API
+//
+// Calculate the South Indian ten porutham marriage match (Dashakoot, also called Dasa Porutham) for two birth records. Returns a pass or fail on each of Dina, Gana, Mahendra, Stree Deergha, Yoni, Rasi, Rasyadhipati, Vasya, Rajju and Vedha, a total out of ten, and Rajju and Vedha as explicit hard vetoes that disqualify a match whatever the rest of the sheet reads. This is a different system from the 36 point Ashtakoot Gun Milan on POST /vedic-astrology/compatibility and the two are never reconciled, so a Tamil, Malayalam or Telugu matrimonial desk can read the sheet it actually uses. Direction matters: person1 is the groom and person2 is the bride, because five of the ten poruthams count from the bride birth star to the groom birth star.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /vedic-astrology/compatibility/dashakoot (the `CalculateDashakoot` operationId).
+func (c *ClientWithResponses) CalculateDashakootWithBodyWithResponse(ctx context.Context, params *CalculateDashakootParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CalculateDashakootResponse, error) {
+	rsp, err := c.CalculateDashakootWithBody(ctx, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCalculateDashakootResponse(rsp)
+}
+
+// CalculateDashakootWithResponse Calculate ten porutham match - Dashakoot South Indian Kundli Matching API
+//
+// Calculate the South Indian ten porutham marriage match (Dashakoot, also called Dasa Porutham) for two birth records. Returns a pass or fail on each of Dina, Gana, Mahendra, Stree Deergha, Yoni, Rasi, Rasyadhipati, Vasya, Rajju and Vedha, a total out of ten, and Rajju and Vedha as explicit hard vetoes that disqualify a match whatever the rest of the sheet reads. This is a different system from the 36 point Ashtakoot Gun Milan on POST /vedic-astrology/compatibility and the two are never reconciled, so a Tamil, Malayalam or Telugu matrimonial desk can read the sheet it actually uses. Direction matters: person1 is the groom and person2 is the bride, because five of the ten poruthams count from the bride birth star to the groom birth star.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /vedic-astrology/compatibility/dashakoot (the `CalculateDashakoot` operationId).
+func (c *ClientWithResponses) CalculateDashakootWithResponse(ctx context.Context, params *CalculateDashakootParams, body CalculateDashakootJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateDashakootResponse, error) {
+	rsp, err := c.CalculateDashakoot(ctx, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCalculateDashakootResponse(rsp)
+}
+
+// CalculatePapasamyamWithBodyWithResponse Compare malefic affliction - Papasamyam Kundli Matching API
+//
+// Calculate Papasamyam, the balance of malefic (papa) points between two birth charts, for Vedic marriage matching. Counts Mars, Saturn, Sun and Rahu sitting in the afflicting bhavas 1, 2, 4, 7, 8 and 12 read from three reference points in each chart, the Lagna weighted 1, the Moon weighted 0.5 and Venus weighted 0.25, and returns both totals with the graha, the bhava and the weight behind every point. The verdict is a comparison and never a judgement on one person: the bride total must be equal to or below the groom total, so a heavily afflicted groom matched with a comparably afflicted bride reads as balanced while an unafflicted groom matched with an afflicted bride does not. Use it beside Gun Milan and the ten porutham sheet on a matrimonial platform, since a koota score says nothing about malefic balance.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /vedic-astrology/compatibility/papasamyam (the `CalculatePapasamyam` operationId).
+func (c *ClientWithResponses) CalculatePapasamyamWithBodyWithResponse(ctx context.Context, params *CalculatePapasamyamParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CalculatePapasamyamResponse, error) {
+	rsp, err := c.CalculatePapasamyamWithBody(ctx, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCalculatePapasamyamResponse(rsp)
+}
+
+// CalculatePapasamyamWithResponse Compare malefic affliction - Papasamyam Kundli Matching API
+//
+// Calculate Papasamyam, the balance of malefic (papa) points between two birth charts, for Vedic marriage matching. Counts Mars, Saturn, Sun and Rahu sitting in the afflicting bhavas 1, 2, 4, 7, 8 and 12 read from three reference points in each chart, the Lagna weighted 1, the Moon weighted 0.5 and Venus weighted 0.25, and returns both totals with the graha, the bhava and the weight behind every point. The verdict is a comparison and never a judgement on one person: the bride total must be equal to or below the groom total, so a heavily afflicted groom matched with a comparably afflicted bride reads as balanced while an unafflicted groom matched with an afflicted bride does not. Use it beside Gun Milan and the ten porutham sheet on a matrimonial platform, since a koota score says nothing about malefic balance.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /vedic-astrology/compatibility/papasamyam (the `CalculatePapasamyam` operationId).
+func (c *ClientWithResponses) CalculatePapasamyamWithResponse(ctx context.Context, params *CalculatePapasamyamParams, body CalculatePapasamyamJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculatePapasamyamResponse, error) {
+	rsp, err := c.CalculatePapasamyam(ctx, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseCalculatePapasamyamResponse(rsp)
 }
 
 // GetVedicDailyReadingWithBodyWithResponse Daily Reading - Composed Gochara, Panchanga and Dasha for one native on one day
@@ -176061,6 +177474,154 @@ func ParseCalculateGunMilanResponse(rsp *http.Response) (*CalculateGunMilanRespo
 	switch {
 	case rsp.StatusCode == 405:
 		var headers CalculateGunMilanResponse405Headers
+		if values := rsp.Header.Values("Allow"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "Allow", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.Allow = &value
+		}
+		response.Headers405 = &headers
+	}
+
+	return response, nil
+}
+
+// ParseCalculateDashakootResponse parses an HTTP response from a CalculateDashakootWithResponse call
+func ParseCalculateDashakootResponse(rsp *http.Response) (*CalculateDashakootResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CalculateDashakootResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest DashakootResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 405:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON405 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	switch {
+	case rsp.StatusCode == 405:
+		var headers CalculateDashakootResponse405Headers
+		if values := rsp.Header.Values("Allow"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "Allow", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.Allow = &value
+		}
+		response.Headers405 = &headers
+	}
+
+	return response, nil
+}
+
+// ParseCalculatePapasamyamResponse parses an HTTP response from a CalculatePapasamyamWithResponse call
+func ParseCalculatePapasamyamResponse(rsp *http.Response) (*CalculatePapasamyamResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &CalculatePapasamyamResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest PapasamyamResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 405:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON405 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	switch {
+	case rsp.StatusCode == 405:
+		var headers CalculatePapasamyamResponse405Headers
 		if values := rsp.Header.Values("Allow"); len(values) > 0 {
 			var value string
 			if err := runtime.BindStyledParameterWithOptions("simple", "Allow", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {

@@ -91,7 +91,7 @@ Western astrology API for natal birth charts, daily, weekly, monthly, and yearly
 
 ## Vedic Astrology - `roxy.VedicAstrology`
 
-Vedic astrology (Jyotish) and KP API for kundli generation with 15 divisional charts (D1-D60), panchang with choghadi...
+Vedic astrology (Jyotish) and KP API for kundli generation with the sixteen Shodasavarga divisional charts (D1 to D60...
 
 - `calculateArudhaPadas` - POST `/vedic-astrology/arudha` - Get the twelve Arudha padas - Arudha Lagna Calculator API
 - `calculateAshtakavarga` - POST `/vedic-astrology/ashtakavarga` - Get Ashtakavarga (planetary strength) analysis - Ashtakavarga Calculator API
@@ -105,6 +105,8 @@ Vedic astrology (Jyotish) and KP API for kundli generation with 15 divisional ch
 - `generateBirthChart` - POST `/vedic-astrology/birth-chart` - Get birth chart (D1 Rashi chart) - Kundli Calculator API
 - `calculateCharaKarakas` - POST `/vedic-astrology/chara-karakas` - Get Chara Karakas including Atmakaraka - Jaimini Karaka Calculator API
 - `calculateGunMilan` - POST `/vedic-astrology/compatibility` - Calculate compatibility score - Gun Milan API (Ashtakoot Matching)
+- `calculateDashakoot` - POST `/vedic-astrology/compatibility/dashakoot` - Calculate ten porutham match - Dashakoot South Indian Kundli Matching API
+- `calculatePapasamyam` - POST `/vedic-astrology/compatibility/papasamyam` - Compare malefic affliction - Papasamyam Kundli Matching API
 - `getVedicDailyReading` - POST `/vedic-astrology/daily` - Daily Reading - Composed Gochara, Panchanga and Dasha for one native on one day
 - `getCurrentDasha` - POST `/vedic-astrology/dasha/current` - Get current Mahadasha, Antardasha, Pratyantardasha, Sookshma, Prana - Dasha Calculator API
 - `getMajorDashas` - POST `/vedic-astrology/dasha/major` - Get all 9 Mahadasha periods (120-year cycle)
