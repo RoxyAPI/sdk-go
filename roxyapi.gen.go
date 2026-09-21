@@ -15825,6 +15825,48 @@ func (e CalculateGematriaJSONBodyAtbashOutput) Valid() bool {
 	}
 }
 
+// Defines values for CalculateGematriaJSONBodyCiphers.
+const (
+	Kolel                  CalculateGematriaJSONBodyCiphers = "kolel"
+	MisparGadol            CalculateGematriaJSONBodyCiphers = "mispar-gadol"
+	MisparHaMerubahHaKlali CalculateGematriaJSONBodyCiphers = "mispar-ha-merubah-ha-klali"
+	MisparHechrachi        CalculateGematriaJSONBodyCiphers = "mispar-hechrachi"
+	MisparKatan            CalculateGematriaJSONBodyCiphers = "mispar-katan"
+	MisparKidmi            CalculateGematriaJSONBodyCiphers = "mispar-kidmi"
+	MisparMeshulash        CalculateGematriaJSONBodyCiphers = "mispar-meshulash"
+	MisparMusafi           CalculateGematriaJSONBodyCiphers = "mispar-musafi"
+	MisparPrati            CalculateGematriaJSONBodyCiphers = "mispar-prati"
+	OtiyotBeMilui          CalculateGematriaJSONBodyCiphers = "otiyot-be-milui"
+)
+
+// Valid indicates whether the value is a known member of the CalculateGematriaJSONBodyCiphers enum.
+func (e CalculateGematriaJSONBodyCiphers) Valid() bool {
+	switch e {
+	case Kolel:
+		return true
+	case MisparGadol:
+		return true
+	case MisparHaMerubahHaKlali:
+		return true
+	case MisparHechrachi:
+		return true
+	case MisparKatan:
+		return true
+	case MisparKidmi:
+		return true
+	case MisparMeshulash:
+		return true
+	case MisparMusafi:
+		return true
+	case MisparPrati:
+		return true
+	case OtiyotBeMilui:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for CalculateGematriaJSONBodyMisparGadol.
 const (
 	CalculateGematriaJSONBodyMisparGadolFinals500900 CalculateGematriaJSONBodyMisparGadol = "finals-500-900"
@@ -32349,6 +32391,9 @@ type KPChartResponse struct {
 			// Nakshatra Nakshatra of Ketu.
 			Nakshatra string `json:"nakshatra"`
 
+			// Pada Nakshatra pada (1-4) of Ketu.
+			Pada float32 `json:"pada"`
+
 			// Sign Zodiac sign Ketu occupies.
 			Sign string `json:"sign"`
 
@@ -32378,6 +32423,9 @@ type KPChartResponse struct {
 
 			// Nakshatra Nakshatra of Rahu.
 			Nakshatra string `json:"nakshatra"`
+
+			// Pada Nakshatra pada (1-4) of Rahu.
+			Pada float32 `json:"pada"`
 
 			// Sign Zodiac sign Rahu occupies.
 			Sign string `json:"sign"`
@@ -37528,10 +37576,10 @@ type GetDailyAyurvedaReadingParams struct {
 	Date *openapi_types.Date `form:"date,omitempty" json:"date,omitempty"`
 
 	// Latitude Latitude in decimal degrees. It sets how long the day and the night actually are, which is what the dosha periods are cut from.
-	Latitude *float32 `form:"latitude,omitempty" json:"latitude,omitempty"`
+	Latitude float32 `form:"latitude" json:"latitude"`
 
 	// Longitude Longitude in decimal degrees. It sets the clock time of sunrise at this place.
-	Longitude *float32 `form:"longitude,omitempty" json:"longitude,omitempty"`
+	Longitude float32 `form:"longitude" json:"longitude"`
 
 	// Timezone Selects which day counts as current when date is omitted, and which local day sunrise is computed for. Defaults to UTC, so the reading rolls over at 00:00 UTC. Accepts an IANA name (e.g. "Europe/London"), decimal hours (e.g. 5.5 for IST), or a fixed UTC offset (e.g. "-05:00").
 	Timezone *string `form:"timezone,omitempty" json:"timezone,omitempty"`
@@ -39890,7 +39938,7 @@ type CalculateGematriaJSONBody struct {
 	AtbashOutput *CalculateGematriaJSONBodyAtbashOutput `json:"atbashOutput,omitempty"`
 
 	// Ciphers Which ciphers to return, by identifier. Omit for every computed cipher. Valid values are mispar-hechrachi, mispar-gadol, otiyot-be-milui, mispar-katan, mispar-kidmi, mispar-prati, mispar-ha-merubah-ha-klali, mispar-meshulash, mispar-musafi, kolel.
-	Ciphers *[]string `json:"ciphers,omitempty"`
+	Ciphers *[]CalculateGematriaJSONBodyCiphers `json:"ciphers,omitempty"`
 
 	// IncludeMatches Whether to return the curated equal value entries for the chosen spelling. Set false to skip the lookup when only the numbers are wanted.
 	IncludeMatches *bool `json:"includeMatches,omitempty"`
@@ -39922,6 +39970,9 @@ type CalculateGematriaParamsLang string
 
 // CalculateGematriaJSONBodyAtbashOutput defines parameters for CalculateGematria.
 type CalculateGematriaJSONBodyAtbashOutput string
+
+// CalculateGematriaJSONBodyCiphers defines parameters for CalculateGematria.
+type CalculateGematriaJSONBodyCiphers string
 
 // CalculateGematriaJSONBodyMisparGadol defines parameters for CalculateGematria.
 type CalculateGematriaJSONBodyMisparGadol string
@@ -50938,21 +50989,21 @@ type ClientInterface interface {
 
 	// GetDailyHoroscope Daily horoscope by zodiac sign - Transit-based editorial columns
 	//
-	// A publish-ready column for any zodiac sign, built from the dated transits over it and returned with those events for fact-checking. The reading names the aspects, sign ingresses, lunations and retrograde stations driving it and reads each into the whole-sign houses of that sign, so every sign gets different content rather than one blurb reused twelve times. Alongside the column come overview, love, career, health, finance and advice, the active transits, Moon sign and phase, an energy rating, lucky number and color, and compatible signs. No language model is involved, so a given sign and date always returns the same text and a piece scheduled months ahead is the piece that runs. Content rolls over at midnight, by default UTC. Pass date for editorial scheduling, or timezone to roll over on a local clock. Available in eight languages. Daily horoscope API, zodiac forecast, sun sign horoscope, astrology prediction.
+	// A publish-ready column for any zodiac sign, built from the dated transits over it and returned with those events for fact-checking. The reading names the aspects, sign ingresses, lunations and retrograde stations driving it and reads each into the whole-sign houses of that sign, so every sign gets different content rather than one blurb reused twelve times. Alongside the column come overview, love, career, health, finance and advice, the active transits, Moon sign and phase, an energy rating, lucky number and color, and compatible signs. No language model is involved, so a given sign and date always returns the same text and a piece scheduled months ahead is the piece that runs. Content rolls over at midnight, by default UTC. Pass date for editorial scheduling, or timezone to roll over on a local clock. Composed in 8 languages (en, de, es, fr, hi, pt, ru, tr); any other lang code returns English. Daily horoscope API, zodiac forecast, sun sign horoscope, astrology prediction.
 	//
 	// Corresponds with GET /astrology/horoscope/{sign}/daily (the `GetDailyHoroscope` operationId).
 	GetDailyHoroscope(ctx context.Context, sign GetDailyHoroscopeParamsSign, params *GetDailyHoroscopeParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetMonthlyHoroscope Monthly horoscope by zodiac sign - Editorial column with key dates
 	//
-	// A month-long column for any zodiac sign, plus a week-by-week breakdown and dated key dates a calendar page renders directly. The column names the major aspects, slow-planet sign changes, lunations and stations of the month, and reads each into the whole-sign houses of that sign, and those events come back beside the prose with their exact instants, so a piece can be checked against NASA JPL Horizons or the US Naval Observatory before it runs. Key dates are the real New Moon, Full Moon and retrograde instants, never approximations. Alongside the column come overview, love, career, health, finance and advice. Pass any date inside a month to retrieve that month, or timezone to roll over on a local clock. Available in eight languages. Monthly horoscope API, zodiac monthly forecast, astrology monthly prediction.
+	// A month-long column for any zodiac sign, plus a week-by-week breakdown and dated key dates a calendar page renders directly. The column names the major aspects, slow-planet sign changes, lunations and stations of the month, and reads each into the whole-sign houses of that sign, and those events come back beside the prose with their exact instants, so a piece can be checked against NASA JPL Horizons or the US Naval Observatory before it runs. Key dates are the real New Moon, Full Moon and retrograde instants, never approximations. Alongside the column come overview, love, career, health, finance and advice. Pass any date inside a month to retrieve that month, or timezone to roll over on a local clock. Composed in 8 languages (en, de, es, fr, hi, pt, ru, tr); any other lang code returns English. Monthly horoscope API, zodiac monthly forecast, astrology monthly prediction.
 	//
 	// Corresponds with GET /astrology/horoscope/{sign}/monthly (the `GetMonthlyHoroscope` operationId).
 	GetMonthlyHoroscope(ctx context.Context, sign GetMonthlyHoroscopeParamsSign, params *GetMonthlyHoroscopeParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetWeeklyHoroscope Weekly horoscope by zodiac sign - Seven-day editorial column
 	//
-	// A Monday to Sunday column for any zodiac sign, naming the transits that perfect during the week and the days they fall on. Each event is read into the whole-sign houses of that sign, so content is unique per sign, and the dated events come back beside the prose so an editor can check a piece before it runs. Alongside the column come overview, love, career, health, finance and advice, plus lucky days, lucky numbers and compatible signs. No language model is involved, so the same sign and week always returns the same text. Pass any date inside a week to retrieve that week, or timezone to roll over on a local clock. Available in eight languages. Weekly horoscope API, zodiac weekly forecast, astrology weekly prediction.
+	// A Monday to Sunday column for any zodiac sign, naming the transits that perfect during the week and the days they fall on. Each event is read into the whole-sign houses of that sign, so content is unique per sign, and the dated events come back beside the prose so an editor can check a piece before it runs. Alongside the column come overview, love, career, health, finance and advice, plus lucky days, lucky numbers and compatible signs. No language model is involved, so the same sign and week always returns the same text. Pass any date inside a week to retrieve that week, or timezone to roll over on a local clock. Composed in 8 languages (en, de, es, fr, hi, pt, ru, tr); any other lang code returns English. Weekly horoscope API, zodiac weekly forecast, astrology weekly prediction.
 	//
 	// Corresponds with GET /astrology/horoscope/{sign}/weekly (the `GetWeeklyHoroscope` operationId).
 	GetWeeklyHoroscope(ctx context.Context, sign GetWeeklyHoroscopeParamsSign, params *GetWeeklyHoroscopeParams, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -53767,7 +53818,7 @@ type ClientInterface interface {
 
 	// GetEclipticCrossingsWithBody Ecliptic Crossings - When planets cross the ecliptic plane
 	//
-	// Find all ecliptic plane crossings for visible planets during a given year. An ecliptic crossing occurs when a planetary celestial latitude passes through 0 degrees, crossing from one side of the ecliptic to the other. Ascending crossings (south to north) correspond to the ascending node, descending crossings (north to south) to the descending node. Moon crosses ~2 times per month, outer planets cross less frequently. Returns exact date, time, direction, sidereal longitude, and zodiac sign. Ecliptic crossing API, planetary node crossing, ascending descending node ephemeris.
+	// Find all ecliptic plane crossings for visible planets during a given year. An ecliptic crossing occurs when a planetary celestial latitude passes through 0 degrees, crossing from one side of the ecliptic to the other. Ascending crossings (south to north) correspond to the ascending node, descending crossings (north to south) to the descending node. Moon crosses ~2 times per month, outer planets cross less frequently. Returns exact date, time, direction, longitude and zodiac sign in the requested coordinateSystem, sidereal by default. Ecliptic crossing API, planetary node crossing, ascending descending node ephemeris.
 	//
 	// Takes any type of body and a specified content type.
 	//
@@ -53776,7 +53827,7 @@ type ClientInterface interface {
 
 	// GetEclipticCrossings Ecliptic Crossings - When planets cross the ecliptic plane
 	//
-	// Find all ecliptic plane crossings for visible planets during a given year. An ecliptic crossing occurs when a planetary celestial latitude passes through 0 degrees, crossing from one side of the ecliptic to the other. Ascending crossings (south to north) correspond to the ascending node, descending crossings (north to south) to the descending node. Moon crosses ~2 times per month, outer planets cross less frequently. Returns exact date, time, direction, sidereal longitude, and zodiac sign. Ecliptic crossing API, planetary node crossing, ascending descending node ephemeris.
+	// Find all ecliptic plane crossings for visible planets during a given year. An ecliptic crossing occurs when a planetary celestial latitude passes through 0 degrees, crossing from one side of the ecliptic to the other. Ascending crossings (south to north) correspond to the ascending node, descending crossings (north to south) to the descending node. Moon crosses ~2 times per month, outer planets cross less frequently. Returns exact date, time, direction, longitude and zodiac sign in the requested coordinateSystem, sidereal by default. Ecliptic crossing API, planetary node crossing, ascending descending node ephemeris.
 	//
 	// Takes a body of the `application/json` content type.
 	//
@@ -54754,7 +54805,7 @@ func (c *Client) GenerateFixedStars(ctx context.Context, params *GenerateFixedSt
 
 // GetDailyHoroscope Daily horoscope by zodiac sign - Transit-based editorial columns
 //
-// A publish-ready column for any zodiac sign, built from the dated transits over it and returned with those events for fact-checking. The reading names the aspects, sign ingresses, lunations and retrograde stations driving it and reads each into the whole-sign houses of that sign, so every sign gets different content rather than one blurb reused twelve times. Alongside the column come overview, love, career, health, finance and advice, the active transits, Moon sign and phase, an energy rating, lucky number and color, and compatible signs. No language model is involved, so a given sign and date always returns the same text and a piece scheduled months ahead is the piece that runs. Content rolls over at midnight, by default UTC. Pass date for editorial scheduling, or timezone to roll over on a local clock. Available in eight languages. Daily horoscope API, zodiac forecast, sun sign horoscope, astrology prediction.
+// A publish-ready column for any zodiac sign, built from the dated transits over it and returned with those events for fact-checking. The reading names the aspects, sign ingresses, lunations and retrograde stations driving it and reads each into the whole-sign houses of that sign, so every sign gets different content rather than one blurb reused twelve times. Alongside the column come overview, love, career, health, finance and advice, the active transits, Moon sign and phase, an energy rating, lucky number and color, and compatible signs. No language model is involved, so a given sign and date always returns the same text and a piece scheduled months ahead is the piece that runs. Content rolls over at midnight, by default UTC. Pass date for editorial scheduling, or timezone to roll over on a local clock. Composed in 8 languages (en, de, es, fr, hi, pt, ru, tr); any other lang code returns English. Daily horoscope API, zodiac forecast, sun sign horoscope, astrology prediction.
 //
 // Corresponds with GET /astrology/horoscope/{sign}/daily (the `GetDailyHoroscope` operationId).
 func (c *Client) GetDailyHoroscope(ctx context.Context, sign GetDailyHoroscopeParamsSign, params *GetDailyHoroscopeParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
@@ -54771,7 +54822,7 @@ func (c *Client) GetDailyHoroscope(ctx context.Context, sign GetDailyHoroscopePa
 
 // GetMonthlyHoroscope Monthly horoscope by zodiac sign - Editorial column with key dates
 //
-// A month-long column for any zodiac sign, plus a week-by-week breakdown and dated key dates a calendar page renders directly. The column names the major aspects, slow-planet sign changes, lunations and stations of the month, and reads each into the whole-sign houses of that sign, and those events come back beside the prose with their exact instants, so a piece can be checked against NASA JPL Horizons or the US Naval Observatory before it runs. Key dates are the real New Moon, Full Moon and retrograde instants, never approximations. Alongside the column come overview, love, career, health, finance and advice. Pass any date inside a month to retrieve that month, or timezone to roll over on a local clock. Available in eight languages. Monthly horoscope API, zodiac monthly forecast, astrology monthly prediction.
+// A month-long column for any zodiac sign, plus a week-by-week breakdown and dated key dates a calendar page renders directly. The column names the major aspects, slow-planet sign changes, lunations and stations of the month, and reads each into the whole-sign houses of that sign, and those events come back beside the prose with their exact instants, so a piece can be checked against NASA JPL Horizons or the US Naval Observatory before it runs. Key dates are the real New Moon, Full Moon and retrograde instants, never approximations. Alongside the column come overview, love, career, health, finance and advice. Pass any date inside a month to retrieve that month, or timezone to roll over on a local clock. Composed in 8 languages (en, de, es, fr, hi, pt, ru, tr); any other lang code returns English. Monthly horoscope API, zodiac monthly forecast, astrology monthly prediction.
 //
 // Corresponds with GET /astrology/horoscope/{sign}/monthly (the `GetMonthlyHoroscope` operationId).
 func (c *Client) GetMonthlyHoroscope(ctx context.Context, sign GetMonthlyHoroscopeParamsSign, params *GetMonthlyHoroscopeParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
@@ -54788,7 +54839,7 @@ func (c *Client) GetMonthlyHoroscope(ctx context.Context, sign GetMonthlyHorosco
 
 // GetWeeklyHoroscope Weekly horoscope by zodiac sign - Seven-day editorial column
 //
-// A Monday to Sunday column for any zodiac sign, naming the transits that perfect during the week and the days they fall on. Each event is read into the whole-sign houses of that sign, so content is unique per sign, and the dated events come back beside the prose so an editor can check a piece before it runs. Alongside the column come overview, love, career, health, finance and advice, plus lucky days, lucky numbers and compatible signs. No language model is involved, so the same sign and week always returns the same text. Pass any date inside a week to retrieve that week, or timezone to roll over on a local clock. Available in eight languages. Weekly horoscope API, zodiac weekly forecast, astrology weekly prediction.
+// A Monday to Sunday column for any zodiac sign, naming the transits that perfect during the week and the days they fall on. Each event is read into the whole-sign houses of that sign, so content is unique per sign, and the dated events come back beside the prose so an editor can check a piece before it runs. Alongside the column come overview, love, career, health, finance and advice, plus lucky days, lucky numbers and compatible signs. No language model is involved, so the same sign and week always returns the same text. Pass any date inside a week to retrieve that week, or timezone to roll over on a local clock. Composed in 8 languages (en, de, es, fr, hi, pt, ru, tr); any other lang code returns English. Weekly horoscope API, zodiac weekly forecast, astrology weekly prediction.
 //
 // Corresponds with GET /astrology/horoscope/{sign}/weekly (the `GetWeeklyHoroscope` operationId).
 func (c *Client) GetWeeklyHoroscope(ctx context.Context, sign GetWeeklyHoroscopeParamsSign, params *GetWeeklyHoroscopeParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
@@ -60933,7 +60984,7 @@ func (c *Client) CheckSadhesati(ctx context.Context, params *CheckSadhesatiParam
 
 // GetEclipticCrossingsWithBody Ecliptic Crossings - When planets cross the ecliptic plane
 //
-// Find all ecliptic plane crossings for visible planets during a given year. An ecliptic crossing occurs when a planetary celestial latitude passes through 0 degrees, crossing from one side of the ecliptic to the other. Ascending crossings (south to north) correspond to the ascending node, descending crossings (north to south) to the descending node. Moon crosses ~2 times per month, outer planets cross less frequently. Returns exact date, time, direction, sidereal longitude, and zodiac sign. Ecliptic crossing API, planetary node crossing, ascending descending node ephemeris.
+// Find all ecliptic plane crossings for visible planets during a given year. An ecliptic crossing occurs when a planetary celestial latitude passes through 0 degrees, crossing from one side of the ecliptic to the other. Ascending crossings (south to north) correspond to the ascending node, descending crossings (north to south) to the descending node. Moon crosses ~2 times per month, outer planets cross less frequently. Returns exact date, time, direction, longitude and zodiac sign in the requested coordinateSystem, sidereal by default. Ecliptic crossing API, planetary node crossing, ascending descending node ephemeris.
 //
 // Takes any type of body and a specified content type.
 //
@@ -60952,7 +61003,7 @@ func (c *Client) GetEclipticCrossingsWithBody(ctx context.Context, contentType s
 
 // GetEclipticCrossings Ecliptic Crossings - When planets cross the ecliptic plane
 //
-// Find all ecliptic plane crossings for visible planets during a given year. An ecliptic crossing occurs when a planetary celestial latitude passes through 0 degrees, crossing from one side of the ecliptic to the other. Ascending crossings (south to north) correspond to the ascending node, descending crossings (north to south) to the descending node. Moon crosses ~2 times per month, outer planets cross less frequently. Returns exact date, time, direction, sidereal longitude, and zodiac sign. Ecliptic crossing API, planetary node crossing, ascending descending node ephemeris.
+// Find all ecliptic plane crossings for visible planets during a given year. An ecliptic crossing occurs when a planetary celestial latitude passes through 0 degrees, crossing from one side of the ecliptic to the other. Ascending crossings (south to north) correspond to the ascending node, descending crossings (north to south) to the descending node. Moon crosses ~2 times per month, outer planets cross less frequently. Returns exact date, time, direction, longitude and zodiac sign in the requested coordinateSystem, sidereal by default. Ecliptic crossing API, planetary node crossing, ascending descending node ephemeris.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -65191,28 +65242,20 @@ func NewGetDailyAyurvedaReadingRequest(server string, params *GetDailyAyurvedaRe
 
 		}
 
-		if params.Latitude != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "latitude", *params.Latitude, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "number", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
+		if queryFrag, err := runtime.StyleParamWithOptions("form", true, "latitude", params.Latitude, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "number", Format: ""}); err != nil {
+			return nil, err
+		} else {
+			for _, qp := range strings.Split(queryFrag, "&") {
+				rawQueryFragments = append(rawQueryFragments, qp)
 			}
-
 		}
 
-		if params.Longitude != nil {
-
-			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "longitude", *params.Longitude, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "number", Format: ""}); err != nil {
-				return nil, err
-			} else {
-				for _, qp := range strings.Split(queryFrag, "&") {
-					rawQueryFragments = append(rawQueryFragments, qp)
-				}
+		if queryFrag, err := runtime.StyleParamWithOptions("form", true, "longitude", params.Longitude, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "number", Format: ""}); err != nil {
+			return nil, err
+		} else {
+			for _, qp := range strings.Split(queryFrag, "&") {
+				rawQueryFragments = append(rawQueryFragments, qp)
 			}
-
 		}
 
 		if params.Timezone != nil {
@@ -79949,7 +79992,7 @@ type ClientWithResponsesInterface interface {
 
 	// GetDailyHoroscopeWithResponse Daily horoscope by zodiac sign - Transit-based editorial columns
 	//
-	// A publish-ready column for any zodiac sign, built from the dated transits over it and returned with those events for fact-checking. The reading names the aspects, sign ingresses, lunations and retrograde stations driving it and reads each into the whole-sign houses of that sign, so every sign gets different content rather than one blurb reused twelve times. Alongside the column come overview, love, career, health, finance and advice, the active transits, Moon sign and phase, an energy rating, lucky number and color, and compatible signs. No language model is involved, so a given sign and date always returns the same text and a piece scheduled months ahead is the piece that runs. Content rolls over at midnight, by default UTC. Pass date for editorial scheduling, or timezone to roll over on a local clock. Available in eight languages. Daily horoscope API, zodiac forecast, sun sign horoscope, astrology prediction.
+	// A publish-ready column for any zodiac sign, built from the dated transits over it and returned with those events for fact-checking. The reading names the aspects, sign ingresses, lunations and retrograde stations driving it and reads each into the whole-sign houses of that sign, so every sign gets different content rather than one blurb reused twelve times. Alongside the column come overview, love, career, health, finance and advice, the active transits, Moon sign and phase, an energy rating, lucky number and color, and compatible signs. No language model is involved, so a given sign and date always returns the same text and a piece scheduled months ahead is the piece that runs. Content rolls over at midnight, by default UTC. Pass date for editorial scheduling, or timezone to roll over on a local clock. Composed in 8 languages (en, de, es, fr, hi, pt, ru, tr); any other lang code returns English. Daily horoscope API, zodiac forecast, sun sign horoscope, astrology prediction.
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
@@ -79958,7 +80001,7 @@ type ClientWithResponsesInterface interface {
 
 	// GetMonthlyHoroscopeWithResponse Monthly horoscope by zodiac sign - Editorial column with key dates
 	//
-	// A month-long column for any zodiac sign, plus a week-by-week breakdown and dated key dates a calendar page renders directly. The column names the major aspects, slow-planet sign changes, lunations and stations of the month, and reads each into the whole-sign houses of that sign, and those events come back beside the prose with their exact instants, so a piece can be checked against NASA JPL Horizons or the US Naval Observatory before it runs. Key dates are the real New Moon, Full Moon and retrograde instants, never approximations. Alongside the column come overview, love, career, health, finance and advice. Pass any date inside a month to retrieve that month, or timezone to roll over on a local clock. Available in eight languages. Monthly horoscope API, zodiac monthly forecast, astrology monthly prediction.
+	// A month-long column for any zodiac sign, plus a week-by-week breakdown and dated key dates a calendar page renders directly. The column names the major aspects, slow-planet sign changes, lunations and stations of the month, and reads each into the whole-sign houses of that sign, and those events come back beside the prose with their exact instants, so a piece can be checked against NASA JPL Horizons or the US Naval Observatory before it runs. Key dates are the real New Moon, Full Moon and retrograde instants, never approximations. Alongside the column come overview, love, career, health, finance and advice. Pass any date inside a month to retrieve that month, or timezone to roll over on a local clock. Composed in 8 languages (en, de, es, fr, hi, pt, ru, tr); any other lang code returns English. Monthly horoscope API, zodiac monthly forecast, astrology monthly prediction.
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
@@ -79967,7 +80010,7 @@ type ClientWithResponsesInterface interface {
 
 	// GetWeeklyHoroscopeWithResponse Weekly horoscope by zodiac sign - Seven-day editorial column
 	//
-	// A Monday to Sunday column for any zodiac sign, naming the transits that perfect during the week and the days they fall on. Each event is read into the whole-sign houses of that sign, so content is unique per sign, and the dated events come back beside the prose so an editor can check a piece before it runs. Alongside the column come overview, love, career, health, finance and advice, plus lucky days, lucky numbers and compatible signs. No language model is involved, so the same sign and week always returns the same text. Pass any date inside a week to retrieve that week, or timezone to roll over on a local clock. Available in eight languages. Weekly horoscope API, zodiac weekly forecast, astrology weekly prediction.
+	// A Monday to Sunday column for any zodiac sign, naming the transits that perfect during the week and the days they fall on. Each event is read into the whole-sign houses of that sign, so content is unique per sign, and the dated events come back beside the prose so an editor can check a piece before it runs. Alongside the column come overview, love, career, health, finance and advice, plus lucky days, lucky numbers and compatible signs. No language model is involved, so the same sign and week always returns the same text. Pass any date inside a week to retrieve that week, or timezone to roll over on a local clock. Composed in 8 languages (en, de, es, fr, hi, pt, ru, tr); any other lang code returns English. Weekly horoscope API, zodiac weekly forecast, astrology weekly prediction.
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
@@ -82964,7 +83007,7 @@ type ClientWithResponsesInterface interface {
 
 	// GetEclipticCrossingsWithBodyWithResponse Ecliptic Crossings - When planets cross the ecliptic plane
 	//
-	// Find all ecliptic plane crossings for visible planets during a given year. An ecliptic crossing occurs when a planetary celestial latitude passes through 0 degrees, crossing from one side of the ecliptic to the other. Ascending crossings (south to north) correspond to the ascending node, descending crossings (north to south) to the descending node. Moon crosses ~2 times per month, outer planets cross less frequently. Returns exact date, time, direction, sidereal longitude, and zodiac sign. Ecliptic crossing API, planetary node crossing, ascending descending node ephemeris.
+	// Find all ecliptic plane crossings for visible planets during a given year. An ecliptic crossing occurs when a planetary celestial latitude passes through 0 degrees, crossing from one side of the ecliptic to the other. Ascending crossings (south to north) correspond to the ascending node, descending crossings (north to south) to the descending node. Moon crosses ~2 times per month, outer planets cross less frequently. Returns exact date, time, direction, longitude and zodiac sign in the requested coordinateSystem, sidereal by default. Ecliptic crossing API, planetary node crossing, ascending descending node ephemeris.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -82973,7 +83016,7 @@ type ClientWithResponsesInterface interface {
 
 	// GetEclipticCrossingsWithResponse Ecliptic Crossings - When planets cross the ecliptic plane
 	//
-	// Find all ecliptic plane crossings for visible planets during a given year. An ecliptic crossing occurs when a planetary celestial latitude passes through 0 degrees, crossing from one side of the ecliptic to the other. Ascending crossings (south to north) correspond to the ascending node, descending crossings (north to south) to the descending node. Moon crosses ~2 times per month, outer planets cross less frequently. Returns exact date, time, direction, sidereal longitude, and zodiac sign. Ecliptic crossing API, planetary node crossing, ascending descending node ephemeris.
+	// Find all ecliptic plane crossings for visible planets during a given year. An ecliptic crossing occurs when a planetary celestial latitude passes through 0 degrees, crossing from one side of the ecliptic to the other. Ascending crossings (south to north) correspond to the ascending node, descending crossings (north to south) to the descending node. Moon crosses ~2 times per month, outer planets cross less frequently. Returns exact date, time, direction, longitude and zodiac sign in the requested coordinateSystem, sidereal by default. Ecliptic crossing API, planetary node crossing, ascending descending node ephemeris.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -136051,13 +136094,13 @@ type GetEclipticCrossingsResponse struct {
 			// Direction Ascending = planet moves from south to north of the ecliptic. Descending = north to south.
 			Direction GetEclipticCrossings200JSONResponseBodyEventsDirection `json:"direction"`
 
-			// Longitude Sidereal longitude of the planet at the moment of crossing (Lahiri ayanamsa).
+			// Longitude Longitude of the planet at the moment of crossing, in the requested coordinateSystem: sidereal (Lahiri ayanamsa) by default, tropical when asked.
 			Longitude float32 `json:"longitude"`
 
 			// Planet Planet crossing the ecliptic plane. Sun is excluded (always on the ecliptic by definition).
 			Planet string `json:"planet"`
 
-			// Sign Vedic zodiac sign (rashi) the planet occupies at the crossing.
+			// Sign Zodiac sign the planet occupies at the crossing, read in the same coordinateSystem as longitude: the rashi under sidereal, the tropical sign under tropical.
 			Sign string `json:"sign"`
 
 			// Time Time of the ecliptic crossing (HH:MM, 24-hour). Adjusted to requested timezone.
@@ -136097,13 +136140,13 @@ func (r GetEclipticCrossingsResponse) GetJSON200() *struct {
 		// Direction Ascending = planet moves from south to north of the ecliptic. Descending = north to south.
 		Direction GetEclipticCrossings200JSONResponseBodyEventsDirection `json:"direction"`
 
-		// Longitude Sidereal longitude of the planet at the moment of crossing (Lahiri ayanamsa).
+		// Longitude Longitude of the planet at the moment of crossing, in the requested coordinateSystem: sidereal (Lahiri ayanamsa) by default, tropical when asked.
 		Longitude float32 `json:"longitude"`
 
 		// Planet Planet crossing the ecliptic plane. Sun is excluded (always on the ecliptic by definition).
 		Planet string `json:"planet"`
 
-		// Sign Vedic zodiac sign (rashi) the planet occupies at the crossing.
+		// Sign Zodiac sign the planet occupies at the crossing, read in the same coordinateSystem as longitude: the rashi under sidereal, the tropical sign under tropical.
 		Sign string `json:"sign"`
 
 		// Time Time of the ecliptic crossing (HH:MM, 24-hour). Adjusted to requested timezone.
@@ -141045,7 +141088,7 @@ func (c *ClientWithResponses) GenerateFixedStarsWithResponse(ctx context.Context
 
 // GetDailyHoroscopeWithResponse Daily horoscope by zodiac sign - Transit-based editorial columns
 //
-// A publish-ready column for any zodiac sign, built from the dated transits over it and returned with those events for fact-checking. The reading names the aspects, sign ingresses, lunations and retrograde stations driving it and reads each into the whole-sign houses of that sign, so every sign gets different content rather than one blurb reused twelve times. Alongside the column come overview, love, career, health, finance and advice, the active transits, Moon sign and phase, an energy rating, lucky number and color, and compatible signs. No language model is involved, so a given sign and date always returns the same text and a piece scheduled months ahead is the piece that runs. Content rolls over at midnight, by default UTC. Pass date for editorial scheduling, or timezone to roll over on a local clock. Available in eight languages. Daily horoscope API, zodiac forecast, sun sign horoscope, astrology prediction.
+// A publish-ready column for any zodiac sign, built from the dated transits over it and returned with those events for fact-checking. The reading names the aspects, sign ingresses, lunations and retrograde stations driving it and reads each into the whole-sign houses of that sign, so every sign gets different content rather than one blurb reused twelve times. Alongside the column come overview, love, career, health, finance and advice, the active transits, Moon sign and phase, an energy rating, lucky number and color, and compatible signs. No language model is involved, so a given sign and date always returns the same text and a piece scheduled months ahead is the piece that runs. Content rolls over at midnight, by default UTC. Pass date for editorial scheduling, or timezone to roll over on a local clock. Composed in 8 languages (en, de, es, fr, hi, pt, ru, tr); any other lang code returns English. Daily horoscope API, zodiac forecast, sun sign horoscope, astrology prediction.
 //
 // Returns a wrapper object for the known response body format(s).
 //
@@ -141060,7 +141103,7 @@ func (c *ClientWithResponses) GetDailyHoroscopeWithResponse(ctx context.Context,
 
 // GetMonthlyHoroscopeWithResponse Monthly horoscope by zodiac sign - Editorial column with key dates
 //
-// A month-long column for any zodiac sign, plus a week-by-week breakdown and dated key dates a calendar page renders directly. The column names the major aspects, slow-planet sign changes, lunations and stations of the month, and reads each into the whole-sign houses of that sign, and those events come back beside the prose with their exact instants, so a piece can be checked against NASA JPL Horizons or the US Naval Observatory before it runs. Key dates are the real New Moon, Full Moon and retrograde instants, never approximations. Alongside the column come overview, love, career, health, finance and advice. Pass any date inside a month to retrieve that month, or timezone to roll over on a local clock. Available in eight languages. Monthly horoscope API, zodiac monthly forecast, astrology monthly prediction.
+// A month-long column for any zodiac sign, plus a week-by-week breakdown and dated key dates a calendar page renders directly. The column names the major aspects, slow-planet sign changes, lunations and stations of the month, and reads each into the whole-sign houses of that sign, and those events come back beside the prose with their exact instants, so a piece can be checked against NASA JPL Horizons or the US Naval Observatory before it runs. Key dates are the real New Moon, Full Moon and retrograde instants, never approximations. Alongside the column come overview, love, career, health, finance and advice. Pass any date inside a month to retrieve that month, or timezone to roll over on a local clock. Composed in 8 languages (en, de, es, fr, hi, pt, ru, tr); any other lang code returns English. Monthly horoscope API, zodiac monthly forecast, astrology monthly prediction.
 //
 // Returns a wrapper object for the known response body format(s).
 //
@@ -141075,7 +141118,7 @@ func (c *ClientWithResponses) GetMonthlyHoroscopeWithResponse(ctx context.Contex
 
 // GetWeeklyHoroscopeWithResponse Weekly horoscope by zodiac sign - Seven-day editorial column
 //
-// A Monday to Sunday column for any zodiac sign, naming the transits that perfect during the week and the days they fall on. Each event is read into the whole-sign houses of that sign, so content is unique per sign, and the dated events come back beside the prose so an editor can check a piece before it runs. Alongside the column come overview, love, career, health, finance and advice, plus lucky days, lucky numbers and compatible signs. No language model is involved, so the same sign and week always returns the same text. Pass any date inside a week to retrieve that week, or timezone to roll over on a local clock. Available in eight languages. Weekly horoscope API, zodiac weekly forecast, astrology weekly prediction.
+// A Monday to Sunday column for any zodiac sign, naming the transits that perfect during the week and the days they fall on. Each event is read into the whole-sign houses of that sign, so content is unique per sign, and the dated events come back beside the prose so an editor can check a piece before it runs. Alongside the column come overview, love, career, health, finance and advice, plus lucky days, lucky numbers and compatible signs. No language model is involved, so the same sign and week always returns the same text. Pass any date inside a week to retrieve that week, or timezone to roll over on a local clock. Composed in 8 languages (en, de, es, fr, hi, pt, ru, tr); any other lang code returns English. Weekly horoscope API, zodiac weekly forecast, astrology weekly prediction.
 //
 // Returns a wrapper object for the known response body format(s).
 //
@@ -146070,7 +146113,7 @@ func (c *ClientWithResponses) CheckSadhesatiWithResponse(ctx context.Context, pa
 
 // GetEclipticCrossingsWithBodyWithResponse Ecliptic Crossings - When planets cross the ecliptic plane
 //
-// Find all ecliptic plane crossings for visible planets during a given year. An ecliptic crossing occurs when a planetary celestial latitude passes through 0 degrees, crossing from one side of the ecliptic to the other. Ascending crossings (south to north) correspond to the ascending node, descending crossings (north to south) to the descending node. Moon crosses ~2 times per month, outer planets cross less frequently. Returns exact date, time, direction, sidereal longitude, and zodiac sign. Ecliptic crossing API, planetary node crossing, ascending descending node ephemeris.
+// Find all ecliptic plane crossings for visible planets during a given year. An ecliptic crossing occurs when a planetary celestial latitude passes through 0 degrees, crossing from one side of the ecliptic to the other. Ascending crossings (south to north) correspond to the ascending node, descending crossings (north to south) to the descending node. Moon crosses ~2 times per month, outer planets cross less frequently. Returns exact date, time, direction, longitude and zodiac sign in the requested coordinateSystem, sidereal by default. Ecliptic crossing API, planetary node crossing, ascending descending node ephemeris.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -146085,7 +146128,7 @@ func (c *ClientWithResponses) GetEclipticCrossingsWithBodyWithResponse(ctx conte
 
 // GetEclipticCrossingsWithResponse Ecliptic Crossings - When planets cross the ecliptic plane
 //
-// Find all ecliptic plane crossings for visible planets during a given year. An ecliptic crossing occurs when a planetary celestial latitude passes through 0 degrees, crossing from one side of the ecliptic to the other. Ascending crossings (south to north) correspond to the ascending node, descending crossings (north to south) to the descending node. Moon crosses ~2 times per month, outer planets cross less frequently. Returns exact date, time, direction, sidereal longitude, and zodiac sign. Ecliptic crossing API, planetary node crossing, ascending descending node ephemeris.
+// Find all ecliptic plane crossings for visible planets during a given year. An ecliptic crossing occurs when a planetary celestial latitude passes through 0 degrees, crossing from one side of the ecliptic to the other. Ascending crossings (south to north) correspond to the ascending node, descending crossings (north to south) to the descending node. Moon crosses ~2 times per month, outer planets cross less frequently. Returns exact date, time, direction, longitude and zodiac sign in the requested coordinateSystem, sidereal by default. Ecliptic crossing API, planetary node crossing, ascending descending node ephemeris.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -180144,13 +180187,13 @@ func ParseGetEclipticCrossingsResponse(rsp *http.Response) (*GetEclipticCrossing
 				// Direction Ascending = planet moves from south to north of the ecliptic. Descending = north to south.
 				Direction GetEclipticCrossings200JSONResponseBodyEventsDirection `json:"direction"`
 
-				// Longitude Sidereal longitude of the planet at the moment of crossing (Lahiri ayanamsa).
+				// Longitude Longitude of the planet at the moment of crossing, in the requested coordinateSystem: sidereal (Lahiri ayanamsa) by default, tropical when asked.
 				Longitude float32 `json:"longitude"`
 
 				// Planet Planet crossing the ecliptic plane. Sun is excluded (always on the ecliptic by definition).
 				Planet string `json:"planet"`
 
-				// Sign Vedic zodiac sign (rashi) the planet occupies at the crossing.
+				// Sign Zodiac sign the planet occupies at the crossing, read in the same coordinateSystem as longitude: the rashi under sidereal, the tropical sign under tropical.
 				Sign string `json:"sign"`
 
 				// Time Time of the ecliptic crossing (HH:MM, 24-hour). Adjusted to requested timezone.
