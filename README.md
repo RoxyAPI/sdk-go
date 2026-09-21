@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://roxyapi.com">
-    <img src="https://raw.githubusercontent.com/RoxyAPI/sdk-go/main/assets/hero.png" alt="RoxyAPI Go SDK, typed from the spec. The Spiritual OS layer for agentic AI. One key, flat pricing." width="100%">
+    <img src="https://raw.githubusercontent.com/RoxyAPI/sdk-go/main/assets/hero.png" alt="RoxyAPI Go SDK, ship in an afternoon. The Spiritual OS layer for agentic AI. One key, flat pricing." width="100%">
   </a>
 </p>
 
