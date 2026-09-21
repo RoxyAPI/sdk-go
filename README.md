@@ -1,3 +1,9 @@
+<p align="center">
+  <a href="https://roxyapi.com">
+    <img src="https://raw.githubusercontent.com/RoxyAPI/sdk-go/main/assets/hero.png" alt="RoxyAPI Go SDK: the Spiritual OS layer for agentic AI. One key, flat pricing." width="100%">
+  </a>
+</p>
+
 # RoxyAPI Go SDK
 
 [![Go Reference](https://pkg.go.dev/badge/github.com/RoxyAPI/sdk-go.svg)](https://pkg.go.dev/github.com/RoxyAPI/sdk-go)
