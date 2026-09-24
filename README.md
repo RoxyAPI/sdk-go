@@ -731,7 +731,6 @@ Read from the generated facade on every release. Every other method takes `param
 - `roxy.VedicAstrology.CalculateParallels(ctx, body)`
 - `roxy.VedicAstrology.CalculateTransit(ctx, body)`
 - `roxy.VedicAstrology.GetChoghadiya(ctx, body)`
-- `roxy.VedicAstrology.GetEclipticCrossings(ctx, body)`
 - `roxy.VedicAstrology.GetHeliacalVisibility(ctx, body)`
 - `roxy.VedicAstrology.GetHora(ctx, body)`
 - `roxy.VedicAstrology.GetKpDailyFinance(ctx, body)`

@@ -587,8 +587,8 @@ func (s *VedicAstrologyService) GetDetailedPanchang(ctx context.Context, params 
 	return resp, asRoxyError(resp)
 }
 
-func (s *VedicAstrologyService) GetEclipticCrossings(ctx context.Context, body GetEclipticCrossingsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetEclipticCrossingsResponse, error) {
-	resp, err := s.client.GetEclipticCrossingsWithResponse(ctx, body, reqEditors...)
+func (s *VedicAstrologyService) GetEclipticCrossings(ctx context.Context, params *GetEclipticCrossingsParams, body GetEclipticCrossingsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetEclipticCrossingsResponse, error) {
+	resp, err := s.client.GetEclipticCrossingsWithResponse(ctx, params, body, reqEditors...)
 	if err != nil {
 		return resp, err
 	}

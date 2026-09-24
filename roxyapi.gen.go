@@ -26673,6 +26673,48 @@ func (e CheckSadhesatiParamsLang) Valid() bool {
 	}
 }
 
+// Defines values for GetEclipticCrossingsParamsLang.
+const (
+	GetEclipticCrossingsParamsLangDe     GetEclipticCrossingsParamsLang = "de"
+	GetEclipticCrossingsParamsLangEn     GetEclipticCrossingsParamsLang = "en"
+	GetEclipticCrossingsParamsLangEs     GetEclipticCrossingsParamsLang = "es"
+	GetEclipticCrossingsParamsLangFr     GetEclipticCrossingsParamsLang = "fr"
+	GetEclipticCrossingsParamsLangHi     GetEclipticCrossingsParamsLang = "hi"
+	GetEclipticCrossingsParamsLangPt     GetEclipticCrossingsParamsLang = "pt"
+	GetEclipticCrossingsParamsLangRu     GetEclipticCrossingsParamsLang = "ru"
+	GetEclipticCrossingsParamsLangTr     GetEclipticCrossingsParamsLang = "tr"
+	GetEclipticCrossingsParamsLangZhHans GetEclipticCrossingsParamsLang = "zh-Hans"
+	GetEclipticCrossingsParamsLangZhHant GetEclipticCrossingsParamsLang = "zh-Hant"
+)
+
+// Valid indicates whether the value is a known member of the GetEclipticCrossingsParamsLang enum.
+func (e GetEclipticCrossingsParamsLang) Valid() bool {
+	switch e {
+	case GetEclipticCrossingsParamsLangDe:
+		return true
+	case GetEclipticCrossingsParamsLangEn:
+		return true
+	case GetEclipticCrossingsParamsLangEs:
+		return true
+	case GetEclipticCrossingsParamsLangFr:
+		return true
+	case GetEclipticCrossingsParamsLangHi:
+		return true
+	case GetEclipticCrossingsParamsLangPt:
+		return true
+	case GetEclipticCrossingsParamsLangRu:
+		return true
+	case GetEclipticCrossingsParamsLangTr:
+		return true
+	case GetEclipticCrossingsParamsLangZhHans:
+		return true
+	case GetEclipticCrossingsParamsLangZhHant:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for GetEclipticCrossingsJSONBodyCoordinateSystem.
 const (
 	GetEclipticCrossingsJSONBodyCoordinateSystemSidereal GetEclipticCrossingsJSONBodyCoordinateSystem = "sidereal"
@@ -34482,25 +34524,25 @@ type NatalChartResponse struct {
 
 	// Summary Chart summary with dominant element, modality, retrograde planets, and distribution analysis.
 	Summary struct {
-		// DominantElement Most represented element in the chart (Fire, Earth, Air, Water). Always English, whatever the lang parameter says. Use dominantElementLocalized for anything a reader sees.
+		// DominantElement Element holding the most of the ten planets, Sun through Pluto (Fire, Earth, Air, Water). A tie goes to the tied element holding the Sun, else the Moon, else the Ascendant, else the first of Mercury through Pluto. Always English, whatever the lang parameter says. Use dominantElementLocalized for anything a reader sees.
 		DominantElement string `json:"dominantElement"`
 
 		// DominantElementLocalized Element name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
 		DominantElementLocalized *string `json:"dominantElementLocalized,omitempty"`
 
-		// DominantModality Most represented modality in the chart (Cardinal, Fixed, Mutable). Always English, whatever the lang parameter says. Use dominantModalityLocalized for anything a reader sees.
+		// DominantModality Modality holding the most of the ten planets, Sun through Pluto (Cardinal, Fixed, Mutable). A tie is broken as for dominantElement: the Sun, then the Moon, then the Ascendant, then Mercury through Pluto. Always English, whatever the lang parameter says. Use dominantModalityLocalized for anything a reader sees.
 		DominantModality string `json:"dominantModality"`
 
 		// DominantModalityLocalized Modality name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
 		DominantModalityLocalized *string `json:"dominantModalityLocalized,omitempty"`
 
-		// ElementDistribution Count of planets in each element. Shows elemental emphasis in the personality.
+		// ElementDistribution Count of the ten planets, Sun through Pluto, in each element; the four counts sum to 10. The lunar nodes, Chiron and Lilith are points, not planets, and are not counted. Shows elemental emphasis in the personality.
 		ElementDistribution map[string]float32 `json:"elementDistribution"`
 
-		// ModalityDistribution Count of planets in each modality. Shows the dominant operating mode.
+		// ModalityDistribution Count of the ten planets, Sun through Pluto, in each modality; the three counts sum to 10, and the lunar nodes, Chiron and Lilith are not counted. Shows the dominant operating mode.
 		ModalityDistribution map[string]float32 `json:"modalityDistribution"`
 
-		// RetrogradePlanets Planets in retrograde motion at the time of birth. Always English, whatever the lang parameter says. Use retrogradePlanetsLocalized for anything a reader sees.
+		// RetrogradePlanets Bodies in retrograde motion at the time of birth: the ten planets and the chart points (lunar nodes, Chiron, Lilith) alike. Always English, whatever the lang parameter says. Use retrogradePlanetsLocalized for anything a reader sees.
 		RetrogradePlanets []string `json:"retrogradePlanets"`
 
 		// RetrogradePlanetsLocalized The same retrograde bodies in the requested language, for display only. Index aligned with retrogradePlanets, so entry n of one names entry n of the other. Present only when lang is set to a language other than English, since in English it would repeat retrogradePlanets exactly.
@@ -42686,6 +42728,15 @@ type GetEclipticCrossingsJSONBody struct {
 	// Year Year to scan for ecliptic crossings (1900-2100).
 	Year int `json:"year"`
 }
+
+// GetEclipticCrossingsParams defines parameters for GetEclipticCrossings.
+type GetEclipticCrossingsParams struct {
+	// Lang Response language (BCP 47). Supported: en, tr, de, es, hi, pt, fr, ru, zh-Hans, zh-Hant. Defaults to en. Coverage varies by domain, and a field with no translation in the requested language returns English.
+	Lang *GetEclipticCrossingsParamsLang `form:"lang,omitempty" json:"lang,omitempty"`
+}
+
+// GetEclipticCrossingsParamsLang defines parameters for GetEclipticCrossings.
+type GetEclipticCrossingsParamsLang string
 
 // GetEclipticCrossingsJSONBodyCoordinateSystem defines parameters for GetEclipticCrossings.
 type GetEclipticCrossingsJSONBodyCoordinateSystem string
@@ -53823,7 +53874,7 @@ type ClientInterface interface {
 	// Takes any type of body and a specified content type.
 	//
 	// Corresponds with POST /vedic-astrology/ecliptic-crossings (the `GetEclipticCrossings` operationId).
-	GetEclipticCrossingsWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+	GetEclipticCrossingsWithBody(ctx context.Context, params *GetEclipticCrossingsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetEclipticCrossings Ecliptic Crossings - When planets cross the ecliptic plane
 	//
@@ -53832,7 +53883,7 @@ type ClientInterface interface {
 	// Takes a body of the `application/json` content type.
 	//
 	// Corresponds with POST /vedic-astrology/ecliptic-crossings (the `GetEclipticCrossings` operationId).
-	GetEclipticCrossings(ctx context.Context, body GetEclipticCrossingsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+	GetEclipticCrossings(ctx context.Context, params *GetEclipticCrossingsParams, body GetEclipticCrossingsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
 	// GetHeliacalVisibilityWithBody Heliacal rising and setting (udaya and asta) - Graha Asta Calculator API
 	//
@@ -60989,8 +61040,8 @@ func (c *Client) CheckSadhesati(ctx context.Context, params *CheckSadhesatiParam
 // Takes any type of body and a specified content type.
 //
 // Corresponds with POST /vedic-astrology/ecliptic-crossings (the `GetEclipticCrossings` operationId).
-func (c *Client) GetEclipticCrossingsWithBody(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetEclipticCrossingsRequestWithBody(c.Server, contentType, body)
+func (c *Client) GetEclipticCrossingsWithBody(ctx context.Context, params *GetEclipticCrossingsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetEclipticCrossingsRequestWithBody(c.Server, params, contentType, body)
 	if err != nil {
 		return nil, err
 	}
@@ -61008,8 +61059,8 @@ func (c *Client) GetEclipticCrossingsWithBody(ctx context.Context, contentType s
 // Takes a body of the `application/json` content type.
 //
 // Corresponds with POST /vedic-astrology/ecliptic-crossings (the `GetEclipticCrossings` operationId).
-func (c *Client) GetEclipticCrossings(ctx context.Context, body GetEclipticCrossingsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
-	req, err := NewGetEclipticCrossingsRequest(c.Server, body)
+func (c *Client) GetEclipticCrossings(ctx context.Context, params *GetEclipticCrossingsParams, body GetEclipticCrossingsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGetEclipticCrossingsRequest(c.Server, params, body)
 	if err != nil {
 		return nil, err
 	}
@@ -77809,18 +77860,18 @@ func NewCheckSadhesatiRequestWithBody(server string, params *CheckSadhesatiParam
 }
 
 // NewGetEclipticCrossingsRequest calls the generic GetEclipticCrossings builder with application/json body
-func NewGetEclipticCrossingsRequest(server string, body GetEclipticCrossingsJSONRequestBody) (*http.Request, error) {
+func NewGetEclipticCrossingsRequest(server string, params *GetEclipticCrossingsParams, body GetEclipticCrossingsJSONRequestBody) (*http.Request, error) {
 	var bodyReader io.Reader
 	buf, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
 	bodyReader = bytes.NewReader(buf)
-	return NewGetEclipticCrossingsRequestWithBody(server, "application/json", bodyReader)
+	return NewGetEclipticCrossingsRequestWithBody(server, params, "application/json", bodyReader)
 }
 
 // NewGetEclipticCrossingsRequestWithBody constructs an http.Request for the GetEclipticCrossings method, with any body, and a specified content type
-func NewGetEclipticCrossingsRequestWithBody(server string, contentType string, body io.Reader) (*http.Request, error) {
+func NewGetEclipticCrossingsRequestWithBody(server string, params *GetEclipticCrossingsParams, contentType string, body io.Reader) (*http.Request, error) {
 	var err error
 
 	serverURL, err := url.Parse(server)
@@ -77836,6 +77887,33 @@ func NewGetEclipticCrossingsRequestWithBody(server string, contentType string, b
 	queryURL, err := serverURL.Parse(operationPath)
 	if err != nil {
 		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Lang != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "lang", *params.Lang, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
 	}
 
 	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
@@ -83012,7 +83090,7 @@ type ClientWithResponsesInterface interface {
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with POST /vedic-astrology/ecliptic-crossings (the `GetEclipticCrossings` operationId).
-	GetEclipticCrossingsWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetEclipticCrossingsResponse, error)
+	GetEclipticCrossingsWithBodyWithResponse(ctx context.Context, params *GetEclipticCrossingsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetEclipticCrossingsResponse, error)
 
 	// GetEclipticCrossingsWithResponse Ecliptic Crossings - When planets cross the ecliptic plane
 	//
@@ -83021,7 +83099,7 @@ type ClientWithResponsesInterface interface {
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with POST /vedic-astrology/ecliptic-crossings (the `GetEclipticCrossings` operationId).
-	GetEclipticCrossingsWithResponse(ctx context.Context, body GetEclipticCrossingsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetEclipticCrossingsResponse, error)
+	GetEclipticCrossingsWithResponse(ctx context.Context, params *GetEclipticCrossingsParams, body GetEclipticCrossingsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetEclipticCrossingsResponse, error)
 
 	// GetHeliacalVisibilityWithBodyWithResponse Heliacal rising and setting (udaya and asta) - Graha Asta Calculator API
 	//
@@ -97499,8 +97577,11 @@ type GenerateBaziChartResponse struct {
 			// NaYinChinese The Na Yin name in hanzi. Identical under every lang.
 			NaYinChinese string `json:"naYinChinese"`
 
-			// NaYinElement Element the Na Yin resolves to. Independent of the stem element and often different from it, which is why it is reported separately rather than folded in.
+			// NaYinElement Element the Na Yin resolves to. Independent of the stem element and often different from it, which is why it is reported separately rather than folded in. Always English, whatever the lang parameter says. Use naYinElementLocalized for anything a reader sees.
 			NaYinElement string `json:"naYinElement"`
+
+			// NaYinElementLocalized Na Yin element name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			NaYinElementLocalized *string `json:"naYinElementLocalized,omitempty"`
 
 			// Number Position of this pillar in the sexagenary cycle, 1 to 60, where jia-zi is 1. The cycle runs stems and branches together, which is why only 60 of the 120 possible pairings occur.
 			Number float32 `json:"number"`
@@ -97776,8 +97857,11 @@ func (r GenerateBaziChartResponse) GetJSON200() *struct {
 		// NaYinChinese The Na Yin name in hanzi. Identical under every lang.
 		NaYinChinese string `json:"naYinChinese"`
 
-		// NaYinElement Element the Na Yin resolves to. Independent of the stem element and often different from it, which is why it is reported separately rather than folded in.
+		// NaYinElement Element the Na Yin resolves to. Independent of the stem element and often different from it, which is why it is reported separately rather than folded in. Always English, whatever the lang parameter says. Use naYinElementLocalized for anything a reader sees.
 		NaYinElement string `json:"naYinElement"`
+
+		// NaYinElementLocalized Na Yin element name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		NaYinElementLocalized *string `json:"naYinElementLocalized,omitempty"`
 
 		// Number Position of this pillar in the sexagenary cycle, 1 to 60, where jia-zi is 1. The cycle runs stems and branches together, which is why only 60 of the 120 possible pairings occur.
 		Number float32 `json:"number"`
@@ -98084,8 +98168,11 @@ type CalculateBaziCompatibilityResponse struct {
 				// NaYinChinese The Na Yin name in hanzi. Identical under every lang.
 				NaYinChinese string `json:"naYinChinese"`
 
-				// NaYinElement Element the Na Yin resolves to. Independent of the stem element and often different from it, which is why it is reported separately rather than folded in.
+				// NaYinElement Element the Na Yin resolves to. Independent of the stem element and often different from it, which is why it is reported separately rather than folded in. Always English, whatever the lang parameter says. Use naYinElementLocalized for anything a reader sees.
 				NaYinElement string `json:"naYinElement"`
+
+				// NaYinElementLocalized Na Yin element name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				NaYinElementLocalized *string `json:"naYinElementLocalized,omitempty"`
 
 				// Number Position of this pillar in the sexagenary cycle, 1 to 60, where jia-zi is 1. The cycle runs stems and branches together, which is why only 60 of the 120 possible pairings occur.
 				Number float32 `json:"number"`
@@ -98270,8 +98357,11 @@ type CalculateBaziCompatibilityResponse struct {
 				// NaYinChinese The Na Yin name in hanzi. Identical under every lang.
 				NaYinChinese string `json:"naYinChinese"`
 
-				// NaYinElement Element the Na Yin resolves to. Independent of the stem element and often different from it, which is why it is reported separately rather than folded in.
+				// NaYinElement Element the Na Yin resolves to. Independent of the stem element and often different from it, which is why it is reported separately rather than folded in. Always English, whatever the lang parameter says. Use naYinElementLocalized for anything a reader sees.
 				NaYinElement string `json:"naYinElement"`
+
+				// NaYinElementLocalized Na Yin element name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				NaYinElementLocalized *string `json:"naYinElementLocalized,omitempty"`
 
 				// Number Position of this pillar in the sexagenary cycle, 1 to 60, where jia-zi is 1. The cycle runs stems and branches together, which is why only 60 of the 120 possible pairings occur.
 				Number float32 `json:"number"`
@@ -98523,8 +98613,11 @@ func (r CalculateBaziCompatibilityResponse) GetJSON200() *struct {
 			// NaYinChinese The Na Yin name in hanzi. Identical under every lang.
 			NaYinChinese string `json:"naYinChinese"`
 
-			// NaYinElement Element the Na Yin resolves to. Independent of the stem element and often different from it, which is why it is reported separately rather than folded in.
+			// NaYinElement Element the Na Yin resolves to. Independent of the stem element and often different from it, which is why it is reported separately rather than folded in. Always English, whatever the lang parameter says. Use naYinElementLocalized for anything a reader sees.
 			NaYinElement string `json:"naYinElement"`
+
+			// NaYinElementLocalized Na Yin element name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			NaYinElementLocalized *string `json:"naYinElementLocalized,omitempty"`
 
 			// Number Position of this pillar in the sexagenary cycle, 1 to 60, where jia-zi is 1. The cycle runs stems and branches together, which is why only 60 of the 120 possible pairings occur.
 			Number float32 `json:"number"`
@@ -98709,8 +98802,11 @@ func (r CalculateBaziCompatibilityResponse) GetJSON200() *struct {
 			// NaYinChinese The Na Yin name in hanzi. Identical under every lang.
 			NaYinChinese string `json:"naYinChinese"`
 
-			// NaYinElement Element the Na Yin resolves to. Independent of the stem element and often different from it, which is why it is reported separately rather than folded in.
+			// NaYinElement Element the Na Yin resolves to. Independent of the stem element and often different from it, which is why it is reported separately rather than folded in. Always English, whatever the lang parameter says. Use naYinElementLocalized for anything a reader sees.
 			NaYinElement string `json:"naYinElement"`
+
+			// NaYinElementLocalized Na Yin element name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			NaYinElementLocalized *string `json:"naYinElementLocalized,omitempty"`
 
 			// Number Position of this pillar in the sexagenary cycle, 1 to 60, where jia-zi is 1. The cycle runs stems and branches together, which is why only 60 of the 120 possible pairings occur.
 			Number float32 `json:"number"`
@@ -112757,6 +112853,12 @@ type CastDailyReadingResponse struct {
 		// Date Date this daily casting is for (YYYY-MM-DD, UTC).
 		Date     string `json:"date"`
 		Hexagram *struct {
+			// Binary Binary line pattern (6 digits, bottom to top). 1 = yang (solid line), 0 = yin (broken line). Lines 1-3 form the lower trigram, lines 4-6 form the upper trigram.
+			Binary string `json:"binary"`
+
+			// ChangingLines The oracle statement and meaning of each line that came up CHANGING, and only those. The changing lines are what the cast is actually about, so this saves a second call to read them and stops a consuming agent from having to invent them.
+			ChangingLines *[]ChangingLine `json:"changingLines,omitempty"`
+
 			// Chinese Original Chinese name.
 			Chinese string `json:"chinese"`
 
@@ -112882,6 +112984,12 @@ func (r CastDailyReadingResponse) GetJSON200() *struct {
 	// Date Date this daily casting is for (YYYY-MM-DD, UTC).
 	Date     string `json:"date"`
 	Hexagram *struct {
+		// Binary Binary line pattern (6 digits, bottom to top). 1 = yang (solid line), 0 = yin (broken line). Lines 1-3 form the lower trigram, lines 4-6 form the upper trigram.
+		Binary string `json:"binary"`
+
+		// ChangingLines The oracle statement and meaning of each line that came up CHANGING, and only those. The changing lines are what the cast is actually about, so this saves a second call to read them and stops a consuming agent from having to invent them.
+		ChangingLines *[]ChangingLine `json:"changingLines,omitempty"`
+
 		// Chinese Original Chinese name.
 		Chinese string `json:"chinese"`
 
@@ -136097,11 +136205,17 @@ type GetEclipticCrossingsResponse struct {
 			// Longitude Longitude of the planet at the moment of crossing, in the requested coordinateSystem: sidereal (Lahiri ayanamsa) by default, tropical when asked.
 			Longitude float32 `json:"longitude"`
 
-			// Planet Planet crossing the ecliptic plane. Sun is excluded (always on the ecliptic by definition).
+			// Planet Planet crossing the ecliptic plane. Sun is excluded (always on the ecliptic by definition). Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use planetLocalized for anything a reader sees.
 			Planet string `json:"planet"`
 
-			// Sign Zodiac sign the planet occupies at the crossing, read in the same coordinateSystem as longitude: the rashi under sidereal, the tropical sign under tropical.
+			// PlanetLocalized Planet name in the requested language, for display. Present only when lang is set to a language other than English, since in English it would repeat planet exactly.
+			PlanetLocalized *string `json:"planetLocalized,omitempty"`
+
+			// Sign Zodiac sign the planet occupies at the crossing, read in the same coordinateSystem as longitude: the rashi under sidereal, the tropical sign under tropical. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use signLocalized for anything a reader sees.
 			Sign string `json:"sign"`
+
+			// SignLocalized Zodiac sign name in the requested language, for display. Present only when lang is set to a language other than English, since in English it would repeat sign exactly.
+			SignLocalized *string `json:"signLocalized,omitempty"`
 
 			// Time Time of the ecliptic crossing (HH:MM, 24-hour). Adjusted to requested timezone.
 			Time string `json:"time"`
@@ -136143,11 +136257,17 @@ func (r GetEclipticCrossingsResponse) GetJSON200() *struct {
 		// Longitude Longitude of the planet at the moment of crossing, in the requested coordinateSystem: sidereal (Lahiri ayanamsa) by default, tropical when asked.
 		Longitude float32 `json:"longitude"`
 
-		// Planet Planet crossing the ecliptic plane. Sun is excluded (always on the ecliptic by definition).
+		// Planet Planet crossing the ecliptic plane. Sun is excluded (always on the ecliptic by definition). Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use planetLocalized for anything a reader sees.
 		Planet string `json:"planet"`
 
-		// Sign Zodiac sign the planet occupies at the crossing, read in the same coordinateSystem as longitude: the rashi under sidereal, the tropical sign under tropical.
+		// PlanetLocalized Planet name in the requested language, for display. Present only when lang is set to a language other than English, since in English it would repeat planet exactly.
+		PlanetLocalized *string `json:"planetLocalized,omitempty"`
+
+		// Sign Zodiac sign the planet occupies at the crossing, read in the same coordinateSystem as longitude: the rashi under sidereal, the tropical sign under tropical. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use signLocalized for anything a reader sees.
 		Sign string `json:"sign"`
+
+		// SignLocalized Zodiac sign name in the requested language, for display. Present only when lang is set to a language other than English, since in English it would repeat sign exactly.
+		SignLocalized *string `json:"signLocalized,omitempty"`
 
 		// Time Time of the ecliptic crossing (HH:MM, 24-hour). Adjusted to requested timezone.
 		Time string `json:"time"`
@@ -146118,8 +146238,8 @@ func (c *ClientWithResponses) CheckSadhesatiWithResponse(ctx context.Context, pa
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
 // Corresponds with POST /vedic-astrology/ecliptic-crossings (the `GetEclipticCrossings` operationId).
-func (c *ClientWithResponses) GetEclipticCrossingsWithBodyWithResponse(ctx context.Context, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetEclipticCrossingsResponse, error) {
-	rsp, err := c.GetEclipticCrossingsWithBody(ctx, contentType, body, reqEditors...)
+func (c *ClientWithResponses) GetEclipticCrossingsWithBodyWithResponse(ctx context.Context, params *GetEclipticCrossingsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetEclipticCrossingsResponse, error) {
+	rsp, err := c.GetEclipticCrossingsWithBody(ctx, params, contentType, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -146133,8 +146253,8 @@ func (c *ClientWithResponses) GetEclipticCrossingsWithBodyWithResponse(ctx conte
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
 // Corresponds with POST /vedic-astrology/ecliptic-crossings (the `GetEclipticCrossings` operationId).
-func (c *ClientWithResponses) GetEclipticCrossingsWithResponse(ctx context.Context, body GetEclipticCrossingsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetEclipticCrossingsResponse, error) {
-	rsp, err := c.GetEclipticCrossings(ctx, body, reqEditors...)
+func (c *ClientWithResponses) GetEclipticCrossingsWithResponse(ctx context.Context, params *GetEclipticCrossingsParams, body GetEclipticCrossingsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetEclipticCrossingsResponse, error) {
+	rsp, err := c.GetEclipticCrossings(ctx, params, body, reqEditors...)
 	if err != nil {
 		return nil, err
 	}
@@ -155837,8 +155957,11 @@ func ParseGenerateBaziChartResponse(rsp *http.Response) (*GenerateBaziChartRespo
 				// NaYinChinese The Na Yin name in hanzi. Identical under every lang.
 				NaYinChinese string `json:"naYinChinese"`
 
-				// NaYinElement Element the Na Yin resolves to. Independent of the stem element and often different from it, which is why it is reported separately rather than folded in.
+				// NaYinElement Element the Na Yin resolves to. Independent of the stem element and often different from it, which is why it is reported separately rather than folded in. Always English, whatever the lang parameter says. Use naYinElementLocalized for anything a reader sees.
 				NaYinElement string `json:"naYinElement"`
+
+				// NaYinElementLocalized Na Yin element name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				NaYinElementLocalized *string `json:"naYinElementLocalized,omitempty"`
 
 				// Number Position of this pillar in the sexagenary cycle, 1 to 60, where jia-zi is 1. The cycle runs stems and branches together, which is why only 60 of the 120 possible pairings occur.
 				Number float32 `json:"number"`
@@ -156147,8 +156270,11 @@ func ParseCalculateBaziCompatibilityResponse(rsp *http.Response) (*CalculateBazi
 					// NaYinChinese The Na Yin name in hanzi. Identical under every lang.
 					NaYinChinese string `json:"naYinChinese"`
 
-					// NaYinElement Element the Na Yin resolves to. Independent of the stem element and often different from it, which is why it is reported separately rather than folded in.
+					// NaYinElement Element the Na Yin resolves to. Independent of the stem element and often different from it, which is why it is reported separately rather than folded in. Always English, whatever the lang parameter says. Use naYinElementLocalized for anything a reader sees.
 					NaYinElement string `json:"naYinElement"`
+
+					// NaYinElementLocalized Na Yin element name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+					NaYinElementLocalized *string `json:"naYinElementLocalized,omitempty"`
 
 					// Number Position of this pillar in the sexagenary cycle, 1 to 60, where jia-zi is 1. The cycle runs stems and branches together, which is why only 60 of the 120 possible pairings occur.
 					Number float32 `json:"number"`
@@ -156333,8 +156459,11 @@ func ParseCalculateBaziCompatibilityResponse(rsp *http.Response) (*CalculateBazi
 					// NaYinChinese The Na Yin name in hanzi. Identical under every lang.
 					NaYinChinese string `json:"naYinChinese"`
 
-					// NaYinElement Element the Na Yin resolves to. Independent of the stem element and often different from it, which is why it is reported separately rather than folded in.
+					// NaYinElement Element the Na Yin resolves to. Independent of the stem element and often different from it, which is why it is reported separately rather than folded in. Always English, whatever the lang parameter says. Use naYinElementLocalized for anything a reader sees.
 					NaYinElement string `json:"naYinElement"`
+
+					// NaYinElementLocalized Na Yin element name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+					NaYinElementLocalized *string `json:"naYinElementLocalized,omitempty"`
 
 					// Number Position of this pillar in the sexagenary cycle, 1 to 60, where jia-zi is 1. The cycle runs stems and branches together, which is why only 60 of the 120 possible pairings occur.
 					Number float32 `json:"number"`
@@ -165253,6 +165382,12 @@ func ParseCastDailyReadingResponse(rsp *http.Response) (*CastDailyReadingRespons
 			// Date Date this daily casting is for (YYYY-MM-DD, UTC).
 			Date     string `json:"date"`
 			Hexagram *struct {
+				// Binary Binary line pattern (6 digits, bottom to top). 1 = yang (solid line), 0 = yin (broken line). Lines 1-3 form the lower trigram, lines 4-6 form the upper trigram.
+				Binary string `json:"binary"`
+
+				// ChangingLines The oracle statement and meaning of each line that came up CHANGING, and only those. The changing lines are what the cast is actually about, so this saves a second call to read them and stops a consuming agent from having to invent them.
+				ChangingLines *[]ChangingLine `json:"changingLines,omitempty"`
+
 				// Chinese Original Chinese name.
 				Chinese string `json:"chinese"`
 
@@ -180190,11 +180325,17 @@ func ParseGetEclipticCrossingsResponse(rsp *http.Response) (*GetEclipticCrossing
 				// Longitude Longitude of the planet at the moment of crossing, in the requested coordinateSystem: sidereal (Lahiri ayanamsa) by default, tropical when asked.
 				Longitude float32 `json:"longitude"`
 
-				// Planet Planet crossing the ecliptic plane. Sun is excluded (always on the ecliptic by definition).
+				// Planet Planet crossing the ecliptic plane. Sun is excluded (always on the ecliptic by definition). Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use planetLocalized for anything a reader sees.
 				Planet string `json:"planet"`
 
-				// Sign Zodiac sign the planet occupies at the crossing, read in the same coordinateSystem as longitude: the rashi under sidereal, the tropical sign under tropical.
+				// PlanetLocalized Planet name in the requested language, for display. Present only when lang is set to a language other than English, since in English it would repeat planet exactly.
+				PlanetLocalized *string `json:"planetLocalized,omitempty"`
+
+				// Sign Zodiac sign the planet occupies at the crossing, read in the same coordinateSystem as longitude: the rashi under sidereal, the tropical sign under tropical. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use signLocalized for anything a reader sees.
 				Sign string `json:"sign"`
+
+				// SignLocalized Zodiac sign name in the requested language, for display. Present only when lang is set to a language other than English, since in English it would repeat sign exactly.
+				SignLocalized *string `json:"signLocalized,omitempty"`
 
 				// Time Time of the ecliptic crossing (HH:MM, 24-hour). Adjusted to requested timezone.
 				Time string `json:"time"`
