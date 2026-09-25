@@ -78849,6 +78849,9 @@
         "summary": "Get API usage statistics",
         "tags": [
           "Usage"
+        ],
+        "x-key-types": [
+          "secret"
         ]
       }
     },
