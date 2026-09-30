@@ -29944,7 +29944,7 @@ type AyurvedaDinacharyaRequest struct {
 	// Longitude Longitude in decimal degrees. It sets the clock time of sunrise at this place.
 	Longitude float32 `json:"longitude"`
 
-	// Timezone Timezone as an IANA name such as "Europe/London", or as decimal hours from UTC such as 5.5. An IANA name is resolved to the offset in force on the requested date. It decides which local day is meant and, on the clock-hour grid, where the blocks fall. Defaults to 0.
+	// Timezone Timezone as an IANA name such as "Europe/London", or as decimal hours from UTC such as 5.5. An IANA name is resolved to the offset in force on the requested date, and on the clock-hour grid at the local hour each block opens, so on a daylight-saving change every block keeps its printed hour and one that falls in the skipped hour moves forward past it. It decides which local day is meant and, on the clock-hour grid, where the blocks fall. Defaults to 0.
 	Timezone *AyurvedaDinacharyaRequest_Timezone `json:"timezone,omitempty"`
 }
 
@@ -29957,14 +29957,14 @@ type AyurvedaDinacharyaRequestTimezone0 = float32
 // AyurvedaDinacharyaRequestTimezone1 defines model for AyurvedaDinacharyaRequest.Timezone.1.
 type AyurvedaDinacharyaRequestTimezone1 = string
 
-// AyurvedaDinacharyaRequest_Timezone Timezone as an IANA name such as "Europe/London", or as decimal hours from UTC such as 5.5. An IANA name is resolved to the offset in force on the requested date. It decides which local day is meant and, on the clock-hour grid, where the blocks fall. Defaults to 0.
+// AyurvedaDinacharyaRequest_Timezone Timezone as an IANA name such as "Europe/London", or as decimal hours from UTC such as 5.5. An IANA name is resolved to the offset in force on the requested date, and on the clock-hour grid at the local hour each block opens, so on a daylight-saving change every block keeps its printed hour and one that falls in the skipped hour moves forward past it. It decides which local day is meant and, on the clock-hour grid, where the blocks fall. Defaults to 0.
 type AyurvedaDinacharyaRequest_Timezone struct {
 	union json.RawMessage
 }
 
 // AyurvedaRitucharyaRequest defines model for AyurvedaRitucharyaRequest.
 type AyurvedaRitucharyaRequest struct {
-	// Date The date to resolve, in YYYY-MM-DD format. The season is read at midday UTC on this date, because a season boundary is an instant and a calendar day has to be reduced to one; on a day that carries a boundary, the half the midday falls in is the answer.
+	// Date The date to resolve, in YYYY-MM-DD format. The season is read at midday UTC on this date, because a season boundary is an instant and a calendar day has to be reduced to one; on a day that carries a boundary, the half the midday falls in is the answer. Within about two months of either end of the supported span, a date whose season opens or closes outside that span answers 400.
 	Date openapi_types.Date `json:"date"`
 
 	// Hemisphere Which half of the world the season names are stated for. Defaults to "northern", which is the half the primary text describes. It is NEVER inferred from a latitude: a silent flip would change the answer without the caller asking, and no classical text handles the southern case at all. Passing "southern" rotates the six season names by three places, following a modern almanac rather than a verse, and the response says so and states what was not rotated with them.
@@ -32166,7 +32166,7 @@ type HousesResponse struct {
 		Sign string `json:"sign"`
 	} `json:"ascendant"`
 
-	// Comparison Side-by-side house cusp comparison keyed by house system id: placidus, whole-sign, equal, koch. Only included when houseSystem is set to "all". Useful for educational tools and system comparison.
+	// Comparison Side-by-side house cusp comparison keyed by house system id: placidus, whole-sign, equal, koch. Only included when houseSystem is set to "all". A system that cannot be computed at the latitude (Placidus and Koch beyond 66 degrees 33 minutes north or south) is omitted, so every key present carries its own cusps, and the top level houses array is the first system present in that order. Useful for educational tools and system comparison.
 	Comparison *map[string]struct {
 		// Houses All 12 house cusps as this system computes them. Compare the same house number across the four keys to see how far the systems disagree, which is largest at high latitudes and for the intermediate cusps.
 		Houses []struct {
@@ -35814,7 +35814,7 @@ type TransitsRequest struct {
 
 	// NatalChart Optional natal chart data to compare transits against
 	NatalChart *struct {
-		// Date Date in YYYY-MM-DD format. A single-digit month or day is accepted and zero-padded (2026-3-5 becomes 2026-03-05). Impossible calendar dates are rejected.
+		// Date Date in YYYY-MM-DD format. A single-digit month or day is accepted and zero-padded (2026-3-5 becomes 2026-03-05). Impossible calendar dates are rejected. Calculations that read planetary positions support 1550-01-02 to 2650-01-22; outside that span they answer 400 with code date_out_of_range, and a calculation that reads a window around the date (a sunrise search, a run of days) may answer the same 400 for a date within a few days of either end.
 		Date openapi_types.Date `json:"date"`
 
 		// Latitude Natal birth latitude in decimal degrees, positive north. Sets the local sidereal time behind the natal Ascendant and house cusps that the transits are measured against.
@@ -36369,7 +36369,7 @@ type GetMonthlyTropicalAspectsJSONBody struct {
 	// Timezone Timezone: an IANA name (e.g. "America/New_York", "Europe/London", or `cities[0].timezone` from /location/search) or decimal hours from UTC (e.g. -5 for EST, 5.5 for IST). An IANA name is resolved once, at the start of the window, and that offset applies to every time in the response. Event dates and times are reported in this zone, which is what makes a published calendar read correctly for its audience. Defaults to 0 (UTC).
 	Timezone *GetMonthlyTropicalAspectsJSONBody_Timezone `json:"timezone,omitempty"`
 
-	// Year Year for the aspect calendar (1900-2100). Defaults to the current year (UTC).
+	// Year Year for the aspect calendar (1551 to 2649). Defaults to the current year (UTC).
 	Year *int `json:"year,omitempty"`
 }
 
@@ -36645,7 +36645,7 @@ type GetPlanetaryNodePassagesJSONBody struct {
 	// Timezone Timezone: an IANA name (e.g. "America/New_York", "Europe/London", or `cities[0].timezone` from /location/search) or decimal hours from UTC (e.g. -5 for EST, 5.5 for IST). An IANA name is resolved once, at the start of the window, and that offset applies to every time in the response. Crossing dates and times are reported in this zone. Defaults to 0 (UTC).
 	Timezone *GetPlanetaryNodePassagesJSONBody_Timezone `json:"timezone,omitempty"`
 
-	// Year Year to scan for node passages (1900-2100).
+	// Year Year to scan for node passages (1551 to 2649).
 	Year int `json:"year"`
 }
 
@@ -37041,7 +37041,7 @@ type GetMonthlyDeclinationParallelsJSONBody struct {
 	// Timezone Timezone: an IANA name (e.g. "America/New_York", "Europe/London", or `cities[0].timezone` from /location/search) or decimal hours from UTC (e.g. -5 for EST, 5.5 for IST). An IANA name is resolved once, at the start of the window, and that offset applies to every time in the response. Event dates and times are reported in this zone, which is what makes a published calendar read correctly for its audience. Defaults to 0 (UTC).
 	Timezone *GetMonthlyDeclinationParallelsJSONBody_Timezone `json:"timezone,omitempty"`
 
-	// Year Year for the declination calendar (1900-2100). Defaults to the current year (UTC).
+	// Year Year for the declination calendar (1551 to 2649). Defaults to the current year (UTC).
 	Year *int `json:"year,omitempty"`
 }
 
@@ -37091,7 +37091,7 @@ type GetPlanetMeaningParamsLang string
 
 // GeneratePlanetaryReturnJSONBody defines parameters for GeneratePlanetaryReturn.
 type GeneratePlanetaryReturnJSONBody struct {
-	// ApproximateDate Approximate date near the expected planetary return (YYYY-MM-DD). Provide a date within the expected return window. The algorithm searches from this starting point.
+	// ApproximateDate Approximate date near the expected planetary return (YYYY-MM-DD). The return nearest this date is returned, so a date off by months still lands on a genuine return; during a retrograde loop the planet crosses its natal degree up to three times and the crossing nearest the date is the one returned.
 	ApproximateDate openapi_types.Date `json:"approximateDate"`
 
 	// BirthDate Original birth date in YYYY-MM-DD format. Used to determine the natal longitude of the selected planet.
@@ -37212,7 +37212,7 @@ type GetMonthlyTropicalEphemerisJSONBody struct {
 	// Month Month number (1-12) for the ephemeris. Defaults to the current month (UTC).
 	Month *int `json:"month,omitempty"`
 
-	// Year Year for the monthly ephemeris (1900-2100). Defaults to the current year (UTC).
+	// Year Year for the monthly ephemeris (1551 to 2649). Defaults to the current year (UTC).
 	Year *int `json:"year,omitempty"`
 }
 
@@ -37573,7 +37573,7 @@ type GetMonthlyTropicalTransitsJSONBody struct {
 	// Timezone Timezone: an IANA name (e.g. "America/New_York", "Europe/London", or `cities[0].timezone` from /location/search) or decimal hours from UTC (e.g. -5 for EST, 5.5 for IST). An IANA name is resolved once, at the start of the window, and that offset applies to every time in the response. Ingress dates and times are reported in this zone, which is what makes a published calendar read correctly for its audience. Defaults to 0 (UTC).
 	Timezone *GetMonthlyTropicalTransitsJSONBody_Timezone `json:"timezone,omitempty"`
 
-	// Year Year for the monthly transit table (1900-2100). Defaults to the current year (UTC).
+	// Year Year for the monthly transit table (1551 to 2649). Defaults to the current year (UTC).
 	Year *int `json:"year,omitempty"`
 }
 
@@ -37878,7 +37878,7 @@ type CalculateAnnualForecastJSONBody struct {
 	// DayBoundary Which instant starts the sexagenary DAY, which only matters for a birth between 23:00 and 23:59. "midnight" is the classical position of the Ming compendium San Ming Tong Hui: the day turns at 00:00 and 23:00 to 23:59 is the late zi hour of the day that is ending, so the hour stem is taken from that day. "early-zi" turns the whole day at 23:00, the practice in Hong Kong, Taiwan and much of South East Asia. "split-zi" is the compromise most software implements and the default here: the day still turns at 00:00, but the hour stem is taken from the next day. The three give three different answers for a late-evening birth and identical answers for every other birth.
 	DayBoundary *CalculateAnnualForecastJSONBodyDayBoundary `json:"dayBoundary,omitempty"`
 
-	// HourClock Which clock the HOUR branch is read from. "clock" is civil time exactly as a birth certificate records it, which is what most calculators use and the default here. "local-mean" shifts to the mean sun over the birth longitude, a correction of up to 59 minutes at the edge of a wide time zone. "solar" adds the equation of time on top of that, up to a further 16 minutes. Both non-civil options need "longitude" in the request and return 400 without it.
+	// HourClock Which clock the day boundary and the hour branch are read from, so a correction that carries a birth across midnight moves the day pillar with the hour. "clock" is civil time exactly as a birth certificate records it, which is what most calculators use and the default here. "local-mean" shifts to the mean sun over the birth longitude, a correction of up to 59 minutes at the edge of a wide time zone. "solar" adds the equation of time on top of that, up to a further 16 minutes. Both non-civil options need "longitude" in the request and return 400 without it.
 	HourClock *CalculateAnnualForecastJSONBodyHourClock `json:"hourClock,omitempty"`
 
 	// Latitude Birth latitude in decimal degrees. Accepted for consistency with the other birth-data endpoints and does not affect any part of a BaZi chart. Defaults to 0.
@@ -37946,7 +37946,7 @@ type GenerateBaziChartJSONBody struct {
 	// DayBoundary Which instant starts the sexagenary DAY, which only matters for a birth between 23:00 and 23:59. "midnight" is the classical position of the Ming compendium San Ming Tong Hui: the day turns at 00:00 and 23:00 to 23:59 is the late zi hour of the day that is ending, so the hour stem is taken from that day. "early-zi" turns the whole day at 23:00, the practice in Hong Kong, Taiwan and much of South East Asia. "split-zi" is the compromise most software implements and the default here: the day still turns at 00:00, but the hour stem is taken from the next day. The three give three different answers for a late-evening birth and identical answers for every other birth.
 	DayBoundary *GenerateBaziChartJSONBodyDayBoundary `json:"dayBoundary,omitempty"`
 
-	// HourClock Which clock the HOUR branch is read from. "clock" is civil time exactly as a birth certificate records it, which is what most calculators use and the default here. "local-mean" shifts to the mean sun over the birth longitude, a correction of up to 59 minutes at the edge of a wide time zone. "solar" adds the equation of time on top of that, up to a further 16 minutes. Both non-civil options need "longitude" in the request and return 400 without it.
+	// HourClock Which clock the day boundary and the hour branch are read from, so a correction that carries a birth across midnight moves the day pillar with the hour. "clock" is civil time exactly as a birth certificate records it, which is what most calculators use and the default here. "local-mean" shifts to the mean sun over the birth longitude, a correction of up to 59 minutes at the edge of a wide time zone. "solar" adds the equation of time on top of that, up to a further 16 minutes. Both non-civil options need "longitude" in the request and return 400 without it.
 	HourClock *GenerateBaziChartJSONBodyHourClock `json:"hourClock,omitempty"`
 
 	// Latitude Birth latitude in decimal degrees. Accepted for consistency with the other birth-data endpoints and does not affect any part of a BaZi chart. Defaults to 0.
@@ -38013,7 +38013,7 @@ type CalculateBaziCompatibilityJSONBody struct {
 		// DayBoundary Which instant starts the sexagenary DAY, which only matters for a birth between 23:00 and 23:59. "midnight" is the classical position of the Ming compendium San Ming Tong Hui: the day turns at 00:00 and 23:00 to 23:59 is the late zi hour of the day that is ending, so the hour stem is taken from that day. "early-zi" turns the whole day at 23:00, the practice in Hong Kong, Taiwan and much of South East Asia. "split-zi" is the compromise most software implements and the default here: the day still turns at 00:00, but the hour stem is taken from the next day. The three give three different answers for a late-evening birth and identical answers for every other birth.
 		DayBoundary *CalculateBaziCompatibilityJSONBodyPersonADayBoundary `json:"dayBoundary,omitempty"`
 
-		// HourClock Which clock the HOUR branch is read from. "clock" is civil time exactly as a birth certificate records it, which is what most calculators use and the default here. "local-mean" shifts to the mean sun over the birth longitude, a correction of up to 59 minutes at the edge of a wide time zone. "solar" adds the equation of time on top of that, up to a further 16 minutes. Both non-civil options need "longitude" in the request and return 400 without it.
+		// HourClock Which clock the day boundary and the hour branch are read from, so a correction that carries a birth across midnight moves the day pillar with the hour. "clock" is civil time exactly as a birth certificate records it, which is what most calculators use and the default here. "local-mean" shifts to the mean sun over the birth longitude, a correction of up to 59 minutes at the edge of a wide time zone. "solar" adds the equation of time on top of that, up to a further 16 minutes. Both non-civil options need "longitude" in the request and return 400 without it.
 		HourClock *CalculateBaziCompatibilityJSONBodyPersonAHourClock `json:"hourClock,omitempty"`
 
 		// Latitude Birth latitude in decimal degrees. Accepted for consistency with the other birth-data endpoints and does not affect any part of a BaZi chart. Defaults to 0.
@@ -38040,7 +38040,7 @@ type CalculateBaziCompatibilityJSONBody struct {
 		// DayBoundary Which instant starts the sexagenary DAY, which only matters for a birth between 23:00 and 23:59. "midnight" is the classical position of the Ming compendium San Ming Tong Hui: the day turns at 00:00 and 23:00 to 23:59 is the late zi hour of the day that is ending, so the hour stem is taken from that day. "early-zi" turns the whole day at 23:00, the practice in Hong Kong, Taiwan and much of South East Asia. "split-zi" is the compromise most software implements and the default here: the day still turns at 00:00, but the hour stem is taken from the next day. The three give three different answers for a late-evening birth and identical answers for every other birth.
 		DayBoundary *CalculateBaziCompatibilityJSONBodyPersonBDayBoundary `json:"dayBoundary,omitempty"`
 
-		// HourClock Which clock the HOUR branch is read from. "clock" is civil time exactly as a birth certificate records it, which is what most calculators use and the default here. "local-mean" shifts to the mean sun over the birth longitude, a correction of up to 59 minutes at the edge of a wide time zone. "solar" adds the equation of time on top of that, up to a further 16 minutes. Both non-civil options need "longitude" in the request and return 400 without it.
+		// HourClock Which clock the day boundary and the hour branch are read from, so a correction that carries a birth across midnight moves the day pillar with the hour. "clock" is civil time exactly as a birth certificate records it, which is what most calculators use and the default here. "local-mean" shifts to the mean sun over the birth longitude, a correction of up to 59 minutes at the edge of a wide time zone. "solar" adds the equation of time on top of that, up to a further 16 minutes. Both non-civil options need "longitude" in the request and return 400 without it.
 		HourClock *CalculateBaziCompatibilityJSONBodyPersonBHourClock `json:"hourClock,omitempty"`
 
 		// Latitude Birth latitude in decimal degrees. Accepted for consistency with the other birth-data endpoints and does not affect any part of a BaZi chart. Defaults to 0.
@@ -38135,7 +38135,7 @@ type CalculateDayMasterStrengthJSONBody struct {
 	// DayBoundary Which instant starts the sexagenary DAY, which only matters for a birth between 23:00 and 23:59. "midnight" is the classical position of the Ming compendium San Ming Tong Hui: the day turns at 00:00 and 23:00 to 23:59 is the late zi hour of the day that is ending, so the hour stem is taken from that day. "early-zi" turns the whole day at 23:00, the practice in Hong Kong, Taiwan and much of South East Asia. "split-zi" is the compromise most software implements and the default here: the day still turns at 00:00, but the hour stem is taken from the next day. The three give three different answers for a late-evening birth and identical answers for every other birth.
 	DayBoundary *CalculateDayMasterStrengthJSONBodyDayBoundary `json:"dayBoundary,omitempty"`
 
-	// HourClock Which clock the HOUR branch is read from. "clock" is civil time exactly as a birth certificate records it, which is what most calculators use and the default here. "local-mean" shifts to the mean sun over the birth longitude, a correction of up to 59 minutes at the edge of a wide time zone. "solar" adds the equation of time on top of that, up to a further 16 minutes. Both non-civil options need "longitude" in the request and return 400 without it.
+	// HourClock Which clock the day boundary and the hour branch are read from, so a correction that carries a birth across midnight moves the day pillar with the hour. "clock" is civil time exactly as a birth certificate records it, which is what most calculators use and the default here. "local-mean" shifts to the mean sun over the birth longitude, a correction of up to 59 minutes at the edge of a wide time zone. "solar" adds the equation of time on top of that, up to a further 16 minutes. Both non-civil options need "longitude" in the request and return 400 without it.
 	HourClock *CalculateDayMasterStrengthJSONBodyHourClock `json:"hourClock,omitempty"`
 
 	// Latitude Birth latitude in decimal degrees. Accepted for consistency with the other birth-data endpoints and does not affect any part of a BaZi chart. Defaults to 0.
@@ -38212,7 +38212,7 @@ type CalculateLuckPillarsJSONBody struct {
 	// Gender Subject sex, used only to pick the luck-pillar direction: a male born in a yang-stem year and a female born in a yin-stem year run forward through the sexagenary cycle, and the other two combinations run backward. It affects nothing else in the response.
 	Gender CalculateLuckPillarsJSONBodyGender `json:"gender"`
 
-	// HourClock Which clock the HOUR branch is read from. "clock" is civil time exactly as a birth certificate records it, which is what most calculators use and the default here. "local-mean" shifts to the mean sun over the birth longitude, a correction of up to 59 minutes at the edge of a wide time zone. "solar" adds the equation of time on top of that, up to a further 16 minutes. Both non-civil options need "longitude" in the request and return 400 without it.
+	// HourClock Which clock the day boundary and the hour branch are read from, so a correction that carries a birth across midnight moves the day pillar with the hour. "clock" is civil time exactly as a birth certificate records it, which is what most calculators use and the default here. "local-mean" shifts to the mean sun over the birth longitude, a correction of up to 59 minutes at the edge of a wide time zone. "solar" adds the equation of time on top of that, up to a further 16 minutes. Both non-civil options need "longitude" in the request and return 400 without it.
 	HourClock *CalculateLuckPillarsJSONBodyHourClock `json:"hourClock,omitempty"`
 
 	// Latitude Birth latitude in decimal degrees. Accepted for consistency with the other birth-data endpoints and does not affect any part of a BaZi chart. Defaults to 0.
@@ -38313,7 +38313,7 @@ type GetAlmanacDayParamsLang string
 
 // CalculateLunarDateJSONBody defines parameters for CalculateLunarDate.
 type CalculateLunarDateJSONBody struct {
-	// Date Gregorian date to convert to the lunisolar calendar. Send this OR the lunar fields, never both.
+	// Date Gregorian date to convert to the lunisolar calendar. Send this OR the lunar fields, never both. Converts from the first day of lunar year 1551 to the last day of lunar year 2648, a little inside the supported date span, because numbering a lunar month needs the winter solstice on each side of it and placing a leap month needs the year before; a date outside that answers 400 date_out_of_range.
 	Date *openapi_types.Date `json:"date,omitempty"`
 
 	// IsLeapMonth Set true to address the leap repetition of lunarMonth rather than the first pass. Requesting a leap month a year does not have returns 400.
@@ -38847,7 +38847,7 @@ type ListNinePeriodsParams struct {
 	// Lang Response language (BCP 47). Supported: en, tr, de, es, hi, pt, fr, ru, zh-Hans, zh-Hant. Defaults to en. Coverage varies by domain, and a field with no translation in the requested language returns English.
 	Lang *ListNinePeriodsParamsLang `form:"lang,omitempty" json:"lang,omitempty"`
 
-	// Date Date to resolve the current period for, in YYYY-MM-DD format. Defaults to today in UTC. Useful for asking which period a building was completed in.
+	// Date Date to resolve the current period for, in YYYY-MM-DD format. Defaults to today in UTC. Useful for asking which period a building was completed in. A date landing exactly on the Li Chun day a period opens is placed in the outgoing period.
 	Date *openapi_types.Date `form:"date,omitempty" json:"date,omitempty"`
 }
 
@@ -40786,7 +40786,7 @@ type CalculateExpression200JSONResponseBodyType string
 
 // CheckKarmicDebtJSONBody defines parameters for CheckKarmicDebt.
 type CheckKarmicDebtJSONBody struct {
-	// Day Birth day (checks Life Path)
+	// Day Birth day (checks Birth Day on its own, and Life Path with year and month)
 	Day *int `json:"day,omitempty"`
 
 	// FullName Full birth name (checks Expression, Soul Urge, Personality)
@@ -41678,7 +41678,7 @@ type GetLunarAspectsJSONBody struct {
 	// Timezone Timezone: an IANA name (e.g. "America/New_York", "Europe/London", or `cities[0].timezone` from /location/search) or decimal hours from UTC (e.g. -5 for EST, 5.5 for IST). An IANA name is resolved once, at the start of the window, and that offset applies to every time in the response. Output times are converted to this timezone. Defaults to 0 (UTC).
 	Timezone *GetLunarAspectsJSONBody_Timezone `json:"timezone,omitempty"`
 
-	// Year Year for monthly analysis (1900-2100). Defaults to the current year (UTC).
+	// Year Year for monthly analysis (1551 to 2649). Defaults to the current year (UTC).
 	Year *int `json:"year,omitempty"`
 }
 
@@ -41716,7 +41716,7 @@ type GetMonthlyAspectsJSONBody struct {
 	// Timezone Timezone: an IANA name (e.g. "America/New_York", "Europe/London", or `cities[0].timezone` from /location/search) or decimal hours from UTC (e.g. -5 for EST, 5.5 for IST). An IANA name is resolved once, at the start of the window, and that offset applies to every time in the response. Output times are converted to this timezone. Defaults to 0 (UTC).
 	Timezone *GetMonthlyAspectsJSONBody_Timezone `json:"timezone,omitempty"`
 
-	// Year Year for monthly analysis (1900-2100). Defaults to the current year (UTC).
+	// Year Year for monthly analysis (1551 to 2649). Defaults to the current year (UTC).
 	Year *int `json:"year,omitempty"`
 }
 
@@ -42725,7 +42725,7 @@ type GetEclipticCrossingsJSONBody struct {
 	// Timezone Timezone: an IANA name (e.g. "America/New_York", "Europe/London", or `cities[0].timezone` from /location/search) or decimal hours from UTC (e.g. -5 for EST, 5.5 for IST). An IANA name is resolved once, at the start of the window, and that offset applies to every time in the response. Output times are converted to this timezone. Defaults to 0 (UTC).
 	Timezone *GetEclipticCrossingsJSONBody_Timezone `json:"timezone,omitempty"`
 
-	// Year Year to scan for ecliptic crossings (1900-2100).
+	// Year Year to scan for ecliptic crossings (1551 to 2649).
 	Year int `json:"year"`
 }
 
@@ -42997,7 +42997,7 @@ type GetBasicPanchang200JSONResponseBodyTithiPaksha string
 
 // GetChoghadiyaJSONBody defines parameters for GetChoghadiya.
 type GetChoghadiyaJSONBody struct {
-	// Date Date in YYYY-MM-DD format. A single-digit month or day is accepted and zero-padded (2026-3-5 becomes 2026-03-05). Impossible calendar dates are rejected.
+	// Date Date in YYYY-MM-DD format. A single-digit month or day is accepted and zero-padded (2026-3-5 becomes 2026-03-05). Impossible calendar dates are rejected. Calculations that read planetary positions support 1550-01-02 to 2650-01-22; outside that span they answer 400 with code date_out_of_range, and a calculation that reads a window around the date (a sunrise search, a run of days) may answer the same 400 for a date within a few days of either end.
 	Date openapi_types.Date `json:"date"`
 
 	// Latitude Observer latitude in decimal degrees. Determines sunrise and sunset times which define day/night boundaries for muhurta calculations.
@@ -43035,7 +43035,7 @@ type GetChoghadiya200JSONResponseBodyNightChoghadiyaName string
 
 // GetDetailedPanchangJSONBody defines parameters for GetDetailedPanchang.
 type GetDetailedPanchangJSONBody struct {
-	// Date Date in YYYY-MM-DD format. A single-digit month or day is accepted and zero-padded (2026-3-5 becomes 2026-03-05). Impossible calendar dates are rejected.
+	// Date Date in YYYY-MM-DD format. A single-digit month or day is accepted and zero-padded (2026-3-5 becomes 2026-03-05). Impossible calendar dates are rejected. Calculations that read planetary positions support 1550-01-02 to 2650-01-22; outside that span they answer 400 with code date_out_of_range, and a calculation that reads a window around the date (a sunrise search, a run of days) may answer the same 400 for a date within a few days of either end.
 	Date openapi_types.Date `json:"date"`
 
 	// Latitude Observer latitude in decimal degrees. Determines sunrise and sunset times which define day/night boundaries for muhurta calculations.
@@ -43073,7 +43073,7 @@ type GetDetailedPanchang200JSONResponseBodyTithiPaksha string
 
 // GetHoraJSONBody defines parameters for GetHora.
 type GetHoraJSONBody struct {
-	// Date Date in YYYY-MM-DD format. A single-digit month or day is accepted and zero-padded (2026-3-5 becomes 2026-03-05). Impossible calendar dates are rejected.
+	// Date Date in YYYY-MM-DD format. A single-digit month or day is accepted and zero-padded (2026-3-5 becomes 2026-03-05). Impossible calendar dates are rejected. Calculations that read planetary positions support 1550-01-02 to 2650-01-22; outside that span they answer 400 with code date_out_of_range, and a calculation that reads a window around the date (a sunrise search, a run of days) may answer the same 400 for a date within a few days of either end.
 	Date openapi_types.Date `json:"date"`
 
 	// Latitude Observer latitude in decimal degrees. Determines sunrise and sunset times which define day/night boundaries for muhurta calculations.
@@ -43102,10 +43102,10 @@ type CalculateParallelsJSONBody struct {
 	// Date Date in YYYY-MM-DD format. Planetary declinations are calculated for this date to find parallel and contraparallel aspects.
 	Date openapi_types.Date `json:"date"`
 
-	// Latitude Observer latitude in decimal degrees. Used for topocentric declination corrections.
+	// Latitude Birth latitude in decimal degrees, part of the birth record. Declinations are geocentric, as every published ephemeris prints them, so it does not move them.
 	Latitude float32 `json:"latitude"`
 
-	// Longitude Observer longitude in decimal degrees. Affects local time context for declination calculations.
+	// Longitude Birth longitude in decimal degrees, part of the birth record. Declinations are geocentric, so it does not move them; the instant comes from date, time and timezone.
 	Longitude float32 `json:"longitude"`
 
 	// Orb Orb in degrees for parallel/contraparallel detection. Defaults to 1.5°.
@@ -43140,7 +43140,7 @@ type GetMonthlyParallelsJSONBody struct {
 	// Timezone Timezone: an IANA name (e.g. "America/New_York", "Europe/London", or `cities[0].timezone` from /location/search) or decimal hours from UTC (e.g. -5 for EST, 5.5 for IST). An IANA name is resolved once, at the start of the window, and that offset applies to every time in the response. Output times are converted to this timezone. Defaults to 0 (UTC).
 	Timezone *GetMonthlyParallelsJSONBody_Timezone `json:"timezone,omitempty"`
 
-	// Year Year for monthly parallel analysis (1900-2100). Defaults to the current year (UTC).
+	// Year Year for monthly parallel analysis (1551 to 2649). Defaults to the current year (UTC).
 	Year *int `json:"year,omitempty"`
 }
 
@@ -43184,7 +43184,7 @@ type GetMonthlyEphemerisJSONBody struct {
 	// Month Month number (1-12) for ephemeris. Defaults to the current month (UTC).
 	Month *int `json:"month,omitempty"`
 
-	// Year Year for monthly ephemeris (1900-2100). Defaults to the current year (UTC).
+	// Year Year for monthly ephemeris (1551 to 2649). Defaults to the current year (UTC).
 	Year *int `json:"year,omitempty"`
 }
 
@@ -43285,7 +43285,7 @@ type GetMonthlyTransitsJSONBody struct {
 	// Timezone Timezone: an IANA name (e.g. "America/New_York", "Europe/London", or `cities[0].timezone` from /location/search) or decimal hours from UTC (e.g. -5 for EST, 5.5 for IST). An IANA name is resolved once, at the start of the window, and that offset applies to every time in the response. Output times are converted to this timezone. Defaults to 0 (UTC).
 	Timezone *GetMonthlyTransitsJSONBody_Timezone `json:"timezone,omitempty"`
 
-	// Year Year for monthly transit analysis (1900-2100). Defaults to the current year (UTC).
+	// Year Year for monthly transit analysis (1551 to 2649). Defaults to the current year (UTC).
 	Year *int `json:"year,omitempty"`
 }
 
@@ -51692,7 +51692,7 @@ type ClientInterface interface {
 
 	// CalculateDayMasterStrengthWithBody Calculate Day Master strength - BaZi favorable element API
 	//
-	// Assess how well the Day Master is supported by the rest of a BaZi chart, and which of the five elements help it. Uses the classical three-factor method: whether the birth month season backs the Day Master element, whether any branch stores a root for it, and whether the other stems help or spend it. Returns the verdict, an auditable score with each factor contribution, the seasonal state, the root count, the element headcount, and the favorable and unfavorable element lists that follow from the verdict. Built for chart readers, remedy features, and agents that need the usable half of a Four Pillars reading.
+	// Assess how well the Day Master is supported by the rest of a BaZi chart, and which of the five elements help it. Uses the classical three-factor method: whether the birth month season backs the Day Master element, whether any branch stores a root for it, and whether the other stems and the branches outside the month help or spend it. Returns the verdict, an auditable score with each factor contribution, the seasonal state, the root count, the element headcount, and the favorable and unfavorable element lists that follow from the verdict. Built for chart readers, remedy features, and agents that need the usable half of a Four Pillars reading.
 	//
 	// Takes any type of body and a specified content type.
 	//
@@ -51701,7 +51701,7 @@ type ClientInterface interface {
 
 	// CalculateDayMasterStrength Calculate Day Master strength - BaZi favorable element API
 	//
-	// Assess how well the Day Master is supported by the rest of a BaZi chart, and which of the five elements help it. Uses the classical three-factor method: whether the birth month season backs the Day Master element, whether any branch stores a root for it, and whether the other stems help or spend it. Returns the verdict, an auditable score with each factor contribution, the seasonal state, the root count, the element headcount, and the favorable and unfavorable element lists that follow from the verdict. Built for chart readers, remedy features, and agents that need the usable half of a Four Pillars reading.
+	// Assess how well the Day Master is supported by the rest of a BaZi chart, and which of the five elements help it. Uses the classical three-factor method: whether the birth month season backs the Day Master element, whether any branch stores a root for it, and whether the other stems and the branches outside the month help or spend it. Returns the verdict, an auditable score with each factor contribution, the seasonal state, the root count, the element headcount, and the favorable and unfavorable element lists that follow from the verdict. Built for chart readers, remedy features, and agents that need the usable half of a Four Pillars reading.
 	//
 	// Takes a body of the `application/json` content type.
 	//
@@ -52971,7 +52971,7 @@ type ClientInterface interface {
 
 	// CheckKarmicDebtWithBody Detect Karmic Debt numbers - Past life challenges (13, 14, 16, 19)
 	//
-	// Check for Karmic Debt numbers (13, 14, 16, 19) in Life Path, Expression, Soul Urge, or Personality calculations using Pythagorean numerology. Karmic debt indicates challenges carried from past lives that must be resolved in this lifetime. These numbers appear during reduction and represent specific lessons and tests. Returns comprehensive analysis including debt descriptions, challenges to overcome, and resolution guidance. Perfect for spiritual growth apps, karmic astrology platforms, past life exploration services, and personal transformation tools. Get detailed meanings for all four karmic debt numbers with practical resolution strategies.
+	// Check for Karmic Debt numbers (13, 14, 16, 19) in the five core numbers that carry it, Life Path, Birth Day, Expression, Soul Urge and Personality, using Pythagorean numerology. Karmic debt indicates challenges carried from past lives that must be resolved in this lifetime. These numbers appear during reduction and represent specific lessons and tests. Returns comprehensive analysis including debt descriptions, challenges to overcome, and resolution guidance. Perfect for spiritual growth apps, karmic astrology platforms, past life exploration services, and personal transformation tools. Get detailed meanings for all four karmic debt numbers with practical resolution strategies.
 	//
 	// Takes any type of body and a specified content type.
 	//
@@ -52980,7 +52980,7 @@ type ClientInterface interface {
 
 	// CheckKarmicDebt Detect Karmic Debt numbers - Past life challenges (13, 14, 16, 19)
 	//
-	// Check for Karmic Debt numbers (13, 14, 16, 19) in Life Path, Expression, Soul Urge, or Personality calculations using Pythagorean numerology. Karmic debt indicates challenges carried from past lives that must be resolved in this lifetime. These numbers appear during reduction and represent specific lessons and tests. Returns comprehensive analysis including debt descriptions, challenges to overcome, and resolution guidance. Perfect for spiritual growth apps, karmic astrology platforms, past life exploration services, and personal transformation tools. Get detailed meanings for all four karmic debt numbers with practical resolution strategies.
+	// Check for Karmic Debt numbers (13, 14, 16, 19) in the five core numbers that carry it, Life Path, Birth Day, Expression, Soul Urge and Personality, using Pythagorean numerology. Karmic debt indicates challenges carried from past lives that must be resolved in this lifetime. These numbers appear during reduction and represent specific lessons and tests. Returns comprehensive analysis including debt descriptions, challenges to overcome, and resolution guidance. Perfect for spiritual growth apps, karmic astrology platforms, past life exploration services, and personal transformation tools. Get detailed meanings for all four karmic debt numbers with practical resolution strategies.
 	//
 	// Takes a body of the `application/json` content type.
 	//
@@ -56268,7 +56268,7 @@ func (c *Client) CalculateBaziCompatibility(ctx context.Context, params *Calcula
 
 // CalculateDayMasterStrengthWithBody Calculate Day Master strength - BaZi favorable element API
 //
-// Assess how well the Day Master is supported by the rest of a BaZi chart, and which of the five elements help it. Uses the classical three-factor method: whether the birth month season backs the Day Master element, whether any branch stores a root for it, and whether the other stems help or spend it. Returns the verdict, an auditable score with each factor contribution, the seasonal state, the root count, the element headcount, and the favorable and unfavorable element lists that follow from the verdict. Built for chart readers, remedy features, and agents that need the usable half of a Four Pillars reading.
+// Assess how well the Day Master is supported by the rest of a BaZi chart, and which of the five elements help it. Uses the classical three-factor method: whether the birth month season backs the Day Master element, whether any branch stores a root for it, and whether the other stems and the branches outside the month help or spend it. Returns the verdict, an auditable score with each factor contribution, the seasonal state, the root count, the element headcount, and the favorable and unfavorable element lists that follow from the verdict. Built for chart readers, remedy features, and agents that need the usable half of a Four Pillars reading.
 //
 // Takes any type of body and a specified content type.
 //
@@ -56287,7 +56287,7 @@ func (c *Client) CalculateDayMasterStrengthWithBody(ctx context.Context, params 
 
 // CalculateDayMasterStrength Calculate Day Master strength - BaZi favorable element API
 //
-// Assess how well the Day Master is supported by the rest of a BaZi chart, and which of the five elements help it. Uses the classical three-factor method: whether the birth month season backs the Day Master element, whether any branch stores a root for it, and whether the other stems help or spend it. Returns the verdict, an auditable score with each factor contribution, the seasonal state, the root count, the element headcount, and the favorable and unfavorable element lists that follow from the verdict. Built for chart readers, remedy features, and agents that need the usable half of a Four Pillars reading.
+// Assess how well the Day Master is supported by the rest of a BaZi chart, and which of the five elements help it. Uses the classical three-factor method: whether the birth month season backs the Day Master element, whether any branch stores a root for it, and whether the other stems and the branches outside the month help or spend it. Returns the verdict, an auditable score with each factor contribution, the seasonal state, the root count, the element headcount, and the favorable and unfavorable element lists that follow from the verdict. Built for chart readers, remedy features, and agents that need the usable half of a Four Pillars reading.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -59117,7 +59117,7 @@ func (c *Client) CalculateExpression(ctx context.Context, params *CalculateExpre
 
 // CheckKarmicDebtWithBody Detect Karmic Debt numbers - Past life challenges (13, 14, 16, 19)
 //
-// Check for Karmic Debt numbers (13, 14, 16, 19) in Life Path, Expression, Soul Urge, or Personality calculations using Pythagorean numerology. Karmic debt indicates challenges carried from past lives that must be resolved in this lifetime. These numbers appear during reduction and represent specific lessons and tests. Returns comprehensive analysis including debt descriptions, challenges to overcome, and resolution guidance. Perfect for spiritual growth apps, karmic astrology platforms, past life exploration services, and personal transformation tools. Get detailed meanings for all four karmic debt numbers with practical resolution strategies.
+// Check for Karmic Debt numbers (13, 14, 16, 19) in the five core numbers that carry it, Life Path, Birth Day, Expression, Soul Urge and Personality, using Pythagorean numerology. Karmic debt indicates challenges carried from past lives that must be resolved in this lifetime. These numbers appear during reduction and represent specific lessons and tests. Returns comprehensive analysis including debt descriptions, challenges to overcome, and resolution guidance. Perfect for spiritual growth apps, karmic astrology platforms, past life exploration services, and personal transformation tools. Get detailed meanings for all four karmic debt numbers with practical resolution strategies.
 //
 // Takes any type of body and a specified content type.
 //
@@ -59136,7 +59136,7 @@ func (c *Client) CheckKarmicDebtWithBody(ctx context.Context, params *CheckKarmi
 
 // CheckKarmicDebt Detect Karmic Debt numbers - Past life challenges (13, 14, 16, 19)
 //
-// Check for Karmic Debt numbers (13, 14, 16, 19) in Life Path, Expression, Soul Urge, or Personality calculations using Pythagorean numerology. Karmic debt indicates challenges carried from past lives that must be resolved in this lifetime. These numbers appear during reduction and represent specific lessons and tests. Returns comprehensive analysis including debt descriptions, challenges to overcome, and resolution guidance. Perfect for spiritual growth apps, karmic astrology platforms, past life exploration services, and personal transformation tools. Get detailed meanings for all four karmic debt numbers with practical resolution strategies.
+// Check for Karmic Debt numbers (13, 14, 16, 19) in the five core numbers that carry it, Life Path, Birth Day, Expression, Soul Urge and Personality, using Pythagorean numerology. Karmic debt indicates challenges carried from past lives that must be resolved in this lifetime. These numbers appear during reduction and represent specific lessons and tests. Returns comprehensive analysis including debt descriptions, challenges to overcome, and resolution guidance. Perfect for spiritual growth apps, karmic astrology platforms, past life exploration services, and personal transformation tools. Get detailed meanings for all four karmic debt numbers with practical resolution strategies.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -80754,7 +80754,7 @@ type ClientWithResponsesInterface interface {
 
 	// CalculateDayMasterStrengthWithBodyWithResponse Calculate Day Master strength - BaZi favorable element API
 	//
-	// Assess how well the Day Master is supported by the rest of a BaZi chart, and which of the five elements help it. Uses the classical three-factor method: whether the birth month season backs the Day Master element, whether any branch stores a root for it, and whether the other stems help or spend it. Returns the verdict, an auditable score with each factor contribution, the seasonal state, the root count, the element headcount, and the favorable and unfavorable element lists that follow from the verdict. Built for chart readers, remedy features, and agents that need the usable half of a Four Pillars reading.
+	// Assess how well the Day Master is supported by the rest of a BaZi chart, and which of the five elements help it. Uses the classical three-factor method: whether the birth month season backs the Day Master element, whether any branch stores a root for it, and whether the other stems and the branches outside the month help or spend it. Returns the verdict, an auditable score with each factor contribution, the seasonal state, the root count, the element headcount, and the favorable and unfavorable element lists that follow from the verdict. Built for chart readers, remedy features, and agents that need the usable half of a Four Pillars reading.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -80763,7 +80763,7 @@ type ClientWithResponsesInterface interface {
 
 	// CalculateDayMasterStrengthWithResponse Calculate Day Master strength - BaZi favorable element API
 	//
-	// Assess how well the Day Master is supported by the rest of a BaZi chart, and which of the five elements help it. Uses the classical three-factor method: whether the birth month season backs the Day Master element, whether any branch stores a root for it, and whether the other stems help or spend it. Returns the verdict, an auditable score with each factor contribution, the seasonal state, the root count, the element headcount, and the favorable and unfavorable element lists that follow from the verdict. Built for chart readers, remedy features, and agents that need the usable half of a Four Pillars reading.
+	// Assess how well the Day Master is supported by the rest of a BaZi chart, and which of the five elements help it. Uses the classical three-factor method: whether the birth month season backs the Day Master element, whether any branch stores a root for it, and whether the other stems and the branches outside the month help or spend it. Returns the verdict, an auditable score with each factor contribution, the seasonal state, the root count, the element headcount, and the favorable and unfavorable element lists that follow from the verdict. Built for chart readers, remedy features, and agents that need the usable half of a Four Pillars reading.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -82167,7 +82167,7 @@ type ClientWithResponsesInterface interface {
 
 	// CheckKarmicDebtWithBodyWithResponse Detect Karmic Debt numbers - Past life challenges (13, 14, 16, 19)
 	//
-	// Check for Karmic Debt numbers (13, 14, 16, 19) in Life Path, Expression, Soul Urge, or Personality calculations using Pythagorean numerology. Karmic debt indicates challenges carried from past lives that must be resolved in this lifetime. These numbers appear during reduction and represent specific lessons and tests. Returns comprehensive analysis including debt descriptions, challenges to overcome, and resolution guidance. Perfect for spiritual growth apps, karmic astrology platforms, past life exploration services, and personal transformation tools. Get detailed meanings for all four karmic debt numbers with practical resolution strategies.
+	// Check for Karmic Debt numbers (13, 14, 16, 19) in the five core numbers that carry it, Life Path, Birth Day, Expression, Soul Urge and Personality, using Pythagorean numerology. Karmic debt indicates challenges carried from past lives that must be resolved in this lifetime. These numbers appear during reduction and represent specific lessons and tests. Returns comprehensive analysis including debt descriptions, challenges to overcome, and resolution guidance. Perfect for spiritual growth apps, karmic astrology platforms, past life exploration services, and personal transformation tools. Get detailed meanings for all four karmic debt numbers with practical resolution strategies.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -82176,7 +82176,7 @@ type ClientWithResponsesInterface interface {
 
 	// CheckKarmicDebtWithResponse Detect Karmic Debt numbers - Past life challenges (13, 14, 16, 19)
 	//
-	// Check for Karmic Debt numbers (13, 14, 16, 19) in Life Path, Expression, Soul Urge, or Personality calculations using Pythagorean numerology. Karmic debt indicates challenges carried from past lives that must be resolved in this lifetime. These numbers appear during reduction and represent specific lessons and tests. Returns comprehensive analysis including debt descriptions, challenges to overcome, and resolution guidance. Perfect for spiritual growth apps, karmic astrology platforms, past life exploration services, and personal transformation tools. Get detailed meanings for all four karmic debt numbers with practical resolution strategies.
+	// Check for Karmic Debt numbers (13, 14, 16, 19) in the five core numbers that carry it, Life Path, Birth Day, Expression, Soul Urge and Personality, using Pythagorean numerology. Karmic debt indicates challenges carried from past lives that must be resolved in this lifetime. These numbers appear during reduction and represent specific lessons and tests. Returns comprehensive analysis including debt descriptions, challenges to overcome, and resolution guidance. Perfect for spiritual growth apps, karmic astrology platforms, past life exploration services, and personal transformation tools. Get detailed meanings for all four karmic debt numbers with practical resolution strategies.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -87836,7 +87836,7 @@ type GenerateLunarReturnResponse struct {
 				Sign string `json:"sign"`
 			} `json:"partOfFortune"`
 
-			// Planets All 14 celestial bodies in the tropical zodiac with house placements: the 10 classical planets (Sun through Pluto), the lunar nodes (North Node, South Node, in the requested `nodeType` convention), Chiron, and Black Moon Lilith.
+			// Planets All 14 celestial bodies in the tropical zodiac with house placements: the 10 classical planets (Sun through Pluto), the lunar nodes (North Node, South Node, in the requested `nodeType` convention), Chiron, and Black Moon Lilith. Chiron is included for charts from 1600 to 2500 and omitted outside that range.
 			Planets []struct {
 				// Degree Degree within the zodiac sign (0-29.999). Indicates how far the planet has progressed through the sign.
 				Degree float32 `json:"degree"`
@@ -88020,7 +88020,7 @@ func (r GenerateLunarReturnResponse) GetJSON200() *struct {
 			Sign string `json:"sign"`
 		} `json:"partOfFortune"`
 
-		// Planets All 14 celestial bodies in the tropical zodiac with house placements: the 10 classical planets (Sun through Pluto), the lunar nodes (North Node, South Node, in the requested `nodeType` convention), Chiron, and Black Moon Lilith.
+		// Planets All 14 celestial bodies in the tropical zodiac with house placements: the 10 classical planets (Sun through Pluto), the lunar nodes (North Node, South Node, in the requested `nodeType` convention), Chiron, and Black Moon Lilith. Chiron is included for charts from 1600 to 2500 and omitted outside that range.
 		Planets []struct {
 			// Degree Degree within the zodiac sign (0-29.999). Indicates how far the planet has progressed through the sign.
 			Degree float32 `json:"degree"`
@@ -89282,7 +89282,7 @@ type GeneratePlanetaryReturnResponse struct {
 				Sign string `json:"sign"`
 			} `json:"partOfFortune"`
 
-			// Planets All 14 celestial bodies in the tropical zodiac with house placements: the 10 classical planets (Sun through Pluto), the lunar nodes (North Node, South Node, in the requested `nodeType` convention), Chiron, and Black Moon Lilith.
+			// Planets All 14 celestial bodies in the tropical zodiac with house placements: the 10 classical planets (Sun through Pluto), the lunar nodes (North Node, South Node, in the requested `nodeType` convention), Chiron, and Black Moon Lilith. Chiron is included for charts from 1600 to 2500 and omitted outside that range.
 			Planets []struct {
 				// Degree Degree within the zodiac sign (0-29.999). Indicates how far the planet has progressed through the sign.
 				Degree float32 `json:"degree"`
@@ -89469,7 +89469,7 @@ func (r GeneratePlanetaryReturnResponse) GetJSON200() *struct {
 			Sign string `json:"sign"`
 		} `json:"partOfFortune"`
 
-		// Planets All 14 celestial bodies in the tropical zodiac with house placements: the 10 classical planets (Sun through Pluto), the lunar nodes (North Node, South Node, in the requested `nodeType` convention), Chiron, and Black Moon Lilith.
+		// Planets All 14 celestial bodies in the tropical zodiac with house placements: the 10 classical planets (Sun through Pluto), the lunar nodes (North Node, South Node, in the requested `nodeType` convention), Chiron, and Black Moon Lilith. Chiron is included for charts from 1600 to 2500 and omitted outside that range.
 		Planets []struct {
 			// Degree Degree within the zodiac sign (0-29.999). Indicates how far the planet has progressed through the sign.
 			Degree float32 `json:"degree"`
@@ -90792,7 +90792,7 @@ type GenerateSolarReturnResponse struct {
 				Sign string `json:"sign"`
 			} `json:"partOfFortune"`
 
-			// Planets All 14 celestial bodies in the tropical zodiac with house placements: the 10 classical planets (Sun through Pluto), the lunar nodes (North Node, South Node, in the requested `nodeType` convention), Chiron, and Black Moon Lilith.
+			// Planets All 14 celestial bodies in the tropical zodiac with house placements: the 10 classical planets (Sun through Pluto), the lunar nodes (North Node, South Node, in the requested `nodeType` convention), Chiron, and Black Moon Lilith. Chiron is included for charts from 1600 to 2500 and omitted outside that range.
 			Planets []struct {
 				// Degree Degree within the zodiac sign (0-29.999). Indicates how far the planet has progressed through the sign.
 				Degree float32 `json:"degree"`
@@ -90979,7 +90979,7 @@ func (r GenerateSolarReturnResponse) GetJSON200() *struct {
 			Sign string `json:"sign"`
 		} `json:"partOfFortune"`
 
-		// Planets All 14 celestial bodies in the tropical zodiac with house placements: the 10 classical planets (Sun through Pluto), the lunar nodes (North Node, South Node, in the requested `nodeType` convention), Chiron, and Black Moon Lilith.
+		// Planets All 14 celestial bodies in the tropical zodiac with house placements: the 10 classical planets (Sun through Pluto), the lunar nodes (North Node, South Node, in the requested `nodeType` convention), Chiron, and Black Moon Lilith. Chiron is included for charts from 1600 to 2500 and omitted outside that range.
 		Planets []struct {
 			// Degree Degree within the zodiac sign (0-29.999). Indicates how far the planet has progressed through the sign.
 			Degree float32 `json:"degree"`
@@ -96982,7 +96982,7 @@ type CalculateAnnualForecastResponse struct {
 			// Time Birth time in 24-hour HH:MM:SS format. Sets the hour pillar, which is one of the four and carries the whole picture of later life and offspring. Each Earthly Branch covers two hours, so a birth within a few minutes of an odd hour can land in either. All four pillars are read in the local clock of the birth, and the day boundary is applied in that same clock; only the lunisolar calendar date itself is a world constant, fixed at UTC plus 8 so one instant has one Chinese date everywhere.
 			Time string `json:"time"`
 
-			// Timezone Decimal UTC offset the chart was computed with, resolved from whatever the request sent. An IANA name is resolved to the offset in force on the birth date, so this is the literal number applied and never the name.
+			// Timezone Decimal UTC offset the chart was computed with, resolved from whatever the request sent. An IANA name is resolved to the offset in force at the birth, so this is the literal number applied and never the name. A local time that never happened (the skipped hour of a daylight-saving change) is moved forward past the gap, and date, time and timezone then echo the clock that was running, which the day and hour pillars are read from.
 			Timezone float32 `json:"timezone"`
 		} `json:"birthData"`
 
@@ -97196,7 +97196,7 @@ func (r CalculateAnnualForecastResponse) GetJSON200() *struct {
 		// Time Birth time in 24-hour HH:MM:SS format. Sets the hour pillar, which is one of the four and carries the whole picture of later life and offspring. Each Earthly Branch covers two hours, so a birth within a few minutes of an odd hour can land in either. All four pillars are read in the local clock of the birth, and the day boundary is applied in that same clock; only the lunisolar calendar date itself is a world constant, fixed at UTC plus 8 so one instant has one Chinese date everywhere.
 		Time string `json:"time"`
 
-		// Timezone Decimal UTC offset the chart was computed with, resolved from whatever the request sent. An IANA name is resolved to the offset in force on the birth date, so this is the literal number applied and never the name.
+		// Timezone Decimal UTC offset the chart was computed with, resolved from whatever the request sent. An IANA name is resolved to the offset in force at the birth, so this is the literal number applied and never the name. A local time that never happened (the skipped hour of a daylight-saving change) is moved forward past the gap, and date, time and timezone then echo the clock that was running, which the day and hour pillars are read from.
 		Timezone float32 `json:"timezone"`
 	} `json:"birthData"`
 
@@ -97394,7 +97394,7 @@ type GenerateBaziChartResponse struct {
 			// Time Birth time in 24-hour HH:MM:SS format. Sets the hour pillar, which is one of the four and carries the whole picture of later life and offspring. Each Earthly Branch covers two hours, so a birth within a few minutes of an odd hour can land in either. All four pillars are read in the local clock of the birth, and the day boundary is applied in that same clock; only the lunisolar calendar date itself is a world constant, fixed at UTC plus 8 so one instant has one Chinese date everywhere.
 			Time string `json:"time"`
 
-			// Timezone Decimal UTC offset the chart was computed with, resolved from whatever the request sent. An IANA name is resolved to the offset in force on the birth date, so this is the literal number applied and never the name.
+			// Timezone Decimal UTC offset the chart was computed with, resolved from whatever the request sent. An IANA name is resolved to the offset in force at the birth, so this is the literal number applied and never the name. A local time that never happened (the skipped hour of a daylight-saving change) is moved forward past the gap, and date, time and timezone then echo the clock that was running, which the day and hour pillars are read from.
 			Timezone float32 `json:"timezone"`
 		} `json:"birthData"`
 
@@ -97674,7 +97674,7 @@ func (r GenerateBaziChartResponse) GetJSON200() *struct {
 		// Time Birth time in 24-hour HH:MM:SS format. Sets the hour pillar, which is one of the four and carries the whole picture of later life and offspring. Each Earthly Branch covers two hours, so a birth within a few minutes of an odd hour can land in either. All four pillars are read in the local clock of the birth, and the day boundary is applied in that same clock; only the lunisolar calendar date itself is a world constant, fixed at UTC plus 8 so one instant has one Chinese date everywhere.
 		Time string `json:"time"`
 
-		// Timezone Decimal UTC offset the chart was computed with, resolved from whatever the request sent. An IANA name is resolved to the offset in force on the birth date, so this is the literal number applied and never the name.
+		// Timezone Decimal UTC offset the chart was computed with, resolved from whatever the request sent. An IANA name is resolved to the offset in force at the birth, so this is the literal number applied and never the name. A local time that never happened (the skipped hour of a daylight-saving change) is moved forward past the gap, and date, time and timezone then echo the clock that was running, which the day and hour pillars are read from.
 		Timezone float32 `json:"timezone"`
 	} `json:"birthData"`
 
@@ -98956,7 +98956,7 @@ type CalculateDayMasterStrengthResponse struct {
 			// Time Birth time in 24-hour HH:MM:SS format. Sets the hour pillar, which is one of the four and carries the whole picture of later life and offspring. Each Earthly Branch covers two hours, so a birth within a few minutes of an odd hour can land in either. All four pillars are read in the local clock of the birth, and the day boundary is applied in that same clock; only the lunisolar calendar date itself is a world constant, fixed at UTC plus 8 so one instant has one Chinese date everywhere.
 			Time string `json:"time"`
 
-			// Timezone Decimal UTC offset the chart was computed with, resolved from whatever the request sent. An IANA name is resolved to the offset in force on the birth date, so this is the literal number applied and never the name.
+			// Timezone Decimal UTC offset the chart was computed with, resolved from whatever the request sent. An IANA name is resolved to the offset in force at the birth, so this is the literal number applied and never the name. A local time that never happened (the skipped hour of a daylight-saving change) is moved forward past the gap, and date, time and timezone then echo the clock that was running, which the day and hour pillars are read from.
 			Timezone float32 `json:"timezone"`
 		} `json:"birthData"`
 
@@ -99007,7 +99007,7 @@ type CalculateDayMasterStrengthResponse struct {
 			// Detail What the factor actually found in this chart, in one clause.
 			Detail string `json:"detail"`
 
-			// ID Which classical factor this is. month-command is de ling, whether the birth month season backs the Day Master element. rooting is de di, whether any branch stores a stem of that element. party is de shi, whether the other three stems help or spend it. Always English, whatever the lang parameter says.
+			// ID Which classical factor this is. month-command is de ling, whether the birth month season backs the Day Master element. rooting is de di, whether any branch stores a stem of that element. party is de shi, whether the other three stems, and the principal stems of the three branches outside the month, help or spend it. Always English, whatever the lang parameter says.
 			ID string `json:"id"`
 
 			// Name Display name of the factor. Always English, whatever the lang parameter says. Use nameLocalized for anything a reader sees.
@@ -99092,7 +99092,7 @@ func (r CalculateDayMasterStrengthResponse) GetJSON200() *struct {
 		// Time Birth time in 24-hour HH:MM:SS format. Sets the hour pillar, which is one of the four and carries the whole picture of later life and offspring. Each Earthly Branch covers two hours, so a birth within a few minutes of an odd hour can land in either. All four pillars are read in the local clock of the birth, and the day boundary is applied in that same clock; only the lunisolar calendar date itself is a world constant, fixed at UTC plus 8 so one instant has one Chinese date everywhere.
 		Time string `json:"time"`
 
-		// Timezone Decimal UTC offset the chart was computed with, resolved from whatever the request sent. An IANA name is resolved to the offset in force on the birth date, so this is the literal number applied and never the name.
+		// Timezone Decimal UTC offset the chart was computed with, resolved from whatever the request sent. An IANA name is resolved to the offset in force at the birth, so this is the literal number applied and never the name. A local time that never happened (the skipped hour of a daylight-saving change) is moved forward past the gap, and date, time and timezone then echo the clock that was running, which the day and hour pillars are read from.
 		Timezone float32 `json:"timezone"`
 	} `json:"birthData"`
 
@@ -99143,7 +99143,7 @@ func (r CalculateDayMasterStrengthResponse) GetJSON200() *struct {
 		// Detail What the factor actually found in this chart, in one clause.
 		Detail string `json:"detail"`
 
-		// ID Which classical factor this is. month-command is de ling, whether the birth month season backs the Day Master element. rooting is de di, whether any branch stores a stem of that element. party is de shi, whether the other three stems help or spend it. Always English, whatever the lang parameter says.
+		// ID Which classical factor this is. month-command is de ling, whether the birth month season backs the Day Master element. rooting is de di, whether any branch stores a stem of that element. party is de shi, whether the other three stems, and the principal stems of the three branches outside the month, help or spend it. Always English, whatever the lang parameter says.
 		ID string `json:"id"`
 
 		// Name Display name of the factor. Always English, whatever the lang parameter says. Use nameLocalized for anything a reader sees.
@@ -99323,7 +99323,7 @@ type CalculateLuckPillarsResponse struct {
 			// Time Birth time in 24-hour HH:MM:SS format. Sets the hour pillar, which is one of the four and carries the whole picture of later life and offspring. Each Earthly Branch covers two hours, so a birth within a few minutes of an odd hour can land in either. All four pillars are read in the local clock of the birth, and the day boundary is applied in that same clock; only the lunisolar calendar date itself is a world constant, fixed at UTC plus 8 so one instant has one Chinese date everywhere.
 			Time string `json:"time"`
 
-			// Timezone Decimal UTC offset the chart was computed with, resolved from whatever the request sent. An IANA name is resolved to the offset in force on the birth date, so this is the literal number applied and never the name.
+			// Timezone Decimal UTC offset the chart was computed with, resolved from whatever the request sent. An IANA name is resolved to the offset in force at the birth, so this is the literal number applied and never the name. A local time that never happened (the skipped hour of a daylight-saving change) is moved forward past the gap, and date, time and timezone then echo the clock that was running, which the day and hour pillars are read from.
 			Timezone float32 `json:"timezone"`
 		} `json:"birthData"`
 
@@ -99528,7 +99528,7 @@ func (r CalculateLuckPillarsResponse) GetJSON200() *struct {
 		// Time Birth time in 24-hour HH:MM:SS format. Sets the hour pillar, which is one of the four and carries the whole picture of later life and offspring. Each Earthly Branch covers two hours, so a birth within a few minutes of an odd hour can land in either. All four pillars are read in the local clock of the birth, and the day boundary is applied in that same clock; only the lunisolar calendar date itself is a world constant, fixed at UTC plus 8 so one instant has one Chinese date everywhere.
 		Time string `json:"time"`
 
-		// Timezone Decimal UTC offset the chart was computed with, resolved from whatever the request sent. An IANA name is resolved to the offset in force on the birth date, so this is the literal number applied and never the name.
+		// Timezone Decimal UTC offset the chart was computed with, resolved from whatever the request sent. An IANA name is resolved to the offset in force at the birth, so this is the literal number applied and never the name. A local time that never happened (the skipped hour of a daylight-saving change) is moved forward past the gap, and date, time and timezone then echo the clock that was running, which the day and hour pillars are read from.
 		Timezone float32 `json:"timezone"`
 	} `json:"birthData"`
 
@@ -108038,7 +108038,7 @@ type ListNinePeriodsResponse struct {
 	HTTPResponse *http.Response
 	// JSON200 the response for an HTTP 200 `application/json` response
 	JSON200 *struct {
-		// CurrentPeriod The period in force on that date. Resolved at Li Chun, so a date in January belongs to the previous solar year and can fall in the previous period.
+		// CurrentPeriod The period in force on that date. Resolved at Li Chun, so a date in January belongs to the previous solar year and can fall in the previous period. A date is read at the start of its day in the Chinese calendar frame (UTC+8) and Li Chun falls part-way through its own day, so the date a period opens on still reads as the previous period, the same reading the Kua route gives a birth date.
 		CurrentPeriod float32 `json:"currentPeriod"`
 
 		// CycleEndYear Last solar year of the recorded cycle. The cycle then repeats, so 2044 opens Period 1 again.
@@ -108120,7 +108120,7 @@ type ListNinePeriodsResponse struct {
 
 // GetJSON200 returns the response for an HTTP 200 `application/json` response
 func (r ListNinePeriodsResponse) GetJSON200() *struct {
-	// CurrentPeriod The period in force on that date. Resolved at Li Chun, so a date in January belongs to the previous solar year and can fall in the previous period.
+	// CurrentPeriod The period in force on that date. Resolved at Li Chun, so a date in January belongs to the previous solar year and can fall in the previous period. A date is read at the start of its day in the Chinese calendar frame (UTC+8) and Li Chun falls part-way through its own day, so the date a period opens on still reads as the previous period, the same reading the Kua route gives a birth date.
 	CurrentPeriod float32 `json:"currentPeriod"`
 
 	// CycleEndYear Last solar year of the recorded cycle. The cycle then repeats, so 2044 opens Period 1 again.
@@ -108904,7 +108904,7 @@ type ForecastSolarReturnResponse struct {
 				Sign string `json:"sign"`
 			} `json:"partOfFortune"`
 
-			// Planets All 14 celestial bodies in the tropical zodiac with house placements: the 10 classical planets (Sun through Pluto), the lunar nodes (North Node, South Node, in the requested `nodeType` convention), Chiron, and Black Moon Lilith.
+			// Planets All 14 celestial bodies in the tropical zodiac with house placements: the 10 classical planets (Sun through Pluto), the lunar nodes (North Node, South Node, in the requested `nodeType` convention), Chiron, and Black Moon Lilith. Chiron is included for charts from 1600 to 2500 and omitted outside that range.
 			Planets []struct {
 				// Degree Degree within the zodiac sign (0-29.999). Indicates how far the planet has progressed through the sign.
 				Degree float32 `json:"degree"`
@@ -109079,7 +109079,7 @@ func (r ForecastSolarReturnResponse) GetJSON200() *struct {
 			Sign string `json:"sign"`
 		} `json:"partOfFortune"`
 
-		// Planets All 14 celestial bodies in the tropical zodiac with house placements: the 10 classical planets (Sun through Pluto), the lunar nodes (North Node, South Node, in the requested `nodeType` convention), Chiron, and Black Moon Lilith.
+		// Planets All 14 celestial bodies in the tropical zodiac with house placements: the 10 classical planets (Sun through Pluto), the lunar nodes (North Node, South Node, in the requested `nodeType` convention), Chiron, and Black Moon Lilith. Chiron is included for charts from 1600 to 2500 and omitted outside that range.
 		Planets []struct {
 			// Degree Degree within the zodiac sign (0-29.999). Indicates how far the planet has progressed through the sign.
 			Degree float32 `json:"degree"`
@@ -142348,7 +142348,7 @@ func (c *ClientWithResponses) CalculateBaziCompatibilityWithResponse(ctx context
 
 // CalculateDayMasterStrengthWithBodyWithResponse Calculate Day Master strength - BaZi favorable element API
 //
-// Assess how well the Day Master is supported by the rest of a BaZi chart, and which of the five elements help it. Uses the classical three-factor method: whether the birth month season backs the Day Master element, whether any branch stores a root for it, and whether the other stems help or spend it. Returns the verdict, an auditable score with each factor contribution, the seasonal state, the root count, the element headcount, and the favorable and unfavorable element lists that follow from the verdict. Built for chart readers, remedy features, and agents that need the usable half of a Four Pillars reading.
+// Assess how well the Day Master is supported by the rest of a BaZi chart, and which of the five elements help it. Uses the classical three-factor method: whether the birth month season backs the Day Master element, whether any branch stores a root for it, and whether the other stems and the branches outside the month help or spend it. Returns the verdict, an auditable score with each factor contribution, the seasonal state, the root count, the element headcount, and the favorable and unfavorable element lists that follow from the verdict. Built for chart readers, remedy features, and agents that need the usable half of a Four Pillars reading.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -142363,7 +142363,7 @@ func (c *ClientWithResponses) CalculateDayMasterStrengthWithBodyWithResponse(ctx
 
 // CalculateDayMasterStrengthWithResponse Calculate Day Master strength - BaZi favorable element API
 //
-// Assess how well the Day Master is supported by the rest of a BaZi chart, and which of the five elements help it. Uses the classical three-factor method: whether the birth month season backs the Day Master element, whether any branch stores a root for it, and whether the other stems help or spend it. Returns the verdict, an auditable score with each factor contribution, the seasonal state, the root count, the element headcount, and the favorable and unfavorable element lists that follow from the verdict. Built for chart readers, remedy features, and agents that need the usable half of a Four Pillars reading.
+// Assess how well the Day Master is supported by the rest of a BaZi chart, and which of the five elements help it. Uses the classical three-factor method: whether the birth month season backs the Day Master element, whether any branch stores a root for it, and whether the other stems and the branches outside the month help or spend it. Returns the verdict, an auditable score with each factor contribution, the seasonal state, the root count, the element headcount, and the favorable and unfavorable element lists that follow from the verdict. Built for chart readers, remedy features, and agents that need the usable half of a Four Pillars reading.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -144703,7 +144703,7 @@ func (c *ClientWithResponses) CalculateExpressionWithResponse(ctx context.Contex
 
 // CheckKarmicDebtWithBodyWithResponse Detect Karmic Debt numbers - Past life challenges (13, 14, 16, 19)
 //
-// Check for Karmic Debt numbers (13, 14, 16, 19) in Life Path, Expression, Soul Urge, or Personality calculations using Pythagorean numerology. Karmic debt indicates challenges carried from past lives that must be resolved in this lifetime. These numbers appear during reduction and represent specific lessons and tests. Returns comprehensive analysis including debt descriptions, challenges to overcome, and resolution guidance. Perfect for spiritual growth apps, karmic astrology platforms, past life exploration services, and personal transformation tools. Get detailed meanings for all four karmic debt numbers with practical resolution strategies.
+// Check for Karmic Debt numbers (13, 14, 16, 19) in the five core numbers that carry it, Life Path, Birth Day, Expression, Soul Urge and Personality, using Pythagorean numerology. Karmic debt indicates challenges carried from past lives that must be resolved in this lifetime. These numbers appear during reduction and represent specific lessons and tests. Returns comprehensive analysis including debt descriptions, challenges to overcome, and resolution guidance. Perfect for spiritual growth apps, karmic astrology platforms, past life exploration services, and personal transformation tools. Get detailed meanings for all four karmic debt numbers with practical resolution strategies.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -144718,7 +144718,7 @@ func (c *ClientWithResponses) CheckKarmicDebtWithBodyWithResponse(ctx context.Co
 
 // CheckKarmicDebtWithResponse Detect Karmic Debt numbers - Past life challenges (13, 14, 16, 19)
 //
-// Check for Karmic Debt numbers (13, 14, 16, 19) in Life Path, Expression, Soul Urge, or Personality calculations using Pythagorean numerology. Karmic debt indicates challenges carried from past lives that must be resolved in this lifetime. These numbers appear during reduction and represent specific lessons and tests. Returns comprehensive analysis including debt descriptions, challenges to overcome, and resolution guidance. Perfect for spiritual growth apps, karmic astrology platforms, past life exploration services, and personal transformation tools. Get detailed meanings for all four karmic debt numbers with practical resolution strategies.
+// Check for Karmic Debt numbers (13, 14, 16, 19) in the five core numbers that carry it, Life Path, Birth Day, Expression, Soul Urge and Personality, using Pythagorean numerology. Karmic debt indicates challenges carried from past lives that must be resolved in this lifetime. These numbers appear during reduction and represent specific lessons and tests. Returns comprehensive analysis including debt descriptions, challenges to overcome, and resolution guidance. Perfect for spiritual growth apps, karmic astrology platforms, past life exploration services, and personal transformation tools. Get detailed meanings for all four karmic debt numbers with practical resolution strategies.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -149914,7 +149914,7 @@ func ParseGenerateLunarReturnResponse(rsp *http.Response) (*GenerateLunarReturnR
 					Sign string `json:"sign"`
 				} `json:"partOfFortune"`
 
-				// Planets All 14 celestial bodies in the tropical zodiac with house placements: the 10 classical planets (Sun through Pluto), the lunar nodes (North Node, South Node, in the requested `nodeType` convention), Chiron, and Black Moon Lilith.
+				// Planets All 14 celestial bodies in the tropical zodiac with house placements: the 10 classical planets (Sun through Pluto), the lunar nodes (North Node, South Node, in the requested `nodeType` convention), Chiron, and Black Moon Lilith. Chiron is included for charts from 1600 to 2500 and omitted outside that range.
 				Planets []struct {
 					// Degree Degree within the zodiac sign (0-29.999). Indicates how far the planet has progressed through the sign.
 					Degree float32 `json:"degree"`
@@ -150882,7 +150882,7 @@ func ParseGeneratePlanetaryReturnResponse(rsp *http.Response) (*GeneratePlanetar
 					Sign string `json:"sign"`
 				} `json:"partOfFortune"`
 
-				// Planets All 14 celestial bodies in the tropical zodiac with house placements: the 10 classical planets (Sun through Pluto), the lunar nodes (North Node, South Node, in the requested `nodeType` convention), Chiron, and Black Moon Lilith.
+				// Planets All 14 celestial bodies in the tropical zodiac with house placements: the 10 classical planets (Sun through Pluto), the lunar nodes (North Node, South Node, in the requested `nodeType` convention), Chiron, and Black Moon Lilith. Chiron is included for charts from 1600 to 2500 and omitted outside that range.
 				Planets []struct {
 					// Degree Degree within the zodiac sign (0-29.999). Indicates how far the planet has progressed through the sign.
 					Degree float32 `json:"degree"`
@@ -151909,7 +151909,7 @@ func ParseGenerateSolarReturnResponse(rsp *http.Response) (*GenerateSolarReturnR
 					Sign string `json:"sign"`
 				} `json:"partOfFortune"`
 
-				// Planets All 14 celestial bodies in the tropical zodiac with house placements: the 10 classical planets (Sun through Pluto), the lunar nodes (North Node, South Node, in the requested `nodeType` convention), Chiron, and Black Moon Lilith.
+				// Planets All 14 celestial bodies in the tropical zodiac with house placements: the 10 classical planets (Sun through Pluto), the lunar nodes (North Node, South Node, in the requested `nodeType` convention), Chiron, and Black Moon Lilith. Chiron is included for charts from 1600 to 2500 and omitted outside that range.
 				Planets []struct {
 					// Degree Degree within the zodiac sign (0-29.999). Indicates how far the planet has progressed through the sign.
 					Degree float32 `json:"degree"`
@@ -155574,7 +155574,7 @@ func ParseCalculateAnnualForecastResponse(rsp *http.Response) (*CalculateAnnualF
 				// Time Birth time in 24-hour HH:MM:SS format. Sets the hour pillar, which is one of the four and carries the whole picture of later life and offspring. Each Earthly Branch covers two hours, so a birth within a few minutes of an odd hour can land in either. All four pillars are read in the local clock of the birth, and the day boundary is applied in that same clock; only the lunisolar calendar date itself is a world constant, fixed at UTC plus 8 so one instant has one Chinese date everywhere.
 				Time string `json:"time"`
 
-				// Timezone Decimal UTC offset the chart was computed with, resolved from whatever the request sent. An IANA name is resolved to the offset in force on the birth date, so this is the literal number applied and never the name.
+				// Timezone Decimal UTC offset the chart was computed with, resolved from whatever the request sent. An IANA name is resolved to the offset in force at the birth, so this is the literal number applied and never the name. A local time that never happened (the skipped hour of a daylight-saving change) is moved forward past the gap, and date, time and timezone then echo the clock that was running, which the day and hour pillars are read from.
 				Timezone float32 `json:"timezone"`
 			} `json:"birthData"`
 
@@ -155774,7 +155774,7 @@ func ParseGenerateBaziChartResponse(rsp *http.Response) (*GenerateBaziChartRespo
 				// Time Birth time in 24-hour HH:MM:SS format. Sets the hour pillar, which is one of the four and carries the whole picture of later life and offspring. Each Earthly Branch covers two hours, so a birth within a few minutes of an odd hour can land in either. All four pillars are read in the local clock of the birth, and the day boundary is applied in that same clock; only the lunisolar calendar date itself is a world constant, fixed at UTC plus 8 so one instant has one Chinese date everywhere.
 				Time string `json:"time"`
 
-				// Timezone Decimal UTC offset the chart was computed with, resolved from whatever the request sent. An IANA name is resolved to the offset in force on the birth date, so this is the literal number applied and never the name.
+				// Timezone Decimal UTC offset the chart was computed with, resolved from whatever the request sent. An IANA name is resolved to the offset in force at the birth, so this is the literal number applied and never the name. A local time that never happened (the skipped hour of a daylight-saving change) is moved forward past the gap, and date, time and timezone then echo the clock that was running, which the day and hour pillars are read from.
 				Timezone float32 `json:"timezone"`
 			} `json:"birthData"`
 
@@ -156615,7 +156615,7 @@ func ParseCalculateDayMasterStrengthResponse(rsp *http.Response) (*CalculateDayM
 				// Time Birth time in 24-hour HH:MM:SS format. Sets the hour pillar, which is one of the four and carries the whole picture of later life and offspring. Each Earthly Branch covers two hours, so a birth within a few minutes of an odd hour can land in either. All four pillars are read in the local clock of the birth, and the day boundary is applied in that same clock; only the lunisolar calendar date itself is a world constant, fixed at UTC plus 8 so one instant has one Chinese date everywhere.
 				Time string `json:"time"`
 
-				// Timezone Decimal UTC offset the chart was computed with, resolved from whatever the request sent. An IANA name is resolved to the offset in force on the birth date, so this is the literal number applied and never the name.
+				// Timezone Decimal UTC offset the chart was computed with, resolved from whatever the request sent. An IANA name is resolved to the offset in force at the birth, so this is the literal number applied and never the name. A local time that never happened (the skipped hour of a daylight-saving change) is moved forward past the gap, and date, time and timezone then echo the clock that was running, which the day and hour pillars are read from.
 				Timezone float32 `json:"timezone"`
 			} `json:"birthData"`
 
@@ -156666,7 +156666,7 @@ func ParseCalculateDayMasterStrengthResponse(rsp *http.Response) (*CalculateDayM
 				// Detail What the factor actually found in this chart, in one clause.
 				Detail string `json:"detail"`
 
-				// ID Which classical factor this is. month-command is de ling, whether the birth month season backs the Day Master element. rooting is de di, whether any branch stores a stem of that element. party is de shi, whether the other three stems help or spend it. Always English, whatever the lang parameter says.
+				// ID Which classical factor this is. month-command is de ling, whether the birth month season backs the Day Master element. rooting is de di, whether any branch stores a stem of that element. party is de shi, whether the other three stems, and the principal stems of the three branches outside the month, help or spend it. Always English, whatever the lang parameter says.
 				ID string `json:"id"`
 
 				// Name Display name of the factor. Always English, whatever the lang parameter says. Use nameLocalized for anything a reader sees.
@@ -156848,7 +156848,7 @@ func ParseCalculateLuckPillarsResponse(rsp *http.Response) (*CalculateLuckPillar
 				// Time Birth time in 24-hour HH:MM:SS format. Sets the hour pillar, which is one of the four and carries the whole picture of later life and offspring. Each Earthly Branch covers two hours, so a birth within a few minutes of an odd hour can land in either. All four pillars are read in the local clock of the birth, and the day boundary is applied in that same clock; only the lunisolar calendar date itself is a world constant, fixed at UTC plus 8 so one instant has one Chinese date everywhere.
 				Time string `json:"time"`
 
-				// Timezone Decimal UTC offset the chart was computed with, resolved from whatever the request sent. An IANA name is resolved to the offset in force on the birth date, so this is the literal number applied and never the name.
+				// Timezone Decimal UTC offset the chart was computed with, resolved from whatever the request sent. An IANA name is resolved to the offset in force at the birth, so this is the literal number applied and never the name. A local time that never happened (the skipped hour of a daylight-saving change) is moved forward past the gap, and date, time and timezone then echo the clock that was running, which the day and hour pillars are read from.
 				Timezone float32 `json:"timezone"`
 			} `json:"birthData"`
 
@@ -162370,7 +162370,7 @@ func ParseListNinePeriodsResponse(rsp *http.Response) (*ListNinePeriodsResponse,
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
-			// CurrentPeriod The period in force on that date. Resolved at Li Chun, so a date in January belongs to the previous solar year and can fall in the previous period.
+			// CurrentPeriod The period in force on that date. Resolved at Li Chun, so a date in January belongs to the previous solar year and can fall in the previous period. A date is read at the start of its day in the Chinese calendar frame (UTC+8) and Li Chun falls part-way through its own day, so the date a period opens on still reads as the previous period, the same reading the Kua route gives a birth date.
 			CurrentPeriod float32 `json:"currentPeriod"`
 
 			// CycleEndYear Last solar year of the recorded cycle. The cycle then repeats, so 2044 opens Period 1 again.
@@ -162936,7 +162936,7 @@ func ParseForecastSolarReturnResponse(rsp *http.Response) (*ForecastSolarReturnR
 					Sign string `json:"sign"`
 				} `json:"partOfFortune"`
 
-				// Planets All 14 celestial bodies in the tropical zodiac with house placements: the 10 classical planets (Sun through Pluto), the lunar nodes (North Node, South Node, in the requested `nodeType` convention), Chiron, and Black Moon Lilith.
+				// Planets All 14 celestial bodies in the tropical zodiac with house placements: the 10 classical planets (Sun through Pluto), the lunar nodes (North Node, South Node, in the requested `nodeType` convention), Chiron, and Black Moon Lilith. Chiron is included for charts from 1600 to 2500 and omitted outside that range.
 				Planets []struct {
 					// Degree Degree within the zodiac sign (0-29.999). Indicates how far the planet has progressed through the sign.
 					Degree float32 `json:"degree"`
