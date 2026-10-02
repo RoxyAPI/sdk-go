@@ -37484,7 +37484,7 @@ type CalculateTransitAspectsJSONBody struct {
 	// TransitDate Transit date in YYYY-MM-DD format. Defaults to current date if omitted. Use future dates for predictive transit analysis.
 	TransitDate *openapi_types.Date `json:"transitDate,omitempty"`
 
-	// TransitTime Transit time in HH:MM:SS format. Defaults to 12:00:00 (noon) if omitted.
+	// TransitTime Transit time in HH:MM:SS format, read on the clock of the natal chart timezone at the transit date (an IANA zone takes the offset in force on that date, daylight saving included). Defaults to 12:00:00 (noon) if omitted.
 	TransitTime *string `json:"transitTime,omitempty"`
 }
 
@@ -40546,7 +40546,7 @@ type CalculateBridgeNumbersJSONBody struct {
 	// Day Birth day (1 to 31)
 	Day int `json:"day"`
 
-	// FullName Full legal birth name as it appears on the birth certificate. Used to calculate Expression, Soul Urge, and Personality numbers. Include first, middle, and last names separated by spaces.
+	// FullName Full birth name as it appears on the birth certificate, first, middle and last names separated by spaces. Used to calculate the Expression, Soul Urge and Personality numbers. A name in any script is converted to Latin letters before it is counted, Cyrillic and Greek as the passport spelling and accents folded to the base letter, and the calculation lists the letters counted. For a script that does not write its vowels, send the Latin spelling the person uses.
 	FullName string `json:"fullName"`
 
 	// Month Birth month (1 to 12)
@@ -40567,7 +40567,7 @@ type CalculateBridgeNumbersParamsLang string
 
 // CalculateBusinessNameJSONBody defines parameters for CalculateBusinessName.
 type CalculateBusinessNameJSONBody struct {
-	// Name The business or brand name to evaluate.
+	// Name The business or brand name to evaluate. A name in any script is converted to Latin letters before it is counted, Cyrillic and Greek as the passport spelling and accents folded to the base letter, and the calculation lists the letters counted. For a script that does not write its vowels, send the Latin spelling the person uses.
 	Name string `json:"name"`
 }
 
@@ -40588,7 +40588,7 @@ type CalculateBusinessName200JSONResponseBodyRating string
 
 // CalculateChaldeanJSONBody defines parameters for CalculateChaldean.
 type CalculateChaldeanJSONBody struct {
-	// Name The name to analyze. Chaldean tradition uses the name a person is most known by, not necessarily the full legal birth name.
+	// Name The name to analyze. Chaldean tradition uses the name a person is most known by, not necessarily the full legal birth name. It needs at least one vowel (A, E, I, O, U) and one consonant, since the Soul Urge is read from the vowels and the Personality from the consonants; Y counts as a consonant. A name in any script is converted to Latin letters before it is counted, Cyrillic and Greek as the passport spelling and accents folded to the base letter, and the calculation lists the letters counted. For a script that does not write its vowels, send the Latin spelling the person uses.
 	Name string `json:"name"`
 }
 
@@ -40612,13 +40612,13 @@ type CalculateChaldean200JSONResponseBodySoulUrgeCompoundMeaningNature string
 
 // GenerateNumerologyChartJSONBody defines parameters for GenerateNumerologyChart.
 type GenerateNumerologyChartJSONBody struct {
-	// CurrentYear Year for Personal Year calculation (defaults to current year)
+	// CurrentYear Calendar year for the Personal Year, defaults to the current UTC year. It moves the Personal Year only: the nested personalMonth and maturityStatus.currentAge always read the current UTC date.
 	CurrentYear *int `json:"currentYear,omitempty"`
 
 	// Day Birth day (1-31)
 	Day int `json:"day"`
 
-	// FullName Full birth name as it appears on the birth certificate. Used for all letter-based Pythagorean numerology calculations including Expression, Soul Urge, Personality, and Karmic Lessons.
+	// FullName Full birth name as it appears on the birth certificate. Used for every letter-based number in the chart: Expression, Soul Urge, Personality, Karmic Lessons, Hidden Passion, Subconscious Self and the special letters. A name in any script is converted to Latin letters before it is counted, Cyrillic and Greek as the passport spelling and accents folded to the base letter, and the calculation lists the letters counted. For a script that does not write its vowels, send the Latin spelling the person uses.
 	FullName string `json:"fullName"`
 
 	// Month Birth month (1-12)
@@ -40747,7 +40747,7 @@ type GetDailyNumber200JSONResponseBodyType string
 
 // CalculateDualJSONBody defines parameters for CalculateDual.
 type CalculateDualJSONBody struct {
-	// Name The name to analyze in both systems.
+	// Name The name to analyze in both systems. A name in any script is converted to Latin letters before it is counted, Cyrillic and Greek as the passport spelling and accents folded to the base letter, and the calculation lists the letters counted. For a script that does not write its vowels, send the Latin spelling the person uses.
 	Name string `json:"name"`
 }
 
@@ -40768,7 +40768,7 @@ type CalculateDual200JSONResponseBodyPythagoreanType string
 
 // CalculateExpressionJSONBody defines parameters for CalculateExpression.
 type CalculateExpressionJSONBody struct {
-	// FullName Full birth name (first, middle, last)
+	// FullName Full birth name (first, middle, last). A name in any script is converted to Latin letters before it is counted, Cyrillic and Greek as the passport spelling and accents folded to the base letter, and the calculation lists the letters counted. For a script that does not write its vowels, send the Latin spelling the person uses.
 	FullName string `json:"fullName"`
 }
 
@@ -40789,7 +40789,7 @@ type CheckKarmicDebtJSONBody struct {
 	// Day Birth day (checks Birth Day on its own, and Life Path with year and month)
 	Day *int `json:"day,omitempty"`
 
-	// FullName Full birth name (checks Expression, Soul Urge, Personality)
+	// FullName Full birth name (checks Expression, Soul Urge, Personality). A name in any script is converted to Latin letters before it is counted, Cyrillic and Greek as the passport spelling and accents folded to the base letter, and the calculation lists the letters counted. For a script that does not write its vowels, send the Latin spelling the person uses.
 	FullName *string `json:"fullName,omitempty"`
 
 	// Month Birth month (checks Life Path)
@@ -40810,7 +40810,7 @@ type CheckKarmicDebtParamsLang string
 
 // AnalyzeKarmicLessonsJSONBody defines parameters for AnalyzeKarmicLessons.
 type AnalyzeKarmicLessonsJSONBody struct {
-	// FullName Full birth name to analyze for missing numbers
+	// FullName Full birth name to analyze for missing numbers. A name in any script is converted to Latin letters before it is counted, Cyrillic and Greek as the passport spelling and accents folded to the base letter, and the calculation lists the letters counted. For a script that does not write its vowels, send the Latin spelling the person uses.
 	FullName string `json:"fullName"`
 }
 
@@ -40855,7 +40855,7 @@ type CalculateMaturityJSONBody struct {
 	// Expression Your Expression number (1-9, 11, 22, 33). Optional if fullName is provided.
 	Expression *int `json:"expression,omitempty"`
 
-	// FullName Full birth name to calculate Expression number automatically. Use instead of passing expression directly.
+	// FullName Full birth name to calculate the Expression number automatically. Use instead of passing expression directly. A name in any script is converted to Latin letters before it is counted, Cyrillic and Greek as the passport spelling and accents folded to the base letter, and the calculation lists the letters counted. For a script that does not write its vowels, send the Latin spelling the person uses.
 	FullName *string `json:"fullName,omitempty"`
 
 	// LifePath Your Life Path number (1-9, 11, 22, 33). Optional if year, month, day are provided.
@@ -40900,7 +40900,7 @@ type CalculatePersonalDayJSONBody struct {
 	// Month Birth month (1-12)
 	Month int `json:"month"`
 
-	// TargetDate Target date in YYYY-MM-DD format. Defaults to today (UTC).
+	// TargetDate Target date in YYYY-MM-DD format, in the years 100 to 2100. Defaults to today (UTC).
 	TargetDate *openapi_types.Date `json:"targetDate,omitempty"`
 }
 
@@ -40921,10 +40921,10 @@ type CalculatePersonalMonthJSONBody struct {
 	// Month Birth month (1-12)
 	Month int `json:"month"`
 
-	// TargetMonth Target calendar month to forecast (1-12, defaults to current month)
+	// TargetMonth Target calendar month to forecast (1 to 12). Defaults to the current UTC month.
 	TargetMonth *int `json:"targetMonth,omitempty"`
 
-	// Year Target year for calculation (defaults to current year)
+	// Year Target year. Defaults to the current UTC year.
 	Year *int `json:"year,omitempty"`
 }
 
@@ -40945,7 +40945,7 @@ type CalculatePersonalYearJSONBody struct {
 	// Month Birth month (1-12)
 	Month int `json:"month"`
 
-	// Year Year to calculate (defaults to current year)
+	// Year Year to forecast. Defaults to the current UTC year; the Personal Year turns over on 1 January.
 	Year *int `json:"year,omitempty"`
 }
 
@@ -40960,7 +40960,7 @@ type CalculatePersonalYearParamsLang string
 
 // CalculatePersonalityJSONBody defines parameters for CalculatePersonality.
 type CalculatePersonalityJSONBody struct {
-	// FullName Full birth name (consonants will be extracted)
+	// FullName Full birth name. Its consonants give the Personality number, so a name with none is refused. A name in any script is converted to Latin letters before it is counted, Cyrillic and Greek as the passport spelling and accents folded to the base letter, and the calculation lists the letters counted. For a script that does not write its vowels, send the Latin spelling the person uses.
 	FullName string `json:"fullName"`
 }
 
@@ -40978,7 +40978,7 @@ type CalculatePersonality200JSONResponseBodyType string
 
 // CalculateSoulUrgeJSONBody defines parameters for CalculateSoulUrge.
 type CalculateSoulUrgeJSONBody struct {
-	// FullName Full birth name (vowels will be extracted)
+	// FullName Full birth name. Its vowels A, E, I, O and U give the Soul Urge, so a name with none is refused. A name in any script is converted to Latin letters before it is counted, Cyrillic and Greek as the passport spelling and accents folded to the base letter, and the calculation lists the letters counted. For a script that does not write its vowels, send the Latin spelling the person uses.
 	FullName string `json:"fullName"`
 }
 
@@ -52800,338 +52800,338 @@ type ClientInterface interface {
 	// Corresponds with POST /mesoamerican-astrology/mayan/tzolkin (the `CalculateTzolkin` operationId).
 	CalculateTzolkin(ctx context.Context, params *CalculateTzolkinParams, body CalculateTzolkinJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// CalculateBirthDayWithBody Calculate Birth Day number - Special talents from day of birth
+	// CalculateBirthDayWithBody Calculate Birth Day number - Birthday numerology API
 	//
-	// Calculate your Birth Day number from the day you were born (1-31) using Pythagorean numerology. This number reveals special talents and abilities you possess from birth. It shows natural gifts that can help you achieve your life purpose. Returns comprehensive interpretation including innate talents, natural abilities, career advantages, and how to leverage your special gifts. Automatically detects Master Numbers (11, 22) and reduces double-digit days. Perfect for talent discovery apps, career counseling platforms, personal development services, and skill assessment tools. Get detailed 300-500 word meanings for all numbers 1-9, 11, and 22.
+	// Calculate the Birth Day number from the day of the month a person was born, 1 to 31, with Pythagorean numerology. The 11th, 22nd and 29th keep the master numbers 11 and 22, other two-digit days reduce to one digit, and the 13th, 14th, 16th and 19th are flagged as karmic debt with their meaning. The response returns the calculation and a full interpretation of the special talents the day brings in the language set by lang. Built for birthday features, talent and career discovery tools, and AI agents.
 	//
 	// Takes any type of body and a specified content type.
 	//
 	// Corresponds with POST /numerology/birth-day (the `CalculateBirthDay` operationId).
 	CalculateBirthDayWithBody(ctx context.Context, params *CalculateBirthDayParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// CalculateBirthDay Calculate Birth Day number - Special talents from day of birth
+	// CalculateBirthDay Calculate Birth Day number - Birthday numerology API
 	//
-	// Calculate your Birth Day number from the day you were born (1-31) using Pythagorean numerology. This number reveals special talents and abilities you possess from birth. It shows natural gifts that can help you achieve your life purpose. Returns comprehensive interpretation including innate talents, natural abilities, career advantages, and how to leverage your special gifts. Automatically detects Master Numbers (11, 22) and reduces double-digit days. Perfect for talent discovery apps, career counseling platforms, personal development services, and skill assessment tools. Get detailed 300-500 word meanings for all numbers 1-9, 11, and 22.
+	// Calculate the Birth Day number from the day of the month a person was born, 1 to 31, with Pythagorean numerology. The 11th, 22nd and 29th keep the master numbers 11 and 22, other two-digit days reduce to one digit, and the 13th, 14th, 16th and 19th are flagged as karmic debt with their meaning. The response returns the calculation and a full interpretation of the special talents the day brings in the language set by lang. Built for birthday features, talent and career discovery tools, and AI agents.
 	//
 	// Takes a body of the `application/json` content type.
 	//
 	// Corresponds with POST /numerology/birth-day (the `CalculateBirthDay` operationId).
 	CalculateBirthDay(ctx context.Context, params *CalculateBirthDayParams, body CalculateBirthDayJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// CalculateBridgeNumbersWithBody Calculate Bridge Numbers - Harmonize different aspects of personality
+	// CalculateBridgeNumbersWithBody Calculate Bridge Numbers - Numerology bridge numbers API
 	//
-	// Calculate three Bridge Numbers that reveal the adjustments needed to create harmony between different aspects of your numerology profile. Bridge Numbers are the absolute difference between pairs of core numbers: Life Path and Expression, Expression and Personality, Expression and Soul Urge. A Bridge of 0 means the two aspects are already aligned. Higher bridges (1 to 8) indicate greater tension and provide specific guidance on what changes to make. Bridge Numbers are essential for personal development, coaching applications, self-improvement platforms, and AI-powered personality analysis tools. Requires both a full birth name and birth date to calculate all four core numbers (Life Path, Expression, Soul Urge, Personality) internally before deriving the bridges.
+	// Calculate four numerology Bridge numbers from a full birth name and birth date: Life Path and Expression, Expression and Soul Urge, Soul Urge and Personality, and Expression and Personality. Each bridge is the distance between two core numbers, from 0 to 8, where 0 means the two are already in harmony, and comes with guidance for closing the gap in the language set by lang. Built for personal development, coaching and personality analysis tools and AI agents.
 	//
 	// Takes any type of body and a specified content type.
 	//
 	// Corresponds with POST /numerology/bridge (the `CalculateBridgeNumbers` operationId).
 	CalculateBridgeNumbersWithBody(ctx context.Context, params *CalculateBridgeNumbersParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// CalculateBridgeNumbers Calculate Bridge Numbers - Harmonize different aspects of personality
+	// CalculateBridgeNumbers Calculate Bridge Numbers - Numerology bridge numbers API
 	//
-	// Calculate three Bridge Numbers that reveal the adjustments needed to create harmony between different aspects of your numerology profile. Bridge Numbers are the absolute difference between pairs of core numbers: Life Path and Expression, Expression and Personality, Expression and Soul Urge. A Bridge of 0 means the two aspects are already aligned. Higher bridges (1 to 8) indicate greater tension and provide specific guidance on what changes to make. Bridge Numbers are essential for personal development, coaching applications, self-improvement platforms, and AI-powered personality analysis tools. Requires both a full birth name and birth date to calculate all four core numbers (Life Path, Expression, Soul Urge, Personality) internally before deriving the bridges.
+	// Calculate four numerology Bridge numbers from a full birth name and birth date: Life Path and Expression, Expression and Soul Urge, Soul Urge and Personality, and Expression and Personality. Each bridge is the distance between two core numbers, from 0 to 8, where 0 means the two are already in harmony, and comes with guidance for closing the gap in the language set by lang. Built for personal development, coaching and personality analysis tools and AI agents.
 	//
 	// Takes a body of the `application/json` content type.
 	//
 	// Corresponds with POST /numerology/bridge (the `CalculateBridgeNumbers` operationId).
 	CalculateBridgeNumbers(ctx context.Context, params *CalculateBridgeNumbersParams, body CalculateBridgeNumbersJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// CalculateBusinessNameWithBody Business name numerology - Chaldean brand name analysis and lucky numbers
+	// CalculateBusinessNameWithBody Calculate business name numerology - Brand name numerology API
 	//
-	// Analyze a business or brand name with Chaldean numerology, the system practitioners use for trade names. Returns the name number (compound and root), its planetary ruler, an overall business rating, the industries the number favors, and whether the compound is one of Cheiro fortunate compounds. The most favorable business roots are 1 (leadership), 3 (expansion), 5 (commerce) and 6 (beauty and hospitality); the numbers 4 and 8 carry caution as the karmic numbers of instability and heavy demand. Use it to vet a company name, compare brand options, or guide a naming decision. This is positioning guidance layered over the fundamentals of a memorable, available name, not a guarantee.
+	// Analyze a business or brand name with Chaldean numerology, the system practitioners use for trade names. The name is read word by word, and the response returns the compound number and root with every step, the planetary ruler, a business rating, the industries the number favors, whether the compound is one of the fortunate compounds Cheiro names, and guidance, in the language set by lang. The roots 1, 3, 5 and 6 rate excellent, 2 and 9 good, 7 and 8 caution and 4 avoid. Built for naming tools, brand agencies and founder apps; the rating is positioning guidance, not a guarantee.
 	//
 	// Takes any type of body and a specified content type.
 	//
 	// Corresponds with POST /numerology/business-name (the `CalculateBusinessName` operationId).
 	CalculateBusinessNameWithBody(ctx context.Context, params *CalculateBusinessNameParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// CalculateBusinessName Business name numerology - Chaldean brand name analysis and lucky numbers
+	// CalculateBusinessName Calculate business name numerology - Brand name numerology API
 	//
-	// Analyze a business or brand name with Chaldean numerology, the system practitioners use for trade names. Returns the name number (compound and root), its planetary ruler, an overall business rating, the industries the number favors, and whether the compound is one of Cheiro fortunate compounds. The most favorable business roots are 1 (leadership), 3 (expansion), 5 (commerce) and 6 (beauty and hospitality); the numbers 4 and 8 carry caution as the karmic numbers of instability and heavy demand. Use it to vet a company name, compare brand options, or guide a naming decision. This is positioning guidance layered over the fundamentals of a memorable, available name, not a guarantee.
+	// Analyze a business or brand name with Chaldean numerology, the system practitioners use for trade names. The name is read word by word, and the response returns the compound number and root with every step, the planetary ruler, a business rating, the industries the number favors, whether the compound is one of the fortunate compounds Cheiro names, and guidance, in the language set by lang. The roots 1, 3, 5 and 6 rate excellent, 2 and 9 good, 7 and 8 caution and 4 avoid. Built for naming tools, brand agencies and founder apps; the rating is positioning guidance, not a guarantee.
 	//
 	// Takes a body of the `application/json` content type.
 	//
 	// Corresponds with POST /numerology/business-name (the `CalculateBusinessName` operationId).
 	CalculateBusinessName(ctx context.Context, params *CalculateBusinessNameParams, body CalculateBusinessNameJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// CalculateChaldeanWithBody Chaldean numerology name reading - Destiny, compound number, planetary ruler
+	// CalculateChaldeanWithBody Calculate Chaldean numerology - Chaldean name number calculator API
 	//
-	// Calculate a complete Chaldean numerology reading for a name. The older Chaldean system maps letters to values 1 to 8 by vibration (the number 9 is sacred and never assigned to a letter) and reads the unreduced two-digit compound number (10 to 52, also called a fadic number, defined by Cheiro) in addition to the single-digit root. Returns the Destiny or name number from all letters, the Soul Urge from vowels, and the Personality from consonants, each with its compound number, root, and Cheiro compound interpretation, plus the planetary ruler of the Destiny root and a caution flag for the karmic numbers 4 and 8. Perfect for Chaldean numerology calculators, name analysis tools, and AI numerology assistants that need both the compound and root layers in one call.
+	// Calculate a complete Chaldean numerology reading for a name, following Cheiro. The Destiny or name number, the Soul Urge from the vowels and the Personality from the consonants each come with the compound number from 10 to 52, the single-digit root and the classical compound interpretation, and a longer name is read name by name with every step shown in its calculation. The response adds the planetary ruler and meaning of the Destiny root, a caution flag for the roots 4 and 8, and a summary, in the language set by lang. Built for Chaldean numerology calculators, name analysis tools and AI agents.
 	//
 	// Takes any type of body and a specified content type.
 	//
 	// Corresponds with POST /numerology/chaldean (the `CalculateChaldean` operationId).
 	CalculateChaldeanWithBody(ctx context.Context, params *CalculateChaldeanParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// CalculateChaldean Chaldean numerology name reading - Destiny, compound number, planetary ruler
+	// CalculateChaldean Calculate Chaldean numerology - Chaldean name number calculator API
 	//
-	// Calculate a complete Chaldean numerology reading for a name. The older Chaldean system maps letters to values 1 to 8 by vibration (the number 9 is sacred and never assigned to a letter) and reads the unreduced two-digit compound number (10 to 52, also called a fadic number, defined by Cheiro) in addition to the single-digit root. Returns the Destiny or name number from all letters, the Soul Urge from vowels, and the Personality from consonants, each with its compound number, root, and Cheiro compound interpretation, plus the planetary ruler of the Destiny root and a caution flag for the karmic numbers 4 and 8. Perfect for Chaldean numerology calculators, name analysis tools, and AI numerology assistants that need both the compound and root layers in one call.
+	// Calculate a complete Chaldean numerology reading for a name, following Cheiro. The Destiny or name number, the Soul Urge from the vowels and the Personality from the consonants each come with the compound number from 10 to 52, the single-digit root and the classical compound interpretation, and a longer name is read name by name with every step shown in its calculation. The response adds the planetary ruler and meaning of the Destiny root, a caution flag for the roots 4 and 8, and a summary, in the language set by lang. Built for Chaldean numerology calculators, name analysis tools and AI agents.
 	//
 	// Takes a body of the `application/json` content type.
 	//
 	// Corresponds with POST /numerology/chaldean (the `CalculateChaldean` operationId).
 	CalculateChaldean(ctx context.Context, params *CalculateChaldeanParams, body CalculateChaldeanJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// GenerateNumerologyChartWithBody Generate Complete Numerology Chart - Full profile analysis
+	// GenerateNumerologyChartWithBody Generate numerology chart - Complete numerology reading API
 	//
-	// Generate a comprehensive numerology chart combining all major calculations: Life Path, Expression, Soul Urge, Personality, Birth Day, Maturity, Karmic Lessons, Karmic Debt, and Personal Year. This single endpoint provides everything needed for a full numerology reading. Returns detailed interpretations for all numbers, karmic analysis, yearly forecast, and holistic summary. Perfect for numerology apps, complete reading services, birth chart generators, and comprehensive analysis tools. Save multiple API calls by getting the full chart in one request. Ideal for generating PDF reports or detailed user profiles.
+	// Generate a complete numerology chart from a full birth name and birth date in one call. It returns the six core numbers (Life Path, Expression, Soul Urge, Personality, Birth Day and Maturity) with their calculations and full interpretations, the four Pinnacles and four Challenges with their ages, Karmic Lessons, karmic debt in all five positions, Hidden Passion, Subconscious Self, Cornerstone, Capstone and First Vowel, the Birth Day profile for the exact day, lucky associations, the Maturity activation status, the Personal Year with the current Personal Month, and a written summary, in the language set by lang. The Personal Year uses currentYear or the current UTC year, while the Personal Month and the age behind the Maturity status read the current UTC date. Built for full numerology readings, PDF reports, onboarding profiles and AI agents.
 	//
 	// Takes any type of body and a specified content type.
 	//
 	// Corresponds with POST /numerology/chart (the `GenerateNumerologyChart` operationId).
 	GenerateNumerologyChartWithBody(ctx context.Context, params *GenerateNumerologyChartParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// GenerateNumerologyChart Generate Complete Numerology Chart - Full profile analysis
+	// GenerateNumerologyChart Generate numerology chart - Complete numerology reading API
 	//
-	// Generate a comprehensive numerology chart combining all major calculations: Life Path, Expression, Soul Urge, Personality, Birth Day, Maturity, Karmic Lessons, Karmic Debt, and Personal Year. This single endpoint provides everything needed for a full numerology reading. Returns detailed interpretations for all numbers, karmic analysis, yearly forecast, and holistic summary. Perfect for numerology apps, complete reading services, birth chart generators, and comprehensive analysis tools. Save multiple API calls by getting the full chart in one request. Ideal for generating PDF reports or detailed user profiles.
+	// Generate a complete numerology chart from a full birth name and birth date in one call. It returns the six core numbers (Life Path, Expression, Soul Urge, Personality, Birth Day and Maturity) with their calculations and full interpretations, the four Pinnacles and four Challenges with their ages, Karmic Lessons, karmic debt in all five positions, Hidden Passion, Subconscious Self, Cornerstone, Capstone and First Vowel, the Birth Day profile for the exact day, lucky associations, the Maturity activation status, the Personal Year with the current Personal Month, and a written summary, in the language set by lang. The Personal Year uses currentYear or the current UTC year, while the Personal Month and the age behind the Maturity status read the current UTC date. Built for full numerology readings, PDF reports, onboarding profiles and AI agents.
 	//
 	// Takes a body of the `application/json` content type.
 	//
 	// Corresponds with POST /numerology/chart (the `GenerateNumerologyChart` operationId).
 	GenerateNumerologyChart(ctx context.Context, params *GenerateNumerologyChartParams, body GenerateNumerologyChartJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// CalculateNumCompatibilityWithBody Calculate Compatibility - Relationship dynamics between two people
+	// CalculateNumCompatibilityWithBody Calculate numerology compatibility - Love match scoring API
 	//
-	// Calculate numerology compatibility between two people using Pythagorean numerology. Accepts two input modes per person: pre-calculated Life Path, Expression, and Soul Urge numbers, or raw name and birthdate for automatic calculation. You can mix modes across persons (e.g. numbers for person1, raw inputs for person2). Provides comprehensive relationship analysis with overall compatibility score (0-100), individual aspect compatibility (Life Path 50% weight, Expression 30%, Soul Urge 20%), relationship strengths, challenges, and practical advice. Uses detailed compatibility matrix for all number combinations. Perfect for dating apps, relationship counseling platforms, matchmaking services, and compatibility tools. Get actionable insights for improving relationship dynamics.
+	// Calculate numerology compatibility between two people from their Life Path, Expression and Soul Urge numbers. Send each person as a full birth name with a birth date, or as precomputed numbers, and mix the two modes freely across the pair. The response returns an overall score from 50 to 100 with its rating, a score and description for each number pair, and the strengths, challenges and advice for the relationship, in the language set by lang. Built for dating apps, matchmaking, relationship coaching and AI companions.
 	//
 	// Takes any type of body and a specified content type.
 	//
 	// Corresponds with POST /numerology/compatibility (the `CalculateNumCompatibility` operationId).
 	CalculateNumCompatibilityWithBody(ctx context.Context, params *CalculateNumCompatibilityParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// CalculateNumCompatibility Calculate Compatibility - Relationship dynamics between two people
+	// CalculateNumCompatibility Calculate numerology compatibility - Love match scoring API
 	//
-	// Calculate numerology compatibility between two people using Pythagorean numerology. Accepts two input modes per person: pre-calculated Life Path, Expression, and Soul Urge numbers, or raw name and birthdate for automatic calculation. You can mix modes across persons (e.g. numbers for person1, raw inputs for person2). Provides comprehensive relationship analysis with overall compatibility score (0-100), individual aspect compatibility (Life Path 50% weight, Expression 30%, Soul Urge 20%), relationship strengths, challenges, and practical advice. Uses detailed compatibility matrix for all number combinations. Perfect for dating apps, relationship counseling platforms, matchmaking services, and compatibility tools. Get actionable insights for improving relationship dynamics.
+	// Calculate numerology compatibility between two people from their Life Path, Expression and Soul Urge numbers. Send each person as a full birth name with a birth date, or as precomputed numbers, and mix the two modes freely across the pair. The response returns an overall score from 50 to 100 with its rating, a score and description for each number pair, and the strengths, challenges and advice for the relationship, in the language set by lang. Built for dating apps, matchmaking, relationship coaching and AI companions.
 	//
 	// Takes a body of the `application/json` content type.
 	//
 	// Corresponds with POST /numerology/compatibility (the `CalculateNumCompatibility` operationId).
 	CalculateNumCompatibility(ctx context.Context, params *CalculateNumCompatibilityParams, body CalculateNumCompatibilityJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// GetCompoundNumber Compound number meaning - Cheiro Chaldean interpretation 10 to 52
+	// GetCompoundNumber Get compound number meaning - Chaldean compound numbers 10 to 52 API
 	//
-	// Get the classical Chaldean interpretation of a compound number (also called a fadic number) from 10 to 52, as defined by Cheiro in the Book of Numbers. Compound numbers are the unreduced two-digit numbers that reveal the hidden influence behind a name or date, beyond the single-digit root. Each returns its symbolic title (such as The Wheel of Fortune for 10, The Star of the Magi for 17, or The Crown of the Magi for 21), its nature (fortunate, unfortunate, or mixed), and a full interpretation. Numbers 33 to 52 share the meaning of a lower number in their series, returned with a sameAs pointer. Perfect for Chaldean numerology references, compound number lookups, and AI numerology tools.
+	// Get the classical Chaldean meaning of a compound number, also called a fadic number, from 10 to 52 as Cheiro defines it. A compound number is the unreduced two-digit total behind a name or date, read beside its single-digit root. The response returns the root, the nature (fortunate, unfortunate or mixed), the full interpretation in the language set by lang, and the symbolic name where Cheiro gives one, such as The Wheel of Fortune for 10 or The Crown of the Magi for 21; a number from 33 up that repeats a lower one carries a sameAs pointer to it. Built for Chaldean numerology references, name analysis tools and AI agents.
 	//
 	// Corresponds with GET /numerology/compound-number/{number} (the `GetCompoundNumber` operationId).
 	GetCompoundNumber(ctx context.Context, number string, params *GetCompoundNumberParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// GetDailyNumberWithBody Get daily numerology number - Number of the Day with interpretation
+	// GetDailyNumberWithBody Get daily numerology number - Number of the Day API
 	//
-	// Receive a daily numerology number (1-9, 11, 22, 33) for guidance and reflection. Uses seeded randomness so the same seed gets the same number on the same date, perfect for "Number of the Day" features in numerology apps, wellness platforms, and daily guidance tools. Returns the number with full interpretation including archetype, keywords, strengths, challenges, career, relationships, and spiritual insights. Ideal for daily push notifications, morning briefings, and personalized numerology experiences.
+	// Get the numerology Number of the Day, one of 1 to 9, 11, 22 or 33, with its full interpretation. The same seed returns the same number for the same date, so a user keeps one number all day, and the date defaults to today in UTC. The response returns the number, its type, a daily message and the archetype, keywords, strengths, challenges, career, relationships and spirituality reading in the language set by lang. Built for Number of the Day widgets, push notifications and daily content.
 	//
 	// Takes any type of body and a specified content type.
 	//
 	// Corresponds with POST /numerology/daily (the `GetDailyNumber` operationId).
 	GetDailyNumberWithBody(ctx context.Context, params *GetDailyNumberParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// GetDailyNumber Get daily numerology number - Number of the Day with interpretation
+	// GetDailyNumber Get daily numerology number - Number of the Day API
 	//
-	// Receive a daily numerology number (1-9, 11, 22, 33) for guidance and reflection. Uses seeded randomness so the same seed gets the same number on the same date, perfect for "Number of the Day" features in numerology apps, wellness platforms, and daily guidance tools. Returns the number with full interpretation including archetype, keywords, strengths, challenges, career, relationships, and spiritual insights. Ideal for daily push notifications, morning briefings, and personalized numerology experiences.
+	// Get the numerology Number of the Day, one of 1 to 9, 11, 22 or 33, with its full interpretation. The same seed returns the same number for the same date, so a user keeps one number all day, and the date defaults to today in UTC. The response returns the number, its type, a daily message and the archetype, keywords, strengths, challenges, career, relationships and spirituality reading in the language set by lang. Built for Number of the Day widgets, push notifications and daily content.
 	//
 	// Takes a body of the `application/json` content type.
 	//
 	// Corresponds with POST /numerology/daily (the `GetDailyNumber` operationId).
 	GetDailyNumber(ctx context.Context, params *GetDailyNumberParams, body GetDailyNumberJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// CalculateDualWithBody Dual numerology - Pythagorean and Chaldean name numbers in one call
+	// CalculateDualWithBody Calculate dual numerology - Pythagorean and Chaldean name number API
 	//
-	// Calculate a name number in both major numerology systems at once and compare them. The Pythagorean system maps letters 1 to 9 in alphabetical order and preserves master numbers (11, 22, 33), giving the Expression or Destiny number used in modern Western numerology. The Chaldean system maps letters 1 to 8 by vibration, reads the compound number (10 to 52), and reduces to a root 1 to 9. Returns both results with their interpretations, plus an agreement flag showing whether the two systems point to the same single-digit energy. The only numerology API that returns Pythagorean and Chaldean for a name in a single request, ideal for comparison tools and AI numerology assistants.
+	// Calculate a name number in both Pythagorean and Chaldean numerology in one call and compare them. The Pythagorean side returns the Expression or Destiny number with master numbers 11, 22 and 33 kept; the Chaldean side returns the compound number from 10 to 52, the root, its planetary ruler and the compound interpretation; each shows its calculation name by name. An agreement flag and a plain-language note show whether the two systems point to the same single-digit energy, in the language set by lang. Built for system comparison tools, name analysis features and AI agents.
 	//
 	// Takes any type of body and a specified content type.
 	//
 	// Corresponds with POST /numerology/dual (the `CalculateDual` operationId).
 	CalculateDualWithBody(ctx context.Context, params *CalculateDualParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// CalculateDual Dual numerology - Pythagorean and Chaldean name numbers in one call
+	// CalculateDual Calculate dual numerology - Pythagorean and Chaldean name number API
 	//
-	// Calculate a name number in both major numerology systems at once and compare them. The Pythagorean system maps letters 1 to 9 in alphabetical order and preserves master numbers (11, 22, 33), giving the Expression or Destiny number used in modern Western numerology. The Chaldean system maps letters 1 to 8 by vibration, reads the compound number (10 to 52), and reduces to a root 1 to 9. Returns both results with their interpretations, plus an agreement flag showing whether the two systems point to the same single-digit energy. The only numerology API that returns Pythagorean and Chaldean for a name in a single request, ideal for comparison tools and AI numerology assistants.
+	// Calculate a name number in both Pythagorean and Chaldean numerology in one call and compare them. The Pythagorean side returns the Expression or Destiny number with master numbers 11, 22 and 33 kept; the Chaldean side returns the compound number from 10 to 52, the root, its planetary ruler and the compound interpretation; each shows its calculation name by name. An agreement flag and a plain-language note show whether the two systems point to the same single-digit energy, in the language set by lang. Built for system comparison tools, name analysis features and AI agents.
 	//
 	// Takes a body of the `application/json` content type.
 	//
 	// Corresponds with POST /numerology/dual (the `CalculateDual` operationId).
 	CalculateDual(ctx context.Context, params *CalculateDualParams, body CalculateDualJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// CalculateExpressionWithBody Calculate Expression number - Natural talents and life goals
+	// CalculateExpressionWithBody Calculate Expression number - Destiny number calculator API
 	//
-	// Calculate your Expression (Destiny) number from your full birth name using Pythagorean numerology. This number reveals your natural talents, abilities, and life goals. It shows what you came here to do and what tools you have to accomplish your life purpose. Returns comprehensive interpretation including personality traits, career paths, relationship dynamics, and spiritual insights. Automatically detects Master Numbers (11, 22, 33). Perfect for name numerology apps, career guidance tools, personal development platforms, and talent assessment services. Get detailed 300-500 word meanings for all numbers 1-9, 11, 22, and 33.
+	// Calculate the Expression number, also called the Destiny number, from a full birth name with Pythagorean numerology. Every letter is valued and the name is reduced name by name, with master numbers 11, 22 and 33 kept and a karmic debt of 13, 14, 16 or 19 flagged with its meaning. The response lists every letter value and returns a full interpretation of natural talents, career, relationships and spiritual path in the language set by lang. Built for name numerology apps, career and personal brand tools, and AI agents.
 	//
 	// Takes any type of body and a specified content type.
 	//
 	// Corresponds with POST /numerology/expression (the `CalculateExpression` operationId).
 	CalculateExpressionWithBody(ctx context.Context, params *CalculateExpressionParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// CalculateExpression Calculate Expression number - Natural talents and life goals
+	// CalculateExpression Calculate Expression number - Destiny number calculator API
 	//
-	// Calculate your Expression (Destiny) number from your full birth name using Pythagorean numerology. This number reveals your natural talents, abilities, and life goals. It shows what you came here to do and what tools you have to accomplish your life purpose. Returns comprehensive interpretation including personality traits, career paths, relationship dynamics, and spiritual insights. Automatically detects Master Numbers (11, 22, 33). Perfect for name numerology apps, career guidance tools, personal development platforms, and talent assessment services. Get detailed 300-500 word meanings for all numbers 1-9, 11, 22, and 33.
+	// Calculate the Expression number, also called the Destiny number, from a full birth name with Pythagorean numerology. Every letter is valued and the name is reduced name by name, with master numbers 11, 22 and 33 kept and a karmic debt of 13, 14, 16 or 19 flagged with its meaning. The response lists every letter value and returns a full interpretation of natural talents, career, relationships and spiritual path in the language set by lang. Built for name numerology apps, career and personal brand tools, and AI agents.
 	//
 	// Takes a body of the `application/json` content type.
 	//
 	// Corresponds with POST /numerology/expression (the `CalculateExpression` operationId).
 	CalculateExpression(ctx context.Context, params *CalculateExpressionParams, body CalculateExpressionJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// CheckKarmicDebtWithBody Detect Karmic Debt numbers - Past life challenges (13, 14, 16, 19)
+	// CheckKarmicDebtWithBody Detect Karmic Debt numbers - Karmic debt 13, 14, 16, 19 API
 	//
-	// Check for Karmic Debt numbers (13, 14, 16, 19) in the five core numbers that carry it, Life Path, Birth Day, Expression, Soul Urge and Personality, using Pythagorean numerology. Karmic debt indicates challenges carried from past lives that must be resolved in this lifetime. These numbers appear during reduction and represent specific lessons and tests. Returns comprehensive analysis including debt descriptions, challenges to overcome, and resolution guidance. Perfect for spiritual growth apps, karmic astrology platforms, past life exploration services, and personal transformation tools. Get detailed meanings for all four karmic debt numbers with practical resolution strategies.
+	// Detect Karmic Debt numbers 13, 14, 16 and 19 across the five core numbers that carry them: Life Path, Expression, Soul Urge, Personality and Birth Day. Send a birth date, a full birth name, or both, and only the positions those inputs reach are read; each debt is listed once with its challenge and resolution guidance in the language set by lang. Built for spiritual growth apps, karmic readings, coaching tools and AI agents.
 	//
 	// Takes any type of body and a specified content type.
 	//
 	// Corresponds with POST /numerology/karmic-debt (the `CheckKarmicDebt` operationId).
 	CheckKarmicDebtWithBody(ctx context.Context, params *CheckKarmicDebtParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// CheckKarmicDebt Detect Karmic Debt numbers - Past life challenges (13, 14, 16, 19)
+	// CheckKarmicDebt Detect Karmic Debt numbers - Karmic debt 13, 14, 16, 19 API
 	//
-	// Check for Karmic Debt numbers (13, 14, 16, 19) in the five core numbers that carry it, Life Path, Birth Day, Expression, Soul Urge and Personality, using Pythagorean numerology. Karmic debt indicates challenges carried from past lives that must be resolved in this lifetime. These numbers appear during reduction and represent specific lessons and tests. Returns comprehensive analysis including debt descriptions, challenges to overcome, and resolution guidance. Perfect for spiritual growth apps, karmic astrology platforms, past life exploration services, and personal transformation tools. Get detailed meanings for all four karmic debt numbers with practical resolution strategies.
+	// Detect Karmic Debt numbers 13, 14, 16 and 19 across the five core numbers that carry them: Life Path, Expression, Soul Urge, Personality and Birth Day. Send a birth date, a full birth name, or both, and only the positions those inputs reach are read; each debt is listed once with its challenge and resolution guidance in the language set by lang. Built for spiritual growth apps, karmic readings, coaching tools and AI agents.
 	//
 	// Takes a body of the `application/json` content type.
 	//
 	// Corresponds with POST /numerology/karmic-debt (the `CheckKarmicDebt` operationId).
 	CheckKarmicDebt(ctx context.Context, params *CheckKarmicDebtParams, body CheckKarmicDebtJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// AnalyzeKarmicLessonsWithBody Analyze Karmic Lessons - Life lessons from missing numbers
+	// AnalyzeKarmicLessonsWithBody Analyze Karmic Lessons - Missing numbers numerology API
 	//
-	// Analyze your Karmic Lessons from your birth name using Pythagorean numerology. Karmic lessons are indicated by numbers missing from your name (numbers 1-9 that do not appear). These represent challenges you came to learn and skills you need to develop in this lifetime. Returns comprehensive analysis including missing numbers, specific lessons for each, challenges to overcome, and practical guidance for development. Perfect for spiritual growth apps, personal development platforms, life coaching services, and self-improvement tools. Get detailed lesson descriptions, development strategies, and practical exercises for each missing number.
+	// Analyze the Karmic Lessons of a full birth name with Pythagorean numerology: the numbers 1 to 9 that no letter of the name carries. Each missing number is returned with its lesson, a fuller explanation and practical guidance for developing it, in the language set by lang, beside the count of letters behind every number present. Built for spiritual growth apps, coaching tools, full numerology reports and AI agents.
 	//
 	// Takes any type of body and a specified content type.
 	//
 	// Corresponds with POST /numerology/karmic-lessons (the `AnalyzeKarmicLessons` operationId).
 	AnalyzeKarmicLessonsWithBody(ctx context.Context, params *AnalyzeKarmicLessonsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// AnalyzeKarmicLessons Analyze Karmic Lessons - Life lessons from missing numbers
+	// AnalyzeKarmicLessons Analyze Karmic Lessons - Missing numbers numerology API
 	//
-	// Analyze your Karmic Lessons from your birth name using Pythagorean numerology. Karmic lessons are indicated by numbers missing from your name (numbers 1-9 that do not appear). These represent challenges you came to learn and skills you need to develop in this lifetime. Returns comprehensive analysis including missing numbers, specific lessons for each, challenges to overcome, and practical guidance for development. Perfect for spiritual growth apps, personal development platforms, life coaching services, and self-improvement tools. Get detailed lesson descriptions, development strategies, and practical exercises for each missing number.
+	// Analyze the Karmic Lessons of a full birth name with Pythagorean numerology: the numbers 1 to 9 that no letter of the name carries. Each missing number is returned with its lesson, a fuller explanation and practical guidance for developing it, in the language set by lang, beside the count of letters behind every number present. Built for spiritual growth apps, coaching tools, full numerology reports and AI agents.
 	//
 	// Takes a body of the `application/json` content type.
 	//
 	// Corresponds with POST /numerology/karmic-lessons (the `AnalyzeKarmicLessons` operationId).
 	AnalyzeKarmicLessons(ctx context.Context, params *AnalyzeKarmicLessonsParams, body AnalyzeKarmicLessonsJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// CalculateLifePathWithBody Calculate Life Path number - Most important numerology calculation
+	// CalculateLifePathWithBody Calculate Life Path number - Calculator and meaning API
 	//
-	// Calculate your Life Path number from your birth date using Pythagorean numerology. This is the most significant number in your numerology chart, revealing your life purpose, natural talents, and destiny path. Automatically detects Master Numbers (11, 22, 33) and Karmic Debt numbers (13, 14, 16, 19). Returns comprehensive interpretation including personality traits, strengths, challenges, career guidance, relationship compatibility, and spiritual insights. Perfect for numerology apps, birth chart calculators, life purpose discovery tools, personal development platforms, and astrology services. Get detailed 300-500 word meanings for all numbers 1-9, 11, 22, and 33.
+	// Calculate a Life Path number from a birth date with Pythagorean numerology. The Life Path is the core number of a numerology chart, read from the birth year, month and day alone, with master numbers 11, 22 and 33 kept and a karmic debt of 13, 14, 16 or 19 flagged with its meaning. The response returns every reduction step and a full interpretation (archetype title, keywords, description, strengths, challenges, career, relationships and spirituality) in the language set by lang. Built for Life Path calculators, numerology apps, onboarding personality profiles and AI agents.
 	//
 	// Takes any type of body and a specified content type.
 	//
 	// Corresponds with POST /numerology/life-path (the `CalculateLifePath` operationId).
 	CalculateLifePathWithBody(ctx context.Context, params *CalculateLifePathParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// CalculateLifePath Calculate Life Path number - Most important numerology calculation
+	// CalculateLifePath Calculate Life Path number - Calculator and meaning API
 	//
-	// Calculate your Life Path number from your birth date using Pythagorean numerology. This is the most significant number in your numerology chart, revealing your life purpose, natural talents, and destiny path. Automatically detects Master Numbers (11, 22, 33) and Karmic Debt numbers (13, 14, 16, 19). Returns comprehensive interpretation including personality traits, strengths, challenges, career guidance, relationship compatibility, and spiritual insights. Perfect for numerology apps, birth chart calculators, life purpose discovery tools, personal development platforms, and astrology services. Get detailed 300-500 word meanings for all numbers 1-9, 11, 22, and 33.
+	// Calculate a Life Path number from a birth date with Pythagorean numerology. The Life Path is the core number of a numerology chart, read from the birth year, month and day alone, with master numbers 11, 22 and 33 kept and a karmic debt of 13, 14, 16 or 19 flagged with its meaning. The response returns every reduction step and a full interpretation (archetype title, keywords, description, strengths, challenges, career, relationships and spirituality) in the language set by lang. Built for Life Path calculators, numerology apps, onboarding personality profiles and AI agents.
 	//
 	// Takes a body of the `application/json` content type.
 	//
 	// Corresponds with POST /numerology/life-path (the `CalculateLifePath` operationId).
 	CalculateLifePath(ctx context.Context, params *CalculateLifePathParams, body CalculateLifePathJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// CalculateMaturityWithBody Calculate Maturity number - Who you become in later life
+	// CalculateMaturityWithBody Calculate Maturity number - Realization number numerology API
 	//
-	// Calculate your Maturity (Realization) number by adding Life Path and Expression numbers using Pythagorean numerology. This number reveals who you become in the second half of life, typically manifesting after age 35-40. It shows the ultimate goal of personal development and mature self-expression. Returns comprehensive interpretation including life transformation, mature personality, later-life purpose, and wisdom development. Automatically detects Master Numbers (11, 22, 33). Perfect for life coaching apps, midlife guidance platforms, personal development services, and aging wisdom tools. Get detailed 300-500 word meanings for all numbers 1-9, 11, 22, and 33.
+	// Calculate the Maturity number, also called the Realization number, from the Life Path and Expression numbers with Pythagorean numerology. Send a full birth name and birth date, the two numbers precomputed, or one of each; master numbers 11, 22 and 33 are kept at full value and in the result. The Maturity number describes who a person grows into in the second half of life, usually felt from around 35 to 40, and the response returns the calculation and a full interpretation in the language set by lang. Built for life coaching apps, midlife and later-life guidance, and AI agents.
 	//
 	// Takes any type of body and a specified content type.
 	//
 	// Corresponds with POST /numerology/maturity (the `CalculateMaturity` operationId).
 	CalculateMaturityWithBody(ctx context.Context, params *CalculateMaturityParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// CalculateMaturity Calculate Maturity number - Who you become in later life
+	// CalculateMaturity Calculate Maturity number - Realization number numerology API
 	//
-	// Calculate your Maturity (Realization) number by adding Life Path and Expression numbers using Pythagorean numerology. This number reveals who you become in the second half of life, typically manifesting after age 35-40. It shows the ultimate goal of personal development and mature self-expression. Returns comprehensive interpretation including life transformation, mature personality, later-life purpose, and wisdom development. Automatically detects Master Numbers (11, 22, 33). Perfect for life coaching apps, midlife guidance platforms, personal development services, and aging wisdom tools. Get detailed 300-500 word meanings for all numbers 1-9, 11, 22, and 33.
+	// Calculate the Maturity number, also called the Realization number, from the Life Path and Expression numbers with Pythagorean numerology. Send a full birth name and birth date, the two numbers precomputed, or one of each; master numbers 11, 22 and 33 are kept at full value and in the result. The Maturity number describes who a person grows into in the second half of life, usually felt from around 35 to 40, and the response returns the calculation and a full interpretation in the language set by lang. Built for life coaching apps, midlife and later-life guidance, and AI agents.
 	//
 	// Takes a body of the `application/json` content type.
 	//
 	// Corresponds with POST /numerology/maturity (the `CalculateMaturity` operationId).
 	CalculateMaturity(ctx context.Context, params *CalculateMaturityParams, body CalculateMaturityJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// GetNumberMeaning Get Number Meaning - Interpretation for any number 1-9, 11, 22, 33
+	// GetNumberMeaning Get number meaning - Numerology number meanings API
 	//
-	// Get the complete meaning and interpretation for any numerology number (1-9, 11, 22, 33) using Pythagorean numerology. Returns comprehensive description including archetype title, keywords, personality traits, strengths, weaknesses, career guidance, relationship dynamics, and spiritual insights. Master numbers (11, 22, 33) include amplified meanings with their reduced base number. Perfect for numerology reference tools, educational apps, quick lookups, and building custom numerology calculators. Get detailed 300-500 word expert-written meanings for all 12 valid numerology numbers.
+	// Get the full numerology meaning of any number 1 to 9 or the master numbers 11, 22 and 33. The response returns the archetype title, keywords, a core description, strengths, challenges, career, relationships and spirituality in the language set by lang, the same reading every core number endpoint returns for that number. Built for numerology reference pages, custom calculators, educational apps and AI agents.
 	//
 	// Corresponds with GET /numerology/meanings/{number} (the `GetNumberMeaning` operationId).
 	GetNumberMeaning(ctx context.Context, number string, params *GetNumberMeaningParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// CalculatePersonalDayWithBody Calculate Personal Day - Daily personalized numerology forecast
+	// CalculatePersonalDayWithBody Calculate Personal Day - Daily numerology forecast API
 	//
-	// Calculate your Personal Day number from birth month, day, and a target date. Personal Day is the most granular cycle in Pythagorean numerology, revealing the specific energy and theme for a single calendar day personalized to you. Unlike generic daily numbers, this is based on YOUR birth data combined with the calendar date. Returns the daily theme, actionable guidance, and parent month and year context. Perfect for daily push notifications, morning briefings, calendar widget integrations, daily content generation, and life coaching tools.
+	// Calculate the Personal Day number from a birth month and day with Pythagorean numerology, the 1 to 9 theme of a single calendar day personalized to the birthday. The day is targetDate, or today in UTC when omitted. The response returns the day theme and guidance with the parent Personal Month and Personal Year, in the language set by lang. Built for daily push notifications, morning briefings, calendar widgets and AI agents.
 	//
 	// Takes any type of body and a specified content type.
 	//
 	// Corresponds with POST /numerology/personal-day (the `CalculatePersonalDay` operationId).
 	CalculatePersonalDayWithBody(ctx context.Context, params *CalculatePersonalDayParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// CalculatePersonalDay Calculate Personal Day - Daily personalized numerology forecast
+	// CalculatePersonalDay Calculate Personal Day - Daily numerology forecast API
 	//
-	// Calculate your Personal Day number from birth month, day, and a target date. Personal Day is the most granular cycle in Pythagorean numerology, revealing the specific energy and theme for a single calendar day personalized to you. Unlike generic daily numbers, this is based on YOUR birth data combined with the calendar date. Returns the daily theme, actionable guidance, and parent month and year context. Perfect for daily push notifications, morning briefings, calendar widget integrations, daily content generation, and life coaching tools.
+	// Calculate the Personal Day number from a birth month and day with Pythagorean numerology, the 1 to 9 theme of a single calendar day personalized to the birthday. The day is targetDate, or today in UTC when omitted. The response returns the day theme and guidance with the parent Personal Month and Personal Year, in the language set by lang. Built for daily push notifications, morning briefings, calendar widgets and AI agents.
 	//
 	// Takes a body of the `application/json` content type.
 	//
 	// Corresponds with POST /numerology/personal-day (the `CalculatePersonalDay` operationId).
 	CalculatePersonalDay(ctx context.Context, params *CalculatePersonalDayParams, body CalculatePersonalDayJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// CalculatePersonalMonthWithBody Calculate Personal Month - Monthly numerology forecast
+	// CalculatePersonalMonthWithBody Calculate Personal Month - Monthly numerology forecast API
 	//
-	// Calculate your Personal Month number from birth month, day, and a target year and month. Personal Month reveals the specific theme and energy influencing each calendar month within your Personal Year cycle. Returns the monthly theme, practical focus guidance, and the parent Personal Year context. Perfect for monthly forecast features, push notification content, calendar integrations, editorial monthly columns, and life coaching tools.
+	// Calculate the Personal Month number from a birth month and day with Pythagorean numerology, the 1 to 9 theme of one calendar month inside the Personal Year. The year and month are the ones sent, each defaulting to the current UTC year and month when omitted. The response returns the month theme, practical focus and the parent Personal Year with its theme, in the language set by lang. Built for monthly forecast features, push notifications, editorial columns and AI agents.
 	//
 	// Takes any type of body and a specified content type.
 	//
 	// Corresponds with POST /numerology/personal-month (the `CalculatePersonalMonth` operationId).
 	CalculatePersonalMonthWithBody(ctx context.Context, params *CalculatePersonalMonthParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// CalculatePersonalMonth Calculate Personal Month - Monthly numerology forecast
+	// CalculatePersonalMonth Calculate Personal Month - Monthly numerology forecast API
 	//
-	// Calculate your Personal Month number from birth month, day, and a target year and month. Personal Month reveals the specific theme and energy influencing each calendar month within your Personal Year cycle. Returns the monthly theme, practical focus guidance, and the parent Personal Year context. Perfect for monthly forecast features, push notification content, calendar integrations, editorial monthly columns, and life coaching tools.
+	// Calculate the Personal Month number from a birth month and day with Pythagorean numerology, the 1 to 9 theme of one calendar month inside the Personal Year. The year and month are the ones sent, each defaulting to the current UTC year and month when omitted. The response returns the month theme, practical focus and the parent Personal Year with its theme, in the language set by lang. Built for monthly forecast features, push notifications, editorial columns and AI agents.
 	//
 	// Takes a body of the `application/json` content type.
 	//
 	// Corresponds with POST /numerology/personal-month (the `CalculatePersonalMonth` operationId).
 	CalculatePersonalMonth(ctx context.Context, params *CalculatePersonalMonthParams, body CalculatePersonalMonthJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// CalculatePersonalYearWithBody Calculate Personal Year - Annual cycle and forecast for current year
+	// CalculatePersonalYearWithBody Calculate Personal Year - Personal Year number forecast API
 	//
-	// Calculate your Personal Year number from your birth month, day, and current year using Pythagorean numerology. Personal Year runs in 9-year cycles (1-9) and reveals the theme, opportunities, and challenges for the current year. Each year has a specific energy and lessons. Returns comprehensive annual forecast including year theme, opportunities, challenges, and actionable advice. Perfect for yearly planning apps, life coaching platforms, astrology services, and personal development tools. Get detailed forecasts for all 9 Personal Year cycles with practical guidance.
+	// Calculate the Personal Year number from a birth month and day with Pythagorean numerology, the 1 to 9 cycle that sets the theme of a calendar year. The year is the one sent, or the current UTC year when omitted, and it turns over on 1 January; the birth year is not needed. The response returns the place in the nine-year cycle, the theme, a forecast, opportunities, challenges and advice in the language set by lang. Built for yearly planning features, New Year content, coaching tools and AI agents.
 	//
 	// Takes any type of body and a specified content type.
 	//
 	// Corresponds with POST /numerology/personal-year (the `CalculatePersonalYear` operationId).
 	CalculatePersonalYearWithBody(ctx context.Context, params *CalculatePersonalYearParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// CalculatePersonalYear Calculate Personal Year - Annual cycle and forecast for current year
+	// CalculatePersonalYear Calculate Personal Year - Personal Year number forecast API
 	//
-	// Calculate your Personal Year number from your birth month, day, and current year using Pythagorean numerology. Personal Year runs in 9-year cycles (1-9) and reveals the theme, opportunities, and challenges for the current year. Each year has a specific energy and lessons. Returns comprehensive annual forecast including year theme, opportunities, challenges, and actionable advice. Perfect for yearly planning apps, life coaching platforms, astrology services, and personal development tools. Get detailed forecasts for all 9 Personal Year cycles with practical guidance.
+	// Calculate the Personal Year number from a birth month and day with Pythagorean numerology, the 1 to 9 cycle that sets the theme of a calendar year. The year is the one sent, or the current UTC year when omitted, and it turns over on 1 January; the birth year is not needed. The response returns the place in the nine-year cycle, the theme, a forecast, opportunities, challenges and advice in the language set by lang. Built for yearly planning features, New Year content, coaching tools and AI agents.
 	//
 	// Takes a body of the `application/json` content type.
 	//
 	// Corresponds with POST /numerology/personal-year (the `CalculatePersonalYear` operationId).
 	CalculatePersonalYear(ctx context.Context, params *CalculatePersonalYearParams, body CalculatePersonalYearJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// CalculatePersonalityWithBody Calculate Personality number - How others perceive you
+	// CalculatePersonalityWithBody Calculate Personality number - Outer personality numerology API
 	//
-	// Calculate your Personality number from the consonants in your birth name using Pythagorean numerology. This number reveals how others perceive you, your outer personality, and first impressions you make. It represents the mask you show the world and your social persona. Returns comprehensive interpretation including public image, social dynamics, professional presence, and relationship first impressions. Automatically detects Master Numbers (11, 22, 33). Perfect for personal branding apps, social skills training, professional development platforms, and communication coaching services. Get detailed 300-500 word meanings for all numbers 1-9, 11, 22, and 33.
+	// Calculate the Personality number from the consonants of a full birth name with Pythagorean numerology. Every letter other than A, E, I, O and U is a consonant, Y and W included; master numbers 11, 22 and 33 are kept and a karmic debt of 13, 14, 16 or 19 is flagged with its meaning. The response lists every consonant name by name and returns a full interpretation of first impressions, public image, career and relationships in the language set by lang. Built for personal branding apps, social and dating profiles, coaching tools and AI agents.
 	//
 	// Takes any type of body and a specified content type.
 	//
 	// Corresponds with POST /numerology/personality (the `CalculatePersonality` operationId).
 	CalculatePersonalityWithBody(ctx context.Context, params *CalculatePersonalityParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// CalculatePersonality Calculate Personality number - How others perceive you
+	// CalculatePersonality Calculate Personality number - Outer personality numerology API
 	//
-	// Calculate your Personality number from the consonants in your birth name using Pythagorean numerology. This number reveals how others perceive you, your outer personality, and first impressions you make. It represents the mask you show the world and your social persona. Returns comprehensive interpretation including public image, social dynamics, professional presence, and relationship first impressions. Automatically detects Master Numbers (11, 22, 33). Perfect for personal branding apps, social skills training, professional development platforms, and communication coaching services. Get detailed 300-500 word meanings for all numbers 1-9, 11, 22, and 33.
+	// Calculate the Personality number from the consonants of a full birth name with Pythagorean numerology. Every letter other than A, E, I, O and U is a consonant, Y and W included; master numbers 11, 22 and 33 are kept and a karmic debt of 13, 14, 16 or 19 is flagged with its meaning. The response lists every consonant name by name and returns a full interpretation of first impressions, public image, career and relationships in the language set by lang. Built for personal branding apps, social and dating profiles, coaching tools and AI agents.
 	//
 	// Takes a body of the `application/json` content type.
 	//
 	// Corresponds with POST /numerology/personality (the `CalculatePersonality` operationId).
 	CalculatePersonality(ctx context.Context, params *CalculatePersonalityParams, body CalculatePersonalityJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// CalculateSoulUrgeWithBody Calculate Soul Urge number - Inner motivations and desires
+	// CalculateSoulUrgeWithBody Calculate Soul Urge number - Heart Desire number calculator API
 	//
-	// Calculate your Soul Urge (Heart Desire) number from the vowels in your birth name using Pythagorean numerology. This number reveals your innermost desires, motivations, and what your soul truly wants to experience. It shows what drives you from within, your emotional needs, and what brings you fulfillment. Returns comprehensive interpretation including personality traits, emotional needs, relationship desires, and spiritual longings. Automatically detects Master Numbers (11, 22, 33). Perfect for self-discovery apps, emotional intelligence tools, relationship counseling platforms, and personal development services. Get detailed 300-500 word meanings for all numbers 1-9, 11, 22, and 33.
+	// Calculate the Soul Urge number, also called the Heart Desire number, from the vowels of a full birth name with Pythagorean numerology. A, E, I, O and U are the vowels and Y and W count as consonants; master numbers 11, 22 and 33 are kept and a karmic debt of 13, 14, 16 or 19 is flagged with its meaning. The response lists every vowel name by name and returns a full interpretation of inner motivation, relationships and spiritual path in the language set by lang. Built for self-discovery apps, dating profiles, coaching tools and AI agents.
 	//
 	// Takes any type of body and a specified content type.
 	//
 	// Corresponds with POST /numerology/soul-urge (the `CalculateSoulUrge` operationId).
 	CalculateSoulUrgeWithBody(ctx context.Context, params *CalculateSoulUrgeParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// CalculateSoulUrge Calculate Soul Urge number - Inner motivations and desires
+	// CalculateSoulUrge Calculate Soul Urge number - Heart Desire number calculator API
 	//
-	// Calculate your Soul Urge (Heart Desire) number from the vowels in your birth name using Pythagorean numerology. This number reveals your innermost desires, motivations, and what your soul truly wants to experience. It shows what drives you from within, your emotional needs, and what brings you fulfillment. Returns comprehensive interpretation including personality traits, emotional needs, relationship desires, and spiritual longings. Automatically detects Master Numbers (11, 22, 33). Perfect for self-discovery apps, emotional intelligence tools, relationship counseling platforms, and personal development services. Get detailed 300-500 word meanings for all numbers 1-9, 11, 22, and 33.
+	// Calculate the Soul Urge number, also called the Heart Desire number, from the vowels of a full birth name with Pythagorean numerology. A, E, I, O and U are the vowels and Y and W count as consonants; master numbers 11, 22 and 33 are kept and a karmic debt of 13, 14, 16 or 19 is flagged with its meaning. The response lists every vowel name by name and returns a full interpretation of inner motivation, relationships and spiritual path in the language set by lang. Built for self-discovery apps, dating profiles, coaching tools and AI agents.
 	//
 	// Takes a body of the `application/json` content type.
 	//
@@ -58756,9 +58756,9 @@ func (c *Client) CalculateTzolkin(ctx context.Context, params *CalculateTzolkinP
 	return c.Client.Do(req)
 }
 
-// CalculateBirthDayWithBody Calculate Birth Day number - Special talents from day of birth
+// CalculateBirthDayWithBody Calculate Birth Day number - Birthday numerology API
 //
-// Calculate your Birth Day number from the day you were born (1-31) using Pythagorean numerology. This number reveals special talents and abilities you possess from birth. It shows natural gifts that can help you achieve your life purpose. Returns comprehensive interpretation including innate talents, natural abilities, career advantages, and how to leverage your special gifts. Automatically detects Master Numbers (11, 22) and reduces double-digit days. Perfect for talent discovery apps, career counseling platforms, personal development services, and skill assessment tools. Get detailed 300-500 word meanings for all numbers 1-9, 11, and 22.
+// Calculate the Birth Day number from the day of the month a person was born, 1 to 31, with Pythagorean numerology. The 11th, 22nd and 29th keep the master numbers 11 and 22, other two-digit days reduce to one digit, and the 13th, 14th, 16th and 19th are flagged as karmic debt with their meaning. The response returns the calculation and a full interpretation of the special talents the day brings in the language set by lang. Built for birthday features, talent and career discovery tools, and AI agents.
 //
 // Takes any type of body and a specified content type.
 //
@@ -58775,9 +58775,9 @@ func (c *Client) CalculateBirthDayWithBody(ctx context.Context, params *Calculat
 	return c.Client.Do(req)
 }
 
-// CalculateBirthDay Calculate Birth Day number - Special talents from day of birth
+// CalculateBirthDay Calculate Birth Day number - Birthday numerology API
 //
-// Calculate your Birth Day number from the day you were born (1-31) using Pythagorean numerology. This number reveals special talents and abilities you possess from birth. It shows natural gifts that can help you achieve your life purpose. Returns comprehensive interpretation including innate talents, natural abilities, career advantages, and how to leverage your special gifts. Automatically detects Master Numbers (11, 22) and reduces double-digit days. Perfect for talent discovery apps, career counseling platforms, personal development services, and skill assessment tools. Get detailed 300-500 word meanings for all numbers 1-9, 11, and 22.
+// Calculate the Birth Day number from the day of the month a person was born, 1 to 31, with Pythagorean numerology. The 11th, 22nd and 29th keep the master numbers 11 and 22, other two-digit days reduce to one digit, and the 13th, 14th, 16th and 19th are flagged as karmic debt with their meaning. The response returns the calculation and a full interpretation of the special talents the day brings in the language set by lang. Built for birthday features, talent and career discovery tools, and AI agents.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -58794,9 +58794,9 @@ func (c *Client) CalculateBirthDay(ctx context.Context, params *CalculateBirthDa
 	return c.Client.Do(req)
 }
 
-// CalculateBridgeNumbersWithBody Calculate Bridge Numbers - Harmonize different aspects of personality
+// CalculateBridgeNumbersWithBody Calculate Bridge Numbers - Numerology bridge numbers API
 //
-// Calculate three Bridge Numbers that reveal the adjustments needed to create harmony between different aspects of your numerology profile. Bridge Numbers are the absolute difference between pairs of core numbers: Life Path and Expression, Expression and Personality, Expression and Soul Urge. A Bridge of 0 means the two aspects are already aligned. Higher bridges (1 to 8) indicate greater tension and provide specific guidance on what changes to make. Bridge Numbers are essential for personal development, coaching applications, self-improvement platforms, and AI-powered personality analysis tools. Requires both a full birth name and birth date to calculate all four core numbers (Life Path, Expression, Soul Urge, Personality) internally before deriving the bridges.
+// Calculate four numerology Bridge numbers from a full birth name and birth date: Life Path and Expression, Expression and Soul Urge, Soul Urge and Personality, and Expression and Personality. Each bridge is the distance between two core numbers, from 0 to 8, where 0 means the two are already in harmony, and comes with guidance for closing the gap in the language set by lang. Built for personal development, coaching and personality analysis tools and AI agents.
 //
 // Takes any type of body and a specified content type.
 //
@@ -58813,9 +58813,9 @@ func (c *Client) CalculateBridgeNumbersWithBody(ctx context.Context, params *Cal
 	return c.Client.Do(req)
 }
 
-// CalculateBridgeNumbers Calculate Bridge Numbers - Harmonize different aspects of personality
+// CalculateBridgeNumbers Calculate Bridge Numbers - Numerology bridge numbers API
 //
-// Calculate three Bridge Numbers that reveal the adjustments needed to create harmony between different aspects of your numerology profile. Bridge Numbers are the absolute difference between pairs of core numbers: Life Path and Expression, Expression and Personality, Expression and Soul Urge. A Bridge of 0 means the two aspects are already aligned. Higher bridges (1 to 8) indicate greater tension and provide specific guidance on what changes to make. Bridge Numbers are essential for personal development, coaching applications, self-improvement platforms, and AI-powered personality analysis tools. Requires both a full birth name and birth date to calculate all four core numbers (Life Path, Expression, Soul Urge, Personality) internally before deriving the bridges.
+// Calculate four numerology Bridge numbers from a full birth name and birth date: Life Path and Expression, Expression and Soul Urge, Soul Urge and Personality, and Expression and Personality. Each bridge is the distance between two core numbers, from 0 to 8, where 0 means the two are already in harmony, and comes with guidance for closing the gap in the language set by lang. Built for personal development, coaching and personality analysis tools and AI agents.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -58832,9 +58832,9 @@ func (c *Client) CalculateBridgeNumbers(ctx context.Context, params *CalculateBr
 	return c.Client.Do(req)
 }
 
-// CalculateBusinessNameWithBody Business name numerology - Chaldean brand name analysis and lucky numbers
+// CalculateBusinessNameWithBody Calculate business name numerology - Brand name numerology API
 //
-// Analyze a business or brand name with Chaldean numerology, the system practitioners use for trade names. Returns the name number (compound and root), its planetary ruler, an overall business rating, the industries the number favors, and whether the compound is one of Cheiro fortunate compounds. The most favorable business roots are 1 (leadership), 3 (expansion), 5 (commerce) and 6 (beauty and hospitality); the numbers 4 and 8 carry caution as the karmic numbers of instability and heavy demand. Use it to vet a company name, compare brand options, or guide a naming decision. This is positioning guidance layered over the fundamentals of a memorable, available name, not a guarantee.
+// Analyze a business or brand name with Chaldean numerology, the system practitioners use for trade names. The name is read word by word, and the response returns the compound number and root with every step, the planetary ruler, a business rating, the industries the number favors, whether the compound is one of the fortunate compounds Cheiro names, and guidance, in the language set by lang. The roots 1, 3, 5 and 6 rate excellent, 2 and 9 good, 7 and 8 caution and 4 avoid. Built for naming tools, brand agencies and founder apps; the rating is positioning guidance, not a guarantee.
 //
 // Takes any type of body and a specified content type.
 //
@@ -58851,9 +58851,9 @@ func (c *Client) CalculateBusinessNameWithBody(ctx context.Context, params *Calc
 	return c.Client.Do(req)
 }
 
-// CalculateBusinessName Business name numerology - Chaldean brand name analysis and lucky numbers
+// CalculateBusinessName Calculate business name numerology - Brand name numerology API
 //
-// Analyze a business or brand name with Chaldean numerology, the system practitioners use for trade names. Returns the name number (compound and root), its planetary ruler, an overall business rating, the industries the number favors, and whether the compound is one of Cheiro fortunate compounds. The most favorable business roots are 1 (leadership), 3 (expansion), 5 (commerce) and 6 (beauty and hospitality); the numbers 4 and 8 carry caution as the karmic numbers of instability and heavy demand. Use it to vet a company name, compare brand options, or guide a naming decision. This is positioning guidance layered over the fundamentals of a memorable, available name, not a guarantee.
+// Analyze a business or brand name with Chaldean numerology, the system practitioners use for trade names. The name is read word by word, and the response returns the compound number and root with every step, the planetary ruler, a business rating, the industries the number favors, whether the compound is one of the fortunate compounds Cheiro names, and guidance, in the language set by lang. The roots 1, 3, 5 and 6 rate excellent, 2 and 9 good, 7 and 8 caution and 4 avoid. Built for naming tools, brand agencies and founder apps; the rating is positioning guidance, not a guarantee.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -58870,9 +58870,9 @@ func (c *Client) CalculateBusinessName(ctx context.Context, params *CalculateBus
 	return c.Client.Do(req)
 }
 
-// CalculateChaldeanWithBody Chaldean numerology name reading - Destiny, compound number, planetary ruler
+// CalculateChaldeanWithBody Calculate Chaldean numerology - Chaldean name number calculator API
 //
-// Calculate a complete Chaldean numerology reading for a name. The older Chaldean system maps letters to values 1 to 8 by vibration (the number 9 is sacred and never assigned to a letter) and reads the unreduced two-digit compound number (10 to 52, also called a fadic number, defined by Cheiro) in addition to the single-digit root. Returns the Destiny or name number from all letters, the Soul Urge from vowels, and the Personality from consonants, each with its compound number, root, and Cheiro compound interpretation, plus the planetary ruler of the Destiny root and a caution flag for the karmic numbers 4 and 8. Perfect for Chaldean numerology calculators, name analysis tools, and AI numerology assistants that need both the compound and root layers in one call.
+// Calculate a complete Chaldean numerology reading for a name, following Cheiro. The Destiny or name number, the Soul Urge from the vowels and the Personality from the consonants each come with the compound number from 10 to 52, the single-digit root and the classical compound interpretation, and a longer name is read name by name with every step shown in its calculation. The response adds the planetary ruler and meaning of the Destiny root, a caution flag for the roots 4 and 8, and a summary, in the language set by lang. Built for Chaldean numerology calculators, name analysis tools and AI agents.
 //
 // Takes any type of body and a specified content type.
 //
@@ -58889,9 +58889,9 @@ func (c *Client) CalculateChaldeanWithBody(ctx context.Context, params *Calculat
 	return c.Client.Do(req)
 }
 
-// CalculateChaldean Chaldean numerology name reading - Destiny, compound number, planetary ruler
+// CalculateChaldean Calculate Chaldean numerology - Chaldean name number calculator API
 //
-// Calculate a complete Chaldean numerology reading for a name. The older Chaldean system maps letters to values 1 to 8 by vibration (the number 9 is sacred and never assigned to a letter) and reads the unreduced two-digit compound number (10 to 52, also called a fadic number, defined by Cheiro) in addition to the single-digit root. Returns the Destiny or name number from all letters, the Soul Urge from vowels, and the Personality from consonants, each with its compound number, root, and Cheiro compound interpretation, plus the planetary ruler of the Destiny root and a caution flag for the karmic numbers 4 and 8. Perfect for Chaldean numerology calculators, name analysis tools, and AI numerology assistants that need both the compound and root layers in one call.
+// Calculate a complete Chaldean numerology reading for a name, following Cheiro. The Destiny or name number, the Soul Urge from the vowels and the Personality from the consonants each come with the compound number from 10 to 52, the single-digit root and the classical compound interpretation, and a longer name is read name by name with every step shown in its calculation. The response adds the planetary ruler and meaning of the Destiny root, a caution flag for the roots 4 and 8, and a summary, in the language set by lang. Built for Chaldean numerology calculators, name analysis tools and AI agents.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -58908,9 +58908,9 @@ func (c *Client) CalculateChaldean(ctx context.Context, params *CalculateChaldea
 	return c.Client.Do(req)
 }
 
-// GenerateNumerologyChartWithBody Generate Complete Numerology Chart - Full profile analysis
+// GenerateNumerologyChartWithBody Generate numerology chart - Complete numerology reading API
 //
-// Generate a comprehensive numerology chart combining all major calculations: Life Path, Expression, Soul Urge, Personality, Birth Day, Maturity, Karmic Lessons, Karmic Debt, and Personal Year. This single endpoint provides everything needed for a full numerology reading. Returns detailed interpretations for all numbers, karmic analysis, yearly forecast, and holistic summary. Perfect for numerology apps, complete reading services, birth chart generators, and comprehensive analysis tools. Save multiple API calls by getting the full chart in one request. Ideal for generating PDF reports or detailed user profiles.
+// Generate a complete numerology chart from a full birth name and birth date in one call. It returns the six core numbers (Life Path, Expression, Soul Urge, Personality, Birth Day and Maturity) with their calculations and full interpretations, the four Pinnacles and four Challenges with their ages, Karmic Lessons, karmic debt in all five positions, Hidden Passion, Subconscious Self, Cornerstone, Capstone and First Vowel, the Birth Day profile for the exact day, lucky associations, the Maturity activation status, the Personal Year with the current Personal Month, and a written summary, in the language set by lang. The Personal Year uses currentYear or the current UTC year, while the Personal Month and the age behind the Maturity status read the current UTC date. Built for full numerology readings, PDF reports, onboarding profiles and AI agents.
 //
 // Takes any type of body and a specified content type.
 //
@@ -58927,9 +58927,9 @@ func (c *Client) GenerateNumerologyChartWithBody(ctx context.Context, params *Ge
 	return c.Client.Do(req)
 }
 
-// GenerateNumerologyChart Generate Complete Numerology Chart - Full profile analysis
+// GenerateNumerologyChart Generate numerology chart - Complete numerology reading API
 //
-// Generate a comprehensive numerology chart combining all major calculations: Life Path, Expression, Soul Urge, Personality, Birth Day, Maturity, Karmic Lessons, Karmic Debt, and Personal Year. This single endpoint provides everything needed for a full numerology reading. Returns detailed interpretations for all numbers, karmic analysis, yearly forecast, and holistic summary. Perfect for numerology apps, complete reading services, birth chart generators, and comprehensive analysis tools. Save multiple API calls by getting the full chart in one request. Ideal for generating PDF reports or detailed user profiles.
+// Generate a complete numerology chart from a full birth name and birth date in one call. It returns the six core numbers (Life Path, Expression, Soul Urge, Personality, Birth Day and Maturity) with their calculations and full interpretations, the four Pinnacles and four Challenges with their ages, Karmic Lessons, karmic debt in all five positions, Hidden Passion, Subconscious Self, Cornerstone, Capstone and First Vowel, the Birth Day profile for the exact day, lucky associations, the Maturity activation status, the Personal Year with the current Personal Month, and a written summary, in the language set by lang. The Personal Year uses currentYear or the current UTC year, while the Personal Month and the age behind the Maturity status read the current UTC date. Built for full numerology readings, PDF reports, onboarding profiles and AI agents.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -58946,9 +58946,9 @@ func (c *Client) GenerateNumerologyChart(ctx context.Context, params *GenerateNu
 	return c.Client.Do(req)
 }
 
-// CalculateNumCompatibilityWithBody Calculate Compatibility - Relationship dynamics between two people
+// CalculateNumCompatibilityWithBody Calculate numerology compatibility - Love match scoring API
 //
-// Calculate numerology compatibility between two people using Pythagorean numerology. Accepts two input modes per person: pre-calculated Life Path, Expression, and Soul Urge numbers, or raw name and birthdate for automatic calculation. You can mix modes across persons (e.g. numbers for person1, raw inputs for person2). Provides comprehensive relationship analysis with overall compatibility score (0-100), individual aspect compatibility (Life Path 50% weight, Expression 30%, Soul Urge 20%), relationship strengths, challenges, and practical advice. Uses detailed compatibility matrix for all number combinations. Perfect for dating apps, relationship counseling platforms, matchmaking services, and compatibility tools. Get actionable insights for improving relationship dynamics.
+// Calculate numerology compatibility between two people from their Life Path, Expression and Soul Urge numbers. Send each person as a full birth name with a birth date, or as precomputed numbers, and mix the two modes freely across the pair. The response returns an overall score from 50 to 100 with its rating, a score and description for each number pair, and the strengths, challenges and advice for the relationship, in the language set by lang. Built for dating apps, matchmaking, relationship coaching and AI companions.
 //
 // Takes any type of body and a specified content type.
 //
@@ -58965,9 +58965,9 @@ func (c *Client) CalculateNumCompatibilityWithBody(ctx context.Context, params *
 	return c.Client.Do(req)
 }
 
-// CalculateNumCompatibility Calculate Compatibility - Relationship dynamics between two people
+// CalculateNumCompatibility Calculate numerology compatibility - Love match scoring API
 //
-// Calculate numerology compatibility between two people using Pythagorean numerology. Accepts two input modes per person: pre-calculated Life Path, Expression, and Soul Urge numbers, or raw name and birthdate for automatic calculation. You can mix modes across persons (e.g. numbers for person1, raw inputs for person2). Provides comprehensive relationship analysis with overall compatibility score (0-100), individual aspect compatibility (Life Path 50% weight, Expression 30%, Soul Urge 20%), relationship strengths, challenges, and practical advice. Uses detailed compatibility matrix for all number combinations. Perfect for dating apps, relationship counseling platforms, matchmaking services, and compatibility tools. Get actionable insights for improving relationship dynamics.
+// Calculate numerology compatibility between two people from their Life Path, Expression and Soul Urge numbers. Send each person as a full birth name with a birth date, or as precomputed numbers, and mix the two modes freely across the pair. The response returns an overall score from 50 to 100 with its rating, a score and description for each number pair, and the strengths, challenges and advice for the relationship, in the language set by lang. Built for dating apps, matchmaking, relationship coaching and AI companions.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -58984,9 +58984,9 @@ func (c *Client) CalculateNumCompatibility(ctx context.Context, params *Calculat
 	return c.Client.Do(req)
 }
 
-// GetCompoundNumber Compound number meaning - Cheiro Chaldean interpretation 10 to 52
+// GetCompoundNumber Get compound number meaning - Chaldean compound numbers 10 to 52 API
 //
-// Get the classical Chaldean interpretation of a compound number (also called a fadic number) from 10 to 52, as defined by Cheiro in the Book of Numbers. Compound numbers are the unreduced two-digit numbers that reveal the hidden influence behind a name or date, beyond the single-digit root. Each returns its symbolic title (such as The Wheel of Fortune for 10, The Star of the Magi for 17, or The Crown of the Magi for 21), its nature (fortunate, unfortunate, or mixed), and a full interpretation. Numbers 33 to 52 share the meaning of a lower number in their series, returned with a sameAs pointer. Perfect for Chaldean numerology references, compound number lookups, and AI numerology tools.
+// Get the classical Chaldean meaning of a compound number, also called a fadic number, from 10 to 52 as Cheiro defines it. A compound number is the unreduced two-digit total behind a name or date, read beside its single-digit root. The response returns the root, the nature (fortunate, unfortunate or mixed), the full interpretation in the language set by lang, and the symbolic name where Cheiro gives one, such as The Wheel of Fortune for 10 or The Crown of the Magi for 21; a number from 33 up that repeats a lower one carries a sameAs pointer to it. Built for Chaldean numerology references, name analysis tools and AI agents.
 //
 // Corresponds with GET /numerology/compound-number/{number} (the `GetCompoundNumber` operationId).
 func (c *Client) GetCompoundNumber(ctx context.Context, number string, params *GetCompoundNumberParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
@@ -59001,9 +59001,9 @@ func (c *Client) GetCompoundNumber(ctx context.Context, number string, params *G
 	return c.Client.Do(req)
 }
 
-// GetDailyNumberWithBody Get daily numerology number - Number of the Day with interpretation
+// GetDailyNumberWithBody Get daily numerology number - Number of the Day API
 //
-// Receive a daily numerology number (1-9, 11, 22, 33) for guidance and reflection. Uses seeded randomness so the same seed gets the same number on the same date, perfect for "Number of the Day" features in numerology apps, wellness platforms, and daily guidance tools. Returns the number with full interpretation including archetype, keywords, strengths, challenges, career, relationships, and spiritual insights. Ideal for daily push notifications, morning briefings, and personalized numerology experiences.
+// Get the numerology Number of the Day, one of 1 to 9, 11, 22 or 33, with its full interpretation. The same seed returns the same number for the same date, so a user keeps one number all day, and the date defaults to today in UTC. The response returns the number, its type, a daily message and the archetype, keywords, strengths, challenges, career, relationships and spirituality reading in the language set by lang. Built for Number of the Day widgets, push notifications and daily content.
 //
 // Takes any type of body and a specified content type.
 //
@@ -59020,9 +59020,9 @@ func (c *Client) GetDailyNumberWithBody(ctx context.Context, params *GetDailyNum
 	return c.Client.Do(req)
 }
 
-// GetDailyNumber Get daily numerology number - Number of the Day with interpretation
+// GetDailyNumber Get daily numerology number - Number of the Day API
 //
-// Receive a daily numerology number (1-9, 11, 22, 33) for guidance and reflection. Uses seeded randomness so the same seed gets the same number on the same date, perfect for "Number of the Day" features in numerology apps, wellness platforms, and daily guidance tools. Returns the number with full interpretation including archetype, keywords, strengths, challenges, career, relationships, and spiritual insights. Ideal for daily push notifications, morning briefings, and personalized numerology experiences.
+// Get the numerology Number of the Day, one of 1 to 9, 11, 22 or 33, with its full interpretation. The same seed returns the same number for the same date, so a user keeps one number all day, and the date defaults to today in UTC. The response returns the number, its type, a daily message and the archetype, keywords, strengths, challenges, career, relationships and spirituality reading in the language set by lang. Built for Number of the Day widgets, push notifications and daily content.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -59039,9 +59039,9 @@ func (c *Client) GetDailyNumber(ctx context.Context, params *GetDailyNumberParam
 	return c.Client.Do(req)
 }
 
-// CalculateDualWithBody Dual numerology - Pythagorean and Chaldean name numbers in one call
+// CalculateDualWithBody Calculate dual numerology - Pythagorean and Chaldean name number API
 //
-// Calculate a name number in both major numerology systems at once and compare them. The Pythagorean system maps letters 1 to 9 in alphabetical order and preserves master numbers (11, 22, 33), giving the Expression or Destiny number used in modern Western numerology. The Chaldean system maps letters 1 to 8 by vibration, reads the compound number (10 to 52), and reduces to a root 1 to 9. Returns both results with their interpretations, plus an agreement flag showing whether the two systems point to the same single-digit energy. The only numerology API that returns Pythagorean and Chaldean for a name in a single request, ideal for comparison tools and AI numerology assistants.
+// Calculate a name number in both Pythagorean and Chaldean numerology in one call and compare them. The Pythagorean side returns the Expression or Destiny number with master numbers 11, 22 and 33 kept; the Chaldean side returns the compound number from 10 to 52, the root, its planetary ruler and the compound interpretation; each shows its calculation name by name. An agreement flag and a plain-language note show whether the two systems point to the same single-digit energy, in the language set by lang. Built for system comparison tools, name analysis features and AI agents.
 //
 // Takes any type of body and a specified content type.
 //
@@ -59058,9 +59058,9 @@ func (c *Client) CalculateDualWithBody(ctx context.Context, params *CalculateDua
 	return c.Client.Do(req)
 }
 
-// CalculateDual Dual numerology - Pythagorean and Chaldean name numbers in one call
+// CalculateDual Calculate dual numerology - Pythagorean and Chaldean name number API
 //
-// Calculate a name number in both major numerology systems at once and compare them. The Pythagorean system maps letters 1 to 9 in alphabetical order and preserves master numbers (11, 22, 33), giving the Expression or Destiny number used in modern Western numerology. The Chaldean system maps letters 1 to 8 by vibration, reads the compound number (10 to 52), and reduces to a root 1 to 9. Returns both results with their interpretations, plus an agreement flag showing whether the two systems point to the same single-digit energy. The only numerology API that returns Pythagorean and Chaldean for a name in a single request, ideal for comparison tools and AI numerology assistants.
+// Calculate a name number in both Pythagorean and Chaldean numerology in one call and compare them. The Pythagorean side returns the Expression or Destiny number with master numbers 11, 22 and 33 kept; the Chaldean side returns the compound number from 10 to 52, the root, its planetary ruler and the compound interpretation; each shows its calculation name by name. An agreement flag and a plain-language note show whether the two systems point to the same single-digit energy, in the language set by lang. Built for system comparison tools, name analysis features and AI agents.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -59077,9 +59077,9 @@ func (c *Client) CalculateDual(ctx context.Context, params *CalculateDualParams,
 	return c.Client.Do(req)
 }
 
-// CalculateExpressionWithBody Calculate Expression number - Natural talents and life goals
+// CalculateExpressionWithBody Calculate Expression number - Destiny number calculator API
 //
-// Calculate your Expression (Destiny) number from your full birth name using Pythagorean numerology. This number reveals your natural talents, abilities, and life goals. It shows what you came here to do and what tools you have to accomplish your life purpose. Returns comprehensive interpretation including personality traits, career paths, relationship dynamics, and spiritual insights. Automatically detects Master Numbers (11, 22, 33). Perfect for name numerology apps, career guidance tools, personal development platforms, and talent assessment services. Get detailed 300-500 word meanings for all numbers 1-9, 11, 22, and 33.
+// Calculate the Expression number, also called the Destiny number, from a full birth name with Pythagorean numerology. Every letter is valued and the name is reduced name by name, with master numbers 11, 22 and 33 kept and a karmic debt of 13, 14, 16 or 19 flagged with its meaning. The response lists every letter value and returns a full interpretation of natural talents, career, relationships and spiritual path in the language set by lang. Built for name numerology apps, career and personal brand tools, and AI agents.
 //
 // Takes any type of body and a specified content type.
 //
@@ -59096,9 +59096,9 @@ func (c *Client) CalculateExpressionWithBody(ctx context.Context, params *Calcul
 	return c.Client.Do(req)
 }
 
-// CalculateExpression Calculate Expression number - Natural talents and life goals
+// CalculateExpression Calculate Expression number - Destiny number calculator API
 //
-// Calculate your Expression (Destiny) number from your full birth name using Pythagorean numerology. This number reveals your natural talents, abilities, and life goals. It shows what you came here to do and what tools you have to accomplish your life purpose. Returns comprehensive interpretation including personality traits, career paths, relationship dynamics, and spiritual insights. Automatically detects Master Numbers (11, 22, 33). Perfect for name numerology apps, career guidance tools, personal development platforms, and talent assessment services. Get detailed 300-500 word meanings for all numbers 1-9, 11, 22, and 33.
+// Calculate the Expression number, also called the Destiny number, from a full birth name with Pythagorean numerology. Every letter is valued and the name is reduced name by name, with master numbers 11, 22 and 33 kept and a karmic debt of 13, 14, 16 or 19 flagged with its meaning. The response lists every letter value and returns a full interpretation of natural talents, career, relationships and spiritual path in the language set by lang. Built for name numerology apps, career and personal brand tools, and AI agents.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -59115,9 +59115,9 @@ func (c *Client) CalculateExpression(ctx context.Context, params *CalculateExpre
 	return c.Client.Do(req)
 }
 
-// CheckKarmicDebtWithBody Detect Karmic Debt numbers - Past life challenges (13, 14, 16, 19)
+// CheckKarmicDebtWithBody Detect Karmic Debt numbers - Karmic debt 13, 14, 16, 19 API
 //
-// Check for Karmic Debt numbers (13, 14, 16, 19) in the five core numbers that carry it, Life Path, Birth Day, Expression, Soul Urge and Personality, using Pythagorean numerology. Karmic debt indicates challenges carried from past lives that must be resolved in this lifetime. These numbers appear during reduction and represent specific lessons and tests. Returns comprehensive analysis including debt descriptions, challenges to overcome, and resolution guidance. Perfect for spiritual growth apps, karmic astrology platforms, past life exploration services, and personal transformation tools. Get detailed meanings for all four karmic debt numbers with practical resolution strategies.
+// Detect Karmic Debt numbers 13, 14, 16 and 19 across the five core numbers that carry them: Life Path, Expression, Soul Urge, Personality and Birth Day. Send a birth date, a full birth name, or both, and only the positions those inputs reach are read; each debt is listed once with its challenge and resolution guidance in the language set by lang. Built for spiritual growth apps, karmic readings, coaching tools and AI agents.
 //
 // Takes any type of body and a specified content type.
 //
@@ -59134,9 +59134,9 @@ func (c *Client) CheckKarmicDebtWithBody(ctx context.Context, params *CheckKarmi
 	return c.Client.Do(req)
 }
 
-// CheckKarmicDebt Detect Karmic Debt numbers - Past life challenges (13, 14, 16, 19)
+// CheckKarmicDebt Detect Karmic Debt numbers - Karmic debt 13, 14, 16, 19 API
 //
-// Check for Karmic Debt numbers (13, 14, 16, 19) in the five core numbers that carry it, Life Path, Birth Day, Expression, Soul Urge and Personality, using Pythagorean numerology. Karmic debt indicates challenges carried from past lives that must be resolved in this lifetime. These numbers appear during reduction and represent specific lessons and tests. Returns comprehensive analysis including debt descriptions, challenges to overcome, and resolution guidance. Perfect for spiritual growth apps, karmic astrology platforms, past life exploration services, and personal transformation tools. Get detailed meanings for all four karmic debt numbers with practical resolution strategies.
+// Detect Karmic Debt numbers 13, 14, 16 and 19 across the five core numbers that carry them: Life Path, Expression, Soul Urge, Personality and Birth Day. Send a birth date, a full birth name, or both, and only the positions those inputs reach are read; each debt is listed once with its challenge and resolution guidance in the language set by lang. Built for spiritual growth apps, karmic readings, coaching tools and AI agents.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -59153,9 +59153,9 @@ func (c *Client) CheckKarmicDebt(ctx context.Context, params *CheckKarmicDebtPar
 	return c.Client.Do(req)
 }
 
-// AnalyzeKarmicLessonsWithBody Analyze Karmic Lessons - Life lessons from missing numbers
+// AnalyzeKarmicLessonsWithBody Analyze Karmic Lessons - Missing numbers numerology API
 //
-// Analyze your Karmic Lessons from your birth name using Pythagorean numerology. Karmic lessons are indicated by numbers missing from your name (numbers 1-9 that do not appear). These represent challenges you came to learn and skills you need to develop in this lifetime. Returns comprehensive analysis including missing numbers, specific lessons for each, challenges to overcome, and practical guidance for development. Perfect for spiritual growth apps, personal development platforms, life coaching services, and self-improvement tools. Get detailed lesson descriptions, development strategies, and practical exercises for each missing number.
+// Analyze the Karmic Lessons of a full birth name with Pythagorean numerology: the numbers 1 to 9 that no letter of the name carries. Each missing number is returned with its lesson, a fuller explanation and practical guidance for developing it, in the language set by lang, beside the count of letters behind every number present. Built for spiritual growth apps, coaching tools, full numerology reports and AI agents.
 //
 // Takes any type of body and a specified content type.
 //
@@ -59172,9 +59172,9 @@ func (c *Client) AnalyzeKarmicLessonsWithBody(ctx context.Context, params *Analy
 	return c.Client.Do(req)
 }
 
-// AnalyzeKarmicLessons Analyze Karmic Lessons - Life lessons from missing numbers
+// AnalyzeKarmicLessons Analyze Karmic Lessons - Missing numbers numerology API
 //
-// Analyze your Karmic Lessons from your birth name using Pythagorean numerology. Karmic lessons are indicated by numbers missing from your name (numbers 1-9 that do not appear). These represent challenges you came to learn and skills you need to develop in this lifetime. Returns comprehensive analysis including missing numbers, specific lessons for each, challenges to overcome, and practical guidance for development. Perfect for spiritual growth apps, personal development platforms, life coaching services, and self-improvement tools. Get detailed lesson descriptions, development strategies, and practical exercises for each missing number.
+// Analyze the Karmic Lessons of a full birth name with Pythagorean numerology: the numbers 1 to 9 that no letter of the name carries. Each missing number is returned with its lesson, a fuller explanation and practical guidance for developing it, in the language set by lang, beside the count of letters behind every number present. Built for spiritual growth apps, coaching tools, full numerology reports and AI agents.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -59191,9 +59191,9 @@ func (c *Client) AnalyzeKarmicLessons(ctx context.Context, params *AnalyzeKarmic
 	return c.Client.Do(req)
 }
 
-// CalculateLifePathWithBody Calculate Life Path number - Most important numerology calculation
+// CalculateLifePathWithBody Calculate Life Path number - Calculator and meaning API
 //
-// Calculate your Life Path number from your birth date using Pythagorean numerology. This is the most significant number in your numerology chart, revealing your life purpose, natural talents, and destiny path. Automatically detects Master Numbers (11, 22, 33) and Karmic Debt numbers (13, 14, 16, 19). Returns comprehensive interpretation including personality traits, strengths, challenges, career guidance, relationship compatibility, and spiritual insights. Perfect for numerology apps, birth chart calculators, life purpose discovery tools, personal development platforms, and astrology services. Get detailed 300-500 word meanings for all numbers 1-9, 11, 22, and 33.
+// Calculate a Life Path number from a birth date with Pythagorean numerology. The Life Path is the core number of a numerology chart, read from the birth year, month and day alone, with master numbers 11, 22 and 33 kept and a karmic debt of 13, 14, 16 or 19 flagged with its meaning. The response returns every reduction step and a full interpretation (archetype title, keywords, description, strengths, challenges, career, relationships and spirituality) in the language set by lang. Built for Life Path calculators, numerology apps, onboarding personality profiles and AI agents.
 //
 // Takes any type of body and a specified content type.
 //
@@ -59210,9 +59210,9 @@ func (c *Client) CalculateLifePathWithBody(ctx context.Context, params *Calculat
 	return c.Client.Do(req)
 }
 
-// CalculateLifePath Calculate Life Path number - Most important numerology calculation
+// CalculateLifePath Calculate Life Path number - Calculator and meaning API
 //
-// Calculate your Life Path number from your birth date using Pythagorean numerology. This is the most significant number in your numerology chart, revealing your life purpose, natural talents, and destiny path. Automatically detects Master Numbers (11, 22, 33) and Karmic Debt numbers (13, 14, 16, 19). Returns comprehensive interpretation including personality traits, strengths, challenges, career guidance, relationship compatibility, and spiritual insights. Perfect for numerology apps, birth chart calculators, life purpose discovery tools, personal development platforms, and astrology services. Get detailed 300-500 word meanings for all numbers 1-9, 11, 22, and 33.
+// Calculate a Life Path number from a birth date with Pythagorean numerology. The Life Path is the core number of a numerology chart, read from the birth year, month and day alone, with master numbers 11, 22 and 33 kept and a karmic debt of 13, 14, 16 or 19 flagged with its meaning. The response returns every reduction step and a full interpretation (archetype title, keywords, description, strengths, challenges, career, relationships and spirituality) in the language set by lang. Built for Life Path calculators, numerology apps, onboarding personality profiles and AI agents.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -59229,9 +59229,9 @@ func (c *Client) CalculateLifePath(ctx context.Context, params *CalculateLifePat
 	return c.Client.Do(req)
 }
 
-// CalculateMaturityWithBody Calculate Maturity number - Who you become in later life
+// CalculateMaturityWithBody Calculate Maturity number - Realization number numerology API
 //
-// Calculate your Maturity (Realization) number by adding Life Path and Expression numbers using Pythagorean numerology. This number reveals who you become in the second half of life, typically manifesting after age 35-40. It shows the ultimate goal of personal development and mature self-expression. Returns comprehensive interpretation including life transformation, mature personality, later-life purpose, and wisdom development. Automatically detects Master Numbers (11, 22, 33). Perfect for life coaching apps, midlife guidance platforms, personal development services, and aging wisdom tools. Get detailed 300-500 word meanings for all numbers 1-9, 11, 22, and 33.
+// Calculate the Maturity number, also called the Realization number, from the Life Path and Expression numbers with Pythagorean numerology. Send a full birth name and birth date, the two numbers precomputed, or one of each; master numbers 11, 22 and 33 are kept at full value and in the result. The Maturity number describes who a person grows into in the second half of life, usually felt from around 35 to 40, and the response returns the calculation and a full interpretation in the language set by lang. Built for life coaching apps, midlife and later-life guidance, and AI agents.
 //
 // Takes any type of body and a specified content type.
 //
@@ -59248,9 +59248,9 @@ func (c *Client) CalculateMaturityWithBody(ctx context.Context, params *Calculat
 	return c.Client.Do(req)
 }
 
-// CalculateMaturity Calculate Maturity number - Who you become in later life
+// CalculateMaturity Calculate Maturity number - Realization number numerology API
 //
-// Calculate your Maturity (Realization) number by adding Life Path and Expression numbers using Pythagorean numerology. This number reveals who you become in the second half of life, typically manifesting after age 35-40. It shows the ultimate goal of personal development and mature self-expression. Returns comprehensive interpretation including life transformation, mature personality, later-life purpose, and wisdom development. Automatically detects Master Numbers (11, 22, 33). Perfect for life coaching apps, midlife guidance platforms, personal development services, and aging wisdom tools. Get detailed 300-500 word meanings for all numbers 1-9, 11, 22, and 33.
+// Calculate the Maturity number, also called the Realization number, from the Life Path and Expression numbers with Pythagorean numerology. Send a full birth name and birth date, the two numbers precomputed, or one of each; master numbers 11, 22 and 33 are kept at full value and in the result. The Maturity number describes who a person grows into in the second half of life, usually felt from around 35 to 40, and the response returns the calculation and a full interpretation in the language set by lang. Built for life coaching apps, midlife and later-life guidance, and AI agents.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -59267,9 +59267,9 @@ func (c *Client) CalculateMaturity(ctx context.Context, params *CalculateMaturit
 	return c.Client.Do(req)
 }
 
-// GetNumberMeaning Get Number Meaning - Interpretation for any number 1-9, 11, 22, 33
+// GetNumberMeaning Get number meaning - Numerology number meanings API
 //
-// Get the complete meaning and interpretation for any numerology number (1-9, 11, 22, 33) using Pythagorean numerology. Returns comprehensive description including archetype title, keywords, personality traits, strengths, weaknesses, career guidance, relationship dynamics, and spiritual insights. Master numbers (11, 22, 33) include amplified meanings with their reduced base number. Perfect for numerology reference tools, educational apps, quick lookups, and building custom numerology calculators. Get detailed 300-500 word expert-written meanings for all 12 valid numerology numbers.
+// Get the full numerology meaning of any number 1 to 9 or the master numbers 11, 22 and 33. The response returns the archetype title, keywords, a core description, strengths, challenges, career, relationships and spirituality in the language set by lang, the same reading every core number endpoint returns for that number. Built for numerology reference pages, custom calculators, educational apps and AI agents.
 //
 // Corresponds with GET /numerology/meanings/{number} (the `GetNumberMeaning` operationId).
 func (c *Client) GetNumberMeaning(ctx context.Context, number string, params *GetNumberMeaningParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
@@ -59284,9 +59284,9 @@ func (c *Client) GetNumberMeaning(ctx context.Context, number string, params *Ge
 	return c.Client.Do(req)
 }
 
-// CalculatePersonalDayWithBody Calculate Personal Day - Daily personalized numerology forecast
+// CalculatePersonalDayWithBody Calculate Personal Day - Daily numerology forecast API
 //
-// Calculate your Personal Day number from birth month, day, and a target date. Personal Day is the most granular cycle in Pythagorean numerology, revealing the specific energy and theme for a single calendar day personalized to you. Unlike generic daily numbers, this is based on YOUR birth data combined with the calendar date. Returns the daily theme, actionable guidance, and parent month and year context. Perfect for daily push notifications, morning briefings, calendar widget integrations, daily content generation, and life coaching tools.
+// Calculate the Personal Day number from a birth month and day with Pythagorean numerology, the 1 to 9 theme of a single calendar day personalized to the birthday. The day is targetDate, or today in UTC when omitted. The response returns the day theme and guidance with the parent Personal Month and Personal Year, in the language set by lang. Built for daily push notifications, morning briefings, calendar widgets and AI agents.
 //
 // Takes any type of body and a specified content type.
 //
@@ -59303,9 +59303,9 @@ func (c *Client) CalculatePersonalDayWithBody(ctx context.Context, params *Calcu
 	return c.Client.Do(req)
 }
 
-// CalculatePersonalDay Calculate Personal Day - Daily personalized numerology forecast
+// CalculatePersonalDay Calculate Personal Day - Daily numerology forecast API
 //
-// Calculate your Personal Day number from birth month, day, and a target date. Personal Day is the most granular cycle in Pythagorean numerology, revealing the specific energy and theme for a single calendar day personalized to you. Unlike generic daily numbers, this is based on YOUR birth data combined with the calendar date. Returns the daily theme, actionable guidance, and parent month and year context. Perfect for daily push notifications, morning briefings, calendar widget integrations, daily content generation, and life coaching tools.
+// Calculate the Personal Day number from a birth month and day with Pythagorean numerology, the 1 to 9 theme of a single calendar day personalized to the birthday. The day is targetDate, or today in UTC when omitted. The response returns the day theme and guidance with the parent Personal Month and Personal Year, in the language set by lang. Built for daily push notifications, morning briefings, calendar widgets and AI agents.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -59322,9 +59322,9 @@ func (c *Client) CalculatePersonalDay(ctx context.Context, params *CalculatePers
 	return c.Client.Do(req)
 }
 
-// CalculatePersonalMonthWithBody Calculate Personal Month - Monthly numerology forecast
+// CalculatePersonalMonthWithBody Calculate Personal Month - Monthly numerology forecast API
 //
-// Calculate your Personal Month number from birth month, day, and a target year and month. Personal Month reveals the specific theme and energy influencing each calendar month within your Personal Year cycle. Returns the monthly theme, practical focus guidance, and the parent Personal Year context. Perfect for monthly forecast features, push notification content, calendar integrations, editorial monthly columns, and life coaching tools.
+// Calculate the Personal Month number from a birth month and day with Pythagorean numerology, the 1 to 9 theme of one calendar month inside the Personal Year. The year and month are the ones sent, each defaulting to the current UTC year and month when omitted. The response returns the month theme, practical focus and the parent Personal Year with its theme, in the language set by lang. Built for monthly forecast features, push notifications, editorial columns and AI agents.
 //
 // Takes any type of body and a specified content type.
 //
@@ -59341,9 +59341,9 @@ func (c *Client) CalculatePersonalMonthWithBody(ctx context.Context, params *Cal
 	return c.Client.Do(req)
 }
 
-// CalculatePersonalMonth Calculate Personal Month - Monthly numerology forecast
+// CalculatePersonalMonth Calculate Personal Month - Monthly numerology forecast API
 //
-// Calculate your Personal Month number from birth month, day, and a target year and month. Personal Month reveals the specific theme and energy influencing each calendar month within your Personal Year cycle. Returns the monthly theme, practical focus guidance, and the parent Personal Year context. Perfect for monthly forecast features, push notification content, calendar integrations, editorial monthly columns, and life coaching tools.
+// Calculate the Personal Month number from a birth month and day with Pythagorean numerology, the 1 to 9 theme of one calendar month inside the Personal Year. The year and month are the ones sent, each defaulting to the current UTC year and month when omitted. The response returns the month theme, practical focus and the parent Personal Year with its theme, in the language set by lang. Built for monthly forecast features, push notifications, editorial columns and AI agents.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -59360,9 +59360,9 @@ func (c *Client) CalculatePersonalMonth(ctx context.Context, params *CalculatePe
 	return c.Client.Do(req)
 }
 
-// CalculatePersonalYearWithBody Calculate Personal Year - Annual cycle and forecast for current year
+// CalculatePersonalYearWithBody Calculate Personal Year - Personal Year number forecast API
 //
-// Calculate your Personal Year number from your birth month, day, and current year using Pythagorean numerology. Personal Year runs in 9-year cycles (1-9) and reveals the theme, opportunities, and challenges for the current year. Each year has a specific energy and lessons. Returns comprehensive annual forecast including year theme, opportunities, challenges, and actionable advice. Perfect for yearly planning apps, life coaching platforms, astrology services, and personal development tools. Get detailed forecasts for all 9 Personal Year cycles with practical guidance.
+// Calculate the Personal Year number from a birth month and day with Pythagorean numerology, the 1 to 9 cycle that sets the theme of a calendar year. The year is the one sent, or the current UTC year when omitted, and it turns over on 1 January; the birth year is not needed. The response returns the place in the nine-year cycle, the theme, a forecast, opportunities, challenges and advice in the language set by lang. Built for yearly planning features, New Year content, coaching tools and AI agents.
 //
 // Takes any type of body and a specified content type.
 //
@@ -59379,9 +59379,9 @@ func (c *Client) CalculatePersonalYearWithBody(ctx context.Context, params *Calc
 	return c.Client.Do(req)
 }
 
-// CalculatePersonalYear Calculate Personal Year - Annual cycle and forecast for current year
+// CalculatePersonalYear Calculate Personal Year - Personal Year number forecast API
 //
-// Calculate your Personal Year number from your birth month, day, and current year using Pythagorean numerology. Personal Year runs in 9-year cycles (1-9) and reveals the theme, opportunities, and challenges for the current year. Each year has a specific energy and lessons. Returns comprehensive annual forecast including year theme, opportunities, challenges, and actionable advice. Perfect for yearly planning apps, life coaching platforms, astrology services, and personal development tools. Get detailed forecasts for all 9 Personal Year cycles with practical guidance.
+// Calculate the Personal Year number from a birth month and day with Pythagorean numerology, the 1 to 9 cycle that sets the theme of a calendar year. The year is the one sent, or the current UTC year when omitted, and it turns over on 1 January; the birth year is not needed. The response returns the place in the nine-year cycle, the theme, a forecast, opportunities, challenges and advice in the language set by lang. Built for yearly planning features, New Year content, coaching tools and AI agents.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -59398,9 +59398,9 @@ func (c *Client) CalculatePersonalYear(ctx context.Context, params *CalculatePer
 	return c.Client.Do(req)
 }
 
-// CalculatePersonalityWithBody Calculate Personality number - How others perceive you
+// CalculatePersonalityWithBody Calculate Personality number - Outer personality numerology API
 //
-// Calculate your Personality number from the consonants in your birth name using Pythagorean numerology. This number reveals how others perceive you, your outer personality, and first impressions you make. It represents the mask you show the world and your social persona. Returns comprehensive interpretation including public image, social dynamics, professional presence, and relationship first impressions. Automatically detects Master Numbers (11, 22, 33). Perfect for personal branding apps, social skills training, professional development platforms, and communication coaching services. Get detailed 300-500 word meanings for all numbers 1-9, 11, 22, and 33.
+// Calculate the Personality number from the consonants of a full birth name with Pythagorean numerology. Every letter other than A, E, I, O and U is a consonant, Y and W included; master numbers 11, 22 and 33 are kept and a karmic debt of 13, 14, 16 or 19 is flagged with its meaning. The response lists every consonant name by name and returns a full interpretation of first impressions, public image, career and relationships in the language set by lang. Built for personal branding apps, social and dating profiles, coaching tools and AI agents.
 //
 // Takes any type of body and a specified content type.
 //
@@ -59417,9 +59417,9 @@ func (c *Client) CalculatePersonalityWithBody(ctx context.Context, params *Calcu
 	return c.Client.Do(req)
 }
 
-// CalculatePersonality Calculate Personality number - How others perceive you
+// CalculatePersonality Calculate Personality number - Outer personality numerology API
 //
-// Calculate your Personality number from the consonants in your birth name using Pythagorean numerology. This number reveals how others perceive you, your outer personality, and first impressions you make. It represents the mask you show the world and your social persona. Returns comprehensive interpretation including public image, social dynamics, professional presence, and relationship first impressions. Automatically detects Master Numbers (11, 22, 33). Perfect for personal branding apps, social skills training, professional development platforms, and communication coaching services. Get detailed 300-500 word meanings for all numbers 1-9, 11, 22, and 33.
+// Calculate the Personality number from the consonants of a full birth name with Pythagorean numerology. Every letter other than A, E, I, O and U is a consonant, Y and W included; master numbers 11, 22 and 33 are kept and a karmic debt of 13, 14, 16 or 19 is flagged with its meaning. The response lists every consonant name by name and returns a full interpretation of first impressions, public image, career and relationships in the language set by lang. Built for personal branding apps, social and dating profiles, coaching tools and AI agents.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -59436,9 +59436,9 @@ func (c *Client) CalculatePersonality(ctx context.Context, params *CalculatePers
 	return c.Client.Do(req)
 }
 
-// CalculateSoulUrgeWithBody Calculate Soul Urge number - Inner motivations and desires
+// CalculateSoulUrgeWithBody Calculate Soul Urge number - Heart Desire number calculator API
 //
-// Calculate your Soul Urge (Heart Desire) number from the vowels in your birth name using Pythagorean numerology. This number reveals your innermost desires, motivations, and what your soul truly wants to experience. It shows what drives you from within, your emotional needs, and what brings you fulfillment. Returns comprehensive interpretation including personality traits, emotional needs, relationship desires, and spiritual longings. Automatically detects Master Numbers (11, 22, 33). Perfect for self-discovery apps, emotional intelligence tools, relationship counseling platforms, and personal development services. Get detailed 300-500 word meanings for all numbers 1-9, 11, 22, and 33.
+// Calculate the Soul Urge number, also called the Heart Desire number, from the vowels of a full birth name with Pythagorean numerology. A, E, I, O and U are the vowels and Y and W count as consonants; master numbers 11, 22 and 33 are kept and a karmic debt of 13, 14, 16 or 19 is flagged with its meaning. The response lists every vowel name by name and returns a full interpretation of inner motivation, relationships and spiritual path in the language set by lang. Built for self-discovery apps, dating profiles, coaching tools and AI agents.
 //
 // Takes any type of body and a specified content type.
 //
@@ -59455,9 +59455,9 @@ func (c *Client) CalculateSoulUrgeWithBody(ctx context.Context, params *Calculat
 	return c.Client.Do(req)
 }
 
-// CalculateSoulUrge Calculate Soul Urge number - Inner motivations and desires
+// CalculateSoulUrge Calculate Soul Urge number - Heart Desire number calculator API
 //
-// Calculate your Soul Urge (Heart Desire) number from the vowels in your birth name using Pythagorean numerology. This number reveals your innermost desires, motivations, and what your soul truly wants to experience. It shows what drives you from within, your emotional needs, and what brings you fulfillment. Returns comprehensive interpretation including personality traits, emotional needs, relationship desires, and spiritual longings. Automatically detects Master Numbers (11, 22, 33). Perfect for self-discovery apps, emotional intelligence tools, relationship counseling platforms, and personal development services. Get detailed 300-500 word meanings for all numbers 1-9, 11, 22, and 33.
+// Calculate the Soul Urge number, also called the Heart Desire number, from the vowels of a full birth name with Pythagorean numerology. A, E, I, O and U are the vowels and Y and W count as consonants; master numbers 11, 22 and 33 are kept and a karmic debt of 13, 14, 16 or 19 is flagged with its meaning. The response lists every vowel name by name and returns a full interpretation of inner motivation, relationships and spiritual path in the language set by lang. Built for self-discovery apps, dating profiles, coaching tools and AI agents.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -81994,342 +81994,342 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with POST /mesoamerican-astrology/mayan/tzolkin (the `CalculateTzolkin` operationId).
 	CalculateTzolkinWithResponse(ctx context.Context, params *CalculateTzolkinParams, body CalculateTzolkinJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateTzolkinResponse, error)
 
-	// CalculateBirthDayWithBodyWithResponse Calculate Birth Day number - Special talents from day of birth
+	// CalculateBirthDayWithBodyWithResponse Calculate Birth Day number - Birthday numerology API
 	//
-	// Calculate your Birth Day number from the day you were born (1-31) using Pythagorean numerology. This number reveals special talents and abilities you possess from birth. It shows natural gifts that can help you achieve your life purpose. Returns comprehensive interpretation including innate talents, natural abilities, career advantages, and how to leverage your special gifts. Automatically detects Master Numbers (11, 22) and reduces double-digit days. Perfect for talent discovery apps, career counseling platforms, personal development services, and skill assessment tools. Get detailed 300-500 word meanings for all numbers 1-9, 11, and 22.
+	// Calculate the Birth Day number from the day of the month a person was born, 1 to 31, with Pythagorean numerology. The 11th, 22nd and 29th keep the master numbers 11 and 22, other two-digit days reduce to one digit, and the 13th, 14th, 16th and 19th are flagged as karmic debt with their meaning. The response returns the calculation and a full interpretation of the special talents the day brings in the language set by lang. Built for birthday features, talent and career discovery tools, and AI agents.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with POST /numerology/birth-day (the `CalculateBirthDay` operationId).
 	CalculateBirthDayWithBodyWithResponse(ctx context.Context, params *CalculateBirthDayParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CalculateBirthDayResponse, error)
 
-	// CalculateBirthDayWithResponse Calculate Birth Day number - Special talents from day of birth
+	// CalculateBirthDayWithResponse Calculate Birth Day number - Birthday numerology API
 	//
-	// Calculate your Birth Day number from the day you were born (1-31) using Pythagorean numerology. This number reveals special talents and abilities you possess from birth. It shows natural gifts that can help you achieve your life purpose. Returns comprehensive interpretation including innate talents, natural abilities, career advantages, and how to leverage your special gifts. Automatically detects Master Numbers (11, 22) and reduces double-digit days. Perfect for talent discovery apps, career counseling platforms, personal development services, and skill assessment tools. Get detailed 300-500 word meanings for all numbers 1-9, 11, and 22.
+	// Calculate the Birth Day number from the day of the month a person was born, 1 to 31, with Pythagorean numerology. The 11th, 22nd and 29th keep the master numbers 11 and 22, other two-digit days reduce to one digit, and the 13th, 14th, 16th and 19th are flagged as karmic debt with their meaning. The response returns the calculation and a full interpretation of the special talents the day brings in the language set by lang. Built for birthday features, talent and career discovery tools, and AI agents.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with POST /numerology/birth-day (the `CalculateBirthDay` operationId).
 	CalculateBirthDayWithResponse(ctx context.Context, params *CalculateBirthDayParams, body CalculateBirthDayJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateBirthDayResponse, error)
 
-	// CalculateBridgeNumbersWithBodyWithResponse Calculate Bridge Numbers - Harmonize different aspects of personality
+	// CalculateBridgeNumbersWithBodyWithResponse Calculate Bridge Numbers - Numerology bridge numbers API
 	//
-	// Calculate three Bridge Numbers that reveal the adjustments needed to create harmony between different aspects of your numerology profile. Bridge Numbers are the absolute difference between pairs of core numbers: Life Path and Expression, Expression and Personality, Expression and Soul Urge. A Bridge of 0 means the two aspects are already aligned. Higher bridges (1 to 8) indicate greater tension and provide specific guidance on what changes to make. Bridge Numbers are essential for personal development, coaching applications, self-improvement platforms, and AI-powered personality analysis tools. Requires both a full birth name and birth date to calculate all four core numbers (Life Path, Expression, Soul Urge, Personality) internally before deriving the bridges.
+	// Calculate four numerology Bridge numbers from a full birth name and birth date: Life Path and Expression, Expression and Soul Urge, Soul Urge and Personality, and Expression and Personality. Each bridge is the distance between two core numbers, from 0 to 8, where 0 means the two are already in harmony, and comes with guidance for closing the gap in the language set by lang. Built for personal development, coaching and personality analysis tools and AI agents.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with POST /numerology/bridge (the `CalculateBridgeNumbers` operationId).
 	CalculateBridgeNumbersWithBodyWithResponse(ctx context.Context, params *CalculateBridgeNumbersParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CalculateBridgeNumbersResponse, error)
 
-	// CalculateBridgeNumbersWithResponse Calculate Bridge Numbers - Harmonize different aspects of personality
+	// CalculateBridgeNumbersWithResponse Calculate Bridge Numbers - Numerology bridge numbers API
 	//
-	// Calculate three Bridge Numbers that reveal the adjustments needed to create harmony between different aspects of your numerology profile. Bridge Numbers are the absolute difference between pairs of core numbers: Life Path and Expression, Expression and Personality, Expression and Soul Urge. A Bridge of 0 means the two aspects are already aligned. Higher bridges (1 to 8) indicate greater tension and provide specific guidance on what changes to make. Bridge Numbers are essential for personal development, coaching applications, self-improvement platforms, and AI-powered personality analysis tools. Requires both a full birth name and birth date to calculate all four core numbers (Life Path, Expression, Soul Urge, Personality) internally before deriving the bridges.
+	// Calculate four numerology Bridge numbers from a full birth name and birth date: Life Path and Expression, Expression and Soul Urge, Soul Urge and Personality, and Expression and Personality. Each bridge is the distance between two core numbers, from 0 to 8, where 0 means the two are already in harmony, and comes with guidance for closing the gap in the language set by lang. Built for personal development, coaching and personality analysis tools and AI agents.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with POST /numerology/bridge (the `CalculateBridgeNumbers` operationId).
 	CalculateBridgeNumbersWithResponse(ctx context.Context, params *CalculateBridgeNumbersParams, body CalculateBridgeNumbersJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateBridgeNumbersResponse, error)
 
-	// CalculateBusinessNameWithBodyWithResponse Business name numerology - Chaldean brand name analysis and lucky numbers
+	// CalculateBusinessNameWithBodyWithResponse Calculate business name numerology - Brand name numerology API
 	//
-	// Analyze a business or brand name with Chaldean numerology, the system practitioners use for trade names. Returns the name number (compound and root), its planetary ruler, an overall business rating, the industries the number favors, and whether the compound is one of Cheiro fortunate compounds. The most favorable business roots are 1 (leadership), 3 (expansion), 5 (commerce) and 6 (beauty and hospitality); the numbers 4 and 8 carry caution as the karmic numbers of instability and heavy demand. Use it to vet a company name, compare brand options, or guide a naming decision. This is positioning guidance layered over the fundamentals of a memorable, available name, not a guarantee.
+	// Analyze a business or brand name with Chaldean numerology, the system practitioners use for trade names. The name is read word by word, and the response returns the compound number and root with every step, the planetary ruler, a business rating, the industries the number favors, whether the compound is one of the fortunate compounds Cheiro names, and guidance, in the language set by lang. The roots 1, 3, 5 and 6 rate excellent, 2 and 9 good, 7 and 8 caution and 4 avoid. Built for naming tools, brand agencies and founder apps; the rating is positioning guidance, not a guarantee.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with POST /numerology/business-name (the `CalculateBusinessName` operationId).
 	CalculateBusinessNameWithBodyWithResponse(ctx context.Context, params *CalculateBusinessNameParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CalculateBusinessNameResponse, error)
 
-	// CalculateBusinessNameWithResponse Business name numerology - Chaldean brand name analysis and lucky numbers
+	// CalculateBusinessNameWithResponse Calculate business name numerology - Brand name numerology API
 	//
-	// Analyze a business or brand name with Chaldean numerology, the system practitioners use for trade names. Returns the name number (compound and root), its planetary ruler, an overall business rating, the industries the number favors, and whether the compound is one of Cheiro fortunate compounds. The most favorable business roots are 1 (leadership), 3 (expansion), 5 (commerce) and 6 (beauty and hospitality); the numbers 4 and 8 carry caution as the karmic numbers of instability and heavy demand. Use it to vet a company name, compare brand options, or guide a naming decision. This is positioning guidance layered over the fundamentals of a memorable, available name, not a guarantee.
+	// Analyze a business or brand name with Chaldean numerology, the system practitioners use for trade names. The name is read word by word, and the response returns the compound number and root with every step, the planetary ruler, a business rating, the industries the number favors, whether the compound is one of the fortunate compounds Cheiro names, and guidance, in the language set by lang. The roots 1, 3, 5 and 6 rate excellent, 2 and 9 good, 7 and 8 caution and 4 avoid. Built for naming tools, brand agencies and founder apps; the rating is positioning guidance, not a guarantee.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with POST /numerology/business-name (the `CalculateBusinessName` operationId).
 	CalculateBusinessNameWithResponse(ctx context.Context, params *CalculateBusinessNameParams, body CalculateBusinessNameJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateBusinessNameResponse, error)
 
-	// CalculateChaldeanWithBodyWithResponse Chaldean numerology name reading - Destiny, compound number, planetary ruler
+	// CalculateChaldeanWithBodyWithResponse Calculate Chaldean numerology - Chaldean name number calculator API
 	//
-	// Calculate a complete Chaldean numerology reading for a name. The older Chaldean system maps letters to values 1 to 8 by vibration (the number 9 is sacred and never assigned to a letter) and reads the unreduced two-digit compound number (10 to 52, also called a fadic number, defined by Cheiro) in addition to the single-digit root. Returns the Destiny or name number from all letters, the Soul Urge from vowels, and the Personality from consonants, each with its compound number, root, and Cheiro compound interpretation, plus the planetary ruler of the Destiny root and a caution flag for the karmic numbers 4 and 8. Perfect for Chaldean numerology calculators, name analysis tools, and AI numerology assistants that need both the compound and root layers in one call.
+	// Calculate a complete Chaldean numerology reading for a name, following Cheiro. The Destiny or name number, the Soul Urge from the vowels and the Personality from the consonants each come with the compound number from 10 to 52, the single-digit root and the classical compound interpretation, and a longer name is read name by name with every step shown in its calculation. The response adds the planetary ruler and meaning of the Destiny root, a caution flag for the roots 4 and 8, and a summary, in the language set by lang. Built for Chaldean numerology calculators, name analysis tools and AI agents.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with POST /numerology/chaldean (the `CalculateChaldean` operationId).
 	CalculateChaldeanWithBodyWithResponse(ctx context.Context, params *CalculateChaldeanParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CalculateChaldeanResponse, error)
 
-	// CalculateChaldeanWithResponse Chaldean numerology name reading - Destiny, compound number, planetary ruler
+	// CalculateChaldeanWithResponse Calculate Chaldean numerology - Chaldean name number calculator API
 	//
-	// Calculate a complete Chaldean numerology reading for a name. The older Chaldean system maps letters to values 1 to 8 by vibration (the number 9 is sacred and never assigned to a letter) and reads the unreduced two-digit compound number (10 to 52, also called a fadic number, defined by Cheiro) in addition to the single-digit root. Returns the Destiny or name number from all letters, the Soul Urge from vowels, and the Personality from consonants, each with its compound number, root, and Cheiro compound interpretation, plus the planetary ruler of the Destiny root and a caution flag for the karmic numbers 4 and 8. Perfect for Chaldean numerology calculators, name analysis tools, and AI numerology assistants that need both the compound and root layers in one call.
+	// Calculate a complete Chaldean numerology reading for a name, following Cheiro. The Destiny or name number, the Soul Urge from the vowels and the Personality from the consonants each come with the compound number from 10 to 52, the single-digit root and the classical compound interpretation, and a longer name is read name by name with every step shown in its calculation. The response adds the planetary ruler and meaning of the Destiny root, a caution flag for the roots 4 and 8, and a summary, in the language set by lang. Built for Chaldean numerology calculators, name analysis tools and AI agents.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with POST /numerology/chaldean (the `CalculateChaldean` operationId).
 	CalculateChaldeanWithResponse(ctx context.Context, params *CalculateChaldeanParams, body CalculateChaldeanJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateChaldeanResponse, error)
 
-	// GenerateNumerologyChartWithBodyWithResponse Generate Complete Numerology Chart - Full profile analysis
+	// GenerateNumerologyChartWithBodyWithResponse Generate numerology chart - Complete numerology reading API
 	//
-	// Generate a comprehensive numerology chart combining all major calculations: Life Path, Expression, Soul Urge, Personality, Birth Day, Maturity, Karmic Lessons, Karmic Debt, and Personal Year. This single endpoint provides everything needed for a full numerology reading. Returns detailed interpretations for all numbers, karmic analysis, yearly forecast, and holistic summary. Perfect for numerology apps, complete reading services, birth chart generators, and comprehensive analysis tools. Save multiple API calls by getting the full chart in one request. Ideal for generating PDF reports or detailed user profiles.
+	// Generate a complete numerology chart from a full birth name and birth date in one call. It returns the six core numbers (Life Path, Expression, Soul Urge, Personality, Birth Day and Maturity) with their calculations and full interpretations, the four Pinnacles and four Challenges with their ages, Karmic Lessons, karmic debt in all five positions, Hidden Passion, Subconscious Self, Cornerstone, Capstone and First Vowel, the Birth Day profile for the exact day, lucky associations, the Maturity activation status, the Personal Year with the current Personal Month, and a written summary, in the language set by lang. The Personal Year uses currentYear or the current UTC year, while the Personal Month and the age behind the Maturity status read the current UTC date. Built for full numerology readings, PDF reports, onboarding profiles and AI agents.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with POST /numerology/chart (the `GenerateNumerologyChart` operationId).
 	GenerateNumerologyChartWithBodyWithResponse(ctx context.Context, params *GenerateNumerologyChartParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GenerateNumerologyChartResponse, error)
 
-	// GenerateNumerologyChartWithResponse Generate Complete Numerology Chart - Full profile analysis
+	// GenerateNumerologyChartWithResponse Generate numerology chart - Complete numerology reading API
 	//
-	// Generate a comprehensive numerology chart combining all major calculations: Life Path, Expression, Soul Urge, Personality, Birth Day, Maturity, Karmic Lessons, Karmic Debt, and Personal Year. This single endpoint provides everything needed for a full numerology reading. Returns detailed interpretations for all numbers, karmic analysis, yearly forecast, and holistic summary. Perfect for numerology apps, complete reading services, birth chart generators, and comprehensive analysis tools. Save multiple API calls by getting the full chart in one request. Ideal for generating PDF reports or detailed user profiles.
+	// Generate a complete numerology chart from a full birth name and birth date in one call. It returns the six core numbers (Life Path, Expression, Soul Urge, Personality, Birth Day and Maturity) with their calculations and full interpretations, the four Pinnacles and four Challenges with their ages, Karmic Lessons, karmic debt in all five positions, Hidden Passion, Subconscious Self, Cornerstone, Capstone and First Vowel, the Birth Day profile for the exact day, lucky associations, the Maturity activation status, the Personal Year with the current Personal Month, and a written summary, in the language set by lang. The Personal Year uses currentYear or the current UTC year, while the Personal Month and the age behind the Maturity status read the current UTC date. Built for full numerology readings, PDF reports, onboarding profiles and AI agents.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with POST /numerology/chart (the `GenerateNumerologyChart` operationId).
 	GenerateNumerologyChartWithResponse(ctx context.Context, params *GenerateNumerologyChartParams, body GenerateNumerologyChartJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateNumerologyChartResponse, error)
 
-	// CalculateNumCompatibilityWithBodyWithResponse Calculate Compatibility - Relationship dynamics between two people
+	// CalculateNumCompatibilityWithBodyWithResponse Calculate numerology compatibility - Love match scoring API
 	//
-	// Calculate numerology compatibility between two people using Pythagorean numerology. Accepts two input modes per person: pre-calculated Life Path, Expression, and Soul Urge numbers, or raw name and birthdate for automatic calculation. You can mix modes across persons (e.g. numbers for person1, raw inputs for person2). Provides comprehensive relationship analysis with overall compatibility score (0-100), individual aspect compatibility (Life Path 50% weight, Expression 30%, Soul Urge 20%), relationship strengths, challenges, and practical advice. Uses detailed compatibility matrix for all number combinations. Perfect for dating apps, relationship counseling platforms, matchmaking services, and compatibility tools. Get actionable insights for improving relationship dynamics.
+	// Calculate numerology compatibility between two people from their Life Path, Expression and Soul Urge numbers. Send each person as a full birth name with a birth date, or as precomputed numbers, and mix the two modes freely across the pair. The response returns an overall score from 50 to 100 with its rating, a score and description for each number pair, and the strengths, challenges and advice for the relationship, in the language set by lang. Built for dating apps, matchmaking, relationship coaching and AI companions.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with POST /numerology/compatibility (the `CalculateNumCompatibility` operationId).
 	CalculateNumCompatibilityWithBodyWithResponse(ctx context.Context, params *CalculateNumCompatibilityParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CalculateNumCompatibilityResponse, error)
 
-	// CalculateNumCompatibilityWithResponse Calculate Compatibility - Relationship dynamics between two people
+	// CalculateNumCompatibilityWithResponse Calculate numerology compatibility - Love match scoring API
 	//
-	// Calculate numerology compatibility between two people using Pythagorean numerology. Accepts two input modes per person: pre-calculated Life Path, Expression, and Soul Urge numbers, or raw name and birthdate for automatic calculation. You can mix modes across persons (e.g. numbers for person1, raw inputs for person2). Provides comprehensive relationship analysis with overall compatibility score (0-100), individual aspect compatibility (Life Path 50% weight, Expression 30%, Soul Urge 20%), relationship strengths, challenges, and practical advice. Uses detailed compatibility matrix for all number combinations. Perfect for dating apps, relationship counseling platforms, matchmaking services, and compatibility tools. Get actionable insights for improving relationship dynamics.
+	// Calculate numerology compatibility between two people from their Life Path, Expression and Soul Urge numbers. Send each person as a full birth name with a birth date, or as precomputed numbers, and mix the two modes freely across the pair. The response returns an overall score from 50 to 100 with its rating, a score and description for each number pair, and the strengths, challenges and advice for the relationship, in the language set by lang. Built for dating apps, matchmaking, relationship coaching and AI companions.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with POST /numerology/compatibility (the `CalculateNumCompatibility` operationId).
 	CalculateNumCompatibilityWithResponse(ctx context.Context, params *CalculateNumCompatibilityParams, body CalculateNumCompatibilityJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateNumCompatibilityResponse, error)
 
-	// GetCompoundNumberWithResponse Compound number meaning - Cheiro Chaldean interpretation 10 to 52
+	// GetCompoundNumberWithResponse Get compound number meaning - Chaldean compound numbers 10 to 52 API
 	//
-	// Get the classical Chaldean interpretation of a compound number (also called a fadic number) from 10 to 52, as defined by Cheiro in the Book of Numbers. Compound numbers are the unreduced two-digit numbers that reveal the hidden influence behind a name or date, beyond the single-digit root. Each returns its symbolic title (such as The Wheel of Fortune for 10, The Star of the Magi for 17, or The Crown of the Magi for 21), its nature (fortunate, unfortunate, or mixed), and a full interpretation. Numbers 33 to 52 share the meaning of a lower number in their series, returned with a sameAs pointer. Perfect for Chaldean numerology references, compound number lookups, and AI numerology tools.
+	// Get the classical Chaldean meaning of a compound number, also called a fadic number, from 10 to 52 as Cheiro defines it. A compound number is the unreduced two-digit total behind a name or date, read beside its single-digit root. The response returns the root, the nature (fortunate, unfortunate or mixed), the full interpretation in the language set by lang, and the symbolic name where Cheiro gives one, such as The Wheel of Fortune for 10 or The Crown of the Magi for 21; a number from 33 up that repeats a lower one carries a sameAs pointer to it. Built for Chaldean numerology references, name analysis tools and AI agents.
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with GET /numerology/compound-number/{number} (the `GetCompoundNumber` operationId).
 	GetCompoundNumberWithResponse(ctx context.Context, number string, params *GetCompoundNumberParams, reqEditors ...RequestEditorFn) (*GetCompoundNumberResponse, error)
 
-	// GetDailyNumberWithBodyWithResponse Get daily numerology number - Number of the Day with interpretation
+	// GetDailyNumberWithBodyWithResponse Get daily numerology number - Number of the Day API
 	//
-	// Receive a daily numerology number (1-9, 11, 22, 33) for guidance and reflection. Uses seeded randomness so the same seed gets the same number on the same date, perfect for "Number of the Day" features in numerology apps, wellness platforms, and daily guidance tools. Returns the number with full interpretation including archetype, keywords, strengths, challenges, career, relationships, and spiritual insights. Ideal for daily push notifications, morning briefings, and personalized numerology experiences.
+	// Get the numerology Number of the Day, one of 1 to 9, 11, 22 or 33, with its full interpretation. The same seed returns the same number for the same date, so a user keeps one number all day, and the date defaults to today in UTC. The response returns the number, its type, a daily message and the archetype, keywords, strengths, challenges, career, relationships and spirituality reading in the language set by lang. Built for Number of the Day widgets, push notifications and daily content.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with POST /numerology/daily (the `GetDailyNumber` operationId).
 	GetDailyNumberWithBodyWithResponse(ctx context.Context, params *GetDailyNumberParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GetDailyNumberResponse, error)
 
-	// GetDailyNumberWithResponse Get daily numerology number - Number of the Day with interpretation
+	// GetDailyNumberWithResponse Get daily numerology number - Number of the Day API
 	//
-	// Receive a daily numerology number (1-9, 11, 22, 33) for guidance and reflection. Uses seeded randomness so the same seed gets the same number on the same date, perfect for "Number of the Day" features in numerology apps, wellness platforms, and daily guidance tools. Returns the number with full interpretation including archetype, keywords, strengths, challenges, career, relationships, and spiritual insights. Ideal for daily push notifications, morning briefings, and personalized numerology experiences.
+	// Get the numerology Number of the Day, one of 1 to 9, 11, 22 or 33, with its full interpretation. The same seed returns the same number for the same date, so a user keeps one number all day, and the date defaults to today in UTC. The response returns the number, its type, a daily message and the archetype, keywords, strengths, challenges, career, relationships and spirituality reading in the language set by lang. Built for Number of the Day widgets, push notifications and daily content.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with POST /numerology/daily (the `GetDailyNumber` operationId).
 	GetDailyNumberWithResponse(ctx context.Context, params *GetDailyNumberParams, body GetDailyNumberJSONRequestBody, reqEditors ...RequestEditorFn) (*GetDailyNumberResponse, error)
 
-	// CalculateDualWithBodyWithResponse Dual numerology - Pythagorean and Chaldean name numbers in one call
+	// CalculateDualWithBodyWithResponse Calculate dual numerology - Pythagorean and Chaldean name number API
 	//
-	// Calculate a name number in both major numerology systems at once and compare them. The Pythagorean system maps letters 1 to 9 in alphabetical order and preserves master numbers (11, 22, 33), giving the Expression or Destiny number used in modern Western numerology. The Chaldean system maps letters 1 to 8 by vibration, reads the compound number (10 to 52), and reduces to a root 1 to 9. Returns both results with their interpretations, plus an agreement flag showing whether the two systems point to the same single-digit energy. The only numerology API that returns Pythagorean and Chaldean for a name in a single request, ideal for comparison tools and AI numerology assistants.
+	// Calculate a name number in both Pythagorean and Chaldean numerology in one call and compare them. The Pythagorean side returns the Expression or Destiny number with master numbers 11, 22 and 33 kept; the Chaldean side returns the compound number from 10 to 52, the root, its planetary ruler and the compound interpretation; each shows its calculation name by name. An agreement flag and a plain-language note show whether the two systems point to the same single-digit energy, in the language set by lang. Built for system comparison tools, name analysis features and AI agents.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with POST /numerology/dual (the `CalculateDual` operationId).
 	CalculateDualWithBodyWithResponse(ctx context.Context, params *CalculateDualParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CalculateDualResponse, error)
 
-	// CalculateDualWithResponse Dual numerology - Pythagorean and Chaldean name numbers in one call
+	// CalculateDualWithResponse Calculate dual numerology - Pythagorean and Chaldean name number API
 	//
-	// Calculate a name number in both major numerology systems at once and compare them. The Pythagorean system maps letters 1 to 9 in alphabetical order and preserves master numbers (11, 22, 33), giving the Expression or Destiny number used in modern Western numerology. The Chaldean system maps letters 1 to 8 by vibration, reads the compound number (10 to 52), and reduces to a root 1 to 9. Returns both results with their interpretations, plus an agreement flag showing whether the two systems point to the same single-digit energy. The only numerology API that returns Pythagorean and Chaldean for a name in a single request, ideal for comparison tools and AI numerology assistants.
+	// Calculate a name number in both Pythagorean and Chaldean numerology in one call and compare them. The Pythagorean side returns the Expression or Destiny number with master numbers 11, 22 and 33 kept; the Chaldean side returns the compound number from 10 to 52, the root, its planetary ruler and the compound interpretation; each shows its calculation name by name. An agreement flag and a plain-language note show whether the two systems point to the same single-digit energy, in the language set by lang. Built for system comparison tools, name analysis features and AI agents.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with POST /numerology/dual (the `CalculateDual` operationId).
 	CalculateDualWithResponse(ctx context.Context, params *CalculateDualParams, body CalculateDualJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateDualResponse, error)
 
-	// CalculateExpressionWithBodyWithResponse Calculate Expression number - Natural talents and life goals
+	// CalculateExpressionWithBodyWithResponse Calculate Expression number - Destiny number calculator API
 	//
-	// Calculate your Expression (Destiny) number from your full birth name using Pythagorean numerology. This number reveals your natural talents, abilities, and life goals. It shows what you came here to do and what tools you have to accomplish your life purpose. Returns comprehensive interpretation including personality traits, career paths, relationship dynamics, and spiritual insights. Automatically detects Master Numbers (11, 22, 33). Perfect for name numerology apps, career guidance tools, personal development platforms, and talent assessment services. Get detailed 300-500 word meanings for all numbers 1-9, 11, 22, and 33.
+	// Calculate the Expression number, also called the Destiny number, from a full birth name with Pythagorean numerology. Every letter is valued and the name is reduced name by name, with master numbers 11, 22 and 33 kept and a karmic debt of 13, 14, 16 or 19 flagged with its meaning. The response lists every letter value and returns a full interpretation of natural talents, career, relationships and spiritual path in the language set by lang. Built for name numerology apps, career and personal brand tools, and AI agents.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with POST /numerology/expression (the `CalculateExpression` operationId).
 	CalculateExpressionWithBodyWithResponse(ctx context.Context, params *CalculateExpressionParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CalculateExpressionResponse, error)
 
-	// CalculateExpressionWithResponse Calculate Expression number - Natural talents and life goals
+	// CalculateExpressionWithResponse Calculate Expression number - Destiny number calculator API
 	//
-	// Calculate your Expression (Destiny) number from your full birth name using Pythagorean numerology. This number reveals your natural talents, abilities, and life goals. It shows what you came here to do and what tools you have to accomplish your life purpose. Returns comprehensive interpretation including personality traits, career paths, relationship dynamics, and spiritual insights. Automatically detects Master Numbers (11, 22, 33). Perfect for name numerology apps, career guidance tools, personal development platforms, and talent assessment services. Get detailed 300-500 word meanings for all numbers 1-9, 11, 22, and 33.
+	// Calculate the Expression number, also called the Destiny number, from a full birth name with Pythagorean numerology. Every letter is valued and the name is reduced name by name, with master numbers 11, 22 and 33 kept and a karmic debt of 13, 14, 16 or 19 flagged with its meaning. The response lists every letter value and returns a full interpretation of natural talents, career, relationships and spiritual path in the language set by lang. Built for name numerology apps, career and personal brand tools, and AI agents.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with POST /numerology/expression (the `CalculateExpression` operationId).
 	CalculateExpressionWithResponse(ctx context.Context, params *CalculateExpressionParams, body CalculateExpressionJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateExpressionResponse, error)
 
-	// CheckKarmicDebtWithBodyWithResponse Detect Karmic Debt numbers - Past life challenges (13, 14, 16, 19)
+	// CheckKarmicDebtWithBodyWithResponse Detect Karmic Debt numbers - Karmic debt 13, 14, 16, 19 API
 	//
-	// Check for Karmic Debt numbers (13, 14, 16, 19) in the five core numbers that carry it, Life Path, Birth Day, Expression, Soul Urge and Personality, using Pythagorean numerology. Karmic debt indicates challenges carried from past lives that must be resolved in this lifetime. These numbers appear during reduction and represent specific lessons and tests. Returns comprehensive analysis including debt descriptions, challenges to overcome, and resolution guidance. Perfect for spiritual growth apps, karmic astrology platforms, past life exploration services, and personal transformation tools. Get detailed meanings for all four karmic debt numbers with practical resolution strategies.
+	// Detect Karmic Debt numbers 13, 14, 16 and 19 across the five core numbers that carry them: Life Path, Expression, Soul Urge, Personality and Birth Day. Send a birth date, a full birth name, or both, and only the positions those inputs reach are read; each debt is listed once with its challenge and resolution guidance in the language set by lang. Built for spiritual growth apps, karmic readings, coaching tools and AI agents.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with POST /numerology/karmic-debt (the `CheckKarmicDebt` operationId).
 	CheckKarmicDebtWithBodyWithResponse(ctx context.Context, params *CheckKarmicDebtParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CheckKarmicDebtResponse, error)
 
-	// CheckKarmicDebtWithResponse Detect Karmic Debt numbers - Past life challenges (13, 14, 16, 19)
+	// CheckKarmicDebtWithResponse Detect Karmic Debt numbers - Karmic debt 13, 14, 16, 19 API
 	//
-	// Check for Karmic Debt numbers (13, 14, 16, 19) in the five core numbers that carry it, Life Path, Birth Day, Expression, Soul Urge and Personality, using Pythagorean numerology. Karmic debt indicates challenges carried from past lives that must be resolved in this lifetime. These numbers appear during reduction and represent specific lessons and tests. Returns comprehensive analysis including debt descriptions, challenges to overcome, and resolution guidance. Perfect for spiritual growth apps, karmic astrology platforms, past life exploration services, and personal transformation tools. Get detailed meanings for all four karmic debt numbers with practical resolution strategies.
+	// Detect Karmic Debt numbers 13, 14, 16 and 19 across the five core numbers that carry them: Life Path, Expression, Soul Urge, Personality and Birth Day. Send a birth date, a full birth name, or both, and only the positions those inputs reach are read; each debt is listed once with its challenge and resolution guidance in the language set by lang. Built for spiritual growth apps, karmic readings, coaching tools and AI agents.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with POST /numerology/karmic-debt (the `CheckKarmicDebt` operationId).
 	CheckKarmicDebtWithResponse(ctx context.Context, params *CheckKarmicDebtParams, body CheckKarmicDebtJSONRequestBody, reqEditors ...RequestEditorFn) (*CheckKarmicDebtResponse, error)
 
-	// AnalyzeKarmicLessonsWithBodyWithResponse Analyze Karmic Lessons - Life lessons from missing numbers
+	// AnalyzeKarmicLessonsWithBodyWithResponse Analyze Karmic Lessons - Missing numbers numerology API
 	//
-	// Analyze your Karmic Lessons from your birth name using Pythagorean numerology. Karmic lessons are indicated by numbers missing from your name (numbers 1-9 that do not appear). These represent challenges you came to learn and skills you need to develop in this lifetime. Returns comprehensive analysis including missing numbers, specific lessons for each, challenges to overcome, and practical guidance for development. Perfect for spiritual growth apps, personal development platforms, life coaching services, and self-improvement tools. Get detailed lesson descriptions, development strategies, and practical exercises for each missing number.
+	// Analyze the Karmic Lessons of a full birth name with Pythagorean numerology: the numbers 1 to 9 that no letter of the name carries. Each missing number is returned with its lesson, a fuller explanation and practical guidance for developing it, in the language set by lang, beside the count of letters behind every number present. Built for spiritual growth apps, coaching tools, full numerology reports and AI agents.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with POST /numerology/karmic-lessons (the `AnalyzeKarmicLessons` operationId).
 	AnalyzeKarmicLessonsWithBodyWithResponse(ctx context.Context, params *AnalyzeKarmicLessonsParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*AnalyzeKarmicLessonsResponse, error)
 
-	// AnalyzeKarmicLessonsWithResponse Analyze Karmic Lessons - Life lessons from missing numbers
+	// AnalyzeKarmicLessonsWithResponse Analyze Karmic Lessons - Missing numbers numerology API
 	//
-	// Analyze your Karmic Lessons from your birth name using Pythagorean numerology. Karmic lessons are indicated by numbers missing from your name (numbers 1-9 that do not appear). These represent challenges you came to learn and skills you need to develop in this lifetime. Returns comprehensive analysis including missing numbers, specific lessons for each, challenges to overcome, and practical guidance for development. Perfect for spiritual growth apps, personal development platforms, life coaching services, and self-improvement tools. Get detailed lesson descriptions, development strategies, and practical exercises for each missing number.
+	// Analyze the Karmic Lessons of a full birth name with Pythagorean numerology: the numbers 1 to 9 that no letter of the name carries. Each missing number is returned with its lesson, a fuller explanation and practical guidance for developing it, in the language set by lang, beside the count of letters behind every number present. Built for spiritual growth apps, coaching tools, full numerology reports and AI agents.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with POST /numerology/karmic-lessons (the `AnalyzeKarmicLessons` operationId).
 	AnalyzeKarmicLessonsWithResponse(ctx context.Context, params *AnalyzeKarmicLessonsParams, body AnalyzeKarmicLessonsJSONRequestBody, reqEditors ...RequestEditorFn) (*AnalyzeKarmicLessonsResponse, error)
 
-	// CalculateLifePathWithBodyWithResponse Calculate Life Path number - Most important numerology calculation
+	// CalculateLifePathWithBodyWithResponse Calculate Life Path number - Calculator and meaning API
 	//
-	// Calculate your Life Path number from your birth date using Pythagorean numerology. This is the most significant number in your numerology chart, revealing your life purpose, natural talents, and destiny path. Automatically detects Master Numbers (11, 22, 33) and Karmic Debt numbers (13, 14, 16, 19). Returns comprehensive interpretation including personality traits, strengths, challenges, career guidance, relationship compatibility, and spiritual insights. Perfect for numerology apps, birth chart calculators, life purpose discovery tools, personal development platforms, and astrology services. Get detailed 300-500 word meanings for all numbers 1-9, 11, 22, and 33.
+	// Calculate a Life Path number from a birth date with Pythagorean numerology. The Life Path is the core number of a numerology chart, read from the birth year, month and day alone, with master numbers 11, 22 and 33 kept and a karmic debt of 13, 14, 16 or 19 flagged with its meaning. The response returns every reduction step and a full interpretation (archetype title, keywords, description, strengths, challenges, career, relationships and spirituality) in the language set by lang. Built for Life Path calculators, numerology apps, onboarding personality profiles and AI agents.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with POST /numerology/life-path (the `CalculateLifePath` operationId).
 	CalculateLifePathWithBodyWithResponse(ctx context.Context, params *CalculateLifePathParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CalculateLifePathResponse, error)
 
-	// CalculateLifePathWithResponse Calculate Life Path number - Most important numerology calculation
+	// CalculateLifePathWithResponse Calculate Life Path number - Calculator and meaning API
 	//
-	// Calculate your Life Path number from your birth date using Pythagorean numerology. This is the most significant number in your numerology chart, revealing your life purpose, natural talents, and destiny path. Automatically detects Master Numbers (11, 22, 33) and Karmic Debt numbers (13, 14, 16, 19). Returns comprehensive interpretation including personality traits, strengths, challenges, career guidance, relationship compatibility, and spiritual insights. Perfect for numerology apps, birth chart calculators, life purpose discovery tools, personal development platforms, and astrology services. Get detailed 300-500 word meanings for all numbers 1-9, 11, 22, and 33.
+	// Calculate a Life Path number from a birth date with Pythagorean numerology. The Life Path is the core number of a numerology chart, read from the birth year, month and day alone, with master numbers 11, 22 and 33 kept and a karmic debt of 13, 14, 16 or 19 flagged with its meaning. The response returns every reduction step and a full interpretation (archetype title, keywords, description, strengths, challenges, career, relationships and spirituality) in the language set by lang. Built for Life Path calculators, numerology apps, onboarding personality profiles and AI agents.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with POST /numerology/life-path (the `CalculateLifePath` operationId).
 	CalculateLifePathWithResponse(ctx context.Context, params *CalculateLifePathParams, body CalculateLifePathJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateLifePathResponse, error)
 
-	// CalculateMaturityWithBodyWithResponse Calculate Maturity number - Who you become in later life
+	// CalculateMaturityWithBodyWithResponse Calculate Maturity number - Realization number numerology API
 	//
-	// Calculate your Maturity (Realization) number by adding Life Path and Expression numbers using Pythagorean numerology. This number reveals who you become in the second half of life, typically manifesting after age 35-40. It shows the ultimate goal of personal development and mature self-expression. Returns comprehensive interpretation including life transformation, mature personality, later-life purpose, and wisdom development. Automatically detects Master Numbers (11, 22, 33). Perfect for life coaching apps, midlife guidance platforms, personal development services, and aging wisdom tools. Get detailed 300-500 word meanings for all numbers 1-9, 11, 22, and 33.
+	// Calculate the Maturity number, also called the Realization number, from the Life Path and Expression numbers with Pythagorean numerology. Send a full birth name and birth date, the two numbers precomputed, or one of each; master numbers 11, 22 and 33 are kept at full value and in the result. The Maturity number describes who a person grows into in the second half of life, usually felt from around 35 to 40, and the response returns the calculation and a full interpretation in the language set by lang. Built for life coaching apps, midlife and later-life guidance, and AI agents.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with POST /numerology/maturity (the `CalculateMaturity` operationId).
 	CalculateMaturityWithBodyWithResponse(ctx context.Context, params *CalculateMaturityParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CalculateMaturityResponse, error)
 
-	// CalculateMaturityWithResponse Calculate Maturity number - Who you become in later life
+	// CalculateMaturityWithResponse Calculate Maturity number - Realization number numerology API
 	//
-	// Calculate your Maturity (Realization) number by adding Life Path and Expression numbers using Pythagorean numerology. This number reveals who you become in the second half of life, typically manifesting after age 35-40. It shows the ultimate goal of personal development and mature self-expression. Returns comprehensive interpretation including life transformation, mature personality, later-life purpose, and wisdom development. Automatically detects Master Numbers (11, 22, 33). Perfect for life coaching apps, midlife guidance platforms, personal development services, and aging wisdom tools. Get detailed 300-500 word meanings for all numbers 1-9, 11, 22, and 33.
+	// Calculate the Maturity number, also called the Realization number, from the Life Path and Expression numbers with Pythagorean numerology. Send a full birth name and birth date, the two numbers precomputed, or one of each; master numbers 11, 22 and 33 are kept at full value and in the result. The Maturity number describes who a person grows into in the second half of life, usually felt from around 35 to 40, and the response returns the calculation and a full interpretation in the language set by lang. Built for life coaching apps, midlife and later-life guidance, and AI agents.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with POST /numerology/maturity (the `CalculateMaturity` operationId).
 	CalculateMaturityWithResponse(ctx context.Context, params *CalculateMaturityParams, body CalculateMaturityJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateMaturityResponse, error)
 
-	// GetNumberMeaningWithResponse Get Number Meaning - Interpretation for any number 1-9, 11, 22, 33
+	// GetNumberMeaningWithResponse Get number meaning - Numerology number meanings API
 	//
-	// Get the complete meaning and interpretation for any numerology number (1-9, 11, 22, 33) using Pythagorean numerology. Returns comprehensive description including archetype title, keywords, personality traits, strengths, weaknesses, career guidance, relationship dynamics, and spiritual insights. Master numbers (11, 22, 33) include amplified meanings with their reduced base number. Perfect for numerology reference tools, educational apps, quick lookups, and building custom numerology calculators. Get detailed 300-500 word expert-written meanings for all 12 valid numerology numbers.
+	// Get the full numerology meaning of any number 1 to 9 or the master numbers 11, 22 and 33. The response returns the archetype title, keywords, a core description, strengths, challenges, career, relationships and spirituality in the language set by lang, the same reading every core number endpoint returns for that number. Built for numerology reference pages, custom calculators, educational apps and AI agents.
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with GET /numerology/meanings/{number} (the `GetNumberMeaning` operationId).
 	GetNumberMeaningWithResponse(ctx context.Context, number string, params *GetNumberMeaningParams, reqEditors ...RequestEditorFn) (*GetNumberMeaningResponse, error)
 
-	// CalculatePersonalDayWithBodyWithResponse Calculate Personal Day - Daily personalized numerology forecast
+	// CalculatePersonalDayWithBodyWithResponse Calculate Personal Day - Daily numerology forecast API
 	//
-	// Calculate your Personal Day number from birth month, day, and a target date. Personal Day is the most granular cycle in Pythagorean numerology, revealing the specific energy and theme for a single calendar day personalized to you. Unlike generic daily numbers, this is based on YOUR birth data combined with the calendar date. Returns the daily theme, actionable guidance, and parent month and year context. Perfect for daily push notifications, morning briefings, calendar widget integrations, daily content generation, and life coaching tools.
+	// Calculate the Personal Day number from a birth month and day with Pythagorean numerology, the 1 to 9 theme of a single calendar day personalized to the birthday. The day is targetDate, or today in UTC when omitted. The response returns the day theme and guidance with the parent Personal Month and Personal Year, in the language set by lang. Built for daily push notifications, morning briefings, calendar widgets and AI agents.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with POST /numerology/personal-day (the `CalculatePersonalDay` operationId).
 	CalculatePersonalDayWithBodyWithResponse(ctx context.Context, params *CalculatePersonalDayParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CalculatePersonalDayResponse, error)
 
-	// CalculatePersonalDayWithResponse Calculate Personal Day - Daily personalized numerology forecast
+	// CalculatePersonalDayWithResponse Calculate Personal Day - Daily numerology forecast API
 	//
-	// Calculate your Personal Day number from birth month, day, and a target date. Personal Day is the most granular cycle in Pythagorean numerology, revealing the specific energy and theme for a single calendar day personalized to you. Unlike generic daily numbers, this is based on YOUR birth data combined with the calendar date. Returns the daily theme, actionable guidance, and parent month and year context. Perfect for daily push notifications, morning briefings, calendar widget integrations, daily content generation, and life coaching tools.
+	// Calculate the Personal Day number from a birth month and day with Pythagorean numerology, the 1 to 9 theme of a single calendar day personalized to the birthday. The day is targetDate, or today in UTC when omitted. The response returns the day theme and guidance with the parent Personal Month and Personal Year, in the language set by lang. Built for daily push notifications, morning briefings, calendar widgets and AI agents.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with POST /numerology/personal-day (the `CalculatePersonalDay` operationId).
 	CalculatePersonalDayWithResponse(ctx context.Context, params *CalculatePersonalDayParams, body CalculatePersonalDayJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculatePersonalDayResponse, error)
 
-	// CalculatePersonalMonthWithBodyWithResponse Calculate Personal Month - Monthly numerology forecast
+	// CalculatePersonalMonthWithBodyWithResponse Calculate Personal Month - Monthly numerology forecast API
 	//
-	// Calculate your Personal Month number from birth month, day, and a target year and month. Personal Month reveals the specific theme and energy influencing each calendar month within your Personal Year cycle. Returns the monthly theme, practical focus guidance, and the parent Personal Year context. Perfect for monthly forecast features, push notification content, calendar integrations, editorial monthly columns, and life coaching tools.
+	// Calculate the Personal Month number from a birth month and day with Pythagorean numerology, the 1 to 9 theme of one calendar month inside the Personal Year. The year and month are the ones sent, each defaulting to the current UTC year and month when omitted. The response returns the month theme, practical focus and the parent Personal Year with its theme, in the language set by lang. Built for monthly forecast features, push notifications, editorial columns and AI agents.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with POST /numerology/personal-month (the `CalculatePersonalMonth` operationId).
 	CalculatePersonalMonthWithBodyWithResponse(ctx context.Context, params *CalculatePersonalMonthParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CalculatePersonalMonthResponse, error)
 
-	// CalculatePersonalMonthWithResponse Calculate Personal Month - Monthly numerology forecast
+	// CalculatePersonalMonthWithResponse Calculate Personal Month - Monthly numerology forecast API
 	//
-	// Calculate your Personal Month number from birth month, day, and a target year and month. Personal Month reveals the specific theme and energy influencing each calendar month within your Personal Year cycle. Returns the monthly theme, practical focus guidance, and the parent Personal Year context. Perfect for monthly forecast features, push notification content, calendar integrations, editorial monthly columns, and life coaching tools.
+	// Calculate the Personal Month number from a birth month and day with Pythagorean numerology, the 1 to 9 theme of one calendar month inside the Personal Year. The year and month are the ones sent, each defaulting to the current UTC year and month when omitted. The response returns the month theme, practical focus and the parent Personal Year with its theme, in the language set by lang. Built for monthly forecast features, push notifications, editorial columns and AI agents.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with POST /numerology/personal-month (the `CalculatePersonalMonth` operationId).
 	CalculatePersonalMonthWithResponse(ctx context.Context, params *CalculatePersonalMonthParams, body CalculatePersonalMonthJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculatePersonalMonthResponse, error)
 
-	// CalculatePersonalYearWithBodyWithResponse Calculate Personal Year - Annual cycle and forecast for current year
+	// CalculatePersonalYearWithBodyWithResponse Calculate Personal Year - Personal Year number forecast API
 	//
-	// Calculate your Personal Year number from your birth month, day, and current year using Pythagorean numerology. Personal Year runs in 9-year cycles (1-9) and reveals the theme, opportunities, and challenges for the current year. Each year has a specific energy and lessons. Returns comprehensive annual forecast including year theme, opportunities, challenges, and actionable advice. Perfect for yearly planning apps, life coaching platforms, astrology services, and personal development tools. Get detailed forecasts for all 9 Personal Year cycles with practical guidance.
+	// Calculate the Personal Year number from a birth month and day with Pythagorean numerology, the 1 to 9 cycle that sets the theme of a calendar year. The year is the one sent, or the current UTC year when omitted, and it turns over on 1 January; the birth year is not needed. The response returns the place in the nine-year cycle, the theme, a forecast, opportunities, challenges and advice in the language set by lang. Built for yearly planning features, New Year content, coaching tools and AI agents.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with POST /numerology/personal-year (the `CalculatePersonalYear` operationId).
 	CalculatePersonalYearWithBodyWithResponse(ctx context.Context, params *CalculatePersonalYearParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CalculatePersonalYearResponse, error)
 
-	// CalculatePersonalYearWithResponse Calculate Personal Year - Annual cycle and forecast for current year
+	// CalculatePersonalYearWithResponse Calculate Personal Year - Personal Year number forecast API
 	//
-	// Calculate your Personal Year number from your birth month, day, and current year using Pythagorean numerology. Personal Year runs in 9-year cycles (1-9) and reveals the theme, opportunities, and challenges for the current year. Each year has a specific energy and lessons. Returns comprehensive annual forecast including year theme, opportunities, challenges, and actionable advice. Perfect for yearly planning apps, life coaching platforms, astrology services, and personal development tools. Get detailed forecasts for all 9 Personal Year cycles with practical guidance.
+	// Calculate the Personal Year number from a birth month and day with Pythagorean numerology, the 1 to 9 cycle that sets the theme of a calendar year. The year is the one sent, or the current UTC year when omitted, and it turns over on 1 January; the birth year is not needed. The response returns the place in the nine-year cycle, the theme, a forecast, opportunities, challenges and advice in the language set by lang. Built for yearly planning features, New Year content, coaching tools and AI agents.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with POST /numerology/personal-year (the `CalculatePersonalYear` operationId).
 	CalculatePersonalYearWithResponse(ctx context.Context, params *CalculatePersonalYearParams, body CalculatePersonalYearJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculatePersonalYearResponse, error)
 
-	// CalculatePersonalityWithBodyWithResponse Calculate Personality number - How others perceive you
+	// CalculatePersonalityWithBodyWithResponse Calculate Personality number - Outer personality numerology API
 	//
-	// Calculate your Personality number from the consonants in your birth name using Pythagorean numerology. This number reveals how others perceive you, your outer personality, and first impressions you make. It represents the mask you show the world and your social persona. Returns comprehensive interpretation including public image, social dynamics, professional presence, and relationship first impressions. Automatically detects Master Numbers (11, 22, 33). Perfect for personal branding apps, social skills training, professional development platforms, and communication coaching services. Get detailed 300-500 word meanings for all numbers 1-9, 11, 22, and 33.
+	// Calculate the Personality number from the consonants of a full birth name with Pythagorean numerology. Every letter other than A, E, I, O and U is a consonant, Y and W included; master numbers 11, 22 and 33 are kept and a karmic debt of 13, 14, 16 or 19 is flagged with its meaning. The response lists every consonant name by name and returns a full interpretation of first impressions, public image, career and relationships in the language set by lang. Built for personal branding apps, social and dating profiles, coaching tools and AI agents.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with POST /numerology/personality (the `CalculatePersonality` operationId).
 	CalculatePersonalityWithBodyWithResponse(ctx context.Context, params *CalculatePersonalityParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CalculatePersonalityResponse, error)
 
-	// CalculatePersonalityWithResponse Calculate Personality number - How others perceive you
+	// CalculatePersonalityWithResponse Calculate Personality number - Outer personality numerology API
 	//
-	// Calculate your Personality number from the consonants in your birth name using Pythagorean numerology. This number reveals how others perceive you, your outer personality, and first impressions you make. It represents the mask you show the world and your social persona. Returns comprehensive interpretation including public image, social dynamics, professional presence, and relationship first impressions. Automatically detects Master Numbers (11, 22, 33). Perfect for personal branding apps, social skills training, professional development platforms, and communication coaching services. Get detailed 300-500 word meanings for all numbers 1-9, 11, 22, and 33.
+	// Calculate the Personality number from the consonants of a full birth name with Pythagorean numerology. Every letter other than A, E, I, O and U is a consonant, Y and W included; master numbers 11, 22 and 33 are kept and a karmic debt of 13, 14, 16 or 19 is flagged with its meaning. The response lists every consonant name by name and returns a full interpretation of first impressions, public image, career and relationships in the language set by lang. Built for personal branding apps, social and dating profiles, coaching tools and AI agents.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with POST /numerology/personality (the `CalculatePersonality` operationId).
 	CalculatePersonalityWithResponse(ctx context.Context, params *CalculatePersonalityParams, body CalculatePersonalityJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculatePersonalityResponse, error)
 
-	// CalculateSoulUrgeWithBodyWithResponse Calculate Soul Urge number - Inner motivations and desires
+	// CalculateSoulUrgeWithBodyWithResponse Calculate Soul Urge number - Heart Desire number calculator API
 	//
-	// Calculate your Soul Urge (Heart Desire) number from the vowels in your birth name using Pythagorean numerology. This number reveals your innermost desires, motivations, and what your soul truly wants to experience. It shows what drives you from within, your emotional needs, and what brings you fulfillment. Returns comprehensive interpretation including personality traits, emotional needs, relationship desires, and spiritual longings. Automatically detects Master Numbers (11, 22, 33). Perfect for self-discovery apps, emotional intelligence tools, relationship counseling platforms, and personal development services. Get detailed 300-500 word meanings for all numbers 1-9, 11, 22, and 33.
+	// Calculate the Soul Urge number, also called the Heart Desire number, from the vowels of a full birth name with Pythagorean numerology. A, E, I, O and U are the vowels and Y and W count as consonants; master numbers 11, 22 and 33 are kept and a karmic debt of 13, 14, 16 or 19 is flagged with its meaning. The response lists every vowel name by name and returns a full interpretation of inner motivation, relationships and spiritual path in the language set by lang. Built for self-discovery apps, dating profiles, coaching tools and AI agents.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with POST /numerology/soul-urge (the `CalculateSoulUrge` operationId).
 	CalculateSoulUrgeWithBodyWithResponse(ctx context.Context, params *CalculateSoulUrgeParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*CalculateSoulUrgeResponse, error)
 
-	// CalculateSoulUrgeWithResponse Calculate Soul Urge number - Inner motivations and desires
+	// CalculateSoulUrgeWithResponse Calculate Soul Urge number - Heart Desire number calculator API
 	//
-	// Calculate your Soul Urge (Heart Desire) number from the vowels in your birth name using Pythagorean numerology. This number reveals your innermost desires, motivations, and what your soul truly wants to experience. It shows what drives you from within, your emotional needs, and what brings you fulfillment. Returns comprehensive interpretation including personality traits, emotional needs, relationship desires, and spiritual longings. Automatically detects Master Numbers (11, 22, 33). Perfect for self-discovery apps, emotional intelligence tools, relationship counseling platforms, and personal development services. Get detailed 300-500 word meanings for all numbers 1-9, 11, 22, and 33.
+	// Calculate the Soul Urge number, also called the Heart Desire number, from the vowels of a full birth name with Pythagorean numerology. A, E, I, O and U are the vowels and Y and W count as consonants; master numbers 11, 22 and 33 are kept and a karmic debt of 13, 14, 16 or 19 is flagged with its meaning. The response lists every vowel name by name and returns a full interpretation of inner motivation, relationships and spiritual path in the language set by lang. Built for self-discovery apps, dating profiles, coaching tools and AI agents.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -108337,13 +108337,13 @@ type GenerateDigestResponse struct {
 				// Aspect For a transit-aspect, the angular relationship. One of conjunction, sextile, square, trine, opposition. Absent for other event types.
 				Aspect *string `json:"aspect,omitempty"`
 
-				// Body Primary subject of the event. A transiting planet for western events, Sun for a solar eclipse, Moon for a lunar eclipse or a new or full moon, a mahadasha, antardasha, or pratyantardasha label for dasha changes, or the critical cycle for biorhythm days.
+				// Body Primary subject of the event. A transiting planet for western events, Sun for a solar eclipse, Moon for a lunar eclipse or a new or full moon, or the critical cycle for biorhythm days. For a dasha-change, the Vimshottari lords outermost first, joined by a hyphen, then one space and the level: Saturn Mahadasha, Saturn-Mercury Antardasha, Saturn-Mercury-Ketu Pratyantardasha. Lords are always one of Ketu, Venus, Sun, Moon, Mars, Rahu, Jupiter, Saturn, Mercury. Never localized.
 				Body string `json:"body"`
 
 				// Date Calendar date of the event in YYYY-MM-DD (UTC).
 				Date string `json:"date"`
 
-				// Datetime Exact instant of the event as an ISO-8601 UTC datetime. Astronomical events are refined to this instant by search, not reported at a daily sample point.
+				// Datetime Exact instant of the event as an ISO-8601 UTC datetime, to the nearest second. Astronomical events are refined to this instant by search, not reported at a daily sample point; a dasha-change is the period boundary itself, counted from the birth instant.
 				Datetime string `json:"datetime"`
 
 				// Description Plain-language summary of the event, suitable for direct display. The only localized field: when lang is set this sentence, and the body, target, and aspect names within it, render in the requested language while the structured fields stay English.
@@ -108358,7 +108358,7 @@ type GenerateDigestResponse struct {
 				// Obscuration For a lunar eclipse, the peak fraction from 0 to 1 of the Moon disc covered by Earth umbra. 1 for a total lunar eclipse, between 0 and 1 for a partial, 0 for a penumbral. Absent for solar eclipses and other event types.
 				Obscuration *float32 `json:"obscuration,omitempty"`
 
-				// Orb For a transit-aspect, the separation in degrees from the exact aspect at the reported instant. Tighter orb means a more exact and significant aspect.
+				// Orb For a transit-aspect, the separation in degrees from the exact aspect at the reported instant, rounded to three decimals. The instant is the moment the aspect perfects, so this reads 0. Absent for other event types.
 				Orb *float32 `json:"orb,omitempty"`
 
 				// Phase For a lunar-phase event, which syzygy it is: new-moon (Sun-Moon conjunction) or full-moon (Sun-Moon opposition). The intermediate quarters are not emitted. A stable machine value, never localized. Absent for other event types.
@@ -108473,13 +108473,13 @@ func (r GenerateDigestResponse) GetJSON200() *struct {
 			// Aspect For a transit-aspect, the angular relationship. One of conjunction, sextile, square, trine, opposition. Absent for other event types.
 			Aspect *string `json:"aspect,omitempty"`
 
-			// Body Primary subject of the event. A transiting planet for western events, Sun for a solar eclipse, Moon for a lunar eclipse or a new or full moon, a mahadasha, antardasha, or pratyantardasha label for dasha changes, or the critical cycle for biorhythm days.
+			// Body Primary subject of the event. A transiting planet for western events, Sun for a solar eclipse, Moon for a lunar eclipse or a new or full moon, or the critical cycle for biorhythm days. For a dasha-change, the Vimshottari lords outermost first, joined by a hyphen, then one space and the level: Saturn Mahadasha, Saturn-Mercury Antardasha, Saturn-Mercury-Ketu Pratyantardasha. Lords are always one of Ketu, Venus, Sun, Moon, Mars, Rahu, Jupiter, Saturn, Mercury. Never localized.
 			Body string `json:"body"`
 
 			// Date Calendar date of the event in YYYY-MM-DD (UTC).
 			Date string `json:"date"`
 
-			// Datetime Exact instant of the event as an ISO-8601 UTC datetime. Astronomical events are refined to this instant by search, not reported at a daily sample point.
+			// Datetime Exact instant of the event as an ISO-8601 UTC datetime, to the nearest second. Astronomical events are refined to this instant by search, not reported at a daily sample point; a dasha-change is the period boundary itself, counted from the birth instant.
 			Datetime string `json:"datetime"`
 
 			// Description Plain-language summary of the event, suitable for direct display. The only localized field: when lang is set this sentence, and the body, target, and aspect names within it, render in the requested language while the structured fields stay English.
@@ -108494,7 +108494,7 @@ func (r GenerateDigestResponse) GetJSON200() *struct {
 			// Obscuration For a lunar eclipse, the peak fraction from 0 to 1 of the Moon disc covered by Earth umbra. 1 for a total lunar eclipse, between 0 and 1 for a partial, 0 for a penumbral. Absent for solar eclipses and other event types.
 			Obscuration *float32 `json:"obscuration,omitempty"`
 
-			// Orb For a transit-aspect, the separation in degrees from the exact aspect at the reported instant. Tighter orb means a more exact and significant aspect.
+			// Orb For a transit-aspect, the separation in degrees from the exact aspect at the reported instant, rounded to three decimals. The instant is the moment the aspect perfects, so this reads 0. Absent for other event types.
 			Orb *float32 `json:"orb,omitempty"`
 
 			// Phase For a lunar-phase event, which syzygy it is: new-moon (Sun-Moon conjunction) or full-moon (Sun-Moon opposition). The intermediate quarters are not emitted. A stable machine value, never localized. Absent for other event types.
@@ -108615,13 +108615,13 @@ type FindSignificantDatesResponse struct {
 			// Aspect For a transit-aspect, the angular relationship. One of conjunction, sextile, square, trine, opposition. Absent for other event types.
 			Aspect *string `json:"aspect,omitempty"`
 
-			// Body Primary subject of the event. A transiting planet for western events, Sun for a solar eclipse, Moon for a lunar eclipse or a new or full moon, a mahadasha, antardasha, or pratyantardasha label for dasha changes, or the critical cycle for biorhythm days.
+			// Body Primary subject of the event. A transiting planet for western events, Sun for a solar eclipse, Moon for a lunar eclipse or a new or full moon, or the critical cycle for biorhythm days. For a dasha-change, the Vimshottari lords outermost first, joined by a hyphen, then one space and the level: Saturn Mahadasha, Saturn-Mercury Antardasha, Saturn-Mercury-Ketu Pratyantardasha. Lords are always one of Ketu, Venus, Sun, Moon, Mars, Rahu, Jupiter, Saturn, Mercury. Never localized.
 			Body string `json:"body"`
 
 			// Date Calendar date of the event in YYYY-MM-DD (UTC).
 			Date string `json:"date"`
 
-			// Datetime Exact instant of the event as an ISO-8601 UTC datetime. Astronomical events are refined to this instant by search, not reported at a daily sample point.
+			// Datetime Exact instant of the event as an ISO-8601 UTC datetime, to the nearest second. Astronomical events are refined to this instant by search, not reported at a daily sample point; a dasha-change is the period boundary itself, counted from the birth instant.
 			Datetime string `json:"datetime"`
 
 			// Description Plain-language summary of the event, suitable for direct display. The only localized field: when lang is set this sentence, and the body, target, and aspect names within it, render in the requested language while the structured fields stay English.
@@ -108636,7 +108636,7 @@ type FindSignificantDatesResponse struct {
 			// Obscuration For a lunar eclipse, the peak fraction from 0 to 1 of the Moon disc covered by Earth umbra. 1 for a total lunar eclipse, between 0 and 1 for a partial, 0 for a penumbral. Absent for solar eclipses and other event types.
 			Obscuration *float32 `json:"obscuration,omitempty"`
 
-			// Orb For a transit-aspect, the separation in degrees from the exact aspect at the reported instant. Tighter orb means a more exact and significant aspect.
+			// Orb For a transit-aspect, the separation in degrees from the exact aspect at the reported instant, rounded to three decimals. The instant is the moment the aspect perfects, so this reads 0. Absent for other event types.
 			Orb *float32 `json:"orb,omitempty"`
 
 			// Phase For a lunar-phase event, which syzygy it is: new-moon (Sun-Moon conjunction) or full-moon (Sun-Moon opposition). The intermediate quarters are not emitted. A stable machine value, never localized. Absent for other event types.
@@ -108703,13 +108703,13 @@ func (r FindSignificantDatesResponse) GetJSON200() *struct {
 		// Aspect For a transit-aspect, the angular relationship. One of conjunction, sextile, square, trine, opposition. Absent for other event types.
 		Aspect *string `json:"aspect,omitempty"`
 
-		// Body Primary subject of the event. A transiting planet for western events, Sun for a solar eclipse, Moon for a lunar eclipse or a new or full moon, a mahadasha, antardasha, or pratyantardasha label for dasha changes, or the critical cycle for biorhythm days.
+		// Body Primary subject of the event. A transiting planet for western events, Sun for a solar eclipse, Moon for a lunar eclipse or a new or full moon, or the critical cycle for biorhythm days. For a dasha-change, the Vimshottari lords outermost first, joined by a hyphen, then one space and the level: Saturn Mahadasha, Saturn-Mercury Antardasha, Saturn-Mercury-Ketu Pratyantardasha. Lords are always one of Ketu, Venus, Sun, Moon, Mars, Rahu, Jupiter, Saturn, Mercury. Never localized.
 		Body string `json:"body"`
 
 		// Date Calendar date of the event in YYYY-MM-DD (UTC).
 		Date string `json:"date"`
 
-		// Datetime Exact instant of the event as an ISO-8601 UTC datetime. Astronomical events are refined to this instant by search, not reported at a daily sample point.
+		// Datetime Exact instant of the event as an ISO-8601 UTC datetime, to the nearest second. Astronomical events are refined to this instant by search, not reported at a daily sample point; a dasha-change is the period boundary itself, counted from the birth instant.
 		Datetime string `json:"datetime"`
 
 		// Description Plain-language summary of the event, suitable for direct display. The only localized field: when lang is set this sentence, and the body, target, and aspect names within it, render in the requested language while the structured fields stay English.
@@ -108724,7 +108724,7 @@ func (r FindSignificantDatesResponse) GetJSON200() *struct {
 		// Obscuration For a lunar eclipse, the peak fraction from 0 to 1 of the Moon disc covered by Earth umbra. 1 for a total lunar eclipse, between 0 and 1 for a partial, 0 for a penumbral. Absent for solar eclipses and other event types.
 		Obscuration *float32 `json:"obscuration,omitempty"`
 
-		// Orb For a transit-aspect, the separation in degrees from the exact aspect at the reported instant. Tighter orb means a more exact and significant aspect.
+		// Orb For a transit-aspect, the separation in degrees from the exact aspect at the reported instant, rounded to three decimals. The instant is the moment the aspect perfects, so this reads 0. Absent for other event types.
 		Orb *float32 `json:"orb,omitempty"`
 
 		// Phase For a lunar-phase event, which syzygy it is: new-moon (Sun-Moon conjunction) or full-moon (Sun-Moon opposition). The intermediate quarters are not emitted. A stable machine value, never localized. Absent for other event types.
@@ -109253,13 +109253,13 @@ type GenerateTimelineResponse struct {
 			// Aspect For a transit-aspect, the angular relationship. One of conjunction, sextile, square, trine, opposition. Absent for other event types.
 			Aspect *string `json:"aspect,omitempty"`
 
-			// Body Primary subject of the event. A transiting planet for western events, Sun for a solar eclipse, Moon for a lunar eclipse or a new or full moon, a mahadasha, antardasha, or pratyantardasha label for dasha changes, or the critical cycle for biorhythm days.
+			// Body Primary subject of the event. A transiting planet for western events, Sun for a solar eclipse, Moon for a lunar eclipse or a new or full moon, or the critical cycle for biorhythm days. For a dasha-change, the Vimshottari lords outermost first, joined by a hyphen, then one space and the level: Saturn Mahadasha, Saturn-Mercury Antardasha, Saturn-Mercury-Ketu Pratyantardasha. Lords are always one of Ketu, Venus, Sun, Moon, Mars, Rahu, Jupiter, Saturn, Mercury. Never localized.
 			Body string `json:"body"`
 
 			// Date Calendar date of the event in YYYY-MM-DD (UTC).
 			Date string `json:"date"`
 
-			// Datetime Exact instant of the event as an ISO-8601 UTC datetime. Astronomical events are refined to this instant by search, not reported at a daily sample point.
+			// Datetime Exact instant of the event as an ISO-8601 UTC datetime, to the nearest second. Astronomical events are refined to this instant by search, not reported at a daily sample point; a dasha-change is the period boundary itself, counted from the birth instant.
 			Datetime string `json:"datetime"`
 
 			// Description Plain-language summary of the event, suitable for direct display. The only localized field: when lang is set this sentence, and the body, target, and aspect names within it, render in the requested language while the structured fields stay English.
@@ -109274,7 +109274,7 @@ type GenerateTimelineResponse struct {
 			// Obscuration For a lunar eclipse, the peak fraction from 0 to 1 of the Moon disc covered by Earth umbra. 1 for a total lunar eclipse, between 0 and 1 for a partial, 0 for a penumbral. Absent for solar eclipses and other event types.
 			Obscuration *float32 `json:"obscuration,omitempty"`
 
-			// Orb For a transit-aspect, the separation in degrees from the exact aspect at the reported instant. Tighter orb means a more exact and significant aspect.
+			// Orb For a transit-aspect, the separation in degrees from the exact aspect at the reported instant, rounded to three decimals. The instant is the moment the aspect perfects, so this reads 0. Absent for other event types.
 			Orb *float32 `json:"orb,omitempty"`
 
 			// Phase For a lunar-phase event, which syzygy it is: new-moon (Sun-Moon conjunction) or full-moon (Sun-Moon opposition). The intermediate quarters are not emitted. A stable machine value, never localized. Absent for other event types.
@@ -109341,13 +109341,13 @@ func (r GenerateTimelineResponse) GetJSON200() *struct {
 		// Aspect For a transit-aspect, the angular relationship. One of conjunction, sextile, square, trine, opposition. Absent for other event types.
 		Aspect *string `json:"aspect,omitempty"`
 
-		// Body Primary subject of the event. A transiting planet for western events, Sun for a solar eclipse, Moon for a lunar eclipse or a new or full moon, a mahadasha, antardasha, or pratyantardasha label for dasha changes, or the critical cycle for biorhythm days.
+		// Body Primary subject of the event. A transiting planet for western events, Sun for a solar eclipse, Moon for a lunar eclipse or a new or full moon, or the critical cycle for biorhythm days. For a dasha-change, the Vimshottari lords outermost first, joined by a hyphen, then one space and the level: Saturn Mahadasha, Saturn-Mercury Antardasha, Saturn-Mercury-Ketu Pratyantardasha. Lords are always one of Ketu, Venus, Sun, Moon, Mars, Rahu, Jupiter, Saturn, Mercury. Never localized.
 		Body string `json:"body"`
 
 		// Date Calendar date of the event in YYYY-MM-DD (UTC).
 		Date string `json:"date"`
 
-		// Datetime Exact instant of the event as an ISO-8601 UTC datetime. Astronomical events are refined to this instant by search, not reported at a daily sample point.
+		// Datetime Exact instant of the event as an ISO-8601 UTC datetime, to the nearest second. Astronomical events are refined to this instant by search, not reported at a daily sample point; a dasha-change is the period boundary itself, counted from the birth instant.
 		Datetime string `json:"datetime"`
 
 		// Description Plain-language summary of the event, suitable for direct display. The only localized field: when lang is set this sentence, and the body, target, and aspect names within it, render in the requested language while the structured fields stay English.
@@ -109362,7 +109362,7 @@ func (r GenerateTimelineResponse) GetJSON200() *struct {
 		// Obscuration For a lunar eclipse, the peak fraction from 0 to 1 of the Moon disc covered by Earth umbra. 1 for a total lunar eclipse, between 0 and 1 for a partial, 0 for a penumbral. Absent for solar eclipses and other event types.
 		Obscuration *float32 `json:"obscuration,omitempty"`
 
-		// Orb For a transit-aspect, the separation in degrees from the exact aspect at the reported instant. Tighter orb means a more exact and significant aspect.
+		// Orb For a transit-aspect, the separation in degrees from the exact aspect at the reported instant, rounded to three decimals. The instant is the moment the aspect perfects, so this reads 0. Absent for other event types.
 		Orb *float32 `json:"orb,omitempty"`
 
 		// Phase For a lunar-phase event, which syzygy it is: new-moon (Sun-Moon conjunction) or full-moon (Sun-Moon opposition). The intermediate quarters are not emitted. A stable machine value, never localized. Absent for other event types.
@@ -109485,13 +109485,13 @@ type ForecastTransitsResponse struct {
 			// Aspect For a transit-aspect, the angular relationship. One of conjunction, sextile, square, trine, opposition. Absent for other event types.
 			Aspect *string `json:"aspect,omitempty"`
 
-			// Body Primary subject of the event. A transiting planet for western events, Sun for a solar eclipse, Moon for a lunar eclipse or a new or full moon, a mahadasha, antardasha, or pratyantardasha label for dasha changes, or the critical cycle for biorhythm days.
+			// Body Primary subject of the event. A transiting planet for western events, Sun for a solar eclipse, Moon for a lunar eclipse or a new or full moon, or the critical cycle for biorhythm days. For a dasha-change, the Vimshottari lords outermost first, joined by a hyphen, then one space and the level: Saturn Mahadasha, Saturn-Mercury Antardasha, Saturn-Mercury-Ketu Pratyantardasha. Lords are always one of Ketu, Venus, Sun, Moon, Mars, Rahu, Jupiter, Saturn, Mercury. Never localized.
 			Body string `json:"body"`
 
 			// Date Calendar date of the event in YYYY-MM-DD (UTC).
 			Date string `json:"date"`
 
-			// Datetime Exact instant of the event as an ISO-8601 UTC datetime. Astronomical events are refined to this instant by search, not reported at a daily sample point.
+			// Datetime Exact instant of the event as an ISO-8601 UTC datetime, to the nearest second. Astronomical events are refined to this instant by search, not reported at a daily sample point; a dasha-change is the period boundary itself, counted from the birth instant.
 			Datetime string `json:"datetime"`
 
 			// Description Plain-language summary of the event, suitable for direct display. The only localized field: when lang is set this sentence, and the body, target, and aspect names within it, render in the requested language while the structured fields stay English.
@@ -109506,7 +109506,7 @@ type ForecastTransitsResponse struct {
 			// Obscuration For a lunar eclipse, the peak fraction from 0 to 1 of the Moon disc covered by Earth umbra. 1 for a total lunar eclipse, between 0 and 1 for a partial, 0 for a penumbral. Absent for solar eclipses and other event types.
 			Obscuration *float32 `json:"obscuration,omitempty"`
 
-			// Orb For a transit-aspect, the separation in degrees from the exact aspect at the reported instant. Tighter orb means a more exact and significant aspect.
+			// Orb For a transit-aspect, the separation in degrees from the exact aspect at the reported instant, rounded to three decimals. The instant is the moment the aspect perfects, so this reads 0. Absent for other event types.
 			Orb *float32 `json:"orb,omitempty"`
 
 			// Phase For a lunar-phase event, which syzygy it is: new-moon (Sun-Moon conjunction) or full-moon (Sun-Moon opposition). The intermediate quarters are not emitted. A stable machine value, never localized. Absent for other event types.
@@ -109573,13 +109573,13 @@ func (r ForecastTransitsResponse) GetJSON200() *struct {
 		// Aspect For a transit-aspect, the angular relationship. One of conjunction, sextile, square, trine, opposition. Absent for other event types.
 		Aspect *string `json:"aspect,omitempty"`
 
-		// Body Primary subject of the event. A transiting planet for western events, Sun for a solar eclipse, Moon for a lunar eclipse or a new or full moon, a mahadasha, antardasha, or pratyantardasha label for dasha changes, or the critical cycle for biorhythm days.
+		// Body Primary subject of the event. A transiting planet for western events, Sun for a solar eclipse, Moon for a lunar eclipse or a new or full moon, or the critical cycle for biorhythm days. For a dasha-change, the Vimshottari lords outermost first, joined by a hyphen, then one space and the level: Saturn Mahadasha, Saturn-Mercury Antardasha, Saturn-Mercury-Ketu Pratyantardasha. Lords are always one of Ketu, Venus, Sun, Moon, Mars, Rahu, Jupiter, Saturn, Mercury. Never localized.
 		Body string `json:"body"`
 
 		// Date Calendar date of the event in YYYY-MM-DD (UTC).
 		Date string `json:"date"`
 
-		// Datetime Exact instant of the event as an ISO-8601 UTC datetime. Astronomical events are refined to this instant by search, not reported at a daily sample point.
+		// Datetime Exact instant of the event as an ISO-8601 UTC datetime, to the nearest second. Astronomical events are refined to this instant by search, not reported at a daily sample point; a dasha-change is the period boundary itself, counted from the birth instant.
 		Datetime string `json:"datetime"`
 
 		// Description Plain-language summary of the event, suitable for direct display. The only localized field: when lang is set this sentence, and the body, target, and aspect names within it, render in the requested language while the structured fields stay English.
@@ -109594,7 +109594,7 @@ func (r ForecastTransitsResponse) GetJSON200() *struct {
 		// Obscuration For a lunar eclipse, the peak fraction from 0 to 1 of the Moon disc covered by Earth umbra. 1 for a total lunar eclipse, between 0 and 1 for a partial, 0 for a penumbral. Absent for solar eclipses and other event types.
 		Obscuration *float32 `json:"obscuration,omitempty"`
 
-		// Orb For a transit-aspect, the separation in degrees from the exact aspect at the reported instant. Tighter orb means a more exact and significant aspect.
+		// Orb For a transit-aspect, the separation in degrees from the exact aspect at the reported instant, rounded to three decimals. The instant is the moment the aspect perfects, so this reads 0. Absent for other event types.
 		Orb *float32 `json:"orb,omitempty"`
 
 		// Phase For a lunar-phase event, which syzygy it is: new-moon (Sun-Moon conjunction) or full-moon (Sun-Moon opposition). The intermediate quarters are not emitted. A stable machine value, never localized. Absent for other event types.
@@ -120958,7 +120958,7 @@ type CalculateBirthDayResponse struct {
 	HTTPResponse *http.Response
 	// JSON200 the response for an HTTP 200 `application/json` response
 	JSON200 *struct {
-		// Calculation Step-by-step digit reduction of the birth day. Single-digit days (1 to 9) remain as-is, Master Number days (11, 22) are preserved, and all other double-digit days are reduced by summing their digits.
+		// Calculation Step-by-step digit reduction of the birth day. Single-digit days (1 to 9) remain as they are, a day that is or reduces to 11 or 22 keeps it, and every other two-digit day is reduced to one digit.
 		Calculation string `json:"calculation"`
 
 		// HasKarmicDebt Indicates whether a Karmic Debt number (13, 14, 16, or 19) corresponds to the birth day. Karmic Debt in the Birth Day position reveals past-life challenges woven directly into your natural talents, influencing how your gifts manifest.
@@ -120985,7 +120985,7 @@ type CalculateBirthDayResponse struct {
 			// Challenges The flip side of your gifts. Each challenge explains how an overreliance on natural talent can become a liability without conscious balance.
 			Challenges []string `json:"challenges"`
 
-			// Description Expert-written 300 to 500 word reading of the special abilities your birth day bestows. Covers how these gifts complement your Life Path and Expression numbers.
+			// Description Core interpretation of the special abilities the birth day brings and how they complement the Life Path and Expression numbers. Together with the strengths, challenges, career, relationships and spirituality fields it makes a full reading.
 			Description string `json:"description"`
 
 			// Keywords Innate talents and natural aptitudes encoded in your birth day. These gifts are available from birth and become more refined with age.
@@ -121004,7 +121004,7 @@ type CalculateBirthDayResponse struct {
 			Title string `json:"title"`
 		} `json:"meaning"`
 
-		// Number Your Birth Day number, revealing the special talents and innate abilities you carry from the day you were born. Values range from 1 to 9 for single digits, or 11, 22 for Master Numbers (days 11 and 22 are never reduced).
+		// Number Your Birth Day number, revealing the special talents and innate abilities you carry from the day you were born. Values range from 1 to 9 for single digits, or 11, 22 for Master Numbers (the 11th, 22nd and 29th).
 		Number float32 `json:"number"`
 
 		// Type Whether this is a standard single-digit number (1 to 9) or a Master Number (11, 22). Master Numbers in the Birth Day position indicate extraordinary innate gifts that are available from birth and demand conscious development.
@@ -121026,7 +121026,7 @@ type CalculateBirthDayResponse struct {
 
 // GetJSON200 returns the response for an HTTP 200 `application/json` response
 func (r CalculateBirthDayResponse) GetJSON200() *struct {
-	// Calculation Step-by-step digit reduction of the birth day. Single-digit days (1 to 9) remain as-is, Master Number days (11, 22) are preserved, and all other double-digit days are reduced by summing their digits.
+	// Calculation Step-by-step digit reduction of the birth day. Single-digit days (1 to 9) remain as they are, a day that is or reduces to 11 or 22 keeps it, and every other two-digit day is reduced to one digit.
 	Calculation string `json:"calculation"`
 
 	// HasKarmicDebt Indicates whether a Karmic Debt number (13, 14, 16, or 19) corresponds to the birth day. Karmic Debt in the Birth Day position reveals past-life challenges woven directly into your natural talents, influencing how your gifts manifest.
@@ -121053,7 +121053,7 @@ func (r CalculateBirthDayResponse) GetJSON200() *struct {
 		// Challenges The flip side of your gifts. Each challenge explains how an overreliance on natural talent can become a liability without conscious balance.
 		Challenges []string `json:"challenges"`
 
-		// Description Expert-written 300 to 500 word reading of the special abilities your birth day bestows. Covers how these gifts complement your Life Path and Expression numbers.
+		// Description Core interpretation of the special abilities the birth day brings and how they complement the Life Path and Expression numbers. Together with the strengths, challenges, career, relationships and spirituality fields it makes a full reading.
 		Description string `json:"description"`
 
 		// Keywords Innate talents and natural aptitudes encoded in your birth day. These gifts are available from birth and become more refined with age.
@@ -121072,7 +121072,7 @@ func (r CalculateBirthDayResponse) GetJSON200() *struct {
 		Title string `json:"title"`
 	} `json:"meaning"`
 
-	// Number Your Birth Day number, revealing the special talents and innate abilities you carry from the day you were born. Values range from 1 to 9 for single digits, or 11, 22 for Master Numbers (days 11 and 22 are never reduced).
+	// Number Your Birth Day number, revealing the special talents and innate abilities you carry from the day you were born. Values range from 1 to 9 for single digits, or 11, 22 for Master Numbers (the 11th, 22nd and 29th).
 	Number float32 `json:"number"`
 
 	// Type Whether this is a standard single-digit number (1 to 9) or a Master Number (11, 22). Master Numbers in the Birth Day position indicate extraordinary innate gifts that are available from birth and demand conscious development.
@@ -121150,7 +121150,7 @@ type CalculateBridgeNumbersResponse struct {
 	HTTPResponse *http.Response
 	// JSON200 the response for an HTTP 200 `application/json` response
 	JSON200 *struct {
-		// ExpressionPersonality Bridge between Expression and Personality numbers. Reveals the gap between your true talents (all letters) and how others perceive you (consonants only). A high bridge means others may not see your real capabilities, requiring you to present yourself more authentically.
+		// ExpressionPersonality Bridge between Expression and Personality numbers, a pairing this API adds beside the classical bridges. Reveals the gap between your true talents (all letters) and how others perceive you (consonants only). A high bridge means others may not see your real capabilities, requiring you to present yourself more authentically.
 		ExpressionPersonality struct {
 			// Bridge Bridge number (0 to 8). The absolute difference between two core numerology numbers after reducing master numbers to single digits. 0 means the two aspects are already in natural harmony. Higher values indicate greater tension requiring conscious adjustment.
 			Bridge int `json:"bridge"`
@@ -121218,6 +121218,29 @@ type CalculateBridgeNumbersResponse struct {
 				Number float32 `json:"number"`
 			} `json:"to"`
 		} `json:"lifePathExpression"`
+
+		// SoulUrgePersonality Bridge between Soul Urge and Personality numbers, one of the classical bridges. Reveals the gap between your inner self (vowels only) and the image others meet first (consonants only). A high bridge means what you want and how you come across pull apart, calling for a more transparent presentation of your real motives.
+		SoulUrgePersonality struct {
+			// Bridge Bridge number (0 to 8). The absolute difference between two core numerology numbers after reducing master numbers to single digits. 0 means the two aspects are already in natural harmony. Higher values indicate greater tension requiring conscious adjustment.
+			Bridge int `json:"bridge"`
+			From   struct {
+				// Name Name of the first core number in this bridge pair. Identifies which aspect of personality or destiny is being compared.
+				Name string `json:"name"`
+
+				// Number The reduced single-digit value (1 to 9) of the first core number used in the bridge calculation.
+				Number float32 `json:"number"`
+			} `json:"from"`
+
+			// Meaning Actionable guidance for bridging the gap between these two aspects of your numerology profile. Explains what adjustments to make to bring these energies into harmony.
+			Meaning string `json:"meaning"`
+			To      struct {
+				// Name Name of the second core number in this bridge pair. Identifies the other aspect of personality or destiny being compared.
+				Name string `json:"name"`
+
+				// Number The reduced single-digit value (1 to 9) of the second core number used in the bridge calculation.
+				Number float32 `json:"number"`
+			} `json:"to"`
+		} `json:"soulUrgePersonality"`
 	}
 	// JSON400 the response for an HTTP 400 `application/json` response
 	JSON400 *ErrorResponse
@@ -121235,7 +121258,7 @@ type CalculateBridgeNumbersResponse struct {
 
 // GetJSON200 returns the response for an HTTP 200 `application/json` response
 func (r CalculateBridgeNumbersResponse) GetJSON200() *struct {
-	// ExpressionPersonality Bridge between Expression and Personality numbers. Reveals the gap between your true talents (all letters) and how others perceive you (consonants only). A high bridge means others may not see your real capabilities, requiring you to present yourself more authentically.
+	// ExpressionPersonality Bridge between Expression and Personality numbers, a pairing this API adds beside the classical bridges. Reveals the gap between your true talents (all letters) and how others perceive you (consonants only). A high bridge means others may not see your real capabilities, requiring you to present yourself more authentically.
 	ExpressionPersonality struct {
 		// Bridge Bridge number (0 to 8). The absolute difference between two core numerology numbers after reducing master numbers to single digits. 0 means the two aspects are already in natural harmony. Higher values indicate greater tension requiring conscious adjustment.
 		Bridge int `json:"bridge"`
@@ -121303,6 +121326,29 @@ func (r CalculateBridgeNumbersResponse) GetJSON200() *struct {
 			Number float32 `json:"number"`
 		} `json:"to"`
 	} `json:"lifePathExpression"`
+
+	// SoulUrgePersonality Bridge between Soul Urge and Personality numbers, one of the classical bridges. Reveals the gap between your inner self (vowels only) and the image others meet first (consonants only). A high bridge means what you want and how you come across pull apart, calling for a more transparent presentation of your real motives.
+	SoulUrgePersonality struct {
+		// Bridge Bridge number (0 to 8). The absolute difference between two core numerology numbers after reducing master numbers to single digits. 0 means the two aspects are already in natural harmony. Higher values indicate greater tension requiring conscious adjustment.
+		Bridge int `json:"bridge"`
+		From   struct {
+			// Name Name of the first core number in this bridge pair. Identifies which aspect of personality or destiny is being compared.
+			Name string `json:"name"`
+
+			// Number The reduced single-digit value (1 to 9) of the first core number used in the bridge calculation.
+			Number float32 `json:"number"`
+		} `json:"from"`
+
+		// Meaning Actionable guidance for bridging the gap between these two aspects of your numerology profile. Explains what adjustments to make to bring these energies into harmony.
+		Meaning string `json:"meaning"`
+		To      struct {
+			// Name Name of the second core number in this bridge pair. Identifies the other aspect of personality or destiny being compared.
+			Name string `json:"name"`
+
+			// Number The reduced single-digit value (1 to 9) of the second core number used in the bridge calculation.
+			Number float32 `json:"number"`
+		} `json:"to"`
+	} `json:"soulUrgePersonality"`
 } {
 	return r.JSON200
 }
@@ -121424,7 +121470,7 @@ type CalculateBusinessNameResponse struct {
 		// Summary One-line plain-language verdict for the business name.
 		Summary string `json:"summary"`
 
-		// Total Raw Chaldean letter total of the name.
+		// Total The sum the compound is read from: for a one-word name, its Chaldean letter total; for a longer name, the sum of each word reduced to its single number, as Cheiro works John Smith (18 to 9, 17 to 8, total 17).
 		Total float32 `json:"total"`
 	}
 	// JSON400 the response for an HTTP 400 `application/json` response
@@ -121491,7 +121537,7 @@ func (r CalculateBusinessNameResponse) GetJSON200() *struct {
 	// Summary One-line plain-language verdict for the business name.
 	Summary string `json:"summary"`
 
-	// Total Raw Chaldean letter total of the name.
+	// Total The sum the compound is read from: for a one-word name, its Chaldean letter total; for a longer name, the sum of each word reduced to its single number, as Cheiro works John Smith (18 to 9, 17 to 8, total 17).
 	Total float32 `json:"total"`
 } {
 	return r.JSON200
@@ -121571,7 +121617,7 @@ type CalculateChaldeanResponse struct {
 
 		// Destiny The Destiny or name number from all letters. The primary Chaldean number, revealing the overall direction encoded in the name.
 		Destiny struct {
-			// Calculation Letter-by-letter Chaldean breakdown summed to the total, then to compound and root.
+			// Calculation Letter-by-letter Chaldean breakdown, name by name for a longer name, summed to the total, then to compound and root.
 			Calculation string `json:"calculation"`
 
 			// Compound The interpretable compound number (10 to 52), the hidden influence behind the name, or null when the total resolves below 10.
@@ -121598,7 +121644,7 @@ type CalculateChaldeanResponse struct {
 			// Root The single-digit root (1 to 9), the outward expression. Chaldean does not preserve master numbers.
 			Root float32 `json:"root"`
 
-			// Total Raw sum of the Chaldean letter values before any reduction.
+			// Total The sum the compound is read from: for a one-word name, its Chaldean letter total; for a longer name, the sum of each word reduced to its single number, as Cheiro works John Smith (18 to 9, 17 to 8, total 17).
 			Total float32 `json:"total"`
 		} `json:"destiny"`
 
@@ -121626,7 +121672,7 @@ type CalculateChaldeanResponse struct {
 
 		// Personality The Personality number from the consonants, revealing the outer impression. Root may be 0 when the name has no consonants.
 		Personality struct {
-			// Calculation Letter-by-letter Chaldean breakdown summed to the total, then to compound and root.
+			// Calculation Letter-by-letter Chaldean breakdown, name by name for a longer name, summed to the total, then to compound and root.
 			Calculation string `json:"calculation"`
 
 			// Compound The interpretable compound number (10 to 52), the hidden influence behind the name, or null when the total resolves below 10.
@@ -121653,13 +121699,13 @@ type CalculateChaldeanResponse struct {
 			// Root The single-digit root (1 to 9), the outward expression. Chaldean does not preserve master numbers.
 			Root float32 `json:"root"`
 
-			// Total Raw sum of the Chaldean letter values before any reduction.
+			// Total The sum the compound is read from: for a one-word name, its Chaldean letter total; for a longer name, the sum of each word reduced to its single number, as Cheiro works John Smith (18 to 9, 17 to 8, total 17).
 			Total float32 `json:"total"`
 		} `json:"personality"`
 
 		// SoulUrge The Soul Urge number from the vowels, revealing inner desire. Root may be 0 when the name has no vowels.
 		SoulUrge struct {
-			// Calculation Letter-by-letter Chaldean breakdown summed to the total, then to compound and root.
+			// Calculation Letter-by-letter Chaldean breakdown, name by name for a longer name, summed to the total, then to compound and root.
 			Calculation string `json:"calculation"`
 
 			// Compound The interpretable compound number (10 to 52), the hidden influence behind the name, or null when the total resolves below 10.
@@ -121686,7 +121732,7 @@ type CalculateChaldeanResponse struct {
 			// Root The single-digit root (1 to 9), the outward expression. Chaldean does not preserve master numbers.
 			Root float32 `json:"root"`
 
-			// Total Raw sum of the Chaldean letter values before any reduction.
+			// Total The sum the compound is read from: for a one-word name, its Chaldean letter total; for a longer name, the sum of each word reduced to its single number, as Cheiro works John Smith (18 to 9, 17 to 8, total 17).
 			Total float32 `json:"total"`
 		} `json:"soulUrge"`
 
@@ -121714,7 +121760,7 @@ func (r CalculateChaldeanResponse) GetJSON200() *struct {
 
 	// Destiny The Destiny or name number from all letters. The primary Chaldean number, revealing the overall direction encoded in the name.
 	Destiny struct {
-		// Calculation Letter-by-letter Chaldean breakdown summed to the total, then to compound and root.
+		// Calculation Letter-by-letter Chaldean breakdown, name by name for a longer name, summed to the total, then to compound and root.
 		Calculation string `json:"calculation"`
 
 		// Compound The interpretable compound number (10 to 52), the hidden influence behind the name, or null when the total resolves below 10.
@@ -121741,7 +121787,7 @@ func (r CalculateChaldeanResponse) GetJSON200() *struct {
 		// Root The single-digit root (1 to 9), the outward expression. Chaldean does not preserve master numbers.
 		Root float32 `json:"root"`
 
-		// Total Raw sum of the Chaldean letter values before any reduction.
+		// Total The sum the compound is read from: for a one-word name, its Chaldean letter total; for a longer name, the sum of each word reduced to its single number, as Cheiro works John Smith (18 to 9, 17 to 8, total 17).
 		Total float32 `json:"total"`
 	} `json:"destiny"`
 
@@ -121769,7 +121815,7 @@ func (r CalculateChaldeanResponse) GetJSON200() *struct {
 
 	// Personality The Personality number from the consonants, revealing the outer impression. Root may be 0 when the name has no consonants.
 	Personality struct {
-		// Calculation Letter-by-letter Chaldean breakdown summed to the total, then to compound and root.
+		// Calculation Letter-by-letter Chaldean breakdown, name by name for a longer name, summed to the total, then to compound and root.
 		Calculation string `json:"calculation"`
 
 		// Compound The interpretable compound number (10 to 52), the hidden influence behind the name, or null when the total resolves below 10.
@@ -121796,13 +121842,13 @@ func (r CalculateChaldeanResponse) GetJSON200() *struct {
 		// Root The single-digit root (1 to 9), the outward expression. Chaldean does not preserve master numbers.
 		Root float32 `json:"root"`
 
-		// Total Raw sum of the Chaldean letter values before any reduction.
+		// Total The sum the compound is read from: for a one-word name, its Chaldean letter total; for a longer name, the sum of each word reduced to its single number, as Cheiro works John Smith (18 to 9, 17 to 8, total 17).
 		Total float32 `json:"total"`
 	} `json:"personality"`
 
 	// SoulUrge The Soul Urge number from the vowels, revealing inner desire. Root may be 0 when the name has no vowels.
 	SoulUrge struct {
-		// Calculation Letter-by-letter Chaldean breakdown summed to the total, then to compound and root.
+		// Calculation Letter-by-letter Chaldean breakdown, name by name for a longer name, summed to the total, then to compound and root.
 		Calculation string `json:"calculation"`
 
 		// Compound The interpretable compound number (10 to 52), the hidden influence behind the name, or null when the total resolves below 10.
@@ -121829,7 +121875,7 @@ func (r CalculateChaldeanResponse) GetJSON200() *struct {
 		// Root The single-digit root (1 to 9), the outward expression. Chaldean does not preserve master numbers.
 		Root float32 `json:"root"`
 
-		// Total Raw sum of the Chaldean letter values before any reduction.
+		// Total The sum the compound is read from: for a one-word name, its Chaldean letter total; for a longer name, the sum of each word reduced to its single number, as Cheiro works John Smith (18 to 9, 17 to 8, total 17).
 		Total float32 `json:"total"`
 	} `json:"soulUrge"`
 
@@ -121910,9 +121956,9 @@ type GenerateNumerologyChartResponse struct {
 	JSON200 *struct {
 		// AdditionalInsights Additional numerology insights: karmic analysis, yearly/monthly forecasts, pinnacles, challenges, hidden passion, subconscious self, and name letter analysis.
 		AdditionalInsights struct {
-			// Challenges Four Challenge numbers representing life obstacles aligned with Pinnacle timing.
+			// Challenges Four Challenge numbers representing life obstacles. The 3rd (Main) Challenge lasts for life; the other three are timed approximately with the Pinnacle phases.
 			Challenges []struct {
-				// EndAge Age when this period ends. Null for the 4th Challenge.
+				// EndAge Last whole age of the period, inclusive, approximate as startAge explains. Null for the 3rd (Main) Challenge and the 4th, which last for life.
 				EndAge *float32 `json:"endAge"`
 
 				// Meaning Meaning and resolution guidance for this Challenge number.
@@ -121936,13 +121982,13 @@ type GenerateNumerologyChartResponse struct {
 				// Position Challenge position (1-4). Four life obstacle periods.
 				Position float32 `json:"position"`
 
-				// StartAge Age when this Challenge period begins.
+				// StartAge Age when this Challenge is most felt. The 3rd (Main) Challenge starts at 0 and lasts for life; the 1st, 2nd and 4th take the ages of their Pinnacle phase as an approximation, since Challenges have no fixed durations.
 				StartAge float32 `json:"startAge"`
 			} `json:"challenges"`
 
 			// HiddenPassion Hidden Passion number. The most frequent number in the name revealing an overwhelming drive or talent.
 			HiddenPassion struct {
-				// AllPassions All numbers tied for highest frequency (usually one, sometimes multiple).
+				// AllPassions All numbers tied for highest frequency, in ascending order (usually one, sometimes multiple).
 				AllPassions []float32 `json:"allPassions"`
 
 				// Count How many times this number appears in the name.
@@ -121951,7 +121997,7 @@ type GenerateNumerologyChartResponse struct {
 				// Description What this dominant number drive reveals about latent talents and obsessions.
 				Description string `json:"description"`
 
-				// Number Hidden Passion number (1-9). The most frequently occurring number in the birth name.
+				// Number Hidden Passion number (1-9). The most frequently occurring number in the birth name; when several tie, the lowest of them.
 				Number float32 `json:"number"`
 
 				// Title Archetype title for this Hidden Passion.
@@ -121960,7 +122006,7 @@ type GenerateNumerologyChartResponse struct {
 
 			// KarmicDebt Karmic Debt analysis. Identifies unresolved karma from past lives carried through specific numbers (13, 14, 16, 19).
 			KarmicDebt struct {
-				// DebtNumbers List of karmic debt numbers found (13=laziness, 14=abuse of freedom, 16=ego destruction, 19=selfishness).
+				// DebtNumbers List of karmic debt numbers found (13=laziness, 14=abuse of freedom, 16=ego destruction, 19=selfishness), each listed once, in core-number order: Life Path, Expression, Soul Urge, Personality, Birth Day.
 				DebtNumbers []float32 `json:"debtNumbers"`
 
 				// HasKarmicDebt True if any core number reduces through a karmic debt number (13, 14, 16, 19).
@@ -122034,7 +122080,7 @@ type GenerateNumerologyChartResponse struct {
 
 				// FirstVowel First Vowel analysis. Reveals instinctive emotional reactions.
 				FirstVowel struct {
-					// Letter First vowel in the full name (A, E, I, O, or U).
+					// Letter First vowel of the first name (A, E, I, O or U). A first name with none of them takes its Y, the vowel sound of names like Lynn; one with no Y either takes the first A, E, I, O or U of the rest of the name.
 					Letter string `json:"letter"`
 
 					// Meaning Instinctive emotional response and inner reaction style.
@@ -122059,12 +122105,12 @@ type GenerateNumerologyChartResponse struct {
 				// Opportunities Key opportunities available during this Personal Year. Each entry identifies a specific area of life where conditions are favorable for growth and forward momentum.
 				Opportunities []string `json:"opportunities"`
 
-				// PersonalMonth Personal Month forecast nested within the Personal Year cycle.
+				// PersonalMonth Personal Month forecast for the current UTC calendar month, applied to the Personal Year above. With a currentYear other than the current year, it pairs that Personal Year with the current month.
 				PersonalMonth struct {
 					// Focus Practical focus and guidance for this month.
 					Focus string `json:"focus"`
 
-					// PersonalMonth Personal Month number (1-9).
+					// PersonalMonth Personal Month number (1-9): the Personal Year above plus the current UTC calendar month, reduced to one digit.
 					PersonalMonth float32 `json:"personalMonth"`
 
 					// Theme Central theme for this Personal Month.
@@ -122078,9 +122124,9 @@ type GenerateNumerologyChartResponse struct {
 				Theme string `json:"theme"`
 			} `json:"personalYear"`
 
-			// Pinnacles Four Pinnacle numbers representing major life phases with age ranges and meanings.
+			// Pinnacles Four Pinnacle numbers representing major life phases, master numbers 11, 22 and 33 kept, with age ranges and meanings.
 			Pinnacles []struct {
-				// EndAge Age when this phase ends. Null for the 4th Pinnacle (lasts rest of life).
+				// EndAge Last whole age of this phase, inclusive. The First Pinnacle ends at 36 minus the Life Path reduced to one digit and each later phase starts the year after; null for the 4th Pinnacle (lasts rest of life).
 				EndAge *float32 `json:"endAge"`
 
 				// Meaning Meaning and interpretation for this Pinnacle number.
@@ -122175,7 +122221,7 @@ type GenerateNumerologyChartResponse struct {
 					// Challenges The flip side of your gifts. Each challenge explains how an overreliance on natural talent can become a liability without conscious balance.
 					Challenges []string `json:"challenges"`
 
-					// Description Expert-written 300 to 500 word reading of the special abilities your birth day bestows. Covers how these gifts complement your Life Path and Expression numbers.
+					// Description Core interpretation of the special abilities the birth day brings and how they complement the Life Path and Expression numbers. Together with the strengths, challenges, career, relationships and spirituality fields it makes a full reading.
 					Description string `json:"description"`
 
 					// Keywords Innate talents and natural aptitudes encoded in your birth day. These gifts are available from birth and become more refined with age and experience.
@@ -122220,7 +122266,7 @@ type GenerateNumerologyChartResponse struct {
 					// Challenges Growth areas where natural talent can become a liability without conscious balance. Explains how each challenge manifests and practical ways to work through it.
 					Challenges []string `json:"challenges"`
 
-					// Description Expert-written 300 to 500 word analysis of natural abilities, life goals, and the talents your birth name reveals. Suitable for detailed readings and personality assessments.
+					// Description Core interpretation of the natural abilities, life goals and talents the birth name describes. Together with the strengths, challenges, career, relationships and spirituality fields it makes a full reading.
 					Description string `json:"description"`
 
 					// Keywords Natural talents and abilities encoded in the birth name. These define your innate skill set, creative potential, and the gifts available to you throughout life.
@@ -122265,7 +122311,7 @@ type GenerateNumerologyChartResponse struct {
 					// Challenges Growth areas and shadow qualities to work through. Each entry explains the root cause, how it surfaces in behavior, and constructive strategies for personal development.
 					Challenges []string `json:"challenges"`
 
-					// Description Authoritative 300 to 500 word interpretation covering personality, life purpose, and core themes. Written by numerology experts and suitable for full-page readings or PDF report generation.
+					// Description Core interpretation of the Life Path covering personality, life purpose and core themes. Together with the strengths, challenges, career, relationships and spirituality fields it makes a full reading.
 					Description string `json:"description"`
 
 					// Keywords Defining personality traits and energetic themes for this Life Path. Useful for compatibility matching, personality snapshots, and building numerology profile summaries.
@@ -122310,7 +122356,7 @@ type GenerateNumerologyChartResponse struct {
 					// Challenges Growth areas to watch as Maturity energy intensifies. Understanding these early helps you navigate the transition into your mature self with awareness and grace.
 					Challenges []string `json:"challenges"`
 
-					// Description Expert-written 300 to 500 word guide to the person you are evolving into. The Maturity number represents the wisdom gained through lived experience and reveals your ultimate destination.
+					// Description Core interpretation of the person being grown into in the second half of life, the wisdom gained through lived experience. Together with the strengths, challenges, career, relationships and spirituality fields it makes a full reading.
 					Description string `json:"description"`
 
 					// Keywords Emerging traits and qualities that strengthen after age 35 to 40. These energies gradually integrate into your personality as you mature and gain life experience.
@@ -122355,7 +122401,7 @@ type GenerateNumerologyChartResponse struct {
 					// Challenges Blind spots in your public persona. Patterns others notice that you may not, including defense mechanisms and image-management tendencies that can limit authentic connection.
 					Challenges []string `json:"challenges"`
 
-					// Description Expert-written 300 to 500 word analysis of the outer personality, social presence, and the image you project to the world. Reveals the gap between perception and inner truth.
+					// Description Core interpretation of the outer personality, social presence and the image projected to the world. Together with the strengths, challenges, career, relationships and spirituality fields it makes a full reading.
 					Description string `json:"description"`
 
 					// Keywords Traits that define your public persona and first impression. These are the qualities others perceive before they get to know the real you.
@@ -122400,7 +122446,7 @@ type GenerateNumerologyChartResponse struct {
 					// Challenges Inner shadows and emotional patterns to balance. Explains how each challenge manifests when the Soul Urge energy is overextended or repressed.
 					Challenges []string `json:"challenges"`
 
-					// Description Expert-written 300 to 500 word exploration of the inner self, hidden desires, and emotional landscape. Reveals what the heart truly craves beneath the surface persona.
+					// Description Core interpretation of the inner self, hidden desires and emotional landscape. Together with the strengths, challenges, career, relationships and spirituality fields it makes a full reading.
 					Description string `json:"description"`
 
 					// Keywords Core emotional drives and inner motivations. These define what truly fulfills you at the deepest level, beyond surface-level desires and social expectations.
@@ -122456,7 +122502,7 @@ type GenerateNumerologyChartResponse struct {
 			// ActivationRange Age range when the Maturity number typically activates (35-40).
 			ActivationRange string `json:"activationRange"`
 
-			// CurrentAge Current age calculated from the birth year.
+			// CurrentAge The current UTC calendar year minus the birth year. The birthday is not considered, so before the birthday it reads one more than the age in whole years, and currentYear does not move it.
 			CurrentAge float32 `json:"currentAge"`
 
 			// IsActive Whether the Maturity number is currently active (typically activates around age 35-40).
@@ -122493,9 +122539,9 @@ type GenerateNumerologyChartResponse struct {
 func (r GenerateNumerologyChartResponse) GetJSON200() *struct {
 	// AdditionalInsights Additional numerology insights: karmic analysis, yearly/monthly forecasts, pinnacles, challenges, hidden passion, subconscious self, and name letter analysis.
 	AdditionalInsights struct {
-		// Challenges Four Challenge numbers representing life obstacles aligned with Pinnacle timing.
+		// Challenges Four Challenge numbers representing life obstacles. The 3rd (Main) Challenge lasts for life; the other three are timed approximately with the Pinnacle phases.
 		Challenges []struct {
-			// EndAge Age when this period ends. Null for the 4th Challenge.
+			// EndAge Last whole age of the period, inclusive, approximate as startAge explains. Null for the 3rd (Main) Challenge and the 4th, which last for life.
 			EndAge *float32 `json:"endAge"`
 
 			// Meaning Meaning and resolution guidance for this Challenge number.
@@ -122519,13 +122565,13 @@ func (r GenerateNumerologyChartResponse) GetJSON200() *struct {
 			// Position Challenge position (1-4). Four life obstacle periods.
 			Position float32 `json:"position"`
 
-			// StartAge Age when this Challenge period begins.
+			// StartAge Age when this Challenge is most felt. The 3rd (Main) Challenge starts at 0 and lasts for life; the 1st, 2nd and 4th take the ages of their Pinnacle phase as an approximation, since Challenges have no fixed durations.
 			StartAge float32 `json:"startAge"`
 		} `json:"challenges"`
 
 		// HiddenPassion Hidden Passion number. The most frequent number in the name revealing an overwhelming drive or talent.
 		HiddenPassion struct {
-			// AllPassions All numbers tied for highest frequency (usually one, sometimes multiple).
+			// AllPassions All numbers tied for highest frequency, in ascending order (usually one, sometimes multiple).
 			AllPassions []float32 `json:"allPassions"`
 
 			// Count How many times this number appears in the name.
@@ -122534,7 +122580,7 @@ func (r GenerateNumerologyChartResponse) GetJSON200() *struct {
 			// Description What this dominant number drive reveals about latent talents and obsessions.
 			Description string `json:"description"`
 
-			// Number Hidden Passion number (1-9). The most frequently occurring number in the birth name.
+			// Number Hidden Passion number (1-9). The most frequently occurring number in the birth name; when several tie, the lowest of them.
 			Number float32 `json:"number"`
 
 			// Title Archetype title for this Hidden Passion.
@@ -122543,7 +122589,7 @@ func (r GenerateNumerologyChartResponse) GetJSON200() *struct {
 
 		// KarmicDebt Karmic Debt analysis. Identifies unresolved karma from past lives carried through specific numbers (13, 14, 16, 19).
 		KarmicDebt struct {
-			// DebtNumbers List of karmic debt numbers found (13=laziness, 14=abuse of freedom, 16=ego destruction, 19=selfishness).
+			// DebtNumbers List of karmic debt numbers found (13=laziness, 14=abuse of freedom, 16=ego destruction, 19=selfishness), each listed once, in core-number order: Life Path, Expression, Soul Urge, Personality, Birth Day.
 			DebtNumbers []float32 `json:"debtNumbers"`
 
 			// HasKarmicDebt True if any core number reduces through a karmic debt number (13, 14, 16, 19).
@@ -122617,7 +122663,7 @@ func (r GenerateNumerologyChartResponse) GetJSON200() *struct {
 
 			// FirstVowel First Vowel analysis. Reveals instinctive emotional reactions.
 			FirstVowel struct {
-				// Letter First vowel in the full name (A, E, I, O, or U).
+				// Letter First vowel of the first name (A, E, I, O or U). A first name with none of them takes its Y, the vowel sound of names like Lynn; one with no Y either takes the first A, E, I, O or U of the rest of the name.
 				Letter string `json:"letter"`
 
 				// Meaning Instinctive emotional response and inner reaction style.
@@ -122642,12 +122688,12 @@ func (r GenerateNumerologyChartResponse) GetJSON200() *struct {
 			// Opportunities Key opportunities available during this Personal Year. Each entry identifies a specific area of life where conditions are favorable for growth and forward momentum.
 			Opportunities []string `json:"opportunities"`
 
-			// PersonalMonth Personal Month forecast nested within the Personal Year cycle.
+			// PersonalMonth Personal Month forecast for the current UTC calendar month, applied to the Personal Year above. With a currentYear other than the current year, it pairs that Personal Year with the current month.
 			PersonalMonth struct {
 				// Focus Practical focus and guidance for this month.
 				Focus string `json:"focus"`
 
-				// PersonalMonth Personal Month number (1-9).
+				// PersonalMonth Personal Month number (1-9): the Personal Year above plus the current UTC calendar month, reduced to one digit.
 				PersonalMonth float32 `json:"personalMonth"`
 
 				// Theme Central theme for this Personal Month.
@@ -122661,9 +122707,9 @@ func (r GenerateNumerologyChartResponse) GetJSON200() *struct {
 			Theme string `json:"theme"`
 		} `json:"personalYear"`
 
-		// Pinnacles Four Pinnacle numbers representing major life phases with age ranges and meanings.
+		// Pinnacles Four Pinnacle numbers representing major life phases, master numbers 11, 22 and 33 kept, with age ranges and meanings.
 		Pinnacles []struct {
-			// EndAge Age when this phase ends. Null for the 4th Pinnacle (lasts rest of life).
+			// EndAge Last whole age of this phase, inclusive. The First Pinnacle ends at 36 minus the Life Path reduced to one digit and each later phase starts the year after; null for the 4th Pinnacle (lasts rest of life).
 			EndAge *float32 `json:"endAge"`
 
 			// Meaning Meaning and interpretation for this Pinnacle number.
@@ -122758,7 +122804,7 @@ func (r GenerateNumerologyChartResponse) GetJSON200() *struct {
 				// Challenges The flip side of your gifts. Each challenge explains how an overreliance on natural talent can become a liability without conscious balance.
 				Challenges []string `json:"challenges"`
 
-				// Description Expert-written 300 to 500 word reading of the special abilities your birth day bestows. Covers how these gifts complement your Life Path and Expression numbers.
+				// Description Core interpretation of the special abilities the birth day brings and how they complement the Life Path and Expression numbers. Together with the strengths, challenges, career, relationships and spirituality fields it makes a full reading.
 				Description string `json:"description"`
 
 				// Keywords Innate talents and natural aptitudes encoded in your birth day. These gifts are available from birth and become more refined with age and experience.
@@ -122803,7 +122849,7 @@ func (r GenerateNumerologyChartResponse) GetJSON200() *struct {
 				// Challenges Growth areas where natural talent can become a liability without conscious balance. Explains how each challenge manifests and practical ways to work through it.
 				Challenges []string `json:"challenges"`
 
-				// Description Expert-written 300 to 500 word analysis of natural abilities, life goals, and the talents your birth name reveals. Suitable for detailed readings and personality assessments.
+				// Description Core interpretation of the natural abilities, life goals and talents the birth name describes. Together with the strengths, challenges, career, relationships and spirituality fields it makes a full reading.
 				Description string `json:"description"`
 
 				// Keywords Natural talents and abilities encoded in the birth name. These define your innate skill set, creative potential, and the gifts available to you throughout life.
@@ -122848,7 +122894,7 @@ func (r GenerateNumerologyChartResponse) GetJSON200() *struct {
 				// Challenges Growth areas and shadow qualities to work through. Each entry explains the root cause, how it surfaces in behavior, and constructive strategies for personal development.
 				Challenges []string `json:"challenges"`
 
-				// Description Authoritative 300 to 500 word interpretation covering personality, life purpose, and core themes. Written by numerology experts and suitable for full-page readings or PDF report generation.
+				// Description Core interpretation of the Life Path covering personality, life purpose and core themes. Together with the strengths, challenges, career, relationships and spirituality fields it makes a full reading.
 				Description string `json:"description"`
 
 				// Keywords Defining personality traits and energetic themes for this Life Path. Useful for compatibility matching, personality snapshots, and building numerology profile summaries.
@@ -122893,7 +122939,7 @@ func (r GenerateNumerologyChartResponse) GetJSON200() *struct {
 				// Challenges Growth areas to watch as Maturity energy intensifies. Understanding these early helps you navigate the transition into your mature self with awareness and grace.
 				Challenges []string `json:"challenges"`
 
-				// Description Expert-written 300 to 500 word guide to the person you are evolving into. The Maturity number represents the wisdom gained through lived experience and reveals your ultimate destination.
+				// Description Core interpretation of the person being grown into in the second half of life, the wisdom gained through lived experience. Together with the strengths, challenges, career, relationships and spirituality fields it makes a full reading.
 				Description string `json:"description"`
 
 				// Keywords Emerging traits and qualities that strengthen after age 35 to 40. These energies gradually integrate into your personality as you mature and gain life experience.
@@ -122938,7 +122984,7 @@ func (r GenerateNumerologyChartResponse) GetJSON200() *struct {
 				// Challenges Blind spots in your public persona. Patterns others notice that you may not, including defense mechanisms and image-management tendencies that can limit authentic connection.
 				Challenges []string `json:"challenges"`
 
-				// Description Expert-written 300 to 500 word analysis of the outer personality, social presence, and the image you project to the world. Reveals the gap between perception and inner truth.
+				// Description Core interpretation of the outer personality, social presence and the image projected to the world. Together with the strengths, challenges, career, relationships and spirituality fields it makes a full reading.
 				Description string `json:"description"`
 
 				// Keywords Traits that define your public persona and first impression. These are the qualities others perceive before they get to know the real you.
@@ -122983,7 +123029,7 @@ func (r GenerateNumerologyChartResponse) GetJSON200() *struct {
 				// Challenges Inner shadows and emotional patterns to balance. Explains how each challenge manifests when the Soul Urge energy is overextended or repressed.
 				Challenges []string `json:"challenges"`
 
-				// Description Expert-written 300 to 500 word exploration of the inner self, hidden desires, and emotional landscape. Reveals what the heart truly craves beneath the surface persona.
+				// Description Core interpretation of the inner self, hidden desires and emotional landscape. Together with the strengths, challenges, career, relationships and spirituality fields it makes a full reading.
 				Description string `json:"description"`
 
 				// Keywords Core emotional drives and inner motivations. These define what truly fulfills you at the deepest level, beyond surface-level desires and social expectations.
@@ -123039,7 +123085,7 @@ func (r GenerateNumerologyChartResponse) GetJSON200() *struct {
 		// ActivationRange Age range when the Maturity number typically activates (35-40).
 		ActivationRange string `json:"activationRange"`
 
-		// CurrentAge Current age calculated from the birth year.
+		// CurrentAge The current UTC calendar year minus the birth year. The birthday is not considered, so before the birthday it reads one more than the age in whole years, and currentYear does not move it.
 		CurrentAge float32 `json:"currentAge"`
 
 		// IsActive Whether the Maturity number is currently active (typically activates around age 35-40).
@@ -123136,7 +123182,7 @@ type CalculateNumCompatibilityResponse struct {
 		// Challenges Potential relationship challenges
 		Challenges []string `json:"challenges"`
 		Expression struct {
-			// Compatibility Expression compatibility score (0-100)
+			// Compatibility Expression compatibility score (50-100)
 			Compatibility float32 `json:"compatibility"`
 
 			// Description Detailed Expression compatibility analysis
@@ -123149,7 +123195,7 @@ type CalculateNumCompatibilityResponse struct {
 			Person2 float32 `json:"person2"`
 		} `json:"expression"`
 		LifePath struct {
-			// Compatibility Life Path compatibility score (0-100)
+			// Compatibility Life Path compatibility score (50-100)
 			Compatibility float32 `json:"compatibility"`
 
 			// Description Detailed Life Path compatibility analysis
@@ -123162,13 +123208,13 @@ type CalculateNumCompatibilityResponse struct {
 			Person2 float32 `json:"person2"`
 		} `json:"lifePath"`
 
-		// OverallScore Overall compatibility score (0-100)
+		// OverallScore Overall compatibility score: 50% Life Path, 30% Expression and 20% Soul Urge pair scores, rounded. Every pair score runs 50 to 100, so the overall score does too.
 		OverallScore float32 `json:"overallScore"`
 
-		// Rating Compatibility rating: Highly Compatible, Very Compatible, Compatible, Moderately Compatible, or Challenging.
+		// Rating Compatibility rating from overallScore: Highly Compatible (90 and up), Very Compatible (75 to 89), Compatible (60 to 74) or Moderately Compatible (50 to 59). The scale also names Challenging below 45, which no pair of core numbers reaches.
 		Rating   string `json:"rating"`
 		SoulUrge struct {
-			// Compatibility Soul Urge compatibility score (0-100)
+			// Compatibility Soul Urge compatibility score (50-100)
 			Compatibility float32 `json:"compatibility"`
 
 			// Description Detailed Soul Urge compatibility analysis
@@ -123206,7 +123252,7 @@ func (r CalculateNumCompatibilityResponse) GetJSON200() *struct {
 	// Challenges Potential relationship challenges
 	Challenges []string `json:"challenges"`
 	Expression struct {
-		// Compatibility Expression compatibility score (0-100)
+		// Compatibility Expression compatibility score (50-100)
 		Compatibility float32 `json:"compatibility"`
 
 		// Description Detailed Expression compatibility analysis
@@ -123219,7 +123265,7 @@ func (r CalculateNumCompatibilityResponse) GetJSON200() *struct {
 		Person2 float32 `json:"person2"`
 	} `json:"expression"`
 	LifePath struct {
-		// Compatibility Life Path compatibility score (0-100)
+		// Compatibility Life Path compatibility score (50-100)
 		Compatibility float32 `json:"compatibility"`
 
 		// Description Detailed Life Path compatibility analysis
@@ -123232,13 +123278,13 @@ func (r CalculateNumCompatibilityResponse) GetJSON200() *struct {
 		Person2 float32 `json:"person2"`
 	} `json:"lifePath"`
 
-	// OverallScore Overall compatibility score (0-100)
+	// OverallScore Overall compatibility score: 50% Life Path, 30% Expression and 20% Soul Urge pair scores, rounded. Every pair score runs 50 to 100, so the overall score does too.
 	OverallScore float32 `json:"overallScore"`
 
-	// Rating Compatibility rating: Highly Compatible, Very Compatible, Compatible, Moderately Compatible, or Challenging.
+	// Rating Compatibility rating from overallScore: Highly Compatible (90 and up), Very Compatible (75 to 89), Compatible (60 to 74) or Moderately Compatible (50 to 59). The scale also names Challenging below 45, which no pair of core numbers reaches.
 	Rating   string `json:"rating"`
 	SoulUrge struct {
-		// Compatibility Soul Urge compatibility score (0-100)
+		// Compatibility Soul Urge compatibility score (50-100)
 		Compatibility float32 `json:"compatibility"`
 
 		// Description Detailed Soul Urge compatibility analysis
@@ -123462,7 +123508,7 @@ type GetDailyNumberResponse struct {
 			// Challenges Shadow patterns to watch for today. Awareness of these helps navigate the day with intention and balance.
 			Challenges []string `json:"challenges"`
 
-			// Description Expert-written 300 to 500 word interpretation of the daily energy. Covers personality resonance, life themes, and how this number influences the day.
+			// Description Core interpretation of the number of the day: its personality resonance, life themes and how it colors the day. Together with the strengths, challenges, career, relationships and spirituality fields it makes a full reading.
 			Description string `json:"description"`
 
 			// Keywords Defining traits and energetic themes active today. Useful for daily affirmations, journaling prompts, and focus areas.
@@ -123518,7 +123564,7 @@ func (r GetDailyNumberResponse) GetJSON200() *struct {
 		// Challenges Shadow patterns to watch for today. Awareness of these helps navigate the day with intention and balance.
 		Challenges []string `json:"challenges"`
 
-		// Description Expert-written 300 to 500 word interpretation of the daily energy. Covers personality resonance, life themes, and how this number influences the day.
+		// Description Core interpretation of the number of the day: its personality resonance, life themes and how it colors the day. Together with the strengths, challenges, career, relationships and spirituality fields it makes a full reading.
 		Description string `json:"description"`
 
 		// Keywords Defining traits and energetic themes active today. Useful for daily affirmations, journaling prompts, and focus areas.
@@ -123657,7 +123703,7 @@ type CalculateDualResponse struct {
 			// Title Archetype of the Chaldean root.
 			Title string `json:"title"`
 
-			// Total Raw Chaldean letter total.
+			// Total The sum the compound is read from: for a one-word name, its Chaldean letter total; for a longer name, the sum of each word reduced to its single number, as Cheiro works John Smith (18 to 9, 17 to 8, total 17).
 			Total float32 `json:"total"`
 		} `json:"chaldean"`
 
@@ -123738,7 +123784,7 @@ func (r CalculateDualResponse) GetJSON200() *struct {
 		// Title Archetype of the Chaldean root.
 		Title string `json:"title"`
 
-		// Total Raw Chaldean letter total.
+		// Total The sum the compound is read from: for a one-word name, its Chaldean letter total; for a longer name, the sum of each word reduced to its single number, as Cheiro works John Smith (18 to 9, 17 to 8, total 17).
 		Total float32 `json:"total"`
 	} `json:"chaldean"`
 
@@ -123836,10 +123882,10 @@ type CalculateExpressionResponse struct {
 	HTTPResponse *http.Response
 	// JSON200 the response for an HTTP 200 `application/json` response
 	JSON200 *struct {
-		// Calculation Full Pythagorean letter-to-number conversion showing every letter value in the birth name, grouped by word, then summed and reduced to the final Expression number.
+		// Calculation Every letter value of the birth name, grouped by name: each name is summed and reduced, then the names are added and reduced to the final Expression number.
 		Calculation string `json:"calculation"`
 
-		// HasKarmicDebt Whether a Karmic Debt number (13, 14, 16, 19) appeared during the name reduction. Indicates inherited challenges embedded in your given name.
+		// HasKarmicDebt Whether a Karmic Debt number (13, 14, 16, 19) appeared in the final reduction, the sum of the reduced names. Indicates inherited challenges embedded in your given name.
 		HasKarmicDebt bool `json:"hasKarmicDebt"`
 
 		// KarmicDebtMeaning Detailed interpretation of the Karmic Debt number when present. Includes the debt theme, the inherited challenge, and guidance for resolution. Only returned when hasKarmicDebt is true.
@@ -123863,7 +123909,7 @@ type CalculateExpressionResponse struct {
 			// Challenges Shadow side of your talents and areas requiring conscious effort. Each challenge explains its root cause and practical strategies for transformation.
 			Challenges []string `json:"challenges"`
 
-			// Description Expert-written 300 to 500 word interpretation of the natural abilities, life mission, and destiny encoded in your birth name. Covers how these talents manifest across life stages.
+			// Description Core interpretation of the natural abilities, life mission and destiny the birth name describes. Together with the strengths, challenges, career, relationships and spirituality fields it makes a full reading.
 			Description string `json:"description"`
 
 			// Keywords Defining traits and talent themes for this Expression number. Ideal for personality profiles, compatibility engines, and talent-matching features.
@@ -123882,7 +123928,7 @@ type CalculateExpressionResponse struct {
 			Title string `json:"title"`
 		} `json:"meaning"`
 
-		// Number Expression number (also called Destiny number) derived from all letters in the full birth name. Reveals natural talents, abilities, and the goals you are meant to achieve. Values: 1 to 9, 11, 22, or 33.
+		// Number Expression number (also called Destiny number) from every letter of the full birth name. Reveals natural talents, abilities, and the goals you are meant to achieve. Values: 1 to 9, 11, 22, or 33.
 		Number float32 `json:"number"`
 
 		// Type Single-digit (1 to 9) or Master Number (11, 22, 33). Master Numbers in the Expression position indicate extraordinary innate talent that demands conscious development.
@@ -123904,10 +123950,10 @@ type CalculateExpressionResponse struct {
 
 // GetJSON200 returns the response for an HTTP 200 `application/json` response
 func (r CalculateExpressionResponse) GetJSON200() *struct {
-	// Calculation Full Pythagorean letter-to-number conversion showing every letter value in the birth name, grouped by word, then summed and reduced to the final Expression number.
+	// Calculation Every letter value of the birth name, grouped by name: each name is summed and reduced, then the names are added and reduced to the final Expression number.
 	Calculation string `json:"calculation"`
 
-	// HasKarmicDebt Whether a Karmic Debt number (13, 14, 16, 19) appeared during the name reduction. Indicates inherited challenges embedded in your given name.
+	// HasKarmicDebt Whether a Karmic Debt number (13, 14, 16, 19) appeared in the final reduction, the sum of the reduced names. Indicates inherited challenges embedded in your given name.
 	HasKarmicDebt bool `json:"hasKarmicDebt"`
 
 	// KarmicDebtMeaning Detailed interpretation of the Karmic Debt number when present. Includes the debt theme, the inherited challenge, and guidance for resolution. Only returned when hasKarmicDebt is true.
@@ -123931,7 +123977,7 @@ func (r CalculateExpressionResponse) GetJSON200() *struct {
 		// Challenges Shadow side of your talents and areas requiring conscious effort. Each challenge explains its root cause and practical strategies for transformation.
 		Challenges []string `json:"challenges"`
 
-		// Description Expert-written 300 to 500 word interpretation of the natural abilities, life mission, and destiny encoded in your birth name. Covers how these talents manifest across life stages.
+		// Description Core interpretation of the natural abilities, life mission and destiny the birth name describes. Together with the strengths, challenges, career, relationships and spirituality fields it makes a full reading.
 		Description string `json:"description"`
 
 		// Keywords Defining traits and talent themes for this Expression number. Ideal for personality profiles, compatibility engines, and talent-matching features.
@@ -123950,7 +123996,7 @@ func (r CalculateExpressionResponse) GetJSON200() *struct {
 		Title string `json:"title"`
 	} `json:"meaning"`
 
-	// Number Expression number (also called Destiny number) derived from all letters in the full birth name. Reveals natural talents, abilities, and the goals you are meant to achieve. Values: 1 to 9, 11, 22, or 33.
+	// Number Expression number (also called Destiny number) from every letter of the full birth name. Reveals natural talents, abilities, and the goals you are meant to achieve. Values: 1 to 9, 11, 22, or 33.
 	Number float32 `json:"number"`
 
 	// Type Single-digit (1 to 9) or Master Number (11, 22, 33). Master Numbers in the Expression position indicate extraordinary innate talent that demands conscious development.
@@ -124028,7 +124074,7 @@ type CheckKarmicDebtResponse struct {
 	HTTPResponse *http.Response
 	// JSON200 the response for an HTTP 200 `application/json` response
 	JSON200 *struct {
-		// DebtNumbers All karmic debt numbers found (13, 14, 16, 19)
+		// DebtNumbers All karmic debt numbers found (13, 14, 16, 19), each listed once, in core-number order: Life Path, Expression, Soul Urge, Personality, Birth Day.
 		DebtNumbers []float32 `json:"debtNumbers"`
 
 		// HasKarmicDebt Whether any karmic debt numbers were detected
@@ -124066,7 +124112,7 @@ type CheckKarmicDebtResponse struct {
 
 // GetJSON200 returns the response for an HTTP 200 `application/json` response
 func (r CheckKarmicDebtResponse) GetJSON200() *struct {
-	// DebtNumbers All karmic debt numbers found (13, 14, 16, 19)
+	// DebtNumbers All karmic debt numbers found (13, 14, 16, 19), each listed once, in core-number order: Life Path, Expression, Soul Urge, Personality, Birth Day.
 	DebtNumbers []float32 `json:"debtNumbers"`
 
 	// HasKarmicDebt Whether any karmic debt numbers were detected
@@ -124288,7 +124334,7 @@ type CalculateLifePathResponse struct {
 	HTTPResponse *http.Response
 	// JSON200 the response for an HTTP 200 `application/json` response
 	JSON200 *struct {
-		// Calculation Full step-by-step breakdown of the 3-Cycle Pythagorean reduction. Shows how month, day, and year each reduce independently before combining into the final Life Path number.
+		// Calculation Every step of the calculation: the birth month, day and year each reduced, then combined into the final Life Path number.
 		Calculation string `json:"calculation"`
 
 		// HasKarmicDebt Indicates whether a Karmic Debt number (13, 14, 16, or 19) appeared during the reduction chain. Karmic Debt reveals past-life challenges carried into this lifetime.
@@ -124315,10 +124361,10 @@ type CalculateLifePathResponse struct {
 			// Challenges Growth areas and shadow qualities to be aware of. Each entry names the challenge and explains its root cause and how to work through it constructively.
 			Challenges []string `json:"challenges"`
 
-			// Description In-depth 300 to 500 word interpretation covering personality, purpose, and life themes. Written by numerology experts with decades of practice. Suitable for full-page readings and detailed reports.
+			// Description Core interpretation of the number covering personality, purpose and life themes. Together with the strengths, challenges, career, relationships and spirituality fields it makes a full-page reading.
 			Description string `json:"description"`
 
-			// Keywords Ten defining personality traits and energetic themes associated with this number. Useful for quick personality snapshots, tag clouds, and compatibility matching.
+			// Keywords Defining personality traits and energetic themes of this number. Useful for quick personality snapshots, tag clouds and compatibility matching.
 			Keywords []string `json:"keywords"`
 
 			// Relationships Love, friendship, and family dynamics. Covers romantic compatibility with other Life Path numbers, communication style, and the key relationship lessons for this number.
@@ -124356,7 +124402,7 @@ type CalculateLifePathResponse struct {
 
 // GetJSON200 returns the response for an HTTP 200 `application/json` response
 func (r CalculateLifePathResponse) GetJSON200() *struct {
-	// Calculation Full step-by-step breakdown of the 3-Cycle Pythagorean reduction. Shows how month, day, and year each reduce independently before combining into the final Life Path number.
+	// Calculation Every step of the calculation: the birth month, day and year each reduced, then combined into the final Life Path number.
 	Calculation string `json:"calculation"`
 
 	// HasKarmicDebt Indicates whether a Karmic Debt number (13, 14, 16, or 19) appeared during the reduction chain. Karmic Debt reveals past-life challenges carried into this lifetime.
@@ -124383,10 +124429,10 @@ func (r CalculateLifePathResponse) GetJSON200() *struct {
 		// Challenges Growth areas and shadow qualities to be aware of. Each entry names the challenge and explains its root cause and how to work through it constructively.
 		Challenges []string `json:"challenges"`
 
-		// Description In-depth 300 to 500 word interpretation covering personality, purpose, and life themes. Written by numerology experts with decades of practice. Suitable for full-page readings and detailed reports.
+		// Description Core interpretation of the number covering personality, purpose and life themes. Together with the strengths, challenges, career, relationships and spirituality fields it makes a full-page reading.
 		Description string `json:"description"`
 
-		// Keywords Ten defining personality traits and energetic themes associated with this number. Useful for quick personality snapshots, tag clouds, and compatibility matching.
+		// Keywords Defining personality traits and energetic themes of this number. Useful for quick personality snapshots, tag clouds and compatibility matching.
 		Keywords []string `json:"keywords"`
 
 		// Relationships Love, friendship, and family dynamics. Covers romantic compatibility with other Life Path numbers, communication style, and the key relationship lessons for this number.
@@ -124507,7 +124553,7 @@ type CalculateMaturityResponse struct {
 			// Challenges Growth areas to watch as Maturity energy intensifies. Understanding these early helps you navigate the transition with awareness and grace.
 			Challenges []string `json:"challenges"`
 
-			// Description Expert-written 300 to 500 word guide to the person you are evolving into. The Maturity number is the sum of Life Path and Expression, representing the wisdom gained through lived experience.
+			// Description Core interpretation of the person being grown into in the second half of life, the wisdom gained through lived experience. Together with the strengths, challenges, career, relationships and spirituality fields it makes a full reading.
 			Description string `json:"description"`
 
 			// Keywords Emerging traits and qualities that strengthen after age 35 to 40. These energies gradually integrate into your personality as you mature.
@@ -124575,7 +124621,7 @@ func (r CalculateMaturityResponse) GetJSON200() *struct {
 		// Challenges Growth areas to watch as Maturity energy intensifies. Understanding these early helps you navigate the transition with awareness and grace.
 		Challenges []string `json:"challenges"`
 
-		// Description Expert-written 300 to 500 word guide to the person you are evolving into. The Maturity number is the sum of Life Path and Expression, representing the wisdom gained through lived experience.
+		// Description Core interpretation of the person being grown into in the second half of life, the wisdom gained through lived experience. Together with the strengths, challenges, career, relationships and spirituality fields it makes a full reading.
 		Description string `json:"description"`
 
 		// Keywords Emerging traits and qualities that strengthen after age 35 to 40. These energies gradually integrate into your personality as you mature.
@@ -124679,7 +124725,7 @@ type GetNumberMeaningResponse struct {
 			// Challenges Growth areas and shadow qualities. Each entry explains the root cause, how it surfaces, and constructive strategies for working through it.
 			Challenges []string `json:"challenges"`
 
-			// Description Authoritative 300 to 500 word interpretation covering personality, life purpose, and core themes. Written by numerology experts and suitable for full-page readings.
+			// Description Core interpretation of the number covering personality, life purpose and core themes. Together with the strengths, challenges, career, relationships and spirituality fields it makes a full reading.
 			Description string `json:"description"`
 
 			// Keywords Ten defining personality traits and energetic themes. Useful for personality snapshots, compatibility matching, and building numerology profile summaries.
@@ -124729,7 +124775,7 @@ func (r GetNumberMeaningResponse) GetJSON200() *struct {
 		// Challenges Growth areas and shadow qualities. Each entry explains the root cause, how it surfaces, and constructive strategies for working through it.
 		Challenges []string `json:"challenges"`
 
-		// Description Authoritative 300 to 500 word interpretation covering personality, life purpose, and core themes. Written by numerology experts and suitable for full-page readings.
+		// Description Core interpretation of the number covering personality, life purpose and core themes. Together with the strengths, challenges, career, relationships and spirituality fields it makes a full reading.
 		Description string `json:"description"`
 
 		// Keywords Ten defining personality traits and energetic themes. Useful for personality snapshots, compatibility matching, and building numerology profile summaries.
@@ -125221,7 +125267,7 @@ type CalculatePersonalityResponse struct {
 	HTTPResponse *http.Response
 	// JSON200 the response for an HTTP 200 `application/json` response
 	JSON200 *struct {
-		// Calculation Full step-by-step Pythagorean reduction using only the consonants from the birth name. Shows each consonant mapped to its numeric value, grouped by word, then summed and reduced to the final Personality number.
+		// Calculation Every consonant of the birth name with its value, grouped by name: each name is summed and reduced, then the names are added and reduced to the final Personality number.
 		Calculation string `json:"calculation"`
 
 		// HasKarmicDebt Indicates whether a Karmic Debt number (13, 14, 16, or 19) appeared during the consonant reduction chain. Karmic Debt in the Personality position reveals past-life patterns that influence how others perceive you and the social challenges you must overcome.
@@ -125248,7 +125294,7 @@ type CalculatePersonalityResponse struct {
 			// Challenges Blind spots in your public persona. Patterns others notice that you may not, including defense mechanisms and image-management tendencies that can limit authentic connection.
 			Challenges []string `json:"challenges"`
 
-			// Description Expert-written 300 to 500 word analysis of the outer personality, social presence, and the image you project to the world. Reveals the gap between how others see you and who you truly are.
+			// Description Core interpretation of the outer personality, social presence and the image projected to the world. Together with the strengths, challenges, career, relationships and spirituality fields it makes a full reading.
 			Description string `json:"description"`
 
 			// Keywords Traits that define your public persona and first impression. These are the qualities others perceive before they get to know the real you.
@@ -125289,7 +125335,7 @@ type CalculatePersonalityResponse struct {
 
 // GetJSON200 returns the response for an HTTP 200 `application/json` response
 func (r CalculatePersonalityResponse) GetJSON200() *struct {
-	// Calculation Full step-by-step Pythagorean reduction using only the consonants from the birth name. Shows each consonant mapped to its numeric value, grouped by word, then summed and reduced to the final Personality number.
+	// Calculation Every consonant of the birth name with its value, grouped by name: each name is summed and reduced, then the names are added and reduced to the final Personality number.
 	Calculation string `json:"calculation"`
 
 	// HasKarmicDebt Indicates whether a Karmic Debt number (13, 14, 16, or 19) appeared during the consonant reduction chain. Karmic Debt in the Personality position reveals past-life patterns that influence how others perceive you and the social challenges you must overcome.
@@ -125316,7 +125362,7 @@ func (r CalculatePersonalityResponse) GetJSON200() *struct {
 		// Challenges Blind spots in your public persona. Patterns others notice that you may not, including defense mechanisms and image-management tendencies that can limit authentic connection.
 		Challenges []string `json:"challenges"`
 
-		// Description Expert-written 300 to 500 word analysis of the outer personality, social presence, and the image you project to the world. Reveals the gap between how others see you and who you truly are.
+		// Description Core interpretation of the outer personality, social presence and the image projected to the world. Together with the strengths, challenges, career, relationships and spirituality fields it makes a full reading.
 		Description string `json:"description"`
 
 		// Keywords Traits that define your public persona and first impression. These are the qualities others perceive before they get to know the real you.
@@ -125413,7 +125459,7 @@ type CalculateSoulUrgeResponse struct {
 	HTTPResponse *http.Response
 	// JSON200 the response for an HTTP 200 `application/json` response
 	JSON200 *struct {
-		// Calculation Full step-by-step Pythagorean reduction using only the vowels (A, E, I, O, U) from the birth name. Shows each vowel mapped to its numeric value, grouped by word, then summed and reduced to the final Soul Urge number.
+		// Calculation Every vowel (A, E, I, O, U) of the birth name with its value, grouped by name: each name is summed and reduced, then the names are added and reduced to the final Soul Urge number.
 		Calculation string `json:"calculation"`
 
 		// HasKarmicDebt Indicates whether a Karmic Debt number (13, 14, 16, or 19) appeared during the vowel reduction chain. Karmic Debt in the Soul Urge reveals past-life emotional patterns and unresolved inner desires carried into this lifetime.
@@ -125440,7 +125486,7 @@ type CalculateSoulUrgeResponse struct {
 			// Challenges Inner shadows and emotional patterns to balance. Explains how each challenge manifests when the Soul Urge energy is overextended or repressed.
 			Challenges []string `json:"challenges"`
 
-			// Description Expert-written 300 to 500 word exploration of the inner self, hidden desires, and emotional landscape. Reveals what the heart truly craves beneath the surface persona.
+			// Description Core interpretation of the inner self, hidden desires and emotional landscape. Together with the strengths, challenges, career, relationships and spirituality fields it makes a full reading.
 			Description string `json:"description"`
 
 			// Keywords Core emotional drives and inner motivations for this Soul Urge. Useful for understanding hidden desires, emotional needs, and what truly fulfills someone at the deepest level.
@@ -125481,7 +125527,7 @@ type CalculateSoulUrgeResponse struct {
 
 // GetJSON200 returns the response for an HTTP 200 `application/json` response
 func (r CalculateSoulUrgeResponse) GetJSON200() *struct {
-	// Calculation Full step-by-step Pythagorean reduction using only the vowels (A, E, I, O, U) from the birth name. Shows each vowel mapped to its numeric value, grouped by word, then summed and reduced to the final Soul Urge number.
+	// Calculation Every vowel (A, E, I, O, U) of the birth name with its value, grouped by name: each name is summed and reduced, then the names are added and reduced to the final Soul Urge number.
 	Calculation string `json:"calculation"`
 
 	// HasKarmicDebt Indicates whether a Karmic Debt number (13, 14, 16, or 19) appeared during the vowel reduction chain. Karmic Debt in the Soul Urge reveals past-life emotional patterns and unresolved inner desires carried into this lifetime.
@@ -125508,7 +125554,7 @@ func (r CalculateSoulUrgeResponse) GetJSON200() *struct {
 		// Challenges Inner shadows and emotional patterns to balance. Explains how each challenge manifests when the Soul Urge energy is overextended or repressed.
 		Challenges []string `json:"challenges"`
 
-		// Description Expert-written 300 to 500 word exploration of the inner self, hidden desires, and emotional landscape. Reveals what the heart truly craves beneath the surface persona.
+		// Description Core interpretation of the inner self, hidden desires and emotional landscape. Together with the strengths, challenges, career, relationships and spirituality fields it makes a full reading.
 		Description string `json:"description"`
 
 		// Keywords Core emotional drives and inner motivations for this Soul Urge. Useful for understanding hidden desires, emotional needs, and what truly fulfills someone at the deepest level.
@@ -126716,9 +126762,12 @@ type CastYesNoResponse struct {
 	HTTPResponse *http.Response
 	// JSON200 the response for an HTTP 200 `application/json` response
 	JSON200 *struct {
-		// Answer Tarot-derived answer. Yes = upright card supports a positive outcome. No = reversed card suggests obstacles. Maybe = inherently ambiguous card drawn (The Hanged Man, Wheel of Fortune, Temperance, Two of Swords, Four of Swords) signaling pause, reflection, or shifting circumstances.
+		// Answer Tarot-derived answer. Yes = upright card supports a positive outcome. No = reversed card suggests obstacles. Maybe = inherently ambiguous card drawn (The Hanged Man, Wheel of Fortune, Temperance, Two of Swords, Four of Swords) signaling pause, reflection, or shifting circumstances. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use answerLocalized for anything a reader sees.
 		Answer CastYesNo200JSONResponseBodyAnswer `json:"answer"`
-		Card   struct {
+
+		// AnswerLocalized Answer in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		AnswerLocalized *string `json:"answerLocalized,omitempty"`
+		Card            struct {
 			// Arcana Whether this card belongs to the Major Arcana (22 trump cards, major life themes) or Minor Arcana (56 suit cards, daily situations).
 			Arcana CastYesNo200JSONResponseBodyCardArcana `json:"arcana"`
 
@@ -126747,8 +126796,11 @@ type CastYesNoResponse struct {
 		// Seed The seed used for this draw, echoed back when one was supplied. Present only if the request carried a seed. Makes a cached or forwarded response self describing, so a reading can be reproduced or shared without the original request beside it.
 		Seed *string `json:"seed,omitempty"`
 
-		// Strength Confidence level of the answer. Strong = Major Arcana card drawn (powerful, definitive cosmic energy). Qualified = Minor Arcana card drawn (nuanced, situational guidance).
+		// Strength Confidence level of the answer. Strong = Major Arcana card drawn (powerful, definitive cosmic energy). Qualified = Minor Arcana card drawn (nuanced, situational guidance). Always English, whatever the lang parameter says. Use strengthLocalized for anything a reader sees.
 		Strength CastYesNo200JSONResponseBodyStrength `json:"strength"`
+
+		// StrengthLocalized Answer strength in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		StrengthLocalized *string `json:"strengthLocalized,omitempty"`
 	}
 	// JSON400 the response for an HTTP 400 `application/json` response
 	JSON400 *ErrorResponse
@@ -126766,9 +126818,12 @@ type CastYesNoResponse struct {
 
 // GetJSON200 returns the response for an HTTP 200 `application/json` response
 func (r CastYesNoResponse) GetJSON200() *struct {
-	// Answer Tarot-derived answer. Yes = upright card supports a positive outcome. No = reversed card suggests obstacles. Maybe = inherently ambiguous card drawn (The Hanged Man, Wheel of Fortune, Temperance, Two of Swords, Four of Swords) signaling pause, reflection, or shifting circumstances.
+	// Answer Tarot-derived answer. Yes = upright card supports a positive outcome. No = reversed card suggests obstacles. Maybe = inherently ambiguous card drawn (The Hanged Man, Wheel of Fortune, Temperance, Two of Swords, Four of Swords) signaling pause, reflection, or shifting circumstances. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use answerLocalized for anything a reader sees.
 	Answer CastYesNo200JSONResponseBodyAnswer `json:"answer"`
-	Card   struct {
+
+	// AnswerLocalized Answer in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+	AnswerLocalized *string `json:"answerLocalized,omitempty"`
+	Card            struct {
 		// Arcana Whether this card belongs to the Major Arcana (22 trump cards, major life themes) or Minor Arcana (56 suit cards, daily situations).
 		Arcana CastYesNo200JSONResponseBodyCardArcana `json:"arcana"`
 
@@ -126797,8 +126852,11 @@ func (r CastYesNoResponse) GetJSON200() *struct {
 	// Seed The seed used for this draw, echoed back when one was supplied. Present only if the request carried a seed. Makes a cached or forwarded response self describing, so a reading can be reproduced or shared without the original request beside it.
 	Seed *string `json:"seed,omitempty"`
 
-	// Strength Confidence level of the answer. Strong = Major Arcana card drawn (powerful, definitive cosmic energy). Qualified = Minor Arcana card drawn (nuanced, situational guidance).
+	// Strength Confidence level of the answer. Strong = Major Arcana card drawn (powerful, definitive cosmic energy). Qualified = Minor Arcana card drawn (nuanced, situational guidance). Always English, whatever the lang parameter says. Use strengthLocalized for anything a reader sees.
 	Strength CastYesNo200JSONResponseBodyStrength `json:"strength"`
+
+	// StrengthLocalized Answer strength in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+	StrengthLocalized *string `json:"strengthLocalized,omitempty"`
 } {
 	return r.JSON200
 }
@@ -144416,9 +144474,9 @@ func (c *ClientWithResponses) CalculateTzolkinWithResponse(ctx context.Context, 
 	return ParseCalculateTzolkinResponse(rsp)
 }
 
-// CalculateBirthDayWithBodyWithResponse Calculate Birth Day number - Special talents from day of birth
+// CalculateBirthDayWithBodyWithResponse Calculate Birth Day number - Birthday numerology API
 //
-// Calculate your Birth Day number from the day you were born (1-31) using Pythagorean numerology. This number reveals special talents and abilities you possess from birth. It shows natural gifts that can help you achieve your life purpose. Returns comprehensive interpretation including innate talents, natural abilities, career advantages, and how to leverage your special gifts. Automatically detects Master Numbers (11, 22) and reduces double-digit days. Perfect for talent discovery apps, career counseling platforms, personal development services, and skill assessment tools. Get detailed 300-500 word meanings for all numbers 1-9, 11, and 22.
+// Calculate the Birth Day number from the day of the month a person was born, 1 to 31, with Pythagorean numerology. The 11th, 22nd and 29th keep the master numbers 11 and 22, other two-digit days reduce to one digit, and the 13th, 14th, 16th and 19th are flagged as karmic debt with their meaning. The response returns the calculation and a full interpretation of the special talents the day brings in the language set by lang. Built for birthday features, talent and career discovery tools, and AI agents.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -144431,9 +144489,9 @@ func (c *ClientWithResponses) CalculateBirthDayWithBodyWithResponse(ctx context.
 	return ParseCalculateBirthDayResponse(rsp)
 }
 
-// CalculateBirthDayWithResponse Calculate Birth Day number - Special talents from day of birth
+// CalculateBirthDayWithResponse Calculate Birth Day number - Birthday numerology API
 //
-// Calculate your Birth Day number from the day you were born (1-31) using Pythagorean numerology. This number reveals special talents and abilities you possess from birth. It shows natural gifts that can help you achieve your life purpose. Returns comprehensive interpretation including innate talents, natural abilities, career advantages, and how to leverage your special gifts. Automatically detects Master Numbers (11, 22) and reduces double-digit days. Perfect for talent discovery apps, career counseling platforms, personal development services, and skill assessment tools. Get detailed 300-500 word meanings for all numbers 1-9, 11, and 22.
+// Calculate the Birth Day number from the day of the month a person was born, 1 to 31, with Pythagorean numerology. The 11th, 22nd and 29th keep the master numbers 11 and 22, other two-digit days reduce to one digit, and the 13th, 14th, 16th and 19th are flagged as karmic debt with their meaning. The response returns the calculation and a full interpretation of the special talents the day brings in the language set by lang. Built for birthday features, talent and career discovery tools, and AI agents.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -144446,9 +144504,9 @@ func (c *ClientWithResponses) CalculateBirthDayWithResponse(ctx context.Context,
 	return ParseCalculateBirthDayResponse(rsp)
 }
 
-// CalculateBridgeNumbersWithBodyWithResponse Calculate Bridge Numbers - Harmonize different aspects of personality
+// CalculateBridgeNumbersWithBodyWithResponse Calculate Bridge Numbers - Numerology bridge numbers API
 //
-// Calculate three Bridge Numbers that reveal the adjustments needed to create harmony between different aspects of your numerology profile. Bridge Numbers are the absolute difference between pairs of core numbers: Life Path and Expression, Expression and Personality, Expression and Soul Urge. A Bridge of 0 means the two aspects are already aligned. Higher bridges (1 to 8) indicate greater tension and provide specific guidance on what changes to make. Bridge Numbers are essential for personal development, coaching applications, self-improvement platforms, and AI-powered personality analysis tools. Requires both a full birth name and birth date to calculate all four core numbers (Life Path, Expression, Soul Urge, Personality) internally before deriving the bridges.
+// Calculate four numerology Bridge numbers from a full birth name and birth date: Life Path and Expression, Expression and Soul Urge, Soul Urge and Personality, and Expression and Personality. Each bridge is the distance between two core numbers, from 0 to 8, where 0 means the two are already in harmony, and comes with guidance for closing the gap in the language set by lang. Built for personal development, coaching and personality analysis tools and AI agents.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -144461,9 +144519,9 @@ func (c *ClientWithResponses) CalculateBridgeNumbersWithBodyWithResponse(ctx con
 	return ParseCalculateBridgeNumbersResponse(rsp)
 }
 
-// CalculateBridgeNumbersWithResponse Calculate Bridge Numbers - Harmonize different aspects of personality
+// CalculateBridgeNumbersWithResponse Calculate Bridge Numbers - Numerology bridge numbers API
 //
-// Calculate three Bridge Numbers that reveal the adjustments needed to create harmony between different aspects of your numerology profile. Bridge Numbers are the absolute difference between pairs of core numbers: Life Path and Expression, Expression and Personality, Expression and Soul Urge. A Bridge of 0 means the two aspects are already aligned. Higher bridges (1 to 8) indicate greater tension and provide specific guidance on what changes to make. Bridge Numbers are essential for personal development, coaching applications, self-improvement platforms, and AI-powered personality analysis tools. Requires both a full birth name and birth date to calculate all four core numbers (Life Path, Expression, Soul Urge, Personality) internally before deriving the bridges.
+// Calculate four numerology Bridge numbers from a full birth name and birth date: Life Path and Expression, Expression and Soul Urge, Soul Urge and Personality, and Expression and Personality. Each bridge is the distance between two core numbers, from 0 to 8, where 0 means the two are already in harmony, and comes with guidance for closing the gap in the language set by lang. Built for personal development, coaching and personality analysis tools and AI agents.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -144476,9 +144534,9 @@ func (c *ClientWithResponses) CalculateBridgeNumbersWithResponse(ctx context.Con
 	return ParseCalculateBridgeNumbersResponse(rsp)
 }
 
-// CalculateBusinessNameWithBodyWithResponse Business name numerology - Chaldean brand name analysis and lucky numbers
+// CalculateBusinessNameWithBodyWithResponse Calculate business name numerology - Brand name numerology API
 //
-// Analyze a business or brand name with Chaldean numerology, the system practitioners use for trade names. Returns the name number (compound and root), its planetary ruler, an overall business rating, the industries the number favors, and whether the compound is one of Cheiro fortunate compounds. The most favorable business roots are 1 (leadership), 3 (expansion), 5 (commerce) and 6 (beauty and hospitality); the numbers 4 and 8 carry caution as the karmic numbers of instability and heavy demand. Use it to vet a company name, compare brand options, or guide a naming decision. This is positioning guidance layered over the fundamentals of a memorable, available name, not a guarantee.
+// Analyze a business or brand name with Chaldean numerology, the system practitioners use for trade names. The name is read word by word, and the response returns the compound number and root with every step, the planetary ruler, a business rating, the industries the number favors, whether the compound is one of the fortunate compounds Cheiro names, and guidance, in the language set by lang. The roots 1, 3, 5 and 6 rate excellent, 2 and 9 good, 7 and 8 caution and 4 avoid. Built for naming tools, brand agencies and founder apps; the rating is positioning guidance, not a guarantee.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -144491,9 +144549,9 @@ func (c *ClientWithResponses) CalculateBusinessNameWithBodyWithResponse(ctx cont
 	return ParseCalculateBusinessNameResponse(rsp)
 }
 
-// CalculateBusinessNameWithResponse Business name numerology - Chaldean brand name analysis and lucky numbers
+// CalculateBusinessNameWithResponse Calculate business name numerology - Brand name numerology API
 //
-// Analyze a business or brand name with Chaldean numerology, the system practitioners use for trade names. Returns the name number (compound and root), its planetary ruler, an overall business rating, the industries the number favors, and whether the compound is one of Cheiro fortunate compounds. The most favorable business roots are 1 (leadership), 3 (expansion), 5 (commerce) and 6 (beauty and hospitality); the numbers 4 and 8 carry caution as the karmic numbers of instability and heavy demand. Use it to vet a company name, compare brand options, or guide a naming decision. This is positioning guidance layered over the fundamentals of a memorable, available name, not a guarantee.
+// Analyze a business or brand name with Chaldean numerology, the system practitioners use for trade names. The name is read word by word, and the response returns the compound number and root with every step, the planetary ruler, a business rating, the industries the number favors, whether the compound is one of the fortunate compounds Cheiro names, and guidance, in the language set by lang. The roots 1, 3, 5 and 6 rate excellent, 2 and 9 good, 7 and 8 caution and 4 avoid. Built for naming tools, brand agencies and founder apps; the rating is positioning guidance, not a guarantee.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -144506,9 +144564,9 @@ func (c *ClientWithResponses) CalculateBusinessNameWithResponse(ctx context.Cont
 	return ParseCalculateBusinessNameResponse(rsp)
 }
 
-// CalculateChaldeanWithBodyWithResponse Chaldean numerology name reading - Destiny, compound number, planetary ruler
+// CalculateChaldeanWithBodyWithResponse Calculate Chaldean numerology - Chaldean name number calculator API
 //
-// Calculate a complete Chaldean numerology reading for a name. The older Chaldean system maps letters to values 1 to 8 by vibration (the number 9 is sacred and never assigned to a letter) and reads the unreduced two-digit compound number (10 to 52, also called a fadic number, defined by Cheiro) in addition to the single-digit root. Returns the Destiny or name number from all letters, the Soul Urge from vowels, and the Personality from consonants, each with its compound number, root, and Cheiro compound interpretation, plus the planetary ruler of the Destiny root and a caution flag for the karmic numbers 4 and 8. Perfect for Chaldean numerology calculators, name analysis tools, and AI numerology assistants that need both the compound and root layers in one call.
+// Calculate a complete Chaldean numerology reading for a name, following Cheiro. The Destiny or name number, the Soul Urge from the vowels and the Personality from the consonants each come with the compound number from 10 to 52, the single-digit root and the classical compound interpretation, and a longer name is read name by name with every step shown in its calculation. The response adds the planetary ruler and meaning of the Destiny root, a caution flag for the roots 4 and 8, and a summary, in the language set by lang. Built for Chaldean numerology calculators, name analysis tools and AI agents.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -144521,9 +144579,9 @@ func (c *ClientWithResponses) CalculateChaldeanWithBodyWithResponse(ctx context.
 	return ParseCalculateChaldeanResponse(rsp)
 }
 
-// CalculateChaldeanWithResponse Chaldean numerology name reading - Destiny, compound number, planetary ruler
+// CalculateChaldeanWithResponse Calculate Chaldean numerology - Chaldean name number calculator API
 //
-// Calculate a complete Chaldean numerology reading for a name. The older Chaldean system maps letters to values 1 to 8 by vibration (the number 9 is sacred and never assigned to a letter) and reads the unreduced two-digit compound number (10 to 52, also called a fadic number, defined by Cheiro) in addition to the single-digit root. Returns the Destiny or name number from all letters, the Soul Urge from vowels, and the Personality from consonants, each with its compound number, root, and Cheiro compound interpretation, plus the planetary ruler of the Destiny root and a caution flag for the karmic numbers 4 and 8. Perfect for Chaldean numerology calculators, name analysis tools, and AI numerology assistants that need both the compound and root layers in one call.
+// Calculate a complete Chaldean numerology reading for a name, following Cheiro. The Destiny or name number, the Soul Urge from the vowels and the Personality from the consonants each come with the compound number from 10 to 52, the single-digit root and the classical compound interpretation, and a longer name is read name by name with every step shown in its calculation. The response adds the planetary ruler and meaning of the Destiny root, a caution flag for the roots 4 and 8, and a summary, in the language set by lang. Built for Chaldean numerology calculators, name analysis tools and AI agents.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -144536,9 +144594,9 @@ func (c *ClientWithResponses) CalculateChaldeanWithResponse(ctx context.Context,
 	return ParseCalculateChaldeanResponse(rsp)
 }
 
-// GenerateNumerologyChartWithBodyWithResponse Generate Complete Numerology Chart - Full profile analysis
+// GenerateNumerologyChartWithBodyWithResponse Generate numerology chart - Complete numerology reading API
 //
-// Generate a comprehensive numerology chart combining all major calculations: Life Path, Expression, Soul Urge, Personality, Birth Day, Maturity, Karmic Lessons, Karmic Debt, and Personal Year. This single endpoint provides everything needed for a full numerology reading. Returns detailed interpretations for all numbers, karmic analysis, yearly forecast, and holistic summary. Perfect for numerology apps, complete reading services, birth chart generators, and comprehensive analysis tools. Save multiple API calls by getting the full chart in one request. Ideal for generating PDF reports or detailed user profiles.
+// Generate a complete numerology chart from a full birth name and birth date in one call. It returns the six core numbers (Life Path, Expression, Soul Urge, Personality, Birth Day and Maturity) with their calculations and full interpretations, the four Pinnacles and four Challenges with their ages, Karmic Lessons, karmic debt in all five positions, Hidden Passion, Subconscious Self, Cornerstone, Capstone and First Vowel, the Birth Day profile for the exact day, lucky associations, the Maturity activation status, the Personal Year with the current Personal Month, and a written summary, in the language set by lang. The Personal Year uses currentYear or the current UTC year, while the Personal Month and the age behind the Maturity status read the current UTC date. Built for full numerology readings, PDF reports, onboarding profiles and AI agents.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -144551,9 +144609,9 @@ func (c *ClientWithResponses) GenerateNumerologyChartWithBodyWithResponse(ctx co
 	return ParseGenerateNumerologyChartResponse(rsp)
 }
 
-// GenerateNumerologyChartWithResponse Generate Complete Numerology Chart - Full profile analysis
+// GenerateNumerologyChartWithResponse Generate numerology chart - Complete numerology reading API
 //
-// Generate a comprehensive numerology chart combining all major calculations: Life Path, Expression, Soul Urge, Personality, Birth Day, Maturity, Karmic Lessons, Karmic Debt, and Personal Year. This single endpoint provides everything needed for a full numerology reading. Returns detailed interpretations for all numbers, karmic analysis, yearly forecast, and holistic summary. Perfect for numerology apps, complete reading services, birth chart generators, and comprehensive analysis tools. Save multiple API calls by getting the full chart in one request. Ideal for generating PDF reports or detailed user profiles.
+// Generate a complete numerology chart from a full birth name and birth date in one call. It returns the six core numbers (Life Path, Expression, Soul Urge, Personality, Birth Day and Maturity) with their calculations and full interpretations, the four Pinnacles and four Challenges with their ages, Karmic Lessons, karmic debt in all five positions, Hidden Passion, Subconscious Self, Cornerstone, Capstone and First Vowel, the Birth Day profile for the exact day, lucky associations, the Maturity activation status, the Personal Year with the current Personal Month, and a written summary, in the language set by lang. The Personal Year uses currentYear or the current UTC year, while the Personal Month and the age behind the Maturity status read the current UTC date. Built for full numerology readings, PDF reports, onboarding profiles and AI agents.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -144566,9 +144624,9 @@ func (c *ClientWithResponses) GenerateNumerologyChartWithResponse(ctx context.Co
 	return ParseGenerateNumerologyChartResponse(rsp)
 }
 
-// CalculateNumCompatibilityWithBodyWithResponse Calculate Compatibility - Relationship dynamics between two people
+// CalculateNumCompatibilityWithBodyWithResponse Calculate numerology compatibility - Love match scoring API
 //
-// Calculate numerology compatibility between two people using Pythagorean numerology. Accepts two input modes per person: pre-calculated Life Path, Expression, and Soul Urge numbers, or raw name and birthdate for automatic calculation. You can mix modes across persons (e.g. numbers for person1, raw inputs for person2). Provides comprehensive relationship analysis with overall compatibility score (0-100), individual aspect compatibility (Life Path 50% weight, Expression 30%, Soul Urge 20%), relationship strengths, challenges, and practical advice. Uses detailed compatibility matrix for all number combinations. Perfect for dating apps, relationship counseling platforms, matchmaking services, and compatibility tools. Get actionable insights for improving relationship dynamics.
+// Calculate numerology compatibility between two people from their Life Path, Expression and Soul Urge numbers. Send each person as a full birth name with a birth date, or as precomputed numbers, and mix the two modes freely across the pair. The response returns an overall score from 50 to 100 with its rating, a score and description for each number pair, and the strengths, challenges and advice for the relationship, in the language set by lang. Built for dating apps, matchmaking, relationship coaching and AI companions.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -144581,9 +144639,9 @@ func (c *ClientWithResponses) CalculateNumCompatibilityWithBodyWithResponse(ctx 
 	return ParseCalculateNumCompatibilityResponse(rsp)
 }
 
-// CalculateNumCompatibilityWithResponse Calculate Compatibility - Relationship dynamics between two people
+// CalculateNumCompatibilityWithResponse Calculate numerology compatibility - Love match scoring API
 //
-// Calculate numerology compatibility between two people using Pythagorean numerology. Accepts two input modes per person: pre-calculated Life Path, Expression, and Soul Urge numbers, or raw name and birthdate for automatic calculation. You can mix modes across persons (e.g. numbers for person1, raw inputs for person2). Provides comprehensive relationship analysis with overall compatibility score (0-100), individual aspect compatibility (Life Path 50% weight, Expression 30%, Soul Urge 20%), relationship strengths, challenges, and practical advice. Uses detailed compatibility matrix for all number combinations. Perfect for dating apps, relationship counseling platforms, matchmaking services, and compatibility tools. Get actionable insights for improving relationship dynamics.
+// Calculate numerology compatibility between two people from their Life Path, Expression and Soul Urge numbers. Send each person as a full birth name with a birth date, or as precomputed numbers, and mix the two modes freely across the pair. The response returns an overall score from 50 to 100 with its rating, a score and description for each number pair, and the strengths, challenges and advice for the relationship, in the language set by lang. Built for dating apps, matchmaking, relationship coaching and AI companions.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -144596,9 +144654,9 @@ func (c *ClientWithResponses) CalculateNumCompatibilityWithResponse(ctx context.
 	return ParseCalculateNumCompatibilityResponse(rsp)
 }
 
-// GetCompoundNumberWithResponse Compound number meaning - Cheiro Chaldean interpretation 10 to 52
+// GetCompoundNumberWithResponse Get compound number meaning - Chaldean compound numbers 10 to 52 API
 //
-// Get the classical Chaldean interpretation of a compound number (also called a fadic number) from 10 to 52, as defined by Cheiro in the Book of Numbers. Compound numbers are the unreduced two-digit numbers that reveal the hidden influence behind a name or date, beyond the single-digit root. Each returns its symbolic title (such as The Wheel of Fortune for 10, The Star of the Magi for 17, or The Crown of the Magi for 21), its nature (fortunate, unfortunate, or mixed), and a full interpretation. Numbers 33 to 52 share the meaning of a lower number in their series, returned with a sameAs pointer. Perfect for Chaldean numerology references, compound number lookups, and AI numerology tools.
+// Get the classical Chaldean meaning of a compound number, also called a fadic number, from 10 to 52 as Cheiro defines it. A compound number is the unreduced two-digit total behind a name or date, read beside its single-digit root. The response returns the root, the nature (fortunate, unfortunate or mixed), the full interpretation in the language set by lang, and the symbolic name where Cheiro gives one, such as The Wheel of Fortune for 10 or The Crown of the Magi for 21; a number from 33 up that repeats a lower one carries a sameAs pointer to it. Built for Chaldean numerology references, name analysis tools and AI agents.
 //
 // Returns a wrapper object for the known response body format(s).
 //
@@ -144611,9 +144669,9 @@ func (c *ClientWithResponses) GetCompoundNumberWithResponse(ctx context.Context,
 	return ParseGetCompoundNumberResponse(rsp)
 }
 
-// GetDailyNumberWithBodyWithResponse Get daily numerology number - Number of the Day with interpretation
+// GetDailyNumberWithBodyWithResponse Get daily numerology number - Number of the Day API
 //
-// Receive a daily numerology number (1-9, 11, 22, 33) for guidance and reflection. Uses seeded randomness so the same seed gets the same number on the same date, perfect for "Number of the Day" features in numerology apps, wellness platforms, and daily guidance tools. Returns the number with full interpretation including archetype, keywords, strengths, challenges, career, relationships, and spiritual insights. Ideal for daily push notifications, morning briefings, and personalized numerology experiences.
+// Get the numerology Number of the Day, one of 1 to 9, 11, 22 or 33, with its full interpretation. The same seed returns the same number for the same date, so a user keeps one number all day, and the date defaults to today in UTC. The response returns the number, its type, a daily message and the archetype, keywords, strengths, challenges, career, relationships and spirituality reading in the language set by lang. Built for Number of the Day widgets, push notifications and daily content.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -144626,9 +144684,9 @@ func (c *ClientWithResponses) GetDailyNumberWithBodyWithResponse(ctx context.Con
 	return ParseGetDailyNumberResponse(rsp)
 }
 
-// GetDailyNumberWithResponse Get daily numerology number - Number of the Day with interpretation
+// GetDailyNumberWithResponse Get daily numerology number - Number of the Day API
 //
-// Receive a daily numerology number (1-9, 11, 22, 33) for guidance and reflection. Uses seeded randomness so the same seed gets the same number on the same date, perfect for "Number of the Day" features in numerology apps, wellness platforms, and daily guidance tools. Returns the number with full interpretation including archetype, keywords, strengths, challenges, career, relationships, and spiritual insights. Ideal for daily push notifications, morning briefings, and personalized numerology experiences.
+// Get the numerology Number of the Day, one of 1 to 9, 11, 22 or 33, with its full interpretation. The same seed returns the same number for the same date, so a user keeps one number all day, and the date defaults to today in UTC. The response returns the number, its type, a daily message and the archetype, keywords, strengths, challenges, career, relationships and spirituality reading in the language set by lang. Built for Number of the Day widgets, push notifications and daily content.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -144641,9 +144699,9 @@ func (c *ClientWithResponses) GetDailyNumberWithResponse(ctx context.Context, pa
 	return ParseGetDailyNumberResponse(rsp)
 }
 
-// CalculateDualWithBodyWithResponse Dual numerology - Pythagorean and Chaldean name numbers in one call
+// CalculateDualWithBodyWithResponse Calculate dual numerology - Pythagorean and Chaldean name number API
 //
-// Calculate a name number in both major numerology systems at once and compare them. The Pythagorean system maps letters 1 to 9 in alphabetical order and preserves master numbers (11, 22, 33), giving the Expression or Destiny number used in modern Western numerology. The Chaldean system maps letters 1 to 8 by vibration, reads the compound number (10 to 52), and reduces to a root 1 to 9. Returns both results with their interpretations, plus an agreement flag showing whether the two systems point to the same single-digit energy. The only numerology API that returns Pythagorean and Chaldean for a name in a single request, ideal for comparison tools and AI numerology assistants.
+// Calculate a name number in both Pythagorean and Chaldean numerology in one call and compare them. The Pythagorean side returns the Expression or Destiny number with master numbers 11, 22 and 33 kept; the Chaldean side returns the compound number from 10 to 52, the root, its planetary ruler and the compound interpretation; each shows its calculation name by name. An agreement flag and a plain-language note show whether the two systems point to the same single-digit energy, in the language set by lang. Built for system comparison tools, name analysis features and AI agents.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -144656,9 +144714,9 @@ func (c *ClientWithResponses) CalculateDualWithBodyWithResponse(ctx context.Cont
 	return ParseCalculateDualResponse(rsp)
 }
 
-// CalculateDualWithResponse Dual numerology - Pythagorean and Chaldean name numbers in one call
+// CalculateDualWithResponse Calculate dual numerology - Pythagorean and Chaldean name number API
 //
-// Calculate a name number in both major numerology systems at once and compare them. The Pythagorean system maps letters 1 to 9 in alphabetical order and preserves master numbers (11, 22, 33), giving the Expression or Destiny number used in modern Western numerology. The Chaldean system maps letters 1 to 8 by vibration, reads the compound number (10 to 52), and reduces to a root 1 to 9. Returns both results with their interpretations, plus an agreement flag showing whether the two systems point to the same single-digit energy. The only numerology API that returns Pythagorean and Chaldean for a name in a single request, ideal for comparison tools and AI numerology assistants.
+// Calculate a name number in both Pythagorean and Chaldean numerology in one call and compare them. The Pythagorean side returns the Expression or Destiny number with master numbers 11, 22 and 33 kept; the Chaldean side returns the compound number from 10 to 52, the root, its planetary ruler and the compound interpretation; each shows its calculation name by name. An agreement flag and a plain-language note show whether the two systems point to the same single-digit energy, in the language set by lang. Built for system comparison tools, name analysis features and AI agents.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -144671,9 +144729,9 @@ func (c *ClientWithResponses) CalculateDualWithResponse(ctx context.Context, par
 	return ParseCalculateDualResponse(rsp)
 }
 
-// CalculateExpressionWithBodyWithResponse Calculate Expression number - Natural talents and life goals
+// CalculateExpressionWithBodyWithResponse Calculate Expression number - Destiny number calculator API
 //
-// Calculate your Expression (Destiny) number from your full birth name using Pythagorean numerology. This number reveals your natural talents, abilities, and life goals. It shows what you came here to do and what tools you have to accomplish your life purpose. Returns comprehensive interpretation including personality traits, career paths, relationship dynamics, and spiritual insights. Automatically detects Master Numbers (11, 22, 33). Perfect for name numerology apps, career guidance tools, personal development platforms, and talent assessment services. Get detailed 300-500 word meanings for all numbers 1-9, 11, 22, and 33.
+// Calculate the Expression number, also called the Destiny number, from a full birth name with Pythagorean numerology. Every letter is valued and the name is reduced name by name, with master numbers 11, 22 and 33 kept and a karmic debt of 13, 14, 16 or 19 flagged with its meaning. The response lists every letter value and returns a full interpretation of natural talents, career, relationships and spiritual path in the language set by lang. Built for name numerology apps, career and personal brand tools, and AI agents.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -144686,9 +144744,9 @@ func (c *ClientWithResponses) CalculateExpressionWithBodyWithResponse(ctx contex
 	return ParseCalculateExpressionResponse(rsp)
 }
 
-// CalculateExpressionWithResponse Calculate Expression number - Natural talents and life goals
+// CalculateExpressionWithResponse Calculate Expression number - Destiny number calculator API
 //
-// Calculate your Expression (Destiny) number from your full birth name using Pythagorean numerology. This number reveals your natural talents, abilities, and life goals. It shows what you came here to do and what tools you have to accomplish your life purpose. Returns comprehensive interpretation including personality traits, career paths, relationship dynamics, and spiritual insights. Automatically detects Master Numbers (11, 22, 33). Perfect for name numerology apps, career guidance tools, personal development platforms, and talent assessment services. Get detailed 300-500 word meanings for all numbers 1-9, 11, 22, and 33.
+// Calculate the Expression number, also called the Destiny number, from a full birth name with Pythagorean numerology. Every letter is valued and the name is reduced name by name, with master numbers 11, 22 and 33 kept and a karmic debt of 13, 14, 16 or 19 flagged with its meaning. The response lists every letter value and returns a full interpretation of natural talents, career, relationships and spiritual path in the language set by lang. Built for name numerology apps, career and personal brand tools, and AI agents.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -144701,9 +144759,9 @@ func (c *ClientWithResponses) CalculateExpressionWithResponse(ctx context.Contex
 	return ParseCalculateExpressionResponse(rsp)
 }
 
-// CheckKarmicDebtWithBodyWithResponse Detect Karmic Debt numbers - Past life challenges (13, 14, 16, 19)
+// CheckKarmicDebtWithBodyWithResponse Detect Karmic Debt numbers - Karmic debt 13, 14, 16, 19 API
 //
-// Check for Karmic Debt numbers (13, 14, 16, 19) in the five core numbers that carry it, Life Path, Birth Day, Expression, Soul Urge and Personality, using Pythagorean numerology. Karmic debt indicates challenges carried from past lives that must be resolved in this lifetime. These numbers appear during reduction and represent specific lessons and tests. Returns comprehensive analysis including debt descriptions, challenges to overcome, and resolution guidance. Perfect for spiritual growth apps, karmic astrology platforms, past life exploration services, and personal transformation tools. Get detailed meanings for all four karmic debt numbers with practical resolution strategies.
+// Detect Karmic Debt numbers 13, 14, 16 and 19 across the five core numbers that carry them: Life Path, Expression, Soul Urge, Personality and Birth Day. Send a birth date, a full birth name, or both, and only the positions those inputs reach are read; each debt is listed once with its challenge and resolution guidance in the language set by lang. Built for spiritual growth apps, karmic readings, coaching tools and AI agents.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -144716,9 +144774,9 @@ func (c *ClientWithResponses) CheckKarmicDebtWithBodyWithResponse(ctx context.Co
 	return ParseCheckKarmicDebtResponse(rsp)
 }
 
-// CheckKarmicDebtWithResponse Detect Karmic Debt numbers - Past life challenges (13, 14, 16, 19)
+// CheckKarmicDebtWithResponse Detect Karmic Debt numbers - Karmic debt 13, 14, 16, 19 API
 //
-// Check for Karmic Debt numbers (13, 14, 16, 19) in the five core numbers that carry it, Life Path, Birth Day, Expression, Soul Urge and Personality, using Pythagorean numerology. Karmic debt indicates challenges carried from past lives that must be resolved in this lifetime. These numbers appear during reduction and represent specific lessons and tests. Returns comprehensive analysis including debt descriptions, challenges to overcome, and resolution guidance. Perfect for spiritual growth apps, karmic astrology platforms, past life exploration services, and personal transformation tools. Get detailed meanings for all four karmic debt numbers with practical resolution strategies.
+// Detect Karmic Debt numbers 13, 14, 16 and 19 across the five core numbers that carry them: Life Path, Expression, Soul Urge, Personality and Birth Day. Send a birth date, a full birth name, or both, and only the positions those inputs reach are read; each debt is listed once with its challenge and resolution guidance in the language set by lang. Built for spiritual growth apps, karmic readings, coaching tools and AI agents.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -144731,9 +144789,9 @@ func (c *ClientWithResponses) CheckKarmicDebtWithResponse(ctx context.Context, p
 	return ParseCheckKarmicDebtResponse(rsp)
 }
 
-// AnalyzeKarmicLessonsWithBodyWithResponse Analyze Karmic Lessons - Life lessons from missing numbers
+// AnalyzeKarmicLessonsWithBodyWithResponse Analyze Karmic Lessons - Missing numbers numerology API
 //
-// Analyze your Karmic Lessons from your birth name using Pythagorean numerology. Karmic lessons are indicated by numbers missing from your name (numbers 1-9 that do not appear). These represent challenges you came to learn and skills you need to develop in this lifetime. Returns comprehensive analysis including missing numbers, specific lessons for each, challenges to overcome, and practical guidance for development. Perfect for spiritual growth apps, personal development platforms, life coaching services, and self-improvement tools. Get detailed lesson descriptions, development strategies, and practical exercises for each missing number.
+// Analyze the Karmic Lessons of a full birth name with Pythagorean numerology: the numbers 1 to 9 that no letter of the name carries. Each missing number is returned with its lesson, a fuller explanation and practical guidance for developing it, in the language set by lang, beside the count of letters behind every number present. Built for spiritual growth apps, coaching tools, full numerology reports and AI agents.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -144746,9 +144804,9 @@ func (c *ClientWithResponses) AnalyzeKarmicLessonsWithBodyWithResponse(ctx conte
 	return ParseAnalyzeKarmicLessonsResponse(rsp)
 }
 
-// AnalyzeKarmicLessonsWithResponse Analyze Karmic Lessons - Life lessons from missing numbers
+// AnalyzeKarmicLessonsWithResponse Analyze Karmic Lessons - Missing numbers numerology API
 //
-// Analyze your Karmic Lessons from your birth name using Pythagorean numerology. Karmic lessons are indicated by numbers missing from your name (numbers 1-9 that do not appear). These represent challenges you came to learn and skills you need to develop in this lifetime. Returns comprehensive analysis including missing numbers, specific lessons for each, challenges to overcome, and practical guidance for development. Perfect for spiritual growth apps, personal development platforms, life coaching services, and self-improvement tools. Get detailed lesson descriptions, development strategies, and practical exercises for each missing number.
+// Analyze the Karmic Lessons of a full birth name with Pythagorean numerology: the numbers 1 to 9 that no letter of the name carries. Each missing number is returned with its lesson, a fuller explanation and practical guidance for developing it, in the language set by lang, beside the count of letters behind every number present. Built for spiritual growth apps, coaching tools, full numerology reports and AI agents.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -144761,9 +144819,9 @@ func (c *ClientWithResponses) AnalyzeKarmicLessonsWithResponse(ctx context.Conte
 	return ParseAnalyzeKarmicLessonsResponse(rsp)
 }
 
-// CalculateLifePathWithBodyWithResponse Calculate Life Path number - Most important numerology calculation
+// CalculateLifePathWithBodyWithResponse Calculate Life Path number - Calculator and meaning API
 //
-// Calculate your Life Path number from your birth date using Pythagorean numerology. This is the most significant number in your numerology chart, revealing your life purpose, natural talents, and destiny path. Automatically detects Master Numbers (11, 22, 33) and Karmic Debt numbers (13, 14, 16, 19). Returns comprehensive interpretation including personality traits, strengths, challenges, career guidance, relationship compatibility, and spiritual insights. Perfect for numerology apps, birth chart calculators, life purpose discovery tools, personal development platforms, and astrology services. Get detailed 300-500 word meanings for all numbers 1-9, 11, 22, and 33.
+// Calculate a Life Path number from a birth date with Pythagorean numerology. The Life Path is the core number of a numerology chart, read from the birth year, month and day alone, with master numbers 11, 22 and 33 kept and a karmic debt of 13, 14, 16 or 19 flagged with its meaning. The response returns every reduction step and a full interpretation (archetype title, keywords, description, strengths, challenges, career, relationships and spirituality) in the language set by lang. Built for Life Path calculators, numerology apps, onboarding personality profiles and AI agents.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -144776,9 +144834,9 @@ func (c *ClientWithResponses) CalculateLifePathWithBodyWithResponse(ctx context.
 	return ParseCalculateLifePathResponse(rsp)
 }
 
-// CalculateLifePathWithResponse Calculate Life Path number - Most important numerology calculation
+// CalculateLifePathWithResponse Calculate Life Path number - Calculator and meaning API
 //
-// Calculate your Life Path number from your birth date using Pythagorean numerology. This is the most significant number in your numerology chart, revealing your life purpose, natural talents, and destiny path. Automatically detects Master Numbers (11, 22, 33) and Karmic Debt numbers (13, 14, 16, 19). Returns comprehensive interpretation including personality traits, strengths, challenges, career guidance, relationship compatibility, and spiritual insights. Perfect for numerology apps, birth chart calculators, life purpose discovery tools, personal development platforms, and astrology services. Get detailed 300-500 word meanings for all numbers 1-9, 11, 22, and 33.
+// Calculate a Life Path number from a birth date with Pythagorean numerology. The Life Path is the core number of a numerology chart, read from the birth year, month and day alone, with master numbers 11, 22 and 33 kept and a karmic debt of 13, 14, 16 or 19 flagged with its meaning. The response returns every reduction step and a full interpretation (archetype title, keywords, description, strengths, challenges, career, relationships and spirituality) in the language set by lang. Built for Life Path calculators, numerology apps, onboarding personality profiles and AI agents.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -144791,9 +144849,9 @@ func (c *ClientWithResponses) CalculateLifePathWithResponse(ctx context.Context,
 	return ParseCalculateLifePathResponse(rsp)
 }
 
-// CalculateMaturityWithBodyWithResponse Calculate Maturity number - Who you become in later life
+// CalculateMaturityWithBodyWithResponse Calculate Maturity number - Realization number numerology API
 //
-// Calculate your Maturity (Realization) number by adding Life Path and Expression numbers using Pythagorean numerology. This number reveals who you become in the second half of life, typically manifesting after age 35-40. It shows the ultimate goal of personal development and mature self-expression. Returns comprehensive interpretation including life transformation, mature personality, later-life purpose, and wisdom development. Automatically detects Master Numbers (11, 22, 33). Perfect for life coaching apps, midlife guidance platforms, personal development services, and aging wisdom tools. Get detailed 300-500 word meanings for all numbers 1-9, 11, 22, and 33.
+// Calculate the Maturity number, also called the Realization number, from the Life Path and Expression numbers with Pythagorean numerology. Send a full birth name and birth date, the two numbers precomputed, or one of each; master numbers 11, 22 and 33 are kept at full value and in the result. The Maturity number describes who a person grows into in the second half of life, usually felt from around 35 to 40, and the response returns the calculation and a full interpretation in the language set by lang. Built for life coaching apps, midlife and later-life guidance, and AI agents.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -144806,9 +144864,9 @@ func (c *ClientWithResponses) CalculateMaturityWithBodyWithResponse(ctx context.
 	return ParseCalculateMaturityResponse(rsp)
 }
 
-// CalculateMaturityWithResponse Calculate Maturity number - Who you become in later life
+// CalculateMaturityWithResponse Calculate Maturity number - Realization number numerology API
 //
-// Calculate your Maturity (Realization) number by adding Life Path and Expression numbers using Pythagorean numerology. This number reveals who you become in the second half of life, typically manifesting after age 35-40. It shows the ultimate goal of personal development and mature self-expression. Returns comprehensive interpretation including life transformation, mature personality, later-life purpose, and wisdom development. Automatically detects Master Numbers (11, 22, 33). Perfect for life coaching apps, midlife guidance platforms, personal development services, and aging wisdom tools. Get detailed 300-500 word meanings for all numbers 1-9, 11, 22, and 33.
+// Calculate the Maturity number, also called the Realization number, from the Life Path and Expression numbers with Pythagorean numerology. Send a full birth name and birth date, the two numbers precomputed, or one of each; master numbers 11, 22 and 33 are kept at full value and in the result. The Maturity number describes who a person grows into in the second half of life, usually felt from around 35 to 40, and the response returns the calculation and a full interpretation in the language set by lang. Built for life coaching apps, midlife and later-life guidance, and AI agents.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -144821,9 +144879,9 @@ func (c *ClientWithResponses) CalculateMaturityWithResponse(ctx context.Context,
 	return ParseCalculateMaturityResponse(rsp)
 }
 
-// GetNumberMeaningWithResponse Get Number Meaning - Interpretation for any number 1-9, 11, 22, 33
+// GetNumberMeaningWithResponse Get number meaning - Numerology number meanings API
 //
-// Get the complete meaning and interpretation for any numerology number (1-9, 11, 22, 33) using Pythagorean numerology. Returns comprehensive description including archetype title, keywords, personality traits, strengths, weaknesses, career guidance, relationship dynamics, and spiritual insights. Master numbers (11, 22, 33) include amplified meanings with their reduced base number. Perfect for numerology reference tools, educational apps, quick lookups, and building custom numerology calculators. Get detailed 300-500 word expert-written meanings for all 12 valid numerology numbers.
+// Get the full numerology meaning of any number 1 to 9 or the master numbers 11, 22 and 33. The response returns the archetype title, keywords, a core description, strengths, challenges, career, relationships and spirituality in the language set by lang, the same reading every core number endpoint returns for that number. Built for numerology reference pages, custom calculators, educational apps and AI agents.
 //
 // Returns a wrapper object for the known response body format(s).
 //
@@ -144836,9 +144894,9 @@ func (c *ClientWithResponses) GetNumberMeaningWithResponse(ctx context.Context, 
 	return ParseGetNumberMeaningResponse(rsp)
 }
 
-// CalculatePersonalDayWithBodyWithResponse Calculate Personal Day - Daily personalized numerology forecast
+// CalculatePersonalDayWithBodyWithResponse Calculate Personal Day - Daily numerology forecast API
 //
-// Calculate your Personal Day number from birth month, day, and a target date. Personal Day is the most granular cycle in Pythagorean numerology, revealing the specific energy and theme for a single calendar day personalized to you. Unlike generic daily numbers, this is based on YOUR birth data combined with the calendar date. Returns the daily theme, actionable guidance, and parent month and year context. Perfect for daily push notifications, morning briefings, calendar widget integrations, daily content generation, and life coaching tools.
+// Calculate the Personal Day number from a birth month and day with Pythagorean numerology, the 1 to 9 theme of a single calendar day personalized to the birthday. The day is targetDate, or today in UTC when omitted. The response returns the day theme and guidance with the parent Personal Month and Personal Year, in the language set by lang. Built for daily push notifications, morning briefings, calendar widgets and AI agents.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -144851,9 +144909,9 @@ func (c *ClientWithResponses) CalculatePersonalDayWithBodyWithResponse(ctx conte
 	return ParseCalculatePersonalDayResponse(rsp)
 }
 
-// CalculatePersonalDayWithResponse Calculate Personal Day - Daily personalized numerology forecast
+// CalculatePersonalDayWithResponse Calculate Personal Day - Daily numerology forecast API
 //
-// Calculate your Personal Day number from birth month, day, and a target date. Personal Day is the most granular cycle in Pythagorean numerology, revealing the specific energy and theme for a single calendar day personalized to you. Unlike generic daily numbers, this is based on YOUR birth data combined with the calendar date. Returns the daily theme, actionable guidance, and parent month and year context. Perfect for daily push notifications, morning briefings, calendar widget integrations, daily content generation, and life coaching tools.
+// Calculate the Personal Day number from a birth month and day with Pythagorean numerology, the 1 to 9 theme of a single calendar day personalized to the birthday. The day is targetDate, or today in UTC when omitted. The response returns the day theme and guidance with the parent Personal Month and Personal Year, in the language set by lang. Built for daily push notifications, morning briefings, calendar widgets and AI agents.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -144866,9 +144924,9 @@ func (c *ClientWithResponses) CalculatePersonalDayWithResponse(ctx context.Conte
 	return ParseCalculatePersonalDayResponse(rsp)
 }
 
-// CalculatePersonalMonthWithBodyWithResponse Calculate Personal Month - Monthly numerology forecast
+// CalculatePersonalMonthWithBodyWithResponse Calculate Personal Month - Monthly numerology forecast API
 //
-// Calculate your Personal Month number from birth month, day, and a target year and month. Personal Month reveals the specific theme and energy influencing each calendar month within your Personal Year cycle. Returns the monthly theme, practical focus guidance, and the parent Personal Year context. Perfect for monthly forecast features, push notification content, calendar integrations, editorial monthly columns, and life coaching tools.
+// Calculate the Personal Month number from a birth month and day with Pythagorean numerology, the 1 to 9 theme of one calendar month inside the Personal Year. The year and month are the ones sent, each defaulting to the current UTC year and month when omitted. The response returns the month theme, practical focus and the parent Personal Year with its theme, in the language set by lang. Built for monthly forecast features, push notifications, editorial columns and AI agents.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -144881,9 +144939,9 @@ func (c *ClientWithResponses) CalculatePersonalMonthWithBodyWithResponse(ctx con
 	return ParseCalculatePersonalMonthResponse(rsp)
 }
 
-// CalculatePersonalMonthWithResponse Calculate Personal Month - Monthly numerology forecast
+// CalculatePersonalMonthWithResponse Calculate Personal Month - Monthly numerology forecast API
 //
-// Calculate your Personal Month number from birth month, day, and a target year and month. Personal Month reveals the specific theme and energy influencing each calendar month within your Personal Year cycle. Returns the monthly theme, practical focus guidance, and the parent Personal Year context. Perfect for monthly forecast features, push notification content, calendar integrations, editorial monthly columns, and life coaching tools.
+// Calculate the Personal Month number from a birth month and day with Pythagorean numerology, the 1 to 9 theme of one calendar month inside the Personal Year. The year and month are the ones sent, each defaulting to the current UTC year and month when omitted. The response returns the month theme, practical focus and the parent Personal Year with its theme, in the language set by lang. Built for monthly forecast features, push notifications, editorial columns and AI agents.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -144896,9 +144954,9 @@ func (c *ClientWithResponses) CalculatePersonalMonthWithResponse(ctx context.Con
 	return ParseCalculatePersonalMonthResponse(rsp)
 }
 
-// CalculatePersonalYearWithBodyWithResponse Calculate Personal Year - Annual cycle and forecast for current year
+// CalculatePersonalYearWithBodyWithResponse Calculate Personal Year - Personal Year number forecast API
 //
-// Calculate your Personal Year number from your birth month, day, and current year using Pythagorean numerology. Personal Year runs in 9-year cycles (1-9) and reveals the theme, opportunities, and challenges for the current year. Each year has a specific energy and lessons. Returns comprehensive annual forecast including year theme, opportunities, challenges, and actionable advice. Perfect for yearly planning apps, life coaching platforms, astrology services, and personal development tools. Get detailed forecasts for all 9 Personal Year cycles with practical guidance.
+// Calculate the Personal Year number from a birth month and day with Pythagorean numerology, the 1 to 9 cycle that sets the theme of a calendar year. The year is the one sent, or the current UTC year when omitted, and it turns over on 1 January; the birth year is not needed. The response returns the place in the nine-year cycle, the theme, a forecast, opportunities, challenges and advice in the language set by lang. Built for yearly planning features, New Year content, coaching tools and AI agents.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -144911,9 +144969,9 @@ func (c *ClientWithResponses) CalculatePersonalYearWithBodyWithResponse(ctx cont
 	return ParseCalculatePersonalYearResponse(rsp)
 }
 
-// CalculatePersonalYearWithResponse Calculate Personal Year - Annual cycle and forecast for current year
+// CalculatePersonalYearWithResponse Calculate Personal Year - Personal Year number forecast API
 //
-// Calculate your Personal Year number from your birth month, day, and current year using Pythagorean numerology. Personal Year runs in 9-year cycles (1-9) and reveals the theme, opportunities, and challenges for the current year. Each year has a specific energy and lessons. Returns comprehensive annual forecast including year theme, opportunities, challenges, and actionable advice. Perfect for yearly planning apps, life coaching platforms, astrology services, and personal development tools. Get detailed forecasts for all 9 Personal Year cycles with practical guidance.
+// Calculate the Personal Year number from a birth month and day with Pythagorean numerology, the 1 to 9 cycle that sets the theme of a calendar year. The year is the one sent, or the current UTC year when omitted, and it turns over on 1 January; the birth year is not needed. The response returns the place in the nine-year cycle, the theme, a forecast, opportunities, challenges and advice in the language set by lang. Built for yearly planning features, New Year content, coaching tools and AI agents.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -144926,9 +144984,9 @@ func (c *ClientWithResponses) CalculatePersonalYearWithResponse(ctx context.Cont
 	return ParseCalculatePersonalYearResponse(rsp)
 }
 
-// CalculatePersonalityWithBodyWithResponse Calculate Personality number - How others perceive you
+// CalculatePersonalityWithBodyWithResponse Calculate Personality number - Outer personality numerology API
 //
-// Calculate your Personality number from the consonants in your birth name using Pythagorean numerology. This number reveals how others perceive you, your outer personality, and first impressions you make. It represents the mask you show the world and your social persona. Returns comprehensive interpretation including public image, social dynamics, professional presence, and relationship first impressions. Automatically detects Master Numbers (11, 22, 33). Perfect for personal branding apps, social skills training, professional development platforms, and communication coaching services. Get detailed 300-500 word meanings for all numbers 1-9, 11, 22, and 33.
+// Calculate the Personality number from the consonants of a full birth name with Pythagorean numerology. Every letter other than A, E, I, O and U is a consonant, Y and W included; master numbers 11, 22 and 33 are kept and a karmic debt of 13, 14, 16 or 19 is flagged with its meaning. The response lists every consonant name by name and returns a full interpretation of first impressions, public image, career and relationships in the language set by lang. Built for personal branding apps, social and dating profiles, coaching tools and AI agents.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -144941,9 +144999,9 @@ func (c *ClientWithResponses) CalculatePersonalityWithBodyWithResponse(ctx conte
 	return ParseCalculatePersonalityResponse(rsp)
 }
 
-// CalculatePersonalityWithResponse Calculate Personality number - How others perceive you
+// CalculatePersonalityWithResponse Calculate Personality number - Outer personality numerology API
 //
-// Calculate your Personality number from the consonants in your birth name using Pythagorean numerology. This number reveals how others perceive you, your outer personality, and first impressions you make. It represents the mask you show the world and your social persona. Returns comprehensive interpretation including public image, social dynamics, professional presence, and relationship first impressions. Automatically detects Master Numbers (11, 22, 33). Perfect for personal branding apps, social skills training, professional development platforms, and communication coaching services. Get detailed 300-500 word meanings for all numbers 1-9, 11, 22, and 33.
+// Calculate the Personality number from the consonants of a full birth name with Pythagorean numerology. Every letter other than A, E, I, O and U is a consonant, Y and W included; master numbers 11, 22 and 33 are kept and a karmic debt of 13, 14, 16 or 19 is flagged with its meaning. The response lists every consonant name by name and returns a full interpretation of first impressions, public image, career and relationships in the language set by lang. Built for personal branding apps, social and dating profiles, coaching tools and AI agents.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -144956,9 +145014,9 @@ func (c *ClientWithResponses) CalculatePersonalityWithResponse(ctx context.Conte
 	return ParseCalculatePersonalityResponse(rsp)
 }
 
-// CalculateSoulUrgeWithBodyWithResponse Calculate Soul Urge number - Inner motivations and desires
+// CalculateSoulUrgeWithBodyWithResponse Calculate Soul Urge number - Heart Desire number calculator API
 //
-// Calculate your Soul Urge (Heart Desire) number from the vowels in your birth name using Pythagorean numerology. This number reveals your innermost desires, motivations, and what your soul truly wants to experience. It shows what drives you from within, your emotional needs, and what brings you fulfillment. Returns comprehensive interpretation including personality traits, emotional needs, relationship desires, and spiritual longings. Automatically detects Master Numbers (11, 22, 33). Perfect for self-discovery apps, emotional intelligence tools, relationship counseling platforms, and personal development services. Get detailed 300-500 word meanings for all numbers 1-9, 11, 22, and 33.
+// Calculate the Soul Urge number, also called the Heart Desire number, from the vowels of a full birth name with Pythagorean numerology. A, E, I, O and U are the vowels and Y and W count as consonants; master numbers 11, 22 and 33 are kept and a karmic debt of 13, 14, 16 or 19 is flagged with its meaning. The response lists every vowel name by name and returns a full interpretation of inner motivation, relationships and spiritual path in the language set by lang. Built for self-discovery apps, dating profiles, coaching tools and AI agents.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -144971,9 +145029,9 @@ func (c *ClientWithResponses) CalculateSoulUrgeWithBodyWithResponse(ctx context.
 	return ParseCalculateSoulUrgeResponse(rsp)
 }
 
-// CalculateSoulUrgeWithResponse Calculate Soul Urge number - Inner motivations and desires
+// CalculateSoulUrgeWithResponse Calculate Soul Urge number - Heart Desire number calculator API
 //
-// Calculate your Soul Urge (Heart Desire) number from the vowels in your birth name using Pythagorean numerology. This number reveals your innermost desires, motivations, and what your soul truly wants to experience. It shows what drives you from within, your emotional needs, and what brings you fulfillment. Returns comprehensive interpretation including personality traits, emotional needs, relationship desires, and spiritual longings. Automatically detects Master Numbers (11, 22, 33). Perfect for self-discovery apps, emotional intelligence tools, relationship counseling platforms, and personal development services. Get detailed 300-500 word meanings for all numbers 1-9, 11, 22, and 33.
+// Calculate the Soul Urge number, also called the Heart Desire number, from the vowels of a full birth name with Pythagorean numerology. A, E, I, O and U are the vowels and Y and W count as consonants; master numbers 11, 22 and 33 are kept and a karmic debt of 13, 14, 16 or 19 is flagged with its meaning. The response lists every vowel name by name and returns a full interpretation of inner motivation, relationships and spiritual path in the language set by lang. Built for self-discovery apps, dating profiles, coaching tools and AI agents.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -162589,13 +162647,13 @@ func ParseGenerateDigestResponse(rsp *http.Response) (*GenerateDigestResponse, e
 					// Aspect For a transit-aspect, the angular relationship. One of conjunction, sextile, square, trine, opposition. Absent for other event types.
 					Aspect *string `json:"aspect,omitempty"`
 
-					// Body Primary subject of the event. A transiting planet for western events, Sun for a solar eclipse, Moon for a lunar eclipse or a new or full moon, a mahadasha, antardasha, or pratyantardasha label for dasha changes, or the critical cycle for biorhythm days.
+					// Body Primary subject of the event. A transiting planet for western events, Sun for a solar eclipse, Moon for a lunar eclipse or a new or full moon, or the critical cycle for biorhythm days. For a dasha-change, the Vimshottari lords outermost first, joined by a hyphen, then one space and the level: Saturn Mahadasha, Saturn-Mercury Antardasha, Saturn-Mercury-Ketu Pratyantardasha. Lords are always one of Ketu, Venus, Sun, Moon, Mars, Rahu, Jupiter, Saturn, Mercury. Never localized.
 					Body string `json:"body"`
 
 					// Date Calendar date of the event in YYYY-MM-DD (UTC).
 					Date string `json:"date"`
 
-					// Datetime Exact instant of the event as an ISO-8601 UTC datetime. Astronomical events are refined to this instant by search, not reported at a daily sample point.
+					// Datetime Exact instant of the event as an ISO-8601 UTC datetime, to the nearest second. Astronomical events are refined to this instant by search, not reported at a daily sample point; a dasha-change is the period boundary itself, counted from the birth instant.
 					Datetime string `json:"datetime"`
 
 					// Description Plain-language summary of the event, suitable for direct display. The only localized field: when lang is set this sentence, and the body, target, and aspect names within it, render in the requested language while the structured fields stay English.
@@ -162610,7 +162668,7 @@ func ParseGenerateDigestResponse(rsp *http.Response) (*GenerateDigestResponse, e
 					// Obscuration For a lunar eclipse, the peak fraction from 0 to 1 of the Moon disc covered by Earth umbra. 1 for a total lunar eclipse, between 0 and 1 for a partial, 0 for a penumbral. Absent for solar eclipses and other event types.
 					Obscuration *float32 `json:"obscuration,omitempty"`
 
-					// Orb For a transit-aspect, the separation in degrees from the exact aspect at the reported instant. Tighter orb means a more exact and significant aspect.
+					// Orb For a transit-aspect, the separation in degrees from the exact aspect at the reported instant, rounded to three decimals. The instant is the moment the aspect perfects, so this reads 0. Absent for other event types.
 					Orb *float32 `json:"orb,omitempty"`
 
 					// Phase For a lunar-phase event, which syzygy it is: new-moon (Sun-Moon conjunction) or full-moon (Sun-Moon opposition). The intermediate quarters are not emitted. A stable machine value, never localized. Absent for other event types.
@@ -162733,13 +162791,13 @@ func ParseFindSignificantDatesResponse(rsp *http.Response) (*FindSignificantDate
 				// Aspect For a transit-aspect, the angular relationship. One of conjunction, sextile, square, trine, opposition. Absent for other event types.
 				Aspect *string `json:"aspect,omitempty"`
 
-				// Body Primary subject of the event. A transiting planet for western events, Sun for a solar eclipse, Moon for a lunar eclipse or a new or full moon, a mahadasha, antardasha, or pratyantardasha label for dasha changes, or the critical cycle for biorhythm days.
+				// Body Primary subject of the event. A transiting planet for western events, Sun for a solar eclipse, Moon for a lunar eclipse or a new or full moon, or the critical cycle for biorhythm days. For a dasha-change, the Vimshottari lords outermost first, joined by a hyphen, then one space and the level: Saturn Mahadasha, Saturn-Mercury Antardasha, Saturn-Mercury-Ketu Pratyantardasha. Lords are always one of Ketu, Venus, Sun, Moon, Mars, Rahu, Jupiter, Saturn, Mercury. Never localized.
 				Body string `json:"body"`
 
 				// Date Calendar date of the event in YYYY-MM-DD (UTC).
 				Date string `json:"date"`
 
-				// Datetime Exact instant of the event as an ISO-8601 UTC datetime. Astronomical events are refined to this instant by search, not reported at a daily sample point.
+				// Datetime Exact instant of the event as an ISO-8601 UTC datetime, to the nearest second. Astronomical events are refined to this instant by search, not reported at a daily sample point; a dasha-change is the period boundary itself, counted from the birth instant.
 				Datetime string `json:"datetime"`
 
 				// Description Plain-language summary of the event, suitable for direct display. The only localized field: when lang is set this sentence, and the body, target, and aspect names within it, render in the requested language while the structured fields stay English.
@@ -162754,7 +162812,7 @@ func ParseFindSignificantDatesResponse(rsp *http.Response) (*FindSignificantDate
 				// Obscuration For a lunar eclipse, the peak fraction from 0 to 1 of the Moon disc covered by Earth umbra. 1 for a total lunar eclipse, between 0 and 1 for a partial, 0 for a penumbral. Absent for solar eclipses and other event types.
 				Obscuration *float32 `json:"obscuration,omitempty"`
 
-				// Orb For a transit-aspect, the separation in degrees from the exact aspect at the reported instant. Tighter orb means a more exact and significant aspect.
+				// Orb For a transit-aspect, the separation in degrees from the exact aspect at the reported instant, rounded to three decimals. The instant is the moment the aspect perfects, so this reads 0. Absent for other event types.
 				Orb *float32 `json:"orb,omitempty"`
 
 				// Phase For a lunar-phase event, which syzygy it is: new-moon (Sun-Moon conjunction) or full-moon (Sun-Moon opposition). The intermediate quarters are not emitted. A stable machine value, never localized. Absent for other event types.
@@ -163112,13 +163170,13 @@ func ParseGenerateTimelineResponse(rsp *http.Response) (*GenerateTimelineRespons
 				// Aspect For a transit-aspect, the angular relationship. One of conjunction, sextile, square, trine, opposition. Absent for other event types.
 				Aspect *string `json:"aspect,omitempty"`
 
-				// Body Primary subject of the event. A transiting planet for western events, Sun for a solar eclipse, Moon for a lunar eclipse or a new or full moon, a mahadasha, antardasha, or pratyantardasha label for dasha changes, or the critical cycle for biorhythm days.
+				// Body Primary subject of the event. A transiting planet for western events, Sun for a solar eclipse, Moon for a lunar eclipse or a new or full moon, or the critical cycle for biorhythm days. For a dasha-change, the Vimshottari lords outermost first, joined by a hyphen, then one space and the level: Saturn Mahadasha, Saturn-Mercury Antardasha, Saturn-Mercury-Ketu Pratyantardasha. Lords are always one of Ketu, Venus, Sun, Moon, Mars, Rahu, Jupiter, Saturn, Mercury. Never localized.
 				Body string `json:"body"`
 
 				// Date Calendar date of the event in YYYY-MM-DD (UTC).
 				Date string `json:"date"`
 
-				// Datetime Exact instant of the event as an ISO-8601 UTC datetime. Astronomical events are refined to this instant by search, not reported at a daily sample point.
+				// Datetime Exact instant of the event as an ISO-8601 UTC datetime, to the nearest second. Astronomical events are refined to this instant by search, not reported at a daily sample point; a dasha-change is the period boundary itself, counted from the birth instant.
 				Datetime string `json:"datetime"`
 
 				// Description Plain-language summary of the event, suitable for direct display. The only localized field: when lang is set this sentence, and the body, target, and aspect names within it, render in the requested language while the structured fields stay English.
@@ -163133,7 +163191,7 @@ func ParseGenerateTimelineResponse(rsp *http.Response) (*GenerateTimelineRespons
 				// Obscuration For a lunar eclipse, the peak fraction from 0 to 1 of the Moon disc covered by Earth umbra. 1 for a total lunar eclipse, between 0 and 1 for a partial, 0 for a penumbral. Absent for solar eclipses and other event types.
 				Obscuration *float32 `json:"obscuration,omitempty"`
 
-				// Orb For a transit-aspect, the separation in degrees from the exact aspect at the reported instant. Tighter orb means a more exact and significant aspect.
+				// Orb For a transit-aspect, the separation in degrees from the exact aspect at the reported instant, rounded to three decimals. The instant is the moment the aspect perfects, so this reads 0. Absent for other event types.
 				Orb *float32 `json:"orb,omitempty"`
 
 				// Phase For a lunar-phase event, which syzygy it is: new-moon (Sun-Moon conjunction) or full-moon (Sun-Moon opposition). The intermediate quarters are not emitted. A stable machine value, never localized. Absent for other event types.
@@ -163258,13 +163316,13 @@ func ParseForecastTransitsResponse(rsp *http.Response) (*ForecastTransitsRespons
 				// Aspect For a transit-aspect, the angular relationship. One of conjunction, sextile, square, trine, opposition. Absent for other event types.
 				Aspect *string `json:"aspect,omitempty"`
 
-				// Body Primary subject of the event. A transiting planet for western events, Sun for a solar eclipse, Moon for a lunar eclipse or a new or full moon, a mahadasha, antardasha, or pratyantardasha label for dasha changes, or the critical cycle for biorhythm days.
+				// Body Primary subject of the event. A transiting planet for western events, Sun for a solar eclipse, Moon for a lunar eclipse or a new or full moon, or the critical cycle for biorhythm days. For a dasha-change, the Vimshottari lords outermost first, joined by a hyphen, then one space and the level: Saturn Mahadasha, Saturn-Mercury Antardasha, Saturn-Mercury-Ketu Pratyantardasha. Lords are always one of Ketu, Venus, Sun, Moon, Mars, Rahu, Jupiter, Saturn, Mercury. Never localized.
 				Body string `json:"body"`
 
 				// Date Calendar date of the event in YYYY-MM-DD (UTC).
 				Date string `json:"date"`
 
-				// Datetime Exact instant of the event as an ISO-8601 UTC datetime. Astronomical events are refined to this instant by search, not reported at a daily sample point.
+				// Datetime Exact instant of the event as an ISO-8601 UTC datetime, to the nearest second. Astronomical events are refined to this instant by search, not reported at a daily sample point; a dasha-change is the period boundary itself, counted from the birth instant.
 				Datetime string `json:"datetime"`
 
 				// Description Plain-language summary of the event, suitable for direct display. The only localized field: when lang is set this sentence, and the body, target, and aspect names within it, render in the requested language while the structured fields stay English.
@@ -163279,7 +163337,7 @@ func ParseForecastTransitsResponse(rsp *http.Response) (*ForecastTransitsRespons
 				// Obscuration For a lunar eclipse, the peak fraction from 0 to 1 of the Moon disc covered by Earth umbra. 1 for a total lunar eclipse, between 0 and 1 for a partial, 0 for a penumbral. Absent for solar eclipses and other event types.
 				Obscuration *float32 `json:"obscuration,omitempty"`
 
-				// Orb For a transit-aspect, the separation in degrees from the exact aspect at the reported instant. Tighter orb means a more exact and significant aspect.
+				// Orb For a transit-aspect, the separation in degrees from the exact aspect at the reported instant, rounded to three decimals. The instant is the moment the aspect perfects, so this reads 0. Absent for other event types.
 				Orb *float32 `json:"orb,omitempty"`
 
 				// Phase For a lunar-phase event, which syzygy it is: new-moon (Sun-Moon conjunction) or full-moon (Sun-Moon opposition). The intermediate quarters are not emitted. A stable machine value, never localized. Absent for other event types.
@@ -170704,7 +170762,7 @@ func ParseCalculateBirthDayResponse(rsp *http.Response) (*CalculateBirthDayRespo
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
-			// Calculation Step-by-step digit reduction of the birth day. Single-digit days (1 to 9) remain as-is, Master Number days (11, 22) are preserved, and all other double-digit days are reduced by summing their digits.
+			// Calculation Step-by-step digit reduction of the birth day. Single-digit days (1 to 9) remain as they are, a day that is or reduces to 11 or 22 keeps it, and every other two-digit day is reduced to one digit.
 			Calculation string `json:"calculation"`
 
 			// HasKarmicDebt Indicates whether a Karmic Debt number (13, 14, 16, or 19) corresponds to the birth day. Karmic Debt in the Birth Day position reveals past-life challenges woven directly into your natural talents, influencing how your gifts manifest.
@@ -170731,7 +170789,7 @@ func ParseCalculateBirthDayResponse(rsp *http.Response) (*CalculateBirthDayRespo
 				// Challenges The flip side of your gifts. Each challenge explains how an overreliance on natural talent can become a liability without conscious balance.
 				Challenges []string `json:"challenges"`
 
-				// Description Expert-written 300 to 500 word reading of the special abilities your birth day bestows. Covers how these gifts complement your Life Path and Expression numbers.
+				// Description Core interpretation of the special abilities the birth day brings and how they complement the Life Path and Expression numbers. Together with the strengths, challenges, career, relationships and spirituality fields it makes a full reading.
 				Description string `json:"description"`
 
 				// Keywords Innate talents and natural aptitudes encoded in your birth day. These gifts are available from birth and become more refined with age.
@@ -170750,7 +170808,7 @@ func ParseCalculateBirthDayResponse(rsp *http.Response) (*CalculateBirthDayRespo
 				Title string `json:"title"`
 			} `json:"meaning"`
 
-			// Number Your Birth Day number, revealing the special talents and innate abilities you carry from the day you were born. Values range from 1 to 9 for single digits, or 11, 22 for Master Numbers (days 11 and 22 are never reduced).
+			// Number Your Birth Day number, revealing the special talents and innate abilities you carry from the day you were born. Values range from 1 to 9 for single digits, or 11, 22 for Master Numbers (the 11th, 22nd and 29th).
 			Number float32 `json:"number"`
 
 			// Type Whether this is a standard single-digit number (1 to 9) or a Master Number (11, 22). Master Numbers in the Birth Day position indicate extraordinary innate gifts that are available from birth and demand conscious development.
@@ -170830,7 +170888,7 @@ func ParseCalculateBridgeNumbersResponse(rsp *http.Response) (*CalculateBridgeNu
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
-			// ExpressionPersonality Bridge between Expression and Personality numbers. Reveals the gap between your true talents (all letters) and how others perceive you (consonants only). A high bridge means others may not see your real capabilities, requiring you to present yourself more authentically.
+			// ExpressionPersonality Bridge between Expression and Personality numbers, a pairing this API adds beside the classical bridges. Reveals the gap between your true talents (all letters) and how others perceive you (consonants only). A high bridge means others may not see your real capabilities, requiring you to present yourself more authentically.
 			ExpressionPersonality struct {
 				// Bridge Bridge number (0 to 8). The absolute difference between two core numerology numbers after reducing master numbers to single digits. 0 means the two aspects are already in natural harmony. Higher values indicate greater tension requiring conscious adjustment.
 				Bridge int `json:"bridge"`
@@ -170898,6 +170956,29 @@ func ParseCalculateBridgeNumbersResponse(rsp *http.Response) (*CalculateBridgeNu
 					Number float32 `json:"number"`
 				} `json:"to"`
 			} `json:"lifePathExpression"`
+
+			// SoulUrgePersonality Bridge between Soul Urge and Personality numbers, one of the classical bridges. Reveals the gap between your inner self (vowels only) and the image others meet first (consonants only). A high bridge means what you want and how you come across pull apart, calling for a more transparent presentation of your real motives.
+			SoulUrgePersonality struct {
+				// Bridge Bridge number (0 to 8). The absolute difference between two core numerology numbers after reducing master numbers to single digits. 0 means the two aspects are already in natural harmony. Higher values indicate greater tension requiring conscious adjustment.
+				Bridge int `json:"bridge"`
+				From   struct {
+					// Name Name of the first core number in this bridge pair. Identifies which aspect of personality or destiny is being compared.
+					Name string `json:"name"`
+
+					// Number The reduced single-digit value (1 to 9) of the first core number used in the bridge calculation.
+					Number float32 `json:"number"`
+				} `json:"from"`
+
+				// Meaning Actionable guidance for bridging the gap between these two aspects of your numerology profile. Explains what adjustments to make to bring these energies into harmony.
+				Meaning string `json:"meaning"`
+				To      struct {
+					// Name Name of the second core number in this bridge pair. Identifies the other aspect of personality or destiny being compared.
+					Name string `json:"name"`
+
+					// Number The reduced single-digit value (1 to 9) of the second core number used in the bridge calculation.
+					Number float32 `json:"number"`
+				} `json:"to"`
+			} `json:"soulUrgePersonality"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err
@@ -171021,7 +171102,7 @@ func ParseCalculateBusinessNameResponse(rsp *http.Response) (*CalculateBusinessN
 			// Summary One-line plain-language verdict for the business name.
 			Summary string `json:"summary"`
 
-			// Total Raw Chaldean letter total of the name.
+			// Total The sum the compound is read from: for a one-word name, its Chaldean letter total; for a longer name, the sum of each word reduced to its single number, as Cheiro works John Smith (18 to 9, 17 to 8, total 17).
 			Total float32 `json:"total"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
@@ -171103,7 +171184,7 @@ func ParseCalculateChaldeanResponse(rsp *http.Response) (*CalculateChaldeanRespo
 
 			// Destiny The Destiny or name number from all letters. The primary Chaldean number, revealing the overall direction encoded in the name.
 			Destiny struct {
-				// Calculation Letter-by-letter Chaldean breakdown summed to the total, then to compound and root.
+				// Calculation Letter-by-letter Chaldean breakdown, name by name for a longer name, summed to the total, then to compound and root.
 				Calculation string `json:"calculation"`
 
 				// Compound The interpretable compound number (10 to 52), the hidden influence behind the name, or null when the total resolves below 10.
@@ -171130,7 +171211,7 @@ func ParseCalculateChaldeanResponse(rsp *http.Response) (*CalculateChaldeanRespo
 				// Root The single-digit root (1 to 9), the outward expression. Chaldean does not preserve master numbers.
 				Root float32 `json:"root"`
 
-				// Total Raw sum of the Chaldean letter values before any reduction.
+				// Total The sum the compound is read from: for a one-word name, its Chaldean letter total; for a longer name, the sum of each word reduced to its single number, as Cheiro works John Smith (18 to 9, 17 to 8, total 17).
 				Total float32 `json:"total"`
 			} `json:"destiny"`
 
@@ -171158,7 +171239,7 @@ func ParseCalculateChaldeanResponse(rsp *http.Response) (*CalculateChaldeanRespo
 
 			// Personality The Personality number from the consonants, revealing the outer impression. Root may be 0 when the name has no consonants.
 			Personality struct {
-				// Calculation Letter-by-letter Chaldean breakdown summed to the total, then to compound and root.
+				// Calculation Letter-by-letter Chaldean breakdown, name by name for a longer name, summed to the total, then to compound and root.
 				Calculation string `json:"calculation"`
 
 				// Compound The interpretable compound number (10 to 52), the hidden influence behind the name, or null when the total resolves below 10.
@@ -171185,13 +171266,13 @@ func ParseCalculateChaldeanResponse(rsp *http.Response) (*CalculateChaldeanRespo
 				// Root The single-digit root (1 to 9), the outward expression. Chaldean does not preserve master numbers.
 				Root float32 `json:"root"`
 
-				// Total Raw sum of the Chaldean letter values before any reduction.
+				// Total The sum the compound is read from: for a one-word name, its Chaldean letter total; for a longer name, the sum of each word reduced to its single number, as Cheiro works John Smith (18 to 9, 17 to 8, total 17).
 				Total float32 `json:"total"`
 			} `json:"personality"`
 
 			// SoulUrge The Soul Urge number from the vowels, revealing inner desire. Root may be 0 when the name has no vowels.
 			SoulUrge struct {
-				// Calculation Letter-by-letter Chaldean breakdown summed to the total, then to compound and root.
+				// Calculation Letter-by-letter Chaldean breakdown, name by name for a longer name, summed to the total, then to compound and root.
 				Calculation string `json:"calculation"`
 
 				// Compound The interpretable compound number (10 to 52), the hidden influence behind the name, or null when the total resolves below 10.
@@ -171218,7 +171299,7 @@ func ParseCalculateChaldeanResponse(rsp *http.Response) (*CalculateChaldeanRespo
 				// Root The single-digit root (1 to 9), the outward expression. Chaldean does not preserve master numbers.
 				Root float32 `json:"root"`
 
-				// Total Raw sum of the Chaldean letter values before any reduction.
+				// Total The sum the compound is read from: for a one-word name, its Chaldean letter total; for a longer name, the sum of each word reduced to its single number, as Cheiro works John Smith (18 to 9, 17 to 8, total 17).
 				Total float32 `json:"total"`
 			} `json:"soulUrge"`
 
@@ -171301,9 +171382,9 @@ func ParseGenerateNumerologyChartResponse(rsp *http.Response) (*GenerateNumerolo
 		var dest struct {
 			// AdditionalInsights Additional numerology insights: karmic analysis, yearly/monthly forecasts, pinnacles, challenges, hidden passion, subconscious self, and name letter analysis.
 			AdditionalInsights struct {
-				// Challenges Four Challenge numbers representing life obstacles aligned with Pinnacle timing.
+				// Challenges Four Challenge numbers representing life obstacles. The 3rd (Main) Challenge lasts for life; the other three are timed approximately with the Pinnacle phases.
 				Challenges []struct {
-					// EndAge Age when this period ends. Null for the 4th Challenge.
+					// EndAge Last whole age of the period, inclusive, approximate as startAge explains. Null for the 3rd (Main) Challenge and the 4th, which last for life.
 					EndAge *float32 `json:"endAge"`
 
 					// Meaning Meaning and resolution guidance for this Challenge number.
@@ -171327,13 +171408,13 @@ func ParseGenerateNumerologyChartResponse(rsp *http.Response) (*GenerateNumerolo
 					// Position Challenge position (1-4). Four life obstacle periods.
 					Position float32 `json:"position"`
 
-					// StartAge Age when this Challenge period begins.
+					// StartAge Age when this Challenge is most felt. The 3rd (Main) Challenge starts at 0 and lasts for life; the 1st, 2nd and 4th take the ages of their Pinnacle phase as an approximation, since Challenges have no fixed durations.
 					StartAge float32 `json:"startAge"`
 				} `json:"challenges"`
 
 				// HiddenPassion Hidden Passion number. The most frequent number in the name revealing an overwhelming drive or talent.
 				HiddenPassion struct {
-					// AllPassions All numbers tied for highest frequency (usually one, sometimes multiple).
+					// AllPassions All numbers tied for highest frequency, in ascending order (usually one, sometimes multiple).
 					AllPassions []float32 `json:"allPassions"`
 
 					// Count How many times this number appears in the name.
@@ -171342,7 +171423,7 @@ func ParseGenerateNumerologyChartResponse(rsp *http.Response) (*GenerateNumerolo
 					// Description What this dominant number drive reveals about latent talents and obsessions.
 					Description string `json:"description"`
 
-					// Number Hidden Passion number (1-9). The most frequently occurring number in the birth name.
+					// Number Hidden Passion number (1-9). The most frequently occurring number in the birth name; when several tie, the lowest of them.
 					Number float32 `json:"number"`
 
 					// Title Archetype title for this Hidden Passion.
@@ -171351,7 +171432,7 @@ func ParseGenerateNumerologyChartResponse(rsp *http.Response) (*GenerateNumerolo
 
 				// KarmicDebt Karmic Debt analysis. Identifies unresolved karma from past lives carried through specific numbers (13, 14, 16, 19).
 				KarmicDebt struct {
-					// DebtNumbers List of karmic debt numbers found (13=laziness, 14=abuse of freedom, 16=ego destruction, 19=selfishness).
+					// DebtNumbers List of karmic debt numbers found (13=laziness, 14=abuse of freedom, 16=ego destruction, 19=selfishness), each listed once, in core-number order: Life Path, Expression, Soul Urge, Personality, Birth Day.
 					DebtNumbers []float32 `json:"debtNumbers"`
 
 					// HasKarmicDebt True if any core number reduces through a karmic debt number (13, 14, 16, 19).
@@ -171425,7 +171506,7 @@ func ParseGenerateNumerologyChartResponse(rsp *http.Response) (*GenerateNumerolo
 
 					// FirstVowel First Vowel analysis. Reveals instinctive emotional reactions.
 					FirstVowel struct {
-						// Letter First vowel in the full name (A, E, I, O, or U).
+						// Letter First vowel of the first name (A, E, I, O or U). A first name with none of them takes its Y, the vowel sound of names like Lynn; one with no Y either takes the first A, E, I, O or U of the rest of the name.
 						Letter string `json:"letter"`
 
 						// Meaning Instinctive emotional response and inner reaction style.
@@ -171450,12 +171531,12 @@ func ParseGenerateNumerologyChartResponse(rsp *http.Response) (*GenerateNumerolo
 					// Opportunities Key opportunities available during this Personal Year. Each entry identifies a specific area of life where conditions are favorable for growth and forward momentum.
 					Opportunities []string `json:"opportunities"`
 
-					// PersonalMonth Personal Month forecast nested within the Personal Year cycle.
+					// PersonalMonth Personal Month forecast for the current UTC calendar month, applied to the Personal Year above. With a currentYear other than the current year, it pairs that Personal Year with the current month.
 					PersonalMonth struct {
 						// Focus Practical focus and guidance for this month.
 						Focus string `json:"focus"`
 
-						// PersonalMonth Personal Month number (1-9).
+						// PersonalMonth Personal Month number (1-9): the Personal Year above plus the current UTC calendar month, reduced to one digit.
 						PersonalMonth float32 `json:"personalMonth"`
 
 						// Theme Central theme for this Personal Month.
@@ -171469,9 +171550,9 @@ func ParseGenerateNumerologyChartResponse(rsp *http.Response) (*GenerateNumerolo
 					Theme string `json:"theme"`
 				} `json:"personalYear"`
 
-				// Pinnacles Four Pinnacle numbers representing major life phases with age ranges and meanings.
+				// Pinnacles Four Pinnacle numbers representing major life phases, master numbers 11, 22 and 33 kept, with age ranges and meanings.
 				Pinnacles []struct {
-					// EndAge Age when this phase ends. Null for the 4th Pinnacle (lasts rest of life).
+					// EndAge Last whole age of this phase, inclusive. The First Pinnacle ends at 36 minus the Life Path reduced to one digit and each later phase starts the year after; null for the 4th Pinnacle (lasts rest of life).
 					EndAge *float32 `json:"endAge"`
 
 					// Meaning Meaning and interpretation for this Pinnacle number.
@@ -171566,7 +171647,7 @@ func ParseGenerateNumerologyChartResponse(rsp *http.Response) (*GenerateNumerolo
 						// Challenges The flip side of your gifts. Each challenge explains how an overreliance on natural talent can become a liability without conscious balance.
 						Challenges []string `json:"challenges"`
 
-						// Description Expert-written 300 to 500 word reading of the special abilities your birth day bestows. Covers how these gifts complement your Life Path and Expression numbers.
+						// Description Core interpretation of the special abilities the birth day brings and how they complement the Life Path and Expression numbers. Together with the strengths, challenges, career, relationships and spirituality fields it makes a full reading.
 						Description string `json:"description"`
 
 						// Keywords Innate talents and natural aptitudes encoded in your birth day. These gifts are available from birth and become more refined with age and experience.
@@ -171611,7 +171692,7 @@ func ParseGenerateNumerologyChartResponse(rsp *http.Response) (*GenerateNumerolo
 						// Challenges Growth areas where natural talent can become a liability without conscious balance. Explains how each challenge manifests and practical ways to work through it.
 						Challenges []string `json:"challenges"`
 
-						// Description Expert-written 300 to 500 word analysis of natural abilities, life goals, and the talents your birth name reveals. Suitable for detailed readings and personality assessments.
+						// Description Core interpretation of the natural abilities, life goals and talents the birth name describes. Together with the strengths, challenges, career, relationships and spirituality fields it makes a full reading.
 						Description string `json:"description"`
 
 						// Keywords Natural talents and abilities encoded in the birth name. These define your innate skill set, creative potential, and the gifts available to you throughout life.
@@ -171656,7 +171737,7 @@ func ParseGenerateNumerologyChartResponse(rsp *http.Response) (*GenerateNumerolo
 						// Challenges Growth areas and shadow qualities to work through. Each entry explains the root cause, how it surfaces in behavior, and constructive strategies for personal development.
 						Challenges []string `json:"challenges"`
 
-						// Description Authoritative 300 to 500 word interpretation covering personality, life purpose, and core themes. Written by numerology experts and suitable for full-page readings or PDF report generation.
+						// Description Core interpretation of the Life Path covering personality, life purpose and core themes. Together with the strengths, challenges, career, relationships and spirituality fields it makes a full reading.
 						Description string `json:"description"`
 
 						// Keywords Defining personality traits and energetic themes for this Life Path. Useful for compatibility matching, personality snapshots, and building numerology profile summaries.
@@ -171701,7 +171782,7 @@ func ParseGenerateNumerologyChartResponse(rsp *http.Response) (*GenerateNumerolo
 						// Challenges Growth areas to watch as Maturity energy intensifies. Understanding these early helps you navigate the transition into your mature self with awareness and grace.
 						Challenges []string `json:"challenges"`
 
-						// Description Expert-written 300 to 500 word guide to the person you are evolving into. The Maturity number represents the wisdom gained through lived experience and reveals your ultimate destination.
+						// Description Core interpretation of the person being grown into in the second half of life, the wisdom gained through lived experience. Together with the strengths, challenges, career, relationships and spirituality fields it makes a full reading.
 						Description string `json:"description"`
 
 						// Keywords Emerging traits and qualities that strengthen after age 35 to 40. These energies gradually integrate into your personality as you mature and gain life experience.
@@ -171746,7 +171827,7 @@ func ParseGenerateNumerologyChartResponse(rsp *http.Response) (*GenerateNumerolo
 						// Challenges Blind spots in your public persona. Patterns others notice that you may not, including defense mechanisms and image-management tendencies that can limit authentic connection.
 						Challenges []string `json:"challenges"`
 
-						// Description Expert-written 300 to 500 word analysis of the outer personality, social presence, and the image you project to the world. Reveals the gap between perception and inner truth.
+						// Description Core interpretation of the outer personality, social presence and the image projected to the world. Together with the strengths, challenges, career, relationships and spirituality fields it makes a full reading.
 						Description string `json:"description"`
 
 						// Keywords Traits that define your public persona and first impression. These are the qualities others perceive before they get to know the real you.
@@ -171791,7 +171872,7 @@ func ParseGenerateNumerologyChartResponse(rsp *http.Response) (*GenerateNumerolo
 						// Challenges Inner shadows and emotional patterns to balance. Explains how each challenge manifests when the Soul Urge energy is overextended or repressed.
 						Challenges []string `json:"challenges"`
 
-						// Description Expert-written 300 to 500 word exploration of the inner self, hidden desires, and emotional landscape. Reveals what the heart truly craves beneath the surface persona.
+						// Description Core interpretation of the inner self, hidden desires and emotional landscape. Together with the strengths, challenges, career, relationships and spirituality fields it makes a full reading.
 						Description string `json:"description"`
 
 						// Keywords Core emotional drives and inner motivations. These define what truly fulfills you at the deepest level, beyond surface-level desires and social expectations.
@@ -171847,7 +171928,7 @@ func ParseGenerateNumerologyChartResponse(rsp *http.Response) (*GenerateNumerolo
 				// ActivationRange Age range when the Maturity number typically activates (35-40).
 				ActivationRange string `json:"activationRange"`
 
-				// CurrentAge Current age calculated from the birth year.
+				// CurrentAge The current UTC calendar year minus the birth year. The birthday is not considered, so before the birthday it reads one more than the age in whole years, and currentYear does not move it.
 				CurrentAge float32 `json:"currentAge"`
 
 				// IsActive Whether the Maturity number is currently active (typically activates around age 35-40).
@@ -171946,7 +172027,7 @@ func ParseCalculateNumCompatibilityResponse(rsp *http.Response) (*CalculateNumCo
 			// Challenges Potential relationship challenges
 			Challenges []string `json:"challenges"`
 			Expression struct {
-				// Compatibility Expression compatibility score (0-100)
+				// Compatibility Expression compatibility score (50-100)
 				Compatibility float32 `json:"compatibility"`
 
 				// Description Detailed Expression compatibility analysis
@@ -171959,7 +172040,7 @@ func ParseCalculateNumCompatibilityResponse(rsp *http.Response) (*CalculateNumCo
 				Person2 float32 `json:"person2"`
 			} `json:"expression"`
 			LifePath struct {
-				// Compatibility Life Path compatibility score (0-100)
+				// Compatibility Life Path compatibility score (50-100)
 				Compatibility float32 `json:"compatibility"`
 
 				// Description Detailed Life Path compatibility analysis
@@ -171972,13 +172053,13 @@ func ParseCalculateNumCompatibilityResponse(rsp *http.Response) (*CalculateNumCo
 				Person2 float32 `json:"person2"`
 			} `json:"lifePath"`
 
-			// OverallScore Overall compatibility score (0-100)
+			// OverallScore Overall compatibility score: 50% Life Path, 30% Expression and 20% Soul Urge pair scores, rounded. Every pair score runs 50 to 100, so the overall score does too.
 			OverallScore float32 `json:"overallScore"`
 
-			// Rating Compatibility rating: Highly Compatible, Very Compatible, Compatible, Moderately Compatible, or Challenging.
+			// Rating Compatibility rating from overallScore: Highly Compatible (90 and up), Very Compatible (75 to 89), Compatible (60 to 74) or Moderately Compatible (50 to 59). The scale also names Challenging below 45, which no pair of core numbers reaches.
 			Rating   string `json:"rating"`
 			SoulUrge struct {
-				// Compatibility Soul Urge compatibility score (0-100)
+				// Compatibility Soul Urge compatibility score (50-100)
 				Compatibility float32 `json:"compatibility"`
 
 				// Description Detailed Soul Urge compatibility analysis
@@ -172172,7 +172253,7 @@ func ParseGetDailyNumberResponse(rsp *http.Response) (*GetDailyNumberResponse, e
 				// Challenges Shadow patterns to watch for today. Awareness of these helps navigate the day with intention and balance.
 				Challenges []string `json:"challenges"`
 
-				// Description Expert-written 300 to 500 word interpretation of the daily energy. Covers personality resonance, life themes, and how this number influences the day.
+				// Description Core interpretation of the number of the day: its personality resonance, life themes and how it colors the day. Together with the strengths, challenges, career, relationships and spirituality fields it makes a full reading.
 				Description string `json:"description"`
 
 				// Keywords Defining traits and energetic themes active today. Useful for daily affirmations, journaling prompts, and focus areas.
@@ -172313,7 +172394,7 @@ func ParseCalculateDualResponse(rsp *http.Response) (*CalculateDualResponse, err
 				// Title Archetype of the Chaldean root.
 				Title string `json:"title"`
 
-				// Total Raw Chaldean letter total.
+				// Total The sum the compound is read from: for a one-word name, its Chaldean letter total; for a longer name, the sum of each word reduced to its single number, as Cheiro works John Smith (18 to 9, 17 to 8, total 17).
 				Total float32 `json:"total"`
 			} `json:"chaldean"`
 
@@ -172413,10 +172494,10 @@ func ParseCalculateExpressionResponse(rsp *http.Response) (*CalculateExpressionR
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
-			// Calculation Full Pythagorean letter-to-number conversion showing every letter value in the birth name, grouped by word, then summed and reduced to the final Expression number.
+			// Calculation Every letter value of the birth name, grouped by name: each name is summed and reduced, then the names are added and reduced to the final Expression number.
 			Calculation string `json:"calculation"`
 
-			// HasKarmicDebt Whether a Karmic Debt number (13, 14, 16, 19) appeared during the name reduction. Indicates inherited challenges embedded in your given name.
+			// HasKarmicDebt Whether a Karmic Debt number (13, 14, 16, 19) appeared in the final reduction, the sum of the reduced names. Indicates inherited challenges embedded in your given name.
 			HasKarmicDebt bool `json:"hasKarmicDebt"`
 
 			// KarmicDebtMeaning Detailed interpretation of the Karmic Debt number when present. Includes the debt theme, the inherited challenge, and guidance for resolution. Only returned when hasKarmicDebt is true.
@@ -172440,7 +172521,7 @@ func ParseCalculateExpressionResponse(rsp *http.Response) (*CalculateExpressionR
 				// Challenges Shadow side of your talents and areas requiring conscious effort. Each challenge explains its root cause and practical strategies for transformation.
 				Challenges []string `json:"challenges"`
 
-				// Description Expert-written 300 to 500 word interpretation of the natural abilities, life mission, and destiny encoded in your birth name. Covers how these talents manifest across life stages.
+				// Description Core interpretation of the natural abilities, life mission and destiny the birth name describes. Together with the strengths, challenges, career, relationships and spirituality fields it makes a full reading.
 				Description string `json:"description"`
 
 				// Keywords Defining traits and talent themes for this Expression number. Ideal for personality profiles, compatibility engines, and talent-matching features.
@@ -172459,7 +172540,7 @@ func ParseCalculateExpressionResponse(rsp *http.Response) (*CalculateExpressionR
 				Title string `json:"title"`
 			} `json:"meaning"`
 
-			// Number Expression number (also called Destiny number) derived from all letters in the full birth name. Reveals natural talents, abilities, and the goals you are meant to achieve. Values: 1 to 9, 11, 22, or 33.
+			// Number Expression number (also called Destiny number) from every letter of the full birth name. Reveals natural talents, abilities, and the goals you are meant to achieve. Values: 1 to 9, 11, 22, or 33.
 			Number float32 `json:"number"`
 
 			// Type Single-digit (1 to 9) or Master Number (11, 22, 33). Master Numbers in the Expression position indicate extraordinary innate talent that demands conscious development.
@@ -172539,7 +172620,7 @@ func ParseCheckKarmicDebtResponse(rsp *http.Response) (*CheckKarmicDebtResponse,
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
-			// DebtNumbers All karmic debt numbers found (13, 14, 16, 19)
+			// DebtNumbers All karmic debt numbers found (13, 14, 16, 19), each listed once, in core-number order: Life Path, Expression, Soul Urge, Personality, Birth Day.
 			DebtNumbers []float32 `json:"debtNumbers"`
 
 			// HasKarmicDebt Whether any karmic debt numbers were detected
@@ -172729,7 +172810,7 @@ func ParseCalculateLifePathResponse(rsp *http.Response) (*CalculateLifePathRespo
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
-			// Calculation Full step-by-step breakdown of the 3-Cycle Pythagorean reduction. Shows how month, day, and year each reduce independently before combining into the final Life Path number.
+			// Calculation Every step of the calculation: the birth month, day and year each reduced, then combined into the final Life Path number.
 			Calculation string `json:"calculation"`
 
 			// HasKarmicDebt Indicates whether a Karmic Debt number (13, 14, 16, or 19) appeared during the reduction chain. Karmic Debt reveals past-life challenges carried into this lifetime.
@@ -172756,10 +172837,10 @@ func ParseCalculateLifePathResponse(rsp *http.Response) (*CalculateLifePathRespo
 				// Challenges Growth areas and shadow qualities to be aware of. Each entry names the challenge and explains its root cause and how to work through it constructively.
 				Challenges []string `json:"challenges"`
 
-				// Description In-depth 300 to 500 word interpretation covering personality, purpose, and life themes. Written by numerology experts with decades of practice. Suitable for full-page readings and detailed reports.
+				// Description Core interpretation of the number covering personality, purpose and life themes. Together with the strengths, challenges, career, relationships and spirituality fields it makes a full-page reading.
 				Description string `json:"description"`
 
-				// Keywords Ten defining personality traits and energetic themes associated with this number. Useful for quick personality snapshots, tag clouds, and compatibility matching.
+				// Keywords Defining personality traits and energetic themes of this number. Useful for quick personality snapshots, tag clouds and compatibility matching.
 				Keywords []string `json:"keywords"`
 
 				// Relationships Love, friendship, and family dynamics. Covers romantic compatibility with other Life Path numbers, communication style, and the key relationship lessons for this number.
@@ -172882,7 +172963,7 @@ func ParseCalculateMaturityResponse(rsp *http.Response) (*CalculateMaturityRespo
 				// Challenges Growth areas to watch as Maturity energy intensifies. Understanding these early helps you navigate the transition with awareness and grace.
 				Challenges []string `json:"challenges"`
 
-				// Description Expert-written 300 to 500 word guide to the person you are evolving into. The Maturity number is the sum of Life Path and Expression, representing the wisdom gained through lived experience.
+				// Description Core interpretation of the person being grown into in the second half of life, the wisdom gained through lived experience. Together with the strengths, challenges, career, relationships and spirituality fields it makes a full reading.
 				Description string `json:"description"`
 
 				// Keywords Emerging traits and qualities that strengthen after age 35 to 40. These energies gradually integrate into your personality as you mature.
@@ -172988,7 +173069,7 @@ func ParseGetNumberMeaningResponse(rsp *http.Response) (*GetNumberMeaningRespons
 				// Challenges Growth areas and shadow qualities. Each entry explains the root cause, how it surfaces, and constructive strategies for working through it.
 				Challenges []string `json:"challenges"`
 
-				// Description Authoritative 300 to 500 word interpretation covering personality, life purpose, and core themes. Written by numerology experts and suitable for full-page readings.
+				// Description Core interpretation of the number covering personality, life purpose and core themes. Together with the strengths, challenges, career, relationships and spirituality fields it makes a full reading.
 				Description string `json:"description"`
 
 				// Keywords Ten defining personality traits and energetic themes. Useful for personality snapshots, compatibility matching, and building numerology profile summaries.
@@ -173379,7 +173460,7 @@ func ParseCalculatePersonalityResponse(rsp *http.Response) (*CalculatePersonalit
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
-			// Calculation Full step-by-step Pythagorean reduction using only the consonants from the birth name. Shows each consonant mapped to its numeric value, grouped by word, then summed and reduced to the final Personality number.
+			// Calculation Every consonant of the birth name with its value, grouped by name: each name is summed and reduced, then the names are added and reduced to the final Personality number.
 			Calculation string `json:"calculation"`
 
 			// HasKarmicDebt Indicates whether a Karmic Debt number (13, 14, 16, or 19) appeared during the consonant reduction chain. Karmic Debt in the Personality position reveals past-life patterns that influence how others perceive you and the social challenges you must overcome.
@@ -173406,7 +173487,7 @@ func ParseCalculatePersonalityResponse(rsp *http.Response) (*CalculatePersonalit
 				// Challenges Blind spots in your public persona. Patterns others notice that you may not, including defense mechanisms and image-management tendencies that can limit authentic connection.
 				Challenges []string `json:"challenges"`
 
-				// Description Expert-written 300 to 500 word analysis of the outer personality, social presence, and the image you project to the world. Reveals the gap between how others see you and who you truly are.
+				// Description Core interpretation of the outer personality, social presence and the image projected to the world. Together with the strengths, challenges, career, relationships and spirituality fields it makes a full reading.
 				Description string `json:"description"`
 
 				// Keywords Traits that define your public persona and first impression. These are the qualities others perceive before they get to know the real you.
@@ -173505,7 +173586,7 @@ func ParseCalculateSoulUrgeResponse(rsp *http.Response) (*CalculateSoulUrgeRespo
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
-			// Calculation Full step-by-step Pythagorean reduction using only the vowels (A, E, I, O, U) from the birth name. Shows each vowel mapped to its numeric value, grouped by word, then summed and reduced to the final Soul Urge number.
+			// Calculation Every vowel (A, E, I, O, U) of the birth name with its value, grouped by name: each name is summed and reduced, then the names are added and reduced to the final Soul Urge number.
 			Calculation string `json:"calculation"`
 
 			// HasKarmicDebt Indicates whether a Karmic Debt number (13, 14, 16, or 19) appeared during the vowel reduction chain. Karmic Debt in the Soul Urge reveals past-life emotional patterns and unresolved inner desires carried into this lifetime.
@@ -173532,7 +173613,7 @@ func ParseCalculateSoulUrgeResponse(rsp *http.Response) (*CalculateSoulUrgeRespo
 				// Challenges Inner shadows and emotional patterns to balance. Explains how each challenge manifests when the Soul Urge energy is overextended or repressed.
 				Challenges []string `json:"challenges"`
 
-				// Description Expert-written 300 to 500 word exploration of the inner self, hidden desires, and emotional landscape. Reveals what the heart truly craves beneath the surface persona.
+				// Description Core interpretation of the inner self, hidden desires and emotional landscape. Together with the strengths, challenges, career, relationships and spirituality fields it makes a full reading.
 				Description string `json:"description"`
 
 				// Keywords Core emotional drives and inner motivations for this Soul Urge. Useful for understanding hidden desires, emotional needs, and what truly fulfills someone at the deepest level.
@@ -174460,9 +174541,12 @@ func ParseCastYesNoResponse(rsp *http.Response) (*CastYesNoResponse, error) {
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
-			// Answer Tarot-derived answer. Yes = upright card supports a positive outcome. No = reversed card suggests obstacles. Maybe = inherently ambiguous card drawn (The Hanged Man, Wheel of Fortune, Temperance, Two of Swords, Four of Swords) signaling pause, reflection, or shifting circumstances.
+			// Answer Tarot-derived answer. Yes = upright card supports a positive outcome. No = reversed card suggests obstacles. Maybe = inherently ambiguous card drawn (The Hanged Man, Wheel of Fortune, Temperance, Two of Swords, Four of Swords) signaling pause, reflection, or shifting circumstances. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use answerLocalized for anything a reader sees.
 			Answer CastYesNo200JSONResponseBodyAnswer `json:"answer"`
-			Card   struct {
+
+			// AnswerLocalized Answer in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			AnswerLocalized *string `json:"answerLocalized,omitempty"`
+			Card            struct {
 				// Arcana Whether this card belongs to the Major Arcana (22 trump cards, major life themes) or Minor Arcana (56 suit cards, daily situations).
 				Arcana CastYesNo200JSONResponseBodyCardArcana `json:"arcana"`
 
@@ -174491,8 +174575,11 @@ func ParseCastYesNoResponse(rsp *http.Response) (*CastYesNoResponse, error) {
 			// Seed The seed used for this draw, echoed back when one was supplied. Present only if the request carried a seed. Makes a cached or forwarded response self describing, so a reading can be reproduced or shared without the original request beside it.
 			Seed *string `json:"seed,omitempty"`
 
-			// Strength Confidence level of the answer. Strong = Major Arcana card drawn (powerful, definitive cosmic energy). Qualified = Minor Arcana card drawn (nuanced, situational guidance).
+			// Strength Confidence level of the answer. Strong = Major Arcana card drawn (powerful, definitive cosmic energy). Qualified = Minor Arcana card drawn (nuanced, situational guidance). Always English, whatever the lang parameter says. Use strengthLocalized for anything a reader sees.
 			Strength CastYesNo200JSONResponseBodyStrength `json:"strength"`
+
+			// StrengthLocalized Answer strength in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			StrengthLocalized *string `json:"strengthLocalized,omitempty"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
 			return nil, err

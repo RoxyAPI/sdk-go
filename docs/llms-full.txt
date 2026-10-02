@@ -255,28 +255,28 @@ Vastu Shastra API for directional home and plot analysis: entrance padas with th
 
 ## Numerology - `roxy.Numerology`
 
-Numerology API to calculate life path, expression, soul urge, personality, and maturity numbers, with Pinnacle and Ch...
+Numerology API for life path numbers, complete numerology charts and compatibility, in both Pythagorean and Chaldean...
 
-- `calculateBirthDay` - POST `/numerology/birth-day` - Calculate Birth Day number - Special talents from day of birth
-- `calculateBridgeNumbers` - POST `/numerology/bridge` - Calculate Bridge Numbers - Harmonize different aspects of personality
-- `calculateBusinessName` - POST `/numerology/business-name` - Business name numerology - Chaldean brand name analysis and lucky numbers
-- `calculateChaldean` - POST `/numerology/chaldean` - Chaldean numerology name reading - Destiny, compound number, planetary ruler
-- `generateNumerologyChart` - POST `/numerology/chart` - Generate Complete Numerology Chart - Full profile analysis
-- `calculateNumCompatibility` - POST `/numerology/compatibility` - Calculate Compatibility - Relationship dynamics between two people
-- `getCompoundNumber` - GET `/numerology/compound-number/{number}` - Compound number meaning - Cheiro Chaldean interpretation 10 to 52
-- `getDailyNumber` - POST `/numerology/daily` - Get daily numerology number - Number of the Day with interpretation
-- `calculateDual` - POST `/numerology/dual` - Dual numerology - Pythagorean and Chaldean name numbers in one call
-- `calculateExpression` - POST `/numerology/expression` - Calculate Expression number - Natural talents and life goals
-- `checkKarmicDebt` - POST `/numerology/karmic-debt` - Detect Karmic Debt numbers - Past life challenges (13, 14, 16, 19)
-- `analyzeKarmicLessons` - POST `/numerology/karmic-lessons` - Analyze Karmic Lessons - Life lessons from missing numbers
-- `calculateLifePath` - POST `/numerology/life-path` - Calculate Life Path number - Most important numerology calculation
-- `calculateMaturity` - POST `/numerology/maturity` - Calculate Maturity number - Who you become in later life
-- `getNumberMeaning` - GET `/numerology/meanings/{number}` - Get Number Meaning - Interpretation for any number 1-9, 11, 22, 33
-- `calculatePersonalDay` - POST `/numerology/personal-day` - Calculate Personal Day - Daily personalized numerology forecast
-- `calculatePersonalMonth` - POST `/numerology/personal-month` - Calculate Personal Month - Monthly numerology forecast
-- `calculatePersonalYear` - POST `/numerology/personal-year` - Calculate Personal Year - Annual cycle and forecast for current year
-- `calculatePersonality` - POST `/numerology/personality` - Calculate Personality number - How others perceive you
-- `calculateSoulUrge` - POST `/numerology/soul-urge` - Calculate Soul Urge number - Inner motivations and desires
+- `calculateBirthDay` - POST `/numerology/birth-day` - Calculate Birth Day number - Birthday numerology API
+- `calculateBridgeNumbers` - POST `/numerology/bridge` - Calculate Bridge Numbers - Numerology bridge numbers API
+- `calculateBusinessName` - POST `/numerology/business-name` - Calculate business name numerology - Brand name numerology API
+- `calculateChaldean` - POST `/numerology/chaldean` - Calculate Chaldean numerology - Chaldean name number calculator API
+- `generateNumerologyChart` - POST `/numerology/chart` - Generate numerology chart - Complete numerology reading API
+- `calculateNumCompatibility` - POST `/numerology/compatibility` - Calculate numerology compatibility - Love match scoring API
+- `getCompoundNumber` - GET `/numerology/compound-number/{number}` - Get compound number meaning - Chaldean compound numbers 10 to 52 API
+- `getDailyNumber` - POST `/numerology/daily` - Get daily numerology number - Number of the Day API
+- `calculateDual` - POST `/numerology/dual` - Calculate dual numerology - Pythagorean and Chaldean name number API
+- `calculateExpression` - POST `/numerology/expression` - Calculate Expression number - Destiny number calculator API
+- `checkKarmicDebt` - POST `/numerology/karmic-debt` - Detect Karmic Debt numbers - Karmic debt 13, 14, 16, 19 API
+- `analyzeKarmicLessons` - POST `/numerology/karmic-lessons` - Analyze Karmic Lessons - Missing numbers numerology API
+- `calculateLifePath` - POST `/numerology/life-path` - Calculate Life Path number - Calculator and meaning API
+- `calculateMaturity` - POST `/numerology/maturity` - Calculate Maturity number - Realization number numerology API
+- `getNumberMeaning` - GET `/numerology/meanings/{number}` - Get number meaning - Numerology number meanings API
+- `calculatePersonalDay` - POST `/numerology/personal-day` - Calculate Personal Day - Daily numerology forecast API
+- `calculatePersonalMonth` - POST `/numerology/personal-month` - Calculate Personal Month - Monthly numerology forecast API
+- `calculatePersonalYear` - POST `/numerology/personal-year` - Calculate Personal Year - Personal Year number forecast API
+- `calculatePersonality` - POST `/numerology/personality` - Calculate Personality number - Outer personality numerology API
+- `calculateSoulUrge` - POST `/numerology/soul-urge` - Calculate Soul Urge number - Heart Desire number calculator API
 
 ## Kabbalah - `roxy.Kabbalah`
 
