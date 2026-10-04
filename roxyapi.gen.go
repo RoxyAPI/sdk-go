@@ -29172,7 +29172,7 @@ type ArabicLotsResponse struct {
 		// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
 		Time string `json:"time"`
 
-		// Timezone Timezone offset from UTC in decimal hours. Examples: New York = -5, London = 0, India = 5.5, Tokyo = 9.
+		// Timezone Timezone offset from UTC in decimal hours, resolved for the birth date. Examples: New York = -5 in winter and -4 in summer, London = 0, India = 5.5, Tokyo = 9.
 		Timezone float32 `json:"timezone"`
 	} `json:"birthDetails"`
 
@@ -29776,7 +29776,7 @@ type AsteroidsResponse struct {
 		// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
 		Time string `json:"time"`
 
-		// Timezone Timezone offset from UTC in decimal hours. Examples: New York = -5, London = 0, India = 5.5, Tokyo = 9.
+		// Timezone Timezone offset from UTC in decimal hours, resolved for the birth date. Examples: New York = -5 in winter and -4 in summer, London = 0, India = 5.5, Tokyo = 9.
 		Timezone float32 `json:"timezone"`
 	} `json:"birthDetails"`
 
@@ -29806,7 +29806,7 @@ type AstrocartographyResponse struct {
 		// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
 		Time string `json:"time"`
 
-		// Timezone Timezone offset from UTC in decimal hours. Examples: New York = -5, London = 0, India = 5.5, Tokyo = 9.
+		// Timezone Timezone offset from UTC in decimal hours, resolved for the birth date. Examples: New York = -5 in winter and -4 in summer, London = 0, India = 5.5, Tokyo = 9.
 		Timezone float32 `json:"timezone"`
 	} `json:"birthDetails"`
 
@@ -31937,7 +31937,7 @@ type FixedStarsResponse struct {
 		// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
 		Time string `json:"time"`
 
-		// Timezone Timezone offset from UTC in decimal hours. Examples: New York = -5, London = 0, India = 5.5, Tokyo = 9.
+		// Timezone Timezone offset from UTC in decimal hours, resolved for the birth date. Examples: New York = -5 in winter and -4 in summer, London = 0, India = 5.5, Tokyo = 9.
 		Timezone float32 `json:"timezone"`
 	} `json:"birthDetails"`
 
@@ -33965,7 +33965,7 @@ type LilithResponse struct {
 		// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
 		Time string `json:"time"`
 
-		// Timezone Timezone offset from UTC in decimal hours. Examples: New York = -5, London = 0, India = 5.5, Tokyo = 9.
+		// Timezone Timezone offset from UTC in decimal hours, resolved for the birth date. Examples: New York = -5 in winter and -4 in summer, London = 0, India = 5.5, Tokyo = 9.
 		Timezone float32 `json:"timezone"`
 	} `json:"birthDetails"`
 
@@ -35042,7 +35042,7 @@ type ProfectionsResponse struct {
 		// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
 		Time string `json:"time"`
 
-		// Timezone Timezone offset from UTC in decimal hours. Examples: New York = -5, London = 0, India = 5.5, Tokyo = 9.
+		// Timezone Timezone offset from UTC in decimal hours, resolved for the birth date. Examples: New York = -5 in winter and -4 in summer, London = 0, India = 5.5, Tokyo = 9.
 		Timezone float32 `json:"timezone"`
 	} `json:"birthDetails"`
 
@@ -35143,7 +35143,7 @@ type ProgressionsResponse struct {
 		// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
 		Time string `json:"time"`
 
-		// Timezone Timezone offset from UTC in decimal hours. Examples: New York = -5, London = 0, India = 5.5, Tokyo = 9.
+		// Timezone Timezone offset from UTC in decimal hours, resolved for the birth date. Examples: New York = -5 in winter and -4 in summer, London = 0, India = 5.5, Tokyo = 9.
 		Timezone float32 `json:"timezone"`
 	} `json:"birthDetails"`
 
@@ -35769,7 +35769,7 @@ type SolarArcResponse struct {
 		// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
 		Time string `json:"time"`
 
-		// Timezone Timezone offset from UTC in decimal hours. Examples: New York = -5, London = 0, India = 5.5, Tokyo = 9.
+		// Timezone Timezone offset from UTC in decimal hours, resolved for the birth date. Examples: New York = -5 in winter and -4 in summer, London = 0, India = 5.5, Tokyo = 9.
 		Timezone float32 `json:"timezone"`
 	} `json:"birthDetails"`
 
@@ -85831,7 +85831,7 @@ type GenerateCompositeChartResponse struct {
 			// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
 			Time string `json:"time"`
 
-			// Timezone Timezone offset from UTC in decimal hours. Examples: New York = -5, London = 0, India = 5.5, Tokyo = 9.
+			// Timezone Timezone offset from UTC in decimal hours, resolved for the birth date. Examples: New York = -5 in winter and -4 in summer, London = 0, India = 5.5, Tokyo = 9.
 			Timezone float32 `json:"timezone"`
 		} `json:"person1"`
 
@@ -85849,7 +85849,7 @@ type GenerateCompositeChartResponse struct {
 			// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
 			Time string `json:"time"`
 
-			// Timezone Timezone offset from UTC in decimal hours. Examples: New York = -5, London = 0, India = 5.5, Tokyo = 9.
+			// Timezone Timezone offset from UTC in decimal hours, resolved for the birth date. Examples: New York = -5 in winter and -4 in summer, London = 0, India = 5.5, Tokyo = 9.
 			Timezone float32 `json:"timezone"`
 		} `json:"person2"`
 	}
@@ -86000,7 +86000,7 @@ func (r GenerateCompositeChartResponse) GetJSON200() *struct {
 		// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
 		Time string `json:"time"`
 
-		// Timezone Timezone offset from UTC in decimal hours. Examples: New York = -5, London = 0, India = 5.5, Tokyo = 9.
+		// Timezone Timezone offset from UTC in decimal hours, resolved for the birth date. Examples: New York = -5 in winter and -4 in summer, London = 0, India = 5.5, Tokyo = 9.
 		Timezone float32 `json:"timezone"`
 	} `json:"person1"`
 
@@ -86018,7 +86018,7 @@ func (r GenerateCompositeChartResponse) GetJSON200() *struct {
 		// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
 		Time string `json:"time"`
 
-		// Timezone Timezone offset from UTC in decimal hours. Examples: New York = -5, London = 0, India = 5.5, Tokyo = 9.
+		// Timezone Timezone offset from UTC in decimal hours, resolved for the birth date. Examples: New York = -5 in winter and -4 in summer, London = 0, India = 5.5, Tokyo = 9.
 		Timezone float32 `json:"timezone"`
 	} `json:"person2"`
 } {
@@ -87796,7 +87796,7 @@ type GenerateLunarReturnResponse struct {
 				// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
 				Time string `json:"time"`
 
-				// Timezone Timezone offset from UTC in decimal hours. Examples: New York = -5, London = 0, India = 5.5, Tokyo = 9.
+				// Timezone Timezone offset from UTC in decimal hours, resolved for the birth date. Examples: New York = -5 in winter and -4 in summer, London = 0, India = 5.5, Tokyo = 9.
 				Timezone float32 `json:"timezone"`
 			} `json:"birthDetails"`
 
@@ -87980,7 +87980,7 @@ func (r GenerateLunarReturnResponse) GetJSON200() *struct {
 			// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
 			Time string `json:"time"`
 
-			// Timezone Timezone offset from UTC in decimal hours. Examples: New York = -5, London = 0, India = 5.5, Tokyo = 9.
+			// Timezone Timezone offset from UTC in decimal hours, resolved for the birth date. Examples: New York = -5 in winter and -4 in summer, London = 0, India = 5.5, Tokyo = 9.
 			Timezone float32 `json:"timezone"`
 		} `json:"birthDetails"`
 
@@ -89242,7 +89242,7 @@ type GeneratePlanetaryReturnResponse struct {
 				// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
 				Time string `json:"time"`
 
-				// Timezone Timezone offset from UTC in decimal hours. Examples: New York = -5, London = 0, India = 5.5, Tokyo = 9.
+				// Timezone Timezone offset from UTC in decimal hours, resolved for the birth date. Examples: New York = -5 in winter and -4 in summer, London = 0, India = 5.5, Tokyo = 9.
 				Timezone float32 `json:"timezone"`
 			} `json:"birthDetails"`
 
@@ -89429,7 +89429,7 @@ func (r GeneratePlanetaryReturnResponse) GetJSON200() *struct {
 			// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
 			Time string `json:"time"`
 
-			// Timezone Timezone offset from UTC in decimal hours. Examples: New York = -5, London = 0, India = 5.5, Tokyo = 9.
+			// Timezone Timezone offset from UTC in decimal hours, resolved for the birth date. Examples: New York = -5 in winter and -4 in summer, London = 0, India = 5.5, Tokyo = 9.
 			Timezone float32 `json:"timezone"`
 		} `json:"birthDetails"`
 
@@ -90752,7 +90752,7 @@ type GenerateSolarReturnResponse struct {
 				// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
 				Time string `json:"time"`
 
-				// Timezone Timezone offset from UTC in decimal hours. Examples: New York = -5, London = 0, India = 5.5, Tokyo = 9.
+				// Timezone Timezone offset from UTC in decimal hours, resolved for the birth date. Examples: New York = -5 in winter and -4 in summer, London = 0, India = 5.5, Tokyo = 9.
 				Timezone float32 `json:"timezone"`
 			} `json:"birthDetails"`
 
@@ -90939,7 +90939,7 @@ func (r GenerateSolarReturnResponse) GetJSON200() *struct {
 			// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
 			Time string `json:"time"`
 
-			// Timezone Timezone offset from UTC in decimal hours. Examples: New York = -5, London = 0, India = 5.5, Tokyo = 9.
+			// Timezone Timezone offset from UTC in decimal hours, resolved for the birth date. Examples: New York = -5 in winter and -4 in summer, London = 0, India = 5.5, Tokyo = 9.
 			Timezone float32 `json:"timezone"`
 		} `json:"birthDetails"`
 
@@ -108864,7 +108864,7 @@ type ForecastSolarReturnResponse struct {
 				// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
 				Time string `json:"time"`
 
-				// Timezone Timezone offset from UTC in decimal hours. Examples: New York = -5, London = 0, India = 5.5, Tokyo = 9.
+				// Timezone Timezone offset from UTC in decimal hours, resolved for the birth date. Examples: New York = -5 in winter and -4 in summer, London = 0, India = 5.5, Tokyo = 9.
 				Timezone float32 `json:"timezone"`
 			} `json:"birthDetails"`
 
@@ -109039,7 +109039,7 @@ func (r ForecastSolarReturnResponse) GetJSON200() *struct {
 			// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
 			Time string `json:"time"`
 
-			// Timezone Timezone offset from UTC in decimal hours. Examples: New York = -5, London = 0, India = 5.5, Tokyo = 9.
+			// Timezone Timezone offset from UTC in decimal hours, resolved for the birth date. Examples: New York = -5 in winter and -4 in summer, London = 0, India = 5.5, Tokyo = 9.
 			Timezone float32 `json:"timezone"`
 		} `json:"birthDetails"`
 
@@ -148692,7 +148692,7 @@ func ParseGenerateCompositeChartResponse(rsp *http.Response) (*GenerateComposite
 				// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
 				Time string `json:"time"`
 
-				// Timezone Timezone offset from UTC in decimal hours. Examples: New York = -5, London = 0, India = 5.5, Tokyo = 9.
+				// Timezone Timezone offset from UTC in decimal hours, resolved for the birth date. Examples: New York = -5 in winter and -4 in summer, London = 0, India = 5.5, Tokyo = 9.
 				Timezone float32 `json:"timezone"`
 			} `json:"person1"`
 
@@ -148710,7 +148710,7 @@ func ParseGenerateCompositeChartResponse(rsp *http.Response) (*GenerateComposite
 				// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
 				Time string `json:"time"`
 
-				// Timezone Timezone offset from UTC in decimal hours. Examples: New York = -5, London = 0, India = 5.5, Tokyo = 9.
+				// Timezone Timezone offset from UTC in decimal hours, resolved for the birth date. Examples: New York = -5 in winter and -4 in summer, London = 0, India = 5.5, Tokyo = 9.
 				Timezone float32 `json:"timezone"`
 			} `json:"person2"`
 		}
@@ -149932,7 +149932,7 @@ func ParseGenerateLunarReturnResponse(rsp *http.Response) (*GenerateLunarReturnR
 					// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
 					Time string `json:"time"`
 
-					// Timezone Timezone offset from UTC in decimal hours. Examples: New York = -5, London = 0, India = 5.5, Tokyo = 9.
+					// Timezone Timezone offset from UTC in decimal hours, resolved for the birth date. Examples: New York = -5 in winter and -4 in summer, London = 0, India = 5.5, Tokyo = 9.
 					Timezone float32 `json:"timezone"`
 				} `json:"birthDetails"`
 
@@ -150900,7 +150900,7 @@ func ParseGeneratePlanetaryReturnResponse(rsp *http.Response) (*GeneratePlanetar
 					// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
 					Time string `json:"time"`
 
-					// Timezone Timezone offset from UTC in decimal hours. Examples: New York = -5, London = 0, India = 5.5, Tokyo = 9.
+					// Timezone Timezone offset from UTC in decimal hours, resolved for the birth date. Examples: New York = -5 in winter and -4 in summer, London = 0, India = 5.5, Tokyo = 9.
 					Timezone float32 `json:"timezone"`
 				} `json:"birthDetails"`
 
@@ -151927,7 +151927,7 @@ func ParseGenerateSolarReturnResponse(rsp *http.Response) (*GenerateSolarReturnR
 					// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
 					Time string `json:"time"`
 
-					// Timezone Timezone offset from UTC in decimal hours. Examples: New York = -5, London = 0, India = 5.5, Tokyo = 9.
+					// Timezone Timezone offset from UTC in decimal hours, resolved for the birth date. Examples: New York = -5 in winter and -4 in summer, London = 0, India = 5.5, Tokyo = 9.
 					Timezone float32 `json:"timezone"`
 				} `json:"birthDetails"`
 
@@ -162954,7 +162954,7 @@ func ParseForecastSolarReturnResponse(rsp *http.Response) (*ForecastSolarReturnR
 					// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
 					Time string `json:"time"`
 
-					// Timezone Timezone offset from UTC in decimal hours. Examples: New York = -5, London = 0, India = 5.5, Tokyo = 9.
+					// Timezone Timezone offset from UTC in decimal hours, resolved for the birth date. Examples: New York = -5 in winter and -4 in summer, London = 0, India = 5.5, Tokyo = 9.
 					Timezone float32 `json:"timezone"`
 				} `json:"birthDetails"`
 

@@ -64,7 +64,7 @@
               }
             ],
             "description": "Timezone: an IANA name (e.g. \"America/New_York\", \"Europe/London\", or `cities[0].timezone` from /location/search) or decimal hours from UTC (e.g. -5 for EST, 5.5 for IST). An IANA name is resolved to the offset in force at the given date and time.",
-            "example": -5
+            "example": "America/New_York"
           }
         },
         "required": [
@@ -108,8 +108,8 @@
                 "type": "string"
               },
               "timezone": {
-                "description": "Timezone offset from UTC in decimal hours. Examples: New York = -5, London = 0, India = 5.5, Tokyo = 9.",
-                "example": -5,
+                "description": "Timezone offset from UTC in decimal hours, resolved for the birth date. Examples: New York = -5 in winter and -4 in summer, London = 0, India = 5.5, Tokyo = 9.",
+                "example": -4,
                 "maximum": 14,
                 "minimum": -12,
                 "type": "number"
@@ -812,7 +812,7 @@
               }
             ],
             "description": "Timezone: an IANA name (e.g. \"America/New_York\", \"Europe/London\", or `cities[0].timezone` from /location/search) or decimal hours from UTC (e.g. -5 for EST, 5.5 for IST). An IANA name is resolved to the offset in force at the given date and time.",
-            "example": -5
+            "example": "America/New_York"
           }
         },
         "required": [
@@ -1031,7 +1031,7 @@
               }
             ],
             "description": "Timezone: an IANA name (e.g. \"America/New_York\", \"Europe/London\", or `cities[0].timezone` from /location/search) or decimal hours from UTC (e.g. -5 for EST, 5.5 for IST). An IANA name is resolved to the offset in force at the given date and time.",
-            "example": -5
+            "example": "America/New_York"
           }
         },
         "required": [
@@ -1352,7 +1352,7 @@
           },
           "timezone": {
             "description": "Timezone offset from UTC in decimal hours.",
-            "example": -5,
+            "example": -4,
             "type": "number"
           }
         },
@@ -1428,7 +1428,7 @@
               }
             ],
             "description": "Timezone: an IANA name (e.g. \"America/New_York\", \"Europe/London\", or `cities[0].timezone` from /location/search) or decimal hours from UTC (e.g. -5 for EST, 5.5 for IST). An IANA name is resolved to the offset in force at the given date and time.",
-            "example": -5
+            "example": "America/New_York"
           }
         },
         "required": [
@@ -1548,8 +1548,8 @@
                 "type": "string"
               },
               "timezone": {
-                "description": "Timezone offset from UTC in decimal hours. Examples: New York = -5, London = 0, India = 5.5, Tokyo = 9.",
-                "example": -5,
+                "description": "Timezone offset from UTC in decimal hours, resolved for the birth date. Examples: New York = -5 in winter and -4 in summer, London = 0, India = 5.5, Tokyo = 9.",
+                "example": -4,
                 "maximum": 14,
                 "minimum": -12,
                 "type": "number"
@@ -1621,8 +1621,8 @@
                 "type": "string"
               },
               "timezone": {
-                "description": "Timezone offset from UTC in decimal hours. Examples: New York = -5, London = 0, India = 5.5, Tokyo = 9.",
-                "example": -5,
+                "description": "Timezone offset from UTC in decimal hours, resolved for the birth date. Examples: New York = -5 in winter and -4 in summer, London = 0, India = 5.5, Tokyo = 9.",
+                "example": -4,
                 "maximum": 14,
                 "minimum": -12,
                 "type": "number"
@@ -6569,8 +6569,8 @@
                 "type": "string"
               },
               "timezone": {
-                "description": "Timezone offset from UTC in decimal hours. Examples: New York = -5, London = 0, India = 5.5, Tokyo = 9.",
-                "example": -5,
+                "description": "Timezone offset from UTC in decimal hours, resolved for the birth date. Examples: New York = -5 in winter and -4 in summer, London = 0, India = 5.5, Tokyo = 9.",
+                "example": -4,
                 "maximum": 14,
                 "minimum": -12,
                 "type": "number"
@@ -7367,7 +7367,7 @@
           },
           "timezone": {
             "description": "Timezone offset from UTC applied to this calculation.",
-            "example": -5,
+            "example": -4,
             "type": "number"
           }
         },
@@ -11453,7 +11453,7 @@
               }
             ],
             "description": "Timezone: an IANA name (e.g. \"America/New_York\", \"Europe/London\", or `cities[0].timezone` from /location/search) or decimal hours from UTC (e.g. -5 for EST, 5.5 for IST). An IANA name is resolved to the offset in force at the given date and time.",
-            "example": -5
+            "example": "America/New_York"
           }
         },
         "required": [
@@ -11497,8 +11497,8 @@
                 "type": "string"
               },
               "timezone": {
-                "description": "Timezone offset from UTC in decimal hours. Examples: New York = -5, London = 0, India = 5.5, Tokyo = 9.",
-                "example": -5,
+                "description": "Timezone offset from UTC in decimal hours, resolved for the birth date. Examples: New York = -5 in winter and -4 in summer, London = 0, India = 5.5, Tokyo = 9.",
+                "example": -4,
                 "maximum": 14,
                 "minimum": -12,
                 "type": "number"
@@ -11651,7 +11651,7 @@
               },
               "timezone": {
                 "description": "Timezone offset from UTC applied to the birth instant.",
-                "example": -5,
+                "example": -4,
                 "type": "number"
               }
             },
@@ -12169,7 +12169,7 @@
               }
             ],
             "description": "Timezone: an IANA name (e.g. \"America/New_York\", \"Europe/London\", or `cities[0].timezone` from /location/search) or decimal hours from UTC (e.g. -5 for EST, 5.5 for IST). An IANA name is resolved to the offset in force at the given date and time.",
-            "example": -5
+            "example": "America/New_York"
           }
         },
         "required": [
@@ -12380,7 +12380,7 @@
               },
               "timezone": {
                 "description": "Timezone offset from UTC in decimal hours.",
-                "example": -5,
+                "example": -4,
                 "type": "number"
               }
             },
@@ -13893,7 +13893,7 @@
               }
             ],
             "description": "Timezone: an IANA name (e.g. \"America/New_York\", \"Europe/London\", or `cities[0].timezone` from /location/search) or decimal hours from UTC (e.g. -5 for EST, 5.5 for IST). An IANA name is resolved to the offset in force at the given date and time.",
-            "example": -5
+            "example": "America/New_York"
           }
         },
         "required": [
@@ -13944,8 +13944,8 @@
                 "type": "string"
               },
               "timezone": {
-                "description": "Timezone offset from UTC in decimal hours. Examples: New York = -5, London = 0, India = 5.5, Tokyo = 9.",
-                "example": -5,
+                "description": "Timezone offset from UTC in decimal hours, resolved for the birth date. Examples: New York = -5 in winter and -4 in summer, London = 0, India = 5.5, Tokyo = 9.",
+                "example": -4,
                 "maximum": 14,
                 "minimum": -12,
                 "type": "number"
@@ -14085,7 +14085,7 @@
               }
             ],
             "description": "Timezone: an IANA name (e.g. \"America/New_York\", \"Europe/London\", or `cities[0].timezone` from /location/search) or decimal hours from UTC (e.g. -5 for EST, 5.5 for IST). An IANA name is resolved to the offset in force at the given date and time.",
-            "example": -5
+            "example": "America/New_York"
           }
         },
         "required": [
@@ -14165,8 +14165,8 @@
                 "type": "string"
               },
               "timezone": {
-                "description": "Timezone offset from UTC in decimal hours. Examples: New York = -5, London = 0, India = 5.5, Tokyo = 9.",
-                "example": -5,
+                "description": "Timezone offset from UTC in decimal hours, resolved for the birth date. Examples: New York = -5 in winter and -4 in summer, London = 0, India = 5.5, Tokyo = 9.",
+                "example": -4,
                 "maximum": 14,
                 "minimum": -12,
                 "type": "number"
@@ -15509,7 +15509,7 @@
               }
             ],
             "description": "Timezone: an IANA name (e.g. \"America/New_York\", \"Europe/London\", or `cities[0].timezone` from /location/search) or decimal hours from UTC (e.g. -5 for EST, 5.5 for IST). An IANA name is resolved to the offset in force at the given date and time.",
-            "example": -5
+            "example": "America/New_York"
           }
         },
         "required": [
@@ -15554,8 +15554,8 @@
                 "type": "string"
               },
               "timezone": {
-                "description": "Timezone offset from UTC in decimal hours. Examples: New York = -5, London = 0, India = 5.5, Tokyo = 9.",
-                "example": -5,
+                "description": "Timezone offset from UTC in decimal hours, resolved for the birth date. Examples: New York = -5 in winter and -4 in summer, London = 0, India = 5.5, Tokyo = 9.",
+                "example": -4,
                 "maximum": 14,
                 "minimum": -12,
                 "type": "number"
@@ -15705,7 +15705,7 @@
                   }
                 ],
                 "description": "Natal timezone: decimal hours OR IANA name (e.g. \"America/New_York\"). IANA resolved to the DST-correct offset for the natal date.",
-                "example": -5
+                "example": "America/New_York"
               }
             },
             "required": [
@@ -18369,7 +18369,7 @@
                     ],
                     "default": 0,
                     "description": "Timezone: an IANA name (e.g. \"America/New_York\", \"Europe/London\", or `cities[0].timezone` from /location/search) or decimal hours from UTC (e.g. -5 for EST, 5.5 for IST). An IANA name is resolved once, at the start of the window, and that offset applies to every time in the response. Event dates and times are reported in this zone, which is what makes a published calendar read correctly for its audience. Defaults to 0 (UTC).",
-                    "example": -5
+                    "example": "America/New_York"
                   },
                   "year": {
                     "description": "Year for the aspect calendar (1551 to 2649). Defaults to the current year (UTC).",
@@ -18494,7 +18494,7 @@
                     },
                     "timezone": {
                       "description": "Timezone the event dates and times are reported in. Echoes the request.",
-                      "example": -5,
+                      "example": -4,
                       "type": "number"
                     },
                     "year": {
@@ -18799,7 +18799,7 @@
                       }
                     ],
                     "description": "Timezone: an IANA name (e.g. \"America/New_York\", \"Europe/London\", or `cities[0].timezone` from /location/search) or decimal hours from UTC (e.g. -5 for EST, 5.5 for IST). An IANA name is resolved to the offset in force at the given date and time.",
-                    "example": -5
+                    "example": "America/New_York"
                   }
                 },
                 "required": [
@@ -18934,7 +18934,7 @@
                   "latitude": 40.7128,
                   "longitude": -74.006,
                   "time": "14:30:00",
-                  "timezone": -5
+                  "timezone": "America/New_York"
                 },
                 "person2": {
                   "date": "1992-03-20",
@@ -18997,7 +18997,7 @@
                           }
                         ],
                         "description": "Timezone: an IANA name (e.g. \"America/New_York\", \"Europe/London\", or `cities[0].timezone` from /location/search) or decimal hours from UTC (e.g. -5 for EST, 5.5 for IST). An IANA name is resolved to the offset in force at the given date and time.",
-                        "example": -5
+                        "example": "America/New_York"
                       }
                     },
                     "required": [
@@ -19060,7 +19060,7 @@
                           }
                         ],
                         "description": "Timezone: an IANA name (e.g. \"America/New_York\", \"Europe/London\", or `cities[0].timezone` from /location/search) or decimal hours from UTC (e.g. -5 for EST, 5.5 for IST). An IANA name is resolved to the offset in force at the given date and time.",
-                        "example": -5
+                        "example": "America/New_York"
                       }
                     },
                     "required": [
@@ -19810,7 +19810,7 @@
                   "latitude": 40.7128,
                   "longitude": -74.006,
                   "time": "14:30:00",
-                  "timezone": -5
+                  "timezone": "America/New_York"
                 },
                 "person2": {
                   "date": "1992-03-20",
@@ -19885,7 +19885,7 @@
                           }
                         ],
                         "description": "Timezone: an IANA name (e.g. \"America/New_York\", \"Europe/London\", or `cities[0].timezone` from /location/search) or decimal hours from UTC (e.g. -5 for EST, 5.5 for IST). An IANA name is resolved to the offset in force at the given date and time.",
-                        "example": -5
+                        "example": "America/New_York"
                       }
                     },
                     "required": [
@@ -19948,7 +19948,7 @@
                           }
                         ],
                         "description": "Timezone: an IANA name (e.g. \"America/New_York\", \"Europe/London\", or `cities[0].timezone` from /location/search) or decimal hours from UTC (e.g. -5 for EST, 5.5 for IST). An IANA name is resolved to the offset in force at the given date and time.",
-                        "example": -5
+                        "example": "America/New_York"
                       }
                     },
                     "required": [
@@ -20359,8 +20359,8 @@
                           "type": "string"
                         },
                         "timezone": {
-                          "description": "Timezone offset from UTC in decimal hours. Examples: New York = -5, London = 0, India = 5.5, Tokyo = 9.",
-                          "example": -5,
+                          "description": "Timezone offset from UTC in decimal hours, resolved for the birth date. Examples: New York = -5 in winter and -4 in summer, London = 0, India = 5.5, Tokyo = 9.",
+                          "example": -4,
                           "maximum": 14,
                           "minimum": -12,
                           "type": "number"
@@ -20405,8 +20405,8 @@
                           "type": "string"
                         },
                         "timezone": {
-                          "description": "Timezone offset from UTC in decimal hours. Examples: New York = -5, London = 0, India = 5.5, Tokyo = 9.",
-                          "example": -5,
+                          "description": "Timezone offset from UTC in decimal hours, resolved for the birth date. Examples: New York = -5 in winter and -4 in summer, London = 0, India = 5.5, Tokyo = 9.",
+                          "example": -4,
                           "maximum": 14,
                           "minimum": -12,
                           "type": "number"
@@ -20556,7 +20556,7 @@
                     ],
                     "default": 0,
                     "description": "Timezone: an IANA name (e.g. \"America/New_York\", \"Europe/London\", or `cities[0].timezone` from /location/search) or decimal hours from UTC (e.g. -5 for EST, 5.5 for IST). An IANA name is resolved once, at the start of the window, and that offset applies to every time in the response. Crossing dates and times are reported in this zone. Defaults to 0 (UTC).",
-                    "example": -5
+                    "example": "America/New_York"
                   },
                   "year": {
                     "description": "Year to scan for node passages (1551 to 2649).",
@@ -20649,7 +20649,7 @@
                     },
                     "timezone": {
                       "description": "Timezone the dates and times are reported in. Echoes the request.",
-                      "example": -5,
+                      "example": -4,
                       "type": "number"
                     },
                     "year": {
@@ -20836,7 +20836,7 @@
                       }
                     ],
                     "description": "Timezone: an IANA name (e.g. \"America/New_York\", \"Europe/London\", or `cities[0].timezone` from /location/search) or decimal hours from UTC (e.g. -5 for EST, 5.5 for IST). An IANA name is resolved to the offset in force at the given date and time.",
-                    "example": -5
+                    "example": "America/New_York"
                   }
                 },
                 "required": [
@@ -23238,7 +23238,7 @@
                       }
                     ],
                     "description": "Decimal hours from UTC (e.g. -5 for EST, 5.5 for IST, 9 for JST) OR IANA name (e.g. \"America/New_York\"). IANA resolved to the DST-correct offset for the chart date.",
-                    "example": -5
+                    "example": "America/New_York"
                   }
                 },
                 "required": [
@@ -23538,7 +23538,7 @@
                       }
                     ],
                     "description": "Decimal hours from UTC (e.g. -5 for EST, 5.5 for IST, 9 for JST) OR IANA name (e.g. \"America/New_York\"). IANA resolved to the offset in force at the birth date and time.",
-                    "example": -5
+                    "example": "America/New_York"
                   }
                 },
                 "required": [
@@ -23674,7 +23674,7 @@
                 "latitude": 40.7128,
                 "longitude": -74.006,
                 "returnDate": "2024-08-12",
-                "timezone": -5
+                "timezone": "America/New_York"
               },
               "schema": {
                 "properties": {
@@ -23734,7 +23734,7 @@
                       }
                     ],
                     "description": "Decimal hours from UTC OR IANA name (e.g. \"America/New_York\"). IANA resolved to the DST-correct offset for the birthDate. Output datetime is adjusted to this timezone.",
-                    "example": -5
+                    "example": "America/New_York"
                   }
                 },
                 "required": [
@@ -23903,8 +23903,8 @@
                               "type": "string"
                             },
                             "timezone": {
-                              "description": "Timezone offset from UTC in decimal hours. Examples: New York = -5, London = 0, India = 5.5, Tokyo = 9.",
-                              "example": -5,
+                              "description": "Timezone offset from UTC in decimal hours, resolved for the birth date. Examples: New York = -5 in winter and -4 in summer, London = 0, India = 5.5, Tokyo = 9.",
+                              "example": -4,
                               "maximum": 14,
                               "minimum": -12,
                               "type": "number"
@@ -24200,7 +24200,7 @@
                         },
                         "timezone": {
                           "description": "Timezone offset from UTC applied to output datetime formatting.",
-                          "example": -5,
+                          "example": -4,
                           "type": "number"
                         }
                       },
@@ -25123,7 +25123,7 @@
                     ],
                     "default": 0,
                     "description": "Timezone: an IANA name (e.g. \"America/New_York\", \"Europe/London\", or `cities[0].timezone` from /location/search) or decimal hours from UTC (e.g. -5 for EST, 5.5 for IST). An IANA name is resolved once, at the start of the window, and that offset applies to every time in the response. Event dates and times are reported in this zone, which is what makes a published calendar read correctly for its audience. Defaults to 0 (UTC).",
-                    "example": -5
+                    "example": "America/New_York"
                   },
                   "year": {
                     "description": "Year for the declination calendar (1551 to 2649). Defaults to the current year (UTC).",
@@ -25235,7 +25235,7 @@
                     },
                     "timezone": {
                       "description": "Timezone the event dates and times are reported in. Echoes the request.",
-                      "example": -5,
+                      "example": -4,
                       "type": "number"
                     },
                     "year": {
@@ -25790,7 +25790,7 @@
                 "latitude": 40.7128,
                 "longitude": -74.006,
                 "planet": "Jupiter",
-                "timezone": -5
+                "timezone": "America/New_York"
               },
               "schema": {
                 "properties": {
@@ -25862,7 +25862,7 @@
                       }
                     ],
                     "description": "Decimal hours from UTC OR IANA name (e.g. \"America/New_York\"). IANA resolved to the DST-correct offset for the birthDate. Output datetime is adjusted to this timezone.",
-                    "example": -5
+                    "example": "America/New_York"
                   }
                 },
                 "required": [
@@ -26037,8 +26037,8 @@
                               "type": "string"
                             },
                             "timezone": {
-                              "description": "Timezone offset from UTC in decimal hours. Examples: New York = -5, London = 0, India = 5.5, Tokyo = 9.",
-                              "example": -5,
+                              "description": "Timezone offset from UTC in decimal hours, resolved for the birth date. Examples: New York = -5 in winter and -4 in summer, London = 0, India = 5.5, Tokyo = 9.",
+                              "example": -4,
                               "maximum": 14,
                               "minimum": -12,
                               "type": "number"
@@ -26327,7 +26327,7 @@
                         },
                         "timezone": {
                           "description": "Timezone offset from UTC applied to output datetime formatting.",
-                          "example": -5,
+                          "example": -4,
                           "type": "number"
                         }
                       },
@@ -26544,7 +26544,7 @@
                       }
                     ],
                     "description": "Decimal hours from UTC (e.g. -5 for EST, 5.5 for IST, 9 for JST, 5.75 for NPT) OR IANA name (e.g. \"America/New_York\"). IANA resolved to the DST-correct offset for the chart date.",
-                    "example": -5
+                    "example": "America/New_York"
                   }
                 },
                 "required": [
@@ -28005,7 +28005,7 @@
                 "latitude": 40.7128,
                 "longitude": -74.006,
                 "returnYear": 2024,
-                "timezone": -5
+                "timezone": "America/New_York"
               },
               "schema": {
                 "properties": {
@@ -28064,7 +28064,7 @@
                       }
                     ],
                     "description": "Decimal hours from UTC OR IANA name (e.g. \"America/New_York\"). IANA resolved to the DST-correct offset for the birthDate. Output datetime is adjusted to this timezone.",
-                    "example": -5
+                    "example": "America/New_York"
                   }
                 },
                 "required": [
@@ -28233,8 +28233,8 @@
                               "type": "string"
                             },
                             "timezone": {
-                              "description": "Timezone offset from UTC in decimal hours. Examples: New York = -5, London = 0, India = 5.5, Tokyo = 9.",
-                              "example": -5,
+                              "description": "Timezone offset from UTC in decimal hours, resolved for the birth date. Examples: New York = -5 in winter and -4 in summer, London = 0, India = 5.5, Tokyo = 9.",
+                              "example": -4,
                               "maximum": 14,
                               "minimum": -12,
                               "type": "number"
@@ -28530,7 +28530,7 @@
                         },
                         "timezone": {
                           "description": "Timezone offset from UTC applied to output datetime formatting.",
-                          "example": -5,
+                          "example": -4,
                           "type": "number"
                         }
                       },
@@ -28765,7 +28765,7 @@
                           }
                         ],
                         "description": "Timezone: an IANA name (e.g. \"America/New_York\", \"Europe/London\", or `cities[0].timezone` from /location/search) or decimal hours from UTC (e.g. -5 for EST, 5.5 for IST). An IANA name is resolved to the offset in force at the given date and time.",
-                        "example": -5
+                        "example": "America/New_York"
                       }
                     },
                     "required": [
@@ -28832,7 +28832,7 @@
                           }
                         ],
                         "description": "Timezone: an IANA name (e.g. \"America/New_York\", \"Europe/London\", or `cities[0].timezone` from /location/search) or decimal hours from UTC (e.g. -5 for EST, 5.5 for IST). An IANA name is resolved to the offset in force at the given date and time.",
-                        "example": -5
+                        "example": "America/New_York"
                       }
                     },
                     "required": [
@@ -29547,7 +29547,7 @@
                           }
                         ],
                         "description": "Timezone: an IANA name (e.g. \"America/New_York\", \"Europe/London\", or `cities[0].timezone` from /location/search) or decimal hours from UTC (e.g. -5 for EST, 5.5 for IST). An IANA name is resolved to the offset in force at the given date and time.",
-                        "example": -5
+                        "example": "America/New_York"
                       }
                     },
                     "required": [
@@ -30560,7 +30560,7 @@
                     ],
                     "default": 0,
                     "description": "Timezone: an IANA name (e.g. \"America/New_York\", \"Europe/London\", or `cities[0].timezone` from /location/search) or decimal hours from UTC (e.g. -5 for EST, 5.5 for IST). An IANA name is resolved once, at the start of the window, and that offset applies to every time in the response. Ingress dates and times are reported in this zone, which is what makes a published calendar read correctly for its audience. Defaults to 0 (UTC).",
-                    "example": -5
+                    "example": "America/New_York"
                   },
                   "year": {
                     "description": "Year for the monthly transit table (1551 to 2649). Defaults to the current year (UTC).",
@@ -30627,7 +30627,7 @@
                     },
                     "timezone": {
                       "description": "Timezone the ingress dates and times are reported in. Echoes the request.",
-                      "example": -5,
+                      "example": -4,
                       "type": "number"
                     },
                     "transitEvents": {
@@ -53203,8 +53203,8 @@
                               "type": "string"
                             },
                             "timezone": {
-                              "description": "Timezone offset from UTC in decimal hours. Examples: New York = -5, London = 0, India = 5.5, Tokyo = 9.",
-                              "example": -5,
+                              "description": "Timezone offset from UTC in decimal hours, resolved for the birth date. Examples: New York = -5 in winter and -4 in summer, London = 0, India = 5.5, Tokyo = 9.",
+                              "example": -4,
                               "maximum": 14,
                               "minimum": -12,
                               "type": "number"
@@ -53465,7 +53465,7 @@
                         },
                         "timezone": {
                           "description": "Decimal timezone offset applied to the output datetime.",
-                          "example": -5,
+                          "example": -4,
                           "type": "number"
                         }
                       },
