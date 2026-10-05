@@ -280,7 +280,7 @@ Numerology API for life path numbers, complete numerology charts and compatibili
 
 ## Kabbalah - `roxy.Kabbalah`
 
-Kabbalah API for gematria, the 72 names, the Tree of Life and the Hebrew birthday, from one key
+Kabbalah API for gematria, the 72 names, the Tree of Life and the Hebrew birthday
 
 - `generateBirthProfile` - POST `/kabbalah/birth-profile` - Generate a birth profile - Hebrew birthday and birth angel API
 - `listGematriaCiphers` - GET `/kabbalah/ciphers` - List gematria ciphers - gematria methods API with provenance on every row
@@ -312,7 +312,7 @@ Tarot reading API with the complete 78-card Rider-Waite-Smith deck and card mean
 
 ## Biorhythm - `roxy.Biorhythm`
 
-The most complete biorhythm API: 10 cycle types across 3 primary (physical, emotional, intellectual), 4 secondary (in...
+Biorhythm API for entertainment and reflection, with 10 model cycle types across 3 primary (physical, emotional, inte...
 
 - `calculateBioCompatibility` - POST `/biorhythm/compatibility` - Calculate compatibility - Biorhythm alignment between two people
 - `getCriticalDays` - POST `/biorhythm/critical-days` - Find critical days - Zero crossing detection for any date range
