@@ -31769,7 +31769,7 @@ type DivisionalChartResponse_Chart struct {
 
 			// Nakshatra Nakshatra (lunar mansion) data for this planet, carried over from the D1 chart.
 			Nakshatra struct {
-				// Key Nakshatra index in the zodiac sequence starting from Ashwini.
+				// Key Nakshatra index (1-27) in the zodiac sequence starting from Ashwini.
 				Key float32 `json:"key"`
 
 				// Lord Vimshottari ruling planet of this nakshatra.
@@ -34671,7 +34671,7 @@ type NavamsaResponse_Chart struct {
 
 			// Nakshatra Nakshatra (lunar mansion) data for this planet, carried over from the D1 chart.
 			Nakshatra struct {
-				// Key Nakshatra index in the zodiac sequence starting from Ashwini.
+				// Key Nakshatra index (1-27) in the zodiac sequence starting from Ashwini.
 				Key float32 `json:"key"`
 
 				// Lord Vimshottari ruling planet of this nakshatra.
@@ -51154,7 +51154,7 @@ type ClientInterface interface {
 
 	// GetUpcomingMoonPhases Get upcoming moon phases - Next new moon, full moon, quarters
 	//
-	// Get upcoming moon phase transitions (New Moon, First Quarter, Full Moon, Last Quarter) for the next weeks/months. Returns dates and phase names for each lunar quarter. Perfect for lunar event calendars, moon phase widgets, and astrology planning tools.
+	// Get upcoming moon phase transitions (New Moon, First Quarter Moon, Full Moon, Third Quarter Moon) for the next weeks/months. Returns dates and phase names for each lunar quarter. Perfect for lunar event calendars, moon phase widgets, and astrology planning tools.
 	//
 	// Corresponds with GET /astrology/moon-phase/upcoming (the `GetUpcomingMoonPhases` operationId).
 	GetUpcomingMoonPhases(ctx context.Context, params *GetUpcomingMoonPhasesParams, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -53581,7 +53581,7 @@ type ClientInterface interface {
 
 	// GenerateBirthChartWithBody Get birth chart (D1 Rashi chart) - Kundli Calculator API
 	//
-	// Calculate complete Vedic birth chart (Janam Kundli, natal chart) with all 9 planetary positions (Sun through Ketu) plus Ascendant (Lagna). Kundli calculator API for astrology apps, matrimonial sites. Returns accurate graha positions grouped by zodiac signs (rashis) with nakshatra details and pada. Perfect for kundli generation, horoscope matching, and Vedic astrology software integration.
+	// Calculate complete Vedic birth chart (Janam Kundli, natal chart) with all 9 planetary positions (Sun through Ketu) plus Ascendant (Lagna). Kundli calculator API for astrology apps, matrimonial sites. Returns accurate graha positions grouped by zodiac signs (rashis) with nakshatra details and pada. Perfect for kundli generation, horoscope matching, and Vedic astrology software integration. Rahu and Ketu are the mean lunar node, referred to the true equinox of date, with Ketu exactly opposite Rahu.
 	//
 	// Takes any type of body and a specified content type.
 	//
@@ -53590,7 +53590,7 @@ type ClientInterface interface {
 
 	// GenerateBirthChart Get birth chart (D1 Rashi chart) - Kundli Calculator API
 	//
-	// Calculate complete Vedic birth chart (Janam Kundli, natal chart) with all 9 planetary positions (Sun through Ketu) plus Ascendant (Lagna). Kundli calculator API for astrology apps, matrimonial sites. Returns accurate graha positions grouped by zodiac signs (rashis) with nakshatra details and pada. Perfect for kundli generation, horoscope matching, and Vedic astrology software integration.
+	// Calculate complete Vedic birth chart (Janam Kundli, natal chart) with all 9 planetary positions (Sun through Ketu) plus Ascendant (Lagna). Kundli calculator API for astrology apps, matrimonial sites. Returns accurate graha positions grouped by zodiac signs (rashis) with nakshatra details and pada. Perfect for kundli generation, horoscope matching, and Vedic astrology software integration. Rahu and Ketu are the mean lunar node, referred to the true equinox of date, with Ketu exactly opposite Rahu.
 	//
 	// Takes a body of the `application/json` content type.
 	//
@@ -54232,7 +54232,7 @@ type ClientInterface interface {
 
 	// GetPlanetPositionsWithBody Get planetary positions - Graha Positions API
 	//
-	// Get simplified planetary positions (graha positions) for all 9 planets (Sun through Ketu) plus Ascendant (Lagna). Real-time planet transit calculator for Vedic astrology. Navagraha positions API with nakshatra, pada, and rashi details. Includes house number placement using Whole Sign house system from Lagna. Faster response for basic planetary data without full chart structure. Perfect for planetary alignment tracking, daily transit updates, and astrology widgets.
+	// Get simplified planetary positions (graha positions) for all 9 planets (Sun through Ketu) plus Ascendant (Lagna). Real-time planet transit calculator for Vedic astrology. Navagraha positions API with nakshatra, pada, and rashi details. Includes house number placement using Whole Sign house system from Lagna. Faster response for basic planetary data without full chart structure. Perfect for planetary alignment tracking, daily transit updates, and astrology widgets. Rahu and Ketu are the mean lunar node, referred to the true equinox of date, with Ketu exactly opposite Rahu.
 	//
 	// Takes any type of body and a specified content type.
 	//
@@ -54241,7 +54241,7 @@ type ClientInterface interface {
 
 	// GetPlanetPositions Get planetary positions - Graha Positions API
 	//
-	// Get simplified planetary positions (graha positions) for all 9 planets (Sun through Ketu) plus Ascendant (Lagna). Real-time planet transit calculator for Vedic astrology. Navagraha positions API with nakshatra, pada, and rashi details. Includes house number placement using Whole Sign house system from Lagna. Faster response for basic planetary data without full chart structure. Perfect for planetary alignment tracking, daily transit updates, and astrology widgets.
+	// Get simplified planetary positions (graha positions) for all 9 planets (Sun through Ketu) plus Ascendant (Lagna). Real-time planet transit calculator for Vedic astrology. Navagraha positions API with nakshatra, pada, and rashi details. Includes house number placement using Whole Sign house system from Lagna. Faster response for basic planetary data without full chart structure. Perfect for planetary alignment tracking, daily transit updates, and astrology widgets. Rahu and Ketu are the mean lunar node, referred to the true equinox of date, with Ketu exactly opposite Rahu.
 	//
 	// Takes a body of the `application/json` content type.
 	//
@@ -54250,7 +54250,7 @@ type ClientInterface interface {
 
 	// GetMonthlyEphemerisWithBody Monthly Ephemeris - Daily sidereal planetary positions for a month
 	//
-	// Get daily sidereal ecliptic positions for all 9 Vedic planets (Navagraha) for an entire month. Returns longitude, zodiac sign, degree within sign, and retrograde status for each planet on each day. Calculated at noon UTC. Omit year and month to get the month in progress, so a published ephemeris page stays current without a redeploy. Essential for ephemeris generation, transit tracking, and planetary movement visualization. Monthly planetary ephemeris API, sidereal position table, daily graha gochara positions, ecliptic longitude calculator.
+	// Get daily sidereal ecliptic positions for all 9 Vedic planets (Navagraha) for an entire month. Returns longitude, zodiac sign, degree within sign, and retrograde status for each planet on each day. Calculated at noon UTC. Omit year and month to get the month in progress, so a published ephemeris page stays current without a redeploy. Essential for ephemeris generation, transit tracking, and planetary movement visualization. Monthly planetary ephemeris API, sidereal position table, daily graha gochara positions, ecliptic longitude calculator. Rahu and Ketu are the mean lunar node, referred to the true equinox of date, with Ketu exactly opposite Rahu.
 	//
 	// Takes any type of body and a specified content type.
 	//
@@ -54259,7 +54259,7 @@ type ClientInterface interface {
 
 	// GetMonthlyEphemeris Monthly Ephemeris - Daily sidereal planetary positions for a month
 	//
-	// Get daily sidereal ecliptic positions for all 9 Vedic planets (Navagraha) for an entire month. Returns longitude, zodiac sign, degree within sign, and retrograde status for each planet on each day. Calculated at noon UTC. Omit year and month to get the month in progress, so a published ephemeris page stays current without a redeploy. Essential for ephemeris generation, transit tracking, and planetary movement visualization. Monthly planetary ephemeris API, sidereal position table, daily graha gochara positions, ecliptic longitude calculator.
+	// Get daily sidereal ecliptic positions for all 9 Vedic planets (Navagraha) for an entire month. Returns longitude, zodiac sign, degree within sign, and retrograde status for each planet on each day. Calculated at noon UTC. Omit year and month to get the month in progress, so a published ephemeris page stays current without a redeploy. Essential for ephemeris generation, transit tracking, and planetary movement visualization. Monthly planetary ephemeris API, sidereal position table, daily graha gochara positions, ecliptic longitude calculator. Rahu and Ketu are the mean lunar node, referred to the true equinox of date, with Ketu exactly opposite Rahu.
 	//
 	// Takes a body of the `application/json` content type.
 	//
@@ -55110,7 +55110,7 @@ func (c *Client) GetCurrentMoonPhase(ctx context.Context, params *GetCurrentMoon
 
 // GetUpcomingMoonPhases Get upcoming moon phases - Next new moon, full moon, quarters
 //
-// Get upcoming moon phase transitions (New Moon, First Quarter, Full Moon, Last Quarter) for the next weeks/months. Returns dates and phase names for each lunar quarter. Perfect for lunar event calendars, moon phase widgets, and astrology planning tools.
+// Get upcoming moon phase transitions (New Moon, First Quarter Moon, Full Moon, Third Quarter Moon) for the next weeks/months. Returns dates and phase names for each lunar quarter. Perfect for lunar event calendars, moon phase widgets, and astrology planning tools.
 //
 // Corresponds with GET /astrology/moon-phase/upcoming (the `GetUpcomingMoonPhases` operationId).
 func (c *Client) GetUpcomingMoonPhases(ctx context.Context, params *GetUpcomingMoonPhasesParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
@@ -60427,7 +60427,7 @@ func (c *Client) CalculateBhavaBala(ctx context.Context, params *CalculateBhavaB
 
 // GenerateBirthChartWithBody Get birth chart (D1 Rashi chart) - Kundli Calculator API
 //
-// Calculate complete Vedic birth chart (Janam Kundli, natal chart) with all 9 planetary positions (Sun through Ketu) plus Ascendant (Lagna). Kundli calculator API for astrology apps, matrimonial sites. Returns accurate graha positions grouped by zodiac signs (rashis) with nakshatra details and pada. Perfect for kundli generation, horoscope matching, and Vedic astrology software integration.
+// Calculate complete Vedic birth chart (Janam Kundli, natal chart) with all 9 planetary positions (Sun through Ketu) plus Ascendant (Lagna). Kundli calculator API for astrology apps, matrimonial sites. Returns accurate graha positions grouped by zodiac signs (rashis) with nakshatra details and pada. Perfect for kundli generation, horoscope matching, and Vedic astrology software integration. Rahu and Ketu are the mean lunar node, referred to the true equinox of date, with Ketu exactly opposite Rahu.
 //
 // Takes any type of body and a specified content type.
 //
@@ -60446,7 +60446,7 @@ func (c *Client) GenerateBirthChartWithBody(ctx context.Context, params *Generat
 
 // GenerateBirthChart Get birth chart (D1 Rashi chart) - Kundli Calculator API
 //
-// Calculate complete Vedic birth chart (Janam Kundli, natal chart) with all 9 planetary positions (Sun through Ketu) plus Ascendant (Lagna). Kundli calculator API for astrology apps, matrimonial sites. Returns accurate graha positions grouped by zodiac signs (rashis) with nakshatra details and pada. Perfect for kundli generation, horoscope matching, and Vedic astrology software integration.
+// Calculate complete Vedic birth chart (Janam Kundli, natal chart) with all 9 planetary positions (Sun through Ketu) plus Ascendant (Lagna). Kundli calculator API for astrology apps, matrimonial sites. Returns accurate graha positions grouped by zodiac signs (rashis) with nakshatra details and pada. Perfect for kundli generation, horoscope matching, and Vedic astrology software integration. Rahu and Ketu are the mean lunar node, referred to the true equinox of date, with Ketu exactly opposite Rahu.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -61808,7 +61808,7 @@ func (c *Client) GetMonthlyParallels(ctx context.Context, params *GetMonthlyPara
 
 // GetPlanetPositionsWithBody Get planetary positions - Graha Positions API
 //
-// Get simplified planetary positions (graha positions) for all 9 planets (Sun through Ketu) plus Ascendant (Lagna). Real-time planet transit calculator for Vedic astrology. Navagraha positions API with nakshatra, pada, and rashi details. Includes house number placement using Whole Sign house system from Lagna. Faster response for basic planetary data without full chart structure. Perfect for planetary alignment tracking, daily transit updates, and astrology widgets.
+// Get simplified planetary positions (graha positions) for all 9 planets (Sun through Ketu) plus Ascendant (Lagna). Real-time planet transit calculator for Vedic astrology. Navagraha positions API with nakshatra, pada, and rashi details. Includes house number placement using Whole Sign house system from Lagna. Faster response for basic planetary data without full chart structure. Perfect for planetary alignment tracking, daily transit updates, and astrology widgets. Rahu and Ketu are the mean lunar node, referred to the true equinox of date, with Ketu exactly opposite Rahu.
 //
 // Takes any type of body and a specified content type.
 //
@@ -61827,7 +61827,7 @@ func (c *Client) GetPlanetPositionsWithBody(ctx context.Context, params *GetPlan
 
 // GetPlanetPositions Get planetary positions - Graha Positions API
 //
-// Get simplified planetary positions (graha positions) for all 9 planets (Sun through Ketu) plus Ascendant (Lagna). Real-time planet transit calculator for Vedic astrology. Navagraha positions API with nakshatra, pada, and rashi details. Includes house number placement using Whole Sign house system from Lagna. Faster response for basic planetary data without full chart structure. Perfect for planetary alignment tracking, daily transit updates, and astrology widgets.
+// Get simplified planetary positions (graha positions) for all 9 planets (Sun through Ketu) plus Ascendant (Lagna). Real-time planet transit calculator for Vedic astrology. Navagraha positions API with nakshatra, pada, and rashi details. Includes house number placement using Whole Sign house system from Lagna. Faster response for basic planetary data without full chart structure. Perfect for planetary alignment tracking, daily transit updates, and astrology widgets. Rahu and Ketu are the mean lunar node, referred to the true equinox of date, with Ketu exactly opposite Rahu.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -61846,7 +61846,7 @@ func (c *Client) GetPlanetPositions(ctx context.Context, params *GetPlanetPositi
 
 // GetMonthlyEphemerisWithBody Monthly Ephemeris - Daily sidereal planetary positions for a month
 //
-// Get daily sidereal ecliptic positions for all 9 Vedic planets (Navagraha) for an entire month. Returns longitude, zodiac sign, degree within sign, and retrograde status for each planet on each day. Calculated at noon UTC. Omit year and month to get the month in progress, so a published ephemeris page stays current without a redeploy. Essential for ephemeris generation, transit tracking, and planetary movement visualization. Monthly planetary ephemeris API, sidereal position table, daily graha gochara positions, ecliptic longitude calculator.
+// Get daily sidereal ecliptic positions for all 9 Vedic planets (Navagraha) for an entire month. Returns longitude, zodiac sign, degree within sign, and retrograde status for each planet on each day. Calculated at noon UTC. Omit year and month to get the month in progress, so a published ephemeris page stays current without a redeploy. Essential for ephemeris generation, transit tracking, and planetary movement visualization. Monthly planetary ephemeris API, sidereal position table, daily graha gochara positions, ecliptic longitude calculator. Rahu and Ketu are the mean lunar node, referred to the true equinox of date, with Ketu exactly opposite Rahu.
 //
 // Takes any type of body and a specified content type.
 //
@@ -61865,7 +61865,7 @@ func (c *Client) GetMonthlyEphemerisWithBody(ctx context.Context, params *GetMon
 
 // GetMonthlyEphemeris Monthly Ephemeris - Daily sidereal planetary positions for a month
 //
-// Get daily sidereal ecliptic positions for all 9 Vedic planets (Navagraha) for an entire month. Returns longitude, zodiac sign, degree within sign, and retrograde status for each planet on each day. Calculated at noon UTC. Omit year and month to get the month in progress, so a published ephemeris page stays current without a redeploy. Essential for ephemeris generation, transit tracking, and planetary movement visualization. Monthly planetary ephemeris API, sidereal position table, daily graha gochara positions, ecliptic longitude calculator.
+// Get daily sidereal ecliptic positions for all 9 Vedic planets (Navagraha) for an entire month. Returns longitude, zodiac sign, degree within sign, and retrograde status for each planet on each day. Calculated at noon UTC. Omit year and month to get the month in progress, so a published ephemeris page stays current without a redeploy. Essential for ephemeris generation, transit tracking, and planetary movement visualization. Monthly planetary ephemeris API, sidereal position table, daily graha gochara positions, ecliptic longitude calculator. Rahu and Ketu are the mean lunar node, referred to the true equinox of date, with Ketu exactly opposite Rahu.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -80196,7 +80196,7 @@ type ClientWithResponsesInterface interface {
 
 	// GetUpcomingMoonPhasesWithResponse Get upcoming moon phases - Next new moon, full moon, quarters
 	//
-	// Get upcoming moon phase transitions (New Moon, First Quarter, Full Moon, Last Quarter) for the next weeks/months. Returns dates and phase names for each lunar quarter. Perfect for lunar event calendars, moon phase widgets, and astrology planning tools.
+	// Get upcoming moon phase transitions (New Moon, First Quarter Moon, Full Moon, Third Quarter Moon) for the next weeks/months. Returns dates and phase names for each lunar quarter. Perfect for lunar event calendars, moon phase widgets, and astrology planning tools.
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
@@ -82797,7 +82797,7 @@ type ClientWithResponsesInterface interface {
 
 	// GenerateBirthChartWithBodyWithResponse Get birth chart (D1 Rashi chart) - Kundli Calculator API
 	//
-	// Calculate complete Vedic birth chart (Janam Kundli, natal chart) with all 9 planetary positions (Sun through Ketu) plus Ascendant (Lagna). Kundli calculator API for astrology apps, matrimonial sites. Returns accurate graha positions grouped by zodiac signs (rashis) with nakshatra details and pada. Perfect for kundli generation, horoscope matching, and Vedic astrology software integration.
+	// Calculate complete Vedic birth chart (Janam Kundli, natal chart) with all 9 planetary positions (Sun through Ketu) plus Ascendant (Lagna). Kundli calculator API for astrology apps, matrimonial sites. Returns accurate graha positions grouped by zodiac signs (rashis) with nakshatra details and pada. Perfect for kundli generation, horoscope matching, and Vedic astrology software integration. Rahu and Ketu are the mean lunar node, referred to the true equinox of date, with Ketu exactly opposite Rahu.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -82806,7 +82806,7 @@ type ClientWithResponsesInterface interface {
 
 	// GenerateBirthChartWithResponse Get birth chart (D1 Rashi chart) - Kundli Calculator API
 	//
-	// Calculate complete Vedic birth chart (Janam Kundli, natal chart) with all 9 planetary positions (Sun through Ketu) plus Ascendant (Lagna). Kundli calculator API for astrology apps, matrimonial sites. Returns accurate graha positions grouped by zodiac signs (rashis) with nakshatra details and pada. Perfect for kundli generation, horoscope matching, and Vedic astrology software integration.
+	// Calculate complete Vedic birth chart (Janam Kundli, natal chart) with all 9 planetary positions (Sun through Ketu) plus Ascendant (Lagna). Kundli calculator API for astrology apps, matrimonial sites. Returns accurate graha positions grouped by zodiac signs (rashis) with nakshatra details and pada. Perfect for kundli generation, horoscope matching, and Vedic astrology software integration. Rahu and Ketu are the mean lunar node, referred to the true equinox of date, with Ketu exactly opposite Rahu.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -83454,7 +83454,7 @@ type ClientWithResponsesInterface interface {
 
 	// GetPlanetPositionsWithBodyWithResponse Get planetary positions - Graha Positions API
 	//
-	// Get simplified planetary positions (graha positions) for all 9 planets (Sun through Ketu) plus Ascendant (Lagna). Real-time planet transit calculator for Vedic astrology. Navagraha positions API with nakshatra, pada, and rashi details. Includes house number placement using Whole Sign house system from Lagna. Faster response for basic planetary data without full chart structure. Perfect for planetary alignment tracking, daily transit updates, and astrology widgets.
+	// Get simplified planetary positions (graha positions) for all 9 planets (Sun through Ketu) plus Ascendant (Lagna). Real-time planet transit calculator for Vedic astrology. Navagraha positions API with nakshatra, pada, and rashi details. Includes house number placement using Whole Sign house system from Lagna. Faster response for basic planetary data without full chart structure. Perfect for planetary alignment tracking, daily transit updates, and astrology widgets. Rahu and Ketu are the mean lunar node, referred to the true equinox of date, with Ketu exactly opposite Rahu.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -83463,7 +83463,7 @@ type ClientWithResponsesInterface interface {
 
 	// GetPlanetPositionsWithResponse Get planetary positions - Graha Positions API
 	//
-	// Get simplified planetary positions (graha positions) for all 9 planets (Sun through Ketu) plus Ascendant (Lagna). Real-time planet transit calculator for Vedic astrology. Navagraha positions API with nakshatra, pada, and rashi details. Includes house number placement using Whole Sign house system from Lagna. Faster response for basic planetary data without full chart structure. Perfect for planetary alignment tracking, daily transit updates, and astrology widgets.
+	// Get simplified planetary positions (graha positions) for all 9 planets (Sun through Ketu) plus Ascendant (Lagna). Real-time planet transit calculator for Vedic astrology. Navagraha positions API with nakshatra, pada, and rashi details. Includes house number placement using Whole Sign house system from Lagna. Faster response for basic planetary data without full chart structure. Perfect for planetary alignment tracking, daily transit updates, and astrology widgets. Rahu and Ketu are the mean lunar node, referred to the true equinox of date, with Ketu exactly opposite Rahu.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -83472,7 +83472,7 @@ type ClientWithResponsesInterface interface {
 
 	// GetMonthlyEphemerisWithBodyWithResponse Monthly Ephemeris - Daily sidereal planetary positions for a month
 	//
-	// Get daily sidereal ecliptic positions for all 9 Vedic planets (Navagraha) for an entire month. Returns longitude, zodiac sign, degree within sign, and retrograde status for each planet on each day. Calculated at noon UTC. Omit year and month to get the month in progress, so a published ephemeris page stays current without a redeploy. Essential for ephemeris generation, transit tracking, and planetary movement visualization. Monthly planetary ephemeris API, sidereal position table, daily graha gochara positions, ecliptic longitude calculator.
+	// Get daily sidereal ecliptic positions for all 9 Vedic planets (Navagraha) for an entire month. Returns longitude, zodiac sign, degree within sign, and retrograde status for each planet on each day. Calculated at noon UTC. Omit year and month to get the month in progress, so a published ephemeris page stays current without a redeploy. Essential for ephemeris generation, transit tracking, and planetary movement visualization. Monthly planetary ephemeris API, sidereal position table, daily graha gochara positions, ecliptic longitude calculator. Rahu and Ketu are the mean lunar node, referred to the true equinox of date, with Ketu exactly opposite Rahu.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -83481,7 +83481,7 @@ type ClientWithResponsesInterface interface {
 
 	// GetMonthlyEphemerisWithResponse Monthly Ephemeris - Daily sidereal planetary positions for a month
 	//
-	// Get daily sidereal ecliptic positions for all 9 Vedic planets (Navagraha) for an entire month. Returns longitude, zodiac sign, degree within sign, and retrograde status for each planet on each day. Calculated at noon UTC. Omit year and month to get the month in progress, so a published ephemeris page stays current without a redeploy. Essential for ephemeris generation, transit tracking, and planetary movement visualization. Monthly planetary ephemeris API, sidereal position table, daily graha gochara positions, ecliptic longitude calculator.
+	// Get daily sidereal ecliptic positions for all 9 Vedic planets (Navagraha) for an entire month. Returns longitude, zodiac sign, degree within sign, and retrograde status for each planet on each day. Calculated at noon UTC. Omit year and month to get the month in progress, so a published ephemeris page stays current without a redeploy. Essential for ephemeris generation, transit tracking, and planetary movement visualization. Monthly planetary ephemeris API, sidereal position table, daily graha gochara positions, ecliptic longitude calculator. Rahu and Ketu are the mean lunar node, referred to the true equinox of date, with Ketu exactly opposite Rahu.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -88481,7 +88481,7 @@ type GetUpcomingMoonPhasesResponse struct {
 			// Date Date of this moon phase transition (YYYY-MM-DD).
 			Date string `json:"date"`
 
-			// Phase Lunar phase name (New Moon, First Quarter, Full Moon, Last Quarter).
+			// Phase Lunar phase name (New Moon, First Quarter Moon, Full Moon, Third Quarter Moon).
 			Phase string `json:"phase"`
 		} `json:"phases"`
 	}
@@ -88506,7 +88506,7 @@ func (r GetUpcomingMoonPhasesResponse) GetJSON200() *struct {
 		// Date Date of this moon phase transition (YYYY-MM-DD).
 		Date string `json:"date"`
 
-		// Phase Lunar phase name (New Moon, First Quarter, Full Moon, Last Quarter).
+		// Phase Lunar phase name (New Moon, First Quarter Moon, Full Moon, Third Quarter Moon).
 		Phase string `json:"phase"`
 	} `json:"phases"`
 } {
@@ -138422,7 +138422,7 @@ type GetDetailedPanchangResponse struct {
 		Transitions struct {
 			// Karana Karana (half-tithi) transition. karanas change twice per tithi. Important for muhurta timing.
 			Karana struct {
-				// EndsAt ISO 8601 UTC time when the current karana ends.
+				// EndsAt Local time in the requested timezone (ISO 8601, no offset suffix) when the current karana ends.
 				EndsAt string `json:"endsAt"`
 
 				// Next Name of the next karana (half-tithi).
@@ -138431,7 +138431,7 @@ type GetDetailedPanchangResponse struct {
 
 			// MoonSign Moon sign (Chandra rashi) transition, when Moon changes zodiac sign. Affects Chandrabalam, Tarabalam, and daily horoscope predictions.
 			MoonSign struct {
-				// ChangesAt ISO 8601 UTC time when Moon enters the next rashi. Moon changes sign approximately every 2.25 days.
+				// ChangesAt Local time in the requested timezone (ISO 8601, no offset suffix) when Moon enters the next rashi. Moon changes sign approximately every 2.25 days.
 				ChangesAt string `json:"changesAt"`
 
 				// Current Current Moon rashi (zodiac sign).
@@ -138443,7 +138443,7 @@ type GetDetailedPanchangResponse struct {
 
 			// Nakshatra Nakshatra (lunar mansion) transition timing: when Moon moves to the next nakshatra. Critical for muhurta and Tarabalam calculations.
 			Nakshatra struct {
-				// EndsAt ISO 8601 UTC time when the Moon leaves the current nakshatra.
+				// EndsAt Local time in the requested timezone (ISO 8601, no offset suffix) when the Moon leaves the current nakshatra.
 				EndsAt string `json:"endsAt"`
 
 				// Next Name of the next nakshatra the Moon will enter.
@@ -138455,7 +138455,7 @@ type GetDetailedPanchangResponse struct {
 
 			// Tithi Tithi (lunar day) transition timing: when the current tithi ends and the next one begins.
 			Tithi struct {
-				// EndsAt ISO 8601 UTC time when the current tithi ends. Precise to ~1 minute via binary search.
+				// EndsAt Local time in the requested timezone (ISO 8601, no offset suffix) when the current tithi ends. Precise to ~1 minute via binary search.
 				EndsAt string `json:"endsAt"`
 
 				// Next Name of the next tithi that begins after the transition.
@@ -138464,7 +138464,7 @@ type GetDetailedPanchangResponse struct {
 
 			// Yoga Nitya Yoga transition timing: when the current yoga period ends. Based on combined Sun-Moon motion.
 			Yoga struct {
-				// EndsAt ISO 8601 UTC time when the current yoga ends.
+				// EndsAt Local time in the requested timezone (ISO 8601, no offset suffix) when the current yoga ends.
 				EndsAt string `json:"endsAt"`
 
 				// Next Name of the next yoga.
@@ -138816,7 +138816,7 @@ func (r GetDetailedPanchangResponse) GetJSON200() *struct {
 	Transitions struct {
 		// Karana Karana (half-tithi) transition. karanas change twice per tithi. Important for muhurta timing.
 		Karana struct {
-			// EndsAt ISO 8601 UTC time when the current karana ends.
+			// EndsAt Local time in the requested timezone (ISO 8601, no offset suffix) when the current karana ends.
 			EndsAt string `json:"endsAt"`
 
 			// Next Name of the next karana (half-tithi).
@@ -138825,7 +138825,7 @@ func (r GetDetailedPanchangResponse) GetJSON200() *struct {
 
 		// MoonSign Moon sign (Chandra rashi) transition, when Moon changes zodiac sign. Affects Chandrabalam, Tarabalam, and daily horoscope predictions.
 		MoonSign struct {
-			// ChangesAt ISO 8601 UTC time when Moon enters the next rashi. Moon changes sign approximately every 2.25 days.
+			// ChangesAt Local time in the requested timezone (ISO 8601, no offset suffix) when Moon enters the next rashi. Moon changes sign approximately every 2.25 days.
 			ChangesAt string `json:"changesAt"`
 
 			// Current Current Moon rashi (zodiac sign).
@@ -138837,7 +138837,7 @@ func (r GetDetailedPanchangResponse) GetJSON200() *struct {
 
 		// Nakshatra Nakshatra (lunar mansion) transition timing: when Moon moves to the next nakshatra. Critical for muhurta and Tarabalam calculations.
 		Nakshatra struct {
-			// EndsAt ISO 8601 UTC time when the Moon leaves the current nakshatra.
+			// EndsAt Local time in the requested timezone (ISO 8601, no offset suffix) when the Moon leaves the current nakshatra.
 			EndsAt string `json:"endsAt"`
 
 			// Next Name of the next nakshatra the Moon will enter.
@@ -138849,7 +138849,7 @@ func (r GetDetailedPanchangResponse) GetJSON200() *struct {
 
 		// Tithi Tithi (lunar day) transition timing: when the current tithi ends and the next one begins.
 		Tithi struct {
-			// EndsAt ISO 8601 UTC time when the current tithi ends. Precise to ~1 minute via binary search.
+			// EndsAt Local time in the requested timezone (ISO 8601, no offset suffix) when the current tithi ends. Precise to ~1 minute via binary search.
 			EndsAt string `json:"endsAt"`
 
 			// Next Name of the next tithi that begins after the transition.
@@ -138858,7 +138858,7 @@ func (r GetDetailedPanchangResponse) GetJSON200() *struct {
 
 		// Yoga Nitya Yoga transition timing: when the current yoga period ends. Based on combined Sun-Moon motion.
 		Yoga struct {
-			// EndsAt ISO 8601 UTC time when the current yoga ends.
+			// EndsAt Local time in the requested timezone (ISO 8601, no offset suffix) when the current yoga ends.
 			EndsAt string `json:"endsAt"`
 
 			// Next Name of the next yoga.
@@ -141476,7 +141476,7 @@ func (c *ClientWithResponses) GetCurrentMoonPhaseWithResponse(ctx context.Contex
 
 // GetUpcomingMoonPhasesWithResponse Get upcoming moon phases - Next new moon, full moon, quarters
 //
-// Get upcoming moon phase transitions (New Moon, First Quarter, Full Moon, Last Quarter) for the next weeks/months. Returns dates and phase names for each lunar quarter. Perfect for lunar event calendars, moon phase widgets, and astrology planning tools.
+// Get upcoming moon phase transitions (New Moon, First Quarter Moon, Full Moon, Third Quarter Moon) for the next weeks/months. Returns dates and phase names for each lunar quarter. Perfect for lunar event calendars, moon phase widgets, and astrology planning tools.
 //
 // Returns a wrapper object for the known response body format(s).
 //
@@ -145811,7 +145811,7 @@ func (c *ClientWithResponses) CalculateBhavaBalaWithResponse(ctx context.Context
 
 // GenerateBirthChartWithBodyWithResponse Get birth chart (D1 Rashi chart) - Kundli Calculator API
 //
-// Calculate complete Vedic birth chart (Janam Kundli, natal chart) with all 9 planetary positions (Sun through Ketu) plus Ascendant (Lagna). Kundli calculator API for astrology apps, matrimonial sites. Returns accurate graha positions grouped by zodiac signs (rashis) with nakshatra details and pada. Perfect for kundli generation, horoscope matching, and Vedic astrology software integration.
+// Calculate complete Vedic birth chart (Janam Kundli, natal chart) with all 9 planetary positions (Sun through Ketu) plus Ascendant (Lagna). Kundli calculator API for astrology apps, matrimonial sites. Returns accurate graha positions grouped by zodiac signs (rashis) with nakshatra details and pada. Perfect for kundli generation, horoscope matching, and Vedic astrology software integration. Rahu and Ketu are the mean lunar node, referred to the true equinox of date, with Ketu exactly opposite Rahu.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -145826,7 +145826,7 @@ func (c *ClientWithResponses) GenerateBirthChartWithBodyWithResponse(ctx context
 
 // GenerateBirthChartWithResponse Get birth chart (D1 Rashi chart) - Kundli Calculator API
 //
-// Calculate complete Vedic birth chart (Janam Kundli, natal chart) with all 9 planetary positions (Sun through Ketu) plus Ascendant (Lagna). Kundli calculator API for astrology apps, matrimonial sites. Returns accurate graha positions grouped by zodiac signs (rashis) with nakshatra details and pada. Perfect for kundli generation, horoscope matching, and Vedic astrology software integration.
+// Calculate complete Vedic birth chart (Janam Kundli, natal chart) with all 9 planetary positions (Sun through Ketu) plus Ascendant (Lagna). Kundli calculator API for astrology apps, matrimonial sites. Returns accurate graha positions grouped by zodiac signs (rashis) with nakshatra details and pada. Perfect for kundli generation, horoscope matching, and Vedic astrology software integration. Rahu and Ketu are the mean lunar node, referred to the true equinox of date, with Ketu exactly opposite Rahu.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -146906,7 +146906,7 @@ func (c *ClientWithResponses) GetMonthlyParallelsWithResponse(ctx context.Contex
 
 // GetPlanetPositionsWithBodyWithResponse Get planetary positions - Graha Positions API
 //
-// Get simplified planetary positions (graha positions) for all 9 planets (Sun through Ketu) plus Ascendant (Lagna). Real-time planet transit calculator for Vedic astrology. Navagraha positions API with nakshatra, pada, and rashi details. Includes house number placement using Whole Sign house system from Lagna. Faster response for basic planetary data without full chart structure. Perfect for planetary alignment tracking, daily transit updates, and astrology widgets.
+// Get simplified planetary positions (graha positions) for all 9 planets (Sun through Ketu) plus Ascendant (Lagna). Real-time planet transit calculator for Vedic astrology. Navagraha positions API with nakshatra, pada, and rashi details. Includes house number placement using Whole Sign house system from Lagna. Faster response for basic planetary data without full chart structure. Perfect for planetary alignment tracking, daily transit updates, and astrology widgets. Rahu and Ketu are the mean lunar node, referred to the true equinox of date, with Ketu exactly opposite Rahu.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -146921,7 +146921,7 @@ func (c *ClientWithResponses) GetPlanetPositionsWithBodyWithResponse(ctx context
 
 // GetPlanetPositionsWithResponse Get planetary positions - Graha Positions API
 //
-// Get simplified planetary positions (graha positions) for all 9 planets (Sun through Ketu) plus Ascendant (Lagna). Real-time planet transit calculator for Vedic astrology. Navagraha positions API with nakshatra, pada, and rashi details. Includes house number placement using Whole Sign house system from Lagna. Faster response for basic planetary data without full chart structure. Perfect for planetary alignment tracking, daily transit updates, and astrology widgets.
+// Get simplified planetary positions (graha positions) for all 9 planets (Sun through Ketu) plus Ascendant (Lagna). Real-time planet transit calculator for Vedic astrology. Navagraha positions API with nakshatra, pada, and rashi details. Includes house number placement using Whole Sign house system from Lagna. Faster response for basic planetary data without full chart structure. Perfect for planetary alignment tracking, daily transit updates, and astrology widgets. Rahu and Ketu are the mean lunar node, referred to the true equinox of date, with Ketu exactly opposite Rahu.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -146936,7 +146936,7 @@ func (c *ClientWithResponses) GetPlanetPositionsWithResponse(ctx context.Context
 
 // GetMonthlyEphemerisWithBodyWithResponse Monthly Ephemeris - Daily sidereal planetary positions for a month
 //
-// Get daily sidereal ecliptic positions for all 9 Vedic planets (Navagraha) for an entire month. Returns longitude, zodiac sign, degree within sign, and retrograde status for each planet on each day. Calculated at noon UTC. Omit year and month to get the month in progress, so a published ephemeris page stays current without a redeploy. Essential for ephemeris generation, transit tracking, and planetary movement visualization. Monthly planetary ephemeris API, sidereal position table, daily graha gochara positions, ecliptic longitude calculator.
+// Get daily sidereal ecliptic positions for all 9 Vedic planets (Navagraha) for an entire month. Returns longitude, zodiac sign, degree within sign, and retrograde status for each planet on each day. Calculated at noon UTC. Omit year and month to get the month in progress, so a published ephemeris page stays current without a redeploy. Essential for ephemeris generation, transit tracking, and planetary movement visualization. Monthly planetary ephemeris API, sidereal position table, daily graha gochara positions, ecliptic longitude calculator. Rahu and Ketu are the mean lunar node, referred to the true equinox of date, with Ketu exactly opposite Rahu.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -146951,7 +146951,7 @@ func (c *ClientWithResponses) GetMonthlyEphemerisWithBodyWithResponse(ctx contex
 
 // GetMonthlyEphemerisWithResponse Monthly Ephemeris - Daily sidereal planetary positions for a month
 //
-// Get daily sidereal ecliptic positions for all 9 Vedic planets (Navagraha) for an entire month. Returns longitude, zodiac sign, degree within sign, and retrograde status for each planet on each day. Calculated at noon UTC. Omit year and month to get the month in progress, so a published ephemeris page stays current without a redeploy. Essential for ephemeris generation, transit tracking, and planetary movement visualization. Monthly planetary ephemeris API, sidereal position table, daily graha gochara positions, ecliptic longitude calculator.
+// Get daily sidereal ecliptic positions for all 9 Vedic planets (Navagraha) for an entire month. Returns longitude, zodiac sign, degree within sign, and retrograde status for each planet on each day. Calculated at noon UTC. Omit year and month to get the month in progress, so a published ephemeris page stays current without a redeploy. Essential for ephemeris generation, transit tracking, and planetary movement visualization. Monthly planetary ephemeris API, sidereal position table, daily graha gochara positions, ecliptic longitude calculator. Rahu and Ketu are the mean lunar node, referred to the true equinox of date, with Ketu exactly opposite Rahu.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -150344,7 +150344,7 @@ func ParseGetUpcomingMoonPhasesResponse(rsp *http.Response) (*GetUpcomingMoonPha
 				// Date Date of this moon phase transition (YYYY-MM-DD).
 				Date string `json:"date"`
 
-				// Phase Lunar phase name (New Moon, First Quarter, Full Moon, Last Quarter).
+				// Phase Lunar phase name (New Moon, First Quarter Moon, Full Moon, Third Quarter Moon).
 				Phase string `json:"phase"`
 			} `json:"phases"`
 		}
@@ -182163,7 +182163,7 @@ func ParseGetDetailedPanchangResponse(rsp *http.Response) (*GetDetailedPanchangR
 			Transitions struct {
 				// Karana Karana (half-tithi) transition. karanas change twice per tithi. Important for muhurta timing.
 				Karana struct {
-					// EndsAt ISO 8601 UTC time when the current karana ends.
+					// EndsAt Local time in the requested timezone (ISO 8601, no offset suffix) when the current karana ends.
 					EndsAt string `json:"endsAt"`
 
 					// Next Name of the next karana (half-tithi).
@@ -182172,7 +182172,7 @@ func ParseGetDetailedPanchangResponse(rsp *http.Response) (*GetDetailedPanchangR
 
 				// MoonSign Moon sign (Chandra rashi) transition, when Moon changes zodiac sign. Affects Chandrabalam, Tarabalam, and daily horoscope predictions.
 				MoonSign struct {
-					// ChangesAt ISO 8601 UTC time when Moon enters the next rashi. Moon changes sign approximately every 2.25 days.
+					// ChangesAt Local time in the requested timezone (ISO 8601, no offset suffix) when Moon enters the next rashi. Moon changes sign approximately every 2.25 days.
 					ChangesAt string `json:"changesAt"`
 
 					// Current Current Moon rashi (zodiac sign).
@@ -182184,7 +182184,7 @@ func ParseGetDetailedPanchangResponse(rsp *http.Response) (*GetDetailedPanchangR
 
 				// Nakshatra Nakshatra (lunar mansion) transition timing: when Moon moves to the next nakshatra. Critical for muhurta and Tarabalam calculations.
 				Nakshatra struct {
-					// EndsAt ISO 8601 UTC time when the Moon leaves the current nakshatra.
+					// EndsAt Local time in the requested timezone (ISO 8601, no offset suffix) when the Moon leaves the current nakshatra.
 					EndsAt string `json:"endsAt"`
 
 					// Next Name of the next nakshatra the Moon will enter.
@@ -182196,7 +182196,7 @@ func ParseGetDetailedPanchangResponse(rsp *http.Response) (*GetDetailedPanchangR
 
 				// Tithi Tithi (lunar day) transition timing: when the current tithi ends and the next one begins.
 				Tithi struct {
-					// EndsAt ISO 8601 UTC time when the current tithi ends. Precise to ~1 minute via binary search.
+					// EndsAt Local time in the requested timezone (ISO 8601, no offset suffix) when the current tithi ends. Precise to ~1 minute via binary search.
 					EndsAt string `json:"endsAt"`
 
 					// Next Name of the next tithi that begins after the transition.
@@ -182205,7 +182205,7 @@ func ParseGetDetailedPanchangResponse(rsp *http.Response) (*GetDetailedPanchangR
 
 				// Yoga Nitya Yoga transition timing: when the current yoga period ends. Based on combined Sun-Moon motion.
 				Yoga struct {
-					// EndsAt ISO 8601 UTC time when the current yoga ends.
+					// EndsAt Local time in the requested timezone (ISO 8601, no offset suffix) when the current yoga ends.
 					EndsAt string `json:"endsAt"`
 
 					// Next Name of the next yoga.
