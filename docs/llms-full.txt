@@ -367,7 +367,7 @@ Crystal healing API covering the most popular and widely-searched healing crysta
 
 ## Dreams - `roxy.Dreams`
 
-Dream interpretation API with a 2,000+ symbol dream dictionary and psychological meanings covering animals, objects,...
+Dream interpretation API with a 2,200+ symbol dream dictionary and psychological meanings covering animals, objects,...
 
 - `getDailyDreamSymbol` - POST `/dreams/daily` - Daily dream symbol - Dream symbol of the day API
 - `searchDreamSymbols` - GET `/dreams/symbols` - List and search dream symbols - Dream dictionary API

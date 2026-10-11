@@ -51951,7 +51951,7 @@ type ClientInterface interface {
 
 	// SearchDreamSymbols List and search dream symbols - Dream dictionary API
 	//
-	// Browse and search our complete dream interpretation dictionary containing 2,000+ dream symbols with psychological meanings. Find dream meanings for animals (snake dreams, spider dreams, dog dreams), common scenarios (falling dreams, flying dreams, being chased, drowning), people (dreams about mother, father, baby, ex), objects (car, house, water, fire), emotions (fear, anxiety, love), body parts (teeth falling out, hair, eyes), colors, numbers, and abstract concepts. Filter by starting letter for A-Z navigation or search by keyword to find what your dreams mean.
+	// Browse and search our complete dream interpretation dictionary containing 2,200+ dream symbols with psychological meanings. Find dream meanings for animals (snake dreams, spider dreams, dog dreams), common scenarios (falling dreams, flying dreams, being chased, drowning), people (dreams about mother, father, baby, ex), objects (car, house, water, fire), emotions (fear, anxiety, love), body parts (teeth falling out, hair, eyes), colors, numbers, and abstract concepts. Filter by starting letter for A-Z navigation or search by keyword to find what your dreams mean.
 	//
 	// Corresponds with GET /dreams/symbols (the `SearchDreamSymbols` operationId).
 	SearchDreamSymbols(ctx context.Context, params *SearchDreamSymbolsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -51965,7 +51965,7 @@ type ClientInterface interface {
 
 	// GetRandomSymbols Random dream symbols - Dream symbol discovery API
 	//
-	// Discover random dream symbols and their interpretations for daily dream insights and exploration. Each request returns different symbols from the 2,000+ dream meaning database, perfect for dream of the day features, dream journaling prompts, meditation on subconscious themes, or exploring what different dreams mean. Get one or multiple random dream interpretations with full psychological meanings.
+	// Discover random dream symbols and their interpretations for daily dream insights and exploration. Each request returns different symbols from the 2,200+ dream meaning database, perfect for dream of the day features, dream journaling prompts, meditation on subconscious themes, or exploring what different dreams mean. Get one or multiple random dream interpretations with full psychological meanings.
 	//
 	// Corresponds with GET /dreams/symbols/random (the `GetRandomSymbols` operationId).
 	GetRandomSymbols(ctx context.Context, params *GetRandomSymbolsParams, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -56857,7 +56857,7 @@ func (c *Client) GetDailyDreamSymbol(ctx context.Context, body GetDailyDreamSymb
 
 // SearchDreamSymbols List and search dream symbols - Dream dictionary API
 //
-// Browse and search our complete dream interpretation dictionary containing 2,000+ dream symbols with psychological meanings. Find dream meanings for animals (snake dreams, spider dreams, dog dreams), common scenarios (falling dreams, flying dreams, being chased, drowning), people (dreams about mother, father, baby, ex), objects (car, house, water, fire), emotions (fear, anxiety, love), body parts (teeth falling out, hair, eyes), colors, numbers, and abstract concepts. Filter by starting letter for A-Z navigation or search by keyword to find what your dreams mean.
+// Browse and search our complete dream interpretation dictionary containing 2,200+ dream symbols with psychological meanings. Find dream meanings for animals (snake dreams, spider dreams, dog dreams), common scenarios (falling dreams, flying dreams, being chased, drowning), people (dreams about mother, father, baby, ex), objects (car, house, water, fire), emotions (fear, anxiety, love), body parts (teeth falling out, hair, eyes), colors, numbers, and abstract concepts. Filter by starting letter for A-Z navigation or search by keyword to find what your dreams mean.
 //
 // Corresponds with GET /dreams/symbols (the `SearchDreamSymbols` operationId).
 func (c *Client) SearchDreamSymbols(ctx context.Context, params *SearchDreamSymbolsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
@@ -56891,7 +56891,7 @@ func (c *Client) GetSymbolLetterCounts(ctx context.Context, reqEditors ...Reques
 
 // GetRandomSymbols Random dream symbols - Dream symbol discovery API
 //
-// Discover random dream symbols and their interpretations for daily dream insights and exploration. Each request returns different symbols from the 2,000+ dream meaning database, perfect for dream of the day features, dream journaling prompts, meditation on subconscious themes, or exploring what different dreams mean. Get one or multiple random dream interpretations with full psychological meanings.
+// Discover random dream symbols and their interpretations for daily dream insights and exploration. Each request returns different symbols from the 2,200+ dream meaning database, perfect for dream of the day features, dream journaling prompts, meditation on subconscious themes, or exploring what different dreams mean. Get one or multiple random dream interpretations with full psychological meanings.
 //
 // Corresponds with GET /dreams/symbols/random (the `GetRandomSymbols` operationId).
 func (c *Client) GetRandomSymbols(ctx context.Context, params *GetRandomSymbolsParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
@@ -81051,7 +81051,7 @@ type ClientWithResponsesInterface interface {
 
 	// SearchDreamSymbolsWithResponse List and search dream symbols - Dream dictionary API
 	//
-	// Browse and search our complete dream interpretation dictionary containing 2,000+ dream symbols with psychological meanings. Find dream meanings for animals (snake dreams, spider dreams, dog dreams), common scenarios (falling dreams, flying dreams, being chased, drowning), people (dreams about mother, father, baby, ex), objects (car, house, water, fire), emotions (fear, anxiety, love), body parts (teeth falling out, hair, eyes), colors, numbers, and abstract concepts. Filter by starting letter for A-Z navigation or search by keyword to find what your dreams mean.
+	// Browse and search our complete dream interpretation dictionary containing 2,200+ dream symbols with psychological meanings. Find dream meanings for animals (snake dreams, spider dreams, dog dreams), common scenarios (falling dreams, flying dreams, being chased, drowning), people (dreams about mother, father, baby, ex), objects (car, house, water, fire), emotions (fear, anxiety, love), body parts (teeth falling out, hair, eyes), colors, numbers, and abstract concepts. Filter by starting letter for A-Z navigation or search by keyword to find what your dreams mean.
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
@@ -81069,7 +81069,7 @@ type ClientWithResponsesInterface interface {
 
 	// GetRandomSymbolsWithResponse Random dream symbols - Dream symbol discovery API
 	//
-	// Discover random dream symbols and their interpretations for daily dream insights and exploration. Each request returns different symbols from the 2,000+ dream meaning database, perfect for dream of the day features, dream journaling prompts, meditation on subconscious themes, or exploring what different dreams mean. Get one or multiple random dream interpretations with full psychological meanings.
+	// Discover random dream symbols and their interpretations for daily dream insights and exploration. Each request returns different symbols from the 2,200+ dream meaning database, perfect for dream of the day features, dream journaling prompts, meditation on subconscious themes, or exploring what different dreams mean. Get one or multiple random dream interpretations with full psychological meanings.
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
@@ -104727,7 +104727,7 @@ type SearchDreamSymbolsResponse struct {
 		// Offset Number of symbols skipped. Use with limit for pagination.
 		Offset float32 `json:"offset"`
 
-		// Symbols Dream symbols for the current page. Use /symbols/{id} to get full interpretation.
+		// Symbols Dream symbols for the current page, in alphabetical order by name. With q, symbols whose name starts with the query come first, then names containing it, then symbols whose meaning mentions it, each group alphabetical. Use /symbols/{id} to get full interpretation.
 		Symbols []BasicDreamSymbol `json:"symbols"`
 
 		// Total Total number of dream symbols matching your search or filter criteria.
@@ -104755,7 +104755,7 @@ func (r SearchDreamSymbolsResponse) GetJSON200() *struct {
 	// Offset Number of symbols skipped. Use with limit for pagination.
 	Offset float32 `json:"offset"`
 
-	// Symbols Dream symbols for the current page. Use /symbols/{id} to get full interpretation.
+	// Symbols Dream symbols for the current page, in alphabetical order by name. With q, symbols whose name starts with the query come first, then names containing it, then symbols whose meaning mentions it, each group alphabetical. Use /symbols/{id} to get full interpretation.
 	Symbols []BasicDreamSymbol `json:"symbols"`
 
 	// Total Total number of dream symbols matching your search or filter criteria.
@@ -142901,7 +142901,7 @@ func (c *ClientWithResponses) GetDailyDreamSymbolWithResponse(ctx context.Contex
 
 // SearchDreamSymbolsWithResponse List and search dream symbols - Dream dictionary API
 //
-// Browse and search our complete dream interpretation dictionary containing 2,000+ dream symbols with psychological meanings. Find dream meanings for animals (snake dreams, spider dreams, dog dreams), common scenarios (falling dreams, flying dreams, being chased, drowning), people (dreams about mother, father, baby, ex), objects (car, house, water, fire), emotions (fear, anxiety, love), body parts (teeth falling out, hair, eyes), colors, numbers, and abstract concepts. Filter by starting letter for A-Z navigation or search by keyword to find what your dreams mean.
+// Browse and search our complete dream interpretation dictionary containing 2,200+ dream symbols with psychological meanings. Find dream meanings for animals (snake dreams, spider dreams, dog dreams), common scenarios (falling dreams, flying dreams, being chased, drowning), people (dreams about mother, father, baby, ex), objects (car, house, water, fire), emotions (fear, anxiety, love), body parts (teeth falling out, hair, eyes), colors, numbers, and abstract concepts. Filter by starting letter for A-Z navigation or search by keyword to find what your dreams mean.
 //
 // Returns a wrapper object for the known response body format(s).
 //
@@ -142931,7 +142931,7 @@ func (c *ClientWithResponses) GetSymbolLetterCountsWithResponse(ctx context.Cont
 
 // GetRandomSymbolsWithResponse Random dream symbols - Dream symbol discovery API
 //
-// Discover random dream symbols and their interpretations for daily dream insights and exploration. Each request returns different symbols from the 2,000+ dream meaning database, perfect for dream of the day features, dream journaling prompts, meditation on subconscious themes, or exploring what different dreams mean. Get one or multiple random dream interpretations with full psychological meanings.
+// Discover random dream symbols and their interpretations for daily dream insights and exploration. Each request returns different symbols from the 2,200+ dream meaning database, perfect for dream of the day features, dream journaling prompts, meditation on subconscious themes, or exploring what different dreams mean. Get one or multiple random dream interpretations with full psychological meanings.
 //
 // Returns a wrapper object for the known response body format(s).
 //
@@ -160345,7 +160345,7 @@ func ParseSearchDreamSymbolsResponse(rsp *http.Response) (*SearchDreamSymbolsRes
 			// Offset Number of symbols skipped. Use with limit for pagination.
 			Offset float32 `json:"offset"`
 
-			// Symbols Dream symbols for the current page. Use /symbols/{id} to get full interpretation.
+			// Symbols Dream symbols for the current page, in alphabetical order by name. With q, symbols whose name starts with the query come first, then names containing it, then symbols whose meaning mentions it, each group alphabetical. Use /symbols/{id} to get full interpretation.
 			Symbols []BasicDreamSymbol `json:"symbols"`
 
 			// Total Total number of dream symbols matching your search or filter criteria.
