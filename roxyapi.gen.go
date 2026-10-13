@@ -51387,7 +51387,7 @@ type ClientInterface interface {
 
 	// CalculateTransitAspectsWithBody Transit Aspects - Detailed transit-to-natal aspect analysis with interpretations
 	//
-	// Calculate all transit-to-natal aspects with detailed interpretations, strength ratings, and timing guidance. Compares current (or future) planetary positions against your natal chart to identify active transits. Returns aspect type, orb, applying/separating status, narrative interpretation, impact rating, and practical guidance for each transit. Supports planet and aspect-type filtering. More detailed than the /transits endpoint, adding AI-friendly interpretation fields. Transit aspects API, transit-to-natal analysis, predictive astrology, personalized transit forecast.
+	// Calculate all transit-to-natal aspects with detailed interpretations, strength ratings, and timing guidance. Compares current (or future) planetary positions against your natal chart to identify active transits. Returns aspect type, orb, applying/separating status, narrative interpretation, impact rating, and practical guidance for each transit. Like /astrology/transits with a natalChart, returns summary, timing, impact, guidance, and keywords for each aspect. Adds planet, aspect-type, and minStrength filtering plus summary.strongest and summary.byType rollups. Transit aspects API, transit-to-natal analysis, predictive astrology, personalized transit forecast.
 	//
 	// Takes any type of body and a specified content type.
 	//
@@ -51396,7 +51396,7 @@ type ClientInterface interface {
 
 	// CalculateTransitAspects Transit Aspects - Detailed transit-to-natal aspect analysis with interpretations
 	//
-	// Calculate all transit-to-natal aspects with detailed interpretations, strength ratings, and timing guidance. Compares current (or future) planetary positions against your natal chart to identify active transits. Returns aspect type, orb, applying/separating status, narrative interpretation, impact rating, and practical guidance for each transit. Supports planet and aspect-type filtering. More detailed than the /transits endpoint, adding AI-friendly interpretation fields. Transit aspects API, transit-to-natal analysis, predictive astrology, personalized transit forecast.
+	// Calculate all transit-to-natal aspects with detailed interpretations, strength ratings, and timing guidance. Compares current (or future) planetary positions against your natal chart to identify active transits. Returns aspect type, orb, applying/separating status, narrative interpretation, impact rating, and practical guidance for each transit. Like /astrology/transits with a natalChart, returns summary, timing, impact, guidance, and keywords for each aspect. Adds planet, aspect-type, and minStrength filtering plus summary.strongest and summary.byType rollups. Transit aspects API, transit-to-natal analysis, predictive astrology, personalized transit forecast.
 	//
 	// Takes a body of the `application/json` content type.
 	//
@@ -55613,7 +55613,7 @@ func (c *Client) CalculateSynastry(ctx context.Context, params *CalculateSynastr
 
 // CalculateTransitAspectsWithBody Transit Aspects - Detailed transit-to-natal aspect analysis with interpretations
 //
-// Calculate all transit-to-natal aspects with detailed interpretations, strength ratings, and timing guidance. Compares current (or future) planetary positions against your natal chart to identify active transits. Returns aspect type, orb, applying/separating status, narrative interpretation, impact rating, and practical guidance for each transit. Supports planet and aspect-type filtering. More detailed than the /transits endpoint, adding AI-friendly interpretation fields. Transit aspects API, transit-to-natal analysis, predictive astrology, personalized transit forecast.
+// Calculate all transit-to-natal aspects with detailed interpretations, strength ratings, and timing guidance. Compares current (or future) planetary positions against your natal chart to identify active transits. Returns aspect type, orb, applying/separating status, narrative interpretation, impact rating, and practical guidance for each transit. Like /astrology/transits with a natalChart, returns summary, timing, impact, guidance, and keywords for each aspect. Adds planet, aspect-type, and minStrength filtering plus summary.strongest and summary.byType rollups. Transit aspects API, transit-to-natal analysis, predictive astrology, personalized transit forecast.
 //
 // Takes any type of body and a specified content type.
 //
@@ -55632,7 +55632,7 @@ func (c *Client) CalculateTransitAspectsWithBody(ctx context.Context, params *Ca
 
 // CalculateTransitAspects Transit Aspects - Detailed transit-to-natal aspect analysis with interpretations
 //
-// Calculate all transit-to-natal aspects with detailed interpretations, strength ratings, and timing guidance. Compares current (or future) planetary positions against your natal chart to identify active transits. Returns aspect type, orb, applying/separating status, narrative interpretation, impact rating, and practical guidance for each transit. Supports planet and aspect-type filtering. More detailed than the /transits endpoint, adding AI-friendly interpretation fields. Transit aspects API, transit-to-natal analysis, predictive astrology, personalized transit forecast.
+// Calculate all transit-to-natal aspects with detailed interpretations, strength ratings, and timing guidance. Compares current (or future) planetary positions against your natal chart to identify active transits. Returns aspect type, orb, applying/separating status, narrative interpretation, impact rating, and practical guidance for each transit. Like /astrology/transits with a natalChart, returns summary, timing, impact, guidance, and keywords for each aspect. Adds planet, aspect-type, and minStrength filtering plus summary.strongest and summary.byType rollups. Transit aspects API, transit-to-natal analysis, predictive astrology, personalized transit forecast.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -80439,7 +80439,7 @@ type ClientWithResponsesInterface interface {
 
 	// CalculateTransitAspectsWithBodyWithResponse Transit Aspects - Detailed transit-to-natal aspect analysis with interpretations
 	//
-	// Calculate all transit-to-natal aspects with detailed interpretations, strength ratings, and timing guidance. Compares current (or future) planetary positions against your natal chart to identify active transits. Returns aspect type, orb, applying/separating status, narrative interpretation, impact rating, and practical guidance for each transit. Supports planet and aspect-type filtering. More detailed than the /transits endpoint, adding AI-friendly interpretation fields. Transit aspects API, transit-to-natal analysis, predictive astrology, personalized transit forecast.
+	// Calculate all transit-to-natal aspects with detailed interpretations, strength ratings, and timing guidance. Compares current (or future) planetary positions against your natal chart to identify active transits. Returns aspect type, orb, applying/separating status, narrative interpretation, impact rating, and practical guidance for each transit. Like /astrology/transits with a natalChart, returns summary, timing, impact, guidance, and keywords for each aspect. Adds planet, aspect-type, and minStrength filtering plus summary.strongest and summary.byType rollups. Transit aspects API, transit-to-natal analysis, predictive astrology, personalized transit forecast.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -80448,7 +80448,7 @@ type ClientWithResponsesInterface interface {
 
 	// CalculateTransitAspectsWithResponse Transit Aspects - Detailed transit-to-natal aspect analysis with interpretations
 	//
-	// Calculate all transit-to-natal aspects with detailed interpretations, strength ratings, and timing guidance. Compares current (or future) planetary positions against your natal chart to identify active transits. Returns aspect type, orb, applying/separating status, narrative interpretation, impact rating, and practical guidance for each transit. Supports planet and aspect-type filtering. More detailed than the /transits endpoint, adding AI-friendly interpretation fields. Transit aspects API, transit-to-natal analysis, predictive astrology, personalized transit forecast.
+	// Calculate all transit-to-natal aspects with detailed interpretations, strength ratings, and timing guidance. Compares current (or future) planetary positions against your natal chart to identify active transits. Returns aspect type, orb, applying/separating status, narrative interpretation, impact rating, and practical guidance for each transit. Like /astrology/transits with a natalChart, returns summary, timing, impact, guidance, and keywords for each aspect. Adds planet, aspect-type, and minStrength filtering plus summary.strongest and summary.byType rollups. Transit aspects API, transit-to-natal analysis, predictive astrology, personalized transit forecast.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -141881,7 +141881,7 @@ func (c *ClientWithResponses) CalculateSynastryWithResponse(ctx context.Context,
 
 // CalculateTransitAspectsWithBodyWithResponse Transit Aspects - Detailed transit-to-natal aspect analysis with interpretations
 //
-// Calculate all transit-to-natal aspects with detailed interpretations, strength ratings, and timing guidance. Compares current (or future) planetary positions against your natal chart to identify active transits. Returns aspect type, orb, applying/separating status, narrative interpretation, impact rating, and practical guidance for each transit. Supports planet and aspect-type filtering. More detailed than the /transits endpoint, adding AI-friendly interpretation fields. Transit aspects API, transit-to-natal analysis, predictive astrology, personalized transit forecast.
+// Calculate all transit-to-natal aspects with detailed interpretations, strength ratings, and timing guidance. Compares current (or future) planetary positions against your natal chart to identify active transits. Returns aspect type, orb, applying/separating status, narrative interpretation, impact rating, and practical guidance for each transit. Like /astrology/transits with a natalChart, returns summary, timing, impact, guidance, and keywords for each aspect. Adds planet, aspect-type, and minStrength filtering plus summary.strongest and summary.byType rollups. Transit aspects API, transit-to-natal analysis, predictive astrology, personalized transit forecast.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -141896,7 +141896,7 @@ func (c *ClientWithResponses) CalculateTransitAspectsWithBodyWithResponse(ctx co
 
 // CalculateTransitAspectsWithResponse Transit Aspects - Detailed transit-to-natal aspect analysis with interpretations
 //
-// Calculate all transit-to-natal aspects with detailed interpretations, strength ratings, and timing guidance. Compares current (or future) planetary positions against your natal chart to identify active transits. Returns aspect type, orb, applying/separating status, narrative interpretation, impact rating, and practical guidance for each transit. Supports planet and aspect-type filtering. More detailed than the /transits endpoint, adding AI-friendly interpretation fields. Transit aspects API, transit-to-natal analysis, predictive astrology, personalized transit forecast.
+// Calculate all transit-to-natal aspects with detailed interpretations, strength ratings, and timing guidance. Compares current (or future) planetary positions against your natal chart to identify active transits. Returns aspect type, orb, applying/separating status, narrative interpretation, impact rating, and practical guidance for each transit. Like /astrology/transits with a natalChart, returns summary, timing, impact, guidance, and keywords for each aspect. Adds planet, aspect-type, and minStrength filtering plus summary.strongest and summary.byType rollups. Transit aspects API, transit-to-natal analysis, predictive astrology, personalized transit forecast.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
