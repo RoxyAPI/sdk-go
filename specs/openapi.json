@@ -64714,7 +64714,7 @@
                         "example": "Nodo medio",
                         "type": "string"
                       },
-                      "description": "Label per selectable option, keyed `{fieldName}.{value}` so the same value can read differently under different fields. For example `nodeType.mean` and `houseSystem.whole-sign`. Split on the first dot: the field name is before it, and everything after it is the value you send back unchanged.",
+                      "description": "Label per selectable option, keyed `{fieldName}.{value}` so the same value can read differently under different fields. For example `nodeType.mean`, `houseSystem.whole-sign` and `id.rat`. An id shared by collections with different display names is omitted. Split on the first dot: the field name is before it, and everything after it is the value you send back unchanged.",
                       "type": "object"
                     },
                     "fields": {
@@ -64723,7 +64723,7 @@
                         "example": "Fecha de nacimiento",
                         "type": "string"
                       },
-                      "description": "Label per request field or parameter name. Keys are the wire names used in request bodies and query parameters, such as `birthDate`, `timezone` or `houseSystem`.",
+                      "description": "Label per request field or parameter name. Keys are the wire names used in request bodies, query parameters and path parameters, such as `birthDate`, `timezone` or `houseSystem`.",
                       "type": "object"
                     },
                     "lang": {

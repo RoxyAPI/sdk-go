@@ -117054,10 +117054,10 @@ type GetFieldLabelsResponse struct {
 	HTTPResponse *http.Response
 	// JSON200 the response for an HTTP 200 `application/json` response
 	JSON200 *struct {
-		// Enums Label per selectable option, keyed `{fieldName}.{value}` so the same value can read differently under different fields. For example `nodeType.mean` and `houseSystem.whole-sign`. Split on the first dot: the field name is before it, and everything after it is the value you send back unchanged.
+		// Enums Label per selectable option, keyed `{fieldName}.{value}` so the same value can read differently under different fields. For example `nodeType.mean`, `houseSystem.whole-sign` and `id.rat`. An id shared by collections with different display names is omitted. Split on the first dot: the field name is before it, and everything after it is the value you send back unchanged.
 		Enums map[string]string `json:"enums"`
 
-		// Fields Label per request field or parameter name. Keys are the wire names used in request bodies and query parameters, such as `birthDate`, `timezone` or `houseSystem`.
+		// Fields Label per request field or parameter name. Keys are the wire names used in request bodies, query parameters and path parameters, such as `birthDate`, `timezone` or `houseSystem`.
 		Fields map[string]string `json:"fields"`
 
 		// Lang Language these labels resolved to. Echoes the `lang` query parameter, or `en` when it is omitted.
@@ -117079,10 +117079,10 @@ type GetFieldLabelsResponse struct {
 
 // GetJSON200 returns the response for an HTTP 200 `application/json` response
 func (r GetFieldLabelsResponse) GetJSON200() *struct {
-	// Enums Label per selectable option, keyed `{fieldName}.{value}` so the same value can read differently under different fields. For example `nodeType.mean` and `houseSystem.whole-sign`. Split on the first dot: the field name is before it, and everything after it is the value you send back unchanged.
+	// Enums Label per selectable option, keyed `{fieldName}.{value}` so the same value can read differently under different fields. For example `nodeType.mean`, `houseSystem.whole-sign` and `id.rat`. An id shared by collections with different display names is omitted. Split on the first dot: the field name is before it, and everything after it is the value you send back unchanged.
 	Enums map[string]string `json:"enums"`
 
-	// Fields Label per request field or parameter name. Keys are the wire names used in request bodies and query parameters, such as `birthDate`, `timezone` or `houseSystem`.
+	// Fields Label per request field or parameter name. Keys are the wire names used in request bodies, query parameters and path parameters, such as `birthDate`, `timezone` or `houseSystem`.
 	Fields map[string]string `json:"fields"`
 
 	// Lang Language these labels resolved to. Echoes the `lang` query parameter, or `en` when it is omitted.
@@ -168150,10 +168150,10 @@ func ParseGetFieldLabelsResponse(rsp *http.Response) (*GetFieldLabelsResponse, e
 	switch {
 	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
 		var dest struct {
-			// Enums Label per selectable option, keyed `{fieldName}.{value}` so the same value can read differently under different fields. For example `nodeType.mean` and `houseSystem.whole-sign`. Split on the first dot: the field name is before it, and everything after it is the value you send back unchanged.
+			// Enums Label per selectable option, keyed `{fieldName}.{value}` so the same value can read differently under different fields. For example `nodeType.mean`, `houseSystem.whole-sign` and `id.rat`. An id shared by collections with different display names is omitted. Split on the first dot: the field name is before it, and everything after it is the value you send back unchanged.
 			Enums map[string]string `json:"enums"`
 
-			// Fields Label per request field or parameter name. Keys are the wire names used in request bodies and query parameters, such as `birthDate`, `timezone` or `houseSystem`.
+			// Fields Label per request field or parameter name. Keys are the wire names used in request bodies, query parameters and path parameters, such as `birthDate`, `timezone` or `houseSystem`.
 			Fields map[string]string `json:"fields"`
 
 			// Lang Language these labels resolved to. Echoes the `lang` query parameter, or `en` when it is omitted.
