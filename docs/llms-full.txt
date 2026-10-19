@@ -48,6 +48,8 @@ This file is the method INDEX (operation id, HTTP method, path, summary). For re
 
 Western astrology API for natal birth charts, daily, weekly, monthly, and yearly horoscopes with unique content per s...
 
+[API reference](https://roxyapi.com/api-reference/western-astrology)
+
 - `calculateArabicLots` - POST `/astrology/arabic-lots` - Arabic lots calculator - seven Hermetic parts including Part of Fortune and Spirit
 - `detectAspectPatterns` - POST `/astrology/aspect-patterns` - Detect aspect patterns - Grand Trine, Kite, T-Square, Grand Cross, Yod, Mystic Rectangle, Stellium
 - `calculateAspects` - POST `/astrology/aspects` - Calculate planetary aspects - Aspect finder for any date and time
@@ -91,6 +93,8 @@ Western astrology API for natal birth charts, daily, weekly, monthly, and yearly
 ## Vedic Astrology - `roxy.VedicAstrology`
 
 Vedic astrology (Jyotish) and KP API for kundli generation with the sixteen Shodasavarga divisional charts (D1 to D60...
+
+[API reference](https://roxyapi.com/api-reference/vedic-astrology)
 
 - `calculateArudhaPadas` - POST `/vedic-astrology/arudha` - Get the twelve Arudha padas - Arudha Lagna Calculator API
 - `calculateAshtakavarga` - POST `/vedic-astrology/ashtakavarga` - Get Ashtakavarga (planetary strength) analysis - Ashtakavarga Calculator API
@@ -155,6 +159,8 @@ Vedic astrology (Jyotish) and KP API for kundli generation with the sixteen Shod
 
 Astrology forecast API that merges upcoming transit aspects, sign ingresses, retrograde stations, new and full moons,...
 
+[API reference](https://roxyapi.com/api-reference/forecast)
+
 - `generateDigest` - POST `/forecast/digest` - Forecast digest - Pre-summarized next 24h, 7d, 30d, and 90d rollups
 - `findSignificantDates` - POST `/forecast/significant-dates` - Significant dates - High-significance cross-domain forecast highlights
 - `forecastSolarReturn` - POST `/forecast/solar-return` - Solar return chart - Annual birthday forecast chart for a single subject
@@ -164,6 +170,8 @@ Astrology forecast API that merges upcoming transit aspects, sign ingresses, ret
 ## Human Design - `roxy.HumanDesign`
 
 Human Design API that generates the full bodygraph from a birth moment: type, strategy, inner authority, profile, def...
+
+[API reference](https://roxyapi.com/api-reference/human-design)
 
 - `generateBodygraph` - POST `/human-design/bodygraph` - Generate full Human Design bodygraph - Type, authority, profile, centers, channels, gates
 - `calculateCenters` - POST `/human-design/centers` - Calculate the nine Human Design centers
@@ -181,6 +189,8 @@ Human Design API that generates the full bodygraph from a birth moment: type, st
 ## Chinese Astrology - `roxy.ChineseAstrology`
 
 Chinese zodiac and BaZi astrology API: Four Pillars charts, Chinese zodiac signs and the Chinese lunisolar calendar f...
+
+[API reference](https://roxyapi.com/api-reference/chinese-astrology)
 
 - `calculateAnnualForecast` - POST `/chinese-astrology/bazi/annual-forecast` - Calculate BaZi annual forecast - Liu Nian yearly pillar API
 - `generateBaziChart` - POST `/chinese-astrology/bazi/chart` - Generate BaZi chart - Four Pillars of Destiny calculator API
@@ -203,6 +213,8 @@ Chinese zodiac and BaZi astrology API: Four Pillars charts, Chinese zodiac signs
 
 Compute classical feng shui from one API: Xuan Kong flying star natal charts for any of the nine periods and 24 mount...
 
+[API reference](https://roxyapi.com/api-reference/feng-shui)
+
 - `getAnnualAfflictions` - GET `/feng-shui/afflictions/{year}` - Annual afflictions - Tai Sui, San Sha and Five Yellow API
 - `listBaguaSectors` - GET `/feng-shui/bagua` - List Bagua sectors - Feng shui bagua map API
 - `getBaguaSector` - GET `/feng-shui/bagua/{id}` - Look up a Bagua sector - Life area reference API
@@ -218,6 +230,8 @@ Compute classical feng shui from one API: Xuan Kong flying star natal charts for
 ## Mesoamerican Astrology - `roxy.MesoamericanAstrology`
 
 Calculate Mayan astrology day signs, the Tzolkin sacred round, the Haab year, the full Long Count and the Aztec tonal...
+
+[API reference](https://roxyapi.com/api-reference/mesoamerican-astrology)
 
 - `getDailyAztecReading` - GET `/mesoamerican-astrology/aztec/daily` - Daily Aztec energy reading - Tonalpohualli day sign of the day API
 - `listAztecDaySigns` - GET `/mesoamerican-astrology/aztec/day-signs` - List the 20 Aztec day signs - Tonalpohualli sign catalogue API
@@ -242,6 +256,8 @@ Calculate Mayan astrology day signs, the Tzolkin sacred round, the Haab year, th
 
 Vastu Shastra API for directional home and plot analysis: entrance padas with the classical effect of each of the 32...
 
+[API reference](https://roxyapi.com/api-reference/vastu)
+
 - `calculateAyadi` - POST `/vastu/ayadi` - Calculate Ayadi shadvarga - Vastu proportion and yoni calculator API
 - `listDevatas` - GET `/vastu/devatas` - List the 45 devatas - Vastu Purusha Mandala reference API
 - `getDevata` - GET `/vastu/devatas/{id}` - Look up one devata - Vastu mandala devata reference API
@@ -256,6 +272,8 @@ Vastu Shastra API for directional home and plot analysis: entrance padas with th
 ## Numerology - `roxy.Numerology`
 
 Numerology API for life path numbers, complete numerology charts and compatibility, in both Pythagorean and Chaldean...
+
+[API reference](https://roxyapi.com/api-reference/numerology)
 
 - `calculateBirthDay` - POST `/numerology/birth-day` - Calculate Birth Day number - Birthday numerology API
 - `calculateBridgeNumbers` - POST `/numerology/bridge` - Calculate Bridge Numbers - Numerology bridge numbers API
@@ -282,6 +300,8 @@ Numerology API for life path numbers, complete numerology charts and compatibili
 
 Kabbalah API for gematria, the 72 names, the Tree of Life and the Hebrew birthday
 
+[API reference](https://roxyapi.com/api-reference/kabbalah)
+
 - `generateBirthProfile` - POST `/kabbalah/birth-profile` - Generate a birth profile - Hebrew birthday and birth angel API
 - `listGematriaCiphers` - GET `/kabbalah/ciphers` - List gematria ciphers - gematria methods API with provenance on every row
 - `calculateNameCompatibility` - POST `/kabbalah/compatibility` - Compare two names - gematria name compatibility API with every component published
@@ -299,6 +319,8 @@ Kabbalah API for gematria, the 72 names, the Tree of Life and the Hebrew birthda
 
 Tarot reading API with the complete 78-card Rider-Waite-Smith deck and card meanings for love, career, health, and sp...
 
+[API reference](https://roxyapi.com/api-reference/tarot)
+
 - `listCards` - GET `/tarot/cards` - List all 78 tarot cards - Tarot deck catalog API
 - `getCard` - GET `/tarot/cards/{id}` - Get tarot card by id - Tarot card meaning API
 - `getDailyCard` - POST `/tarot/daily` - Daily tarot card - Card of the day API
@@ -314,6 +336,8 @@ Tarot reading API with the complete 78-card Rider-Waite-Smith deck and card mean
 
 Biorhythm API for entertainment and reflection, with 10 model cycle types across 3 primary (physical, emotional, inte...
 
+[API reference](https://roxyapi.com/api-reference/biorhythm)
+
 - `calculateBioCompatibility` - POST `/biorhythm/compatibility` - Calculate compatibility - Biorhythm alignment between two people
 - `getCriticalDays` - POST `/biorhythm/critical-days` - Find critical days - Zero crossing detection for any date range
 - `getDailyBiorhythm` - POST `/biorhythm/daily` - Get daily biorhythm - Seeded reading for daily check-in features
@@ -324,6 +348,8 @@ Biorhythm API for entertainment and reflection, with 10 model cycle types across
 ## Ayurveda - `roxy.Ayurveda`
 
 Ayurveda API for dosha profiles, the dinacharya daily routine and the ritucharya seasonal regimen, with a verse cited...
+
+[API reference](https://roxyapi.com/api-reference/ayurveda)
 
 - `calculateAyurvedicConstitution` - POST `/ayurveda/constitution` - Ayurvedic constitution from a birth chart - Dosha profile API
 - `getDailyAyurvedaReading` - GET `/ayurveda/daily` - Daily Ayurveda reading - Dosha clock and brahma muhurta by location API
@@ -338,6 +364,8 @@ Ayurveda API for dosha profiles, the dinacharya daily routine and the ritucharya
 
 I-Ching oracle API with all 64 hexagrams, 384 changing lines, 8 trigrams, and modern interpretations for love, career...
 
+[API reference](https://roxyapi.com/api-reference/i-ching)
+
 - `castReading` - GET `/iching/cast` - Cast an I-Ching reading - Hexagram divination API
 - `getDailyHexagram` - POST `/iching/daily` - Daily hexagram - Daily I-Ching oracle API
 - `castDailyReading` - POST `/iching/daily/cast` - Cast daily reading with changing lines - I-Ching divination API
@@ -351,6 +379,8 @@ I-Ching oracle API with all 64 hexagrams, 384 changing lines, 8 trigrams, and mo
 ## Crystals and Healing Stones - `roxy.Crystals`
 
 Crystal healing API covering the most popular and widely-searched healing crystals and gemstones, from Amethyst and R...
+
+[API reference](https://roxyapi.com/api-reference/crystals-and-healing-stones)
 
 - `listCrystals` - GET `/crystals` - List all crystals - Crystal healing database API
 - `getBirthstones` - GET `/crystals/birthstone/{month}` - Birthstones by month - Birthstone lookup API
@@ -369,6 +399,8 @@ Crystal healing API covering the most popular and widely-searched healing crysta
 
 Dream interpretation API with a 2,200+ symbol dream dictionary and psychological meanings covering animals, objects,...
 
+[API reference](https://roxyapi.com/api-reference/dreams)
+
 - `getDailyDreamSymbol` - POST `/dreams/daily` - Daily dream symbol - Dream symbol of the day API
 - `searchDreamSymbols` - GET `/dreams/symbols` - List and search dream symbols - Dream dictionary API
 - `getSymbolLetterCounts` - GET `/dreams/symbols/letters` - Symbol counts by letter - Dream dictionary index API
@@ -379,6 +411,8 @@ Dream interpretation API with a 2,200+ symbol dream dictionary and psychological
 
 Angel numbers API with meanings for 111, 222, 333, 444, 555, 666, 777, 888, 999, 1111, and 75+ sequences covering eve...
 
+[API reference](https://roxyapi.com/api-reference/angel-numbers)
+
 - `getDailyAngelNumber` - POST `/angel-numbers/daily` - Daily angel number - Angel number of the day API
 - `analyzeNumberSequence` - GET `/angel-numbers/lookup` - Analyze any number sequence - Angel number analysis API
 - `listAngelNumbers` - GET `/angel-numbers/numbers` - List all angel numbers - Angel number catalog API
@@ -388,6 +422,8 @@ Angel numbers API with meanings for 111, 222, 333, 444, 555, 666, 777, 888, 999,
 
 Timezone and location API with city search and geocoding across 235,000+ cities in 240+ countries, returning latitude...
 
+[API reference](https://roxyapi.com/api-reference/location-and-timezone)
+
 - `listCountries` - GET `/location/countries` - List all countries - ISO codes and city coverage
 - `getCitiesByCountry` - GET `/location/countries/{iso2}` - Get cities in a country - Geocoding directory sorted by population
 - `searchCities` - GET `/location/search` - Search cities worldwide - Geocoding autocomplete with coordinates and timezone
@@ -396,11 +432,15 @@ Timezone and location API with city search and geocoding across 235,000+ cities 
 
 Monitor your API usage, check rate limits, and track request consumption
 
+[API reference](https://roxyapi.com/api-reference/usage)
+
 - `getUsageStats` - GET `/usage` - Get API usage statistics
 
 ## Languages - `roxy.Languages`
 
 List the response languages accepted by the `lang` query parameter on every i18n-aware endpoint
+
+[API reference](https://roxyapi.com/api-reference/languages)
 
 - `listLanguages` - GET `/languages` - List supported response languages
 - `getFieldLabels` - GET `/languages/field-labels` - Get field labels for a language

@@ -23,6 +23,7 @@ import (
 	"go/token"
 	"net/http"
 	"os"
+	"regexp"
 	"slices"
 	"sort"
 	"strconv"
@@ -783,13 +784,19 @@ func segmentByOpKey(domains []domainInfo) map[string]string {
 	return m
 }
 
+var referenceWhitespace = regexp.MustCompile(`\s+`)
+
+func referenceURL(tag string) string {
+	return "https://roxyapi.com/api-reference/" + referenceWhitespace.ReplaceAllString(strings.ToLower(tag), "-")
+}
+
 func renderDomainsTable(domains []domainInfo) string {
 	var b strings.Builder
 	b.WriteString("<!-- BEGIN:DOMAINS -->\n")
 	b.WriteString("| Accessor | What it covers |\n")
 	b.WriteString("|----------|----------------|\n")
 	for _, d := range domains {
-		b.WriteString(fmt.Sprintf("| `roxy.%s` | %s |\n", pascal(d.segment), d.summary))
+		b.WriteString(fmt.Sprintf("| [`roxy.%s`](%s) | %s |\n", pascal(d.segment), referenceURL(d.tag), d.summary))
 	}
 	b.WriteString("<!-- END:DOMAINS -->")
 	return b.String()
@@ -806,6 +813,7 @@ func renderMethods(domains []domainInfo) string {
 		if d.summary != "" {
 			b.WriteString(d.summary + "\n\n")
 		}
+		b.WriteString(fmt.Sprintf("[API reference](%s)\n\n", referenceURL(d.tag)))
 		for _, op := range d.ops {
 			line := fmt.Sprintf("- `%s` - %s `%s`", op.opID, strings.ToUpper(op.verb), op.path)
 			if op.summary != "" {
