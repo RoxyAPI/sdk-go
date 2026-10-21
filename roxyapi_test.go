@@ -4,10 +4,14 @@ import (
 	"context"
 	"encoding/json"
 	"errors"
+	"go/ast"
+	"go/parser"
+	"go/token"
 	"net/http"
 	"net/http/httptest"
 	"os"
 	"reflect"
+	"strconv"
 	"strings"
 	"testing"
 
@@ -56,7 +60,7 @@ func TestRequestShape(t *testing.T) {
 }
 
 func TestErrorMapping(t *testing.T) {
-	srv, _ := newTestServer(t, 401, `{"error":"Invalid API key","code":"invalid_api_key"}`)
+	srv, _ := newTestServer(t, 401, `{"error":"Invalid API key","code":"invalid_api_key","doc_url":"https://roxyapi.com/docs/errors#invalid_api_key"}`)
 	roxy, err := roxyapi.NewRoxy("sk_bad", roxyapi.WithBaseURL(srv.URL))
 	if err != nil {
 		t.Fatalf("NewRoxy: %v", err)
@@ -68,6 +72,9 @@ func TestErrorMapping(t *testing.T) {
 	}
 	if re.StatusCode != 401 || re.Code != "invalid_api_key" || re.Message != "Invalid API key" {
 		t.Errorf("RoxyError = %+v, want 401 invalid_api_key Invalid API key", *re)
+	}
+	if re.DocURL != "https://roxyapi.com/docs/errors#invalid_api_key" || re.RetryAfter != 0 {
+		t.Errorf("DocURL = %q RetryAfter = %v", re.DocURL, re.RetryAfter)
 	}
 	if got, want := re.Error(), "roxyapi: 401 invalid_api_key: Invalid API key"; got != want {
 		t.Errorf("Error() = %q, want %q", got, want)
@@ -322,5 +329,116 @@ func TestLive(t *testing.T) {
 	}
 	if resp.JSON200 == nil {
 		t.Fatal("JSON200 is nil")
+	}
+}
+
+// TestErrorsRegionMatchesSpec fails when the generated ERRORS table of README.md or
+// AGENTS.md lists different codes than info["x-error-codes"] of the spec.
+func TestErrorsRegionMatchesSpec(t *testing.T) {
+	raw, err := os.ReadFile("specs/openapi.json")
+	if err != nil {
+		t.Fatal(err)
+	}
+	var spec struct {
+		Info struct {
+			Codes []struct {
+				Code string `json:"code"`
+			} `json:"x-error-codes"`
+		} `json:"info"`
+	}
+	if err := json.Unmarshal(raw, &spec); err != nil || len(spec.Info.Codes) == 0 {
+		t.Fatalf("spec x-error-codes unreadable: %v (%d codes)", err, len(spec.Info.Codes))
+	}
+	for _, doc := range []string{"README.md", "AGENTS.md"} {
+		b, err := os.ReadFile(doc)
+		if err != nil {
+			t.Fatal(err)
+		}
+		text := string(b)
+		start := strings.Index(text, "<!-- BEGIN:ERRORS -->")
+		end := strings.Index(text, "<!-- END:ERRORS -->")
+		if start < 0 || end < start {
+			t.Fatalf("%s has no ERRORS region", doc)
+		}
+		var got []string
+		for _, line := range strings.Split(text[start:end], "\n") {
+			if cells := strings.Split(line, "|"); len(cells) > 3 && strings.HasPrefix(strings.TrimSpace(cells[2]), "`") {
+				got = append(got, strings.Trim(strings.TrimSpace(cells[2]), "`"))
+			}
+		}
+		var want []string
+		for _, c := range spec.Info.Codes {
+			want = append(want, c.Code)
+		}
+		if !reflect.DeepEqual(got, want) {
+			t.Errorf("%s ERRORS codes = %v, want %v", doc, got, want)
+		}
+	}
+}
+
+// TestErrorCodeConstantsMatchSpec fails when errorcodes.gen.go declares different
+// codes than info["x-error-codes"], in the same order.
+func TestErrorCodeConstantsMatchSpec(t *testing.T) {
+	raw, err := os.ReadFile("specs/openapi.json")
+	if err != nil {
+		t.Fatal(err)
+	}
+	var spec struct {
+		Info struct {
+			Codes []struct {
+				Code string `json:"code"`
+			} `json:"x-error-codes"`
+		} `json:"info"`
+	}
+	if err := json.Unmarshal(raw, &spec); err != nil || len(spec.Info.Codes) == 0 {
+		t.Fatalf("spec x-error-codes unreadable: %v", err)
+	}
+	file, err := parser.ParseFile(token.NewFileSet(), "errorcodes.gen.go", nil, 0)
+	if err != nil {
+		t.Fatal(err)
+	}
+	var got []string
+	for _, decl := range file.Decls {
+		if gd, ok := decl.(*ast.GenDecl); ok && gd.Tok == token.CONST {
+			for _, sp := range gd.Specs {
+				v := sp.(*ast.ValueSpec)
+				if !strings.HasPrefix(v.Names[0].Name, "ErrCode") {
+					t.Errorf("constant %s lacks the ErrCode prefix", v.Names[0].Name)
+				}
+				s, _ := strconv.Unquote(v.Values[0].(*ast.BasicLit).Value)
+				got = append(got, s)
+			}
+		}
+	}
+	var want []string
+	for _, c := range spec.Info.Codes {
+		want = append(want, c.Code)
+	}
+	if !reflect.DeepEqual(got, want) {
+		t.Errorf("constants = %v, want %v", got, want)
+	}
+	if roxyapi.ErrCodeRateLimitPerMinute != "rate_limit_per_minute" || roxyapi.ErrCodeAPIKeyRequired != "api_key_required" {
+		t.Error("constant names do not read as the codes they carry")
+	}
+}
+
+// TestNewRoxyAcceptsEveryClientOption pins that the options callers already pass to
+// NewRoxy still compile, each alone and all together.
+func TestNewRoxyAcceptsEveryClientOption(t *testing.T) {
+	var _ roxyapi.Option = roxyapi.WithBaseURL("")
+	var _ roxyapi.Option = roxyapi.WithHTTPClient(http.DefaultClient)
+	var _ roxyapi.Option = roxyapi.WithRequestEditorFn(func(context.Context, *http.Request) error { return nil })
+	for name, opts := range map[string][]roxyapi.Option{
+		"base url":       {roxyapi.WithBaseURL("http://localhost")},
+		"http client":    {roxyapi.WithHTTPClient(http.DefaultClient)},
+		"request editor": {roxyapi.WithRequestEditorFn(func(context.Context, *http.Request) error { return nil })},
+		"retry":          {roxyapi.WithMaxRetries(0), roxyapi.WithRetry(roxyapi.RetryConfig{MaxRetries: 1})},
+	} {
+		if _, err := roxyapi.NewRoxy("sk_test", opts...); err != nil {
+			t.Errorf("%s: %v", name, err)
+		}
+	}
+	if _, err := roxyapi.NewRoxy("sk_test", roxyapi.WithBaseURL("http://localhost"), roxyapi.WithHTTPClient(http.DefaultClient)); err != nil {
+		t.Error(err)
 	}
 }

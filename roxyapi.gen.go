@@ -31890,35 +31890,71 @@ type DreamSymbol struct {
 
 // ErrorResponse Error body returned by every RoxyAPI endpoint on a 4xx or 5xx response.
 type ErrorResponse struct {
-	// Allow Present on 405 responses: the HTTP methods this path accepts.
+	// Allow Allowed HTTP methods for this path. Mirrors the Allow response header.
 	Allow *[]string `json:"allow,omitempty"`
 
-	// Code Stable machine readable error code, for example validation_error or rate_limit_exceeded.
+	// Code Machine-readable error code. Stable identifier.
 	Code string `json:"code"`
 
-	// Docs Link to the documentation for this domain, when available.
+	// DocURL Absolute URL of the documented explanation of this code, anchored at the code itself, for example https://roxyapi.com/docs/errors#not_found.
+	DocURL *string `json:"doc_url,omitempty"`
+
+	// Docs Link to the product page for this domain.
 	Docs *string `json:"docs,omitempty"`
 
-	// Error Human readable error message. Wording may change; switch on code instead.
+	// Error First issue summary.
 	Error string `json:"error"`
 
-	// Issues Present on 400 responses: every field that failed validation.
+	// Issues Every validation failure. Use this to rebuild a valid request.
 	Issues *[]ErrorResponseIssue `json:"issues,omitempty"`
 }
 
-// ErrorResponseIssue A single field-level validation failure from a 400 response.
+// ErrorResponseIssue defines model for ErrorResponseIssue.
 type ErrorResponseIssue struct {
-	// Code Validation issue code, for example invalid_type or too_small.
+	// Code Zod issue code (invalid_type, too_small, too_big, invalid_string, ...).
 	Code *string `json:"code,omitempty"`
 
-	// Expected Expected type, when the issue is a type mismatch.
+	// Expected Expected type for invalid_type.
 	Expected *string `json:"expected,omitempty"`
 
-	// Message Human readable description of this failure.
-	Message *string `json:"message,omitempty"`
+	// Format Format name for string issues (regex, email, url, uuid).
+	Format    *string `json:"format,omitempty"`
+	Inclusive *bool   `json:"inclusive,omitempty"`
 
-	// Path Dot-separated field path, or (root) for a top-level error.
+	// Maximum Maximum bound for too_big issues.
+	Maximum *ErrorResponseIssue_Maximum `json:"maximum,omitempty"`
+	Message *string                     `json:"message,omitempty"`
+
+	// Minimum Minimum bound for too_small issues.
+	Minimum *ErrorResponseIssue_Minimum `json:"minimum,omitempty"`
+
+	// Path Dot-separated field path, or "(root)" for top-level.
 	Path *string `json:"path,omitempty"`
+
+	// Pattern Regex pattern when format is regex.
+	Pattern *string `json:"pattern,omitempty"`
+}
+
+// ErrorResponseIssueMaximum0 defines model for ErrorResponseIssue.Maximum.0.
+type ErrorResponseIssueMaximum0 = float32
+
+// ErrorResponseIssueMaximum1 defines model for ErrorResponseIssue.Maximum.1.
+type ErrorResponseIssueMaximum1 = string
+
+// ErrorResponseIssue_Maximum Maximum bound for too_big issues.
+type ErrorResponseIssue_Maximum struct {
+	union json.RawMessage
+}
+
+// ErrorResponseIssueMinimum0 defines model for ErrorResponseIssue.Minimum.0.
+type ErrorResponseIssueMinimum0 = float32
+
+// ErrorResponseIssueMinimum1 defines model for ErrorResponseIssue.Minimum.1.
+type ErrorResponseIssueMinimum1 = string
+
+// ErrorResponseIssue_Minimum Minimum bound for too_small issues.
+type ErrorResponseIssue_Minimum struct {
+	union json.RawMessage
 }
 
 // FixedStarsResponse defines model for FixedStarsResponse.
@@ -45037,6 +45073,130 @@ func (t DivisionalChartRequest_Timezone) MarshalJSON() ([]byte, error) {
 }
 
 func (t *DivisionalChartRequest_Timezone) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsErrorResponseIssueMaximum0 returns the union data inside the ErrorResponseIssue_Maximum as a ErrorResponseIssueMaximum0
+func (t ErrorResponseIssue_Maximum) AsErrorResponseIssueMaximum0() (ErrorResponseIssueMaximum0, error) {
+	var body ErrorResponseIssueMaximum0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromErrorResponseIssueMaximum0 overwrites any union data inside the ErrorResponseIssue_Maximum as the provided ErrorResponseIssueMaximum0
+func (t *ErrorResponseIssue_Maximum) FromErrorResponseIssueMaximum0(v ErrorResponseIssueMaximum0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeErrorResponseIssueMaximum0 performs a merge with any union data inside the ErrorResponseIssue_Maximum, using the provided ErrorResponseIssueMaximum0
+func (t *ErrorResponseIssue_Maximum) MergeErrorResponseIssueMaximum0(v ErrorResponseIssueMaximum0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsErrorResponseIssueMaximum1 returns the union data inside the ErrorResponseIssue_Maximum as a ErrorResponseIssueMaximum1
+func (t ErrorResponseIssue_Maximum) AsErrorResponseIssueMaximum1() (ErrorResponseIssueMaximum1, error) {
+	var body ErrorResponseIssueMaximum1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromErrorResponseIssueMaximum1 overwrites any union data inside the ErrorResponseIssue_Maximum as the provided ErrorResponseIssueMaximum1
+func (t *ErrorResponseIssue_Maximum) FromErrorResponseIssueMaximum1(v ErrorResponseIssueMaximum1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeErrorResponseIssueMaximum1 performs a merge with any union data inside the ErrorResponseIssue_Maximum, using the provided ErrorResponseIssueMaximum1
+func (t *ErrorResponseIssue_Maximum) MergeErrorResponseIssueMaximum1(v ErrorResponseIssueMaximum1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t ErrorResponseIssue_Maximum) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *ErrorResponseIssue_Maximum) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsErrorResponseIssueMinimum0 returns the union data inside the ErrorResponseIssue_Minimum as a ErrorResponseIssueMinimum0
+func (t ErrorResponseIssue_Minimum) AsErrorResponseIssueMinimum0() (ErrorResponseIssueMinimum0, error) {
+	var body ErrorResponseIssueMinimum0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromErrorResponseIssueMinimum0 overwrites any union data inside the ErrorResponseIssue_Minimum as the provided ErrorResponseIssueMinimum0
+func (t *ErrorResponseIssue_Minimum) FromErrorResponseIssueMinimum0(v ErrorResponseIssueMinimum0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeErrorResponseIssueMinimum0 performs a merge with any union data inside the ErrorResponseIssue_Minimum, using the provided ErrorResponseIssueMinimum0
+func (t *ErrorResponseIssue_Minimum) MergeErrorResponseIssueMinimum0(v ErrorResponseIssueMinimum0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsErrorResponseIssueMinimum1 returns the union data inside the ErrorResponseIssue_Minimum as a ErrorResponseIssueMinimum1
+func (t ErrorResponseIssue_Minimum) AsErrorResponseIssueMinimum1() (ErrorResponseIssueMinimum1, error) {
+	var body ErrorResponseIssueMinimum1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromErrorResponseIssueMinimum1 overwrites any union data inside the ErrorResponseIssue_Minimum as the provided ErrorResponseIssueMinimum1
+func (t *ErrorResponseIssue_Minimum) FromErrorResponseIssueMinimum1(v ErrorResponseIssueMinimum1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeErrorResponseIssueMinimum1 performs a merge with any union data inside the ErrorResponseIssue_Minimum, using the provided ErrorResponseIssueMinimum1
+func (t *ErrorResponseIssue_Minimum) MergeErrorResponseIssueMinimum1(v ErrorResponseIssueMinimum1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t ErrorResponseIssue_Minimum) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *ErrorResponseIssue_Minimum) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }
@@ -126960,7 +127120,7 @@ type GetUsageStatsResponse struct {
 		// Status Subscription lifecycle state. Values: active, cancelled (no longer renewing but usable until endDate), suspended (payment failed, usable until endDate), expired (past endDate), pending (checkout started, payment not captured).
 		Status string `json:"status"`
 
-		// UsedThisMonth Billable requests counted against the current calendar month. The quota window is the UTC calendar month and resets on the 1st at 12:00 AM UTC, never on your renewal date, so an annual plan refills every month and a plan bought mid month still refills on the 1st. Read from the durable request ledger, which can trail the live limiter by up to 5 minutes; for the exact live position read the X-RateLimit-Used header on any response, including this one. Cached responses still count.
+		// UsedThisMonth Billable requests counted against the current calendar month. The quota window is the UTC calendar month and resets on the 1st at 12:00 AM UTC, never on your renewal date, so an annual plan refills every month and a plan bought mid month still refills on the 1st. Read from the durable request ledger, which can trail the live limiter by up to 5 minutes; for the exact live position read the X-RateLimit-Used header on any response, including this one. Cached responses still count; a request that failed on our side with a 5xx never does.
 		UsedThisMonth float32 `json:"usedThisMonth"`
 	}
 	// JSON400 the response for an HTTP 400 `application/json` response
@@ -126999,7 +127159,7 @@ func (r GetUsageStatsResponse) GetJSON200() *struct {
 	// Status Subscription lifecycle state. Values: active, cancelled (no longer renewing but usable until endDate), suspended (payment failed, usable until endDate), expired (past endDate), pending (checkout started, payment not captured).
 	Status string `json:"status"`
 
-	// UsedThisMonth Billable requests counted against the current calendar month. The quota window is the UTC calendar month and resets on the 1st at 12:00 AM UTC, never on your renewal date, so an annual plan refills every month and a plan bought mid month still refills on the 1st. Read from the durable request ledger, which can trail the live limiter by up to 5 minutes; for the exact live position read the X-RateLimit-Used header on any response, including this one. Cached responses still count.
+	// UsedThisMonth Billable requests counted against the current calendar month. The quota window is the UTC calendar month and resets on the 1st at 12:00 AM UTC, never on your renewal date, so an annual plan refills every month and a plan bought mid month still refills on the 1st. Read from the durable request ledger, which can trail the live limiter by up to 5 minutes; for the exact live position read the X-RateLimit-Used header on any response, including this one. Cached responses still count; a request that failed on our side with a 5xx never does.
 	UsedThisMonth float32 `json:"usedThisMonth"`
 } {
 	return r.JSON200
@@ -174691,7 +174851,7 @@ func ParseGetUsageStatsResponse(rsp *http.Response) (*GetUsageStatsResponse, err
 			// Status Subscription lifecycle state. Values: active, cancelled (no longer renewing but usable until endDate), suspended (payment failed, usable until endDate), expired (past endDate), pending (checkout started, payment not captured).
 			Status string `json:"status"`
 
-			// UsedThisMonth Billable requests counted against the current calendar month. The quota window is the UTC calendar month and resets on the 1st at 12:00 AM UTC, never on your renewal date, so an annual plan refills every month and a plan bought mid month still refills on the 1st. Read from the durable request ledger, which can trail the live limiter by up to 5 minutes; for the exact live position read the X-RateLimit-Used header on any response, including this one. Cached responses still count.
+			// UsedThisMonth Billable requests counted against the current calendar month. The quota window is the UTC calendar month and resets on the 1st at 12:00 AM UTC, never on your renewal date, so an annual plan refills every month and a plan bought mid month still refills on the 1st. Read from the durable request ledger, which can trail the live limiter by up to 5 minutes; for the exact live position read the X-RateLimit-Used header on any response, including this one. Cached responses still count; a request that failed on our side with a 5xx never does.
 			UsedThisMonth float32 `json:"usedThisMonth"`
 		}
 		if err := json.Unmarshal(bodyBytes, &dest); err != nil {

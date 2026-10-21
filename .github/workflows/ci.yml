@@ -28,7 +28,7 @@ jobs:
           ROXYAPI_SPEC_FILE: specs/openapi.json
         run: |
           go run ./tools/roxygen generate
-          git diff --exit-code -- specs/openapi.json roxyapi.gen.go roxy.gen.go README.md AGENTS.md docs/llms-full.txt \
+          git diff --exit-code -- specs/openapi.json roxyapi.gen.go roxy.gen.go errorcodes.gen.go README.md AGENTS.md docs/llms-full.txt \
             || { echo 'codegen drift: run "go run ./tools/roxygen generate" and commit the result'; exit 1; }
 
       - name: gofmt

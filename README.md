@@ -15,21 +15,23 @@ The official **Go SDK for [RoxyAPI](https://roxyapi.com)**, the typed astrology 
 
 A fully typed, idiomatic golang client generated from the live OpenAPI spec: one direct runtime dependency, the standard library `net/http` underneath, autocomplete on every endpoint and field, and bundled docs for AI coding agents.
 
-## Why developers use Roxy
-
 - **One key, every domain.** Eighteen plus insight domains under a single subscription, with flat all-inclusive pricing.
 - **Typed end to end.** Domain grouped methods, typed request bodies, typed responses, and one catchable error type. Your editor walks the whole API.
 - **Lean.** Standard `net/http` and one direct dependency. No vendor cloud, no heavy framework.
 - **Agent ready.** Bundled `AGENTS.md` and `docs/llms-full.txt`, plus a remote MCP server per domain.
 - **Proof before pay.** The playground at https://roxyapi.com/api-reference returns real production responses.
 
-## Start with one call
+Build horoscope apps and daily push readings, natal and Vedic birth chart generators, compatibility and synastry matchers, numerology and tarot experiences, human design bodygraphs, transit and forecast timelines, biorhythm trackers, dream and angel number lookups, and AI agents that reason over any of it through MCP.
 
-Get real product value with a single typed call. No setup beyond your API key.
+## Install
 
 ```bash
 go get github.com/RoxyAPI/sdk-go
 ```
+
+## Start with one call
+
+Get real product value with a single typed call. No setup beyond your API key.
 
 ```go
 roxy, err := roxyapi.NewRoxy(os.Getenv("ROXY_API_KEY"))
@@ -62,6 +64,8 @@ import (
 )
 
 func main() {
+	// Retries 429, 500, 502, 503 and 504 by default. Optional settings, shown with their defaults:
+	// roxyapi.NewRoxy(key, roxyapi.WithRetry(roxyapi.RetryConfig{MaxRetries: 2, InitialDelay: 500 * time.Millisecond, MaxDelay: 30 * time.Second}))
 	roxy, err := roxyapi.NewRoxy(os.Getenv("ROXY_API_KEY"))
 	if err != nil {
 		panic(err)
@@ -82,7 +86,9 @@ func main() {
 	// from the lookup ("Europe/London") and the server resolves it to the DST-correct
 	// offset for the date of the chart.
 	var tz roxyapi.NatalChartRequest_Timezone
-	_ = tz.FromNatalChartRequestTimezone1(city.Timezone)
+	if err := tz.FromNatalChartRequestTimezone1(city.Timezone); err != nil {
+		panic(err)
+	}
 	chart, err := roxy.Astrology.GenerateNatalChart(ctx, nil, roxyapi.NatalChartRequest{
 		Date:     roxyapi.Date(1990, time.January, 15),
 		Time:     "14:30:00",
@@ -95,7 +101,9 @@ func main() {
 	// Step 3: the same birth as a Vedic kundli. Same inputs, sidereal zodiac. Vedic bodies
 	// take Timezone as an optional pointer (omit it to default to IST).
 	var vtz roxyapi.BirthChartRequest_Timezone
-	_ = vtz.FromBirthChartRequestTimezone1(city.Timezone)
+	if err := vtz.FromBirthChartRequestTimezone1(city.Timezone); err != nil {
+		panic(err)
+	}
 	kundli, err := roxy.VedicAstrology.GenerateBirthChart(ctx, nil, roxyapi.BirthChartRequest{
 		Date:     roxyapi.Date(1990, time.January, 15),
 		Time:     "14:30:00",
@@ -109,10 +117,6 @@ func main() {
 ```
 
 `NewRoxy` sets the base URL (`https://roxyapi.com/api/v2`) and injects the auth header and SDK identification header on every request. Every method returns `(resp, err)`: check `err` first, then read the typed body off `resp.JSON200` (see Error handling).
-
-## What you can build
-
-Horoscope apps and daily push readings, natal and Vedic birth chart generators, compatibility and synastry matchers, numerology and tarot experiences, human design bodygraphs, transit and forecast timelines, biorhythm trackers, dream and angel number lookups, and AI agents that reason over any of it through MCP.
 
 ## Domains
 
@@ -181,7 +185,9 @@ Natal chart products, daily horoscope features, dating and compatibility apps, a
 // Natal chart. The most requested Western call, run once at onboarding.
 // The body carries the latitude, longitude and timezone from the location lookup above.
 var natalTz roxyapi.NatalChartRequest_Timezone
-_ = natalTz.FromNatalChartRequestTimezone1(timezone)
+if err := natalTz.FromNatalChartRequestTimezone1(timezone); err != nil {
+	return err
+}
 natal, err := roxy.Astrology.GenerateNatalChart(ctx, nil, roxyapi.NatalChartRequest{
 	Date: birthDate, Time: birthTime, Latitude: latitude, Longitude: longitude, Timezone: natalTz,
 })
@@ -202,10 +208,14 @@ if err != nil {
 var synastryBody roxyapi.CalculateSynastryJSONRequestBody
 synastryBody.Person1.Date, synastryBody.Person1.Time = birthDate, birthTime
 synastryBody.Person1.Latitude, synastryBody.Person1.Longitude = latitude, longitude
-_ = synastryBody.Person1.Timezone.FromCalculateSynastryJSONBodyPerson1Timezone1(timezone)
+if err := synastryBody.Person1.Timezone.FromCalculateSynastryJSONBodyPerson1Timezone1(timezone); err != nil {
+	return err
+}
 synastryBody.Person2.Date, synastryBody.Person2.Time = partnerDate, partnerTime
 synastryBody.Person2.Latitude, synastryBody.Person2.Longitude = partner.Latitude, partner.Longitude
-_ = synastryBody.Person2.Timezone.FromCalculateSynastryJSONBodyPerson2Timezone1(partner.Timezone)
+if err := synastryBody.Person2.Timezone.FromCalculateSynastryJSONBodyPerson2Timezone1(partner.Timezone); err != nil {
+	return err
+}
 synastry, err := roxy.Astrology.CalculateSynastry(ctx, nil, synastryBody)
 if err != nil {
 	return err
@@ -228,7 +238,9 @@ Kundli generators, matrimonial matching, muhurta and panchang apps, and KP pract
 // Vedic kundli. The same birth read sidereally: the body reuses the location lookup above.
 // Vedic bodies take Timezone as an optional pointer; omit it to default to IST.
 var kundliTz roxyapi.BirthChartRequest_Timezone
-_ = kundliTz.FromBirthChartRequestTimezone1(timezone)
+if err := kundliTz.FromBirthChartRequestTimezone1(timezone); err != nil {
+	return err
+}
 kundli, err := roxy.VedicAstrology.GenerateBirthChart(ctx, nil, roxyapi.BirthChartRequest{
 	Date: birthDate, Time: birthTime, Latitude: latitude, Longitude: longitude, Timezone: &kundliTz,
 })
@@ -239,7 +251,9 @@ if err != nil {
 
 // Detailed panchang. Tithi, nakshatra, yoga, karana, rahu kaal and the muhurtas for a date and place.
 var panchangTz roxyapi.GetDetailedPanchangJSONBody_Timezone
-_ = panchangTz.FromGetDetailedPanchangJSONBodyTimezone1(timezone)
+if err := panchangTz.FromGetDetailedPanchangJSONBodyTimezone1(timezone); err != nil {
+	return err
+}
 panchang, err := roxy.VedicAstrology.GetDetailedPanchang(ctx, nil, roxyapi.GetDetailedPanchangJSONRequestBody{
 	Date: roxyapi.Date(2026, time.October, 1), Latitude: latitude, Longitude: longitude, Timezone: &panchangTz,
 })
@@ -250,7 +264,9 @@ if err != nil {
 
 // Vimshottari dasha. The mahadasha, antardasha and pratyantardasha running right now.
 var dashaTz roxyapi.GetCurrentDashaJSONBody_Timezone
-_ = dashaTz.FromGetCurrentDashaJSONBodyTimezone1(timezone)
+if err := dashaTz.FromGetCurrentDashaJSONBodyTimezone1(timezone); err != nil {
+	return err
+}
 dasha, err := roxy.VedicAstrology.GetCurrentDasha(ctx, nil, roxyapi.GetCurrentDashaJSONRequestBody{
 	Date: birthDate, Time: birthTime, Latitude: latitude, Longitude: longitude, Timezone: &dashaTz,
 })
@@ -261,7 +277,9 @@ if err != nil {
 
 // Mangal Dosha. The most asked matrimonial check.
 var doshaTz roxyapi.ManglikRequest_Timezone
-_ = doshaTz.FromManglikRequestTimezone1(timezone)
+if err := doshaTz.FromManglikRequestTimezone1(timezone); err != nil {
+	return err
+}
 dosha, err := roxy.VedicAstrology.CheckManglikDosha(ctx, nil, roxyapi.ManglikRequest{
 	Date: birthDate, Time: birthTime, Latitude: latitude, Longitude: longitude, Timezone: &doshaTz,
 })
@@ -275,11 +293,15 @@ var milanBody roxyapi.CompatibilityRequest
 milanBody.Person1.Date, milanBody.Person1.Time = birthDate, birthTime
 milanBody.Person1.Latitude, milanBody.Person1.Longitude = latitude, longitude
 milanBody.Person1.Timezone = new(roxyapi.CompatibilityRequest_Person1_Timezone)
-_ = milanBody.Person1.Timezone.FromCompatibilityRequestPerson1Timezone1(timezone)
+if err := milanBody.Person1.Timezone.FromCompatibilityRequestPerson1Timezone1(timezone); err != nil {
+	return err
+}
 milanBody.Person2.Date, milanBody.Person2.Time = partnerDate, partnerTime
 milanBody.Person2.Latitude, milanBody.Person2.Longitude = partner.Latitude, partner.Longitude
 milanBody.Person2.Timezone = new(roxyapi.CompatibilityRequest_Person2_Timezone)
-_ = milanBody.Person2.Timezone.FromCompatibilityRequestPerson2Timezone1(partner.Timezone)
+if err := milanBody.Person2.Timezone.FromCompatibilityRequestPerson2Timezone1(partner.Timezone); err != nil {
+	return err
+}
 milan, err := roxy.VedicAstrology.CalculateGunMilan(ctx, nil, milanBody)
 if err != nil {
 	return err
@@ -288,7 +310,9 @@ if err != nil {
 
 // KP ruling planets. Horary answers at the moment of the question, for the place looked up above.
 var kpTz roxyapi.GetKpRulingPlanetsJSONBody_Timezone
-_ = kpTz.FromGetKpRulingPlanetsJSONBodyTimezone1(timezone)
+if err := kpTz.FromGetKpRulingPlanetsJSONBodyTimezone1(timezone); err != nil {
+	return err
+}
 kp, err := roxy.VedicAstrology.GetKpRulingPlanets(ctx, nil, roxyapi.GetKpRulingPlanetsJSONRequestBody{
 	Latitude: latitude, Longitude: longitude, Timezone: &kpTz,
 })
@@ -308,7 +332,9 @@ Forecast feeds, transit alerts and timing tools. One call returns a dated, signi
 var transitsBody roxyapi.ForecastTransitsJSONRequestBody
 transitsBody.BirthData.Date, transitsBody.BirthData.Time = birthDate, birthTime
 transitsBody.BirthData.Latitude, transitsBody.BirthData.Longitude = roxyapi.Ptr(latitude), roxyapi.Ptr(longitude)
-_ = transitsBody.BirthData.Timezone.FromForecastTransitsJSONBodyBirthDataTimezone1(timezone)
+if err := transitsBody.BirthData.Timezone.FromForecastTransitsJSONBodyBirthDataTimezone1(timezone); err != nil {
+	return err
+}
 transitsBody.StartDate, transitsBody.EndDate = roxyapi.Ptr(roxyapi.Date(2026, time.October, 1)), roxyapi.Ptr(roxyapi.Date(2026, time.October, 31))
 transits, err := roxy.Forecast.ForecastTransits(ctx, nil, transitsBody)
 if err != nil {
@@ -320,7 +346,9 @@ if err != nil {
 var timelineBody roxyapi.GenerateTimelineJSONRequestBody
 timelineBody.BirthData.Date, timelineBody.BirthData.Time = birthDate, birthTime
 timelineBody.BirthData.Latitude, timelineBody.BirthData.Longitude = roxyapi.Ptr(latitude), roxyapi.Ptr(longitude)
-_ = timelineBody.BirthData.Timezone.FromGenerateTimelineJSONBodyBirthDataTimezone1(timezone)
+if err := timelineBody.BirthData.Timezone.FromGenerateTimelineJSONBodyBirthDataTimezone1(timezone); err != nil {
+	return err
+}
 timelineBody.StartDate, timelineBody.EndDate = roxyapi.Ptr(roxyapi.Date(2026, time.October, 1)), roxyapi.Ptr(roxyapi.Date(2026, time.October, 31))
 timeline, err := roxy.Forecast.GenerateTimeline(ctx, nil, timelineBody)
 if err != nil {
@@ -337,7 +365,9 @@ Self-discovery apps, coaching bots and compatibility products. The full bodygrap
 // Bodygraph. Type, strategy, authority, profile, definition, centers, channels and all 26 gates in one call.
 // Human Design needs only the birth instant, so it takes the date, time and timezone from the lookup above.
 var hdTz roxyapi.GenerateBodygraphJSONBody_Timezone
-_ = hdTz.FromGenerateBodygraphJSONBodyTimezone1(timezone)
+if err := hdTz.FromGenerateBodygraphJSONBodyTimezone1(timezone); err != nil {
+	return err
+}
 hd, err := roxy.HumanDesign.GenerateBodygraph(ctx, nil, roxyapi.GenerateBodygraphJSONRequestBody{
 	Date: birthDate, Time: birthTime, Timezone: hdTz,
 })
@@ -349,9 +379,13 @@ if err != nil {
 // Connection. Two bodygraphs combined, each of the 36 channels classified by how the pair forms it.
 var connectionBody roxyapi.CalculateConnectionJSONRequestBody
 connectionBody.PersonA.Date, connectionBody.PersonA.Time = birthDate, birthTime
-_ = connectionBody.PersonA.Timezone.FromCalculateConnectionJSONBodyPersonATimezone1(timezone)
+if err := connectionBody.PersonA.Timezone.FromCalculateConnectionJSONBodyPersonATimezone1(timezone); err != nil {
+	return err
+}
 connectionBody.PersonB.Date, connectionBody.PersonB.Time = partnerDate, partnerTime
-_ = connectionBody.PersonB.Timezone.FromCalculateConnectionJSONBodyPersonBTimezone1(partner.Timezone)
+if err := connectionBody.PersonB.Timezone.FromCalculateConnectionJSONBodyPersonBTimezone1(partner.Timezone); err != nil {
+	return err
+}
 connection, err := roxy.HumanDesign.CalculateConnection(ctx, nil, connectionBody)
 if err != nil {
 	return err
@@ -367,7 +401,9 @@ BaZi readings, zodiac content and Tong Shu date pages. The school splits that ma
 // BaZi Four Pillars. The anchor call of the domain, from the same birth instant as every chart above.
 // Each response echoes the Conventions it was computed under, so a chart can be reproduced, not guessed.
 var baziTz roxyapi.GenerateBaziChartJSONBody_Timezone
-_ = baziTz.FromGenerateBaziChartJSONBodyTimezone1(timezone)
+if err := baziTz.FromGenerateBaziChartJSONBodyTimezone1(timezone); err != nil {
+	return err
+}
 bazi, err := roxy.ChineseAstrology.GenerateBaziChart(ctx, nil, roxyapi.GenerateBaziChartJSONRequestBody{
 	Date: birthDate, Time: birthTime, Timezone: baziTz,
 })
@@ -521,7 +557,9 @@ if err != nil {
 
 // Birth profile. The Hebrew date and birthday, the three birth angels and the birth sephirah from the instant above.
 var kabbalahTz roxyapi.GenerateBirthProfileJSONBody_Timezone
-_ = kabbalahTz.FromGenerateBirthProfileJSONBodyTimezone1(timezone)
+if err := kabbalahTz.FromGenerateBirthProfileJSONBodyTimezone1(timezone); err != nil {
+	return err
+}
 kabbalah, err := roxy.Kabbalah.GenerateBirthProfile(ctx, nil, roxyapi.GenerateBirthProfileJSONRequestBody{
 	Date: birthDate, Time: roxyapi.Ptr(birthTime), Timezone: kabbalahTz,
 })
@@ -594,7 +632,9 @@ The dosha profile read from a verified sidereal chart with the verse on each fac
 ```go
 // Constitution. The dosha profile read from the sidereal chart of the same birth, each factor with its verse.
 var constitutionTz roxyapi.AyurvedaConstitutionRequest_Timezone
-_ = constitutionTz.FromAyurvedaConstitutionRequestTimezone1(timezone)
+if err := constitutionTz.FromAyurvedaConstitutionRequestTimezone1(timezone); err != nil {
+	return err
+}
 constitution, err := roxy.Ayurveda.CalculateAyurvedicConstitution(ctx, nil, roxyapi.AyurvedaConstitutionRequest{
 	Date: birthDate, Time: birthTime, Latitude: latitude, Longitude: longitude, Timezone: &constitutionTz,
 })
@@ -605,7 +645,9 @@ if err != nil {
 
 // Dinacharya. Brahma muhurta, the dosha periods and the routine for a date at the place looked up above.
 var dinacharyaTz roxyapi.AyurvedaDinacharyaRequest_Timezone
-_ = dinacharyaTz.FromAyurvedaDinacharyaRequestTimezone1(timezone)
+if err := dinacharyaTz.FromAyurvedaDinacharyaRequestTimezone1(timezone); err != nil {
+	return err
+}
 dinacharya, err := roxy.Ayurveda.GetDinacharyaSchedule(ctx, nil, roxyapi.AyurvedaDinacharyaRequest{
 	Date: roxyapi.Date(2026, time.October, 1), Latitude: latitude, Longitude: longitude, Timezone: &dinacharyaTz,
 })
@@ -701,25 +743,138 @@ if err != nil {
 // sequence.JSON200.DigitRoot, .IsRepeating, .KnownMeaning (nil when not curated), .DigitRootMeaning.Title
 ```
 
-## Built for AI agents
+## Built for AI agents (Cursor, Claude Code, Copilot, Codex, Gemini CLI)
 
-Every endpoint is also a remote MCP tool at `https://roxyapi.com/mcp/{domain}` (Streamable HTTP, no local setup). Use the SDK for typed Go services; use MCP for agents (Claude, Cursor, ChatGPT) that select tools from user intent. This module ships [AGENTS.md](https://github.com/RoxyAPI/sdk-go/blob/main/AGENTS.md) and [docs/llms-full.txt](https://github.com/RoxyAPI/sdk-go/blob/main/docs/llms-full.txt). Point your coding agent to the guide in the installed module cache for quick start, common calls, and typed field formats.
+This module ships with bundled documentation that AI coding agents read directly from the module cache:
 
-## Reliability
+- [AGENTS.md](https://github.com/RoxyAPI/sdk-go/blob/main/AGENTS.md) for quick start, patterns, gotchas, and a common-tasks reference
+- [docs/llms-full.txt](https://github.com/RoxyAPI/sdk-go/blob/main/docs/llms-full.txt) for the complete method index
 
-- Ephemeris output verified against NASA JPL Horizons. Methodology: https://roxyapi.com/methodology. Open benchmark (210 reference points vs JPL Horizons DE441): https://github.com/RoxyAPI/astrology-api-benchmark.
-- Generated from the same OpenAPI spec that powers the live API, so the SDK never drifts from production.
-- One catchable `RoxyError` with a stable `Code` for every failure.
+Point your coding agent to the guide in the installed module cache for quick start, common calls, and typed field formats.
 
-## Gotchas
+Prefer MCP? Every domain has a [Remote MCP server](https://roxyapi.com/docs/mcp) at `https://roxyapi.com/mcp/{domain}` (Streamable HTTP, no stdio, no self-hosting). Use the SDK for typed Go services; use MCP for agents (Claude, Cursor, ChatGPT) that select tools from user intent. One-line Claude Code setup:
 
-- **Argument arity varies.** Calls are `(ctx, pathParams..., params, body)`, but an endpoint with no query parameters has **no `params` argument**. Passing a stray `nil` there is read as a request editor and panics. The exact list is under Methods with no params argument below; let autocomplete show the signature.
-- **The body type is `roxyapi.<MethodName>JSONRequestBody`.** Some are aliases of a named request (`NatalChartRequest`); both names compile.
-- **`Date` and `Timezone` are typed.** Build a date with `roxyapi.Date(1990, time.January, 15)`, never a string. `Timezone` is a per-request union: `tz.From<Req>Timezone1("Europe/Berlin")` (IANA) or `From<Req>Timezone0(1)` (decimal offset).
-- **Optional fields are pointers.** Use `roxyapi.Ptr(...)` for `Seed`, `Question`, `Lang`, `Limit`, and similar.
-- **Enum-like strings are validated server-side.** `sign` and `Lang` are open string types; an invalid value compiles and comes back as a `validation_error` (400).
-- **Read responses off `JSON200`** (`resp.JSON200.Cities[0].Latitude`). It is nil unless the call was a 2xx (errors are returned, not in the body).
-- **Person-pair, forecast and Vastu bodies use anonymous nested structs** (`Person1`, `PersonA`, `BirthData`, `Plot`). Declare the body with `var` and fill those fields one by one, as the synastry, Guna Milan, forecast, connection and Vastu blocks above do; a slice of inline structs (`Rooms`) is easiest to unmarshal from its JSON shape.
+```bash
+claude mcp add-json --scope user roxy-astrology \
+  '{"type":"http","url":"https://roxyapi.com/mcp/astrology","headers":{"X-API-Key":"YOUR_KEY"}}'
+```
+
+## Authentication
+
+Get your API key at [roxyapi.com/pricing](https://roxyapi.com/pricing). Instant delivery after checkout.
+
+```go
+roxy, err := roxyapi.NewRoxy(os.Getenv("ROXY_API_KEY"))
+```
+
+Never expose your API key client-side. Call Roxy from server code only. `NewRoxy` returns an error for an empty key, so a missing `ROXY_API_KEY` fails at construction.
+
+## Multi-language responses
+
+Interpretations and editorial text are available in 10 languages: English (`en`), Turkish (`tr`), German (`de`), Spanish (`es`), French (`fr`), Hindi (`hi`), Portuguese (`pt`), Russian (`ru`), Chinese Simplified (`zh-Hans`), Chinese Traditional (`zh-Hant`). Set `Lang` on the params struct of any supported endpoint with `roxyapi.Ptr(...)`:
+
+```go
+resp, err := roxy.Astrology.GetDailyHoroscope(ctx, "aries",
+	&roxyapi.GetDailyHoroscopeParams{Lang: roxyapi.Ptr(roxyapi.GetDailyHoroscopeParamsLang("es"))})
+```
+
+Each endpoint has its own `Lang` type. Supported: astrology, Vedic astrology, forecast, human design, Chinese astrology, feng shui, Mesoamerican astrology, vastu, numerology, kabbalah, tarot, biorhythm, ayurveda, I Ching, crystals, angel numbers. English-only: dreams, location, usage. The two Chinese scripts (`zh-Hans`, `zh-Hant`) currently ship on Chinese astrology and feng shui; every other domain answers those codes in English per field. Untranslated fields fall back to English. Call `roxy.Languages.ListLanguages(ctx)` for the live list.
+
+## Error handling
+
+Every method returns `(resp, err)`, and one catchable error type covers every failure: any 4xx or 5xx is returned as a `*RoxyError` with `StatusCode`, `Code` (stable; compare with the `roxyapi.ErrCode...` constants, one per code in the table below), `Message` (human readable), `DocURL` (the `doc_url` link for that code) and `RetryAfter` (a `time.Duration`, zero when the response sent no `Retry-After`).
+
+```go
+resp, err := roxy.Astrology.GetDailyHoroscope(ctx, "aries", nil)
+var rerr *roxyapi.RoxyError
+if errors.As(err, &rerr) {
+	switch rerr.Code {
+	case roxyapi.ErrCodeRateLimitPerMinute, roxyapi.ErrCodeComputeSaturated:
+		// already retried twice by default; this is the last attempt
+	case roxyapi.ErrCodeValidationError:
+		for _, iss := range rerr.Issues { // each field that failed
+			fmt.Printf("%s: %s\n", iss.Path, iss.Message)
+		}
+	}
+}
+```
+
+<!-- BEGIN:ERRORS -->
+Every error returns `{ error, code, doc_url }`. Switch on `code`; `error` is readable text and may change. Each meaning below says whether and when to retry, and `Retry-After` carries the wait when the response sends it. Every code is documented at https://roxyapi.com/docs/errors.
+
+| Status | Code | Meaning |
+|--------|------|---------|
+| 400 | `validation_error` | A field is missing or invalid. The body lists every failing field at once in issues, each with its path and the expected shape. |
+| 400 | `bad_request` | The request was rejected as a whole, for example a body that is not valid JSON or a date range that ends before it starts. |
+| 400 | `date_out_of_range` | A date lies outside the span the planetary positions are served for. The error names the supported dates. |
+| 401 | `api_key_required` | No API key was sent. |
+| 401 | `invalid_api_key` | The key sent is malformed or cannot be verified. |
+| 401 | `api_key_revoked` | The key was valid once and has since been revoked from the account page. |
+| 401 | `subscription_not_found` | The key verifies, but the subscription behind it no longer exists. |
+| 401 | `subscription_inactive` | The subscription behind the key is cancelled, expired or suspended, or a trial is past its end date. |
+| 401 | `publishable_key_not_allowed_on_mcp` | A publishable key was used on a Remote MCP server, which takes a secret key. |
+| 401 | `invalid_client_ip` | A keyless request could not be attributed to a caller. |
+| 401 | `unauthorized` | Authentication failed with no more specific reason to give. |
+| 403 | `forbidden` | The key is valid, but this request is not permitted. |
+| 403 | `origin_required` | A publishable key with an origin allowlist was used with no Origin header, as from a server or a native app. |
+| 403 | `origin_not_allowed` | The calling site is not on the origin allowlist of this publishable key. |
+| 404 | `not_found` | Nothing is served at this path, or the identifier in it does not exist. A path miss adds suggestions, the closest real endpoints. |
+| 405 | `method_not_allowed` | The path exists for a different HTTP method. The body lists the accepted methods in allow, as does the Allow header. |
+| 409 | `conflict` | The request cannot be applied in the current state. |
+| 410 | `gone` | The path was removed permanently. |
+| 413 | `payload_too_large` | The request body is larger than the API accepts. A body far over the cap is refused before it reaches the API and returns a bare 413 with no JSON body. |
+| 415 | `unsupported_media_type` | A request with a body was sent without Content-Type: application/json. |
+| 422 | `unprocessable_entity` | Every field is valid, but the combination cannot be computed. |
+| 429 | `rate_limit_exceeded` | The monthly request allowance is used up. Retry-After gives the seconds to the reset. |
+| 429 | `rate_limit_per_minute` | The per-minute limit of the plan was reached. Retry-After gives the seconds to the next minute, and the monthly allowance is not charged. |
+| 429 | `rate_limited` | A rate limit was reached, reported without the plan detail. |
+| 429 | `free_tier_exhausted` | A keyless request has used up its trial allowance. |
+| 500 | `internal_error` | The request failed inside our service. Retry with exponential backoff. |
+| 503 | `compute_saturated` | Heavy calculations are briefly at capacity. Send the same request again after Retry-After seconds. |
+| Any | `error` | A fallback for a status with no more specific code. The status and the error field carry the signal. |
+<!-- END:ERRORS -->
+
+### Retries
+
+`NewRoxy` retries twice by default, with jittered backoff: 429, 500, 502, 503 and 504, plus a connection that failed before the request was sent. It honours `Retry-After`, replays request bodies, and never waits past the context deadline. A `Retry-After` longer than 30 seconds is not waited out: the error comes back with `RetryAfter` set. `roxyapi.WithMaxRetries(0)` turns retries off, `roxyapi.WithMaxRetries(5)` raises them, and `roxyapi.WithRetry(roxyapi.RetryConfig{MaxRetries: 3, InitialDelay: time.Second, MaxDelay: time.Minute})` changes the delays (defaults 500ms and 30s); both return a `roxyapi.Option`, the type `NewRoxy` takes, which every client option such as `WithHTTPClient` also satisfies; the order relative to `WithHTTPClient` does not matter.
+
+```go
+roxy, _ := roxyapi.NewRoxy(os.Getenv("ROXY_API_KEY"), roxyapi.WithMaxRetries(5))
+_, err := roxy.Astrology.GetDailyHoroscope(ctx, "aries", nil)
+var rerr *roxyapi.RoxyError
+if errors.As(err, &rerr) {
+	fmt.Println(rerr.StatusCode, rerr.Code, rerr.DocURL, rerr.RetryAfter)
+}
+```
+
+## Go
+
+Every request and response is a typed Go struct, generated from the same OpenAPI spec that powers the live API, so the SDK never drifts from production and autocomplete walks every domain, endpoint and field. Signatures, union types and the anonymous nested bodies are in [AGENTS.md](https://github.com/RoxyAPI/sdk-go/blob/main/AGENTS.md); the full reference is on [pkg.go.dev](https://pkg.go.dev/github.com/RoxyAPI/sdk-go).
+
+## Configuration
+
+Configure the client with the generated options: `roxyapi.WithBaseURL`, `roxyapi.WithHTTPClient` (any `*http.Client`, for timeouts or proxies), and `roxyapi.WithRequestEditorFn`. The underlying `ClientWithResponses` stays exported for advanced use.
+
+```go
+roxy, err := roxyapi.NewRoxy(key, roxyapi.WithHTTPClient(&http.Client{Timeout: 10 * time.Second}))
+```
+
+## FAQ
+
+**Q: `SearchCities` returned 200 but `Cities[0]` panics, or my city is not found.**
+A: A successful search can still return an empty `Cities` slice, so check `len(search.JSON200.Cities) == 0` before indexing. Add the state or country whenever the name is common (`"Springfield, Illinois"`, `"London, United Kingdom"`); `Total` above 1 means the name is ambiguous, so show `Province` and `Country` and let the user confirm.
+
+**Q: I got `nil pointer dereference` in `applyEditors`. What did I do?**
+A: You passed `nil` to an endpoint that has no query-parameters argument. That is every method whose endpoint takes no query parameters, not even `lang`; the list is under Methods with no params argument below. The `nil` is read as a request editor: the call compiles, then panics at runtime. Drop the argument and let autocomplete show the signature.
+
+**Q: `NewRoxy` returned no error but every call is `401 api_key_required`.**
+A: Make sure `ROXY_API_KEY` is exported. `NewRoxy` returns an error for an empty key; a non-empty but wrong key only fails on the first request.
+
+**Q: How do I build the `Timezone` when I cannot guess the union type name?**
+A: The union type is `<Request>_Timezone` for a named request body (`NatalChartRequest_Timezone`) and `<Operation>JSONBody_Timezone` for an inline body (`GenerateBodygraphJSONBody_Timezone`). If you cannot guess it, write the `Timezone:` field with any value and read the expected type from the compiler error, or let autocomplete fill it. Build it with `.From<Type>Timezone1("IANA")` or `.From<Type>Timezone0(decimal)`.
+
+**Q: What type does `NewRoxy` return, so I can store it or pass it to a function?**
+A: `*roxyapi.Roxy`.
 
 ### Methods with no params argument
 
@@ -746,65 +901,18 @@ Read from the generated facade on every release. Every other method takes `param
 - `roxy.Languages.ListLanguages(ctx)`
 <!-- END:NOPARAMS -->
 
-## FAQ
+## Links
 
-**Q: `SearchCities` returned 200 but `Cities[0]` panics, or my city is not found.**
-A: A successful search can still return an empty `Cities` slice, so check `len(search.JSON200.Cities) == 0` before indexing. Add the state or country whenever the name is common (`"Springfield, Illinois"`, `"London, United Kingdom"`); `Total` above 1 means the name is ambiguous, so show `Province` and `Country` and let the user confirm.
-
-**Q: I got `nil pointer dereference` in `applyEditors`. What did I do?**
-A: You passed `nil` to an endpoint that has no query-parameters argument. That is every method whose endpoint takes no query parameters, not even `lang`; the list is under Methods with no params argument above. The `nil` is read as a request editor: the call compiles, then panics at runtime. Drop the argument and let autocomplete show the signature.
-
-**Q: `NewRoxy` returned no error but every call is `401 api_key_required`.**
-A: Make sure `ROXY_API_KEY` is exported. `NewRoxy` returns an error for an empty key; a non-empty but wrong key only fails on the first request.
-
-**Q: How do I build the `Timezone` when I cannot guess the union type name?**
-A: The union type is `<Request>_Timezone` for a named request body (`NatalChartRequest_Timezone`) and `<Operation>JSONBody_Timezone` for an inline body (`GenerateBodygraphJSONBody_Timezone`). If you cannot guess it, write the `Timezone:` field with any value and read the expected type from the compiler error, or let autocomplete fill it. Build it with `.From<Type>Timezone1("IANA")` or `.From<Type>Timezone0(decimal)`.
-
-**Q: What type does `NewRoxy` return, so I can store it or pass it to a function?**
-A: `*roxyapi.Roxy`.
-
-## Error handling and advanced use
-
-Any 4xx or 5xx is returned as a `*RoxyError`. Switch on `Code` (stable); `Message` is human readable.
-
-```go
-resp, err := roxy.Astrology.GetDailyHoroscope(ctx, "aries", nil)
-var rerr *roxyapi.RoxyError
-if errors.As(err, &rerr) {
-	switch rerr.Code {
-	case "rate_limit_exceeded":
-		// back off
-	case "validation_error":
-		for _, iss := range rerr.Issues { // each field that failed
-			fmt.Printf("%s: %s\n", iss.Path, iss.Message)
-		}
-	}
-}
-```
-
-| Status | Code | When |
-|--------|------|------|
-| 400 | `validation_error` | Missing or invalid parameters (see `Issues`) |
-| 401 | `api_key_required` | No API key provided |
-| 401 | `invalid_api_key` | Key format invalid or tampered |
-| 401 | `subscription_not_found` | Key references non-existent subscription |
-| 401 | `subscription_inactive` | Subscription cancelled, expired, or suspended |
-| 401 | `api_key_revoked` | Key was deleted from the account |
-| 404 | `not_found` | Resource not found |
-| 4xx | `bad_request` and other status-derived codes | A client error the endpoint itself detected, such as a date window whose `endDate` precedes `startDate` |
-| 429 | `rate_limit_exceeded` | Monthly quota reached |
-| 500 | `internal_error` | Server error |
-
-Configure the client with the generated options: `roxyapi.WithBaseURL`, `roxyapi.WithHTTPClient` (any `*http.Client`, for timeouts or proxies), and `roxyapi.WithRequestEditorFn`. The underlying `ClientWithResponses` stays exported for advanced use.
-
-```go
-roxy, err := roxyapi.NewRoxy(key, roxyapi.WithHTTPClient(&http.Client{Timeout: 10 * time.Second}))
-```
-
-## Keywords
-
-go sdk, golang api client, astrology api, vedic astrology api, kundli api, horoscope api, numerology api, tarot api, human design api, chinese astrology api, bazi api, feng shui api, mayan astrology api, vastu api, gematria api, ayurveda api, biorhythm api, i ching api, dream interpretation api, angel numbers api, geocoding api, rest api client, ai agent sdk, mcp server.
+- [Documentation](https://roxyapi.com/docs)
+- [API Reference](https://roxyapi.com/api-reference)
+- [Pricing](https://roxyapi.com/pricing)
+- [MCP setup for AI agents](https://roxyapi.com/docs/mcp)
+- [Templates](https://roxyapi.com/templates)
+- [Go reference](https://pkg.go.dev/github.com/RoxyAPI/sdk-go)
+- [Methodology](https://roxyapi.com/methodology) and the [open benchmark](https://github.com/RoxyAPI/astrology-api-benchmark) (210 reference points vs JPL Horizons DE441)
+- [Issues](https://github.com/RoxyAPI/sdk-go/issues)
+- Other SDKs: [TypeScript](https://www.npmjs.com/package/@roxyapi/sdk), [Python](https://pypi.org/project/roxy-sdk/), [PHP](https://packagist.org/packages/roxyapi/sdk), [.NET](https://www.nuget.org/packages/RoxyApi.Sdk), [Rust](https://crates.io/crates/roxyapi)
 
 ## License
 
-MIT. See [LICENSE](https://github.com/RoxyAPI/sdk-go/blob/main/LICENSE).
+MIT

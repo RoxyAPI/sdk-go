@@ -104,6 +104,7 @@ func generate() {
 	fmt.Printf("Typed client written to %s\n", clientPath)
 
 	buildFacade(spec)
+	buildErrorCodes(spec)
 	syncDocs()
 }
 
@@ -210,10 +211,27 @@ func forceRequiredPath(params any) int {
 	return fixed
 }
 
+// errorBodyDescription heads the shared schema. Everything below it is derived.
+const errorBodyDescription = "Error body returned by every RoxyAPI endpoint on a 4xx or 5xx response."
+
+// volatileKeys vary per operation (a per-operation example, a code pinned to one
+// enum value) and have no place in the one shared schema.
+var volatileKeys = []string{"enum", "example", "examples", "default", "const"}
+
 // normalizeErrors adds one shared ErrorResponse schema and repoints every 4xx and
 // 5xx response at it, so the generator emits a single typed error body (mapped to
-// *RoxyError in errors.go) instead of a distinct inline struct per operation. The
-// served spec inlines the same `{ error, code }` shape on every error status.
+// *RoxyError in errors.go) instead of a distinct inline struct per operation.
+//
+// The schema is the union of every error response schema in the document, $refs
+// resolved: a property any of them declares is declared here, with its type, items
+// and description taken from the first schema that has it (paths, verbs and statuses
+// walked in sorted order, so output is byte-stable), and a type conflict between two
+// schemas fails the run. `error` and `code` are always required, because every body
+// carries them and RoxyError reads them without a nil check; any other property is
+// required only if every schema requires it. An array property of objects is hoisted
+// to a named component (`issues` becomes ErrorResponseIssue), so the generated type
+// keeps a name. Nested fields are all optional (see dropRequired). The merge is a fixed point: a document already normalized
+// regenerates to itself.
 func normalizeErrors(spec map[string]any) {
 	components, _ := spec["components"].(map[string]any)
 	if components == nil {
@@ -226,81 +244,242 @@ func normalizeErrors(spec map[string]any) {
 		components["schemas"] = schemas
 	}
 
-	schemas["ErrorResponseIssue"] = map[string]any{
-		"type":        "object",
-		"description": "A single field-level validation failure from a 400 response.",
-		"properties": map[string]any{
-			"path":     stringProp("Dot-separated field path, or (root) for a top-level error."),
-			"message":  stringProp("Human readable description of this failure."),
-			"code":     stringProp("Validation issue code, for example invalid_type or too_small."),
-			"expected": stringProp("Expected type, when the issue is a type mismatch."),
-		},
-	}
-	schemas["ErrorResponse"] = map[string]any{
-		"type":        "object",
-		"description": "Error body returned by every RoxyAPI endpoint on a 4xx or 5xx response.",
-		"required":    []any{"error", "code"},
-		"properties": map[string]any{
-			"error": stringProp("Human readable error message. Wording may change; switch on code instead."),
-			"code":  stringProp("Stable machine readable error code, for example validation_error or rate_limit_exceeded."),
-			"issues": map[string]any{
-				"type":        "array",
-				"description": "Present on 400 responses: every field that failed validation.",
-				"items":       map[string]any{"$ref": "#/components/schemas/ErrorResponseIssue"},
-			},
-			"allow": map[string]any{
-				"type":        "array",
-				"description": "Present on 405 responses: the HTTP methods this path accepts.",
-				"items":       map[string]any{"type": "string"},
-			},
-			"docs": stringProp("Link to the documentation for this domain, when available."),
-		},
-	}
-
-	errRef := map[string]any{"$ref": "#/components/schemas/ErrorResponse"}
+	var merged map[string]any
+	var responses []map[string]any
 	paths, _ := spec["paths"].(map[string]any)
-	normalized := 0
-	for path, item := range paths {
-		pathItem, ok := item.(map[string]any)
-		if !ok {
-			continue
-		}
-		for verb, val := range pathItem {
+	for _, path := range sortedKeys(paths) {
+		item, _ := paths[path].(map[string]any)
+		for _, verb := range sortedKeys(item) {
 			if _, isVerb := httpVerbs[verb]; !isVerb {
 				continue
 			}
-			op, ok := val.(map[string]any)
-			if !ok {
-				continue
-			}
-			responses, ok := op["responses"].(map[string]any)
-			if !ok {
-				continue
-			}
-			for code, r := range responses {
+			op, _ := item[verb].(map[string]any)
+			byStatus, _ := op["responses"].(map[string]any)
+			for _, code := range sortedKeys(byStatus) {
 				status, err := strconv.Atoi(code)
 				if err != nil || status < 400 {
 					continue
 				}
-				resp, ok := r.(map[string]any)
-				if !ok {
+				where := fmt.Sprintf("%s %s %s", strings.ToUpper(verb), path, code)
+				resp, _ := byStatus[code].(map[string]any)
+				if _, isRef := resp["$ref"]; isRef {
+					fail("normalize errors: %s is a $ref response, which this generator has never seen; teach normalizeErrors the shape before regenerating", where)
+				}
+				responses = append(responses, resp)
+				content, _ := resp["content"].(map[string]any)
+				media, _ := content["application/json"].(map[string]any)
+				schema, _ := media["schema"].(map[string]any)
+				if schema == nil {
 					continue
 				}
-				if _, isRef := resp["$ref"]; isRef {
-					fail("normalize errors: %s %s %s is a $ref response, which this generator has never seen; teach normalizeErrors the shape before regenerating", strings.ToUpper(verb), path, code)
+				var err2 error
+				if merged, err2 = mergeSchema(merged, schema, schemas, where); err2 != nil {
+					fail("normalize errors: %v", err2)
 				}
-				resp["content"] = map[string]any{
-					"application/json": map[string]any{"schema": cloneMap(errRef)},
-				}
-				normalized++
 			}
 		}
 	}
-	fmt.Printf("Normalized %d error responses to ErrorResponse.\n", normalized)
+	if merged == nil {
+		fail("normalize errors: the document declares no error response schema")
+	}
+	props, _ := merged["properties"].(map[string]any)
+	for _, name := range []string{"error", "code"} {
+		if props[name] == nil {
+			fail("normalize errors: no error schema declares %q", name)
+		}
+	}
+	merged["required"] = withRequired(merged["required"], "error", "code")
+	merged["description"] = errorBodyDescription
+
+	for _, name := range sortedKeys(props) {
+		prop, _ := props[name].(map[string]any)
+		dropRequired(prop)
+		items, _ := prop["items"].(map[string]any)
+		if prop["type"] == "array" && items != nil && items["type"] == "object" {
+			named := "ErrorResponse" + strings.ToUpper(name[:1]) + strings.TrimSuffix(name[1:], "s")
+			schemas[named] = items
+			prop["items"] = map[string]any{"$ref": "#/components/schemas/" + named}
+		}
+	}
+	schemas["ErrorResponse"] = merged
+
+	errRef := map[string]any{"$ref": "#/components/schemas/ErrorResponse"}
+	for _, resp := range responses {
+		resp["content"] = map[string]any{"application/json": map[string]any{"schema": cloneMap(errRef)}}
+	}
+	fmt.Printf("Normalized %d error responses to ErrorResponse.\n", len(responses))
 }
 
-func stringProp(desc string) map[string]any {
-	return map[string]any{"type": "string", "description": desc}
+// dropRequired makes every nested field optional, which is the shape the public
+// generated types already have (ErrorResponseIssue.Path is a *string); a spec that
+// starts requiring one must not turn a pointer into a value in a patch release.
+func dropRequired(s map[string]any) {
+	delete(s, "required")
+	if props, ok := s["properties"].(map[string]any); ok {
+		for _, p := range props {
+			if m, ok := p.(map[string]any); ok {
+				dropRequired(m)
+			}
+		}
+	}
+	if items, ok := s["items"].(map[string]any); ok {
+		dropRequired(items)
+	}
+}
+
+// mergeSchema folds b into a (nil starts a fresh union) and returns the result. Both
+// are resolved against the component schemas and never mutated.
+func mergeSchema(a, b map[string]any, schemas map[string]any, where string) (map[string]any, error) {
+	b, err := resolveRef(b, schemas, where)
+	if err != nil {
+		return nil, err
+	}
+	if a == nil {
+		return stripVolatile(b), nil
+	}
+	if a, err = resolveRef(a, schemas, where); err != nil {
+		return nil, err
+	}
+	if a["type"] != b["type"] {
+		return nil, fmt.Errorf("%s: type %v conflicts with %v", where, b["type"], a["type"])
+	}
+	out := cloneMap(a)
+	if out["description"] == nil || out["description"] == "" {
+		if d, ok := b["description"]; ok {
+			out["description"] = d
+		}
+	}
+	for k, v := range b {
+		if _, has := out[k]; !has && !slices.Contains(volatileKeys, k) {
+			out[k] = stripVolatileValue(v)
+		}
+	}
+	if aProps, ok := a["properties"].(map[string]any); ok {
+		bProps, _ := b["properties"].(map[string]any)
+		props := cloneMap(aProps)
+		for _, name := range sortedKeys(bProps) {
+			bp, _ := bProps[name].(map[string]any)
+			ap, _ := props[name].(map[string]any)
+			if props[name], err = mergeSchema(ap, bp, schemas, where+" "+name); err != nil {
+				return nil, err
+			}
+		}
+		out["properties"] = props
+		if req := intersectRequired(a["required"], b["required"]); len(req) > 0 {
+			out["required"] = req
+		} else {
+			delete(out, "required")
+		}
+	}
+	if aItems, ok := a["items"].(map[string]any); ok {
+		bItems, _ := b["items"].(map[string]any)
+		if bItems != nil {
+			if out["items"], err = mergeSchema(aItems, bItems, schemas, where+" items"); err != nil {
+				return nil, err
+			}
+		}
+	}
+	return out, nil
+}
+
+// resolveRef follows a `#/components/schemas/X` reference to its schema.
+func resolveRef(s map[string]any, schemas map[string]any, where string) (map[string]any, error) {
+	for depth := 0; ; depth++ {
+		ref, isRef := s["$ref"].(string)
+		if !isRef {
+			return s, nil
+		}
+		target, _ := schemas[strings.TrimPrefix(ref, "#/components/schemas/")].(map[string]any)
+		if target == nil || depth > 8 {
+			return nil, fmt.Errorf("%s: cannot resolve %s", where, ref)
+		}
+		s = target
+	}
+}
+
+// stripVolatile deep-copies a schema without the per-operation keys.
+func stripVolatile(s map[string]any) map[string]any {
+	out := make(map[string]any, len(s))
+	for k, v := range s {
+		if !slices.Contains(volatileKeys, k) {
+			out[k] = stripVolatileValue(v)
+		}
+	}
+	return out
+}
+
+func stripVolatileValue(v any) any {
+	switch t := v.(type) {
+	case map[string]any:
+		// A property literally named like a volatile key (`default`) is a property,
+		// not an annotation, so only schema-shaped maps are stripped.
+		if _, isSchema := t["type"]; isSchema || t["$ref"] != nil || t["oneOf"] != nil {
+			return stripVolatile(t)
+		}
+		out := make(map[string]any, len(t))
+		for k, x := range t {
+			out[k] = stripVolatileValue(x)
+		}
+		return out
+	case []any:
+		out := make([]any, len(t))
+		for i, x := range t {
+			out[i] = stripVolatileValue(x)
+		}
+		return out
+	}
+	return v
+}
+
+func stringList(v any) []string {
+	var out []string
+	list, _ := v.([]any)
+	for _, x := range list {
+		if str, ok := x.(string); ok {
+			out = append(out, str)
+		}
+	}
+	return out
+}
+
+func toAnyList(ss []string) []any {
+	out := make([]any, len(ss))
+	for i, s := range ss {
+		out[i] = s
+	}
+	return out
+}
+
+func intersectRequired(a, b any) []any {
+	bs := stringList(b)
+	var out []string
+	for _, s := range stringList(a) {
+		if slices.Contains(bs, s) {
+			out = append(out, s)
+		}
+	}
+	sort.Strings(out)
+	return toAnyList(out)
+}
+
+func withRequired(v any, names ...string) []any {
+	all := stringList(v)
+	for _, n := range names {
+		if !slices.Contains(all, n) {
+			all = append(all, n)
+		}
+	}
+	sort.Strings(all)
+	return toAnyList(all)
+}
+
+func sortedKeys(m map[string]any) []string {
+	keys := make([]string, 0, len(m))
+	for k := range m {
+		keys = append(keys, k)
+	}
+	sort.Strings(keys)
+	return keys
 }
 
 func cloneMap(m map[string]any) map[string]any {
@@ -309,6 +488,81 @@ func cloneMap(m map[string]any) map[string]any {
 		out[k] = v
 	}
 	return out
+}
+
+// ─── error code constants ────────────────────────────────────────────────────
+
+const errorCodesPath = "errorcodes.gen.go"
+
+// errorCodeInitialisms are the words Go spells in capitals.
+var errorCodeInitialisms = map[string]string{"api": "API", "url": "URL", "ip": "IP", "mcp": "MCP", "id": "ID"}
+
+// errorCodeRow is one entry of info["x-error-codes"], in spec order.
+type errorCodeRow struct{ code, status, meaning string }
+
+func errorCodeRows(spec map[string]any) []errorCodeRow {
+	info, _ := spec["info"].(map[string]any)
+	list, _ := info["x-error-codes"].([]any)
+	if len(list) == 0 {
+		fail("error codes: info[x-error-codes] is missing or empty")
+	}
+	var rows []errorCodeRow
+	for _, c := range list {
+		row, _ := c.(map[string]any)
+		code, _ := row["code"].(string)
+		meaning, _ := row["meaning"].(string)
+		if code == "" || meaning == "" {
+			fail("error codes: entry %v lacks code or meaning", c)
+		}
+		status := "Any" // the fallback code carries a null status
+		if n, ok := row["status"].(json.Number); ok {
+			status = n.String()
+		}
+		rows = append(rows, errorCodeRow{code, status, meaning})
+	}
+	return rows
+}
+
+// errorCodeConst turns `api_key_required` into ErrCodeAPIKeyRequired.
+func errorCodeConst(code string) string {
+	var b strings.Builder
+	b.WriteString("ErrCode")
+	for _, w := range strings.Split(code, "_") {
+		if up, ok := errorCodeInitialisms[w]; ok {
+			b.WriteString(up)
+		} else if w != "" {
+			b.WriteString(strings.ToUpper(w[:1]) + w[1:])
+		}
+	}
+	return b.String()
+}
+
+// buildErrorCodes emits errorcodes.gen.go: one untyped string constant per documented
+// error code, so `rerr.Code == roxyapi.ErrCodeRateLimitPerMinute` compiles against the
+// string field of RoxyError. The names and meanings come from the spec, never typed.
+func buildErrorCodes(spec map[string]any) {
+	var b strings.Builder
+	b.WriteString("// Code generated by roxygen; DO NOT EDIT.\n\n")
+	b.WriteString("package roxyapi\n\n")
+	b.WriteString("// Error codes the API returns, for comparison with RoxyError.Code.\nconst (\n")
+	seen := map[string]string{}
+	for i, r := range errorCodeRows(spec) {
+		name := errorCodeConst(r.code)
+		if prev, dup := seen[name]; dup {
+			fail("error codes: %q and %q both map to %s", prev, r.code, name)
+		}
+		seen[name] = r.code
+		if i > 0 {
+			b.WriteString("\n")
+		}
+		b.WriteString(fmt.Sprintf("\t// %s is HTTP %s. %s\n", name, r.status, r.meaning))
+		b.WriteString(fmt.Sprintf("\t%s = %q\n", name, r.code))
+	}
+	b.WriteString(")\n")
+	src, err := format.Source([]byte(b.String()))
+	check(err, "format error codes")
+	check(os.WriteFile(errorCodesPath, src, 0o644), "write error codes")
+	fmt.Printf("Error codes written to %s\n", errorCodesPath)
 }
 
 // ─── facade generation ───────────────────────────────────────────────────────
@@ -449,7 +703,7 @@ func writeWrapper(b *strings.Builder, fset *token.FileSet, svc string, fn *ast.F
 	b.WriteString(fmt.Sprintf("func (s *%s) %s(%s) (%s) {\n", svc, opName, strings.Join(paramParts, ", "), strings.Join(resultParts, ", ")))
 	b.WriteString(fmt.Sprintf("\tresp, err := s.client.%s(%s)\n", fn.Name.Name, strings.Join(args, ", ")))
 	b.WriteString("\tif err != nil {\n\t\treturn resp, err\n\t}\n")
-	b.WriteString("\treturn resp, asRoxyError(resp)\n}\n\n")
+	b.WriteString("\treturn resp, asRoxyError(resp, resp.HTTPResponse)\n}\n\n")
 }
 
 // receiverType returns the type name of a pointer receiver (`*Foo` -> "Foo"), or "".
@@ -552,9 +806,12 @@ func syncDocs() {
 	table := renderDomainsTable(domains)
 	langs := renderLangs(domains)
 	noParams := renderNoParams(facadeMethods())
+	errorsTable := renderErrors(spec)
 	changed := false
 	changed = swap("README.md", "DOMAINS", table) || changed
 	changed = swap("README.md", "NOPARAMS", noParams) || changed
+	changed = swap("README.md", "ERRORS", errorsTable) || changed
+	changed = swap("AGENTS.md", "ERRORS", errorsTable) || changed
 	changed = swap("AGENTS.md", "DOMAINS", table) || changed
 	changed = swap("AGENTS.md", "LANGS", langs) || changed
 	changed = swap("AGENTS.md", "NOPARAMS", noParams) || changed
@@ -624,6 +881,21 @@ func renderNoParams(methods []facadeMethod) string {
 		b.WriteString(fmt.Sprintf("- `roxy.%s.%s(%s)`\n", m.accessor, m.name, strings.Join(m.args, ", ")))
 	}
 	b.WriteString("<!-- END:NOPARAMS -->")
+	return b.String()
+}
+
+// renderErrors renders the error contract from info["x-error-codes"] in spec order,
+// meanings verbatim. A document without the list fails loudly rather than emptying
+// the region.
+func renderErrors(spec map[string]any) string {
+	var b strings.Builder
+	b.WriteString("<!-- BEGIN:ERRORS -->\n")
+	b.WriteString("Every error returns `{ error, code, doc_url }`. Switch on `code`; `error` is readable text and may change. Each meaning below says whether and when to retry, and `Retry-After` carries the wait when the response sends it. Every code is documented at https://roxyapi.com/docs/errors.\n\n")
+	b.WriteString("| Status | Code | Meaning |\n|--------|------|---------|\n")
+	for _, r := range errorCodeRows(spec) {
+		b.WriteString(fmt.Sprintf("| %s | `%s` | %s |\n", r.status, r.code, strings.ReplaceAll(r.meaning, "|", "\\|")))
+	}
+	b.WriteString("<!-- END:ERRORS -->")
 	return b.String()
 }
 

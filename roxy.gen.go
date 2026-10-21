@@ -69,7 +69,7 @@ func (s *AstrologyService) CalculateArabicLots(ctx context.Context, params *Calc
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *AstrologyService) CalculateAspects(ctx context.Context, params *CalculateAspectsParams, body CalculateAspectsJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateAspectsResponse, error) {
@@ -77,7 +77,7 @@ func (s *AstrologyService) CalculateAspects(ctx context.Context, params *Calcula
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *AstrologyService) CalculateCompatibility(ctx context.Context, params *CalculateCompatibilityParams, body CalculateCompatibilityJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateCompatibilityResponse, error) {
@@ -85,7 +85,7 @@ func (s *AstrologyService) CalculateCompatibility(ctx context.Context, params *C
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *AstrologyService) CalculateHouses(ctx context.Context, params *CalculateHousesParams, body CalculateHousesJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateHousesResponse, error) {
@@ -93,7 +93,7 @@ func (s *AstrologyService) CalculateHouses(ctx context.Context, params *Calculat
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *AstrologyService) CalculateSynastry(ctx context.Context, params *CalculateSynastryParams, body CalculateSynastryJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateSynastryResponse, error) {
@@ -101,7 +101,7 @@ func (s *AstrologyService) CalculateSynastry(ctx context.Context, params *Calcul
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *AstrologyService) CalculateTransitAspects(ctx context.Context, params *CalculateTransitAspectsParams, body CalculateTransitAspectsJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateTransitAspectsResponse, error) {
@@ -109,7 +109,7 @@ func (s *AstrologyService) CalculateTransitAspects(ctx context.Context, params *
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *AstrologyService) CalculateTransits(ctx context.Context, params *CalculateTransitsParams, body CalculateTransitsJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateTransitsResponse, error) {
@@ -117,7 +117,7 @@ func (s *AstrologyService) CalculateTransits(ctx context.Context, params *Calcul
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *AstrologyService) DetectAspectPatterns(ctx context.Context, params *DetectAspectPatternsParams, body DetectAspectPatternsJSONRequestBody, reqEditors ...RequestEditorFn) (*DetectAspectPatternsResponse, error) {
@@ -125,7 +125,7 @@ func (s *AstrologyService) DetectAspectPatterns(ctx context.Context, params *Det
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *AstrologyService) GenerateAsteroids(ctx context.Context, params *GenerateAsteroidsParams, body GenerateAsteroidsJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateAsteroidsResponse, error) {
@@ -133,7 +133,7 @@ func (s *AstrologyService) GenerateAsteroids(ctx context.Context, params *Genera
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *AstrologyService) GenerateAstrocartography(ctx context.Context, params *GenerateAstrocartographyParams, body GenerateAstrocartographyJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateAstrocartographyResponse, error) {
@@ -141,7 +141,7 @@ func (s *AstrologyService) GenerateAstrocartography(ctx context.Context, params 
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *AstrologyService) GenerateCompositeChart(ctx context.Context, params *GenerateCompositeChartParams, body GenerateCompositeChartJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateCompositeChartResponse, error) {
@@ -149,7 +149,7 @@ func (s *AstrologyService) GenerateCompositeChart(ctx context.Context, params *G
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *AstrologyService) GenerateFixedStars(ctx context.Context, params *GenerateFixedStarsParams, body GenerateFixedStarsJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateFixedStarsResponse, error) {
@@ -157,7 +157,7 @@ func (s *AstrologyService) GenerateFixedStars(ctx context.Context, params *Gener
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *AstrologyService) GenerateLilith(ctx context.Context, params *GenerateLilithParams, body GenerateLilithJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateLilithResponse, error) {
@@ -165,7 +165,7 @@ func (s *AstrologyService) GenerateLilith(ctx context.Context, params *GenerateL
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *AstrologyService) GenerateLocalSpace(ctx context.Context, params *GenerateLocalSpaceParams, body GenerateLocalSpaceJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateLocalSpaceResponse, error) {
@@ -173,7 +173,7 @@ func (s *AstrologyService) GenerateLocalSpace(ctx context.Context, params *Gener
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *AstrologyService) GenerateLunarReturn(ctx context.Context, params *GenerateLunarReturnParams, body GenerateLunarReturnJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateLunarReturnResponse, error) {
@@ -181,7 +181,7 @@ func (s *AstrologyService) GenerateLunarReturn(ctx context.Context, params *Gene
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *AstrologyService) GenerateNatalChart(ctx context.Context, params *GenerateNatalChartParams, body GenerateNatalChartJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateNatalChartResponse, error) {
@@ -189,7 +189,7 @@ func (s *AstrologyService) GenerateNatalChart(ctx context.Context, params *Gener
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *AstrologyService) GeneratePlanetaryReturn(ctx context.Context, params *GeneratePlanetaryReturnParams, body GeneratePlanetaryReturnJSONRequestBody, reqEditors ...RequestEditorFn) (*GeneratePlanetaryReturnResponse, error) {
@@ -197,7 +197,7 @@ func (s *AstrologyService) GeneratePlanetaryReturn(ctx context.Context, params *
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *AstrologyService) GenerateProfections(ctx context.Context, params *GenerateProfectionsParams, body GenerateProfectionsJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateProfectionsResponse, error) {
@@ -205,7 +205,7 @@ func (s *AstrologyService) GenerateProfections(ctx context.Context, params *Gene
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *AstrologyService) GenerateProgressions(ctx context.Context, params *GenerateProgressionsParams, body GenerateProgressionsJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateProgressionsResponse, error) {
@@ -213,7 +213,7 @@ func (s *AstrologyService) GenerateProgressions(ctx context.Context, params *Gen
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *AstrologyService) GenerateRelocationChart(ctx context.Context, params *GenerateRelocationChartParams, body GenerateRelocationChartJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateRelocationChartResponse, error) {
@@ -221,7 +221,7 @@ func (s *AstrologyService) GenerateRelocationChart(ctx context.Context, params *
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *AstrologyService) GenerateSolarArc(ctx context.Context, params *GenerateSolarArcParams, body GenerateSolarArcJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateSolarArcResponse, error) {
@@ -229,7 +229,7 @@ func (s *AstrologyService) GenerateSolarArc(ctx context.Context, params *Generat
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *AstrologyService) GenerateSolarReturn(ctx context.Context, params *GenerateSolarReturnParams, body GenerateSolarReturnJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateSolarReturnResponse, error) {
@@ -237,7 +237,7 @@ func (s *AstrologyService) GenerateSolarReturn(ctx context.Context, params *Gene
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *AstrologyService) GetCurrentMoonPhase(ctx context.Context, params *GetCurrentMoonPhaseParams, reqEditors ...RequestEditorFn) (*GetCurrentMoonPhaseResponse, error) {
@@ -245,7 +245,7 @@ func (s *AstrologyService) GetCurrentMoonPhase(ctx context.Context, params *GetC
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *AstrologyService) GetDailyHoroscope(ctx context.Context, sign GetDailyHoroscopeParamsSign, params *GetDailyHoroscopeParams, reqEditors ...RequestEditorFn) (*GetDailyHoroscopeResponse, error) {
@@ -253,7 +253,7 @@ func (s *AstrologyService) GetDailyHoroscope(ctx context.Context, sign GetDailyH
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *AstrologyService) GetMonthlyDeclinationParallels(ctx context.Context, params *GetMonthlyDeclinationParallelsParams, body GetMonthlyDeclinationParallelsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetMonthlyDeclinationParallelsResponse, error) {
@@ -261,7 +261,7 @@ func (s *AstrologyService) GetMonthlyDeclinationParallels(ctx context.Context, p
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *AstrologyService) GetMonthlyHoroscope(ctx context.Context, sign GetMonthlyHoroscopeParamsSign, params *GetMonthlyHoroscopeParams, reqEditors ...RequestEditorFn) (*GetMonthlyHoroscopeResponse, error) {
@@ -269,7 +269,7 @@ func (s *AstrologyService) GetMonthlyHoroscope(ctx context.Context, sign GetMont
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *AstrologyService) GetMonthlyTropicalAspects(ctx context.Context, params *GetMonthlyTropicalAspectsParams, body GetMonthlyTropicalAspectsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetMonthlyTropicalAspectsResponse, error) {
@@ -277,7 +277,7 @@ func (s *AstrologyService) GetMonthlyTropicalAspects(ctx context.Context, params
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *AstrologyService) GetMonthlyTropicalEphemeris(ctx context.Context, params *GetMonthlyTropicalEphemerisParams, body GetMonthlyTropicalEphemerisJSONRequestBody, reqEditors ...RequestEditorFn) (*GetMonthlyTropicalEphemerisResponse, error) {
@@ -285,7 +285,7 @@ func (s *AstrologyService) GetMonthlyTropicalEphemeris(ctx context.Context, para
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *AstrologyService) GetMonthlyTropicalTransits(ctx context.Context, params *GetMonthlyTropicalTransitsParams, body GetMonthlyTropicalTransitsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetMonthlyTropicalTransitsResponse, error) {
@@ -293,7 +293,7 @@ func (s *AstrologyService) GetMonthlyTropicalTransits(ctx context.Context, param
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *AstrologyService) GetMoonCalendar(ctx context.Context, year int, month int, params *GetMoonCalendarParams, reqEditors ...RequestEditorFn) (*GetMoonCalendarResponse, error) {
@@ -301,7 +301,7 @@ func (s *AstrologyService) GetMoonCalendar(ctx context.Context, year int, month 
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *AstrologyService) GetPlanetMeaning(ctx context.Context, id string, params *GetPlanetMeaningParams, reqEditors ...RequestEditorFn) (*GetPlanetMeaningResponse, error) {
@@ -309,7 +309,7 @@ func (s *AstrologyService) GetPlanetMeaning(ctx context.Context, id string, para
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *AstrologyService) GetPlanetaryNodePassages(ctx context.Context, params *GetPlanetaryNodePassagesParams, body GetPlanetaryNodePassagesJSONRequestBody, reqEditors ...RequestEditorFn) (*GetPlanetaryNodePassagesResponse, error) {
@@ -317,7 +317,7 @@ func (s *AstrologyService) GetPlanetaryNodePassages(ctx context.Context, params 
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *AstrologyService) GetPlanetaryPositions(ctx context.Context, params *GetPlanetaryPositionsParams, body GetPlanetaryPositionsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetPlanetaryPositionsResponse, error) {
@@ -325,7 +325,7 @@ func (s *AstrologyService) GetPlanetaryPositions(ctx context.Context, params *Ge
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *AstrologyService) GetUpcomingMoonPhases(ctx context.Context, params *GetUpcomingMoonPhasesParams, reqEditors ...RequestEditorFn) (*GetUpcomingMoonPhasesResponse, error) {
@@ -333,7 +333,7 @@ func (s *AstrologyService) GetUpcomingMoonPhases(ctx context.Context, params *Ge
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *AstrologyService) GetWeeklyHoroscope(ctx context.Context, sign GetWeeklyHoroscopeParamsSign, params *GetWeeklyHoroscopeParams, reqEditors ...RequestEditorFn) (*GetWeeklyHoroscopeResponse, error) {
@@ -341,7 +341,7 @@ func (s *AstrologyService) GetWeeklyHoroscope(ctx context.Context, sign GetWeekl
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *AstrologyService) GetYearlyHoroscope(ctx context.Context, sign GetYearlyHoroscopeParamsSign, params *GetYearlyHoroscopeParams, reqEditors ...RequestEditorFn) (*GetYearlyHoroscopeResponse, error) {
@@ -349,7 +349,7 @@ func (s *AstrologyService) GetYearlyHoroscope(ctx context.Context, sign GetYearl
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *AstrologyService) GetZodiacSign(ctx context.Context, id string, params *GetZodiacSignParams, reqEditors ...RequestEditorFn) (*GetZodiacSignResponse, error) {
@@ -357,7 +357,7 @@ func (s *AstrologyService) GetZodiacSign(ctx context.Context, id string, params 
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *AstrologyService) ListPlanetMeanings(ctx context.Context, params *ListPlanetMeaningsParams, reqEditors ...RequestEditorFn) (*ListPlanetMeaningsResponse, error) {
@@ -365,7 +365,7 @@ func (s *AstrologyService) ListPlanetMeanings(ctx context.Context, params *ListP
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *AstrologyService) ListZodiacSigns(ctx context.Context, params *ListZodiacSignsParams, reqEditors ...RequestEditorFn) (*ListZodiacSignsResponse, error) {
@@ -373,7 +373,7 @@ func (s *AstrologyService) ListZodiacSigns(ctx context.Context, params *ListZodi
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 // VedicAstrologyService groups the vedic-astrology endpoints.
@@ -384,7 +384,7 @@ func (s *VedicAstrologyService) CalculateArudhaPadas(ctx context.Context, params
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VedicAstrologyService) CalculateAshtakavarga(ctx context.Context, body CalculateAshtakavargaJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateAshtakavargaResponse, error) {
@@ -392,7 +392,7 @@ func (s *VedicAstrologyService) CalculateAshtakavarga(ctx context.Context, body 
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VedicAstrologyService) CalculateBhavChalit(ctx context.Context, params *CalculateBhavChalitParams, body CalculateBhavChalitJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateBhavChalitResponse, error) {
@@ -400,7 +400,7 @@ func (s *VedicAstrologyService) CalculateBhavChalit(ctx context.Context, params 
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VedicAstrologyService) CalculateBhavaBala(ctx context.Context, params *CalculateBhavaBalaParams, body CalculateBhavaBalaJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateBhavaBalaResponse, error) {
@@ -408,7 +408,7 @@ func (s *VedicAstrologyService) CalculateBhavaBala(ctx context.Context, params *
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VedicAstrologyService) CalculateCharaKarakas(ctx context.Context, params *CalculateCharaKarakasParams, body CalculateCharaKarakasJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateCharaKarakasResponse, error) {
@@ -416,7 +416,7 @@ func (s *VedicAstrologyService) CalculateCharaKarakas(ctx context.Context, param
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VedicAstrologyService) CalculateDashakoot(ctx context.Context, params *CalculateDashakootParams, body CalculateDashakootJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateDashakootResponse, error) {
@@ -424,7 +424,7 @@ func (s *VedicAstrologyService) CalculateDashakoot(ctx context.Context, params *
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VedicAstrologyService) CalculateDrishti(ctx context.Context, body CalculateDrishtiJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateDrishtiResponse, error) {
@@ -432,7 +432,7 @@ func (s *VedicAstrologyService) CalculateDrishti(ctx context.Context, body Calcu
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VedicAstrologyService) CalculateGunMilan(ctx context.Context, params *CalculateGunMilanParams, body CalculateGunMilanJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateGunMilanResponse, error) {
@@ -440,7 +440,7 @@ func (s *VedicAstrologyService) CalculateGunMilan(ctx context.Context, params *C
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VedicAstrologyService) CalculatePapasamyam(ctx context.Context, params *CalculatePapasamyamParams, body CalculatePapasamyamJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculatePapasamyamResponse, error) {
@@ -448,7 +448,7 @@ func (s *VedicAstrologyService) CalculatePapasamyam(ctx context.Context, params 
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VedicAstrologyService) CalculateParallels(ctx context.Context, body CalculateParallelsJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateParallelsResponse, error) {
@@ -456,7 +456,7 @@ func (s *VedicAstrologyService) CalculateParallels(ctx context.Context, body Cal
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VedicAstrologyService) CalculateShadbala(ctx context.Context, params *CalculateShadbalaParams, body CalculateShadbalaJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateShadbalaResponse, error) {
@@ -464,7 +464,7 @@ func (s *VedicAstrologyService) CalculateShadbala(ctx context.Context, params *C
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VedicAstrologyService) CalculateTransit(ctx context.Context, body CalculateTransitJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateTransitResponse, error) {
@@ -472,7 +472,7 @@ func (s *VedicAstrologyService) CalculateTransit(ctx context.Context, body Calcu
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VedicAstrologyService) CastKpHoraryChart(ctx context.Context, params *CastKpHoraryChartParams, body CastKpHoraryChartJSONRequestBody, reqEditors ...RequestEditorFn) (*CastKpHoraryChartResponse, error) {
@@ -480,7 +480,7 @@ func (s *VedicAstrologyService) CastKpHoraryChart(ctx context.Context, params *C
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VedicAstrologyService) CheckKalsarpaDosha(ctx context.Context, params *CheckKalsarpaDoshaParams, body CheckKalsarpaDoshaJSONRequestBody, reqEditors ...RequestEditorFn) (*CheckKalsarpaDoshaResponse, error) {
@@ -488,7 +488,7 @@ func (s *VedicAstrologyService) CheckKalsarpaDosha(ctx context.Context, params *
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VedicAstrologyService) CheckManglikDosha(ctx context.Context, params *CheckManglikDoshaParams, body CheckManglikDoshaJSONRequestBody, reqEditors ...RequestEditorFn) (*CheckManglikDoshaResponse, error) {
@@ -496,7 +496,7 @@ func (s *VedicAstrologyService) CheckManglikDosha(ctx context.Context, params *C
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VedicAstrologyService) CheckSadhesati(ctx context.Context, params *CheckSadhesatiParams, body CheckSadhesatiJSONRequestBody, reqEditors ...RequestEditorFn) (*CheckSadhesatiResponse, error) {
@@ -504,7 +504,7 @@ func (s *VedicAstrologyService) CheckSadhesati(ctx context.Context, params *Chec
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VedicAstrologyService) DetectYogas(ctx context.Context, params *DetectYogasParams, body DetectYogasJSONRequestBody, reqEditors ...RequestEditorFn) (*DetectYogasResponse, error) {
@@ -512,7 +512,7 @@ func (s *VedicAstrologyService) DetectYogas(ctx context.Context, params *DetectY
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VedicAstrologyService) GenerateBirthChart(ctx context.Context, params *GenerateBirthChartParams, body GenerateBirthChartJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateBirthChartResponse, error) {
@@ -520,7 +520,7 @@ func (s *VedicAstrologyService) GenerateBirthChart(ctx context.Context, params *
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VedicAstrologyService) GenerateDivisionalChart(ctx context.Context, params *GenerateDivisionalChartParams, body GenerateDivisionalChartJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateDivisionalChartResponse, error) {
@@ -528,7 +528,7 @@ func (s *VedicAstrologyService) GenerateDivisionalChart(ctx context.Context, par
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VedicAstrologyService) GenerateKpChart(ctx context.Context, params *GenerateKpChartParams, body GenerateKpChartJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateKpChartResponse, error) {
@@ -536,7 +536,7 @@ func (s *VedicAstrologyService) GenerateKpChart(ctx context.Context, params *Gen
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VedicAstrologyService) GenerateNavamsa(ctx context.Context, params *GenerateNavamsaParams, body GenerateNavamsaJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateNavamsaResponse, error) {
@@ -544,7 +544,7 @@ func (s *VedicAstrologyService) GenerateNavamsa(ctx context.Context, params *Gen
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VedicAstrologyService) GetAvastha(ctx context.Context, id GetAvasthaParamsID, params *GetAvasthaParams, reqEditors ...RequestEditorFn) (*GetAvasthaResponse, error) {
@@ -552,7 +552,7 @@ func (s *VedicAstrologyService) GetAvastha(ctx context.Context, id GetAvasthaPar
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VedicAstrologyService) GetBasicPanchang(ctx context.Context, params *GetBasicPanchangParams, body GetBasicPanchangJSONRequestBody, reqEditors ...RequestEditorFn) (*GetBasicPanchangResponse, error) {
@@ -560,7 +560,7 @@ func (s *VedicAstrologyService) GetBasicPanchang(ctx context.Context, params *Ge
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VedicAstrologyService) GetChoghadiya(ctx context.Context, body GetChoghadiyaJSONRequestBody, reqEditors ...RequestEditorFn) (*GetChoghadiyaResponse, error) {
@@ -568,7 +568,7 @@ func (s *VedicAstrologyService) GetChoghadiya(ctx context.Context, body GetChogh
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VedicAstrologyService) GetCurrentDasha(ctx context.Context, params *GetCurrentDashaParams, body GetCurrentDashaJSONRequestBody, reqEditors ...RequestEditorFn) (*GetCurrentDashaResponse, error) {
@@ -576,7 +576,7 @@ func (s *VedicAstrologyService) GetCurrentDasha(ctx context.Context, params *Get
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VedicAstrologyService) GetDetailedPanchang(ctx context.Context, params *GetDetailedPanchangParams, body GetDetailedPanchangJSONRequestBody, reqEditors ...RequestEditorFn) (*GetDetailedPanchangResponse, error) {
@@ -584,7 +584,7 @@ func (s *VedicAstrologyService) GetDetailedPanchang(ctx context.Context, params 
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VedicAstrologyService) GetEclipticCrossings(ctx context.Context, params *GetEclipticCrossingsParams, body GetEclipticCrossingsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetEclipticCrossingsResponse, error) {
@@ -592,7 +592,7 @@ func (s *VedicAstrologyService) GetEclipticCrossings(ctx context.Context, params
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VedicAstrologyService) GetHeliacalVisibility(ctx context.Context, body GetHeliacalVisibilityJSONRequestBody, reqEditors ...RequestEditorFn) (*GetHeliacalVisibilityResponse, error) {
@@ -600,7 +600,7 @@ func (s *VedicAstrologyService) GetHeliacalVisibility(ctx context.Context, body 
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VedicAstrologyService) GetHora(ctx context.Context, body GetHoraJSONRequestBody, reqEditors ...RequestEditorFn) (*GetHoraResponse, error) {
@@ -608,7 +608,7 @@ func (s *VedicAstrologyService) GetHora(ctx context.Context, body GetHoraJSONReq
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VedicAstrologyService) GetKpAyanamsa(ctx context.Context, params *GetKpAyanamsaParams, reqEditors ...RequestEditorFn) (*GetKpAyanamsaResponse, error) {
@@ -616,7 +616,7 @@ func (s *VedicAstrologyService) GetKpAyanamsa(ctx context.Context, params *GetKp
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VedicAstrologyService) GetKpCusps(ctx context.Context, params *GetKpCuspsParams, body GetKpCuspsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetKpCuspsResponse, error) {
@@ -624,7 +624,7 @@ func (s *VedicAstrologyService) GetKpCusps(ctx context.Context, params *GetKpCus
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VedicAstrologyService) GetKpDailyFinance(ctx context.Context, body GetKpDailyFinanceJSONRequestBody, reqEditors ...RequestEditorFn) (*GetKpDailyFinanceResponse, error) {
@@ -632,7 +632,7 @@ func (s *VedicAstrologyService) GetKpDailyFinance(ctx context.Context, body GetK
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VedicAstrologyService) GetKpPlanetsInterval(ctx context.Context, body GetKpPlanetsIntervalJSONRequestBody, reqEditors ...RequestEditorFn) (*GetKpPlanetsIntervalResponse, error) {
@@ -640,7 +640,7 @@ func (s *VedicAstrologyService) GetKpPlanetsInterval(ctx context.Context, body G
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VedicAstrologyService) GetKpPlanets(ctx context.Context, body GetKpPlanetsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetKpPlanetsResponse, error) {
@@ -648,7 +648,7 @@ func (s *VedicAstrologyService) GetKpPlanets(ctx context.Context, body GetKpPlan
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VedicAstrologyService) GetKpRasiChanges(ctx context.Context, body GetKpRasiChangesJSONRequestBody, reqEditors ...RequestEditorFn) (*GetKpRasiChangesResponse, error) {
@@ -656,7 +656,7 @@ func (s *VedicAstrologyService) GetKpRasiChanges(ctx context.Context, body GetKp
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VedicAstrologyService) GetKpRulingInterval(ctx context.Context, params *GetKpRulingIntervalParams, body GetKpRulingIntervalJSONRequestBody, reqEditors ...RequestEditorFn) (*GetKpRulingIntervalResponse, error) {
@@ -664,7 +664,7 @@ func (s *VedicAstrologyService) GetKpRulingInterval(ctx context.Context, params 
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VedicAstrologyService) GetKpRulingPlanets(ctx context.Context, params *GetKpRulingPlanetsParams, body GetKpRulingPlanetsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetKpRulingPlanetsResponse, error) {
@@ -672,7 +672,7 @@ func (s *VedicAstrologyService) GetKpRulingPlanets(ctx context.Context, params *
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VedicAstrologyService) GetKpSublordChanges(ctx context.Context, body GetKpSublordChangesJSONRequestBody, reqEditors ...RequestEditorFn) (*GetKpSublordChangesResponse, error) {
@@ -680,7 +680,7 @@ func (s *VedicAstrologyService) GetKpSublordChanges(ctx context.Context, body Ge
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VedicAstrologyService) GetLunarAspects(ctx context.Context, params *GetLunarAspectsParams, body GetLunarAspectsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetLunarAspectsResponse, error) {
@@ -688,7 +688,7 @@ func (s *VedicAstrologyService) GetLunarAspects(ctx context.Context, params *Get
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VedicAstrologyService) GetMajorDashas(ctx context.Context, params *GetMajorDashasParams, body GetMajorDashasJSONRequestBody, reqEditors ...RequestEditorFn) (*GetMajorDashasResponse, error) {
@@ -696,7 +696,7 @@ func (s *VedicAstrologyService) GetMajorDashas(ctx context.Context, params *GetM
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VedicAstrologyService) GetMonthlyAspects(ctx context.Context, params *GetMonthlyAspectsParams, body GetMonthlyAspectsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetMonthlyAspectsResponse, error) {
@@ -704,7 +704,7 @@ func (s *VedicAstrologyService) GetMonthlyAspects(ctx context.Context, params *G
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VedicAstrologyService) GetMonthlyEphemeris(ctx context.Context, params *GetMonthlyEphemerisParams, body GetMonthlyEphemerisJSONRequestBody, reqEditors ...RequestEditorFn) (*GetMonthlyEphemerisResponse, error) {
@@ -712,7 +712,7 @@ func (s *VedicAstrologyService) GetMonthlyEphemeris(ctx context.Context, params 
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VedicAstrologyService) GetMonthlyParallels(ctx context.Context, params *GetMonthlyParallelsParams, body GetMonthlyParallelsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetMonthlyParallelsResponse, error) {
@@ -720,7 +720,7 @@ func (s *VedicAstrologyService) GetMonthlyParallels(ctx context.Context, params 
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VedicAstrologyService) GetMonthlyTransits(ctx context.Context, params *GetMonthlyTransitsParams, body GetMonthlyTransitsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetMonthlyTransitsResponse, error) {
@@ -728,7 +728,7 @@ func (s *VedicAstrologyService) GetMonthlyTransits(ctx context.Context, params *
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VedicAstrologyService) GetNakshatra(ctx context.Context, id GetNakshatraParamsID, params *GetNakshatraParams, reqEditors ...RequestEditorFn) (*GetNakshatraResponse, error) {
@@ -736,7 +736,7 @@ func (s *VedicAstrologyService) GetNakshatra(ctx context.Context, id GetNakshatr
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VedicAstrologyService) GetPlanetPositions(ctx context.Context, params *GetPlanetPositionsParams, body GetPlanetPositionsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetPlanetPositionsResponse, error) {
@@ -744,7 +744,7 @@ func (s *VedicAstrologyService) GetPlanetPositions(ctx context.Context, params *
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VedicAstrologyService) GetPranaDashas(ctx context.Context, mahadasha GetPranaDashasParamsMahadasha, antardasha GetPranaDashasParamsAntardasha, pratyantardasha GetPranaDashasParamsPratyantardasha, sookshma GetPranaDashasParamsSookshma, params *GetPranaDashasParams, body GetPranaDashasJSONRequestBody, reqEditors ...RequestEditorFn) (*GetPranaDashasResponse, error) {
@@ -752,7 +752,7 @@ func (s *VedicAstrologyService) GetPranaDashas(ctx context.Context, mahadasha Ge
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VedicAstrologyService) GetPratyantardashas(ctx context.Context, mahadasha GetPratyantardashasParamsMahadasha, antardasha GetPratyantardashasParamsAntardasha, params *GetPratyantardashasParams, body GetPratyantardashasJSONRequestBody, reqEditors ...RequestEditorFn) (*GetPratyantardashasResponse, error) {
@@ -760,7 +760,7 @@ func (s *VedicAstrologyService) GetPratyantardashas(ctx context.Context, mahadas
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VedicAstrologyService) GetRashi(ctx context.Context, id GetRashiParamsID, params *GetRashiParams, reqEditors ...RequestEditorFn) (*GetRashiResponse, error) {
@@ -768,7 +768,7 @@ func (s *VedicAstrologyService) GetRashi(ctx context.Context, id GetRashiParamsI
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VedicAstrologyService) GetSookshmaDashas(ctx context.Context, mahadasha GetSookshmaDashasParamsMahadasha, antardasha GetSookshmaDashasParamsAntardasha, pratyantardasha GetSookshmaDashasParamsPratyantardasha, params *GetSookshmaDashasParams, body GetSookshmaDashasJSONRequestBody, reqEditors ...RequestEditorFn) (*GetSookshmaDashasResponse, error) {
@@ -776,7 +776,7 @@ func (s *VedicAstrologyService) GetSookshmaDashas(ctx context.Context, mahadasha
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VedicAstrologyService) GetSubDashas(ctx context.Context, mahadasha GetSubDashasParamsMahadasha, params *GetSubDashasParams, body GetSubDashasJSONRequestBody, reqEditors ...RequestEditorFn) (*GetSubDashasResponse, error) {
@@ -784,7 +784,7 @@ func (s *VedicAstrologyService) GetSubDashas(ctx context.Context, mahadasha GetS
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VedicAstrologyService) GetUpagrahaPositions(ctx context.Context, body GetUpagrahaPositionsJSONRequestBody, reqEditors ...RequestEditorFn) (*GetUpagrahaPositionsResponse, error) {
@@ -792,7 +792,7 @@ func (s *VedicAstrologyService) GetUpagrahaPositions(ctx context.Context, body G
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VedicAstrologyService) GetVedicDailyReading(ctx context.Context, params *GetVedicDailyReadingParams, body GetVedicDailyReadingJSONRequestBody, reqEditors ...RequestEditorFn) (*GetVedicDailyReadingResponse, error) {
@@ -800,7 +800,7 @@ func (s *VedicAstrologyService) GetVedicDailyReading(ctx context.Context, params
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VedicAstrologyService) GetYoga(ctx context.Context, id GetYogaParamsID, params *GetYogaParams, reqEditors ...RequestEditorFn) (*GetYogaResponse, error) {
@@ -808,7 +808,7 @@ func (s *VedicAstrologyService) GetYoga(ctx context.Context, id GetYogaParamsID,
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VedicAstrologyService) ListAvasthas(ctx context.Context, params *ListAvasthasParams, reqEditors ...RequestEditorFn) (*ListAvasthasResponse, error) {
@@ -816,7 +816,7 @@ func (s *VedicAstrologyService) ListAvasthas(ctx context.Context, params *ListAv
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VedicAstrologyService) ListNakshatras(ctx context.Context, params *ListNakshatrasParams, reqEditors ...RequestEditorFn) (*ListNakshatrasResponse, error) {
@@ -824,7 +824,7 @@ func (s *VedicAstrologyService) ListNakshatras(ctx context.Context, params *List
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VedicAstrologyService) ListRashis(ctx context.Context, params *ListRashisParams, reqEditors ...RequestEditorFn) (*ListRashisResponse, error) {
@@ -832,7 +832,7 @@ func (s *VedicAstrologyService) ListRashis(ctx context.Context, params *ListRash
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VedicAstrologyService) ListYogas(ctx context.Context, params *ListYogasParams, reqEditors ...RequestEditorFn) (*ListYogasResponse, error) {
@@ -840,7 +840,7 @@ func (s *VedicAstrologyService) ListYogas(ctx context.Context, params *ListYogas
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 // ForecastService groups the forecast endpoints.
@@ -851,7 +851,7 @@ func (s *ForecastService) FindSignificantDates(ctx context.Context, params *Find
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *ForecastService) ForecastSolarReturn(ctx context.Context, params *ForecastSolarReturnParams, body ForecastSolarReturnJSONRequestBody, reqEditors ...RequestEditorFn) (*ForecastSolarReturnResponse, error) {
@@ -859,7 +859,7 @@ func (s *ForecastService) ForecastSolarReturn(ctx context.Context, params *Forec
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *ForecastService) ForecastTransits(ctx context.Context, params *ForecastTransitsParams, body ForecastTransitsJSONRequestBody, reqEditors ...RequestEditorFn) (*ForecastTransitsResponse, error) {
@@ -867,7 +867,7 @@ func (s *ForecastService) ForecastTransits(ctx context.Context, params *Forecast
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *ForecastService) GenerateDigest(ctx context.Context, params *GenerateDigestParams, body GenerateDigestJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateDigestResponse, error) {
@@ -875,7 +875,7 @@ func (s *ForecastService) GenerateDigest(ctx context.Context, params *GenerateDi
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *ForecastService) GenerateTimeline(ctx context.Context, params *GenerateTimelineParams, body GenerateTimelineJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateTimelineResponse, error) {
@@ -883,7 +883,7 @@ func (s *ForecastService) GenerateTimeline(ctx context.Context, params *Generate
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 // HumanDesignService groups the human-design endpoints.
@@ -894,7 +894,7 @@ func (s *HumanDesignService) CalculateCenters(ctx context.Context, params *Calcu
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *HumanDesignService) CalculateChannels(ctx context.Context, params *CalculateChannelsParams, body CalculateChannelsJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateChannelsResponse, error) {
@@ -902,7 +902,7 @@ func (s *HumanDesignService) CalculateChannels(ctx context.Context, params *Calc
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *HumanDesignService) CalculateConnection(ctx context.Context, params *CalculateConnectionParams, body CalculateConnectionJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateConnectionResponse, error) {
@@ -910,7 +910,7 @@ func (s *HumanDesignService) CalculateConnection(ctx context.Context, params *Ca
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *HumanDesignService) CalculateGates(ctx context.Context, params *CalculateGatesParams, body CalculateGatesJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateGatesResponse, error) {
@@ -918,7 +918,7 @@ func (s *HumanDesignService) CalculateGates(ctx context.Context, params *Calcula
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *HumanDesignService) CalculatePenta(ctx context.Context, params *CalculatePentaParams, body CalculatePentaJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculatePentaResponse, error) {
@@ -926,7 +926,7 @@ func (s *HumanDesignService) CalculatePenta(ctx context.Context, params *Calcula
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *HumanDesignService) CalculateProfile(ctx context.Context, params *CalculateProfileParams, body CalculateProfileJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateProfileResponse, error) {
@@ -934,7 +934,7 @@ func (s *HumanDesignService) CalculateProfile(ctx context.Context, params *Calcu
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *HumanDesignService) CalculateType(ctx context.Context, params *CalculateTypeParams, body CalculateTypeJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateTypeResponse, error) {
@@ -942,7 +942,7 @@ func (s *HumanDesignService) CalculateType(ctx context.Context, params *Calculat
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *HumanDesignService) CalculateVariables(ctx context.Context, params *CalculateVariablesParams, body CalculateVariablesJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateVariablesResponse, error) {
@@ -950,7 +950,7 @@ func (s *HumanDesignService) CalculateVariables(ctx context.Context, params *Cal
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *HumanDesignService) GenerateBodygraph(ctx context.Context, params *GenerateBodygraphParams, body GenerateBodygraphJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateBodygraphResponse, error) {
@@ -958,7 +958,7 @@ func (s *HumanDesignService) GenerateBodygraph(ctx context.Context, params *Gene
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *HumanDesignService) GenerateTransit(ctx context.Context, params *GenerateTransitParams, body GenerateTransitJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateTransitResponse, error) {
@@ -966,7 +966,7 @@ func (s *HumanDesignService) GenerateTransit(ctx context.Context, params *Genera
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *HumanDesignService) GetCenter(ctx context.Context, id GetCenterParamsID, params *GetCenterParams, reqEditors ...RequestEditorFn) (*GetCenterResponse, error) {
@@ -974,7 +974,7 @@ func (s *HumanDesignService) GetCenter(ctx context.Context, id GetCenterParamsID
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *HumanDesignService) GetGate(ctx context.Context, number int, params *GetGateParams, reqEditors ...RequestEditorFn) (*GetGateResponse, error) {
@@ -982,7 +982,7 @@ func (s *HumanDesignService) GetGate(ctx context.Context, number int, params *Ge
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 // ChineseAstrologyService groups the chinese-astrology endpoints.
@@ -993,7 +993,7 @@ func (s *ChineseAstrologyService) CalculateAnnualForecast(ctx context.Context, p
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *ChineseAstrologyService) CalculateBaziCompatibility(ctx context.Context, params *CalculateBaziCompatibilityParams, body CalculateBaziCompatibilityJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateBaziCompatibilityResponse, error) {
@@ -1001,7 +1001,7 @@ func (s *ChineseAstrologyService) CalculateBaziCompatibility(ctx context.Context
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *ChineseAstrologyService) CalculateDayMasterStrength(ctx context.Context, params *CalculateDayMasterStrengthParams, body CalculateDayMasterStrengthJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateDayMasterStrengthResponse, error) {
@@ -1009,7 +1009,7 @@ func (s *ChineseAstrologyService) CalculateDayMasterStrength(ctx context.Context
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *ChineseAstrologyService) CalculateLuckPillars(ctx context.Context, params *CalculateLuckPillarsParams, body CalculateLuckPillarsJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateLuckPillarsResponse, error) {
@@ -1017,7 +1017,7 @@ func (s *ChineseAstrologyService) CalculateLuckPillars(ctx context.Context, para
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *ChineseAstrologyService) CalculateLunarDate(ctx context.Context, params *CalculateLunarDateParams, body CalculateLunarDateJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateLunarDateResponse, error) {
@@ -1025,7 +1025,7 @@ func (s *ChineseAstrologyService) CalculateLunarDate(ctx context.Context, params
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *ChineseAstrologyService) CalculateZodiacAnimal(ctx context.Context, params *CalculateZodiacAnimalParams, body CalculateZodiacAnimalJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateZodiacAnimalResponse, error) {
@@ -1033,7 +1033,7 @@ func (s *ChineseAstrologyService) CalculateZodiacAnimal(ctx context.Context, par
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *ChineseAstrologyService) GenerateBaziChart(ctx context.Context, params *GenerateBaziChartParams, body GenerateBaziChartJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateBaziChartResponse, error) {
@@ -1041,7 +1041,7 @@ func (s *ChineseAstrologyService) GenerateBaziChart(ctx context.Context, params 
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *ChineseAstrologyService) GetAlmanacDay(ctx context.Context, date openapi_types.Date, params *GetAlmanacDayParams, reqEditors ...RequestEditorFn) (*GetAlmanacDayResponse, error) {
@@ -1049,7 +1049,7 @@ func (s *ChineseAstrologyService) GetAlmanacDay(ctx context.Context, date openap
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *ChineseAstrologyService) GetDailyZodiacReading(ctx context.Context, id GetDailyZodiacReadingParamsID, params *GetDailyZodiacReadingParams, reqEditors ...RequestEditorFn) (*GetDailyZodiacReadingResponse, error) {
@@ -1057,7 +1057,7 @@ func (s *ChineseAstrologyService) GetDailyZodiacReading(ctx context.Context, id 
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *ChineseAstrologyService) GetMonthlyAlmanac(ctx context.Context, params *GetMonthlyAlmanacParams, reqEditors ...RequestEditorFn) (*GetMonthlyAlmanacResponse, error) {
@@ -1065,7 +1065,7 @@ func (s *ChineseAstrologyService) GetMonthlyAlmanac(ctx context.Context, params 
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *ChineseAstrologyService) GetZodiacAnimal(ctx context.Context, id GetZodiacAnimalParamsID, params *GetZodiacAnimalParams, reqEditors ...RequestEditorFn) (*GetZodiacAnimalResponse, error) {
@@ -1073,7 +1073,7 @@ func (s *ChineseAstrologyService) GetZodiacAnimal(ctx context.Context, id GetZod
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *ChineseAstrologyService) GetZodiacCompatibility(ctx context.Context, sign1 GetZodiacCompatibilityParamsSign1, sign2 GetZodiacCompatibilityParamsSign2, params *GetZodiacCompatibilityParams, reqEditors ...RequestEditorFn) (*GetZodiacCompatibilityResponse, error) {
@@ -1081,7 +1081,7 @@ func (s *ChineseAstrologyService) GetZodiacCompatibility(ctx context.Context, si
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *ChineseAstrologyService) ListFiveElements(ctx context.Context, params *ListFiveElementsParams, reqEditors ...RequestEditorFn) (*ListFiveElementsResponse, error) {
@@ -1089,7 +1089,7 @@ func (s *ChineseAstrologyService) ListFiveElements(ctx context.Context, params *
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *ChineseAstrologyService) ListSolarTerms(ctx context.Context, year int, params *ListSolarTermsParams, reqEditors ...RequestEditorFn) (*ListSolarTermsResponse, error) {
@@ -1097,7 +1097,7 @@ func (s *ChineseAstrologyService) ListSolarTerms(ctx context.Context, year int, 
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *ChineseAstrologyService) ListZodiacAnimals(ctx context.Context, params *ListZodiacAnimalsParams, reqEditors ...RequestEditorFn) (*ListZodiacAnimalsResponse, error) {
@@ -1105,7 +1105,7 @@ func (s *ChineseAstrologyService) ListZodiacAnimals(ctx context.Context, params 
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *ChineseAstrologyService) LookupAuspiciousDays(ctx context.Context, params *LookupAuspiciousDaysParams, body LookupAuspiciousDaysJSONRequestBody, reqEditors ...RequestEditorFn) (*LookupAuspiciousDaysResponse, error) {
@@ -1113,7 +1113,7 @@ func (s *ChineseAstrologyService) LookupAuspiciousDays(ctx context.Context, para
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 // FengShuiService groups the feng-shui endpoints.
@@ -1124,7 +1124,7 @@ func (s *FengShuiService) CalculateKuaNumber(ctx context.Context, params *Calcul
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *FengShuiService) GenerateEightMansions(ctx context.Context, params *GenerateEightMansionsParams, body GenerateEightMansionsJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateEightMansionsResponse, error) {
@@ -1132,7 +1132,7 @@ func (s *FengShuiService) GenerateEightMansions(ctx context.Context, params *Gen
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *FengShuiService) GenerateFlyingStarChart(ctx context.Context, params *GenerateFlyingStarChartParams, body GenerateFlyingStarChartJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateFlyingStarChartResponse, error) {
@@ -1140,7 +1140,7 @@ func (s *FengShuiService) GenerateFlyingStarChart(ctx context.Context, params *G
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *FengShuiService) GetAnnualAfflictions(ctx context.Context, year int, params *GetAnnualAfflictionsParams, reqEditors ...RequestEditorFn) (*GetAnnualAfflictionsResponse, error) {
@@ -1148,7 +1148,7 @@ func (s *FengShuiService) GetAnnualAfflictions(ctx context.Context, year int, pa
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *FengShuiService) GetAnnualFlyingStars(ctx context.Context, year int, params *GetAnnualFlyingStarsParams, reqEditors ...RequestEditorFn) (*GetAnnualFlyingStarsResponse, error) {
@@ -1156,7 +1156,7 @@ func (s *FengShuiService) GetAnnualFlyingStars(ctx context.Context, year int, pa
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *FengShuiService) GetBaguaSector(ctx context.Context, id GetBaguaSectorParamsID, params *GetBaguaSectorParams, reqEditors ...RequestEditorFn) (*GetBaguaSectorResponse, error) {
@@ -1164,7 +1164,7 @@ func (s *FengShuiService) GetBaguaSector(ctx context.Context, id GetBaguaSectorP
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *FengShuiService) GetKuaNumber(ctx context.Context, number int, params *GetKuaNumberParams, reqEditors ...RequestEditorFn) (*GetKuaNumberResponse, error) {
@@ -1172,7 +1172,7 @@ func (s *FengShuiService) GetKuaNumber(ctx context.Context, number int, params *
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *FengShuiService) GetMonthlyFlyingStars(ctx context.Context, params *GetMonthlyFlyingStarsParams, reqEditors ...RequestEditorFn) (*GetMonthlyFlyingStarsResponse, error) {
@@ -1180,7 +1180,7 @@ func (s *FengShuiService) GetMonthlyFlyingStars(ctx context.Context, params *Get
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *FengShuiService) ListBaguaSectors(ctx context.Context, params *ListBaguaSectorsParams, reqEditors ...RequestEditorFn) (*ListBaguaSectorsResponse, error) {
@@ -1188,7 +1188,7 @@ func (s *FengShuiService) ListBaguaSectors(ctx context.Context, params *ListBagu
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *FengShuiService) ListFlyingStars(ctx context.Context, params *ListFlyingStarsParams, reqEditors ...RequestEditorFn) (*ListFlyingStarsResponse, error) {
@@ -1196,7 +1196,7 @@ func (s *FengShuiService) ListFlyingStars(ctx context.Context, params *ListFlyin
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *FengShuiService) ListNinePeriods(ctx context.Context, params *ListNinePeriodsParams, reqEditors ...RequestEditorFn) (*ListNinePeriodsResponse, error) {
@@ -1204,7 +1204,7 @@ func (s *FengShuiService) ListNinePeriods(ctx context.Context, params *ListNineP
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 // MesoamericanAstrologyService groups the mesoamerican-astrology endpoints.
@@ -1215,7 +1215,7 @@ func (s *MesoamericanAstrologyService) CalculateMayanCompatibility(ctx context.C
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *MesoamericanAstrologyService) CalculateTonalpohualli(ctx context.Context, params *CalculateTonalpohualliParams, body CalculateTonalpohualliJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateTonalpohualliResponse, error) {
@@ -1223,7 +1223,7 @@ func (s *MesoamericanAstrologyService) CalculateTonalpohualli(ctx context.Contex
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *MesoamericanAstrologyService) CalculateTzolkin(ctx context.Context, params *CalculateTzolkinParams, body CalculateTzolkinJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateTzolkinResponse, error) {
@@ -1231,7 +1231,7 @@ func (s *MesoamericanAstrologyService) CalculateTzolkin(ctx context.Context, par
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *MesoamericanAstrologyService) ConvertLongCount(ctx context.Context, params *ConvertLongCountParams, body ConvertLongCountJSONRequestBody, reqEditors ...RequestEditorFn) (*ConvertLongCountResponse, error) {
@@ -1239,7 +1239,7 @@ func (s *MesoamericanAstrologyService) ConvertLongCount(ctx context.Context, par
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *MesoamericanAstrologyService) GenerateMayanChart(ctx context.Context, params *GenerateMayanChartParams, body GenerateMayanChartJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateMayanChartResponse, error) {
@@ -1247,7 +1247,7 @@ func (s *MesoamericanAstrologyService) GenerateMayanChart(ctx context.Context, p
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *MesoamericanAstrologyService) GetAztecDaySign(ctx context.Context, id GetAztecDaySignParamsID, params *GetAztecDaySignParams, reqEditors ...RequestEditorFn) (*GetAztecDaySignResponse, error) {
@@ -1255,7 +1255,7 @@ func (s *MesoamericanAstrologyService) GetAztecDaySign(ctx context.Context, id G
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *MesoamericanAstrologyService) GetAztecTrecena(ctx context.Context, number int, params *GetAztecTrecenaParams, reqEditors ...RequestEditorFn) (*GetAztecTrecenaResponse, error) {
@@ -1263,7 +1263,7 @@ func (s *MesoamericanAstrologyService) GetAztecTrecena(ctx context.Context, numb
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *MesoamericanAstrologyService) GetDailyAztecReading(ctx context.Context, params *GetDailyAztecReadingParams, reqEditors ...RequestEditorFn) (*GetDailyAztecReadingResponse, error) {
@@ -1271,7 +1271,7 @@ func (s *MesoamericanAstrologyService) GetDailyAztecReading(ctx context.Context,
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *MesoamericanAstrologyService) GetDailyMayanReading(ctx context.Context, params *GetDailyMayanReadingParams, reqEditors ...RequestEditorFn) (*GetDailyMayanReadingResponse, error) {
@@ -1279,7 +1279,7 @@ func (s *MesoamericanAstrologyService) GetDailyMayanReading(ctx context.Context,
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *MesoamericanAstrologyService) GetHaabMonth(ctx context.Context, id GetHaabMonthParamsID, params *GetHaabMonthParams, reqEditors ...RequestEditorFn) (*GetHaabMonthResponse, error) {
@@ -1287,7 +1287,7 @@ func (s *MesoamericanAstrologyService) GetHaabMonth(ctx context.Context, id GetH
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *MesoamericanAstrologyService) GetMayanDaySign(ctx context.Context, id GetMayanDaySignParamsID, params *GetMayanDaySignParams, reqEditors ...RequestEditorFn) (*GetMayanDaySignResponse, error) {
@@ -1295,7 +1295,7 @@ func (s *MesoamericanAstrologyService) GetMayanDaySign(ctx context.Context, id G
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *MesoamericanAstrologyService) GetMonthlyTzolkinCalendar(ctx context.Context, params *GetMonthlyTzolkinCalendarParams, reqEditors ...RequestEditorFn) (*GetMonthlyTzolkinCalendarResponse, error) {
@@ -1303,7 +1303,7 @@ func (s *MesoamericanAstrologyService) GetMonthlyTzolkinCalendar(ctx context.Con
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *MesoamericanAstrologyService) GetTrecena(ctx context.Context, number int, params *GetTrecenaParams, reqEditors ...RequestEditorFn) (*GetTrecenaResponse, error) {
@@ -1311,7 +1311,7 @@ func (s *MesoamericanAstrologyService) GetTrecena(ctx context.Context, number in
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *MesoamericanAstrologyService) ListAztecDaySigns(ctx context.Context, params *ListAztecDaySignsParams, reqEditors ...RequestEditorFn) (*ListAztecDaySignsResponse, error) {
@@ -1319,7 +1319,7 @@ func (s *MesoamericanAstrologyService) ListAztecDaySigns(ctx context.Context, pa
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *MesoamericanAstrologyService) ListAztecTrecenas(ctx context.Context, params *ListAztecTrecenasParams, reqEditors ...RequestEditorFn) (*ListAztecTrecenasResponse, error) {
@@ -1327,7 +1327,7 @@ func (s *MesoamericanAstrologyService) ListAztecTrecenas(ctx context.Context, pa
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *MesoamericanAstrologyService) ListHaabMonths(ctx context.Context, params *ListHaabMonthsParams, reqEditors ...RequestEditorFn) (*ListHaabMonthsResponse, error) {
@@ -1335,7 +1335,7 @@ func (s *MesoamericanAstrologyService) ListHaabMonths(ctx context.Context, param
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *MesoamericanAstrologyService) ListMayanDaySigns(ctx context.Context, params *ListMayanDaySignsParams, reqEditors ...RequestEditorFn) (*ListMayanDaySignsResponse, error) {
@@ -1343,7 +1343,7 @@ func (s *MesoamericanAstrologyService) ListMayanDaySigns(ctx context.Context, pa
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *MesoamericanAstrologyService) ListTrecenas(ctx context.Context, params *ListTrecenasParams, reqEditors ...RequestEditorFn) (*ListTrecenasResponse, error) {
@@ -1351,7 +1351,7 @@ func (s *MesoamericanAstrologyService) ListTrecenas(ctx context.Context, params 
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 // VastuService groups the vastu endpoints.
@@ -1362,7 +1362,7 @@ func (s *VastuService) CalculateAyadi(ctx context.Context, params *CalculateAyad
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VastuService) CalculateEntrancePada(ctx context.Context, params *CalculateEntrancePadaParams, body CalculateEntrancePadaJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateEntrancePadaResponse, error) {
@@ -1370,7 +1370,7 @@ func (s *VastuService) CalculateEntrancePada(ctx context.Context, params *Calcul
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VastuService) CalculatePlotAnalysis(ctx context.Context, params *CalculatePlotAnalysisParams, body CalculatePlotAnalysisJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculatePlotAnalysisResponse, error) {
@@ -1378,7 +1378,7 @@ func (s *VastuService) CalculatePlotAnalysis(ctx context.Context, params *Calcul
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VastuService) CalculateRoomCompliance(ctx context.Context, params *CalculateRoomComplianceParams, body CalculateRoomComplianceJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateRoomComplianceResponse, error) {
@@ -1386,7 +1386,7 @@ func (s *VastuService) CalculateRoomCompliance(ctx context.Context, params *Calc
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VastuService) FindGrihaPraveshDates(ctx context.Context, params *FindGrihaPraveshDatesParams, body FindGrihaPraveshDatesJSONRequestBody, reqEditors ...RequestEditorFn) (*FindGrihaPraveshDatesResponse, error) {
@@ -1394,7 +1394,7 @@ func (s *VastuService) FindGrihaPraveshDates(ctx context.Context, params *FindGr
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VastuService) GenerateMandala(ctx context.Context, params *GenerateMandalaParams, body GenerateMandalaJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateMandalaResponse, error) {
@@ -1402,7 +1402,7 @@ func (s *VastuService) GenerateMandala(ctx context.Context, params *GenerateMand
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VastuService) GetDevata(ctx context.Context, id GetDevataParamsID, params *GetDevataParams, reqEditors ...RequestEditorFn) (*GetDevataResponse, error) {
@@ -1410,7 +1410,7 @@ func (s *VastuService) GetDevata(ctx context.Context, id GetDevataParamsID, para
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VastuService) GetDikpalaDirection(ctx context.Context, id GetDikpalaDirectionParamsID, params *GetDikpalaDirectionParams, reqEditors ...RequestEditorFn) (*GetDikpalaDirectionResponse, error) {
@@ -1418,7 +1418,7 @@ func (s *VastuService) GetDikpalaDirection(ctx context.Context, id GetDikpalaDir
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VastuService) ListDevatas(ctx context.Context, params *ListDevatasParams, reqEditors ...RequestEditorFn) (*ListDevatasResponse, error) {
@@ -1426,7 +1426,7 @@ func (s *VastuService) ListDevatas(ctx context.Context, params *ListDevatasParam
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *VastuService) ListDikpalaDirections(ctx context.Context, params *ListDikpalaDirectionsParams, reqEditors ...RequestEditorFn) (*ListDikpalaDirectionsResponse, error) {
@@ -1434,7 +1434,7 @@ func (s *VastuService) ListDikpalaDirections(ctx context.Context, params *ListDi
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 // NumerologyService groups the numerology endpoints.
@@ -1445,7 +1445,7 @@ func (s *NumerologyService) AnalyzeKarmicLessons(ctx context.Context, params *An
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *NumerologyService) CalculateBirthDay(ctx context.Context, params *CalculateBirthDayParams, body CalculateBirthDayJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateBirthDayResponse, error) {
@@ -1453,7 +1453,7 @@ func (s *NumerologyService) CalculateBirthDay(ctx context.Context, params *Calcu
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *NumerologyService) CalculateBridgeNumbers(ctx context.Context, params *CalculateBridgeNumbersParams, body CalculateBridgeNumbersJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateBridgeNumbersResponse, error) {
@@ -1461,7 +1461,7 @@ func (s *NumerologyService) CalculateBridgeNumbers(ctx context.Context, params *
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *NumerologyService) CalculateBusinessName(ctx context.Context, params *CalculateBusinessNameParams, body CalculateBusinessNameJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateBusinessNameResponse, error) {
@@ -1469,7 +1469,7 @@ func (s *NumerologyService) CalculateBusinessName(ctx context.Context, params *C
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *NumerologyService) CalculateChaldean(ctx context.Context, params *CalculateChaldeanParams, body CalculateChaldeanJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateChaldeanResponse, error) {
@@ -1477,7 +1477,7 @@ func (s *NumerologyService) CalculateChaldean(ctx context.Context, params *Calcu
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *NumerologyService) CalculateDual(ctx context.Context, params *CalculateDualParams, body CalculateDualJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateDualResponse, error) {
@@ -1485,7 +1485,7 @@ func (s *NumerologyService) CalculateDual(ctx context.Context, params *Calculate
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *NumerologyService) CalculateExpression(ctx context.Context, params *CalculateExpressionParams, body CalculateExpressionJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateExpressionResponse, error) {
@@ -1493,7 +1493,7 @@ func (s *NumerologyService) CalculateExpression(ctx context.Context, params *Cal
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *NumerologyService) CalculateLifePath(ctx context.Context, params *CalculateLifePathParams, body CalculateLifePathJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateLifePathResponse, error) {
@@ -1501,7 +1501,7 @@ func (s *NumerologyService) CalculateLifePath(ctx context.Context, params *Calcu
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *NumerologyService) CalculateMaturity(ctx context.Context, params *CalculateMaturityParams, body CalculateMaturityJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateMaturityResponse, error) {
@@ -1509,7 +1509,7 @@ func (s *NumerologyService) CalculateMaturity(ctx context.Context, params *Calcu
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *NumerologyService) CalculateNumCompatibility(ctx context.Context, params *CalculateNumCompatibilityParams, body CalculateNumCompatibilityJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateNumCompatibilityResponse, error) {
@@ -1517,7 +1517,7 @@ func (s *NumerologyService) CalculateNumCompatibility(ctx context.Context, param
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *NumerologyService) CalculatePersonalDay(ctx context.Context, params *CalculatePersonalDayParams, body CalculatePersonalDayJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculatePersonalDayResponse, error) {
@@ -1525,7 +1525,7 @@ func (s *NumerologyService) CalculatePersonalDay(ctx context.Context, params *Ca
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *NumerologyService) CalculatePersonalMonth(ctx context.Context, params *CalculatePersonalMonthParams, body CalculatePersonalMonthJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculatePersonalMonthResponse, error) {
@@ -1533,7 +1533,7 @@ func (s *NumerologyService) CalculatePersonalMonth(ctx context.Context, params *
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *NumerologyService) CalculatePersonalYear(ctx context.Context, params *CalculatePersonalYearParams, body CalculatePersonalYearJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculatePersonalYearResponse, error) {
@@ -1541,7 +1541,7 @@ func (s *NumerologyService) CalculatePersonalYear(ctx context.Context, params *C
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *NumerologyService) CalculatePersonality(ctx context.Context, params *CalculatePersonalityParams, body CalculatePersonalityJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculatePersonalityResponse, error) {
@@ -1549,7 +1549,7 @@ func (s *NumerologyService) CalculatePersonality(ctx context.Context, params *Ca
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *NumerologyService) CalculateSoulUrge(ctx context.Context, params *CalculateSoulUrgeParams, body CalculateSoulUrgeJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateSoulUrgeResponse, error) {
@@ -1557,7 +1557,7 @@ func (s *NumerologyService) CalculateSoulUrge(ctx context.Context, params *Calcu
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *NumerologyService) CheckKarmicDebt(ctx context.Context, params *CheckKarmicDebtParams, body CheckKarmicDebtJSONRequestBody, reqEditors ...RequestEditorFn) (*CheckKarmicDebtResponse, error) {
@@ -1565,7 +1565,7 @@ func (s *NumerologyService) CheckKarmicDebt(ctx context.Context, params *CheckKa
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *NumerologyService) GenerateNumerologyChart(ctx context.Context, params *GenerateNumerologyChartParams, body GenerateNumerologyChartJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateNumerologyChartResponse, error) {
@@ -1573,7 +1573,7 @@ func (s *NumerologyService) GenerateNumerologyChart(ctx context.Context, params 
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *NumerologyService) GetCompoundNumber(ctx context.Context, number string, params *GetCompoundNumberParams, reqEditors ...RequestEditorFn) (*GetCompoundNumberResponse, error) {
@@ -1581,7 +1581,7 @@ func (s *NumerologyService) GetCompoundNumber(ctx context.Context, number string
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *NumerologyService) GetDailyNumber(ctx context.Context, params *GetDailyNumberParams, body GetDailyNumberJSONRequestBody, reqEditors ...RequestEditorFn) (*GetDailyNumberResponse, error) {
@@ -1589,7 +1589,7 @@ func (s *NumerologyService) GetDailyNumber(ctx context.Context, params *GetDaily
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *NumerologyService) GetNumberMeaning(ctx context.Context, number string, params *GetNumberMeaningParams, reqEditors ...RequestEditorFn) (*GetNumberMeaningResponse, error) {
@@ -1597,7 +1597,7 @@ func (s *NumerologyService) GetNumberMeaning(ctx context.Context, number string,
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 // KabbalahService groups the kabbalah endpoints.
@@ -1608,7 +1608,7 @@ func (s *KabbalahService) CalculateGematria(ctx context.Context, params *Calcula
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *KabbalahService) CalculateNameCompatibility(ctx context.Context, params *CalculateNameCompatibilityParams, body CalculateNameCompatibilityJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateNameCompatibilityResponse, error) {
@@ -1616,7 +1616,7 @@ func (s *KabbalahService) CalculateNameCompatibility(ctx context.Context, params
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *KabbalahService) GenerateBirthProfile(ctx context.Context, params *GenerateBirthProfileParams, body GenerateBirthProfileJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateBirthProfileResponse, error) {
@@ -1624,7 +1624,7 @@ func (s *KabbalahService) GenerateBirthProfile(ctx context.Context, params *Gene
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *KabbalahService) GenerateNameProfile(ctx context.Context, params *GenerateNameProfileParams, body GenerateNameProfileJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateNameProfileResponse, error) {
@@ -1632,7 +1632,7 @@ func (s *KabbalahService) GenerateNameProfile(ctx context.Context, params *Gener
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *KabbalahService) GetDailySephirah(ctx context.Context, params *GetDailySephirahParams, reqEditors ...RequestEditorFn) (*GetDailySephirahResponse, error) {
@@ -1640,7 +1640,7 @@ func (s *KabbalahService) GetDailySephirah(ctx context.Context, params *GetDaily
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *KabbalahService) GetHebrewLetter(ctx context.Context, id GetHebrewLetterParamsID, params *GetHebrewLetterParams, reqEditors ...RequestEditorFn) (*GetHebrewLetterResponse, error) {
@@ -1648,7 +1648,7 @@ func (s *KabbalahService) GetHebrewLetter(ctx context.Context, id GetHebrewLette
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *KabbalahService) GetSephirah(ctx context.Context, id GetSephirahParamsID, params *GetSephirahParams, reqEditors ...RequestEditorFn) (*GetSephirahResponse, error) {
@@ -1656,7 +1656,7 @@ func (s *KabbalahService) GetSephirah(ctx context.Context, id GetSephirahParamsI
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *KabbalahService) GetShemName(ctx context.Context, number int, params *GetShemNameParams, reqEditors ...RequestEditorFn) (*GetShemNameResponse, error) {
@@ -1664,7 +1664,7 @@ func (s *KabbalahService) GetShemName(ctx context.Context, number int, params *G
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *KabbalahService) GetTreeOfLife(ctx context.Context, params *GetTreeOfLifeParams, reqEditors ...RequestEditorFn) (*GetTreeOfLifeResponse, error) {
@@ -1672,7 +1672,7 @@ func (s *KabbalahService) GetTreeOfLife(ctx context.Context, params *GetTreeOfLi
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *KabbalahService) ListGematriaCiphers(ctx context.Context, params *ListGematriaCiphersParams, reqEditors ...RequestEditorFn) (*ListGematriaCiphersResponse, error) {
@@ -1680,7 +1680,7 @@ func (s *KabbalahService) ListGematriaCiphers(ctx context.Context, params *ListG
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *KabbalahService) ListHebrewLetters(ctx context.Context, params *ListHebrewLettersParams, reqEditors ...RequestEditorFn) (*ListHebrewLettersResponse, error) {
@@ -1688,7 +1688,7 @@ func (s *KabbalahService) ListHebrewLetters(ctx context.Context, params *ListHeb
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *KabbalahService) ListShemNames(ctx context.Context, params *ListShemNamesParams, reqEditors ...RequestEditorFn) (*ListShemNamesResponse, error) {
@@ -1696,7 +1696,7 @@ func (s *KabbalahService) ListShemNames(ctx context.Context, params *ListShemNam
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 // TarotService groups the tarot endpoints.
@@ -1707,7 +1707,7 @@ func (s *TarotService) CastCareerSpread(ctx context.Context, params *CastCareerS
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *TarotService) CastCelticCross(ctx context.Context, params *CastCelticCrossParams, body CastCelticCrossJSONRequestBody, reqEditors ...RequestEditorFn) (*CastCelticCrossResponse, error) {
@@ -1715,7 +1715,7 @@ func (s *TarotService) CastCelticCross(ctx context.Context, params *CastCelticCr
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *TarotService) CastCustomSpread(ctx context.Context, params *CastCustomSpreadParams, body CastCustomSpreadJSONRequestBody, reqEditors ...RequestEditorFn) (*CastCustomSpreadResponse, error) {
@@ -1723,7 +1723,7 @@ func (s *TarotService) CastCustomSpread(ctx context.Context, params *CastCustomS
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *TarotService) CastLoveSpread(ctx context.Context, params *CastLoveSpreadParams, body CastLoveSpreadJSONRequestBody, reqEditors ...RequestEditorFn) (*CastLoveSpreadResponse, error) {
@@ -1731,7 +1731,7 @@ func (s *TarotService) CastLoveSpread(ctx context.Context, params *CastLoveSprea
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *TarotService) CastThreeCard(ctx context.Context, params *CastThreeCardParams, body CastThreeCardJSONRequestBody, reqEditors ...RequestEditorFn) (*CastThreeCardResponse, error) {
@@ -1739,7 +1739,7 @@ func (s *TarotService) CastThreeCard(ctx context.Context, params *CastThreeCardP
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *TarotService) CastYesNo(ctx context.Context, params *CastYesNoParams, body CastYesNoJSONRequestBody, reqEditors ...RequestEditorFn) (*CastYesNoResponse, error) {
@@ -1747,7 +1747,7 @@ func (s *TarotService) CastYesNo(ctx context.Context, params *CastYesNoParams, b
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *TarotService) DrawCards(ctx context.Context, params *DrawCardsParams, body DrawCardsJSONRequestBody, reqEditors ...RequestEditorFn) (*DrawCardsResponse, error) {
@@ -1755,7 +1755,7 @@ func (s *TarotService) DrawCards(ctx context.Context, params *DrawCardsParams, b
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *TarotService) GetCard(ctx context.Context, id string, params *GetCardParams, reqEditors ...RequestEditorFn) (*GetCardResponse, error) {
@@ -1763,7 +1763,7 @@ func (s *TarotService) GetCard(ctx context.Context, id string, params *GetCardPa
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *TarotService) GetDailyCard(ctx context.Context, params *GetDailyCardParams, body GetDailyCardJSONRequestBody, reqEditors ...RequestEditorFn) (*GetDailyCardResponse, error) {
@@ -1771,7 +1771,7 @@ func (s *TarotService) GetDailyCard(ctx context.Context, params *GetDailyCardPar
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *TarotService) ListCards(ctx context.Context, params *ListCardsParams, reqEditors ...RequestEditorFn) (*ListCardsResponse, error) {
@@ -1779,7 +1779,7 @@ func (s *TarotService) ListCards(ctx context.Context, params *ListCardsParams, r
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 // BiorhythmService groups the biorhythm endpoints.
@@ -1790,7 +1790,7 @@ func (s *BiorhythmService) CalculateBioCompatibility(ctx context.Context, params
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *BiorhythmService) GetCriticalDays(ctx context.Context, params *GetCriticalDaysParams, body GetCriticalDaysJSONRequestBody, reqEditors ...RequestEditorFn) (*GetCriticalDaysResponse, error) {
@@ -1798,7 +1798,7 @@ func (s *BiorhythmService) GetCriticalDays(ctx context.Context, params *GetCriti
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *BiorhythmService) GetDailyBiorhythm(ctx context.Context, params *GetDailyBiorhythmParams, body GetDailyBiorhythmJSONRequestBody, reqEditors ...RequestEditorFn) (*GetDailyBiorhythmResponse, error) {
@@ -1806,7 +1806,7 @@ func (s *BiorhythmService) GetDailyBiorhythm(ctx context.Context, params *GetDai
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *BiorhythmService) GetForecast(ctx context.Context, params *GetForecastParams, body GetForecastJSONRequestBody, reqEditors ...RequestEditorFn) (*GetForecastResponse, error) {
@@ -1814,7 +1814,7 @@ func (s *BiorhythmService) GetForecast(ctx context.Context, params *GetForecastP
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *BiorhythmService) GetPhases(ctx context.Context, params *GetPhasesParams, body GetPhasesJSONRequestBody, reqEditors ...RequestEditorFn) (*GetPhasesResponse, error) {
@@ -1822,7 +1822,7 @@ func (s *BiorhythmService) GetPhases(ctx context.Context, params *GetPhasesParam
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *BiorhythmService) GetReading(ctx context.Context, params *GetReadingParams, body GetReadingJSONRequestBody, reqEditors ...RequestEditorFn) (*GetReadingResponse, error) {
@@ -1830,7 +1830,7 @@ func (s *BiorhythmService) GetReading(ctx context.Context, params *GetReadingPar
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 // AyurvedaService groups the ayurveda endpoints.
@@ -1841,7 +1841,7 @@ func (s *AyurvedaService) CalculateAyurvedicConstitution(ctx context.Context, pa
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *AyurvedaService) GetDailyAyurvedaReading(ctx context.Context, params *GetDailyAyurvedaReadingParams, reqEditors ...RequestEditorFn) (*GetDailyAyurvedaReadingResponse, error) {
@@ -1849,7 +1849,7 @@ func (s *AyurvedaService) GetDailyAyurvedaReading(ctx context.Context, params *G
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *AyurvedaService) GetDinacharyaSchedule(ctx context.Context, params *GetDinacharyaScheduleParams, body GetDinacharyaScheduleJSONRequestBody, reqEditors ...RequestEditorFn) (*GetDinacharyaScheduleResponse, error) {
@@ -1857,7 +1857,7 @@ func (s *AyurvedaService) GetDinacharyaSchedule(ctx context.Context, params *Get
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *AyurvedaService) GetDosha(ctx context.Context, id GetDoshaParamsID, params *GetDoshaParams, reqEditors ...RequestEditorFn) (*GetDoshaResponse, error) {
@@ -1865,7 +1865,7 @@ func (s *AyurvedaService) GetDosha(ctx context.Context, id GetDoshaParamsID, par
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *AyurvedaService) GetRitucharya(ctx context.Context, params *GetRitucharyaParams, body GetRitucharyaJSONRequestBody, reqEditors ...RequestEditorFn) (*GetRitucharyaResponse, error) {
@@ -1873,7 +1873,7 @@ func (s *AyurvedaService) GetRitucharya(ctx context.Context, params *GetRituchar
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *AyurvedaService) ListDoshas(ctx context.Context, params *ListDoshasParams, reqEditors ...RequestEditorFn) (*ListDoshasResponse, error) {
@@ -1881,7 +1881,7 @@ func (s *AyurvedaService) ListDoshas(ctx context.Context, params *ListDoshasPara
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *AyurvedaService) ListGunas(ctx context.Context, params *ListGunasParams, reqEditors ...RequestEditorFn) (*ListGunasResponse, error) {
@@ -1889,7 +1889,7 @@ func (s *AyurvedaService) ListGunas(ctx context.Context, params *ListGunasParams
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *AyurvedaService) ListRasas(ctx context.Context, params *ListRasasParams, reqEditors ...RequestEditorFn) (*ListRasasResponse, error) {
@@ -1897,7 +1897,7 @@ func (s *AyurvedaService) ListRasas(ctx context.Context, params *ListRasasParams
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 // IchingService groups the iching endpoints.
@@ -1908,7 +1908,7 @@ func (s *IchingService) CastDailyReading(ctx context.Context, params *CastDailyR
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *IchingService) CastReading(ctx context.Context, params *CastReadingParams, reqEditors ...RequestEditorFn) (*CastReadingResponse, error) {
@@ -1916,7 +1916,7 @@ func (s *IchingService) CastReading(ctx context.Context, params *CastReadingPara
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *IchingService) GetDailyHexagram(ctx context.Context, params *GetDailyHexagramParams, body GetDailyHexagramJSONRequestBody, reqEditors ...RequestEditorFn) (*GetDailyHexagramResponse, error) {
@@ -1924,7 +1924,7 @@ func (s *IchingService) GetDailyHexagram(ctx context.Context, params *GetDailyHe
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *IchingService) GetHexagram(ctx context.Context, number int, params *GetHexagramParams, reqEditors ...RequestEditorFn) (*GetHexagramResponse, error) {
@@ -1932,7 +1932,7 @@ func (s *IchingService) GetHexagram(ctx context.Context, number int, params *Get
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *IchingService) GetRandomHexagram(ctx context.Context, params *GetRandomHexagramParams, reqEditors ...RequestEditorFn) (*GetRandomHexagramResponse, error) {
@@ -1940,7 +1940,7 @@ func (s *IchingService) GetRandomHexagram(ctx context.Context, params *GetRandom
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *IchingService) GetTrigram(ctx context.Context, id string, params *GetTrigramParams, reqEditors ...RequestEditorFn) (*GetTrigramResponse, error) {
@@ -1948,7 +1948,7 @@ func (s *IchingService) GetTrigram(ctx context.Context, id string, params *GetTr
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *IchingService) ListHexagrams(ctx context.Context, params *ListHexagramsParams, reqEditors ...RequestEditorFn) (*ListHexagramsResponse, error) {
@@ -1956,7 +1956,7 @@ func (s *IchingService) ListHexagrams(ctx context.Context, params *ListHexagrams
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *IchingService) ListTrigrams(ctx context.Context, params *ListTrigramsParams, reqEditors ...RequestEditorFn) (*ListTrigramsResponse, error) {
@@ -1964,7 +1964,7 @@ func (s *IchingService) ListTrigrams(ctx context.Context, params *ListTrigramsPa
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *IchingService) LookupHexagram(ctx context.Context, params *LookupHexagramParams, reqEditors ...RequestEditorFn) (*LookupHexagramResponse, error) {
@@ -1972,7 +1972,7 @@ func (s *IchingService) LookupHexagram(ctx context.Context, params *LookupHexagr
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 // CrystalsService groups the crystals endpoints.
@@ -1983,7 +1983,7 @@ func (s *CrystalsService) GetBirthstones(ctx context.Context, month int, params 
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *CrystalsService) GetCrystalPairings(ctx context.Context, id string, params *GetCrystalPairingsParams, reqEditors ...RequestEditorFn) (*GetCrystalPairingsResponse, error) {
@@ -1991,7 +1991,7 @@ func (s *CrystalsService) GetCrystalPairings(ctx context.Context, id string, par
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *CrystalsService) GetCrystal(ctx context.Context, id string, params *GetCrystalParams, reqEditors ...RequestEditorFn) (*GetCrystalResponse, error) {
@@ -1999,7 +1999,7 @@ func (s *CrystalsService) GetCrystal(ctx context.Context, id string, params *Get
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *CrystalsService) GetCrystalsByChakra(ctx context.Context, chakra GetCrystalsByChakraParamsChakra, params *GetCrystalsByChakraParams, reqEditors ...RequestEditorFn) (*GetCrystalsByChakraResponse, error) {
@@ -2007,7 +2007,7 @@ func (s *CrystalsService) GetCrystalsByChakra(ctx context.Context, chakra GetCry
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *CrystalsService) GetCrystalsByElement(ctx context.Context, element GetCrystalsByElementParamsElement, params *GetCrystalsByElementParams, reqEditors ...RequestEditorFn) (*GetCrystalsByElementResponse, error) {
@@ -2015,7 +2015,7 @@ func (s *CrystalsService) GetCrystalsByElement(ctx context.Context, element GetC
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *CrystalsService) GetCrystalsByZodiac(ctx context.Context, sign GetCrystalsByZodiacParamsSign, params *GetCrystalsByZodiacParams, reqEditors ...RequestEditorFn) (*GetCrystalsByZodiacResponse, error) {
@@ -2023,7 +2023,7 @@ func (s *CrystalsService) GetCrystalsByZodiac(ctx context.Context, sign GetCryst
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *CrystalsService) GetDailyCrystal(ctx context.Context, params *GetDailyCrystalParams, body GetDailyCrystalJSONRequestBody, reqEditors ...RequestEditorFn) (*GetDailyCrystalResponse, error) {
@@ -2031,7 +2031,7 @@ func (s *CrystalsService) GetDailyCrystal(ctx context.Context, params *GetDailyC
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *CrystalsService) GetRandomCrystal(ctx context.Context, params *GetRandomCrystalParams, reqEditors ...RequestEditorFn) (*GetRandomCrystalResponse, error) {
@@ -2039,7 +2039,7 @@ func (s *CrystalsService) GetRandomCrystal(ctx context.Context, params *GetRando
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *CrystalsService) ListCrystalColors(ctx context.Context, params *ListCrystalColorsParams, reqEditors ...RequestEditorFn) (*ListCrystalColorsResponse, error) {
@@ -2047,7 +2047,7 @@ func (s *CrystalsService) ListCrystalColors(ctx context.Context, params *ListCry
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *CrystalsService) ListCrystalPlanets(ctx context.Context, params *ListCrystalPlanetsParams, reqEditors ...RequestEditorFn) (*ListCrystalPlanetsResponse, error) {
@@ -2055,7 +2055,7 @@ func (s *CrystalsService) ListCrystalPlanets(ctx context.Context, params *ListCr
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *CrystalsService) ListCrystals(ctx context.Context, params *ListCrystalsParams, reqEditors ...RequestEditorFn) (*ListCrystalsResponse, error) {
@@ -2063,7 +2063,7 @@ func (s *CrystalsService) ListCrystals(ctx context.Context, params *ListCrystals
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *CrystalsService) SearchCrystals(ctx context.Context, params *SearchCrystalsParams, reqEditors ...RequestEditorFn) (*SearchCrystalsResponse, error) {
@@ -2071,7 +2071,7 @@ func (s *CrystalsService) SearchCrystals(ctx context.Context, params *SearchCrys
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 // DreamsService groups the dreams endpoints.
@@ -2082,7 +2082,7 @@ func (s *DreamsService) GetDailyDreamSymbol(ctx context.Context, body GetDailyDr
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *DreamsService) GetDreamSymbol(ctx context.Context, id string, reqEditors ...RequestEditorFn) (*GetDreamSymbolResponse, error) {
@@ -2090,7 +2090,7 @@ func (s *DreamsService) GetDreamSymbol(ctx context.Context, id string, reqEditor
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *DreamsService) GetRandomSymbols(ctx context.Context, params *GetRandomSymbolsParams, reqEditors ...RequestEditorFn) (*GetRandomSymbolsResponse, error) {
@@ -2098,7 +2098,7 @@ func (s *DreamsService) GetRandomSymbols(ctx context.Context, params *GetRandomS
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *DreamsService) GetSymbolLetterCounts(ctx context.Context, reqEditors ...RequestEditorFn) (*GetSymbolLetterCountsResponse, error) {
@@ -2106,7 +2106,7 @@ func (s *DreamsService) GetSymbolLetterCounts(ctx context.Context, reqEditors ..
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *DreamsService) SearchDreamSymbols(ctx context.Context, params *SearchDreamSymbolsParams, reqEditors ...RequestEditorFn) (*SearchDreamSymbolsResponse, error) {
@@ -2114,7 +2114,7 @@ func (s *DreamsService) SearchDreamSymbols(ctx context.Context, params *SearchDr
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 // AngelNumbersService groups the angel-numbers endpoints.
@@ -2125,7 +2125,7 @@ func (s *AngelNumbersService) AnalyzeNumberSequence(ctx context.Context, params 
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *AngelNumbersService) GetAngelNumber(ctx context.Context, number string, params *GetAngelNumberParams, reqEditors ...RequestEditorFn) (*GetAngelNumberResponse, error) {
@@ -2133,7 +2133,7 @@ func (s *AngelNumbersService) GetAngelNumber(ctx context.Context, number string,
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *AngelNumbersService) GetDailyAngelNumber(ctx context.Context, params *GetDailyAngelNumberParams, body GetDailyAngelNumberJSONRequestBody, reqEditors ...RequestEditorFn) (*GetDailyAngelNumberResponse, error) {
@@ -2141,7 +2141,7 @@ func (s *AngelNumbersService) GetDailyAngelNumber(ctx context.Context, params *G
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *AngelNumbersService) ListAngelNumbers(ctx context.Context, params *ListAngelNumbersParams, reqEditors ...RequestEditorFn) (*ListAngelNumbersResponse, error) {
@@ -2149,7 +2149,7 @@ func (s *AngelNumbersService) ListAngelNumbers(ctx context.Context, params *List
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 // LocationService groups the location endpoints.
@@ -2160,7 +2160,7 @@ func (s *LocationService) GetCitiesByCountry(ctx context.Context, iso2 string, p
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *LocationService) ListCountries(ctx context.Context, params *ListCountriesParams, reqEditors ...RequestEditorFn) (*ListCountriesResponse, error) {
@@ -2168,7 +2168,7 @@ func (s *LocationService) ListCountries(ctx context.Context, params *ListCountri
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *LocationService) SearchCities(ctx context.Context, params *SearchCitiesParams, reqEditors ...RequestEditorFn) (*SearchCitiesResponse, error) {
@@ -2176,7 +2176,7 @@ func (s *LocationService) SearchCities(ctx context.Context, params *SearchCities
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 // UsageService groups the usage endpoints.
@@ -2187,7 +2187,7 @@ func (s *UsageService) GetUsageStats(ctx context.Context, reqEditors ...RequestE
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 // LanguagesService groups the languages endpoints.
@@ -2198,7 +2198,7 @@ func (s *LanguagesService) GetFieldLabels(ctx context.Context, params *GetFieldL
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
 
 func (s *LanguagesService) ListLanguages(ctx context.Context, reqEditors ...RequestEditorFn) (*ListLanguagesResponse, error) {
@@ -2206,5 +2206,5 @@ func (s *LanguagesService) ListLanguages(ctx context.Context, reqEditors ...Requ
 	if err != nil {
 		return resp, err
 	}
-	return resp, asRoxyError(resp)
+	return resp, asRoxyError(resp, resp.HTTPResponse)
 }
