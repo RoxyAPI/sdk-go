@@ -52240,7 +52240,7 @@ type ClientInterface interface {
 
 	// CalculateConnectionWithBody Calculate Human Design connection chart - Two-person composite bodygraph compatibility
 	//
-	// Calculate a Human Design connection chart by overlaying two bodygraphs. For each of the 36 channels the dynamic between the two people is classified as electromagnetic, dominance, compromise, or companionship, the four mechanics of how two designs meet. Also returns the nine centers as defined or open in the combined bodygraph with which person defines each, the combined definition, and a count of each dynamic. Built for relationship, dating, and coaching tools.
+	// Calculate a Human Design connection chart by overlaying two bodygraphs. For each of the 36 channels the dynamic between the two people is classified as electromagnetic, dominance, compromise, or companionship, the four mechanics of how two designs meet. Returns every active gate for each person, including hanging gates, the nine centers as defined or open in the combined bodygraph with which person defines each, the combined definition, and a count of each dynamic. Built for relationship, dating, and coaching tools.
 	//
 	// Takes any type of body and a specified content type.
 	//
@@ -52249,7 +52249,7 @@ type ClientInterface interface {
 
 	// CalculateConnection Calculate Human Design connection chart - Two-person composite bodygraph compatibility
 	//
-	// Calculate a Human Design connection chart by overlaying two bodygraphs. For each of the 36 channels the dynamic between the two people is classified as electromagnetic, dominance, compromise, or companionship, the four mechanics of how two designs meet. Also returns the nine centers as defined or open in the combined bodygraph with which person defines each, the combined definition, and a count of each dynamic. Built for relationship, dating, and coaching tools.
+	// Calculate a Human Design connection chart by overlaying two bodygraphs. For each of the 36 channels the dynamic between the two people is classified as electromagnetic, dominance, compromise, or companionship, the four mechanics of how two designs meet. Returns every active gate for each person, including hanging gates, the nine centers as defined or open in the combined bodygraph with which person defines each, the combined definition, and a count of each dynamic. Built for relationship, dating, and coaching tools.
 	//
 	// Takes a body of the `application/json` content type.
 	//
@@ -57496,7 +57496,7 @@ func (c *Client) CalculateChannels(ctx context.Context, params *CalculateChannel
 
 // CalculateConnectionWithBody Calculate Human Design connection chart - Two-person composite bodygraph compatibility
 //
-// Calculate a Human Design connection chart by overlaying two bodygraphs. For each of the 36 channels the dynamic between the two people is classified as electromagnetic, dominance, compromise, or companionship, the four mechanics of how two designs meet. Also returns the nine centers as defined or open in the combined bodygraph with which person defines each, the combined definition, and a count of each dynamic. Built for relationship, dating, and coaching tools.
+// Calculate a Human Design connection chart by overlaying two bodygraphs. For each of the 36 channels the dynamic between the two people is classified as electromagnetic, dominance, compromise, or companionship, the four mechanics of how two designs meet. Returns every active gate for each person, including hanging gates, the nine centers as defined or open in the combined bodygraph with which person defines each, the combined definition, and a count of each dynamic. Built for relationship, dating, and coaching tools.
 //
 // Takes any type of body and a specified content type.
 //
@@ -57515,7 +57515,7 @@ func (c *Client) CalculateConnectionWithBody(ctx context.Context, params *Calcul
 
 // CalculateConnection Calculate Human Design connection chart - Two-person composite bodygraph compatibility
 //
-// Calculate a Human Design connection chart by overlaying two bodygraphs. For each of the 36 channels the dynamic between the two people is classified as electromagnetic, dominance, compromise, or companionship, the four mechanics of how two designs meet. Also returns the nine centers as defined or open in the combined bodygraph with which person defines each, the combined definition, and a count of each dynamic. Built for relationship, dating, and coaching tools.
+// Calculate a Human Design connection chart by overlaying two bodygraphs. For each of the 36 channels the dynamic between the two people is classified as electromagnetic, dominance, compromise, or companionship, the four mechanics of how two designs meet. Returns every active gate for each person, including hanging gates, the nine centers as defined or open in the combined bodygraph with which person defines each, the combined definition, and a count of each dynamic. Built for relationship, dating, and coaching tools.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -81366,7 +81366,7 @@ type ClientWithResponsesInterface interface {
 
 	// CalculateConnectionWithBodyWithResponse Calculate Human Design connection chart - Two-person composite bodygraph compatibility
 	//
-	// Calculate a Human Design connection chart by overlaying two bodygraphs. For each of the 36 channels the dynamic between the two people is classified as electromagnetic, dominance, compromise, or companionship, the four mechanics of how two designs meet. Also returns the nine centers as defined or open in the combined bodygraph with which person defines each, the combined definition, and a count of each dynamic. Built for relationship, dating, and coaching tools.
+	// Calculate a Human Design connection chart by overlaying two bodygraphs. For each of the 36 channels the dynamic between the two people is classified as electromagnetic, dominance, compromise, or companionship, the four mechanics of how two designs meet. Returns every active gate for each person, including hanging gates, the nine centers as defined or open in the combined bodygraph with which person defines each, the combined definition, and a count of each dynamic. Built for relationship, dating, and coaching tools.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -81375,7 +81375,7 @@ type ClientWithResponsesInterface interface {
 
 	// CalculateConnectionWithResponse Calculate Human Design connection chart - Two-person composite bodygraph compatibility
 	//
-	// Calculate a Human Design connection chart by overlaying two bodygraphs. For each of the 36 channels the dynamic between the two people is classified as electromagnetic, dominance, compromise, or companionship, the four mechanics of how two designs meet. Also returns the nine centers as defined or open in the combined bodygraph with which person defines each, the combined definition, and a count of each dynamic. Built for relationship, dating, and coaching tools.
+	// Calculate a Human Design connection chart by overlaying two bodygraphs. For each of the 36 channels the dynamic between the two people is classified as electromagnetic, dominance, compromise, or companionship, the four mechanics of how two designs meet. Returns every active gate for each person, including hanging gates, the nine centers as defined or open in the combined bodygraph with which person defines each, the combined definition, and a count of each dynamic. Built for relationship, dating, and coaching tools.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -110694,6 +110694,12 @@ type CalculateConnectionResponse struct {
 		// CombinedDefinitionLocalized Combined definition name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
 		CombinedDefinitionLocalized *string `json:"combinedDefinitionLocalized,omitempty"`
 
+		// PersonAGates All unique active Human Design gate numbers for person A, in ascending order, including hanging gates that do not complete a channel. Use with personBGates to draw every activation on the combined bodygraph. Gate numbers are machine identifiers and do not change with lang.
+		PersonAGates *[]int `json:"personAGates,omitempty"`
+
+		// PersonBGates All unique active Human Design gate numbers for person B, in ascending order, including hanging gates that do not complete a channel. Use with personAGates to draw every activation on the combined bodygraph. Gate numbers are machine identifiers and do not change with lang.
+		PersonBGates *[]int `json:"personBGates,omitempty"`
+
 		// Summary Count of each connection dynamic across all connected channels.
 		Summary struct {
 			// Companionship Count of companionship channels, where both people share the whole channel.
@@ -110787,6 +110793,12 @@ func (r CalculateConnectionResponse) GetJSON200() *struct {
 
 	// CombinedDefinitionLocalized Combined definition name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
 	CombinedDefinitionLocalized *string `json:"combinedDefinitionLocalized,omitempty"`
+
+	// PersonAGates All unique active Human Design gate numbers for person A, in ascending order, including hanging gates that do not complete a channel. Use with personBGates to draw every activation on the combined bodygraph. Gate numbers are machine identifiers and do not change with lang.
+	PersonAGates *[]int `json:"personAGates,omitempty"`
+
+	// PersonBGates All unique active Human Design gate numbers for person B, in ascending order, including hanging gates that do not complete a channel. Use with personAGates to draw every activation on the combined bodygraph. Gate numbers are machine identifiers and do not change with lang.
+	PersonBGates *[]int `json:"personBGates,omitempty"`
 
 	// Summary Count of each connection dynamic across all connected channels.
 	Summary struct {
@@ -143426,7 +143438,7 @@ func (c *ClientWithResponses) CalculateChannelsWithResponse(ctx context.Context,
 
 // CalculateConnectionWithBodyWithResponse Calculate Human Design connection chart - Two-person composite bodygraph compatibility
 //
-// Calculate a Human Design connection chart by overlaying two bodygraphs. For each of the 36 channels the dynamic between the two people is classified as electromagnetic, dominance, compromise, or companionship, the four mechanics of how two designs meet. Also returns the nine centers as defined or open in the combined bodygraph with which person defines each, the combined definition, and a count of each dynamic. Built for relationship, dating, and coaching tools.
+// Calculate a Human Design connection chart by overlaying two bodygraphs. For each of the 36 channels the dynamic between the two people is classified as electromagnetic, dominance, compromise, or companionship, the four mechanics of how two designs meet. Returns every active gate for each person, including hanging gates, the nine centers as defined or open in the combined bodygraph with which person defines each, the combined definition, and a count of each dynamic. Built for relationship, dating, and coaching tools.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -143441,7 +143453,7 @@ func (c *ClientWithResponses) CalculateConnectionWithBodyWithResponse(ctx contex
 
 // CalculateConnectionWithResponse Calculate Human Design connection chart - Two-person composite bodygraph compatibility
 //
-// Calculate a Human Design connection chart by overlaying two bodygraphs. For each of the 36 channels the dynamic between the two people is classified as electromagnetic, dominance, compromise, or companionship, the four mechanics of how two designs meet. Also returns the nine centers as defined or open in the combined bodygraph with which person defines each, the combined definition, and a count of each dynamic. Built for relationship, dating, and coaching tools.
+// Calculate a Human Design connection chart by overlaying two bodygraphs. For each of the 36 channels the dynamic between the two people is classified as electromagnetic, dominance, compromise, or companionship, the four mechanics of how two designs meet. Returns every active gate for each person, including hanging gates, the nine centers as defined or open in the combined bodygraph with which person defines each, the combined definition, and a count of each dynamic. Built for relationship, dating, and coaching tools.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -164085,6 +164097,12 @@ func ParseCalculateConnectionResponse(rsp *http.Response) (*CalculateConnectionR
 
 			// CombinedDefinitionLocalized Combined definition name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
 			CombinedDefinitionLocalized *string `json:"combinedDefinitionLocalized,omitempty"`
+
+			// PersonAGates All unique active Human Design gate numbers for person A, in ascending order, including hanging gates that do not complete a channel. Use with personBGates to draw every activation on the combined bodygraph. Gate numbers are machine identifiers and do not change with lang.
+			PersonAGates *[]int `json:"personAGates,omitempty"`
+
+			// PersonBGates All unique active Human Design gate numbers for person B, in ascending order, including hanging gates that do not complete a channel. Use with personAGates to draw every activation on the combined bodygraph. Gate numbers are machine identifiers and do not change with lang.
+			PersonBGates *[]int `json:"personBGates,omitempty"`
 
 			// Summary Count of each connection dynamic across all connected channels.
 			Summary struct {
