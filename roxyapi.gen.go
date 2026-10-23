@@ -36300,7 +36300,7 @@ type GetDailyAngelNumberJSONBody struct {
 	// Date Date for the reading in YYYY-MM-DD format. Defaults to today (UTC). Useful for viewing past daily readings or pre-generating future ones.
 	Date *openapi_types.Date `json:"date,omitempty"`
 
-	// Seed Optional seed for reproducible readings. Same seed + same date = same angel number every time. Pass any unique identifier (userId, email hash, session token). Omit for anonymous daily readings.
+	// Seed Optional seed for reproducible readings. Same seed + same date = same angel number every time. Pass any unique identifier (userId, email hash, session token) to give each user their own angel number for the day. Without a seed every caller receives the same shared angel number of the day.
 	Seed *string `json:"seed,omitempty"`
 }
 
@@ -37803,7 +37803,7 @@ type GetDailyBiorhythmJSONBody struct {
 	// Date Date for the reading in YYYY-MM-DD format. Defaults to today (UTC). Useful for viewing past daily readings or pre-generating future ones.
 	Date *openapi_types.Date `json:"date,omitempty"`
 
-	// Seed Optional seed for reproducible readings. Same seed + same date = same reading every time. Pass any unique identifier (userId, email hash, session token). Omit for anonymous daily readings.
+	// Seed Optional seed for reproducible readings. Same seed + same date = same reading every time. Pass any unique identifier (userId, email hash, session token) to give each user their own reading for the day. Without a seed every caller receives the same shared reading of the day.
 	Seed *string `json:"seed,omitempty"`
 }
 
@@ -38574,7 +38574,7 @@ type GetDailyCrystalJSONBody struct {
 	// Date Date for the reading in YYYY-MM-DD format. Defaults to today (UTC). Useful for viewing past daily readings or pre-generating future ones.
 	Date *openapi_types.Date `json:"date,omitempty"`
 
-	// Seed Optional seed for reproducible readings. Same seed + same date = same crystal every time. Pass any unique identifier (userId, email hash, session token). Omit for anonymous daily readings.
+	// Seed Optional seed for reproducible readings. Same seed + same date = same crystal every time. Pass any unique identifier (userId, email hash, session token) to give each user their own crystal for the day. Without a seed every caller receives the same shared crystal of the day.
 	Seed *string `json:"seed,omitempty"`
 }
 
@@ -38682,7 +38682,7 @@ type GetDailyDreamSymbolJSONBody struct {
 	// Date Date for the reading in YYYY-MM-DD format. Defaults to today (UTC). Useful for viewing past daily readings or pre-generating future ones.
 	Date *openapi_types.Date `json:"date,omitempty"`
 
-	// Seed Optional seed for reproducible readings. Same seed + same date = same symbol every time. Pass any unique identifier (userId, email hash, session token). Omit for anonymous daily readings.
+	// Seed Optional seed for reproducible readings. Same seed + same date = same symbol every time. Pass any unique identifier (userId, email hash, session token) to give each user their own symbol for the day. Without a seed every caller receives the same shared symbol of the day.
 	Seed *string `json:"seed,omitempty"`
 }
 
@@ -39800,7 +39800,7 @@ type GetDailyHexagramJSONBody struct {
 	// Date Date for the reading in YYYY-MM-DD format. Defaults to today (UTC). Useful for viewing past daily readings or pre-generating future ones.
 	Date *openapi_types.Date `json:"date,omitempty"`
 
-	// Seed Optional seed for reproducible readings. Same seed + same date = same hexagram every time. Pass any unique identifier (userId, email hash, session token). Omit for anonymous daily readings.
+	// Seed Optional seed for reproducible readings. Same seed + same date = same hexagram every time. Pass any unique identifier (userId, email hash, session token) to give each user their own hexagram for the day. Without a seed every caller receives the same shared hexagram of the day.
 	Seed *string `json:"seed,omitempty"`
 }
 
@@ -39818,7 +39818,7 @@ type CastDailyReadingJSONBody struct {
 	// Date Date for the reading in YYYY-MM-DD format. Defaults to today (UTC). Useful for viewing past daily readings or pre-generating future ones.
 	Date *openapi_types.Date `json:"date,omitempty"`
 
-	// Seed Optional seed for reproducible readings. Same seed + same date = same hexagram every time. Pass any unique identifier (userId, email hash, session token). Omit for anonymous daily readings.
+	// Seed Optional seed for reproducible readings. Same seed + same date = same hexagram every time. Pass any unique identifier (userId, email hash, session token) to give each user their own hexagram for the day. Without a seed every caller receives the same shared hexagram of the day.
 	Seed *string `json:"seed,omitempty"`
 }
 
@@ -40765,7 +40765,7 @@ type GetDailyNumberJSONBody struct {
 	// Date Date for the reading in YYYY-MM-DD format. Defaults to today (UTC). Useful for viewing past daily readings or pre-generating future ones.
 	Date *openapi_types.Date `json:"date,omitempty"`
 
-	// Seed Optional seed for reproducible readings. Same seed + same date = same number every time. Pass any unique identifier (userId, email hash, session token). Omit for anonymous daily readings.
+	// Seed Optional seed for reproducible readings. Same seed + same date = same number every time. Pass any unique identifier (userId, email hash, session token) to give each user their own number for the day. Without a seed every caller receives the same shared number of the day.
 	Seed *string `json:"seed,omitempty"`
 }
 
@@ -41074,7 +41074,7 @@ type GetDailyCardJSONBody struct {
 	// Date Date for the reading in YYYY-MM-DD format. Defaults to today (UTC). Useful for viewing past daily readings or pre-generating future ones.
 	Date *openapi_types.Date `json:"date,omitempty"`
 
-	// Seed Optional seed for reproducible readings. Same seed + same date = same card every time. Pass any unique identifier (userId, email hash, session token). Omit for anonymous daily readings.
+	// Seed Optional seed for reproducible readings. Same seed + same date = same card every time. Pass any unique identifier (userId, email hash, session token) to give each user their own card for the day. Without a seed every caller receives the same shared card of the day.
 	Seed *string `json:"seed,omitempty"`
 }
 
@@ -53314,7 +53314,7 @@ type ClientInterface interface {
 
 	// GetDailyCardWithBody Daily tarot card - Card of the day API
 	//
-	// Receive a single tarot card for daily guidance and reflection. This endpoint uses seeded randomness to ensure the same seed gets the same card on the same day, perfect for "Card of the Day" features. Provide a seed (userId, email hash, session token) for reproducible consistency, or omit for anonymous daily draws. Returns card with keywords, full meaning, and a daily message summary. Great for tarot apps, wellness platforms, morning ritual apps, and journaling tools.
+	// Receive a single tarot card for daily guidance and reflection. This endpoint uses seeded randomness to ensure the same seed gets the same card on the same day, perfect for "Card of the Day" features. Pass a seed (userId, email hash, session token) to give each user their own card for the day; without a seed every caller receives the same shared card of the day, which changes at midnight UTC. Returns card with keywords, full meaning, and a daily message summary. Great for tarot apps, wellness platforms, morning ritual apps, and journaling tools.
 	//
 	// Takes any type of body and a specified content type.
 	//
@@ -53323,7 +53323,7 @@ type ClientInterface interface {
 
 	// GetDailyCard Daily tarot card - Card of the day API
 	//
-	// Receive a single tarot card for daily guidance and reflection. This endpoint uses seeded randomness to ensure the same seed gets the same card on the same day, perfect for "Card of the Day" features. Provide a seed (userId, email hash, session token) for reproducible consistency, or omit for anonymous daily draws. Returns card with keywords, full meaning, and a daily message summary. Great for tarot apps, wellness platforms, morning ritual apps, and journaling tools.
+	// Receive a single tarot card for daily guidance and reflection. This endpoint uses seeded randomness to ensure the same seed gets the same card on the same day, perfect for "Card of the Day" features. Pass a seed (userId, email hash, session token) to give each user their own card for the day; without a seed every caller receives the same shared card of the day, which changes at midnight UTC. Returns card with keywords, full meaning, and a daily message summary. Great for tarot apps, wellness platforms, morning ritual apps, and journaling tools.
 	//
 	// Takes a body of the `application/json` content type.
 	//
@@ -59670,7 +59670,7 @@ func (c *Client) GetCard(ctx context.Context, id string, params *GetCardParams, 
 
 // GetDailyCardWithBody Daily tarot card - Card of the day API
 //
-// Receive a single tarot card for daily guidance and reflection. This endpoint uses seeded randomness to ensure the same seed gets the same card on the same day, perfect for "Card of the Day" features. Provide a seed (userId, email hash, session token) for reproducible consistency, or omit for anonymous daily draws. Returns card with keywords, full meaning, and a daily message summary. Great for tarot apps, wellness platforms, morning ritual apps, and journaling tools.
+// Receive a single tarot card for daily guidance and reflection. This endpoint uses seeded randomness to ensure the same seed gets the same card on the same day, perfect for "Card of the Day" features. Pass a seed (userId, email hash, session token) to give each user their own card for the day; without a seed every caller receives the same shared card of the day, which changes at midnight UTC. Returns card with keywords, full meaning, and a daily message summary. Great for tarot apps, wellness platforms, morning ritual apps, and journaling tools.
 //
 // Takes any type of body and a specified content type.
 //
@@ -59689,7 +59689,7 @@ func (c *Client) GetDailyCardWithBody(ctx context.Context, params *GetDailyCardP
 
 // GetDailyCard Daily tarot card - Card of the day API
 //
-// Receive a single tarot card for daily guidance and reflection. This endpoint uses seeded randomness to ensure the same seed gets the same card on the same day, perfect for "Card of the Day" features. Provide a seed (userId, email hash, session token) for reproducible consistency, or omit for anonymous daily draws. Returns card with keywords, full meaning, and a daily message summary. Great for tarot apps, wellness platforms, morning ritual apps, and journaling tools.
+// Receive a single tarot card for daily guidance and reflection. This endpoint uses seeded randomness to ensure the same seed gets the same card on the same day, perfect for "Card of the Day" features. Pass a seed (userId, email hash, session token) to give each user their own card for the day; without a seed every caller receives the same shared card of the day, which changes at midnight UTC. Returns card with keywords, full meaning, and a daily message summary. Great for tarot apps, wellness platforms, morning ritual apps, and journaling tools.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -82516,7 +82516,7 @@ type ClientWithResponsesInterface interface {
 
 	// GetDailyCardWithBodyWithResponse Daily tarot card - Card of the day API
 	//
-	// Receive a single tarot card for daily guidance and reflection. This endpoint uses seeded randomness to ensure the same seed gets the same card on the same day, perfect for "Card of the Day" features. Provide a seed (userId, email hash, session token) for reproducible consistency, or omit for anonymous daily draws. Returns card with keywords, full meaning, and a daily message summary. Great for tarot apps, wellness platforms, morning ritual apps, and journaling tools.
+	// Receive a single tarot card for daily guidance and reflection. This endpoint uses seeded randomness to ensure the same seed gets the same card on the same day, perfect for "Card of the Day" features. Pass a seed (userId, email hash, session token) to give each user their own card for the day; without a seed every caller receives the same shared card of the day, which changes at midnight UTC. Returns card with keywords, full meaning, and a daily message summary. Great for tarot apps, wellness platforms, morning ritual apps, and journaling tools.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -82525,7 +82525,7 @@ type ClientWithResponsesInterface interface {
 
 	// GetDailyCardWithResponse Daily tarot card - Card of the day API
 	//
-	// Receive a single tarot card for daily guidance and reflection. This endpoint uses seeded randomness to ensure the same seed gets the same card on the same day, perfect for "Card of the Day" features. Provide a seed (userId, email hash, session token) for reproducible consistency, or omit for anonymous daily draws. Returns card with keywords, full meaning, and a daily message summary. Great for tarot apps, wellness platforms, morning ritual apps, and journaling tools.
+	// Receive a single tarot card for daily guidance and reflection. This endpoint uses seeded randomness to ensure the same seed gets the same card on the same day, perfect for "Card of the Day" features. Pass a seed (userId, email hash, session token) to give each user their own card for the day; without a seed every caller receives the same shared card of the day, which changes at midnight UTC. Returns card with keywords, full meaning, and a daily message summary. Great for tarot apps, wellness platforms, morning ritual apps, and journaling tools.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -145248,7 +145248,7 @@ func (c *ClientWithResponses) GetCardWithResponse(ctx context.Context, id string
 
 // GetDailyCardWithBodyWithResponse Daily tarot card - Card of the day API
 //
-// Receive a single tarot card for daily guidance and reflection. This endpoint uses seeded randomness to ensure the same seed gets the same card on the same day, perfect for "Card of the Day" features. Provide a seed (userId, email hash, session token) for reproducible consistency, or omit for anonymous daily draws. Returns card with keywords, full meaning, and a daily message summary. Great for tarot apps, wellness platforms, morning ritual apps, and journaling tools.
+// Receive a single tarot card for daily guidance and reflection. This endpoint uses seeded randomness to ensure the same seed gets the same card on the same day, perfect for "Card of the Day" features. Pass a seed (userId, email hash, session token) to give each user their own card for the day; without a seed every caller receives the same shared card of the day, which changes at midnight UTC. Returns card with keywords, full meaning, and a daily message summary. Great for tarot apps, wellness platforms, morning ritual apps, and journaling tools.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -145263,7 +145263,7 @@ func (c *ClientWithResponses) GetDailyCardWithBodyWithResponse(ctx context.Conte
 
 // GetDailyCardWithResponse Daily tarot card - Card of the day API
 //
-// Receive a single tarot card for daily guidance and reflection. This endpoint uses seeded randomness to ensure the same seed gets the same card on the same day, perfect for "Card of the Day" features. Provide a seed (userId, email hash, session token) for reproducible consistency, or omit for anonymous daily draws. Returns card with keywords, full meaning, and a daily message summary. Great for tarot apps, wellness platforms, morning ritual apps, and journaling tools.
+// Receive a single tarot card for daily guidance and reflection. This endpoint uses seeded randomness to ensure the same seed gets the same card on the same day, perfect for "Card of the Day" features. Pass a seed (userId, email hash, session token) to give each user their own card for the day; without a seed every caller receives the same shared card of the day, which changes at midnight UTC. Returns card with keywords, full meaning, and a daily message summary. Great for tarot apps, wellness platforms, morning ritual apps, and journaling tools.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
