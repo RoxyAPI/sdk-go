@@ -33533,7 +33533,7 @@ type KPRasiChangesResponse struct {
 		// FromSignLord Rashi lord (planetary ruler) of the departing sign. Determines the Vimshottari dasha connection.
 		FromSignLord string `json:"fromSignLord"`
 
-		// Time Ingress time (HH:MM, 24-hour): the instant is found to the second and shown to the minute it falls in. Adjusted to requested timezone.
+		// Time Ingress time (HH:MM, 24-hour): the instant is found to the second and shown rounded to the nearest minute. Adjusted to requested timezone.
 		Time string `json:"time"`
 
 		// ToSign New zodiac sign entered by the planet. Marks the beginning of a new transit phase in Vedic gochar analysis.
@@ -33829,7 +33829,7 @@ type KPSublordChangesResponse struct {
 		// FromSublord KP sublord planet before transition. The sublord determines whether an event signified by the star lord will manifest.
 		FromSublord string `json:"fromSublord"`
 
-		// Time Sublord transition time (HH:MM, 24-hour): the instant is found to the second and shown to the minute it falls in. Adjusted to requested timezone.
+		// Time Sublord transition time (HH:MM, 24-hour): the instant is found to the second and shown rounded to the nearest minute. Adjusted to requested timezone.
 		Time string `json:"time"`
 
 		// ToKp New KP number (1-249) the planet enters. Each number maps to a unique star lord and sublord combination.
