@@ -35872,7 +35872,7 @@ type TransitsRequest struct {
 	// Time Transit time in HH:MM:SS format (defaults to current time)
 	Time *string `json:"time,omitempty"`
 
-	// Timezone Transit timezone: decimal hours from UTC OR IANA name (e.g. "America/New_York"). IANA resolved to the DST-correct offset for the transit date. Defaults to 0 (UTC).
+	// Timezone Transit timezone: decimal hours from UTC OR IANA name (e.g. "America/New_York"). IANA resolved to the DST-correct offset for the transit date. When `date` or `time` is omitted, the current moment is read in this zone, so `transitDate` and `transitTime` come back as its local clock. Defaults to 0 (UTC).
 	Timezone *TransitsRequest_Timezone `json:"timezone,omitempty"`
 }
 
@@ -35896,7 +35896,7 @@ type TransitsRequestTimezone0 = float32
 // TransitsRequestTimezone1 defines model for TransitsRequest.Timezone.1.
 type TransitsRequestTimezone1 = string
 
-// TransitsRequest_Timezone Transit timezone: decimal hours from UTC OR IANA name (e.g. "America/New_York"). IANA resolved to the DST-correct offset for the transit date. Defaults to 0 (UTC).
+// TransitsRequest_Timezone Transit timezone: decimal hours from UTC OR IANA name (e.g. "America/New_York"). IANA resolved to the DST-correct offset for the transit date. When `date` or `time` is omitted, the current moment is read in this zone, so `transitDate` and `transitTime` come back as its local clock. Defaults to 0 (UTC).
 type TransitsRequest_Timezone struct {
 	union json.RawMessage
 }
@@ -37029,7 +37029,7 @@ type GetCurrentMoonPhaseParams struct {
 	// Time Time in 24-hour HH:MM:SS format. Defaults to 12:00:00 (noon). Moon moves ~13 degrees per day so time affects phase precision.
 	Time *string `form:"time,omitempty" json:"time,omitempty"`
 
-	// Timezone IANA name (e.g. "America/New_York", "Europe/London"), decimal hours (e.g. -5 for EST, 1 for CET), or a fixed UTC offset (e.g. "-05:00"). IANA resolved to the DST-correct offset for the given date. Defaults to 0 (UTC).
+	// Timezone IANA name (e.g. "America/New_York", "Europe/London"), decimal hours (e.g. -5 for EST, 1 for CET), or a fixed UTC offset (e.g. "-05:00"). IANA resolved to the DST-correct offset for the given date. With `date` omitted, today is the date in this zone. Defaults to 0 (UTC).
 	Timezone *string `form:"timezone,omitempty" json:"timezone,omitempty"`
 }
 
@@ -52774,7 +52774,7 @@ type ClientInterface interface {
 
 	// SearchCities Search cities worldwide - Geocoding autocomplete with coordinates and timezone
 	//
-	// Turn a place name into coordinates, an IANA timezone and a DST-aware UTC offset, across 235,000+ cities and towns in 240+ countries. Coverage reaches rural towns of a few hundred people and every administrative seat, so a birthplace outside a major metro resolves as reliably as a capital. Matching is case-insensitive, accent-insensitive and partial, so ber matches Berlin, Bern and Bergen, native scripts are transliterated, and historic names resolve to the current place, so bombay returns Mumbai and peking returns Beijing. Results are ordered by match quality first and population second, so an exactly named small town is never buried under a larger city that merely shares its opening letters. Built for birth chart location pickers, horoscope apps, event scheduling, and any feature that needs place-to-coordinates resolution.
+	// Turn a place name into coordinates, an IANA timezone and a DST-aware UTC offset, across 5,180,000+ cities, towns and villages in 240+ countries. Coverage reaches every village on record, whatever its population, so a birthplace outside a major metro resolves as reliably as a capital. Matching is case-insensitive, accent-insensitive and partial, so ber matches Berlin, Bern and Bergen, native scripts are transliterated, and historic names resolve to the current place, so bombay returns Mumbai and peking returns Beijing. A full name typed ranks above its smaller namesakes, a few letters reach the best-known city first, and a state, province or country in the query picks the right one of many places with the same name. A town name that matches nothing returns no match, never the largest town in the region it names. Built for birth chart location pickers, horoscope apps, event scheduling, and any feature that needs place-to-coordinates resolution.
 	//
 	// Corresponds with GET /location/search (the `SearchCities` operationId).
 	SearchCities(ctx context.Context, params *SearchCitiesParams, reqEditors ...RequestEditorFn) (*http.Response, error)
@@ -58490,7 +58490,7 @@ func (c *Client) GetCitiesByCountry(ctx context.Context, iso2 string, params *Ge
 
 // SearchCities Search cities worldwide - Geocoding autocomplete with coordinates and timezone
 //
-// Turn a place name into coordinates, an IANA timezone and a DST-aware UTC offset, across 235,000+ cities and towns in 240+ countries. Coverage reaches rural towns of a few hundred people and every administrative seat, so a birthplace outside a major metro resolves as reliably as a capital. Matching is case-insensitive, accent-insensitive and partial, so ber matches Berlin, Bern and Bergen, native scripts are transliterated, and historic names resolve to the current place, so bombay returns Mumbai and peking returns Beijing. Results are ordered by match quality first and population second, so an exactly named small town is never buried under a larger city that merely shares its opening letters. Built for birth chart location pickers, horoscope apps, event scheduling, and any feature that needs place-to-coordinates resolution.
+// Turn a place name into coordinates, an IANA timezone and a DST-aware UTC offset, across 5,180,000+ cities, towns and villages in 240+ countries. Coverage reaches every village on record, whatever its population, so a birthplace outside a major metro resolves as reliably as a capital. Matching is case-insensitive, accent-insensitive and partial, so ber matches Berlin, Bern and Bergen, native scripts are transliterated, and historic names resolve to the current place, so bombay returns Mumbai and peking returns Beijing. A full name typed ranks above its smaller namesakes, a few letters reach the best-known city first, and a state, province or country in the query picks the right one of many places with the same name. A town name that matches nothing returns no match, never the largest town in the region it names. Built for birth chart location pickers, horoscope apps, event scheduling, and any feature that needs place-to-coordinates resolution.
 //
 // Corresponds with GET /location/search (the `SearchCities` operationId).
 func (c *Client) SearchCities(ctx context.Context, params *SearchCitiesParams, reqEditors ...RequestEditorFn) (*http.Response, error) {
@@ -81940,7 +81940,7 @@ type ClientWithResponsesInterface interface {
 
 	// SearchCitiesWithResponse Search cities worldwide - Geocoding autocomplete with coordinates and timezone
 	//
-	// Turn a place name into coordinates, an IANA timezone and a DST-aware UTC offset, across 235,000+ cities and towns in 240+ countries. Coverage reaches rural towns of a few hundred people and every administrative seat, so a birthplace outside a major metro resolves as reliably as a capital. Matching is case-insensitive, accent-insensitive and partial, so ber matches Berlin, Bern and Bergen, native scripts are transliterated, and historic names resolve to the current place, so bombay returns Mumbai and peking returns Beijing. Results are ordered by match quality first and population second, so an exactly named small town is never buried under a larger city that merely shares its opening letters. Built for birth chart location pickers, horoscope apps, event scheduling, and any feature that needs place-to-coordinates resolution.
+	// Turn a place name into coordinates, an IANA timezone and a DST-aware UTC offset, across 5,180,000+ cities, towns and villages in 240+ countries. Coverage reaches every village on record, whatever its population, so a birthplace outside a major metro resolves as reliably as a capital. Matching is case-insensitive, accent-insensitive and partial, so ber matches Berlin, Bern and Bergen, native scripts are transliterated, and historic names resolve to the current place, so bombay returns Mumbai and peking returns Beijing. A full name typed ranks above its smaller namesakes, a few letters reach the best-known city first, and a state, province or country in the query picks the right one of many places with the same name. A town name that matches nothing returns no match, never the largest town in the region it names. Built for birth chart location pickers, horoscope apps, event scheduling, and any feature that needs place-to-coordinates resolution.
 	//
 	// Returns a wrapper object for the known response body format(s).
 	//
@@ -117334,7 +117334,7 @@ type ListCountriesResponse struct {
 	JSON200 *struct {
 		// Countries Countries for the current page, sorted alphabetically by name.
 		Countries []struct {
-			// CityCount Number of searchable places in this country, including small towns and administrative seats. Useful for showing coverage in a UI or sizing a dependent city dropdown.
+			// CityCount Number of searchable places in this country, every town and village included. Useful for showing coverage in a UI or sizing a dependent city dropdown.
 			CityCount float32 `json:"cityCount"`
 
 			// Iso2 ISO 3166-1 alpha-2 country code. Use as the identifier when fetching cities for a specific country via the /countries/{iso2} endpoint.
@@ -117374,7 +117374,7 @@ type ListCountriesResponse struct {
 func (r ListCountriesResponse) GetJSON200() *struct {
 	// Countries Countries for the current page, sorted alphabetically by name.
 	Countries []struct {
-		// CityCount Number of searchable places in this country, including small towns and administrative seats. Useful for showing coverage in a UI or sizing a dependent city dropdown.
+		// CityCount Number of searchable places in this country, every town and village included. Useful for showing coverage in a UI or sizing a dependent city dropdown.
 		CityCount float32 `json:"cityCount"`
 
 		// Iso2 ISO 3166-1 alpha-2 country code. Use as the identifier when fetching cities for a specific country via the /countries/{iso2} endpoint.
@@ -117485,7 +117485,7 @@ type GetCitiesByCountryResponse struct {
 			// Longitude Geographic longitude in decimal degrees (-180 to 180). Pass directly to astrology, horoscope, and panchang API endpoints alongside latitude.
 			Longitude float32 `json:"longitude"`
 
-			// Population Population estimate for the place. Breaks ties between results of equal match quality, so among several places matching equally well the largest leads. It never outranks a better match, which is why a small town still wins when its name is typed exactly. May be 0 for a hamlet or administrative seat that carries no published figure.
+			// Population Population estimate for the place. Weighs the ranking, so among places matching a query alike the larger leads, while a full name typed still outranks a namesake many times its size. 0 for a place with no published figure, as most villages are.
 			Population float32 `json:"population"`
 
 			// Province State, province, canton, or administrative region. Show it whenever more than one result comes back: it is what separates Richfield, Utah from Richfield, Minnesota, and the six US Springfields from each other. Empty for the small number of places with no administrative division recorded.
@@ -117540,7 +117540,7 @@ func (r GetCitiesByCountryResponse) GetJSON200() *struct {
 		// Longitude Geographic longitude in decimal degrees (-180 to 180). Pass directly to astrology, horoscope, and panchang API endpoints alongside latitude.
 		Longitude float32 `json:"longitude"`
 
-		// Population Population estimate for the place. Breaks ties between results of equal match quality, so among several places matching equally well the largest leads. It never outranks a better match, which is why a small town still wins when its name is typed exactly. May be 0 for a hamlet or administrative seat that carries no published figure.
+		// Population Population estimate for the place. Weighs the ranking, so among places matching a query alike the larger leads, while a full name typed still outranks a namesake many times its size. 0 for a place with no published figure, as most villages are.
 		Population float32 `json:"population"`
 
 		// Province State, province, canton, or administrative region. Show it whenever more than one result comes back: it is what separates Richfield, Utah from Richfield, Minnesota, and the six US Springfields from each other. Empty for the small number of places with no administrative division recorded.
@@ -117651,7 +117651,7 @@ type SearchCitiesResponse struct {
 			// Longitude Geographic longitude in decimal degrees (-180 to 180). Pass directly to astrology, horoscope, and panchang API endpoints alongside latitude.
 			Longitude float32 `json:"longitude"`
 
-			// Population Population estimate for the place. Breaks ties between results of equal match quality, so among several places matching equally well the largest leads. It never outranks a better match, which is why a small town still wins when its name is typed exactly. May be 0 for a hamlet or administrative seat that carries no published figure.
+			// Population Population estimate for the place. Weighs the ranking, so among places matching a query alike the larger leads, while a full name typed still outranks a namesake many times its size. 0 for a place with no published figure, as most villages are.
 			Population float32 `json:"population"`
 
 			// Province State, province, canton, or administrative region. Show it whenever more than one result comes back: it is what separates Richfield, Utah from Richfield, Minnesota, and the six US Springfields from each other. Empty for the small number of places with no administrative division recorded.
@@ -117706,7 +117706,7 @@ func (r SearchCitiesResponse) GetJSON200() *struct {
 		// Longitude Geographic longitude in decimal degrees (-180 to 180). Pass directly to astrology, horoscope, and panchang API endpoints alongside latitude.
 		Longitude float32 `json:"longitude"`
 
-		// Population Population estimate for the place. Breaks ties between results of equal match quality, so among several places matching equally well the largest leads. It never outranks a better match, which is why a small town still wins when its name is typed exactly. May be 0 for a hamlet or administrative seat that carries no published figure.
+		// Population Population estimate for the place. Weighs the ranking, so among places matching a query alike the larger leads, while a full name typed still outranks a namesake many times its size. 0 for a place with no published figure, as most villages are.
 		Population float32 `json:"population"`
 
 		// Province State, province, canton, or administrative region. Show it whenever more than one result comes back: it is what separates Richfield, Utah from Richfield, Minnesota, and the six US Springfields from each other. Empty for the small number of places with no administrative division recorded.
@@ -144288,7 +144288,7 @@ func (c *ClientWithResponses) GetCitiesByCountryWithResponse(ctx context.Context
 
 // SearchCitiesWithResponse Search cities worldwide - Geocoding autocomplete with coordinates and timezone
 //
-// Turn a place name into coordinates, an IANA timezone and a DST-aware UTC offset, across 235,000+ cities and towns in 240+ countries. Coverage reaches rural towns of a few hundred people and every administrative seat, so a birthplace outside a major metro resolves as reliably as a capital. Matching is case-insensitive, accent-insensitive and partial, so ber matches Berlin, Bern and Bergen, native scripts are transliterated, and historic names resolve to the current place, so bombay returns Mumbai and peking returns Beijing. Results are ordered by match quality first and population second, so an exactly named small town is never buried under a larger city that merely shares its opening letters. Built for birth chart location pickers, horoscope apps, event scheduling, and any feature that needs place-to-coordinates resolution.
+// Turn a place name into coordinates, an IANA timezone and a DST-aware UTC offset, across 5,180,000+ cities, towns and villages in 240+ countries. Coverage reaches every village on record, whatever its population, so a birthplace outside a major metro resolves as reliably as a capital. Matching is case-insensitive, accent-insensitive and partial, so ber matches Berlin, Bern and Bergen, native scripts are transliterated, and historic names resolve to the current place, so bombay returns Mumbai and peking returns Beijing. A full name typed ranks above its smaller namesakes, a few letters reach the best-known city first, and a state, province or country in the query picks the right one of many places with the same name. A town name that matches nothing returns no match, never the largest town in the region it names. Built for birth chart location pickers, horoscope apps, event scheduling, and any feature that needs place-to-coordinates resolution.
 //
 // Returns a wrapper object for the known response body format(s).
 //
@@ -168413,7 +168413,7 @@ func ParseListCountriesResponse(rsp *http.Response) (*ListCountriesResponse, err
 		var dest struct {
 			// Countries Countries for the current page, sorted alphabetically by name.
 			Countries []struct {
-				// CityCount Number of searchable places in this country, including small towns and administrative seats. Useful for showing coverage in a UI or sizing a dependent city dropdown.
+				// CityCount Number of searchable places in this country, every town and village included. Useful for showing coverage in a UI or sizing a dependent city dropdown.
 				CityCount float32 `json:"cityCount"`
 
 				// Iso2 ISO 3166-1 alpha-2 country code. Use as the identifier when fetching cities for a specific country via the /countries/{iso2} endpoint.
@@ -168526,7 +168526,7 @@ func ParseGetCitiesByCountryResponse(rsp *http.Response) (*GetCitiesByCountryRes
 				// Longitude Geographic longitude in decimal degrees (-180 to 180). Pass directly to astrology, horoscope, and panchang API endpoints alongside latitude.
 				Longitude float32 `json:"longitude"`
 
-				// Population Population estimate for the place. Breaks ties between results of equal match quality, so among several places matching equally well the largest leads. It never outranks a better match, which is why a small town still wins when its name is typed exactly. May be 0 for a hamlet or administrative seat that carries no published figure.
+				// Population Population estimate for the place. Weighs the ranking, so among places matching a query alike the larger leads, while a full name typed still outranks a namesake many times its size. 0 for a place with no published figure, as most villages are.
 				Population float32 `json:"population"`
 
 				// Province State, province, canton, or administrative region. Show it whenever more than one result comes back: it is what separates Richfield, Utah from Richfield, Minnesota, and the six US Springfields from each other. Empty for the small number of places with no administrative division recorded.
@@ -168639,7 +168639,7 @@ func ParseSearchCitiesResponse(rsp *http.Response) (*SearchCitiesResponse, error
 				// Longitude Geographic longitude in decimal degrees (-180 to 180). Pass directly to astrology, horoscope, and panchang API endpoints alongside latitude.
 				Longitude float32 `json:"longitude"`
 
-				// Population Population estimate for the place. Breaks ties between results of equal match quality, so among several places matching equally well the largest leads. It never outranks a better match, which is why a small town still wins when its name is typed exactly. May be 0 for a hamlet or administrative seat that carries no published figure.
+				// Population Population estimate for the place. Weighs the ranking, so among places matching a query alike the larger leads, while a full name typed still outranks a namesake many times its size. 0 for a place with no published figure, as most villages are.
 				Population float32 `json:"population"`
 
 				// Province State, province, canton, or administrative region. Show it whenever more than one result comes back: it is what separates Richfield, Utah from Richfield, Minnesota, and the six US Springfields from each other. Empty for the small number of places with no administrative division recorded.
