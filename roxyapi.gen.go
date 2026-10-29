@@ -4449,6 +4449,30 @@ func (e ProfectionsRequestNodeType) Valid() bool {
 	}
 }
 
+// Defines values for ProgressionsRequestHouseSystem.
+const (
+	ProgressionsRequestHouseSystemEqual     ProgressionsRequestHouseSystem = "equal"
+	ProgressionsRequestHouseSystemKoch      ProgressionsRequestHouseSystem = "koch"
+	ProgressionsRequestHouseSystemPlacidus  ProgressionsRequestHouseSystem = "placidus"
+	ProgressionsRequestHouseSystemWholeSign ProgressionsRequestHouseSystem = "whole-sign"
+)
+
+// Valid indicates whether the value is a known member of the ProgressionsRequestHouseSystem enum.
+func (e ProgressionsRequestHouseSystem) Valid() bool {
+	switch e {
+	case ProgressionsRequestHouseSystemEqual:
+		return true
+	case ProgressionsRequestHouseSystemKoch:
+		return true
+	case ProgressionsRequestHouseSystemPlacidus:
+		return true
+	case ProgressionsRequestHouseSystemWholeSign:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for ProgressionsRequestNodeType.
 const (
 	ProgressionsRequestNodeTypeMean ProgressionsRequestNodeType = "mean"
@@ -30986,7 +31010,7 @@ type BirthChartResponse struct {
 		} `json:"signs"`
 	} `json:"virgo"`
 
-	// Yogas Forty-four classical yogas detected against this chart. Twelve conjunction and dignity yogas: Gajakesari (three-rule parashara definition), Sunapha, Anapha, Dhurdhura, Kemadruma, Chandra Mangala, Budha-Aditya, and the five Pancha Mahapurusha (Ruchaka, Bhadra, Hamsa, Malavya, Sasa). Plus all 32 Nabhasa distribution yogas across the Asraya, Dala, Akriti and Sankhya families, which read how the seven visible grahas are spread over the whole chart rather than any single conjunction, and which apply the four classical precedence norms so an outranked yoga is returned as absent with evidence naming the norm that silenced it. Each entry carries an `id` (matches `GET /yoga/{id}` for full glossary lookup), a `present` boolean, a `quality` (Positive, Negative, or Both = auspicious, inauspicious, or context-dependent), and classical-text `evidence` for the rule that triggered or failed. Filter on `present === true` for the active list.
+	// Yogas Forty-eight classical yogas detected against this chart. Twelve conjunction and dignity yogas: Gajakesari (three-rule parashara definition), Sunapha, Anapha, Dhurdhura, Kemadruma, Chandra Mangala, Budha-Aditya, and the five Pancha Mahapurusha (Ruchaka, Bhadra, Hamsa, Malavya, Sasa). Plus all 32 Nabhasa distribution yogas across the Asraya, Dala, Akriti and Sankhya families, which read how the seven visible grahas are spread over the whole chart rather than any single conjunction, and which apply the four classical precedence norms so an outranked yoga is returned as absent with evidence naming the norm that silenced it. Plus the four wealth and poverty verdicts (Dhana, Daridra, Lakshmi, Dhana Malika), each reading as the first rule that matched. Each entry carries an `id` (matches `GET /yoga/{id}` for full glossary lookup), a `present` boolean, a `quality` (Positive, Negative, or Both = auspicious, inauspicious, or context-dependent), and classical-text `evidence` for the rule that triggered or failed. Filter on `present === true` for the active list.
 	Yogas *[]struct {
 		// Description Brief classical formation rule. Identifies the planetary placement, lordship, dignity, aspect pattern, sign modality, or whole-chart bhava distribution required for the yoga to form.
 		Description string `json:"description"`
@@ -32040,7 +32064,7 @@ type FixedStarsResponse struct {
 		Sign string `json:"sign"`
 	} `json:"stars"`
 
-	// Summary Short overview of the fixed-star report for previews and report intros.
+	// Summary Short overview of the fixed-star report for previews and report intros: the number of conjunctions inside the orb and the tightest one found, or a plain statement that no star touches the chart. Localized to the requested language.
 	Summary string `json:"summary"`
 }
 
@@ -32104,7 +32128,7 @@ type HeliacalResponse struct {
 			Type HeliacalResponseGrahasLastEventType `json:"type"`
 		} `json:"lastEvent"`
 
-		// LongitudeSeparation Plain angular separation of the two ecliptic longitudes, in degrees. Returned beside timeDegrees so the two measures can be compared: this is what a combustion flag on a birth chart uses, and the gap between them is precisely what a location-aware heliacal calculation adds.
+		// LongitudeSeparation Plain angular separation of the two ecliptic longitudes, in degrees, read at the same instant as timeDegrees: the Sun crossing the horizon named in `horizon` on the requested day, sunset for west and sunrise for east, at the observer location. Returned beside timeDegrees so the two measures can be compared: this is the quantity a combustion flag on a birth chart uses, and the gap between them is precisely what a location-aware heliacal calculation adds. A birth chart reads it at the birth moment instead, so the two differ by however far the graha and the Sun moved in between, about half a degree per hour for the Moon.
 		LongitudeSeparation float32 `json:"longitudeSeparation"`
 
 		// NextEvent The event that will end the current state, or null when none falls inside the search horizon. For an invisible graha this is the udaya a practitioner is waiting for, so it answers when Guru Asta or Shukra Asta lifts.
@@ -32316,7 +32340,7 @@ type KPChartRequest struct {
 	// Date Birth date in YYYY-MM-DD format
 	Date openapi_types.Date `json:"date"`
 
-	// Latitude Birth location latitude in decimal degrees
+	// Latitude Birth location latitude in decimal degrees. The latitude must lie below 66.56 degrees north or south, inside the polar circles: KP cusps are Placidus, which has no solution beyond them, so a polar latitude returns 400.
 	Latitude float32 `json:"latitude"`
 
 	// Longitude Birth location longitude in decimal degrees
@@ -32614,7 +32638,7 @@ type KPCuspsRequest struct {
 	// Date Birth date in YYYY-MM-DD format
 	Date openapi_types.Date `json:"date"`
 
-	// Latitude Birth location latitude in decimal degrees
+	// Latitude Birth location latitude in decimal degrees. The latitude must lie below 66.56 degrees north or south, inside the polar circles: KP cusps are Placidus, which has no solution beyond them, so a polar latitude returns 400.
 	Latitude float32 `json:"latitude"`
 
 	// Longitude Birth location longitude in decimal degrees
@@ -32710,7 +32734,7 @@ type KPDailyFinanceRequest struct {
 	// GainHouses Houses whose significators count as gain, 1 to 12. Defaults to the convention, 2 and 11. Override it to run your own school: the two lists may not share a house.
 	GainHouses *[]int `json:"gainHouses,omitempty"`
 
-	// Latitude Birth latitude in decimal degrees. Sets the Placidus cusps; also the place the ruling planets and the Moon windows are read at.
+	// Latitude Birth latitude in decimal degrees. Sets the Placidus cusps; also the place the ruling planets and the Moon windows are read at. The latitude must lie below 66.56 degrees north or south, inside the polar circles: KP cusps are Placidus, which has no solution beyond them, so a polar latitude returns 400.
 	Latitude float32 `json:"latitude"`
 
 	// Longitude Birth longitude in decimal degrees, east positive.
@@ -32725,7 +32749,7 @@ type KPDailyFinanceRequest struct {
 	// Time Reading moment on that date, HH:MM:SS local. The ruling planets and the running sookshma lord are read at this instant. Defaults to 12:00:00; pass a market open or any hour for an intraday read.
 	Time *string `json:"time,omitempty"`
 
-	// Timezone Timezone as an IANA name (Asia/Kolkata) or decimal hours from UTC. Applies to the birth time, to the reading date and time, and to every local timestamp in the response. IANA names resolve to the offset in force on the date being read.
+	// Timezone Timezone as an IANA name (Asia/Kolkata) or decimal hours from UTC. Applies to the birth time, to the reading date and time, and to every local timestamp in the response. An IANA name is resolved twice, each to the offset in force at its own moment: at the birth date and time for the natal chart, and on the date being read for the reading. A decimal is applied to both as sent.
 	Timezone *KPDailyFinanceRequest_Timezone `json:"timezone,omitempty"`
 
 	// Weights Layer weights in percent, all four required, summing to 100. Defaults to the convention, cusps 30, dasha 40, rulingPlanets 15, moonWindows 15. Seventy percent of the default sits on the cusps and the outer dasha levels, which hold for months, so a chart reads inside a narrow band all month and the bands separate charts more than days. Move weight onto rulingPlanets and moonWindows for a reading that turns with the day.
@@ -32756,7 +32780,7 @@ type KPDailyFinanceRequestTimezone0 = float32
 // KPDailyFinanceRequestTimezone1 defines model for KPDailyFinanceRequest.Timezone.1.
 type KPDailyFinanceRequestTimezone1 = string
 
-// KPDailyFinanceRequest_Timezone Timezone as an IANA name (Asia/Kolkata) or decimal hours from UTC. Applies to the birth time, to the reading date and time, and to every local timestamp in the response. IANA names resolve to the offset in force on the date being read.
+// KPDailyFinanceRequest_Timezone Timezone as an IANA name (Asia/Kolkata) or decimal hours from UTC. Applies to the birth time, to the reading date and time, and to every local timestamp in the response. An IANA name is resolved twice, each to the offset in force at its own moment: at the birth date and time for the natal chart, and on the date being read for the reading. A decimal is applied to both as sent.
 type KPDailyFinanceRequest_Timezone struct {
 	union json.RawMessage
 }
@@ -33064,7 +33088,7 @@ type KPHoraryRequest struct {
 	// HoraryNumber Horary number from 1 to 249, given by the querent while focused on their question. It maps to one of the 249 KP sub divisions of the zodiac, and that division sets the Ascendant of the chart. The querent should give the first number that comes to mind and use it once for that question; the astrologer never chooses it. Numbers outside 1 to 249 are rejected rather than wrapped, because a wrapped number would silently answer a different question.
 	HoraryNumber int `json:"horaryNumber"`
 
-	// Latitude Latitude where the question is judged, decimal degrees. The house cusps are Placidus and therefore latitude dependent, so this is the place of judgment, not the querent birthplace.
+	// Latitude Latitude where the question is judged, decimal degrees. The house cusps are Placidus and therefore latitude dependent, so this is the place of judgment, not the querent birthplace. The latitude must lie below 66.56 degrees north or south, inside the polar circles: KP cusps are Placidus, which has no solution beyond them, so a polar latitude returns 400.
 	Latitude float32 `json:"latitude"`
 
 	// Longitude Longitude where the question is judged, decimal degrees.
@@ -33397,7 +33421,7 @@ type KPPlanetsRequest struct {
 	// Date Birth date in YYYY-MM-DD format
 	Date openapi_types.Date `json:"date"`
 
-	// Latitude Birth location latitude in decimal degrees
+	// Latitude Birth location latitude in decimal degrees. Accepted at any latitude, polar included: planet longitudes are geocentric and the star and sub lords are divisions of longitude, so no house cusp is involved.
 	Latitude float32 `json:"latitude"`
 
 	// Longitude Birth location longitude in decimal degrees
@@ -33949,7 +33973,7 @@ type LilithRequest struct {
 	// Date Birth date in YYYY-MM-DD format. Determines planetary positions for the specific calendar day.
 	Date openapi_types.Date `json:"date"`
 
-	// HouseSystem House system used to place each Lilith variant in a house. Placidus (default), Whole Sign, Equal, or Koch.
+	// HouseSystem House system used to place each Lilith variant in a house. Placidus (default), Whole Sign, Equal, or Koch. Above the polar circle, quadrant systems fall back to Whole Sign and the echoed houseSystem reports the system actually used.
 	HouseSystem *LilithRequestHouseSystem `json:"houseSystem,omitempty"`
 
 	// Latitude Birth location latitude in decimal degrees (-90 to 90). Positive = North, negative = South.
@@ -33968,7 +33992,7 @@ type LilithRequest struct {
 	Timezone LilithRequest_Timezone `json:"timezone"`
 }
 
-// LilithRequestHouseSystem House system used to place each Lilith variant in a house. Placidus (default), Whole Sign, Equal, or Koch.
+// LilithRequestHouseSystem House system used to place each Lilith variant in a house. Placidus (default), Whole Sign, Equal, or Koch. Above the polar circle, quadrant systems fall back to Whole Sign and the echoed houseSystem reports the system actually used.
 type LilithRequestHouseSystem string
 
 // LilithRequestNodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is the osculating node and the default, because it is what most Western chart software reports; mean is the smoothed node preferred by several evolutionary schools, so pass "mean" to match one. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
@@ -34005,7 +34029,7 @@ type LilithResponse struct {
 		Timezone float32 `json:"timezone"`
 	} `json:"birthDetails"`
 
-	// HouseSystem House system applied when placing each variant in a house.
+	// HouseSystem House system actually applied when placing each variant in a house. Differs from the requested system only above the polar circle, where quadrant systems fall back to Whole Sign.
 	HouseSystem LilithResponseHouseSystem `json:"houseSystem"`
 
 	// Lilith Both Black Moon Lilith variants, the mean lunar apogee first and the true (osculating) apogee second.
@@ -34048,7 +34072,7 @@ type LilithResponse struct {
 	Summary string `json:"summary"`
 }
 
-// LilithResponseHouseSystem House system applied when placing each variant in a house.
+// LilithResponseHouseSystem House system actually applied when placing each variant in a house. Differs from the requested system only above the polar circle, where quadrant systems fall back to Whole Sign.
 type LilithResponseHouseSystem string
 
 // LilithResponseLilithVariant Which lunar apogee this entry describes. The mean variant is the smoothed average apogee; the true variant is the instantaneous osculating apogee. Always one of these two English literals, whatever the lang parameter says, so it stays safe to compare against in code. Use variantLocalized for anything a reader sees.
@@ -35115,6 +35139,9 @@ type ProgressionsRequest struct {
 	// Date Birth date in YYYY-MM-DD format. Determines planetary positions for the specific calendar day.
 	Date openapi_types.Date `json:"date"`
 
+	// HouseSystem House system of the natal chart that every progressed body is placed in. Pass the system the natal chart was drawn in so the house numbers match it. Placidus (default) is the most widely used in Western astrology. Whole Sign assigns one sign per house. Equal divides into 30 degree segments from the Ascendant. Koch emphasizes higher latitudes. Quadrant systems fall back to Whole Sign above the polar circle.
+	HouseSystem *ProgressionsRequestHouseSystem `json:"houseSystem,omitempty"`
+
 	// Latitude Birth location latitude in decimal degrees (-90 to 90). Positive = North, negative = South.
 	Latitude float32 `json:"latitude"`
 
@@ -35133,6 +35160,9 @@ type ProgressionsRequest struct {
 	// Timezone Timezone: an IANA name (e.g. "America/New_York", "Europe/London", or `cities[0].timezone` from /location/search) or decimal hours from UTC (e.g. -5 for EST, 5.5 for IST). An IANA name is resolved to the offset in force at the given date and time.
 	Timezone ProgressionsRequest_Timezone `json:"timezone"`
 }
+
+// ProgressionsRequestHouseSystem House system of the natal chart that every progressed body is placed in. Pass the system the natal chart was drawn in so the house numbers match it. Placidus (default) is the most widely used in Western astrology. Whole Sign assigns one sign per house. Equal divides into 30 degree segments from the Ascendant. Koch emphasizes higher latitudes. Quadrant systems fall back to Whole Sign above the polar circle.
+type ProgressionsRequestHouseSystem string
 
 // ProgressionsRequestNodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is the osculating node and the default, because it is what most Western chart software reports; mean is the smoothed node preferred by several evolutionary schools, so pass "mean" to match one. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
 type ProgressionsRequestNodeType string
@@ -35206,7 +35236,7 @@ type ProgressionsResponse struct {
 		// Degree Degree of the progressed body within its zodiac sign (0 to 29.999).
 		Degree float32 `json:"degree"`
 
-		// House Whole-sign house (1 to 12) counted from the progressed Ascendant sign. The 1st house is the entire sign the progressed Ascendant falls in.
+		// House Natal house (1 to 12) the progressed body occupies, read against the natal cusps in the requested houseSystem, the same house number POST /natal-chart gives a body at this longitude. Natal houses are the standard frame for reading progressed planets, the progressed Moon through the houses above all.
 		House int `json:"house"`
 
 		// Interpretation Plain language meaning of this progressed body in its sign, suitable for chart reports and AI agents. Localized to the requested language.
@@ -39908,6 +39938,9 @@ type GenerateBirthProfileJSONBody struct {
 	// LeapDayPolicy Where 29 February falls. The civil wheel was built for a 365 day year and has no slot for it, so published tables differ: extend-previous reads the day as part of the period ending 28 February, next-angel reads it as the opening of the period starting 1 March. Ignored when angelDating is solar-longitude.
 	LeapDayPolicy *GenerateBirthProfileJSONBodyLeapDayPolicy `json:"leapDayPolicy,omitempty"`
 
+	// TargetDate Date to count the next Hebrew birthday from, in YYYY-MM-DD format. Send the local date of the user for an exact answer: on the birthday itself the answer is that day. Defaults to today (UTC).
+	TargetDate *openapi_types.Date `json:"targetDate,omitempty"`
+
 	// Time Birth time in HH:MM:SS local to the timezone field. Defaults to noon when omitted, which is stated because the name read from the hour changes every twenty minutes and a defaulted time cannot be precise.
 	Time *string `json:"time,omitempty"`
 
@@ -40648,7 +40681,7 @@ type CalculateChaldean200JSONResponseBodySoulUrgeCompoundMeaningNature string
 
 // GenerateNumerologyChartJSONBody defines parameters for GenerateNumerologyChart.
 type GenerateNumerologyChartJSONBody struct {
-	// CurrentYear Calendar year for the Personal Year, defaults to the current UTC year. It moves the Personal Year only: the nested personalMonth and maturityStatus.currentAge always read the current UTC date.
+	// CurrentYear Calendar year for the Personal Year. When omitted it is the year of targetDate, or of the current UTC date when targetDate is omitted too. It moves the Personal Year only: the nested personalMonth and maturityStatus.currentAge read targetDate.
 	CurrentYear *int `json:"currentYear,omitempty"`
 
 	// Day Birth day (1-31)
@@ -40659,6 +40692,9 @@ type GenerateNumerologyChartJSONBody struct {
 
 	// Month Birth month (1-12)
 	Month int `json:"month"`
+
+	// TargetDate Date to read the chart on, in YYYY-MM-DD format, in the years 100 to 2100, on or after the birth date. Send the local date of the user for an exact answer: it sets maturityStatus.currentAge and isActive, the Personal Month, and the Personal Year when currentYear is absent. Defaults to today (UTC).
+	TargetDate *openapi_types.Date `json:"targetDate,omitempty"`
 
 	// Year Birth year between 100 and 2100. Supports historical figures like Einstein (1879) and Shakespeare (1564).
 	Year int `json:"year"`
@@ -41913,7 +41949,7 @@ type GetVedicDailyReadingJSONBody struct {
 	// NodeType Lunar node type for Rahu and Ketu. "mean" uses the smooth mean node, which is the traditional Vedic default and what printed panchangs use. "true" uses the osculating node, which swings up to 1.5 degrees either side of mean and can therefore move a node into a different rashi and change its gochara house. Defaults to "mean".
 	NodeType *GetVedicDailyReadingJSONBodyNodeType `json:"nodeType,omitempty"`
 
-	// Timezone Timezone: IANA name (e.g. "Asia/Kolkata", "America/New_York") OR decimal hours from UTC (e.g. -5 for EST, 5.5 for IST). IANA strings are resolved to the DST-correct offset for the date being read. Interprets the birth time and the civil date below. Defaults to 5.5.
+	// Timezone Timezone: IANA name (e.g. "Asia/Kolkata", "America/New_York") OR decimal hours from UTC (e.g. -5 for EST, 5.5 for IST). IANA strings are resolved twice, each to the DST-correct offset of its own moment: at the birth date and time for the birth chart, and on the date being read for the reading day. A decimal is applied to both as sent. Defaults to 5.5.
 	Timezone *GetVedicDailyReadingJSONBody_Timezone `json:"timezone,omitempty"`
 }
 
@@ -42047,7 +42083,7 @@ type GetCurrentDashaJSONBody struct {
 	// Date Birth date in YYYY-MM-DD format. Date determines planetary positions and nakshatra calculations for Vedic kundli (janam patri). Accurate birth date is essential for dashas, yoga calculations, and divisional charts (vargas).
 	Date openapi_types.Date `json:"date"`
 
-	// Datetime ISO 8601 datetime (YYYY-MM-DDTHH:MM:SS) to read the running periods at, for a reading prepared for a future day, a backtest, or a chart cast for a past moment. Defaults to the current instant. Interpreted as local time in the request timezone (a trailing Z is accepted but ignored); with timezone 0 it is UTC.
+	// Datetime ISO 8601 datetime (YYYY-MM-DDTHH:MM:SS) to read the running periods at, for a reading prepared for a future day, a backtest, or a chart cast for a past moment. Defaults to the current instant. Interpreted as local time in the request timezone, an IANA name resolved at this datetime rather than at the birth (a trailing Z is accepted but ignored); with timezone 0 it is UTC.
 	Datetime *time.Time `json:"datetime,omitempty"`
 
 	// Latitude Birth location latitude in decimal degrees. Location determines local sidereal time for Lagna calculation and affects bhava (house) cusps. Example: Delhi 28.6139, Mumbai 19.0760, Kathmandu 27.7172.
@@ -42059,7 +42095,7 @@ type GetCurrentDashaJSONBody struct {
 	// NodeType Lunar node type for Rahu and Ketu, used ONLY when "significators" is true. Dasha dates themselves come from the Moon and never move with this field. "mean" uses the smooth mean node (traditional default). "true" uses the osculating node, which swings up to 1.5 degrees either side of mean over a 173-day cycle and can therefore change which house or star a node falls in. Defaults to "mean".
 	NodeType *GetCurrentDashaJSONBodyNodeType `json:"nodeType,omitempty"`
 
-	// Significators Set true to attach the KP significators of each period lord: its star lord, sub lord, occupied house, the houses it signifies at levels L1 to L4, and a strength grade. Off by default, so responses stay exactly as they are for clients that only need dates. Requires the birth latitude and longitude, since significators are read off a Placidus house chart, and uses the same ayanamsa frame selected above.
+	// Significators Set true to attach the KP significators of each period lord: its star lord, sub lord, occupied house, the houses it signifies at levels L1 to L4, and a strength grade. Off by default, so responses stay exactly as they are for clients that only need dates. Requires the birth latitude and longitude, since significators are read off a Placidus house chart, and uses the same ayanamsa frame selected above. The latitude must lie below 66.56 degrees north or south, inside the polar circles: KP cusps are Placidus, which has no solution beyond them, so a polar latitude returns 400.
 	Significators *bool `json:"significators,omitempty"`
 
 	// Time Birth time in 24-hour HH:MM:SS format. Time is CRITICAL for Lagna (Ascendant) calculation and house divisions. It changes every two hours roughly. Even minutes matter for accurate nakshatra pada and divisional chart (D9, D10) calculations. Without exact time, Lagna and house-based predictions will be incorrect.
@@ -42205,7 +42241,7 @@ type GetMajorDashasJSONBody struct {
 	// NodeType Lunar node type for Rahu and Ketu, used ONLY when "significators" is true. Dasha dates themselves come from the Moon and never move with this field. "mean" uses the smooth mean node (traditional default). "true" uses the osculating node, which swings up to 1.5 degrees either side of mean over a 173-day cycle and can therefore change which house or star a node falls in. Defaults to "mean".
 	NodeType *GetMajorDashasJSONBodyNodeType `json:"nodeType,omitempty"`
 
-	// Significators Set true to attach the KP significators of each period lord: its star lord, sub lord, occupied house, the houses it signifies at levels L1 to L4, and a strength grade. Off by default, so responses stay exactly as they are for clients that only need dates. Requires the birth latitude and longitude, since significators are read off a Placidus house chart, and uses the same ayanamsa frame selected above.
+	// Significators Set true to attach the KP significators of each period lord: its star lord, sub lord, occupied house, the houses it signifies at levels L1 to L4, and a strength grade. Off by default, so responses stay exactly as they are for clients that only need dates. Requires the birth latitude and longitude, since significators are read off a Placidus house chart, and uses the same ayanamsa frame selected above. The latitude must lie below 66.56 degrees north or south, inside the polar circles: KP cusps are Placidus, which has no solution beyond them, so a polar latitude returns 400.
 	Significators *bool `json:"significators,omitempty"`
 
 	// Time Birth time in 24-hour HH:MM:SS format. Time is CRITICAL for Lagna (Ascendant) calculation and house divisions. It changes every two hours roughly. Even minutes matter for accurate nakshatra pada and divisional chart (D9, D10) calculations. Without exact time, Lagna and house-based predictions will be incorrect.
@@ -42285,7 +42321,7 @@ type GetSubDashasJSONBody struct {
 	// NodeType Lunar node type for Rahu and Ketu, used ONLY when "significators" is true. Dasha dates themselves come from the Moon and never move with this field. "mean" uses the smooth mean node (traditional default). "true" uses the osculating node, which swings up to 1.5 degrees either side of mean over a 173-day cycle and can therefore change which house or star a node falls in. Defaults to "mean".
 	NodeType *GetSubDashasJSONBodyNodeType `json:"nodeType,omitempty"`
 
-	// Significators Set true to attach the KP significators of each period lord: its star lord, sub lord, occupied house, the houses it signifies at levels L1 to L4, and a strength grade. Off by default, so responses stay exactly as they are for clients that only need dates. Requires the birth latitude and longitude, since significators are read off a Placidus house chart, and uses the same ayanamsa frame selected above.
+	// Significators Set true to attach the KP significators of each period lord: its star lord, sub lord, occupied house, the houses it signifies at levels L1 to L4, and a strength grade. Off by default, so responses stay exactly as they are for clients that only need dates. Requires the birth latitude and longitude, since significators are read off a Placidus house chart, and uses the same ayanamsa frame selected above. The latitude must lie below 66.56 degrees north or south, inside the polar circles: KP cusps are Placidus, which has no solution beyond them, so a polar latitude returns 400.
 	Significators *bool `json:"significators,omitempty"`
 
 	// Time Birth time in 24-hour HH:MM:SS format. Time is CRITICAL for Lagna (Ascendant) calculation and house divisions. It changes every two hours roughly. Even minutes matter for accurate nakshatra pada and divisional chart (D9, D10) calculations. Without exact time, Lagna and house-based predictions will be incorrect.
@@ -42380,7 +42416,7 @@ type GetPratyantardashasJSONBody struct {
 	// NodeType Lunar node type for Rahu and Ketu, used ONLY when "significators" is true. Dasha dates themselves come from the Moon and never move with this field. "mean" uses the smooth mean node (traditional default). "true" uses the osculating node, which swings up to 1.5 degrees either side of mean over a 173-day cycle and can therefore change which house or star a node falls in. Defaults to "mean".
 	NodeType *GetPratyantardashasJSONBodyNodeType `json:"nodeType,omitempty"`
 
-	// Significators Set true to attach the KP significators of each period lord: its star lord, sub lord, occupied house, the houses it signifies at levels L1 to L4, and a strength grade. Off by default, so responses stay exactly as they are for clients that only need dates. Requires the birth latitude and longitude, since significators are read off a Placidus house chart, and uses the same ayanamsa frame selected above.
+	// Significators Set true to attach the KP significators of each period lord: its star lord, sub lord, occupied house, the houses it signifies at levels L1 to L4, and a strength grade. Off by default, so responses stay exactly as they are for clients that only need dates. Requires the birth latitude and longitude, since significators are read off a Placidus house chart, and uses the same ayanamsa frame selected above. The latitude must lie below 66.56 degrees north or south, inside the polar circles: KP cusps are Placidus, which has no solution beyond them, so a polar latitude returns 400.
 	Significators *bool `json:"significators,omitempty"`
 
 	// Time Birth time in 24-hour HH:MM:SS format. Time is CRITICAL for Lagna (Ascendant) calculation and house divisions. It changes every two hours roughly. Even minutes matter for accurate nakshatra pada and divisional chart (D9, D10) calculations. Without exact time, Lagna and house-based predictions will be incorrect.
@@ -42487,7 +42523,7 @@ type GetSookshmaDashasJSONBody struct {
 	// NodeType Lunar node type for Rahu and Ketu, used ONLY when "significators" is true. Dasha dates themselves come from the Moon and never move with this field. "mean" uses the smooth mean node (traditional default). "true" uses the osculating node, which swings up to 1.5 degrees either side of mean over a 173-day cycle and can therefore change which house or star a node falls in. Defaults to "mean".
 	NodeType *GetSookshmaDashasJSONBodyNodeType `json:"nodeType,omitempty"`
 
-	// Significators Set true to attach the KP significators of each period lord: its star lord, sub lord, occupied house, the houses it signifies at levels L1 to L4, and a strength grade. Off by default, so responses stay exactly as they are for clients that only need dates. Requires the birth latitude and longitude, since significators are read off a Placidus house chart, and uses the same ayanamsa frame selected above.
+	// Significators Set true to attach the KP significators of each period lord: its star lord, sub lord, occupied house, the houses it signifies at levels L1 to L4, and a strength grade. Off by default, so responses stay exactly as they are for clients that only need dates. Requires the birth latitude and longitude, since significators are read off a Placidus house chart, and uses the same ayanamsa frame selected above. The latitude must lie below 66.56 degrees north or south, inside the polar circles: KP cusps are Placidus, which has no solution beyond them, so a polar latitude returns 400.
 	Significators *bool `json:"significators,omitempty"`
 
 	// Time Birth time in 24-hour HH:MM:SS format. Time is CRITICAL for Lagna (Ascendant) calculation and house divisions. It changes every two hours roughly. Even minutes matter for accurate nakshatra pada and divisional chart (D9, D10) calculations. Without exact time, Lagna and house-based predictions will be incorrect.
@@ -42606,7 +42642,7 @@ type GetPranaDashasJSONBody struct {
 	// NodeType Lunar node type for Rahu and Ketu, used ONLY when "significators" is true. Dasha dates themselves come from the Moon and never move with this field. "mean" uses the smooth mean node (traditional default). "true" uses the osculating node, which swings up to 1.5 degrees either side of mean over a 173-day cycle and can therefore change which house or star a node falls in. Defaults to "mean".
 	NodeType *GetPranaDashasJSONBodyNodeType `json:"nodeType,omitempty"`
 
-	// Significators Set true to attach the KP significators of each period lord: its star lord, sub lord, occupied house, the houses it signifies at levels L1 to L4, and a strength grade. Off by default, so responses stay exactly as they are for clients that only need dates. Requires the birth latitude and longitude, since significators are read off a Placidus house chart, and uses the same ayanamsa frame selected above.
+	// Significators Set true to attach the KP significators of each period lord: its star lord, sub lord, occupied house, the houses it signifies at levels L1 to L4, and a strength grade. Off by default, so responses stay exactly as they are for clients that only need dates. Requires the birth latitude and longitude, since significators are read off a Placidus house chart, and uses the same ayanamsa frame selected above. The latitude must lie below 66.56 degrees north or south, inside the polar circles: KP cusps are Placidus, which has no solution beyond them, so a polar latitude returns 400.
 	Significators *bool `json:"significators,omitempty"`
 
 	// Time Birth time in 24-hour HH:MM:SS format. Time is CRITICAL for Lagna (Ascendant) calculation and house divisions. It changes every two hours roughly. Even minutes matter for accurate nakshatra pada and divisional chart (D9, D10) calculations. Without exact time, Lagna and house-based predictions will be incorrect.
@@ -42859,7 +42895,7 @@ type GetKpRulingPlanetsJSONBody struct {
 	// Datetime ISO 8601 datetime (YYYY-MM-DDTHH:MM:SS) for ruling planets. Defaults to current time. Interpreted as local time when a non-zero timezone is provided (a trailing Z is accepted but ignored); with timezone 0 it is UTC.
 	Datetime *time.Time `json:"datetime,omitempty"`
 
-	// Latitude Observer latitude in decimal degrees
+	// Latitude Observer latitude in decimal degrees. Any latitude for the ruling planets alone; with birthDate and birthTime the significators read Placidus cusps, so the latitude must lie below 66.56 degrees north or south and a polar latitude returns 400.
 	Latitude float32 `json:"latitude"`
 
 	// Longitude Observer longitude in decimal degrees
@@ -42868,7 +42904,7 @@ type GetKpRulingPlanetsJSONBody struct {
 	// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the Rahu and Ketu positions. Mean is the traditional Vedic default and what printed panchangs use; the choice can move a KP sub-lord in narrow boundary cases, where a span can be as small as 0.5 degrees. Defaults to "mean".
 	NodeType *GetKpRulingPlanetsJSONBodyNodeType `json:"nodeType,omitempty"`
 
-	// Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC. IANA resolved to the DST-correct offset based on birthDate or datetime. Defaults to 5.5.
+	// Timezone Timezone: IANA name (e.g. "America/New_York", "Europe/London") OR decimal hours from UTC. An IANA name is resolved to the DST-correct offset of each moment separately: at datetime for the ruling planets, and at birthDate and birthTime for the significators. A decimal is applied to both as sent. Defaults to 5.5.
 	Timezone *GetKpRulingPlanetsJSONBody_Timezone `json:"timezone,omitempty"`
 }
 
@@ -42912,7 +42948,7 @@ type GetKpRulingIntervalJSONBody struct {
 	// IntervalMinutes Interval between calculations in minutes (1-1440). Use 1-5 for birth time rectification.
 	IntervalMinutes int `json:"intervalMinutes"`
 
-	// Latitude Observer latitude in decimal degrees
+	// Latitude Observer latitude in decimal degrees. The latitude must lie below 66.56 degrees north or south, inside the polar circles: KP cusps are Placidus, which has no solution beyond them, so a polar latitude returns 400.
 	Latitude float32 `json:"latitude"`
 
 	// Longitude Observer longitude in decimal degrees
@@ -43283,7 +43319,7 @@ type CalculateTransitJSONBody struct {
 	// Longitude Observer longitude in decimal degrees. Affects local sidereal time for Lagna and house calculations.
 	Longitude float32 `json:"longitude"`
 
-	// Timezone Timezone: an IANA name (e.g. "America/New_York", "Europe/London", or `cities[0].timezone` from /location/search) or decimal hours from UTC (e.g. -5 for EST, 5.5 for IST). An IANA name is resolved to the offset in force at the given date and time. Defaults to 5.5 (IST).
+	// Timezone Timezone: an IANA name (e.g. "America/New_York", "Europe/London", or `cities[0].timezone` from /location/search) or decimal hours from UTC (e.g. -5 for EST, 5.5 for IST). An IANA name is resolved to the offset in force at the given date and time. The birth moment and the transit moment are each resolved at their own date and time. Defaults to 5.5 (IST).
 	Timezone *CalculateTransitJSONBody_Timezone `json:"timezone,omitempty"`
 
 	// TransitDate Transit date to analyze in YYYY-MM-DD format. Planetary positions on this date are overlaid on the natal chart.
@@ -51443,7 +51479,7 @@ type ClientInterface interface {
 
 	// GenerateProgressionsWithBody Secondary progressions calculator - progressed chart, progressed Sun and Moon
 	//
-	// Generate the secondary progressed chart for any date using the day-for-a-year key. Each day of ephemeris motion after birth stands in for one year of life. Returns every progressed body with its sign, degree, whole-sign house, motion, and retrograde state, plus the progressed Ascendant and Midheaven via the Naibod arc. The progressed Sun and progressed Moon are the headline timing markers for inner growth and emotional chapters. Secondary progressions API, progressed chart calculator, progressed Sun and Moon, progressed Ascendant and Midheaven.
+	// Generate the secondary progressed chart for any date using the day-for-a-year key. Each day of ephemeris motion after birth stands in for one year of life. Returns every progressed body with its sign, degree, natal house, motion, and retrograde state, plus the progressed Ascendant and Midheaven via the Naibod arc. The progressed Sun and progressed Moon are the headline timing markers for inner growth and emotional chapters. Secondary progressions API, progressed chart calculator, progressed Sun and Moon, progressed Ascendant and Midheaven.
 	//
 	// Takes any type of body and a specified content type.
 	//
@@ -51452,7 +51488,7 @@ type ClientInterface interface {
 
 	// GenerateProgressions Secondary progressions calculator - progressed chart, progressed Sun and Moon
 	//
-	// Generate the secondary progressed chart for any date using the day-for-a-year key. Each day of ephemeris motion after birth stands in for one year of life. Returns every progressed body with its sign, degree, whole-sign house, motion, and retrograde state, plus the progressed Ascendant and Midheaven via the Naibod arc. The progressed Sun and progressed Moon are the headline timing markers for inner growth and emotional chapters. Secondary progressions API, progressed chart calculator, progressed Sun and Moon, progressed Ascendant and Midheaven.
+	// Generate the secondary progressed chart for any date using the day-for-a-year key. Each day of ephemeris motion after birth stands in for one year of life. Returns every progressed body with its sign, degree, natal house, motion, and retrograde state, plus the progressed Ascendant and Midheaven via the Naibod arc. The progressed Sun and progressed Moon are the headline timing markers for inner growth and emotional chapters. Secondary progressions API, progressed chart calculator, progressed Sun and Moon, progressed Ascendant and Midheaven.
 	//
 	// Takes a body of the `application/json` content type.
 	//
@@ -52618,7 +52654,7 @@ type ClientInterface interface {
 
 	// GenerateBirthProfileWithBody Generate a birth profile - Hebrew birthday and birth angel API
 	//
-	// Return the Hebrew date of a birth, the Hebrew birthday that follows it, the three birth names of the Renaissance angel tradition and the sephirah of the birth day, from one birth moment. The Hebrew date is computed from the published calendar algorithm rather than looked up, the sunset boundary is a typed request field because it depends on where you were, and the two rival ways of dating the first name are a typed convention the response echoes. Built for Jewish culture and education apps, birth angel features and any product that wants the Hebrew birthday on the same key as the rest of its readings.
+	// Return the Hebrew date of a birth, the next Hebrew birthday from targetDate or today, the three birth names of the Renaissance angel tradition and the sephirah of the birth day, from one birth moment. The Hebrew date is computed from the published calendar algorithm rather than looked up, the sunset boundary is a typed request field because it depends on where you were, and the two rival ways of dating the first name are a typed convention the response echoes. Built for Jewish culture and education apps, birth angel features and any product that wants the Hebrew birthday on the same key as the rest of its readings.
 	//
 	// Takes any type of body and a specified content type.
 	//
@@ -52627,7 +52663,7 @@ type ClientInterface interface {
 
 	// GenerateBirthProfile Generate a birth profile - Hebrew birthday and birth angel API
 	//
-	// Return the Hebrew date of a birth, the Hebrew birthday that follows it, the three birth names of the Renaissance angel tradition and the sephirah of the birth day, from one birth moment. The Hebrew date is computed from the published calendar algorithm rather than looked up, the sunset boundary is a typed request field because it depends on where you were, and the two rival ways of dating the first name are a typed convention the response echoes. Built for Jewish culture and education apps, birth angel features and any product that wants the Hebrew birthday on the same key as the rest of its readings.
+	// Return the Hebrew date of a birth, the next Hebrew birthday from targetDate or today, the three birth names of the Renaissance angel tradition and the sephirah of the birth day, from one birth moment. The Hebrew date is computed from the published calendar algorithm rather than looked up, the sunset boundary is a typed request field because it depends on where you were, and the two rival ways of dating the first name are a typed convention the response echoes. Built for Jewish culture and education apps, birth angel features and any product that wants the Hebrew birthday on the same key as the rest of its readings.
 	//
 	// Takes a body of the `application/json` content type.
 	//
@@ -53034,7 +53070,7 @@ type ClientInterface interface {
 
 	// GenerateNumerologyChartWithBody Generate numerology chart - Complete numerology reading API
 	//
-	// Generate a complete numerology chart from a full birth name and birth date in one call. It returns the six core numbers (Life Path, Expression, Soul Urge, Personality, Birth Day and Maturity) with their calculations and full interpretations, the four Pinnacles and four Challenges with their ages, Karmic Lessons, karmic debt in all five positions, Hidden Passion, Subconscious Self, Cornerstone, Capstone and First Vowel, the Birth Day profile for the exact day, lucky associations, the Maturity activation status, the Personal Year with the current Personal Month, and a written summary, in the language set by lang. The Personal Year uses currentYear or the current UTC year, while the Personal Month and the age behind the Maturity status read the current UTC date. Built for full numerology readings, PDF reports, onboarding profiles and AI agents.
+	// Generate a complete numerology chart from a full birth name and birth date in one call. It returns the six core numbers (Life Path, Expression, Soul Urge, Personality, Birth Day and Maturity) with their calculations and full interpretations, the four Pinnacles and four Challenges with their ages, Karmic Lessons, karmic debt in all five positions, Hidden Passion, Subconscious Self, Cornerstone, Capstone and First Vowel, the Birth Day profile for the exact day, lucky associations, the Maturity activation status, the Personal Year with the current Personal Month, and a written summary, in the language set by lang. The age behind the Maturity status, the Personal Month and the Personal Year are read on targetDate, the current UTC date when omitted, and currentYear overrides the Personal Year alone. Built for full numerology readings, PDF reports, onboarding profiles and AI agents.
 	//
 	// Takes any type of body and a specified content type.
 	//
@@ -53043,7 +53079,7 @@ type ClientInterface interface {
 
 	// GenerateNumerologyChart Generate numerology chart - Complete numerology reading API
 	//
-	// Generate a complete numerology chart from a full birth name and birth date in one call. It returns the six core numbers (Life Path, Expression, Soul Urge, Personality, Birth Day and Maturity) with their calculations and full interpretations, the four Pinnacles and four Challenges with their ages, Karmic Lessons, karmic debt in all five positions, Hidden Passion, Subconscious Self, Cornerstone, Capstone and First Vowel, the Birth Day profile for the exact day, lucky associations, the Maturity activation status, the Personal Year with the current Personal Month, and a written summary, in the language set by lang. The Personal Year uses currentYear or the current UTC year, while the Personal Month and the age behind the Maturity status read the current UTC date. Built for full numerology readings, PDF reports, onboarding profiles and AI agents.
+	// Generate a complete numerology chart from a full birth name and birth date in one call. It returns the six core numbers (Life Path, Expression, Soul Urge, Personality, Birth Day and Maturity) with their calculations and full interpretations, the four Pinnacles and four Challenges with their ages, Karmic Lessons, karmic debt in all five positions, Hidden Passion, Subconscious Self, Cornerstone, Capstone and First Vowel, the Birth Day profile for the exact day, lucky associations, the Maturity activation status, the Personal Year with the current Personal Month, and a written summary, in the language set by lang. The age behind the Maturity status, the Personal Month and the Personal Year are read on targetDate, the current UTC date when omitted, and currentYear overrides the Personal Year alone. Built for full numerology readings, PDF reports, onboarding profiles and AI agents.
 	//
 	// Takes a body of the `application/json` content type.
 	//
@@ -54072,7 +54108,7 @@ type ClientInterface interface {
 
 	// GenerateKpChartWithBody Generate complete KP birth chart
 	//
-	// Generate authentic Krishnamurti Paddhati birth charts with Placidus house cusps, star-lord and sub-lord calculations. Supports custom ayanamsa and dynamic KP-Newcomb ayanamsa calculation. Returns complete chart with all 9 planets (Sun through Ketu), Ascendant, 12 Placidus house cusps, nakshatra details, star-lords, sub-lords, and KP horary numbers (1-249). Perfect for KP astrology software, horary prediction apps, and event timing analysis. One call is a complete Krishnamurti Paddhati chart generator, returning the Placidus cusps and the planets with their sub lords together.
+	// Generate authentic Krishnamurti Paddhati birth charts with Placidus house cusps, star-lord and sub-lord calculations. Supports custom ayanamsa and dynamic KP-Newcomb ayanamsa calculation. Returns complete chart with all 9 planets (Sun through Ketu), Ascendant, 12 Placidus house cusps, nakshatra details, star-lords, sub-lords, and KP horary numbers (1-249). Perfect for KP astrology software, horary prediction apps, and event timing analysis. One call is a complete Krishnamurti Paddhati chart generator, returning the Placidus cusps and the planets with their sub lords together. The latitude must lie below 66.56 degrees north or south, inside the polar circles: KP cusps are Placidus, which has no solution beyond them, so a polar latitude returns 400.
 	//
 	// Takes any type of body and a specified content type.
 	//
@@ -54081,7 +54117,7 @@ type ClientInterface interface {
 
 	// GenerateKpChart Generate complete KP birth chart
 	//
-	// Generate authentic Krishnamurti Paddhati birth charts with Placidus house cusps, star-lord and sub-lord calculations. Supports custom ayanamsa and dynamic KP-Newcomb ayanamsa calculation. Returns complete chart with all 9 planets (Sun through Ketu), Ascendant, 12 Placidus house cusps, nakshatra details, star-lords, sub-lords, and KP horary numbers (1-249). Perfect for KP astrology software, horary prediction apps, and event timing analysis. One call is a complete Krishnamurti Paddhati chart generator, returning the Placidus cusps and the planets with their sub lords together.
+	// Generate authentic Krishnamurti Paddhati birth charts with Placidus house cusps, star-lord and sub-lord calculations. Supports custom ayanamsa and dynamic KP-Newcomb ayanamsa calculation. Returns complete chart with all 9 planets (Sun through Ketu), Ascendant, 12 Placidus house cusps, nakshatra details, star-lords, sub-lords, and KP horary numbers (1-249). Perfect for KP astrology software, horary prediction apps, and event timing analysis. One call is a complete Krishnamurti Paddhati chart generator, returning the Placidus cusps and the planets with their sub lords together. The latitude must lie below 66.56 degrees north or south, inside the polar circles: KP cusps are Placidus, which has no solution beyond them, so a polar latitude returns 400.
 	//
 	// Takes a body of the `application/json` content type.
 	//
@@ -54090,7 +54126,7 @@ type ClientInterface interface {
 
 	// GetKpCuspsWithBody Get KP Placidus house cusps with sub-lords
 	//
-	// Calculate unequal Placidus house cusps with ruling sign-lord, nakshatra-lord, and sub-lord for each cusp. Dynamic KP-Newcomb or custom ayanamsa support. Used in KP horary astrology, cusp sub-lord analysis, and birth chart rectification. Returns all 12 house cusps with KP sub-division details. Use it as a Placidus house cusp calculator that also carries the star lord and sub lord of each cusp, which is what Krishnamurti Paddhati horary work reads first.
+	// Calculate unequal Placidus house cusps with ruling sign-lord, nakshatra-lord, and sub-lord for each cusp. Dynamic KP-Newcomb or custom ayanamsa support. Used in KP horary astrology, cusp sub-lord analysis, and birth chart rectification. Returns all 12 house cusps with KP sub-division details. Use it as a Placidus house cusp calculator that also carries the star lord and sub lord of each cusp, which is what Krishnamurti Paddhati horary work reads first. The latitude must lie below 66.56 degrees north or south, inside the polar circles: KP cusps are Placidus, which has no solution beyond them, so a polar latitude returns 400.
 	//
 	// Takes any type of body and a specified content type.
 	//
@@ -54099,7 +54135,7 @@ type ClientInterface interface {
 
 	// GetKpCusps Get KP Placidus house cusps with sub-lords
 	//
-	// Calculate unequal Placidus house cusps with ruling sign-lord, nakshatra-lord, and sub-lord for each cusp. Dynamic KP-Newcomb or custom ayanamsa support. Used in KP horary astrology, cusp sub-lord analysis, and birth chart rectification. Returns all 12 house cusps with KP sub-division details. Use it as a Placidus house cusp calculator that also carries the star lord and sub lord of each cusp, which is what Krishnamurti Paddhati horary work reads first.
+	// Calculate unequal Placidus house cusps with ruling sign-lord, nakshatra-lord, and sub-lord for each cusp. Dynamic KP-Newcomb or custom ayanamsa support. Used in KP horary astrology, cusp sub-lord analysis, and birth chart rectification. Returns all 12 house cusps with KP sub-division details. Use it as a Placidus house cusp calculator that also carries the star lord and sub lord of each cusp, which is what Krishnamurti Paddhati horary work reads first. The latitude must lie below 66.56 degrees north or south, inside the polar circles: KP cusps are Placidus, which has no solution beyond them, so a polar latitude returns 400.
 	//
 	// Takes a body of the `application/json` content type.
 	//
@@ -54108,7 +54144,7 @@ type ClientInterface interface {
 
 	// GetKpDailyFinanceWithBody Daily finance score from four KP sub lord layers - KP Daily Finance API
 	//
-	// A Krishnamurti Paddhati daily finance reading for one native on one date. Four KP layers are each scored against the money houses and weighed into one number: the cusp sub lords of the gain and loss houses (structural promise), the four running Vimshottari lords at the reading moment (timing), the ruling planets of that moment (the pulse), and the sub lord windows the Moon passes through across the civil day (the hour hand), with the best and worst windows named. Weights cusps 30, dasha 40, rulingPlanets 15, moonWindows 15. Every input is the shipped KP arithmetic: Placidus cusps, the 249 sub lord table, the four tier significator rule, the Vimshottari chain to the sookshma level, all in the one ayanamsa you choose. Every row prints its planet, its standing against the two sets and its score, so the number can be audited rather than trusted. The house groups, the classification, the inversion on the loss cusps, the retrograde penalty, the level weights and the layer weights are a KP practitioner convention adopted as the published convention of this route: no classical KP text weighs these four layers against each other, and every table behind the number is printed so the result can be checked line by line rather than trusted. The score measures what the method outputs for the day, never the probability of a gain or a loss. Override the two house groups to run your own school.
+	// A Krishnamurti Paddhati daily finance reading for one native on one date. Four KP layers are each scored against the money houses and weighed into one number: the cusp sub lords of the gain and loss houses (structural promise), the four running Vimshottari lords at the reading moment (timing), the ruling planets of that moment (the pulse), and the sub lord windows the Moon passes through across the civil day (the hour hand), with the best and worst windows named. Weights cusps 30, dasha 40, rulingPlanets 15, moonWindows 15. Every input is the shipped KP arithmetic: Placidus cusps, the 249 sub lord table, the four tier significator rule, the Vimshottari chain to the sookshma level, all in the one ayanamsa you choose. Every row prints its planet, its standing against the two sets and its score, so the number can be audited rather than trusted. The house groups, the classification, the inversion on the loss cusps, the retrograde penalty, the level weights and the layer weights are a KP practitioner convention adopted as the published convention of this route: no classical KP text weighs these four layers against each other, and every table behind the number is printed so the result can be checked line by line rather than trusted. The score measures what the method outputs for the day, never the probability of a gain or a loss. Override the two house groups to run your own school. The latitude must lie below 66.56 degrees north or south, inside the polar circles: KP cusps are Placidus, which has no solution beyond them, so a polar latitude returns 400.
 	//
 	// Takes any type of body and a specified content type.
 	//
@@ -54117,7 +54153,7 @@ type ClientInterface interface {
 
 	// GetKpDailyFinance Daily finance score from four KP sub lord layers - KP Daily Finance API
 	//
-	// A Krishnamurti Paddhati daily finance reading for one native on one date. Four KP layers are each scored against the money houses and weighed into one number: the cusp sub lords of the gain and loss houses (structural promise), the four running Vimshottari lords at the reading moment (timing), the ruling planets of that moment (the pulse), and the sub lord windows the Moon passes through across the civil day (the hour hand), with the best and worst windows named. Weights cusps 30, dasha 40, rulingPlanets 15, moonWindows 15. Every input is the shipped KP arithmetic: Placidus cusps, the 249 sub lord table, the four tier significator rule, the Vimshottari chain to the sookshma level, all in the one ayanamsa you choose. Every row prints its planet, its standing against the two sets and its score, so the number can be audited rather than trusted. The house groups, the classification, the inversion on the loss cusps, the retrograde penalty, the level weights and the layer weights are a KP practitioner convention adopted as the published convention of this route: no classical KP text weighs these four layers against each other, and every table behind the number is printed so the result can be checked line by line rather than trusted. The score measures what the method outputs for the day, never the probability of a gain or a loss. Override the two house groups to run your own school.
+	// A Krishnamurti Paddhati daily finance reading for one native on one date. Four KP layers are each scored against the money houses and weighed into one number: the cusp sub lords of the gain and loss houses (structural promise), the four running Vimshottari lords at the reading moment (timing), the ruling planets of that moment (the pulse), and the sub lord windows the Moon passes through across the civil day (the hour hand), with the best and worst windows named. Weights cusps 30, dasha 40, rulingPlanets 15, moonWindows 15. Every input is the shipped KP arithmetic: Placidus cusps, the 249 sub lord table, the four tier significator rule, the Vimshottari chain to the sookshma level, all in the one ayanamsa you choose. Every row prints its planet, its standing against the two sets and its score, so the number can be audited rather than trusted. The house groups, the classification, the inversion on the loss cusps, the retrograde penalty, the level weights and the layer weights are a KP practitioner convention adopted as the published convention of this route: no classical KP text weighs these four layers against each other, and every table behind the number is printed so the result can be checked line by line rather than trusted. The score measures what the method outputs for the day, never the probability of a gain or a loss. Override the two house groups to run your own school. The latitude must lie below 66.56 degrees north or south, inside the polar circles: KP cusps are Placidus, which has no solution beyond them, so a polar latitude returns 400.
 	//
 	// Takes a body of the `application/json` content type.
 	//
@@ -54126,7 +54162,7 @@ type ClientInterface interface {
 
 	// CastKpHoraryChartWithBody Cast a KP horary (Prashna) chart from a number 1-249 - KP Horary API
 	//
-	// Cast a Krishnamurti Paddhati horary chart, also called Prashna, from a number between 1 and 249 given by the querent plus the moment and place the question is judged. NO BIRTH DETAILS ARE NEEDED, which is what makes horary the KP answer when birth time is unknown or unreliable. The number maps to one of the 249 KP sub divisions and sets the Ascendant; the twelve Placidus cusps follow from that Ascendant at the given latitude, and every planetary position comes from the real sky at the moment of the question. Returns the Ascendant with its sub lord, all twelve cusps with star lord and sub lord, the nine grahas placed against those cusps, the five ruling planets for validating the chart, and four-level significators for judging which houses each graha supports. KP horary API, Prashna kundali calculator, 249 horary number chart, Krishnamurti Paddhati horary, cusp sub lord question answering.
+	// Cast a Krishnamurti Paddhati horary chart, also called Prashna, from a number between 1 and 249 given by the querent plus the moment and place the question is judged. NO BIRTH DETAILS ARE NEEDED, which is what makes horary the KP answer when birth time is unknown or unreliable. The number maps to one of the 249 KP sub divisions and sets the Ascendant; the twelve Placidus cusps follow from that Ascendant at the given latitude, and every planetary position comes from the real sky at the moment of the question. Returns the Ascendant with its sub lord, all twelve cusps with star lord and sub lord, the nine grahas placed against those cusps, the five ruling planets for validating the chart, and four-level significators for judging which houses each graha supports. KP horary API, Prashna kundali calculator, 249 horary number chart, Krishnamurti Paddhati horary, cusp sub lord question answering. The latitude must lie below 66.56 degrees north or south, inside the polar circles: KP cusps are Placidus, which has no solution beyond them, so a polar latitude returns 400.
 	//
 	// Takes any type of body and a specified content type.
 	//
@@ -54135,7 +54171,7 @@ type ClientInterface interface {
 
 	// CastKpHoraryChart Cast a KP horary (Prashna) chart from a number 1-249 - KP Horary API
 	//
-	// Cast a Krishnamurti Paddhati horary chart, also called Prashna, from a number between 1 and 249 given by the querent plus the moment and place the question is judged. NO BIRTH DETAILS ARE NEEDED, which is what makes horary the KP answer when birth time is unknown or unreliable. The number maps to one of the 249 KP sub divisions and sets the Ascendant; the twelve Placidus cusps follow from that Ascendant at the given latitude, and every planetary position comes from the real sky at the moment of the question. Returns the Ascendant with its sub lord, all twelve cusps with star lord and sub lord, the nine grahas placed against those cusps, the five ruling planets for validating the chart, and four-level significators for judging which houses each graha supports. KP horary API, Prashna kundali calculator, 249 horary number chart, Krishnamurti Paddhati horary, cusp sub lord question answering.
+	// Cast a Krishnamurti Paddhati horary chart, also called Prashna, from a number between 1 and 249 given by the querent plus the moment and place the question is judged. NO BIRTH DETAILS ARE NEEDED, which is what makes horary the KP answer when birth time is unknown or unreliable. The number maps to one of the 249 KP sub divisions and sets the Ascendant; the twelve Placidus cusps follow from that Ascendant at the given latitude, and every planetary position comes from the real sky at the moment of the question. Returns the Ascendant with its sub lord, all twelve cusps with star lord and sub lord, the nine grahas placed against those cusps, the five ruling planets for validating the chart, and four-level significators for judging which houses each graha supports. KP horary API, Prashna kundali calculator, 249 horary number chart, Krishnamurti Paddhati horary, cusp sub lord question answering. The latitude must lie below 66.56 degrees north or south, inside the polar circles: KP cusps are Placidus, which has no solution beyond them, so a polar latitude returns 400.
 	//
 	// Takes a body of the `application/json` content type.
 	//
@@ -54216,7 +54252,7 @@ type ClientInterface interface {
 
 	// GetKpRulingIntervalWithBody Get KP ruling planets with significators at intervals
 	//
-	// Calculate ruling planets and their KP significators at regular time intervals using Krishnamurti Paddhati prashna (horary) astrology. For each interval, a full Placidus house chart is erected and significators are computed using the 4-level KP hierarchy: Level 1 (strongest) planets in star of house occupant, Level 2 occupants, Level 3 planets in star of house owner, Level 4 house owner. Returns Day Lord (sunrise-based Hindu Vara), Moon Sign/Star/Sub/Sub-Sub Lords, Lagna Sign/Star/Sub/Sub-Sub Lords, unique ruling planets set, and per-ruling-planet house significations. No birth data needed, significators come from each moments sky chart. Use for birth time rectification, muhurta selection, and KP horary number analysis.
+	// Calculate ruling planets and their KP significators at regular time intervals using Krishnamurti Paddhati prashna (horary) astrology. For each interval, a full Placidus house chart is erected and significators are computed using the 4-level KP hierarchy: Level 1 (strongest) planets in star of house occupant, Level 2 occupants, Level 3 planets in star of house owner, Level 4 house owner. Returns Day Lord (sunrise-based Hindu Vara), Moon Sign/Star/Sub/Sub-Sub Lords, Lagna Sign/Star/Sub/Sub-Sub Lords, unique ruling planets set, and per-ruling-planet house significations. No birth data needed, significators come from each moments sky chart. Use for birth time rectification, muhurta selection, and KP horary number analysis. The latitude must lie below 66.56 degrees north or south, inside the polar circles: KP cusps are Placidus, which has no solution beyond them, so a polar latitude returns 400.
 	//
 	// Takes any type of body and a specified content type.
 	//
@@ -54225,7 +54261,7 @@ type ClientInterface interface {
 
 	// GetKpRulingInterval Get KP ruling planets with significators at intervals
 	//
-	// Calculate ruling planets and their KP significators at regular time intervals using Krishnamurti Paddhati prashna (horary) astrology. For each interval, a full Placidus house chart is erected and significators are computed using the 4-level KP hierarchy: Level 1 (strongest) planets in star of house occupant, Level 2 occupants, Level 3 planets in star of house owner, Level 4 house owner. Returns Day Lord (sunrise-based Hindu Vara), Moon Sign/Star/Sub/Sub-Sub Lords, Lagna Sign/Star/Sub/Sub-Sub Lords, unique ruling planets set, and per-ruling-planet house significations. No birth data needed, significators come from each moments sky chart. Use for birth time rectification, muhurta selection, and KP horary number analysis.
+	// Calculate ruling planets and their KP significators at regular time intervals using Krishnamurti Paddhati prashna (horary) astrology. For each interval, a full Placidus house chart is erected and significators are computed using the 4-level KP hierarchy: Level 1 (strongest) planets in star of house occupant, Level 2 occupants, Level 3 planets in star of house owner, Level 4 house owner. Returns Day Lord (sunrise-based Hindu Vara), Moon Sign/Star/Sub/Sub-Sub Lords, Lagna Sign/Star/Sub/Sub-Sub Lords, unique ruling planets set, and per-ruling-planet house significations. No birth data needed, significators come from each moments sky chart. Use for birth time rectification, muhurta selection, and KP horary number analysis. The latitude must lie below 66.56 degrees north or south, inside the polar circles: KP cusps are Placidus, which has no solution beyond them, so a polar latitude returns 400.
 	//
 	// Takes a body of the `application/json` content type.
 	//
@@ -55549,7 +55585,7 @@ func (c *Client) GenerateProfections(ctx context.Context, params *GenerateProfec
 
 // GenerateProgressionsWithBody Secondary progressions calculator - progressed chart, progressed Sun and Moon
 //
-// Generate the secondary progressed chart for any date using the day-for-a-year key. Each day of ephemeris motion after birth stands in for one year of life. Returns every progressed body with its sign, degree, whole-sign house, motion, and retrograde state, plus the progressed Ascendant and Midheaven via the Naibod arc. The progressed Sun and progressed Moon are the headline timing markers for inner growth and emotional chapters. Secondary progressions API, progressed chart calculator, progressed Sun and Moon, progressed Ascendant and Midheaven.
+// Generate the secondary progressed chart for any date using the day-for-a-year key. Each day of ephemeris motion after birth stands in for one year of life. Returns every progressed body with its sign, degree, natal house, motion, and retrograde state, plus the progressed Ascendant and Midheaven via the Naibod arc. The progressed Sun and progressed Moon are the headline timing markers for inner growth and emotional chapters. Secondary progressions API, progressed chart calculator, progressed Sun and Moon, progressed Ascendant and Midheaven.
 //
 // Takes any type of body and a specified content type.
 //
@@ -55568,7 +55604,7 @@ func (c *Client) GenerateProgressionsWithBody(ctx context.Context, params *Gener
 
 // GenerateProgressions Secondary progressions calculator - progressed chart, progressed Sun and Moon
 //
-// Generate the secondary progressed chart for any date using the day-for-a-year key. Each day of ephemeris motion after birth stands in for one year of life. Returns every progressed body with its sign, degree, whole-sign house, motion, and retrograde state, plus the progressed Ascendant and Midheaven via the Naibod arc. The progressed Sun and progressed Moon are the headline timing markers for inner growth and emotional chapters. Secondary progressions API, progressed chart calculator, progressed Sun and Moon, progressed Ascendant and Midheaven.
+// Generate the secondary progressed chart for any date using the day-for-a-year key. Each day of ephemeris motion after birth stands in for one year of life. Returns every progressed body with its sign, degree, natal house, motion, and retrograde state, plus the progressed Ascendant and Midheaven via the Naibod arc. The progressed Sun and progressed Moon are the headline timing markers for inner growth and emotional chapters. Secondary progressions API, progressed chart calculator, progressed Sun and Moon, progressed Ascendant and Midheaven.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -58134,7 +58170,7 @@ func (c *Client) GetTrigram(ctx context.Context, id string, params *GetTrigramPa
 
 // GenerateBirthProfileWithBody Generate a birth profile - Hebrew birthday and birth angel API
 //
-// Return the Hebrew date of a birth, the Hebrew birthday that follows it, the three birth names of the Renaissance angel tradition and the sephirah of the birth day, from one birth moment. The Hebrew date is computed from the published calendar algorithm rather than looked up, the sunset boundary is a typed request field because it depends on where you were, and the two rival ways of dating the first name are a typed convention the response echoes. Built for Jewish culture and education apps, birth angel features and any product that wants the Hebrew birthday on the same key as the rest of its readings.
+// Return the Hebrew date of a birth, the next Hebrew birthday from targetDate or today, the three birth names of the Renaissance angel tradition and the sephirah of the birth day, from one birth moment. The Hebrew date is computed from the published calendar algorithm rather than looked up, the sunset boundary is a typed request field because it depends on where you were, and the two rival ways of dating the first name are a typed convention the response echoes. Built for Jewish culture and education apps, birth angel features and any product that wants the Hebrew birthday on the same key as the rest of its readings.
 //
 // Takes any type of body and a specified content type.
 //
@@ -58153,7 +58189,7 @@ func (c *Client) GenerateBirthProfileWithBody(ctx context.Context, params *Gener
 
 // GenerateBirthProfile Generate a birth profile - Hebrew birthday and birth angel API
 //
-// Return the Hebrew date of a birth, the Hebrew birthday that follows it, the three birth names of the Renaissance angel tradition and the sephirah of the birth day, from one birth moment. The Hebrew date is computed from the published calendar algorithm rather than looked up, the sunset boundary is a typed request field because it depends on where you were, and the two rival ways of dating the first name are a typed convention the response echoes. Built for Jewish culture and education apps, birth angel features and any product that wants the Hebrew birthday on the same key as the rest of its readings.
+// Return the Hebrew date of a birth, the next Hebrew birthday from targetDate or today, the three birth names of the Renaissance angel tradition and the sephirah of the birth day, from one birth moment. The Hebrew date is computed from the published calendar algorithm rather than looked up, the sunset boundary is a typed request field because it depends on where you were, and the two rival ways of dating the first name are a typed convention the response echoes. Built for Jewish culture and education apps, birth angel features and any product that wants the Hebrew birthday on the same key as the rest of its readings.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -59070,7 +59106,7 @@ func (c *Client) CalculateChaldean(ctx context.Context, params *CalculateChaldea
 
 // GenerateNumerologyChartWithBody Generate numerology chart - Complete numerology reading API
 //
-// Generate a complete numerology chart from a full birth name and birth date in one call. It returns the six core numbers (Life Path, Expression, Soul Urge, Personality, Birth Day and Maturity) with their calculations and full interpretations, the four Pinnacles and four Challenges with their ages, Karmic Lessons, karmic debt in all five positions, Hidden Passion, Subconscious Self, Cornerstone, Capstone and First Vowel, the Birth Day profile for the exact day, lucky associations, the Maturity activation status, the Personal Year with the current Personal Month, and a written summary, in the language set by lang. The Personal Year uses currentYear or the current UTC year, while the Personal Month and the age behind the Maturity status read the current UTC date. Built for full numerology readings, PDF reports, onboarding profiles and AI agents.
+// Generate a complete numerology chart from a full birth name and birth date in one call. It returns the six core numbers (Life Path, Expression, Soul Urge, Personality, Birth Day and Maturity) with their calculations and full interpretations, the four Pinnacles and four Challenges with their ages, Karmic Lessons, karmic debt in all five positions, Hidden Passion, Subconscious Self, Cornerstone, Capstone and First Vowel, the Birth Day profile for the exact day, lucky associations, the Maturity activation status, the Personal Year with the current Personal Month, and a written summary, in the language set by lang. The age behind the Maturity status, the Personal Month and the Personal Year are read on targetDate, the current UTC date when omitted, and currentYear overrides the Personal Year alone. Built for full numerology readings, PDF reports, onboarding profiles and AI agents.
 //
 // Takes any type of body and a specified content type.
 //
@@ -59089,7 +59125,7 @@ func (c *Client) GenerateNumerologyChartWithBody(ctx context.Context, params *Ge
 
 // GenerateNumerologyChart Generate numerology chart - Complete numerology reading API
 //
-// Generate a complete numerology chart from a full birth name and birth date in one call. It returns the six core numbers (Life Path, Expression, Soul Urge, Personality, Birth Day and Maturity) with their calculations and full interpretations, the four Pinnacles and four Challenges with their ages, Karmic Lessons, karmic debt in all five positions, Hidden Passion, Subconscious Self, Cornerstone, Capstone and First Vowel, the Birth Day profile for the exact day, lucky associations, the Maturity activation status, the Personal Year with the current Personal Month, and a written summary, in the language set by lang. The Personal Year uses currentYear or the current UTC year, while the Personal Month and the age behind the Maturity status read the current UTC date. Built for full numerology readings, PDF reports, onboarding profiles and AI agents.
+// Generate a complete numerology chart from a full birth name and birth date in one call. It returns the six core numbers (Life Path, Expression, Soul Urge, Personality, Birth Day and Maturity) with their calculations and full interpretations, the four Pinnacles and four Challenges with their ages, Karmic Lessons, karmic debt in all five positions, Hidden Passion, Subconscious Self, Cornerstone, Capstone and First Vowel, the Birth Day profile for the exact day, lucky associations, the Maturity activation status, the Personal Year with the current Personal Month, and a written summary, in the language set by lang. The age behind the Maturity status, the Personal Month and the Personal Year are read on targetDate, the current UTC date when omitted, and currentYear overrides the Personal Year alone. Built for full numerology readings, PDF reports, onboarding profiles and AI agents.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -61288,7 +61324,7 @@ func (c *Client) GetKpAyanamsa(ctx context.Context, params *GetKpAyanamsaParams,
 
 // GenerateKpChartWithBody Generate complete KP birth chart
 //
-// Generate authentic Krishnamurti Paddhati birth charts with Placidus house cusps, star-lord and sub-lord calculations. Supports custom ayanamsa and dynamic KP-Newcomb ayanamsa calculation. Returns complete chart with all 9 planets (Sun through Ketu), Ascendant, 12 Placidus house cusps, nakshatra details, star-lords, sub-lords, and KP horary numbers (1-249). Perfect for KP astrology software, horary prediction apps, and event timing analysis. One call is a complete Krishnamurti Paddhati chart generator, returning the Placidus cusps and the planets with their sub lords together.
+// Generate authentic Krishnamurti Paddhati birth charts with Placidus house cusps, star-lord and sub-lord calculations. Supports custom ayanamsa and dynamic KP-Newcomb ayanamsa calculation. Returns complete chart with all 9 planets (Sun through Ketu), Ascendant, 12 Placidus house cusps, nakshatra details, star-lords, sub-lords, and KP horary numbers (1-249). Perfect for KP astrology software, horary prediction apps, and event timing analysis. One call is a complete Krishnamurti Paddhati chart generator, returning the Placidus cusps and the planets with their sub lords together. The latitude must lie below 66.56 degrees north or south, inside the polar circles: KP cusps are Placidus, which has no solution beyond them, so a polar latitude returns 400.
 //
 // Takes any type of body and a specified content type.
 //
@@ -61307,7 +61343,7 @@ func (c *Client) GenerateKpChartWithBody(ctx context.Context, params *GenerateKp
 
 // GenerateKpChart Generate complete KP birth chart
 //
-// Generate authentic Krishnamurti Paddhati birth charts with Placidus house cusps, star-lord and sub-lord calculations. Supports custom ayanamsa and dynamic KP-Newcomb ayanamsa calculation. Returns complete chart with all 9 planets (Sun through Ketu), Ascendant, 12 Placidus house cusps, nakshatra details, star-lords, sub-lords, and KP horary numbers (1-249). Perfect for KP astrology software, horary prediction apps, and event timing analysis. One call is a complete Krishnamurti Paddhati chart generator, returning the Placidus cusps and the planets with their sub lords together.
+// Generate authentic Krishnamurti Paddhati birth charts with Placidus house cusps, star-lord and sub-lord calculations. Supports custom ayanamsa and dynamic KP-Newcomb ayanamsa calculation. Returns complete chart with all 9 planets (Sun through Ketu), Ascendant, 12 Placidus house cusps, nakshatra details, star-lords, sub-lords, and KP horary numbers (1-249). Perfect for KP astrology software, horary prediction apps, and event timing analysis. One call is a complete Krishnamurti Paddhati chart generator, returning the Placidus cusps and the planets with their sub lords together. The latitude must lie below 66.56 degrees north or south, inside the polar circles: KP cusps are Placidus, which has no solution beyond them, so a polar latitude returns 400.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -61326,7 +61362,7 @@ func (c *Client) GenerateKpChart(ctx context.Context, params *GenerateKpChartPar
 
 // GetKpCuspsWithBody Get KP Placidus house cusps with sub-lords
 //
-// Calculate unequal Placidus house cusps with ruling sign-lord, nakshatra-lord, and sub-lord for each cusp. Dynamic KP-Newcomb or custom ayanamsa support. Used in KP horary astrology, cusp sub-lord analysis, and birth chart rectification. Returns all 12 house cusps with KP sub-division details. Use it as a Placidus house cusp calculator that also carries the star lord and sub lord of each cusp, which is what Krishnamurti Paddhati horary work reads first.
+// Calculate unequal Placidus house cusps with ruling sign-lord, nakshatra-lord, and sub-lord for each cusp. Dynamic KP-Newcomb or custom ayanamsa support. Used in KP horary astrology, cusp sub-lord analysis, and birth chart rectification. Returns all 12 house cusps with KP sub-division details. Use it as a Placidus house cusp calculator that also carries the star lord and sub lord of each cusp, which is what Krishnamurti Paddhati horary work reads first. The latitude must lie below 66.56 degrees north or south, inside the polar circles: KP cusps are Placidus, which has no solution beyond them, so a polar latitude returns 400.
 //
 // Takes any type of body and a specified content type.
 //
@@ -61345,7 +61381,7 @@ func (c *Client) GetKpCuspsWithBody(ctx context.Context, params *GetKpCuspsParam
 
 // GetKpCusps Get KP Placidus house cusps with sub-lords
 //
-// Calculate unequal Placidus house cusps with ruling sign-lord, nakshatra-lord, and sub-lord for each cusp. Dynamic KP-Newcomb or custom ayanamsa support. Used in KP horary astrology, cusp sub-lord analysis, and birth chart rectification. Returns all 12 house cusps with KP sub-division details. Use it as a Placidus house cusp calculator that also carries the star lord and sub lord of each cusp, which is what Krishnamurti Paddhati horary work reads first.
+// Calculate unequal Placidus house cusps with ruling sign-lord, nakshatra-lord, and sub-lord for each cusp. Dynamic KP-Newcomb or custom ayanamsa support. Used in KP horary astrology, cusp sub-lord analysis, and birth chart rectification. Returns all 12 house cusps with KP sub-division details. Use it as a Placidus house cusp calculator that also carries the star lord and sub lord of each cusp, which is what Krishnamurti Paddhati horary work reads first. The latitude must lie below 66.56 degrees north or south, inside the polar circles: KP cusps are Placidus, which has no solution beyond them, so a polar latitude returns 400.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -61364,7 +61400,7 @@ func (c *Client) GetKpCusps(ctx context.Context, params *GetKpCuspsParams, body 
 
 // GetKpDailyFinanceWithBody Daily finance score from four KP sub lord layers - KP Daily Finance API
 //
-// A Krishnamurti Paddhati daily finance reading for one native on one date. Four KP layers are each scored against the money houses and weighed into one number: the cusp sub lords of the gain and loss houses (structural promise), the four running Vimshottari lords at the reading moment (timing), the ruling planets of that moment (the pulse), and the sub lord windows the Moon passes through across the civil day (the hour hand), with the best and worst windows named. Weights cusps 30, dasha 40, rulingPlanets 15, moonWindows 15. Every input is the shipped KP arithmetic: Placidus cusps, the 249 sub lord table, the four tier significator rule, the Vimshottari chain to the sookshma level, all in the one ayanamsa you choose. Every row prints its planet, its standing against the two sets and its score, so the number can be audited rather than trusted. The house groups, the classification, the inversion on the loss cusps, the retrograde penalty, the level weights and the layer weights are a KP practitioner convention adopted as the published convention of this route: no classical KP text weighs these four layers against each other, and every table behind the number is printed so the result can be checked line by line rather than trusted. The score measures what the method outputs for the day, never the probability of a gain or a loss. Override the two house groups to run your own school.
+// A Krishnamurti Paddhati daily finance reading for one native on one date. Four KP layers are each scored against the money houses and weighed into one number: the cusp sub lords of the gain and loss houses (structural promise), the four running Vimshottari lords at the reading moment (timing), the ruling planets of that moment (the pulse), and the sub lord windows the Moon passes through across the civil day (the hour hand), with the best and worst windows named. Weights cusps 30, dasha 40, rulingPlanets 15, moonWindows 15. Every input is the shipped KP arithmetic: Placidus cusps, the 249 sub lord table, the four tier significator rule, the Vimshottari chain to the sookshma level, all in the one ayanamsa you choose. Every row prints its planet, its standing against the two sets and its score, so the number can be audited rather than trusted. The house groups, the classification, the inversion on the loss cusps, the retrograde penalty, the level weights and the layer weights are a KP practitioner convention adopted as the published convention of this route: no classical KP text weighs these four layers against each other, and every table behind the number is printed so the result can be checked line by line rather than trusted. The score measures what the method outputs for the day, never the probability of a gain or a loss. Override the two house groups to run your own school. The latitude must lie below 66.56 degrees north or south, inside the polar circles: KP cusps are Placidus, which has no solution beyond them, so a polar latitude returns 400.
 //
 // Takes any type of body and a specified content type.
 //
@@ -61383,7 +61419,7 @@ func (c *Client) GetKpDailyFinanceWithBody(ctx context.Context, contentType stri
 
 // GetKpDailyFinance Daily finance score from four KP sub lord layers - KP Daily Finance API
 //
-// A Krishnamurti Paddhati daily finance reading for one native on one date. Four KP layers are each scored against the money houses and weighed into one number: the cusp sub lords of the gain and loss houses (structural promise), the four running Vimshottari lords at the reading moment (timing), the ruling planets of that moment (the pulse), and the sub lord windows the Moon passes through across the civil day (the hour hand), with the best and worst windows named. Weights cusps 30, dasha 40, rulingPlanets 15, moonWindows 15. Every input is the shipped KP arithmetic: Placidus cusps, the 249 sub lord table, the four tier significator rule, the Vimshottari chain to the sookshma level, all in the one ayanamsa you choose. Every row prints its planet, its standing against the two sets and its score, so the number can be audited rather than trusted. The house groups, the classification, the inversion on the loss cusps, the retrograde penalty, the level weights and the layer weights are a KP practitioner convention adopted as the published convention of this route: no classical KP text weighs these four layers against each other, and every table behind the number is printed so the result can be checked line by line rather than trusted. The score measures what the method outputs for the day, never the probability of a gain or a loss. Override the two house groups to run your own school.
+// A Krishnamurti Paddhati daily finance reading for one native on one date. Four KP layers are each scored against the money houses and weighed into one number: the cusp sub lords of the gain and loss houses (structural promise), the four running Vimshottari lords at the reading moment (timing), the ruling planets of that moment (the pulse), and the sub lord windows the Moon passes through across the civil day (the hour hand), with the best and worst windows named. Weights cusps 30, dasha 40, rulingPlanets 15, moonWindows 15. Every input is the shipped KP arithmetic: Placidus cusps, the 249 sub lord table, the four tier significator rule, the Vimshottari chain to the sookshma level, all in the one ayanamsa you choose. Every row prints its planet, its standing against the two sets and its score, so the number can be audited rather than trusted. The house groups, the classification, the inversion on the loss cusps, the retrograde penalty, the level weights and the layer weights are a KP practitioner convention adopted as the published convention of this route: no classical KP text weighs these four layers against each other, and every table behind the number is printed so the result can be checked line by line rather than trusted. The score measures what the method outputs for the day, never the probability of a gain or a loss. Override the two house groups to run your own school. The latitude must lie below 66.56 degrees north or south, inside the polar circles: KP cusps are Placidus, which has no solution beyond them, so a polar latitude returns 400.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -61402,7 +61438,7 @@ func (c *Client) GetKpDailyFinance(ctx context.Context, body GetKpDailyFinanceJS
 
 // CastKpHoraryChartWithBody Cast a KP horary (Prashna) chart from a number 1-249 - KP Horary API
 //
-// Cast a Krishnamurti Paddhati horary chart, also called Prashna, from a number between 1 and 249 given by the querent plus the moment and place the question is judged. NO BIRTH DETAILS ARE NEEDED, which is what makes horary the KP answer when birth time is unknown or unreliable. The number maps to one of the 249 KP sub divisions and sets the Ascendant; the twelve Placidus cusps follow from that Ascendant at the given latitude, and every planetary position comes from the real sky at the moment of the question. Returns the Ascendant with its sub lord, all twelve cusps with star lord and sub lord, the nine grahas placed against those cusps, the five ruling planets for validating the chart, and four-level significators for judging which houses each graha supports. KP horary API, Prashna kundali calculator, 249 horary number chart, Krishnamurti Paddhati horary, cusp sub lord question answering.
+// Cast a Krishnamurti Paddhati horary chart, also called Prashna, from a number between 1 and 249 given by the querent plus the moment and place the question is judged. NO BIRTH DETAILS ARE NEEDED, which is what makes horary the KP answer when birth time is unknown or unreliable. The number maps to one of the 249 KP sub divisions and sets the Ascendant; the twelve Placidus cusps follow from that Ascendant at the given latitude, and every planetary position comes from the real sky at the moment of the question. Returns the Ascendant with its sub lord, all twelve cusps with star lord and sub lord, the nine grahas placed against those cusps, the five ruling planets for validating the chart, and four-level significators for judging which houses each graha supports. KP horary API, Prashna kundali calculator, 249 horary number chart, Krishnamurti Paddhati horary, cusp sub lord question answering. The latitude must lie below 66.56 degrees north or south, inside the polar circles: KP cusps are Placidus, which has no solution beyond them, so a polar latitude returns 400.
 //
 // Takes any type of body and a specified content type.
 //
@@ -61421,7 +61457,7 @@ func (c *Client) CastKpHoraryChartWithBody(ctx context.Context, params *CastKpHo
 
 // CastKpHoraryChart Cast a KP horary (Prashna) chart from a number 1-249 - KP Horary API
 //
-// Cast a Krishnamurti Paddhati horary chart, also called Prashna, from a number between 1 and 249 given by the querent plus the moment and place the question is judged. NO BIRTH DETAILS ARE NEEDED, which is what makes horary the KP answer when birth time is unknown or unreliable. The number maps to one of the 249 KP sub divisions and sets the Ascendant; the twelve Placidus cusps follow from that Ascendant at the given latitude, and every planetary position comes from the real sky at the moment of the question. Returns the Ascendant with its sub lord, all twelve cusps with star lord and sub lord, the nine grahas placed against those cusps, the five ruling planets for validating the chart, and four-level significators for judging which houses each graha supports. KP horary API, Prashna kundali calculator, 249 horary number chart, Krishnamurti Paddhati horary, cusp sub lord question answering.
+// Cast a Krishnamurti Paddhati horary chart, also called Prashna, from a number between 1 and 249 given by the querent plus the moment and place the question is judged. NO BIRTH DETAILS ARE NEEDED, which is what makes horary the KP answer when birth time is unknown or unreliable. The number maps to one of the 249 KP sub divisions and sets the Ascendant; the twelve Placidus cusps follow from that Ascendant at the given latitude, and every planetary position comes from the real sky at the moment of the question. Returns the Ascendant with its sub lord, all twelve cusps with star lord and sub lord, the nine grahas placed against those cusps, the five ruling planets for validating the chart, and four-level significators for judging which houses each graha supports. KP horary API, Prashna kundali calculator, 249 horary number chart, Krishnamurti Paddhati horary, cusp sub lord question answering. The latitude must lie below 66.56 degrees north or south, inside the polar circles: KP cusps are Placidus, which has no solution beyond them, so a polar latitude returns 400.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -61592,7 +61628,7 @@ func (c *Client) GetKpRulingPlanets(ctx context.Context, params *GetKpRulingPlan
 
 // GetKpRulingIntervalWithBody Get KP ruling planets with significators at intervals
 //
-// Calculate ruling planets and their KP significators at regular time intervals using Krishnamurti Paddhati prashna (horary) astrology. For each interval, a full Placidus house chart is erected and significators are computed using the 4-level KP hierarchy: Level 1 (strongest) planets in star of house occupant, Level 2 occupants, Level 3 planets in star of house owner, Level 4 house owner. Returns Day Lord (sunrise-based Hindu Vara), Moon Sign/Star/Sub/Sub-Sub Lords, Lagna Sign/Star/Sub/Sub-Sub Lords, unique ruling planets set, and per-ruling-planet house significations. No birth data needed, significators come from each moments sky chart. Use for birth time rectification, muhurta selection, and KP horary number analysis.
+// Calculate ruling planets and their KP significators at regular time intervals using Krishnamurti Paddhati prashna (horary) astrology. For each interval, a full Placidus house chart is erected and significators are computed using the 4-level KP hierarchy: Level 1 (strongest) planets in star of house occupant, Level 2 occupants, Level 3 planets in star of house owner, Level 4 house owner. Returns Day Lord (sunrise-based Hindu Vara), Moon Sign/Star/Sub/Sub-Sub Lords, Lagna Sign/Star/Sub/Sub-Sub Lords, unique ruling planets set, and per-ruling-planet house significations. No birth data needed, significators come from each moments sky chart. Use for birth time rectification, muhurta selection, and KP horary number analysis. The latitude must lie below 66.56 degrees north or south, inside the polar circles: KP cusps are Placidus, which has no solution beyond them, so a polar latitude returns 400.
 //
 // Takes any type of body and a specified content type.
 //
@@ -61611,7 +61647,7 @@ func (c *Client) GetKpRulingIntervalWithBody(ctx context.Context, params *GetKpR
 
 // GetKpRulingInterval Get KP ruling planets with significators at intervals
 //
-// Calculate ruling planets and their KP significators at regular time intervals using Krishnamurti Paddhati prashna (horary) astrology. For each interval, a full Placidus house chart is erected and significators are computed using the 4-level KP hierarchy: Level 1 (strongest) planets in star of house occupant, Level 2 occupants, Level 3 planets in star of house owner, Level 4 house owner. Returns Day Lord (sunrise-based Hindu Vara), Moon Sign/Star/Sub/Sub-Sub Lords, Lagna Sign/Star/Sub/Sub-Sub Lords, unique ruling planets set, and per-ruling-planet house significations. No birth data needed, significators come from each moments sky chart. Use for birth time rectification, muhurta selection, and KP horary number analysis.
+// Calculate ruling planets and their KP significators at regular time intervals using Krishnamurti Paddhati prashna (horary) astrology. For each interval, a full Placidus house chart is erected and significators are computed using the 4-level KP hierarchy: Level 1 (strongest) planets in star of house occupant, Level 2 occupants, Level 3 planets in star of house owner, Level 4 house owner. Returns Day Lord (sunrise-based Hindu Vara), Moon Sign/Star/Sub/Sub-Sub Lords, Lagna Sign/Star/Sub/Sub-Sub Lords, unique ruling planets set, and per-ruling-planet house significations. No birth data needed, significators come from each moments sky chart. Use for birth time rectification, muhurta selection, and KP horary number analysis. The latitude must lie below 66.56 degrees north or south, inside the polar circles: KP cusps are Placidus, which has no solution beyond them, so a polar latitude returns 400.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -80491,7 +80527,7 @@ type ClientWithResponsesInterface interface {
 
 	// GenerateProgressionsWithBodyWithResponse Secondary progressions calculator - progressed chart, progressed Sun and Moon
 	//
-	// Generate the secondary progressed chart for any date using the day-for-a-year key. Each day of ephemeris motion after birth stands in for one year of life. Returns every progressed body with its sign, degree, whole-sign house, motion, and retrograde state, plus the progressed Ascendant and Midheaven via the Naibod arc. The progressed Sun and progressed Moon are the headline timing markers for inner growth and emotional chapters. Secondary progressions API, progressed chart calculator, progressed Sun and Moon, progressed Ascendant and Midheaven.
+	// Generate the secondary progressed chart for any date using the day-for-a-year key. Each day of ephemeris motion after birth stands in for one year of life. Returns every progressed body with its sign, degree, natal house, motion, and retrograde state, plus the progressed Ascendant and Midheaven via the Naibod arc. The progressed Sun and progressed Moon are the headline timing markers for inner growth and emotional chapters. Secondary progressions API, progressed chart calculator, progressed Sun and Moon, progressed Ascendant and Midheaven.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -80500,7 +80536,7 @@ type ClientWithResponsesInterface interface {
 
 	// GenerateProgressionsWithResponse Secondary progressions calculator - progressed chart, progressed Sun and Moon
 	//
-	// Generate the secondary progressed chart for any date using the day-for-a-year key. Each day of ephemeris motion after birth stands in for one year of life. Returns every progressed body with its sign, degree, whole-sign house, motion, and retrograde state, plus the progressed Ascendant and Midheaven via the Naibod arc. The progressed Sun and progressed Moon are the headline timing markers for inner growth and emotional chapters. Secondary progressions API, progressed chart calculator, progressed Sun and Moon, progressed Ascendant and Midheaven.
+	// Generate the secondary progressed chart for any date using the day-for-a-year key. Each day of ephemeris motion after birth stands in for one year of life. Returns every progressed body with its sign, degree, natal house, motion, and retrograde state, plus the progressed Ascendant and Midheaven via the Naibod arc. The progressed Sun and progressed Moon are the headline timing markers for inner growth and emotional chapters. Secondary progressions API, progressed chart calculator, progressed Sun and Moon, progressed Ascendant and Midheaven.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -81760,7 +81796,7 @@ type ClientWithResponsesInterface interface {
 
 	// GenerateBirthProfileWithBodyWithResponse Generate a birth profile - Hebrew birthday and birth angel API
 	//
-	// Return the Hebrew date of a birth, the Hebrew birthday that follows it, the three birth names of the Renaissance angel tradition and the sephirah of the birth day, from one birth moment. The Hebrew date is computed from the published calendar algorithm rather than looked up, the sunset boundary is a typed request field because it depends on where you were, and the two rival ways of dating the first name are a typed convention the response echoes. Built for Jewish culture and education apps, birth angel features and any product that wants the Hebrew birthday on the same key as the rest of its readings.
+	// Return the Hebrew date of a birth, the next Hebrew birthday from targetDate or today, the three birth names of the Renaissance angel tradition and the sephirah of the birth day, from one birth moment. The Hebrew date is computed from the published calendar algorithm rather than looked up, the sunset boundary is a typed request field because it depends on where you were, and the two rival ways of dating the first name are a typed convention the response echoes. Built for Jewish culture and education apps, birth angel features and any product that wants the Hebrew birthday on the same key as the rest of its readings.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -81769,7 +81805,7 @@ type ClientWithResponsesInterface interface {
 
 	// GenerateBirthProfileWithResponse Generate a birth profile - Hebrew birthday and birth angel API
 	//
-	// Return the Hebrew date of a birth, the Hebrew birthday that follows it, the three birth names of the Renaissance angel tradition and the sephirah of the birth day, from one birth moment. The Hebrew date is computed from the published calendar algorithm rather than looked up, the sunset boundary is a typed request field because it depends on where you were, and the two rival ways of dating the first name are a typed convention the response echoes. Built for Jewish culture and education apps, birth angel features and any product that wants the Hebrew birthday on the same key as the rest of its readings.
+	// Return the Hebrew date of a birth, the next Hebrew birthday from targetDate or today, the three birth names of the Renaissance angel tradition and the sephirah of the birth day, from one birth moment. The Hebrew date is computed from the published calendar algorithm rather than looked up, the sunset boundary is a typed request field because it depends on where you were, and the two rival ways of dating the first name are a typed convention the response echoes. Built for Jewish culture and education apps, birth angel features and any product that wants the Hebrew birthday on the same key as the rest of its readings.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -82228,7 +82264,7 @@ type ClientWithResponsesInterface interface {
 
 	// GenerateNumerologyChartWithBodyWithResponse Generate numerology chart - Complete numerology reading API
 	//
-	// Generate a complete numerology chart from a full birth name and birth date in one call. It returns the six core numbers (Life Path, Expression, Soul Urge, Personality, Birth Day and Maturity) with their calculations and full interpretations, the four Pinnacles and four Challenges with their ages, Karmic Lessons, karmic debt in all five positions, Hidden Passion, Subconscious Self, Cornerstone, Capstone and First Vowel, the Birth Day profile for the exact day, lucky associations, the Maturity activation status, the Personal Year with the current Personal Month, and a written summary, in the language set by lang. The Personal Year uses currentYear or the current UTC year, while the Personal Month and the age behind the Maturity status read the current UTC date. Built for full numerology readings, PDF reports, onboarding profiles and AI agents.
+	// Generate a complete numerology chart from a full birth name and birth date in one call. It returns the six core numbers (Life Path, Expression, Soul Urge, Personality, Birth Day and Maturity) with their calculations and full interpretations, the four Pinnacles and four Challenges with their ages, Karmic Lessons, karmic debt in all five positions, Hidden Passion, Subconscious Self, Cornerstone, Capstone and First Vowel, the Birth Day profile for the exact day, lucky associations, the Maturity activation status, the Personal Year with the current Personal Month, and a written summary, in the language set by lang. The age behind the Maturity status, the Personal Month and the Personal Year are read on targetDate, the current UTC date when omitted, and currentYear overrides the Personal Year alone. Built for full numerology readings, PDF reports, onboarding profiles and AI agents.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -82237,7 +82273,7 @@ type ClientWithResponsesInterface interface {
 
 	// GenerateNumerologyChartWithResponse Generate numerology chart - Complete numerology reading API
 	//
-	// Generate a complete numerology chart from a full birth name and birth date in one call. It returns the six core numbers (Life Path, Expression, Soul Urge, Personality, Birth Day and Maturity) with their calculations and full interpretations, the four Pinnacles and four Challenges with their ages, Karmic Lessons, karmic debt in all five positions, Hidden Passion, Subconscious Self, Cornerstone, Capstone and First Vowel, the Birth Day profile for the exact day, lucky associations, the Maturity activation status, the Personal Year with the current Personal Month, and a written summary, in the language set by lang. The Personal Year uses currentYear or the current UTC year, while the Personal Month and the age behind the Maturity status read the current UTC date. Built for full numerology readings, PDF reports, onboarding profiles and AI agents.
+	// Generate a complete numerology chart from a full birth name and birth date in one call. It returns the six core numbers (Life Path, Expression, Soul Urge, Personality, Birth Day and Maturity) with their calculations and full interpretations, the four Pinnacles and four Challenges with their ages, Karmic Lessons, karmic debt in all five positions, Hidden Passion, Subconscious Self, Cornerstone, Capstone and First Vowel, the Birth Day profile for the exact day, lucky associations, the Maturity activation status, the Personal Year with the current Personal Month, and a written summary, in the language set by lang. The age behind the Maturity status, the Personal Month and the Personal Year are read on targetDate, the current UTC date when omitted, and currentYear overrides the Personal Year alone. Built for full numerology readings, PDF reports, onboarding profiles and AI agents.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -83290,7 +83326,7 @@ type ClientWithResponsesInterface interface {
 
 	// GenerateKpChartWithBodyWithResponse Generate complete KP birth chart
 	//
-	// Generate authentic Krishnamurti Paddhati birth charts with Placidus house cusps, star-lord and sub-lord calculations. Supports custom ayanamsa and dynamic KP-Newcomb ayanamsa calculation. Returns complete chart with all 9 planets (Sun through Ketu), Ascendant, 12 Placidus house cusps, nakshatra details, star-lords, sub-lords, and KP horary numbers (1-249). Perfect for KP astrology software, horary prediction apps, and event timing analysis. One call is a complete Krishnamurti Paddhati chart generator, returning the Placidus cusps and the planets with their sub lords together.
+	// Generate authentic Krishnamurti Paddhati birth charts with Placidus house cusps, star-lord and sub-lord calculations. Supports custom ayanamsa and dynamic KP-Newcomb ayanamsa calculation. Returns complete chart with all 9 planets (Sun through Ketu), Ascendant, 12 Placidus house cusps, nakshatra details, star-lords, sub-lords, and KP horary numbers (1-249). Perfect for KP astrology software, horary prediction apps, and event timing analysis. One call is a complete Krishnamurti Paddhati chart generator, returning the Placidus cusps and the planets with their sub lords together. The latitude must lie below 66.56 degrees north or south, inside the polar circles: KP cusps are Placidus, which has no solution beyond them, so a polar latitude returns 400.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -83299,7 +83335,7 @@ type ClientWithResponsesInterface interface {
 
 	// GenerateKpChartWithResponse Generate complete KP birth chart
 	//
-	// Generate authentic Krishnamurti Paddhati birth charts with Placidus house cusps, star-lord and sub-lord calculations. Supports custom ayanamsa and dynamic KP-Newcomb ayanamsa calculation. Returns complete chart with all 9 planets (Sun through Ketu), Ascendant, 12 Placidus house cusps, nakshatra details, star-lords, sub-lords, and KP horary numbers (1-249). Perfect for KP astrology software, horary prediction apps, and event timing analysis. One call is a complete Krishnamurti Paddhati chart generator, returning the Placidus cusps and the planets with their sub lords together.
+	// Generate authentic Krishnamurti Paddhati birth charts with Placidus house cusps, star-lord and sub-lord calculations. Supports custom ayanamsa and dynamic KP-Newcomb ayanamsa calculation. Returns complete chart with all 9 planets (Sun through Ketu), Ascendant, 12 Placidus house cusps, nakshatra details, star-lords, sub-lords, and KP horary numbers (1-249). Perfect for KP astrology software, horary prediction apps, and event timing analysis. One call is a complete Krishnamurti Paddhati chart generator, returning the Placidus cusps and the planets with their sub lords together. The latitude must lie below 66.56 degrees north or south, inside the polar circles: KP cusps are Placidus, which has no solution beyond them, so a polar latitude returns 400.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -83308,7 +83344,7 @@ type ClientWithResponsesInterface interface {
 
 	// GetKpCuspsWithBodyWithResponse Get KP Placidus house cusps with sub-lords
 	//
-	// Calculate unequal Placidus house cusps with ruling sign-lord, nakshatra-lord, and sub-lord for each cusp. Dynamic KP-Newcomb or custom ayanamsa support. Used in KP horary astrology, cusp sub-lord analysis, and birth chart rectification. Returns all 12 house cusps with KP sub-division details. Use it as a Placidus house cusp calculator that also carries the star lord and sub lord of each cusp, which is what Krishnamurti Paddhati horary work reads first.
+	// Calculate unequal Placidus house cusps with ruling sign-lord, nakshatra-lord, and sub-lord for each cusp. Dynamic KP-Newcomb or custom ayanamsa support. Used in KP horary astrology, cusp sub-lord analysis, and birth chart rectification. Returns all 12 house cusps with KP sub-division details. Use it as a Placidus house cusp calculator that also carries the star lord and sub lord of each cusp, which is what Krishnamurti Paddhati horary work reads first. The latitude must lie below 66.56 degrees north or south, inside the polar circles: KP cusps are Placidus, which has no solution beyond them, so a polar latitude returns 400.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -83317,7 +83353,7 @@ type ClientWithResponsesInterface interface {
 
 	// GetKpCuspsWithResponse Get KP Placidus house cusps with sub-lords
 	//
-	// Calculate unequal Placidus house cusps with ruling sign-lord, nakshatra-lord, and sub-lord for each cusp. Dynamic KP-Newcomb or custom ayanamsa support. Used in KP horary astrology, cusp sub-lord analysis, and birth chart rectification. Returns all 12 house cusps with KP sub-division details. Use it as a Placidus house cusp calculator that also carries the star lord and sub lord of each cusp, which is what Krishnamurti Paddhati horary work reads first.
+	// Calculate unequal Placidus house cusps with ruling sign-lord, nakshatra-lord, and sub-lord for each cusp. Dynamic KP-Newcomb or custom ayanamsa support. Used in KP horary astrology, cusp sub-lord analysis, and birth chart rectification. Returns all 12 house cusps with KP sub-division details. Use it as a Placidus house cusp calculator that also carries the star lord and sub lord of each cusp, which is what Krishnamurti Paddhati horary work reads first. The latitude must lie below 66.56 degrees north or south, inside the polar circles: KP cusps are Placidus, which has no solution beyond them, so a polar latitude returns 400.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -83326,7 +83362,7 @@ type ClientWithResponsesInterface interface {
 
 	// GetKpDailyFinanceWithBodyWithResponse Daily finance score from four KP sub lord layers - KP Daily Finance API
 	//
-	// A Krishnamurti Paddhati daily finance reading for one native on one date. Four KP layers are each scored against the money houses and weighed into one number: the cusp sub lords of the gain and loss houses (structural promise), the four running Vimshottari lords at the reading moment (timing), the ruling planets of that moment (the pulse), and the sub lord windows the Moon passes through across the civil day (the hour hand), with the best and worst windows named. Weights cusps 30, dasha 40, rulingPlanets 15, moonWindows 15. Every input is the shipped KP arithmetic: Placidus cusps, the 249 sub lord table, the four tier significator rule, the Vimshottari chain to the sookshma level, all in the one ayanamsa you choose. Every row prints its planet, its standing against the two sets and its score, so the number can be audited rather than trusted. The house groups, the classification, the inversion on the loss cusps, the retrograde penalty, the level weights and the layer weights are a KP practitioner convention adopted as the published convention of this route: no classical KP text weighs these four layers against each other, and every table behind the number is printed so the result can be checked line by line rather than trusted. The score measures what the method outputs for the day, never the probability of a gain or a loss. Override the two house groups to run your own school.
+	// A Krishnamurti Paddhati daily finance reading for one native on one date. Four KP layers are each scored against the money houses and weighed into one number: the cusp sub lords of the gain and loss houses (structural promise), the four running Vimshottari lords at the reading moment (timing), the ruling planets of that moment (the pulse), and the sub lord windows the Moon passes through across the civil day (the hour hand), with the best and worst windows named. Weights cusps 30, dasha 40, rulingPlanets 15, moonWindows 15. Every input is the shipped KP arithmetic: Placidus cusps, the 249 sub lord table, the four tier significator rule, the Vimshottari chain to the sookshma level, all in the one ayanamsa you choose. Every row prints its planet, its standing against the two sets and its score, so the number can be audited rather than trusted. The house groups, the classification, the inversion on the loss cusps, the retrograde penalty, the level weights and the layer weights are a KP practitioner convention adopted as the published convention of this route: no classical KP text weighs these four layers against each other, and every table behind the number is printed so the result can be checked line by line rather than trusted. The score measures what the method outputs for the day, never the probability of a gain or a loss. Override the two house groups to run your own school. The latitude must lie below 66.56 degrees north or south, inside the polar circles: KP cusps are Placidus, which has no solution beyond them, so a polar latitude returns 400.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -83335,7 +83371,7 @@ type ClientWithResponsesInterface interface {
 
 	// GetKpDailyFinanceWithResponse Daily finance score from four KP sub lord layers - KP Daily Finance API
 	//
-	// A Krishnamurti Paddhati daily finance reading for one native on one date. Four KP layers are each scored against the money houses and weighed into one number: the cusp sub lords of the gain and loss houses (structural promise), the four running Vimshottari lords at the reading moment (timing), the ruling planets of that moment (the pulse), and the sub lord windows the Moon passes through across the civil day (the hour hand), with the best and worst windows named. Weights cusps 30, dasha 40, rulingPlanets 15, moonWindows 15. Every input is the shipped KP arithmetic: Placidus cusps, the 249 sub lord table, the four tier significator rule, the Vimshottari chain to the sookshma level, all in the one ayanamsa you choose. Every row prints its planet, its standing against the two sets and its score, so the number can be audited rather than trusted. The house groups, the classification, the inversion on the loss cusps, the retrograde penalty, the level weights and the layer weights are a KP practitioner convention adopted as the published convention of this route: no classical KP text weighs these four layers against each other, and every table behind the number is printed so the result can be checked line by line rather than trusted. The score measures what the method outputs for the day, never the probability of a gain or a loss. Override the two house groups to run your own school.
+	// A Krishnamurti Paddhati daily finance reading for one native on one date. Four KP layers are each scored against the money houses and weighed into one number: the cusp sub lords of the gain and loss houses (structural promise), the four running Vimshottari lords at the reading moment (timing), the ruling planets of that moment (the pulse), and the sub lord windows the Moon passes through across the civil day (the hour hand), with the best and worst windows named. Weights cusps 30, dasha 40, rulingPlanets 15, moonWindows 15. Every input is the shipped KP arithmetic: Placidus cusps, the 249 sub lord table, the four tier significator rule, the Vimshottari chain to the sookshma level, all in the one ayanamsa you choose. Every row prints its planet, its standing against the two sets and its score, so the number can be audited rather than trusted. The house groups, the classification, the inversion on the loss cusps, the retrograde penalty, the level weights and the layer weights are a KP practitioner convention adopted as the published convention of this route: no classical KP text weighs these four layers against each other, and every table behind the number is printed so the result can be checked line by line rather than trusted. The score measures what the method outputs for the day, never the probability of a gain or a loss. Override the two house groups to run your own school. The latitude must lie below 66.56 degrees north or south, inside the polar circles: KP cusps are Placidus, which has no solution beyond them, so a polar latitude returns 400.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -83344,7 +83380,7 @@ type ClientWithResponsesInterface interface {
 
 	// CastKpHoraryChartWithBodyWithResponse Cast a KP horary (Prashna) chart from a number 1-249 - KP Horary API
 	//
-	// Cast a Krishnamurti Paddhati horary chart, also called Prashna, from a number between 1 and 249 given by the querent plus the moment and place the question is judged. NO BIRTH DETAILS ARE NEEDED, which is what makes horary the KP answer when birth time is unknown or unreliable. The number maps to one of the 249 KP sub divisions and sets the Ascendant; the twelve Placidus cusps follow from that Ascendant at the given latitude, and every planetary position comes from the real sky at the moment of the question. Returns the Ascendant with its sub lord, all twelve cusps with star lord and sub lord, the nine grahas placed against those cusps, the five ruling planets for validating the chart, and four-level significators for judging which houses each graha supports. KP horary API, Prashna kundali calculator, 249 horary number chart, Krishnamurti Paddhati horary, cusp sub lord question answering.
+	// Cast a Krishnamurti Paddhati horary chart, also called Prashna, from a number between 1 and 249 given by the querent plus the moment and place the question is judged. NO BIRTH DETAILS ARE NEEDED, which is what makes horary the KP answer when birth time is unknown or unreliable. The number maps to one of the 249 KP sub divisions and sets the Ascendant; the twelve Placidus cusps follow from that Ascendant at the given latitude, and every planetary position comes from the real sky at the moment of the question. Returns the Ascendant with its sub lord, all twelve cusps with star lord and sub lord, the nine grahas placed against those cusps, the five ruling planets for validating the chart, and four-level significators for judging which houses each graha supports. KP horary API, Prashna kundali calculator, 249 horary number chart, Krishnamurti Paddhati horary, cusp sub lord question answering. The latitude must lie below 66.56 degrees north or south, inside the polar circles: KP cusps are Placidus, which has no solution beyond them, so a polar latitude returns 400.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -83353,7 +83389,7 @@ type ClientWithResponsesInterface interface {
 
 	// CastKpHoraryChartWithResponse Cast a KP horary (Prashna) chart from a number 1-249 - KP Horary API
 	//
-	// Cast a Krishnamurti Paddhati horary chart, also called Prashna, from a number between 1 and 249 given by the querent plus the moment and place the question is judged. NO BIRTH DETAILS ARE NEEDED, which is what makes horary the KP answer when birth time is unknown or unreliable. The number maps to one of the 249 KP sub divisions and sets the Ascendant; the twelve Placidus cusps follow from that Ascendant at the given latitude, and every planetary position comes from the real sky at the moment of the question. Returns the Ascendant with its sub lord, all twelve cusps with star lord and sub lord, the nine grahas placed against those cusps, the five ruling planets for validating the chart, and four-level significators for judging which houses each graha supports. KP horary API, Prashna kundali calculator, 249 horary number chart, Krishnamurti Paddhati horary, cusp sub lord question answering.
+	// Cast a Krishnamurti Paddhati horary chart, also called Prashna, from a number between 1 and 249 given by the querent plus the moment and place the question is judged. NO BIRTH DETAILS ARE NEEDED, which is what makes horary the KP answer when birth time is unknown or unreliable. The number maps to one of the 249 KP sub divisions and sets the Ascendant; the twelve Placidus cusps follow from that Ascendant at the given latitude, and every planetary position comes from the real sky at the moment of the question. Returns the Ascendant with its sub lord, all twelve cusps with star lord and sub lord, the nine grahas placed against those cusps, the five ruling planets for validating the chart, and four-level significators for judging which houses each graha supports. KP horary API, Prashna kundali calculator, 249 horary number chart, Krishnamurti Paddhati horary, cusp sub lord question answering. The latitude must lie below 66.56 degrees north or south, inside the polar circles: KP cusps are Placidus, which has no solution beyond them, so a polar latitude returns 400.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -83434,7 +83470,7 @@ type ClientWithResponsesInterface interface {
 
 	// GetKpRulingIntervalWithBodyWithResponse Get KP ruling planets with significators at intervals
 	//
-	// Calculate ruling planets and their KP significators at regular time intervals using Krishnamurti Paddhati prashna (horary) astrology. For each interval, a full Placidus house chart is erected and significators are computed using the 4-level KP hierarchy: Level 1 (strongest) planets in star of house occupant, Level 2 occupants, Level 3 planets in star of house owner, Level 4 house owner. Returns Day Lord (sunrise-based Hindu Vara), Moon Sign/Star/Sub/Sub-Sub Lords, Lagna Sign/Star/Sub/Sub-Sub Lords, unique ruling planets set, and per-ruling-planet house significations. No birth data needed, significators come from each moments sky chart. Use for birth time rectification, muhurta selection, and KP horary number analysis.
+	// Calculate ruling planets and their KP significators at regular time intervals using Krishnamurti Paddhati prashna (horary) astrology. For each interval, a full Placidus house chart is erected and significators are computed using the 4-level KP hierarchy: Level 1 (strongest) planets in star of house occupant, Level 2 occupants, Level 3 planets in star of house owner, Level 4 house owner. Returns Day Lord (sunrise-based Hindu Vara), Moon Sign/Star/Sub/Sub-Sub Lords, Lagna Sign/Star/Sub/Sub-Sub Lords, unique ruling planets set, and per-ruling-planet house significations. No birth data needed, significators come from each moments sky chart. Use for birth time rectification, muhurta selection, and KP horary number analysis. The latitude must lie below 66.56 degrees north or south, inside the polar circles: KP cusps are Placidus, which has no solution beyond them, so a polar latitude returns 400.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -83443,7 +83479,7 @@ type ClientWithResponsesInterface interface {
 
 	// GetKpRulingIntervalWithResponse Get KP ruling planets with significators at intervals
 	//
-	// Calculate ruling planets and their KP significators at regular time intervals using Krishnamurti Paddhati prashna (horary) astrology. For each interval, a full Placidus house chart is erected and significators are computed using the 4-level KP hierarchy: Level 1 (strongest) planets in star of house occupant, Level 2 occupants, Level 3 planets in star of house owner, Level 4 house owner. Returns Day Lord (sunrise-based Hindu Vara), Moon Sign/Star/Sub/Sub-Sub Lords, Lagna Sign/Star/Sub/Sub-Sub Lords, unique ruling planets set, and per-ruling-planet house significations. No birth data needed, significators come from each moments sky chart. Use for birth time rectification, muhurta selection, and KP horary number analysis.
+	// Calculate ruling planets and their KP significators at regular time intervals using Krishnamurti Paddhati prashna (horary) astrology. For each interval, a full Placidus house chart is erected and significators are computed using the 4-level KP hierarchy: Level 1 (strongest) planets in star of house occupant, Level 2 occupants, Level 3 planets in star of house owner, Level 4 house owner. Returns Day Lord (sunrise-based Hindu Vara), Moon Sign/Star/Sub/Sub-Sub Lords, Lagna Sign/Star/Sub/Sub-Sub Lords, unique ruling planets set, and per-ruling-planet house significations. No birth data needed, significators come from each moments sky chart. Use for birth time rectification, muhurta selection, and KP horary number analysis. The latitude must lie below 66.56 degrees north or south, inside the polar circles: KP cusps are Placidus, which has no solution beyond them, so a polar latitude returns 400.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -99435,7 +99471,7 @@ type CalculateLuckPillarsResponse struct {
 			// ID Annual pillar identifier for that year, under the year boundary applied.
 			ID string `json:"id"`
 
-			// LuckPillarIndex Which returned luck pillar this year falls inside, by its index. 0 means the year falls before the first luck pillar begins, in the stretch still governed by the natal chart alone.
+			// LuckPillarIndex Which returned luck pillar this year falls inside, by its index. The year a period begins in counts as inside it, though the handover falls in a month of that year. 0 means the year falls before the first luck pillar begins, in the stretch still governed by the natal chart alone.
 			LuckPillarIndex float32 `json:"luckPillarIndex"`
 
 			// Number Position of the annual pillar in the sexagenary cycle, 1 to 60.
@@ -99546,7 +99582,7 @@ type CalculateLuckPillarsResponse struct {
 			// EndAge Age in whole years at which this period ends and the next one begins.
 			EndAge float32 `json:"endAge"`
 
-			// EndYear Gregorian year this period ends.
+			// EndYear Gregorian year this period ends and the next one begins, startYear plus ten.
 			EndYear float32 `json:"endYear"`
 
 			// ID Pillar identifier, the stem id and the branch id joined by a hyphen.
@@ -99561,7 +99597,7 @@ type CalculateLuckPillarsResponse struct {
 			// StartAge Age in whole years at which this ten-year period begins.
 			StartAge float32 `json:"startAge"`
 
-			// StartYear Gregorian year this period begins, the birth year plus startAge.
+			// StartYear Gregorian year this period begins: the year of the date that falls startAge years and startAgeMonths months after the birth date, plus ten for each later period. A birth in November with a start of 4 years 7 months begins its first period in June of the birth year plus five.
 			StartYear float32 `json:"startYear"`
 
 			// Stem The Heavenly Stem of this luck pillar, with its element and polarity.
@@ -99613,7 +99649,7 @@ type CalculateLuckPillarsResponse struct {
 		// StartAge Age in whole years at which the first luck pillar begins. Counted from the birth instant to the adjacent minor solar term at three days to the year, forward for a forward direction and backward for a reverse one.
 		StartAge float32 `json:"startAge"`
 
-		// StartAgeMonths Additional months past startAge, 0 to 11, from the remainder of the same count at one day to four months. Calculators that round the whole count to the nearest year will differ from this by up to six months.
+		// StartAgeMonths Additional months past startAge, 0 to 11, from the remainder of the same count at one day to four months, rounded once to the nearest month. Calculators that round the whole count to the nearest year will differ from this by up to six months.
 		StartAgeMonths float32 `json:"startAgeMonths"`
 
 		// Summary One-paragraph reading of the sequence direction and its start.
@@ -99640,7 +99676,7 @@ func (r CalculateLuckPillarsResponse) GetJSON200() *struct {
 		// ID Annual pillar identifier for that year, under the year boundary applied.
 		ID string `json:"id"`
 
-		// LuckPillarIndex Which returned luck pillar this year falls inside, by its index. 0 means the year falls before the first luck pillar begins, in the stretch still governed by the natal chart alone.
+		// LuckPillarIndex Which returned luck pillar this year falls inside, by its index. The year a period begins in counts as inside it, though the handover falls in a month of that year. 0 means the year falls before the first luck pillar begins, in the stretch still governed by the natal chart alone.
 		LuckPillarIndex float32 `json:"luckPillarIndex"`
 
 		// Number Position of the annual pillar in the sexagenary cycle, 1 to 60.
@@ -99751,7 +99787,7 @@ func (r CalculateLuckPillarsResponse) GetJSON200() *struct {
 		// EndAge Age in whole years at which this period ends and the next one begins.
 		EndAge float32 `json:"endAge"`
 
-		// EndYear Gregorian year this period ends.
+		// EndYear Gregorian year this period ends and the next one begins, startYear plus ten.
 		EndYear float32 `json:"endYear"`
 
 		// ID Pillar identifier, the stem id and the branch id joined by a hyphen.
@@ -99766,7 +99802,7 @@ func (r CalculateLuckPillarsResponse) GetJSON200() *struct {
 		// StartAge Age in whole years at which this ten-year period begins.
 		StartAge float32 `json:"startAge"`
 
-		// StartYear Gregorian year this period begins, the birth year plus startAge.
+		// StartYear Gregorian year this period begins: the year of the date that falls startAge years and startAgeMonths months after the birth date, plus ten for each later period. A birth in November with a start of 4 years 7 months begins its first period in June of the birth year plus five.
 		StartYear float32 `json:"startYear"`
 
 		// Stem The Heavenly Stem of this luck pillar, with its element and polarity.
@@ -99818,7 +99854,7 @@ func (r CalculateLuckPillarsResponse) GetJSON200() *struct {
 	// StartAge Age in whole years at which the first luck pillar begins. Counted from the birth instant to the adjacent minor solar term at three days to the year, forward for a forward direction and backward for a reverse one.
 	StartAge float32 `json:"startAge"`
 
-	// StartAgeMonths Additional months past startAge, 0 to 11, from the remainder of the same count at one day to four months. Calculators that round the whole count to the nearest year will differ from this by up to six months.
+	// StartAgeMonths Additional months past startAge, 0 to 11, from the remainder of the same count at one day to four months, rounded once to the nearest month. Calculators that round the whole count to the nearest year will differ from this by up to six months.
 	StartAgeMonths float32 `json:"startAgeMonths"`
 
 	// Summary One-paragraph reading of the sequence direction and its start.
@@ -113980,12 +114016,12 @@ type GenerateBirthProfileResponse struct {
 			YearStart string `json:"yearStart"`
 		} `json:"conventions"`
 
-		// HebrewBirthday The next Hebrew birthday. Three Hebrew dates are missing from some years, and where the anniversary moves to is a matter of community practice rather than arithmetic, so the field is null with a note rather than a guess.
+		// HebrewBirthday The next Hebrew birthday from targetDate (the current UTC date when omitted), the anniversary of hebrewDate. Three Hebrew dates are missing from some years, and where the anniversary moves to is a matter of community practice rather than arithmetic, so the field is null with a note rather than a guess.
 		HebrewBirthday struct {
-			// Date The next Gregorian date the Hebrew birthday falls on, or null when that Hebrew date does not exist in the year it would fall in.
+			// Date The Gregorian date of the next Hebrew birthday on or after targetDate, or the current UTC date when targetDate is omitted (that day when it is the birthday), or null when that Hebrew date does not exist in the year it falls in. It is the daytime civil date: the Hebrew day itself opens at nightfall the evening before.
 			Date *string `json:"date"`
 
-			// HebrewYear The Hebrew year the anniversary was looked for in.
+			// HebrewYear The Hebrew year of that next anniversary, always later than the birth year. Present on the null branch too, naming the year the date is missing from.
 			HebrewYear float32 `json:"hebrewYear"`
 
 			// Note Present only when the date is null, saying why. Absent otherwise, so a caller can branch on presence.
@@ -114107,12 +114143,12 @@ func (r GenerateBirthProfileResponse) GetJSON200() *struct {
 		YearStart string `json:"yearStart"`
 	} `json:"conventions"`
 
-	// HebrewBirthday The next Hebrew birthday. Three Hebrew dates are missing from some years, and where the anniversary moves to is a matter of community practice rather than arithmetic, so the field is null with a note rather than a guess.
+	// HebrewBirthday The next Hebrew birthday from targetDate (the current UTC date when omitted), the anniversary of hebrewDate. Three Hebrew dates are missing from some years, and where the anniversary moves to is a matter of community practice rather than arithmetic, so the field is null with a note rather than a guess.
 	HebrewBirthday struct {
-		// Date The next Gregorian date the Hebrew birthday falls on, or null when that Hebrew date does not exist in the year it would fall in.
+		// Date The Gregorian date of the next Hebrew birthday on or after targetDate, or the current UTC date when targetDate is omitted (that day when it is the birthday), or null when that Hebrew date does not exist in the year it falls in. It is the daytime civil date: the Hebrew day itself opens at nightfall the evening before.
 		Date *string `json:"date"`
 
-		// HebrewYear The Hebrew year the anniversary was looked for in.
+		// HebrewYear The Hebrew year of that next anniversary, always later than the birth year. Present on the null branch too, naming the year the date is missing from.
 		HebrewYear float32 `json:"hebrewYear"`
 
 		// Note Present only when the date is null, saying why. Absent otherwise, so a caller can branch on presence.
@@ -122277,12 +122313,12 @@ type GenerateNumerologyChartResponse struct {
 				// Opportunities Key opportunities available during this Personal Year. Each entry identifies a specific area of life where conditions are favorable for growth and forward momentum.
 				Opportunities []string `json:"opportunities"`
 
-				// PersonalMonth Personal Month forecast for the current UTC calendar month, applied to the Personal Year above. With a currentYear other than the current year, it pairs that Personal Year with the current month.
+				// PersonalMonth Personal Month forecast for the calendar month of targetDate (the current UTC month when omitted), applied to the Personal Year above. With a currentYear other than the year of targetDate, it pairs that Personal Year with this month.
 				PersonalMonth struct {
 					// Focus Practical focus and guidance for this month.
 					Focus string `json:"focus"`
 
-					// PersonalMonth Personal Month number (1-9): the Personal Year above plus the current UTC calendar month, reduced to one digit.
+					// PersonalMonth Personal Month number (1-9): the Personal Year above plus the calendar month of targetDate (the current UTC month when omitted), reduced to one digit.
 					PersonalMonth float32 `json:"personalMonth"`
 
 					// Theme Central theme for this Personal Month.
@@ -122674,10 +122710,10 @@ type GenerateNumerologyChartResponse struct {
 			// ActivationRange Age range when the Maturity number typically activates (35-40).
 			ActivationRange string `json:"activationRange"`
 
-			// CurrentAge The current UTC calendar year minus the birth year. The birthday is not considered, so before the birthday it reads one more than the age in whole years, and currentYear does not move it.
+			// CurrentAge Age in completed years on targetDate, or on the current UTC date when targetDate is omitted: the birth year subtracted, less one until the birthday has come round. A 29 February birthday comes round on 1 March in a common year. currentYear does not move it.
 			CurrentAge float32 `json:"currentAge"`
 
-			// IsActive Whether the Maturity number is currently active (typically activates around age 35-40).
+			// IsActive Whether the Maturity number is currently active: true from the 35th birthday, when currentAge reaches 35 (the number typically activates around age 35-40).
 			IsActive bool `json:"isActive"`
 		} `json:"maturityStatus"`
 
@@ -122860,12 +122896,12 @@ func (r GenerateNumerologyChartResponse) GetJSON200() *struct {
 			// Opportunities Key opportunities available during this Personal Year. Each entry identifies a specific area of life where conditions are favorable for growth and forward momentum.
 			Opportunities []string `json:"opportunities"`
 
-			// PersonalMonth Personal Month forecast for the current UTC calendar month, applied to the Personal Year above. With a currentYear other than the current year, it pairs that Personal Year with the current month.
+			// PersonalMonth Personal Month forecast for the calendar month of targetDate (the current UTC month when omitted), applied to the Personal Year above. With a currentYear other than the year of targetDate, it pairs that Personal Year with this month.
 			PersonalMonth struct {
 				// Focus Practical focus and guidance for this month.
 				Focus string `json:"focus"`
 
-				// PersonalMonth Personal Month number (1-9): the Personal Year above plus the current UTC calendar month, reduced to one digit.
+				// PersonalMonth Personal Month number (1-9): the Personal Year above plus the calendar month of targetDate (the current UTC month when omitted), reduced to one digit.
 				PersonalMonth float32 `json:"personalMonth"`
 
 				// Theme Central theme for this Personal Month.
@@ -123257,10 +123293,10 @@ func (r GenerateNumerologyChartResponse) GetJSON200() *struct {
 		// ActivationRange Age range when the Maturity number typically activates (35-40).
 		ActivationRange string `json:"activationRange"`
 
-		// CurrentAge The current UTC calendar year minus the birth year. The birthday is not considered, so before the birthday it reads one more than the age in whole years, and currentYear does not move it.
+		// CurrentAge Age in completed years on targetDate, or on the current UTC date when targetDate is omitted: the birth year subtracted, less one until the birthday has come round. A 29 February birthday comes round on 1 March in a common year. currentYear does not move it.
 		CurrentAge float32 `json:"currentAge"`
 
-		// IsActive Whether the Maturity number is currently active (typically activates around age 35-40).
+		// IsActive Whether the Maturity number is currently active: true from the 35th birthday, when currentAge reaches 35 (the number typically activates around age 35-40).
 		IsActive bool `json:"isActive"`
 	} `json:"maturityStatus"`
 
@@ -141873,7 +141909,7 @@ func (c *ClientWithResponses) GenerateProfectionsWithResponse(ctx context.Contex
 
 // GenerateProgressionsWithBodyWithResponse Secondary progressions calculator - progressed chart, progressed Sun and Moon
 //
-// Generate the secondary progressed chart for any date using the day-for-a-year key. Each day of ephemeris motion after birth stands in for one year of life. Returns every progressed body with its sign, degree, whole-sign house, motion, and retrograde state, plus the progressed Ascendant and Midheaven via the Naibod arc. The progressed Sun and progressed Moon are the headline timing markers for inner growth and emotional chapters. Secondary progressions API, progressed chart calculator, progressed Sun and Moon, progressed Ascendant and Midheaven.
+// Generate the secondary progressed chart for any date using the day-for-a-year key. Each day of ephemeris motion after birth stands in for one year of life. Returns every progressed body with its sign, degree, natal house, motion, and retrograde state, plus the progressed Ascendant and Midheaven via the Naibod arc. The progressed Sun and progressed Moon are the headline timing markers for inner growth and emotional chapters. Secondary progressions API, progressed chart calculator, progressed Sun and Moon, progressed Ascendant and Midheaven.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -141888,7 +141924,7 @@ func (c *ClientWithResponses) GenerateProgressionsWithBodyWithResponse(ctx conte
 
 // GenerateProgressionsWithResponse Secondary progressions calculator - progressed chart, progressed Sun and Moon
 //
-// Generate the secondary progressed chart for any date using the day-for-a-year key. Each day of ephemeris motion after birth stands in for one year of life. Returns every progressed body with its sign, degree, whole-sign house, motion, and retrograde state, plus the progressed Ascendant and Midheaven via the Naibod arc. The progressed Sun and progressed Moon are the headline timing markers for inner growth and emotional chapters. Secondary progressions API, progressed chart calculator, progressed Sun and Moon, progressed Ascendant and Midheaven.
+// Generate the secondary progressed chart for any date using the day-for-a-year key. Each day of ephemeris motion after birth stands in for one year of life. Returns every progressed body with its sign, degree, natal house, motion, and retrograde state, plus the progressed Ascendant and Midheaven via the Naibod arc. The progressed Sun and progressed Moon are the headline timing markers for inner growth and emotional chapters. Secondary progressions API, progressed chart calculator, progressed Sun and Moon, progressed Ascendant and Midheaven.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -143988,7 +144024,7 @@ func (c *ClientWithResponses) GetTrigramWithResponse(ctx context.Context, id str
 
 // GenerateBirthProfileWithBodyWithResponse Generate a birth profile - Hebrew birthday and birth angel API
 //
-// Return the Hebrew date of a birth, the Hebrew birthday that follows it, the three birth names of the Renaissance angel tradition and the sephirah of the birth day, from one birth moment. The Hebrew date is computed from the published calendar algorithm rather than looked up, the sunset boundary is a typed request field because it depends on where you were, and the two rival ways of dating the first name are a typed convention the response echoes. Built for Jewish culture and education apps, birth angel features and any product that wants the Hebrew birthday on the same key as the rest of its readings.
+// Return the Hebrew date of a birth, the next Hebrew birthday from targetDate or today, the three birth names of the Renaissance angel tradition and the sephirah of the birth day, from one birth moment. The Hebrew date is computed from the published calendar algorithm rather than looked up, the sunset boundary is a typed request field because it depends on where you were, and the two rival ways of dating the first name are a typed convention the response echoes. Built for Jewish culture and education apps, birth angel features and any product that wants the Hebrew birthday on the same key as the rest of its readings.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -144003,7 +144039,7 @@ func (c *ClientWithResponses) GenerateBirthProfileWithBodyWithResponse(ctx conte
 
 // GenerateBirthProfileWithResponse Generate a birth profile - Hebrew birthday and birth angel API
 //
-// Return the Hebrew date of a birth, the Hebrew birthday that follows it, the three birth names of the Renaissance angel tradition and the sephirah of the birth day, from one birth moment. The Hebrew date is computed from the published calendar algorithm rather than looked up, the sunset boundary is a typed request field because it depends on where you were, and the two rival ways of dating the first name are a typed convention the response echoes. Built for Jewish culture and education apps, birth angel features and any product that wants the Hebrew birthday on the same key as the rest of its readings.
+// Return the Hebrew date of a birth, the next Hebrew birthday from targetDate or today, the three birth names of the Renaissance angel tradition and the sephirah of the birth day, from one birth moment. The Hebrew date is computed from the published calendar algorithm rather than looked up, the sunset boundary is a typed request field because it depends on where you were, and the two rival ways of dating the first name are a typed convention the response echoes. Built for Jewish culture and education apps, birth angel features and any product that wants the Hebrew birthday on the same key as the rest of its readings.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -144768,7 +144804,7 @@ func (c *ClientWithResponses) CalculateChaldeanWithResponse(ctx context.Context,
 
 // GenerateNumerologyChartWithBodyWithResponse Generate numerology chart - Complete numerology reading API
 //
-// Generate a complete numerology chart from a full birth name and birth date in one call. It returns the six core numbers (Life Path, Expression, Soul Urge, Personality, Birth Day and Maturity) with their calculations and full interpretations, the four Pinnacles and four Challenges with their ages, Karmic Lessons, karmic debt in all five positions, Hidden Passion, Subconscious Self, Cornerstone, Capstone and First Vowel, the Birth Day profile for the exact day, lucky associations, the Maturity activation status, the Personal Year with the current Personal Month, and a written summary, in the language set by lang. The Personal Year uses currentYear or the current UTC year, while the Personal Month and the age behind the Maturity status read the current UTC date. Built for full numerology readings, PDF reports, onboarding profiles and AI agents.
+// Generate a complete numerology chart from a full birth name and birth date in one call. It returns the six core numbers (Life Path, Expression, Soul Urge, Personality, Birth Day and Maturity) with their calculations and full interpretations, the four Pinnacles and four Challenges with their ages, Karmic Lessons, karmic debt in all five positions, Hidden Passion, Subconscious Self, Cornerstone, Capstone and First Vowel, the Birth Day profile for the exact day, lucky associations, the Maturity activation status, the Personal Year with the current Personal Month, and a written summary, in the language set by lang. The age behind the Maturity status, the Personal Month and the Personal Year are read on targetDate, the current UTC date when omitted, and currentYear overrides the Personal Year alone. Built for full numerology readings, PDF reports, onboarding profiles and AI agents.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -144783,7 +144819,7 @@ func (c *ClientWithResponses) GenerateNumerologyChartWithBodyWithResponse(ctx co
 
 // GenerateNumerologyChartWithResponse Generate numerology chart - Complete numerology reading API
 //
-// Generate a complete numerology chart from a full birth name and birth date in one call. It returns the six core numbers (Life Path, Expression, Soul Urge, Personality, Birth Day and Maturity) with their calculations and full interpretations, the four Pinnacles and four Challenges with their ages, Karmic Lessons, karmic debt in all five positions, Hidden Passion, Subconscious Self, Cornerstone, Capstone and First Vowel, the Birth Day profile for the exact day, lucky associations, the Maturity activation status, the Personal Year with the current Personal Month, and a written summary, in the language set by lang. The Personal Year uses currentYear or the current UTC year, while the Personal Month and the age behind the Maturity status read the current UTC date. Built for full numerology readings, PDF reports, onboarding profiles and AI agents.
+// Generate a complete numerology chart from a full birth name and birth date in one call. It returns the six core numbers (Life Path, Expression, Soul Urge, Personality, Birth Day and Maturity) with their calculations and full interpretations, the four Pinnacles and four Challenges with their ages, Karmic Lessons, karmic debt in all five positions, Hidden Passion, Subconscious Self, Cornerstone, Capstone and First Vowel, the Birth Day profile for the exact day, lucky associations, the Maturity activation status, the Personal Year with the current Personal Month, and a written summary, in the language set by lang. The age behind the Maturity status, the Personal Month and the Personal Year are read on targetDate, the current UTC date when omitted, and currentYear overrides the Personal Year alone. Built for full numerology readings, PDF reports, onboarding profiles and AI agents.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -146538,7 +146574,7 @@ func (c *ClientWithResponses) GetKpAyanamsaWithResponse(ctx context.Context, par
 
 // GenerateKpChartWithBodyWithResponse Generate complete KP birth chart
 //
-// Generate authentic Krishnamurti Paddhati birth charts with Placidus house cusps, star-lord and sub-lord calculations. Supports custom ayanamsa and dynamic KP-Newcomb ayanamsa calculation. Returns complete chart with all 9 planets (Sun through Ketu), Ascendant, 12 Placidus house cusps, nakshatra details, star-lords, sub-lords, and KP horary numbers (1-249). Perfect for KP astrology software, horary prediction apps, and event timing analysis. One call is a complete Krishnamurti Paddhati chart generator, returning the Placidus cusps and the planets with their sub lords together.
+// Generate authentic Krishnamurti Paddhati birth charts with Placidus house cusps, star-lord and sub-lord calculations. Supports custom ayanamsa and dynamic KP-Newcomb ayanamsa calculation. Returns complete chart with all 9 planets (Sun through Ketu), Ascendant, 12 Placidus house cusps, nakshatra details, star-lords, sub-lords, and KP horary numbers (1-249). Perfect for KP astrology software, horary prediction apps, and event timing analysis. One call is a complete Krishnamurti Paddhati chart generator, returning the Placidus cusps and the planets with their sub lords together. The latitude must lie below 66.56 degrees north or south, inside the polar circles: KP cusps are Placidus, which has no solution beyond them, so a polar latitude returns 400.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -146553,7 +146589,7 @@ func (c *ClientWithResponses) GenerateKpChartWithBodyWithResponse(ctx context.Co
 
 // GenerateKpChartWithResponse Generate complete KP birth chart
 //
-// Generate authentic Krishnamurti Paddhati birth charts with Placidus house cusps, star-lord and sub-lord calculations. Supports custom ayanamsa and dynamic KP-Newcomb ayanamsa calculation. Returns complete chart with all 9 planets (Sun through Ketu), Ascendant, 12 Placidus house cusps, nakshatra details, star-lords, sub-lords, and KP horary numbers (1-249). Perfect for KP astrology software, horary prediction apps, and event timing analysis. One call is a complete Krishnamurti Paddhati chart generator, returning the Placidus cusps and the planets with their sub lords together.
+// Generate authentic Krishnamurti Paddhati birth charts with Placidus house cusps, star-lord and sub-lord calculations. Supports custom ayanamsa and dynamic KP-Newcomb ayanamsa calculation. Returns complete chart with all 9 planets (Sun through Ketu), Ascendant, 12 Placidus house cusps, nakshatra details, star-lords, sub-lords, and KP horary numbers (1-249). Perfect for KP astrology software, horary prediction apps, and event timing analysis. One call is a complete Krishnamurti Paddhati chart generator, returning the Placidus cusps and the planets with their sub lords together. The latitude must lie below 66.56 degrees north or south, inside the polar circles: KP cusps are Placidus, which has no solution beyond them, so a polar latitude returns 400.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -146568,7 +146604,7 @@ func (c *ClientWithResponses) GenerateKpChartWithResponse(ctx context.Context, p
 
 // GetKpCuspsWithBodyWithResponse Get KP Placidus house cusps with sub-lords
 //
-// Calculate unequal Placidus house cusps with ruling sign-lord, nakshatra-lord, and sub-lord for each cusp. Dynamic KP-Newcomb or custom ayanamsa support. Used in KP horary astrology, cusp sub-lord analysis, and birth chart rectification. Returns all 12 house cusps with KP sub-division details. Use it as a Placidus house cusp calculator that also carries the star lord and sub lord of each cusp, which is what Krishnamurti Paddhati horary work reads first.
+// Calculate unequal Placidus house cusps with ruling sign-lord, nakshatra-lord, and sub-lord for each cusp. Dynamic KP-Newcomb or custom ayanamsa support. Used in KP horary astrology, cusp sub-lord analysis, and birth chart rectification. Returns all 12 house cusps with KP sub-division details. Use it as a Placidus house cusp calculator that also carries the star lord and sub lord of each cusp, which is what Krishnamurti Paddhati horary work reads first. The latitude must lie below 66.56 degrees north or south, inside the polar circles: KP cusps are Placidus, which has no solution beyond them, so a polar latitude returns 400.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -146583,7 +146619,7 @@ func (c *ClientWithResponses) GetKpCuspsWithBodyWithResponse(ctx context.Context
 
 // GetKpCuspsWithResponse Get KP Placidus house cusps with sub-lords
 //
-// Calculate unequal Placidus house cusps with ruling sign-lord, nakshatra-lord, and sub-lord for each cusp. Dynamic KP-Newcomb or custom ayanamsa support. Used in KP horary astrology, cusp sub-lord analysis, and birth chart rectification. Returns all 12 house cusps with KP sub-division details. Use it as a Placidus house cusp calculator that also carries the star lord and sub lord of each cusp, which is what Krishnamurti Paddhati horary work reads first.
+// Calculate unequal Placidus house cusps with ruling sign-lord, nakshatra-lord, and sub-lord for each cusp. Dynamic KP-Newcomb or custom ayanamsa support. Used in KP horary astrology, cusp sub-lord analysis, and birth chart rectification. Returns all 12 house cusps with KP sub-division details. Use it as a Placidus house cusp calculator that also carries the star lord and sub lord of each cusp, which is what Krishnamurti Paddhati horary work reads first. The latitude must lie below 66.56 degrees north or south, inside the polar circles: KP cusps are Placidus, which has no solution beyond them, so a polar latitude returns 400.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -146598,7 +146634,7 @@ func (c *ClientWithResponses) GetKpCuspsWithResponse(ctx context.Context, params
 
 // GetKpDailyFinanceWithBodyWithResponse Daily finance score from four KP sub lord layers - KP Daily Finance API
 //
-// A Krishnamurti Paddhati daily finance reading for one native on one date. Four KP layers are each scored against the money houses and weighed into one number: the cusp sub lords of the gain and loss houses (structural promise), the four running Vimshottari lords at the reading moment (timing), the ruling planets of that moment (the pulse), and the sub lord windows the Moon passes through across the civil day (the hour hand), with the best and worst windows named. Weights cusps 30, dasha 40, rulingPlanets 15, moonWindows 15. Every input is the shipped KP arithmetic: Placidus cusps, the 249 sub lord table, the four tier significator rule, the Vimshottari chain to the sookshma level, all in the one ayanamsa you choose. Every row prints its planet, its standing against the two sets and its score, so the number can be audited rather than trusted. The house groups, the classification, the inversion on the loss cusps, the retrograde penalty, the level weights and the layer weights are a KP practitioner convention adopted as the published convention of this route: no classical KP text weighs these four layers against each other, and every table behind the number is printed so the result can be checked line by line rather than trusted. The score measures what the method outputs for the day, never the probability of a gain or a loss. Override the two house groups to run your own school.
+// A Krishnamurti Paddhati daily finance reading for one native on one date. Four KP layers are each scored against the money houses and weighed into one number: the cusp sub lords of the gain and loss houses (structural promise), the four running Vimshottari lords at the reading moment (timing), the ruling planets of that moment (the pulse), and the sub lord windows the Moon passes through across the civil day (the hour hand), with the best and worst windows named. Weights cusps 30, dasha 40, rulingPlanets 15, moonWindows 15. Every input is the shipped KP arithmetic: Placidus cusps, the 249 sub lord table, the four tier significator rule, the Vimshottari chain to the sookshma level, all in the one ayanamsa you choose. Every row prints its planet, its standing against the two sets and its score, so the number can be audited rather than trusted. The house groups, the classification, the inversion on the loss cusps, the retrograde penalty, the level weights and the layer weights are a KP practitioner convention adopted as the published convention of this route: no classical KP text weighs these four layers against each other, and every table behind the number is printed so the result can be checked line by line rather than trusted. The score measures what the method outputs for the day, never the probability of a gain or a loss. Override the two house groups to run your own school. The latitude must lie below 66.56 degrees north or south, inside the polar circles: KP cusps are Placidus, which has no solution beyond them, so a polar latitude returns 400.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -146613,7 +146649,7 @@ func (c *ClientWithResponses) GetKpDailyFinanceWithBodyWithResponse(ctx context.
 
 // GetKpDailyFinanceWithResponse Daily finance score from four KP sub lord layers - KP Daily Finance API
 //
-// A Krishnamurti Paddhati daily finance reading for one native on one date. Four KP layers are each scored against the money houses and weighed into one number: the cusp sub lords of the gain and loss houses (structural promise), the four running Vimshottari lords at the reading moment (timing), the ruling planets of that moment (the pulse), and the sub lord windows the Moon passes through across the civil day (the hour hand), with the best and worst windows named. Weights cusps 30, dasha 40, rulingPlanets 15, moonWindows 15. Every input is the shipped KP arithmetic: Placidus cusps, the 249 sub lord table, the four tier significator rule, the Vimshottari chain to the sookshma level, all in the one ayanamsa you choose. Every row prints its planet, its standing against the two sets and its score, so the number can be audited rather than trusted. The house groups, the classification, the inversion on the loss cusps, the retrograde penalty, the level weights and the layer weights are a KP practitioner convention adopted as the published convention of this route: no classical KP text weighs these four layers against each other, and every table behind the number is printed so the result can be checked line by line rather than trusted. The score measures what the method outputs for the day, never the probability of a gain or a loss. Override the two house groups to run your own school.
+// A Krishnamurti Paddhati daily finance reading for one native on one date. Four KP layers are each scored against the money houses and weighed into one number: the cusp sub lords of the gain and loss houses (structural promise), the four running Vimshottari lords at the reading moment (timing), the ruling planets of that moment (the pulse), and the sub lord windows the Moon passes through across the civil day (the hour hand), with the best and worst windows named. Weights cusps 30, dasha 40, rulingPlanets 15, moonWindows 15. Every input is the shipped KP arithmetic: Placidus cusps, the 249 sub lord table, the four tier significator rule, the Vimshottari chain to the sookshma level, all in the one ayanamsa you choose. Every row prints its planet, its standing against the two sets and its score, so the number can be audited rather than trusted. The house groups, the classification, the inversion on the loss cusps, the retrograde penalty, the level weights and the layer weights are a KP practitioner convention adopted as the published convention of this route: no classical KP text weighs these four layers against each other, and every table behind the number is printed so the result can be checked line by line rather than trusted. The score measures what the method outputs for the day, never the probability of a gain or a loss. Override the two house groups to run your own school. The latitude must lie below 66.56 degrees north or south, inside the polar circles: KP cusps are Placidus, which has no solution beyond them, so a polar latitude returns 400.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -146628,7 +146664,7 @@ func (c *ClientWithResponses) GetKpDailyFinanceWithResponse(ctx context.Context,
 
 // CastKpHoraryChartWithBodyWithResponse Cast a KP horary (Prashna) chart from a number 1-249 - KP Horary API
 //
-// Cast a Krishnamurti Paddhati horary chart, also called Prashna, from a number between 1 and 249 given by the querent plus the moment and place the question is judged. NO BIRTH DETAILS ARE NEEDED, which is what makes horary the KP answer when birth time is unknown or unreliable. The number maps to one of the 249 KP sub divisions and sets the Ascendant; the twelve Placidus cusps follow from that Ascendant at the given latitude, and every planetary position comes from the real sky at the moment of the question. Returns the Ascendant with its sub lord, all twelve cusps with star lord and sub lord, the nine grahas placed against those cusps, the five ruling planets for validating the chart, and four-level significators for judging which houses each graha supports. KP horary API, Prashna kundali calculator, 249 horary number chart, Krishnamurti Paddhati horary, cusp sub lord question answering.
+// Cast a Krishnamurti Paddhati horary chart, also called Prashna, from a number between 1 and 249 given by the querent plus the moment and place the question is judged. NO BIRTH DETAILS ARE NEEDED, which is what makes horary the KP answer when birth time is unknown or unreliable. The number maps to one of the 249 KP sub divisions and sets the Ascendant; the twelve Placidus cusps follow from that Ascendant at the given latitude, and every planetary position comes from the real sky at the moment of the question. Returns the Ascendant with its sub lord, all twelve cusps with star lord and sub lord, the nine grahas placed against those cusps, the five ruling planets for validating the chart, and four-level significators for judging which houses each graha supports. KP horary API, Prashna kundali calculator, 249 horary number chart, Krishnamurti Paddhati horary, cusp sub lord question answering. The latitude must lie below 66.56 degrees north or south, inside the polar circles: KP cusps are Placidus, which has no solution beyond them, so a polar latitude returns 400.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -146643,7 +146679,7 @@ func (c *ClientWithResponses) CastKpHoraryChartWithBodyWithResponse(ctx context.
 
 // CastKpHoraryChartWithResponse Cast a KP horary (Prashna) chart from a number 1-249 - KP Horary API
 //
-// Cast a Krishnamurti Paddhati horary chart, also called Prashna, from a number between 1 and 249 given by the querent plus the moment and place the question is judged. NO BIRTH DETAILS ARE NEEDED, which is what makes horary the KP answer when birth time is unknown or unreliable. The number maps to one of the 249 KP sub divisions and sets the Ascendant; the twelve Placidus cusps follow from that Ascendant at the given latitude, and every planetary position comes from the real sky at the moment of the question. Returns the Ascendant with its sub lord, all twelve cusps with star lord and sub lord, the nine grahas placed against those cusps, the five ruling planets for validating the chart, and four-level significators for judging which houses each graha supports. KP horary API, Prashna kundali calculator, 249 horary number chart, Krishnamurti Paddhati horary, cusp sub lord question answering.
+// Cast a Krishnamurti Paddhati horary chart, also called Prashna, from a number between 1 and 249 given by the querent plus the moment and place the question is judged. NO BIRTH DETAILS ARE NEEDED, which is what makes horary the KP answer when birth time is unknown or unreliable. The number maps to one of the 249 KP sub divisions and sets the Ascendant; the twelve Placidus cusps follow from that Ascendant at the given latitude, and every planetary position comes from the real sky at the moment of the question. Returns the Ascendant with its sub lord, all twelve cusps with star lord and sub lord, the nine grahas placed against those cusps, the five ruling planets for validating the chart, and four-level significators for judging which houses each graha supports. KP horary API, Prashna kundali calculator, 249 horary number chart, Krishnamurti Paddhati horary, cusp sub lord question answering. The latitude must lie below 66.56 degrees north or south, inside the polar circles: KP cusps are Placidus, which has no solution beyond them, so a polar latitude returns 400.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -146778,7 +146814,7 @@ func (c *ClientWithResponses) GetKpRulingPlanetsWithResponse(ctx context.Context
 
 // GetKpRulingIntervalWithBodyWithResponse Get KP ruling planets with significators at intervals
 //
-// Calculate ruling planets and their KP significators at regular time intervals using Krishnamurti Paddhati prashna (horary) astrology. For each interval, a full Placidus house chart is erected and significators are computed using the 4-level KP hierarchy: Level 1 (strongest) planets in star of house occupant, Level 2 occupants, Level 3 planets in star of house owner, Level 4 house owner. Returns Day Lord (sunrise-based Hindu Vara), Moon Sign/Star/Sub/Sub-Sub Lords, Lagna Sign/Star/Sub/Sub-Sub Lords, unique ruling planets set, and per-ruling-planet house significations. No birth data needed, significators come from each moments sky chart. Use for birth time rectification, muhurta selection, and KP horary number analysis.
+// Calculate ruling planets and their KP significators at regular time intervals using Krishnamurti Paddhati prashna (horary) astrology. For each interval, a full Placidus house chart is erected and significators are computed using the 4-level KP hierarchy: Level 1 (strongest) planets in star of house occupant, Level 2 occupants, Level 3 planets in star of house owner, Level 4 house owner. Returns Day Lord (sunrise-based Hindu Vara), Moon Sign/Star/Sub/Sub-Sub Lords, Lagna Sign/Star/Sub/Sub-Sub Lords, unique ruling planets set, and per-ruling-planet house significations. No birth data needed, significators come from each moments sky chart. Use for birth time rectification, muhurta selection, and KP horary number analysis. The latitude must lie below 66.56 degrees north or south, inside the polar circles: KP cusps are Placidus, which has no solution beyond them, so a polar latitude returns 400.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -146793,7 +146829,7 @@ func (c *ClientWithResponses) GetKpRulingIntervalWithBodyWithResponse(ctx contex
 
 // GetKpRulingIntervalWithResponse Get KP ruling planets with significators at intervals
 //
-// Calculate ruling planets and their KP significators at regular time intervals using Krishnamurti Paddhati prashna (horary) astrology. For each interval, a full Placidus house chart is erected and significators are computed using the 4-level KP hierarchy: Level 1 (strongest) planets in star of house occupant, Level 2 occupants, Level 3 planets in star of house owner, Level 4 house owner. Returns Day Lord (sunrise-based Hindu Vara), Moon Sign/Star/Sub/Sub-Sub Lords, Lagna Sign/Star/Sub/Sub-Sub Lords, unique ruling planets set, and per-ruling-planet house significations. No birth data needed, significators come from each moments sky chart. Use for birth time rectification, muhurta selection, and KP horary number analysis.
+// Calculate ruling planets and their KP significators at regular time intervals using Krishnamurti Paddhati prashna (horary) astrology. For each interval, a full Placidus house chart is erected and significators are computed using the 4-level KP hierarchy: Level 1 (strongest) planets in star of house occupant, Level 2 occupants, Level 3 planets in star of house owner, Level 4 house owner. Returns Day Lord (sunrise-based Hindu Vara), Moon Sign/Star/Sub/Sub-Sub Lords, Lagna Sign/Star/Sub/Sub-Sub Lords, unique ruling planets set, and per-ruling-planet house significations. No birth data needed, significators come from each moments sky chart. Use for birth time rectification, muhurta selection, and KP horary number analysis. The latitude must lie below 66.56 degrees north or south, inside the polar circles: KP cusps are Placidus, which has no solution beyond them, so a polar latitude returns 400.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -157030,7 +157066,7 @@ func ParseCalculateLuckPillarsResponse(rsp *http.Response) (*CalculateLuckPillar
 				// ID Annual pillar identifier for that year, under the year boundary applied.
 				ID string `json:"id"`
 
-				// LuckPillarIndex Which returned luck pillar this year falls inside, by its index. 0 means the year falls before the first luck pillar begins, in the stretch still governed by the natal chart alone.
+				// LuckPillarIndex Which returned luck pillar this year falls inside, by its index. The year a period begins in counts as inside it, though the handover falls in a month of that year. 0 means the year falls before the first luck pillar begins, in the stretch still governed by the natal chart alone.
 				LuckPillarIndex float32 `json:"luckPillarIndex"`
 
 				// Number Position of the annual pillar in the sexagenary cycle, 1 to 60.
@@ -157141,7 +157177,7 @@ func ParseCalculateLuckPillarsResponse(rsp *http.Response) (*CalculateLuckPillar
 				// EndAge Age in whole years at which this period ends and the next one begins.
 				EndAge float32 `json:"endAge"`
 
-				// EndYear Gregorian year this period ends.
+				// EndYear Gregorian year this period ends and the next one begins, startYear plus ten.
 				EndYear float32 `json:"endYear"`
 
 				// ID Pillar identifier, the stem id and the branch id joined by a hyphen.
@@ -157156,7 +157192,7 @@ func ParseCalculateLuckPillarsResponse(rsp *http.Response) (*CalculateLuckPillar
 				// StartAge Age in whole years at which this ten-year period begins.
 				StartAge float32 `json:"startAge"`
 
-				// StartYear Gregorian year this period begins, the birth year plus startAge.
+				// StartYear Gregorian year this period begins: the year of the date that falls startAge years and startAgeMonths months after the birth date, plus ten for each later period. A birth in November with a start of 4 years 7 months begins its first period in June of the birth year plus five.
 				StartYear float32 `json:"startYear"`
 
 				// Stem The Heavenly Stem of this luck pillar, with its element and polarity.
@@ -157208,7 +157244,7 @@ func ParseCalculateLuckPillarsResponse(rsp *http.Response) (*CalculateLuckPillar
 			// StartAge Age in whole years at which the first luck pillar begins. Counted from the birth instant to the adjacent minor solar term at three days to the year, forward for a forward direction and backward for a reverse one.
 			StartAge float32 `json:"startAge"`
 
-			// StartAgeMonths Additional months past startAge, 0 to 11, from the remainder of the same count at one day to four months. Calculators that round the whole count to the nearest year will differ from this by up to six months.
+			// StartAgeMonths Additional months past startAge, 0 to 11, from the remainder of the same count at one day to four months, rounded once to the nearest month. Calculators that round the whole count to the nearest year will differ from this by up to six months.
 			StartAgeMonths float32 `json:"startAgeMonths"`
 
 			// Summary One-paragraph reading of the sequence direction and its start.
@@ -166342,12 +166378,12 @@ func ParseGenerateBirthProfileResponse(rsp *http.Response) (*GenerateBirthProfil
 				YearStart string `json:"yearStart"`
 			} `json:"conventions"`
 
-			// HebrewBirthday The next Hebrew birthday. Three Hebrew dates are missing from some years, and where the anniversary moves to is a matter of community practice rather than arithmetic, so the field is null with a note rather than a guess.
+			// HebrewBirthday The next Hebrew birthday from targetDate (the current UTC date when omitted), the anniversary of hebrewDate. Three Hebrew dates are missing from some years, and where the anniversary moves to is a matter of community practice rather than arithmetic, so the field is null with a note rather than a guess.
 			HebrewBirthday struct {
-				// Date The next Gregorian date the Hebrew birthday falls on, or null when that Hebrew date does not exist in the year it would fall in.
+				// Date The Gregorian date of the next Hebrew birthday on or after targetDate, or the current UTC date when targetDate is omitted (that day when it is the birthday), or null when that Hebrew date does not exist in the year it falls in. It is the daytime civil date: the Hebrew day itself opens at nightfall the evening before.
 				Date *string `json:"date"`
 
-				// HebrewYear The Hebrew year the anniversary was looked for in.
+				// HebrewYear The Hebrew year of that next anniversary, always later than the birth year. Present on the null branch too, naming the year the date is missing from.
 				HebrewYear float32 `json:"hebrewYear"`
 
 				// Note Present only when the date is null, saying why. Absent otherwise, so a caller can branch on presence.
@@ -171709,12 +171745,12 @@ func ParseGenerateNumerologyChartResponse(rsp *http.Response) (*GenerateNumerolo
 					// Opportunities Key opportunities available during this Personal Year. Each entry identifies a specific area of life where conditions are favorable for growth and forward momentum.
 					Opportunities []string `json:"opportunities"`
 
-					// PersonalMonth Personal Month forecast for the current UTC calendar month, applied to the Personal Year above. With a currentYear other than the current year, it pairs that Personal Year with the current month.
+					// PersonalMonth Personal Month forecast for the calendar month of targetDate (the current UTC month when omitted), applied to the Personal Year above. With a currentYear other than the year of targetDate, it pairs that Personal Year with this month.
 					PersonalMonth struct {
 						// Focus Practical focus and guidance for this month.
 						Focus string `json:"focus"`
 
-						// PersonalMonth Personal Month number (1-9): the Personal Year above plus the current UTC calendar month, reduced to one digit.
+						// PersonalMonth Personal Month number (1-9): the Personal Year above plus the calendar month of targetDate (the current UTC month when omitted), reduced to one digit.
 						PersonalMonth float32 `json:"personalMonth"`
 
 						// Theme Central theme for this Personal Month.
@@ -172106,10 +172142,10 @@ func ParseGenerateNumerologyChartResponse(rsp *http.Response) (*GenerateNumerolo
 				// ActivationRange Age range when the Maturity number typically activates (35-40).
 				ActivationRange string `json:"activationRange"`
 
-				// CurrentAge The current UTC calendar year minus the birth year. The birthday is not considered, so before the birthday it reads one more than the age in whole years, and currentYear does not move it.
+				// CurrentAge Age in completed years on targetDate, or on the current UTC date when targetDate is omitted: the birth year subtracted, less one until the birthday has come round. A 29 February birthday comes round on 1 March in a common year. currentYear does not move it.
 				CurrentAge float32 `json:"currentAge"`
 
-				// IsActive Whether the Maturity number is currently active (typically activates around age 35-40).
+				// IsActive Whether the Maturity number is currently active: true from the 35th birthday, when currentAge reaches 35 (the number typically activates around age 35-40).
 				IsActive bool `json:"isActive"`
 			} `json:"maturityStatus"`
 
