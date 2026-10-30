@@ -1,8 +1,8 @@
 module github.com/RoxyAPI/sdk-go
 
-go 1.24.3
+go 1.25.0
 
-require github.com/oapi-codegen/runtime v1.7.0
+require github.com/oapi-codegen/runtime v1.8.0
 
 require (
 	github.com/apapsch/go-jsonmerge/v2 v2.0.0 // indirect
