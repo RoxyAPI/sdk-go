@@ -14,9 +14,14 @@ updates:
         patterns:
           - "*"
     # github.com/oapi-codegen/runtime is the one consumer dependency and is versioned
-    # apart from the generator (the generator module does not require it), so a bump
+    # apart from the generator (the generator module does not require it), so a patch bump
     # PR is safe to take: CI compiles the generated client against it and the hermetic
     # regenerate proves the output did not move.
+    # runtime 1.8 raises the module's go directive to 1.25, dropping the 1.24 consumers
+    # the CI matrix covers; adopt it deliberately together with that floor change.
+    ignore:
+      - dependency-name: "github.com/oapi-codegen/runtime"
+        update-types: ["version-update:semver-minor", "version-update:semver-major"]
 
   - package-ecosystem: gomod
     directory: /tools/roxygen
