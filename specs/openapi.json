@@ -26401,12 +26401,18 @@
                             "description": "Lunar phase name for this date.",
                             "example": "Waxing Crescent Moon",
                             "type": "string"
+                          },
+                          "sign": {
+                            "description": "Tropical zodiac sign the Moon occupies at noon UTC on this date, canonical English. Use it to key a sign glyph or a moon-in-sign planting and ritual guide.",
+                            "example": "Aries",
+                            "type": "string"
                           }
                         },
                         "required": [
                           "date",
                           "phase",
-                          "illumination"
+                          "illumination",
+                          "sign"
                         ],
                         "type": "object"
                       },

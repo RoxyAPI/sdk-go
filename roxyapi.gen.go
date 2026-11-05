@@ -92873,6 +92873,9 @@ type GetMoonCalendarResponse struct {
 
 			// Phase Lunar phase name for this date.
 			Phase string `json:"phase"`
+
+			// Sign Tropical zodiac sign the Moon occupies at noon UTC on this date, canonical English. Use it to key a sign glyph or a moon-in-sign planting and ritual guide.
+			Sign string `json:"sign"`
 		} `json:"calendar"`
 
 		// Month Calendar month for this lunar calendar.
@@ -92910,6 +92913,9 @@ func (r GetMoonCalendarResponse) GetJSON200() *struct {
 
 		// Phase Lunar phase name for this date.
 		Phase string `json:"phase"`
+
+		// Sign Tropical zodiac sign the Moon occupies at noon UTC on this date, canonical English. Use it to key a sign glyph or a moon-in-sign planting and ritual guide.
+		Sign string `json:"sign"`
 	} `json:"calendar"`
 
 	// Month Calendar month for this lunar calendar.
@@ -156333,6 +156339,9 @@ func ParseGetMoonCalendarResponse(rsp *http.Response) (*GetMoonCalendarResponse,
 
 				// Phase Lunar phase name for this date.
 				Phase string `json:"phase"`
+
+				// Sign Tropical zodiac sign the Moon occupies at noon UTC on this date, canonical English. Use it to key a sign glyph or a moon-in-sign planting and ritual guide.
+				Sign string `json:"sign"`
 			} `json:"calendar"`
 
 			// Month Calendar month for this lunar calendar.
