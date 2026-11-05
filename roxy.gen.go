@@ -33,6 +33,7 @@ type Roxy struct {
 	AngelNumbers          *AngelNumbersService
 	Location              *LocationService
 	Usage                 *UsageService
+	Reports               *ReportsService
 	Languages             *LanguagesService
 }
 
@@ -57,6 +58,7 @@ func newRoxy(c *ClientWithResponses) *Roxy {
 	r.AngelNumbers = &AngelNumbersService{client: c}
 	r.Location = &LocationService{client: c}
 	r.Usage = &UsageService{client: c}
+	r.Reports = &ReportsService{client: c}
 	r.Languages = &LanguagesService{client: c}
 	return r
 }
@@ -2184,6 +2186,81 @@ type UsageService struct{ client *ClientWithResponses }
 
 func (s *UsageService) GetUsageStats(ctx context.Context, reqEditors ...RequestEditorFn) (*GetUsageStatsResponse, error) {
 	resp, err := s.client.GetUsageStatsWithResponse(ctx, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp, resp.HTTPResponse)
+}
+
+// ReportsService groups the reports endpoints.
+type ReportsService struct{ client *ClientWithResponses }
+
+func (s *ReportsService) GenerateBaziReport(ctx context.Context, params *GenerateBaziReportParams, body GenerateBaziReportJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateBaziReportResponse, error) {
+	resp, err := s.client.GenerateBaziReportWithResponse(ctx, params, body, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp, resp.HTTPResponse)
+}
+
+func (s *ReportsService) GenerateHumanDesignReport(ctx context.Context, params *GenerateHumanDesignReportParams, body GenerateHumanDesignReportJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateHumanDesignReportResponse, error) {
+	resp, err := s.client.GenerateHumanDesignReportWithResponse(ctx, params, body, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp, resp.HTTPResponse)
+}
+
+func (s *ReportsService) GenerateKundliReport(ctx context.Context, params *GenerateKundliReportParams, body GenerateKundliReportJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateKundliReportResponse, error) {
+	resp, err := s.client.GenerateKundliReportWithResponse(ctx, params, body, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp, resp.HTTPResponse)
+}
+
+func (s *ReportsService) GenerateMatchmakingReport(ctx context.Context, params *GenerateMatchmakingReportParams, body GenerateMatchmakingReportJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateMatchmakingReportResponse, error) {
+	resp, err := s.client.GenerateMatchmakingReportWithResponse(ctx, params, body, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp, resp.HTTPResponse)
+}
+
+func (s *ReportsService) GenerateNatalReport(ctx context.Context, params *GenerateNatalReportParams, body GenerateNatalReportJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateNatalReportResponse, error) {
+	resp, err := s.client.GenerateNatalReportWithResponse(ctx, params, body, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp, resp.HTTPResponse)
+}
+
+func (s *ReportsService) GenerateNumerologyReport(ctx context.Context, params *GenerateNumerologyReportParams, body GenerateNumerologyReportJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateNumerologyReportResponse, error) {
+	resp, err := s.client.GenerateNumerologyReportWithResponse(ctx, params, body, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp, resp.HTTPResponse)
+}
+
+func (s *ReportsService) GenerateSynastryReport(ctx context.Context, params *GenerateSynastryReportParams, body GenerateSynastryReportJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateSynastryReportResponse, error) {
+	resp, err := s.client.GenerateSynastryReportWithResponse(ctx, params, body, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp, resp.HTTPResponse)
+}
+
+func (s *ReportsService) GenerateTarotReport(ctx context.Context, params *GenerateTarotReportParams, body GenerateTarotReportJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateTarotReportResponse, error) {
+	resp, err := s.client.GenerateTarotReportWithResponse(ctx, params, body, reqEditors...)
+	if err != nil {
+		return resp, err
+	}
+	return resp, asRoxyError(resp, resp.HTTPResponse)
+}
+
+func (s *ReportsService) GenerateYearlyForecastReport(ctx context.Context, params *GenerateYearlyForecastReportParams, body GenerateYearlyForecastReportJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateYearlyForecastReportResponse, error) {
+	resp, err := s.client.GenerateYearlyForecastReportWithResponse(ctx, params, body, reqEditors...)
 	if err != nil {
 		return resp, err
 	}

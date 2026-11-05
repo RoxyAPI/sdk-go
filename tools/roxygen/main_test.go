@@ -62,3 +62,23 @@ func TestMergeSchemaFailsOnTypeConflict(t *testing.T) {
 		t.Errorf("err = %v, want a conflict naming extra", err)
 	}
 }
+
+func langOp(codes ...any) operation {
+	return operation{path: "/x", verb: "get", params: []any{map[string]any{
+		"in": "query", "name": "lang", "schema": map[string]any{"enum": codes, "default": "en"},
+	}}}
+}
+
+func TestRenderLangsStatesTheWidestListWhenOthersAreSubsets(t *testing.T) {
+	got := renderLangs([]domainInfo{
+		{segment: "reports", ops: []operation{langOp("en", "hi")}},
+		{segment: "astrology", ops: []operation{langOp("en", "hi", "zh-Hans")}},
+		{segment: "location", ops: []operation{{path: "/y", verb: "get"}}},
+	})
+	if !strings.Contains(got, "3 languages: `en`, `hi`, `zh-Hans`") {
+		t.Errorf("note does not state the widest list: %s", got)
+	}
+	if !strings.Contains(got, "Supported: `roxy.Reports`, `roxy.Astrology`. English-only: `roxy.Location`.") {
+		t.Errorf("accessor lists wrong: %s", got)
+	}
+}

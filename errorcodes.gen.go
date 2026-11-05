@@ -13,6 +13,15 @@ const (
 	// ErrCodeDateOutOfRange is HTTP 400. A date lies outside the span the planetary positions are served for. The error names the supported dates.
 	ErrCodeDateOutOfRange = "date_out_of_range"
 
+	// ErrCodeInvalidBranding is HTTP 400. The report branding cannot be used, for example a logo that is not a PNG, JPEG, WebP or SVG image.
+	ErrCodeInvalidBranding = "invalid_branding"
+
+	// ErrCodeLogoFetchFailed is HTTP 400. The report logo could not be fetched: it must be an HTTPS URL on a public host that answers within the size limit.
+	ErrCodeLogoFetchFailed = "logo_fetch_failed"
+
+	// ErrCodeUnsupportedCharacter is HTTP 400. The report text holds a character no report font draws. The error names it: remove or replace it.
+	ErrCodeUnsupportedCharacter = "unsupported_character"
+
 	// ErrCodeAPIKeyRequired is HTTP 401. No API key was sent.
 	ErrCodeAPIKeyRequired = "api_key_required"
 
@@ -79,11 +88,20 @@ const (
 	// ErrCodeFreeTierExhausted is HTTP 429. A keyless request has used up its trial allowance.
 	ErrCodeFreeTierExhausted = "free_tier_exhausted"
 
+	// ErrCodeReportsRateLimited is HTTP 429. Too many reports were requested this minute. Retry-After gives the seconds to the next minute.
+	ErrCodeReportsRateLimited = "reports_rate_limited"
+
 	// ErrCodeInternalError is HTTP 500. The request failed inside our service. Retry with exponential backoff.
 	ErrCodeInternalError = "internal_error"
 
 	// ErrCodeComputeSaturated is HTTP 503. Heavy calculations are briefly at capacity. Send the same request again after Retry-After seconds.
 	ErrCodeComputeSaturated = "compute_saturated"
+
+	// ErrCodeReportsBusy is HTTP 503. Report rendering is briefly at capacity. Send the same request again after Retry-After seconds.
+	ErrCodeReportsBusy = "reports_busy"
+
+	// ErrCodeReportRenderTimeout is HTTP 503. The report took too long to render. Send the same request again.
+	ErrCodeReportRenderTimeout = "report_render_timeout"
 
 	// ErrCodeError is HTTP Any. A fallback for a status with no more specific code. The status and the error field carry the signal.
 	ErrCodeError = "error"

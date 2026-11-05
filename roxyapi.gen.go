@@ -597,6 +597,174 @@ func (e BasicCardSuit) Valid() bool {
 	}
 }
 
+// Defines values for BaziReportRequestBrandingFont.
+const (
+	BaziReportRequestBrandingFontFrauncesJost BaziReportRequestBrandingFont = "fraunces-jost"
+	BaziReportRequestBrandingFontGeist        BaziReportRequestBrandingFont = "geist"
+	BaziReportRequestBrandingFontJost         BaziReportRequestBrandingFont = "jost"
+	BaziReportRequestBrandingFontSystem       BaziReportRequestBrandingFont = "system"
+)
+
+// Valid indicates whether the value is a known member of the BaziReportRequestBrandingFont enum.
+func (e BaziReportRequestBrandingFont) Valid() bool {
+	switch e {
+	case BaziReportRequestBrandingFontFrauncesJost:
+		return true
+	case BaziReportRequestBrandingFontGeist:
+		return true
+	case BaziReportRequestBrandingFontJost:
+		return true
+	case BaziReportRequestBrandingFontSystem:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for BaziReportRequestBrandingTheme.
+const (
+	BaziReportRequestBrandingThemeCeleste      BaziReportRequestBrandingTheme = "celeste"
+	BaziReportRequestBrandingThemeEucalyptus   BaziReportRequestBrandingTheme = "eucalyptus"
+	BaziReportRequestBrandingThemeKiln         BaziReportRequestBrandingTheme = "kiln"
+	BaziReportRequestBrandingThemeMoonlit      BaziReportRequestBrandingTheme = "moonlit"
+	BaziReportRequestBrandingThemePractitioner BaziReportRequestBrandingTheme = "practitioner"
+)
+
+// Valid indicates whether the value is a known member of the BaziReportRequestBrandingTheme enum.
+func (e BaziReportRequestBrandingTheme) Valid() bool {
+	switch e {
+	case BaziReportRequestBrandingThemeCeleste:
+		return true
+	case BaziReportRequestBrandingThemeEucalyptus:
+		return true
+	case BaziReportRequestBrandingThemeKiln:
+		return true
+	case BaziReportRequestBrandingThemeMoonlit:
+		return true
+	case BaziReportRequestBrandingThemePractitioner:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for BaziReportRequestDayBoundary.
+const (
+	BaziReportRequestDayBoundaryEarlyZi  BaziReportRequestDayBoundary = "early-zi"
+	BaziReportRequestDayBoundaryMidnight BaziReportRequestDayBoundary = "midnight"
+	BaziReportRequestDayBoundarySplitZi  BaziReportRequestDayBoundary = "split-zi"
+)
+
+// Valid indicates whether the value is a known member of the BaziReportRequestDayBoundary enum.
+func (e BaziReportRequestDayBoundary) Valid() bool {
+	switch e {
+	case BaziReportRequestDayBoundaryEarlyZi:
+		return true
+	case BaziReportRequestDayBoundaryMidnight:
+		return true
+	case BaziReportRequestDayBoundarySplitZi:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for BaziReportRequestFormat.
+const (
+	BaziReportRequestFormatHTML     BaziReportRequestFormat = "html"
+	BaziReportRequestFormatMarkdown BaziReportRequestFormat = "markdown"
+	BaziReportRequestFormatPdf      BaziReportRequestFormat = "pdf"
+)
+
+// Valid indicates whether the value is a known member of the BaziReportRequestFormat enum.
+func (e BaziReportRequestFormat) Valid() bool {
+	switch e {
+	case BaziReportRequestFormatHTML:
+		return true
+	case BaziReportRequestFormatMarkdown:
+		return true
+	case BaziReportRequestFormatPdf:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for BaziReportRequestGender.
+const (
+	BaziReportRequestGenderFemale BaziReportRequestGender = "female"
+	BaziReportRequestGenderMale   BaziReportRequestGender = "male"
+)
+
+// Valid indicates whether the value is a known member of the BaziReportRequestGender enum.
+func (e BaziReportRequestGender) Valid() bool {
+	switch e {
+	case BaziReportRequestGenderFemale:
+		return true
+	case BaziReportRequestGenderMale:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for BaziReportRequestHourClock.
+const (
+	BaziReportRequestHourClockClock     BaziReportRequestHourClock = "clock"
+	BaziReportRequestHourClockLocalMean BaziReportRequestHourClock = "local-mean"
+	BaziReportRequestHourClockSolar     BaziReportRequestHourClock = "solar"
+)
+
+// Valid indicates whether the value is a known member of the BaziReportRequestHourClock enum.
+func (e BaziReportRequestHourClock) Valid() bool {
+	switch e {
+	case BaziReportRequestHourClockClock:
+		return true
+	case BaziReportRequestHourClockLocalMean:
+		return true
+	case BaziReportRequestHourClockSolar:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for BaziReportRequestPageSize.
+const (
+	BaziReportRequestPageSizeA4     BaziReportRequestPageSize = "A4"
+	BaziReportRequestPageSizeLetter BaziReportRequestPageSize = "Letter"
+)
+
+// Valid indicates whether the value is a known member of the BaziReportRequestPageSize enum.
+func (e BaziReportRequestPageSize) Valid() bool {
+	switch e {
+	case BaziReportRequestPageSizeA4:
+		return true
+	case BaziReportRequestPageSizeLetter:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for BaziReportRequestYearBoundary.
+const (
+	BaziReportRequestYearBoundaryLiChun       BaziReportRequestYearBoundary = "li-chun"
+	BaziReportRequestYearBoundaryLunarNewYear BaziReportRequestYearBoundary = "lunar-new-year"
+)
+
+// Valid indicates whether the value is a known member of the BaziReportRequestYearBoundary enum.
+func (e BaziReportRequestYearBoundary) Valid() bool {
+	switch e {
+	case BaziReportRequestYearBoundaryLiChun:
+		return true
+	case BaziReportRequestYearBoundaryLunarNewYear:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for BhavChalitRequestAyanamsa.
 const (
 	BhavChalitRequestAyanamsaCustom    BhavChalitRequestAyanamsa = "custom"
@@ -2985,6 +3153,114 @@ func (e HeliacalResponseGrahasNextEventType) Valid() bool {
 	}
 }
 
+// Defines values for HumanDesignReportRequestBrandingFont.
+const (
+	HumanDesignReportRequestBrandingFontFrauncesJost HumanDesignReportRequestBrandingFont = "fraunces-jost"
+	HumanDesignReportRequestBrandingFontGeist        HumanDesignReportRequestBrandingFont = "geist"
+	HumanDesignReportRequestBrandingFontJost         HumanDesignReportRequestBrandingFont = "jost"
+	HumanDesignReportRequestBrandingFontSystem       HumanDesignReportRequestBrandingFont = "system"
+)
+
+// Valid indicates whether the value is a known member of the HumanDesignReportRequestBrandingFont enum.
+func (e HumanDesignReportRequestBrandingFont) Valid() bool {
+	switch e {
+	case HumanDesignReportRequestBrandingFontFrauncesJost:
+		return true
+	case HumanDesignReportRequestBrandingFontGeist:
+		return true
+	case HumanDesignReportRequestBrandingFontJost:
+		return true
+	case HumanDesignReportRequestBrandingFontSystem:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for HumanDesignReportRequestBrandingTheme.
+const (
+	HumanDesignReportRequestBrandingThemeCeleste      HumanDesignReportRequestBrandingTheme = "celeste"
+	HumanDesignReportRequestBrandingThemeEucalyptus   HumanDesignReportRequestBrandingTheme = "eucalyptus"
+	HumanDesignReportRequestBrandingThemeKiln         HumanDesignReportRequestBrandingTheme = "kiln"
+	HumanDesignReportRequestBrandingThemeMoonlit      HumanDesignReportRequestBrandingTheme = "moonlit"
+	HumanDesignReportRequestBrandingThemePractitioner HumanDesignReportRequestBrandingTheme = "practitioner"
+)
+
+// Valid indicates whether the value is a known member of the HumanDesignReportRequestBrandingTheme enum.
+func (e HumanDesignReportRequestBrandingTheme) Valid() bool {
+	switch e {
+	case HumanDesignReportRequestBrandingThemeCeleste:
+		return true
+	case HumanDesignReportRequestBrandingThemeEucalyptus:
+		return true
+	case HumanDesignReportRequestBrandingThemeKiln:
+		return true
+	case HumanDesignReportRequestBrandingThemeMoonlit:
+		return true
+	case HumanDesignReportRequestBrandingThemePractitioner:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for HumanDesignReportRequestFormat.
+const (
+	HumanDesignReportRequestFormatHTML     HumanDesignReportRequestFormat = "html"
+	HumanDesignReportRequestFormatMarkdown HumanDesignReportRequestFormat = "markdown"
+	HumanDesignReportRequestFormatPdf      HumanDesignReportRequestFormat = "pdf"
+)
+
+// Valid indicates whether the value is a known member of the HumanDesignReportRequestFormat enum.
+func (e HumanDesignReportRequestFormat) Valid() bool {
+	switch e {
+	case HumanDesignReportRequestFormatHTML:
+		return true
+	case HumanDesignReportRequestFormatMarkdown:
+		return true
+	case HumanDesignReportRequestFormatPdf:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for HumanDesignReportRequestNodeType.
+const (
+	HumanDesignReportRequestNodeTypeMean HumanDesignReportRequestNodeType = "mean"
+	HumanDesignReportRequestNodeTypeTrue HumanDesignReportRequestNodeType = "true"
+)
+
+// Valid indicates whether the value is a known member of the HumanDesignReportRequestNodeType enum.
+func (e HumanDesignReportRequestNodeType) Valid() bool {
+	switch e {
+	case HumanDesignReportRequestNodeTypeMean:
+		return true
+	case HumanDesignReportRequestNodeTypeTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for HumanDesignReportRequestPageSize.
+const (
+	HumanDesignReportRequestPageSizeA4     HumanDesignReportRequestPageSize = "A4"
+	HumanDesignReportRequestPageSizeLetter HumanDesignReportRequestPageSize = "Letter"
+)
+
+// Valid indicates whether the value is a known member of the HumanDesignReportRequestPageSize enum.
+func (e HumanDesignReportRequestPageSize) Valid() bool {
+	switch e {
+	case HumanDesignReportRequestPageSizeA4:
+		return true
+	case HumanDesignReportRequestPageSizeLetter:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for KPChartRequestAyanamsa.
 const (
 	KPChartRequestAyanamsaCustom    KPChartRequestAyanamsa = "custom"
@@ -3816,6 +4092,123 @@ func (e KalsarpaResponseSeverity) Valid() bool {
 	}
 }
 
+// Defines values for KundliReportRequestAyanamsa.
+const (
+	KundliReportRequestAyanamsaCustom    KundliReportRequestAyanamsa = "custom"
+	KundliReportRequestAyanamsaKpNewcomb KundliReportRequestAyanamsa = "kp-newcomb"
+	KundliReportRequestAyanamsaKpOld     KundliReportRequestAyanamsa = "kp-old"
+	KundliReportRequestAyanamsaLahiri    KundliReportRequestAyanamsa = "lahiri"
+	KundliReportRequestAyanamsaRaman     KundliReportRequestAyanamsa = "raman"
+)
+
+// Valid indicates whether the value is a known member of the KundliReportRequestAyanamsa enum.
+func (e KundliReportRequestAyanamsa) Valid() bool {
+	switch e {
+	case KundliReportRequestAyanamsaCustom:
+		return true
+	case KundliReportRequestAyanamsaKpNewcomb:
+		return true
+	case KundliReportRequestAyanamsaKpOld:
+		return true
+	case KundliReportRequestAyanamsaLahiri:
+		return true
+	case KundliReportRequestAyanamsaRaman:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for KundliReportRequestBrandingFont.
+const (
+	KundliReportRequestBrandingFontFrauncesJost KundliReportRequestBrandingFont = "fraunces-jost"
+	KundliReportRequestBrandingFontGeist        KundliReportRequestBrandingFont = "geist"
+	KundliReportRequestBrandingFontJost         KundliReportRequestBrandingFont = "jost"
+	KundliReportRequestBrandingFontSystem       KundliReportRequestBrandingFont = "system"
+)
+
+// Valid indicates whether the value is a known member of the KundliReportRequestBrandingFont enum.
+func (e KundliReportRequestBrandingFont) Valid() bool {
+	switch e {
+	case KundliReportRequestBrandingFontFrauncesJost:
+		return true
+	case KundliReportRequestBrandingFontGeist:
+		return true
+	case KundliReportRequestBrandingFontJost:
+		return true
+	case KundliReportRequestBrandingFontSystem:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for KundliReportRequestBrandingTheme.
+const (
+	KundliReportRequestBrandingThemeCeleste      KundliReportRequestBrandingTheme = "celeste"
+	KundliReportRequestBrandingThemeEucalyptus   KundliReportRequestBrandingTheme = "eucalyptus"
+	KundliReportRequestBrandingThemeKiln         KundliReportRequestBrandingTheme = "kiln"
+	KundliReportRequestBrandingThemeMoonlit      KundliReportRequestBrandingTheme = "moonlit"
+	KundliReportRequestBrandingThemePractitioner KundliReportRequestBrandingTheme = "practitioner"
+)
+
+// Valid indicates whether the value is a known member of the KundliReportRequestBrandingTheme enum.
+func (e KundliReportRequestBrandingTheme) Valid() bool {
+	switch e {
+	case KundliReportRequestBrandingThemeCeleste:
+		return true
+	case KundliReportRequestBrandingThemeEucalyptus:
+		return true
+	case KundliReportRequestBrandingThemeKiln:
+		return true
+	case KundliReportRequestBrandingThemeMoonlit:
+		return true
+	case KundliReportRequestBrandingThemePractitioner:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for KundliReportRequestFormat.
+const (
+	KundliReportRequestFormatHTML     KundliReportRequestFormat = "html"
+	KundliReportRequestFormatMarkdown KundliReportRequestFormat = "markdown"
+	KundliReportRequestFormatPdf      KundliReportRequestFormat = "pdf"
+)
+
+// Valid indicates whether the value is a known member of the KundliReportRequestFormat enum.
+func (e KundliReportRequestFormat) Valid() bool {
+	switch e {
+	case KundliReportRequestFormatHTML:
+		return true
+	case KundliReportRequestFormatMarkdown:
+		return true
+	case KundliReportRequestFormatPdf:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for KundliReportRequestPageSize.
+const (
+	KundliReportRequestPageSizeA4     KundliReportRequestPageSize = "A4"
+	KundliReportRequestPageSizeLetter KundliReportRequestPageSize = "Letter"
+)
+
+// Valid indicates whether the value is a known member of the KundliReportRequestPageSize enum.
+func (e KundliReportRequestPageSize) Valid() bool {
+	switch e {
+	case KundliReportRequestPageSizeA4:
+		return true
+	case KundliReportRequestPageSizeLetter:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for LilithRequestHouseSystem.
 const (
 	LilithRequestHouseSystemEqual     LilithRequestHouseSystem = "equal"
@@ -3942,6 +4335,123 @@ func (e ManglikResponseSeverity) Valid() bool {
 	case ManglikResponseSeverityModerate:
 		return true
 	case ManglikResponseSeveritySevere:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for MatchmakingReportRequestAyanamsa.
+const (
+	MatchmakingReportRequestAyanamsaCustom    MatchmakingReportRequestAyanamsa = "custom"
+	MatchmakingReportRequestAyanamsaKpNewcomb MatchmakingReportRequestAyanamsa = "kp-newcomb"
+	MatchmakingReportRequestAyanamsaKpOld     MatchmakingReportRequestAyanamsa = "kp-old"
+	MatchmakingReportRequestAyanamsaLahiri    MatchmakingReportRequestAyanamsa = "lahiri"
+	MatchmakingReportRequestAyanamsaRaman     MatchmakingReportRequestAyanamsa = "raman"
+)
+
+// Valid indicates whether the value is a known member of the MatchmakingReportRequestAyanamsa enum.
+func (e MatchmakingReportRequestAyanamsa) Valid() bool {
+	switch e {
+	case MatchmakingReportRequestAyanamsaCustom:
+		return true
+	case MatchmakingReportRequestAyanamsaKpNewcomb:
+		return true
+	case MatchmakingReportRequestAyanamsaKpOld:
+		return true
+	case MatchmakingReportRequestAyanamsaLahiri:
+		return true
+	case MatchmakingReportRequestAyanamsaRaman:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for MatchmakingReportRequestBrandingFont.
+const (
+	MatchmakingReportRequestBrandingFontFrauncesJost MatchmakingReportRequestBrandingFont = "fraunces-jost"
+	MatchmakingReportRequestBrandingFontGeist        MatchmakingReportRequestBrandingFont = "geist"
+	MatchmakingReportRequestBrandingFontJost         MatchmakingReportRequestBrandingFont = "jost"
+	MatchmakingReportRequestBrandingFontSystem       MatchmakingReportRequestBrandingFont = "system"
+)
+
+// Valid indicates whether the value is a known member of the MatchmakingReportRequestBrandingFont enum.
+func (e MatchmakingReportRequestBrandingFont) Valid() bool {
+	switch e {
+	case MatchmakingReportRequestBrandingFontFrauncesJost:
+		return true
+	case MatchmakingReportRequestBrandingFontGeist:
+		return true
+	case MatchmakingReportRequestBrandingFontJost:
+		return true
+	case MatchmakingReportRequestBrandingFontSystem:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for MatchmakingReportRequestBrandingTheme.
+const (
+	MatchmakingReportRequestBrandingThemeCeleste      MatchmakingReportRequestBrandingTheme = "celeste"
+	MatchmakingReportRequestBrandingThemeEucalyptus   MatchmakingReportRequestBrandingTheme = "eucalyptus"
+	MatchmakingReportRequestBrandingThemeKiln         MatchmakingReportRequestBrandingTheme = "kiln"
+	MatchmakingReportRequestBrandingThemeMoonlit      MatchmakingReportRequestBrandingTheme = "moonlit"
+	MatchmakingReportRequestBrandingThemePractitioner MatchmakingReportRequestBrandingTheme = "practitioner"
+)
+
+// Valid indicates whether the value is a known member of the MatchmakingReportRequestBrandingTheme enum.
+func (e MatchmakingReportRequestBrandingTheme) Valid() bool {
+	switch e {
+	case MatchmakingReportRequestBrandingThemeCeleste:
+		return true
+	case MatchmakingReportRequestBrandingThemeEucalyptus:
+		return true
+	case MatchmakingReportRequestBrandingThemeKiln:
+		return true
+	case MatchmakingReportRequestBrandingThemeMoonlit:
+		return true
+	case MatchmakingReportRequestBrandingThemePractitioner:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for MatchmakingReportRequestFormat.
+const (
+	MatchmakingReportRequestFormatHTML     MatchmakingReportRequestFormat = "html"
+	MatchmakingReportRequestFormatMarkdown MatchmakingReportRequestFormat = "markdown"
+	MatchmakingReportRequestFormatPdf      MatchmakingReportRequestFormat = "pdf"
+)
+
+// Valid indicates whether the value is a known member of the MatchmakingReportRequestFormat enum.
+func (e MatchmakingReportRequestFormat) Valid() bool {
+	switch e {
+	case MatchmakingReportRequestFormatHTML:
+		return true
+	case MatchmakingReportRequestFormatMarkdown:
+		return true
+	case MatchmakingReportRequestFormatPdf:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for MatchmakingReportRequestPageSize.
+const (
+	MatchmakingReportRequestPageSizeA4     MatchmakingReportRequestPageSize = "A4"
+	MatchmakingReportRequestPageSizeLetter MatchmakingReportRequestPageSize = "Letter"
+)
+
+// Valid indicates whether the value is a known member of the MatchmakingReportRequestPageSize enum.
+func (e MatchmakingReportRequestPageSize) Valid() bool {
+	switch e {
+	case MatchmakingReportRequestPageSizeA4:
+		return true
+	case MatchmakingReportRequestPageSizeLetter:
 		return true
 	default:
 		return false
@@ -4113,6 +4623,138 @@ func (e NatalChartResponsePlanetsDignity) Valid() bool {
 	}
 }
 
+// Defines values for NatalReportRequestBrandingFont.
+const (
+	NatalReportRequestBrandingFontFrauncesJost NatalReportRequestBrandingFont = "fraunces-jost"
+	NatalReportRequestBrandingFontGeist        NatalReportRequestBrandingFont = "geist"
+	NatalReportRequestBrandingFontJost         NatalReportRequestBrandingFont = "jost"
+	NatalReportRequestBrandingFontSystem       NatalReportRequestBrandingFont = "system"
+)
+
+// Valid indicates whether the value is a known member of the NatalReportRequestBrandingFont enum.
+func (e NatalReportRequestBrandingFont) Valid() bool {
+	switch e {
+	case NatalReportRequestBrandingFontFrauncesJost:
+		return true
+	case NatalReportRequestBrandingFontGeist:
+		return true
+	case NatalReportRequestBrandingFontJost:
+		return true
+	case NatalReportRequestBrandingFontSystem:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for NatalReportRequestBrandingTheme.
+const (
+	NatalReportRequestBrandingThemeCeleste      NatalReportRequestBrandingTheme = "celeste"
+	NatalReportRequestBrandingThemeEucalyptus   NatalReportRequestBrandingTheme = "eucalyptus"
+	NatalReportRequestBrandingThemeKiln         NatalReportRequestBrandingTheme = "kiln"
+	NatalReportRequestBrandingThemeMoonlit      NatalReportRequestBrandingTheme = "moonlit"
+	NatalReportRequestBrandingThemePractitioner NatalReportRequestBrandingTheme = "practitioner"
+)
+
+// Valid indicates whether the value is a known member of the NatalReportRequestBrandingTheme enum.
+func (e NatalReportRequestBrandingTheme) Valid() bool {
+	switch e {
+	case NatalReportRequestBrandingThemeCeleste:
+		return true
+	case NatalReportRequestBrandingThemeEucalyptus:
+		return true
+	case NatalReportRequestBrandingThemeKiln:
+		return true
+	case NatalReportRequestBrandingThemeMoonlit:
+		return true
+	case NatalReportRequestBrandingThemePractitioner:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for NatalReportRequestFormat.
+const (
+	NatalReportRequestFormatHTML     NatalReportRequestFormat = "html"
+	NatalReportRequestFormatMarkdown NatalReportRequestFormat = "markdown"
+	NatalReportRequestFormatPdf      NatalReportRequestFormat = "pdf"
+)
+
+// Valid indicates whether the value is a known member of the NatalReportRequestFormat enum.
+func (e NatalReportRequestFormat) Valid() bool {
+	switch e {
+	case NatalReportRequestFormatHTML:
+		return true
+	case NatalReportRequestFormatMarkdown:
+		return true
+	case NatalReportRequestFormatPdf:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for NatalReportRequestHouseSystem.
+const (
+	NatalReportRequestHouseSystemEqual     NatalReportRequestHouseSystem = "equal"
+	NatalReportRequestHouseSystemKoch      NatalReportRequestHouseSystem = "koch"
+	NatalReportRequestHouseSystemPlacidus  NatalReportRequestHouseSystem = "placidus"
+	NatalReportRequestHouseSystemWholeSign NatalReportRequestHouseSystem = "whole-sign"
+)
+
+// Valid indicates whether the value is a known member of the NatalReportRequestHouseSystem enum.
+func (e NatalReportRequestHouseSystem) Valid() bool {
+	switch e {
+	case NatalReportRequestHouseSystemEqual:
+		return true
+	case NatalReportRequestHouseSystemKoch:
+		return true
+	case NatalReportRequestHouseSystemPlacidus:
+		return true
+	case NatalReportRequestHouseSystemWholeSign:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for NatalReportRequestNodeType.
+const (
+	NatalReportRequestNodeTypeMean NatalReportRequestNodeType = "mean"
+	NatalReportRequestNodeTypeTrue NatalReportRequestNodeType = "true"
+)
+
+// Valid indicates whether the value is a known member of the NatalReportRequestNodeType enum.
+func (e NatalReportRequestNodeType) Valid() bool {
+	switch e {
+	case NatalReportRequestNodeTypeMean:
+		return true
+	case NatalReportRequestNodeTypeTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for NatalReportRequestPageSize.
+const (
+	NatalReportRequestPageSizeA4     NatalReportRequestPageSize = "A4"
+	NatalReportRequestPageSizeLetter NatalReportRequestPageSize = "Letter"
+)
+
+// Valid indicates whether the value is a known member of the NatalReportRequestPageSize enum.
+func (e NatalReportRequestPageSize) Valid() bool {
+	switch e {
+	case NatalReportRequestPageSizeA4:
+		return true
+	case NatalReportRequestPageSizeLetter:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for NavamsaRequestAyanamsa.
 const (
 	NavamsaRequestAyanamsaCustom    NavamsaRequestAyanamsa = "custom"
@@ -4212,6 +4854,96 @@ func (e NavamsaResponseChartMetaNakshatraLord) Valid() bool {
 	case NavamsaResponseChartMetaNakshatraLordSun:
 		return true
 	case NavamsaResponseChartMetaNakshatraLordVenus:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for NumerologyReportRequestBrandingFont.
+const (
+	NumerologyReportRequestBrandingFontFrauncesJost NumerologyReportRequestBrandingFont = "fraunces-jost"
+	NumerologyReportRequestBrandingFontGeist        NumerologyReportRequestBrandingFont = "geist"
+	NumerologyReportRequestBrandingFontJost         NumerologyReportRequestBrandingFont = "jost"
+	NumerologyReportRequestBrandingFontSystem       NumerologyReportRequestBrandingFont = "system"
+)
+
+// Valid indicates whether the value is a known member of the NumerologyReportRequestBrandingFont enum.
+func (e NumerologyReportRequestBrandingFont) Valid() bool {
+	switch e {
+	case NumerologyReportRequestBrandingFontFrauncesJost:
+		return true
+	case NumerologyReportRequestBrandingFontGeist:
+		return true
+	case NumerologyReportRequestBrandingFontJost:
+		return true
+	case NumerologyReportRequestBrandingFontSystem:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for NumerologyReportRequestBrandingTheme.
+const (
+	NumerologyReportRequestBrandingThemeCeleste      NumerologyReportRequestBrandingTheme = "celeste"
+	NumerologyReportRequestBrandingThemeEucalyptus   NumerologyReportRequestBrandingTheme = "eucalyptus"
+	NumerologyReportRequestBrandingThemeKiln         NumerologyReportRequestBrandingTheme = "kiln"
+	NumerologyReportRequestBrandingThemeMoonlit      NumerologyReportRequestBrandingTheme = "moonlit"
+	NumerologyReportRequestBrandingThemePractitioner NumerologyReportRequestBrandingTheme = "practitioner"
+)
+
+// Valid indicates whether the value is a known member of the NumerologyReportRequestBrandingTheme enum.
+func (e NumerologyReportRequestBrandingTheme) Valid() bool {
+	switch e {
+	case NumerologyReportRequestBrandingThemeCeleste:
+		return true
+	case NumerologyReportRequestBrandingThemeEucalyptus:
+		return true
+	case NumerologyReportRequestBrandingThemeKiln:
+		return true
+	case NumerologyReportRequestBrandingThemeMoonlit:
+		return true
+	case NumerologyReportRequestBrandingThemePractitioner:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for NumerologyReportRequestFormat.
+const (
+	NumerologyReportRequestFormatHTML     NumerologyReportRequestFormat = "html"
+	NumerologyReportRequestFormatMarkdown NumerologyReportRequestFormat = "markdown"
+	NumerologyReportRequestFormatPdf      NumerologyReportRequestFormat = "pdf"
+)
+
+// Valid indicates whether the value is a known member of the NumerologyReportRequestFormat enum.
+func (e NumerologyReportRequestFormat) Valid() bool {
+	switch e {
+	case NumerologyReportRequestFormatHTML:
+		return true
+	case NumerologyReportRequestFormatMarkdown:
+		return true
+	case NumerologyReportRequestFormatPdf:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for NumerologyReportRequestPageSize.
+const (
+	NumerologyReportRequestPageSizeA4     NumerologyReportRequestPageSize = "A4"
+	NumerologyReportRequestPageSizeLetter NumerologyReportRequestPageSize = "Letter"
+)
+
+// Valid indicates whether the value is a known member of the NumerologyReportRequestPageSize enum.
+func (e NumerologyReportRequestPageSize) Valid() bool {
+	switch e {
+	case NumerologyReportRequestPageSizeA4:
+		return true
+	case NumerologyReportRequestPageSizeLetter:
 		return true
 	default:
 		return false
@@ -4662,6 +5394,270 @@ func (e SolarArcRequestNodeType) Valid() bool {
 	}
 }
 
+// Defines values for SynastryReportRequestBrandingFont.
+const (
+	SynastryReportRequestBrandingFontFrauncesJost SynastryReportRequestBrandingFont = "fraunces-jost"
+	SynastryReportRequestBrandingFontGeist        SynastryReportRequestBrandingFont = "geist"
+	SynastryReportRequestBrandingFontJost         SynastryReportRequestBrandingFont = "jost"
+	SynastryReportRequestBrandingFontSystem       SynastryReportRequestBrandingFont = "system"
+)
+
+// Valid indicates whether the value is a known member of the SynastryReportRequestBrandingFont enum.
+func (e SynastryReportRequestBrandingFont) Valid() bool {
+	switch e {
+	case SynastryReportRequestBrandingFontFrauncesJost:
+		return true
+	case SynastryReportRequestBrandingFontGeist:
+		return true
+	case SynastryReportRequestBrandingFontJost:
+		return true
+	case SynastryReportRequestBrandingFontSystem:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for SynastryReportRequestBrandingTheme.
+const (
+	SynastryReportRequestBrandingThemeCeleste      SynastryReportRequestBrandingTheme = "celeste"
+	SynastryReportRequestBrandingThemeEucalyptus   SynastryReportRequestBrandingTheme = "eucalyptus"
+	SynastryReportRequestBrandingThemeKiln         SynastryReportRequestBrandingTheme = "kiln"
+	SynastryReportRequestBrandingThemeMoonlit      SynastryReportRequestBrandingTheme = "moonlit"
+	SynastryReportRequestBrandingThemePractitioner SynastryReportRequestBrandingTheme = "practitioner"
+)
+
+// Valid indicates whether the value is a known member of the SynastryReportRequestBrandingTheme enum.
+func (e SynastryReportRequestBrandingTheme) Valid() bool {
+	switch e {
+	case SynastryReportRequestBrandingThemeCeleste:
+		return true
+	case SynastryReportRequestBrandingThemeEucalyptus:
+		return true
+	case SynastryReportRequestBrandingThemeKiln:
+		return true
+	case SynastryReportRequestBrandingThemeMoonlit:
+		return true
+	case SynastryReportRequestBrandingThemePractitioner:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for SynastryReportRequestFormat.
+const (
+	SynastryReportRequestFormatHTML     SynastryReportRequestFormat = "html"
+	SynastryReportRequestFormatMarkdown SynastryReportRequestFormat = "markdown"
+	SynastryReportRequestFormatPdf      SynastryReportRequestFormat = "pdf"
+)
+
+// Valid indicates whether the value is a known member of the SynastryReportRequestFormat enum.
+func (e SynastryReportRequestFormat) Valid() bool {
+	switch e {
+	case SynastryReportRequestFormatHTML:
+		return true
+	case SynastryReportRequestFormatMarkdown:
+		return true
+	case SynastryReportRequestFormatPdf:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for SynastryReportRequestHouseSystem.
+const (
+	SynastryReportRequestHouseSystemEqual     SynastryReportRequestHouseSystem = "equal"
+	SynastryReportRequestHouseSystemKoch      SynastryReportRequestHouseSystem = "koch"
+	SynastryReportRequestHouseSystemPlacidus  SynastryReportRequestHouseSystem = "placidus"
+	SynastryReportRequestHouseSystemWholeSign SynastryReportRequestHouseSystem = "whole-sign"
+)
+
+// Valid indicates whether the value is a known member of the SynastryReportRequestHouseSystem enum.
+func (e SynastryReportRequestHouseSystem) Valid() bool {
+	switch e {
+	case SynastryReportRequestHouseSystemEqual:
+		return true
+	case SynastryReportRequestHouseSystemKoch:
+		return true
+	case SynastryReportRequestHouseSystemPlacidus:
+		return true
+	case SynastryReportRequestHouseSystemWholeSign:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for SynastryReportRequestPageSize.
+const (
+	SynastryReportRequestPageSizeA4     SynastryReportRequestPageSize = "A4"
+	SynastryReportRequestPageSizeLetter SynastryReportRequestPageSize = "Letter"
+)
+
+// Valid indicates whether the value is a known member of the SynastryReportRequestPageSize enum.
+func (e SynastryReportRequestPageSize) Valid() bool {
+	switch e {
+	case SynastryReportRequestPageSizeA4:
+		return true
+	case SynastryReportRequestPageSizeLetter:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for SynastryReportRequestPerson1NodeType.
+const (
+	SynastryReportRequestPerson1NodeTypeMean SynastryReportRequestPerson1NodeType = "mean"
+	SynastryReportRequestPerson1NodeTypeTrue SynastryReportRequestPerson1NodeType = "true"
+)
+
+// Valid indicates whether the value is a known member of the SynastryReportRequestPerson1NodeType enum.
+func (e SynastryReportRequestPerson1NodeType) Valid() bool {
+	switch e {
+	case SynastryReportRequestPerson1NodeTypeMean:
+		return true
+	case SynastryReportRequestPerson1NodeTypeTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for SynastryReportRequestPerson2NodeType.
+const (
+	SynastryReportRequestPerson2NodeTypeMean SynastryReportRequestPerson2NodeType = "mean"
+	SynastryReportRequestPerson2NodeTypeTrue SynastryReportRequestPerson2NodeType = "true"
+)
+
+// Valid indicates whether the value is a known member of the SynastryReportRequestPerson2NodeType enum.
+func (e SynastryReportRequestPerson2NodeType) Valid() bool {
+	switch e {
+	case SynastryReportRequestPerson2NodeTypeMean:
+		return true
+	case SynastryReportRequestPerson2NodeTypeTrue:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for TarotReportRequestBrandingFont.
+const (
+	TarotReportRequestBrandingFontFrauncesJost TarotReportRequestBrandingFont = "fraunces-jost"
+	TarotReportRequestBrandingFontGeist        TarotReportRequestBrandingFont = "geist"
+	TarotReportRequestBrandingFontJost         TarotReportRequestBrandingFont = "jost"
+	TarotReportRequestBrandingFontSystem       TarotReportRequestBrandingFont = "system"
+)
+
+// Valid indicates whether the value is a known member of the TarotReportRequestBrandingFont enum.
+func (e TarotReportRequestBrandingFont) Valid() bool {
+	switch e {
+	case TarotReportRequestBrandingFontFrauncesJost:
+		return true
+	case TarotReportRequestBrandingFontGeist:
+		return true
+	case TarotReportRequestBrandingFontJost:
+		return true
+	case TarotReportRequestBrandingFontSystem:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for TarotReportRequestBrandingTheme.
+const (
+	TarotReportRequestBrandingThemeCeleste      TarotReportRequestBrandingTheme = "celeste"
+	TarotReportRequestBrandingThemeEucalyptus   TarotReportRequestBrandingTheme = "eucalyptus"
+	TarotReportRequestBrandingThemeKiln         TarotReportRequestBrandingTheme = "kiln"
+	TarotReportRequestBrandingThemeMoonlit      TarotReportRequestBrandingTheme = "moonlit"
+	TarotReportRequestBrandingThemePractitioner TarotReportRequestBrandingTheme = "practitioner"
+)
+
+// Valid indicates whether the value is a known member of the TarotReportRequestBrandingTheme enum.
+func (e TarotReportRequestBrandingTheme) Valid() bool {
+	switch e {
+	case TarotReportRequestBrandingThemeCeleste:
+		return true
+	case TarotReportRequestBrandingThemeEucalyptus:
+		return true
+	case TarotReportRequestBrandingThemeKiln:
+		return true
+	case TarotReportRequestBrandingThemeMoonlit:
+		return true
+	case TarotReportRequestBrandingThemePractitioner:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for TarotReportRequestFormat.
+const (
+	TarotReportRequestFormatHTML     TarotReportRequestFormat = "html"
+	TarotReportRequestFormatMarkdown TarotReportRequestFormat = "markdown"
+	TarotReportRequestFormatPdf      TarotReportRequestFormat = "pdf"
+)
+
+// Valid indicates whether the value is a known member of the TarotReportRequestFormat enum.
+func (e TarotReportRequestFormat) Valid() bool {
+	switch e {
+	case TarotReportRequestFormatHTML:
+		return true
+	case TarotReportRequestFormatMarkdown:
+		return true
+	case TarotReportRequestFormatPdf:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for TarotReportRequestPageSize.
+const (
+	TarotReportRequestPageSizeA4     TarotReportRequestPageSize = "A4"
+	TarotReportRequestPageSizeLetter TarotReportRequestPageSize = "Letter"
+)
+
+// Valid indicates whether the value is a known member of the TarotReportRequestPageSize enum.
+func (e TarotReportRequestPageSize) Valid() bool {
+	switch e {
+	case TarotReportRequestPageSizeA4:
+		return true
+	case TarotReportRequestPageSizeLetter:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for TarotReportRequestSpread.
+const (
+	TarotReportRequestSpreadCareer      TarotReportRequestSpread = "career"
+	TarotReportRequestSpreadCelticCross TarotReportRequestSpread = "celtic-cross"
+	TarotReportRequestSpreadLove        TarotReportRequestSpread = "love"
+	TarotReportRequestSpreadThreeCard   TarotReportRequestSpread = "three-card"
+)
+
+// Valid indicates whether the value is a known member of the TarotReportRequestSpread enum.
+func (e TarotReportRequestSpread) Valid() bool {
+	switch e {
+	case TarotReportRequestSpreadCareer:
+		return true
+	case TarotReportRequestSpreadCelticCross:
+		return true
+	case TarotReportRequestSpreadLove:
+		return true
+	case TarotReportRequestSpreadThreeCard:
+		return true
+	default:
+		return false
+	}
+}
+
 // Defines values for TransitsRequestNodeType.
 const (
 	TransitsRequestNodeTypeMean TransitsRequestNodeType = "mean"
@@ -4701,6 +5697,120 @@ func (e UpagrahaRequestAyanamsa) Valid() bool {
 	case UpagrahaRequestAyanamsaLahiri:
 		return true
 	case UpagrahaRequestAyanamsaRaman:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for YearlyForecastReportRequestBrandingFont.
+const (
+	YearlyForecastReportRequestBrandingFontFrauncesJost YearlyForecastReportRequestBrandingFont = "fraunces-jost"
+	YearlyForecastReportRequestBrandingFontGeist        YearlyForecastReportRequestBrandingFont = "geist"
+	YearlyForecastReportRequestBrandingFontJost         YearlyForecastReportRequestBrandingFont = "jost"
+	YearlyForecastReportRequestBrandingFontSystem       YearlyForecastReportRequestBrandingFont = "system"
+)
+
+// Valid indicates whether the value is a known member of the YearlyForecastReportRequestBrandingFont enum.
+func (e YearlyForecastReportRequestBrandingFont) Valid() bool {
+	switch e {
+	case YearlyForecastReportRequestBrandingFontFrauncesJost:
+		return true
+	case YearlyForecastReportRequestBrandingFontGeist:
+		return true
+	case YearlyForecastReportRequestBrandingFontJost:
+		return true
+	case YearlyForecastReportRequestBrandingFontSystem:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for YearlyForecastReportRequestBrandingTheme.
+const (
+	YearlyForecastReportRequestBrandingThemeCeleste      YearlyForecastReportRequestBrandingTheme = "celeste"
+	YearlyForecastReportRequestBrandingThemeEucalyptus   YearlyForecastReportRequestBrandingTheme = "eucalyptus"
+	YearlyForecastReportRequestBrandingThemeKiln         YearlyForecastReportRequestBrandingTheme = "kiln"
+	YearlyForecastReportRequestBrandingThemeMoonlit      YearlyForecastReportRequestBrandingTheme = "moonlit"
+	YearlyForecastReportRequestBrandingThemePractitioner YearlyForecastReportRequestBrandingTheme = "practitioner"
+)
+
+// Valid indicates whether the value is a known member of the YearlyForecastReportRequestBrandingTheme enum.
+func (e YearlyForecastReportRequestBrandingTheme) Valid() bool {
+	switch e {
+	case YearlyForecastReportRequestBrandingThemeCeleste:
+		return true
+	case YearlyForecastReportRequestBrandingThemeEucalyptus:
+		return true
+	case YearlyForecastReportRequestBrandingThemeKiln:
+		return true
+	case YearlyForecastReportRequestBrandingThemeMoonlit:
+		return true
+	case YearlyForecastReportRequestBrandingThemePractitioner:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for YearlyForecastReportRequestFormat.
+const (
+	YearlyForecastReportRequestFormatHTML     YearlyForecastReportRequestFormat = "html"
+	YearlyForecastReportRequestFormatMarkdown YearlyForecastReportRequestFormat = "markdown"
+	YearlyForecastReportRequestFormatPdf      YearlyForecastReportRequestFormat = "pdf"
+)
+
+// Valid indicates whether the value is a known member of the YearlyForecastReportRequestFormat enum.
+func (e YearlyForecastReportRequestFormat) Valid() bool {
+	switch e {
+	case YearlyForecastReportRequestFormatHTML:
+		return true
+	case YearlyForecastReportRequestFormatMarkdown:
+		return true
+	case YearlyForecastReportRequestFormatPdf:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for YearlyForecastReportRequestHouseSystem.
+const (
+	YearlyForecastReportRequestHouseSystemEqual     YearlyForecastReportRequestHouseSystem = "equal"
+	YearlyForecastReportRequestHouseSystemKoch      YearlyForecastReportRequestHouseSystem = "koch"
+	YearlyForecastReportRequestHouseSystemPlacidus  YearlyForecastReportRequestHouseSystem = "placidus"
+	YearlyForecastReportRequestHouseSystemWholeSign YearlyForecastReportRequestHouseSystem = "whole-sign"
+)
+
+// Valid indicates whether the value is a known member of the YearlyForecastReportRequestHouseSystem enum.
+func (e YearlyForecastReportRequestHouseSystem) Valid() bool {
+	switch e {
+	case YearlyForecastReportRequestHouseSystemEqual:
+		return true
+	case YearlyForecastReportRequestHouseSystemKoch:
+		return true
+	case YearlyForecastReportRequestHouseSystemPlacidus:
+		return true
+	case YearlyForecastReportRequestHouseSystemWholeSign:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for YearlyForecastReportRequestPageSize.
+const (
+	YearlyForecastReportRequestPageSizeA4     YearlyForecastReportRequestPageSize = "A4"
+	YearlyForecastReportRequestPageSizeLetter YearlyForecastReportRequestPageSize = "Letter"
+)
+
+// Valid indicates whether the value is a known member of the YearlyForecastReportRequestPageSize enum.
+func (e YearlyForecastReportRequestPageSize) Valid() bool {
+	switch e {
+	case YearlyForecastReportRequestPageSizeA4:
+		return true
+	case YearlyForecastReportRequestPageSizeLetter:
 		return true
 	default:
 		return false
@@ -12755,37 +13865,37 @@ func (e GetBaguaSectorParamsLang) Valid() bool {
 
 // Defines values for GetBaguaSectorParamsID.
 const (
-	Career        GetBaguaSectorParamsID = "career"
-	Children      GetBaguaSectorParamsID = "children"
-	Fame          GetBaguaSectorParamsID = "fame"
-	Family        GetBaguaSectorParamsID = "family"
-	Health        GetBaguaSectorParamsID = "health"
-	HelpfulPeople GetBaguaSectorParamsID = "helpful-people"
-	Knowledge     GetBaguaSectorParamsID = "knowledge"
-	Love          GetBaguaSectorParamsID = "love"
-	Wealth        GetBaguaSectorParamsID = "wealth"
+	GetBaguaSectorParamsIDCareer        GetBaguaSectorParamsID = "career"
+	GetBaguaSectorParamsIDChildren      GetBaguaSectorParamsID = "children"
+	GetBaguaSectorParamsIDFame          GetBaguaSectorParamsID = "fame"
+	GetBaguaSectorParamsIDFamily        GetBaguaSectorParamsID = "family"
+	GetBaguaSectorParamsIDHealth        GetBaguaSectorParamsID = "health"
+	GetBaguaSectorParamsIDHelpfulPeople GetBaguaSectorParamsID = "helpful-people"
+	GetBaguaSectorParamsIDKnowledge     GetBaguaSectorParamsID = "knowledge"
+	GetBaguaSectorParamsIDLove          GetBaguaSectorParamsID = "love"
+	GetBaguaSectorParamsIDWealth        GetBaguaSectorParamsID = "wealth"
 )
 
 // Valid indicates whether the value is a known member of the GetBaguaSectorParamsID enum.
 func (e GetBaguaSectorParamsID) Valid() bool {
 	switch e {
-	case Career:
+	case GetBaguaSectorParamsIDCareer:
 		return true
-	case Children:
+	case GetBaguaSectorParamsIDChildren:
 		return true
-	case Fame:
+	case GetBaguaSectorParamsIDFame:
 		return true
-	case Family:
+	case GetBaguaSectorParamsIDFamily:
 		return true
-	case Health:
+	case GetBaguaSectorParamsIDHealth:
 		return true
-	case HelpfulPeople:
+	case GetBaguaSectorParamsIDHelpfulPeople:
 		return true
-	case Knowledge:
+	case GetBaguaSectorParamsIDKnowledge:
 		return true
-	case Love:
+	case GetBaguaSectorParamsIDLove:
 		return true
-	case Wealth:
+	case GetBaguaSectorParamsIDWealth:
 		return true
 	default:
 		return false
@@ -19095,6 +20205,519 @@ func (e CalculateSoulUrge200JSONResponseBodyType) Valid() bool {
 	case CalculateSoulUrge200JSONResponseBodyTypeMaster:
 		return true
 	case CalculateSoulUrge200JSONResponseBodyTypeSingle:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GenerateBaziReportParamsLang.
+const (
+	GenerateBaziReportParamsLangDe GenerateBaziReportParamsLang = "de"
+	GenerateBaziReportParamsLangEn GenerateBaziReportParamsLang = "en"
+	GenerateBaziReportParamsLangEs GenerateBaziReportParamsLang = "es"
+	GenerateBaziReportParamsLangFr GenerateBaziReportParamsLang = "fr"
+	GenerateBaziReportParamsLangHi GenerateBaziReportParamsLang = "hi"
+	GenerateBaziReportParamsLangPt GenerateBaziReportParamsLang = "pt"
+	GenerateBaziReportParamsLangRu GenerateBaziReportParamsLang = "ru"
+	GenerateBaziReportParamsLangTr GenerateBaziReportParamsLang = "tr"
+)
+
+// Valid indicates whether the value is a known member of the GenerateBaziReportParamsLang enum.
+func (e GenerateBaziReportParamsLang) Valid() bool {
+	switch e {
+	case GenerateBaziReportParamsLangDe:
+		return true
+	case GenerateBaziReportParamsLangEn:
+		return true
+	case GenerateBaziReportParamsLangEs:
+		return true
+	case GenerateBaziReportParamsLangFr:
+		return true
+	case GenerateBaziReportParamsLangHi:
+		return true
+	case GenerateBaziReportParamsLangPt:
+		return true
+	case GenerateBaziReportParamsLangRu:
+		return true
+	case GenerateBaziReportParamsLangTr:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GenerateBaziReport200JSONResponseBodyFormat.
+const (
+	GenerateBaziReport200JSONResponseBodyFormatHTML     GenerateBaziReport200JSONResponseBodyFormat = "html"
+	GenerateBaziReport200JSONResponseBodyFormatMarkdown GenerateBaziReport200JSONResponseBodyFormat = "markdown"
+	GenerateBaziReport200JSONResponseBodyFormatPdf      GenerateBaziReport200JSONResponseBodyFormat = "pdf"
+)
+
+// Valid indicates whether the value is a known member of the GenerateBaziReport200JSONResponseBodyFormat enum.
+func (e GenerateBaziReport200JSONResponseBodyFormat) Valid() bool {
+	switch e {
+	case GenerateBaziReport200JSONResponseBodyFormatHTML:
+		return true
+	case GenerateBaziReport200JSONResponseBodyFormatMarkdown:
+		return true
+	case GenerateBaziReport200JSONResponseBodyFormatPdf:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GenerateHumanDesignReportParamsLang.
+const (
+	GenerateHumanDesignReportParamsLangDe GenerateHumanDesignReportParamsLang = "de"
+	GenerateHumanDesignReportParamsLangEn GenerateHumanDesignReportParamsLang = "en"
+	GenerateHumanDesignReportParamsLangEs GenerateHumanDesignReportParamsLang = "es"
+	GenerateHumanDesignReportParamsLangFr GenerateHumanDesignReportParamsLang = "fr"
+	GenerateHumanDesignReportParamsLangHi GenerateHumanDesignReportParamsLang = "hi"
+	GenerateHumanDesignReportParamsLangPt GenerateHumanDesignReportParamsLang = "pt"
+	GenerateHumanDesignReportParamsLangRu GenerateHumanDesignReportParamsLang = "ru"
+	GenerateHumanDesignReportParamsLangTr GenerateHumanDesignReportParamsLang = "tr"
+)
+
+// Valid indicates whether the value is a known member of the GenerateHumanDesignReportParamsLang enum.
+func (e GenerateHumanDesignReportParamsLang) Valid() bool {
+	switch e {
+	case GenerateHumanDesignReportParamsLangDe:
+		return true
+	case GenerateHumanDesignReportParamsLangEn:
+		return true
+	case GenerateHumanDesignReportParamsLangEs:
+		return true
+	case GenerateHumanDesignReportParamsLangFr:
+		return true
+	case GenerateHumanDesignReportParamsLangHi:
+		return true
+	case GenerateHumanDesignReportParamsLangPt:
+		return true
+	case GenerateHumanDesignReportParamsLangRu:
+		return true
+	case GenerateHumanDesignReportParamsLangTr:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GenerateHumanDesignReport200JSONResponseBodyFormat.
+const (
+	GenerateHumanDesignReport200JSONResponseBodyFormatHTML     GenerateHumanDesignReport200JSONResponseBodyFormat = "html"
+	GenerateHumanDesignReport200JSONResponseBodyFormatMarkdown GenerateHumanDesignReport200JSONResponseBodyFormat = "markdown"
+	GenerateHumanDesignReport200JSONResponseBodyFormatPdf      GenerateHumanDesignReport200JSONResponseBodyFormat = "pdf"
+)
+
+// Valid indicates whether the value is a known member of the GenerateHumanDesignReport200JSONResponseBodyFormat enum.
+func (e GenerateHumanDesignReport200JSONResponseBodyFormat) Valid() bool {
+	switch e {
+	case GenerateHumanDesignReport200JSONResponseBodyFormatHTML:
+		return true
+	case GenerateHumanDesignReport200JSONResponseBodyFormatMarkdown:
+		return true
+	case GenerateHumanDesignReport200JSONResponseBodyFormatPdf:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GenerateKundliReportParamsLang.
+const (
+	GenerateKundliReportParamsLangDe GenerateKundliReportParamsLang = "de"
+	GenerateKundliReportParamsLangEn GenerateKundliReportParamsLang = "en"
+	GenerateKundliReportParamsLangEs GenerateKundliReportParamsLang = "es"
+	GenerateKundliReportParamsLangFr GenerateKundliReportParamsLang = "fr"
+	GenerateKundliReportParamsLangHi GenerateKundliReportParamsLang = "hi"
+	GenerateKundliReportParamsLangPt GenerateKundliReportParamsLang = "pt"
+	GenerateKundliReportParamsLangRu GenerateKundliReportParamsLang = "ru"
+	GenerateKundliReportParamsLangTr GenerateKundliReportParamsLang = "tr"
+)
+
+// Valid indicates whether the value is a known member of the GenerateKundliReportParamsLang enum.
+func (e GenerateKundliReportParamsLang) Valid() bool {
+	switch e {
+	case GenerateKundliReportParamsLangDe:
+		return true
+	case GenerateKundliReportParamsLangEn:
+		return true
+	case GenerateKundliReportParamsLangEs:
+		return true
+	case GenerateKundliReportParamsLangFr:
+		return true
+	case GenerateKundliReportParamsLangHi:
+		return true
+	case GenerateKundliReportParamsLangPt:
+		return true
+	case GenerateKundliReportParamsLangRu:
+		return true
+	case GenerateKundliReportParamsLangTr:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GenerateKundliReport200JSONResponseBodyFormat.
+const (
+	GenerateKundliReport200JSONResponseBodyFormatHTML     GenerateKundliReport200JSONResponseBodyFormat = "html"
+	GenerateKundliReport200JSONResponseBodyFormatMarkdown GenerateKundliReport200JSONResponseBodyFormat = "markdown"
+	GenerateKundliReport200JSONResponseBodyFormatPdf      GenerateKundliReport200JSONResponseBodyFormat = "pdf"
+)
+
+// Valid indicates whether the value is a known member of the GenerateKundliReport200JSONResponseBodyFormat enum.
+func (e GenerateKundliReport200JSONResponseBodyFormat) Valid() bool {
+	switch e {
+	case GenerateKundliReport200JSONResponseBodyFormatHTML:
+		return true
+	case GenerateKundliReport200JSONResponseBodyFormatMarkdown:
+		return true
+	case GenerateKundliReport200JSONResponseBodyFormatPdf:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GenerateMatchmakingReportParamsLang.
+const (
+	GenerateMatchmakingReportParamsLangDe GenerateMatchmakingReportParamsLang = "de"
+	GenerateMatchmakingReportParamsLangEn GenerateMatchmakingReportParamsLang = "en"
+	GenerateMatchmakingReportParamsLangEs GenerateMatchmakingReportParamsLang = "es"
+	GenerateMatchmakingReportParamsLangFr GenerateMatchmakingReportParamsLang = "fr"
+	GenerateMatchmakingReportParamsLangHi GenerateMatchmakingReportParamsLang = "hi"
+	GenerateMatchmakingReportParamsLangPt GenerateMatchmakingReportParamsLang = "pt"
+	GenerateMatchmakingReportParamsLangRu GenerateMatchmakingReportParamsLang = "ru"
+	GenerateMatchmakingReportParamsLangTr GenerateMatchmakingReportParamsLang = "tr"
+)
+
+// Valid indicates whether the value is a known member of the GenerateMatchmakingReportParamsLang enum.
+func (e GenerateMatchmakingReportParamsLang) Valid() bool {
+	switch e {
+	case GenerateMatchmakingReportParamsLangDe:
+		return true
+	case GenerateMatchmakingReportParamsLangEn:
+		return true
+	case GenerateMatchmakingReportParamsLangEs:
+		return true
+	case GenerateMatchmakingReportParamsLangFr:
+		return true
+	case GenerateMatchmakingReportParamsLangHi:
+		return true
+	case GenerateMatchmakingReportParamsLangPt:
+		return true
+	case GenerateMatchmakingReportParamsLangRu:
+		return true
+	case GenerateMatchmakingReportParamsLangTr:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GenerateMatchmakingReport200JSONResponseBodyFormat.
+const (
+	GenerateMatchmakingReport200JSONResponseBodyFormatHTML     GenerateMatchmakingReport200JSONResponseBodyFormat = "html"
+	GenerateMatchmakingReport200JSONResponseBodyFormatMarkdown GenerateMatchmakingReport200JSONResponseBodyFormat = "markdown"
+	GenerateMatchmakingReport200JSONResponseBodyFormatPdf      GenerateMatchmakingReport200JSONResponseBodyFormat = "pdf"
+)
+
+// Valid indicates whether the value is a known member of the GenerateMatchmakingReport200JSONResponseBodyFormat enum.
+func (e GenerateMatchmakingReport200JSONResponseBodyFormat) Valid() bool {
+	switch e {
+	case GenerateMatchmakingReport200JSONResponseBodyFormatHTML:
+		return true
+	case GenerateMatchmakingReport200JSONResponseBodyFormatMarkdown:
+		return true
+	case GenerateMatchmakingReport200JSONResponseBodyFormatPdf:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GenerateNatalReportParamsLang.
+const (
+	GenerateNatalReportParamsLangDe GenerateNatalReportParamsLang = "de"
+	GenerateNatalReportParamsLangEn GenerateNatalReportParamsLang = "en"
+	GenerateNatalReportParamsLangEs GenerateNatalReportParamsLang = "es"
+	GenerateNatalReportParamsLangFr GenerateNatalReportParamsLang = "fr"
+	GenerateNatalReportParamsLangHi GenerateNatalReportParamsLang = "hi"
+	GenerateNatalReportParamsLangPt GenerateNatalReportParamsLang = "pt"
+	GenerateNatalReportParamsLangRu GenerateNatalReportParamsLang = "ru"
+	GenerateNatalReportParamsLangTr GenerateNatalReportParamsLang = "tr"
+)
+
+// Valid indicates whether the value is a known member of the GenerateNatalReportParamsLang enum.
+func (e GenerateNatalReportParamsLang) Valid() bool {
+	switch e {
+	case GenerateNatalReportParamsLangDe:
+		return true
+	case GenerateNatalReportParamsLangEn:
+		return true
+	case GenerateNatalReportParamsLangEs:
+		return true
+	case GenerateNatalReportParamsLangFr:
+		return true
+	case GenerateNatalReportParamsLangHi:
+		return true
+	case GenerateNatalReportParamsLangPt:
+		return true
+	case GenerateNatalReportParamsLangRu:
+		return true
+	case GenerateNatalReportParamsLangTr:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GenerateNatalReport200JSONResponseBodyFormat.
+const (
+	GenerateNatalReport200JSONResponseBodyFormatHTML     GenerateNatalReport200JSONResponseBodyFormat = "html"
+	GenerateNatalReport200JSONResponseBodyFormatMarkdown GenerateNatalReport200JSONResponseBodyFormat = "markdown"
+	GenerateNatalReport200JSONResponseBodyFormatPdf      GenerateNatalReport200JSONResponseBodyFormat = "pdf"
+)
+
+// Valid indicates whether the value is a known member of the GenerateNatalReport200JSONResponseBodyFormat enum.
+func (e GenerateNatalReport200JSONResponseBodyFormat) Valid() bool {
+	switch e {
+	case GenerateNatalReport200JSONResponseBodyFormatHTML:
+		return true
+	case GenerateNatalReport200JSONResponseBodyFormatMarkdown:
+		return true
+	case GenerateNatalReport200JSONResponseBodyFormatPdf:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GenerateNumerologyReportParamsLang.
+const (
+	GenerateNumerologyReportParamsLangDe GenerateNumerologyReportParamsLang = "de"
+	GenerateNumerologyReportParamsLangEn GenerateNumerologyReportParamsLang = "en"
+	GenerateNumerologyReportParamsLangEs GenerateNumerologyReportParamsLang = "es"
+	GenerateNumerologyReportParamsLangFr GenerateNumerologyReportParamsLang = "fr"
+	GenerateNumerologyReportParamsLangHi GenerateNumerologyReportParamsLang = "hi"
+	GenerateNumerologyReportParamsLangPt GenerateNumerologyReportParamsLang = "pt"
+	GenerateNumerologyReportParamsLangRu GenerateNumerologyReportParamsLang = "ru"
+	GenerateNumerologyReportParamsLangTr GenerateNumerologyReportParamsLang = "tr"
+)
+
+// Valid indicates whether the value is a known member of the GenerateNumerologyReportParamsLang enum.
+func (e GenerateNumerologyReportParamsLang) Valid() bool {
+	switch e {
+	case GenerateNumerologyReportParamsLangDe:
+		return true
+	case GenerateNumerologyReportParamsLangEn:
+		return true
+	case GenerateNumerologyReportParamsLangEs:
+		return true
+	case GenerateNumerologyReportParamsLangFr:
+		return true
+	case GenerateNumerologyReportParamsLangHi:
+		return true
+	case GenerateNumerologyReportParamsLangPt:
+		return true
+	case GenerateNumerologyReportParamsLangRu:
+		return true
+	case GenerateNumerologyReportParamsLangTr:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GenerateNumerologyReport200JSONResponseBodyFormat.
+const (
+	GenerateNumerologyReport200JSONResponseBodyFormatHTML     GenerateNumerologyReport200JSONResponseBodyFormat = "html"
+	GenerateNumerologyReport200JSONResponseBodyFormatMarkdown GenerateNumerologyReport200JSONResponseBodyFormat = "markdown"
+	GenerateNumerologyReport200JSONResponseBodyFormatPdf      GenerateNumerologyReport200JSONResponseBodyFormat = "pdf"
+)
+
+// Valid indicates whether the value is a known member of the GenerateNumerologyReport200JSONResponseBodyFormat enum.
+func (e GenerateNumerologyReport200JSONResponseBodyFormat) Valid() bool {
+	switch e {
+	case GenerateNumerologyReport200JSONResponseBodyFormatHTML:
+		return true
+	case GenerateNumerologyReport200JSONResponseBodyFormatMarkdown:
+		return true
+	case GenerateNumerologyReport200JSONResponseBodyFormatPdf:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GenerateSynastryReportParamsLang.
+const (
+	GenerateSynastryReportParamsLangDe GenerateSynastryReportParamsLang = "de"
+	GenerateSynastryReportParamsLangEn GenerateSynastryReportParamsLang = "en"
+	GenerateSynastryReportParamsLangEs GenerateSynastryReportParamsLang = "es"
+	GenerateSynastryReportParamsLangFr GenerateSynastryReportParamsLang = "fr"
+	GenerateSynastryReportParamsLangHi GenerateSynastryReportParamsLang = "hi"
+	GenerateSynastryReportParamsLangPt GenerateSynastryReportParamsLang = "pt"
+	GenerateSynastryReportParamsLangRu GenerateSynastryReportParamsLang = "ru"
+	GenerateSynastryReportParamsLangTr GenerateSynastryReportParamsLang = "tr"
+)
+
+// Valid indicates whether the value is a known member of the GenerateSynastryReportParamsLang enum.
+func (e GenerateSynastryReportParamsLang) Valid() bool {
+	switch e {
+	case GenerateSynastryReportParamsLangDe:
+		return true
+	case GenerateSynastryReportParamsLangEn:
+		return true
+	case GenerateSynastryReportParamsLangEs:
+		return true
+	case GenerateSynastryReportParamsLangFr:
+		return true
+	case GenerateSynastryReportParamsLangHi:
+		return true
+	case GenerateSynastryReportParamsLangPt:
+		return true
+	case GenerateSynastryReportParamsLangRu:
+		return true
+	case GenerateSynastryReportParamsLangTr:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GenerateSynastryReport200JSONResponseBodyFormat.
+const (
+	GenerateSynastryReport200JSONResponseBodyFormatHTML     GenerateSynastryReport200JSONResponseBodyFormat = "html"
+	GenerateSynastryReport200JSONResponseBodyFormatMarkdown GenerateSynastryReport200JSONResponseBodyFormat = "markdown"
+	GenerateSynastryReport200JSONResponseBodyFormatPdf      GenerateSynastryReport200JSONResponseBodyFormat = "pdf"
+)
+
+// Valid indicates whether the value is a known member of the GenerateSynastryReport200JSONResponseBodyFormat enum.
+func (e GenerateSynastryReport200JSONResponseBodyFormat) Valid() bool {
+	switch e {
+	case GenerateSynastryReport200JSONResponseBodyFormatHTML:
+		return true
+	case GenerateSynastryReport200JSONResponseBodyFormatMarkdown:
+		return true
+	case GenerateSynastryReport200JSONResponseBodyFormatPdf:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GenerateTarotReportParamsLang.
+const (
+	GenerateTarotReportParamsLangDe GenerateTarotReportParamsLang = "de"
+	GenerateTarotReportParamsLangEn GenerateTarotReportParamsLang = "en"
+	GenerateTarotReportParamsLangEs GenerateTarotReportParamsLang = "es"
+	GenerateTarotReportParamsLangFr GenerateTarotReportParamsLang = "fr"
+	GenerateTarotReportParamsLangHi GenerateTarotReportParamsLang = "hi"
+	GenerateTarotReportParamsLangPt GenerateTarotReportParamsLang = "pt"
+	GenerateTarotReportParamsLangRu GenerateTarotReportParamsLang = "ru"
+	GenerateTarotReportParamsLangTr GenerateTarotReportParamsLang = "tr"
+)
+
+// Valid indicates whether the value is a known member of the GenerateTarotReportParamsLang enum.
+func (e GenerateTarotReportParamsLang) Valid() bool {
+	switch e {
+	case GenerateTarotReportParamsLangDe:
+		return true
+	case GenerateTarotReportParamsLangEn:
+		return true
+	case GenerateTarotReportParamsLangEs:
+		return true
+	case GenerateTarotReportParamsLangFr:
+		return true
+	case GenerateTarotReportParamsLangHi:
+		return true
+	case GenerateTarotReportParamsLangPt:
+		return true
+	case GenerateTarotReportParamsLangRu:
+		return true
+	case GenerateTarotReportParamsLangTr:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GenerateTarotReport200JSONResponseBodyFormat.
+const (
+	GenerateTarotReport200JSONResponseBodyFormatHTML     GenerateTarotReport200JSONResponseBodyFormat = "html"
+	GenerateTarotReport200JSONResponseBodyFormatMarkdown GenerateTarotReport200JSONResponseBodyFormat = "markdown"
+	GenerateTarotReport200JSONResponseBodyFormatPdf      GenerateTarotReport200JSONResponseBodyFormat = "pdf"
+)
+
+// Valid indicates whether the value is a known member of the GenerateTarotReport200JSONResponseBodyFormat enum.
+func (e GenerateTarotReport200JSONResponseBodyFormat) Valid() bool {
+	switch e {
+	case GenerateTarotReport200JSONResponseBodyFormatHTML:
+		return true
+	case GenerateTarotReport200JSONResponseBodyFormatMarkdown:
+		return true
+	case GenerateTarotReport200JSONResponseBodyFormatPdf:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GenerateYearlyForecastReportParamsLang.
+const (
+	GenerateYearlyForecastReportParamsLangDe GenerateYearlyForecastReportParamsLang = "de"
+	GenerateYearlyForecastReportParamsLangEn GenerateYearlyForecastReportParamsLang = "en"
+	GenerateYearlyForecastReportParamsLangEs GenerateYearlyForecastReportParamsLang = "es"
+	GenerateYearlyForecastReportParamsLangFr GenerateYearlyForecastReportParamsLang = "fr"
+	GenerateYearlyForecastReportParamsLangHi GenerateYearlyForecastReportParamsLang = "hi"
+	GenerateYearlyForecastReportParamsLangPt GenerateYearlyForecastReportParamsLang = "pt"
+	GenerateYearlyForecastReportParamsLangRu GenerateYearlyForecastReportParamsLang = "ru"
+	GenerateYearlyForecastReportParamsLangTr GenerateYearlyForecastReportParamsLang = "tr"
+)
+
+// Valid indicates whether the value is a known member of the GenerateYearlyForecastReportParamsLang enum.
+func (e GenerateYearlyForecastReportParamsLang) Valid() bool {
+	switch e {
+	case GenerateYearlyForecastReportParamsLangDe:
+		return true
+	case GenerateYearlyForecastReportParamsLangEn:
+		return true
+	case GenerateYearlyForecastReportParamsLangEs:
+		return true
+	case GenerateYearlyForecastReportParamsLangFr:
+		return true
+	case GenerateYearlyForecastReportParamsLangHi:
+		return true
+	case GenerateYearlyForecastReportParamsLangPt:
+		return true
+	case GenerateYearlyForecastReportParamsLangRu:
+		return true
+	case GenerateYearlyForecastReportParamsLangTr:
+		return true
+	default:
+		return false
+	}
+}
+
+// Defines values for GenerateYearlyForecastReport200JSONResponseBodyFormat.
+const (
+	GenerateYearlyForecastReport200JSONResponseBodyFormatHTML     GenerateYearlyForecastReport200JSONResponseBodyFormat = "html"
+	GenerateYearlyForecastReport200JSONResponseBodyFormatMarkdown GenerateYearlyForecastReport200JSONResponseBodyFormat = "markdown"
+	GenerateYearlyForecastReport200JSONResponseBodyFormatPdf      GenerateYearlyForecastReport200JSONResponseBodyFormat = "pdf"
+)
+
+// Valid indicates whether the value is a known member of the GenerateYearlyForecastReport200JSONResponseBodyFormat enum.
+func (e GenerateYearlyForecastReport200JSONResponseBodyFormat) Valid() bool {
+	switch e {
+	case GenerateYearlyForecastReport200JSONResponseBodyFormatHTML:
+		return true
+	case GenerateYearlyForecastReport200JSONResponseBodyFormatMarkdown:
+		return true
+	case GenerateYearlyForecastReport200JSONResponseBodyFormatPdf:
 		return true
 	default:
 		return false
@@ -30097,6 +31720,119 @@ type BasicTrigram struct {
 	Symbol string `json:"symbol"`
 }
 
+// BaziReportRequest defines model for BaziReportRequest.
+type BaziReportRequest struct {
+	// Branding White-label branding for this report. Every field is optional and nothing is stored: send it with each request.
+	Branding *struct {
+		// Colors Brand colours. Each one left out keeps the theme colour.
+		Colors *struct {
+			// Accent Rules and highlights, as a six digit hex colour.
+			Accent *string `json:"accent,omitempty"`
+
+			// Primary Headings and table headers, as a six digit hex colour.
+			Primary *string `json:"primary,omitempty"`
+		} `json:"colors,omitempty"`
+
+		// Email Contact email printed on the cover.
+		Email *openapi_types.Email `json:"email,omitempty"`
+
+		// Font Font pair for headings and text, the same pairs the RoxyAPI UI components take. Left out, the theme typeface is used.
+		Font *BaziReportRequestBrandingFont `json:"font,omitempty"`
+
+		// Footer Line printed at the foot of every page, such as a disclaimer or a booking note.
+		Footer *string `json:"footer,omitempty"`
+
+		// Logo HTTPS URL of a PNG, JPEG, WebP or SVG logo under 1 MB, printed on the cover. It is fetched for this report only and never stored.
+		Logo *string `json:"logo,omitempty"`
+
+		// Name Business or practitioner name printed on the cover and in the running header of every page.
+		Name *string `json:"name,omitempty"`
+
+		// Theme Design preset shared with the RoxyAPI UI components: colours, typefaces and spacing. Left out, the neutral default is used.
+		Theme *BaziReportRequestBrandingTheme `json:"theme,omitempty"`
+
+		// Website Website printed on the cover.
+		Website *string `json:"website,omitempty"`
+	} `json:"branding,omitempty"`
+
+	// Date Birth date in YYYY-MM-DD format. Sets the year, month and day pillars. The year pillar turns at Beginning of Spring rather than on 1 January, and the month pillar turns at each of the twelve minor solar terms rather than at a calendar month boundary.
+	Date openapi_types.Date `json:"date"`
+
+	// DayBoundary Which instant starts the sexagenary DAY, which only matters for a birth between 23:00 and 23:59. "midnight" is the classical position of the Ming compendium San Ming Tong Hui: the day turns at 00:00 and 23:00 to 23:59 is the late zi hour of the day that is ending, so the hour stem is taken from that day. "early-zi" turns the whole day at 23:00, the practice in Hong Kong, Taiwan and much of South East Asia. "split-zi" is the compromise most software implements and the default here: the day still turns at 00:00, but the hour stem is taken from the next day. The three give three different answers for a late-evening birth and identical answers for every other birth.
+	DayBoundary *BaziReportRequestDayBoundary `json:"dayBoundary,omitempty"`
+
+	// Format Output format: pdf (a print-ready PDF, base64 in the pdf field), html (one self-contained HTML document in the html field) or markdown (CommonMark in the markdown field).
+	Format *BaziReportRequestFormat `json:"format,omitempty"`
+
+	// Gender Subject sex, used only to pick the luck-pillar direction: a male born in a yang-stem year and a female born in a yin-stem year run forward through the sexagenary cycle, and the other two combinations run backward. It affects nothing else in the response.
+	Gender BaziReportRequestGender `json:"gender"`
+
+	// HourClock Which clock the day boundary and the hour branch are read from, so a correction that carries a birth across midnight moves the day pillar with the hour. "clock" is civil time exactly as a birth certificate records it, which is what most calculators use and the default here. "local-mean" shifts to the mean sun over the birth longitude, a correction of up to 59 minutes at the edge of a wide time zone. "solar" adds the equation of time on top of that, up to a further 16 minutes. Both non-civil options need "longitude" in the request and return 400 without it.
+	HourClock *BaziReportRequestHourClock `json:"hourClock,omitempty"`
+
+	// Latitude Birth latitude in decimal degrees. Accepted for consistency with the other birth-data endpoints and does not affect any part of a BaZi chart. Defaults to 0.
+	Latitude *float32 `json:"latitude,omitempty"`
+
+	// Longitude Birth longitude in decimal degrees. Positive is East, negative is West. Required when hourClock is "local-mean" or "solar", which shift the hour branch to the sun over the birth place; omitting it in either case returns 400. Ignored when hourClock is "clock".
+	Longitude *float32 `json:"longitude,omitempty"`
+
+	// Page Page layout of the PDF.
+	Page *struct {
+		// Size Paper size of the PDF. Ignored by html and markdown.
+		Size *BaziReportRequestPageSize `json:"size,omitempty"`
+	} `json:"page,omitempty"`
+
+	// Readings Whether the report carries its written readings. false keeps the charts, tables and key figures and leaves out every interpretation, for a chart-only report at the same cost.
+	Readings *bool `json:"readings,omitempty"`
+
+	// Time Birth time in 24-hour HH:MM:SS format. Sets the hour pillar, which is one of the four and carries the whole picture of later life and offspring. Each Earthly Branch covers two hours, so a birth within a few minutes of an odd hour can land in either. All four pillars are read in the local clock of the birth, and the day boundary is applied in that same clock; only the lunisolar calendar date itself is a world constant, fixed at UTC plus 8 so one instant has one Chinese date everywhere.
+	Time string `json:"time"`
+
+	// Timezone IANA name (e.g. "America/New_York", "Europe/London", "UTC"), decimal hours (e.g. -5 for EST, 1 for CET), or a fixed UTC offset (e.g. "-05:00", "+01:00"). Prefer the IANA name: it is resolved to the offset in force at the birth date and time, historical daylight-saving rules included, while a fixed offset or decimal is taken literally and will be wrong if it does not match the daylight-saving state at that moment. On a transition day a time in the repeated hour is read as its first occurrence and a time in the skipped hour is moved forward past the gap. Invalid timezones return 400 with a validation error.
+	Timezone BaziReportRequest_Timezone `json:"timezone"`
+
+	// Year Gregorian year the year-ahead section reads against the natal chart, and the first of the ten annual pillars the luck pillar section lists.
+	Year int `json:"year"`
+
+	// YearBoundary Which instant starts the sexagenary YEAR. "li-chun" is Beginning of Spring, around 4 February, and is the classical rule every BaZi text uses, so it is the default on this endpoint. "lunar-new-year" is the folk rule people mean when they say which animal they are, and it falls between late January and late February. The two disagree for any birth in the weeks between them: 14 February 2026 is a Wood Snake year under lunar-new-year and a Fire Horse year under li-chun.
+	YearBoundary *BaziReportRequestYearBoundary `json:"yearBoundary,omitempty"`
+}
+
+// BaziReportRequestBrandingFont Font pair for headings and text, the same pairs the RoxyAPI UI components take. Left out, the theme typeface is used.
+type BaziReportRequestBrandingFont string
+
+// BaziReportRequestBrandingTheme Design preset shared with the RoxyAPI UI components: colours, typefaces and spacing. Left out, the neutral default is used.
+type BaziReportRequestBrandingTheme string
+
+// BaziReportRequestDayBoundary Which instant starts the sexagenary DAY, which only matters for a birth between 23:00 and 23:59. "midnight" is the classical position of the Ming compendium San Ming Tong Hui: the day turns at 00:00 and 23:00 to 23:59 is the late zi hour of the day that is ending, so the hour stem is taken from that day. "early-zi" turns the whole day at 23:00, the practice in Hong Kong, Taiwan and much of South East Asia. "split-zi" is the compromise most software implements and the default here: the day still turns at 00:00, but the hour stem is taken from the next day. The three give three different answers for a late-evening birth and identical answers for every other birth.
+type BaziReportRequestDayBoundary string
+
+// BaziReportRequestFormat Output format: pdf (a print-ready PDF, base64 in the pdf field), html (one self-contained HTML document in the html field) or markdown (CommonMark in the markdown field).
+type BaziReportRequestFormat string
+
+// BaziReportRequestGender Subject sex, used only to pick the luck-pillar direction: a male born in a yang-stem year and a female born in a yin-stem year run forward through the sexagenary cycle, and the other two combinations run backward. It affects nothing else in the response.
+type BaziReportRequestGender string
+
+// BaziReportRequestHourClock Which clock the day boundary and the hour branch are read from, so a correction that carries a birth across midnight moves the day pillar with the hour. "clock" is civil time exactly as a birth certificate records it, which is what most calculators use and the default here. "local-mean" shifts to the mean sun over the birth longitude, a correction of up to 59 minutes at the edge of a wide time zone. "solar" adds the equation of time on top of that, up to a further 16 minutes. Both non-civil options need "longitude" in the request and return 400 without it.
+type BaziReportRequestHourClock string
+
+// BaziReportRequestPageSize Paper size of the PDF. Ignored by html and markdown.
+type BaziReportRequestPageSize string
+
+// BaziReportRequestTimezone0 defines model for BaziReportRequest.Timezone.0.
+type BaziReportRequestTimezone0 = float32
+
+// BaziReportRequestTimezone1 defines model for BaziReportRequest.Timezone.1.
+type BaziReportRequestTimezone1 = string
+
+// BaziReportRequest_Timezone IANA name (e.g. "America/New_York", "Europe/London", "UTC"), decimal hours (e.g. -5 for EST, 1 for CET), or a fixed UTC offset (e.g. "-05:00", "+01:00"). Prefer the IANA name: it is resolved to the offset in force at the birth date and time, historical daylight-saving rules included, while a fixed offset or decimal is taken literally and will be wrong if it does not match the daylight-saving state at that moment. On a transition day a time in the repeated hour is read as its first occurrence and a time in the skipped hour is moved forward past the gap. Invalid timezones return 400 with a validation error.
+type BaziReportRequest_Timezone struct {
+	union json.RawMessage
+}
+
+// BaziReportRequestYearBoundary Which instant starts the sexagenary YEAR. "li-chun" is Beginning of Spring, around 4 February, and is the classical rule every BaZi text uses, so it is the default on this endpoint. "lunar-new-year" is the folk rule people mean when they say which animal they are, and it falls between late January and late February. The two disagree for any birth in the weeks between them: 14 February 2026 is a Wood Snake year under lunar-new-year and a Fire Horse year under li-chun.
+type BaziReportRequestYearBoundary string
+
 // BhavChalitRequest defines model for BhavChalitRequest.
 type BhavChalitRequest struct {
 	// Ayanamsa Sidereal frame (ayanamsa) the chart is cast in. "lahiri" is Lahiri/Chitrapaksha, the traditional Vedic standard used by most software, and is the default. "raman" is the B.V. Raman ayanamsa from Hindu Predictive Astrology, about 1.45 degrees below Lahiri. "kp-newcomb" and "kp-old" are the two Krishnamurti Paddhati frames. "custom" takes your own value in degrees via ayanamsaValue, for reconciling exactly against a specific reference program. The frame rotates the whole zodiac, so a graha sitting within 1.45 degrees of a boundary can change rashi or nakshatra when you switch: pick the one your reference software uses and keep it.
@@ -32290,6 +34026,98 @@ type HousesResponse struct {
 	Timezone float32 `json:"timezone"`
 }
 
+// HumanDesignReportRequest defines model for HumanDesignReportRequest.
+type HumanDesignReportRequest struct {
+	// Branding White-label branding for this report. Every field is optional and nothing is stored: send it with each request.
+	Branding *struct {
+		// Colors Brand colours. Each one left out keeps the theme colour.
+		Colors *struct {
+			// Accent Rules and highlights, as a six digit hex colour.
+			Accent *string `json:"accent,omitempty"`
+
+			// Primary Headings and table headers, as a six digit hex colour.
+			Primary *string `json:"primary,omitempty"`
+		} `json:"colors,omitempty"`
+
+		// Email Contact email printed on the cover.
+		Email *openapi_types.Email `json:"email,omitempty"`
+
+		// Font Font pair for headings and text, the same pairs the RoxyAPI UI components take. Left out, the theme typeface is used.
+		Font *HumanDesignReportRequestBrandingFont `json:"font,omitempty"`
+
+		// Footer Line printed at the foot of every page, such as a disclaimer or a booking note.
+		Footer *string `json:"footer,omitempty"`
+
+		// Logo HTTPS URL of a PNG, JPEG, WebP or SVG logo under 1 MB, printed on the cover. It is fetched for this report only and never stored.
+		Logo *string `json:"logo,omitempty"`
+
+		// Name Business or practitioner name printed on the cover and in the running header of every page.
+		Name *string `json:"name,omitempty"`
+
+		// Theme Design preset shared with the RoxyAPI UI components: colours, typefaces and spacing. Left out, the neutral default is used.
+		Theme *HumanDesignReportRequestBrandingTheme `json:"theme,omitempty"`
+
+		// Website Website printed on the cover.
+		Website *string `json:"website,omitempty"`
+	} `json:"branding,omitempty"`
+
+	// Date Birth date in YYYY-MM-DD format. The anchor for both the Personality activations at birth and the Design activations 88 degrees of solar arc earlier.
+	Date openapi_types.Date `json:"date"`
+
+	// Format Output format: pdf (a print-ready PDF, base64 in the pdf field), html (one self-contained HTML document in the html field) or markdown (CommonMark in the markdown field).
+	Format *HumanDesignReportRequestFormat `json:"format,omitempty"`
+
+	// Latitude Birth latitude in decimal degrees. Optional and does not affect the bodygraph, which depends only on ecliptic longitudes. Defaults to 0.
+	Latitude *float32 `json:"latitude,omitempty"`
+
+	// Longitude Birth longitude in decimal degrees. Optional and does not affect the bodygraph. Defaults to 0.
+	Longitude *float32 `json:"longitude,omitempty"`
+
+	// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node activations. True is what professional Human Design software uses (HumanDesign.ai, Total Human Design) and is the value RoxyAPI verifies against, so leave it unset for a standard chart. It matters only when a node sits on a gate boundary, where the choice moves a node gate. Because a gate can be half of a channel, that can change the completed channels and, with them, whether a center reads defined or open, plus the definition, authority, profile or type. A chart where only one center disagrees is the usual shape, since the type and profile often survive unchanged. If another calculator disagrees on any of those, it is almost certainly using the mean node: pass "mean" to match it. Defaults to "true".
+	NodeType *HumanDesignReportRequestNodeType `json:"nodeType,omitempty"`
+
+	// Page Page layout of the PDF.
+	Page *struct {
+		// Size Paper size of the PDF. Ignored by html and markdown.
+		Size *HumanDesignReportRequestPageSize `json:"size,omitempty"`
+	} `json:"page,omitempty"`
+
+	// Readings Whether the report carries its written readings. false keeps the charts, tables and key figures and leaves out every interpretation, for a chart-only report at the same cost.
+	Readings *bool `json:"readings,omitempty"`
+
+	// Time Birth time in 24-hour HH:MM:SS format. Precision matters: the profile lines and gate boundaries shift with the exact minute of birth.
+	Time string `json:"time"`
+
+	// Timezone IANA name (e.g. "America/New_York", "Europe/London", "UTC"), decimal hours (e.g. -5 for EST, 1 for CET), or a fixed UTC offset (e.g. "-05:00", "+01:00"). Prefer the IANA name: it is resolved to the offset in force at the birth date and time, historical daylight-saving rules included, while a fixed offset or decimal is taken literally and will be wrong if it does not match the daylight-saving state at that moment. On a transition day a time in the repeated hour is read as its first occurrence and a time in the skipped hour is moved forward past the gap. Invalid timezones return 400 with a validation error.
+	Timezone HumanDesignReportRequest_Timezone `json:"timezone"`
+}
+
+// HumanDesignReportRequestBrandingFont Font pair for headings and text, the same pairs the RoxyAPI UI components take. Left out, the theme typeface is used.
+type HumanDesignReportRequestBrandingFont string
+
+// HumanDesignReportRequestBrandingTheme Design preset shared with the RoxyAPI UI components: colours, typefaces and spacing. Left out, the neutral default is used.
+type HumanDesignReportRequestBrandingTheme string
+
+// HumanDesignReportRequestFormat Output format: pdf (a print-ready PDF, base64 in the pdf field), html (one self-contained HTML document in the html field) or markdown (CommonMark in the markdown field).
+type HumanDesignReportRequestFormat string
+
+// HumanDesignReportRequestNodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node activations. True is what professional Human Design software uses (HumanDesign.ai, Total Human Design) and is the value RoxyAPI verifies against, so leave it unset for a standard chart. It matters only when a node sits on a gate boundary, where the choice moves a node gate. Because a gate can be half of a channel, that can change the completed channels and, with them, whether a center reads defined or open, plus the definition, authority, profile or type. A chart where only one center disagrees is the usual shape, since the type and profile often survive unchanged. If another calculator disagrees on any of those, it is almost certainly using the mean node: pass "mean" to match it. Defaults to "true".
+type HumanDesignReportRequestNodeType string
+
+// HumanDesignReportRequestPageSize Paper size of the PDF. Ignored by html and markdown.
+type HumanDesignReportRequestPageSize string
+
+// HumanDesignReportRequestTimezone0 defines model for HumanDesignReportRequest.Timezone.0.
+type HumanDesignReportRequestTimezone0 = float32
+
+// HumanDesignReportRequestTimezone1 defines model for HumanDesignReportRequest.Timezone.1.
+type HumanDesignReportRequestTimezone1 = string
+
+// HumanDesignReportRequest_Timezone IANA name (e.g. "America/New_York", "Europe/London", "UTC"), decimal hours (e.g. -5 for EST, 1 for CET), or a fixed UTC offset (e.g. "-05:00", "+01:00"). Prefer the IANA name: it is resolved to the offset in force at the birth date and time, historical daylight-saving rules included, while a fixed offset or decimal is taken literally and will be wrong if it does not match the daylight-saving state at that moment. On a transition day a time in the repeated hour is read as its first occurrence and a time in the skipped hour is moved forward past the gap. Invalid timezones return 400 with a validation error.
+type HumanDesignReportRequest_Timezone struct {
+	union json.RawMessage
+}
+
 // Interpretation defines model for Interpretation.
 type Interpretation struct {
 	// Advice Practical wisdom and actionable advice from this hexagram for daily life application.
@@ -33968,6 +35796,101 @@ type KalsarpaResponse struct {
 // KalsarpaResponseSeverity Kalsarpa dosha intensity based on Rahu-Ketu house positions
 type KalsarpaResponseSeverity string
 
+// KundliReportRequest defines model for KundliReportRequest.
+type KundliReportRequest struct {
+	// Ayanamsa Sidereal frame (ayanamsa) the chart is cast in. "lahiri" is Lahiri/Chitrapaksha, the traditional Vedic standard used by most software, and is the default. "raman" is the B.V. Raman ayanamsa from Hindu Predictive Astrology, about 1.45 degrees below Lahiri. "kp-newcomb" and "kp-old" are the two Krishnamurti Paddhati frames. "custom" takes your own value in degrees via ayanamsaValue, for reconciling exactly against a specific reference program. The frame rotates the whole zodiac, so a graha sitting within 1.45 degrees of a boundary can change rashi or nakshatra when you switch: pick the one your reference software uses and keep it.
+	Ayanamsa *KundliReportRequestAyanamsa `json:"ayanamsa,omitempty"`
+
+	// AyanamsaValue Custom ayanamsa value in degrees. When provided, overrides the computed ayanamsa from the selected type. Use for testing with specific ayanamsa values or matching a particular reference source.
+	AyanamsaValue *float32 `json:"ayanamsaValue,omitempty"`
+
+	// Branding White-label branding for this report. Every field is optional and nothing is stored: send it with each request.
+	Branding *struct {
+		// Colors Brand colours. Each one left out keeps the theme colour.
+		Colors *struct {
+			// Accent Rules and highlights, as a six digit hex colour.
+			Accent *string `json:"accent,omitempty"`
+
+			// Primary Headings and table headers, as a six digit hex colour.
+			Primary *string `json:"primary,omitempty"`
+		} `json:"colors,omitempty"`
+
+		// Email Contact email printed on the cover.
+		Email *openapi_types.Email `json:"email,omitempty"`
+
+		// Font Font pair for headings and text, the same pairs the RoxyAPI UI components take. Left out, the theme typeface is used.
+		Font *KundliReportRequestBrandingFont `json:"font,omitempty"`
+
+		// Footer Line printed at the foot of every page, such as a disclaimer or a booking note.
+		Footer *string `json:"footer,omitempty"`
+
+		// Logo HTTPS URL of a PNG, JPEG, WebP or SVG logo under 1 MB, printed on the cover. It is fetched for this report only and never stored.
+		Logo *string `json:"logo,omitempty"`
+
+		// Name Business or practitioner name printed on the cover and in the running header of every page.
+		Name *string `json:"name,omitempty"`
+
+		// Theme Design preset shared with the RoxyAPI UI components: colours, typefaces and spacing. Left out, the neutral default is used.
+		Theme *KundliReportRequestBrandingTheme `json:"theme,omitempty"`
+
+		// Website Website printed on the cover.
+		Website *string `json:"website,omitempty"`
+	} `json:"branding,omitempty"`
+
+	// Date Birth date in YYYY-MM-DD format. Date determines planetary positions and nakshatra calculations for Vedic kundli (janam patri). Accurate birth date is essential for dashas, yoga calculations, and divisional charts (vargas).
+	Date openapi_types.Date `json:"date"`
+
+	// Format Output format: pdf (a print-ready PDF, base64 in the pdf field), html (one self-contained HTML document in the html field) or markdown (CommonMark in the markdown field).
+	Format *KundliReportRequestFormat `json:"format,omitempty"`
+
+	// Latitude Birth location latitude in decimal degrees. Location determines local sidereal time for Lagna calculation and affects bhava (house) cusps. Example: Delhi 28.6139, Mumbai 19.0760, Kathmandu 27.7172.
+	Latitude float32 `json:"latitude"`
+
+	// Longitude Birth location longitude in decimal degrees. Affects local time calculations and ayanamsha adjustments. Example: Delhi 77.2090, Mumbai 72.8777, Kathmandu 85.3240.
+	Longitude float32 `json:"longitude"`
+
+	// Page Page layout of the PDF.
+	Page *struct {
+		// Size Paper size of the PDF. Ignored by html and markdown.
+		Size *KundliReportRequestPageSize `json:"size,omitempty"`
+	} `json:"page,omitempty"`
+
+	// Readings Whether the report carries its written readings. false keeps the charts, tables and key figures and leaves out every interpretation, for a chart-only report at the same cost.
+	Readings *bool `json:"readings,omitempty"`
+
+	// Time Birth time in 24-hour HH:MM:SS format. Time is CRITICAL for Lagna (Ascendant) calculation and house divisions. It changes every two hours roughly. Even minutes matter for accurate nakshatra pada and divisional chart (D9, D10) calculations. Without exact time, Lagna and house-based predictions will be incorrect.
+	Time string `json:"time"`
+
+	// Timezone Timezone: an IANA name (e.g. "America/New_York", "Europe/London", or `cities[0].timezone` from /location/search) or decimal hours from UTC (e.g. -5 for EST, 5.5 for IST). An IANA name is resolved to the offset in force at the given date and time. Defaults to 5.5.
+	Timezone *KundliReportRequest_Timezone `json:"timezone,omitempty"`
+}
+
+// KundliReportRequestAyanamsa Sidereal frame (ayanamsa) the chart is cast in. "lahiri" is Lahiri/Chitrapaksha, the traditional Vedic standard used by most software, and is the default. "raman" is the B.V. Raman ayanamsa from Hindu Predictive Astrology, about 1.45 degrees below Lahiri. "kp-newcomb" and "kp-old" are the two Krishnamurti Paddhati frames. "custom" takes your own value in degrees via ayanamsaValue, for reconciling exactly against a specific reference program. The frame rotates the whole zodiac, so a graha sitting within 1.45 degrees of a boundary can change rashi or nakshatra when you switch: pick the one your reference software uses and keep it.
+type KundliReportRequestAyanamsa string
+
+// KundliReportRequestBrandingFont Font pair for headings and text, the same pairs the RoxyAPI UI components take. Left out, the theme typeface is used.
+type KundliReportRequestBrandingFont string
+
+// KundliReportRequestBrandingTheme Design preset shared with the RoxyAPI UI components: colours, typefaces and spacing. Left out, the neutral default is used.
+type KundliReportRequestBrandingTheme string
+
+// KundliReportRequestFormat Output format: pdf (a print-ready PDF, base64 in the pdf field), html (one self-contained HTML document in the html field) or markdown (CommonMark in the markdown field).
+type KundliReportRequestFormat string
+
+// KundliReportRequestPageSize Paper size of the PDF. Ignored by html and markdown.
+type KundliReportRequestPageSize string
+
+// KundliReportRequestTimezone0 defines model for KundliReportRequest.Timezone.0.
+type KundliReportRequestTimezone0 = float32
+
+// KundliReportRequestTimezone1 defines model for KundliReportRequest.Timezone.1.
+type KundliReportRequestTimezone1 = string
+
+// KundliReportRequest_Timezone Timezone: an IANA name (e.g. "America/New_York", "Europe/London", or `cities[0].timezone` from /location/search) or decimal hours from UTC (e.g. -5 for EST, 5.5 for IST). An IANA name is resolved to the offset in force at the given date and time. Defaults to 5.5.
+type KundliReportRequest_Timezone struct {
+	union json.RawMessage
+}
+
 // LilithRequest defines model for LilithRequest.
 type LilithRequest struct {
 	// Date Birth date in YYYY-MM-DD format. Determines planetary positions for the specific calendar day.
@@ -34223,6 +36146,133 @@ type ManglikResponse struct {
 
 // ManglikResponseSeverity Manglik dosha intensity, Mild (houses 2, 12), Moderate (houses 4, 7), Severe (houses 1, 8)
 type ManglikResponseSeverity string
+
+// MatchmakingReportRequest defines model for MatchmakingReportRequest.
+type MatchmakingReportRequest struct {
+	// Ayanamsa Sidereal frame (ayanamsa) the chart is cast in. "lahiri" is Lahiri/Chitrapaksha, the traditional Vedic standard used by most software, and is the default. "raman" is the B.V. Raman ayanamsa from Hindu Predictive Astrology, about 1.45 degrees below Lahiri. "kp-newcomb" and "kp-old" are the two Krishnamurti Paddhati frames. "custom" takes your own value in degrees via ayanamsaValue, for reconciling exactly against a specific reference program. The frame rotates the whole zodiac, so a graha sitting within 1.45 degrees of a boundary can change rashi or nakshatra when you switch: pick the one your reference software uses and keep it.
+	Ayanamsa *MatchmakingReportRequestAyanamsa `json:"ayanamsa,omitempty"`
+
+	// AyanamsaValue Custom ayanamsa value in degrees. When provided, overrides the computed ayanamsa from the selected type. Use for testing with specific ayanamsa values or matching a particular reference source.
+	AyanamsaValue *float32 `json:"ayanamsaValue,omitempty"`
+
+	// Branding White-label branding for this report. Every field is optional and nothing is stored: send it with each request.
+	Branding *struct {
+		// Colors Brand colours. Each one left out keeps the theme colour.
+		Colors *struct {
+			// Accent Rules and highlights, as a six digit hex colour.
+			Accent *string `json:"accent,omitempty"`
+
+			// Primary Headings and table headers, as a six digit hex colour.
+			Primary *string `json:"primary,omitempty"`
+		} `json:"colors,omitempty"`
+
+		// Email Contact email printed on the cover.
+		Email *openapi_types.Email `json:"email,omitempty"`
+
+		// Font Font pair for headings and text, the same pairs the RoxyAPI UI components take. Left out, the theme typeface is used.
+		Font *MatchmakingReportRequestBrandingFont `json:"font,omitempty"`
+
+		// Footer Line printed at the foot of every page, such as a disclaimer or a booking note.
+		Footer *string `json:"footer,omitempty"`
+
+		// Logo HTTPS URL of a PNG, JPEG, WebP or SVG logo under 1 MB, printed on the cover. It is fetched for this report only and never stored.
+		Logo *string `json:"logo,omitempty"`
+
+		// Name Business or practitioner name printed on the cover and in the running header of every page.
+		Name *string `json:"name,omitempty"`
+
+		// Theme Design preset shared with the RoxyAPI UI components: colours, typefaces and spacing. Left out, the neutral default is used.
+		Theme *MatchmakingReportRequestBrandingTheme `json:"theme,omitempty"`
+
+		// Website Website printed on the cover.
+		Website *string `json:"website,omitempty"`
+	} `json:"branding,omitempty"`
+
+	// Format Output format: pdf (a print-ready PDF, base64 in the pdf field), html (one self-contained HTML document in the html field) or markdown (CommonMark in the markdown field).
+	Format *MatchmakingReportRequestFormat `json:"format,omitempty"`
+
+	// Page Page layout of the PDF.
+	Page *struct {
+		// Size Paper size of the PDF. Ignored by html and markdown.
+		Size *MatchmakingReportRequestPageSize `json:"size,omitempty"`
+	} `json:"page,omitempty"`
+
+	// Person1 Birth data of the first person (typically the boy/groom in traditional Ashtakoot matching). Date, time, and location determine Moon nakshatra for koota scoring.
+	Person1 struct {
+		// Date Birth date in YYYY-MM-DD format. Date determines planetary positions and nakshatra calculations for Vedic kundli (janam patri). Accurate birth date is essential for dashas, yoga calculations, and divisional charts (vargas).
+		Date openapi_types.Date `json:"date"`
+
+		// Latitude Birth location latitude in decimal degrees. Location determines local sidereal time for Lagna calculation and affects bhava (house) cusps. Example: Delhi 28.6139, Mumbai 19.0760, Kathmandu 27.7172.
+		Latitude float32 `json:"latitude"`
+
+		// Longitude Birth location longitude in decimal degrees. Affects local time calculations and ayanamsha adjustments. Example: Delhi 77.2090, Mumbai 72.8777, Kathmandu 85.3240.
+		Longitude float32 `json:"longitude"`
+
+		// Time Birth time in 24-hour HH:MM:SS format. Time is CRITICAL for Lagna (Ascendant) calculation and house divisions. It changes every two hours roughly. Even minutes matter for accurate nakshatra pada and divisional chart (D9, D10) calculations. Without exact time, Lagna and house-based predictions will be incorrect.
+		Time string `json:"time"`
+
+		// Timezone Timezone: an IANA name (e.g. "America/New_York", "Europe/London", or `cities[0].timezone` from /location/search) or decimal hours from UTC (e.g. -5 for EST, 5.5 for IST). An IANA name is resolved to the offset in force at the given date and time. Defaults to 5.5.
+		Timezone *MatchmakingReportRequest_Person1_Timezone `json:"timezone,omitempty"`
+	} `json:"person1"`
+
+	// Person2 Birth data of the second person (typically the girl/bride in traditional Ashtakoot matching). Moon nakshatra compared against person 1 across all 8 kootas.
+	Person2 struct {
+		// Date Birth date in YYYY-MM-DD format. Date determines planetary positions and nakshatra calculations for Vedic kundli (janam patri). Accurate birth date is essential for dashas, yoga calculations, and divisional charts (vargas).
+		Date openapi_types.Date `json:"date"`
+
+		// Latitude Birth location latitude in decimal degrees. Location determines local sidereal time for Lagna calculation and affects bhava (house) cusps. Example: Delhi 28.6139, Mumbai 19.0760, Kathmandu 27.7172.
+		Latitude float32 `json:"latitude"`
+
+		// Longitude Birth location longitude in decimal degrees. Affects local time calculations and ayanamsha adjustments. Example: Delhi 77.2090, Mumbai 72.8777, Kathmandu 85.3240.
+		Longitude float32 `json:"longitude"`
+
+		// Time Birth time in 24-hour HH:MM:SS format. Time is CRITICAL for Lagna (Ascendant) calculation and house divisions. It changes every two hours roughly. Even minutes matter for accurate nakshatra pada and divisional chart (D9, D10) calculations. Without exact time, Lagna and house-based predictions will be incorrect.
+		Time string `json:"time"`
+
+		// Timezone Timezone: an IANA name (e.g. "America/New_York", "Europe/London", or `cities[0].timezone` from /location/search) or decimal hours from UTC (e.g. -5 for EST, 5.5 for IST). An IANA name is resolved to the offset in force at the given date and time. Defaults to 5.5.
+		Timezone *MatchmakingReportRequest_Person2_Timezone `json:"timezone,omitempty"`
+	} `json:"person2"`
+
+	// Readings Whether the report carries its written readings. false keeps the charts, tables and key figures and leaves out every interpretation, for a chart-only report at the same cost.
+	Readings *bool `json:"readings,omitempty"`
+}
+
+// MatchmakingReportRequestAyanamsa Sidereal frame (ayanamsa) the chart is cast in. "lahiri" is Lahiri/Chitrapaksha, the traditional Vedic standard used by most software, and is the default. "raman" is the B.V. Raman ayanamsa from Hindu Predictive Astrology, about 1.45 degrees below Lahiri. "kp-newcomb" and "kp-old" are the two Krishnamurti Paddhati frames. "custom" takes your own value in degrees via ayanamsaValue, for reconciling exactly against a specific reference program. The frame rotates the whole zodiac, so a graha sitting within 1.45 degrees of a boundary can change rashi or nakshatra when you switch: pick the one your reference software uses and keep it.
+type MatchmakingReportRequestAyanamsa string
+
+// MatchmakingReportRequestBrandingFont Font pair for headings and text, the same pairs the RoxyAPI UI components take. Left out, the theme typeface is used.
+type MatchmakingReportRequestBrandingFont string
+
+// MatchmakingReportRequestBrandingTheme Design preset shared with the RoxyAPI UI components: colours, typefaces and spacing. Left out, the neutral default is used.
+type MatchmakingReportRequestBrandingTheme string
+
+// MatchmakingReportRequestFormat Output format: pdf (a print-ready PDF, base64 in the pdf field), html (one self-contained HTML document in the html field) or markdown (CommonMark in the markdown field).
+type MatchmakingReportRequestFormat string
+
+// MatchmakingReportRequestPageSize Paper size of the PDF. Ignored by html and markdown.
+type MatchmakingReportRequestPageSize string
+
+// MatchmakingReportRequestPerson1Timezone0 defines model for MatchmakingReportRequest.Person1.Timezone.0.
+type MatchmakingReportRequestPerson1Timezone0 = float32
+
+// MatchmakingReportRequestPerson1Timezone1 defines model for MatchmakingReportRequest.Person1.Timezone.1.
+type MatchmakingReportRequestPerson1Timezone1 = string
+
+// MatchmakingReportRequest_Person1_Timezone Timezone: an IANA name (e.g. "America/New_York", "Europe/London", or `cities[0].timezone` from /location/search) or decimal hours from UTC (e.g. -5 for EST, 5.5 for IST). An IANA name is resolved to the offset in force at the given date and time. Defaults to 5.5.
+type MatchmakingReportRequest_Person1_Timezone struct {
+	union json.RawMessage
+}
+
+// MatchmakingReportRequestPerson2Timezone0 defines model for MatchmakingReportRequest.Person2.Timezone.0.
+type MatchmakingReportRequestPerson2Timezone0 = float32
+
+// MatchmakingReportRequestPerson2Timezone1 defines model for MatchmakingReportRequest.Person2.Timezone.1.
+type MatchmakingReportRequestPerson2Timezone1 = string
+
+// MatchmakingReportRequest_Person2_Timezone Timezone: an IANA name (e.g. "America/New_York", "Europe/London", or `cities[0].timezone` from /location/search) or decimal hours from UTC (e.g. -5 for EST, 5.5 for IST). An IANA name is resolved to the offset in force at the given date and time. Defaults to 5.5.
+type MatchmakingReportRequest_Person2_Timezone struct {
+	union json.RawMessage
+}
 
 // NakshatraListResponse defines model for NakshatraListResponse.
 type NakshatraListResponse = []struct {
@@ -34643,6 +36693,104 @@ type NatalChartResponsePatternsModality string
 // NatalChartResponsePlanetsDignity Essential dignity of this body in the sign it occupies: domicile (the sign it rules, its strongest placement), exaltation (honoured and amplified), detriment (opposite its rulership, where it struggles), fall (opposite its exaltation, where it is weakened), or peregrine (in none of its own dignity signs). Absent for the lunar nodes, Chiron and Black Moon Lilith, which rule no sign and therefore hold no dignity at all, so an absent field and peregrine are different answers. Derived by sign only, so triplicity, bounds and face are not considered. Always English, whatever the lang parameter says, so it stays safe to compare against in code. The four dignity signs behind it are published per body by GET /planet-meanings/{id}.
 type NatalChartResponsePlanetsDignity string
 
+// NatalReportRequest defines model for NatalReportRequest.
+type NatalReportRequest struct {
+	// Branding White-label branding for this report. Every field is optional and nothing is stored: send it with each request.
+	Branding *struct {
+		// Colors Brand colours. Each one left out keeps the theme colour.
+		Colors *struct {
+			// Accent Rules and highlights, as a six digit hex colour.
+			Accent *string `json:"accent,omitempty"`
+
+			// Primary Headings and table headers, as a six digit hex colour.
+			Primary *string `json:"primary,omitempty"`
+		} `json:"colors,omitempty"`
+
+		// Email Contact email printed on the cover.
+		Email *openapi_types.Email `json:"email,omitempty"`
+
+		// Font Font pair for headings and text, the same pairs the RoxyAPI UI components take. Left out, the theme typeface is used.
+		Font *NatalReportRequestBrandingFont `json:"font,omitempty"`
+
+		// Footer Line printed at the foot of every page, such as a disclaimer or a booking note.
+		Footer *string `json:"footer,omitempty"`
+
+		// Logo HTTPS URL of a PNG, JPEG, WebP or SVG logo under 1 MB, printed on the cover. It is fetched for this report only and never stored.
+		Logo *string `json:"logo,omitempty"`
+
+		// Name Business or practitioner name printed on the cover and in the running header of every page.
+		Name *string `json:"name,omitempty"`
+
+		// Theme Design preset shared with the RoxyAPI UI components: colours, typefaces and spacing. Left out, the neutral default is used.
+		Theme *NatalReportRequestBrandingTheme `json:"theme,omitempty"`
+
+		// Website Website printed on the cover.
+		Website *string `json:"website,omitempty"`
+	} `json:"branding,omitempty"`
+
+	// Date Birth date in YYYY-MM-DD format. Determines planetary positions for the specific calendar day.
+	Date openapi_types.Date `json:"date"`
+
+	// Format Output format: pdf (a print-ready PDF, base64 in the pdf field), html (one self-contained HTML document in the html field) or markdown (CommonMark in the markdown field).
+	Format *NatalReportRequestFormat `json:"format,omitempty"`
+
+	// HouseSystem House system for dividing the chart into 12 houses. Placidus (default) is most popular in Western astrology and time-sensitive. Whole Sign assigns one sign per house (simpler, ancient). Equal houses divide chart into 30° segments from Ascendant. Koch emphasizes houses in high latitudes.
+	HouseSystem *NatalReportRequestHouseSystem `json:"houseSystem,omitempty"`
+
+	// Latitude Birth location latitude in decimal degrees (-90 to 90). Positive = North, negative = South.
+	Latitude float32 `json:"latitude"`
+
+	// Longitude Birth location longitude in decimal degrees (-180 to 180). Positive = East, negative = West.
+	Longitude float32 `json:"longitude"`
+
+	// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is the osculating node and the default, because it is what most Western chart software reports; mean is the smoothed node preferred by several evolutionary schools, so pass "mean" to match one. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
+	NodeType *NatalReportRequestNodeType `json:"nodeType,omitempty"`
+
+	// Page Page layout of the PDF.
+	Page *struct {
+		// Size Paper size of the PDF. Ignored by html and markdown.
+		Size *NatalReportRequestPageSize `json:"size,omitempty"`
+	} `json:"page,omitempty"`
+
+	// Readings Whether the report carries its written readings. false keeps the charts, tables and key figures and leaves out every interpretation, for a chart-only report at the same cost.
+	Readings *bool `json:"readings,omitempty"`
+
+	// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
+	Time string `json:"time"`
+
+	// Timezone Timezone: an IANA name (e.g. "America/New_York", "Europe/London", or `cities[0].timezone` from /location/search) or decimal hours from UTC (e.g. -5 for EST, 5.5 for IST). An IANA name is resolved to the offset in force at the given date and time.
+	Timezone NatalReportRequest_Timezone `json:"timezone"`
+}
+
+// NatalReportRequestBrandingFont Font pair for headings and text, the same pairs the RoxyAPI UI components take. Left out, the theme typeface is used.
+type NatalReportRequestBrandingFont string
+
+// NatalReportRequestBrandingTheme Design preset shared with the RoxyAPI UI components: colours, typefaces and spacing. Left out, the neutral default is used.
+type NatalReportRequestBrandingTheme string
+
+// NatalReportRequestFormat Output format: pdf (a print-ready PDF, base64 in the pdf field), html (one self-contained HTML document in the html field) or markdown (CommonMark in the markdown field).
+type NatalReportRequestFormat string
+
+// NatalReportRequestHouseSystem House system for dividing the chart into 12 houses. Placidus (default) is most popular in Western astrology and time-sensitive. Whole Sign assigns one sign per house (simpler, ancient). Equal houses divide chart into 30° segments from Ascendant. Koch emphasizes houses in high latitudes.
+type NatalReportRequestHouseSystem string
+
+// NatalReportRequestNodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is the osculating node and the default, because it is what most Western chart software reports; mean is the smoothed node preferred by several evolutionary schools, so pass "mean" to match one. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
+type NatalReportRequestNodeType string
+
+// NatalReportRequestPageSize Paper size of the PDF. Ignored by html and markdown.
+type NatalReportRequestPageSize string
+
+// NatalReportRequestTimezone0 defines model for NatalReportRequest.Timezone.0.
+type NatalReportRequestTimezone0 = float32
+
+// NatalReportRequestTimezone1 defines model for NatalReportRequest.Timezone.1.
+type NatalReportRequestTimezone1 = string
+
+// NatalReportRequest_Timezone Timezone: an IANA name (e.g. "America/New_York", "Europe/London", or `cities[0].timezone` from /location/search) or decimal hours from UTC (e.g. -5 for EST, 5.5 for IST). An IANA name is resolved to the offset in force at the given date and time.
+type NatalReportRequest_Timezone struct {
+	union json.RawMessage
+}
+
 // NavamsaRequest defines model for NavamsaRequest.
 type NavamsaRequest struct {
 	// Ayanamsa Sidereal frame (ayanamsa) the chart is cast in. "lahiri" is Lahiri/Chitrapaksha, the traditional Vedic standard used by most software, and is the default. "raman" is the B.V. Raman ayanamsa from Hindu Predictive Astrology, about 1.45 degrees below Lahiri. "kp-newcomb" and "kp-old" are the two Krishnamurti Paddhati frames. "custom" takes your own value in degrees via ayanamsaValue, for reconciling exactly against a specific reference program. The frame rotates the whole zodiac, so a graha sitting within 1.45 degrees of a boundary can change rashi or nakshatra when you switch: pick the one your reference software uses and keep it.
@@ -34780,6 +36928,84 @@ type NavamsaResponse_Chart struct {
 	} `json:"meta"`
 	AdditionalProperties map[string]interface{} `json:"-"`
 }
+
+// NumerologyReportRequest defines model for NumerologyReportRequest.
+type NumerologyReportRequest struct {
+	// Branding White-label branding for this report. Every field is optional and nothing is stored: send it with each request.
+	Branding *struct {
+		// Colors Brand colours. Each one left out keeps the theme colour.
+		Colors *struct {
+			// Accent Rules and highlights, as a six digit hex colour.
+			Accent *string `json:"accent,omitempty"`
+
+			// Primary Headings and table headers, as a six digit hex colour.
+			Primary *string `json:"primary,omitempty"`
+		} `json:"colors,omitempty"`
+
+		// Email Contact email printed on the cover.
+		Email *openapi_types.Email `json:"email,omitempty"`
+
+		// Font Font pair for headings and text, the same pairs the RoxyAPI UI components take. Left out, the theme typeface is used.
+		Font *NumerologyReportRequestBrandingFont `json:"font,omitempty"`
+
+		// Footer Line printed at the foot of every page, such as a disclaimer or a booking note.
+		Footer *string `json:"footer,omitempty"`
+
+		// Logo HTTPS URL of a PNG, JPEG, WebP or SVG logo under 1 MB, printed on the cover. It is fetched for this report only and never stored.
+		Logo *string `json:"logo,omitempty"`
+
+		// Name Business or practitioner name printed on the cover and in the running header of every page.
+		Name *string `json:"name,omitempty"`
+
+		// Theme Design preset shared with the RoxyAPI UI components: colours, typefaces and spacing. Left out, the neutral default is used.
+		Theme *NumerologyReportRequestBrandingTheme `json:"theme,omitempty"`
+
+		// Website Website printed on the cover.
+		Website *string `json:"website,omitempty"`
+	} `json:"branding,omitempty"`
+
+	// CurrentYear Calendar year for the Personal Year. When omitted it is the year of targetDate, or of the current UTC date when targetDate is omitted too. It moves the Personal Year only: the nested personalMonth and maturityStatus.currentAge read targetDate.
+	CurrentYear *int `json:"currentYear,omitempty"`
+
+	// Day Birth day (1-31)
+	Day int `json:"day"`
+
+	// Format Output format: pdf (a print-ready PDF, base64 in the pdf field), html (one self-contained HTML document in the html field) or markdown (CommonMark in the markdown field).
+	Format *NumerologyReportRequestFormat `json:"format,omitempty"`
+
+	// FullName Full birth name as it appears on the birth certificate. Used for every letter-based number in the chart: Expression, Soul Urge, Personality, Karmic Lessons, Hidden Passion, Subconscious Self and the special letters. A name in any script is converted to Latin letters before it is counted, Cyrillic and Greek as the passport spelling and accents folded to the base letter, and the calculation lists the letters counted. For a script that does not write its vowels, send the Latin spelling the person uses.
+	FullName string `json:"fullName"`
+
+	// Month Birth month (1-12)
+	Month int `json:"month"`
+
+	// Page Page layout of the PDF.
+	Page *struct {
+		// Size Paper size of the PDF. Ignored by html and markdown.
+		Size *NumerologyReportRequestPageSize `json:"size,omitempty"`
+	} `json:"page,omitempty"`
+
+	// Readings Whether the report carries its written readings. false keeps the charts, tables and key figures and leaves out every interpretation, for a chart-only report at the same cost.
+	Readings *bool `json:"readings,omitempty"`
+
+	// TargetDate Date to read the chart on, in YYYY-MM-DD format, in the years 100 to 2100, on or after the birth date. Send the local date of the user for an exact answer: it sets maturityStatus.currentAge and isActive, the Personal Month, and the Personal Year when currentYear is absent. Defaults to today (UTC).
+	TargetDate *openapi_types.Date `json:"targetDate,omitempty"`
+
+	// Year Birth year between 100 and 2100. Supports historical figures like Einstein (1879) and Shakespeare (1564).
+	Year int `json:"year"`
+}
+
+// NumerologyReportRequestBrandingFont Font pair for headings and text, the same pairs the RoxyAPI UI components take. Left out, the theme typeface is used.
+type NumerologyReportRequestBrandingFont string
+
+// NumerologyReportRequestBrandingTheme Design preset shared with the RoxyAPI UI components: colours, typefaces and spacing. Left out, the neutral default is used.
+type NumerologyReportRequestBrandingTheme string
+
+// NumerologyReportRequestFormat Output format: pdf (a print-ready PDF, base64 in the pdf field), html (one self-contained HTML document in the html field) or markdown (CommonMark in the markdown field).
+type NumerologyReportRequestFormat string
+
+// NumerologyReportRequestPageSize Paper size of the PDF. Ignored by html and markdown.
+type NumerologyReportRequestPageSize string
 
 // PapasamyamRequest defines model for PapasamyamRequest.
 type PapasamyamRequest struct {
@@ -35873,6 +38099,216 @@ type SolarArcResponse struct {
 	TargetDate openapi_types.Date `json:"targetDate"`
 }
 
+// SynastryReportRequest defines model for SynastryReportRequest.
+type SynastryReportRequest struct {
+	// Branding White-label branding for this report. Every field is optional and nothing is stored: send it with each request.
+	Branding *struct {
+		// Colors Brand colours. Each one left out keeps the theme colour.
+		Colors *struct {
+			// Accent Rules and highlights, as a six digit hex colour.
+			Accent *string `json:"accent,omitempty"`
+
+			// Primary Headings and table headers, as a six digit hex colour.
+			Primary *string `json:"primary,omitempty"`
+		} `json:"colors,omitempty"`
+
+		// Email Contact email printed on the cover.
+		Email *openapi_types.Email `json:"email,omitempty"`
+
+		// Font Font pair for headings and text, the same pairs the RoxyAPI UI components take. Left out, the theme typeface is used.
+		Font *SynastryReportRequestBrandingFont `json:"font,omitempty"`
+
+		// Footer Line printed at the foot of every page, such as a disclaimer or a booking note.
+		Footer *string `json:"footer,omitempty"`
+
+		// Logo HTTPS URL of a PNG, JPEG, WebP or SVG logo under 1 MB, printed on the cover. It is fetched for this report only and never stored.
+		Logo *string `json:"logo,omitempty"`
+
+		// Name Business or practitioner name printed on the cover and in the running header of every page.
+		Name *string `json:"name,omitempty"`
+
+		// Theme Design preset shared with the RoxyAPI UI components: colours, typefaces and spacing. Left out, the neutral default is used.
+		Theme *SynastryReportRequestBrandingTheme `json:"theme,omitempty"`
+
+		// Website Website printed on the cover.
+		Website *string `json:"website,omitempty"`
+	} `json:"branding,omitempty"`
+
+	// Format Output format: pdf (a print-ready PDF, base64 in the pdf field), html (one self-contained HTML document in the html field) or markdown (CommonMark in the markdown field).
+	Format *SynastryReportRequestFormat `json:"format,omitempty"`
+
+	// HouseSystem House system for both natal charts. Placidus (default), Whole Sign, Equal, or Koch.
+	HouseSystem *SynastryReportRequestHouseSystem `json:"houseSystem,omitempty"`
+
+	// Page Page layout of the PDF.
+	Page *struct {
+		// Size Paper size of the PDF. Ignored by html and markdown.
+		Size *SynastryReportRequestPageSize `json:"size,omitempty"`
+	} `json:"page,omitempty"`
+	Person1 struct {
+		// Date Birth date in YYYY-MM-DD format. Determines planetary positions for the specific calendar day.
+		Date openapi_types.Date `json:"date"`
+
+		// Latitude Birth location latitude in decimal degrees (-90 to 90). Positive = North, negative = South.
+		Latitude float32 `json:"latitude"`
+
+		// Longitude Birth location longitude in decimal degrees (-180 to 180). Positive = East, negative = West.
+		Longitude float32 `json:"longitude"`
+
+		// Name Optional display name for this person. Included in the response for easy identification.
+		Name *string `json:"name,omitempty"`
+
+		// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is the osculating node and the default, because it is what most Western chart software reports; mean is the smoothed node preferred by several evolutionary schools, so pass "mean" to match one. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
+		NodeType *SynastryReportRequestPerson1NodeType `json:"nodeType,omitempty"`
+
+		// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
+		Time string `json:"time"`
+
+		// Timezone Timezone: an IANA name (e.g. "America/New_York", "Europe/London", or `cities[0].timezone` from /location/search) or decimal hours from UTC (e.g. -5 for EST, 5.5 for IST). An IANA name is resolved to the offset in force at the given date and time.
+		Timezone SynastryReportRequest_Person1_Timezone `json:"timezone"`
+	} `json:"person1"`
+	Person2 struct {
+		// Date Birth date in YYYY-MM-DD format. Determines planetary positions for the specific calendar day.
+		Date openapi_types.Date `json:"date"`
+
+		// Latitude Birth location latitude in decimal degrees (-90 to 90). Positive = North, negative = South.
+		Latitude float32 `json:"latitude"`
+
+		// Longitude Birth location longitude in decimal degrees (-180 to 180). Positive = East, negative = West.
+		Longitude float32 `json:"longitude"`
+
+		// Name Optional display name for this person. Included in the response for easy identification.
+		Name *string `json:"name,omitempty"`
+
+		// NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is the osculating node and the default, because it is what most Western chart software reports; mean is the smoothed node preferred by several evolutionary schools, so pass "mean" to match one. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
+		NodeType *SynastryReportRequestPerson2NodeType `json:"nodeType,omitempty"`
+
+		// Time Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.
+		Time string `json:"time"`
+
+		// Timezone Timezone: an IANA name (e.g. "America/New_York", "Europe/London", or `cities[0].timezone` from /location/search) or decimal hours from UTC (e.g. -5 for EST, 5.5 for IST). An IANA name is resolved to the offset in force at the given date and time.
+		Timezone SynastryReportRequest_Person2_Timezone `json:"timezone"`
+	} `json:"person2"`
+
+	// Readings Whether the report carries its written readings. false keeps the charts, tables and key figures and leaves out every interpretation, for a chart-only report at the same cost.
+	Readings *bool `json:"readings,omitempty"`
+}
+
+// SynastryReportRequestBrandingFont Font pair for headings and text, the same pairs the RoxyAPI UI components take. Left out, the theme typeface is used.
+type SynastryReportRequestBrandingFont string
+
+// SynastryReportRequestBrandingTheme Design preset shared with the RoxyAPI UI components: colours, typefaces and spacing. Left out, the neutral default is used.
+type SynastryReportRequestBrandingTheme string
+
+// SynastryReportRequestFormat Output format: pdf (a print-ready PDF, base64 in the pdf field), html (one self-contained HTML document in the html field) or markdown (CommonMark in the markdown field).
+type SynastryReportRequestFormat string
+
+// SynastryReportRequestHouseSystem House system for both natal charts. Placidus (default), Whole Sign, Equal, or Koch.
+type SynastryReportRequestHouseSystem string
+
+// SynastryReportRequestPageSize Paper size of the PDF. Ignored by html and markdown.
+type SynastryReportRequestPageSize string
+
+// SynastryReportRequestPerson1NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is the osculating node and the default, because it is what most Western chart software reports; mean is the smoothed node preferred by several evolutionary schools, so pass "mean" to match one. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
+type SynastryReportRequestPerson1NodeType string
+
+// SynastryReportRequestPerson1Timezone0 defines model for SynastryReportRequest.Person1.Timezone.0.
+type SynastryReportRequestPerson1Timezone0 = float32
+
+// SynastryReportRequestPerson1Timezone1 defines model for SynastryReportRequest.Person1.Timezone.1.
+type SynastryReportRequestPerson1Timezone1 = string
+
+// SynastryReportRequest_Person1_Timezone Timezone: an IANA name (e.g. "America/New_York", "Europe/London", or `cities[0].timezone` from /location/search) or decimal hours from UTC (e.g. -5 for EST, 5.5 for IST). An IANA name is resolved to the offset in force at the given date and time.
+type SynastryReportRequest_Person1_Timezone struct {
+	union json.RawMessage
+}
+
+// SynastryReportRequestPerson2NodeType Lunar node convention. "mean" is the smoothed average node, which always moves retrograde; "true" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is the osculating node and the default, because it is what most Western chart software reports; mean is the smoothed node preferred by several evolutionary schools, so pass "mean" to match one. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to "true".
+type SynastryReportRequestPerson2NodeType string
+
+// SynastryReportRequestPerson2Timezone0 defines model for SynastryReportRequest.Person2.Timezone.0.
+type SynastryReportRequestPerson2Timezone0 = float32
+
+// SynastryReportRequestPerson2Timezone1 defines model for SynastryReportRequest.Person2.Timezone.1.
+type SynastryReportRequestPerson2Timezone1 = string
+
+// SynastryReportRequest_Person2_Timezone Timezone: an IANA name (e.g. "America/New_York", "Europe/London", or `cities[0].timezone` from /location/search) or decimal hours from UTC (e.g. -5 for EST, 5.5 for IST). An IANA name is resolved to the offset in force at the given date and time.
+type SynastryReportRequest_Person2_Timezone struct {
+	union json.RawMessage
+}
+
+// TarotReportRequest defines model for TarotReportRequest.
+type TarotReportRequest struct {
+	// Branding White-label branding for this report. Every field is optional and nothing is stored: send it with each request.
+	Branding *struct {
+		// Colors Brand colours. Each one left out keeps the theme colour.
+		Colors *struct {
+			// Accent Rules and highlights, as a six digit hex colour.
+			Accent *string `json:"accent,omitempty"`
+
+			// Primary Headings and table headers, as a six digit hex colour.
+			Primary *string `json:"primary,omitempty"`
+		} `json:"colors,omitempty"`
+
+		// Email Contact email printed on the cover.
+		Email *openapi_types.Email `json:"email,omitempty"`
+
+		// Font Font pair for headings and text, the same pairs the RoxyAPI UI components take. Left out, the theme typeface is used.
+		Font *TarotReportRequestBrandingFont `json:"font,omitempty"`
+
+		// Footer Line printed at the foot of every page, such as a disclaimer or a booking note.
+		Footer *string `json:"footer,omitempty"`
+
+		// Logo HTTPS URL of a PNG, JPEG, WebP or SVG logo under 1 MB, printed on the cover. It is fetched for this report only and never stored.
+		Logo *string `json:"logo,omitempty"`
+
+		// Name Business or practitioner name printed on the cover and in the running header of every page.
+		Name *string `json:"name,omitempty"`
+
+		// Theme Design preset shared with the RoxyAPI UI components: colours, typefaces and spacing. Left out, the neutral default is used.
+		Theme *TarotReportRequestBrandingTheme `json:"theme,omitempty"`
+
+		// Website Website printed on the cover.
+		Website *string `json:"website,omitempty"`
+	} `json:"branding,omitempty"`
+
+	// Format Output format: pdf (a print-ready PDF, base64 in the pdf field), html (one self-contained HTML document in the html field) or markdown (CommonMark in the markdown field).
+	Format *TarotReportRequestFormat `json:"format,omitempty"`
+
+	// Page Page layout of the PDF.
+	Page *struct {
+		// Size Paper size of the PDF. Ignored by html and markdown.
+		Size *TarotReportRequestPageSize `json:"size,omitempty"`
+	} `json:"page,omitempty"`
+
+	// Question Optional querent question, printed on the report. Omit for a general reading.
+	Question *string `json:"question,omitempty"`
+
+	// Readings Whether the report carries its written readings. false keeps the charts, tables and key figures and leaves out every interpretation, for a chart-only report at the same cost.
+	Readings *bool `json:"readings,omitempty"`
+
+	// Seed Optional seed for a reproducible draw: the same seed and spread always produce the same report. Omit for a random draw; the report prints the seed it used.
+	Seed *string `json:"seed,omitempty"`
+
+	// Spread Which spread to draw: celtic-cross (ten cards, the default), three-card, love or career, the same spreads the spread routes cast.
+	Spread *TarotReportRequestSpread `json:"spread,omitempty"`
+}
+
+// TarotReportRequestBrandingFont Font pair for headings and text, the same pairs the RoxyAPI UI components take. Left out, the theme typeface is used.
+type TarotReportRequestBrandingFont string
+
+// TarotReportRequestBrandingTheme Design preset shared with the RoxyAPI UI components: colours, typefaces and spacing. Left out, the neutral default is used.
+type TarotReportRequestBrandingTheme string
+
+// TarotReportRequestFormat Output format: pdf (a print-ready PDF, base64 in the pdf field), html (one self-contained HTML document in the html field) or markdown (CommonMark in the markdown field).
+type TarotReportRequestFormat string
+
+// TarotReportRequestPageSize Paper size of the PDF. Ignored by html and markdown.
+type TarotReportRequestPageSize string
+
+// TarotReportRequestSpread Which spread to draw: celtic-cross (ten cards, the default), three-card, love or career, the same spreads the spread routes cast.
+type TarotReportRequestSpread string
+
 // TransitsRequest defines model for TransitsRequest.
 type TransitsRequest struct {
 	// Date Transit date in YYYY-MM-DD format (defaults to current date)
@@ -36186,6 +38622,101 @@ type UpagrahaResponse struct {
 		// Rashi Zodiac sign (rashi) the upagraha occupies. One of 12 Vedic rashis from Aries to Pisces.
 		Rashi string `json:"rashi"`
 	} `json:"timeBased"`
+}
+
+// YearlyForecastReportRequest defines model for YearlyForecastReportRequest.
+type YearlyForecastReportRequest struct {
+	// Branding White-label branding for this report. Every field is optional and nothing is stored: send it with each request.
+	Branding *struct {
+		// Colors Brand colours. Each one left out keeps the theme colour.
+		Colors *struct {
+			// Accent Rules and highlights, as a six digit hex colour.
+			Accent *string `json:"accent,omitempty"`
+
+			// Primary Headings and table headers, as a six digit hex colour.
+			Primary *string `json:"primary,omitempty"`
+		} `json:"colors,omitempty"`
+
+		// Email Contact email printed on the cover.
+		Email *openapi_types.Email `json:"email,omitempty"`
+
+		// Font Font pair for headings and text, the same pairs the RoxyAPI UI components take. Left out, the theme typeface is used.
+		Font *YearlyForecastReportRequestBrandingFont `json:"font,omitempty"`
+
+		// Footer Line printed at the foot of every page, such as a disclaimer or a booking note.
+		Footer *string `json:"footer,omitempty"`
+
+		// Logo HTTPS URL of a PNG, JPEG, WebP or SVG logo under 1 MB, printed on the cover. It is fetched for this report only and never stored.
+		Logo *string `json:"logo,omitempty"`
+
+		// Name Business or practitioner name printed on the cover and in the running header of every page.
+		Name *string `json:"name,omitempty"`
+
+		// Theme Design preset shared with the RoxyAPI UI components: colours, typefaces and spacing. Left out, the neutral default is used.
+		Theme *YearlyForecastReportRequestBrandingTheme `json:"theme,omitempty"`
+
+		// Website Website printed on the cover.
+		Website *string `json:"website,omitempty"`
+	} `json:"branding,omitempty"`
+
+	// Date Birth date in YYYY-MM-DD format. Anchors the natal Sun longitude the transiting Sun returns to each year.
+	Date openapi_types.Date `json:"date"`
+
+	// Format Output format: pdf (a print-ready PDF, base64 in the pdf field), html (one self-contained HTML document in the html field) or markdown (CommonMark in the markdown field).
+	Format *YearlyForecastReportRequestFormat `json:"format,omitempty"`
+
+	// HouseSystem House system for the return chart. placidus is the Western default. whole-sign, equal, and koch are also supported.
+	HouseSystem *YearlyForecastReportRequestHouseSystem `json:"houseSystem,omitempty"`
+
+	// Latitude Latitude of the solar return location in decimal degrees. The solar return is location-sensitive: use the birthplace to anchor the chart to natal geography, or the current city for a relocated solar return.
+	Latitude float32 `json:"latitude"`
+
+	// Longitude Longitude of the solar return location in decimal degrees. Sets the local sidereal time, so it drives the Ascendant, Midheaven, and house cusps of the return chart.
+	Longitude float32 `json:"longitude"`
+
+	// Page Page layout of the PDF.
+	Page *struct {
+		// Size Paper size of the PDF. Ignored by html and markdown.
+		Size *YearlyForecastReportRequestPageSize `json:"size,omitempty"`
+	} `json:"page,omitempty"`
+
+	// Readings Whether the report carries its written readings. false keeps the charts, tables and key figures and leaves out every interpretation, for a chart-only report at the same cost.
+	Readings *bool `json:"readings,omitempty"`
+
+	// Time Birth time in 24-hour HH:MM:SS format. Pins the exact natal Sun position that defines the solar return moment.
+	Time string `json:"time"`
+
+	// Timezone IANA name (e.g. "America/New_York", "Europe/London", "UTC"), decimal hours (e.g. -5 for EST, 1 for CET), or a fixed UTC offset (e.g. "-05:00", "+01:00"). Prefer the IANA name: it is resolved to the offset in force at the birth date and time, historical daylight-saving rules included, while a fixed offset or decimal is taken literally and will be wrong if it does not match the daylight-saving state at that moment. On a transition day a time in the repeated hour is read as its first occurrence and a time in the skipped hour is moved forward past the gap. Invalid timezones return 400 with a validation error.
+	Timezone YearlyForecastReportRequest_Timezone `json:"timezone"`
+
+	// Year Year to cast the solar return for. The chart is erected for the moment in this year when the transiting Sun returns to the natal Sun longitude, on or within a day of the birthday.
+	Year int `json:"year"`
+}
+
+// YearlyForecastReportRequestBrandingFont Font pair for headings and text, the same pairs the RoxyAPI UI components take. Left out, the theme typeface is used.
+type YearlyForecastReportRequestBrandingFont string
+
+// YearlyForecastReportRequestBrandingTheme Design preset shared with the RoxyAPI UI components: colours, typefaces and spacing. Left out, the neutral default is used.
+type YearlyForecastReportRequestBrandingTheme string
+
+// YearlyForecastReportRequestFormat Output format: pdf (a print-ready PDF, base64 in the pdf field), html (one self-contained HTML document in the html field) or markdown (CommonMark in the markdown field).
+type YearlyForecastReportRequestFormat string
+
+// YearlyForecastReportRequestHouseSystem House system for the return chart. placidus is the Western default. whole-sign, equal, and koch are also supported.
+type YearlyForecastReportRequestHouseSystem string
+
+// YearlyForecastReportRequestPageSize Paper size of the PDF. Ignored by html and markdown.
+type YearlyForecastReportRequestPageSize string
+
+// YearlyForecastReportRequestTimezone0 defines model for YearlyForecastReportRequest.Timezone.0.
+type YearlyForecastReportRequestTimezone0 = float32
+
+// YearlyForecastReportRequestTimezone1 defines model for YearlyForecastReportRequest.Timezone.1.
+type YearlyForecastReportRequestTimezone1 = string
+
+// YearlyForecastReportRequest_Timezone IANA name (e.g. "America/New_York", "Europe/London", "UTC"), decimal hours (e.g. -5 for EST, 1 for CET), or a fixed UTC offset (e.g. "-05:00", "+01:00"). Prefer the IANA name: it is resolved to the offset in force at the birth date and time, historical daylight-saving rules included, while a fixed offset or decimal is taken literally and will be wrong if it does not match the daylight-saving state at that moment. On a transition day a time in the repeated hour is read as its first occurrence and a time in the skipped hour is moved forward past the gap. Invalid timezones return 400 with a validation error.
+type YearlyForecastReportRequest_Timezone struct {
+	union json.RawMessage
 }
 
 // YogaDetail defines model for YogaDetail.
@@ -41066,6 +43597,114 @@ type CalculateSoulUrgeParamsLang string
 // CalculateSoulUrge200JSONResponseBodyType defines parameters for CalculateSoulUrge.
 type CalculateSoulUrge200JSONResponseBodyType string
 
+// GenerateBaziReportParams defines parameters for GenerateBaziReport.
+type GenerateBaziReportParams struct {
+	// Lang Report language (BCP 47): the labels, headings and readings are written in it. Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en.
+	Lang *GenerateBaziReportParamsLang `form:"lang,omitempty" json:"lang,omitempty"`
+}
+
+// GenerateBaziReportParamsLang defines parameters for GenerateBaziReport.
+type GenerateBaziReportParamsLang string
+
+// GenerateBaziReport200JSONResponseBodyFormat defines parameters for GenerateBaziReport.
+type GenerateBaziReport200JSONResponseBodyFormat string
+
+// GenerateHumanDesignReportParams defines parameters for GenerateHumanDesignReport.
+type GenerateHumanDesignReportParams struct {
+	// Lang Report language (BCP 47): the labels, headings and readings are written in it. Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en.
+	Lang *GenerateHumanDesignReportParamsLang `form:"lang,omitempty" json:"lang,omitempty"`
+}
+
+// GenerateHumanDesignReportParamsLang defines parameters for GenerateHumanDesignReport.
+type GenerateHumanDesignReportParamsLang string
+
+// GenerateHumanDesignReport200JSONResponseBodyFormat defines parameters for GenerateHumanDesignReport.
+type GenerateHumanDesignReport200JSONResponseBodyFormat string
+
+// GenerateKundliReportParams defines parameters for GenerateKundliReport.
+type GenerateKundliReportParams struct {
+	// Lang Report language (BCP 47): the labels, headings and readings are written in it. Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en.
+	Lang *GenerateKundliReportParamsLang `form:"lang,omitempty" json:"lang,omitempty"`
+}
+
+// GenerateKundliReportParamsLang defines parameters for GenerateKundliReport.
+type GenerateKundliReportParamsLang string
+
+// GenerateKundliReport200JSONResponseBodyFormat defines parameters for GenerateKundliReport.
+type GenerateKundliReport200JSONResponseBodyFormat string
+
+// GenerateMatchmakingReportParams defines parameters for GenerateMatchmakingReport.
+type GenerateMatchmakingReportParams struct {
+	// Lang Report language (BCP 47): the labels, headings and readings are written in it. Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en.
+	Lang *GenerateMatchmakingReportParamsLang `form:"lang,omitempty" json:"lang,omitempty"`
+}
+
+// GenerateMatchmakingReportParamsLang defines parameters for GenerateMatchmakingReport.
+type GenerateMatchmakingReportParamsLang string
+
+// GenerateMatchmakingReport200JSONResponseBodyFormat defines parameters for GenerateMatchmakingReport.
+type GenerateMatchmakingReport200JSONResponseBodyFormat string
+
+// GenerateNatalReportParams defines parameters for GenerateNatalReport.
+type GenerateNatalReportParams struct {
+	// Lang Report language (BCP 47): the labels, headings and readings are written in it. Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en.
+	Lang *GenerateNatalReportParamsLang `form:"lang,omitempty" json:"lang,omitempty"`
+}
+
+// GenerateNatalReportParamsLang defines parameters for GenerateNatalReport.
+type GenerateNatalReportParamsLang string
+
+// GenerateNatalReport200JSONResponseBodyFormat defines parameters for GenerateNatalReport.
+type GenerateNatalReport200JSONResponseBodyFormat string
+
+// GenerateNumerologyReportParams defines parameters for GenerateNumerologyReport.
+type GenerateNumerologyReportParams struct {
+	// Lang Report language (BCP 47): the labels, headings and readings are written in it. Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en.
+	Lang *GenerateNumerologyReportParamsLang `form:"lang,omitempty" json:"lang,omitempty"`
+}
+
+// GenerateNumerologyReportParamsLang defines parameters for GenerateNumerologyReport.
+type GenerateNumerologyReportParamsLang string
+
+// GenerateNumerologyReport200JSONResponseBodyFormat defines parameters for GenerateNumerologyReport.
+type GenerateNumerologyReport200JSONResponseBodyFormat string
+
+// GenerateSynastryReportParams defines parameters for GenerateSynastryReport.
+type GenerateSynastryReportParams struct {
+	// Lang Report language (BCP 47): the labels, headings and readings are written in it. Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en.
+	Lang *GenerateSynastryReportParamsLang `form:"lang,omitempty" json:"lang,omitempty"`
+}
+
+// GenerateSynastryReportParamsLang defines parameters for GenerateSynastryReport.
+type GenerateSynastryReportParamsLang string
+
+// GenerateSynastryReport200JSONResponseBodyFormat defines parameters for GenerateSynastryReport.
+type GenerateSynastryReport200JSONResponseBodyFormat string
+
+// GenerateTarotReportParams defines parameters for GenerateTarotReport.
+type GenerateTarotReportParams struct {
+	// Lang Report language (BCP 47): the labels, headings and readings are written in it. Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en.
+	Lang *GenerateTarotReportParamsLang `form:"lang,omitempty" json:"lang,omitempty"`
+}
+
+// GenerateTarotReportParamsLang defines parameters for GenerateTarotReport.
+type GenerateTarotReportParamsLang string
+
+// GenerateTarotReport200JSONResponseBodyFormat defines parameters for GenerateTarotReport.
+type GenerateTarotReport200JSONResponseBodyFormat string
+
+// GenerateYearlyForecastReportParams defines parameters for GenerateYearlyForecastReport.
+type GenerateYearlyForecastReportParams struct {
+	// Lang Report language (BCP 47): the labels, headings and readings are written in it. Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en.
+	Lang *GenerateYearlyForecastReportParamsLang `form:"lang,omitempty" json:"lang,omitempty"`
+}
+
+// GenerateYearlyForecastReportParamsLang defines parameters for GenerateYearlyForecastReport.
+type GenerateYearlyForecastReportParamsLang string
+
+// GenerateYearlyForecastReport200JSONResponseBodyFormat defines parameters for GenerateYearlyForecastReport.
+type GenerateYearlyForecastReport200JSONResponseBodyFormat string
+
 // ListCardsParams defines parameters for ListCards.
 type ListCardsParams struct {
 	// Lang Response language (BCP 47). Supported: en, tr, de, es, hi, pt, fr, ru, zh-Hans, zh-Hant. Defaults to en. Coverage varies by domain, and a field with no translation in the requested language returns English.
@@ -43708,6 +46347,33 @@ type CalculatePersonalityJSONRequestBody CalculatePersonalityJSONBody
 // CalculateSoulUrgeJSONRequestBody defines body for CalculateSoulUrge for application/json ContentType.
 type CalculateSoulUrgeJSONRequestBody CalculateSoulUrgeJSONBody
 
+// GenerateBaziReportJSONRequestBody defines body for GenerateBaziReport for application/json ContentType.
+type GenerateBaziReportJSONRequestBody = BaziReportRequest
+
+// GenerateHumanDesignReportJSONRequestBody defines body for GenerateHumanDesignReport for application/json ContentType.
+type GenerateHumanDesignReportJSONRequestBody = HumanDesignReportRequest
+
+// GenerateKundliReportJSONRequestBody defines body for GenerateKundliReport for application/json ContentType.
+type GenerateKundliReportJSONRequestBody = KundliReportRequest
+
+// GenerateMatchmakingReportJSONRequestBody defines body for GenerateMatchmakingReport for application/json ContentType.
+type GenerateMatchmakingReportJSONRequestBody = MatchmakingReportRequest
+
+// GenerateNatalReportJSONRequestBody defines body for GenerateNatalReport for application/json ContentType.
+type GenerateNatalReportJSONRequestBody = NatalReportRequest
+
+// GenerateNumerologyReportJSONRequestBody defines body for GenerateNumerologyReport for application/json ContentType.
+type GenerateNumerologyReportJSONRequestBody = NumerologyReportRequest
+
+// GenerateSynastryReportJSONRequestBody defines body for GenerateSynastryReport for application/json ContentType.
+type GenerateSynastryReportJSONRequestBody = SynastryReportRequest
+
+// GenerateTarotReportJSONRequestBody defines body for GenerateTarotReport for application/json ContentType.
+type GenerateTarotReportJSONRequestBody = TarotReportRequest
+
+// GenerateYearlyForecastReportJSONRequestBody defines body for GenerateYearlyForecastReport for application/json ContentType.
+type GenerateYearlyForecastReportJSONRequestBody = YearlyForecastReportRequest
+
 // GetDailyCardJSONRequestBody defines body for GetDailyCard for application/json ContentType.
 type GetDailyCardJSONRequestBody GetDailyCardJSONBody
 
@@ -44555,6 +47221,68 @@ func (t *AyurvedaDinacharyaRequest_Timezone) UnmarshalJSON(b []byte) error {
 	return err
 }
 
+// AsBaziReportRequestTimezone0 returns the union data inside the BaziReportRequest_Timezone as a BaziReportRequestTimezone0
+func (t BaziReportRequest_Timezone) AsBaziReportRequestTimezone0() (BaziReportRequestTimezone0, error) {
+	var body BaziReportRequestTimezone0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromBaziReportRequestTimezone0 overwrites any union data inside the BaziReportRequest_Timezone as the provided BaziReportRequestTimezone0
+func (t *BaziReportRequest_Timezone) FromBaziReportRequestTimezone0(v BaziReportRequestTimezone0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeBaziReportRequestTimezone0 performs a merge with any union data inside the BaziReportRequest_Timezone, using the provided BaziReportRequestTimezone0
+func (t *BaziReportRequest_Timezone) MergeBaziReportRequestTimezone0(v BaziReportRequestTimezone0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsBaziReportRequestTimezone1 returns the union data inside the BaziReportRequest_Timezone as a BaziReportRequestTimezone1
+func (t BaziReportRequest_Timezone) AsBaziReportRequestTimezone1() (BaziReportRequestTimezone1, error) {
+	var body BaziReportRequestTimezone1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromBaziReportRequestTimezone1 overwrites any union data inside the BaziReportRequest_Timezone as the provided BaziReportRequestTimezone1
+func (t *BaziReportRequest_Timezone) FromBaziReportRequestTimezone1(v BaziReportRequestTimezone1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeBaziReportRequestTimezone1 performs a merge with any union data inside the BaziReportRequest_Timezone, using the provided BaziReportRequestTimezone1
+func (t *BaziReportRequest_Timezone) MergeBaziReportRequestTimezone1(v BaziReportRequestTimezone1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t BaziReportRequest_Timezone) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *BaziReportRequest_Timezone) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
 // AsBhavChalitRequestTimezone0 returns the union data inside the BhavChalitRequest_Timezone as a BhavChalitRequestTimezone0
 func (t BhavChalitRequest_Timezone) AsBhavChalitRequestTimezone0() (BhavChalitRequestTimezone0, error) {
 	var body BhavChalitRequestTimezone0
@@ -45299,6 +48027,68 @@ func (t *HeliacalRequest_Timezone) UnmarshalJSON(b []byte) error {
 	return err
 }
 
+// AsHumanDesignReportRequestTimezone0 returns the union data inside the HumanDesignReportRequest_Timezone as a HumanDesignReportRequestTimezone0
+func (t HumanDesignReportRequest_Timezone) AsHumanDesignReportRequestTimezone0() (HumanDesignReportRequestTimezone0, error) {
+	var body HumanDesignReportRequestTimezone0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromHumanDesignReportRequestTimezone0 overwrites any union data inside the HumanDesignReportRequest_Timezone as the provided HumanDesignReportRequestTimezone0
+func (t *HumanDesignReportRequest_Timezone) FromHumanDesignReportRequestTimezone0(v HumanDesignReportRequestTimezone0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeHumanDesignReportRequestTimezone0 performs a merge with any union data inside the HumanDesignReportRequest_Timezone, using the provided HumanDesignReportRequestTimezone0
+func (t *HumanDesignReportRequest_Timezone) MergeHumanDesignReportRequestTimezone0(v HumanDesignReportRequestTimezone0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsHumanDesignReportRequestTimezone1 returns the union data inside the HumanDesignReportRequest_Timezone as a HumanDesignReportRequestTimezone1
+func (t HumanDesignReportRequest_Timezone) AsHumanDesignReportRequestTimezone1() (HumanDesignReportRequestTimezone1, error) {
+	var body HumanDesignReportRequestTimezone1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromHumanDesignReportRequestTimezone1 overwrites any union data inside the HumanDesignReportRequest_Timezone as the provided HumanDesignReportRequestTimezone1
+func (t *HumanDesignReportRequest_Timezone) FromHumanDesignReportRequestTimezone1(v HumanDesignReportRequestTimezone1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeHumanDesignReportRequestTimezone1 performs a merge with any union data inside the HumanDesignReportRequest_Timezone, using the provided HumanDesignReportRequestTimezone1
+func (t *HumanDesignReportRequest_Timezone) MergeHumanDesignReportRequestTimezone1(v HumanDesignReportRequestTimezone1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t HumanDesignReportRequest_Timezone) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *HumanDesignReportRequest_Timezone) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
 // AsKPChartRequestTimezone0 returns the union data inside the KPChartRequest_Timezone as a KPChartRequestTimezone0
 func (t KPChartRequest_Timezone) AsKPChartRequestTimezone0() (KPChartRequestTimezone0, error) {
 	var body KPChartRequestTimezone0
@@ -45857,6 +48647,68 @@ func (t *KalsarpaRequest_Timezone) UnmarshalJSON(b []byte) error {
 	return err
 }
 
+// AsKundliReportRequestTimezone0 returns the union data inside the KundliReportRequest_Timezone as a KundliReportRequestTimezone0
+func (t KundliReportRequest_Timezone) AsKundliReportRequestTimezone0() (KundliReportRequestTimezone0, error) {
+	var body KundliReportRequestTimezone0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromKundliReportRequestTimezone0 overwrites any union data inside the KundliReportRequest_Timezone as the provided KundliReportRequestTimezone0
+func (t *KundliReportRequest_Timezone) FromKundliReportRequestTimezone0(v KundliReportRequestTimezone0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeKundliReportRequestTimezone0 performs a merge with any union data inside the KundliReportRequest_Timezone, using the provided KundliReportRequestTimezone0
+func (t *KundliReportRequest_Timezone) MergeKundliReportRequestTimezone0(v KundliReportRequestTimezone0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsKundliReportRequestTimezone1 returns the union data inside the KundliReportRequest_Timezone as a KundliReportRequestTimezone1
+func (t KundliReportRequest_Timezone) AsKundliReportRequestTimezone1() (KundliReportRequestTimezone1, error) {
+	var body KundliReportRequestTimezone1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromKundliReportRequestTimezone1 overwrites any union data inside the KundliReportRequest_Timezone as the provided KundliReportRequestTimezone1
+func (t *KundliReportRequest_Timezone) FromKundliReportRequestTimezone1(v KundliReportRequestTimezone1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeKundliReportRequestTimezone1 performs a merge with any union data inside the KundliReportRequest_Timezone, using the provided KundliReportRequestTimezone1
+func (t *KundliReportRequest_Timezone) MergeKundliReportRequestTimezone1(v KundliReportRequestTimezone1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t KundliReportRequest_Timezone) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *KundliReportRequest_Timezone) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
 // AsLilithRequestTimezone0 returns the union data inside the LilithRequest_Timezone as a LilithRequestTimezone0
 func (t LilithRequest_Timezone) AsLilithRequestTimezone0() (LilithRequestTimezone0, error) {
 	var body LilithRequestTimezone0
@@ -45981,6 +48833,130 @@ func (t *ManglikRequest_Timezone) UnmarshalJSON(b []byte) error {
 	return err
 }
 
+// AsMatchmakingReportRequestPerson1Timezone0 returns the union data inside the MatchmakingReportRequest_Person1_Timezone as a MatchmakingReportRequestPerson1Timezone0
+func (t MatchmakingReportRequest_Person1_Timezone) AsMatchmakingReportRequestPerson1Timezone0() (MatchmakingReportRequestPerson1Timezone0, error) {
+	var body MatchmakingReportRequestPerson1Timezone0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromMatchmakingReportRequestPerson1Timezone0 overwrites any union data inside the MatchmakingReportRequest_Person1_Timezone as the provided MatchmakingReportRequestPerson1Timezone0
+func (t *MatchmakingReportRequest_Person1_Timezone) FromMatchmakingReportRequestPerson1Timezone0(v MatchmakingReportRequestPerson1Timezone0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeMatchmakingReportRequestPerson1Timezone0 performs a merge with any union data inside the MatchmakingReportRequest_Person1_Timezone, using the provided MatchmakingReportRequestPerson1Timezone0
+func (t *MatchmakingReportRequest_Person1_Timezone) MergeMatchmakingReportRequestPerson1Timezone0(v MatchmakingReportRequestPerson1Timezone0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsMatchmakingReportRequestPerson1Timezone1 returns the union data inside the MatchmakingReportRequest_Person1_Timezone as a MatchmakingReportRequestPerson1Timezone1
+func (t MatchmakingReportRequest_Person1_Timezone) AsMatchmakingReportRequestPerson1Timezone1() (MatchmakingReportRequestPerson1Timezone1, error) {
+	var body MatchmakingReportRequestPerson1Timezone1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromMatchmakingReportRequestPerson1Timezone1 overwrites any union data inside the MatchmakingReportRequest_Person1_Timezone as the provided MatchmakingReportRequestPerson1Timezone1
+func (t *MatchmakingReportRequest_Person1_Timezone) FromMatchmakingReportRequestPerson1Timezone1(v MatchmakingReportRequestPerson1Timezone1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeMatchmakingReportRequestPerson1Timezone1 performs a merge with any union data inside the MatchmakingReportRequest_Person1_Timezone, using the provided MatchmakingReportRequestPerson1Timezone1
+func (t *MatchmakingReportRequest_Person1_Timezone) MergeMatchmakingReportRequestPerson1Timezone1(v MatchmakingReportRequestPerson1Timezone1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t MatchmakingReportRequest_Person1_Timezone) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *MatchmakingReportRequest_Person1_Timezone) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsMatchmakingReportRequestPerson2Timezone0 returns the union data inside the MatchmakingReportRequest_Person2_Timezone as a MatchmakingReportRequestPerson2Timezone0
+func (t MatchmakingReportRequest_Person2_Timezone) AsMatchmakingReportRequestPerson2Timezone0() (MatchmakingReportRequestPerson2Timezone0, error) {
+	var body MatchmakingReportRequestPerson2Timezone0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromMatchmakingReportRequestPerson2Timezone0 overwrites any union data inside the MatchmakingReportRequest_Person2_Timezone as the provided MatchmakingReportRequestPerson2Timezone0
+func (t *MatchmakingReportRequest_Person2_Timezone) FromMatchmakingReportRequestPerson2Timezone0(v MatchmakingReportRequestPerson2Timezone0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeMatchmakingReportRequestPerson2Timezone0 performs a merge with any union data inside the MatchmakingReportRequest_Person2_Timezone, using the provided MatchmakingReportRequestPerson2Timezone0
+func (t *MatchmakingReportRequest_Person2_Timezone) MergeMatchmakingReportRequestPerson2Timezone0(v MatchmakingReportRequestPerson2Timezone0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsMatchmakingReportRequestPerson2Timezone1 returns the union data inside the MatchmakingReportRequest_Person2_Timezone as a MatchmakingReportRequestPerson2Timezone1
+func (t MatchmakingReportRequest_Person2_Timezone) AsMatchmakingReportRequestPerson2Timezone1() (MatchmakingReportRequestPerson2Timezone1, error) {
+	var body MatchmakingReportRequestPerson2Timezone1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromMatchmakingReportRequestPerson2Timezone1 overwrites any union data inside the MatchmakingReportRequest_Person2_Timezone as the provided MatchmakingReportRequestPerson2Timezone1
+func (t *MatchmakingReportRequest_Person2_Timezone) FromMatchmakingReportRequestPerson2Timezone1(v MatchmakingReportRequestPerson2Timezone1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeMatchmakingReportRequestPerson2Timezone1 performs a merge with any union data inside the MatchmakingReportRequest_Person2_Timezone, using the provided MatchmakingReportRequestPerson2Timezone1
+func (t *MatchmakingReportRequest_Person2_Timezone) MergeMatchmakingReportRequestPerson2Timezone1(v MatchmakingReportRequestPerson2Timezone1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t MatchmakingReportRequest_Person2_Timezone) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *MatchmakingReportRequest_Person2_Timezone) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
 // AsNatalChartRequestTimezone0 returns the union data inside the NatalChartRequest_Timezone as a NatalChartRequestTimezone0
 func (t NatalChartRequest_Timezone) AsNatalChartRequestTimezone0() (NatalChartRequestTimezone0, error) {
 	var body NatalChartRequestTimezone0
@@ -46039,6 +49015,68 @@ func (t NatalChartRequest_Timezone) MarshalJSON() ([]byte, error) {
 }
 
 func (t *NatalChartRequest_Timezone) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsNatalReportRequestTimezone0 returns the union data inside the NatalReportRequest_Timezone as a NatalReportRequestTimezone0
+func (t NatalReportRequest_Timezone) AsNatalReportRequestTimezone0() (NatalReportRequestTimezone0, error) {
+	var body NatalReportRequestTimezone0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromNatalReportRequestTimezone0 overwrites any union data inside the NatalReportRequest_Timezone as the provided NatalReportRequestTimezone0
+func (t *NatalReportRequest_Timezone) FromNatalReportRequestTimezone0(v NatalReportRequestTimezone0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeNatalReportRequestTimezone0 performs a merge with any union data inside the NatalReportRequest_Timezone, using the provided NatalReportRequestTimezone0
+func (t *NatalReportRequest_Timezone) MergeNatalReportRequestTimezone0(v NatalReportRequestTimezone0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsNatalReportRequestTimezone1 returns the union data inside the NatalReportRequest_Timezone as a NatalReportRequestTimezone1
+func (t NatalReportRequest_Timezone) AsNatalReportRequestTimezone1() (NatalReportRequestTimezone1, error) {
+	var body NatalReportRequestTimezone1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromNatalReportRequestTimezone1 overwrites any union data inside the NatalReportRequest_Timezone as the provided NatalReportRequestTimezone1
+func (t *NatalReportRequest_Timezone) FromNatalReportRequestTimezone1(v NatalReportRequestTimezone1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeNatalReportRequestTimezone1 performs a merge with any union data inside the NatalReportRequest_Timezone, using the provided NatalReportRequestTimezone1
+func (t *NatalReportRequest_Timezone) MergeNatalReportRequestTimezone1(v NatalReportRequestTimezone1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t NatalReportRequest_Timezone) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *NatalReportRequest_Timezone) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }
@@ -46663,6 +49701,130 @@ func (t *SolarArcRequest_Timezone) UnmarshalJSON(b []byte) error {
 	return err
 }
 
+// AsSynastryReportRequestPerson1Timezone0 returns the union data inside the SynastryReportRequest_Person1_Timezone as a SynastryReportRequestPerson1Timezone0
+func (t SynastryReportRequest_Person1_Timezone) AsSynastryReportRequestPerson1Timezone0() (SynastryReportRequestPerson1Timezone0, error) {
+	var body SynastryReportRequestPerson1Timezone0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromSynastryReportRequestPerson1Timezone0 overwrites any union data inside the SynastryReportRequest_Person1_Timezone as the provided SynastryReportRequestPerson1Timezone0
+func (t *SynastryReportRequest_Person1_Timezone) FromSynastryReportRequestPerson1Timezone0(v SynastryReportRequestPerson1Timezone0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeSynastryReportRequestPerson1Timezone0 performs a merge with any union data inside the SynastryReportRequest_Person1_Timezone, using the provided SynastryReportRequestPerson1Timezone0
+func (t *SynastryReportRequest_Person1_Timezone) MergeSynastryReportRequestPerson1Timezone0(v SynastryReportRequestPerson1Timezone0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsSynastryReportRequestPerson1Timezone1 returns the union data inside the SynastryReportRequest_Person1_Timezone as a SynastryReportRequestPerson1Timezone1
+func (t SynastryReportRequest_Person1_Timezone) AsSynastryReportRequestPerson1Timezone1() (SynastryReportRequestPerson1Timezone1, error) {
+	var body SynastryReportRequestPerson1Timezone1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromSynastryReportRequestPerson1Timezone1 overwrites any union data inside the SynastryReportRequest_Person1_Timezone as the provided SynastryReportRequestPerson1Timezone1
+func (t *SynastryReportRequest_Person1_Timezone) FromSynastryReportRequestPerson1Timezone1(v SynastryReportRequestPerson1Timezone1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeSynastryReportRequestPerson1Timezone1 performs a merge with any union data inside the SynastryReportRequest_Person1_Timezone, using the provided SynastryReportRequestPerson1Timezone1
+func (t *SynastryReportRequest_Person1_Timezone) MergeSynastryReportRequestPerson1Timezone1(v SynastryReportRequestPerson1Timezone1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t SynastryReportRequest_Person1_Timezone) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *SynastryReportRequest_Person1_Timezone) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsSynastryReportRequestPerson2Timezone0 returns the union data inside the SynastryReportRequest_Person2_Timezone as a SynastryReportRequestPerson2Timezone0
+func (t SynastryReportRequest_Person2_Timezone) AsSynastryReportRequestPerson2Timezone0() (SynastryReportRequestPerson2Timezone0, error) {
+	var body SynastryReportRequestPerson2Timezone0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromSynastryReportRequestPerson2Timezone0 overwrites any union data inside the SynastryReportRequest_Person2_Timezone as the provided SynastryReportRequestPerson2Timezone0
+func (t *SynastryReportRequest_Person2_Timezone) FromSynastryReportRequestPerson2Timezone0(v SynastryReportRequestPerson2Timezone0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeSynastryReportRequestPerson2Timezone0 performs a merge with any union data inside the SynastryReportRequest_Person2_Timezone, using the provided SynastryReportRequestPerson2Timezone0
+func (t *SynastryReportRequest_Person2_Timezone) MergeSynastryReportRequestPerson2Timezone0(v SynastryReportRequestPerson2Timezone0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsSynastryReportRequestPerson2Timezone1 returns the union data inside the SynastryReportRequest_Person2_Timezone as a SynastryReportRequestPerson2Timezone1
+func (t SynastryReportRequest_Person2_Timezone) AsSynastryReportRequestPerson2Timezone1() (SynastryReportRequestPerson2Timezone1, error) {
+	var body SynastryReportRequestPerson2Timezone1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromSynastryReportRequestPerson2Timezone1 overwrites any union data inside the SynastryReportRequest_Person2_Timezone as the provided SynastryReportRequestPerson2Timezone1
+func (t *SynastryReportRequest_Person2_Timezone) FromSynastryReportRequestPerson2Timezone1(v SynastryReportRequestPerson2Timezone1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeSynastryReportRequestPerson2Timezone1 performs a merge with any union data inside the SynastryReportRequest_Person2_Timezone, using the provided SynastryReportRequestPerson2Timezone1
+func (t *SynastryReportRequest_Person2_Timezone) MergeSynastryReportRequestPerson2Timezone1(v SynastryReportRequestPerson2Timezone1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t SynastryReportRequest_Person2_Timezone) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *SynastryReportRequest_Person2_Timezone) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
 // AsTransitsRequestNatalChartTimezone0 returns the union data inside the TransitsRequest_NatalChart_Timezone as a TransitsRequestNatalChartTimezone0
 func (t TransitsRequest_NatalChart_Timezone) AsTransitsRequestNatalChartTimezone0() (TransitsRequestNatalChartTimezone0, error) {
 	var body TransitsRequestNatalChartTimezone0
@@ -46845,6 +50007,68 @@ func (t UpagrahaRequest_Timezone) MarshalJSON() ([]byte, error) {
 }
 
 func (t *UpagrahaRequest_Timezone) UnmarshalJSON(b []byte) error {
+	err := t.union.UnmarshalJSON(b)
+	return err
+}
+
+// AsYearlyForecastReportRequestTimezone0 returns the union data inside the YearlyForecastReportRequest_Timezone as a YearlyForecastReportRequestTimezone0
+func (t YearlyForecastReportRequest_Timezone) AsYearlyForecastReportRequestTimezone0() (YearlyForecastReportRequestTimezone0, error) {
+	var body YearlyForecastReportRequestTimezone0
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromYearlyForecastReportRequestTimezone0 overwrites any union data inside the YearlyForecastReportRequest_Timezone as the provided YearlyForecastReportRequestTimezone0
+func (t *YearlyForecastReportRequest_Timezone) FromYearlyForecastReportRequestTimezone0(v YearlyForecastReportRequestTimezone0) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeYearlyForecastReportRequestTimezone0 performs a merge with any union data inside the YearlyForecastReportRequest_Timezone, using the provided YearlyForecastReportRequestTimezone0
+func (t *YearlyForecastReportRequest_Timezone) MergeYearlyForecastReportRequestTimezone0(v YearlyForecastReportRequestTimezone0) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+// AsYearlyForecastReportRequestTimezone1 returns the union data inside the YearlyForecastReportRequest_Timezone as a YearlyForecastReportRequestTimezone1
+func (t YearlyForecastReportRequest_Timezone) AsYearlyForecastReportRequestTimezone1() (YearlyForecastReportRequestTimezone1, error) {
+	var body YearlyForecastReportRequestTimezone1
+	err := json.Unmarshal(t.union, &body)
+	return body, err
+}
+
+// FromYearlyForecastReportRequestTimezone1 overwrites any union data inside the YearlyForecastReportRequest_Timezone as the provided YearlyForecastReportRequestTimezone1
+func (t *YearlyForecastReportRequest_Timezone) FromYearlyForecastReportRequestTimezone1(v YearlyForecastReportRequestTimezone1) error {
+	b, err := json.Marshal(v)
+	t.union = b
+	return err
+}
+
+// MergeYearlyForecastReportRequestTimezone1 performs a merge with any union data inside the YearlyForecastReportRequest_Timezone, using the provided YearlyForecastReportRequestTimezone1
+func (t *YearlyForecastReportRequest_Timezone) MergeYearlyForecastReportRequestTimezone1(v YearlyForecastReportRequestTimezone1) error {
+	b, err := json.Marshal(v)
+	if err != nil {
+		return err
+	}
+
+	merged, err := runtime.JSONMerge(t.union, b)
+	t.union = merged
+	return err
+}
+
+func (t YearlyForecastReportRequest_Timezone) MarshalJSON() ([]byte, error) {
+	b, err := t.union.MarshalJSON()
+	return b, err
+}
+
+func (t *YearlyForecastReportRequest_Timezone) UnmarshalJSON(b []byte) error {
 	err := t.union.UnmarshalJSON(b)
 	return err
 }
@@ -53334,6 +56558,168 @@ type ClientInterface interface {
 	// Corresponds with POST /numerology/soul-urge (the `CalculateSoulUrge` operationId).
 	CalculateSoulUrge(ctx context.Context, params *CalculateSoulUrgeParams, body CalculateSoulUrgeJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
+	// GenerateBaziReportWithBody BaZi report - Branded PDF report API
+	//
+	// Renders the bazi report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /reports/bazi (the `GenerateBaziReport` operationId).
+	GenerateBaziReportWithBody(ctx context.Context, params *GenerateBaziReportParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GenerateBaziReport BaZi report - Branded PDF report API
+	//
+	// Renders the bazi report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /reports/bazi (the `GenerateBaziReport` operationId).
+	GenerateBaziReport(ctx context.Context, params *GenerateBaziReportParams, body GenerateBaziReportJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GenerateHumanDesignReportWithBody Human Design report - Branded PDF report API
+	//
+	// Renders the human design report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /reports/human-design (the `GenerateHumanDesignReport` operationId).
+	GenerateHumanDesignReportWithBody(ctx context.Context, params *GenerateHumanDesignReportParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GenerateHumanDesignReport Human Design report - Branded PDF report API
+	//
+	// Renders the human design report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /reports/human-design (the `GenerateHumanDesignReport` operationId).
+	GenerateHumanDesignReport(ctx context.Context, params *GenerateHumanDesignReportParams, body GenerateHumanDesignReportJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GenerateKundliReportWithBody Kundli report - Branded PDF report API
+	//
+	// Renders the kundli report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /reports/kundli (the `GenerateKundliReport` operationId).
+	GenerateKundliReportWithBody(ctx context.Context, params *GenerateKundliReportParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GenerateKundliReport Kundli report - Branded PDF report API
+	//
+	// Renders the kundli report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /reports/kundli (the `GenerateKundliReport` operationId).
+	GenerateKundliReport(ctx context.Context, params *GenerateKundliReportParams, body GenerateKundliReportJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GenerateMatchmakingReportWithBody Kundli matching report - Branded PDF report API
+	//
+	// Renders the kundli matching report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /reports/matchmaking (the `GenerateMatchmakingReport` operationId).
+	GenerateMatchmakingReportWithBody(ctx context.Context, params *GenerateMatchmakingReportParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GenerateMatchmakingReport Kundli matching report - Branded PDF report API
+	//
+	// Renders the kundli matching report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /reports/matchmaking (the `GenerateMatchmakingReport` operationId).
+	GenerateMatchmakingReport(ctx context.Context, params *GenerateMatchmakingReportParams, body GenerateMatchmakingReportJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GenerateNatalReportWithBody Natal chart report - Branded PDF report API
+	//
+	// Renders the natal chart report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /reports/natal (the `GenerateNatalReport` operationId).
+	GenerateNatalReportWithBody(ctx context.Context, params *GenerateNatalReportParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GenerateNatalReport Natal chart report - Branded PDF report API
+	//
+	// Renders the natal chart report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /reports/natal (the `GenerateNatalReport` operationId).
+	GenerateNatalReport(ctx context.Context, params *GenerateNatalReportParams, body GenerateNatalReportJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GenerateNumerologyReportWithBody Numerology report - Branded PDF report API
+	//
+	// Renders the numerology report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /reports/numerology (the `GenerateNumerologyReport` operationId).
+	GenerateNumerologyReportWithBody(ctx context.Context, params *GenerateNumerologyReportParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GenerateNumerologyReport Numerology report - Branded PDF report API
+	//
+	// Renders the numerology report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /reports/numerology (the `GenerateNumerologyReport` operationId).
+	GenerateNumerologyReport(ctx context.Context, params *GenerateNumerologyReportParams, body GenerateNumerologyReportJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GenerateSynastryReportWithBody Synastry report - Branded PDF report API
+	//
+	// Renders the synastry report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /reports/synastry (the `GenerateSynastryReport` operationId).
+	GenerateSynastryReportWithBody(ctx context.Context, params *GenerateSynastryReportParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GenerateSynastryReport Synastry report - Branded PDF report API
+	//
+	// Renders the synastry report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /reports/synastry (the `GenerateSynastryReport` operationId).
+	GenerateSynastryReport(ctx context.Context, params *GenerateSynastryReportParams, body GenerateSynastryReportJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GenerateTarotReportWithBody Tarot reading report - Branded PDF report API
+	//
+	// Renders the tarot reading report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /reports/tarot (the `GenerateTarotReport` operationId).
+	GenerateTarotReportWithBody(ctx context.Context, params *GenerateTarotReportParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GenerateTarotReport Tarot reading report - Branded PDF report API
+	//
+	// Renders the tarot reading report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /reports/tarot (the `GenerateTarotReport` operationId).
+	GenerateTarotReport(ctx context.Context, params *GenerateTarotReportParams, body GenerateTarotReportJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GenerateYearlyForecastReportWithBody Yearly forecast report - Branded PDF report API
+	//
+	// Renders the yearly forecast report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+	//
+	// Takes any type of body and a specified content type.
+	//
+	// Corresponds with POST /reports/yearly-forecast (the `GenerateYearlyForecastReport` operationId).
+	GenerateYearlyForecastReportWithBody(ctx context.Context, params *GenerateYearlyForecastReportParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
+
+	// GenerateYearlyForecastReport Yearly forecast report - Branded PDF report API
+	//
+	// Renders the yearly forecast report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+	//
+	// Takes a body of the `application/json` content type.
+	//
+	// Corresponds with POST /reports/yearly-forecast (the `GenerateYearlyForecastReport` operationId).
+	GenerateYearlyForecastReport(ctx context.Context, params *GenerateYearlyForecastReportParams, body GenerateYearlyForecastReportJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
+
 	// ListCards List all 78 tarot cards - Tarot deck catalog API
 	//
 	// Retrieve the complete Rider-Waite-Smith tarot deck of 78 cards. The 22 Major Arcana (numbered 0-21) carry life lessons, spiritual themes, and karmic influences like The Fool, Death, The Tower; the 56 Minor Arcana (4 suits × 14 cards each) cover daily situations and practical matters. Filter by arcana type (major for spiritual guidance, minor for everyday concerns), suit (cups for emotions and relationships, wands for creativity and passion, swords for intellect and conflict, pentacles for material wealth and finances), or card number (Ace=1 for new beginnings, 2-10 for progression, Page=11 for messages, Knight=12 for action, Queen=13 for mastery, King=14 for authority). Returns lightweight basic card data. Use GET /cards/{id} for full upright and reversed interpretations with keywords. Perfect for building tarot reference libraries, card databases, learning applications, or browsing the complete traditional deck used by professional tarot readers worldwide.
@@ -59660,6 +63046,348 @@ func (c *Client) CalculateSoulUrgeWithBody(ctx context.Context, params *Calculat
 // Corresponds with POST /numerology/soul-urge (the `CalculateSoulUrge` operationId).
 func (c *Client) CalculateSoulUrge(ctx context.Context, params *CalculateSoulUrgeParams, body CalculateSoulUrgeJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
 	req, err := NewCalculateSoulUrgeRequest(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GenerateBaziReportWithBody BaZi report - Branded PDF report API
+//
+// Renders the bazi report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /reports/bazi (the `GenerateBaziReport` operationId).
+func (c *Client) GenerateBaziReportWithBody(ctx context.Context, params *GenerateBaziReportParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGenerateBaziReportRequestWithBody(c.Server, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GenerateBaziReport BaZi report - Branded PDF report API
+//
+// Renders the bazi report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /reports/bazi (the `GenerateBaziReport` operationId).
+func (c *Client) GenerateBaziReport(ctx context.Context, params *GenerateBaziReportParams, body GenerateBaziReportJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGenerateBaziReportRequest(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GenerateHumanDesignReportWithBody Human Design report - Branded PDF report API
+//
+// Renders the human design report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /reports/human-design (the `GenerateHumanDesignReport` operationId).
+func (c *Client) GenerateHumanDesignReportWithBody(ctx context.Context, params *GenerateHumanDesignReportParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGenerateHumanDesignReportRequestWithBody(c.Server, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GenerateHumanDesignReport Human Design report - Branded PDF report API
+//
+// Renders the human design report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /reports/human-design (the `GenerateHumanDesignReport` operationId).
+func (c *Client) GenerateHumanDesignReport(ctx context.Context, params *GenerateHumanDesignReportParams, body GenerateHumanDesignReportJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGenerateHumanDesignReportRequest(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GenerateKundliReportWithBody Kundli report - Branded PDF report API
+//
+// Renders the kundli report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /reports/kundli (the `GenerateKundliReport` operationId).
+func (c *Client) GenerateKundliReportWithBody(ctx context.Context, params *GenerateKundliReportParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGenerateKundliReportRequestWithBody(c.Server, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GenerateKundliReport Kundli report - Branded PDF report API
+//
+// Renders the kundli report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /reports/kundli (the `GenerateKundliReport` operationId).
+func (c *Client) GenerateKundliReport(ctx context.Context, params *GenerateKundliReportParams, body GenerateKundliReportJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGenerateKundliReportRequest(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GenerateMatchmakingReportWithBody Kundli matching report - Branded PDF report API
+//
+// Renders the kundli matching report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /reports/matchmaking (the `GenerateMatchmakingReport` operationId).
+func (c *Client) GenerateMatchmakingReportWithBody(ctx context.Context, params *GenerateMatchmakingReportParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGenerateMatchmakingReportRequestWithBody(c.Server, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GenerateMatchmakingReport Kundli matching report - Branded PDF report API
+//
+// Renders the kundli matching report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /reports/matchmaking (the `GenerateMatchmakingReport` operationId).
+func (c *Client) GenerateMatchmakingReport(ctx context.Context, params *GenerateMatchmakingReportParams, body GenerateMatchmakingReportJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGenerateMatchmakingReportRequest(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GenerateNatalReportWithBody Natal chart report - Branded PDF report API
+//
+// Renders the natal chart report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /reports/natal (the `GenerateNatalReport` operationId).
+func (c *Client) GenerateNatalReportWithBody(ctx context.Context, params *GenerateNatalReportParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGenerateNatalReportRequestWithBody(c.Server, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GenerateNatalReport Natal chart report - Branded PDF report API
+//
+// Renders the natal chart report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /reports/natal (the `GenerateNatalReport` operationId).
+func (c *Client) GenerateNatalReport(ctx context.Context, params *GenerateNatalReportParams, body GenerateNatalReportJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGenerateNatalReportRequest(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GenerateNumerologyReportWithBody Numerology report - Branded PDF report API
+//
+// Renders the numerology report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /reports/numerology (the `GenerateNumerologyReport` operationId).
+func (c *Client) GenerateNumerologyReportWithBody(ctx context.Context, params *GenerateNumerologyReportParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGenerateNumerologyReportRequestWithBody(c.Server, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GenerateNumerologyReport Numerology report - Branded PDF report API
+//
+// Renders the numerology report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /reports/numerology (the `GenerateNumerologyReport` operationId).
+func (c *Client) GenerateNumerologyReport(ctx context.Context, params *GenerateNumerologyReportParams, body GenerateNumerologyReportJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGenerateNumerologyReportRequest(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GenerateSynastryReportWithBody Synastry report - Branded PDF report API
+//
+// Renders the synastry report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /reports/synastry (the `GenerateSynastryReport` operationId).
+func (c *Client) GenerateSynastryReportWithBody(ctx context.Context, params *GenerateSynastryReportParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGenerateSynastryReportRequestWithBody(c.Server, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GenerateSynastryReport Synastry report - Branded PDF report API
+//
+// Renders the synastry report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /reports/synastry (the `GenerateSynastryReport` operationId).
+func (c *Client) GenerateSynastryReport(ctx context.Context, params *GenerateSynastryReportParams, body GenerateSynastryReportJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGenerateSynastryReportRequest(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GenerateTarotReportWithBody Tarot reading report - Branded PDF report API
+//
+// Renders the tarot reading report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /reports/tarot (the `GenerateTarotReport` operationId).
+func (c *Client) GenerateTarotReportWithBody(ctx context.Context, params *GenerateTarotReportParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGenerateTarotReportRequestWithBody(c.Server, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GenerateTarotReport Tarot reading report - Branded PDF report API
+//
+// Renders the tarot reading report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /reports/tarot (the `GenerateTarotReport` operationId).
+func (c *Client) GenerateTarotReport(ctx context.Context, params *GenerateTarotReportParams, body GenerateTarotReportJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGenerateTarotReportRequest(c.Server, params, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GenerateYearlyForecastReportWithBody Yearly forecast report - Branded PDF report API
+//
+// Renders the yearly forecast report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+//
+// Takes any type of body and a specified content type.
+//
+// Corresponds with POST /reports/yearly-forecast (the `GenerateYearlyForecastReport` operationId).
+func (c *Client) GenerateYearlyForecastReportWithBody(ctx context.Context, params *GenerateYearlyForecastReportParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGenerateYearlyForecastReportRequestWithBody(c.Server, params, contentType, body)
+	if err != nil {
+		return nil, err
+	}
+	req = req.WithContext(ctx)
+	if err := c.applyEditors(ctx, req, reqEditors); err != nil {
+		return nil, err
+	}
+	return c.Client.Do(req)
+}
+
+// GenerateYearlyForecastReport Yearly forecast report - Branded PDF report API
+//
+// Renders the yearly forecast report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+//
+// Takes a body of the `application/json` content type.
+//
+// Corresponds with POST /reports/yearly-forecast (the `GenerateYearlyForecastReport` operationId).
+func (c *Client) GenerateYearlyForecastReport(ctx context.Context, params *GenerateYearlyForecastReportParams, body GenerateYearlyForecastReportJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error) {
+	req, err := NewGenerateYearlyForecastReportRequest(c.Server, params, body)
 	if err != nil {
 		return nil, err
 	}
@@ -74833,6 +78561,609 @@ func NewCalculateSoulUrgeRequestWithBody(server string, params *CalculateSoulUrg
 	return req, nil
 }
 
+// NewGenerateBaziReportRequest calls the generic GenerateBaziReport builder with application/json body
+func NewGenerateBaziReportRequest(server string, params *GenerateBaziReportParams, body GenerateBaziReportJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewGenerateBaziReportRequestWithBody(server, params, "application/json", bodyReader)
+}
+
+// NewGenerateBaziReportRequestWithBody constructs an http.Request for the GenerateBaziReport method, with any body, and a specified content type
+func NewGenerateBaziReportRequestWithBody(server string, params *GenerateBaziReportParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/reports/bazi")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Lang != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "lang", *params.Lang, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewGenerateHumanDesignReportRequest calls the generic GenerateHumanDesignReport builder with application/json body
+func NewGenerateHumanDesignReportRequest(server string, params *GenerateHumanDesignReportParams, body GenerateHumanDesignReportJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewGenerateHumanDesignReportRequestWithBody(server, params, "application/json", bodyReader)
+}
+
+// NewGenerateHumanDesignReportRequestWithBody constructs an http.Request for the GenerateHumanDesignReport method, with any body, and a specified content type
+func NewGenerateHumanDesignReportRequestWithBody(server string, params *GenerateHumanDesignReportParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/reports/human-design")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Lang != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "lang", *params.Lang, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewGenerateKundliReportRequest calls the generic GenerateKundliReport builder with application/json body
+func NewGenerateKundliReportRequest(server string, params *GenerateKundliReportParams, body GenerateKundliReportJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewGenerateKundliReportRequestWithBody(server, params, "application/json", bodyReader)
+}
+
+// NewGenerateKundliReportRequestWithBody constructs an http.Request for the GenerateKundliReport method, with any body, and a specified content type
+func NewGenerateKundliReportRequestWithBody(server string, params *GenerateKundliReportParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/reports/kundli")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Lang != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "lang", *params.Lang, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewGenerateMatchmakingReportRequest calls the generic GenerateMatchmakingReport builder with application/json body
+func NewGenerateMatchmakingReportRequest(server string, params *GenerateMatchmakingReportParams, body GenerateMatchmakingReportJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewGenerateMatchmakingReportRequestWithBody(server, params, "application/json", bodyReader)
+}
+
+// NewGenerateMatchmakingReportRequestWithBody constructs an http.Request for the GenerateMatchmakingReport method, with any body, and a specified content type
+func NewGenerateMatchmakingReportRequestWithBody(server string, params *GenerateMatchmakingReportParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/reports/matchmaking")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Lang != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "lang", *params.Lang, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewGenerateNatalReportRequest calls the generic GenerateNatalReport builder with application/json body
+func NewGenerateNatalReportRequest(server string, params *GenerateNatalReportParams, body GenerateNatalReportJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewGenerateNatalReportRequestWithBody(server, params, "application/json", bodyReader)
+}
+
+// NewGenerateNatalReportRequestWithBody constructs an http.Request for the GenerateNatalReport method, with any body, and a specified content type
+func NewGenerateNatalReportRequestWithBody(server string, params *GenerateNatalReportParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/reports/natal")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Lang != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "lang", *params.Lang, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewGenerateNumerologyReportRequest calls the generic GenerateNumerologyReport builder with application/json body
+func NewGenerateNumerologyReportRequest(server string, params *GenerateNumerologyReportParams, body GenerateNumerologyReportJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewGenerateNumerologyReportRequestWithBody(server, params, "application/json", bodyReader)
+}
+
+// NewGenerateNumerologyReportRequestWithBody constructs an http.Request for the GenerateNumerologyReport method, with any body, and a specified content type
+func NewGenerateNumerologyReportRequestWithBody(server string, params *GenerateNumerologyReportParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/reports/numerology")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Lang != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "lang", *params.Lang, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewGenerateSynastryReportRequest calls the generic GenerateSynastryReport builder with application/json body
+func NewGenerateSynastryReportRequest(server string, params *GenerateSynastryReportParams, body GenerateSynastryReportJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewGenerateSynastryReportRequestWithBody(server, params, "application/json", bodyReader)
+}
+
+// NewGenerateSynastryReportRequestWithBody constructs an http.Request for the GenerateSynastryReport method, with any body, and a specified content type
+func NewGenerateSynastryReportRequestWithBody(server string, params *GenerateSynastryReportParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/reports/synastry")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Lang != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "lang", *params.Lang, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewGenerateTarotReportRequest calls the generic GenerateTarotReport builder with application/json body
+func NewGenerateTarotReportRequest(server string, params *GenerateTarotReportParams, body GenerateTarotReportJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewGenerateTarotReportRequestWithBody(server, params, "application/json", bodyReader)
+}
+
+// NewGenerateTarotReportRequestWithBody constructs an http.Request for the GenerateTarotReport method, with any body, and a specified content type
+func NewGenerateTarotReportRequestWithBody(server string, params *GenerateTarotReportParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/reports/tarot")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Lang != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "lang", *params.Lang, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
+// NewGenerateYearlyForecastReportRequest calls the generic GenerateYearlyForecastReport builder with application/json body
+func NewGenerateYearlyForecastReportRequest(server string, params *GenerateYearlyForecastReportParams, body GenerateYearlyForecastReportJSONRequestBody) (*http.Request, error) {
+	var bodyReader io.Reader
+	buf, err := json.Marshal(body)
+	if err != nil {
+		return nil, err
+	}
+	bodyReader = bytes.NewReader(buf)
+	return NewGenerateYearlyForecastReportRequestWithBody(server, params, "application/json", bodyReader)
+}
+
+// NewGenerateYearlyForecastReportRequestWithBody constructs an http.Request for the GenerateYearlyForecastReport method, with any body, and a specified content type
+func NewGenerateYearlyForecastReportRequestWithBody(server string, params *GenerateYearlyForecastReportParams, contentType string, body io.Reader) (*http.Request, error) {
+	var err error
+
+	serverURL, err := url.Parse(server)
+	if err != nil {
+		return nil, err
+	}
+
+	operationPath := fmt.Sprintf("/reports/yearly-forecast")
+	if operationPath[0] == '/' {
+		operationPath = "." + operationPath
+	}
+
+	queryURL, err := serverURL.Parse(operationPath)
+	if err != nil {
+		return nil, err
+	}
+
+	if params != nil {
+		// queryValues collects non-styled parameters (passthrough, JSON)
+		// that are safe to round-trip through url.Values.Encode().
+		queryValues := queryURL.Query()
+		// rawQueryFragments collects pre-encoded query fragments from
+		// styled parameters, preserving literal commas as delimiters
+		// per the OpenAPI spec (e.g. "color=blue,black,brown").
+		var rawQueryFragments []string
+
+		if params.Lang != nil {
+
+			if queryFrag, err := runtime.StyleParamWithOptions("form", true, "lang", *params.Lang, runtime.StyleParamOptions{ParamLocation: runtime.ParamLocationQuery, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			} else {
+				for _, qp := range strings.Split(queryFrag, "&") {
+					rawQueryFragments = append(rawQueryFragments, qp)
+				}
+			}
+
+		}
+
+		if encoded := queryValues.Encode(); encoded != "" {
+			rawQueryFragments = append(rawQueryFragments, encoded)
+		}
+		queryURL.RawQuery = strings.Join(rawQueryFragments, "&")
+	}
+
+	req, err := http.NewRequest(http.MethodPost, queryURL.String(), body)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Add("Content-Type", contentType)
+
+	return req, nil
+}
+
 // NewListCardsRequest constructs an http.Request for the ListCards method
 func NewListCardsRequest(server string, params *ListCardsParams) (*http.Request, error) {
 	var err error
@@ -82531,6 +86862,168 @@ type ClientWithResponsesInterface interface {
 	//
 	// Corresponds with POST /numerology/soul-urge (the `CalculateSoulUrge` operationId).
 	CalculateSoulUrgeWithResponse(ctx context.Context, params *CalculateSoulUrgeParams, body CalculateSoulUrgeJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateSoulUrgeResponse, error)
+
+	// GenerateBaziReportWithBodyWithResponse BaZi report - Branded PDF report API
+	//
+	// Renders the bazi report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /reports/bazi (the `GenerateBaziReport` operationId).
+	GenerateBaziReportWithBodyWithResponse(ctx context.Context, params *GenerateBaziReportParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GenerateBaziReportResponse, error)
+
+	// GenerateBaziReportWithResponse BaZi report - Branded PDF report API
+	//
+	// Renders the bazi report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /reports/bazi (the `GenerateBaziReport` operationId).
+	GenerateBaziReportWithResponse(ctx context.Context, params *GenerateBaziReportParams, body GenerateBaziReportJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateBaziReportResponse, error)
+
+	// GenerateHumanDesignReportWithBodyWithResponse Human Design report - Branded PDF report API
+	//
+	// Renders the human design report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /reports/human-design (the `GenerateHumanDesignReport` operationId).
+	GenerateHumanDesignReportWithBodyWithResponse(ctx context.Context, params *GenerateHumanDesignReportParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GenerateHumanDesignReportResponse, error)
+
+	// GenerateHumanDesignReportWithResponse Human Design report - Branded PDF report API
+	//
+	// Renders the human design report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /reports/human-design (the `GenerateHumanDesignReport` operationId).
+	GenerateHumanDesignReportWithResponse(ctx context.Context, params *GenerateHumanDesignReportParams, body GenerateHumanDesignReportJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateHumanDesignReportResponse, error)
+
+	// GenerateKundliReportWithBodyWithResponse Kundli report - Branded PDF report API
+	//
+	// Renders the kundli report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /reports/kundli (the `GenerateKundliReport` operationId).
+	GenerateKundliReportWithBodyWithResponse(ctx context.Context, params *GenerateKundliReportParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GenerateKundliReportResponse, error)
+
+	// GenerateKundliReportWithResponse Kundli report - Branded PDF report API
+	//
+	// Renders the kundli report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /reports/kundli (the `GenerateKundliReport` operationId).
+	GenerateKundliReportWithResponse(ctx context.Context, params *GenerateKundliReportParams, body GenerateKundliReportJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateKundliReportResponse, error)
+
+	// GenerateMatchmakingReportWithBodyWithResponse Kundli matching report - Branded PDF report API
+	//
+	// Renders the kundli matching report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /reports/matchmaking (the `GenerateMatchmakingReport` operationId).
+	GenerateMatchmakingReportWithBodyWithResponse(ctx context.Context, params *GenerateMatchmakingReportParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GenerateMatchmakingReportResponse, error)
+
+	// GenerateMatchmakingReportWithResponse Kundli matching report - Branded PDF report API
+	//
+	// Renders the kundli matching report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /reports/matchmaking (the `GenerateMatchmakingReport` operationId).
+	GenerateMatchmakingReportWithResponse(ctx context.Context, params *GenerateMatchmakingReportParams, body GenerateMatchmakingReportJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateMatchmakingReportResponse, error)
+
+	// GenerateNatalReportWithBodyWithResponse Natal chart report - Branded PDF report API
+	//
+	// Renders the natal chart report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /reports/natal (the `GenerateNatalReport` operationId).
+	GenerateNatalReportWithBodyWithResponse(ctx context.Context, params *GenerateNatalReportParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GenerateNatalReportResponse, error)
+
+	// GenerateNatalReportWithResponse Natal chart report - Branded PDF report API
+	//
+	// Renders the natal chart report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /reports/natal (the `GenerateNatalReport` operationId).
+	GenerateNatalReportWithResponse(ctx context.Context, params *GenerateNatalReportParams, body GenerateNatalReportJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateNatalReportResponse, error)
+
+	// GenerateNumerologyReportWithBodyWithResponse Numerology report - Branded PDF report API
+	//
+	// Renders the numerology report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /reports/numerology (the `GenerateNumerologyReport` operationId).
+	GenerateNumerologyReportWithBodyWithResponse(ctx context.Context, params *GenerateNumerologyReportParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GenerateNumerologyReportResponse, error)
+
+	// GenerateNumerologyReportWithResponse Numerology report - Branded PDF report API
+	//
+	// Renders the numerology report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /reports/numerology (the `GenerateNumerologyReport` operationId).
+	GenerateNumerologyReportWithResponse(ctx context.Context, params *GenerateNumerologyReportParams, body GenerateNumerologyReportJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateNumerologyReportResponse, error)
+
+	// GenerateSynastryReportWithBodyWithResponse Synastry report - Branded PDF report API
+	//
+	// Renders the synastry report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /reports/synastry (the `GenerateSynastryReport` operationId).
+	GenerateSynastryReportWithBodyWithResponse(ctx context.Context, params *GenerateSynastryReportParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GenerateSynastryReportResponse, error)
+
+	// GenerateSynastryReportWithResponse Synastry report - Branded PDF report API
+	//
+	// Renders the synastry report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /reports/synastry (the `GenerateSynastryReport` operationId).
+	GenerateSynastryReportWithResponse(ctx context.Context, params *GenerateSynastryReportParams, body GenerateSynastryReportJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateSynastryReportResponse, error)
+
+	// GenerateTarotReportWithBodyWithResponse Tarot reading report - Branded PDF report API
+	//
+	// Renders the tarot reading report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /reports/tarot (the `GenerateTarotReport` operationId).
+	GenerateTarotReportWithBodyWithResponse(ctx context.Context, params *GenerateTarotReportParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GenerateTarotReportResponse, error)
+
+	// GenerateTarotReportWithResponse Tarot reading report - Branded PDF report API
+	//
+	// Renders the tarot reading report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /reports/tarot (the `GenerateTarotReport` operationId).
+	GenerateTarotReportWithResponse(ctx context.Context, params *GenerateTarotReportParams, body GenerateTarotReportJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateTarotReportResponse, error)
+
+	// GenerateYearlyForecastReportWithBodyWithResponse Yearly forecast report - Branded PDF report API
+	//
+	// Renders the yearly forecast report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+	//
+	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /reports/yearly-forecast (the `GenerateYearlyForecastReport` operationId).
+	GenerateYearlyForecastReportWithBodyWithResponse(ctx context.Context, params *GenerateYearlyForecastReportParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GenerateYearlyForecastReportResponse, error)
+
+	// GenerateYearlyForecastReportWithResponse Yearly forecast report - Branded PDF report API
+	//
+	// Renders the yearly forecast report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+	//
+	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+	//
+	// Corresponds with POST /reports/yearly-forecast (the `GenerateYearlyForecastReport` operationId).
+	GenerateYearlyForecastReportWithResponse(ctx context.Context, params *GenerateYearlyForecastReportParams, body GenerateYearlyForecastReportJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateYearlyForecastReportResponse, error)
 
 	// ListCardsWithResponse List all 78 tarot cards - Tarot deck catalog API
 	//
@@ -125849,6 +130342,1230 @@ func (r CalculateSoulUrgeResponse) ContentType() string {
 	return ""
 }
 
+// GenerateBaziReportResponse405Headers the declared response headers of an HTTP 405 response for GenerateBaziReport
+type GenerateBaziReportResponse405Headers struct {
+	Allow *string
+}
+
+type GenerateBaziReportResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// Format Format of the output field present.
+		Format GenerateBaziReport200JSONResponseBodyFormat `json:"format"`
+
+		// HTML The report as one self-contained HTML document. Present when format is html.
+		HTML *string `json:"html,omitempty"`
+
+		// Lang Language the report is written in.
+		Lang string `json:"lang"`
+
+		// Markdown The report as CommonMark. Present when format is markdown.
+		Markdown *string `json:"markdown,omitempty"`
+
+		// Pages Number of PDF pages. Present when format is pdf.
+		Pages *int `json:"pages,omitempty"`
+
+		// Pdf The PDF, base64 encoded. Present when format is pdf: decode it and save it as a .pdf file.
+		Pdf *string `json:"pdf,omitempty"`
+
+		// Template The report template rendered.
+		Template string `json:"template"`
+
+		// Title Report title in the report language, ready for a file name or a heading.
+		Title string `json:"title"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON405 the response for an HTTP 405 `application/json` response
+	JSON405 *ErrorResponse
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+	// Headers405 the parsed response headers for an HTTP 405 response
+	Headers405 *GenerateBaziReportResponse405Headers
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GenerateBaziReportResponse) GetJSON200() *struct {
+	// Format Format of the output field present.
+	Format GenerateBaziReport200JSONResponseBodyFormat `json:"format"`
+
+	// HTML The report as one self-contained HTML document. Present when format is html.
+	HTML *string `json:"html,omitempty"`
+
+	// Lang Language the report is written in.
+	Lang string `json:"lang"`
+
+	// Markdown The report as CommonMark. Present when format is markdown.
+	Markdown *string `json:"markdown,omitempty"`
+
+	// Pages Number of PDF pages. Present when format is pdf.
+	Pages *int `json:"pages,omitempty"`
+
+	// Pdf The PDF, base64 encoded. Present when format is pdf: decode it and save it as a .pdf file.
+	Pdf *string `json:"pdf,omitempty"`
+
+	// Template The report template rendered.
+	Template string `json:"template"`
+
+	// Title Report title in the report language, ready for a file name or a heading.
+	Title string `json:"title"`
+} {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r GenerateBaziReportResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r GenerateBaziReportResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON405 returns the response for an HTTP 405 `application/json` response
+func (r GenerateBaziReportResponse) GetJSON405() *ErrorResponse {
+	return r.JSON405
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r GenerateBaziReportResponse) GetJSON429() *ErrorResponse {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GenerateBaziReportResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r GenerateBaziReportResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GenerateBaziReportResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GenerateBaziReportResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// Bytes is a convenience method to retrieve the raw bytes from the HTTP response
+func (r GenerateBaziReportResponse) Bytes() []byte {
+	return r.Body
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GenerateBaziReportResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+// GenerateHumanDesignReportResponse405Headers the declared response headers of an HTTP 405 response for GenerateHumanDesignReport
+type GenerateHumanDesignReportResponse405Headers struct {
+	Allow *string
+}
+
+type GenerateHumanDesignReportResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// Format Format of the output field present.
+		Format GenerateHumanDesignReport200JSONResponseBodyFormat `json:"format"`
+
+		// HTML The report as one self-contained HTML document. Present when format is html.
+		HTML *string `json:"html,omitempty"`
+
+		// Lang Language the report is written in.
+		Lang string `json:"lang"`
+
+		// Markdown The report as CommonMark. Present when format is markdown.
+		Markdown *string `json:"markdown,omitempty"`
+
+		// Pages Number of PDF pages. Present when format is pdf.
+		Pages *int `json:"pages,omitempty"`
+
+		// Pdf The PDF, base64 encoded. Present when format is pdf: decode it and save it as a .pdf file.
+		Pdf *string `json:"pdf,omitempty"`
+
+		// Template The report template rendered.
+		Template string `json:"template"`
+
+		// Title Report title in the report language, ready for a file name or a heading.
+		Title string `json:"title"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON405 the response for an HTTP 405 `application/json` response
+	JSON405 *ErrorResponse
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+	// Headers405 the parsed response headers for an HTTP 405 response
+	Headers405 *GenerateHumanDesignReportResponse405Headers
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GenerateHumanDesignReportResponse) GetJSON200() *struct {
+	// Format Format of the output field present.
+	Format GenerateHumanDesignReport200JSONResponseBodyFormat `json:"format"`
+
+	// HTML The report as one self-contained HTML document. Present when format is html.
+	HTML *string `json:"html,omitempty"`
+
+	// Lang Language the report is written in.
+	Lang string `json:"lang"`
+
+	// Markdown The report as CommonMark. Present when format is markdown.
+	Markdown *string `json:"markdown,omitempty"`
+
+	// Pages Number of PDF pages. Present when format is pdf.
+	Pages *int `json:"pages,omitempty"`
+
+	// Pdf The PDF, base64 encoded. Present when format is pdf: decode it and save it as a .pdf file.
+	Pdf *string `json:"pdf,omitempty"`
+
+	// Template The report template rendered.
+	Template string `json:"template"`
+
+	// Title Report title in the report language, ready for a file name or a heading.
+	Title string `json:"title"`
+} {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r GenerateHumanDesignReportResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r GenerateHumanDesignReportResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON405 returns the response for an HTTP 405 `application/json` response
+func (r GenerateHumanDesignReportResponse) GetJSON405() *ErrorResponse {
+	return r.JSON405
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r GenerateHumanDesignReportResponse) GetJSON429() *ErrorResponse {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GenerateHumanDesignReportResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r GenerateHumanDesignReportResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GenerateHumanDesignReportResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GenerateHumanDesignReportResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// Bytes is a convenience method to retrieve the raw bytes from the HTTP response
+func (r GenerateHumanDesignReportResponse) Bytes() []byte {
+	return r.Body
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GenerateHumanDesignReportResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+// GenerateKundliReportResponse405Headers the declared response headers of an HTTP 405 response for GenerateKundliReport
+type GenerateKundliReportResponse405Headers struct {
+	Allow *string
+}
+
+type GenerateKundliReportResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// Format Format of the output field present.
+		Format GenerateKundliReport200JSONResponseBodyFormat `json:"format"`
+
+		// HTML The report as one self-contained HTML document. Present when format is html.
+		HTML *string `json:"html,omitempty"`
+
+		// Lang Language the report is written in.
+		Lang string `json:"lang"`
+
+		// Markdown The report as CommonMark. Present when format is markdown.
+		Markdown *string `json:"markdown,omitempty"`
+
+		// Pages Number of PDF pages. Present when format is pdf.
+		Pages *int `json:"pages,omitempty"`
+
+		// Pdf The PDF, base64 encoded. Present when format is pdf: decode it and save it as a .pdf file.
+		Pdf *string `json:"pdf,omitempty"`
+
+		// Template The report template rendered.
+		Template string `json:"template"`
+
+		// Title Report title in the report language, ready for a file name or a heading.
+		Title string `json:"title"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON405 the response for an HTTP 405 `application/json` response
+	JSON405 *ErrorResponse
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+	// Headers405 the parsed response headers for an HTTP 405 response
+	Headers405 *GenerateKundliReportResponse405Headers
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GenerateKundliReportResponse) GetJSON200() *struct {
+	// Format Format of the output field present.
+	Format GenerateKundliReport200JSONResponseBodyFormat `json:"format"`
+
+	// HTML The report as one self-contained HTML document. Present when format is html.
+	HTML *string `json:"html,omitempty"`
+
+	// Lang Language the report is written in.
+	Lang string `json:"lang"`
+
+	// Markdown The report as CommonMark. Present when format is markdown.
+	Markdown *string `json:"markdown,omitempty"`
+
+	// Pages Number of PDF pages. Present when format is pdf.
+	Pages *int `json:"pages,omitempty"`
+
+	// Pdf The PDF, base64 encoded. Present when format is pdf: decode it and save it as a .pdf file.
+	Pdf *string `json:"pdf,omitempty"`
+
+	// Template The report template rendered.
+	Template string `json:"template"`
+
+	// Title Report title in the report language, ready for a file name or a heading.
+	Title string `json:"title"`
+} {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r GenerateKundliReportResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r GenerateKundliReportResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON405 returns the response for an HTTP 405 `application/json` response
+func (r GenerateKundliReportResponse) GetJSON405() *ErrorResponse {
+	return r.JSON405
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r GenerateKundliReportResponse) GetJSON429() *ErrorResponse {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GenerateKundliReportResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r GenerateKundliReportResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GenerateKundliReportResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GenerateKundliReportResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// Bytes is a convenience method to retrieve the raw bytes from the HTTP response
+func (r GenerateKundliReportResponse) Bytes() []byte {
+	return r.Body
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GenerateKundliReportResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+// GenerateMatchmakingReportResponse405Headers the declared response headers of an HTTP 405 response for GenerateMatchmakingReport
+type GenerateMatchmakingReportResponse405Headers struct {
+	Allow *string
+}
+
+type GenerateMatchmakingReportResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// Format Format of the output field present.
+		Format GenerateMatchmakingReport200JSONResponseBodyFormat `json:"format"`
+
+		// HTML The report as one self-contained HTML document. Present when format is html.
+		HTML *string `json:"html,omitempty"`
+
+		// Lang Language the report is written in.
+		Lang string `json:"lang"`
+
+		// Markdown The report as CommonMark. Present when format is markdown.
+		Markdown *string `json:"markdown,omitempty"`
+
+		// Pages Number of PDF pages. Present when format is pdf.
+		Pages *int `json:"pages,omitempty"`
+
+		// Pdf The PDF, base64 encoded. Present when format is pdf: decode it and save it as a .pdf file.
+		Pdf *string `json:"pdf,omitempty"`
+
+		// Template The report template rendered.
+		Template string `json:"template"`
+
+		// Title Report title in the report language, ready for a file name or a heading.
+		Title string `json:"title"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON405 the response for an HTTP 405 `application/json` response
+	JSON405 *ErrorResponse
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+	// Headers405 the parsed response headers for an HTTP 405 response
+	Headers405 *GenerateMatchmakingReportResponse405Headers
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GenerateMatchmakingReportResponse) GetJSON200() *struct {
+	// Format Format of the output field present.
+	Format GenerateMatchmakingReport200JSONResponseBodyFormat `json:"format"`
+
+	// HTML The report as one self-contained HTML document. Present when format is html.
+	HTML *string `json:"html,omitempty"`
+
+	// Lang Language the report is written in.
+	Lang string `json:"lang"`
+
+	// Markdown The report as CommonMark. Present when format is markdown.
+	Markdown *string `json:"markdown,omitempty"`
+
+	// Pages Number of PDF pages. Present when format is pdf.
+	Pages *int `json:"pages,omitempty"`
+
+	// Pdf The PDF, base64 encoded. Present when format is pdf: decode it and save it as a .pdf file.
+	Pdf *string `json:"pdf,omitempty"`
+
+	// Template The report template rendered.
+	Template string `json:"template"`
+
+	// Title Report title in the report language, ready for a file name or a heading.
+	Title string `json:"title"`
+} {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r GenerateMatchmakingReportResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r GenerateMatchmakingReportResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON405 returns the response for an HTTP 405 `application/json` response
+func (r GenerateMatchmakingReportResponse) GetJSON405() *ErrorResponse {
+	return r.JSON405
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r GenerateMatchmakingReportResponse) GetJSON429() *ErrorResponse {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GenerateMatchmakingReportResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r GenerateMatchmakingReportResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GenerateMatchmakingReportResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GenerateMatchmakingReportResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// Bytes is a convenience method to retrieve the raw bytes from the HTTP response
+func (r GenerateMatchmakingReportResponse) Bytes() []byte {
+	return r.Body
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GenerateMatchmakingReportResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+// GenerateNatalReportResponse405Headers the declared response headers of an HTTP 405 response for GenerateNatalReport
+type GenerateNatalReportResponse405Headers struct {
+	Allow *string
+}
+
+type GenerateNatalReportResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// Format Format of the output field present.
+		Format GenerateNatalReport200JSONResponseBodyFormat `json:"format"`
+
+		// HTML The report as one self-contained HTML document. Present when format is html.
+		HTML *string `json:"html,omitempty"`
+
+		// Lang Language the report is written in.
+		Lang string `json:"lang"`
+
+		// Markdown The report as CommonMark. Present when format is markdown.
+		Markdown *string `json:"markdown,omitempty"`
+
+		// Pages Number of PDF pages. Present when format is pdf.
+		Pages *int `json:"pages,omitempty"`
+
+		// Pdf The PDF, base64 encoded. Present when format is pdf: decode it and save it as a .pdf file.
+		Pdf *string `json:"pdf,omitempty"`
+
+		// Template The report template rendered.
+		Template string `json:"template"`
+
+		// Title Report title in the report language, ready for a file name or a heading.
+		Title string `json:"title"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON405 the response for an HTTP 405 `application/json` response
+	JSON405 *ErrorResponse
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+	// Headers405 the parsed response headers for an HTTP 405 response
+	Headers405 *GenerateNatalReportResponse405Headers
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GenerateNatalReportResponse) GetJSON200() *struct {
+	// Format Format of the output field present.
+	Format GenerateNatalReport200JSONResponseBodyFormat `json:"format"`
+
+	// HTML The report as one self-contained HTML document. Present when format is html.
+	HTML *string `json:"html,omitempty"`
+
+	// Lang Language the report is written in.
+	Lang string `json:"lang"`
+
+	// Markdown The report as CommonMark. Present when format is markdown.
+	Markdown *string `json:"markdown,omitempty"`
+
+	// Pages Number of PDF pages. Present when format is pdf.
+	Pages *int `json:"pages,omitempty"`
+
+	// Pdf The PDF, base64 encoded. Present when format is pdf: decode it and save it as a .pdf file.
+	Pdf *string `json:"pdf,omitempty"`
+
+	// Template The report template rendered.
+	Template string `json:"template"`
+
+	// Title Report title in the report language, ready for a file name or a heading.
+	Title string `json:"title"`
+} {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r GenerateNatalReportResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r GenerateNatalReportResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON405 returns the response for an HTTP 405 `application/json` response
+func (r GenerateNatalReportResponse) GetJSON405() *ErrorResponse {
+	return r.JSON405
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r GenerateNatalReportResponse) GetJSON429() *ErrorResponse {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GenerateNatalReportResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r GenerateNatalReportResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GenerateNatalReportResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GenerateNatalReportResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// Bytes is a convenience method to retrieve the raw bytes from the HTTP response
+func (r GenerateNatalReportResponse) Bytes() []byte {
+	return r.Body
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GenerateNatalReportResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+// GenerateNumerologyReportResponse405Headers the declared response headers of an HTTP 405 response for GenerateNumerologyReport
+type GenerateNumerologyReportResponse405Headers struct {
+	Allow *string
+}
+
+type GenerateNumerologyReportResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// Format Format of the output field present.
+		Format GenerateNumerologyReport200JSONResponseBodyFormat `json:"format"`
+
+		// HTML The report as one self-contained HTML document. Present when format is html.
+		HTML *string `json:"html,omitempty"`
+
+		// Lang Language the report is written in.
+		Lang string `json:"lang"`
+
+		// Markdown The report as CommonMark. Present when format is markdown.
+		Markdown *string `json:"markdown,omitempty"`
+
+		// Pages Number of PDF pages. Present when format is pdf.
+		Pages *int `json:"pages,omitempty"`
+
+		// Pdf The PDF, base64 encoded. Present when format is pdf: decode it and save it as a .pdf file.
+		Pdf *string `json:"pdf,omitempty"`
+
+		// Template The report template rendered.
+		Template string `json:"template"`
+
+		// Title Report title in the report language, ready for a file name or a heading.
+		Title string `json:"title"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON405 the response for an HTTP 405 `application/json` response
+	JSON405 *ErrorResponse
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+	// Headers405 the parsed response headers for an HTTP 405 response
+	Headers405 *GenerateNumerologyReportResponse405Headers
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GenerateNumerologyReportResponse) GetJSON200() *struct {
+	// Format Format of the output field present.
+	Format GenerateNumerologyReport200JSONResponseBodyFormat `json:"format"`
+
+	// HTML The report as one self-contained HTML document. Present when format is html.
+	HTML *string `json:"html,omitempty"`
+
+	// Lang Language the report is written in.
+	Lang string `json:"lang"`
+
+	// Markdown The report as CommonMark. Present when format is markdown.
+	Markdown *string `json:"markdown,omitempty"`
+
+	// Pages Number of PDF pages. Present when format is pdf.
+	Pages *int `json:"pages,omitempty"`
+
+	// Pdf The PDF, base64 encoded. Present when format is pdf: decode it and save it as a .pdf file.
+	Pdf *string `json:"pdf,omitempty"`
+
+	// Template The report template rendered.
+	Template string `json:"template"`
+
+	// Title Report title in the report language, ready for a file name or a heading.
+	Title string `json:"title"`
+} {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r GenerateNumerologyReportResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r GenerateNumerologyReportResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON405 returns the response for an HTTP 405 `application/json` response
+func (r GenerateNumerologyReportResponse) GetJSON405() *ErrorResponse {
+	return r.JSON405
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r GenerateNumerologyReportResponse) GetJSON429() *ErrorResponse {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GenerateNumerologyReportResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r GenerateNumerologyReportResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GenerateNumerologyReportResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GenerateNumerologyReportResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// Bytes is a convenience method to retrieve the raw bytes from the HTTP response
+func (r GenerateNumerologyReportResponse) Bytes() []byte {
+	return r.Body
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GenerateNumerologyReportResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+// GenerateSynastryReportResponse405Headers the declared response headers of an HTTP 405 response for GenerateSynastryReport
+type GenerateSynastryReportResponse405Headers struct {
+	Allow *string
+}
+
+type GenerateSynastryReportResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// Format Format of the output field present.
+		Format GenerateSynastryReport200JSONResponseBodyFormat `json:"format"`
+
+		// HTML The report as one self-contained HTML document. Present when format is html.
+		HTML *string `json:"html,omitempty"`
+
+		// Lang Language the report is written in.
+		Lang string `json:"lang"`
+
+		// Markdown The report as CommonMark. Present when format is markdown.
+		Markdown *string `json:"markdown,omitempty"`
+
+		// Pages Number of PDF pages. Present when format is pdf.
+		Pages *int `json:"pages,omitempty"`
+
+		// Pdf The PDF, base64 encoded. Present when format is pdf: decode it and save it as a .pdf file.
+		Pdf *string `json:"pdf,omitempty"`
+
+		// Template The report template rendered.
+		Template string `json:"template"`
+
+		// Title Report title in the report language, ready for a file name or a heading.
+		Title string `json:"title"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON405 the response for an HTTP 405 `application/json` response
+	JSON405 *ErrorResponse
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+	// Headers405 the parsed response headers for an HTTP 405 response
+	Headers405 *GenerateSynastryReportResponse405Headers
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GenerateSynastryReportResponse) GetJSON200() *struct {
+	// Format Format of the output field present.
+	Format GenerateSynastryReport200JSONResponseBodyFormat `json:"format"`
+
+	// HTML The report as one self-contained HTML document. Present when format is html.
+	HTML *string `json:"html,omitempty"`
+
+	// Lang Language the report is written in.
+	Lang string `json:"lang"`
+
+	// Markdown The report as CommonMark. Present when format is markdown.
+	Markdown *string `json:"markdown,omitempty"`
+
+	// Pages Number of PDF pages. Present when format is pdf.
+	Pages *int `json:"pages,omitempty"`
+
+	// Pdf The PDF, base64 encoded. Present when format is pdf: decode it and save it as a .pdf file.
+	Pdf *string `json:"pdf,omitempty"`
+
+	// Template The report template rendered.
+	Template string `json:"template"`
+
+	// Title Report title in the report language, ready for a file name or a heading.
+	Title string `json:"title"`
+} {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r GenerateSynastryReportResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r GenerateSynastryReportResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON405 returns the response for an HTTP 405 `application/json` response
+func (r GenerateSynastryReportResponse) GetJSON405() *ErrorResponse {
+	return r.JSON405
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r GenerateSynastryReportResponse) GetJSON429() *ErrorResponse {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GenerateSynastryReportResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r GenerateSynastryReportResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GenerateSynastryReportResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GenerateSynastryReportResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// Bytes is a convenience method to retrieve the raw bytes from the HTTP response
+func (r GenerateSynastryReportResponse) Bytes() []byte {
+	return r.Body
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GenerateSynastryReportResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+// GenerateTarotReportResponse405Headers the declared response headers of an HTTP 405 response for GenerateTarotReport
+type GenerateTarotReportResponse405Headers struct {
+	Allow *string
+}
+
+type GenerateTarotReportResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// Format Format of the output field present.
+		Format GenerateTarotReport200JSONResponseBodyFormat `json:"format"`
+
+		// HTML The report as one self-contained HTML document. Present when format is html.
+		HTML *string `json:"html,omitempty"`
+
+		// Lang Language the report is written in.
+		Lang string `json:"lang"`
+
+		// Markdown The report as CommonMark. Present when format is markdown.
+		Markdown *string `json:"markdown,omitempty"`
+
+		// Pages Number of PDF pages. Present when format is pdf.
+		Pages *int `json:"pages,omitempty"`
+
+		// Pdf The PDF, base64 encoded. Present when format is pdf: decode it and save it as a .pdf file.
+		Pdf *string `json:"pdf,omitempty"`
+
+		// Template The report template rendered.
+		Template string `json:"template"`
+
+		// Title Report title in the report language, ready for a file name or a heading.
+		Title string `json:"title"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON405 the response for an HTTP 405 `application/json` response
+	JSON405 *ErrorResponse
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+	// Headers405 the parsed response headers for an HTTP 405 response
+	Headers405 *GenerateTarotReportResponse405Headers
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GenerateTarotReportResponse) GetJSON200() *struct {
+	// Format Format of the output field present.
+	Format GenerateTarotReport200JSONResponseBodyFormat `json:"format"`
+
+	// HTML The report as one self-contained HTML document. Present when format is html.
+	HTML *string `json:"html,omitempty"`
+
+	// Lang Language the report is written in.
+	Lang string `json:"lang"`
+
+	// Markdown The report as CommonMark. Present when format is markdown.
+	Markdown *string `json:"markdown,omitempty"`
+
+	// Pages Number of PDF pages. Present when format is pdf.
+	Pages *int `json:"pages,omitempty"`
+
+	// Pdf The PDF, base64 encoded. Present when format is pdf: decode it and save it as a .pdf file.
+	Pdf *string `json:"pdf,omitempty"`
+
+	// Template The report template rendered.
+	Template string `json:"template"`
+
+	// Title Report title in the report language, ready for a file name or a heading.
+	Title string `json:"title"`
+} {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r GenerateTarotReportResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r GenerateTarotReportResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON405 returns the response for an HTTP 405 `application/json` response
+func (r GenerateTarotReportResponse) GetJSON405() *ErrorResponse {
+	return r.JSON405
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r GenerateTarotReportResponse) GetJSON429() *ErrorResponse {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GenerateTarotReportResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r GenerateTarotReportResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GenerateTarotReportResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GenerateTarotReportResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// Bytes is a convenience method to retrieve the raw bytes from the HTTP response
+func (r GenerateTarotReportResponse) Bytes() []byte {
+	return r.Body
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GenerateTarotReportResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
+// GenerateYearlyForecastReportResponse405Headers the declared response headers of an HTTP 405 response for GenerateYearlyForecastReport
+type GenerateYearlyForecastReportResponse405Headers struct {
+	Allow *string
+}
+
+type GenerateYearlyForecastReportResponse struct {
+	Body         []byte
+	HTTPResponse *http.Response
+	// JSON200 the response for an HTTP 200 `application/json` response
+	JSON200 *struct {
+		// Format Format of the output field present.
+		Format GenerateYearlyForecastReport200JSONResponseBodyFormat `json:"format"`
+
+		// HTML The report as one self-contained HTML document. Present when format is html.
+		HTML *string `json:"html,omitempty"`
+
+		// Lang Language the report is written in.
+		Lang string `json:"lang"`
+
+		// Markdown The report as CommonMark. Present when format is markdown.
+		Markdown *string `json:"markdown,omitempty"`
+
+		// Pages Number of PDF pages. Present when format is pdf.
+		Pages *int `json:"pages,omitempty"`
+
+		// Pdf The PDF, base64 encoded. Present when format is pdf: decode it and save it as a .pdf file.
+		Pdf *string `json:"pdf,omitempty"`
+
+		// Template The report template rendered.
+		Template string `json:"template"`
+
+		// Title Report title in the report language, ready for a file name or a heading.
+		Title string `json:"title"`
+	}
+	// JSON400 the response for an HTTP 400 `application/json` response
+	JSON400 *ErrorResponse
+	// JSON401 the response for an HTTP 401 `application/json` response
+	JSON401 *ErrorResponse
+	// JSON405 the response for an HTTP 405 `application/json` response
+	JSON405 *ErrorResponse
+	// JSON429 the response for an HTTP 429 `application/json` response
+	JSON429 *ErrorResponse
+	// JSON500 the response for an HTTP 500 `application/json` response
+	JSON500 *ErrorResponse
+	// Headers405 the parsed response headers for an HTTP 405 response
+	Headers405 *GenerateYearlyForecastReportResponse405Headers
+}
+
+// GetJSON200 returns the response for an HTTP 200 `application/json` response
+func (r GenerateYearlyForecastReportResponse) GetJSON200() *struct {
+	// Format Format of the output field present.
+	Format GenerateYearlyForecastReport200JSONResponseBodyFormat `json:"format"`
+
+	// HTML The report as one self-contained HTML document. Present when format is html.
+	HTML *string `json:"html,omitempty"`
+
+	// Lang Language the report is written in.
+	Lang string `json:"lang"`
+
+	// Markdown The report as CommonMark. Present when format is markdown.
+	Markdown *string `json:"markdown,omitempty"`
+
+	// Pages Number of PDF pages. Present when format is pdf.
+	Pages *int `json:"pages,omitempty"`
+
+	// Pdf The PDF, base64 encoded. Present when format is pdf: decode it and save it as a .pdf file.
+	Pdf *string `json:"pdf,omitempty"`
+
+	// Template The report template rendered.
+	Template string `json:"template"`
+
+	// Title Report title in the report language, ready for a file name or a heading.
+	Title string `json:"title"`
+} {
+	return r.JSON200
+}
+
+// GetJSON400 returns the response for an HTTP 400 `application/json` response
+func (r GenerateYearlyForecastReportResponse) GetJSON400() *ErrorResponse {
+	return r.JSON400
+}
+
+// GetJSON401 returns the response for an HTTP 401 `application/json` response
+func (r GenerateYearlyForecastReportResponse) GetJSON401() *ErrorResponse {
+	return r.JSON401
+}
+
+// GetJSON405 returns the response for an HTTP 405 `application/json` response
+func (r GenerateYearlyForecastReportResponse) GetJSON405() *ErrorResponse {
+	return r.JSON405
+}
+
+// GetJSON429 returns the response for an HTTP 429 `application/json` response
+func (r GenerateYearlyForecastReportResponse) GetJSON429() *ErrorResponse {
+	return r.JSON429
+}
+
+// GetJSON500 returns the response for an HTTP 500 `application/json` response
+func (r GenerateYearlyForecastReportResponse) GetJSON500() *ErrorResponse {
+	return r.JSON500
+}
+
+// GetBody returns the raw response body bytes
+func (r GenerateYearlyForecastReportResponse) GetBody() []byte {
+	return r.Body
+}
+
+// Status returns HTTPResponse.Status
+func (r GenerateYearlyForecastReportResponse) Status() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Status
+	}
+	return http.StatusText(0)
+}
+
+// StatusCode returns HTTPResponse.StatusCode
+func (r GenerateYearlyForecastReportResponse) StatusCode() int {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.StatusCode
+	}
+	return 0
+}
+
+// Bytes is a convenience method to retrieve the raw bytes from the HTTP response
+func (r GenerateYearlyForecastReportResponse) Bytes() []byte {
+	return r.Body
+}
+
+// ContentType is a convenience method to retrieve the Content-Type value from the HTTP response headers
+func (r GenerateYearlyForecastReportResponse) ContentType() string {
+	if r.HTTPResponse != nil {
+		return r.HTTPResponse.Header.Get("Content-Type")
+	}
+	return ""
+}
+
 // ListCardsResponse405Headers the declared response headers of an HTTP 405 response for ListCards
 type ListCardsResponse405Headers struct {
 	Allow *string
@@ -127150,7 +132867,7 @@ type GetUsageStatsResponse struct {
 		// RemainingThisMonth Requests left before the monthly allowance is exhausted, floored at zero. Equal to requestsPerMonth minus usedThisMonth. Refills at the calendar month rollover, whose exact instant every API response carries as a Unix timestamp in the X-RateLimit-Reset header.
 		RemainingThisMonth float32 `json:"remainingThisMonth"`
 
-		// RequestsPerMonth Monthly request allowance for the plan. One request, API or MCP, equals one unit: there is no credit weighting and no per domain fee.
+		// RequestsPerMonth Monthly request allowance for the plan. Every data endpoint call, API or MCP, is one request and a report spends the cost its operation lists in x-request-cost: there is no per domain fee.
 		RequestsPerMonth float32 `json:"requestsPerMonth"`
 
 		// Status Subscription lifecycle state. Values: active, cancelled (no longer renewing but usable until endDate), suspended (payment failed, usable until endDate), expired (past endDate), pending (checkout started, payment not captured).
@@ -127189,7 +132906,7 @@ func (r GetUsageStatsResponse) GetJSON200() *struct {
 	// RemainingThisMonth Requests left before the monthly allowance is exhausted, floored at zero. Equal to requestsPerMonth minus usedThisMonth. Refills at the calendar month rollover, whose exact instant every API response carries as a Unix timestamp in the X-RateLimit-Reset header.
 	RemainingThisMonth float32 `json:"remainingThisMonth"`
 
-	// RequestsPerMonth Monthly request allowance for the plan. One request, API or MCP, equals one unit: there is no credit weighting and no per domain fee.
+	// RequestsPerMonth Monthly request allowance for the plan. Every data endpoint call, API or MCP, is one request and a report spends the cost its operation lists in x-request-cost: there is no per domain fee.
 	RequestsPerMonth float32 `json:"requestsPerMonth"`
 
 	// Status Subscription lifecycle state. Values: active, cancelled (no longer renewing but usable until endDate), suspended (payment failed, usable until endDate), expired (past endDate), pending (checkout started, payment not captured).
@@ -145250,6 +150967,276 @@ func (c *ClientWithResponses) CalculateSoulUrgeWithResponse(ctx context.Context,
 		return nil, err
 	}
 	return ParseCalculateSoulUrgeResponse(rsp)
+}
+
+// GenerateBaziReportWithBodyWithResponse BaZi report - Branded PDF report API
+//
+// Renders the bazi report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /reports/bazi (the `GenerateBaziReport` operationId).
+func (c *ClientWithResponses) GenerateBaziReportWithBodyWithResponse(ctx context.Context, params *GenerateBaziReportParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GenerateBaziReportResponse, error) {
+	rsp, err := c.GenerateBaziReportWithBody(ctx, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGenerateBaziReportResponse(rsp)
+}
+
+// GenerateBaziReportWithResponse BaZi report - Branded PDF report API
+//
+// Renders the bazi report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /reports/bazi (the `GenerateBaziReport` operationId).
+func (c *ClientWithResponses) GenerateBaziReportWithResponse(ctx context.Context, params *GenerateBaziReportParams, body GenerateBaziReportJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateBaziReportResponse, error) {
+	rsp, err := c.GenerateBaziReport(ctx, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGenerateBaziReportResponse(rsp)
+}
+
+// GenerateHumanDesignReportWithBodyWithResponse Human Design report - Branded PDF report API
+//
+// Renders the human design report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /reports/human-design (the `GenerateHumanDesignReport` operationId).
+func (c *ClientWithResponses) GenerateHumanDesignReportWithBodyWithResponse(ctx context.Context, params *GenerateHumanDesignReportParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GenerateHumanDesignReportResponse, error) {
+	rsp, err := c.GenerateHumanDesignReportWithBody(ctx, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGenerateHumanDesignReportResponse(rsp)
+}
+
+// GenerateHumanDesignReportWithResponse Human Design report - Branded PDF report API
+//
+// Renders the human design report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /reports/human-design (the `GenerateHumanDesignReport` operationId).
+func (c *ClientWithResponses) GenerateHumanDesignReportWithResponse(ctx context.Context, params *GenerateHumanDesignReportParams, body GenerateHumanDesignReportJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateHumanDesignReportResponse, error) {
+	rsp, err := c.GenerateHumanDesignReport(ctx, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGenerateHumanDesignReportResponse(rsp)
+}
+
+// GenerateKundliReportWithBodyWithResponse Kundli report - Branded PDF report API
+//
+// Renders the kundli report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /reports/kundli (the `GenerateKundliReport` operationId).
+func (c *ClientWithResponses) GenerateKundliReportWithBodyWithResponse(ctx context.Context, params *GenerateKundliReportParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GenerateKundliReportResponse, error) {
+	rsp, err := c.GenerateKundliReportWithBody(ctx, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGenerateKundliReportResponse(rsp)
+}
+
+// GenerateKundliReportWithResponse Kundli report - Branded PDF report API
+//
+// Renders the kundli report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /reports/kundli (the `GenerateKundliReport` operationId).
+func (c *ClientWithResponses) GenerateKundliReportWithResponse(ctx context.Context, params *GenerateKundliReportParams, body GenerateKundliReportJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateKundliReportResponse, error) {
+	rsp, err := c.GenerateKundliReport(ctx, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGenerateKundliReportResponse(rsp)
+}
+
+// GenerateMatchmakingReportWithBodyWithResponse Kundli matching report - Branded PDF report API
+//
+// Renders the kundli matching report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /reports/matchmaking (the `GenerateMatchmakingReport` operationId).
+func (c *ClientWithResponses) GenerateMatchmakingReportWithBodyWithResponse(ctx context.Context, params *GenerateMatchmakingReportParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GenerateMatchmakingReportResponse, error) {
+	rsp, err := c.GenerateMatchmakingReportWithBody(ctx, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGenerateMatchmakingReportResponse(rsp)
+}
+
+// GenerateMatchmakingReportWithResponse Kundli matching report - Branded PDF report API
+//
+// Renders the kundli matching report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /reports/matchmaking (the `GenerateMatchmakingReport` operationId).
+func (c *ClientWithResponses) GenerateMatchmakingReportWithResponse(ctx context.Context, params *GenerateMatchmakingReportParams, body GenerateMatchmakingReportJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateMatchmakingReportResponse, error) {
+	rsp, err := c.GenerateMatchmakingReport(ctx, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGenerateMatchmakingReportResponse(rsp)
+}
+
+// GenerateNatalReportWithBodyWithResponse Natal chart report - Branded PDF report API
+//
+// Renders the natal chart report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /reports/natal (the `GenerateNatalReport` operationId).
+func (c *ClientWithResponses) GenerateNatalReportWithBodyWithResponse(ctx context.Context, params *GenerateNatalReportParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GenerateNatalReportResponse, error) {
+	rsp, err := c.GenerateNatalReportWithBody(ctx, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGenerateNatalReportResponse(rsp)
+}
+
+// GenerateNatalReportWithResponse Natal chart report - Branded PDF report API
+//
+// Renders the natal chart report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /reports/natal (the `GenerateNatalReport` operationId).
+func (c *ClientWithResponses) GenerateNatalReportWithResponse(ctx context.Context, params *GenerateNatalReportParams, body GenerateNatalReportJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateNatalReportResponse, error) {
+	rsp, err := c.GenerateNatalReport(ctx, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGenerateNatalReportResponse(rsp)
+}
+
+// GenerateNumerologyReportWithBodyWithResponse Numerology report - Branded PDF report API
+//
+// Renders the numerology report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /reports/numerology (the `GenerateNumerologyReport` operationId).
+func (c *ClientWithResponses) GenerateNumerologyReportWithBodyWithResponse(ctx context.Context, params *GenerateNumerologyReportParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GenerateNumerologyReportResponse, error) {
+	rsp, err := c.GenerateNumerologyReportWithBody(ctx, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGenerateNumerologyReportResponse(rsp)
+}
+
+// GenerateNumerologyReportWithResponse Numerology report - Branded PDF report API
+//
+// Renders the numerology report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /reports/numerology (the `GenerateNumerologyReport` operationId).
+func (c *ClientWithResponses) GenerateNumerologyReportWithResponse(ctx context.Context, params *GenerateNumerologyReportParams, body GenerateNumerologyReportJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateNumerologyReportResponse, error) {
+	rsp, err := c.GenerateNumerologyReport(ctx, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGenerateNumerologyReportResponse(rsp)
+}
+
+// GenerateSynastryReportWithBodyWithResponse Synastry report - Branded PDF report API
+//
+// Renders the synastry report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /reports/synastry (the `GenerateSynastryReport` operationId).
+func (c *ClientWithResponses) GenerateSynastryReportWithBodyWithResponse(ctx context.Context, params *GenerateSynastryReportParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GenerateSynastryReportResponse, error) {
+	rsp, err := c.GenerateSynastryReportWithBody(ctx, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGenerateSynastryReportResponse(rsp)
+}
+
+// GenerateSynastryReportWithResponse Synastry report - Branded PDF report API
+//
+// Renders the synastry report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /reports/synastry (the `GenerateSynastryReport` operationId).
+func (c *ClientWithResponses) GenerateSynastryReportWithResponse(ctx context.Context, params *GenerateSynastryReportParams, body GenerateSynastryReportJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateSynastryReportResponse, error) {
+	rsp, err := c.GenerateSynastryReport(ctx, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGenerateSynastryReportResponse(rsp)
+}
+
+// GenerateTarotReportWithBodyWithResponse Tarot reading report - Branded PDF report API
+//
+// Renders the tarot reading report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /reports/tarot (the `GenerateTarotReport` operationId).
+func (c *ClientWithResponses) GenerateTarotReportWithBodyWithResponse(ctx context.Context, params *GenerateTarotReportParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GenerateTarotReportResponse, error) {
+	rsp, err := c.GenerateTarotReportWithBody(ctx, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGenerateTarotReportResponse(rsp)
+}
+
+// GenerateTarotReportWithResponse Tarot reading report - Branded PDF report API
+//
+// Renders the tarot reading report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /reports/tarot (the `GenerateTarotReport` operationId).
+func (c *ClientWithResponses) GenerateTarotReportWithResponse(ctx context.Context, params *GenerateTarotReportParams, body GenerateTarotReportJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateTarotReportResponse, error) {
+	rsp, err := c.GenerateTarotReport(ctx, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGenerateTarotReportResponse(rsp)
+}
+
+// GenerateYearlyForecastReportWithBodyWithResponse Yearly forecast report - Branded PDF report API
+//
+// Renders the yearly forecast report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+//
+// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /reports/yearly-forecast (the `GenerateYearlyForecastReport` operationId).
+func (c *ClientWithResponses) GenerateYearlyForecastReportWithBodyWithResponse(ctx context.Context, params *GenerateYearlyForecastReportParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GenerateYearlyForecastReportResponse, error) {
+	rsp, err := c.GenerateYearlyForecastReportWithBody(ctx, params, contentType, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGenerateYearlyForecastReportResponse(rsp)
+}
+
+// GenerateYearlyForecastReportWithResponse Yearly forecast report - Branded PDF report API
+//
+// Renders the yearly forecast report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.
+//
+// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
+//
+// Corresponds with POST /reports/yearly-forecast (the `GenerateYearlyForecastReport` operationId).
+func (c *ClientWithResponses) GenerateYearlyForecastReportWithResponse(ctx context.Context, params *GenerateYearlyForecastReportParams, body GenerateYearlyForecastReportJSONRequestBody, reqEditors ...RequestEditorFn) (*GenerateYearlyForecastReportResponse, error) {
+	rsp, err := c.GenerateYearlyForecastReport(ctx, params, body, reqEditors...)
+	if err != nil {
+		return nil, err
+	}
+	return ParseGenerateYearlyForecastReportResponse(rsp)
 }
 
 // ListCardsWithResponse List all 78 tarot cards - Tarot deck catalog API
@@ -173910,6 +179897,888 @@ func ParseCalculateSoulUrgeResponse(rsp *http.Response) (*CalculateSoulUrgeRespo
 	return response, nil
 }
 
+// ParseGenerateBaziReportResponse parses an HTTP response from a GenerateBaziReportWithResponse call
+func ParseGenerateBaziReportResponse(rsp *http.Response) (*GenerateBaziReportResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GenerateBaziReportResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Format Format of the output field present.
+			Format GenerateBaziReport200JSONResponseBodyFormat `json:"format"`
+
+			// HTML The report as one self-contained HTML document. Present when format is html.
+			HTML *string `json:"html,omitempty"`
+
+			// Lang Language the report is written in.
+			Lang string `json:"lang"`
+
+			// Markdown The report as CommonMark. Present when format is markdown.
+			Markdown *string `json:"markdown,omitempty"`
+
+			// Pages Number of PDF pages. Present when format is pdf.
+			Pages *int `json:"pages,omitempty"`
+
+			// Pdf The PDF, base64 encoded. Present when format is pdf: decode it and save it as a .pdf file.
+			Pdf *string `json:"pdf,omitempty"`
+
+			// Template The report template rendered.
+			Template string `json:"template"`
+
+			// Title Report title in the report language, ready for a file name or a heading.
+			Title string `json:"title"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 405:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON405 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	switch {
+	case rsp.StatusCode == 405:
+		var headers GenerateBaziReportResponse405Headers
+		if values := rsp.Header.Values("Allow"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "Allow", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.Allow = &value
+		}
+		response.Headers405 = &headers
+	}
+
+	return response, nil
+}
+
+// ParseGenerateHumanDesignReportResponse parses an HTTP response from a GenerateHumanDesignReportWithResponse call
+func ParseGenerateHumanDesignReportResponse(rsp *http.Response) (*GenerateHumanDesignReportResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GenerateHumanDesignReportResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Format Format of the output field present.
+			Format GenerateHumanDesignReport200JSONResponseBodyFormat `json:"format"`
+
+			// HTML The report as one self-contained HTML document. Present when format is html.
+			HTML *string `json:"html,omitempty"`
+
+			// Lang Language the report is written in.
+			Lang string `json:"lang"`
+
+			// Markdown The report as CommonMark. Present when format is markdown.
+			Markdown *string `json:"markdown,omitempty"`
+
+			// Pages Number of PDF pages. Present when format is pdf.
+			Pages *int `json:"pages,omitempty"`
+
+			// Pdf The PDF, base64 encoded. Present when format is pdf: decode it and save it as a .pdf file.
+			Pdf *string `json:"pdf,omitempty"`
+
+			// Template The report template rendered.
+			Template string `json:"template"`
+
+			// Title Report title in the report language, ready for a file name or a heading.
+			Title string `json:"title"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 405:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON405 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	switch {
+	case rsp.StatusCode == 405:
+		var headers GenerateHumanDesignReportResponse405Headers
+		if values := rsp.Header.Values("Allow"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "Allow", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.Allow = &value
+		}
+		response.Headers405 = &headers
+	}
+
+	return response, nil
+}
+
+// ParseGenerateKundliReportResponse parses an HTTP response from a GenerateKundliReportWithResponse call
+func ParseGenerateKundliReportResponse(rsp *http.Response) (*GenerateKundliReportResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GenerateKundliReportResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Format Format of the output field present.
+			Format GenerateKundliReport200JSONResponseBodyFormat `json:"format"`
+
+			// HTML The report as one self-contained HTML document. Present when format is html.
+			HTML *string `json:"html,omitempty"`
+
+			// Lang Language the report is written in.
+			Lang string `json:"lang"`
+
+			// Markdown The report as CommonMark. Present when format is markdown.
+			Markdown *string `json:"markdown,omitempty"`
+
+			// Pages Number of PDF pages. Present when format is pdf.
+			Pages *int `json:"pages,omitempty"`
+
+			// Pdf The PDF, base64 encoded. Present when format is pdf: decode it and save it as a .pdf file.
+			Pdf *string `json:"pdf,omitempty"`
+
+			// Template The report template rendered.
+			Template string `json:"template"`
+
+			// Title Report title in the report language, ready for a file name or a heading.
+			Title string `json:"title"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 405:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON405 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	switch {
+	case rsp.StatusCode == 405:
+		var headers GenerateKundliReportResponse405Headers
+		if values := rsp.Header.Values("Allow"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "Allow", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.Allow = &value
+		}
+		response.Headers405 = &headers
+	}
+
+	return response, nil
+}
+
+// ParseGenerateMatchmakingReportResponse parses an HTTP response from a GenerateMatchmakingReportWithResponse call
+func ParseGenerateMatchmakingReportResponse(rsp *http.Response) (*GenerateMatchmakingReportResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GenerateMatchmakingReportResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Format Format of the output field present.
+			Format GenerateMatchmakingReport200JSONResponseBodyFormat `json:"format"`
+
+			// HTML The report as one self-contained HTML document. Present when format is html.
+			HTML *string `json:"html,omitempty"`
+
+			// Lang Language the report is written in.
+			Lang string `json:"lang"`
+
+			// Markdown The report as CommonMark. Present when format is markdown.
+			Markdown *string `json:"markdown,omitempty"`
+
+			// Pages Number of PDF pages. Present when format is pdf.
+			Pages *int `json:"pages,omitempty"`
+
+			// Pdf The PDF, base64 encoded. Present when format is pdf: decode it and save it as a .pdf file.
+			Pdf *string `json:"pdf,omitempty"`
+
+			// Template The report template rendered.
+			Template string `json:"template"`
+
+			// Title Report title in the report language, ready for a file name or a heading.
+			Title string `json:"title"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 405:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON405 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	switch {
+	case rsp.StatusCode == 405:
+		var headers GenerateMatchmakingReportResponse405Headers
+		if values := rsp.Header.Values("Allow"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "Allow", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.Allow = &value
+		}
+		response.Headers405 = &headers
+	}
+
+	return response, nil
+}
+
+// ParseGenerateNatalReportResponse parses an HTTP response from a GenerateNatalReportWithResponse call
+func ParseGenerateNatalReportResponse(rsp *http.Response) (*GenerateNatalReportResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GenerateNatalReportResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Format Format of the output field present.
+			Format GenerateNatalReport200JSONResponseBodyFormat `json:"format"`
+
+			// HTML The report as one self-contained HTML document. Present when format is html.
+			HTML *string `json:"html,omitempty"`
+
+			// Lang Language the report is written in.
+			Lang string `json:"lang"`
+
+			// Markdown The report as CommonMark. Present when format is markdown.
+			Markdown *string `json:"markdown,omitempty"`
+
+			// Pages Number of PDF pages. Present when format is pdf.
+			Pages *int `json:"pages,omitempty"`
+
+			// Pdf The PDF, base64 encoded. Present when format is pdf: decode it and save it as a .pdf file.
+			Pdf *string `json:"pdf,omitempty"`
+
+			// Template The report template rendered.
+			Template string `json:"template"`
+
+			// Title Report title in the report language, ready for a file name or a heading.
+			Title string `json:"title"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 405:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON405 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	switch {
+	case rsp.StatusCode == 405:
+		var headers GenerateNatalReportResponse405Headers
+		if values := rsp.Header.Values("Allow"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "Allow", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.Allow = &value
+		}
+		response.Headers405 = &headers
+	}
+
+	return response, nil
+}
+
+// ParseGenerateNumerologyReportResponse parses an HTTP response from a GenerateNumerologyReportWithResponse call
+func ParseGenerateNumerologyReportResponse(rsp *http.Response) (*GenerateNumerologyReportResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GenerateNumerologyReportResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Format Format of the output field present.
+			Format GenerateNumerologyReport200JSONResponseBodyFormat `json:"format"`
+
+			// HTML The report as one self-contained HTML document. Present when format is html.
+			HTML *string `json:"html,omitempty"`
+
+			// Lang Language the report is written in.
+			Lang string `json:"lang"`
+
+			// Markdown The report as CommonMark. Present when format is markdown.
+			Markdown *string `json:"markdown,omitempty"`
+
+			// Pages Number of PDF pages. Present when format is pdf.
+			Pages *int `json:"pages,omitempty"`
+
+			// Pdf The PDF, base64 encoded. Present when format is pdf: decode it and save it as a .pdf file.
+			Pdf *string `json:"pdf,omitempty"`
+
+			// Template The report template rendered.
+			Template string `json:"template"`
+
+			// Title Report title in the report language, ready for a file name or a heading.
+			Title string `json:"title"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 405:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON405 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	switch {
+	case rsp.StatusCode == 405:
+		var headers GenerateNumerologyReportResponse405Headers
+		if values := rsp.Header.Values("Allow"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "Allow", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.Allow = &value
+		}
+		response.Headers405 = &headers
+	}
+
+	return response, nil
+}
+
+// ParseGenerateSynastryReportResponse parses an HTTP response from a GenerateSynastryReportWithResponse call
+func ParseGenerateSynastryReportResponse(rsp *http.Response) (*GenerateSynastryReportResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GenerateSynastryReportResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Format Format of the output field present.
+			Format GenerateSynastryReport200JSONResponseBodyFormat `json:"format"`
+
+			// HTML The report as one self-contained HTML document. Present when format is html.
+			HTML *string `json:"html,omitempty"`
+
+			// Lang Language the report is written in.
+			Lang string `json:"lang"`
+
+			// Markdown The report as CommonMark. Present when format is markdown.
+			Markdown *string `json:"markdown,omitempty"`
+
+			// Pages Number of PDF pages. Present when format is pdf.
+			Pages *int `json:"pages,omitempty"`
+
+			// Pdf The PDF, base64 encoded. Present when format is pdf: decode it and save it as a .pdf file.
+			Pdf *string `json:"pdf,omitempty"`
+
+			// Template The report template rendered.
+			Template string `json:"template"`
+
+			// Title Report title in the report language, ready for a file name or a heading.
+			Title string `json:"title"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 405:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON405 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	switch {
+	case rsp.StatusCode == 405:
+		var headers GenerateSynastryReportResponse405Headers
+		if values := rsp.Header.Values("Allow"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "Allow", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.Allow = &value
+		}
+		response.Headers405 = &headers
+	}
+
+	return response, nil
+}
+
+// ParseGenerateTarotReportResponse parses an HTTP response from a GenerateTarotReportWithResponse call
+func ParseGenerateTarotReportResponse(rsp *http.Response) (*GenerateTarotReportResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GenerateTarotReportResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Format Format of the output field present.
+			Format GenerateTarotReport200JSONResponseBodyFormat `json:"format"`
+
+			// HTML The report as one self-contained HTML document. Present when format is html.
+			HTML *string `json:"html,omitempty"`
+
+			// Lang Language the report is written in.
+			Lang string `json:"lang"`
+
+			// Markdown The report as CommonMark. Present when format is markdown.
+			Markdown *string `json:"markdown,omitempty"`
+
+			// Pages Number of PDF pages. Present when format is pdf.
+			Pages *int `json:"pages,omitempty"`
+
+			// Pdf The PDF, base64 encoded. Present when format is pdf: decode it and save it as a .pdf file.
+			Pdf *string `json:"pdf,omitempty"`
+
+			// Template The report template rendered.
+			Template string `json:"template"`
+
+			// Title Report title in the report language, ready for a file name or a heading.
+			Title string `json:"title"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 405:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON405 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	switch {
+	case rsp.StatusCode == 405:
+		var headers GenerateTarotReportResponse405Headers
+		if values := rsp.Header.Values("Allow"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "Allow", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.Allow = &value
+		}
+		response.Headers405 = &headers
+	}
+
+	return response, nil
+}
+
+// ParseGenerateYearlyForecastReportResponse parses an HTTP response from a GenerateYearlyForecastReportWithResponse call
+func ParseGenerateYearlyForecastReportResponse(rsp *http.Response) (*GenerateYearlyForecastReportResponse, error) {
+	bodyBytes, err := io.ReadAll(rsp.Body)
+	defer func() { _ = rsp.Body.Close() }()
+	if err != nil {
+		return nil, err
+	}
+
+	response := &GenerateYearlyForecastReportResponse{
+		Body:         bodyBytes,
+		HTTPResponse: rsp,
+	}
+
+	switch {
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 200:
+		var dest struct {
+			// Format Format of the output field present.
+			Format GenerateYearlyForecastReport200JSONResponseBodyFormat `json:"format"`
+
+			// HTML The report as one self-contained HTML document. Present when format is html.
+			HTML *string `json:"html,omitempty"`
+
+			// Lang Language the report is written in.
+			Lang string `json:"lang"`
+
+			// Markdown The report as CommonMark. Present when format is markdown.
+			Markdown *string `json:"markdown,omitempty"`
+
+			// Pages Number of PDF pages. Present when format is pdf.
+			Pages *int `json:"pages,omitempty"`
+
+			// Pdf The PDF, base64 encoded. Present when format is pdf: decode it and save it as a .pdf file.
+			Pdf *string `json:"pdf,omitempty"`
+
+			// Template The report template rendered.
+			Template string `json:"template"`
+
+			// Title Report title in the report language, ready for a file name or a heading.
+			Title string `json:"title"`
+		}
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON200 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 400:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON400 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 401:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON401 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 405:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON405 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 429:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON429 = &dest
+
+	case strings.Contains(rsp.Header.Get("Content-Type"), "json") && rsp.StatusCode == 500:
+		var dest ErrorResponse
+		if err := json.Unmarshal(bodyBytes, &dest); err != nil {
+			return nil, err
+		}
+		response.JSON500 = &dest
+
+	}
+
+	switch {
+	case rsp.StatusCode == 405:
+		var headers GenerateYearlyForecastReportResponse405Headers
+		if values := rsp.Header.Values("Allow"); len(values) > 0 {
+			var value string
+			if err := runtime.BindStyledParameterWithOptions("simple", "Allow", values[0], &value, runtime.BindStyledParameterOptions{ParamLocation: runtime.ParamLocationHeader, Explode: false, Required: false, Type: "string", Format: ""}); err != nil {
+				return nil, err
+			}
+			headers.Allow = &value
+		}
+		response.Headers405 = &headers
+	}
+
+	return response, nil
+}
+
 // ParseListCardsResponse parses an HTTP response from a ListCardsWithResponse call
 func ParseListCardsResponse(rsp *http.Response) (*ListCardsResponse, error) {
 	bodyBytes, err := io.ReadAll(rsp.Body)
@@ -174881,7 +181750,7 @@ func ParseGetUsageStatsResponse(rsp *http.Response) (*GetUsageStatsResponse, err
 			// RemainingThisMonth Requests left before the monthly allowance is exhausted, floored at zero. Equal to requestsPerMonth minus usedThisMonth. Refills at the calendar month rollover, whose exact instant every API response carries as a Unix timestamp in the X-RateLimit-Reset header.
 			RemainingThisMonth float32 `json:"remainingThisMonth"`
 
-			// RequestsPerMonth Monthly request allowance for the plan. One request, API or MCP, equals one unit: there is no credit weighting and no per domain fee.
+			// RequestsPerMonth Monthly request allowance for the plan. Every data endpoint call, API or MCP, is one request and a report spends the cost its operation lists in x-request-cost: there is no per domain fee.
 			RequestsPerMonth float32 `json:"requestsPerMonth"`
 
 			// Status Subscription lifecycle state. Values: active, cancelled (no longer renewing but usable until endDate), suspended (payment failed, usable until endDate), expired (past endDate), pending (checkout started, payment not captured).

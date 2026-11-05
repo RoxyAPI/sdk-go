@@ -38,7 +38,7 @@ Endpoints with no query parameters have no `params` argument; passing `nil` ther
 <!-- END:NOPARAMS -->
 
 <!-- BEGIN:LANGS -->
-**Multi-language responses.** Interpretations are available in 10 languages: `en`, `tr`, `de`, `es`, `hi`, `pt`, `fr`, `ru`, `zh-Hans`, `zh-Hant`. Set `Lang` on the params struct of any supported endpoint with `roxyapi.Ptr(...)`; it defaults to `en`. Supported: `roxy.Astrology`, `roxy.VedicAstrology`, `roxy.Forecast`, `roxy.HumanDesign`, `roxy.ChineseAstrology`, `roxy.FengShui`, `roxy.MesoamericanAstrology`, `roxy.Vastu`, `roxy.Numerology`, `roxy.Kabbalah`, `roxy.Tarot`, `roxy.Biorhythm`, `roxy.Ayurveda`, `roxy.Iching`, `roxy.Crystals`, `roxy.AngelNumbers`, `roxy.Languages`. English-only: `roxy.Dreams`, `roxy.Location`, `roxy.Usage`.
+**Multi-language responses.** Interpretations are available in 10 languages: `en`, `tr`, `de`, `es`, `hi`, `pt`, `fr`, `ru`, `zh-Hans`, `zh-Hant`. Set `Lang` on the params struct of any supported endpoint with `roxyapi.Ptr(...)`; it defaults to `en`. Supported: `roxy.Astrology`, `roxy.VedicAstrology`, `roxy.Forecast`, `roxy.HumanDesign`, `roxy.ChineseAstrology`, `roxy.FengShui`, `roxy.MesoamericanAstrology`, `roxy.Vastu`, `roxy.Numerology`, `roxy.Kabbalah`, `roxy.Tarot`, `roxy.Biorhythm`, `roxy.Ayurveda`, `roxy.Iching`, `roxy.Crystals`, `roxy.AngelNumbers`, `roxy.Reports`, `roxy.Languages`. English-only: `roxy.Dreams`, `roxy.Location`, `roxy.Usage`.
 <!-- END:LANGS -->
 
 This file is the method INDEX (operation id, HTTP method, path, summary). For request and response FIELD names, use the typed Go structs: editor autocomplete, https://pkg.go.dev/github.com/RoxyAPI/sdk-go, or the JSON shapes at https://roxyapi.com/api-reference.
@@ -435,6 +435,22 @@ Monitor your API usage, check rate limits, and track request consumption
 [API reference](https://roxyapi.com/api-reference/usage)
 
 - `getUsageStats` - GET `/usage` - Get API usage statistics
+
+## Reports - `roxy.Reports`
+
+Branded reports built from the API: a natal chart and more as a print-ready PDF, self-contained HTML or Markdown, whi...
+
+[API reference](https://roxyapi.com/api-reference/reports)
+
+- `generateBaziReport` - POST `/reports/bazi` - BaZi report - Branded PDF report API
+- `generateHumanDesignReport` - POST `/reports/human-design` - Human Design report - Branded PDF report API
+- `generateKundliReport` - POST `/reports/kundli` - Kundli report - Branded PDF report API
+- `generateMatchmakingReport` - POST `/reports/matchmaking` - Kundli matching report - Branded PDF report API
+- `generateNatalReport` - POST `/reports/natal` - Natal chart report - Branded PDF report API
+- `generateNumerologyReport` - POST `/reports/numerology` - Numerology report - Branded PDF report API
+- `generateSynastryReport` - POST `/reports/synastry` - Synastry report - Branded PDF report API
+- `generateTarotReport` - POST `/reports/tarot` - Tarot reading report - Branded PDF report API
+- `generateYearlyForecastReport` - POST `/reports/yearly-forecast` - Yearly forecast report - Branded PDF report API
 
 ## Languages - `roxy.Languages`
 

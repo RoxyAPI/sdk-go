@@ -899,13 +899,19 @@ func renderErrors(spec map[string]any) string {
 	return b.String()
 }
 
-// renderLangs states the `lang` query parameter as the spec declares it: the codes
-// and default (one shape, asserted identical on every operation that has it) and
-// which accessors carry it at all. Display names and per-domain translation depth
-// are not in the spec and stay in prose outside the markers.
+// renderLangs states the `lang` query parameter as the spec declares it: the widest
+// code list and its default (every operation's list must be a subset of it with the
+// same default; a composite such as a report accepts only the codes all of its
+// domains write) and which accessors carry it at all. Display names and per-domain
+// translation depth are not in the spec and stay in prose outside the markers.
 func renderLangs(domains []domainInfo) string {
+	type langDecl struct {
+		op    operation
+		codes []string
+		def   string
+	}
+	var decls []langDecl
 	var codes []string
-	def := ""
 	var supported, englishOnly []string
 	for _, d := range domains {
 		hasLang := false
@@ -921,11 +927,9 @@ func renderLangs(domains []domainInfo) string {
 			for _, e := range enum {
 				these = append(these, fmt.Sprint(e))
 			}
-			thisDef := fmt.Sprint(schema["default"])
-			if codes == nil {
-				codes, def = these, thisDef
-			} else if strings.Join(these, ",") != strings.Join(codes, ",") || thisDef != def {
-				fail("spec: %s %s declares lang as %v (default %s), other operations declare %v (default %s); one note cannot describe both", strings.ToUpper(op.verb), op.path, these, thisDef, codes, def)
+			decls = append(decls, langDecl{op, these, fmt.Sprint(schema["default"])})
+			if len(these) > len(codes) {
+				codes = these
 			}
 		}
 		if hasLang {
@@ -937,12 +941,28 @@ func renderLangs(domains []domainInfo) string {
 	if len(codes) == 0 {
 		fail("spec: no operation declares a lang query parameter")
 	}
+	def := decls[0].def
+	for _, d := range decls {
+		if d.def != def || !subset(d.codes, codes) {
+			fail("spec: %s %s declares lang as %v (default %s), not a subset of %v (default %s); one note cannot describe both", strings.ToUpper(d.op.verb), d.op.path, d.codes, d.def, codes, def)
+		}
+	}
 	quoted := make([]string, len(codes))
 	for i, c := range codes {
 		quoted[i] = "`" + c + "`"
 	}
 	return fmt.Sprintf("<!-- BEGIN:LANGS -->\n**Multi-language responses.** Interpretations are available in %d languages: %s. Set `Lang` on the params struct of any supported endpoint with `roxyapi.Ptr(...)`; it defaults to `%s`. Supported: %s. English-only: %s.\n<!-- END:LANGS -->",
 		len(codes), strings.Join(quoted, ", "), def, strings.Join(supported, ", "), strings.Join(englishOnly, ", "))
+}
+
+// subset reports whether every element of a is in b.
+func subset(a, b []string) bool {
+	for _, x := range a {
+		if !slices.Contains(b, x) {
+			return false
+		}
+	}
+	return true
 }
 
 type operation struct {

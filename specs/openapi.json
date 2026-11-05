@@ -2180,6 +2180,237 @@
         ],
         "type": "object"
       },
+      "BaziReportRequest": {
+        "properties": {
+          "branding": {
+            "description": "White-label branding for this report. Every field is optional and nothing is stored: send it with each request.",
+            "example": {
+              "colors": {
+                "accent": "#b45309",
+                "primary": "#1e293b"
+              },
+              "email": "hello@example.com",
+              "font": "fraunces-jost",
+              "footer": "For reflection and entertainment. Book a reading at example.com.",
+              "name": "Luna Rivera Astrology",
+              "theme": "practitioner",
+              "website": "https://example.com"
+            },
+            "properties": {
+              "colors": {
+                "description": "Brand colours. Each one left out keeps the theme colour.",
+                "properties": {
+                  "accent": {
+                    "description": "Rules and highlights, as a six digit hex colour.",
+                    "example": "#b45309",
+                    "pattern": "^#[0-9a-fA-F]{6}$",
+                    "type": "string"
+                  },
+                  "primary": {
+                    "description": "Headings and table headers, as a six digit hex colour.",
+                    "example": "#1e293b",
+                    "pattern": "^#[0-9a-fA-F]{6}$",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "email": {
+                "description": "Contact email printed on the cover.",
+                "example": "hello@example.com",
+                "format": "email",
+                "maxLength": 254,
+                "type": "string"
+              },
+              "font": {
+                "description": "Font pair for headings and text, the same pairs the RoxyAPI UI components take. Left out, the theme typeface is used.",
+                "enum": [
+                  "fraunces-jost",
+                  "jost",
+                  "geist",
+                  "system"
+                ],
+                "example": "fraunces-jost",
+                "type": "string"
+              },
+              "footer": {
+                "description": "Line printed at the foot of every page, such as a disclaimer or a booking note.",
+                "example": "For reflection and entertainment. Book a reading at example.com.",
+                "maxLength": 200,
+                "minLength": 1,
+                "type": "string"
+              },
+              "logo": {
+                "description": "HTTPS URL of a PNG, JPEG, WebP or SVG logo under 1 MB, printed on the cover. It is fetched for this report only and never stored.",
+                "example": "https://example.com/logo.png",
+                "format": "uri",
+                "maxLength": 2048,
+                "type": "string"
+              },
+              "name": {
+                "description": "Business or practitioner name printed on the cover and in the running header of every page.",
+                "example": "Luna Rivera Astrology",
+                "maxLength": 80,
+                "minLength": 1,
+                "type": "string"
+              },
+              "theme": {
+                "description": "Design preset shared with the RoxyAPI UI components: colours, typefaces and spacing. Left out, the neutral default is used.",
+                "enum": [
+                  "celeste",
+                  "eucalyptus",
+                  "kiln",
+                  "moonlit",
+                  "practitioner"
+                ],
+                "example": "practitioner",
+                "type": "string"
+              },
+              "website": {
+                "description": "Website printed on the cover.",
+                "example": "https://example.com",
+                "format": "uri",
+                "maxLength": 2048,
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "date": {
+            "description": "Birth date in YYYY-MM-DD format. Sets the year, month and day pillars. The year pillar turns at Beginning of Spring rather than on 1 January, and the month pillar turns at each of the twelve minor solar terms rather than at a calendar month boundary.",
+            "example": "1990-06-15",
+            "format": "date",
+            "type": "string"
+          },
+          "dayBoundary": {
+            "default": "split-zi",
+            "description": "Which instant starts the sexagenary DAY, which only matters for a birth between 23:00 and 23:59. \"midnight\" is the classical position of the Ming compendium San Ming Tong Hui: the day turns at 00:00 and 23:00 to 23:59 is the late zi hour of the day that is ending, so the hour stem is taken from that day. \"early-zi\" turns the whole day at 23:00, the practice in Hong Kong, Taiwan and much of South East Asia. \"split-zi\" is the compromise most software implements and the default here: the day still turns at 00:00, but the hour stem is taken from the next day. The three give three different answers for a late-evening birth and identical answers for every other birth.",
+            "enum": [
+              "split-zi",
+              "midnight",
+              "early-zi"
+            ],
+            "example": "split-zi",
+            "type": "string"
+          },
+          "format": {
+            "default": "pdf",
+            "description": "Output format: pdf (a print-ready PDF, base64 in the pdf field), html (one self-contained HTML document in the html field) or markdown (CommonMark in the markdown field).",
+            "enum": [
+              "pdf",
+              "html",
+              "markdown"
+            ],
+            "example": "pdf",
+            "type": "string"
+          },
+          "gender": {
+            "description": "Subject sex, used only to pick the luck-pillar direction: a male born in a yang-stem year and a female born in a yin-stem year run forward through the sexagenary cycle, and the other two combinations run backward. It affects nothing else in the response.",
+            "enum": [
+              "male",
+              "female"
+            ],
+            "example": "male",
+            "type": "string"
+          },
+          "hourClock": {
+            "default": "clock",
+            "description": "Which clock the day boundary and the hour branch are read from, so a correction that carries a birth across midnight moves the day pillar with the hour. \"clock\" is civil time exactly as a birth certificate records it, which is what most calculators use and the default here. \"local-mean\" shifts to the mean sun over the birth longitude, a correction of up to 59 minutes at the edge of a wide time zone. \"solar\" adds the equation of time on top of that, up to a further 16 minutes. Both non-civil options need \"longitude\" in the request and return 400 without it.",
+            "enum": [
+              "clock",
+              "local-mean",
+              "solar"
+            ],
+            "example": "clock",
+            "type": "string"
+          },
+          "latitude": {
+            "default": 0,
+            "description": "Birth latitude in decimal degrees. Accepted for consistency with the other birth-data endpoints and does not affect any part of a BaZi chart. Defaults to 0.",
+            "example": 0,
+            "maximum": 90,
+            "minimum": -90,
+            "type": "number"
+          },
+          "longitude": {
+            "description": "Birth longitude in decimal degrees. Positive is East, negative is West. Required when hourClock is \"local-mean\" or \"solar\", which shift the hour branch to the sun over the birth place; omitting it in either case returns 400. Ignored when hourClock is \"clock\".",
+            "example": 116.4,
+            "maximum": 180,
+            "minimum": -180,
+            "type": "number"
+          },
+          "page": {
+            "default": {
+              "size": "A4"
+            },
+            "description": "Page layout of the PDF.",
+            "properties": {
+              "size": {
+                "default": "A4",
+                "description": "Paper size of the PDF. Ignored by html and markdown.",
+                "enum": [
+                  "A4",
+                  "Letter"
+                ],
+                "example": "A4",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "readings": {
+            "default": true,
+            "description": "Whether the report carries its written readings. false keeps the charts, tables and key figures and leaves out every interpretation, for a chart-only report at the same cost.",
+            "example": true,
+            "type": "boolean"
+          },
+          "time": {
+            "description": "Birth time in 24-hour HH:MM:SS format. Sets the hour pillar, which is one of the four and carries the whole picture of later life and offspring. Each Earthly Branch covers two hours, so a birth within a few minutes of an odd hour can land in either. All four pillars are read in the local clock of the birth, and the day boundary is applied in that same clock; only the lunisolar calendar date itself is a world constant, fixed at UTC plus 8 so one instant has one Chinese date everywhere.",
+            "example": "14:30:00",
+            "format": "time",
+            "type": "string"
+          },
+          "timezone": {
+            "anyOf": [
+              {
+                "maximum": 14,
+                "minimum": -14,
+                "type": "number"
+              },
+              {
+                "type": "string"
+              }
+            ],
+            "description": "IANA name (e.g. \"America/New_York\", \"Europe/London\", \"UTC\"), decimal hours (e.g. -5 for EST, 1 for CET), or a fixed UTC offset (e.g. \"-05:00\", \"+01:00\"). Prefer the IANA name: it is resolved to the offset in force at the birth date and time, historical daylight-saving rules included, while a fixed offset or decimal is taken literally and will be wrong if it does not match the daylight-saving state at that moment. On a transition day a time in the repeated hour is read as its first occurrence and a time in the skipped hour is moved forward past the gap. Invalid timezones return 400 with a validation error.",
+            "example": "America/New_York"
+          },
+          "year": {
+            "description": "Gregorian year the year-ahead section reads against the natal chart, and the first of the ten annual pillars the luck pillar section lists.",
+            "example": 2027,
+            "maximum": 2649,
+            "minimum": 1551,
+            "type": "integer"
+          },
+          "yearBoundary": {
+            "default": "li-chun",
+            "description": "Which instant starts the sexagenary YEAR. \"li-chun\" is Beginning of Spring, around 4 February, and is the classical rule every BaZi text uses, so it is the default on this endpoint. \"lunar-new-year\" is the folk rule people mean when they say which animal they are, and it falls between late January and late February. The two disagree for any birth in the weeks between them: 14 February 2026 is a Wood Snake year under lunar-new-year and a Fire Horse year under li-chun.",
+            "enum": [
+              "li-chun",
+              "lunar-new-year"
+            ],
+            "example": "li-chun",
+            "type": "string"
+          }
+        },
+        "required": [
+          "date",
+          "time",
+          "timezone",
+          "gender",
+          "year"
+        ],
+        "type": "object"
+      },
       "BhavChalitRequest": {
         "properties": {
           "ayanamsa": {
@@ -7418,6 +7649,198 @@
         ],
         "type": "object"
       },
+      "HumanDesignReportRequest": {
+        "properties": {
+          "branding": {
+            "description": "White-label branding for this report. Every field is optional and nothing is stored: send it with each request.",
+            "example": {
+              "colors": {
+                "accent": "#b45309",
+                "primary": "#1e293b"
+              },
+              "email": "hello@example.com",
+              "font": "fraunces-jost",
+              "footer": "For reflection and entertainment. Book a reading at example.com.",
+              "name": "Luna Rivera Astrology",
+              "theme": "practitioner",
+              "website": "https://example.com"
+            },
+            "properties": {
+              "colors": {
+                "description": "Brand colours. Each one left out keeps the theme colour.",
+                "properties": {
+                  "accent": {
+                    "description": "Rules and highlights, as a six digit hex colour.",
+                    "example": "#b45309",
+                    "pattern": "^#[0-9a-fA-F]{6}$",
+                    "type": "string"
+                  },
+                  "primary": {
+                    "description": "Headings and table headers, as a six digit hex colour.",
+                    "example": "#1e293b",
+                    "pattern": "^#[0-9a-fA-F]{6}$",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "email": {
+                "description": "Contact email printed on the cover.",
+                "example": "hello@example.com",
+                "format": "email",
+                "maxLength": 254,
+                "type": "string"
+              },
+              "font": {
+                "description": "Font pair for headings and text, the same pairs the RoxyAPI UI components take. Left out, the theme typeface is used.",
+                "enum": [
+                  "fraunces-jost",
+                  "jost",
+                  "geist",
+                  "system"
+                ],
+                "example": "fraunces-jost",
+                "type": "string"
+              },
+              "footer": {
+                "description": "Line printed at the foot of every page, such as a disclaimer or a booking note.",
+                "example": "For reflection and entertainment. Book a reading at example.com.",
+                "maxLength": 200,
+                "minLength": 1,
+                "type": "string"
+              },
+              "logo": {
+                "description": "HTTPS URL of a PNG, JPEG, WebP or SVG logo under 1 MB, printed on the cover. It is fetched for this report only and never stored.",
+                "example": "https://example.com/logo.png",
+                "format": "uri",
+                "maxLength": 2048,
+                "type": "string"
+              },
+              "name": {
+                "description": "Business or practitioner name printed on the cover and in the running header of every page.",
+                "example": "Luna Rivera Astrology",
+                "maxLength": 80,
+                "minLength": 1,
+                "type": "string"
+              },
+              "theme": {
+                "description": "Design preset shared with the RoxyAPI UI components: colours, typefaces and spacing. Left out, the neutral default is used.",
+                "enum": [
+                  "celeste",
+                  "eucalyptus",
+                  "kiln",
+                  "moonlit",
+                  "practitioner"
+                ],
+                "example": "practitioner",
+                "type": "string"
+              },
+              "website": {
+                "description": "Website printed on the cover.",
+                "example": "https://example.com",
+                "format": "uri",
+                "maxLength": 2048,
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "date": {
+            "description": "Birth date in YYYY-MM-DD format. The anchor for both the Personality activations at birth and the Design activations 88 degrees of solar arc earlier.",
+            "example": "1990-07-15",
+            "format": "date",
+            "type": "string"
+          },
+          "format": {
+            "default": "pdf",
+            "description": "Output format: pdf (a print-ready PDF, base64 in the pdf field), html (one self-contained HTML document in the html field) or markdown (CommonMark in the markdown field).",
+            "enum": [
+              "pdf",
+              "html",
+              "markdown"
+            ],
+            "example": "pdf",
+            "type": "string"
+          },
+          "latitude": {
+            "default": 0,
+            "description": "Birth latitude in decimal degrees. Optional and does not affect the bodygraph, which depends only on ecliptic longitudes. Defaults to 0.",
+            "example": 0,
+            "maximum": 90,
+            "minimum": -90,
+            "type": "number"
+          },
+          "longitude": {
+            "default": 0,
+            "description": "Birth longitude in decimal degrees. Optional and does not affect the bodygraph. Defaults to 0.",
+            "example": 0,
+            "maximum": 180,
+            "minimum": -180,
+            "type": "number"
+          },
+          "nodeType": {
+            "default": "true",
+            "description": "Lunar node convention. \"mean\" is the smoothed average node, which always moves retrograde; \"true\" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node activations. True is what professional Human Design software uses (HumanDesign.ai, Total Human Design) and is the value RoxyAPI verifies against, so leave it unset for a standard chart. It matters only when a node sits on a gate boundary, where the choice moves a node gate. Because a gate can be half of a channel, that can change the completed channels and, with them, whether a center reads defined or open, plus the definition, authority, profile or type. A chart where only one center disagrees is the usual shape, since the type and profile often survive unchanged. If another calculator disagrees on any of those, it is almost certainly using the mean node: pass \"mean\" to match it. Defaults to \"true\".",
+            "enum": [
+              "mean",
+              "true"
+            ],
+            "example": "true",
+            "type": "string"
+          },
+          "page": {
+            "default": {
+              "size": "A4"
+            },
+            "description": "Page layout of the PDF.",
+            "properties": {
+              "size": {
+                "default": "A4",
+                "description": "Paper size of the PDF. Ignored by html and markdown.",
+                "enum": [
+                  "A4",
+                  "Letter"
+                ],
+                "example": "A4",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "readings": {
+            "default": true,
+            "description": "Whether the report carries its written readings. false keeps the charts, tables and key figures and leaves out every interpretation, for a chart-only report at the same cost.",
+            "example": true,
+            "type": "boolean"
+          },
+          "time": {
+            "description": "Birth time in 24-hour HH:MM:SS format. Precision matters: the profile lines and gate boundaries shift with the exact minute of birth.",
+            "example": "13:00:00",
+            "format": "time",
+            "type": "string"
+          },
+          "timezone": {
+            "anyOf": [
+              {
+                "maximum": 14,
+                "minimum": -14,
+                "type": "number"
+              },
+              {
+                "type": "string"
+              }
+            ],
+            "description": "IANA name (e.g. \"America/New_York\", \"Europe/London\", \"UTC\"), decimal hours (e.g. -5 for EST, 1 for CET), or a fixed UTC offset (e.g. \"-05:00\", \"+01:00\"). Prefer the IANA name: it is resolved to the offset in force at the birth date and time, historical daylight-saving rules included, while a fixed offset or decimal is taken literally and will be wrong if it does not match the daylight-saving state at that moment. On a transition day a time in the repeated hour is read as its first occurrence and a time in the skipped hour is moved forward past the gap. Invalid timezones return 400 with a validation error.",
+            "example": "America/New_York"
+          }
+        },
+        "required": [
+          "date",
+          "time",
+          "timezone"
+        ],
+        "type": "object"
+      },
       "Interpretation": {
         "properties": {
           "advice": {
@@ -11425,6 +11848,206 @@
         ],
         "type": "object"
       },
+      "KundliReportRequest": {
+        "properties": {
+          "ayanamsa": {
+            "default": "lahiri",
+            "description": "Sidereal frame (ayanamsa) the chart is cast in. \"lahiri\" is Lahiri/Chitrapaksha, the traditional Vedic standard used by most software, and is the default. \"raman\" is the B.V. Raman ayanamsa from Hindu Predictive Astrology, about 1.45 degrees below Lahiri. \"kp-newcomb\" and \"kp-old\" are the two Krishnamurti Paddhati frames. \"custom\" takes your own value in degrees via ayanamsaValue, for reconciling exactly against a specific reference program. The frame rotates the whole zodiac, so a graha sitting within 1.45 degrees of a boundary can change rashi or nakshatra when you switch: pick the one your reference software uses and keep it.",
+            "enum": [
+              "kp-newcomb",
+              "kp-old",
+              "lahiri",
+              "raman",
+              "custom"
+            ],
+            "example": "lahiri",
+            "type": "string"
+          },
+          "ayanamsaValue": {
+            "description": "Custom ayanamsa value in degrees. When provided, overrides the computed ayanamsa from the selected type. Use for testing with specific ayanamsa values or matching a particular reference source.",
+            "example": 24,
+            "type": "number"
+          },
+          "branding": {
+            "description": "White-label branding for this report. Every field is optional and nothing is stored: send it with each request.",
+            "example": {
+              "colors": {
+                "accent": "#b45309",
+                "primary": "#1e293b"
+              },
+              "email": "hello@example.com",
+              "font": "fraunces-jost",
+              "footer": "For reflection and entertainment. Book a reading at example.com.",
+              "name": "Luna Rivera Astrology",
+              "theme": "practitioner",
+              "website": "https://example.com"
+            },
+            "properties": {
+              "colors": {
+                "description": "Brand colours. Each one left out keeps the theme colour.",
+                "properties": {
+                  "accent": {
+                    "description": "Rules and highlights, as a six digit hex colour.",
+                    "example": "#b45309",
+                    "pattern": "^#[0-9a-fA-F]{6}$",
+                    "type": "string"
+                  },
+                  "primary": {
+                    "description": "Headings and table headers, as a six digit hex colour.",
+                    "example": "#1e293b",
+                    "pattern": "^#[0-9a-fA-F]{6}$",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "email": {
+                "description": "Contact email printed on the cover.",
+                "example": "hello@example.com",
+                "format": "email",
+                "maxLength": 254,
+                "type": "string"
+              },
+              "font": {
+                "description": "Font pair for headings and text, the same pairs the RoxyAPI UI components take. Left out, the theme typeface is used.",
+                "enum": [
+                  "fraunces-jost",
+                  "jost",
+                  "geist",
+                  "system"
+                ],
+                "example": "fraunces-jost",
+                "type": "string"
+              },
+              "footer": {
+                "description": "Line printed at the foot of every page, such as a disclaimer or a booking note.",
+                "example": "For reflection and entertainment. Book a reading at example.com.",
+                "maxLength": 200,
+                "minLength": 1,
+                "type": "string"
+              },
+              "logo": {
+                "description": "HTTPS URL of a PNG, JPEG, WebP or SVG logo under 1 MB, printed on the cover. It is fetched for this report only and never stored.",
+                "example": "https://example.com/logo.png",
+                "format": "uri",
+                "maxLength": 2048,
+                "type": "string"
+              },
+              "name": {
+                "description": "Business or practitioner name printed on the cover and in the running header of every page.",
+                "example": "Luna Rivera Astrology",
+                "maxLength": 80,
+                "minLength": 1,
+                "type": "string"
+              },
+              "theme": {
+                "description": "Design preset shared with the RoxyAPI UI components: colours, typefaces and spacing. Left out, the neutral default is used.",
+                "enum": [
+                  "celeste",
+                  "eucalyptus",
+                  "kiln",
+                  "moonlit",
+                  "practitioner"
+                ],
+                "example": "practitioner",
+                "type": "string"
+              },
+              "website": {
+                "description": "Website printed on the cover.",
+                "example": "https://example.com",
+                "format": "uri",
+                "maxLength": 2048,
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "date": {
+            "description": "Birth date in YYYY-MM-DD format. Date determines planetary positions and nakshatra calculations for Vedic kundli (janam patri). Accurate birth date is essential for dashas, yoga calculations, and divisional charts (vargas).",
+            "example": "1990-07-04",
+            "format": "date",
+            "type": "string"
+          },
+          "format": {
+            "default": "pdf",
+            "description": "Output format: pdf (a print-ready PDF, base64 in the pdf field), html (one self-contained HTML document in the html field) or markdown (CommonMark in the markdown field).",
+            "enum": [
+              "pdf",
+              "html",
+              "markdown"
+            ],
+            "example": "pdf",
+            "type": "string"
+          },
+          "latitude": {
+            "description": "Birth location latitude in decimal degrees. Location determines local sidereal time for Lagna calculation and affects bhava (house) cusps. Example: Delhi 28.6139, Mumbai 19.0760, Kathmandu 27.7172.",
+            "example": 28.6139,
+            "maximum": 90,
+            "minimum": -90,
+            "type": "number"
+          },
+          "longitude": {
+            "description": "Birth location longitude in decimal degrees. Affects local time calculations and ayanamsha adjustments. Example: Delhi 77.2090, Mumbai 72.8777, Kathmandu 85.3240.",
+            "example": 77.209,
+            "maximum": 180,
+            "minimum": -180,
+            "type": "number"
+          },
+          "page": {
+            "default": {
+              "size": "A4"
+            },
+            "description": "Page layout of the PDF.",
+            "properties": {
+              "size": {
+                "default": "A4",
+                "description": "Paper size of the PDF. Ignored by html and markdown.",
+                "enum": [
+                  "A4",
+                  "Letter"
+                ],
+                "example": "A4",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "readings": {
+            "default": true,
+            "description": "Whether the report carries its written readings. false keeps the charts, tables and key figures and leaves out every interpretation, for a chart-only report at the same cost.",
+            "example": true,
+            "type": "boolean"
+          },
+          "time": {
+            "description": "Birth time in 24-hour HH:MM:SS format. Time is CRITICAL for Lagna (Ascendant) calculation and house divisions. It changes every two hours roughly. Even minutes matter for accurate nakshatra pada and divisional chart (D9, D10) calculations. Without exact time, Lagna and house-based predictions will be incorrect.",
+            "example": "10:12:00",
+            "format": "time",
+            "type": "string"
+          },
+          "timezone": {
+            "anyOf": [
+              {
+                "maximum": 14,
+                "minimum": -14,
+                "type": "number"
+              },
+              {
+                "type": "string"
+              }
+            ],
+            "default": 5.5,
+            "description": "Timezone: an IANA name (e.g. \"America/New_York\", \"Europe/London\", or `cities[0].timezone` from /location/search) or decimal hours from UTC (e.g. -5 for EST, 5.5 for IST). An IANA name is resolved to the offset in force at the given date and time. Defaults to 5.5.",
+            "example": 5.5
+          }
+        },
+        "required": [
+          "date",
+          "time",
+          "latitude",
+          "longitude"
+        ],
+        "type": "object"
+      },
       "LilithRequest": {
         "properties": {
           "date": {
@@ -11971,6 +12594,269 @@
           "frame",
           "present",
           "description"
+        ],
+        "type": "object"
+      },
+      "MatchmakingReportRequest": {
+        "properties": {
+          "ayanamsa": {
+            "default": "lahiri",
+            "description": "Sidereal frame (ayanamsa) the chart is cast in. \"lahiri\" is Lahiri/Chitrapaksha, the traditional Vedic standard used by most software, and is the default. \"raman\" is the B.V. Raman ayanamsa from Hindu Predictive Astrology, about 1.45 degrees below Lahiri. \"kp-newcomb\" and \"kp-old\" are the two Krishnamurti Paddhati frames. \"custom\" takes your own value in degrees via ayanamsaValue, for reconciling exactly against a specific reference program. The frame rotates the whole zodiac, so a graha sitting within 1.45 degrees of a boundary can change rashi or nakshatra when you switch: pick the one your reference software uses and keep it.",
+            "enum": [
+              "kp-newcomb",
+              "kp-old",
+              "lahiri",
+              "raman",
+              "custom"
+            ],
+            "example": "lahiri",
+            "type": "string"
+          },
+          "ayanamsaValue": {
+            "description": "Custom ayanamsa value in degrees. When provided, overrides the computed ayanamsa from the selected type. Use for testing with specific ayanamsa values or matching a particular reference source.",
+            "example": 24,
+            "type": "number"
+          },
+          "branding": {
+            "description": "White-label branding for this report. Every field is optional and nothing is stored: send it with each request.",
+            "example": {
+              "colors": {
+                "accent": "#b45309",
+                "primary": "#1e293b"
+              },
+              "email": "hello@example.com",
+              "font": "fraunces-jost",
+              "footer": "For reflection and entertainment. Book a reading at example.com.",
+              "name": "Luna Rivera Astrology",
+              "theme": "practitioner",
+              "website": "https://example.com"
+            },
+            "properties": {
+              "colors": {
+                "description": "Brand colours. Each one left out keeps the theme colour.",
+                "properties": {
+                  "accent": {
+                    "description": "Rules and highlights, as a six digit hex colour.",
+                    "example": "#b45309",
+                    "pattern": "^#[0-9a-fA-F]{6}$",
+                    "type": "string"
+                  },
+                  "primary": {
+                    "description": "Headings and table headers, as a six digit hex colour.",
+                    "example": "#1e293b",
+                    "pattern": "^#[0-9a-fA-F]{6}$",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "email": {
+                "description": "Contact email printed on the cover.",
+                "example": "hello@example.com",
+                "format": "email",
+                "maxLength": 254,
+                "type": "string"
+              },
+              "font": {
+                "description": "Font pair for headings and text, the same pairs the RoxyAPI UI components take. Left out, the theme typeface is used.",
+                "enum": [
+                  "fraunces-jost",
+                  "jost",
+                  "geist",
+                  "system"
+                ],
+                "example": "fraunces-jost",
+                "type": "string"
+              },
+              "footer": {
+                "description": "Line printed at the foot of every page, such as a disclaimer or a booking note.",
+                "example": "For reflection and entertainment. Book a reading at example.com.",
+                "maxLength": 200,
+                "minLength": 1,
+                "type": "string"
+              },
+              "logo": {
+                "description": "HTTPS URL of a PNG, JPEG, WebP or SVG logo under 1 MB, printed on the cover. It is fetched for this report only and never stored.",
+                "example": "https://example.com/logo.png",
+                "format": "uri",
+                "maxLength": 2048,
+                "type": "string"
+              },
+              "name": {
+                "description": "Business or practitioner name printed on the cover and in the running header of every page.",
+                "example": "Luna Rivera Astrology",
+                "maxLength": 80,
+                "minLength": 1,
+                "type": "string"
+              },
+              "theme": {
+                "description": "Design preset shared with the RoxyAPI UI components: colours, typefaces and spacing. Left out, the neutral default is used.",
+                "enum": [
+                  "celeste",
+                  "eucalyptus",
+                  "kiln",
+                  "moonlit",
+                  "practitioner"
+                ],
+                "example": "practitioner",
+                "type": "string"
+              },
+              "website": {
+                "description": "Website printed on the cover.",
+                "example": "https://example.com",
+                "format": "uri",
+                "maxLength": 2048,
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "format": {
+            "default": "pdf",
+            "description": "Output format: pdf (a print-ready PDF, base64 in the pdf field), html (one self-contained HTML document in the html field) or markdown (CommonMark in the markdown field).",
+            "enum": [
+              "pdf",
+              "html",
+              "markdown"
+            ],
+            "example": "pdf",
+            "type": "string"
+          },
+          "page": {
+            "default": {
+              "size": "A4"
+            },
+            "description": "Page layout of the PDF.",
+            "properties": {
+              "size": {
+                "default": "A4",
+                "description": "Paper size of the PDF. Ignored by html and markdown.",
+                "enum": [
+                  "A4",
+                  "Letter"
+                ],
+                "example": "A4",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "person1": {
+            "description": "Birth data of the first person (typically the boy/groom in traditional Ashtakoot matching). Date, time, and location determine Moon nakshatra for koota scoring.",
+            "properties": {
+              "date": {
+                "description": "Birth date in YYYY-MM-DD format. Date determines planetary positions and nakshatra calculations for Vedic kundli (janam patri). Accurate birth date is essential for dashas, yoga calculations, and divisional charts (vargas).",
+                "example": "1990-07-04",
+                "format": "date",
+                "type": "string"
+              },
+              "latitude": {
+                "description": "Birth location latitude in decimal degrees. Location determines local sidereal time for Lagna calculation and affects bhava (house) cusps. Example: Delhi 28.6139, Mumbai 19.0760, Kathmandu 27.7172.",
+                "example": 28.6139,
+                "maximum": 90,
+                "minimum": -90,
+                "type": "number"
+              },
+              "longitude": {
+                "description": "Birth location longitude in decimal degrees. Affects local time calculations and ayanamsha adjustments. Example: Delhi 77.2090, Mumbai 72.8777, Kathmandu 85.3240.",
+                "example": 77.209,
+                "maximum": 180,
+                "minimum": -180,
+                "type": "number"
+              },
+              "time": {
+                "description": "Birth time in 24-hour HH:MM:SS format. Time is CRITICAL for Lagna (Ascendant) calculation and house divisions. It changes every two hours roughly. Even minutes matter for accurate nakshatra pada and divisional chart (D9, D10) calculations. Without exact time, Lagna and house-based predictions will be incorrect.",
+                "example": "10:12:00",
+                "format": "time",
+                "type": "string"
+              },
+              "timezone": {
+                "anyOf": [
+                  {
+                    "maximum": 14,
+                    "minimum": -14,
+                    "type": "number"
+                  },
+                  {
+                    "type": "string"
+                  }
+                ],
+                "default": 5.5,
+                "description": "Timezone: an IANA name (e.g. \"America/New_York\", \"Europe/London\", or `cities[0].timezone` from /location/search) or decimal hours from UTC (e.g. -5 for EST, 5.5 for IST). An IANA name is resolved to the offset in force at the given date and time. Defaults to 5.5.",
+                "example": 5.5
+              }
+            },
+            "required": [
+              "date",
+              "time",
+              "latitude",
+              "longitude"
+            ],
+            "type": "object"
+          },
+          "person2": {
+            "description": "Birth data of the second person (typically the girl/bride in traditional Ashtakoot matching). Moon nakshatra compared against person 1 across all 8 kootas.",
+            "properties": {
+              "date": {
+                "description": "Birth date in YYYY-MM-DD format. Date determines planetary positions and nakshatra calculations for Vedic kundli (janam patri). Accurate birth date is essential for dashas, yoga calculations, and divisional charts (vargas).",
+                "example": "1990-07-04",
+                "format": "date",
+                "type": "string"
+              },
+              "latitude": {
+                "description": "Birth location latitude in decimal degrees. Location determines local sidereal time for Lagna calculation and affects bhava (house) cusps. Example: Delhi 28.6139, Mumbai 19.0760, Kathmandu 27.7172.",
+                "example": 28.6139,
+                "maximum": 90,
+                "minimum": -90,
+                "type": "number"
+              },
+              "longitude": {
+                "description": "Birth location longitude in decimal degrees. Affects local time calculations and ayanamsha adjustments. Example: Delhi 77.2090, Mumbai 72.8777, Kathmandu 85.3240.",
+                "example": 77.209,
+                "maximum": 180,
+                "minimum": -180,
+                "type": "number"
+              },
+              "time": {
+                "description": "Birth time in 24-hour HH:MM:SS format. Time is CRITICAL for Lagna (Ascendant) calculation and house divisions. It changes every two hours roughly. Even minutes matter for accurate nakshatra pada and divisional chart (D9, D10) calculations. Without exact time, Lagna and house-based predictions will be incorrect.",
+                "example": "10:12:00",
+                "format": "time",
+                "type": "string"
+              },
+              "timezone": {
+                "anyOf": [
+                  {
+                    "maximum": 14,
+                    "minimum": -14,
+                    "type": "number"
+                  },
+                  {
+                    "type": "string"
+                  }
+                ],
+                "default": 5.5,
+                "description": "Timezone: an IANA name (e.g. \"America/New_York\", \"Europe/London\", or `cities[0].timezone` from /location/search) or decimal hours from UTC (e.g. -5 for EST, 5.5 for IST). An IANA name is resolved to the offset in force at the given date and time. Defaults to 5.5.",
+                "example": 5.5
+              }
+            },
+            "required": [
+              "date",
+              "time",
+              "latitude",
+              "longitude"
+            ],
+            "type": "object"
+          },
+          "readings": {
+            "default": true,
+            "description": "Whether the report carries its written readings. false keeps the charts, tables and key figures and leaves out every interpretation, for a chart-only report at the same cost.",
+            "example": true,
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "person1",
+          "person2"
         ],
         "type": "object"
       },
@@ -12928,6 +13814,210 @@
         ],
         "type": "object"
       },
+      "NatalReportRequest": {
+        "properties": {
+          "branding": {
+            "description": "White-label branding for this report. Every field is optional and nothing is stored: send it with each request.",
+            "example": {
+              "colors": {
+                "accent": "#b45309",
+                "primary": "#1e293b"
+              },
+              "email": "hello@example.com",
+              "font": "fraunces-jost",
+              "footer": "For reflection and entertainment. Book a reading at example.com.",
+              "name": "Luna Rivera Astrology",
+              "theme": "practitioner",
+              "website": "https://example.com"
+            },
+            "properties": {
+              "colors": {
+                "description": "Brand colours. Each one left out keeps the theme colour.",
+                "properties": {
+                  "accent": {
+                    "description": "Rules and highlights, as a six digit hex colour.",
+                    "example": "#b45309",
+                    "pattern": "^#[0-9a-fA-F]{6}$",
+                    "type": "string"
+                  },
+                  "primary": {
+                    "description": "Headings and table headers, as a six digit hex colour.",
+                    "example": "#1e293b",
+                    "pattern": "^#[0-9a-fA-F]{6}$",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "email": {
+                "description": "Contact email printed on the cover.",
+                "example": "hello@example.com",
+                "format": "email",
+                "maxLength": 254,
+                "type": "string"
+              },
+              "font": {
+                "description": "Font pair for headings and text, the same pairs the RoxyAPI UI components take. Left out, the theme typeface is used.",
+                "enum": [
+                  "fraunces-jost",
+                  "jost",
+                  "geist",
+                  "system"
+                ],
+                "example": "fraunces-jost",
+                "type": "string"
+              },
+              "footer": {
+                "description": "Line printed at the foot of every page, such as a disclaimer or a booking note.",
+                "example": "For reflection and entertainment. Book a reading at example.com.",
+                "maxLength": 200,
+                "minLength": 1,
+                "type": "string"
+              },
+              "logo": {
+                "description": "HTTPS URL of a PNG, JPEG, WebP or SVG logo under 1 MB, printed on the cover. It is fetched for this report only and never stored.",
+                "example": "https://example.com/logo.png",
+                "format": "uri",
+                "maxLength": 2048,
+                "type": "string"
+              },
+              "name": {
+                "description": "Business or practitioner name printed on the cover and in the running header of every page.",
+                "example": "Luna Rivera Astrology",
+                "maxLength": 80,
+                "minLength": 1,
+                "type": "string"
+              },
+              "theme": {
+                "description": "Design preset shared with the RoxyAPI UI components: colours, typefaces and spacing. Left out, the neutral default is used.",
+                "enum": [
+                  "celeste",
+                  "eucalyptus",
+                  "kiln",
+                  "moonlit",
+                  "practitioner"
+                ],
+                "example": "practitioner",
+                "type": "string"
+              },
+              "website": {
+                "description": "Website printed on the cover.",
+                "example": "https://example.com",
+                "format": "uri",
+                "maxLength": 2048,
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "date": {
+            "description": "Birth date in YYYY-MM-DD format. Determines planetary positions for the specific calendar day.",
+            "example": "1990-07-15",
+            "format": "date",
+            "type": "string"
+          },
+          "format": {
+            "default": "pdf",
+            "description": "Output format: pdf (a print-ready PDF, base64 in the pdf field), html (one self-contained HTML document in the html field) or markdown (CommonMark in the markdown field).",
+            "enum": [
+              "pdf",
+              "html",
+              "markdown"
+            ],
+            "example": "pdf",
+            "type": "string"
+          },
+          "houseSystem": {
+            "default": "placidus",
+            "description": "House system for dividing the chart into 12 houses. Placidus (default) is most popular in Western astrology and time-sensitive. Whole Sign assigns one sign per house (simpler, ancient). Equal houses divide chart into 30° segments from Ascendant. Koch emphasizes houses in high latitudes.",
+            "enum": [
+              "placidus",
+              "whole-sign",
+              "equal",
+              "koch"
+            ],
+            "example": "placidus",
+            "type": "string"
+          },
+          "latitude": {
+            "description": "Birth location latitude in decimal degrees (-90 to 90). Positive = North, negative = South.",
+            "example": 40.7128,
+            "maximum": 90,
+            "minimum": -90,
+            "type": "number"
+          },
+          "longitude": {
+            "description": "Birth location longitude in decimal degrees (-180 to 180). Positive = East, negative = West.",
+            "example": -74.006,
+            "maximum": 180,
+            "minimum": -180,
+            "type": "number"
+          },
+          "nodeType": {
+            "default": "true",
+            "description": "Lunar node convention. \"mean\" is the smoothed average node, which always moves retrograde; \"true\" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is the osculating node and the default, because it is what most Western chart software reports; mean is the smoothed node preferred by several evolutionary schools, so pass \"mean\" to match one. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to \"true\".",
+            "enum": [
+              "mean",
+              "true"
+            ],
+            "example": "true",
+            "type": "string"
+          },
+          "page": {
+            "default": {
+              "size": "A4"
+            },
+            "description": "Page layout of the PDF.",
+            "properties": {
+              "size": {
+                "default": "A4",
+                "description": "Paper size of the PDF. Ignored by html and markdown.",
+                "enum": [
+                  "A4",
+                  "Letter"
+                ],
+                "example": "A4",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "readings": {
+            "default": true,
+            "description": "Whether the report carries its written readings. false keeps the charts, tables and key figures and leaves out every interpretation, for a chart-only report at the same cost.",
+            "example": true,
+            "type": "boolean"
+          },
+          "time": {
+            "description": "Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.",
+            "example": "14:30:00",
+            "format": "time",
+            "type": "string"
+          },
+          "timezone": {
+            "anyOf": [
+              {
+                "maximum": 14,
+                "minimum": -14,
+                "type": "number"
+              },
+              {
+                "type": "string"
+              }
+            ],
+            "description": "Timezone: an IANA name (e.g. \"America/New_York\", \"Europe/London\", or `cities[0].timezone` from /location/search) or decimal hours from UTC (e.g. -5 for EST, 5.5 for IST). An IANA name is resolved to the offset in force at the given date and time.",
+            "example": "America/New_York"
+          }
+        },
+        "required": [
+          "date",
+          "time",
+          "latitude",
+          "longitude",
+          "timezone"
+        ],
+        "type": "object"
+      },
       "NavamsaRequest": {
         "properties": {
           "ayanamsa": {
@@ -13263,6 +14353,188 @@
           "frame",
           "vargottama",
           "vargottamaExplanation"
+        ],
+        "type": "object"
+      },
+      "NumerologyReportRequest": {
+        "properties": {
+          "branding": {
+            "description": "White-label branding for this report. Every field is optional and nothing is stored: send it with each request.",
+            "example": {
+              "colors": {
+                "accent": "#b45309",
+                "primary": "#1e293b"
+              },
+              "email": "hello@example.com",
+              "font": "fraunces-jost",
+              "footer": "For reflection and entertainment. Book a reading at example.com.",
+              "name": "Luna Rivera Astrology",
+              "theme": "practitioner",
+              "website": "https://example.com"
+            },
+            "properties": {
+              "colors": {
+                "description": "Brand colours. Each one left out keeps the theme colour.",
+                "properties": {
+                  "accent": {
+                    "description": "Rules and highlights, as a six digit hex colour.",
+                    "example": "#b45309",
+                    "pattern": "^#[0-9a-fA-F]{6}$",
+                    "type": "string"
+                  },
+                  "primary": {
+                    "description": "Headings and table headers, as a six digit hex colour.",
+                    "example": "#1e293b",
+                    "pattern": "^#[0-9a-fA-F]{6}$",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "email": {
+                "description": "Contact email printed on the cover.",
+                "example": "hello@example.com",
+                "format": "email",
+                "maxLength": 254,
+                "type": "string"
+              },
+              "font": {
+                "description": "Font pair for headings and text, the same pairs the RoxyAPI UI components take. Left out, the theme typeface is used.",
+                "enum": [
+                  "fraunces-jost",
+                  "jost",
+                  "geist",
+                  "system"
+                ],
+                "example": "fraunces-jost",
+                "type": "string"
+              },
+              "footer": {
+                "description": "Line printed at the foot of every page, such as a disclaimer or a booking note.",
+                "example": "For reflection and entertainment. Book a reading at example.com.",
+                "maxLength": 200,
+                "minLength": 1,
+                "type": "string"
+              },
+              "logo": {
+                "description": "HTTPS URL of a PNG, JPEG, WebP or SVG logo under 1 MB, printed on the cover. It is fetched for this report only and never stored.",
+                "example": "https://example.com/logo.png",
+                "format": "uri",
+                "maxLength": 2048,
+                "type": "string"
+              },
+              "name": {
+                "description": "Business or practitioner name printed on the cover and in the running header of every page.",
+                "example": "Luna Rivera Astrology",
+                "maxLength": 80,
+                "minLength": 1,
+                "type": "string"
+              },
+              "theme": {
+                "description": "Design preset shared with the RoxyAPI UI components: colours, typefaces and spacing. Left out, the neutral default is used.",
+                "enum": [
+                  "celeste",
+                  "eucalyptus",
+                  "kiln",
+                  "moonlit",
+                  "practitioner"
+                ],
+                "example": "practitioner",
+                "type": "string"
+              },
+              "website": {
+                "description": "Website printed on the cover.",
+                "example": "https://example.com",
+                "format": "uri",
+                "maxLength": 2048,
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "currentYear": {
+            "description": "Calendar year for the Personal Year. When omitted it is the year of targetDate, or of the current UTC date when targetDate is omitted too. It moves the Personal Year only: the nested personalMonth and maturityStatus.currentAge read targetDate.",
+            "example": 2025,
+            "maximum": 2100,
+            "minimum": 100,
+            "type": "integer"
+          },
+          "day": {
+            "description": "Birth day (1-31)",
+            "example": 15,
+            "maximum": 31,
+            "minimum": 1,
+            "type": "integer"
+          },
+          "format": {
+            "default": "pdf",
+            "description": "Output format: pdf (a print-ready PDF, base64 in the pdf field), html (one self-contained HTML document in the html field) or markdown (CommonMark in the markdown field).",
+            "enum": [
+              "pdf",
+              "html",
+              "markdown"
+            ],
+            "example": "pdf",
+            "type": "string"
+          },
+          "fullName": {
+            "description": "Full birth name as it appears on the birth certificate. Used for every letter-based number in the chart: Expression, Soul Urge, Personality, Karmic Lessons, Hidden Passion, Subconscious Self and the special letters. A name in any script is converted to Latin letters before it is counted, Cyrillic and Greek as the passport spelling and accents folded to the base letter, and the calculation lists the letters counted. For a script that does not write its vowels, send the Latin spelling the person uses.",
+            "example": "John William Smith",
+            "maxLength": 200,
+            "minLength": 1,
+            "type": "string"
+          },
+          "month": {
+            "description": "Birth month (1-12)",
+            "example": 7,
+            "maximum": 12,
+            "minimum": 1,
+            "type": "integer"
+          },
+          "page": {
+            "default": {
+              "size": "A4"
+            },
+            "description": "Page layout of the PDF.",
+            "properties": {
+              "size": {
+                "default": "A4",
+                "description": "Paper size of the PDF. Ignored by html and markdown.",
+                "enum": [
+                  "A4",
+                  "Letter"
+                ],
+                "example": "A4",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "readings": {
+            "default": true,
+            "description": "Whether the report carries its written readings. false keeps the charts, tables and key figures and leaves out every interpretation, for a chart-only report at the same cost.",
+            "example": true,
+            "type": "boolean"
+          },
+          "targetDate": {
+            "description": "Date to read the chart on, in YYYY-MM-DD format, in the years 100 to 2100, on or after the birth date. Send the local date of the user for an exact answer: it sets maturityStatus.currentAge and isActive, the Personal Month, and the Personal Year when currentYear is absent. Defaults to today (UTC).",
+            "example": "2026-10-28",
+            "format": "date",
+            "type": "string"
+          },
+          "year": {
+            "description": "Birth year between 100 and 2100. Supports historical figures like Einstein (1879) and Shakespeare (1564).",
+            "example": 1990,
+            "maximum": 2100,
+            "minimum": 100,
+            "type": "integer"
+          }
+        },
+        "required": [
+          "fullName",
+          "year",
+          "month",
+          "day"
         ],
         "type": "object"
       },
@@ -15703,6 +16975,448 @@
         ],
         "type": "object"
       },
+      "SynastryReportRequest": {
+        "properties": {
+          "branding": {
+            "description": "White-label branding for this report. Every field is optional and nothing is stored: send it with each request.",
+            "example": {
+              "colors": {
+                "accent": "#b45309",
+                "primary": "#1e293b"
+              },
+              "email": "hello@example.com",
+              "font": "fraunces-jost",
+              "footer": "For reflection and entertainment. Book a reading at example.com.",
+              "name": "Luna Rivera Astrology",
+              "theme": "practitioner",
+              "website": "https://example.com"
+            },
+            "properties": {
+              "colors": {
+                "description": "Brand colours. Each one left out keeps the theme colour.",
+                "properties": {
+                  "accent": {
+                    "description": "Rules and highlights, as a six digit hex colour.",
+                    "example": "#b45309",
+                    "pattern": "^#[0-9a-fA-F]{6}$",
+                    "type": "string"
+                  },
+                  "primary": {
+                    "description": "Headings and table headers, as a six digit hex colour.",
+                    "example": "#1e293b",
+                    "pattern": "^#[0-9a-fA-F]{6}$",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "email": {
+                "description": "Contact email printed on the cover.",
+                "example": "hello@example.com",
+                "format": "email",
+                "maxLength": 254,
+                "type": "string"
+              },
+              "font": {
+                "description": "Font pair for headings and text, the same pairs the RoxyAPI UI components take. Left out, the theme typeface is used.",
+                "enum": [
+                  "fraunces-jost",
+                  "jost",
+                  "geist",
+                  "system"
+                ],
+                "example": "fraunces-jost",
+                "type": "string"
+              },
+              "footer": {
+                "description": "Line printed at the foot of every page, such as a disclaimer or a booking note.",
+                "example": "For reflection and entertainment. Book a reading at example.com.",
+                "maxLength": 200,
+                "minLength": 1,
+                "type": "string"
+              },
+              "logo": {
+                "description": "HTTPS URL of a PNG, JPEG, WebP or SVG logo under 1 MB, printed on the cover. It is fetched for this report only and never stored.",
+                "example": "https://example.com/logo.png",
+                "format": "uri",
+                "maxLength": 2048,
+                "type": "string"
+              },
+              "name": {
+                "description": "Business or practitioner name printed on the cover and in the running header of every page.",
+                "example": "Luna Rivera Astrology",
+                "maxLength": 80,
+                "minLength": 1,
+                "type": "string"
+              },
+              "theme": {
+                "description": "Design preset shared with the RoxyAPI UI components: colours, typefaces and spacing. Left out, the neutral default is used.",
+                "enum": [
+                  "celeste",
+                  "eucalyptus",
+                  "kiln",
+                  "moonlit",
+                  "practitioner"
+                ],
+                "example": "practitioner",
+                "type": "string"
+              },
+              "website": {
+                "description": "Website printed on the cover.",
+                "example": "https://example.com",
+                "format": "uri",
+                "maxLength": 2048,
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "format": {
+            "default": "pdf",
+            "description": "Output format: pdf (a print-ready PDF, base64 in the pdf field), html (one self-contained HTML document in the html field) or markdown (CommonMark in the markdown field).",
+            "enum": [
+              "pdf",
+              "html",
+              "markdown"
+            ],
+            "example": "pdf",
+            "type": "string"
+          },
+          "houseSystem": {
+            "default": "placidus",
+            "description": "House system for both natal charts. Placidus (default), Whole Sign, Equal, or Koch.",
+            "enum": [
+              "placidus",
+              "whole-sign",
+              "equal",
+              "koch"
+            ],
+            "example": "placidus",
+            "type": "string"
+          },
+          "page": {
+            "default": {
+              "size": "A4"
+            },
+            "description": "Page layout of the PDF.",
+            "properties": {
+              "size": {
+                "default": "A4",
+                "description": "Paper size of the PDF. Ignored by html and markdown.",
+                "enum": [
+                  "A4",
+                  "Letter"
+                ],
+                "example": "A4",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "person1": {
+            "properties": {
+              "date": {
+                "description": "Birth date in YYYY-MM-DD format. Determines planetary positions for the specific calendar day.",
+                "example": "1990-07-15",
+                "format": "date",
+                "type": "string"
+              },
+              "latitude": {
+                "description": "Birth location latitude in decimal degrees (-90 to 90). Positive = North, negative = South.",
+                "example": 40.7128,
+                "maximum": 90,
+                "minimum": -90,
+                "type": "number"
+              },
+              "longitude": {
+                "description": "Birth location longitude in decimal degrees (-180 to 180). Positive = East, negative = West.",
+                "example": -74.006,
+                "maximum": 180,
+                "minimum": -180,
+                "type": "number"
+              },
+              "name": {
+                "description": "Optional display name for this person. Included in the response for easy identification.",
+                "example": "Alex",
+                "type": "string"
+              },
+              "nodeType": {
+                "default": "true",
+                "description": "Lunar node convention. \"mean\" is the smoothed average node, which always moves retrograde; \"true\" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is the osculating node and the default, because it is what most Western chart software reports; mean is the smoothed node preferred by several evolutionary schools, so pass \"mean\" to match one. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to \"true\".",
+                "enum": [
+                  "mean",
+                  "true"
+                ],
+                "example": "true",
+                "type": "string"
+              },
+              "time": {
+                "description": "Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.",
+                "example": "14:30:00",
+                "format": "time",
+                "type": "string"
+              },
+              "timezone": {
+                "anyOf": [
+                  {
+                    "maximum": 14,
+                    "minimum": -14,
+                    "type": "number"
+                  },
+                  {
+                    "type": "string"
+                  }
+                ],
+                "description": "Timezone: an IANA name (e.g. \"America/New_York\", \"Europe/London\", or `cities[0].timezone` from /location/search) or decimal hours from UTC (e.g. -5 for EST, 5.5 for IST). An IANA name is resolved to the offset in force at the given date and time.",
+                "example": "America/New_York"
+              }
+            },
+            "required": [
+              "date",
+              "time",
+              "latitude",
+              "longitude",
+              "timezone"
+            ],
+            "type": "object"
+          },
+          "person2": {
+            "properties": {
+              "date": {
+                "description": "Birth date in YYYY-MM-DD format. Determines planetary positions for the specific calendar day.",
+                "example": "1990-07-15",
+                "format": "date",
+                "type": "string"
+              },
+              "latitude": {
+                "description": "Birth location latitude in decimal degrees (-90 to 90). Positive = North, negative = South.",
+                "example": 40.7128,
+                "maximum": 90,
+                "minimum": -90,
+                "type": "number"
+              },
+              "longitude": {
+                "description": "Birth location longitude in decimal degrees (-180 to 180). Positive = East, negative = West.",
+                "example": -74.006,
+                "maximum": 180,
+                "minimum": -180,
+                "type": "number"
+              },
+              "name": {
+                "description": "Optional display name for this person. Included in the response for easy identification.",
+                "example": "Alex",
+                "type": "string"
+              },
+              "nodeType": {
+                "default": "true",
+                "description": "Lunar node convention. \"mean\" is the smoothed average node, which always moves retrograde; \"true\" is the osculating node, which tracks the real perturbed node, oscillates up to about 1.5 degrees either side of the mean on a 173-day cycle, and can briefly turn direct. Neither is more correct and they almost always fall in the same sign. Applies to the North and South Node. True is the osculating node and the default, because it is what most Western chart software reports; mean is the smoothed node preferred by several evolutionary schools, so pass \"mean\" to match one. Nothing else in the chart changes, and the two agree on the sign except when the node sits within about 1.8 degrees of a cusp. Defaults to \"true\".",
+                "enum": [
+                  "mean",
+                  "true"
+                ],
+                "example": "true",
+                "type": "string"
+              },
+              "time": {
+                "description": "Birth time in 24-hour HH:MM:SS format. Determines the Ascendant (rising sign) and house cusps. Use 12:00:00 if unknown.",
+                "example": "14:30:00",
+                "format": "time",
+                "type": "string"
+              },
+              "timezone": {
+                "anyOf": [
+                  {
+                    "maximum": 14,
+                    "minimum": -14,
+                    "type": "number"
+                  },
+                  {
+                    "type": "string"
+                  }
+                ],
+                "description": "Timezone: an IANA name (e.g. \"America/New_York\", \"Europe/London\", or `cities[0].timezone` from /location/search) or decimal hours from UTC (e.g. -5 for EST, 5.5 for IST). An IANA name is resolved to the offset in force at the given date and time.",
+                "example": "America/New_York"
+              }
+            },
+            "required": [
+              "date",
+              "time",
+              "latitude",
+              "longitude",
+              "timezone"
+            ],
+            "type": "object"
+          },
+          "readings": {
+            "default": true,
+            "description": "Whether the report carries its written readings. false keeps the charts, tables and key figures and leaves out every interpretation, for a chart-only report at the same cost.",
+            "example": true,
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "person1",
+          "person2"
+        ],
+        "type": "object"
+      },
+      "TarotReportRequest": {
+        "properties": {
+          "branding": {
+            "description": "White-label branding for this report. Every field is optional and nothing is stored: send it with each request.",
+            "example": {
+              "colors": {
+                "accent": "#b45309",
+                "primary": "#1e293b"
+              },
+              "email": "hello@example.com",
+              "font": "fraunces-jost",
+              "footer": "For reflection and entertainment. Book a reading at example.com.",
+              "name": "Luna Rivera Astrology",
+              "theme": "practitioner",
+              "website": "https://example.com"
+            },
+            "properties": {
+              "colors": {
+                "description": "Brand colours. Each one left out keeps the theme colour.",
+                "properties": {
+                  "accent": {
+                    "description": "Rules and highlights, as a six digit hex colour.",
+                    "example": "#b45309",
+                    "pattern": "^#[0-9a-fA-F]{6}$",
+                    "type": "string"
+                  },
+                  "primary": {
+                    "description": "Headings and table headers, as a six digit hex colour.",
+                    "example": "#1e293b",
+                    "pattern": "^#[0-9a-fA-F]{6}$",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "email": {
+                "description": "Contact email printed on the cover.",
+                "example": "hello@example.com",
+                "format": "email",
+                "maxLength": 254,
+                "type": "string"
+              },
+              "font": {
+                "description": "Font pair for headings and text, the same pairs the RoxyAPI UI components take. Left out, the theme typeface is used.",
+                "enum": [
+                  "fraunces-jost",
+                  "jost",
+                  "geist",
+                  "system"
+                ],
+                "example": "fraunces-jost",
+                "type": "string"
+              },
+              "footer": {
+                "description": "Line printed at the foot of every page, such as a disclaimer or a booking note.",
+                "example": "For reflection and entertainment. Book a reading at example.com.",
+                "maxLength": 200,
+                "minLength": 1,
+                "type": "string"
+              },
+              "logo": {
+                "description": "HTTPS URL of a PNG, JPEG, WebP or SVG logo under 1 MB, printed on the cover. It is fetched for this report only and never stored.",
+                "example": "https://example.com/logo.png",
+                "format": "uri",
+                "maxLength": 2048,
+                "type": "string"
+              },
+              "name": {
+                "description": "Business or practitioner name printed on the cover and in the running header of every page.",
+                "example": "Luna Rivera Astrology",
+                "maxLength": 80,
+                "minLength": 1,
+                "type": "string"
+              },
+              "theme": {
+                "description": "Design preset shared with the RoxyAPI UI components: colours, typefaces and spacing. Left out, the neutral default is used.",
+                "enum": [
+                  "celeste",
+                  "eucalyptus",
+                  "kiln",
+                  "moonlit",
+                  "practitioner"
+                ],
+                "example": "practitioner",
+                "type": "string"
+              },
+              "website": {
+                "description": "Website printed on the cover.",
+                "example": "https://example.com",
+                "format": "uri",
+                "maxLength": 2048,
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "format": {
+            "default": "pdf",
+            "description": "Output format: pdf (a print-ready PDF, base64 in the pdf field), html (one self-contained HTML document in the html field) or markdown (CommonMark in the markdown field).",
+            "enum": [
+              "pdf",
+              "html",
+              "markdown"
+            ],
+            "example": "pdf",
+            "type": "string"
+          },
+          "page": {
+            "default": {
+              "size": "A4"
+            },
+            "description": "Page layout of the PDF.",
+            "properties": {
+              "size": {
+                "default": "A4",
+                "description": "Paper size of the PDF. Ignored by html and markdown.",
+                "enum": [
+                  "A4",
+                  "Letter"
+                ],
+                "example": "A4",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "question": {
+            "description": "Optional querent question, printed on the report. Omit for a general reading.",
+            "example": "What should I know about this situation?",
+            "type": "string"
+          },
+          "readings": {
+            "default": true,
+            "description": "Whether the report carries its written readings. false keeps the charts, tables and key figures and leaves out every interpretation, for a chart-only report at the same cost.",
+            "example": true,
+            "type": "boolean"
+          },
+          "seed": {
+            "description": "Optional seed for a reproducible draw: the same seed and spread always produce the same report. Omit for a random draw; the report prints the seed it used.",
+            "example": "reading-2f9c1a",
+            "type": "string"
+          },
+          "spread": {
+            "default": "celtic-cross",
+            "description": "Which spread to draw: celtic-cross (ten cards, the default), three-card, love or career, the same spreads the spread routes cast.",
+            "enum": [
+              "celtic-cross",
+              "three-card",
+              "love",
+              "career"
+            ],
+            "example": "celtic-cross",
+            "type": "string"
+          }
+        },
+        "type": "object"
+      },
       "TransitsRequest": {
         "properties": {
           "date": {
@@ -16347,6 +18061,208 @@
         ],
         "type": "object"
       },
+      "YearlyForecastReportRequest": {
+        "properties": {
+          "branding": {
+            "description": "White-label branding for this report. Every field is optional and nothing is stored: send it with each request.",
+            "example": {
+              "colors": {
+                "accent": "#b45309",
+                "primary": "#1e293b"
+              },
+              "email": "hello@example.com",
+              "font": "fraunces-jost",
+              "footer": "For reflection and entertainment. Book a reading at example.com.",
+              "name": "Luna Rivera Astrology",
+              "theme": "practitioner",
+              "website": "https://example.com"
+            },
+            "properties": {
+              "colors": {
+                "description": "Brand colours. Each one left out keeps the theme colour.",
+                "properties": {
+                  "accent": {
+                    "description": "Rules and highlights, as a six digit hex colour.",
+                    "example": "#b45309",
+                    "pattern": "^#[0-9a-fA-F]{6}$",
+                    "type": "string"
+                  },
+                  "primary": {
+                    "description": "Headings and table headers, as a six digit hex colour.",
+                    "example": "#1e293b",
+                    "pattern": "^#[0-9a-fA-F]{6}$",
+                    "type": "string"
+                  }
+                },
+                "type": "object"
+              },
+              "email": {
+                "description": "Contact email printed on the cover.",
+                "example": "hello@example.com",
+                "format": "email",
+                "maxLength": 254,
+                "type": "string"
+              },
+              "font": {
+                "description": "Font pair for headings and text, the same pairs the RoxyAPI UI components take. Left out, the theme typeface is used.",
+                "enum": [
+                  "fraunces-jost",
+                  "jost",
+                  "geist",
+                  "system"
+                ],
+                "example": "fraunces-jost",
+                "type": "string"
+              },
+              "footer": {
+                "description": "Line printed at the foot of every page, such as a disclaimer or a booking note.",
+                "example": "For reflection and entertainment. Book a reading at example.com.",
+                "maxLength": 200,
+                "minLength": 1,
+                "type": "string"
+              },
+              "logo": {
+                "description": "HTTPS URL of a PNG, JPEG, WebP or SVG logo under 1 MB, printed on the cover. It is fetched for this report only and never stored.",
+                "example": "https://example.com/logo.png",
+                "format": "uri",
+                "maxLength": 2048,
+                "type": "string"
+              },
+              "name": {
+                "description": "Business or practitioner name printed on the cover and in the running header of every page.",
+                "example": "Luna Rivera Astrology",
+                "maxLength": 80,
+                "minLength": 1,
+                "type": "string"
+              },
+              "theme": {
+                "description": "Design preset shared with the RoxyAPI UI components: colours, typefaces and spacing. Left out, the neutral default is used.",
+                "enum": [
+                  "celeste",
+                  "eucalyptus",
+                  "kiln",
+                  "moonlit",
+                  "practitioner"
+                ],
+                "example": "practitioner",
+                "type": "string"
+              },
+              "website": {
+                "description": "Website printed on the cover.",
+                "example": "https://example.com",
+                "format": "uri",
+                "maxLength": 2048,
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "date": {
+            "description": "Birth date in YYYY-MM-DD format. Anchors the natal Sun longitude the transiting Sun returns to each year.",
+            "example": "1990-07-15",
+            "format": "date",
+            "type": "string"
+          },
+          "format": {
+            "default": "pdf",
+            "description": "Output format: pdf (a print-ready PDF, base64 in the pdf field), html (one self-contained HTML document in the html field) or markdown (CommonMark in the markdown field).",
+            "enum": [
+              "pdf",
+              "html",
+              "markdown"
+            ],
+            "example": "pdf",
+            "type": "string"
+          },
+          "houseSystem": {
+            "default": "placidus",
+            "description": "House system for the return chart. placidus is the Western default. whole-sign, equal, and koch are also supported.",
+            "enum": [
+              "placidus",
+              "whole-sign",
+              "equal",
+              "koch"
+            ],
+            "example": "placidus",
+            "type": "string"
+          },
+          "latitude": {
+            "description": "Latitude of the solar return location in decimal degrees. The solar return is location-sensitive: use the birthplace to anchor the chart to natal geography, or the current city for a relocated solar return.",
+            "example": 40.7128,
+            "maximum": 90,
+            "minimum": -90,
+            "type": "number"
+          },
+          "longitude": {
+            "description": "Longitude of the solar return location in decimal degrees. Sets the local sidereal time, so it drives the Ascendant, Midheaven, and house cusps of the return chart.",
+            "example": -74.006,
+            "maximum": 180,
+            "minimum": -180,
+            "type": "number"
+          },
+          "page": {
+            "default": {
+              "size": "A4"
+            },
+            "description": "Page layout of the PDF.",
+            "properties": {
+              "size": {
+                "default": "A4",
+                "description": "Paper size of the PDF. Ignored by html and markdown.",
+                "enum": [
+                  "A4",
+                  "Letter"
+                ],
+                "example": "A4",
+                "type": "string"
+              }
+            },
+            "type": "object"
+          },
+          "readings": {
+            "default": true,
+            "description": "Whether the report carries its written readings. false keeps the charts, tables and key figures and leaves out every interpretation, for a chart-only report at the same cost.",
+            "example": true,
+            "type": "boolean"
+          },
+          "time": {
+            "description": "Birth time in 24-hour HH:MM:SS format. Pins the exact natal Sun position that defines the solar return moment.",
+            "example": "14:30:00",
+            "format": "time",
+            "type": "string"
+          },
+          "timezone": {
+            "anyOf": [
+              {
+                "maximum": 14,
+                "minimum": -14,
+                "type": "number"
+              },
+              {
+                "type": "string"
+              }
+            ],
+            "description": "IANA name (e.g. \"America/New_York\", \"Europe/London\", \"UTC\"), decimal hours (e.g. -5 for EST, 1 for CET), or a fixed UTC offset (e.g. \"-05:00\", \"+01:00\"). Prefer the IANA name: it is resolved to the offset in force at the birth date and time, historical daylight-saving rules included, while a fixed offset or decimal is taken literally and will be wrong if it does not match the daylight-saving state at that moment. On a transition day a time in the repeated hour is read as its first occurrence and a time in the skipped hour is moved forward past the gap. Invalid timezones return 400 with a validation error.",
+            "example": "America/New_York"
+          },
+          "year": {
+            "description": "Year to cast the solar return for. The chart is erected for the moment in this year when the transiting Sun returns to the natal Sun longitude, on or within a day of the birthday.",
+            "example": 2026,
+            "maximum": 2649,
+            "minimum": 1551,
+            "type": "integer"
+          }
+        },
+        "required": [
+          "date",
+          "time",
+          "year",
+          "latitude",
+          "longitude",
+          "timezone"
+        ],
+        "type": "object"
+      },
       "YogaDetail": {
         "properties": {
           "description": {
@@ -16646,7 +18562,7 @@
       "name": "RoxyAPI Support",
       "url": "https://roxyapi.com/contact"
     },
-    "description": "# RoxyAPI: the Spiritual OS layer for agentic AI\n\n\u003e **Base URL:** `https://roxyapi.com/api/v2`. Every path below is relative to it.\n\nOne API key for 18 insight domains (Western Astrology, Vedic Astrology, Forecast, Human Design, Chinese Astrology, Feng Shui, Mesoamerican Astrology, Vastu Shastra, Numerology, Kabbalah, Tarot Reading, Biorhythm, Ayurveda, I-Ching Oracle, Crystals and Healing Stones, Dream Interpretation, Angel Numbers, Location and Timezone), 261+ endpoints, planetary positions read directly from the NASA JPL DE440 ephemeris and verified against NASA JPL Horizons, and every calculation held by 3,683 gold standard tests. Readings come back as structured data with editorial interpretation text, translated into 10+ languages via `?lang=` on translated endpoints. Remote MCP servers, typed SDKs for TypeScript, Python, PHP, C#, Go, and Rust, drop-in UI components and copy-paste widgets, and open source Templates all run on this one document.\n\n## Who builds on RoxyAPI\n\n- **Developers** shipping astrology, tarot, numerology and wellness apps without learning each system first\n- **AI agent builders** giving Claude, GPT or Gemini real calculations instead of guesses, over Remote MCP\n- **Vibe coders** building with Cursor, Claude Code, Bolt or Replit from the spec and AGENTS.md\n- **Founders and brands** launching insight products for their audience on one key\n\n## Quick start\n\n**1. Get a key** at [roxyapi.com/pricing](https://roxyapi.com/pricing). It is ready the moment payment clears.\n\n**2. Make your first call:**\n```bash\ncurl -H \"X-API-Key: YOUR_KEY\" https://roxyapi.com/api/v2/astrology/horoscope/aries/daily\n```\n\n**3. Check your usage:**\n```bash\ncurl -H \"X-API-Key: YOUR_KEY\" https://roxyapi.com/api/v2/usage\n```\n\n## AI agents: Remote MCP\n\nEvery domain has its own Remote MCP server over Streamable HTTP at `https://roxyapi.com/mcp/{domain}` (for example `/mcp/astrology`), 258+ tools in all, with nothing to install or host. Add the URL to Claude, Cursor, VS Code, ChatGPT or any MCP client, or connect from the OpenAI Agents SDK and Gemini ADK. Coding agents that build against this API use the documentation server at `/mcp/docs`. Setup for every client: [roxyapi.com/docs/mcp](https://roxyapi.com/docs/mcp).\n\n## Authentication\n\nSend your key as `X-API-Key: YOUR_KEY` (recommended), as `Authorization: Bearer YOUR_KEY`, or as the `?api_key=` query parameter for quick tests. Keep secret keys on a server; publishable keys are for the browser.\n\n## Responses and limits\n\nClean JSON with no wrapper. An error returns `{ \"error\", \"code\", \"doc_url\" }`: `error` is readable and may change wording, `code` is stable and the one to switch on, and `doc_url` links to the fix for that exact code.\n\nEvery response carries `X-RateLimit-Limit`, `X-RateLimit-Remaining`, `X-RateLimit-Used` and `X-RateLimit-Reset` for your monthly allowance, which resets on the 1st of each month at 00:00 UTC. Each plan also has a per-minute limit for bursts, from 600 requests per minute on Starter; going over it answers `429` with a `Retry-After` and never counts against the month.\n\n## Errors\n\nEvery code the API returns, also published machine-readably as `x-error-codes` on the `info` object of this document:\n\n| Status | Code | When |\n|--------|------|------|\n| 400 | [`validation_error`](https://roxyapi.com/docs/errors#validation_error) | A field is missing or invalid. The body lists every failing field at once in issues, each with its path and the expected shape. |\n| 400 | [`bad_request`](https://roxyapi.com/docs/errors#bad_request) | The request was rejected as a whole, for example a body that is not valid JSON or a date range that ends before it starts. |\n| 400 | [`date_out_of_range`](https://roxyapi.com/docs/errors#date_out_of_range) | A date lies outside the span the planetary positions are served for. The error names the supported dates. |\n| 401 | [`api_key_required`](https://roxyapi.com/docs/errors#api_key_required) | No API key was sent. |\n| 401 | [`invalid_api_key`](https://roxyapi.com/docs/errors#invalid_api_key) | The key sent is malformed or cannot be verified. |\n| 401 | [`api_key_revoked`](https://roxyapi.com/docs/errors#api_key_revoked) | The key was valid once and has since been revoked from the account page. |\n| 401 | [`subscription_not_found`](https://roxyapi.com/docs/errors#subscription_not_found) | The key verifies, but the subscription behind it no longer exists. |\n| 401 | [`subscription_inactive`](https://roxyapi.com/docs/errors#subscription_inactive) | The subscription behind the key is cancelled, expired or suspended, or a trial is past its end date. |\n| 401 | [`publishable_key_not_allowed_on_mcp`](https://roxyapi.com/docs/errors#publishable_key_not_allowed_on_mcp) | A publishable key was used on a Remote MCP server, which takes a secret key. |\n| 401 | [`invalid_client_ip`](https://roxyapi.com/docs/errors#invalid_client_ip) | A keyless request could not be attributed to a caller. |\n| 401 | [`unauthorized`](https://roxyapi.com/docs/errors#unauthorized) | Authentication failed with no more specific reason to give. |\n| 403 | [`forbidden`](https://roxyapi.com/docs/errors#forbidden) | The key is valid, but this request is not permitted. |\n| 403 | [`origin_required`](https://roxyapi.com/docs/errors#origin_required) | A publishable key with an origin allowlist was used with no Origin header, as from a server or a native app. |\n| 403 | [`origin_not_allowed`](https://roxyapi.com/docs/errors#origin_not_allowed) | The calling site is not on the origin allowlist of this publishable key. |\n| 404 | [`not_found`](https://roxyapi.com/docs/errors#not_found) | Nothing is served at this path, or the identifier in it does not exist. A path miss adds suggestions, the closest real endpoints. |\n| 405 | [`method_not_allowed`](https://roxyapi.com/docs/errors#method_not_allowed) | The path exists for a different HTTP method. The body lists the accepted methods in allow, as does the Allow header. |\n| 409 | [`conflict`](https://roxyapi.com/docs/errors#conflict) | The request cannot be applied in the current state. |\n| 410 | [`gone`](https://roxyapi.com/docs/errors#gone) | The path was removed permanently. |\n| 413 | [`payload_too_large`](https://roxyapi.com/docs/errors#payload_too_large) | The request body is larger than the API accepts. A body far over the cap is refused before it reaches the API and returns a bare 413 with no JSON body. |\n| 415 | [`unsupported_media_type`](https://roxyapi.com/docs/errors#unsupported_media_type) | A request with a body was sent without Content-Type: application/json. |\n| 422 | [`unprocessable_entity`](https://roxyapi.com/docs/errors#unprocessable_entity) | Every field is valid, but the combination cannot be computed. |\n| 429 | [`rate_limit_exceeded`](https://roxyapi.com/docs/errors#rate_limit_exceeded) | The monthly request allowance is used up. Retry-After gives the seconds to the reset. |\n| 429 | [`rate_limit_per_minute`](https://roxyapi.com/docs/errors#rate_limit_per_minute) | The per-minute limit of the plan was reached. Retry-After gives the seconds to the next minute, and the monthly allowance is not charged. |\n| 429 | [`rate_limited`](https://roxyapi.com/docs/errors#rate_limited) | A rate limit was reached, reported without the plan detail. |\n| 429 | [`free_tier_exhausted`](https://roxyapi.com/docs/errors#free_tier_exhausted) | A keyless request has used up its trial allowance. |\n| 500 | [`internal_error`](https://roxyapi.com/docs/errors#internal_error) | The request failed inside our service. Retry with exponential backoff. |\n| 503 | [`compute_saturated`](https://roxyapi.com/docs/errors#compute_saturated) | Heavy calculations are briefly at capacity. Send the same request again after Retry-After seconds. |\n| Any | [`error`](https://roxyapi.com/docs/errors#error) | A fallback for a status with no more specific code. The status and the error field carry the signal. |\n\n## Pricing\n\nOne flat subscription covers every domain, every endpoint, Remote MCP, the SDKs, UI components, widgets and every language. Every call counts the same, a planet position or a full birth chart, with no credits and no per-product fees. From $39 per month for 50K requests, up to 3M requests, with custom volume above that: [roxyapi.com/pricing](https://roxyapi.com/pricing).\n\n## Resources\n\n- [Quickstart](https://roxyapi.com/docs/quickstart): the first call in three steps\n- [Documentation](https://roxyapi.com/docs): guides, tutorials and a reference per domain\n- [Remote MCP](https://roxyapi.com/docs/mcp): connect an AI agent\n- [SDKs](https://roxyapi.com/docs/sdk) and [UI components](https://roxyapi.com/ui)\n- [Templates](https://roxyapi.com/templates): open source apps to clone and deploy\n- [Methodology](https://roxyapi.com/methodology): how accuracy is verified\n- [Contact](https://roxyapi.com/contact): support and key recovery\n",
+    "description": "# RoxyAPI: the Spiritual OS layer for agentic AI\n\n\u003e **Base URL:** `https://roxyapi.com/api/v2`. Every path below is relative to it.\n\nOne API key for 18+ insight domains (Western Astrology, Vedic Astrology, Forecast, Human Design, Chinese Astrology, Feng Shui, Mesoamerican Astrology, Vastu Shastra, Numerology, Kabbalah, Tarot Reading, Biorhythm, Ayurveda, I-Ching Oracle, Crystals and Healing Stones, Dream Interpretation, Angel Numbers, Location and Timezone), 261+ endpoints, planetary positions read directly from the NASA JPL DE440 ephemeris and verified against NASA JPL Horizons, and every calculation held by 3,683 gold standard tests. Readings come back as structured data with editorial interpretation text, translated into 10+ languages via `?lang=` on translated endpoints. Remote MCP servers, typed SDKs for TypeScript, Python, PHP, C#, Go, and Rust, drop-in UI components and copy-paste widgets, and open source Templates all run on this one document.\n\n## Who builds on RoxyAPI\n\n- **Developers** shipping astrology, tarot, numerology and wellness apps without learning each system first\n- **AI agent builders** giving Claude, GPT or Gemini real calculations instead of guesses, over Remote MCP\n- **Vibe coders** building with Cursor, Claude Code, Bolt or Replit from the spec and AGENTS.md\n- **Founders and brands** launching insight products for their audience on one key\n\n## Quick start\n\n**1. Get a key** at [roxyapi.com/pricing](https://roxyapi.com/pricing). It is ready the moment payment clears.\n\n**2. Make your first call:**\n```bash\ncurl -H \"X-API-Key: YOUR_KEY\" https://roxyapi.com/api/v2/astrology/horoscope/aries/daily\n```\n\n**3. Check your usage:**\n```bash\ncurl -H \"X-API-Key: YOUR_KEY\" https://roxyapi.com/api/v2/usage\n```\n\n## AI agents: Remote MCP\n\nEvery domain has its own Remote MCP server over Streamable HTTP at `https://roxyapi.com/mcp/{domain}` (for example `/mcp/astrology`), 258+ tools in all, with nothing to install or host. Add the URL to Claude, Cursor, VS Code, ChatGPT or any MCP client, or connect from the OpenAI Agents SDK and Gemini ADK. Coding agents that build against this API use the documentation server at `/mcp/docs`. Setup for every client: [roxyapi.com/docs/mcp](https://roxyapi.com/docs/mcp).\n\n## Authentication\n\nSend your key as `X-API-Key: YOUR_KEY` (recommended), as `Authorization: Bearer YOUR_KEY`, or as the `?api_key=` query parameter for quick tests. Keep secret keys on a server; publishable keys are for the browser.\n\n## Responses and limits\n\nClean JSON with no wrapper. An error returns `{ \"error\", \"code\", \"doc_url\" }`: `error` is readable and may change wording, `code` is stable and the one to switch on, and `doc_url` links to the fix for that exact code.\n\nEvery response carries `X-RateLimit-Limit`, `X-RateLimit-Remaining`, `X-RateLimit-Used` and `X-RateLimit-Reset` for your monthly allowance, which resets on the 1st of each month at 00:00 UTC. Each plan also has a per-minute limit for bursts, from 600 requests per minute on Starter; going over it answers `429` with a `Retry-After` and never counts against the month.\n\n## Errors\n\nEvery code the API returns, also published machine-readably as `x-error-codes` on the `info` object of this document:\n\n| Status | Code | When |\n|--------|------|------|\n| 400 | [`validation_error`](https://roxyapi.com/docs/errors#validation_error) | A field is missing or invalid. The body lists every failing field at once in issues, each with its path and the expected shape. |\n| 400 | [`bad_request`](https://roxyapi.com/docs/errors#bad_request) | The request was rejected as a whole, for example a body that is not valid JSON or a date range that ends before it starts. |\n| 400 | [`date_out_of_range`](https://roxyapi.com/docs/errors#date_out_of_range) | A date lies outside the span the planetary positions are served for. The error names the supported dates. |\n| 400 | [`invalid_branding`](https://roxyapi.com/docs/errors#invalid_branding) | The report branding cannot be used, for example a logo that is not a PNG, JPEG, WebP or SVG image. |\n| 400 | [`logo_fetch_failed`](https://roxyapi.com/docs/errors#logo_fetch_failed) | The report logo could not be fetched: it must be an HTTPS URL on a public host that answers within the size limit. |\n| 400 | [`unsupported_character`](https://roxyapi.com/docs/errors#unsupported_character) | The report text holds a character no report font draws. The error names it: remove or replace it. |\n| 401 | [`api_key_required`](https://roxyapi.com/docs/errors#api_key_required) | No API key was sent. |\n| 401 | [`invalid_api_key`](https://roxyapi.com/docs/errors#invalid_api_key) | The key sent is malformed or cannot be verified. |\n| 401 | [`api_key_revoked`](https://roxyapi.com/docs/errors#api_key_revoked) | The key was valid once and has since been revoked from the account page. |\n| 401 | [`subscription_not_found`](https://roxyapi.com/docs/errors#subscription_not_found) | The key verifies, but the subscription behind it no longer exists. |\n| 401 | [`subscription_inactive`](https://roxyapi.com/docs/errors#subscription_inactive) | The subscription behind the key is cancelled, expired or suspended, or a trial is past its end date. |\n| 401 | [`publishable_key_not_allowed_on_mcp`](https://roxyapi.com/docs/errors#publishable_key_not_allowed_on_mcp) | A publishable key was used on a Remote MCP server, which takes a secret key. |\n| 401 | [`invalid_client_ip`](https://roxyapi.com/docs/errors#invalid_client_ip) | A keyless request could not be attributed to a caller. |\n| 401 | [`unauthorized`](https://roxyapi.com/docs/errors#unauthorized) | Authentication failed with no more specific reason to give. |\n| 403 | [`forbidden`](https://roxyapi.com/docs/errors#forbidden) | The key is valid, but this request is not permitted. |\n| 403 | [`origin_required`](https://roxyapi.com/docs/errors#origin_required) | A publishable key with an origin allowlist was used with no Origin header, as from a server or a native app. |\n| 403 | [`origin_not_allowed`](https://roxyapi.com/docs/errors#origin_not_allowed) | The calling site is not on the origin allowlist of this publishable key. |\n| 404 | [`not_found`](https://roxyapi.com/docs/errors#not_found) | Nothing is served at this path, or the identifier in it does not exist. A path miss adds suggestions, the closest real endpoints. |\n| 405 | [`method_not_allowed`](https://roxyapi.com/docs/errors#method_not_allowed) | The path exists for a different HTTP method. The body lists the accepted methods in allow, as does the Allow header. |\n| 409 | [`conflict`](https://roxyapi.com/docs/errors#conflict) | The request cannot be applied in the current state. |\n| 410 | [`gone`](https://roxyapi.com/docs/errors#gone) | The path was removed permanently. |\n| 413 | [`payload_too_large`](https://roxyapi.com/docs/errors#payload_too_large) | The request body is larger than the API accepts. A body far over the cap is refused before it reaches the API and returns a bare 413 with no JSON body. |\n| 415 | [`unsupported_media_type`](https://roxyapi.com/docs/errors#unsupported_media_type) | A request with a body was sent without Content-Type: application/json. |\n| 422 | [`unprocessable_entity`](https://roxyapi.com/docs/errors#unprocessable_entity) | Every field is valid, but the combination cannot be computed. |\n| 429 | [`rate_limit_exceeded`](https://roxyapi.com/docs/errors#rate_limit_exceeded) | The monthly request allowance is used up. Retry-After gives the seconds to the reset. |\n| 429 | [`rate_limit_per_minute`](https://roxyapi.com/docs/errors#rate_limit_per_minute) | The per-minute limit of the plan was reached. Retry-After gives the seconds to the next minute, and the monthly allowance is not charged. |\n| 429 | [`rate_limited`](https://roxyapi.com/docs/errors#rate_limited) | A rate limit was reached, reported without the plan detail. |\n| 429 | [`free_tier_exhausted`](https://roxyapi.com/docs/errors#free_tier_exhausted) | A keyless request has used up its trial allowance. |\n| 429 | [`reports_rate_limited`](https://roxyapi.com/docs/errors#reports_rate_limited) | Too many reports were requested this minute. Retry-After gives the seconds to the next minute. |\n| 500 | [`internal_error`](https://roxyapi.com/docs/errors#internal_error) | The request failed inside our service. Retry with exponential backoff. |\n| 503 | [`compute_saturated`](https://roxyapi.com/docs/errors#compute_saturated) | Heavy calculations are briefly at capacity. Send the same request again after Retry-After seconds. |\n| 503 | [`reports_busy`](https://roxyapi.com/docs/errors#reports_busy) | Report rendering is briefly at capacity. Send the same request again after Retry-After seconds. |\n| 503 | [`report_render_timeout`](https://roxyapi.com/docs/errors#report_render_timeout) | The report took too long to render. Send the same request again. |\n| Any | [`error`](https://roxyapi.com/docs/errors#error) | A fallback for a status with no more specific code. The status and the error field carry the signal. |\n\n## Pricing\n\nOne flat subscription covers every domain, every endpoint, Remote MCP, the SDKs, UI components, widgets and every language. Every data endpoint is one request, a planet position or a full birth chart, with no credits and no per-product fees. From $39 per month for 50K requests, up to 3M requests, with custom volume above that: [roxyapi.com/pricing](https://roxyapi.com/pricing).\n\n## Resources\n\n- [Quickstart](https://roxyapi.com/docs/quickstart): the first call in three steps\n- [Documentation](https://roxyapi.com/docs): guides, tutorials and a reference per domain\n- [Remote MCP](https://roxyapi.com/docs/mcp): connect an AI agent\n- [SDKs](https://roxyapi.com/docs/sdk) and [UI components](https://roxyapi.com/ui)\n- [Templates](https://roxyapi.com/templates): open source apps to clone and deploy\n- [Methodology](https://roxyapi.com/methodology): how accuracy is verified\n- [Contact](https://roxyapi.com/contact): support and key recovery\n",
     "license": {
       "name": "Proprietary",
       "url": "https://roxyapi.com/policy/terms"
@@ -16667,6 +18583,21 @@
       {
         "code": "date_out_of_range",
         "meaning": "A date lies outside the span the planetary positions are served for. The error names the supported dates.",
+        "status": 400
+      },
+      {
+        "code": "invalid_branding",
+        "meaning": "The report branding cannot be used, for example a logo that is not a PNG, JPEG, WebP or SVG image.",
+        "status": 400
+      },
+      {
+        "code": "logo_fetch_failed",
+        "meaning": "The report logo could not be fetched: it must be an HTTPS URL on a public host that answers within the size limit.",
+        "status": 400
+      },
+      {
+        "code": "unsupported_character",
+        "meaning": "The report text holds a character no report font draws. The error names it: remove or replace it.",
         "status": 400
       },
       {
@@ -16780,6 +18711,11 @@
         "status": 429
       },
       {
+        "code": "reports_rate_limited",
+        "meaning": "Too many reports were requested this minute. Retry-After gives the seconds to the next minute.",
+        "status": 429
+      },
+      {
         "code": "internal_error",
         "meaning": "The request failed inside our service. Retry with exponential backoff.",
         "status": 500
@@ -16787,6 +18723,16 @@
       {
         "code": "compute_saturated",
         "meaning": "Heavy calculations are briefly at capacity. Send the same request again after Retry-After seconds.",
+        "status": 503
+      },
+      {
+        "code": "reports_busy",
+        "meaning": "Report rendering is briefly at capacity. Send the same request again after Retry-After seconds.",
+        "status": 503
+      },
+      {
+        "code": "report_render_timeout",
+        "meaning": "The report took too long to render. Send the same request again.",
         "status": 503
       },
       {
@@ -77080,6 +79026,1590 @@
         ]
       }
     },
+    "/reports/bazi": {
+      "post": {
+        "description": "Renders the bazi report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.",
+        "operationId": "generateBaziReport",
+        "parameters": [
+          {
+            "description": "Report language (BCP 47): the labels, headings and readings are written in it. Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en.",
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "schema": {
+              "default": "en",
+              "description": "Report language (BCP 47): the labels, headings and readings are written in it. Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en.",
+              "enum": [
+                "en",
+                "tr",
+                "de",
+                "es",
+                "hi",
+                "pt",
+                "fr",
+                "ru"
+              ],
+              "example": "en",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BaziReportRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "format": {
+                      "description": "Format of the output field present.",
+                      "enum": [
+                        "pdf",
+                        "html",
+                        "markdown"
+                      ],
+                      "example": "pdf",
+                      "type": "string"
+                    },
+                    "html": {
+                      "description": "The report as one self-contained HTML document. Present when format is html.",
+                      "example": "\u003c!doctype html\u003e\u003chtml lang=\"en\"\u003e",
+                      "type": "string"
+                    },
+                    "lang": {
+                      "description": "Language the report is written in.",
+                      "example": "en",
+                      "type": "string"
+                    },
+                    "markdown": {
+                      "description": "The report as CommonMark. Present when format is markdown.",
+                      "example": "# BaZi report",
+                      "type": "string"
+                    },
+                    "pages": {
+                      "description": "Number of PDF pages. Present when format is pdf.",
+                      "example": 24,
+                      "type": "integer"
+                    },
+                    "pdf": {
+                      "description": "The PDF, base64 encoded. Present when format is pdf: decode it and save it as a .pdf file.",
+                      "example": "JVBERi0xLjcK",
+                      "type": "string"
+                    },
+                    "template": {
+                      "description": "The report template rendered.",
+                      "example": "bazi",
+                      "type": "string"
+                    },
+                    "title": {
+                      "description": "Report title in the report language, ready for a file name or a heading.",
+                      "example": "BaZi report",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "template",
+                    "lang",
+                    "format",
+                    "title"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "The bazi report in the requested format."
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Validation error. `issues[]` lists every failed field."
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Invalid or missing API key"
+          },
+          "405": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Method not allowed. The path exists but only responds to the methods listed in `allow[]` and the `Allow` response header.",
+            "headers": {
+              "Allow": {
+                "description": "Comma-separated list of allowed methods (RFC 9110).",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Monthly rate limit exceeded"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Internal server error"
+          }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ],
+        "summary": "BaZi report - Branded PDF report API",
+        "tags": [
+          "Reports"
+        ],
+        "x-key-types": [
+          "secret",
+          "publishable"
+        ],
+        "x-request-cost": 50
+      }
+    },
+    "/reports/human-design": {
+      "post": {
+        "description": "Renders the human design report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.",
+        "operationId": "generateHumanDesignReport",
+        "parameters": [
+          {
+            "description": "Report language (BCP 47): the labels, headings and readings are written in it. Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en.",
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "schema": {
+              "default": "en",
+              "description": "Report language (BCP 47): the labels, headings and readings are written in it. Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en.",
+              "enum": [
+                "en",
+                "tr",
+                "de",
+                "es",
+                "hi",
+                "pt",
+                "fr",
+                "ru"
+              ],
+              "example": "en",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/HumanDesignReportRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "format": {
+                      "description": "Format of the output field present.",
+                      "enum": [
+                        "pdf",
+                        "html",
+                        "markdown"
+                      ],
+                      "example": "pdf",
+                      "type": "string"
+                    },
+                    "html": {
+                      "description": "The report as one self-contained HTML document. Present when format is html.",
+                      "example": "\u003c!doctype html\u003e\u003chtml lang=\"en\"\u003e",
+                      "type": "string"
+                    },
+                    "lang": {
+                      "description": "Language the report is written in.",
+                      "example": "en",
+                      "type": "string"
+                    },
+                    "markdown": {
+                      "description": "The report as CommonMark. Present when format is markdown.",
+                      "example": "# Human Design report",
+                      "type": "string"
+                    },
+                    "pages": {
+                      "description": "Number of PDF pages. Present when format is pdf.",
+                      "example": 24,
+                      "type": "integer"
+                    },
+                    "pdf": {
+                      "description": "The PDF, base64 encoded. Present when format is pdf: decode it and save it as a .pdf file.",
+                      "example": "JVBERi0xLjcK",
+                      "type": "string"
+                    },
+                    "template": {
+                      "description": "The report template rendered.",
+                      "example": "human-design",
+                      "type": "string"
+                    },
+                    "title": {
+                      "description": "Report title in the report language, ready for a file name or a heading.",
+                      "example": "Human Design report",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "template",
+                    "lang",
+                    "format",
+                    "title"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "The human design report in the requested format."
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Validation error. `issues[]` lists every failed field."
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Invalid or missing API key"
+          },
+          "405": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Method not allowed. The path exists but only responds to the methods listed in `allow[]` and the `Allow` response header.",
+            "headers": {
+              "Allow": {
+                "description": "Comma-separated list of allowed methods (RFC 9110).",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Monthly rate limit exceeded"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Internal server error"
+          }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ],
+        "summary": "Human Design report - Branded PDF report API",
+        "tags": [
+          "Reports"
+        ],
+        "x-key-types": [
+          "secret",
+          "publishable"
+        ],
+        "x-request-cost": 50
+      }
+    },
+    "/reports/kundli": {
+      "post": {
+        "description": "Renders the kundli report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.",
+        "operationId": "generateKundliReport",
+        "parameters": [
+          {
+            "description": "Report language (BCP 47): the labels, headings and readings are written in it. Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en.",
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "schema": {
+              "default": "en",
+              "description": "Report language (BCP 47): the labels, headings and readings are written in it. Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en.",
+              "enum": [
+                "en",
+                "tr",
+                "de",
+                "es",
+                "hi",
+                "pt",
+                "fr",
+                "ru"
+              ],
+              "example": "en",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/KundliReportRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "format": {
+                      "description": "Format of the output field present.",
+                      "enum": [
+                        "pdf",
+                        "html",
+                        "markdown"
+                      ],
+                      "example": "pdf",
+                      "type": "string"
+                    },
+                    "html": {
+                      "description": "The report as one self-contained HTML document. Present when format is html.",
+                      "example": "\u003c!doctype html\u003e\u003chtml lang=\"en\"\u003e",
+                      "type": "string"
+                    },
+                    "lang": {
+                      "description": "Language the report is written in.",
+                      "example": "en",
+                      "type": "string"
+                    },
+                    "markdown": {
+                      "description": "The report as CommonMark. Present when format is markdown.",
+                      "example": "# Kundli report",
+                      "type": "string"
+                    },
+                    "pages": {
+                      "description": "Number of PDF pages. Present when format is pdf.",
+                      "example": 24,
+                      "type": "integer"
+                    },
+                    "pdf": {
+                      "description": "The PDF, base64 encoded. Present when format is pdf: decode it and save it as a .pdf file.",
+                      "example": "JVBERi0xLjcK",
+                      "type": "string"
+                    },
+                    "template": {
+                      "description": "The report template rendered.",
+                      "example": "kundli",
+                      "type": "string"
+                    },
+                    "title": {
+                      "description": "Report title in the report language, ready for a file name or a heading.",
+                      "example": "Kundli report",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "template",
+                    "lang",
+                    "format",
+                    "title"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "The kundli report in the requested format."
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Validation error. `issues[]` lists every failed field."
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Invalid or missing API key"
+          },
+          "405": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Method not allowed. The path exists but only responds to the methods listed in `allow[]` and the `Allow` response header.",
+            "headers": {
+              "Allow": {
+                "description": "Comma-separated list of allowed methods (RFC 9110).",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Monthly rate limit exceeded"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Internal server error"
+          }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ],
+        "summary": "Kundli report - Branded PDF report API",
+        "tags": [
+          "Reports"
+        ],
+        "x-key-types": [
+          "secret",
+          "publishable"
+        ],
+        "x-request-cost": 100
+      }
+    },
+    "/reports/matchmaking": {
+      "post": {
+        "description": "Renders the kundli matching report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.",
+        "operationId": "generateMatchmakingReport",
+        "parameters": [
+          {
+            "description": "Report language (BCP 47): the labels, headings and readings are written in it. Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en.",
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "schema": {
+              "default": "en",
+              "description": "Report language (BCP 47): the labels, headings and readings are written in it. Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en.",
+              "enum": [
+                "en",
+                "tr",
+                "de",
+                "es",
+                "hi",
+                "pt",
+                "fr",
+                "ru"
+              ],
+              "example": "en",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MatchmakingReportRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "format": {
+                      "description": "Format of the output field present.",
+                      "enum": [
+                        "pdf",
+                        "html",
+                        "markdown"
+                      ],
+                      "example": "pdf",
+                      "type": "string"
+                    },
+                    "html": {
+                      "description": "The report as one self-contained HTML document. Present when format is html.",
+                      "example": "\u003c!doctype html\u003e\u003chtml lang=\"en\"\u003e",
+                      "type": "string"
+                    },
+                    "lang": {
+                      "description": "Language the report is written in.",
+                      "example": "en",
+                      "type": "string"
+                    },
+                    "markdown": {
+                      "description": "The report as CommonMark. Present when format is markdown.",
+                      "example": "# Kundli matching report",
+                      "type": "string"
+                    },
+                    "pages": {
+                      "description": "Number of PDF pages. Present when format is pdf.",
+                      "example": 24,
+                      "type": "integer"
+                    },
+                    "pdf": {
+                      "description": "The PDF, base64 encoded. Present when format is pdf: decode it and save it as a .pdf file.",
+                      "example": "JVBERi0xLjcK",
+                      "type": "string"
+                    },
+                    "template": {
+                      "description": "The report template rendered.",
+                      "example": "matchmaking",
+                      "type": "string"
+                    },
+                    "title": {
+                      "description": "Report title in the report language, ready for a file name or a heading.",
+                      "example": "Kundli matching report",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "template",
+                    "lang",
+                    "format",
+                    "title"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "The kundli matching report in the requested format."
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Validation error. `issues[]` lists every failed field."
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Invalid or missing API key"
+          },
+          "405": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Method not allowed. The path exists but only responds to the methods listed in `allow[]` and the `Allow` response header.",
+            "headers": {
+              "Allow": {
+                "description": "Comma-separated list of allowed methods (RFC 9110).",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Monthly rate limit exceeded"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Internal server error"
+          }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ],
+        "summary": "Kundli matching report - Branded PDF report API",
+        "tags": [
+          "Reports"
+        ],
+        "x-key-types": [
+          "secret",
+          "publishable"
+        ],
+        "x-request-cost": 50
+      }
+    },
+    "/reports/natal": {
+      "post": {
+        "description": "Renders the natal chart report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.",
+        "operationId": "generateNatalReport",
+        "parameters": [
+          {
+            "description": "Report language (BCP 47): the labels, headings and readings are written in it. Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en.",
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "schema": {
+              "default": "en",
+              "description": "Report language (BCP 47): the labels, headings and readings are written in it. Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en.",
+              "enum": [
+                "en",
+                "tr",
+                "de",
+                "es",
+                "hi",
+                "pt",
+                "fr",
+                "ru"
+              ],
+              "example": "en",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NatalReportRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "format": {
+                      "description": "Format of the output field present.",
+                      "enum": [
+                        "pdf",
+                        "html",
+                        "markdown"
+                      ],
+                      "example": "pdf",
+                      "type": "string"
+                    },
+                    "html": {
+                      "description": "The report as one self-contained HTML document. Present when format is html.",
+                      "example": "\u003c!doctype html\u003e\u003chtml lang=\"en\"\u003e",
+                      "type": "string"
+                    },
+                    "lang": {
+                      "description": "Language the report is written in.",
+                      "example": "en",
+                      "type": "string"
+                    },
+                    "markdown": {
+                      "description": "The report as CommonMark. Present when format is markdown.",
+                      "example": "# Natal chart report",
+                      "type": "string"
+                    },
+                    "pages": {
+                      "description": "Number of PDF pages. Present when format is pdf.",
+                      "example": 24,
+                      "type": "integer"
+                    },
+                    "pdf": {
+                      "description": "The PDF, base64 encoded. Present when format is pdf: decode it and save it as a .pdf file.",
+                      "example": "JVBERi0xLjcK",
+                      "type": "string"
+                    },
+                    "template": {
+                      "description": "The report template rendered.",
+                      "example": "natal",
+                      "type": "string"
+                    },
+                    "title": {
+                      "description": "Report title in the report language, ready for a file name or a heading.",
+                      "example": "Natal chart report",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "template",
+                    "lang",
+                    "format",
+                    "title"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "The natal chart report in the requested format."
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Validation error. `issues[]` lists every failed field."
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Invalid or missing API key"
+          },
+          "405": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Method not allowed. The path exists but only responds to the methods listed in `allow[]` and the `Allow` response header.",
+            "headers": {
+              "Allow": {
+                "description": "Comma-separated list of allowed methods (RFC 9110).",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Monthly rate limit exceeded"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Internal server error"
+          }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ],
+        "summary": "Natal chart report - Branded PDF report API",
+        "tags": [
+          "Reports"
+        ],
+        "x-key-types": [
+          "secret",
+          "publishable"
+        ],
+        "x-request-cost": 100
+      }
+    },
+    "/reports/numerology": {
+      "post": {
+        "description": "Renders the numerology report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.",
+        "operationId": "generateNumerologyReport",
+        "parameters": [
+          {
+            "description": "Report language (BCP 47): the labels, headings and readings are written in it. Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en.",
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "schema": {
+              "default": "en",
+              "description": "Report language (BCP 47): the labels, headings and readings are written in it. Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en.",
+              "enum": [
+                "en",
+                "tr",
+                "de",
+                "es",
+                "hi",
+                "pt",
+                "fr",
+                "ru"
+              ],
+              "example": "en",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NumerologyReportRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "format": {
+                      "description": "Format of the output field present.",
+                      "enum": [
+                        "pdf",
+                        "html",
+                        "markdown"
+                      ],
+                      "example": "pdf",
+                      "type": "string"
+                    },
+                    "html": {
+                      "description": "The report as one self-contained HTML document. Present when format is html.",
+                      "example": "\u003c!doctype html\u003e\u003chtml lang=\"en\"\u003e",
+                      "type": "string"
+                    },
+                    "lang": {
+                      "description": "Language the report is written in.",
+                      "example": "en",
+                      "type": "string"
+                    },
+                    "markdown": {
+                      "description": "The report as CommonMark. Present when format is markdown.",
+                      "example": "# Numerology report",
+                      "type": "string"
+                    },
+                    "pages": {
+                      "description": "Number of PDF pages. Present when format is pdf.",
+                      "example": 24,
+                      "type": "integer"
+                    },
+                    "pdf": {
+                      "description": "The PDF, base64 encoded. Present when format is pdf: decode it and save it as a .pdf file.",
+                      "example": "JVBERi0xLjcK",
+                      "type": "string"
+                    },
+                    "template": {
+                      "description": "The report template rendered.",
+                      "example": "numerology",
+                      "type": "string"
+                    },
+                    "title": {
+                      "description": "Report title in the report language, ready for a file name or a heading.",
+                      "example": "Numerology report",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "template",
+                    "lang",
+                    "format",
+                    "title"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "The numerology report in the requested format."
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Validation error. `issues[]` lists every failed field."
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Invalid or missing API key"
+          },
+          "405": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Method not allowed. The path exists but only responds to the methods listed in `allow[]` and the `Allow` response header.",
+            "headers": {
+              "Allow": {
+                "description": "Comma-separated list of allowed methods (RFC 9110).",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Monthly rate limit exceeded"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Internal server error"
+          }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ],
+        "summary": "Numerology report - Branded PDF report API",
+        "tags": [
+          "Reports"
+        ],
+        "x-key-types": [
+          "secret",
+          "publishable"
+        ],
+        "x-request-cost": 50
+      }
+    },
+    "/reports/synastry": {
+      "post": {
+        "description": "Renders the synastry report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.",
+        "operationId": "generateSynastryReport",
+        "parameters": [
+          {
+            "description": "Report language (BCP 47): the labels, headings and readings are written in it. Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en.",
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "schema": {
+              "default": "en",
+              "description": "Report language (BCP 47): the labels, headings and readings are written in it. Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en.",
+              "enum": [
+                "en",
+                "tr",
+                "de",
+                "es",
+                "hi",
+                "pt",
+                "fr",
+                "ru"
+              ],
+              "example": "en",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SynastryReportRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "format": {
+                      "description": "Format of the output field present.",
+                      "enum": [
+                        "pdf",
+                        "html",
+                        "markdown"
+                      ],
+                      "example": "pdf",
+                      "type": "string"
+                    },
+                    "html": {
+                      "description": "The report as one self-contained HTML document. Present when format is html.",
+                      "example": "\u003c!doctype html\u003e\u003chtml lang=\"en\"\u003e",
+                      "type": "string"
+                    },
+                    "lang": {
+                      "description": "Language the report is written in.",
+                      "example": "en",
+                      "type": "string"
+                    },
+                    "markdown": {
+                      "description": "The report as CommonMark. Present when format is markdown.",
+                      "example": "# Synastry report",
+                      "type": "string"
+                    },
+                    "pages": {
+                      "description": "Number of PDF pages. Present when format is pdf.",
+                      "example": 24,
+                      "type": "integer"
+                    },
+                    "pdf": {
+                      "description": "The PDF, base64 encoded. Present when format is pdf: decode it and save it as a .pdf file.",
+                      "example": "JVBERi0xLjcK",
+                      "type": "string"
+                    },
+                    "template": {
+                      "description": "The report template rendered.",
+                      "example": "synastry",
+                      "type": "string"
+                    },
+                    "title": {
+                      "description": "Report title in the report language, ready for a file name or a heading.",
+                      "example": "Synastry report",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "template",
+                    "lang",
+                    "format",
+                    "title"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "The synastry report in the requested format."
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Validation error. `issues[]` lists every failed field."
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Invalid or missing API key"
+          },
+          "405": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Method not allowed. The path exists but only responds to the methods listed in `allow[]` and the `Allow` response header.",
+            "headers": {
+              "Allow": {
+                "description": "Comma-separated list of allowed methods (RFC 9110).",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Monthly rate limit exceeded"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Internal server error"
+          }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ],
+        "summary": "Synastry report - Branded PDF report API",
+        "tags": [
+          "Reports"
+        ],
+        "x-key-types": [
+          "secret",
+          "publishable"
+        ],
+        "x-request-cost": 50
+      }
+    },
+    "/reports/tarot": {
+      "post": {
+        "description": "Renders the tarot reading report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.",
+        "operationId": "generateTarotReport",
+        "parameters": [
+          {
+            "description": "Report language (BCP 47): the labels, headings and readings are written in it. Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en.",
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "schema": {
+              "default": "en",
+              "description": "Report language (BCP 47): the labels, headings and readings are written in it. Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en.",
+              "enum": [
+                "en",
+                "tr",
+                "de",
+                "es",
+                "hi",
+                "pt",
+                "fr",
+                "ru"
+              ],
+              "example": "en",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TarotReportRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "format": {
+                      "description": "Format of the output field present.",
+                      "enum": [
+                        "pdf",
+                        "html",
+                        "markdown"
+                      ],
+                      "example": "pdf",
+                      "type": "string"
+                    },
+                    "html": {
+                      "description": "The report as one self-contained HTML document. Present when format is html.",
+                      "example": "\u003c!doctype html\u003e\u003chtml lang=\"en\"\u003e",
+                      "type": "string"
+                    },
+                    "lang": {
+                      "description": "Language the report is written in.",
+                      "example": "en",
+                      "type": "string"
+                    },
+                    "markdown": {
+                      "description": "The report as CommonMark. Present when format is markdown.",
+                      "example": "# Tarot reading report",
+                      "type": "string"
+                    },
+                    "pages": {
+                      "description": "Number of PDF pages. Present when format is pdf.",
+                      "example": 24,
+                      "type": "integer"
+                    },
+                    "pdf": {
+                      "description": "The PDF, base64 encoded. Present when format is pdf: decode it and save it as a .pdf file.",
+                      "example": "JVBERi0xLjcK",
+                      "type": "string"
+                    },
+                    "template": {
+                      "description": "The report template rendered.",
+                      "example": "tarot",
+                      "type": "string"
+                    },
+                    "title": {
+                      "description": "Report title in the report language, ready for a file name or a heading.",
+                      "example": "Tarot reading report",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "template",
+                    "lang",
+                    "format",
+                    "title"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "The tarot reading report in the requested format."
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Validation error. `issues[]` lists every failed field."
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Invalid or missing API key"
+          },
+          "405": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Method not allowed. The path exists but only responds to the methods listed in `allow[]` and the `Allow` response header.",
+            "headers": {
+              "Allow": {
+                "description": "Comma-separated list of allowed methods (RFC 9110).",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Monthly rate limit exceeded"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Internal server error"
+          }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ],
+        "summary": "Tarot reading report - Branded PDF report API",
+        "tags": [
+          "Reports"
+        ],
+        "x-key-types": [
+          "secret",
+          "publishable"
+        ],
+        "x-request-cost": 25
+      }
+    },
+    "/reports/yearly-forecast": {
+      "post": {
+        "description": "Renders the yearly forecast report from the same input as its chart, as a white-label document under your name, logo, colours and typeface. Like every template in the reports catalogue, it returns a print-ready PDF, self-contained HTML or Markdown, in the language set by lang.",
+        "operationId": "generateYearlyForecastReport",
+        "parameters": [
+          {
+            "description": "Report language (BCP 47): the labels, headings and readings are written in it. Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en.",
+            "in": "query",
+            "name": "lang",
+            "required": false,
+            "schema": {
+              "default": "en",
+              "description": "Report language (BCP 47): the labels, headings and readings are written in it. Supported: en, tr, de, es, hi, pt, fr, ru. Defaults to en.",
+              "enum": [
+                "en",
+                "tr",
+                "de",
+                "es",
+                "hi",
+                "pt",
+                "fr",
+                "ru"
+              ],
+              "example": "en",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/YearlyForecastReportRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "format": {
+                      "description": "Format of the output field present.",
+                      "enum": [
+                        "pdf",
+                        "html",
+                        "markdown"
+                      ],
+                      "example": "pdf",
+                      "type": "string"
+                    },
+                    "html": {
+                      "description": "The report as one self-contained HTML document. Present when format is html.",
+                      "example": "\u003c!doctype html\u003e\u003chtml lang=\"en\"\u003e",
+                      "type": "string"
+                    },
+                    "lang": {
+                      "description": "Language the report is written in.",
+                      "example": "en",
+                      "type": "string"
+                    },
+                    "markdown": {
+                      "description": "The report as CommonMark. Present when format is markdown.",
+                      "example": "# Yearly forecast report",
+                      "type": "string"
+                    },
+                    "pages": {
+                      "description": "Number of PDF pages. Present when format is pdf.",
+                      "example": 24,
+                      "type": "integer"
+                    },
+                    "pdf": {
+                      "description": "The PDF, base64 encoded. Present when format is pdf: decode it and save it as a .pdf file.",
+                      "example": "JVBERi0xLjcK",
+                      "type": "string"
+                    },
+                    "template": {
+                      "description": "The report template rendered.",
+                      "example": "yearly-forecast",
+                      "type": "string"
+                    },
+                    "title": {
+                      "description": "Report title in the report language, ready for a file name or a heading.",
+                      "example": "Yearly forecast report",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "template",
+                    "lang",
+                    "format",
+                    "title"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "description": "The yearly forecast report in the requested format."
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Validation error. `issues[]` lists every failed field."
+          },
+          "401": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Invalid or missing API key"
+          },
+          "405": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Method not allowed. The path exists but only responds to the methods listed in `allow[]` and the `Allow` response header.",
+            "headers": {
+              "Allow": {
+                "description": "Comma-separated list of allowed methods (RFC 9110).",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "429": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Monthly rate limit exceeded"
+          },
+          "500": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            },
+            "description": "Internal server error"
+          }
+        },
+        "security": [
+          {
+            "apiKey": []
+          }
+        ],
+        "summary": "Yearly forecast report - Branded PDF report API",
+        "tags": [
+          "Reports"
+        ],
+        "x-key-types": [
+          "secret",
+          "publishable"
+        ],
+        "x-request-cost": 100
+      }
+    },
     "/tarot/cards": {
       "get": {
         "description": "Retrieve the complete Rider-Waite-Smith tarot deck of 78 cards. The 22 Major Arcana (numbered 0-21) carry life lessons, spiritual themes, and karmic influences like The Fool, Death, The Tower; the 56 Minor Arcana (4 suits × 14 cards each) cover daily situations and practical matters. Filter by arcana type (major for spiritual guidance, minor for everyday concerns), suit (cups for emotions and relationships, wands for creativity and passion, swords for intellect and conflict, pentacles for material wealth and finances), or card number (Ace=1 for new beginnings, 2-10 for progression, Page=11 for messages, Knight=12 for action, Queen=13 for mastery, King=14 for authority). Returns lightweight basic card data. Use GET /cards/{id} for full upright and reversed interpretations with keywords. Perfect for building tarot reference libraries, card databases, learning applications, or browsing the complete traditional deck used by professional tarot readers worldwide.",
@@ -79025,7 +82555,7 @@
                       "type": "number"
                     },
                     "requestsPerMonth": {
-                      "description": "Monthly request allowance for the plan. One request, API or MCP, equals one unit: there is no credit weighting and no per domain fee.",
+                      "description": "Monthly request allowance for the plan. Every data endpoint call, API or MCP, is one request and a report spends the cost its operation lists in x-request-cost: there is no per domain fee.",
                       "example": 10000,
                       "type": "number"
                     },
@@ -100993,6 +104523,10 @@
     {
       "description": "Monitor your API usage, check rate limits, and track request consumption. Get detailed usage breakdowns by endpoint, current month statistics, and recommendations for plan upgrades when approaching limits. Essential for managing API quotas and optimizing subscription plans.",
       "name": "Usage"
+    },
+    {
+      "description": "Branded reports built from the API: a natal chart and more as a print-ready PDF, self-contained HTML or Markdown, white-labelled with your name, logo, colours and typeface, in every supported language. Each report states its cost in requests.",
+      "name": "Reports"
     },
     {
       "description": "List the response languages accepted by the `lang` query parameter on every i18n-aware endpoint. Use to populate language pickers, validate user input, or auto-detect available locales in agent integrations.",
