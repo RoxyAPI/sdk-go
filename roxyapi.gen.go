@@ -33671,7 +33671,7 @@ type ErrorResponse struct {
 
 // ErrorResponseIssue defines model for ErrorResponseIssue.
 type ErrorResponseIssue struct {
-	// Code Zod issue code (invalid_type, too_small, too_big, invalid_string, ...).
+	// Code Machine-readable issue code, such as invalid_type, too_small, too_big or invalid_format.
 	Code *string `json:"code,omitempty"`
 
 	// Expected Expected type for invalid_type.
