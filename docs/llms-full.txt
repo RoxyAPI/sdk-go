@@ -46,7 +46,7 @@ This file is the method INDEX (operation id, HTTP method, path, summary). For re
 <!-- BEGIN:METHODS -->
 ## Western Astrology - `roxy.Astrology`
 
-Western astrology API for natal birth charts, daily, weekly, monthly, and yearly horoscopes with unique content per s...
+Western astrology API for natal birth charts with an editorial reading of the whole chart, daily, weekly, monthly, an...
 
 [API reference](https://roxyapi.com/api-reference/western-astrology)
 
@@ -71,7 +71,7 @@ Western astrology API for natal birth charts, daily, weekly, monthly, and yearly
 - `getMoonCalendar` - GET `/astrology/moon-phase/calendar/{year}/{month}` - Get lunar calendar - Moon phases for entire month
 - `getCurrentMoonPhase` - GET `/astrology/moon-phase/current` - Get current moon phase - Lunar phase calculator with zodiac sign
 - `getUpcomingMoonPhases` - GET `/astrology/moon-phase/upcoming` - Get upcoming moon phases - Next new moon, full moon, quarters
-- `generateNatalChart` - POST `/astrology/natal-chart` - Generate natal chart - Birth chart calculator API with houses and aspects
+- `generateNatalChart` - POST `/astrology/natal-chart` - Generate natal chart - Birth chart API with houses, aspects and a written reading
 - `getMonthlyDeclinationParallels` - POST `/astrology/parallels/monthly` - Monthly Parallels - Declination contacts for an entire month
 - `listPlanetMeanings` - GET `/astrology/planet-meanings` - Get all planet meanings - Complete astrology planet interpretations list
 - `getPlanetMeaning` - GET `/astrology/planet-meanings/{id}` - Get planet meaning details - Complete astrology planet interpretation

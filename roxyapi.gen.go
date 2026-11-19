@@ -31593,7 +31593,7 @@ type AspectPatternsResponse struct {
 		// Include Optional bodies included beyond the default Sun-Pluto set. Empty means classical 10-planet detection only.
 		Include []AspectPatternsResponseOptionsInclude `json:"include"`
 
-		// StrictOrbs Whether the tight orb budget was used. False uses the standard pattern-detection orbs (8 degrees for major aspects, 9 for square, 6 for sextile, 3 for quincunx).
+		// StrictOrbs Whether the tight orb budget was used. False uses the chart aspect table orbs; true narrows them further.
 		StrictOrbs bool `json:"strictOrbs"`
 	} `json:"options"`
 
@@ -31617,7 +31617,7 @@ type AspectPatternsResponse struct {
 		// InterpretationVars Variables that were interpolated into the interpretation template. Names already resolved to the requested language where appropriate.
 		InterpretationVars map[string]string `json:"interpretationVars"`
 
-		// Kind Pattern kind identifier. GRAND_TRINE (3 trines, harmonious flow), KITE (Grand Trine with a focal outlet planet), T_SQUARE (opposition with squared apex, growth engine), GRAND_CROSS (4 planets in 2 oppositions and 4 squares, peak tension), YOD (Finger of Fate, fated adjustment), MYSTIC_RECTANGLE (oppositions softened by trines and sextiles), STELLIUM (3+ planets clustered in a sign or 10-degree arc).
+		// Kind Pattern kind identifier. GRAND_TRINE (3 trines, harmonious flow), KITE (Grand Trine with a focal outlet planet), T_SQUARE (opposition with squared apex, growth engine), GRAND_CROSS (4 planets in 2 oppositions and 4 squares, peak tension), YOD (a planet at the apex of two quincunxes, a call to adjust), MYSTIC_RECTANGLE (oppositions softened by trines and sextiles), STELLIUM (3+ planets clustered in a sign or 10-degree arc).
 		Kind AspectPatternsResponsePatternsKind `json:"kind"`
 
 		// Modality Dominant modality for tension-based patterns (T-Square, Grand Cross). Cardinal initiates, Fixed sustains, Mutable adapts.
@@ -31643,7 +31643,7 @@ type AspectPatternsResponseOptionsInclude string
 // AspectPatternsResponsePatternsElement Dominant element when the pattern is element-coherent (Grand Trine, Kite). Reported lowercase. Absent for patterns whose meaning does not pivot on element.
 type AspectPatternsResponsePatternsElement string
 
-// AspectPatternsResponsePatternsKind Pattern kind identifier. GRAND_TRINE (3 trines, harmonious flow), KITE (Grand Trine with a focal outlet planet), T_SQUARE (opposition with squared apex, growth engine), GRAND_CROSS (4 planets in 2 oppositions and 4 squares, peak tension), YOD (Finger of Fate, fated adjustment), MYSTIC_RECTANGLE (oppositions softened by trines and sextiles), STELLIUM (3+ planets clustered in a sign or 10-degree arc).
+// AspectPatternsResponsePatternsKind Pattern kind identifier. GRAND_TRINE (3 trines, harmonious flow), KITE (Grand Trine with a focal outlet planet), T_SQUARE (opposition with squared apex, growth engine), GRAND_CROSS (4 planets in 2 oppositions and 4 squares, peak tension), YOD (a planet at the apex of two quincunxes, a call to adjust), MYSTIC_RECTANGLE (oppositions softened by trines and sextiles), STELLIUM (3+ planets clustered in a sign or 10-degree arc).
 type AspectPatternsResponsePatternsKind string
 
 // AspectPatternsResponsePatternsModality Dominant modality for tension-based patterns (T-Square, Grand Cross). Cardinal initiates, Fixed sustains, Mutable adapts.
@@ -31763,7 +31763,7 @@ type AspectsResponse struct {
 		// InterpretationVars Variables that were interpolated into the interpretation template. Names already resolved to the requested language where appropriate.
 		InterpretationVars map[string]string `json:"interpretationVars"`
 
-		// Kind Pattern kind identifier. GRAND_TRINE (3 trines, harmonious flow), KITE (Grand Trine with a focal outlet planet), T_SQUARE (opposition with squared apex, growth engine), GRAND_CROSS (4 planets in 2 oppositions and 4 squares, peak tension), YOD (Finger of Fate, fated adjustment), MYSTIC_RECTANGLE (oppositions softened by trines and sextiles), STELLIUM (3+ planets clustered in a sign or 10-degree arc).
+		// Kind Pattern kind identifier. GRAND_TRINE (3 trines, harmonious flow), KITE (Grand Trine with a focal outlet planet), T_SQUARE (opposition with squared apex, growth engine), GRAND_CROSS (4 planets in 2 oppositions and 4 squares, peak tension), YOD (a planet at the apex of two quincunxes, a call to adjust), MYSTIC_RECTANGLE (oppositions softened by trines and sextiles), STELLIUM (3+ planets clustered in a sign or 10-degree arc).
 		Kind AspectsResponsePatternsKind `json:"kind"`
 
 		// Modality Dominant modality for tension-based patterns (T-Square, Grand Cross). Cardinal initiates, Fixed sustains, Mutable adapts.
@@ -31807,7 +31807,7 @@ type AspectsResponse struct {
 // AspectsResponsePatternsElement Dominant element when the pattern is element-coherent (Grand Trine, Kite). Reported lowercase. Absent for patterns whose meaning does not pivot on element.
 type AspectsResponsePatternsElement string
 
-// AspectsResponsePatternsKind Pattern kind identifier. GRAND_TRINE (3 trines, harmonious flow), KITE (Grand Trine with a focal outlet planet), T_SQUARE (opposition with squared apex, growth engine), GRAND_CROSS (4 planets in 2 oppositions and 4 squares, peak tension), YOD (Finger of Fate, fated adjustment), MYSTIC_RECTANGLE (oppositions softened by trines and sextiles), STELLIUM (3+ planets clustered in a sign or 10-degree arc).
+// AspectsResponsePatternsKind Pattern kind identifier. GRAND_TRINE (3 trines, harmonious flow), KITE (Grand Trine with a focal outlet planet), T_SQUARE (opposition with squared apex, growth engine), GRAND_CROSS (4 planets in 2 oppositions and 4 squares, peak tension), YOD (a planet at the apex of two quincunxes, a call to adjust), MYSTIC_RECTANGLE (oppositions softened by trines and sextiles), STELLIUM (3+ planets clustered in a sign or 10-degree arc).
 type AspectsResponsePatternsKind string
 
 // AspectsResponsePatternsModality Dominant modality for tension-based patterns (T-Square, Grand Cross). Cardinal initiates, Fixed sustains, Mutable adapts.
@@ -36880,6 +36880,15 @@ type NatalChartResponse struct {
 		// Degree Degree within the Ascendant sign (0-29.999).
 		Degree float32 `json:"degree"`
 
+		// Interpretation Interpretation of the rising sign: how you meet the world and how others first meet you. Present when lang is one the natal engine writes (English, German, Spanish, French, Hindi, Portuguese, Russian, Turkish); absent otherwise.
+		Interpretation *struct {
+			// Detailed A paragraph on the rising sign: how you meet the world and how others first meet you: the strengths it brings, the habit to watch and how it shows in daily life.
+			Detailed string `json:"detailed"`
+
+			// Summary One-sentence read of the rising sign: how you meet the world and how others first meet you.
+			Summary string `json:"summary"`
+		} `json:"interpretation,omitempty"`
+
 		// Longitude Absolute ecliptic longitude of the Ascendant (0-360).
 		Longitude float32 `json:"longitude"`
 
@@ -36900,7 +36909,7 @@ type NatalChartResponse struct {
 			// Keywords Themes this aspect activates between the two bodies. Translated in place, so they arrive in the requested language.
 			Keywords []string `json:"keywords"`
 
-			// Summary One-sentence read of THIS pair: which two bodies, how tight the aspect is, whether it is applying or separating, and how it is classified. Translated in place, so it arrives in the requested language.
+			// Summary Short read of THIS pair of bodies as the aspect joins them in this chart. Type, orb, strength and motion stay in the fields beside it. Translated in place, so it arrives in the requested language.
 			Summary string `json:"summary"`
 		} `json:"aspectInterpretation"`
 
@@ -36937,10 +36946,10 @@ type NatalChartResponse struct {
 
 	// AspectsInterpretation Aspect pattern analysis showing the balance of harmonious vs challenging energies in the chart.
 	AspectsInterpretation struct {
-		// Challenging Count of challenging aspects (square, opposition).
+		// Challenging Count of challenging aspects (square, opposition, quincunx).
 		Challenging float32 `json:"challenging"`
 
-		// Dominant Whether the chart is predominantly harmonious, challenging, or balanced.
+		// Dominant Which way this chart leans, read from the harmonious and challenging counts beside it against how many of each a typical chart holds: harmonious, challenging or balanced. Always English, whatever the lang parameter says; the summary states the same lean in the requested language.
 		Dominant string `json:"dominant"`
 
 		// Harmonious Count of harmonious aspects (trine, sextile).
@@ -36992,10 +37001,37 @@ type NatalChartResponse struct {
 		SignLocalized *string `json:"signLocalized,omitempty"`
 	} `json:"houses"`
 
+	// Interpretation Whole-chart natal interpretation. Present when lang is one the natal engine writes (English, German, Spanish, French, Hindi, Portuguese, Russian, Turkish); absent otherwise.
+	Interpretation *struct {
+		// Career Career chapter connecting the tenth-house ruler and occupants with the Midheaven sign.
+		Career string `json:"career"`
+
+		// Closing Closing synthesis returning to the central drives, their integration and the chart signature.
+		Closing string `json:"closing"`
+
+		// Home Home chapter connecting the fourth-house ruler and occupants with the IC sign and private foundations.
+		Home string `json:"home"`
+
+		// Love Relationships chapter connecting the seventh-house ruler and occupants with the Venus-Mars relationship.
+		Love string `json:"love"`
+
+		// Opening Whole-chart natal reading connecting the Sun, Moon, Ascendant, central signature and the tension that shapes their expression.
+		Opening string `json:"opening"`
+	} `json:"interpretation,omitempty"`
+
 	// Midheaven Midheaven (MC). The highest point of the ecliptic at birth, representing career direction and public image.
 	Midheaven struct {
 		// Degree Degree within the Midheaven sign (0-29.999).
 		Degree float32 `json:"degree"`
+
+		// Interpretation Interpretation of the Midheaven sign: your public direction and the work you want to be known for. Present when lang is one the natal engine writes (English, German, Spanish, French, Hindi, Portuguese, Russian, Turkish); absent otherwise.
+		Interpretation *struct {
+			// Detailed A paragraph on the Midheaven sign: your public direction and the work you want to be known for: the strengths it brings, the habit to watch and how it shows in daily life.
+			Detailed string `json:"detailed"`
+
+			// Summary One-sentence read of the Midheaven sign: your public direction and the work you want to be known for.
+			Summary string `json:"summary"`
+		} `json:"interpretation,omitempty"`
 
 		// Longitude Absolute ecliptic longitude of the Midheaven (0-360).
 		Longitude float32 `json:"longitude"`
@@ -37048,7 +37084,7 @@ type NatalChartResponse struct {
 		// InterpretationVars Variables that were interpolated into the interpretation template. Names already resolved to the requested language where appropriate.
 		InterpretationVars map[string]string `json:"interpretationVars"`
 
-		// Kind Pattern kind identifier. GRAND_TRINE (3 trines, harmonious flow), KITE (Grand Trine with a focal outlet planet), T_SQUARE (opposition with squared apex, growth engine), GRAND_CROSS (4 planets in 2 oppositions and 4 squares, peak tension), YOD (Finger of Fate, fated adjustment), MYSTIC_RECTANGLE (oppositions softened by trines and sextiles), STELLIUM (3+ planets clustered in a sign or 10-degree arc).
+		// Kind Pattern kind identifier. GRAND_TRINE (3 trines, harmonious flow), KITE (Grand Trine with a focal outlet planet), T_SQUARE (opposition with squared apex, growth engine), GRAND_CROSS (4 planets in 2 oppositions and 4 squares, peak tension), YOD (a planet at the apex of two quincunxes, a call to adjust), MYSTIC_RECTANGLE (oppositions softened by trines and sextiles), STELLIUM (3+ planets clustered in a sign or 10-degree arc).
 		Kind NatalChartResponsePatternsKind `json:"kind"`
 
 		// Modality Dominant modality for tension-based patterns (T-Square, Grand Cross). Cardinal initiates, Fixed sustains, Mutable adapts.
@@ -37075,15 +37111,15 @@ type NatalChartResponse struct {
 		// House House placement (1-12) based on the selected house system.
 		House float32 `json:"house"`
 
-		// Interpretation Planet-in-sign-in-house interpretation. Narrative analysis of what this placement means in the natal chart.
+		// Interpretation Reading of this body in its sign and house for this chart, in the requested language.
 		Interpretation *struct {
-			// Detailed Multi-sentence detailed interpretation with personality insights.
+			// Detailed The full reading of this placement: its sign and house, and where they apply its dignity, retrograde motion, the Moon phase at birth, a nearby angle and its tightest aspect.
 			Detailed string `json:"detailed"`
 
 			// Keywords Key personality traits and themes for this placement.
 			Keywords []string `json:"keywords"`
 
-			// Summary One-sentence interpretation of this planet in its sign and house placement.
+			// Summary The placement in brief: what this body does in its sign and in its house, written for this chart.
 			Summary string `json:"summary"`
 		} `json:"interpretation,omitempty"`
 
@@ -37164,7 +37200,7 @@ type NatalChartResponsePartOfFortuneSect string
 // NatalChartResponsePatternsElement Dominant element when the pattern is element-coherent (Grand Trine, Kite). Reported lowercase. Absent for patterns whose meaning does not pivot on element.
 type NatalChartResponsePatternsElement string
 
-// NatalChartResponsePatternsKind Pattern kind identifier. GRAND_TRINE (3 trines, harmonious flow), KITE (Grand Trine with a focal outlet planet), T_SQUARE (opposition with squared apex, growth engine), GRAND_CROSS (4 planets in 2 oppositions and 4 squares, peak tension), YOD (Finger of Fate, fated adjustment), MYSTIC_RECTANGLE (oppositions softened by trines and sextiles), STELLIUM (3+ planets clustered in a sign or 10-degree arc).
+// NatalChartResponsePatternsKind Pattern kind identifier. GRAND_TRINE (3 trines, harmonious flow), KITE (Grand Trine with a focal outlet planet), T_SQUARE (opposition with squared apex, growth engine), GRAND_CROSS (4 planets in 2 oppositions and 4 squares, peak tension), YOD (a planet at the apex of two quincunxes, a call to adjust), MYSTIC_RECTANGLE (oppositions softened by trines and sextiles), STELLIUM (3+ planets clustered in a sign or 10-degree arc).
 type NatalChartResponsePatternsKind string
 
 // NatalChartResponsePatternsModality Dominant modality for tension-based patterns (T-Square, Grand Cross). Cardinal initiates, Fixed sustains, Mutable adapts.
@@ -38226,7 +38262,7 @@ type RelocationPlanet struct {
 		// Keywords Key themes for this relocated placement.
 		Keywords []string `json:"keywords"`
 
-		// Summary One-sentence interpretation of this planet in its sign and relocated house.
+		// Summary The placement in brief: what this body does in its natal sign and in its relocated house.
 		Summary string `json:"summary"`
 	} `json:"interpretation,omitempty"`
 
@@ -39416,7 +39452,7 @@ type DetectAspectPatternsParams struct {
 	// Lang Response language (BCP 47). Supported: en, tr, de, es, hi, pt, fr, ru, zh-Hans, zh-Hant. Defaults to en. Coverage varies by domain, and a field with no translation in the requested language returns English.
 	Lang *DetectAspectPatternsParamsLang `form:"lang,omitempty" json:"lang,omitempty"`
 
-	// StrictOrbs Use tighter orbs, so only closely formed patterns are reported. Truthy values (true, 1, yes, on; case-insensitive) narrow trine to 5 degrees, square to 5, sextile to 4, quincunx to 2. Defaults to false, the standard pattern-detection orbs.
+	// StrictOrbs Use tighter orbs, so only closely formed patterns are reported. Truthy values (true, 1, yes, on; case-insensitive) narrow trine to 5 degrees, square to 5, sextile to 4, quincunx to 2. Every leg must occur in the chart aspect table. Defaults to false.
 	StrictOrbs *string `form:"strictOrbs,omitempty" json:"strictOrbs,omitempty"`
 
 	// Include Comma-separated list of optional bodies to include beyond the classical 10 planets. Valid tokens (case-insensitive): chiron, northNode (also accepts north_node, north-node, northnode). Empty by default.
@@ -55119,18 +55155,18 @@ type ClientInterface interface {
 	// Corresponds with GET /astrology/moon-phase/upcoming (the `GetUpcomingMoonPhases` operationId).
 	GetUpcomingMoonPhases(ctx context.Context, params *GetUpcomingMoonPhasesParams, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// GenerateNatalChartWithBody Generate natal chart - Birth chart calculator API with houses and aspects
+	// GenerateNatalChartWithBody Generate natal chart - Birth chart API with houses, aspects and a written reading
 	//
-	// Calculate complete Western astrology natal chart (birth chart) with tropical zodiac. Returns all 14 celestial bodies (the 10 classical planets Sun through Pluto, the lunar nodes, Chiron, and Black Moon Lilith), 12 house cusps with customizable house systems (Placidus, Whole Sign, Equal, Koch), major and minor aspects, Ascendant, Midheaven, dominant elements and modalities. Perfect for astrology apps, birth chart generators, horoscope websites, and astrological consultation tools. Verified against NASA JPL Horizons.
+	// Calculate a Western astrology natal chart (birth chart) with planets, houses, aspects and a written reading for that birth. It returns all 14 celestial bodies in the tropical zodiac (the 10 classical planets Sun through Pluto, the lunar nodes, Chiron and Black Moon Lilith) with sign, house and dignity, 12 house cusps in Placidus, Whole Sign, Equal or Koch, major and minor aspects, Ascendant, Midheaven, and the dominant elements and modalities. Every chart carries an editorial reading written for that birth: an opening synthesis, love, career and home chapters, a closing, and a reading for each planet, aspect, the Ascendant and the Midheaven, in English, German, Spanish, French, Hindi, Portuguese, Russian, Turkish. Verified against NASA JPL Horizons.
 	//
 	// Takes any type of body and a specified content type.
 	//
 	// Corresponds with POST /astrology/natal-chart (the `GenerateNatalChart` operationId).
 	GenerateNatalChartWithBody(ctx context.Context, params *GenerateNatalChartParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// GenerateNatalChart Generate natal chart - Birth chart calculator API with houses and aspects
+	// GenerateNatalChart Generate natal chart - Birth chart API with houses, aspects and a written reading
 	//
-	// Calculate complete Western astrology natal chart (birth chart) with tropical zodiac. Returns all 14 celestial bodies (the 10 classical planets Sun through Pluto, the lunar nodes, Chiron, and Black Moon Lilith), 12 house cusps with customizable house systems (Placidus, Whole Sign, Equal, Koch), major and minor aspects, Ascendant, Midheaven, dominant elements and modalities. Perfect for astrology apps, birth chart generators, horoscope websites, and astrological consultation tools. Verified against NASA JPL Horizons.
+	// Calculate a Western astrology natal chart (birth chart) with planets, houses, aspects and a written reading for that birth. It returns all 14 celestial bodies in the tropical zodiac (the 10 classical planets Sun through Pluto, the lunar nodes, Chiron and Black Moon Lilith) with sign, house and dignity, 12 house cusps in Placidus, Whole Sign, Equal or Koch, major and minor aspects, Ascendant, Midheaven, and the dominant elements and modalities. Every chart carries an editorial reading written for that birth: an opening synthesis, love, career and home chapters, a closing, and a reading for each planet, aspect, the Ascendant and the Midheaven, in English, German, Spanish, French, Hindi, Portuguese, Russian, Turkish. Verified against NASA JPL Horizons.
 	//
 	// Takes a body of the `application/json` content type.
 	//
@@ -55189,7 +55225,7 @@ type ClientInterface interface {
 
 	// GetPlanetaryPositionsWithBody Get planetary positions - Ephemeris calculator for all planets
 	//
-	// Calculate accurate tropical zodiac positions for all 14 celestial bodies for any date, time, and location. The bodies are the 10 classical planets Sun through Pluto, the lunar nodes, Chiron, and Black Moon Lilith. Returns longitude, latitude, zodiac sign, degree within sign, daily motion speed, and retrograde status. Perfect for transit tracking, ephemeris tables, astrology apps, and planetary position widgets. Verified against NASA JPL Horizons.
+	// Calculate accurate tropical zodiac positions for all 14 celestial bodies for any date, time, and location. The bodies are the 10 classical planets Sun through Pluto, the lunar nodes, Chiron, and Black Moon Lilith. Returns longitude, latitude, zodiac sign, degree within sign, daily motion speed, retrograde status, and a reading of each body in its sign. Perfect for transit tracking, ephemeris tables, astrology apps, and planetary position widgets. Verified against NASA JPL Horizons.
 	//
 	// Takes any type of body and a specified content type.
 	//
@@ -55198,7 +55234,7 @@ type ClientInterface interface {
 
 	// GetPlanetaryPositions Get planetary positions - Ephemeris calculator for all planets
 	//
-	// Calculate accurate tropical zodiac positions for all 14 celestial bodies for any date, time, and location. The bodies are the 10 classical planets Sun through Pluto, the lunar nodes, Chiron, and Black Moon Lilith. Returns longitude, latitude, zodiac sign, degree within sign, daily motion speed, and retrograde status. Perfect for transit tracking, ephemeris tables, astrology apps, and planetary position widgets. Verified against NASA JPL Horizons.
+	// Calculate accurate tropical zodiac positions for all 14 celestial bodies for any date, time, and location. The bodies are the 10 classical planets Sun through Pluto, the lunar nodes, Chiron, and Black Moon Lilith. Returns longitude, latitude, zodiac sign, degree within sign, daily motion speed, retrograde status, and a reading of each body in its sign. Perfect for transit tracking, ephemeris tables, astrology apps, and planetary position widgets. Verified against NASA JPL Horizons.
 	//
 	// Takes a body of the `application/json` content type.
 	//
@@ -55261,7 +55297,7 @@ type ClientInterface interface {
 
 	// GenerateRelocationChartWithBody Generate relocation chart - Relocated birth chart calculator with shifted houses and angles
 	//
-	// Calculate a relocation chart (relocated birth chart) for a new place on Earth. The birth moment stays the same, so every planet keeps its natal sign and degree, while the Ascendant, Midheaven, Vertex, and all twelve house cusps are recomputed for the new latitude and longitude. Returns the relocated houses and angles, the planets that change house, the angular planets activated at the new place, and the distance and compass direction from the birthplace. Built for relocation astrology readings, astrocartography style move planning, and travel charts. Verified against NASA JPL Horizons.
+	// Calculate a relocation chart (relocated birth chart) for a new place on Earth. The birth moment stays the same, so every planet keeps its natal sign and degree, while the Ascendant, Midheaven, Vertex, and all twelve house cusps are recomputed for the new latitude and longitude. Returns the relocated houses and angles, the planets that change house with a reading of each planet in its relocated house, the angular planets activated at the new place, and the distance and compass direction from the birthplace. Built for relocation astrology readings, astrocartography style move planning, and travel charts. Verified against NASA JPL Horizons.
 	//
 	// Takes any type of body and a specified content type.
 	//
@@ -55270,7 +55306,7 @@ type ClientInterface interface {
 
 	// GenerateRelocationChart Generate relocation chart - Relocated birth chart calculator with shifted houses and angles
 	//
-	// Calculate a relocation chart (relocated birth chart) for a new place on Earth. The birth moment stays the same, so every planet keeps its natal sign and degree, while the Ascendant, Midheaven, Vertex, and all twelve house cusps are recomputed for the new latitude and longitude. Returns the relocated houses and angles, the planets that change house, the angular planets activated at the new place, and the distance and compass direction from the birthplace. Built for relocation astrology readings, astrocartography style move planning, and travel charts. Verified against NASA JPL Horizons.
+	// Calculate a relocation chart (relocated birth chart) for a new place on Earth. The birth moment stays the same, so every planet keeps its natal sign and degree, while the Ascendant, Midheaven, Vertex, and all twelve house cusps are recomputed for the new latitude and longitude. Returns the relocated houses and angles, the planets that change house with a reading of each planet in its relocated house, the angular planets activated at the new place, and the distance and compass direction from the birthplace. Built for relocation astrology readings, astrocartography style move planning, and travel charts. Verified against NASA JPL Horizons.
 	//
 	// Takes a body of the `application/json` content type.
 	//
@@ -59247,9 +59283,9 @@ func (c *Client) GetUpcomingMoonPhases(ctx context.Context, params *GetUpcomingM
 	return c.Client.Do(req)
 }
 
-// GenerateNatalChartWithBody Generate natal chart - Birth chart calculator API with houses and aspects
+// GenerateNatalChartWithBody Generate natal chart - Birth chart API with houses, aspects and a written reading
 //
-// Calculate complete Western astrology natal chart (birth chart) with tropical zodiac. Returns all 14 celestial bodies (the 10 classical planets Sun through Pluto, the lunar nodes, Chiron, and Black Moon Lilith), 12 house cusps with customizable house systems (Placidus, Whole Sign, Equal, Koch), major and minor aspects, Ascendant, Midheaven, dominant elements and modalities. Perfect for astrology apps, birth chart generators, horoscope websites, and astrological consultation tools. Verified against NASA JPL Horizons.
+// Calculate a Western astrology natal chart (birth chart) with planets, houses, aspects and a written reading for that birth. It returns all 14 celestial bodies in the tropical zodiac (the 10 classical planets Sun through Pluto, the lunar nodes, Chiron and Black Moon Lilith) with sign, house and dignity, 12 house cusps in Placidus, Whole Sign, Equal or Koch, major and minor aspects, Ascendant, Midheaven, and the dominant elements and modalities. Every chart carries an editorial reading written for that birth: an opening synthesis, love, career and home chapters, a closing, and a reading for each planet, aspect, the Ascendant and the Midheaven, in English, German, Spanish, French, Hindi, Portuguese, Russian, Turkish. Verified against NASA JPL Horizons.
 //
 // Takes any type of body and a specified content type.
 //
@@ -59266,9 +59302,9 @@ func (c *Client) GenerateNatalChartWithBody(ctx context.Context, params *Generat
 	return c.Client.Do(req)
 }
 
-// GenerateNatalChart Generate natal chart - Birth chart calculator API with houses and aspects
+// GenerateNatalChart Generate natal chart - Birth chart API with houses, aspects and a written reading
 //
-// Calculate complete Western astrology natal chart (birth chart) with tropical zodiac. Returns all 14 celestial bodies (the 10 classical planets Sun through Pluto, the lunar nodes, Chiron, and Black Moon Lilith), 12 house cusps with customizable house systems (Placidus, Whole Sign, Equal, Koch), major and minor aspects, Ascendant, Midheaven, dominant elements and modalities. Perfect for astrology apps, birth chart generators, horoscope websites, and astrological consultation tools. Verified against NASA JPL Horizons.
+// Calculate a Western astrology natal chart (birth chart) with planets, houses, aspects and a written reading for that birth. It returns all 14 celestial bodies in the tropical zodiac (the 10 classical planets Sun through Pluto, the lunar nodes, Chiron and Black Moon Lilith) with sign, house and dignity, 12 house cusps in Placidus, Whole Sign, Equal or Koch, major and minor aspects, Ascendant, Midheaven, and the dominant elements and modalities. Every chart carries an editorial reading written for that birth: an opening synthesis, love, career and home chapters, a closing, and a reading for each planet, aspect, the Ascendant and the Midheaven, in English, German, Spanish, French, Hindi, Portuguese, Russian, Turkish. Verified against NASA JPL Horizons.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -59397,7 +59433,7 @@ func (c *Client) GeneratePlanetaryReturn(ctx context.Context, params *GeneratePl
 
 // GetPlanetaryPositionsWithBody Get planetary positions - Ephemeris calculator for all planets
 //
-// Calculate accurate tropical zodiac positions for all 14 celestial bodies for any date, time, and location. The bodies are the 10 classical planets Sun through Pluto, the lunar nodes, Chiron, and Black Moon Lilith. Returns longitude, latitude, zodiac sign, degree within sign, daily motion speed, and retrograde status. Perfect for transit tracking, ephemeris tables, astrology apps, and planetary position widgets. Verified against NASA JPL Horizons.
+// Calculate accurate tropical zodiac positions for all 14 celestial bodies for any date, time, and location. The bodies are the 10 classical planets Sun through Pluto, the lunar nodes, Chiron, and Black Moon Lilith. Returns longitude, latitude, zodiac sign, degree within sign, daily motion speed, retrograde status, and a reading of each body in its sign. Perfect for transit tracking, ephemeris tables, astrology apps, and planetary position widgets. Verified against NASA JPL Horizons.
 //
 // Takes any type of body and a specified content type.
 //
@@ -59416,7 +59452,7 @@ func (c *Client) GetPlanetaryPositionsWithBody(ctx context.Context, params *GetP
 
 // GetPlanetaryPositions Get planetary positions - Ephemeris calculator for all planets
 //
-// Calculate accurate tropical zodiac positions for all 14 celestial bodies for any date, time, and location. The bodies are the 10 classical planets Sun through Pluto, the lunar nodes, Chiron, and Black Moon Lilith. Returns longitude, latitude, zodiac sign, degree within sign, daily motion speed, and retrograde status. Perfect for transit tracking, ephemeris tables, astrology apps, and planetary position widgets. Verified against NASA JPL Horizons.
+// Calculate accurate tropical zodiac positions for all 14 celestial bodies for any date, time, and location. The bodies are the 10 classical planets Sun through Pluto, the lunar nodes, Chiron, and Black Moon Lilith. Returns longitude, latitude, zodiac sign, degree within sign, daily motion speed, retrograde status, and a reading of each body in its sign. Perfect for transit tracking, ephemeris tables, astrology apps, and planetary position widgets. Verified against NASA JPL Horizons.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -59549,7 +59585,7 @@ func (c *Client) GenerateProgressions(ctx context.Context, params *GenerateProgr
 
 // GenerateRelocationChartWithBody Generate relocation chart - Relocated birth chart calculator with shifted houses and angles
 //
-// Calculate a relocation chart (relocated birth chart) for a new place on Earth. The birth moment stays the same, so every planet keeps its natal sign and degree, while the Ascendant, Midheaven, Vertex, and all twelve house cusps are recomputed for the new latitude and longitude. Returns the relocated houses and angles, the planets that change house, the angular planets activated at the new place, and the distance and compass direction from the birthplace. Built for relocation astrology readings, astrocartography style move planning, and travel charts. Verified against NASA JPL Horizons.
+// Calculate a relocation chart (relocated birth chart) for a new place on Earth. The birth moment stays the same, so every planet keeps its natal sign and degree, while the Ascendant, Midheaven, Vertex, and all twelve house cusps are recomputed for the new latitude and longitude. Returns the relocated houses and angles, the planets that change house with a reading of each planet in its relocated house, the angular planets activated at the new place, and the distance and compass direction from the birthplace. Built for relocation astrology readings, astrocartography style move planning, and travel charts. Verified against NASA JPL Horizons.
 //
 // Takes any type of body and a specified content type.
 //
@@ -59568,7 +59604,7 @@ func (c *Client) GenerateRelocationChartWithBody(ctx context.Context, params *Ge
 
 // GenerateRelocationChart Generate relocation chart - Relocated birth chart calculator with shifted houses and angles
 //
-// Calculate a relocation chart (relocated birth chart) for a new place on Earth. The birth moment stays the same, so every planet keeps its natal sign and degree, while the Ascendant, Midheaven, Vertex, and all twelve house cusps are recomputed for the new latitude and longitude. Returns the relocated houses and angles, the planets that change house, the angular planets activated at the new place, and the distance and compass direction from the birthplace. Built for relocation astrology readings, astrocartography style move planning, and travel charts. Verified against NASA JPL Horizons.
+// Calculate a relocation chart (relocated birth chart) for a new place on Earth. The birth moment stays the same, so every planet keeps its natal sign and degree, while the Ascendant, Midheaven, Vertex, and all twelve house cusps are recomputed for the new latitude and longitude. Returns the relocated houses and angles, the planets that change house with a reading of each planet in its relocated house, the angular planets activated at the new place, and the distance and compass direction from the birthplace. Built for relocation astrology readings, astrocartography style move planning, and travel charts. Verified against NASA JPL Horizons.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -85270,18 +85306,18 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with GET /astrology/moon-phase/upcoming (the `GetUpcomingMoonPhases` operationId).
 	GetUpcomingMoonPhasesWithResponse(ctx context.Context, params *GetUpcomingMoonPhasesParams, reqEditors ...RequestEditorFn) (*GetUpcomingMoonPhasesResponse, error)
 
-	// GenerateNatalChartWithBodyWithResponse Generate natal chart - Birth chart calculator API with houses and aspects
+	// GenerateNatalChartWithBodyWithResponse Generate natal chart - Birth chart API with houses, aspects and a written reading
 	//
-	// Calculate complete Western astrology natal chart (birth chart) with tropical zodiac. Returns all 14 celestial bodies (the 10 classical planets Sun through Pluto, the lunar nodes, Chiron, and Black Moon Lilith), 12 house cusps with customizable house systems (Placidus, Whole Sign, Equal, Koch), major and minor aspects, Ascendant, Midheaven, dominant elements and modalities. Perfect for astrology apps, birth chart generators, horoscope websites, and astrological consultation tools. Verified against NASA JPL Horizons.
+	// Calculate a Western astrology natal chart (birth chart) with planets, houses, aspects and a written reading for that birth. It returns all 14 celestial bodies in the tropical zodiac (the 10 classical planets Sun through Pluto, the lunar nodes, Chiron and Black Moon Lilith) with sign, house and dignity, 12 house cusps in Placidus, Whole Sign, Equal or Koch, major and minor aspects, Ascendant, Midheaven, and the dominant elements and modalities. Every chart carries an editorial reading written for that birth: an opening synthesis, love, career and home chapters, a closing, and a reading for each planet, aspect, the Ascendant and the Midheaven, in English, German, Spanish, French, Hindi, Portuguese, Russian, Turkish. Verified against NASA JPL Horizons.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with POST /astrology/natal-chart (the `GenerateNatalChart` operationId).
 	GenerateNatalChartWithBodyWithResponse(ctx context.Context, params *GenerateNatalChartParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GenerateNatalChartResponse, error)
 
-	// GenerateNatalChartWithResponse Generate natal chart - Birth chart calculator API with houses and aspects
+	// GenerateNatalChartWithResponse Generate natal chart - Birth chart API with houses, aspects and a written reading
 	//
-	// Calculate complete Western astrology natal chart (birth chart) with tropical zodiac. Returns all 14 celestial bodies (the 10 classical planets Sun through Pluto, the lunar nodes, Chiron, and Black Moon Lilith), 12 house cusps with customizable house systems (Placidus, Whole Sign, Equal, Koch), major and minor aspects, Ascendant, Midheaven, dominant elements and modalities. Perfect for astrology apps, birth chart generators, horoscope websites, and astrological consultation tools. Verified against NASA JPL Horizons.
+	// Calculate a Western astrology natal chart (birth chart) with planets, houses, aspects and a written reading for that birth. It returns all 14 celestial bodies in the tropical zodiac (the 10 classical planets Sun through Pluto, the lunar nodes, Chiron and Black Moon Lilith) with sign, house and dignity, 12 house cusps in Placidus, Whole Sign, Equal or Koch, major and minor aspects, Ascendant, Midheaven, and the dominant elements and modalities. Every chart carries an editorial reading written for that birth: an opening synthesis, love, career and home chapters, a closing, and a reading for each planet, aspect, the Ascendant and the Midheaven, in English, German, Spanish, French, Hindi, Portuguese, Russian, Turkish. Verified against NASA JPL Horizons.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -85344,7 +85380,7 @@ type ClientWithResponsesInterface interface {
 
 	// GetPlanetaryPositionsWithBodyWithResponse Get planetary positions - Ephemeris calculator for all planets
 	//
-	// Calculate accurate tropical zodiac positions for all 14 celestial bodies for any date, time, and location. The bodies are the 10 classical planets Sun through Pluto, the lunar nodes, Chiron, and Black Moon Lilith. Returns longitude, latitude, zodiac sign, degree within sign, daily motion speed, and retrograde status. Perfect for transit tracking, ephemeris tables, astrology apps, and planetary position widgets. Verified against NASA JPL Horizons.
+	// Calculate accurate tropical zodiac positions for all 14 celestial bodies for any date, time, and location. The bodies are the 10 classical planets Sun through Pluto, the lunar nodes, Chiron, and Black Moon Lilith. Returns longitude, latitude, zodiac sign, degree within sign, daily motion speed, retrograde status, and a reading of each body in its sign. Perfect for transit tracking, ephemeris tables, astrology apps, and planetary position widgets. Verified against NASA JPL Horizons.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -85353,7 +85389,7 @@ type ClientWithResponsesInterface interface {
 
 	// GetPlanetaryPositionsWithResponse Get planetary positions - Ephemeris calculator for all planets
 	//
-	// Calculate accurate tropical zodiac positions for all 14 celestial bodies for any date, time, and location. The bodies are the 10 classical planets Sun through Pluto, the lunar nodes, Chiron, and Black Moon Lilith. Returns longitude, latitude, zodiac sign, degree within sign, daily motion speed, and retrograde status. Perfect for transit tracking, ephemeris tables, astrology apps, and planetary position widgets. Verified against NASA JPL Horizons.
+	// Calculate accurate tropical zodiac positions for all 14 celestial bodies for any date, time, and location. The bodies are the 10 classical planets Sun through Pluto, the lunar nodes, Chiron, and Black Moon Lilith. Returns longitude, latitude, zodiac sign, degree within sign, daily motion speed, retrograde status, and a reading of each body in its sign. Perfect for transit tracking, ephemeris tables, astrology apps, and planetary position widgets. Verified against NASA JPL Horizons.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -85416,7 +85452,7 @@ type ClientWithResponsesInterface interface {
 
 	// GenerateRelocationChartWithBodyWithResponse Generate relocation chart - Relocated birth chart calculator with shifted houses and angles
 	//
-	// Calculate a relocation chart (relocated birth chart) for a new place on Earth. The birth moment stays the same, so every planet keeps its natal sign and degree, while the Ascendant, Midheaven, Vertex, and all twelve house cusps are recomputed for the new latitude and longitude. Returns the relocated houses and angles, the planets that change house, the angular planets activated at the new place, and the distance and compass direction from the birthplace. Built for relocation astrology readings, astrocartography style move planning, and travel charts. Verified against NASA JPL Horizons.
+	// Calculate a relocation chart (relocated birth chart) for a new place on Earth. The birth moment stays the same, so every planet keeps its natal sign and degree, while the Ascendant, Midheaven, Vertex, and all twelve house cusps are recomputed for the new latitude and longitude. Returns the relocated houses and angles, the planets that change house with a reading of each planet in its relocated house, the angular planets activated at the new place, and the distance and compass direction from the birthplace. Built for relocation astrology readings, astrocartography style move planning, and travel charts. Verified against NASA JPL Horizons.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -85425,7 +85461,7 @@ type ClientWithResponsesInterface interface {
 
 	// GenerateRelocationChartWithResponse Generate relocation chart - Relocated birth chart calculator with shifted houses and angles
 	//
-	// Calculate a relocation chart (relocated birth chart) for a new place on Earth. The birth moment stays the same, so every planet keeps its natal sign and degree, while the Ascendant, Midheaven, Vertex, and all twelve house cusps are recomputed for the new latitude and longitude. Returns the relocated houses and angles, the planets that change house, the angular planets activated at the new place, and the distance and compass direction from the birthplace. Built for relocation astrology readings, astrocartography style move planning, and travel charts. Verified against NASA JPL Horizons.
+	// Calculate a relocation chart (relocated birth chart) for a new place on Earth. The birth moment stays the same, so every planet keeps its natal sign and degree, while the Ascendant, Midheaven, Vertex, and all twelve house cusps are recomputed for the new latitude and longitude. Returns the relocated houses and angles, the planets that change house with a reading of each planet in its relocated house, the angular planets activated at the new place, and the distance and compass direction from the birthplace. Built for relocation astrology readings, astrocartography style move planning, and travel charts. Verified against NASA JPL Horizons.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -148386,9 +148422,9 @@ func (c *ClientWithResponses) GetUpcomingMoonPhasesWithResponse(ctx context.Cont
 	return ParseGetUpcomingMoonPhasesResponse(rsp)
 }
 
-// GenerateNatalChartWithBodyWithResponse Generate natal chart - Birth chart calculator API with houses and aspects
+// GenerateNatalChartWithBodyWithResponse Generate natal chart - Birth chart API with houses, aspects and a written reading
 //
-// Calculate complete Western astrology natal chart (birth chart) with tropical zodiac. Returns all 14 celestial bodies (the 10 classical planets Sun through Pluto, the lunar nodes, Chiron, and Black Moon Lilith), 12 house cusps with customizable house systems (Placidus, Whole Sign, Equal, Koch), major and minor aspects, Ascendant, Midheaven, dominant elements and modalities. Perfect for astrology apps, birth chart generators, horoscope websites, and astrological consultation tools. Verified against NASA JPL Horizons.
+// Calculate a Western astrology natal chart (birth chart) with planets, houses, aspects and a written reading for that birth. It returns all 14 celestial bodies in the tropical zodiac (the 10 classical planets Sun through Pluto, the lunar nodes, Chiron and Black Moon Lilith) with sign, house and dignity, 12 house cusps in Placidus, Whole Sign, Equal or Koch, major and minor aspects, Ascendant, Midheaven, and the dominant elements and modalities. Every chart carries an editorial reading written for that birth: an opening synthesis, love, career and home chapters, a closing, and a reading for each planet, aspect, the Ascendant and the Midheaven, in English, German, Spanish, French, Hindi, Portuguese, Russian, Turkish. Verified against NASA JPL Horizons.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -148401,9 +148437,9 @@ func (c *ClientWithResponses) GenerateNatalChartWithBodyWithResponse(ctx context
 	return ParseGenerateNatalChartResponse(rsp)
 }
 
-// GenerateNatalChartWithResponse Generate natal chart - Birth chart calculator API with houses and aspects
+// GenerateNatalChartWithResponse Generate natal chart - Birth chart API with houses, aspects and a written reading
 //
-// Calculate complete Western astrology natal chart (birth chart) with tropical zodiac. Returns all 14 celestial bodies (the 10 classical planets Sun through Pluto, the lunar nodes, Chiron, and Black Moon Lilith), 12 house cusps with customizable house systems (Placidus, Whole Sign, Equal, Koch), major and minor aspects, Ascendant, Midheaven, dominant elements and modalities. Perfect for astrology apps, birth chart generators, horoscope websites, and astrological consultation tools. Verified against NASA JPL Horizons.
+// Calculate a Western astrology natal chart (birth chart) with planets, houses, aspects and a written reading for that birth. It returns all 14 celestial bodies in the tropical zodiac (the 10 classical planets Sun through Pluto, the lunar nodes, Chiron and Black Moon Lilith) with sign, house and dignity, 12 house cusps in Placidus, Whole Sign, Equal or Koch, major and minor aspects, Ascendant, Midheaven, and the dominant elements and modalities. Every chart carries an editorial reading written for that birth: an opening synthesis, love, career and home chapters, a closing, and a reading for each planet, aspect, the Ascendant and the Midheaven, in English, German, Spanish, French, Hindi, Portuguese, Russian, Turkish. Verified against NASA JPL Horizons.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -148508,7 +148544,7 @@ func (c *ClientWithResponses) GeneratePlanetaryReturnWithResponse(ctx context.Co
 
 // GetPlanetaryPositionsWithBodyWithResponse Get planetary positions - Ephemeris calculator for all planets
 //
-// Calculate accurate tropical zodiac positions for all 14 celestial bodies for any date, time, and location. The bodies are the 10 classical planets Sun through Pluto, the lunar nodes, Chiron, and Black Moon Lilith. Returns longitude, latitude, zodiac sign, degree within sign, daily motion speed, and retrograde status. Perfect for transit tracking, ephemeris tables, astrology apps, and planetary position widgets. Verified against NASA JPL Horizons.
+// Calculate accurate tropical zodiac positions for all 14 celestial bodies for any date, time, and location. The bodies are the 10 classical planets Sun through Pluto, the lunar nodes, Chiron, and Black Moon Lilith. Returns longitude, latitude, zodiac sign, degree within sign, daily motion speed, retrograde status, and a reading of each body in its sign. Perfect for transit tracking, ephemeris tables, astrology apps, and planetary position widgets. Verified against NASA JPL Horizons.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -148523,7 +148559,7 @@ func (c *ClientWithResponses) GetPlanetaryPositionsWithBodyWithResponse(ctx cont
 
 // GetPlanetaryPositionsWithResponse Get planetary positions - Ephemeris calculator for all planets
 //
-// Calculate accurate tropical zodiac positions for all 14 celestial bodies for any date, time, and location. The bodies are the 10 classical planets Sun through Pluto, the lunar nodes, Chiron, and Black Moon Lilith. Returns longitude, latitude, zodiac sign, degree within sign, daily motion speed, and retrograde status. Perfect for transit tracking, ephemeris tables, astrology apps, and planetary position widgets. Verified against NASA JPL Horizons.
+// Calculate accurate tropical zodiac positions for all 14 celestial bodies for any date, time, and location. The bodies are the 10 classical planets Sun through Pluto, the lunar nodes, Chiron, and Black Moon Lilith. Returns longitude, latitude, zodiac sign, degree within sign, daily motion speed, retrograde status, and a reading of each body in its sign. Perfect for transit tracking, ephemeris tables, astrology apps, and planetary position widgets. Verified against NASA JPL Horizons.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -148628,7 +148664,7 @@ func (c *ClientWithResponses) GenerateProgressionsWithResponse(ctx context.Conte
 
 // GenerateRelocationChartWithBodyWithResponse Generate relocation chart - Relocated birth chart calculator with shifted houses and angles
 //
-// Calculate a relocation chart (relocated birth chart) for a new place on Earth. The birth moment stays the same, so every planet keeps its natal sign and degree, while the Ascendant, Midheaven, Vertex, and all twelve house cusps are recomputed for the new latitude and longitude. Returns the relocated houses and angles, the planets that change house, the angular planets activated at the new place, and the distance and compass direction from the birthplace. Built for relocation astrology readings, astrocartography style move planning, and travel charts. Verified against NASA JPL Horizons.
+// Calculate a relocation chart (relocated birth chart) for a new place on Earth. The birth moment stays the same, so every planet keeps its natal sign and degree, while the Ascendant, Midheaven, Vertex, and all twelve house cusps are recomputed for the new latitude and longitude. Returns the relocated houses and angles, the planets that change house with a reading of each planet in its relocated house, the angular planets activated at the new place, and the distance and compass direction from the birthplace. Built for relocation astrology readings, astrocartography style move planning, and travel charts. Verified against NASA JPL Horizons.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -148643,7 +148679,7 @@ func (c *ClientWithResponses) GenerateRelocationChartWithBodyWithResponse(ctx co
 
 // GenerateRelocationChartWithResponse Generate relocation chart - Relocated birth chart calculator with shifted houses and angles
 //
-// Calculate a relocation chart (relocated birth chart) for a new place on Earth. The birth moment stays the same, so every planet keeps its natal sign and degree, while the Ascendant, Midheaven, Vertex, and all twelve house cusps are recomputed for the new latitude and longitude. Returns the relocated houses and angles, the planets that change house, the angular planets activated at the new place, and the distance and compass direction from the birthplace. Built for relocation astrology readings, astrocartography style move planning, and travel charts. Verified against NASA JPL Horizons.
+// Calculate a relocation chart (relocated birth chart) for a new place on Earth. The birth moment stays the same, so every planet keeps its natal sign and degree, while the Ascendant, Midheaven, Vertex, and all twelve house cusps are recomputed for the new latitude and longitude. Returns the relocated houses and angles, the planets that change house with a reading of each planet in its relocated house, the angular planets activated at the new place, and the distance and compass direction from the birthplace. Built for relocation astrology readings, astrocartography style move planning, and travel charts. Verified against NASA JPL Horizons.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
