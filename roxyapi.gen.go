@@ -32799,25 +32799,34 @@ type BirthChartResponse struct {
 
 	// Houses The twelve bhavas (houses) in order, each with its classical name and significations. Houses are counted whole-sign from the Lagna.
 	Houses []struct {
-		// Description Significations of the bhava (house). Present when an interpretation entry exists for this house.
-		Description *string `json:"description,omitempty"`
+		// Description Reading of the bhava (house), written for this chart in English, German, Spanish, French, Hindi, Portuguese, Russian, Turkish: where its lord sits, each graha it holds, and, for a bhava no graha occupies, the drishti Jupiter or Saturn casts on it.
+		Description string `json:"description"`
 
-		// Name Classical name of the bhava (house). Present when an interpretation entry exists for this house.
-		Name *string `json:"name,omitempty"`
+		// Name Classical name of the bhava (house).
+		Name string `json:"name"`
 
 		// Number Bhava (house) number 1-12. House 1 is the Lagna (Ascendant), house 7 the partnership axis, house 10 the career axis.
 		Number int `json:"number"`
 
-		// Themes Significations of the bhava as short keywords, the compact form of description. Bhava 1 covers self, body and vitality; 2 wealth and speech; 7 marriage and partnership; 10 career and status. Suited to chart labels, table cells and legends where the full classical description is too long, and identical to the houseThemes map returned by the Vimshottari dasha and KP chart routes. Localized by the lang query parameter.
-		Themes *[]string `json:"themes,omitempty"`
+		// Themes Significations of the bhava as short keywords. Bhava 1 covers self, body and vitality; 2 wealth and speech; 7 marriage and partnership; 10 career and status. Suited to chart labels, table cells and legends, and identical to the houseThemes map returned by the Vimshottari dasha and KP chart routes. Localized by the lang query parameter.
+		Themes []string `json:"themes"`
 	} `json:"houses"`
 
-	// Interpretations Planet-in-rashi and planet-in-nakshatra interpretation summaries, keyed by planet name. Translated when a supported lang is requested.
+	// Interpretation Whole-chart Vedic birth chart reading written for this birth in English, German, Spanish, French, Hindi, Portuguese, Russian, Turkish, the kundli at a glance.
+	Interpretation struct {
+		// Detailed The whole-chart reading in three paragraphs separated by a blank line: how the Lagna (ascendant) rashi and the Moon rashi relate, counted from each other, with the paksha (lunar fortnight) of birth, or the dark Moon when the Moon is combust; where the Lagna lord sits, its strength and its distance from the Moon; then the chart signature, such as a Pancha Mahapurusha or Gajakesari yoga, a cluster of grahas in one bhava, or an exalted graha.
+		Detailed string `json:"detailed"`
+
+		// Summary The chart thesis in two sentences: how the Lagna (ascendant) rashi and the Moon rashi relate, the two placements a Vedic reading opens on, then where the Lagna lord sits.
+		Summary string `json:"summary"`
+	} `json:"interpretation"`
+
+	// Interpretations Rashi and nakshatra readings for every graha and the Lagna, keyed by planet name, written for this chart in English, German, Spanish, French, Hindi, Portuguese, Russian, Turkish.
 	Interpretations map[string]struct {
-		// Nakshatra Interpretation of the planet placement in its nakshatra.
+		// Nakshatra Reading of the graha in its nakshatra and the star lord it serves; for the Moon, the janma nakshatra.
 		Nakshatra string `json:"nakshatra"`
 
-		// Rashi Interpretation of the planet placement in its rashi (sign).
+		// Rashi Reading of the graha in its rashi (sign), with its dignity, combustion, retrograde motion and planetary war where the chart holds them.
 		Rashi string `json:"rashi"`
 	} `json:"interpretations"`
 	Leo struct {
@@ -57737,18 +57746,18 @@ type ClientInterface interface {
 	// Corresponds with POST /vedic-astrology/bhava-bala (the `CalculateBhavaBala` operationId).
 	CalculateBhavaBala(ctx context.Context, params *CalculateBhavaBalaParams, body CalculateBhavaBalaJSONRequestBody, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// GenerateBirthChartWithBody Get birth chart (D1 Rashi chart) - Kundli Calculator API
+	// GenerateBirthChartWithBody Get birth chart (D1 Rashi chart) - Kundli API with a written chart reading
 	//
-	// Calculate complete Vedic birth chart (Janam Kundli, natal chart) with all 9 planetary positions (Sun through Ketu) plus Ascendant (Lagna). Kundli calculator API for astrology apps, matrimonial sites. Returns accurate graha positions grouped by zodiac signs (rashis) with nakshatra details and pada. Perfect for kundli generation, horoscope matching, and Vedic astrology software integration. Rahu and Ketu are the mean lunar node, referred to the true equinox of date, with Ketu exactly opposite Rahu.
+	// Calculate a Vedic birth chart (Janam Kundli): all 9 grahas, Sun through Ketu, and the Lagna, grouped by rashi with nakshatra and pada. Every chart carries a Vedic chart reading written for that birth: the kundli at a glance, every graha read in its rashi and its nakshatra, and every bhava read from its lord and the grahas it holds, in English, German, Spanish, French, Hindi, Portuguese, Russian, Turkish. Rahu and Ketu are the mean lunar node, referred to the true equinox of date, with Ketu exactly opposite Rahu.
 	//
 	// Takes any type of body and a specified content type.
 	//
 	// Corresponds with POST /vedic-astrology/birth-chart (the `GenerateBirthChart` operationId).
 	GenerateBirthChartWithBody(ctx context.Context, params *GenerateBirthChartParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*http.Response, error)
 
-	// GenerateBirthChart Get birth chart (D1 Rashi chart) - Kundli Calculator API
+	// GenerateBirthChart Get birth chart (D1 Rashi chart) - Kundli API with a written chart reading
 	//
-	// Calculate complete Vedic birth chart (Janam Kundli, natal chart) with all 9 planetary positions (Sun through Ketu) plus Ascendant (Lagna). Kundli calculator API for astrology apps, matrimonial sites. Returns accurate graha positions grouped by zodiac signs (rashis) with nakshatra details and pada. Perfect for kundli generation, horoscope matching, and Vedic astrology software integration. Rahu and Ketu are the mean lunar node, referred to the true equinox of date, with Ketu exactly opposite Rahu.
+	// Calculate a Vedic birth chart (Janam Kundli): all 9 grahas, Sun through Ketu, and the Lagna, grouped by rashi with nakshatra and pada. Every chart carries a Vedic chart reading written for that birth: the kundli at a glance, every graha read in its rashi and its nakshatra, and every bhava read from its lord and the grahas it holds, in English, German, Spanish, French, Hindi, Portuguese, Russian, Turkish. Rahu and Ketu are the mean lunar node, referred to the true equinox of date, with Ketu exactly opposite Rahu.
 	//
 	// Takes a body of the `application/json` content type.
 	//
@@ -64925,9 +64934,9 @@ func (c *Client) CalculateBhavaBala(ctx context.Context, params *CalculateBhavaB
 	return c.Client.Do(req)
 }
 
-// GenerateBirthChartWithBody Get birth chart (D1 Rashi chart) - Kundli Calculator API
+// GenerateBirthChartWithBody Get birth chart (D1 Rashi chart) - Kundli API with a written chart reading
 //
-// Calculate complete Vedic birth chart (Janam Kundli, natal chart) with all 9 planetary positions (Sun through Ketu) plus Ascendant (Lagna). Kundli calculator API for astrology apps, matrimonial sites. Returns accurate graha positions grouped by zodiac signs (rashis) with nakshatra details and pada. Perfect for kundli generation, horoscope matching, and Vedic astrology software integration. Rahu and Ketu are the mean lunar node, referred to the true equinox of date, with Ketu exactly opposite Rahu.
+// Calculate a Vedic birth chart (Janam Kundli): all 9 grahas, Sun through Ketu, and the Lagna, grouped by rashi with nakshatra and pada. Every chart carries a Vedic chart reading written for that birth: the kundli at a glance, every graha read in its rashi and its nakshatra, and every bhava read from its lord and the grahas it holds, in English, German, Spanish, French, Hindi, Portuguese, Russian, Turkish. Rahu and Ketu are the mean lunar node, referred to the true equinox of date, with Ketu exactly opposite Rahu.
 //
 // Takes any type of body and a specified content type.
 //
@@ -64944,9 +64953,9 @@ func (c *Client) GenerateBirthChartWithBody(ctx context.Context, params *Generat
 	return c.Client.Do(req)
 }
 
-// GenerateBirthChart Get birth chart (D1 Rashi chart) - Kundli Calculator API
+// GenerateBirthChart Get birth chart (D1 Rashi chart) - Kundli API with a written chart reading
 //
-// Calculate complete Vedic birth chart (Janam Kundli, natal chart) with all 9 planetary positions (Sun through Ketu) plus Ascendant (Lagna). Kundli calculator API for astrology apps, matrimonial sites. Returns accurate graha positions grouped by zodiac signs (rashis) with nakshatra details and pada. Perfect for kundli generation, horoscope matching, and Vedic astrology software integration. Rahu and Ketu are the mean lunar node, referred to the true equinox of date, with Ketu exactly opposite Rahu.
+// Calculate a Vedic birth chart (Janam Kundli): all 9 grahas, Sun through Ketu, and the Lagna, grouped by rashi with nakshatra and pada. Every chart carries a Vedic chart reading written for that birth: the kundli at a glance, every graha read in its rashi and its nakshatra, and every bhava read from its lord and the grahas it holds, in English, German, Spanish, French, Hindi, Portuguese, Russian, Turkish. Rahu and Ketu are the mean lunar node, referred to the true equinox of date, with Ketu exactly opposite Rahu.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -88060,18 +88069,18 @@ type ClientWithResponsesInterface interface {
 	// Corresponds with POST /vedic-astrology/bhava-bala (the `CalculateBhavaBala` operationId).
 	CalculateBhavaBalaWithResponse(ctx context.Context, params *CalculateBhavaBalaParams, body CalculateBhavaBalaJSONRequestBody, reqEditors ...RequestEditorFn) (*CalculateBhavaBalaResponse, error)
 
-	// GenerateBirthChartWithBodyWithResponse Get birth chart (D1 Rashi chart) - Kundli Calculator API
+	// GenerateBirthChartWithBodyWithResponse Get birth chart (D1 Rashi chart) - Kundli API with a written chart reading
 	//
-	// Calculate complete Vedic birth chart (Janam Kundli, natal chart) with all 9 planetary positions (Sun through Ketu) plus Ascendant (Lagna). Kundli calculator API for astrology apps, matrimonial sites. Returns accurate graha positions grouped by zodiac signs (rashis) with nakshatra details and pada. Perfect for kundli generation, horoscope matching, and Vedic astrology software integration. Rahu and Ketu are the mean lunar node, referred to the true equinox of date, with Ketu exactly opposite Rahu.
+	// Calculate a Vedic birth chart (Janam Kundli): all 9 grahas, Sun through Ketu, and the Lagna, grouped by rashi with nakshatra and pada. Every chart carries a Vedic chart reading written for that birth: the kundli at a glance, every graha read in its rashi and its nakshatra, and every bhava read from its lord and the grahas it holds, in English, German, Spanish, French, Hindi, Portuguese, Russian, Turkish. Rahu and Ketu are the mean lunar node, referred to the true equinox of date, with Ketu exactly opposite Rahu.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
 	// Corresponds with POST /vedic-astrology/birth-chart (the `GenerateBirthChart` operationId).
 	GenerateBirthChartWithBodyWithResponse(ctx context.Context, params *GenerateBirthChartParams, contentType string, body io.Reader, reqEditors ...RequestEditorFn) (*GenerateBirthChartResponse, error)
 
-	// GenerateBirthChartWithResponse Get birth chart (D1 Rashi chart) - Kundli Calculator API
+	// GenerateBirthChartWithResponse Get birth chart (D1 Rashi chart) - Kundli API with a written chart reading
 	//
-	// Calculate complete Vedic birth chart (Janam Kundli, natal chart) with all 9 planetary positions (Sun through Ketu) plus Ascendant (Lagna). Kundli calculator API for astrology apps, matrimonial sites. Returns accurate graha positions grouped by zodiac signs (rashis) with nakshatra details and pada. Perfect for kundli generation, horoscope matching, and Vedic astrology software integration. Rahu and Ketu are the mean lunar node, referred to the true equinox of date, with Ketu exactly opposite Rahu.
+	// Calculate a Vedic birth chart (Janam Kundli): all 9 grahas, Sun through Ketu, and the Lagna, grouped by rashi with nakshatra and pada. Every chart carries a Vedic chart reading written for that birth: the kundli at a glance, every graha read in its rashi and its nakshatra, and every bhava read from its lord and the grahas it holds, in English, German, Spanish, French, Hindi, Portuguese, Russian, Turkish. Rahu and Ketu are the mean lunar node, referred to the true equinox of date, with Ketu exactly opposite Rahu.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -153012,9 +153021,9 @@ func (c *ClientWithResponses) CalculateBhavaBalaWithResponse(ctx context.Context
 	return ParseCalculateBhavaBalaResponse(rsp)
 }
 
-// GenerateBirthChartWithBodyWithResponse Get birth chart (D1 Rashi chart) - Kundli Calculator API
+// GenerateBirthChartWithBodyWithResponse Get birth chart (D1 Rashi chart) - Kundli API with a written chart reading
 //
-// Calculate complete Vedic birth chart (Janam Kundli, natal chart) with all 9 planetary positions (Sun through Ketu) plus Ascendant (Lagna). Kundli calculator API for astrology apps, matrimonial sites. Returns accurate graha positions grouped by zodiac signs (rashis) with nakshatra details and pada. Perfect for kundli generation, horoscope matching, and Vedic astrology software integration. Rahu and Ketu are the mean lunar node, referred to the true equinox of date, with Ketu exactly opposite Rahu.
+// Calculate a Vedic birth chart (Janam Kundli): all 9 grahas, Sun through Ketu, and the Lagna, grouped by rashi with nakshatra and pada. Every chart carries a Vedic chart reading written for that birth: the kundli at a glance, every graha read in its rashi and its nakshatra, and every bhava read from its lord and the grahas it holds, in English, German, Spanish, French, Hindi, Portuguese, Russian, Turkish. Rahu and Ketu are the mean lunar node, referred to the true equinox of date, with Ketu exactly opposite Rahu.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -153027,9 +153036,9 @@ func (c *ClientWithResponses) GenerateBirthChartWithBodyWithResponse(ctx context
 	return ParseGenerateBirthChartResponse(rsp)
 }
 
-// GenerateBirthChartWithResponse Get birth chart (D1 Rashi chart) - Kundli Calculator API
+// GenerateBirthChartWithResponse Get birth chart (D1 Rashi chart) - Kundli API with a written chart reading
 //
-// Calculate complete Vedic birth chart (Janam Kundli, natal chart) with all 9 planetary positions (Sun through Ketu) plus Ascendant (Lagna). Kundli calculator API for astrology apps, matrimonial sites. Returns accurate graha positions grouped by zodiac signs (rashis) with nakshatra details and pada. Perfect for kundli generation, horoscope matching, and Vedic astrology software integration. Rahu and Ketu are the mean lunar node, referred to the true equinox of date, with Ketu exactly opposite Rahu.
+// Calculate a Vedic birth chart (Janam Kundli): all 9 grahas, Sun through Ketu, and the Lagna, grouped by rashi with nakshatra and pada. Every chart carries a Vedic chart reading written for that birth: the kundli at a glance, every graha read in its rashi and its nakshatra, and every bhava read from its lord and the grahas it holds, in English, German, Spanish, French, Hindi, Portuguese, Russian, Turkish. Rahu and Ketu are the mean lunar node, referred to the true equinox of date, with Ketu exactly opposite Rahu.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //

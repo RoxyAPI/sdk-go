@@ -92,7 +92,7 @@ Western astrology API for natal birth charts with an editorial reading of the wh
 
 ## Vedic Astrology - `roxy.VedicAstrology`
 
-Vedic astrology (Jyotish) and KP API for kundli generation with the sixteen Shodasavarga divisional charts (D1 to D60...
+Vedic astrology (Jyotish) and KP API for kundli generation with an editorial reading of the whole chart, the sixteen...
 
 [API reference](https://roxyapi.com/api-reference/vedic-astrology)
 
@@ -105,7 +105,7 @@ Vedic astrology (Jyotish) and KP API for kundli generation with the sixteen Shod
 - `getAvastha` - GET `/vedic-astrology/avasthas/{id}` - Get avastha by ID - Planetary State Detail
 - `calculateBhavChalit` - POST `/vedic-astrology/bhav-chalit` - Get the Bhav Chalit (Chalit Kundli) cusp-based house chart - Bhav Chalit API
 - `calculateBhavaBala` - POST `/vedic-astrology/bhava-bala` - Get Bhava Bala (house strength) for all twelve houses - Bhava Bala Calculator API
-- `generateBirthChart` - POST `/vedic-astrology/birth-chart` - Get birth chart (D1 Rashi chart) - Kundli Calculator API
+- `generateBirthChart` - POST `/vedic-astrology/birth-chart` - Get birth chart (D1 Rashi chart) - Kundli API with a written chart reading
 - `calculateCharaKarakas` - POST `/vedic-astrology/chara-karakas` - Get Chara Karakas including Atmakaraka - Jaimini Karaka Calculator API
 - `calculateGunMilan` - POST `/vedic-astrology/compatibility` - Calculate compatibility score - Gun Milan API (Ashtakoot Matching)
 - `calculateDashakoot` - POST `/vedic-astrology/compatibility/dashakoot` - Calculate ten porutham match - Dashakoot South Indian Kundli Matching API

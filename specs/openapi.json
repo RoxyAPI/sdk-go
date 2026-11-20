@@ -2983,36 +2983,68 @@
         "example": {
           "aries": {
             "rashi": "aries",
-            "signs": []
+            "signs": [
+              {
+                "awastha": "Bala",
+                "deeptadi": "Svastha",
+                "graha": "Mars",
+                "house": 9,
+                "isRetrograde": false,
+                "jagradadi": "Jagrat",
+                "longitude": 0.51,
+                "nakshatra": {
+                  "key": 1,
+                  "lord": "Ketu",
+                  "name": "Ashwini",
+                  "pada": 1
+                }
+              }
+            ]
           },
           "meta": {
-            "Moon": {
-              "awastha": "Yuva",
-              "graha": "Moon",
-              "house": 4,
+            "Jupiter": {
+              "awastha": "Mrita",
+              "deeptadi": "Kopa",
+              "graha": "Jupiter",
+              "house": 11,
               "isRetrograde": false,
-              "longitude": 98.32,
+              "jagradadi": "Sushupti",
+              "longitude": 86.29,
               "nakshatra": {
                 "key": 7,
                 "lord": "Jupiter",
                 "name": "Punarvasu",
-                "pada": 4
+                "pada": 2
               },
-              "rashi": "Cancer"
+              "rashi": "Gemini"
+            },
+            "Moon": {
+              "awastha": "Mrita",
+              "graha": "Moon",
+              "house": 4,
+              "isRetrograde": false,
+              "longitude": 215.34,
+              "nakshatra": {
+                "key": 17,
+                "lord": "Saturn",
+                "name": "Anuradha",
+                "pada": 1
+              },
+              "rashi": "Scorpio"
             },
             "Sun": {
               "awastha": "Vriddha",
               "graha": "Sun",
-              "house": 5,
+              "house": 11,
               "isRetrograde": false,
-              "longitude": 132.45,
+              "longitude": 78.24,
               "nakshatra": {
-                "key": 10,
-                "lord": "Ketu",
-                "name": "Magha",
-                "pada": 2
+                "key": 6,
+                "lord": "Rahu",
+                "name": "Ardra",
+                "pada": 4
               },
-              "rashi": "Leo"
+              "rashi": "Gemini"
             }
           }
         },
@@ -3037,7 +3069,7 @@
                         "Vriddha",
                         "Mrita"
                       ],
-                      "example": "Yuva",
+                      "example": "Bala",
                       "type": "string"
                     },
                     "deeptadi": {
@@ -3053,7 +3085,7 @@
                         "Khala",
                         "Kopa"
                       ],
-                      "example": "Pramudita",
+                      "example": "Svastha",
                       "type": "string"
                     },
                     "graha": {
@@ -3063,7 +3095,7 @@
                     },
                     "house": {
                       "description": "Bhava (house) number 1-12, counted whole-sign from the Lagna (house 1 is the Lagna rashi). Present on the D1 birth chart; divisional charts (navamsa, varga) omit it.",
-                      "example": 3,
+                      "example": 9,
                       "maximum": 12,
                       "minimum": 1,
                       "type": "integer"
@@ -3080,19 +3112,19 @@
                         "Swapna",
                         "Sushupti"
                       ],
-                      "example": "Swapna",
+                      "example": "Jagrat",
                       "type": "string"
                     },
                     "longitude": {
                       "description": "Sidereal longitude in degrees (0-360) using Lahiri ayanamsa.",
-                      "example": 15.42,
+                      "example": 0.51,
                       "type": "number"
                     },
                     "nakshatra": {
                       "properties": {
                         "key": {
                           "description": "Nakshatra index (1-27) in the zodiac sequence starting from Ashwini.",
-                          "example": 2,
+                          "example": 1,
                           "type": "number"
                         },
                         "lord": {
@@ -3108,17 +3140,17 @@
                             "Saturn",
                             "Mercury"
                           ],
-                          "example": "Venus",
+                          "example": "Ketu",
                           "type": "string"
                         },
                         "name": {
                           "description": "Nakshatra (lunar mansion, 1 of 27) the planet occupies.",
-                          "example": "Bharani",
+                          "example": "Ashwini",
                           "type": "string"
                         },
                         "pada": {
                           "description": "Nakshatra pada (quarter, 1-4). Each nakshatra has 4 padas of 3 degrees 20 each.",
-                          "example": 2,
+                          "example": 1,
                           "type": "number"
                         }
                       },
@@ -3168,7 +3200,7 @@
                         "Vriddha",
                         "Mrita"
                       ],
-                      "example": "Yuva",
+                      "example": "Bala",
                       "type": "string"
                     },
                     "deeptadi": {
@@ -3184,7 +3216,7 @@
                         "Khala",
                         "Kopa"
                       ],
-                      "example": "Pramudita",
+                      "example": "Svastha",
                       "type": "string"
                     },
                     "graha": {
@@ -3194,7 +3226,7 @@
                     },
                     "house": {
                       "description": "Bhava (house) number 1-12, counted whole-sign from the Lagna (house 1 is the Lagna rashi). Present on the D1 birth chart; divisional charts (navamsa, varga) omit it.",
-                      "example": 3,
+                      "example": 9,
                       "maximum": 12,
                       "minimum": 1,
                       "type": "integer"
@@ -3211,19 +3243,19 @@
                         "Swapna",
                         "Sushupti"
                       ],
-                      "example": "Swapna",
+                      "example": "Jagrat",
                       "type": "string"
                     },
                     "longitude": {
                       "description": "Sidereal longitude in degrees (0-360) using Lahiri ayanamsa.",
-                      "example": 15.42,
+                      "example": 0.51,
                       "type": "number"
                     },
                     "nakshatra": {
                       "properties": {
                         "key": {
                           "description": "Nakshatra index (1-27) in the zodiac sequence starting from Ashwini.",
-                          "example": 2,
+                          "example": 1,
                           "type": "number"
                         },
                         "lord": {
@@ -3239,17 +3271,17 @@
                             "Saturn",
                             "Mercury"
                           ],
-                          "example": "Venus",
+                          "example": "Ketu",
                           "type": "string"
                         },
                         "name": {
                           "description": "Nakshatra (lunar mansion, 1 of 27) the planet occupies.",
-                          "example": "Bharani",
+                          "example": "Ashwini",
                           "type": "string"
                         },
                         "pada": {
                           "description": "Nakshatra pada (quarter, 1-4). Each nakshatra has 4 padas of 3 degrees 20 each.",
-                          "example": 2,
+                          "example": 1,
                           "type": "number"
                         }
                       },
@@ -3299,7 +3331,7 @@
                         "Vriddha",
                         "Mrita"
                       ],
-                      "example": "Yuva",
+                      "example": "Bala",
                       "type": "string"
                     },
                     "deeptadi": {
@@ -3315,7 +3347,7 @@
                         "Khala",
                         "Kopa"
                       ],
-                      "example": "Pramudita",
+                      "example": "Svastha",
                       "type": "string"
                     },
                     "graha": {
@@ -3325,7 +3357,7 @@
                     },
                     "house": {
                       "description": "Bhava (house) number 1-12, counted whole-sign from the Lagna (house 1 is the Lagna rashi). Present on the D1 birth chart; divisional charts (navamsa, varga) omit it.",
-                      "example": 3,
+                      "example": 9,
                       "maximum": 12,
                       "minimum": 1,
                       "type": "integer"
@@ -3342,19 +3374,19 @@
                         "Swapna",
                         "Sushupti"
                       ],
-                      "example": "Swapna",
+                      "example": "Jagrat",
                       "type": "string"
                     },
                     "longitude": {
                       "description": "Sidereal longitude in degrees (0-360) using Lahiri ayanamsa.",
-                      "example": 15.42,
+                      "example": 0.51,
                       "type": "number"
                     },
                     "nakshatra": {
                       "properties": {
                         "key": {
                           "description": "Nakshatra index (1-27) in the zodiac sequence starting from Ashwini.",
-                          "example": 2,
+                          "example": 1,
                           "type": "number"
                         },
                         "lord": {
@@ -3370,17 +3402,17 @@
                             "Saturn",
                             "Mercury"
                           ],
-                          "example": "Venus",
+                          "example": "Ketu",
                           "type": "string"
                         },
                         "name": {
                           "description": "Nakshatra (lunar mansion, 1 of 27) the planet occupies.",
-                          "example": "Bharani",
+                          "example": "Ashwini",
                           "type": "string"
                         },
                         "pada": {
                           "description": "Nakshatra pada (quarter, 1-4). Each nakshatra has 4 padas of 3 degrees 20 each.",
-                          "example": 2,
+                          "example": 1,
                           "type": "number"
                         }
                       },
@@ -3430,7 +3462,7 @@
                         "Vriddha",
                         "Mrita"
                       ],
-                      "example": "Yuva",
+                      "example": "Bala",
                       "type": "string"
                     },
                     "deeptadi": {
@@ -3446,7 +3478,7 @@
                         "Khala",
                         "Kopa"
                       ],
-                      "example": "Pramudita",
+                      "example": "Svastha",
                       "type": "string"
                     },
                     "graha": {
@@ -3456,7 +3488,7 @@
                     },
                     "house": {
                       "description": "Bhava (house) number 1-12, counted whole-sign from the Lagna (house 1 is the Lagna rashi). Present on the D1 birth chart; divisional charts (navamsa, varga) omit it.",
-                      "example": 3,
+                      "example": 9,
                       "maximum": 12,
                       "minimum": 1,
                       "type": "integer"
@@ -3473,19 +3505,19 @@
                         "Swapna",
                         "Sushupti"
                       ],
-                      "example": "Swapna",
+                      "example": "Jagrat",
                       "type": "string"
                     },
                     "longitude": {
                       "description": "Sidereal longitude in degrees (0-360) using Lahiri ayanamsa.",
-                      "example": 15.42,
+                      "example": 0.51,
                       "type": "number"
                     },
                     "nakshatra": {
                       "properties": {
                         "key": {
                           "description": "Nakshatra index (1-27) in the zodiac sequence starting from Ashwini.",
-                          "example": 2,
+                          "example": 1,
                           "type": "number"
                         },
                         "lord": {
@@ -3501,17 +3533,17 @@
                             "Saturn",
                             "Mercury"
                           ],
-                          "example": "Venus",
+                          "example": "Ketu",
                           "type": "string"
                         },
                         "name": {
                           "description": "Nakshatra (lunar mansion, 1 of 27) the planet occupies.",
-                          "example": "Bharani",
+                          "example": "Ashwini",
                           "type": "string"
                         },
                         "pada": {
                           "description": "Nakshatra pada (quarter, 1-4). Each nakshatra has 4 padas of 3 degrees 20 each.",
-                          "example": 2,
+                          "example": 1,
                           "type": "number"
                         }
                       },
@@ -3610,7 +3642,7 @@
                         "Vriddha",
                         "Mrita"
                       ],
-                      "example": "Yuva",
+                      "example": "Bala",
                       "type": "string"
                     },
                     "deeptadi": {
@@ -3626,7 +3658,7 @@
                         "Khala",
                         "Kopa"
                       ],
-                      "example": "Pramudita",
+                      "example": "Svastha",
                       "type": "string"
                     },
                     "graha": {
@@ -3636,7 +3668,7 @@
                     },
                     "house": {
                       "description": "Bhava (house) number 1-12, counted whole-sign from the Lagna (house 1 is the Lagna rashi). Present on the D1 birth chart; divisional charts (navamsa, varga) omit it.",
-                      "example": 3,
+                      "example": 9,
                       "maximum": 12,
                       "minimum": 1,
                       "type": "integer"
@@ -3653,19 +3685,19 @@
                         "Swapna",
                         "Sushupti"
                       ],
-                      "example": "Swapna",
+                      "example": "Jagrat",
                       "type": "string"
                     },
                     "longitude": {
                       "description": "Sidereal longitude in degrees (0-360) using Lahiri ayanamsa.",
-                      "example": 15.42,
+                      "example": 0.51,
                       "type": "number"
                     },
                     "nakshatra": {
                       "properties": {
                         "key": {
                           "description": "Nakshatra index (1-27) in the zodiac sequence starting from Ashwini.",
-                          "example": 2,
+                          "example": 1,
                           "type": "number"
                         },
                         "lord": {
@@ -3681,17 +3713,17 @@
                             "Saturn",
                             "Mercury"
                           ],
-                          "example": "Venus",
+                          "example": "Ketu",
                           "type": "string"
                         },
                         "name": {
                           "description": "Nakshatra (lunar mansion, 1 of 27) the planet occupies.",
-                          "example": "Bharani",
+                          "example": "Ashwini",
                           "type": "string"
                         },
                         "pada": {
                           "description": "Nakshatra pada (quarter, 1-4). Each nakshatra has 4 padas of 3 degrees 20 each.",
-                          "example": 2,
+                          "example": 1,
                           "type": "number"
                         }
                       },
@@ -3726,13 +3758,13 @@
             "items": {
               "properties": {
                 "description": {
-                  "description": "Significations of the bhava (house). Present when an interpretation entry exists for this house.",
-                  "example": "Self, body, personality, and overall life direction.",
+                  "description": "Reading of the bhava (house), written for this chart in English, German, Spanish, French, Hindi, Portuguese, Russian, Turkish: where its lord sits, each graha it holds, and, for a bhava no graha occupies, the drishti Jupiter or Saturn casts on it.",
+                  "example": "Self-assurance draws allies to your aims, with your 1st lord in the 11th, the bhava of gains. You remember names, connect people who should meet and find the right introduction coming through your circle again and again. Counting on the network without tending it leaves gaps, and the friend who calls first is the one whose circle is still there in a lean year.",
                   "type": "string"
                 },
                 "name": {
-                  "description": "Classical name of the bhava (house). Present when an interpretation entry exists for this house.",
-                  "example": "Tanu Bhava",
+                  "description": "Classical name of the bhava (house).",
+                  "example": "Lagna",
                   "type": "string"
                 },
                 "number": {
@@ -3743,7 +3775,7 @@
                   "type": "integer"
                 },
                 "themes": {
-                  "description": "Significations of the bhava as short keywords, the compact form of description. Bhava 1 covers self, body and vitality; 2 wealth and speech; 7 marriage and partnership; 10 career and status. Suited to chart labels, table cells and legends where the full classical description is too long, and identical to the houseThemes map returned by the Vimshottari dasha and KP chart routes. Localized by the lang query parameter.",
+                  "description": "Significations of the bhava as short keywords. Bhava 1 covers self, body and vitality; 2 wealth and speech; 7 marriage and partnership; 10 career and status. Suited to chart labels, table cells and legends, and identical to the houseThemes map returned by the Vimshottari dasha and KP chart routes. Localized by the lang query parameter.",
                   "example": [
                     "self",
                     "body",
@@ -3758,28 +3790,51 @@
                 }
               },
               "required": [
-                "number"
+                "number",
+                "name",
+                "description",
+                "themes"
               ],
               "type": "object"
             },
             "type": "array"
           },
+          "interpretation": {
+            "description": "Whole-chart Vedic birth chart reading written for this birth in English, German, Spanish, French, Hindi, Portuguese, Russian, Turkish, the kundli at a glance.",
+            "properties": {
+              "detailed": {
+                "description": "The whole-chart reading in three paragraphs separated by a blank line: how the Lagna (ascendant) rashi and the Moon rashi relate, counted from each other, with the paksha (lunar fortnight) of birth, or the dark Moon when the Moon is combust; where the Lagna lord sits, its strength and its distance from the Moon; then the chart signature, such as a Pancha Mahapurusha or Gajakesari yoga, a cluster of grahas in one bhava, or an exalted graha.",
+                "example": "Matched in pace and crossed in element, Leo rising and the Moon in Scorpio let you start projects with the poise of a host and live with them with loyal depth. Heart and will vie for your hours, and learning to let each lead in turn is how the pairing matures. Born in Shukla paksha, the bright fortnight, under a Moon gaining light, you find that feeling grows in you by being shared.\n\nProsperity keeps company with your Lagna lord, the Sun, in the eleventh bhava, and a practical sense of value runs through how you see yourself. Strain runs between the Moon and the Sun, which holds the eighth rashi counted from it, yet the friction teaches you to read your own moods before they surprise you.\n\nStrength gathers in Venus, which forms Malavya Yoga from a kendra, and its qualities give the chart its lead. Seldom still, Leo outwardly and Scorpio within, you get a great deal done, and that motion is one of your gifts.",
+                "type": "string"
+              },
+              "summary": {
+                "description": "The chart thesis in two sentences: how the Lagna (ascendant) rashi and the Moon rashi relate, the two placements a Vedic reading opens on, then where the Lagna lord sits.",
+                "example": "Counted fourth and tenth from each other, Leo rising and a Moon in Scorpio turn inner friction into steady output. Prosperity and self-respect travel together for you while the Sun, steward of the Lagna, works from the eleventh bhava.",
+                "type": "string"
+              }
+            },
+            "required": [
+              "summary",
+              "detailed"
+            ],
+            "type": "object"
+          },
           "interpretations": {
             "additionalProperties": {
               "description": "The two composed readings for one graha: what its rashi placement says, and what its nakshatra placement says. Both are full sentences ready to render.",
               "example": {
-                "nakshatra": "Jupiter in Purva Ashadha nakshatra combines planetary energy with Apas (water deity) deity influence. These natives are confident, persuasive, and enthusiastic. They naturally inspire those around them.",
-                "rashi": "Jupiter in Sagittarius (Dhanu) expresses through the energy of the Bow and Arrow. Respectful towards religion and spiritual matters, intelligent, excel in chosen subject, liberal attitude, fair"
+                "nakshatra": "Twice at home in Punarvasu, your Jupiter makes things come back through you: friendships, chances and good humor alike.",
+                "rashi": "Guru in Mithuna speaks through a scholarly, eloquent voice, courteous to elders and generous with advice to friends. Your shelves hold philosophy beside poetry beside a manual on bookbinding, and you can quote all three at the right moment. Clever answers come to you more easily than deep ones, which is exactly why one framework, lived inside for years, gives your learning its roots. Near the Sun at your birth, Jupiter turns generosity toward purpose and makes belief a private compass you consult often. Your wisdom speaks in many registers, and its courtesy lets difficult truths sound like an invitation."
               },
               "properties": {
                 "nakshatra": {
-                  "description": "Interpretation of the planet placement in its nakshatra.",
-                  "example": "Ambitious and disciplined, with a focus on legacy.",
+                  "description": "Reading of the graha in its nakshatra and the star lord it serves; for the Moon, the janma nakshatra.",
+                  "example": "Twice at home in Punarvasu, your Jupiter makes things come back through you: friendships, chances and good humor alike.",
                   "type": "string"
                 },
                 "rashi": {
-                  "description": "Interpretation of the planet placement in its rashi (sign).",
-                  "example": "Confident, authoritative, and self-driven expression.",
+                  "description": "Reading of the graha in its rashi (sign), with its dignity, combustion, retrograde motion and planetary war where the chart holds them.",
+                  "example": "Guru in Mithuna speaks through a scholarly, eloquent voice, courteous to elders and generous with advice to friends. Your shelves hold philosophy beside poetry beside a manual on bookbinding, and you can quote all three at the right moment. Clever answers come to you more easily than deep ones, which is exactly why one framework, lived inside for years, gives your learning its roots. Near the Sun at your birth, Jupiter turns generosity toward purpose and makes belief a private compass you consult often. Your wisdom speaks in many registers, and its courtesy lets difficult truths sound like an invitation.",
                   "type": "string"
                 }
               },
@@ -3789,11 +3844,11 @@
               ],
               "type": "object"
             },
-            "description": "Planet-in-rashi and planet-in-nakshatra interpretation summaries, keyed by planet name. Translated when a supported lang is requested.",
+            "description": "Rashi and nakshatra readings for every graha and the Lagna, keyed by planet name, written for this chart in English, German, Spanish, French, Hindi, Portuguese, Russian, Turkish.",
             "example": {
               "Jupiter": {
-                "nakshatra": "Jupiter in Purva Ashadha nakshatra combines planetary energy with Apas (water deity) deity influence. These natives are confident, persuasive, and enthusiastic. They naturally inspire those around them.",
-                "rashi": "Jupiter in Sagittarius (Dhanu) expresses through the energy of the Bow and Arrow. Respectful towards religion and spiritual matters, intelligent, excel in chosen subject, liberal attitude, fair"
+                "nakshatra": "Twice at home in Punarvasu, your Jupiter makes things come back through you: friendships, chances and good humor alike.",
+                "rashi": "Guru in Mithuna speaks through a scholarly, eloquent voice, courteous to elders and generous with advice to friends. Your shelves hold philosophy beside poetry beside a manual on bookbinding, and you can quote all three at the right moment. Clever answers come to you more easily than deep ones, which is exactly why one framework, lived inside for years, gives your learning its roots. Near the Sun at your birth, Jupiter turns generosity toward purpose and makes belief a private compass you consult often. Your wisdom speaks in many registers, and its courtesy lets difficult truths sound like an invitation."
               }
             },
             "type": "object"
@@ -3818,7 +3873,7 @@
                         "Vriddha",
                         "Mrita"
                       ],
-                      "example": "Yuva",
+                      "example": "Bala",
                       "type": "string"
                     },
                     "deeptadi": {
@@ -3834,7 +3889,7 @@
                         "Khala",
                         "Kopa"
                       ],
-                      "example": "Pramudita",
+                      "example": "Svastha",
                       "type": "string"
                     },
                     "graha": {
@@ -3844,7 +3899,7 @@
                     },
                     "house": {
                       "description": "Bhava (house) number 1-12, counted whole-sign from the Lagna (house 1 is the Lagna rashi). Present on the D1 birth chart; divisional charts (navamsa, varga) omit it.",
-                      "example": 3,
+                      "example": 9,
                       "maximum": 12,
                       "minimum": 1,
                       "type": "integer"
@@ -3861,19 +3916,19 @@
                         "Swapna",
                         "Sushupti"
                       ],
-                      "example": "Swapna",
+                      "example": "Jagrat",
                       "type": "string"
                     },
                     "longitude": {
                       "description": "Sidereal longitude in degrees (0-360) using Lahiri ayanamsa.",
-                      "example": 15.42,
+                      "example": 0.51,
                       "type": "number"
                     },
                     "nakshatra": {
                       "properties": {
                         "key": {
                           "description": "Nakshatra index (1-27) in the zodiac sequence starting from Ashwini.",
-                          "example": 2,
+                          "example": 1,
                           "type": "number"
                         },
                         "lord": {
@@ -3889,17 +3944,17 @@
                             "Saturn",
                             "Mercury"
                           ],
-                          "example": "Venus",
+                          "example": "Ketu",
                           "type": "string"
                         },
                         "name": {
                           "description": "Nakshatra (lunar mansion, 1 of 27) the planet occupies.",
-                          "example": "Bharani",
+                          "example": "Ashwini",
                           "type": "string"
                         },
                         "pada": {
                           "description": "Nakshatra pada (quarter, 1-4). Each nakshatra has 4 padas of 3 degrees 20 each.",
-                          "example": 2,
+                          "example": 1,
                           "type": "number"
                         }
                       },
@@ -3949,7 +4004,7 @@
                         "Vriddha",
                         "Mrita"
                       ],
-                      "example": "Yuva",
+                      "example": "Bala",
                       "type": "string"
                     },
                     "deeptadi": {
@@ -3965,7 +4020,7 @@
                         "Khala",
                         "Kopa"
                       ],
-                      "example": "Pramudita",
+                      "example": "Svastha",
                       "type": "string"
                     },
                     "graha": {
@@ -3975,7 +4030,7 @@
                     },
                     "house": {
                       "description": "Bhava (house) number 1-12, counted whole-sign from the Lagna (house 1 is the Lagna rashi). Present on the D1 birth chart; divisional charts (navamsa, varga) omit it.",
-                      "example": 3,
+                      "example": 9,
                       "maximum": 12,
                       "minimum": 1,
                       "type": "integer"
@@ -3992,19 +4047,19 @@
                         "Swapna",
                         "Sushupti"
                       ],
-                      "example": "Swapna",
+                      "example": "Jagrat",
                       "type": "string"
                     },
                     "longitude": {
                       "description": "Sidereal longitude in degrees (0-360) using Lahiri ayanamsa.",
-                      "example": 15.42,
+                      "example": 0.51,
                       "type": "number"
                     },
                     "nakshatra": {
                       "properties": {
                         "key": {
                           "description": "Nakshatra index (1-27) in the zodiac sequence starting from Ashwini.",
-                          "example": 2,
+                          "example": 1,
                           "type": "number"
                         },
                         "lord": {
@@ -4020,17 +4075,17 @@
                             "Saturn",
                             "Mercury"
                           ],
-                          "example": "Venus",
+                          "example": "Ketu",
                           "type": "string"
                         },
                         "name": {
                           "description": "Nakshatra (lunar mansion, 1 of 27) the planet occupies.",
-                          "example": "Bharani",
+                          "example": "Ashwini",
                           "type": "string"
                         },
                         "pada": {
                           "description": "Nakshatra pada (quarter, 1-4). Each nakshatra has 4 padas of 3 degrees 20 each.",
-                          "example": 2,
+                          "example": 1,
                           "type": "number"
                         }
                       },
@@ -4064,20 +4119,20 @@
             "additionalProperties": {
               "description": "One graha placement: rashi, sidereal longitude, nakshatra with pada and lord, whole-sign bhava, retrogression, and the Baladi, Jagradadi and Deeptadi avastha states.",
               "example": {
-                "awastha": "Vriddha",
-                "deeptadi": "Svastha",
+                "awastha": "Mrita",
+                "deeptadi": "Kopa",
                 "graha": "Jupiter",
-                "house": 9,
+                "house": 11,
                 "isRetrograde": false,
-                "jagradadi": "Jagrat",
-                "longitude": 259.6848244496506,
+                "jagradadi": "Sushupti",
+                "longitude": 86.29,
                 "nakshatra": {
-                  "key": 19,
-                  "lord": "Venus",
-                  "name": "Purva Ashadha",
+                  "key": 7,
+                  "lord": "Jupiter",
+                  "name": "Punarvasu",
                   "pada": 2
                 },
-                "rashi": "Sagittarius"
+                "rashi": "Gemini"
               },
               "properties": {
                 "avasthaInfo": {
@@ -4152,7 +4207,7 @@
                     "Vriddha",
                     "Mrita"
                   ],
-                  "example": "Yuva",
+                  "example": "Mrita",
                   "type": "string"
                 },
                 "deeptadi": {
@@ -4168,7 +4223,7 @@
                     "Khala",
                     "Kopa"
                   ],
-                  "example": "Pramudita",
+                  "example": "Svastha",
                   "type": "string"
                 },
                 "graha": {
@@ -4178,7 +4233,7 @@
                 },
                 "house": {
                   "description": "Bhava (house) number 1-12, counted whole-sign from the Lagna (house 1 is the Lagna rashi; Lagna itself is house 1). Present on the D1 birth chart; divisional charts omit it.",
-                  "example": 9,
+                  "example": 11,
                   "maximum": 12,
                   "minimum": 1,
                   "type": "integer"
@@ -4195,12 +4250,12 @@
                     "Swapna",
                     "Sushupti"
                   ],
-                  "example": "Swapna",
+                  "example": "Jagrat",
                   "type": "string"
                 },
                 "longitude": {
                   "description": "Sidereal longitude in degrees (0-360) using Lahiri ayanamsa. Precise position used for aspect calculations, divisional chart mapping, and transit analysis.",
-                  "example": 248.73,
+                  "example": 86.29,
                   "type": "number"
                 },
                 "nakshatra": {
@@ -4208,7 +4263,7 @@
                   "properties": {
                     "key": {
                       "description": "Nakshatra sequence number (1-27) in zodiac order starting from Ashwini. Used for Tara Bala compatibility and dasha calculations.",
-                      "example": 19,
+                      "example": 7,
                       "type": "number"
                     },
                     "lord": {
@@ -4224,17 +4279,17 @@
                         "Saturn",
                         "Mercury"
                       ],
-                      "example": "Ketu",
+                      "example": "Jupiter",
                       "type": "string"
                     },
                     "name": {
                       "description": "Nakshatra (lunar mansion) the planet occupies. One of 27 Vedic nakshatras spanning 13 degrees 20 minutes each. Determines dasha lord and behavioral qualities.",
-                      "example": "Moola",
+                      "example": "Punarvasu",
                       "type": "string"
                     },
                     "pada": {
                       "description": "Nakshatra pada (quarter, 1-4). Each nakshatra divides into 4 padas of 3 degrees 20 minutes. Pada determines Navamsa sign and refines personality traits.",
-                      "example": 3,
+                      "example": 2,
                       "type": "number"
                     }
                   },
@@ -4248,7 +4303,7 @@
                 },
                 "rashi": {
                   "description": "Zodiac sign (rashi) the planet occupies in the birth chart. One of 12 Vedic rashis from Aries (Mesha) to Pisces (Meena).",
-                  "example": "Sagittarius",
+                  "example": "Gemini",
                   "type": "string"
                 }
               },
@@ -4264,20 +4319,20 @@
             "description": "Quick lookup of all planet positions keyed by planet name. Contains Sun, Moon, Mars, Mercury, Jupiter, Venus, Saturn, Rahu, Ketu, and Lagna (Ascendant).",
             "example": {
               "Jupiter": {
-                "awastha": "Vriddha",
-                "deeptadi": "Svastha",
+                "awastha": "Mrita",
+                "deeptadi": "Kopa",
                 "graha": "Jupiter",
-                "house": 9,
+                "house": 11,
                 "isRetrograde": false,
-                "jagradadi": "Jagrat",
-                "longitude": 259.6848244496506,
+                "jagradadi": "Sushupti",
+                "longitude": 86.29,
                 "nakshatra": {
-                  "key": 19,
-                  "lord": "Venus",
-                  "name": "Purva Ashadha",
+                  "key": 7,
+                  "lord": "Jupiter",
+                  "name": "Punarvasu",
                   "pada": 2
                 },
-                "rashi": "Sagittarius"
+                "rashi": "Gemini"
               }
             },
             "type": "object"
@@ -4403,7 +4458,7 @@
                         "Vriddha",
                         "Mrita"
                       ],
-                      "example": "Yuva",
+                      "example": "Bala",
                       "type": "string"
                     },
                     "deeptadi": {
@@ -4419,7 +4474,7 @@
                         "Khala",
                         "Kopa"
                       ],
-                      "example": "Pramudita",
+                      "example": "Svastha",
                       "type": "string"
                     },
                     "graha": {
@@ -4429,7 +4484,7 @@
                     },
                     "house": {
                       "description": "Bhava (house) number 1-12, counted whole-sign from the Lagna (house 1 is the Lagna rashi). Present on the D1 birth chart; divisional charts (navamsa, varga) omit it.",
-                      "example": 3,
+                      "example": 9,
                       "maximum": 12,
                       "minimum": 1,
                       "type": "integer"
@@ -4446,19 +4501,19 @@
                         "Swapna",
                         "Sushupti"
                       ],
-                      "example": "Swapna",
+                      "example": "Jagrat",
                       "type": "string"
                     },
                     "longitude": {
                       "description": "Sidereal longitude in degrees (0-360) using Lahiri ayanamsa.",
-                      "example": 15.42,
+                      "example": 0.51,
                       "type": "number"
                     },
                     "nakshatra": {
                       "properties": {
                         "key": {
                           "description": "Nakshatra index (1-27) in the zodiac sequence starting from Ashwini.",
-                          "example": 2,
+                          "example": 1,
                           "type": "number"
                         },
                         "lord": {
@@ -4474,17 +4529,17 @@
                             "Saturn",
                             "Mercury"
                           ],
-                          "example": "Venus",
+                          "example": "Ketu",
                           "type": "string"
                         },
                         "name": {
                           "description": "Nakshatra (lunar mansion, 1 of 27) the planet occupies.",
-                          "example": "Bharani",
+                          "example": "Ashwini",
                           "type": "string"
                         },
                         "pada": {
                           "description": "Nakshatra pada (quarter, 1-4). Each nakshatra has 4 padas of 3 degrees 20 each.",
-                          "example": 2,
+                          "example": 1,
                           "type": "number"
                         }
                       },
@@ -4569,7 +4624,7 @@
                         "Vriddha",
                         "Mrita"
                       ],
-                      "example": "Yuva",
+                      "example": "Bala",
                       "type": "string"
                     },
                     "deeptadi": {
@@ -4585,7 +4640,7 @@
                         "Khala",
                         "Kopa"
                       ],
-                      "example": "Pramudita",
+                      "example": "Svastha",
                       "type": "string"
                     },
                     "graha": {
@@ -4595,7 +4650,7 @@
                     },
                     "house": {
                       "description": "Bhava (house) number 1-12, counted whole-sign from the Lagna (house 1 is the Lagna rashi). Present on the D1 birth chart; divisional charts (navamsa, varga) omit it.",
-                      "example": 3,
+                      "example": 9,
                       "maximum": 12,
                       "minimum": 1,
                       "type": "integer"
@@ -4612,19 +4667,19 @@
                         "Swapna",
                         "Sushupti"
                       ],
-                      "example": "Swapna",
+                      "example": "Jagrat",
                       "type": "string"
                     },
                     "longitude": {
                       "description": "Sidereal longitude in degrees (0-360) using Lahiri ayanamsa.",
-                      "example": 15.42,
+                      "example": 0.51,
                       "type": "number"
                     },
                     "nakshatra": {
                       "properties": {
                         "key": {
                           "description": "Nakshatra index (1-27) in the zodiac sequence starting from Ashwini.",
-                          "example": 2,
+                          "example": 1,
                           "type": "number"
                         },
                         "lord": {
@@ -4640,17 +4695,17 @@
                             "Saturn",
                             "Mercury"
                           ],
-                          "example": "Venus",
+                          "example": "Ketu",
                           "type": "string"
                         },
                         "name": {
                           "description": "Nakshatra (lunar mansion, 1 of 27) the planet occupies.",
-                          "example": "Bharani",
+                          "example": "Ashwini",
                           "type": "string"
                         },
                         "pada": {
                           "description": "Nakshatra pada (quarter, 1-4). Each nakshatra has 4 padas of 3 degrees 20 each.",
-                          "example": 2,
+                          "example": 1,
                           "type": "number"
                         }
                       },
@@ -4700,7 +4755,7 @@
                         "Vriddha",
                         "Mrita"
                       ],
-                      "example": "Yuva",
+                      "example": "Bala",
                       "type": "string"
                     },
                     "deeptadi": {
@@ -4716,7 +4771,7 @@
                         "Khala",
                         "Kopa"
                       ],
-                      "example": "Pramudita",
+                      "example": "Svastha",
                       "type": "string"
                     },
                     "graha": {
@@ -4726,7 +4781,7 @@
                     },
                     "house": {
                       "description": "Bhava (house) number 1-12, counted whole-sign from the Lagna (house 1 is the Lagna rashi). Present on the D1 birth chart; divisional charts (navamsa, varga) omit it.",
-                      "example": 3,
+                      "example": 9,
                       "maximum": 12,
                       "minimum": 1,
                       "type": "integer"
@@ -4743,19 +4798,19 @@
                         "Swapna",
                         "Sushupti"
                       ],
-                      "example": "Swapna",
+                      "example": "Jagrat",
                       "type": "string"
                     },
                     "longitude": {
                       "description": "Sidereal longitude in degrees (0-360) using Lahiri ayanamsa.",
-                      "example": 15.42,
+                      "example": 0.51,
                       "type": "number"
                     },
                     "nakshatra": {
                       "properties": {
                         "key": {
                           "description": "Nakshatra index (1-27) in the zodiac sequence starting from Ashwini.",
-                          "example": 2,
+                          "example": 1,
                           "type": "number"
                         },
                         "lord": {
@@ -4771,17 +4826,17 @@
                             "Saturn",
                             "Mercury"
                           ],
-                          "example": "Venus",
+                          "example": "Ketu",
                           "type": "string"
                         },
                         "name": {
                           "description": "Nakshatra (lunar mansion, 1 of 27) the planet occupies.",
-                          "example": "Bharani",
+                          "example": "Ashwini",
                           "type": "string"
                         },
                         "pada": {
                           "description": "Nakshatra pada (quarter, 1-4). Each nakshatra has 4 padas of 3 degrees 20 each.",
-                          "example": 2,
+                          "example": 1,
                           "type": "number"
                         }
                       },
@@ -4831,7 +4886,7 @@
                         "Vriddha",
                         "Mrita"
                       ],
-                      "example": "Yuva",
+                      "example": "Bala",
                       "type": "string"
                     },
                     "deeptadi": {
@@ -4847,7 +4902,7 @@
                         "Khala",
                         "Kopa"
                       ],
-                      "example": "Pramudita",
+                      "example": "Svastha",
                       "type": "string"
                     },
                     "graha": {
@@ -4857,7 +4912,7 @@
                     },
                     "house": {
                       "description": "Bhava (house) number 1-12, counted whole-sign from the Lagna (house 1 is the Lagna rashi). Present on the D1 birth chart; divisional charts (navamsa, varga) omit it.",
-                      "example": 3,
+                      "example": 9,
                       "maximum": 12,
                       "minimum": 1,
                       "type": "integer"
@@ -4874,19 +4929,19 @@
                         "Swapna",
                         "Sushupti"
                       ],
-                      "example": "Swapna",
+                      "example": "Jagrat",
                       "type": "string"
                     },
                     "longitude": {
                       "description": "Sidereal longitude in degrees (0-360) using Lahiri ayanamsa.",
-                      "example": 15.42,
+                      "example": 0.51,
                       "type": "number"
                     },
                     "nakshatra": {
                       "properties": {
                         "key": {
                           "description": "Nakshatra index (1-27) in the zodiac sequence starting from Ashwini.",
-                          "example": 2,
+                          "example": 1,
                           "type": "number"
                         },
                         "lord": {
@@ -4902,17 +4957,17 @@
                             "Saturn",
                             "Mercury"
                           ],
-                          "example": "Venus",
+                          "example": "Ketu",
                           "type": "string"
                         },
                         "name": {
                           "description": "Nakshatra (lunar mansion, 1 of 27) the planet occupies.",
-                          "example": "Bharani",
+                          "example": "Ashwini",
                           "type": "string"
                         },
                         "pada": {
                           "description": "Nakshatra pada (quarter, 1-4). Each nakshatra has 4 padas of 3 degrees 20 each.",
-                          "example": 2,
+                          "example": 1,
                           "type": "number"
                         }
                       },
@@ -4962,7 +5017,7 @@
                         "Vriddha",
                         "Mrita"
                       ],
-                      "example": "Yuva",
+                      "example": "Bala",
                       "type": "string"
                     },
                     "deeptadi": {
@@ -4978,7 +5033,7 @@
                         "Khala",
                         "Kopa"
                       ],
-                      "example": "Pramudita",
+                      "example": "Svastha",
                       "type": "string"
                     },
                     "graha": {
@@ -4988,7 +5043,7 @@
                     },
                     "house": {
                       "description": "Bhava (house) number 1-12, counted whole-sign from the Lagna (house 1 is the Lagna rashi). Present on the D1 birth chart; divisional charts (navamsa, varga) omit it.",
-                      "example": 3,
+                      "example": 9,
                       "maximum": 12,
                       "minimum": 1,
                       "type": "integer"
@@ -5005,19 +5060,19 @@
                         "Swapna",
                         "Sushupti"
                       ],
-                      "example": "Swapna",
+                      "example": "Jagrat",
                       "type": "string"
                     },
                     "longitude": {
                       "description": "Sidereal longitude in degrees (0-360) using Lahiri ayanamsa.",
-                      "example": 15.42,
+                      "example": 0.51,
                       "type": "number"
                     },
                     "nakshatra": {
                       "properties": {
                         "key": {
                           "description": "Nakshatra index (1-27) in the zodiac sequence starting from Ashwini.",
-                          "example": 2,
+                          "example": 1,
                           "type": "number"
                         },
                         "lord": {
@@ -5033,17 +5088,17 @@
                             "Saturn",
                             "Mercury"
                           ],
-                          "example": "Venus",
+                          "example": "Ketu",
                           "type": "string"
                         },
                         "name": {
                           "description": "Nakshatra (lunar mansion, 1 of 27) the planet occupies.",
-                          "example": "Bharani",
+                          "example": "Ashwini",
                           "type": "string"
                         },
                         "pada": {
                           "description": "Nakshatra pada (quarter, 1-4). Each nakshatra has 4 padas of 3 degrees 20 each.",
-                          "example": 2,
+                          "example": 1,
                           "type": "number"
                         }
                       },
@@ -5174,6 +5229,7 @@
           "combustion",
           "planetaryWar",
           "interpretations",
+          "interpretation",
           "meta"
         ],
         "type": "object"
@@ -89903,7 +89959,7 @@
     },
     "/vedic-astrology/birth-chart": {
       "post": {
-        "description": "Calculate complete Vedic birth chart (Janam Kundli, natal chart) with all 9 planetary positions (Sun through Ketu) plus Ascendant (Lagna). Kundli calculator API for astrology apps, matrimonial sites. Returns accurate graha positions grouped by zodiac signs (rashis) with nakshatra details and pada. Perfect for kundli generation, horoscope matching, and Vedic astrology software integration. Rahu and Ketu are the mean lunar node, referred to the true equinox of date, with Ketu exactly opposite Rahu.",
+        "description": "Calculate a Vedic birth chart (Janam Kundli): all 9 grahas, Sun through Ketu, and the Lagna, grouped by rashi with nakshatra and pada. Every chart carries a Vedic chart reading written for that birth: the kundli at a glance, every graha read in its rashi and its nakshatra, and every bhava read from its lord and the grahas it holds, in English, German, Spanish, French, Hindi, Portuguese, Russian, Turkish. Rahu and Ketu are the mean lunar node, referred to the true equinox of date, with Ketu exactly opposite Rahu.",
         "operationId": "generateBirthChart",
         "parameters": [
           {
@@ -89965,7 +90021,7 @@
                 }
               }
             },
-            "description": "D1 Rashi birth chart with all 12 houses, 9 grahas plus Lagna, combustion analysis (Surya Siddhanta limits, applied as the standard ecliptic longitude orb), planetary war detection, bhava interpretations, and a meta lookup keyed by planet name."
+            "description": "D1 Rashi birth chart with all 12 houses, 9 grahas plus Lagna, combustion analysis (Surya Siddhanta limits, applied as the standard ecliptic longitude orb), planetary war detection, a written reading of the whole chart, every graha and every bhava, and a meta lookup keyed by planet name."
           },
           "400": {
             "content": {
@@ -90031,7 +90087,7 @@
             "apiKey": []
           }
         ],
-        "summary": "Get birth chart (D1 Rashi chart) - Kundli Calculator API",
+        "summary": "Get birth chart (D1 Rashi chart) - Kundli API with a written chart reading",
         "tags": [
           "Vedic Astrology"
         ]
@@ -105127,7 +105183,7 @@
       "name": "Western Astrology"
     },
     {
-      "description": "Vedic astrology (Jyotish) and KP API for kundli generation with the sixteen Shodasavarga divisional charts (D1 to D60), panchang with choghadiya, hora and the classical muhurta windows, kundli matching by Ashtakoot Gun Milan, the South Indian ten porutham with Rajju and Vedha vetoes and Papasamyam, Vimshottari Dasha predictions, dosha detection with remedies, a 301-entry planetary yoga glossary with 48 of them chart-detected and evidenced, and KP horary with 249-level sub-lord analysis. Calculations verified against NASA JPL Horizons at arc-second-level accuracy. Built for matrimonial apps, horoscope platforms, spiritual wellness services, and AI-powered astrology chatbots. One key covers every RoxyAPI domain, with Remote MCP and typed SDKs.",
+      "description": "Vedic astrology (Jyotish) and KP API for kundli generation with an editorial reading of the whole chart, the sixteen Shodasavarga divisional charts (D1 to D60), panchang with choghadiya, hora and the classical muhurta windows, kundli matching by Ashtakoot Gun Milan, the South Indian ten porutham with Rajju and Vedha vetoes and Papasamyam, Vimshottari Dasha predictions, dosha detection with remedies, a 301-entry planetary yoga glossary with 48 of them chart-detected and evidenced, and KP horary with 249-level sub-lord analysis. Calculations verified against NASA JPL Horizons at arc-second-level accuracy. Built for matrimonial apps, horoscope platforms, spiritual wellness services, and AI-powered astrology chatbots. One key covers every RoxyAPI domain, with Remote MCP and typed SDKs.",
       "name": "Vedic Astrology"
     },
     {
