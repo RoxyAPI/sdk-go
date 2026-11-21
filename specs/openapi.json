@@ -22154,6 +22154,11 @@
                             "example": "Sun",
                             "type": "string"
                           },
+                          "planet1Localized": {
+                            "description": "First planet name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.",
+                            "example": "Sol",
+                            "type": "string"
+                          },
                           "planet2": {
                             "description": "Second planet in the aspect pair.",
                             "enum": [
@@ -22173,6 +22178,11 @@
                               "Black Moon Lilith"
                             ],
                             "example": "Moon",
+                            "type": "string"
+                          },
+                          "planet2Localized": {
+                            "description": "Second planet name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.",
+                            "example": "Luna",
                             "type": "string"
                           },
                           "strength": {
@@ -22196,6 +22206,11 @@
                               "SESQUIQUADRATE"
                             ],
                             "example": "TRINE",
+                            "type": "string"
+                          },
+                          "typeLocalized": {
+                            "description": "Aspect type name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.",
+                            "example": "Trígono",
                             "type": "string"
                           }
                         },
@@ -22230,6 +22245,11 @@
                           "description": "Zodiac sign on the composite Ascendant.",
                           "example": "Gemini",
                           "type": "string"
+                        },
+                        "signLocalized": {
+                          "description": "Ascendant sign name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.",
+                          "example": "Géminis",
+                          "type": "string"
                         }
                       },
                       "required": [
@@ -22262,6 +22282,11 @@
                             "description": "Zodiac sign on the composite house cusp.",
                             "example": "Gemini",
                             "type": "string"
+                          },
+                          "signLocalized": {
+                            "description": "Zodiac sign name on this cusp in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.",
+                            "example": "Géminis",
+                            "type": "string"
                           }
                         },
                         "required": [
@@ -22290,6 +22315,11 @@
                         "sign": {
                           "description": "Zodiac sign on the composite Midheaven.",
                           "example": "Aquarius",
+                          "type": "string"
+                        },
+                        "signLocalized": {
+                          "description": "Midheaven sign name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.",
+                          "example": "Acuario",
                           "type": "string"
                         }
                       },
@@ -22394,9 +22424,19 @@
                             "example": "Sun",
                             "type": "string"
                           },
+                          "nameLocalized": {
+                            "description": "Body name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.",
+                            "example": "Sol",
+                            "type": "string"
+                          },
                           "sign": {
                             "description": "Tropical zodiac sign this planet occupies. Determined by 30-degree divisions of ecliptic longitude.",
                             "example": "Cancer",
+                            "type": "string"
+                          },
+                          "signLocalized": {
+                            "description": "Zodiac sign name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.",
+                            "example": "Cáncer",
                             "type": "string"
                           },
                           "speed": {
@@ -57253,7 +57293,7 @@
                   "properties": {
                     "aura": {
                       "description": "The aura mechanic of the type: how the energy field itself operates, for example open and enveloping, or closed and repelling.",
-                      "example": "Closed and repelling. The field pushes outward and deflects influence, so a Manifestor is felt before anything is said, and others tend to brace against energy they cannot read.",
+                      "example": "Focused and absorbing. The field penetrates deeply into one other person at a time and takes in how they work, which is why the attention feels intense and why recognition arrives unevenly.",
                       "type": "string"
                     },
                     "authority": {
@@ -57263,7 +57303,7 @@
                     },
                     "authorityDescription": {
                       "description": "How the decision is made, the timing it requires, and the characteristic trap. Inner authority is the most actionable output of a Human Design chart, so this is the field to lean on when grounding a reading.",
-                      "example": "Decisions are made across an emotional wave rather than inside a moment. The defined Solar Plexus moves on its own rhythm between hope and pain, so no single moment carries the truth: clarity is what remains once the wave has run its course and settled toward neutral. The trap is committing at the peak, where enthusiasm reads as certainty, or at the trough, where gloom reads as insight, and treating any pressure to answer now as a reason to skip the wait.",
+                      "example": "A defined Solar Plexus means every moment is tinted by where you sit on an emotional wave, and no single instant holds the whole answer. An offer that dazzles you at noon may look ordinary by Friday, and the version you see once the shine fades is the true one. Committing on a high leads to promises you later resent, and ending something on a low can cut away a good thing that merely looked dark for a day. Your wisest answers come once feelings are allowed to pass through without action, watched rather than obeyed, until a quiet sureness is all that remains.",
                       "type": "string"
                     },
                     "authorityLocalized": {
@@ -57277,12 +57317,12 @@
                         "properties": {
                           "awareness": {
                             "description": "Whether this is an awareness center. The three awareness centers are Ajna, Solar Plexus, and Spleen.",
-                            "example": false,
+                            "example": true,
                             "type": "boolean"
                           },
                           "biology": {
                             "description": "The gland, organ, or system this center corresponds to in the body.",
-                            "example": "The adrenal glands.",
+                            "example": "The kidneys, the pancreas, and the nervous system. These regulate fluid balance, blood sugar, and nerve signaling, and in the bodygraph they carry the chemistry of the emotional wave.",
                             "type": "string"
                           },
                           "defined": {
@@ -57293,9 +57333,8 @@
                           "gates": {
                             "description": "Active gate numbers that sit in this center.",
                             "example": [
-                              5,
-                              14,
-                              34
+                              30,
+                              37
                             ],
                             "items": {
                               "type": "number"
@@ -57304,7 +57343,7 @@
                           },
                           "id": {
                             "description": "Center identifier. One of head, ajna, throat, g, heart, sacral, solar-plexus, spleen, root.",
-                            "example": "sacral",
+                            "example": "solar-plexus",
                             "type": "string"
                           },
                           "motor": {
@@ -57314,22 +57353,22 @@
                           },
                           "name": {
                             "description": "Display name of the center. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use nameLocalized for anything a reader sees.",
-                            "example": "Sacral",
+                            "example": "Solar Plexus",
                             "type": "string"
                           },
                           "nameLocalized": {
                             "description": "Center name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.",
-                            "example": "Sacro",
+                            "example": "Plexo Solar",
                             "type": "string"
                           },
                           "notSelfQuestion": {
-                            "description": "The conditioning trap of this center when it is open. Returned on every center so a consumer can surface it the moment `defined` is false, which is where the not-self operates.",
-                            "example": "Is all this talking and doing an attempt to attract attention?",
+                            "description": "The question that exposes this center going off course. On an open center it is the not-self question of the conditioning it takes in from others; on a defined center it is the trap of its own fixed energy, never the open-center question.",
+                            "example": "Is your mood filling the room while you say nothing about it? Your feelings broadcast whether you speak or not, and silence about them leaves others guessing at a weather they can sense.",
                             "type": "string"
                           },
                           "theme": {
-                            "description": "Theme text describing the center in its current defined or undefined state.",
-                            "example": "Sustainable life force and work energy. A reliable gut response that guides what to engage with.",
+                            "description": "What this center does in this chart, in second person: how it works when defined, or what it takes in and learns when open. A defined Throat reads differently when a motor reaches it, which is what lets it act.",
+                            "example": "A defined Solar Plexus gives you emotional depth, a wealth of feeling that others sense on your arrival. Watching a film with friends, yours is the reaction everyone glances at during the big scene. Strong feeling is one of your gifts, and speaking openly about its ups and downs lets others read you with ease.",
                             "type": "string"
                           }
                         },
@@ -57355,8 +57394,8 @@
                           "centers": {
                             "description": "The two centers this channel connects and defines.",
                             "example": [
-                              "throat",
-                              "sacral"
+                              "root",
+                              "solar-plexus"
                             ],
                             "items": {
                               "type": "string"
@@ -57365,42 +57404,42 @@
                           },
                           "circuit": {
                             "description": "Circuit family of the channel. One of Individual, Collective, Tribal. Always English, whatever the lang parameter says. Use circuitLocalized for anything a reader sees.",
-                            "example": "Individual",
+                            "example": "Collective",
                             "type": "string"
                           },
                           "circuitDescription": {
                             "description": "What the circuit family of this channel governs.",
-                            "example": "Empowerment through mutation, carried by 15 channels. The knowing here cannot be explained or handed over, only lived, and it changes other people by exposure rather than instruction. It arrives as a pulse, never on demand.",
+                            "example": "Sharing for the species, carried by 14 channels. Pattern and experience are worked into something transmissible: the logical half tests patterns and projects them forward, the abstract half harvests wisdom from experience already lived.",
                             "type": "string"
                           },
                           "circuitLocalized": {
                             "description": "Circuit family name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.",
-                            "example": "Individual",
+                            "example": "Colectivo",
                             "type": "string"
                           },
                           "description": {
-                            "description": "What this channel wires between its two centers and the nature of the energy it carries.",
-                            "example": "Sacral power is pushed straight to the Throat, so awareness in the present moment becomes action with almost no pause between them. The energy stays healthy only while it is busy with work it loves.",
+                            "description": "What this channel wires between its two centers and how its energy shows up in you, in second person. Where the channel defines the center your inner authority comes from, or carries a motor to the Throat, the description says so.",
+                            "example": "Your Root presses for experience and your Solar Plexus gives it a vivid face, so wanting is where every new chapter begins. A single photo of a coastline lodges in you, and the longing to stand there colors your daydreams for weeks. Your Solar Plexus takes definition here, and emotional clarity is what your choices rest on. Bright imagination keeps hope alive for everyone near you, and acting on a want in its first heat spoils it, while letting the feeling settle shows which wishes are real.",
                             "type": "string"
                           },
                           "gateA": {
                             "description": "First gate of the channel.",
-                            "example": 20,
+                            "example": 41,
                             "type": "number"
                           },
                           "gateB": {
                             "description": "Second gate of the channel.",
-                            "example": 34,
+                            "example": 30,
                             "type": "number"
                           },
                           "name": {
                             "description": "Name of the defined channel. Always English, whatever the lang parameter says. Use nameLocalized for anything a reader sees.",
-                            "example": "Charisma",
+                            "example": "Recognition",
                             "type": "string"
                           },
                           "nameLocalized": {
                             "description": "Channel name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.",
-                            "example": "Carisma",
+                            "example": "Reconocimiento",
                             "type": "string"
                           }
                         },
@@ -57423,8 +57462,8 @@
                       "type": "string"
                     },
                     "definitionDescription": {
-                      "description": "How energy flows through the defined centers in this configuration, and what the configuration needs. For a split, this is where the bridging gates of other people matter.",
-                      "example": "The defined centers fall into two groups with no channel between them, so energy is consistent inside each group and does not cross the divide. The gap is bridged by the gates other people carry, which is why particular company can make thinking suddenly feel joined up, and why that company is easily mistaken for completion rather than recognized as a temporary bridge. What the configuration needs is time for the two areas to synthesize and awareness of who is bridging them, not a rushed decision taken while the halves are still speaking separately.",
+                      "description": "How energy flows through your defined centers: which centers form each connected group and, where the definition is split, the gates in another person that would bridge the groups.",
+                      "example": "With a split, part of you keeps looking for its other half, and particular encounters leave you whole for a while. Clarity comes piecemeal, one side of you catching on first and the other joining once the opening is crossed. Two separate parts run in you: one through your Throat and G Center, the other through your Solar Plexus and Root. Near a person who has gate 22, one gap inside you closes, and it opens again when you part. The sense of wholeness a bridge brings describes how you are built, not the worth of the bond, and your own footing returns once it lifts.",
                       "type": "string"
                     },
                     "definitionLocalized": {
@@ -57434,7 +57473,7 @@
                     },
                     "designInstantUtc": {
                       "description": "The Design moment as an ISO 8601 UTC instant: the exact time the Sun stood 88 degrees of solar arc before its natal longitude, and the instant every Design activation was computed at. Compare it with the Design date a reference tool prints to validate the chart on the moment itself.",
-                      "example": "1972-03-14T00:55:56.900Z",
+                      "example": "1990-04-15T04:21:27.761Z",
                       "type": "string"
                     },
                     "gates": {
@@ -57443,35 +57482,40 @@
                         "properties": {
                           "gate": {
                             "description": "Human Design gate number from 1 to 64 that this activation falls in.",
-                            "example": 51,
+                            "example": 62,
                             "type": "number"
                           },
                           "gateDescription": {
                             "description": "Bodygraph function of the gate: what it does in the center it sits in and the channel it forms. This is NOT the meaning of the I-Ching hexagram that shares its number. They share a number, not a definition.",
-                            "example": "Willpower that shocks and competes. Sitting in the heart center, it moves first and startles, and that shock is what initiates others into a deeper connection with spirit.",
+                            "example": "The throat gate that names things. It sorts facts, labels, and details into practical language, giving the opinions of gate 17 something concrete to stand on.",
                             "type": "string"
                           },
                           "gateName": {
                             "description": "Human Design keynote name of the gate, describing its bodygraph function. Always English, whatever the lang parameter says. Use gateNameLocalized for anything a reader sees.",
-                            "example": "Shock",
+                            "example": "Detail",
                             "type": "string"
                           },
                           "gateNameLocalized": {
                             "description": "Gate keynote name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.",
-                            "example": "Choque",
+                            "example": "Detalle",
                             "type": "string"
                           },
                           "ichingHexagram": {
                             "description": "Cross-reference to the I-Ching hexagram that shares this gate number.",
                             "properties": {
                               "english": {
-                                "description": "English name of the corresponding I-Ching hexagram.",
-                                "example": "The Arousing",
+                                "description": "English name of the corresponding I-Ching hexagram. Always English, whatever the lang parameter says. Use nameLocalized for anything a reader sees.",
+                                "example": "Preponderance of the Small",
+                                "type": "string"
+                              },
+                              "nameLocalized": {
+                                "description": "Hexagram name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.",
+                                "example": "La Preponderancia de lo Pequeño",
                                 "type": "string"
                               },
                               "number": {
                                 "description": "I-Ching hexagram number, identical to the gate number it corresponds to.",
-                                "example": 51,
+                                "example": 62,
                                 "type": "number"
                               }
                             },
@@ -57483,12 +57527,12 @@
                           },
                           "line": {
                             "description": "Line number from 1 to 6 within the gate, setting the line keynote and the profile.",
-                            "example": 5,
+                            "example": 3,
                             "type": "number"
                           },
                           "lineMeaning": {
-                            "description": "Meaning of this gate at this specific line, one of 384. The finest interpretive layer in the chart and the one that makes a reading specific rather than generic. This is not the six abstract line archetypes: gate 41 line 3 carries its own meaning that neither the gate keynote nor the line-3 archetype holds alone.",
-                            "example": "The group turns to this line when everything breaks. It reads the shape of the shock and rides it, and savoring the victory is what leaves it exposed to the next one.",
+                            "description": "Meaning of this gate at this specific line, one of 384. The finest interpretive layer in the chart and the one that makes a reading specific rather than generic. This is not the six abstract line archetypes: gate 41 line 3 carries its own meaning that neither the gate keynote nor the line-3 archetype holds alone. When an earlier activation already sits on the same gate and line, this says so in one line instead of printing the meaning twice.",
+                            "example": "You put a fact forward, correct it, and try once more. Every detail that turned out wrong sharpens the next, and boredom with the small thing is what causes your miss.",
                             "type": "string"
                           },
                           "planet": {
@@ -57532,31 +57576,31 @@
                       "properties": {
                         "angle": {
                           "description": "Cross angle. One of Right Angle, Juxtaposition, Left Angle. Always English, whatever the lang parameter says. Use angleLocalized for anything a reader sees.",
-                          "example": "Left Angle",
+                          "example": "Right Angle",
                           "type": "string"
                         },
                         "angleCode": {
                           "description": "Short code for the angle. One of RAX, JXT, LAX.",
-                          "example": "LAX",
+                          "example": "RAX",
                           "type": "string"
                         },
                         "angleLocalized": {
                           "description": "Cross angle name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.",
-                          "example": "Ángulo Izquierdo",
+                          "example": "Ángulo derecho",
                           "type": "string"
                         },
                         "description": {
-                          "description": "The life theme of the cross, synthesized from its four gates and the orientation the angle gives them. The same Sun gate under a different angle is a genuinely different theme: Right Angle is personal destiny, Left Angle is worked out through other people, Juxtaposition is a fixed fate.",
-                          "example": "Shock delivered to whoever is ready for it. The reaction is often outrage, and underneath it is a change that was waiting for something to force it, which is why the shock needs a receiver.",
+                          "description": "The life theme of the cross, read from all four of its gates, the way its angle orients that theme, and the conscious Sun gate it leads with. The same Sun gate under a different angle is a different theme: Right Angle is lived through personal experience, Left Angle through other people, Juxtaposition on one fixed course.",
+                          "example": "You live between the measurable world and the mystery beneath it, naming details precisely while still asking the questions nobody can answer. As a Right Angle cross, the theme plays out through your own experience first. Your conscious Sun sits in gate 62, Detail, the door the whole cross opens through. Asked about something complicated, you lay out each part with care, then say plainly where knowing stops, and people trust you for both. Precision and wonder live together in you; trusting only the nameable, or drifting in the unknown while practical things slide, splits them, and finishing what each phase begins keeps them joined.",
                           "type": "string"
                         },
                         "gates": {
                           "description": "The four cardinal gates of the cross: Personality Sun, Personality Earth, Design Sun, Design Earth.",
                           "example": [
-                            51,
-                            57,
+                            62,
                             61,
-                            62
+                            42,
+                            32
                           ],
                           "items": {
                             "type": "number"
@@ -57564,8 +57608,13 @@
                           "type": "array"
                         },
                         "name": {
-                          "description": "Canonical published name of the incarnation cross, determined by the Personality Sun gate and the angle. All 192 crosses (64 Personality Sun gates times three angles) carry their published name, numbered variants included, so this is never a composed placeholder. Always begins with the angle followed by Cross of. Always English, whatever the lang parameter says.",
-                          "example": "Left Angle Cross of the Clarion",
+                          "description": "Canonical published name of the incarnation cross, determined by the Personality Sun gate and the angle. All 192 crosses (64 Personality Sun gates times three angles) carry their published name, numbered variants included, so this is never a composed placeholder. Always begins with the angle followed by Cross of. Always English, whatever the lang parameter says. Use nameLocalized for anything a reader sees.",
+                          "example": "Right Angle Cross of Maya 2",
+                          "type": "string"
+                        },
+                        "nameLocalized": {
+                          "description": "Incarnation cross name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.",
+                          "example": "Cruz de Ángulo Derecho de Maya 2",
                           "type": "string"
                         }
                       },
@@ -57577,24 +57626,44 @@
                       ],
                       "type": "object"
                     },
+                    "interpretation": {
+                      "description": "A reading of the whole bodygraph that connects type, authority, profile, definition and incarnation cross, written for this chart in English, German, Spanish, French, Hindi, Portuguese, Russian, Turkish.",
+                      "properties": {
+                        "detailed": {
+                          "description": "The whole-chart reading in two paragraphs separated by a blank line: the shape of your definition and what drives your Throat, then your two Sun gates and the two Earth gates that complete your incarnation cross.",
+                          "example": "Company tends to complete your thinking, and a good partner often supplies the very piece your own definition leaves open. Speech is always within reach for you, but no inner push stands behind it, which makes your words land best when the moment calls for them.\n\nYour conscious Sun offers you clear terms that carry understanding across, and the Design Sun, working out of your sight, brings the patience to carry each cycle to its natural close. Opposite each Sun stands its Earth, lending awe at the riddle behind all things in awareness and an instinct for what is built to last out of view, which completes your Right Angle Cross of Maya 2.",
+                          "type": "string"
+                        },
+                        "summary": {
+                          "description": "The whole chart in two sentences: your type and inner authority as one decision rule, then the role your profile plays.",
+                          "example": "You accept an invitation once the glow of being noticed has faded and your yes still feels steady. You speak plainly about what holds, having learned it by getting things wrong first.",
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "summary",
+                        "detailed"
+                      ],
+                      "type": "object"
+                    },
                     "notSelf": {
                       "description": "The not-self theme, the recurring feeling that signals being out of alignment. Always English, whatever the lang parameter says. Use notSelfLocalized for anything a reader sees.",
-                      "example": "Anger",
+                      "example": "Bitterness",
                       "type": "string"
                     },
                     "notSelfLocalized": {
                       "description": "Not-self theme name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.",
-                      "example": "Ira",
+                      "example": "Amargura",
                       "type": "string"
                     },
                     "profile": {
                       "description": "Profile in conscious/unconscious form from the Personality Sun line over the Design Sun line.",
-                      "example": "5/1",
+                      "example": "3/5",
                       "type": "string"
                     },
                     "profileDescription": {
                       "description": "Meaning of the combined profile. A profile is not the sum of its two lines: 6/2 has its own meaning that neither the line 6 nor the line 2 keynote carries alone.",
-                      "example": "Heretic over Investigator. A conscious projection field leads others to assume a solution is already at hand, and the unconscious first line quietly supplies the foundation that can actually answer. Reputation is both the currency and the risk: with real preparation the practical solution lands far beyond the personal, and without it the same projection curdles into blame.",
+                      "example": "People call you when something breaks, partly because you have broken a fair share yourself and know the way back. Plans in your hands get bent, dropped and rebuilt, and the version still standing is the one worth trusting. Problems tend to arrive with your name already attached, as if you were built for emergencies. Your answers carry the weight of experience; blame after a promise falls through stings, and scoping each offer to ground you have actually covered softens it.",
                       "type": "string"
                     },
                     "profileKeynotes": {
@@ -57602,22 +57671,22 @@
                       "properties": {
                         "design": {
                           "description": "Keynote of the unconscious Design line. The half of the life role others see operating in the body, which the person does not directly experience.",
-                          "example": "Investigator: builds a secure foundation through study before acting.",
+                          "example": "Heretic: a universalizing, practical force others project expectations onto.",
                           "type": "string"
                         },
                         "designLine": {
                           "description": "Line number 1 to 6 of the unconscious Design Sun, the second digit of the profile.",
-                          "example": 1,
+                          "example": 5,
                           "type": "number"
                         },
                         "personality": {
                           "description": "Keynote of the conscious Personality line. The half of the life role the person is aware of and can speak to.",
-                          "example": "Heretic: a universalizing, practical force others project expectations onto.",
+                          "example": "Martyr: learns through trial and error, discovering what does not work.",
                           "type": "string"
                         },
                         "personalityLine": {
                           "description": "Line number 1 to 6 of the conscious Personality Sun, the first digit of the profile.",
-                          "example": 5,
+                          "example": 3,
                           "type": "number"
                         }
                       },
@@ -57644,46 +57713,47 @@
                     },
                     "signature": {
                       "description": "The signature feeling of living in alignment with the type. Always English, whatever the lang parameter says. Use signatureLocalized for anything a reader sees.",
-                      "example": "Peace",
+                      "example": "Success",
                       "type": "string"
                     },
                     "signatureLocalized": {
                       "description": "Signature theme name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.",
-                      "example": "Paz",
+                      "example": "Éxito",
                       "type": "string"
                     },
                     "strategy": {
                       "description": "The aura strategy for engaging life correctly for this type. Always English, whatever the lang parameter says. Use strategyLocalized for anything a reader sees.",
-                      "example": "Inform",
+                      "example": "Wait for the invitation",
                       "type": "string"
                     },
                     "strategyDescription": {
                       "description": "How to actually apply the strategy. The strategy field alone is a bare label such as Respond or Inform; this is the operating instruction behind it.",
-                      "example": "Inform everyone an action will affect, before taking it. This is not asking permission and not seeking approval: it removes the surprise that provokes resistance, which is what turns anger into peace.",
+                      "example": "Being invited is your starting line for the big things, and an unhurried yes is how you cross it. A former colleague spots your eye for structure and asks you to lead a project, and you thank them, take your time, and accept from calm. Saying yes on the high of being seen, or counseling people who never requested it, sours into bitterness once the excitement fades and the work remains.",
                       "type": "string"
                     },
                     "strategyLocalized": {
                       "description": "Strategy name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.",
-                      "example": "Informar",
+                      "example": "Esperar la invitación",
                       "type": "string"
                     },
                     "type": {
                       "description": "Human Design energy type. One of Manifestor, Generator, Manifesting Generator, Projector, Reflector. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use typeLocalized for anything a reader sees.",
-                      "example": "Manifestor",
+                      "example": "Projector",
                       "type": "string"
                     },
                     "typeDescription": {
                       "description": "What the aura of this type does and how it is designed to engage life. The grounding text for the type label, so a consuming agent does not have to supply the meaning itself.",
-                      "example": "An initiating, impactful aura built to start things and set them in motion. Informing others before acting clears resistance and brings peace.",
+                      "example": "Your aura acts like a lens rather than a floodlight, settling on one person and taking in the shape of how they live and work. In a busy post office queue, you find yourself tracking how the clerk manages the line and spotting the small change that would ease it. Close attention from you can be a gift or an intrusion, and the difference lies in whether the other side invited it. A sense of success means your insight was wanted and your hours were your own, while bitterness creeping in points to borrowed pace or advice given uninvited.",
                       "type": "string"
                     },
                     "typeLocalized": {
                       "description": "Energy type name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.",
-                      "example": "Manifestador",
+                      "example": "Proyector",
                       "type": "string"
                     }
                   },
                   "required": [
+                    "interpretation",
                     "type",
                     "typeDescription",
                     "aura",
@@ -57891,12 +57961,12 @@
                         "properties": {
                           "awareness": {
                             "description": "Whether this is an awareness center. The three awareness centers are Ajna, Solar Plexus, and Spleen.",
-                            "example": false,
+                            "example": true,
                             "type": "boolean"
                           },
                           "biology": {
                             "description": "The gland, organ, or system this center corresponds to in the body.",
-                            "example": "The adrenal glands.",
+                            "example": "The kidneys, the pancreas, and the nervous system. These regulate fluid balance, blood sugar, and nerve signaling, and in the bodygraph they carry the chemistry of the emotional wave.",
                             "type": "string"
                           },
                           "defined": {
@@ -57907,9 +57977,8 @@
                           "gates": {
                             "description": "Active gate numbers that sit in this center.",
                             "example": [
-                              5,
-                              14,
-                              34
+                              30,
+                              37
                             ],
                             "items": {
                               "type": "number"
@@ -57918,7 +57987,7 @@
                           },
                           "id": {
                             "description": "Center identifier. One of head, ajna, throat, g, heart, sacral, solar-plexus, spleen, root.",
-                            "example": "sacral",
+                            "example": "solar-plexus",
                             "type": "string"
                           },
                           "motor": {
@@ -57928,22 +57997,22 @@
                           },
                           "name": {
                             "description": "Display name of the center. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use nameLocalized for anything a reader sees.",
-                            "example": "Sacral",
+                            "example": "Solar Plexus",
                             "type": "string"
                           },
                           "nameLocalized": {
                             "description": "Center name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.",
-                            "example": "Sacro",
+                            "example": "Plexo Solar",
                             "type": "string"
                           },
                           "notSelfQuestion": {
-                            "description": "The conditioning trap of this center when it is open. Returned on every center so a consumer can surface it the moment `defined` is false, which is where the not-self operates.",
-                            "example": "Is all this talking and doing an attempt to attract attention?",
+                            "description": "The question that exposes this center going off course. On an open center it is the not-self question of the conditioning it takes in from others; on a defined center it is the trap of its own fixed energy, never the open-center question.",
+                            "example": "Is your mood filling the room while you say nothing about it? Your feelings broadcast whether you speak or not, and silence about them leaves others guessing at a weather they can sense.",
                             "type": "string"
                           },
                           "theme": {
-                            "description": "Theme text describing the center in its current defined or undefined state.",
-                            "example": "Sustainable life force and work energy. A reliable gut response that guides what to engage with.",
+                            "description": "What this center does in this chart, in second person: how it works when defined, or what it takes in and learns when open. A defined Throat reads differently when a motor reaches it, which is what lets it act.",
+                            "example": "A defined Solar Plexus gives you emotional depth, a wealth of feeling that others sense on your arrival. Watching a film with friends, yours is the reaction everyone glances at during the big scene. Strong feeling is one of your gifts, and speaking openly about its ups and downs lets others read you with ease.",
                             "type": "string"
                           }
                         },
@@ -58337,8 +58406,8 @@
                           "centers": {
                             "description": "The two centers this channel connects and defines.",
                             "example": [
-                              "throat",
-                              "sacral"
+                              "root",
+                              "solar-plexus"
                             ],
                             "items": {
                               "type": "string"
@@ -58347,42 +58416,42 @@
                           },
                           "circuit": {
                             "description": "Circuit family of the channel. One of Individual, Collective, Tribal. Always English, whatever the lang parameter says. Use circuitLocalized for anything a reader sees.",
-                            "example": "Individual",
+                            "example": "Collective",
                             "type": "string"
                           },
                           "circuitDescription": {
                             "description": "What the circuit family of this channel governs.",
-                            "example": "Empowerment through mutation, carried by 15 channels. The knowing here cannot be explained or handed over, only lived, and it changes other people by exposure rather than instruction. It arrives as a pulse, never on demand.",
+                            "example": "Sharing for the species, carried by 14 channels. Pattern and experience are worked into something transmissible: the logical half tests patterns and projects them forward, the abstract half harvests wisdom from experience already lived.",
                             "type": "string"
                           },
                           "circuitLocalized": {
                             "description": "Circuit family name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.",
-                            "example": "Individual",
+                            "example": "Colectivo",
                             "type": "string"
                           },
                           "description": {
-                            "description": "What this channel wires between its two centers and the nature of the energy it carries.",
-                            "example": "Sacral power is pushed straight to the Throat, so awareness in the present moment becomes action with almost no pause between them. The energy stays healthy only while it is busy with work it loves.",
+                            "description": "What this channel wires between its two centers and how its energy shows up in you, in second person. Where the channel defines the center your inner authority comes from, or carries a motor to the Throat, the description says so.",
+                            "example": "Your Root presses for experience and your Solar Plexus gives it a vivid face, so wanting is where every new chapter begins. A single photo of a coastline lodges in you, and the longing to stand there colors your daydreams for weeks. Your Solar Plexus takes definition here, and emotional clarity is what your choices rest on. Bright imagination keeps hope alive for everyone near you, and acting on a want in its first heat spoils it, while letting the feeling settle shows which wishes are real.",
                             "type": "string"
                           },
                           "gateA": {
                             "description": "First gate of the channel.",
-                            "example": 20,
+                            "example": 41,
                             "type": "number"
                           },
                           "gateB": {
                             "description": "Second gate of the channel.",
-                            "example": 34,
+                            "example": 30,
                             "type": "number"
                           },
                           "name": {
                             "description": "Name of the defined channel. Always English, whatever the lang parameter says. Use nameLocalized for anything a reader sees.",
-                            "example": "Charisma",
+                            "example": "Recognition",
                             "type": "string"
                           },
                           "nameLocalized": {
                             "description": "Channel name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.",
-                            "example": "Carisma",
+                            "example": "Reconocimiento",
                             "type": "string"
                           }
                         },
@@ -59081,35 +59150,40 @@
                         "properties": {
                           "gate": {
                             "description": "Human Design gate number from 1 to 64 that this activation falls in.",
-                            "example": 51,
+                            "example": 62,
                             "type": "number"
                           },
                           "gateDescription": {
                             "description": "Bodygraph function of the gate: what it does in the center it sits in and the channel it forms. This is NOT the meaning of the I-Ching hexagram that shares its number. They share a number, not a definition.",
-                            "example": "Willpower that shocks and competes. Sitting in the heart center, it moves first and startles, and that shock is what initiates others into a deeper connection with spirit.",
+                            "example": "The throat gate that names things. It sorts facts, labels, and details into practical language, giving the opinions of gate 17 something concrete to stand on.",
                             "type": "string"
                           },
                           "gateName": {
                             "description": "Human Design keynote name of the gate, describing its bodygraph function. Always English, whatever the lang parameter says. Use gateNameLocalized for anything a reader sees.",
-                            "example": "Shock",
+                            "example": "Detail",
                             "type": "string"
                           },
                           "gateNameLocalized": {
                             "description": "Gate keynote name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.",
-                            "example": "Choque",
+                            "example": "Detalle",
                             "type": "string"
                           },
                           "ichingHexagram": {
                             "description": "Cross-reference to the I-Ching hexagram that shares this gate number.",
                             "properties": {
                               "english": {
-                                "description": "English name of the corresponding I-Ching hexagram.",
-                                "example": "The Arousing",
+                                "description": "English name of the corresponding I-Ching hexagram. Always English, whatever the lang parameter says. Use nameLocalized for anything a reader sees.",
+                                "example": "Preponderance of the Small",
+                                "type": "string"
+                              },
+                              "nameLocalized": {
+                                "description": "Hexagram name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.",
+                                "example": "La Preponderancia de lo Pequeño",
                                 "type": "string"
                               },
                               "number": {
                                 "description": "I-Ching hexagram number, identical to the gate number it corresponds to.",
-                                "example": 51,
+                                "example": 62,
                                 "type": "number"
                               }
                             },
@@ -59121,12 +59195,12 @@
                           },
                           "line": {
                             "description": "Line number from 1 to 6 within the gate, setting the line keynote and the profile.",
-                            "example": 5,
+                            "example": 3,
                             "type": "number"
                           },
                           "lineMeaning": {
-                            "description": "Meaning of this gate at this specific line, one of 384. The finest interpretive layer in the chart and the one that makes a reading specific rather than generic. This is not the six abstract line archetypes: gate 41 line 3 carries its own meaning that neither the gate keynote nor the line-3 archetype holds alone.",
-                            "example": "The group turns to this line when everything breaks. It reads the shape of the shock and rides it, and savoring the victory is what leaves it exposed to the next one.",
+                            "description": "Meaning of this gate at this specific line, one of 384. The finest interpretive layer in the chart and the one that makes a reading specific rather than generic. This is not the six abstract line archetypes: gate 41 line 3 carries its own meaning that neither the gate keynote nor the line-3 archetype holds alone. When an earlier activation already sits on the same gate and line, this says so in one line instead of printing the meaning twice.",
+                            "example": "You put a fact forward, correct it, and try once more. Every detail that turned out wrong sharpens the next, and boredom with the small thing is what causes your miss.",
                             "type": "string"
                           },
                           "planet": {
@@ -59171,35 +59245,40 @@
                         "properties": {
                           "gate": {
                             "description": "Human Design gate number from 1 to 64 that this activation falls in.",
-                            "example": 51,
+                            "example": 62,
                             "type": "number"
                           },
                           "gateDescription": {
                             "description": "Bodygraph function of the gate: what it does in the center it sits in and the channel it forms. This is NOT the meaning of the I-Ching hexagram that shares its number. They share a number, not a definition.",
-                            "example": "Willpower that shocks and competes. Sitting in the heart center, it moves first and startles, and that shock is what initiates others into a deeper connection with spirit.",
+                            "example": "The throat gate that names things. It sorts facts, labels, and details into practical language, giving the opinions of gate 17 something concrete to stand on.",
                             "type": "string"
                           },
                           "gateName": {
                             "description": "Human Design keynote name of the gate, describing its bodygraph function. Always English, whatever the lang parameter says. Use gateNameLocalized for anything a reader sees.",
-                            "example": "Shock",
+                            "example": "Detail",
                             "type": "string"
                           },
                           "gateNameLocalized": {
                             "description": "Gate keynote name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.",
-                            "example": "Choque",
+                            "example": "Detalle",
                             "type": "string"
                           },
                           "ichingHexagram": {
                             "description": "Cross-reference to the I-Ching hexagram that shares this gate number.",
                             "properties": {
                               "english": {
-                                "description": "English name of the corresponding I-Ching hexagram.",
-                                "example": "The Arousing",
+                                "description": "English name of the corresponding I-Ching hexagram. Always English, whatever the lang parameter says. Use nameLocalized for anything a reader sees.",
+                                "example": "Preponderance of the Small",
+                                "type": "string"
+                              },
+                              "nameLocalized": {
+                                "description": "Hexagram name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.",
+                                "example": "La Preponderancia de lo Pequeño",
                                 "type": "string"
                               },
                               "number": {
                                 "description": "I-Ching hexagram number, identical to the gate number it corresponds to.",
-                                "example": 51,
+                                "example": 62,
                                 "type": "number"
                               }
                             },
@@ -59211,12 +59290,12 @@
                           },
                           "line": {
                             "description": "Line number from 1 to 6 within the gate, setting the line keynote and the profile.",
-                            "example": 5,
+                            "example": 3,
                             "type": "number"
                           },
                           "lineMeaning": {
-                            "description": "Meaning of this gate at this specific line, one of 384. The finest interpretive layer in the chart and the one that makes a reading specific rather than generic. This is not the six abstract line archetypes: gate 41 line 3 carries its own meaning that neither the gate keynote nor the line-3 archetype holds alone.",
-                            "example": "The group turns to this line when everything breaks. It reads the shape of the shock and rides it, and savoring the victory is what leaves it exposed to the next one.",
+                            "description": "Meaning of this gate at this specific line, one of 384. The finest interpretive layer in the chart and the one that makes a reading specific rather than generic. This is not the six abstract line archetypes: gate 41 line 3 carries its own meaning that neither the gate keynote nor the line-3 archetype holds alone. When an earlier activation already sits on the same gate and line, this says so in one line instead of printing the meaning twice.",
+                            "example": "You put a fact forward, correct it, and try once more. Every detail that turned out wrong sharpens the next, and boredom with the small thing is what causes your miss.",
                             "type": "string"
                           },
                           "planet": {
@@ -60295,13 +60374,18 @@
                             "description": "Cross-reference to the I-Ching hexagram that shares this gate number.",
                             "properties": {
                               "english": {
-                                "description": "English name of the corresponding I-Ching hexagram.",
-                                "example": "The Arousing",
+                                "description": "English name of the corresponding I-Ching hexagram. Always English, whatever the lang parameter says. Use nameLocalized for anything a reader sees.",
+                                "example": "Preponderance of the Small",
+                                "type": "string"
+                              },
+                              "nameLocalized": {
+                                "description": "Hexagram name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.",
+                                "example": "La Preponderancia de lo Pequeño",
                                 "type": "string"
                               },
                               "number": {
                                 "description": "I-Ching hexagram number, identical to the gate number it corresponds to.",
-                                "example": 51,
+                                "example": 62,
                                 "type": "number"
                               }
                             },
@@ -60664,7 +60748,7 @@
                   "properties": {
                     "aura": {
                       "description": "The aura mechanic of the type: how the energy field itself operates, for example open and enveloping, or closed and repelling.",
-                      "example": "Closed and repelling. The field pushes outward and deflects influence, so a Manifestor is felt before anything is said, and others tend to brace against energy they cannot read.",
+                      "example": "Focused and absorbing. The field penetrates deeply into one other person at a time and takes in how they work, which is why the attention feels intense and why recognition arrives unevenly.",
                       "type": "string"
                     },
                     "authority": {
@@ -60674,7 +60758,7 @@
                     },
                     "authorityDescription": {
                       "description": "How the decision is made, the timing it requires, and the characteristic trap. Inner authority is the most actionable output of a Human Design chart.",
-                      "example": "Decisions are made across an emotional wave rather than inside a moment. The defined Solar Plexus moves on its own rhythm between hope and pain, so no single moment carries the truth: clarity is what remains once the wave has run its course and settled toward neutral. The trap is committing at the peak, where enthusiasm reads as certainty, or at the trough, where gloom reads as insight, and treating any pressure to answer now as a reason to skip the wait.",
+                      "example": "A defined Solar Plexus means every moment is tinted by where you sit on an emotional wave, and no single instant holds the whole answer. An offer that dazzles you at noon may look ordinary by Friday, and the version you see once the shine fades is the true one. Committing on a high leads to promises you later resent, and ending something on a low can cut away a good thing that merely looked dark for a day. Your wisest answers come once feelings are allowed to pass through without action, watched rather than obeyed, until a quiet sureness is all that remains.",
                       "type": "string"
                     },
                     "authorityLocalized": {
@@ -60684,57 +60768,57 @@
                     },
                     "notSelf": {
                       "description": "The not-self theme that signals being out of alignment. Always English, whatever the lang parameter says. Use notSelfLocalized for anything a reader sees.",
-                      "example": "Anger",
+                      "example": "Bitterness",
                       "type": "string"
                     },
                     "notSelfLocalized": {
                       "description": "Not-self theme name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.",
-                      "example": "Ira",
+                      "example": "Amargura",
                       "type": "string"
                     },
                     "profile": {
                       "description": "Profile from the Personality Sun line over the Design Sun line.",
-                      "example": "5/1",
+                      "example": "3/5",
                       "type": "string"
                     },
                     "signature": {
                       "description": "The signature feeling of living in alignment. Always English, whatever the lang parameter says. Use signatureLocalized for anything a reader sees.",
-                      "example": "Peace",
+                      "example": "Success",
                       "type": "string"
                     },
                     "signatureLocalized": {
                       "description": "Signature theme name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.",
-                      "example": "Paz",
+                      "example": "Éxito",
                       "type": "string"
                     },
                     "strategy": {
                       "description": "The aura strategy for engaging life correctly for this type. Always English, whatever the lang parameter says. Use strategyLocalized for anything a reader sees.",
-                      "example": "Inform",
+                      "example": "Wait for the invitation",
                       "type": "string"
                     },
                     "strategyDescription": {
                       "description": "How to actually apply the strategy. The strategy field alone is a bare label such as Respond or Inform; this is the operating instruction behind it.",
-                      "example": "Inform everyone an action will affect, before taking it. This is not asking permission and not seeking approval: it removes the surprise that provokes resistance, which is what turns anger into peace.",
+                      "example": "Being invited is your starting line for the big things, and an unhurried yes is how you cross it. A former colleague spots your eye for structure and asks you to lead a project, and you thank them, take your time, and accept from calm. Saying yes on the high of being seen, or counseling people who never requested it, sours into bitterness once the excitement fades and the work remains.",
                       "type": "string"
                     },
                     "strategyLocalized": {
                       "description": "Strategy name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.",
-                      "example": "Informar",
+                      "example": "Esperar la invitación",
                       "type": "string"
                     },
                     "type": {
                       "description": "Human Design energy type. One of Manifestor, Generator, Manifesting Generator, Projector, Reflector. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use typeLocalized for anything a reader sees.",
-                      "example": "Manifestor",
+                      "example": "Projector",
                       "type": "string"
                     },
                     "typeDescription": {
                       "description": "What the aura of this type does and how it is designed to engage life. The grounding text for the type label, so a consuming agent does not have to supply the meaning itself.",
-                      "example": "An initiating, impactful aura built to start things and set them in motion. Informing others before acting clears resistance and brings peace.",
+                      "example": "Your aura acts like a lens rather than a floodlight, settling on one person and taking in the shape of how they live and work. In a busy post office queue, you find yourself tracking how the clerk manages the line and spotting the small change that would ease it. Close attention from you can be a gift or an intrusion, and the difference lies in whether the other side invited it. A sense of success means your insight was wanted and your hours were your own, while bitterness creeping in points to borrowed pace or advice given uninvited.",
                       "type": "string"
                     },
                     "typeLocalized": {
                       "description": "Energy type name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.",
-                      "example": "Manifestador",
+                      "example": "Proyector",
                       "type": "string"
                     }
                   },

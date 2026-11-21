@@ -90991,14 +90991,23 @@ type GenerateCompositeChartResponse struct {
 			// Planet1 First planet in the aspect pair.
 			Planet1 GenerateCompositeChart200JSONResponseBodyAspectsPlanet1 `json:"planet1"`
 
+			// Planet1Localized First planet name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			Planet1Localized *string `json:"planet1Localized,omitempty"`
+
 			// Planet2 Second planet in the aspect pair.
 			Planet2 GenerateCompositeChart200JSONResponseBodyAspectsPlanet2 `json:"planet2"`
+
+			// Planet2Localized Second planet name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			Planet2Localized *string `json:"planet2Localized,omitempty"`
 
 			// Strength Aspect strength percentage (0-100). Based on orb tightness relative to the allowed maximum.
 			Strength float32 `json:"strength"`
 
 			// Type Aspect type. Major: conjunction (0), opposition (180), trine (120), square (90), sextile (60). Minor: semi-sextile, quincunx, semi-square, sesquiquadrate.
 			Type GenerateCompositeChart200JSONResponseBodyAspectsType `json:"type"`
+
+			// TypeLocalized Aspect type name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			TypeLocalized *string `json:"typeLocalized,omitempty"`
 		} `json:"aspects"`
 
 		// CompositeAscendant Composite Ascendant. Represents how the relationship presents itself to the outside world.
@@ -91011,6 +91020,9 @@ type GenerateCompositeChartResponse struct {
 
 			// Sign Zodiac sign on the composite Ascendant.
 			Sign string `json:"sign"`
+
+			// SignLocalized Ascendant sign name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			SignLocalized *string `json:"signLocalized,omitempty"`
 		} `json:"compositeAscendant"`
 
 		// CompositeHouses Composite house cusps, each the midpoint of the two natal cusps. Each house represents shared life areas in the relationship.
@@ -91026,6 +91038,9 @@ type GenerateCompositeChartResponse struct {
 
 			// Sign Zodiac sign on the composite house cusp.
 			Sign string `json:"sign"`
+
+			// SignLocalized Zodiac sign name on this cusp in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			SignLocalized *string `json:"signLocalized,omitempty"`
 		} `json:"compositeHouses"`
 
 		// CompositeMidheaven Composite Midheaven (MC). Represents shared goals, public image, and the direction the relationship grows toward.
@@ -91038,6 +91053,9 @@ type GenerateCompositeChartResponse struct {
 
 			// Sign Zodiac sign on the composite Midheaven.
 			Sign string `json:"sign"`
+
+			// SignLocalized Midheaven sign name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			SignLocalized *string `json:"signLocalized,omitempty"`
 		} `json:"compositeMidheaven"`
 
 		// CompositePlanets Composite planetary positions calculated as midpoints between both charts. Each planet represents a shared energy in the relationship.
@@ -91072,8 +91090,14 @@ type GenerateCompositeChartResponse struct {
 			// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The lunar nodes follow the request nodeType, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
 			Name GenerateCompositeChart200JSONResponseBodyCompositePlanetsName `json:"name"`
 
+			// NameLocalized Body name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			NameLocalized *string `json:"nameLocalized,omitempty"`
+
 			// Sign Tropical zodiac sign this planet occupies. Determined by 30-degree divisions of ecliptic longitude.
 			Sign string `json:"sign"`
+
+			// SignLocalized Zodiac sign name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			SignLocalized *string `json:"signLocalized,omitempty"`
 
 			// Speed Daily motion in degrees per day. Negative values indicate retrograde motion.
 			Speed float32 `json:"speed"`
@@ -91160,14 +91184,23 @@ func (r GenerateCompositeChartResponse) GetJSON200() *struct {
 		// Planet1 First planet in the aspect pair.
 		Planet1 GenerateCompositeChart200JSONResponseBodyAspectsPlanet1 `json:"planet1"`
 
+		// Planet1Localized First planet name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		Planet1Localized *string `json:"planet1Localized,omitempty"`
+
 		// Planet2 Second planet in the aspect pair.
 		Planet2 GenerateCompositeChart200JSONResponseBodyAspectsPlanet2 `json:"planet2"`
+
+		// Planet2Localized Second planet name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		Planet2Localized *string `json:"planet2Localized,omitempty"`
 
 		// Strength Aspect strength percentage (0-100). Based on orb tightness relative to the allowed maximum.
 		Strength float32 `json:"strength"`
 
 		// Type Aspect type. Major: conjunction (0), opposition (180), trine (120), square (90), sextile (60). Minor: semi-sextile, quincunx, semi-square, sesquiquadrate.
 		Type GenerateCompositeChart200JSONResponseBodyAspectsType `json:"type"`
+
+		// TypeLocalized Aspect type name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		TypeLocalized *string `json:"typeLocalized,omitempty"`
 	} `json:"aspects"`
 
 	// CompositeAscendant Composite Ascendant. Represents how the relationship presents itself to the outside world.
@@ -91180,6 +91213,9 @@ func (r GenerateCompositeChartResponse) GetJSON200() *struct {
 
 		// Sign Zodiac sign on the composite Ascendant.
 		Sign string `json:"sign"`
+
+		// SignLocalized Ascendant sign name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		SignLocalized *string `json:"signLocalized,omitempty"`
 	} `json:"compositeAscendant"`
 
 	// CompositeHouses Composite house cusps, each the midpoint of the two natal cusps. Each house represents shared life areas in the relationship.
@@ -91195,6 +91231,9 @@ func (r GenerateCompositeChartResponse) GetJSON200() *struct {
 
 		// Sign Zodiac sign on the composite house cusp.
 		Sign string `json:"sign"`
+
+		// SignLocalized Zodiac sign name on this cusp in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		SignLocalized *string `json:"signLocalized,omitempty"`
 	} `json:"compositeHouses"`
 
 	// CompositeMidheaven Composite Midheaven (MC). Represents shared goals, public image, and the direction the relationship grows toward.
@@ -91207,6 +91246,9 @@ func (r GenerateCompositeChartResponse) GetJSON200() *struct {
 
 		// Sign Zodiac sign on the composite Midheaven.
 		Sign string `json:"sign"`
+
+		// SignLocalized Midheaven sign name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		SignLocalized *string `json:"signLocalized,omitempty"`
 	} `json:"compositeMidheaven"`
 
 	// CompositePlanets Composite planetary positions calculated as midpoints between both charts. Each planet represents a shared energy in the relationship.
@@ -91241,8 +91283,14 @@ func (r GenerateCompositeChartResponse) GetJSON200() *struct {
 		// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The lunar nodes follow the request nodeType, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
 		Name GenerateCompositeChart200JSONResponseBodyCompositePlanetsName `json:"name"`
 
+		// NameLocalized Body name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		NameLocalized *string `json:"nameLocalized,omitempty"`
+
 		// Sign Tropical zodiac sign this planet occupies. Determined by 30-degree divisions of ecliptic longitude.
 		Sign string `json:"sign"`
+
+		// SignLocalized Zodiac sign name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		SignLocalized *string `json:"signLocalized,omitempty"`
 
 		// Speed Daily motion in degrees per day. Negative values indicate retrograde motion.
 		Speed float32 `json:"speed"`
@@ -115432,10 +115480,10 @@ type GenerateBodygraphResponse struct {
 			// NameLocalized Center name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
 			NameLocalized *string `json:"nameLocalized,omitempty"`
 
-			// NotSelfQuestion The conditioning trap of this center when it is open. Returned on every center so a consumer can surface it the moment `defined` is false, which is where the not-self operates.
+			// NotSelfQuestion The question that exposes this center going off course. On an open center it is the not-self question of the conditioning it takes in from others; on a defined center it is the trap of its own fixed energy, never the open-center question.
 			NotSelfQuestion string `json:"notSelfQuestion"`
 
-			// Theme Theme text describing the center in its current defined or undefined state.
+			// Theme What this center does in this chart, in second person: how it works when defined, or what it takes in and learns when open. A defined Throat reads differently when a motor reaches it, which is what lets it act.
 			Theme string `json:"theme"`
 		} `json:"centers"`
 
@@ -115453,7 +115501,7 @@ type GenerateBodygraphResponse struct {
 			// CircuitLocalized Circuit family name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
 			CircuitLocalized *string `json:"circuitLocalized,omitempty"`
 
-			// Description What this channel wires between its two centers and the nature of the energy it carries.
+			// Description What this channel wires between its two centers and how its energy shows up in you, in second person. Where the channel defines the center your inner authority comes from, or carries a motor to the Throat, the description says so.
 			Description string `json:"description"`
 
 			// GateA First gate of the channel.
@@ -115472,7 +115520,7 @@ type GenerateBodygraphResponse struct {
 		// Definition Definition type from the number of connected components among defined centers. One of None, Single, Split, Triple Split, Quadruple Split. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use definitionLocalized for anything a reader sees.
 		Definition string `json:"definition"`
 
-		// DefinitionDescription How energy flows through the defined centers in this configuration, and what the configuration needs. For a split, this is where the bridging gates of other people matter.
+		// DefinitionDescription How energy flows through your defined centers: which centers form each connected group and, where the definition is split, the gates in another person that would bridge the groups.
 		DefinitionDescription string `json:"definitionDescription"`
 
 		// DefinitionLocalized Definition type name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
@@ -115497,8 +115545,11 @@ type GenerateBodygraphResponse struct {
 
 			// IchingHexagram Cross-reference to the I-Ching hexagram that shares this gate number.
 			IchingHexagram struct {
-				// English English name of the corresponding I-Ching hexagram.
+				// English English name of the corresponding I-Ching hexagram. Always English, whatever the lang parameter says. Use nameLocalized for anything a reader sees.
 				English string `json:"english"`
+
+				// NameLocalized Hexagram name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				NameLocalized *string `json:"nameLocalized,omitempty"`
 
 				// Number I-Ching hexagram number, identical to the gate number it corresponds to.
 				Number float32 `json:"number"`
@@ -115507,7 +115558,7 @@ type GenerateBodygraphResponse struct {
 			// Line Line number from 1 to 6 within the gate, setting the line keynote and the profile.
 			Line float32 `json:"line"`
 
-			// LineMeaning Meaning of this gate at this specific line, one of 384. The finest interpretive layer in the chart and the one that makes a reading specific rather than generic. This is not the six abstract line archetypes: gate 41 line 3 carries its own meaning that neither the gate keynote nor the line-3 archetype holds alone.
+			// LineMeaning Meaning of this gate at this specific line, one of 384. The finest interpretive layer in the chart and the one that makes a reading specific rather than generic. This is not the six abstract line archetypes: gate 41 line 3 carries its own meaning that neither the gate keynote nor the line-3 archetype holds alone. When an earlier activation already sits on the same gate and line, this says so in one line instead of printing the meaning twice.
 			LineMeaning string `json:"lineMeaning"`
 
 			// Planet Activating body. One of Sun, Earth, Moon, North Node, South Node, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto. Always English, whatever the lang parameter says, so it stays safe to compare against in code and to key a glyph table on. Use planetLocalized for anything a reader sees.
@@ -115534,15 +115585,27 @@ type GenerateBodygraphResponse struct {
 			// AngleLocalized Cross angle name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
 			AngleLocalized *string `json:"angleLocalized,omitempty"`
 
-			// Description The life theme of the cross, synthesized from its four gates and the orientation the angle gives them. The same Sun gate under a different angle is a genuinely different theme: Right Angle is personal destiny, Left Angle is worked out through other people, Juxtaposition is a fixed fate.
+			// Description The life theme of the cross, read from all four of its gates, the way its angle orients that theme, and the conscious Sun gate it leads with. The same Sun gate under a different angle is a different theme: Right Angle is lived through personal experience, Left Angle through other people, Juxtaposition on one fixed course.
 			Description *string `json:"description,omitempty"`
 
 			// Gates The four cardinal gates of the cross: Personality Sun, Personality Earth, Design Sun, Design Earth.
 			Gates []float32 `json:"gates"`
 
-			// Name Canonical published name of the incarnation cross, determined by the Personality Sun gate and the angle. All 192 crosses (64 Personality Sun gates times three angles) carry their published name, numbered variants included, so this is never a composed placeholder. Always begins with the angle followed by Cross of. Always English, whatever the lang parameter says.
+			// Name Canonical published name of the incarnation cross, determined by the Personality Sun gate and the angle. All 192 crosses (64 Personality Sun gates times three angles) carry their published name, numbered variants included, so this is never a composed placeholder. Always begins with the angle followed by Cross of. Always English, whatever the lang parameter says. Use nameLocalized for anything a reader sees.
 			Name string `json:"name"`
+
+			// NameLocalized Incarnation cross name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			NameLocalized *string `json:"nameLocalized,omitempty"`
 		} `json:"incarnationCross"`
+
+		// Interpretation A reading of the whole bodygraph that connects type, authority, profile, definition and incarnation cross, written for this chart in English, German, Spanish, French, Hindi, Portuguese, Russian, Turkish.
+		Interpretation struct {
+			// Detailed The whole-chart reading in two paragraphs separated by a blank line: the shape of your definition and what drives your Throat, then your two Sun gates and the two Earth gates that complete your incarnation cross.
+			Detailed string `json:"detailed"`
+
+			// Summary The whole chart in two sentences: your type and inner authority as one decision rule, then the role your profile plays.
+			Summary string `json:"summary"`
+		} `json:"interpretation"`
 
 		// NotSelf The not-self theme, the recurring feeling that signals being out of alignment. Always English, whatever the lang parameter says. Use notSelfLocalized for anything a reader sees.
 		NotSelf string `json:"notSelf"`
@@ -115652,10 +115715,10 @@ func (r GenerateBodygraphResponse) GetJSON200() *struct {
 		// NameLocalized Center name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
 		NameLocalized *string `json:"nameLocalized,omitempty"`
 
-		// NotSelfQuestion The conditioning trap of this center when it is open. Returned on every center so a consumer can surface it the moment `defined` is false, which is where the not-self operates.
+		// NotSelfQuestion The question that exposes this center going off course. On an open center it is the not-self question of the conditioning it takes in from others; on a defined center it is the trap of its own fixed energy, never the open-center question.
 		NotSelfQuestion string `json:"notSelfQuestion"`
 
-		// Theme Theme text describing the center in its current defined or undefined state.
+		// Theme What this center does in this chart, in second person: how it works when defined, or what it takes in and learns when open. A defined Throat reads differently when a motor reaches it, which is what lets it act.
 		Theme string `json:"theme"`
 	} `json:"centers"`
 
@@ -115673,7 +115736,7 @@ func (r GenerateBodygraphResponse) GetJSON200() *struct {
 		// CircuitLocalized Circuit family name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
 		CircuitLocalized *string `json:"circuitLocalized,omitempty"`
 
-		// Description What this channel wires between its two centers and the nature of the energy it carries.
+		// Description What this channel wires between its two centers and how its energy shows up in you, in second person. Where the channel defines the center your inner authority comes from, or carries a motor to the Throat, the description says so.
 		Description string `json:"description"`
 
 		// GateA First gate of the channel.
@@ -115692,7 +115755,7 @@ func (r GenerateBodygraphResponse) GetJSON200() *struct {
 	// Definition Definition type from the number of connected components among defined centers. One of None, Single, Split, Triple Split, Quadruple Split. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use definitionLocalized for anything a reader sees.
 	Definition string `json:"definition"`
 
-	// DefinitionDescription How energy flows through the defined centers in this configuration, and what the configuration needs. For a split, this is where the bridging gates of other people matter.
+	// DefinitionDescription How energy flows through your defined centers: which centers form each connected group and, where the definition is split, the gates in another person that would bridge the groups.
 	DefinitionDescription string `json:"definitionDescription"`
 
 	// DefinitionLocalized Definition type name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
@@ -115717,8 +115780,11 @@ func (r GenerateBodygraphResponse) GetJSON200() *struct {
 
 		// IchingHexagram Cross-reference to the I-Ching hexagram that shares this gate number.
 		IchingHexagram struct {
-			// English English name of the corresponding I-Ching hexagram.
+			// English English name of the corresponding I-Ching hexagram. Always English, whatever the lang parameter says. Use nameLocalized for anything a reader sees.
 			English string `json:"english"`
+
+			// NameLocalized Hexagram name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			NameLocalized *string `json:"nameLocalized,omitempty"`
 
 			// Number I-Ching hexagram number, identical to the gate number it corresponds to.
 			Number float32 `json:"number"`
@@ -115727,7 +115793,7 @@ func (r GenerateBodygraphResponse) GetJSON200() *struct {
 		// Line Line number from 1 to 6 within the gate, setting the line keynote and the profile.
 		Line float32 `json:"line"`
 
-		// LineMeaning Meaning of this gate at this specific line, one of 384. The finest interpretive layer in the chart and the one that makes a reading specific rather than generic. This is not the six abstract line archetypes: gate 41 line 3 carries its own meaning that neither the gate keynote nor the line-3 archetype holds alone.
+		// LineMeaning Meaning of this gate at this specific line, one of 384. The finest interpretive layer in the chart and the one that makes a reading specific rather than generic. This is not the six abstract line archetypes: gate 41 line 3 carries its own meaning that neither the gate keynote nor the line-3 archetype holds alone. When an earlier activation already sits on the same gate and line, this says so in one line instead of printing the meaning twice.
 		LineMeaning string `json:"lineMeaning"`
 
 		// Planet Activating body. One of Sun, Earth, Moon, North Node, South Node, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto. Always English, whatever the lang parameter says, so it stays safe to compare against in code and to key a glyph table on. Use planetLocalized for anything a reader sees.
@@ -115754,15 +115820,27 @@ func (r GenerateBodygraphResponse) GetJSON200() *struct {
 		// AngleLocalized Cross angle name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
 		AngleLocalized *string `json:"angleLocalized,omitempty"`
 
-		// Description The life theme of the cross, synthesized from its four gates and the orientation the angle gives them. The same Sun gate under a different angle is a genuinely different theme: Right Angle is personal destiny, Left Angle is worked out through other people, Juxtaposition is a fixed fate.
+		// Description The life theme of the cross, read from all four of its gates, the way its angle orients that theme, and the conscious Sun gate it leads with. The same Sun gate under a different angle is a different theme: Right Angle is lived through personal experience, Left Angle through other people, Juxtaposition on one fixed course.
 		Description *string `json:"description,omitempty"`
 
 		// Gates The four cardinal gates of the cross: Personality Sun, Personality Earth, Design Sun, Design Earth.
 		Gates []float32 `json:"gates"`
 
-		// Name Canonical published name of the incarnation cross, determined by the Personality Sun gate and the angle. All 192 crosses (64 Personality Sun gates times three angles) carry their published name, numbered variants included, so this is never a composed placeholder. Always begins with the angle followed by Cross of. Always English, whatever the lang parameter says.
+		// Name Canonical published name of the incarnation cross, determined by the Personality Sun gate and the angle. All 192 crosses (64 Personality Sun gates times three angles) carry their published name, numbered variants included, so this is never a composed placeholder. Always begins with the angle followed by Cross of. Always English, whatever the lang parameter says. Use nameLocalized for anything a reader sees.
 		Name string `json:"name"`
+
+		// NameLocalized Incarnation cross name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+		NameLocalized *string `json:"nameLocalized,omitempty"`
 	} `json:"incarnationCross"`
+
+	// Interpretation A reading of the whole bodygraph that connects type, authority, profile, definition and incarnation cross, written for this chart in English, German, Spanish, French, Hindi, Portuguese, Russian, Turkish.
+	Interpretation struct {
+		// Detailed The whole-chart reading in two paragraphs separated by a blank line: the shape of your definition and what drives your Throat, then your two Sun gates and the two Earth gates that complete your incarnation cross.
+		Detailed string `json:"detailed"`
+
+		// Summary The whole chart in two sentences: your type and inner authority as one decision rule, then the role your profile plays.
+		Summary string `json:"summary"`
+	} `json:"interpretation"`
 
 	// NotSelf The not-self theme, the recurring feeling that signals being out of alignment. Always English, whatever the lang parameter says. Use notSelfLocalized for anything a reader sees.
 	NotSelf string `json:"notSelf"`
@@ -115916,10 +115994,10 @@ type CalculateCentersResponse struct {
 			// NameLocalized Center name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
 			NameLocalized *string `json:"nameLocalized,omitempty"`
 
-			// NotSelfQuestion The conditioning trap of this center when it is open. Returned on every center so a consumer can surface it the moment `defined` is false, which is where the not-self operates.
+			// NotSelfQuestion The question that exposes this center going off course. On an open center it is the not-self question of the conditioning it takes in from others; on a defined center it is the trap of its own fixed energy, never the open-center question.
 			NotSelfQuestion string `json:"notSelfQuestion"`
 
-			// Theme Theme text describing the center in its current defined or undefined state.
+			// Theme What this center does in this chart, in second person: how it works when defined, or what it takes in and learns when open. A defined Throat reads differently when a motor reaches it, which is what lets it act.
 			Theme string `json:"theme"`
 		} `json:"centers"`
 
@@ -115968,10 +116046,10 @@ func (r CalculateCentersResponse) GetJSON200() *struct {
 		// NameLocalized Center name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
 		NameLocalized *string `json:"nameLocalized,omitempty"`
 
-		// NotSelfQuestion The conditioning trap of this center when it is open. Returned on every center so a consumer can surface it the moment `defined` is false, which is where the not-self operates.
+		// NotSelfQuestion The question that exposes this center going off course. On an open center it is the not-self question of the conditioning it takes in from others; on a defined center it is the trap of its own fixed energy, never the open-center question.
 		NotSelfQuestion string `json:"notSelfQuestion"`
 
-		// Theme Theme text describing the center in its current defined or undefined state.
+		// Theme What this center does in this chart, in second person: how it works when defined, or what it takes in and learns when open. A defined Throat reads differently when a motor reaches it, which is what lets it act.
 		Theme string `json:"theme"`
 	} `json:"centers"`
 
@@ -116194,7 +116272,7 @@ type CalculateChannelsResponse struct {
 			// CircuitLocalized Circuit family name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
 			CircuitLocalized *string `json:"circuitLocalized,omitempty"`
 
-			// Description What this channel wires between its two centers and the nature of the energy it carries.
+			// Description What this channel wires between its two centers and how its energy shows up in you, in second person. Where the channel defines the center your inner authority comes from, or carries a motor to the Throat, the description says so.
 			Description string `json:"description"`
 
 			// GateA First gate of the channel.
@@ -116246,7 +116324,7 @@ func (r CalculateChannelsResponse) GetJSON200() *struct {
 		// CircuitLocalized Circuit family name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
 		CircuitLocalized *string `json:"circuitLocalized,omitempty"`
 
-		// Description What this channel wires between its two centers and the nature of the energy it carries.
+		// Description What this channel wires between its two centers and how its energy shows up in you, in second person. Where the channel defines the center your inner authority comes from, or carries a motor to the Throat, the description says so.
 		Description string `json:"description"`
 
 		// GateA First gate of the channel.
@@ -116612,8 +116690,11 @@ type CalculateGatesResponse struct {
 
 			// IchingHexagram Cross-reference to the I-Ching hexagram that shares this gate number.
 			IchingHexagram struct {
-				// English English name of the corresponding I-Ching hexagram.
+				// English English name of the corresponding I-Ching hexagram. Always English, whatever the lang parameter says. Use nameLocalized for anything a reader sees.
 				English string `json:"english"`
+
+				// NameLocalized Hexagram name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				NameLocalized *string `json:"nameLocalized,omitempty"`
 
 				// Number I-Ching hexagram number, identical to the gate number it corresponds to.
 				Number float32 `json:"number"`
@@ -116622,7 +116703,7 @@ type CalculateGatesResponse struct {
 			// Line Line number from 1 to 6 within the gate, setting the line keynote and the profile.
 			Line float32 `json:"line"`
 
-			// LineMeaning Meaning of this gate at this specific line, one of 384. The finest interpretive layer in the chart and the one that makes a reading specific rather than generic. This is not the six abstract line archetypes: gate 41 line 3 carries its own meaning that neither the gate keynote nor the line-3 archetype holds alone.
+			// LineMeaning Meaning of this gate at this specific line, one of 384. The finest interpretive layer in the chart and the one that makes a reading specific rather than generic. This is not the six abstract line archetypes: gate 41 line 3 carries its own meaning that neither the gate keynote nor the line-3 archetype holds alone. When an earlier activation already sits on the same gate and line, this says so in one line instead of printing the meaning twice.
 			LineMeaning string `json:"lineMeaning"`
 
 			// Planet Activating body. One of Sun, Earth, Moon, North Node, South Node, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto. Always English, whatever the lang parameter says, so it stays safe to compare against in code and to key a glyph table on. Use planetLocalized for anything a reader sees.
@@ -116654,8 +116735,11 @@ type CalculateGatesResponse struct {
 
 			// IchingHexagram Cross-reference to the I-Ching hexagram that shares this gate number.
 			IchingHexagram struct {
-				// English English name of the corresponding I-Ching hexagram.
+				// English English name of the corresponding I-Ching hexagram. Always English, whatever the lang parameter says. Use nameLocalized for anything a reader sees.
 				English string `json:"english"`
+
+				// NameLocalized Hexagram name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				NameLocalized *string `json:"nameLocalized,omitempty"`
 
 				// Number I-Ching hexagram number, identical to the gate number it corresponds to.
 				Number float32 `json:"number"`
@@ -116664,7 +116748,7 @@ type CalculateGatesResponse struct {
 			// Line Line number from 1 to 6 within the gate, setting the line keynote and the profile.
 			Line float32 `json:"line"`
 
-			// LineMeaning Meaning of this gate at this specific line, one of 384. The finest interpretive layer in the chart and the one that makes a reading specific rather than generic. This is not the six abstract line archetypes: gate 41 line 3 carries its own meaning that neither the gate keynote nor the line-3 archetype holds alone.
+			// LineMeaning Meaning of this gate at this specific line, one of 384. The finest interpretive layer in the chart and the one that makes a reading specific rather than generic. This is not the six abstract line archetypes: gate 41 line 3 carries its own meaning that neither the gate keynote nor the line-3 archetype holds alone. When an earlier activation already sits on the same gate and line, this says so in one line instead of printing the meaning twice.
 			LineMeaning string `json:"lineMeaning"`
 
 			// Planet Activating body. One of Sun, Earth, Moon, North Node, South Node, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto. Always English, whatever the lang parameter says, so it stays safe to compare against in code and to key a glyph table on. Use planetLocalized for anything a reader sees.
@@ -116712,8 +116796,11 @@ func (r CalculateGatesResponse) GetJSON200() *struct {
 
 		// IchingHexagram Cross-reference to the I-Ching hexagram that shares this gate number.
 		IchingHexagram struct {
-			// English English name of the corresponding I-Ching hexagram.
+			// English English name of the corresponding I-Ching hexagram. Always English, whatever the lang parameter says. Use nameLocalized for anything a reader sees.
 			English string `json:"english"`
+
+			// NameLocalized Hexagram name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			NameLocalized *string `json:"nameLocalized,omitempty"`
 
 			// Number I-Ching hexagram number, identical to the gate number it corresponds to.
 			Number float32 `json:"number"`
@@ -116722,7 +116809,7 @@ func (r CalculateGatesResponse) GetJSON200() *struct {
 		// Line Line number from 1 to 6 within the gate, setting the line keynote and the profile.
 		Line float32 `json:"line"`
 
-		// LineMeaning Meaning of this gate at this specific line, one of 384. The finest interpretive layer in the chart and the one that makes a reading specific rather than generic. This is not the six abstract line archetypes: gate 41 line 3 carries its own meaning that neither the gate keynote nor the line-3 archetype holds alone.
+		// LineMeaning Meaning of this gate at this specific line, one of 384. The finest interpretive layer in the chart and the one that makes a reading specific rather than generic. This is not the six abstract line archetypes: gate 41 line 3 carries its own meaning that neither the gate keynote nor the line-3 archetype holds alone. When an earlier activation already sits on the same gate and line, this says so in one line instead of printing the meaning twice.
 		LineMeaning string `json:"lineMeaning"`
 
 		// Planet Activating body. One of Sun, Earth, Moon, North Node, South Node, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto. Always English, whatever the lang parameter says, so it stays safe to compare against in code and to key a glyph table on. Use planetLocalized for anything a reader sees.
@@ -116754,8 +116841,11 @@ func (r CalculateGatesResponse) GetJSON200() *struct {
 
 		// IchingHexagram Cross-reference to the I-Ching hexagram that shares this gate number.
 		IchingHexagram struct {
-			// English English name of the corresponding I-Ching hexagram.
+			// English English name of the corresponding I-Ching hexagram. Always English, whatever the lang parameter says. Use nameLocalized for anything a reader sees.
 			English string `json:"english"`
+
+			// NameLocalized Hexagram name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			NameLocalized *string `json:"nameLocalized,omitempty"`
 
 			// Number I-Ching hexagram number, identical to the gate number it corresponds to.
 			Number float32 `json:"number"`
@@ -116764,7 +116854,7 @@ func (r CalculateGatesResponse) GetJSON200() *struct {
 		// Line Line number from 1 to 6 within the gate, setting the line keynote and the profile.
 		Line float32 `json:"line"`
 
-		// LineMeaning Meaning of this gate at this specific line, one of 384. The finest interpretive layer in the chart and the one that makes a reading specific rather than generic. This is not the six abstract line archetypes: gate 41 line 3 carries its own meaning that neither the gate keynote nor the line-3 archetype holds alone.
+		// LineMeaning Meaning of this gate at this specific line, one of 384. The finest interpretive layer in the chart and the one that makes a reading specific rather than generic. This is not the six abstract line archetypes: gate 41 line 3 carries its own meaning that neither the gate keynote nor the line-3 archetype holds alone. When an earlier activation already sits on the same gate and line, this says so in one line instead of printing the meaning twice.
 		LineMeaning string `json:"lineMeaning"`
 
 		// Planet Activating body. One of Sun, Earth, Moon, North Node, South Node, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto. Always English, whatever the lang parameter says, so it stays safe to compare against in code and to key a glyph table on. Use planetLocalized for anything a reader sees.
@@ -117387,8 +117477,11 @@ type GenerateTransitResponse struct {
 
 			// IchingHexagram Cross-reference to the I-Ching hexagram that shares this gate number.
 			IchingHexagram struct {
-				// English English name of the corresponding I-Ching hexagram.
+				// English English name of the corresponding I-Ching hexagram. Always English, whatever the lang parameter says. Use nameLocalized for anything a reader sees.
 				English string `json:"english"`
+
+				// NameLocalized Hexagram name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				NameLocalized *string `json:"nameLocalized,omitempty"`
 
 				// Number I-Ching hexagram number, identical to the gate number it corresponds to.
 				Number float32 `json:"number"`
@@ -117496,8 +117589,11 @@ func (r GenerateTransitResponse) GetJSON200() *struct {
 
 		// IchingHexagram Cross-reference to the I-Ching hexagram that shares this gate number.
 		IchingHexagram struct {
-			// English English name of the corresponding I-Ching hexagram.
+			// English English name of the corresponding I-Ching hexagram. Always English, whatever the lang parameter says. Use nameLocalized for anything a reader sees.
 			English string `json:"english"`
+
+			// NameLocalized Hexagram name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+			NameLocalized *string `json:"nameLocalized,omitempty"`
 
 			// Number I-Ching hexagram number, identical to the gate number it corresponds to.
 			Number float32 `json:"number"`
@@ -155790,14 +155886,23 @@ func ParseGenerateCompositeChartResponse(rsp *http.Response) (*GenerateComposite
 				// Planet1 First planet in the aspect pair.
 				Planet1 GenerateCompositeChart200JSONResponseBodyAspectsPlanet1 `json:"planet1"`
 
+				// Planet1Localized First planet name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				Planet1Localized *string `json:"planet1Localized,omitempty"`
+
 				// Planet2 Second planet in the aspect pair.
 				Planet2 GenerateCompositeChart200JSONResponseBodyAspectsPlanet2 `json:"planet2"`
+
+				// Planet2Localized Second planet name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				Planet2Localized *string `json:"planet2Localized,omitempty"`
 
 				// Strength Aspect strength percentage (0-100). Based on orb tightness relative to the allowed maximum.
 				Strength float32 `json:"strength"`
 
 				// Type Aspect type. Major: conjunction (0), opposition (180), trine (120), square (90), sextile (60). Minor: semi-sextile, quincunx, semi-square, sesquiquadrate.
 				Type GenerateCompositeChart200JSONResponseBodyAspectsType `json:"type"`
+
+				// TypeLocalized Aspect type name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				TypeLocalized *string `json:"typeLocalized,omitempty"`
 			} `json:"aspects"`
 
 			// CompositeAscendant Composite Ascendant. Represents how the relationship presents itself to the outside world.
@@ -155810,6 +155915,9 @@ func ParseGenerateCompositeChartResponse(rsp *http.Response) (*GenerateComposite
 
 				// Sign Zodiac sign on the composite Ascendant.
 				Sign string `json:"sign"`
+
+				// SignLocalized Ascendant sign name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				SignLocalized *string `json:"signLocalized,omitempty"`
 			} `json:"compositeAscendant"`
 
 			// CompositeHouses Composite house cusps, each the midpoint of the two natal cusps. Each house represents shared life areas in the relationship.
@@ -155825,6 +155933,9 @@ func ParseGenerateCompositeChartResponse(rsp *http.Response) (*GenerateComposite
 
 				// Sign Zodiac sign on the composite house cusp.
 				Sign string `json:"sign"`
+
+				// SignLocalized Zodiac sign name on this cusp in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				SignLocalized *string `json:"signLocalized,omitempty"`
 			} `json:"compositeHouses"`
 
 			// CompositeMidheaven Composite Midheaven (MC). Represents shared goals, public image, and the direction the relationship grows toward.
@@ -155837,6 +155948,9 @@ func ParseGenerateCompositeChartResponse(rsp *http.Response) (*GenerateComposite
 
 				// Sign Zodiac sign on the composite Midheaven.
 				Sign string `json:"sign"`
+
+				// SignLocalized Midheaven sign name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				SignLocalized *string `json:"signLocalized,omitempty"`
 			} `json:"compositeMidheaven"`
 
 			// CompositePlanets Composite planetary positions calculated as midpoints between both charts. Each planet represents a shared energy in the relationship.
@@ -155871,8 +155985,14 @@ func ParseGenerateCompositeChartResponse(rsp *http.Response) (*GenerateComposite
 				// Name Body name. One of the 10 classical planets (Sun, Moon, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto), the lunar nodes (North Node, South Node), Chiron, or Black Moon Lilith (the mean lunar apogee). The lunar nodes follow the request nodeType, which defaults to the true (osculating) node; pass "mean" for the smoothed node. The two differ by up to about 1.8 degrees and no other body is affected.
 				Name GenerateCompositeChart200JSONResponseBodyCompositePlanetsName `json:"name"`
 
+				// NameLocalized Body name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				NameLocalized *string `json:"nameLocalized,omitempty"`
+
 				// Sign Tropical zodiac sign this planet occupies. Determined by 30-degree divisions of ecliptic longitude.
 				Sign string `json:"sign"`
+
+				// SignLocalized Zodiac sign name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				SignLocalized *string `json:"signLocalized,omitempty"`
 
 				// Speed Daily motion in degrees per day. Negative values indicate retrograde motion.
 				Speed float32 `json:"speed"`
@@ -170899,10 +171019,10 @@ func ParseGenerateBodygraphResponse(rsp *http.Response) (*GenerateBodygraphRespo
 				// NameLocalized Center name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
 				NameLocalized *string `json:"nameLocalized,omitempty"`
 
-				// NotSelfQuestion The conditioning trap of this center when it is open. Returned on every center so a consumer can surface it the moment `defined` is false, which is where the not-self operates.
+				// NotSelfQuestion The question that exposes this center going off course. On an open center it is the not-self question of the conditioning it takes in from others; on a defined center it is the trap of its own fixed energy, never the open-center question.
 				NotSelfQuestion string `json:"notSelfQuestion"`
 
-				// Theme Theme text describing the center in its current defined or undefined state.
+				// Theme What this center does in this chart, in second person: how it works when defined, or what it takes in and learns when open. A defined Throat reads differently when a motor reaches it, which is what lets it act.
 				Theme string `json:"theme"`
 			} `json:"centers"`
 
@@ -170920,7 +171040,7 @@ func ParseGenerateBodygraphResponse(rsp *http.Response) (*GenerateBodygraphRespo
 				// CircuitLocalized Circuit family name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
 				CircuitLocalized *string `json:"circuitLocalized,omitempty"`
 
-				// Description What this channel wires between its two centers and the nature of the energy it carries.
+				// Description What this channel wires between its two centers and how its energy shows up in you, in second person. Where the channel defines the center your inner authority comes from, or carries a motor to the Throat, the description says so.
 				Description string `json:"description"`
 
 				// GateA First gate of the channel.
@@ -170939,7 +171059,7 @@ func ParseGenerateBodygraphResponse(rsp *http.Response) (*GenerateBodygraphRespo
 			// Definition Definition type from the number of connected components among defined centers. One of None, Single, Split, Triple Split, Quadruple Split. Always English, whatever the lang parameter says, so it stays safe to compare against in code. Use definitionLocalized for anything a reader sees.
 			Definition string `json:"definition"`
 
-			// DefinitionDescription How energy flows through the defined centers in this configuration, and what the configuration needs. For a split, this is where the bridging gates of other people matter.
+			// DefinitionDescription How energy flows through your defined centers: which centers form each connected group and, where the definition is split, the gates in another person that would bridge the groups.
 			DefinitionDescription string `json:"definitionDescription"`
 
 			// DefinitionLocalized Definition type name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
@@ -170964,8 +171084,11 @@ func ParseGenerateBodygraphResponse(rsp *http.Response) (*GenerateBodygraphRespo
 
 				// IchingHexagram Cross-reference to the I-Ching hexagram that shares this gate number.
 				IchingHexagram struct {
-					// English English name of the corresponding I-Ching hexagram.
+					// English English name of the corresponding I-Ching hexagram. Always English, whatever the lang parameter says. Use nameLocalized for anything a reader sees.
 					English string `json:"english"`
+
+					// NameLocalized Hexagram name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+					NameLocalized *string `json:"nameLocalized,omitempty"`
 
 					// Number I-Ching hexagram number, identical to the gate number it corresponds to.
 					Number float32 `json:"number"`
@@ -170974,7 +171097,7 @@ func ParseGenerateBodygraphResponse(rsp *http.Response) (*GenerateBodygraphRespo
 				// Line Line number from 1 to 6 within the gate, setting the line keynote and the profile.
 				Line float32 `json:"line"`
 
-				// LineMeaning Meaning of this gate at this specific line, one of 384. The finest interpretive layer in the chart and the one that makes a reading specific rather than generic. This is not the six abstract line archetypes: gate 41 line 3 carries its own meaning that neither the gate keynote nor the line-3 archetype holds alone.
+				// LineMeaning Meaning of this gate at this specific line, one of 384. The finest interpretive layer in the chart and the one that makes a reading specific rather than generic. This is not the six abstract line archetypes: gate 41 line 3 carries its own meaning that neither the gate keynote nor the line-3 archetype holds alone. When an earlier activation already sits on the same gate and line, this says so in one line instead of printing the meaning twice.
 				LineMeaning string `json:"lineMeaning"`
 
 				// Planet Activating body. One of Sun, Earth, Moon, North Node, South Node, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto. Always English, whatever the lang parameter says, so it stays safe to compare against in code and to key a glyph table on. Use planetLocalized for anything a reader sees.
@@ -171001,15 +171124,27 @@ func ParseGenerateBodygraphResponse(rsp *http.Response) (*GenerateBodygraphRespo
 				// AngleLocalized Cross angle name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
 				AngleLocalized *string `json:"angleLocalized,omitempty"`
 
-				// Description The life theme of the cross, synthesized from its four gates and the orientation the angle gives them. The same Sun gate under a different angle is a genuinely different theme: Right Angle is personal destiny, Left Angle is worked out through other people, Juxtaposition is a fixed fate.
+				// Description The life theme of the cross, read from all four of its gates, the way its angle orients that theme, and the conscious Sun gate it leads with. The same Sun gate under a different angle is a different theme: Right Angle is lived through personal experience, Left Angle through other people, Juxtaposition on one fixed course.
 				Description *string `json:"description,omitempty"`
 
 				// Gates The four cardinal gates of the cross: Personality Sun, Personality Earth, Design Sun, Design Earth.
 				Gates []float32 `json:"gates"`
 
-				// Name Canonical published name of the incarnation cross, determined by the Personality Sun gate and the angle. All 192 crosses (64 Personality Sun gates times three angles) carry their published name, numbered variants included, so this is never a composed placeholder. Always begins with the angle followed by Cross of. Always English, whatever the lang parameter says.
+				// Name Canonical published name of the incarnation cross, determined by the Personality Sun gate and the angle. All 192 crosses (64 Personality Sun gates times three angles) carry their published name, numbered variants included, so this is never a composed placeholder. Always begins with the angle followed by Cross of. Always English, whatever the lang parameter says. Use nameLocalized for anything a reader sees.
 				Name string `json:"name"`
+
+				// NameLocalized Incarnation cross name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+				NameLocalized *string `json:"nameLocalized,omitempty"`
 			} `json:"incarnationCross"`
+
+			// Interpretation A reading of the whole bodygraph that connects type, authority, profile, definition and incarnation cross, written for this chart in English, German, Spanish, French, Hindi, Portuguese, Russian, Turkish.
+			Interpretation struct {
+				// Detailed The whole-chart reading in two paragraphs separated by a blank line: the shape of your definition and what drives your Throat, then your two Sun gates and the two Earth gates that complete your incarnation cross.
+				Detailed string `json:"detailed"`
+
+				// Summary The whole chart in two sentences: your type and inner authority as one decision rule, then the role your profile plays.
+				Summary string `json:"summary"`
+			} `json:"interpretation"`
 
 			// NotSelf The not-self theme, the recurring feeling that signals being out of alignment. Always English, whatever the lang parameter says. Use notSelfLocalized for anything a reader sees.
 			NotSelf string `json:"notSelf"`
@@ -171165,10 +171300,10 @@ func ParseCalculateCentersResponse(rsp *http.Response) (*CalculateCentersRespons
 				// NameLocalized Center name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
 				NameLocalized *string `json:"nameLocalized,omitempty"`
 
-				// NotSelfQuestion The conditioning trap of this center when it is open. Returned on every center so a consumer can surface it the moment `defined` is false, which is where the not-self operates.
+				// NotSelfQuestion The question that exposes this center going off course. On an open center it is the not-self question of the conditioning it takes in from others; on a defined center it is the trap of its own fixed energy, never the open-center question.
 				NotSelfQuestion string `json:"notSelfQuestion"`
 
-				// Theme Theme text describing the center in its current defined or undefined state.
+				// Theme What this center does in this chart, in second person: how it works when defined, or what it takes in and learns when open. A defined Throat reads differently when a motor reaches it, which is what lets it act.
 				Theme string `json:"theme"`
 			} `json:"centers"`
 
@@ -171358,7 +171493,7 @@ func ParseCalculateChannelsResponse(rsp *http.Response) (*CalculateChannelsRespo
 				// CircuitLocalized Circuit family name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
 				CircuitLocalized *string `json:"circuitLocalized,omitempty"`
 
-				// Description What this channel wires between its two centers and the nature of the energy it carries.
+				// Description What this channel wires between its two centers and how its energy shows up in you, in second person. Where the channel defines the center your inner authority comes from, or carries a motor to the Throat, the description says so.
 				Description string `json:"description"`
 
 				// GateA First gate of the channel.
@@ -171628,8 +171763,11 @@ func ParseCalculateGatesResponse(rsp *http.Response) (*CalculateGatesResponse, e
 
 				// IchingHexagram Cross-reference to the I-Ching hexagram that shares this gate number.
 				IchingHexagram struct {
-					// English English name of the corresponding I-Ching hexagram.
+					// English English name of the corresponding I-Ching hexagram. Always English, whatever the lang parameter says. Use nameLocalized for anything a reader sees.
 					English string `json:"english"`
+
+					// NameLocalized Hexagram name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+					NameLocalized *string `json:"nameLocalized,omitempty"`
 
 					// Number I-Ching hexagram number, identical to the gate number it corresponds to.
 					Number float32 `json:"number"`
@@ -171638,7 +171776,7 @@ func ParseCalculateGatesResponse(rsp *http.Response) (*CalculateGatesResponse, e
 				// Line Line number from 1 to 6 within the gate, setting the line keynote and the profile.
 				Line float32 `json:"line"`
 
-				// LineMeaning Meaning of this gate at this specific line, one of 384. The finest interpretive layer in the chart and the one that makes a reading specific rather than generic. This is not the six abstract line archetypes: gate 41 line 3 carries its own meaning that neither the gate keynote nor the line-3 archetype holds alone.
+				// LineMeaning Meaning of this gate at this specific line, one of 384. The finest interpretive layer in the chart and the one that makes a reading specific rather than generic. This is not the six abstract line archetypes: gate 41 line 3 carries its own meaning that neither the gate keynote nor the line-3 archetype holds alone. When an earlier activation already sits on the same gate and line, this says so in one line instead of printing the meaning twice.
 				LineMeaning string `json:"lineMeaning"`
 
 				// Planet Activating body. One of Sun, Earth, Moon, North Node, South Node, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto. Always English, whatever the lang parameter says, so it stays safe to compare against in code and to key a glyph table on. Use planetLocalized for anything a reader sees.
@@ -171670,8 +171808,11 @@ func ParseCalculateGatesResponse(rsp *http.Response) (*CalculateGatesResponse, e
 
 				// IchingHexagram Cross-reference to the I-Ching hexagram that shares this gate number.
 				IchingHexagram struct {
-					// English English name of the corresponding I-Ching hexagram.
+					// English English name of the corresponding I-Ching hexagram. Always English, whatever the lang parameter says. Use nameLocalized for anything a reader sees.
 					English string `json:"english"`
+
+					// NameLocalized Hexagram name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+					NameLocalized *string `json:"nameLocalized,omitempty"`
 
 					// Number I-Ching hexagram number, identical to the gate number it corresponds to.
 					Number float32 `json:"number"`
@@ -171680,7 +171821,7 @@ func ParseCalculateGatesResponse(rsp *http.Response) (*CalculateGatesResponse, e
 				// Line Line number from 1 to 6 within the gate, setting the line keynote and the profile.
 				Line float32 `json:"line"`
 
-				// LineMeaning Meaning of this gate at this specific line, one of 384. The finest interpretive layer in the chart and the one that makes a reading specific rather than generic. This is not the six abstract line archetypes: gate 41 line 3 carries its own meaning that neither the gate keynote nor the line-3 archetype holds alone.
+				// LineMeaning Meaning of this gate at this specific line, one of 384. The finest interpretive layer in the chart and the one that makes a reading specific rather than generic. This is not the six abstract line archetypes: gate 41 line 3 carries its own meaning that neither the gate keynote nor the line-3 archetype holds alone. When an earlier activation already sits on the same gate and line, this says so in one line instead of printing the meaning twice.
 				LineMeaning string `json:"lineMeaning"`
 
 				// Planet Activating body. One of Sun, Earth, Moon, North Node, South Node, Mercury, Venus, Mars, Jupiter, Saturn, Uranus, Neptune, Pluto. Always English, whatever the lang parameter says, so it stays safe to compare against in code and to key a glyph table on. Use planetLocalized for anything a reader sees.
@@ -172137,8 +172278,11 @@ func ParseGenerateTransitResponse(rsp *http.Response) (*GenerateTransitResponse,
 
 				// IchingHexagram Cross-reference to the I-Ching hexagram that shares this gate number.
 				IchingHexagram struct {
-					// English English name of the corresponding I-Ching hexagram.
+					// English English name of the corresponding I-Ching hexagram. Always English, whatever the lang parameter says. Use nameLocalized for anything a reader sees.
 					English string `json:"english"`
+
+					// NameLocalized Hexagram name in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
+					NameLocalized *string `json:"nameLocalized,omitempty"`
 
 					// Number I-Ching hexagram number, identical to the gate number it corresponds to.
 					Number float32 `json:"number"`
