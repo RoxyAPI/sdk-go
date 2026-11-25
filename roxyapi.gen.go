@@ -38894,6 +38894,15 @@ type TransitsRequest_Timezone struct {
 
 // TransitsResponse defines model for TransitsResponse.
 type TransitsResponse struct {
+	// Interpretation The reading of the whole transit sky against the natal chart (only included when natalChart is provided in the request).
+	Interpretation *struct {
+		// Detailed The whole sky read as one piece in short paragraphs: the long season set by the slow bodies, the transits easing the way, the nearer ones and the Moon of the day, drawn from every aspect found.
+		Detailed string `json:"detailed"`
+
+		// Summary The leading transit of the moment in one or two sentences.
+		Summary string `json:"summary"`
+	} `json:"interpretation,omitempty"`
+
 	// Summary Transit aspect summary counts (only included when natalChart is provided). Quick overview of the current transit weather.
 	Summary *struct {
 		// Challenging Count of challenging aspects (square, opposition).
@@ -38912,26 +38921,26 @@ type TransitsResponse struct {
 	// Timezone Timezone offset from UTC in hours used for this calculation.
 	Timezone float32 `json:"timezone"`
 
-	// TransitAspects Transit-to-natal aspects (only included when natalChart is provided in the request). Shows which transiting planets are aspecting natal planets.
+	// TransitAspects Transit-to-natal aspects with a written reading each (only included when natalChart is provided in the request). Aspects under 15 percent strength are left out of the list, not out of the readings.
 	TransitAspects *[]struct {
 		// Angle Exact angle of this aspect type in degrees.
 		Angle float32 `json:"angle"`
 
-		// Interpretation Rich interpretation of the transit aspect including narrative summary, timing, impact assessment, practical guidance, and keywords.
+		// Interpretation The reading of this transit aspect: summary, dated timing, impact, guidance and keywords, written for this chart.
 		Interpretation struct {
-			// Guidance Practical advice for working with or navigating this transit energy.
+			// Guidance Ways to work with this transit, offered as options and drawn from both bodies in the aspect.
 			Guidance string `json:"guidance"`
 
-			// Impact Strength and nature of the transit impact on your natal chart.
+			// Impact What the transit stirs in the natal body and the life area where it plays out, from the natal house the transiting body passes through.
 			Impact string `json:"impact"`
 
-			// Keywords Key themes activated by this transit aspect.
+			// Keywords Themes of this transit, drawn from both bodies and the aspect.
 			Keywords []string `json:"keywords"`
 
-			// Summary Narrative interpretation of what this transit aspect means and how it manifests.
+			// Summary The transit in brief: what the transiting body is doing to the natal body in this aspect, in plain words for this chart.
 			Summary string `json:"summary"`
 
-			// Timing How long this transit influence lasts, localized. The bucket follows the speed of the transiting body: a few hours for the Moon, a few days for the Sun, Mercury, Venus and Mars, one to two weeks for Jupiter, several weeks for Saturn, and an extended period for Uranus, Neptune and Pluto.
+			// Timing The dated window of this transit on the transit clock: when it enters orb, every exact pass and when it leaves. A fast body such as the Moon reads in hours of the day.
 			Timing string `json:"timing"`
 		} `json:"interpretation"`
 
@@ -55392,7 +55401,7 @@ type ClientInterface interface {
 
 	// CalculateTransitAspectsWithBody Transit Aspects - Detailed transit-to-natal aspect analysis with interpretations
 	//
-	// Calculate all transit-to-natal aspects with detailed interpretations, strength ratings, and timing guidance. Compares current (or future) planetary positions against your natal chart to identify active transits. Returns aspect type, orb, applying/separating status, narrative interpretation, impact rating, and practical guidance for each transit. Like /astrology/transits with a natalChart, returns summary, timing, impact, guidance, and keywords for each aspect. Adds planet, aspect-type, and minStrength filtering plus summary.strongest and summary.byType rollups. Transit aspects API, transit-to-natal analysis, predictive astrology, personalized transit forecast.
+	// Read the sky of a given day against a natal chart: every transit-to-natal aspect with a written reading, its dated window and exact passes, and a reading of the whole sky. Returns orb, strength and applying or separating status for each aspect, plus summary.strongest and summary.byType rollups, and planet, aspect-type and minStrength filters. The same aspect readings as /astrology/transits with a natalChart, with the transit time read on the natal chart timezone and the natal houses in the requested houseSystem.
 	//
 	// Takes any type of body and a specified content type.
 	//
@@ -55401,7 +55410,7 @@ type ClientInterface interface {
 
 	// CalculateTransitAspects Transit Aspects - Detailed transit-to-natal aspect analysis with interpretations
 	//
-	// Calculate all transit-to-natal aspects with detailed interpretations, strength ratings, and timing guidance. Compares current (or future) planetary positions against your natal chart to identify active transits. Returns aspect type, orb, applying/separating status, narrative interpretation, impact rating, and practical guidance for each transit. Like /astrology/transits with a natalChart, returns summary, timing, impact, guidance, and keywords for each aspect. Adds planet, aspect-type, and minStrength filtering plus summary.strongest and summary.byType rollups. Transit aspects API, transit-to-natal analysis, predictive astrology, personalized transit forecast.
+	// Read the sky of a given day against a natal chart: every transit-to-natal aspect with a written reading, its dated window and exact passes, and a reading of the whole sky. Returns orb, strength and applying or separating status for each aspect, plus summary.strongest and summary.byType rollups, and planet, aspect-type and minStrength filters. The same aspect readings as /astrology/transits with a natalChart, with the transit time read on the natal chart timezone and the natal houses in the requested houseSystem.
 	//
 	// Takes a body of the `application/json` content type.
 	//
@@ -55410,7 +55419,7 @@ type ClientInterface interface {
 
 	// CalculateTransitsWithBody Calculate planetary transits - Current transits with natal chart comparison
 	//
-	// Calculate current or future planetary transits (positions of all bodies now). Optionally compare transits to natal chart to find transit-to-natal aspects. Returns all 14 celestial bodies (the 10 classical planets, the lunar nodes, Chiron, and Black Moon Lilith) with signs, degrees, and speeds. When natal chart provided, includes transit aspects (transiting Sun conjunct natal Mars, etc.) with orbs and applying/separating status. Perfect for daily transit forecasts, aspect alerts, and personalized transit reports.
+	// Calculate the planetary transits of any moment, and read them against a natal chart with dated windows and exact passes. Returns all 14 celestial bodies (the 10 classical planets, the lunar nodes, Chiron and Black Moon Lilith) with sign, degree and speed; with a natalChart, every transit-to-natal aspect carries a written reading, orb, strength and applying or separating status, beside a reading of the whole sky. The time is read on the timezone sent, and the natal houses are Placidus.
 	//
 	// Takes any type of body and a specified content type.
 	//
@@ -55419,7 +55428,7 @@ type ClientInterface interface {
 
 	// CalculateTransits Calculate planetary transits - Current transits with natal chart comparison
 	//
-	// Calculate current or future planetary transits (positions of all bodies now). Optionally compare transits to natal chart to find transit-to-natal aspects. Returns all 14 celestial bodies (the 10 classical planets, the lunar nodes, Chiron, and Black Moon Lilith) with signs, degrees, and speeds. When natal chart provided, includes transit aspects (transiting Sun conjunct natal Mars, etc.) with orbs and applying/separating status. Perfect for daily transit forecasts, aspect alerts, and personalized transit reports.
+	// Calculate the planetary transits of any moment, and read them against a natal chart with dated windows and exact passes. Returns all 14 celestial bodies (the 10 classical planets, the lunar nodes, Chiron and Black Moon Lilith) with sign, degree and speed; with a natalChart, every transit-to-natal aspect carries a written reading, orb, strength and applying or separating status, beside a reading of the whole sky. The time is read on the timezone sent, and the natal houses are Placidus.
 	//
 	// Takes a body of the `application/json` content type.
 	//
@@ -59780,7 +59789,7 @@ func (c *Client) CalculateSynastry(ctx context.Context, params *CalculateSynastr
 
 // CalculateTransitAspectsWithBody Transit Aspects - Detailed transit-to-natal aspect analysis with interpretations
 //
-// Calculate all transit-to-natal aspects with detailed interpretations, strength ratings, and timing guidance. Compares current (or future) planetary positions against your natal chart to identify active transits. Returns aspect type, orb, applying/separating status, narrative interpretation, impact rating, and practical guidance for each transit. Like /astrology/transits with a natalChart, returns summary, timing, impact, guidance, and keywords for each aspect. Adds planet, aspect-type, and minStrength filtering plus summary.strongest and summary.byType rollups. Transit aspects API, transit-to-natal analysis, predictive astrology, personalized transit forecast.
+// Read the sky of a given day against a natal chart: every transit-to-natal aspect with a written reading, its dated window and exact passes, and a reading of the whole sky. Returns orb, strength and applying or separating status for each aspect, plus summary.strongest and summary.byType rollups, and planet, aspect-type and minStrength filters. The same aspect readings as /astrology/transits with a natalChart, with the transit time read on the natal chart timezone and the natal houses in the requested houseSystem.
 //
 // Takes any type of body and a specified content type.
 //
@@ -59799,7 +59808,7 @@ func (c *Client) CalculateTransitAspectsWithBody(ctx context.Context, params *Ca
 
 // CalculateTransitAspects Transit Aspects - Detailed transit-to-natal aspect analysis with interpretations
 //
-// Calculate all transit-to-natal aspects with detailed interpretations, strength ratings, and timing guidance. Compares current (or future) planetary positions against your natal chart to identify active transits. Returns aspect type, orb, applying/separating status, narrative interpretation, impact rating, and practical guidance for each transit. Like /astrology/transits with a natalChart, returns summary, timing, impact, guidance, and keywords for each aspect. Adds planet, aspect-type, and minStrength filtering plus summary.strongest and summary.byType rollups. Transit aspects API, transit-to-natal analysis, predictive astrology, personalized transit forecast.
+// Read the sky of a given day against a natal chart: every transit-to-natal aspect with a written reading, its dated window and exact passes, and a reading of the whole sky. Returns orb, strength and applying or separating status for each aspect, plus summary.strongest and summary.byType rollups, and planet, aspect-type and minStrength filters. The same aspect readings as /astrology/transits with a natalChart, with the transit time read on the natal chart timezone and the natal houses in the requested houseSystem.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -59818,7 +59827,7 @@ func (c *Client) CalculateTransitAspects(ctx context.Context, params *CalculateT
 
 // CalculateTransitsWithBody Calculate planetary transits - Current transits with natal chart comparison
 //
-// Calculate current or future planetary transits (positions of all bodies now). Optionally compare transits to natal chart to find transit-to-natal aspects. Returns all 14 celestial bodies (the 10 classical planets, the lunar nodes, Chiron, and Black Moon Lilith) with signs, degrees, and speeds. When natal chart provided, includes transit aspects (transiting Sun conjunct natal Mars, etc.) with orbs and applying/separating status. Perfect for daily transit forecasts, aspect alerts, and personalized transit reports.
+// Calculate the planetary transits of any moment, and read them against a natal chart with dated windows and exact passes. Returns all 14 celestial bodies (the 10 classical planets, the lunar nodes, Chiron and Black Moon Lilith) with sign, degree and speed; with a natalChart, every transit-to-natal aspect carries a written reading, orb, strength and applying or separating status, beside a reading of the whole sky. The time is read on the timezone sent, and the natal houses are Placidus.
 //
 // Takes any type of body and a specified content type.
 //
@@ -59837,7 +59846,7 @@ func (c *Client) CalculateTransitsWithBody(ctx context.Context, params *Calculat
 
 // CalculateTransits Calculate planetary transits - Current transits with natal chart comparison
 //
-// Calculate current or future planetary transits (positions of all bodies now). Optionally compare transits to natal chart to find transit-to-natal aspects. Returns all 14 celestial bodies (the 10 classical planets, the lunar nodes, Chiron, and Black Moon Lilith) with signs, degrees, and speeds. When natal chart provided, includes transit aspects (transiting Sun conjunct natal Mars, etc.) with orbs and applying/separating status. Perfect for daily transit forecasts, aspect alerts, and personalized transit reports.
+// Calculate the planetary transits of any moment, and read them against a natal chart with dated windows and exact passes. Returns all 14 celestial bodies (the 10 classical planets, the lunar nodes, Chiron and Black Moon Lilith) with sign, degree and speed; with a natalChart, every transit-to-natal aspect carries a written reading, orb, strength and applying or separating status, beside a reading of the whole sky. The time is read on the timezone sent, and the natal houses are Placidus.
 //
 // Takes a body of the `application/json` content type.
 //
@@ -85551,7 +85560,7 @@ type ClientWithResponsesInterface interface {
 
 	// CalculateTransitAspectsWithBodyWithResponse Transit Aspects - Detailed transit-to-natal aspect analysis with interpretations
 	//
-	// Calculate all transit-to-natal aspects with detailed interpretations, strength ratings, and timing guidance. Compares current (or future) planetary positions against your natal chart to identify active transits. Returns aspect type, orb, applying/separating status, narrative interpretation, impact rating, and practical guidance for each transit. Like /astrology/transits with a natalChart, returns summary, timing, impact, guidance, and keywords for each aspect. Adds planet, aspect-type, and minStrength filtering plus summary.strongest and summary.byType rollups. Transit aspects API, transit-to-natal analysis, predictive astrology, personalized transit forecast.
+	// Read the sky of a given day against a natal chart: every transit-to-natal aspect with a written reading, its dated window and exact passes, and a reading of the whole sky. Returns orb, strength and applying or separating status for each aspect, plus summary.strongest and summary.byType rollups, and planet, aspect-type and minStrength filters. The same aspect readings as /astrology/transits with a natalChart, with the transit time read on the natal chart timezone and the natal houses in the requested houseSystem.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -85560,7 +85569,7 @@ type ClientWithResponsesInterface interface {
 
 	// CalculateTransitAspectsWithResponse Transit Aspects - Detailed transit-to-natal aspect analysis with interpretations
 	//
-	// Calculate all transit-to-natal aspects with detailed interpretations, strength ratings, and timing guidance. Compares current (or future) planetary positions against your natal chart to identify active transits. Returns aspect type, orb, applying/separating status, narrative interpretation, impact rating, and practical guidance for each transit. Like /astrology/transits with a natalChart, returns summary, timing, impact, guidance, and keywords for each aspect. Adds planet, aspect-type, and minStrength filtering plus summary.strongest and summary.byType rollups. Transit aspects API, transit-to-natal analysis, predictive astrology, personalized transit forecast.
+	// Read the sky of a given day against a natal chart: every transit-to-natal aspect with a written reading, its dated window and exact passes, and a reading of the whole sky. Returns orb, strength and applying or separating status for each aspect, plus summary.strongest and summary.byType rollups, and planet, aspect-type and minStrength filters. The same aspect readings as /astrology/transits with a natalChart, with the transit time read on the natal chart timezone and the natal houses in the requested houseSystem.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -85569,7 +85578,7 @@ type ClientWithResponsesInterface interface {
 
 	// CalculateTransitsWithBodyWithResponse Calculate planetary transits - Current transits with natal chart comparison
 	//
-	// Calculate current or future planetary transits (positions of all bodies now). Optionally compare transits to natal chart to find transit-to-natal aspects. Returns all 14 celestial bodies (the 10 classical planets, the lunar nodes, Chiron, and Black Moon Lilith) with signs, degrees, and speeds. When natal chart provided, includes transit aspects (transiting Sun conjunct natal Mars, etc.) with orbs and applying/separating status. Perfect for daily transit forecasts, aspect alerts, and personalized transit reports.
+	// Calculate the planetary transits of any moment, and read them against a natal chart with dated windows and exact passes. Returns all 14 celestial bodies (the 10 classical planets, the lunar nodes, Chiron and Black Moon Lilith) with sign, degree and speed; with a natalChart, every transit-to-natal aspect carries a written reading, orb, strength and applying or separating status, beside a reading of the whole sky. The time is read on the timezone sent, and the natal houses are Placidus.
 	//
 	// Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -85578,7 +85587,7 @@ type ClientWithResponsesInterface interface {
 
 	// CalculateTransitsWithResponse Calculate planetary transits - Current transits with natal chart comparison
 	//
-	// Calculate current or future planetary transits (positions of all bodies now). Optionally compare transits to natal chart to find transit-to-natal aspects. Returns all 14 celestial bodies (the 10 classical planets, the lunar nodes, Chiron, and Black Moon Lilith) with signs, degrees, and speeds. When natal chart provided, includes transit aspects (transiting Sun conjunct natal Mars, etc.) with orbs and applying/separating status. Perfect for daily transit forecasts, aspect alerts, and personalized transit reports.
+	// Calculate the planetary transits of any moment, and read them against a natal chart with dated windows and exact passes. Returns all 14 celestial bodies (the 10 classical planets, the lunar nodes, Chiron and Black Moon Lilith) with sign, degree and speed; with a natalChart, every transit-to-natal aspect carries a written reading, orb, strength and applying or separating status, beside a reading of the whole sky. The time is read on the timezone sent, and the natal houses are Placidus.
 	//
 	// Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 	//
@@ -97413,7 +97422,7 @@ type CalculateTransitAspectsResponse struct {
 			SignLocalized *string `json:"signLocalized,omitempty"`
 		} `json:"ascendant"`
 
-		// Aspects Transit-to-natal aspects with interpretations, strength ratings, and guidance. Each aspect represents a transiting planet forming a geometric angle to a natal planet.
+		// Aspects Transit-to-natal aspects, each with a written reading, strength and orb. Each aspect is a transiting body forming a geometric angle to a natal body.
 		Aspects []struct {
 			// Angle Exact angular separation that defines this aspect type in degrees.
 			Angle float32 `json:"angle"`
@@ -97442,21 +97451,21 @@ type CalculateTransitAspectsResponse struct {
 			// Strength Aspect strength percentage (0-100). Based on orb tightness relative to the allowed maximum.
 			Strength float32 `json:"strength"`
 
-			// TransitInterpretation Rich interpretation of the transit aspect: narrative summary, timing, impact assessment, practical guidance, and keywords.
+			// TransitInterpretation The reading of this transit aspect: summary, dated timing, impact, guidance and keywords, written for this chart.
 			TransitInterpretation struct {
-				// Guidance Practical advice for working with this transit energy.
+				// Guidance Ways to work with this transit, offered as options and drawn from both bodies in the aspect.
 				Guidance string `json:"guidance"`
 
-				// Impact Strength and nature of this transit effect: constructive, challenging, or neutral.
+				// Impact What the transit stirs in the natal body and the life area where it plays out, from the natal house the transiting body passes through.
 				Impact string `json:"impact"`
 
-				// Keywords Key themes activated by this transit aspect.
+				// Keywords Themes of this transit, drawn from both bodies and the aspect.
 				Keywords []string `json:"keywords"`
 
-				// Summary Narrative interpretation of this transit aspect and its life impact.
+				// Summary The transit in brief: what the transiting body is doing to the natal body in this aspect, in plain words for this chart.
 				Summary string `json:"summary"`
 
-				// Timing When this transit is most active and how long its influence lasts, localized. The bucket follows the speed of the transiting body: a few hours for the Moon, a few days for the Sun, Mercury, Venus and Mars, one to two weeks for Jupiter, several weeks for Saturn, and an extended period for Uranus, Neptune and Pluto.
+				// Timing The dated window of this transit on the transit clock: when it enters orb, every exact pass and when it leaves. A fast body such as the Moon reads in hours of the day.
 				Timing string `json:"timing"`
 			} `json:"transitInterpretation"`
 
@@ -97487,6 +97496,15 @@ type CalculateTransitAspectsResponse struct {
 			// SignLocalized Zodiac sign name on this cusp in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
 			SignLocalized *string `json:"signLocalized,omitempty"`
 		} `json:"houses"`
+
+		// Interpretation The reading of the whole transit sky against this chart, from every aspect found, so planets, aspectTypes and minStrength never change it.
+		Interpretation struct {
+			// Detailed The whole sky read as one piece in short paragraphs: the long season set by the slow bodies, the transits easing the way, the nearer ones and the Moon of the day, drawn from every aspect before any filter applies.
+			Detailed string `json:"detailed"`
+
+			// Summary The leading transit of the moment in one or two sentences.
+			Summary string `json:"summary"`
+		} `json:"interpretation"`
 
 		// NatalPlanets Natal (birth chart) planetary positions used as the baseline for transit aspect comparison, each placed in its natal house.
 		NatalPlanets []struct {
@@ -97564,21 +97582,21 @@ type CalculateTransitAspectsResponse struct {
 				// Strength Aspect strength percentage (0-100). Based on orb tightness relative to the allowed maximum.
 				Strength float32 `json:"strength"`
 
-				// TransitInterpretation Rich interpretation of the transit aspect: narrative summary, timing, impact assessment, practical guidance, and keywords.
+				// TransitInterpretation The reading of this transit aspect: summary, dated timing, impact, guidance and keywords, written for this chart.
 				TransitInterpretation struct {
-					// Guidance Practical advice for working with this transit energy.
+					// Guidance Ways to work with this transit, offered as options and drawn from both bodies in the aspect.
 					Guidance string `json:"guidance"`
 
-					// Impact Strength and nature of this transit effect: constructive, challenging, or neutral.
+					// Impact What the transit stirs in the natal body and the life area where it plays out, from the natal house the transiting body passes through.
 					Impact string `json:"impact"`
 
-					// Keywords Key themes activated by this transit aspect.
+					// Keywords Themes of this transit, drawn from both bodies and the aspect.
 					Keywords []string `json:"keywords"`
 
-					// Summary Narrative interpretation of this transit aspect and its life impact.
+					// Summary The transit in brief: what the transiting body is doing to the natal body in this aspect, in plain words for this chart.
 					Summary string `json:"summary"`
 
-					// Timing When this transit is most active and how long its influence lasts, localized. The bucket follows the speed of the transiting body: a few hours for the Moon, a few days for the Sun, Mercury, Venus and Mars, one to two weeks for Jupiter, several weeks for Saturn, and an extended period for Uranus, Neptune and Pluto.
+					// Timing The dated window of this transit on the transit clock: when it enters orb, every exact pass and when it leaves. A fast body such as the Moon reads in hours of the day.
 					Timing string `json:"timing"`
 				} `json:"transitInterpretation"`
 
@@ -97660,7 +97678,7 @@ func (r CalculateTransitAspectsResponse) GetJSON200() *struct {
 		SignLocalized *string `json:"signLocalized,omitempty"`
 	} `json:"ascendant"`
 
-	// Aspects Transit-to-natal aspects with interpretations, strength ratings, and guidance. Each aspect represents a transiting planet forming a geometric angle to a natal planet.
+	// Aspects Transit-to-natal aspects, each with a written reading, strength and orb. Each aspect is a transiting body forming a geometric angle to a natal body.
 	Aspects []struct {
 		// Angle Exact angular separation that defines this aspect type in degrees.
 		Angle float32 `json:"angle"`
@@ -97689,21 +97707,21 @@ func (r CalculateTransitAspectsResponse) GetJSON200() *struct {
 		// Strength Aspect strength percentage (0-100). Based on orb tightness relative to the allowed maximum.
 		Strength float32 `json:"strength"`
 
-		// TransitInterpretation Rich interpretation of the transit aspect: narrative summary, timing, impact assessment, practical guidance, and keywords.
+		// TransitInterpretation The reading of this transit aspect: summary, dated timing, impact, guidance and keywords, written for this chart.
 		TransitInterpretation struct {
-			// Guidance Practical advice for working with this transit energy.
+			// Guidance Ways to work with this transit, offered as options and drawn from both bodies in the aspect.
 			Guidance string `json:"guidance"`
 
-			// Impact Strength and nature of this transit effect: constructive, challenging, or neutral.
+			// Impact What the transit stirs in the natal body and the life area where it plays out, from the natal house the transiting body passes through.
 			Impact string `json:"impact"`
 
-			// Keywords Key themes activated by this transit aspect.
+			// Keywords Themes of this transit, drawn from both bodies and the aspect.
 			Keywords []string `json:"keywords"`
 
-			// Summary Narrative interpretation of this transit aspect and its life impact.
+			// Summary The transit in brief: what the transiting body is doing to the natal body in this aspect, in plain words for this chart.
 			Summary string `json:"summary"`
 
-			// Timing When this transit is most active and how long its influence lasts, localized. The bucket follows the speed of the transiting body: a few hours for the Moon, a few days for the Sun, Mercury, Venus and Mars, one to two weeks for Jupiter, several weeks for Saturn, and an extended period for Uranus, Neptune and Pluto.
+			// Timing The dated window of this transit on the transit clock: when it enters orb, every exact pass and when it leaves. A fast body such as the Moon reads in hours of the day.
 			Timing string `json:"timing"`
 		} `json:"transitInterpretation"`
 
@@ -97734,6 +97752,15 @@ func (r CalculateTransitAspectsResponse) GetJSON200() *struct {
 		// SignLocalized Zodiac sign name on this cusp in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
 		SignLocalized *string `json:"signLocalized,omitempty"`
 	} `json:"houses"`
+
+	// Interpretation The reading of the whole transit sky against this chart, from every aspect found, so planets, aspectTypes and minStrength never change it.
+	Interpretation struct {
+		// Detailed The whole sky read as one piece in short paragraphs: the long season set by the slow bodies, the transits easing the way, the nearer ones and the Moon of the day, drawn from every aspect before any filter applies.
+		Detailed string `json:"detailed"`
+
+		// Summary The leading transit of the moment in one or two sentences.
+		Summary string `json:"summary"`
+	} `json:"interpretation"`
 
 	// NatalPlanets Natal (birth chart) planetary positions used as the baseline for transit aspect comparison, each placed in its natal house.
 	NatalPlanets []struct {
@@ -97811,21 +97838,21 @@ func (r CalculateTransitAspectsResponse) GetJSON200() *struct {
 			// Strength Aspect strength percentage (0-100). Based on orb tightness relative to the allowed maximum.
 			Strength float32 `json:"strength"`
 
-			// TransitInterpretation Rich interpretation of the transit aspect: narrative summary, timing, impact assessment, practical guidance, and keywords.
+			// TransitInterpretation The reading of this transit aspect: summary, dated timing, impact, guidance and keywords, written for this chart.
 			TransitInterpretation struct {
-				// Guidance Practical advice for working with this transit energy.
+				// Guidance Ways to work with this transit, offered as options and drawn from both bodies in the aspect.
 				Guidance string `json:"guidance"`
 
-				// Impact Strength and nature of this transit effect: constructive, challenging, or neutral.
+				// Impact What the transit stirs in the natal body and the life area where it plays out, from the natal house the transiting body passes through.
 				Impact string `json:"impact"`
 
-				// Keywords Key themes activated by this transit aspect.
+				// Keywords Themes of this transit, drawn from both bodies and the aspect.
 				Keywords []string `json:"keywords"`
 
-				// Summary Narrative interpretation of this transit aspect and its life impact.
+				// Summary The transit in brief: what the transiting body is doing to the natal body in this aspect, in plain words for this chart.
 				Summary string `json:"summary"`
 
-				// Timing When this transit is most active and how long its influence lasts, localized. The bucket follows the speed of the transiting body: a few hours for the Moon, a few days for the Sun, Mercury, Venus and Mars, one to two weeks for Jupiter, several weeks for Saturn, and an extended period for Uranus, Neptune and Pluto.
+				// Timing The dated window of this transit on the transit clock: when it enters orb, every exact pass and when it leaves. A fast body such as the Moon reads in hours of the day.
 				Timing string `json:"timing"`
 			} `json:"transitInterpretation"`
 
@@ -114100,7 +114127,7 @@ type GenerateDigestResponse struct {
 				// Datetime Exact instant of the event as an ISO-8601 UTC datetime, to the nearest second. Astronomical events are refined to this instant by search, not reported at a daily sample point; a dasha-change is the period boundary itself, counted from the birth instant.
 				Datetime string `json:"datetime"`
 
-				// Description Plain-language summary of the event, suitable for direct display. The only localized field: when lang is set this sentence, and the body, target, and aspect names within it, render in the requested language while the structured fields stay English.
+				// Description Plain-language reading of the event, suitable for direct display. A transit aspect, sign ingress or retrograde or direct station names the event and says what it stirs for this birth subject, in one or two sentences. The only localized field: when lang is set this sentence, and the body, target, and aspect names within it, render in the requested language while the structured fields stay English.
 				Description string `json:"description"`
 
 				// Domain Forecast domain. western covers transit aspects, sign ingresses, retrograde stations, eclipses, and new and full moons. vedic covers Vimshottari mahadasha, antardasha, and pratyantardasha boundaries. biorhythm covers critical days. A stable machine value, never localized, so consumers can branch on it under any language.
@@ -114236,7 +114263,7 @@ func (r GenerateDigestResponse) GetJSON200() *struct {
 			// Datetime Exact instant of the event as an ISO-8601 UTC datetime, to the nearest second. Astronomical events are refined to this instant by search, not reported at a daily sample point; a dasha-change is the period boundary itself, counted from the birth instant.
 			Datetime string `json:"datetime"`
 
-			// Description Plain-language summary of the event, suitable for direct display. The only localized field: when lang is set this sentence, and the body, target, and aspect names within it, render in the requested language while the structured fields stay English.
+			// Description Plain-language reading of the event, suitable for direct display. A transit aspect, sign ingress or retrograde or direct station names the event and says what it stirs for this birth subject, in one or two sentences. The only localized field: when lang is set this sentence, and the body, target, and aspect names within it, render in the requested language while the structured fields stay English.
 			Description string `json:"description"`
 
 			// Domain Forecast domain. western covers transit aspects, sign ingresses, retrograde stations, eclipses, and new and full moons. vedic covers Vimshottari mahadasha, antardasha, and pratyantardasha boundaries. biorhythm covers critical days. A stable machine value, never localized, so consumers can branch on it under any language.
@@ -114378,7 +114405,7 @@ type FindSignificantDatesResponse struct {
 			// Datetime Exact instant of the event as an ISO-8601 UTC datetime, to the nearest second. Astronomical events are refined to this instant by search, not reported at a daily sample point; a dasha-change is the period boundary itself, counted from the birth instant.
 			Datetime string `json:"datetime"`
 
-			// Description Plain-language summary of the event, suitable for direct display. The only localized field: when lang is set this sentence, and the body, target, and aspect names within it, render in the requested language while the structured fields stay English.
+			// Description Plain-language reading of the event, suitable for direct display. A transit aspect, sign ingress or retrograde or direct station names the event and says what it stirs for this birth subject, in one or two sentences. The only localized field: when lang is set this sentence, and the body, target, and aspect names within it, render in the requested language while the structured fields stay English.
 			Description string `json:"description"`
 
 			// Domain Forecast domain. western covers transit aspects, sign ingresses, retrograde stations, eclipses, and new and full moons. vedic covers Vimshottari mahadasha, antardasha, and pratyantardasha boundaries. biorhythm covers critical days. A stable machine value, never localized, so consumers can branch on it under any language.
@@ -114466,7 +114493,7 @@ func (r FindSignificantDatesResponse) GetJSON200() *struct {
 		// Datetime Exact instant of the event as an ISO-8601 UTC datetime, to the nearest second. Astronomical events are refined to this instant by search, not reported at a daily sample point; a dasha-change is the period boundary itself, counted from the birth instant.
 		Datetime string `json:"datetime"`
 
-		// Description Plain-language summary of the event, suitable for direct display. The only localized field: when lang is set this sentence, and the body, target, and aspect names within it, render in the requested language while the structured fields stay English.
+		// Description Plain-language reading of the event, suitable for direct display. A transit aspect, sign ingress or retrograde or direct station names the event and says what it stirs for this birth subject, in one or two sentences. The only localized field: when lang is set this sentence, and the body, target, and aspect names within it, render in the requested language while the structured fields stay English.
 		Description string `json:"description"`
 
 		// Domain Forecast domain. western covers transit aspects, sign ingresses, retrograde stations, eclipses, and new and full moons. vedic covers Vimshottari mahadasha, antardasha, and pratyantardasha boundaries. biorhythm covers critical days. A stable machine value, never localized, so consumers can branch on it under any language.
@@ -115016,7 +115043,7 @@ type GenerateTimelineResponse struct {
 			// Datetime Exact instant of the event as an ISO-8601 UTC datetime, to the nearest second. Astronomical events are refined to this instant by search, not reported at a daily sample point; a dasha-change is the period boundary itself, counted from the birth instant.
 			Datetime string `json:"datetime"`
 
-			// Description Plain-language summary of the event, suitable for direct display. The only localized field: when lang is set this sentence, and the body, target, and aspect names within it, render in the requested language while the structured fields stay English.
+			// Description Plain-language reading of the event, suitable for direct display. A transit aspect, sign ingress or retrograde or direct station names the event and says what it stirs for this birth subject, in one or two sentences. The only localized field: when lang is set this sentence, and the body, target, and aspect names within it, render in the requested language while the structured fields stay English.
 			Description string `json:"description"`
 
 			// Domain Forecast domain. western covers transit aspects, sign ingresses, retrograde stations, eclipses, and new and full moons. vedic covers Vimshottari mahadasha, antardasha, and pratyantardasha boundaries. biorhythm covers critical days. A stable machine value, never localized, so consumers can branch on it under any language.
@@ -115104,7 +115131,7 @@ func (r GenerateTimelineResponse) GetJSON200() *struct {
 		// Datetime Exact instant of the event as an ISO-8601 UTC datetime, to the nearest second. Astronomical events are refined to this instant by search, not reported at a daily sample point; a dasha-change is the period boundary itself, counted from the birth instant.
 		Datetime string `json:"datetime"`
 
-		// Description Plain-language summary of the event, suitable for direct display. The only localized field: when lang is set this sentence, and the body, target, and aspect names within it, render in the requested language while the structured fields stay English.
+		// Description Plain-language reading of the event, suitable for direct display. A transit aspect, sign ingress or retrograde or direct station names the event and says what it stirs for this birth subject, in one or two sentences. The only localized field: when lang is set this sentence, and the body, target, and aspect names within it, render in the requested language while the structured fields stay English.
 		Description string `json:"description"`
 
 		// Domain Forecast domain. western covers transit aspects, sign ingresses, retrograde stations, eclipses, and new and full moons. vedic covers Vimshottari mahadasha, antardasha, and pratyantardasha boundaries. biorhythm covers critical days. A stable machine value, never localized, so consumers can branch on it under any language.
@@ -115248,7 +115275,7 @@ type ForecastTransitsResponse struct {
 			// Datetime Exact instant of the event as an ISO-8601 UTC datetime, to the nearest second. Astronomical events are refined to this instant by search, not reported at a daily sample point; a dasha-change is the period boundary itself, counted from the birth instant.
 			Datetime string `json:"datetime"`
 
-			// Description Plain-language summary of the event, suitable for direct display. The only localized field: when lang is set this sentence, and the body, target, and aspect names within it, render in the requested language while the structured fields stay English.
+			// Description Plain-language reading of the event, suitable for direct display. A transit aspect, sign ingress or retrograde or direct station names the event and says what it stirs for this birth subject, in one or two sentences. The only localized field: when lang is set this sentence, and the body, target, and aspect names within it, render in the requested language while the structured fields stay English.
 			Description string `json:"description"`
 
 			// Domain Forecast domain. western covers transit aspects, sign ingresses, retrograde stations, eclipses, and new and full moons. vedic covers Vimshottari mahadasha, antardasha, and pratyantardasha boundaries. biorhythm covers critical days. A stable machine value, never localized, so consumers can branch on it under any language.
@@ -115336,7 +115363,7 @@ func (r ForecastTransitsResponse) GetJSON200() *struct {
 		// Datetime Exact instant of the event as an ISO-8601 UTC datetime, to the nearest second. Astronomical events are refined to this instant by search, not reported at a daily sample point; a dasha-change is the period boundary itself, counted from the birth instant.
 		Datetime string `json:"datetime"`
 
-		// Description Plain-language summary of the event, suitable for direct display. The only localized field: when lang is set this sentence, and the body, target, and aspect names within it, render in the requested language while the structured fields stay English.
+		// Description Plain-language reading of the event, suitable for direct display. A transit aspect, sign ingress or retrograde or direct station names the event and says what it stirs for this birth subject, in one or two sentences. The only localized field: when lang is set this sentence, and the body, target, and aspect names within it, render in the requested language while the structured fields stay English.
 		Description string `json:"description"`
 
 		// Domain Forecast domain. western covers transit aspects, sign ingresses, retrograde stations, eclipses, and new and full moons. vedic covers Vimshottari mahadasha, antardasha, and pratyantardasha boundaries. biorhythm covers critical days. A stable machine value, never localized, so consumers can branch on it under any language.
@@ -148919,7 +148946,7 @@ func (c *ClientWithResponses) CalculateSynastryWithResponse(ctx context.Context,
 
 // CalculateTransitAspectsWithBodyWithResponse Transit Aspects - Detailed transit-to-natal aspect analysis with interpretations
 //
-// Calculate all transit-to-natal aspects with detailed interpretations, strength ratings, and timing guidance. Compares current (or future) planetary positions against your natal chart to identify active transits. Returns aspect type, orb, applying/separating status, narrative interpretation, impact rating, and practical guidance for each transit. Like /astrology/transits with a natalChart, returns summary, timing, impact, guidance, and keywords for each aspect. Adds planet, aspect-type, and minStrength filtering plus summary.strongest and summary.byType rollups. Transit aspects API, transit-to-natal analysis, predictive astrology, personalized transit forecast.
+// Read the sky of a given day against a natal chart: every transit-to-natal aspect with a written reading, its dated window and exact passes, and a reading of the whole sky. Returns orb, strength and applying or separating status for each aspect, plus summary.strongest and summary.byType rollups, and planet, aspect-type and minStrength filters. The same aspect readings as /astrology/transits with a natalChart, with the transit time read on the natal chart timezone and the natal houses in the requested houseSystem.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -148934,7 +148961,7 @@ func (c *ClientWithResponses) CalculateTransitAspectsWithBodyWithResponse(ctx co
 
 // CalculateTransitAspectsWithResponse Transit Aspects - Detailed transit-to-natal aspect analysis with interpretations
 //
-// Calculate all transit-to-natal aspects with detailed interpretations, strength ratings, and timing guidance. Compares current (or future) planetary positions against your natal chart to identify active transits. Returns aspect type, orb, applying/separating status, narrative interpretation, impact rating, and practical guidance for each transit. Like /astrology/transits with a natalChart, returns summary, timing, impact, guidance, and keywords for each aspect. Adds planet, aspect-type, and minStrength filtering plus summary.strongest and summary.byType rollups. Transit aspects API, transit-to-natal analysis, predictive astrology, personalized transit forecast.
+// Read the sky of a given day against a natal chart: every transit-to-natal aspect with a written reading, its dated window and exact passes, and a reading of the whole sky. Returns orb, strength and applying or separating status for each aspect, plus summary.strongest and summary.byType rollups, and planet, aspect-type and minStrength filters. The same aspect readings as /astrology/transits with a natalChart, with the transit time read on the natal chart timezone and the natal houses in the requested houseSystem.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -148949,7 +148976,7 @@ func (c *ClientWithResponses) CalculateTransitAspectsWithResponse(ctx context.Co
 
 // CalculateTransitsWithBodyWithResponse Calculate planetary transits - Current transits with natal chart comparison
 //
-// Calculate current or future planetary transits (positions of all bodies now). Optionally compare transits to natal chart to find transit-to-natal aspects. Returns all 14 celestial bodies (the 10 classical planets, the lunar nodes, Chiron, and Black Moon Lilith) with signs, degrees, and speeds. When natal chart provided, includes transit aspects (transiting Sun conjunct natal Mars, etc.) with orbs and applying/separating status. Perfect for daily transit forecasts, aspect alerts, and personalized transit reports.
+// Calculate the planetary transits of any moment, and read them against a natal chart with dated windows and exact passes. Returns all 14 celestial bodies (the 10 classical planets, the lunar nodes, Chiron and Black Moon Lilith) with sign, degree and speed; with a natalChart, every transit-to-natal aspect carries a written reading, orb, strength and applying or separating status, beside a reading of the whole sky. The time is read on the timezone sent, and the natal houses are Placidus.
 //
 // Takes any type of body and a specified content type, and returns a wrapper object for the known response body format(s).
 //
@@ -148964,7 +148991,7 @@ func (c *ClientWithResponses) CalculateTransitsWithBodyWithResponse(ctx context.
 
 // CalculateTransitsWithResponse Calculate planetary transits - Current transits with natal chart comparison
 //
-// Calculate current or future planetary transits (positions of all bodies now). Optionally compare transits to natal chart to find transit-to-natal aspects. Returns all 14 celestial bodies (the 10 classical planets, the lunar nodes, Chiron, and Black Moon Lilith) with signs, degrees, and speeds. When natal chart provided, includes transit aspects (transiting Sun conjunct natal Mars, etc.) with orbs and applying/separating status. Perfect for daily transit forecasts, aspect alerts, and personalized transit reports.
+// Calculate the planetary transits of any moment, and read them against a natal chart with dated windows and exact passes. Returns all 14 celestial bodies (the 10 classical planets, the lunar nodes, Chiron and Black Moon Lilith) with sign, degree and speed; with a natalChart, every transit-to-natal aspect carries a written reading, orb, strength and applying or separating status, beside a reading of the whole sky. The time is read on the timezone sent, and the natal houses are Placidus.
 //
 // Takes a body of the `application/json` content type, and returns a wrapper object for the known response body format(s).
 //
@@ -159973,7 +160000,7 @@ func ParseCalculateTransitAspectsResponse(rsp *http.Response) (*CalculateTransit
 				SignLocalized *string `json:"signLocalized,omitempty"`
 			} `json:"ascendant"`
 
-			// Aspects Transit-to-natal aspects with interpretations, strength ratings, and guidance. Each aspect represents a transiting planet forming a geometric angle to a natal planet.
+			// Aspects Transit-to-natal aspects, each with a written reading, strength and orb. Each aspect is a transiting body forming a geometric angle to a natal body.
 			Aspects []struct {
 				// Angle Exact angular separation that defines this aspect type in degrees.
 				Angle float32 `json:"angle"`
@@ -160002,21 +160029,21 @@ func ParseCalculateTransitAspectsResponse(rsp *http.Response) (*CalculateTransit
 				// Strength Aspect strength percentage (0-100). Based on orb tightness relative to the allowed maximum.
 				Strength float32 `json:"strength"`
 
-				// TransitInterpretation Rich interpretation of the transit aspect: narrative summary, timing, impact assessment, practical guidance, and keywords.
+				// TransitInterpretation The reading of this transit aspect: summary, dated timing, impact, guidance and keywords, written for this chart.
 				TransitInterpretation struct {
-					// Guidance Practical advice for working with this transit energy.
+					// Guidance Ways to work with this transit, offered as options and drawn from both bodies in the aspect.
 					Guidance string `json:"guidance"`
 
-					// Impact Strength and nature of this transit effect: constructive, challenging, or neutral.
+					// Impact What the transit stirs in the natal body and the life area where it plays out, from the natal house the transiting body passes through.
 					Impact string `json:"impact"`
 
-					// Keywords Key themes activated by this transit aspect.
+					// Keywords Themes of this transit, drawn from both bodies and the aspect.
 					Keywords []string `json:"keywords"`
 
-					// Summary Narrative interpretation of this transit aspect and its life impact.
+					// Summary The transit in brief: what the transiting body is doing to the natal body in this aspect, in plain words for this chart.
 					Summary string `json:"summary"`
 
-					// Timing When this transit is most active and how long its influence lasts, localized. The bucket follows the speed of the transiting body: a few hours for the Moon, a few days for the Sun, Mercury, Venus and Mars, one to two weeks for Jupiter, several weeks for Saturn, and an extended period for Uranus, Neptune and Pluto.
+					// Timing The dated window of this transit on the transit clock: when it enters orb, every exact pass and when it leaves. A fast body such as the Moon reads in hours of the day.
 					Timing string `json:"timing"`
 				} `json:"transitInterpretation"`
 
@@ -160047,6 +160074,15 @@ func ParseCalculateTransitAspectsResponse(rsp *http.Response) (*CalculateTransit
 				// SignLocalized Zodiac sign name on this cusp in the requested language, for display only. Present only when lang is set to a language other than English, since in English it would repeat its canonical partner field exactly. Never compare against this value, compare against the canonical field beside it.
 				SignLocalized *string `json:"signLocalized,omitempty"`
 			} `json:"houses"`
+
+			// Interpretation The reading of the whole transit sky against this chart, from every aspect found, so planets, aspectTypes and minStrength never change it.
+			Interpretation struct {
+				// Detailed The whole sky read as one piece in short paragraphs: the long season set by the slow bodies, the transits easing the way, the nearer ones and the Moon of the day, drawn from every aspect before any filter applies.
+				Detailed string `json:"detailed"`
+
+				// Summary The leading transit of the moment in one or two sentences.
+				Summary string `json:"summary"`
+			} `json:"interpretation"`
 
 			// NatalPlanets Natal (birth chart) planetary positions used as the baseline for transit aspect comparison, each placed in its natal house.
 			NatalPlanets []struct {
@@ -160124,21 +160160,21 @@ func ParseCalculateTransitAspectsResponse(rsp *http.Response) (*CalculateTransit
 					// Strength Aspect strength percentage (0-100). Based on orb tightness relative to the allowed maximum.
 					Strength float32 `json:"strength"`
 
-					// TransitInterpretation Rich interpretation of the transit aspect: narrative summary, timing, impact assessment, practical guidance, and keywords.
+					// TransitInterpretation The reading of this transit aspect: summary, dated timing, impact, guidance and keywords, written for this chart.
 					TransitInterpretation struct {
-						// Guidance Practical advice for working with this transit energy.
+						// Guidance Ways to work with this transit, offered as options and drawn from both bodies in the aspect.
 						Guidance string `json:"guidance"`
 
-						// Impact Strength and nature of this transit effect: constructive, challenging, or neutral.
+						// Impact What the transit stirs in the natal body and the life area where it plays out, from the natal house the transiting body passes through.
 						Impact string `json:"impact"`
 
-						// Keywords Key themes activated by this transit aspect.
+						// Keywords Themes of this transit, drawn from both bodies and the aspect.
 						Keywords []string `json:"keywords"`
 
-						// Summary Narrative interpretation of this transit aspect and its life impact.
+						// Summary The transit in brief: what the transiting body is doing to the natal body in this aspect, in plain words for this chart.
 						Summary string `json:"summary"`
 
-						// Timing When this transit is most active and how long its influence lasts, localized. The bucket follows the speed of the transiting body: a few hours for the Moon, a few days for the Sun, Mercury, Venus and Mars, one to two weeks for Jupiter, several weeks for Saturn, and an extended period for Uranus, Neptune and Pluto.
+						// Timing The dated window of this transit on the transit clock: when it enters orb, every exact pass and when it leaves. A fast body such as the Moon reads in hours of the day.
 						Timing string `json:"timing"`
 					} `json:"transitInterpretation"`
 
@@ -170204,7 +170240,7 @@ func ParseGenerateDigestResponse(rsp *http.Response) (*GenerateDigestResponse, e
 					// Datetime Exact instant of the event as an ISO-8601 UTC datetime, to the nearest second. Astronomical events are refined to this instant by search, not reported at a daily sample point; a dasha-change is the period boundary itself, counted from the birth instant.
 					Datetime string `json:"datetime"`
 
-					// Description Plain-language summary of the event, suitable for direct display. The only localized field: when lang is set this sentence, and the body, target, and aspect names within it, render in the requested language while the structured fields stay English.
+					// Description Plain-language reading of the event, suitable for direct display. A transit aspect, sign ingress or retrograde or direct station names the event and says what it stirs for this birth subject, in one or two sentences. The only localized field: when lang is set this sentence, and the body, target, and aspect names within it, render in the requested language while the structured fields stay English.
 					Description string `json:"description"`
 
 					// Domain Forecast domain. western covers transit aspects, sign ingresses, retrograde stations, eclipses, and new and full moons. vedic covers Vimshottari mahadasha, antardasha, and pratyantardasha boundaries. biorhythm covers critical days. A stable machine value, never localized, so consumers can branch on it under any language.
@@ -170348,7 +170384,7 @@ func ParseFindSignificantDatesResponse(rsp *http.Response) (*FindSignificantDate
 				// Datetime Exact instant of the event as an ISO-8601 UTC datetime, to the nearest second. Astronomical events are refined to this instant by search, not reported at a daily sample point; a dasha-change is the period boundary itself, counted from the birth instant.
 				Datetime string `json:"datetime"`
 
-				// Description Plain-language summary of the event, suitable for direct display. The only localized field: when lang is set this sentence, and the body, target, and aspect names within it, render in the requested language while the structured fields stay English.
+				// Description Plain-language reading of the event, suitable for direct display. A transit aspect, sign ingress or retrograde or direct station names the event and says what it stirs for this birth subject, in one or two sentences. The only localized field: when lang is set this sentence, and the body, target, and aspect names within it, render in the requested language while the structured fields stay English.
 				Description string `json:"description"`
 
 				// Domain Forecast domain. western covers transit aspects, sign ingresses, retrograde stations, eclipses, and new and full moons. vedic covers Vimshottari mahadasha, antardasha, and pratyantardasha boundaries. biorhythm covers critical days. A stable machine value, never localized, so consumers can branch on it under any language.
@@ -170727,7 +170763,7 @@ func ParseGenerateTimelineResponse(rsp *http.Response) (*GenerateTimelineRespons
 				// Datetime Exact instant of the event as an ISO-8601 UTC datetime, to the nearest second. Astronomical events are refined to this instant by search, not reported at a daily sample point; a dasha-change is the period boundary itself, counted from the birth instant.
 				Datetime string `json:"datetime"`
 
-				// Description Plain-language summary of the event, suitable for direct display. The only localized field: when lang is set this sentence, and the body, target, and aspect names within it, render in the requested language while the structured fields stay English.
+				// Description Plain-language reading of the event, suitable for direct display. A transit aspect, sign ingress or retrograde or direct station names the event and says what it stirs for this birth subject, in one or two sentences. The only localized field: when lang is set this sentence, and the body, target, and aspect names within it, render in the requested language while the structured fields stay English.
 				Description string `json:"description"`
 
 				// Domain Forecast domain. western covers transit aspects, sign ingresses, retrograde stations, eclipses, and new and full moons. vedic covers Vimshottari mahadasha, antardasha, and pratyantardasha boundaries. biorhythm covers critical days. A stable machine value, never localized, so consumers can branch on it under any language.
@@ -170873,7 +170909,7 @@ func ParseForecastTransitsResponse(rsp *http.Response) (*ForecastTransitsRespons
 				// Datetime Exact instant of the event as an ISO-8601 UTC datetime, to the nearest second. Astronomical events are refined to this instant by search, not reported at a daily sample point; a dasha-change is the period boundary itself, counted from the birth instant.
 				Datetime string `json:"datetime"`
 
-				// Description Plain-language summary of the event, suitable for direct display. The only localized field: when lang is set this sentence, and the body, target, and aspect names within it, render in the requested language while the structured fields stay English.
+				// Description Plain-language reading of the event, suitable for direct display. A transit aspect, sign ingress or retrograde or direct station names the event and says what it stirs for this birth subject, in one or two sentences. The only localized field: when lang is set this sentence, and the body, target, and aspect names within it, render in the requested language while the structured fields stay English.
 				Description string `json:"description"`
 
 				// Domain Forecast domain. western covers transit aspects, sign ingresses, retrograde stations, eclipses, and new and full moons. vedic covers Vimshottari mahadasha, antardasha, and pratyantardasha boundaries. biorhythm covers critical days. A stable machine value, never localized, so consumers can branch on it under any language.
